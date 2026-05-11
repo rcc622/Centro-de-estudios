@@ -202,6 +202,77 @@ body{display:flex;flex-direction:column;height:100dvh}
 .empty-ico{font-size:48px;margin-bottom:10px}
 .divider{height:1px;background:#E4E6EB;margin:18px 0}
 .heart-empty{filter:grayscale(1);opacity:.4}
+
+/* SECCIONES (banda verde Duolingo) */
+.section-band{background:linear-gradient(90deg,#42B883,#2D8F66);color:#fff;padding:14px 16px;border-radius:14px;margin:24px 0 16px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 12px rgba(66,184,131,.18)}
+.section-band-ico{font-size:28px;line-height:1;flex-shrink:0}
+.section-band-info{flex:1;min-width:0}
+.section-band-title{font-weight:800;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;opacity:.95}
+.section-band-sub{font-size:14px;font-weight:700;margin-top:2px;letter-spacing:.2px}
+
+/* PATH (burbujas zigzag estilo Duolingo) */
+.path{display:flex;flex-direction:column;align-items:center;gap:18px;padding:8px 0 14px;position:relative}
+.path-wrap{display:flex;flex-direction:column;align-items:center}
+.path-bubble{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;background:#42B883;color:#fff;box-shadow:0 6px 0 #2D8F66,0 8px 14px rgba(66,184,131,.3);cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform .15s,box-shadow .15s;position:relative;flex-shrink:0}
+.path-bubble:active{transform:translateY(2px);box-shadow:0 4px 0 #2D8F66,0 6px 10px rgba(66,184,131,.3)}
+.path-bubble.complete{background:#FFD700;color:#1C1E21;box-shadow:0 6px 0 #B8950A,0 8px 14px rgba(255,215,0,.3)}
+.path-bubble.complete::after{content:'✓';position:absolute;bottom:-4px;right:-4px;background:#42B883;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;border:2px solid #fff}
+.path-bubble.current{background:#1877F2;box-shadow:0 6px 0 #0E5BC4,0 8px 14px rgba(24,119,242,.4);animation:pulseB 1.8s infinite}
+.path-bubble.locked{background:#90949C;color:#fff;box-shadow:0 6px 0 #65676B,0 8px 14px rgba(0,0,0,.1);cursor:not-allowed;opacity:.55}
+.path-bubble-label{font-size:11px;font-weight:700;color:#65676B;margin-top:8px;text-align:center;max-width:220px;line-height:1.35;padding:0 6px}
+.path-bubble-label.complete{color:#42B883}
+.path-bubble-label.current{color:#1877F2}
+@keyframes pulseB{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.path-zig-0{transform:translateX(0)}
+.path-zig-1{transform:translateX(-44px)}
+.path-zig-2{transform:translateX(-78px)}
+.path-zig-3{transform:translateX(-44px)}
+.path-zig-4{transform:translateX(0)}
+.path-zig-5{transform:translateX(44px)}
+.path-zig-6{transform:translateX(78px)}
+.path-zig-7{transform:translateX(44px)}
+
+/* MATCH (emparejar) */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.match-col-title{font-size:11px;font-weight:800;color:#65676B;text-transform:uppercase;letter-spacing:.8px;text-align:center;padding-bottom:4px}
+.match-cell{background:#fff;border:2px solid #E4E6EB;border-radius:12px;padding:12px 10px;text-align:center;font-size:13px;font-weight:600;line-height:1.35;cursor:pointer;user-select:none;-webkit-user-select:none;min-height:64px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.match-cell:active{transform:scale(.97)}
+.match-cell.selected{border-color:#1877F2;background:#EBF5FF;color:#1877F2}
+.match-cell.matched{border-color:#42B883;background:#F0FFF7;color:#42B883;opacity:.55;pointer-events:none}
+.match-cell.wrong{border-color:#E74C3C;background:#FFF1F0;color:#E74C3C;animation:shakeM .4s}
+@keyframes shakeM{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.match-progress{text-align:center;font-size:12px;color:#65676B;font-weight:700;margin-bottom:12px}
+
+/* ORDER (ordenar) */
+.order-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.order-row{background:#fff;border:2px solid #E4E6EB;border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;user-select:none;-webkit-user-select:none}
+.order-row.correct{border-color:#42B883;background:#F0FFF7}
+.order-row.wrong{border-color:#E74C3C;background:#FFF1F0}
+.order-num{width:30px;height:30px;border-radius:50%;background:#E7F0FE;color:#1877F2;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.order-row.correct .order-num{background:#42B883;color:#fff}
+.order-text{flex:1;font-size:13.5px;line-height:1.4;font-weight:600}
+.order-controls{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
+.order-arrow{background:#E7F0FE;color:#1877F2;border:none;width:32px;height:26px;border-radius:6px;font-weight:800;font-size:14px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.order-arrow:active{transform:scale(.93)}
+.order-arrow:disabled{opacity:.3;cursor:not-allowed}
+
+/* LIGHTNING */
+.lightning-banner{background:linear-gradient(135deg,#FFA726,#FF6B35);color:#fff;padding:14px 16px;border-radius:14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;font-weight:800;box-shadow:0 4px 12px rgba(255,107,53,.25)}
+.lightning-banner-ico{font-size:24px}
+.lightning-banner-text{font-size:12px;letter-spacing:.5px;text-transform:uppercase;opacity:.95}
+.lightning-timer-big{font-size:22px;letter-spacing:1px;font-weight:900}
+
+/* FILL-IN-THE-BLANK */
+.fill-blank{display:inline-block;min-width:80px;border-bottom:2.5px solid #1877F2;padding:0 6px;margin:0 2px;color:#1877F2;font-weight:800;text-align:center}
+.fill-blank.filled{background:#EBF5FF;border-radius:4px}
+.fill-blank.correct{color:#42B883;border-color:#42B883;background:#F0FFF7}
+.fill-blank.wrong{color:#E74C3C;border-color:#E74C3C;background:#FFF1F0}
+
+/* SCENARIO card */
+.scenario-card{background:linear-gradient(135deg,#FFF8E7,#fff);border:2px solid #FFA726;border-radius:16px;padding:18px;margin-bottom:14px}
+.scenario-card .scenario-label{font-size:11px;font-weight:800;color:#FF6B35;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.scenario-card .scenario-body{font-size:14.5px;line-height:1.6;color:#1C1E21}
+.scenario-card .scenario-body strong{color:#FF6B35}
 </style>
 </head>
 <body>
@@ -264,6 +335,33 @@ const ACHIEVEMENTS = [
   {id:'mock_pass',     i:'🏁', n:'Listo para Examen',   desc:'Pasa el simulacro con 80%+'},
   {id:'no_hearts',     i:'💔', n:'Sin Vidas',           desc:'Pierde todos tus corazones (irónicamente)'}
 ];
+
+// Metadata de secciones pedagógicas (A teoría → B práctica → C aplicación → D validación)
+const SECTION_META = {
+  A: {ico:'📚', title:'Sección A', sub:'Teoría base'},
+  B: {ico:'💪', title:'Sección B', sub:'Práctica activa'},
+  C: {ico:'🎬', title:'Sección C', sub:'Aplicación · casos reales'},
+  D: {ico:'🏆', title:'Sección D', sub:'Validación y repaso'}
+};
+
+// Ícono por tipo de lección (para el path)
+const LESSON_KIND_ICON = {
+  reading:    '📖',
+  drill:      '🎯',
+  scenario:   '🎬',
+  match:      '🔀',
+  order:      '📋',
+  lightning:  '⚡',
+  fill:       '✍️',
+  flashcards: '🃏'
+};
+
+function lessonIcon(lesson){
+  if(lesson.icon) return lesson.icon;
+  if(lesson.type === 'flashcards') return LESSON_KIND_ICON.flashcards;
+  if(lesson.type && LESSON_KIND_ICON[lesson.type]) return LESSON_KIND_ICON[lesson.type];
+  return LESSON_KIND_ICON.reading;
+}
 
 // ============================================================
 // CONTENT LOADER — carga dinámica desde content/*.json
@@ -419,6 +517,10 @@ let LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false};
 let FLASH_STATE = {idx:0, deck:[], rated:0};
 let QUIZ_STATE = {qIdx:0, answers:{}, deck:[], started:0, timeLimit:0, kind:null, passingScore:80, title:''};
 let QUIZ_TIMER_ID = null;
+let MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:null, errors:0, wrongL:null, wrongR:null};
+let ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
+let LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:180, errors:0, done:false, deadline:0};
+let LIGHTNING_TIMER_ID = null;
 let _luq = [];
 let _achq = [];
 
@@ -850,34 +952,82 @@ function renderDay(){
           <div class="day-status">▶</div>
         </div>
       ` : ''}
-      <div class="section-title">Lecciones</div>
-      ${day.lessons.map((lesson, idx) => {
-        const completed = isLessonCompleted(course.id, day.id, lesson.id);
-        const isFlash = lesson.type === 'flashcards';
-        return `
-          <div class="day-card ${completed?'complete':''}" onclick="${isFlash?`openFlashcards('${lesson.id}')`:`openLesson('${lesson.id}')`}">
-            <div class="day-num">${isFlash?'🎴':idx+1}</div>
-            <div class="day-info">
-              <div class="day-title">${lesson.title}</div>
-              <div class="day-sub">${isFlash ? `${lesson.cards.length} flashcards` : `${lesson.cards.length} cards · ~${Math.max(5, lesson.cards.length*2)} min`}</div>
-            </div>
-            <div class="day-status">${completed ? '✅' : ''}</div>
-          </div>
-        `;
-      }).join('')}
+      ${renderDayLessons(course, day)}
       ${day.unitQuiz ? `
-        <div class="section-title">Quiz de Unidad</div>
-        <div class="day-card ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':'locked'}" onclick="${canTakeUnitQuiz ? `openQuiz('${day.id}','unit-quiz')` : 'quizLockedToast()'}">
-          <div class="day-num">${qp.unitQuizPassed?'🏆':'📝'}</div>
-          <div class="day-info">
-            <div class="day-title">Quiz · ${day.title.replace(/^.*?—\\s*/,'')}</div>
-            <div class="day-sub">${day.unitQuiz.questions?.length || 10} preguntas · ≥${day.unitQuiz.passingScore||80}% para avanzar${qp.bestScore?` · mejor: ${qp.bestScore}%`:''}</div>
+        <div class="section-band" style="background:linear-gradient(90deg,#1877F2,#0E5BC4)">
+          <div class="section-band-ico">📝</div>
+          <div class="section-band-info">
+            <div class="section-band-title">Quiz de unidad</div>
+            <div class="section-band-sub">${qp.unitQuizPassed?'¡Aprobado!':canTakeUnitQuiz?'Listo para tomar':'Completa las lecciones primero'}</div>
           </div>
-          <div class="day-status">${qp.unitQuizPassed?'✅':canTakeUnitQuiz?'▶':'🔒'}</div>
         </div>
+        <div class="path"><div class="path-wrap path-zig-0">
+          <div class="path-bubble ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':'locked'}" onclick="${canTakeUnitQuiz ? `openQuiz('${day.id}','unit-quiz')` : 'quizLockedToast()'}">${qp.unitQuizPassed?'🏆':canTakeUnitQuiz?'📝':'🔒'}</div>
+          <div class="path-bubble-label ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':''}">Quiz · ${day.unitQuiz.questions?.length || 10} preg · ≥${day.unitQuiz.passingScore||80}%${qp.bestScore?` · mejor ${qp.bestScore}%`:''}</div>
+        </div></div>
       ` : ''}
     </div>
     ${renderNav('home')}
+  `;
+}
+
+// Renderiza las lecciones agrupadas por sección (si tienen lesson.section) o en lista plana (compat).
+function renderDayLessons(course, day){
+  if(!day.lessons.length) return '';
+  // ¿Todas (o casi todas) las lecciones tienen lesson.section?
+  const sectioned = day.lessons.some(l => l.section);
+  if(!sectioned){
+    // Compatibilidad hacia atrás: render con path simple
+    return `
+      <div class="section-band">
+        <div class="section-band-ico">📚</div>
+        <div class="section-band-info">
+          <div class="section-band-title">Lecciones</div>
+          <div class="section-band-sub">${day.lessons.length} actividades</div>
+        </div>
+      </div>
+      <div class="path">${day.lessons.map((l, i) => pathBubble(course, day, l, i)).join('')}</div>
+    `;
+  }
+  // Agrupar por section preservando el orden de aparición
+  const order = [];
+  const groups = {};
+  day.lessons.forEach(l => {
+    const s = l.section || 'A';
+    if(!groups[s]){ groups[s] = []; order.push(s); }
+    groups[s].push(l);
+  });
+  let html = '';
+  let globalIdx = 0;
+  order.forEach(s => {
+    const meta = SECTION_META[s] || {ico:'📚', title:`Sección ${s}`, sub:''};
+    html += `
+      <div class="section-band">
+        <div class="section-band-ico">${meta.ico}</div>
+        <div class="section-band-info">
+          <div class="section-band-title">${meta.title}</div>
+          <div class="section-band-sub">${meta.sub}</div>
+        </div>
+      </div>
+      <div class="path">${groups[s].map(l => { const html = pathBubble(course, day, l, globalIdx); globalIdx++; return html; }).join('')}</div>
+    `;
+  });
+  return html;
+}
+
+function pathBubble(course, day, lesson, globalIdx){
+  const completed = isLessonCompleted(course.id, day.id, lesson.id);
+  const isFlash = lesson.type === 'flashcards';
+  const ico = lessonIcon(lesson);
+  const zig = `path-zig-${globalIdx % 8}`;
+  const cls = completed ? 'complete' : (globalIdx === 0 || isLessonCompleted(course.id, day.id, day.lessons[globalIdx-1]?.id)) ? 'current' : '';
+  const onclick = isFlash ? `openFlashcards('${lesson.id}')` : `openLesson('${lesson.id}')`;
+  const lblCls = cls === 'complete' ? 'complete' : cls === 'current' ? 'current' : '';
+  return `
+    <div class="path-wrap ${zig}">
+      <div class="path-bubble ${cls}" onclick="${onclick}">${ico}</div>
+      <div class="path-bubble-label ${lblCls}">${lesson.title}</div>
+    </div>
   `;
 }
 
@@ -886,6 +1036,11 @@ function renderLesson(){
   const day = course?.days.find(d => d.id === CURRENT.dayId);
   const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
   if(!lesson) return renderHome();
+  // Dispatch a renderers especiales por tipo
+  if(lesson.type === 'match')     return renderLessonMatch(course, day, lesson);
+  if(lesson.type === 'order')     return renderLessonOrder(course, day, lesson);
+  if(lesson.type === 'lightning') return renderLessonLightning(course, day, lesson);
+  // Tipos 'reading' (default) | 'drill' | 'scenario' usan el flujo de cards estándar
 
   const card = lesson.cards[LESSON_STATE.cardIdx];
   const total = lesson.cards.length;
@@ -911,14 +1066,38 @@ function renderLesson(){
         ${card.h ? `<div class="card-h2">${card.h}</div>` : ''}
         <table class="kv-table">${card.rows.map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>
       </div>`;
-  } else if(card.type === 'mcq'){
+  } else if(card.type === 'scenario'){
+    cardHtml = `
+      <div class="scenario-card">
+        <div class="scenario-label">🎬 ${card.label || 'Caso real'}</div>
+        ${card.h ? `<div class="card-h2" style="color:#FF6B35;margin-bottom:8px">${card.h}</div>` : ''}
+        <div class="scenario-body">${card.body}</div>
+      </div>`;
+  } else if(card.type === 'mcq' || card.type === 'fill'){
     const answered = LESSON_STATE.answers[idx];
     const isMulti = !!card.multi;
+    const isFill = card.type === 'fill';
     const correctSet = isMulti ? new Set(card.correct) : new Set([card.correct]);
+    // Pregunta: para 'fill' renderiza el blank
+    let qHtml = card.q;
+    if(isFill){
+      if(answered){
+        const userChoice = answered.selected[0];
+        const userText = card.options[userChoice] || '____';
+        const cls = answered.correct ? 'correct' : 'wrong';
+        qHtml = card.q.replace(/___+/g, `<span class="fill-blank ${cls} filled">${userText}</span>`);
+      } else if(LESSON_STATE.tempSelected?.length){
+        const userText = card.options[LESSON_STATE.tempSelected[0]] || '____';
+        qHtml = card.q.replace(/___+/g, `<span class="fill-blank filled">${userText}</span>`);
+      } else {
+        qHtml = card.q.replace(/___+/g, `<span class="fill-blank">______</span>`);
+      }
+    }
+    const tag = isFill ? 'COMPLETAR LA FRASE' : (isMulti ? 'OPCIÓN MÚLTIPLE · ELIGE ' + card.correct.length : 'PREGUNTA');
     cardHtml = `
       <div class="quiz-card">
-        <div class="quiz-tag">${isMulti ? 'OPCIÓN MÚLTIPLE · ELIGE ' + card.correct.length : 'PREGUNTA'}</div>
-        <div class="quiz-q">${card.q}</div>
+        <div class="quiz-tag">${tag}</div>
+        <div class="quiz-q">${qHtml}</div>
         ${card.options.map((opt, i) => {
           let cls = 'opt';
           if(answered){
@@ -942,7 +1121,7 @@ function renderLesson(){
 
   // Action button
   let actionBtn;
-  if(card.type === 'mcq'){
+  if(card.type === 'mcq' || card.type === 'fill'){
     const answered = LESSON_STATE.answers[idx];
     if(!answered){
       const hasSel = LESSON_STATE.tempSelected?.length > 0;
@@ -1001,6 +1180,413 @@ function renderLessonComplete(){
       <button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>
     </div>
   `;
+}
+
+// ============================================================
+// LESSON · MATCH (emparejar términos ↔ definiciones)
+// ============================================================
+function shuffleArr(arr){
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+
+function initMatchState(lesson){
+  const pairs = lesson.pairs || [];
+  const leftIdxs = shuffleArr(pairs.map((_,i)=>i));
+  const rightIdxs = shuffleArr(pairs.map((_,i)=>i));
+  MATCH_STATE = {
+    leftSlots: leftIdxs.map(i => ({id:i, text:pairs[i][0]})),
+    rightSlots: rightIdxs.map(i => ({id:i, text:pairs[i][1]})),
+    selL: null, selR: null,
+    matched: new Set(),
+    errors: 0,
+    wrongL: null, wrongR: null
+  };
+}
+
+function renderLessonMatch(course, day, lesson){
+  if(!MATCH_STATE.leftSlots || !MATCH_STATE.leftSlots.length) initMatchState(lesson);
+  const total = lesson.pairs?.length || 0;
+  const done = MATCH_STATE.matched ? MATCH_STATE.matched.size : 0;
+  const pct = total ? Math.round(done/total*100) : 0;
+  const isDone = total > 0 && done === total;
+
+  const cells = [];
+  for(let i=0; i<total; i++){
+    const l = MATCH_STATE.leftSlots[i];
+    const r = MATCH_STATE.rightSlots[i];
+    const lMatched = MATCH_STATE.matched.has(l.id);
+    const rMatched = MATCH_STATE.matched.has(r.id);
+    let lCls = 'match-cell' + (lMatched?' matched':MATCH_STATE.selL===i?' selected':MATCH_STATE.wrongL===i?' wrong':'');
+    let rCls = 'match-cell' + (rMatched?' matched':MATCH_STATE.selR===i?' selected':MATCH_STATE.wrongR===i?' wrong':'');
+    cells.push(`<div class="${lCls}" onclick="${lMatched?'':`matchTapL(${i})`}">${l.text}</div>`);
+    cells.push(`<div class="${rCls}" onclick="${rMatched?'':`matchTapR(${i})`}">${r.text}</div>`);
+  }
+
+  return `
+    <div class="hdr">
+      <div class="hdr-top">
+        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLesson()">✕</button>
+        <div style="flex:1;margin:0 12px">
+          <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+        </div>
+        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="lesson-header">
+        <div class="lesson-num">🔀 EMPAREJAR · ${done}/${total}</div>
+        <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
+        <div style="font-size:13px;color:#65676B;margin-top:6px">${lesson.instruction || 'Tap un término y luego su definición. Errores pierden ❤️.'}</div>
+      </div>
+      <div class="match-grid">
+        <div class="match-col-title">Término</div>
+        <div class="match-col-title">Definición</div>
+      </div>
+      <div class="match-grid">${cells.join('')}</div>
+      ${isDone ? `<div class="quiz-feedback correct show"><strong>✅ ¡Todos emparejados!</strong>${MATCH_STATE.errors?` ${MATCH_STATE.errors} ${MATCH_STATE.errors===1?'error':'errores'} en el camino.`:' Sin errores 💯'}</div>` : ''}
+    </div>
+    <div class="action-bar">
+      <button class="btn ${isDone?'btn-primary':'btn-disabled'}" onclick="${isDone?'finishMatch()':''}">${isDone?'Terminar lección':'Empareja todos para continuar'}</button>
+    </div>
+  `;
+}
+
+function matchTapL(i){
+  if(MATCH_STATE.matched.has(MATCH_STATE.leftSlots[i].id)) return;
+  MATCH_STATE.selL = i;
+  MATCH_STATE.wrongL = null;
+  MATCH_STATE.wrongR = null;
+  tryMatch();
+  render();
+}
+function matchTapR(i){
+  if(MATCH_STATE.matched.has(MATCH_STATE.rightSlots[i].id)) return;
+  MATCH_STATE.selR = i;
+  MATCH_STATE.wrongL = null;
+  MATCH_STATE.wrongR = null;
+  tryMatch();
+  render();
+}
+function tryMatch(){
+  if(MATCH_STATE.selL === null || MATCH_STATE.selR === null) return;
+  const lId = MATCH_STATE.leftSlots[MATCH_STATE.selL].id;
+  const rId = MATCH_STATE.rightSlots[MATCH_STATE.selR].id;
+  if(lId === rId){
+    MATCH_STATE.matched.add(lId);
+    MATCH_STATE.selL = null;
+    MATCH_STATE.selR = null;
+  } else {
+    MATCH_STATE.errors += 1;
+    MATCH_STATE.wrongL = MATCH_STATE.selL;
+    MATCH_STATE.wrongR = MATCH_STATE.selR;
+    MATCH_STATE.selL = null;
+    MATCH_STATE.selR = null;
+    if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+    setTimeout(() => {
+      MATCH_STATE.wrongL = null;
+      MATCH_STATE.wrongR = null;
+      if(VIEW === 'lesson') render();
+    }, 600);
+  }
+}
+function finishMatch(){
+  LESSON_STATE.errors = MATCH_STATE.errors;
+  finishLesson();
+}
+
+// ============================================================
+// LESSON · ORDER (ordenar pasos)
+// ============================================================
+function initOrderState(lesson){
+  const items = lesson.items || [];
+  ORDER_STATE = {
+    correctOrder: items.slice(),
+    current: shuffleArr(items),
+    correct: false,
+    submitted: false,
+    errors: 0
+  };
+  // Asegurar que el shuffle no quede idéntico al orden correcto si hay 2+ items
+  if(items.length >= 2){
+    let same = true;
+    for(let i=0;i<items.length;i++) if(ORDER_STATE.current[i] !== items[i]) { same=false; break; }
+    if(same) ORDER_STATE.current = shuffleArr(items);
+  }
+}
+
+function renderLessonOrder(course, day, lesson){
+  if(!ORDER_STATE.correctOrder || !ORDER_STATE.correctOrder.length) initOrderState(lesson);
+  const submitted = ORDER_STATE.submitted;
+  const correct = ORDER_STATE.correct;
+  const items = ORDER_STATE.current;
+  const total = items.length;
+
+  return `
+    <div class="hdr">
+      <div class="hdr-top">
+        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLesson()">✕</button>
+        <div style="flex:1;margin:0 12px">
+          <div class="progress-wrap"><div class="progress-bar" style="width:${submitted&&correct?100:50}%"></div></div>
+        </div>
+        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="lesson-header">
+        <div class="lesson-num">📋 ORDENAR</div>
+        <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
+        <div style="font-size:13px;color:#65676B;margin-top:6px">${lesson.instruction || 'Usa ▲▼ para reordenar y verifica al final'}</div>
+      </div>
+      <div class="order-list">
+        ${items.map((it, i) => {
+          let cls = 'order-row';
+          if(submitted){
+            if(correct) cls += ' correct';
+            else if(ORDER_STATE.correctOrder[i] === it) cls += ' correct';
+            else cls += ' wrong';
+          }
+          return `
+            <div class="${cls}">
+              <div class="order-num">${i+1}</div>
+              <div class="order-text">${it}</div>
+              <div class="order-controls">
+                <button class="order-arrow" ${i===0||submitted?'disabled':''} onclick="orderUp(${i})">▲</button>
+                <button class="order-arrow" ${i===total-1||submitted?'disabled':''} onclick="orderDown(${i})">▼</button>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+      ${submitted && !correct ? `
+        <div class="quiz-feedback wrong show">
+          <strong>❌ No es el orden correcto</strong>
+          Las filas verdes ya están en su lugar. Reintenta el resto.
+        </div>
+      ` : ''}
+      ${submitted && correct ? `
+        <div class="quiz-feedback correct show">
+          <strong>✅ ¡Orden correcto!</strong>
+          ${lesson.explanation || ''}
+        </div>
+      ` : ''}
+    </div>
+    <div class="action-bar">
+      ${submitted && !correct ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="retryOrder()">Reintentar</button>` : ''}
+      <button class="btn ${(submitted && correct) ? 'btn-primary' : (submitted ? 'btn-disabled' : 'btn-primary')}" onclick="${submitted && correct ? 'finishOrder()' : (submitted ? '' : 'submitOrder()')}">${submitted && correct ? 'Terminar lección' : 'Verificar orden'}</button>
+    </div>
+  `;
+}
+
+function orderUp(i){
+  if(ORDER_STATE.submitted || i===0) return;
+  const c = ORDER_STATE.current;
+  [c[i-1], c[i]] = [c[i], c[i-1]];
+  render();
+}
+function orderDown(i){
+  if(ORDER_STATE.submitted) return;
+  const c = ORDER_STATE.current;
+  if(i === c.length-1) return;
+  [c[i], c[i+1]] = [c[i+1], c[i]];
+  render();
+}
+function submitOrder(){
+  const isCorrect = ORDER_STATE.current.every((x,i) => x === ORDER_STATE.correctOrder[i]);
+  ORDER_STATE.submitted = true;
+  ORDER_STATE.correct = isCorrect;
+  if(!isCorrect){
+    ORDER_STATE.errors += 1;
+    if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+  }
+  render();
+}
+function retryOrder(){
+  ORDER_STATE.submitted = false;
+  ORDER_STATE.correct = false;
+  ORDER_STATE.current = shuffleArr(ORDER_STATE.correctOrder);
+  // evitar shuffle idéntico al correcto
+  let same = ORDER_STATE.current.every((x,i) => x === ORDER_STATE.correctOrder[i]);
+  if(same && ORDER_STATE.correctOrder.length >= 2) ORDER_STATE.current = shuffleArr(ORDER_STATE.correctOrder);
+  render();
+}
+function finishOrder(){
+  LESSON_STATE.errors = ORDER_STATE.errors;
+  finishLesson();
+}
+
+// ============================================================
+// LESSON · LIGHTNING (preguntas rápidas con timer)
+// ============================================================
+function initLightningState(lesson){
+  LIGHTNING_STATE = {
+    idx: 0,
+    answers: {},
+    deck: lesson.questions || [],
+    started: now(),
+    timeLimit: lesson.timeLimit || 180,
+    errors: 0,
+    done: false,
+    deadline: now() + ((lesson.timeLimit || 180) * 1000)
+  };
+  startLightningTimer();
+}
+
+function startLightningTimer(){
+  stopLightningTimer();
+  LIGHTNING_TIMER_ID = setInterval(() => {
+    if(VIEW !== 'lesson' || LIGHTNING_STATE.done){ stopLightningTimer(); return; }
+    const remaining = Math.max(0, LIGHTNING_STATE.deadline - now());
+    if(remaining === 0){
+      stopLightningTimer();
+      LIGHTNING_STATE.done = true;
+      // contar incorrectas las no respondidas
+      const total = LIGHTNING_STATE.deck.length;
+      let errs = 0;
+      for(let i=0;i<total;i++){
+        const a = LIGHTNING_STATE.answers[i];
+        if(!a || a.correct === false) errs++;
+      }
+      LIGHTNING_STATE.errors = errs;
+      render();
+    } else {
+      const el = document.getElementById('light-timer');
+      if(el){
+        const mm = String(Math.floor(remaining/1000/60)).padStart(2,'0');
+        const ss = String(Math.floor((remaining/1000)%60)).padStart(2,'0');
+        el.textContent = `${mm}:${ss}`;
+      }
+    }
+  }, 250);
+}
+
+function stopLightningTimer(){
+  if(LIGHTNING_TIMER_ID){ clearInterval(LIGHTNING_TIMER_ID); LIGHTNING_TIMER_ID = null; }
+}
+
+function renderLessonLightning(course, day, lesson){
+  if(!LIGHTNING_STATE.deck.length) initLightningState(lesson);
+  const done = LIGHTNING_STATE.done;
+  const total = LIGHTNING_STATE.deck.length;
+
+  if(done){
+    // Pantalla de resumen
+    const correct = Object.values(LIGHTNING_STATE.answers).filter(a => a.correct).length;
+    const score = total ? Math.round(correct/total*100) : 0;
+    const wrongIdxs = [];
+    for(let i=0;i<total;i++){
+      const a = LIGHTNING_STATE.answers[i];
+      if(!a || !a.correct) wrongIdxs.push(i);
+    }
+    return `
+      <div class="hdr">
+        <div class="hdr-top"><div style="font-size:14px;font-weight:700">⚡ Lightning · resumen</div></div>
+      </div>
+      <div class="scroll">
+        <div class="complete-screen" style="padding:24px 16px 14px">
+          <div class="complete-ico">⚡</div>
+          <div class="complete-h">${correct} de ${total}</div>
+          <div class="complete-sub">${lesson.title}</div>
+          <div class="score-big" style="color:${score>=80?'#42B883':score>=50?'#FFA726':'#E74C3C'}">${score}%</div>
+        </div>
+        ${wrongIdxs.length ? `<div class="section-title">Lo que fallaste</div>${wrongIdxs.slice(0,10).map(i => {
+          const q = LIGHTNING_STATE.deck[i];
+          const a = LIGHTNING_STATE.answers[i];
+          const userText = a && a.selected !== undefined ? `${String.fromCharCode(97+a.selected)}) ${q.options[a.selected]}` : '(sin responder · tiempo)';
+          return `
+            <div class="card" style="border-color:#FFD7D5;background:#FFF8F8">
+              <div style="font-size:12px;color:#A8332B;font-weight:800;margin-bottom:6px">PREGUNTA ${i+1}</div>
+              <div style="font-size:14px;font-weight:600;margin-bottom:8px">${q.q}</div>
+              <div style="font-size:13px;line-height:1.5"><strong>Tu respuesta:</strong> ${userText}</div>
+              <div style="font-size:13px;line-height:1.5;margin-top:4px"><strong>Correcto:</strong> ${String.fromCharCode(97+q.correct)}) ${q.options[q.correct]}</div>
+              ${q.explanation ? `<div style="font-size:13px;color:#1F6B4A;background:#F0FFF7;padding:10px;border-radius:8px;margin-top:8px;line-height:1.5">${q.explanation}</div>` : ''}
+            </div>
+          `;
+        }).join('')}` : ''}
+      </div>
+      <div class="action-bar">
+        <button class="btn btn-primary" onclick="finishLightning()">Continuar</button>
+      </div>
+    `;
+  }
+
+  const idx = LIGHTNING_STATE.idx;
+  const q = LIGHTNING_STATE.deck[idx];
+  const pct = total ? Math.round((idx)/total*100) : 0;
+  const remaining = Math.max(0, LIGHTNING_STATE.deadline - now());
+  const mm = String(Math.floor(remaining/1000/60)).padStart(2,'0');
+  const ss = String(Math.floor((remaining/1000)%60)).padStart(2,'0');
+
+  return `
+    <div class="hdr">
+      <div class="hdr-top">
+        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLightning()">✕</button>
+        <div style="flex:1;margin:0 12px">
+          <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+        </div>
+        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="lightning-banner">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="lightning-banner-ico">⚡</span>
+          <div>
+            <div class="lightning-banner-text">Lightning · ${idx+1}/${total}</div>
+            <div style="font-size:11px;opacity:.9">Sin botón Verificar · tap = avanzar</div>
+          </div>
+        </div>
+        <div class="lightning-timer-big" id="light-timer">${mm}:${ss}</div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-tag">PREGUNTA RÁPIDA</div>
+        <div class="quiz-q">${q.q}</div>
+        ${q.options.map((opt, i) => {
+          const letter = String.fromCharCode(97+i);
+          return `<div class="opt" onclick="lightningSelect(${i})"><div class="opt-letter">${letter}</div><div class="opt-text">${opt}</div></div>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function lightningSelect(i){
+  const idx = LIGHTNING_STATE.idx;
+  const q = LIGHTNING_STATE.deck[idx];
+  if(LIGHTNING_STATE.answers[idx]) return;
+  const correct = i === q.correct;
+  LIGHTNING_STATE.answers[idx] = {selected:i, correct};
+  if(!correct){
+    LIGHTNING_STATE.errors += 1;
+    // En Lightning NO se pierden hearts (es modo rápido)
+  }
+  // Avanzar inmediato
+  setTimeout(() => {
+    if(LIGHTNING_STATE.idx + 1 >= LIGHTNING_STATE.deck.length){
+      LIGHTNING_STATE.done = true;
+      stopLightningTimer();
+    } else {
+      LIGHTNING_STATE.idx += 1;
+    }
+    if(VIEW === 'lesson') render();
+  }, 150);
+  render();
+}
+
+function exitLightning(){
+  if(!LIGHTNING_STATE.done && Object.keys(LIGHTNING_STATE.answers).length > 0){
+    if(!confirm('¿Salir del Lightning? Perderás el progreso.')) return;
+  }
+  stopLightningTimer();
+  VIEW = 'day';
+  render();
+}
+
+function finishLightning(){
+  stopLightningTimer();
+  LESSON_STATE.errors = LIGHTNING_STATE.errors;
+  finishLesson();
 }
 
 // ============================================================
@@ -1424,6 +2010,10 @@ function openLesson(id){
   }
   CURRENT.lessonId = id;
   LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[]};
+  MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:new Set(), errors:0, wrongL:null, wrongR:null};
+  ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
+  stopLightningTimer();
+  LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:180, errors:0, done:false, deadline:0};
   VIEW = 'lesson';
   render();
 }
@@ -1436,9 +2026,15 @@ function openFlashcards(lessonId){
 }
 
 function exitLesson(){
-  if(LESSON_STATE.cardIdx > 0 && !LESSON_STATE.completed){
+  const someProgress =
+    (LESSON_STATE.cardIdx > 0) ||
+    (MATCH_STATE.matched && MATCH_STATE.matched.size > 0) ||
+    (ORDER_STATE.submitted) ||
+    (LIGHTNING_STATE.idx > 0 || Object.keys(LIGHTNING_STATE.answers || {}).length > 0);
+  if(someProgress && !LESSON_STATE.completed){
     if(!confirm('¿Salir? Perderás el progreso de esta lección.')) return;
   }
+  stopLightningTimer();
   if(CURRENT.dayId) {
     VIEW = 'day';
   } else {
