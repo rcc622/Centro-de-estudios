@@ -1674,7 +1674,7 @@ function renderLessonComplete(){
         <div class="summary-grid" style="width:100%;max-width:300px">
           <div class="sum-cell"><div class="sum-num">+${xpEarned}</div><div class="sum-lbl">XP</div></div>
           <div class="sum-cell"><div class="sum-num">${errors}</div><div class="sum-lbl">errores</div></div>
-          <div class="sum-cell"><div class="sum-num">${perfect?'💯':Math.round((1-errors/Math.max(1,Object.keys(LESSON_STATE.answers).length))*100)+'%'}</div><div class="sum-lbl">precisión</div></div>
+          <div class="sum-cell"><div class="sum-num">${perfect?'💯':Math.max(20,Math.round(100*Math.pow(0.75,errors)))+'%'}</div><div class="sum-lbl">precisión</div></div>
         </div>
       </div>
     </div>
