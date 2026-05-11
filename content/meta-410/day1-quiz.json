@@ -1,0 +1,115 @@
+{
+  "id": "day1-quiz",
+  "title": "Quiz · Día 1",
+  "kind": "unit-quiz",
+  "passingScore": 80,
+  "timeLimit": 0,
+  "questions": [
+    {
+      "q": "¿Cuál de los siguientes describe mejor el propósito del Opportunity Score en Ads Manager?",
+      "options": [
+        "Predecir el ROAS esperado de la próxima campaña",
+        "Mostrar qué tan optimizadas están las campañas según recomendaciones experimentalmente probadas no aplicadas",
+        "Medir la calidad del creative contra benchmarks de industria",
+        "Estimar el costo por resultado del próximo trimestre"
+      ],
+      "correct": 1,
+      "explanation": "El Opportunity Score es un 0-100 + recomendaciones reales. NO predice ni garantiza performance — refleja la adopción de best practices comprobadas."
+    },
+    {
+      "q": "¿En qué nivel de creación de una campaña haces las selecciones para audiencia, ubicación de conversión y placements?",
+      "options": ["Campaign level", "Ad set level", "Ad level", "Account level"],
+      "correct": 1,
+      "explanation": "Audience, conversion settings y placements son decisiones a nivel Ad set. Campaign decide buying type/objective/budget. Ad decide creative/destination/tracking."
+    },
+    {
+      "q": "Un cliente quiere automatizar TODA su campaña usando AI para vender productos en su sitio web. ¿Qué le recomiendas?",
+      "options": [
+        "Advantage+ audience",
+        "Advantage+ campaign budget",
+        "Advantage+ Sales campaigns",
+        "Advantage+ catalog ads"
+      ],
+      "correct": 2,
+      "explanation": "Advantage+ Sales campaigns es una solución 'complete campaign' que automatiza toda la campaña. Las demás son single-step (automatizan un solo aspecto)."
+    },
+    {
+      "q": "¿Cuáles son soluciones single-step de Advantage+? Selecciona 2.",
+      "options": [
+        "Advantage+ Sales campaigns",
+        "Advantage+ placements",
+        "Advantage+ Leads campaigns",
+        "Advantage+ audience"
+      ],
+      "correct": [1, 3],
+      "multi": true,
+      "explanation": "Placements y audience son single-step. Sales y Leads campaigns son complete campaign solutions."
+    },
+    {
+      "q": "¿Cuál de los siguientes NO es una de las 7 Performance Best Practices oficiales de Meta?",
+      "options": [
+        "Automate campaign setup",
+        "Focus on signals",
+        "Maximize daily frequency caps",
+        "Validate results"
+      ],
+      "correct": 2,
+      "explanation": "Las 7 BP son: Automate setup, Align objectives, Consider audience, Optimize creative & placements, Focus on signals, Get the most out of budget & bidding, Validate results. Frequency caps NO está en la lista."
+    },
+    {
+      "q": "¿Qué Best Practice corresponde a tomar decisiones con data de alta calidad (Pixel, CAPI, datasets)?",
+      "options": [
+        "BP 2 — Align objectives & goals",
+        "BP 4 — Optimize creative & placements",
+        "BP 5 — Focus on signals",
+        "BP 7 — Validate results"
+      ],
+      "correct": 2,
+      "explanation": "BP 5 Focus on signals: 'Inform decision making and optimize your strategy with high-quality data.' Signals = data sources."
+    },
+    {
+      "q": "En un Business Portfolio, ¿qué describe correctamente los 3 tipos de usuarios?",
+      "options": [
+        "Admin, Editor, Viewer",
+        "People (individuos), Partners (otros negocios con su propio portfolio), System users (servidores/software con API access)",
+        "Owner, Member, Guest",
+        "Internal, External, Temporary"
+      ],
+      "correct": 1,
+      "explanation": "People = personas físicas. Partners = otros negocios (necesitan su portfolio + business ID). System users = servidores/software con API access. No todos los portfolios tienen system users disponibles."
+    },
+    {
+      "q": "El acceso temporary en un Business Portfolio dura:",
+      "options": [
+        "Mínimo 1 día, máximo 30 días",
+        "Mínimo 3 días, máximo 75 días",
+        "Mínimo 7 días, máximo 90 días",
+        "Mínimo 24 horas, máximo 365 días"
+      ],
+      "correct": 1,
+      "explanation": "Temporary access: mínimo 3 días, máximo 75 días. Es una opción avanzada para dar acceso básico limitado en el tiempo."
+    },
+    {
+      "q": "¿Cuál es la forma más simple de excluir grupos de contenido sensible en el Brand Safety Center?",
+      "options": [
+        "Crear publisher block lists manuales",
+        "Usar inventory filters (Moderate o Limited)",
+        "Excluir topics como Gaming, News y Politics",
+        "Configurar content type exclusions para live video"
+      ],
+      "correct": 1,
+      "explanation": "Inventory filters (Expanded/Moderate/Limited) son el control más simple y de mayor cobertura. Block lists requieren trabajo manual; topic exclusions solo aplican a FB in-stream/reels."
+    },
+    {
+      "q": "¿Qué nivel de acceso o rol se requiere para cambiar los payment methods conectados a Meta Business Suite?",
+      "options": [
+        "Cualquier usuario con partial access",
+        "Solo system users",
+        "Admin O rol finance (view and manage)",
+        "Solo el creador original del portfolio"
+      ],
+      "correct": 2,
+      "explanation": "Cambiar payment methods requiere acceso admin O el rol finance (view and manage). El rol finance es uno de los Advanced options del portfolio."
+    }
+  ]
+}
