@@ -426,6 +426,17 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .backup-card .bc-btn-outline{background:#fff;color:#1C1E21;border:1.5px solid #E4E6EB}
 .backup-card .bc-hint{font-size:11.5px;color:#8A8D91;text-align:center;font-weight:600;margin-top:8px}
 
+/* ----- POWER banners (Hooked variable rewards) ----- */
+.power-banner{background:linear-gradient(135deg,#FFD700,#FF6B35);color:#fff;border-radius:14px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 14px rgba(255,107,53,.35);position:relative;overflow:hidden}
+.power-banner .pb-ico{font-size:26px;flex-shrink:0;animation:pb-pulse 1.4s infinite}
+.power-banner .pb-info{flex:1;min-width:0}
+.power-banner .pb-title{font-size:13px;font-weight:900;letter-spacing:.3px}
+.power-banner .pb-sub{font-size:11.5px;opacity:.95;font-weight:600;margin-top:1px}
+@keyframes pb-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.combo-pip-wrap{display:flex;gap:4px;margin-left:6px}
+.combo-pip{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4)}
+.combo-pip.on{background:#fff;box-shadow:0 0 6px rgba(255,255,255,.7)}
+
 /* ----- STREAK view (detalle de racha) ----- */
 .streak-hero{background:linear-gradient(135deg,#FFF4D6,#FFE0B3);border:1.5px solid #FFA726;border-radius:20px;padding:22px 18px;margin-bottom:18px;position:relative;overflow:hidden}
 .streak-hero::after{content:'🔥';position:absolute;right:-10px;bottom:-30px;font-size:140px;opacity:.18;line-height:1}
@@ -439,9 +450,9 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .cal-nav{display:flex;gap:6px}
 .cal-nav button{width:30px;height:30px;border-radius:50%;border:1px solid #E4E6EB;background:#fff;color:#1877F2;font-weight:800;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
 .cal-nav button:active{background:#EBF5FF;transform:scale(.95)}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center;width:100%}
 .cal-dow{font-size:10.5px;font-weight:800;color:#8A8D91;letter-spacing:.4px;padding:4px 0}
-.cal-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:13px;font-weight:700;color:#65676B;position:relative;min-height:32px}
+.cal-cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:13px;font-weight:700;color:#65676B;position:relative;min-width:0}
 .cal-cell.empty{visibility:hidden}
 .cal-cell.studied{background:#FF6B35;color:#fff;box-shadow:0 2px 4px rgba(255,107,53,.3)}
 .cal-cell.studied::after{content:'🔥';position:absolute;font-size:8px;top:-2px;right:-2px;display:none}
@@ -800,7 +811,10 @@ let DB = {
   activityLog: {}, // {'YYYY-MM-DD': {xp:n, lessons:n, perfectLessons:n, errors:n, mins:n}}
   studiedWeekdays: {}, // {'YYYY-WW': {0:bool,1:bool,...,6:bool}} para weekend_warrior y constancia
   dailyGoal: 3, // meta de lecciones por día (1, 3, 5, 10)
-  streakViewMonth: null // mes navegado en la vista de streak (null = mes actual)
+  streakViewMonth: null, // mes navegado en la vista de streak (null = mes actual)
+  perfectStreak: 0, // lecciones perfectas consecutivas — para Perfect Combo x2 XP
+  comboReady: false, // true si la próxima lección tendrá x2 XP por combo
+  goalBonusClaimed: {} // {'YYYY-MM-DD': true} para no dar el bonus de meta diaria 2 veces
 };
 let VIEW = 'home';
 let CURRENT = {courseId:null, dayId:null, lessonId:null, quizKind:null};
@@ -1303,6 +1317,26 @@ function renderHome(){
         <h1>Hola, Randall</h1>
         <p>${DB.streak > 0 ? `🔥 ${DB.streak} ${DB.streak===1?'día':'días'} de racha` : 'Sin racha — empieza hoy'} · ${lvlName}</p>
       </div>
+      ${DB.comboReady ? `
+        <div class="power-banner">
+          <div class="pb-ico">⚡</div>
+          <div class="pb-info">
+            <div class="pb-title">PERFECT COMBO ACTIVO</div>
+            <div class="pb-sub">Tu próxima lección perfecta da el doble de XP</div>
+          </div>
+        </div>
+      ` : (DB.perfectStreak > 0 ? `
+        <div class="power-banner" style="background:linear-gradient(135deg,#42B883,#1877F2);box-shadow:0 4px 14px rgba(24,119,242,.25)">
+          <div class="pb-ico" style="animation:none">🎯</div>
+          <div class="pb-info">
+            <div class="pb-title">COMBO ${DB.perfectStreak}/3 · siguiente x2</div>
+            <div class="pb-sub">Mantené la racha sin errores para multiplicar XP</div>
+          </div>
+          <div class="combo-pip-wrap">
+            ${[0,1,2].map(i => `<div class="combo-pip ${i < DB.perfectStreak ? 'on':''}"></div>`).join('')}
+          </div>
+        </div>
+      ` : '')}
       ${heroHtml}
       ${otherCoursesHtml}
       ${upcomingHtml}
@@ -2648,6 +2682,43 @@ function renderAchievements(){
         </div>
       </div>
 
+      <div class="section-title">Tus poderes</div>
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#FFD700,#FF6B35)">⚡</div>
+        <div class="pr-info">
+          <div class="pr-title">Perfect Combo ${DB.comboReady ? '<span style="font-size:11px;color:#FF6B35;margin-left:4px">¡LISTO!</span>' : ''}</div>
+          <div class="pr-meta">${DB.comboReady ? 'Tu próxima lección perfecta da el doble de XP' : `3 lecciones perfectas seguidas → x2 XP · Vas ${DB.perfectStreak||0}/3`}</div>
+          <div class="pr-progress"><div class="pr-progress-bar" style="width:${DB.comboReady?100:Math.min(100,(DB.perfectStreak||0)/3*100)}%"></div></div>
+        </div>
+      </div>
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">🏆</div>
+        <div class="pr-info">
+          <div class="pr-title">Meta diaria — bonus +50 XP</div>
+          <div class="pr-meta">Completá tu meta del día y recibí 50 XP bonus (una vez por día)</div>
+          ${(() => {
+            const goal = DB.dailyGoal || 3;
+            const done = DB.activityLog?.[todayStr()]?.lessons || 0;
+            const claimed = DB.goalBonusClaimed?.[todayStr()];
+            return `<div class="pr-meta" style="margin-top:4px;color:${claimed?'#42B883':'#1C1E21'};font-weight:800">${claimed ? '✓ Reclamado hoy · sigue mañana' : `Hoy: ${done}/${goal} lecciones`}</div>`;
+          })()}
+        </div>
+      </div>
+      <div class="practice-row locked">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🛡️</div>
+        <div class="pr-info">
+          <div class="pr-title">Escudo de racha <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
+          <div class="pr-meta">Cada 7 días de racha ganás un escudo que te salva si te saltás un día</div>
+        </div>
+      </div>
+      <div class="practice-row locked">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">📦</div>
+        <div class="pr-info">
+          <div class="pr-title">Caja misteriosa <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
+          <div class="pr-meta">Cada 5 lecciones perfectas ganás una caja con recompensa aleatoria (XP extra, hearts, multiplicadores)</div>
+        </div>
+      </div>
+
       <div class="section-title">Logros (${earnedCount}/${ACHIEVEMENTS.length})</div>
       <div class="ach-grid">
         ${ACHIEVEMENTS.map(a => {
@@ -2686,10 +2757,21 @@ function setDailyGoal(n){
 }
 function streakNavMonth(delta){
   haptic(HAPTIC.tap);
-  const cur = DB.streakViewMonth ? new Date(DB.streakViewMonth) : new Date();
-  cur.setDate(1);
+  // Parsea en hora LOCAL (no UTC). Antes usaba new Date("YYYY-MM") que ECMA
+  // interpreta como UTC, lo que en zonas como México (-6) saltaba meses al
+  // navegar y dejaba al usuario en diciembre 2025 después de pocos clicks.
+  let cur;
+  if(DB.streakViewMonth){
+    const [y, m] = DB.streakViewMonth.split('-').map(Number);
+    cur = new Date(y, m-1, 1);
+  } else {
+    cur = new Date();
+    cur.setDate(1);
+  }
   cur.setMonth(cur.getMonth() + delta);
-  DB.streakViewMonth = cur.toISOString().slice(0,7);
+  const yy = cur.getFullYear();
+  const mm = String(cur.getMonth()+1).padStart(2,'0');
+  DB.streakViewMonth = `${yy}-${mm}`;
   render();
 }
 
@@ -3115,13 +3197,44 @@ function nextCard(){
 
 function finishLesson(){
   const perfect = LESSON_STATE.errors === 0;
-  const xp = perfect ? 30 : Math.max(10, 25 - LESSON_STATE.errors*3);
+  let xp = perfect ? 30 : Math.max(10, 25 - LESSON_STATE.errors*3);
   const duration = LESSON_STATE.started ? Math.round((now() - LESSON_STATE.started) / 60000) : 0;
+
+  // POWER: Perfect Combo — si comboReady (3 perfectas seguidas previas), x2 XP
+  let comboUsed = false;
+  if(DB.comboReady){
+    xp = xp * 2;
+    DB.comboReady = false;
+    comboUsed = true;
+  }
+  // Trackear racha de perfectas
+  if(perfect){
+    DB.perfectStreak = (DB.perfectStreak || 0) + 1;
+    if(DB.perfectStreak >= 3 && !DB.comboReady){
+      DB.comboReady = true;
+    }
+  } else {
+    DB.perfectStreak = 0;
+  }
 
   markLessonComplete(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, perfect);
   updateStreak();
   addXP(xp);
   recordActivity({xp, lessons:1, perfectLessons: perfect?1:0, errors: LESSON_STATE.errors, mins: duration});
+
+  // POWER: Daily Goal Bonus — +50 XP al alcanzar la meta del día (una vez por día)
+  const goal = DB.dailyGoal || 3;
+  const todayKey = todayStr();
+  const todayLessons = DB.activityLog?.[todayKey]?.lessons || 0;
+  if(!DB.goalBonusClaimed) DB.goalBonusClaimed = {};
+  if(todayLessons >= goal && !DB.goalBonusClaimed[todayKey]){
+    DB.goalBonusClaimed[todayKey] = true;
+    addXP(50);
+    setTimeout(() => showToast('🏆 ¡Meta diaria alcanzada! +50 XP bonus', 2800, 'success'), 600);
+  }
+  if(comboUsed){
+    setTimeout(() => showToast('🔥 ¡Perfect Combo! XP duplicado', 2200, 'success'), comboUsed && todayLessons >= goal ? 3400 : 400);
+  }
 
   // Logros de cantidad de lecciones perfectas
   if(DB.perfectLessons >= 5) earnAch('five_perfect');
