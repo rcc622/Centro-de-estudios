@@ -355,13 +355,13 @@
       "type": "order",
       "instruction": "Las 7 BP de Meta van en un orden específico. Reordena con ▲▼ y verifica.",
       "items": [
-        "1. Automate campaign setup",
-        "2. Align objectives & goals",
-        "3. Consider your audience",
-        "4. Optimize creative & placements",
-        "5. Focus on signals",
-        "6. Get the most out of budget & bidding",
-        "7. Validate results"
+        "Automate campaign setup",
+        "Align objectives & goals",
+        "Consider your audience",
+        "Optimize creative & placements",
+        "Focus on signals",
+        "Get the most out of budget & bidding",
+        "Validate results"
       ],
       "explanation": "Las recomendaciones del Opportunity Score corresponden a las BP 1-6. La BP 7 (Validate results) ocurre <strong>post-campaña</strong> y no se mide en el opportunity score."
     },
