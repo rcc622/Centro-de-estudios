@@ -414,6 +414,31 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .flash-a{font-size:15px;line-height:1.55}
 .flash-hint{font-size:10.5px;color:#8A8D91;letter-spacing:.4px;text-transform:uppercase;font-weight:700}
 
+/* ----- Heart timer en header + modal sin hearts ----- */
+.hearts-timer{font-size:10.5px;color:#8A8D91;font-weight:700;margin-left:4px;letter-spacing:.3px}
+.hearts-timer.urgent{color:#E74C3C}
+.shield-chip{display:inline-flex;align-items:center;gap:3px;font-size:13px;font-weight:800;color:#9B59B6;margin-left:8px;cursor:pointer}
+.shield-chip:active{opacity:.6}
+
+.modal-bd{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:300;display:none;align-items:flex-end;justify-content:center;padding:0;animation:mbd-in .2s ease}
+.modal-bd.open{display:flex}
+.modal-sheet{background:#fff;width:100%;max-width:640px;border-radius:24px 24px 0 0;padding:24px 20px max(28px,env(safe-area-inset-bottom)) 20px;box-shadow:0 -8px 30px rgba(0,0,0,.2);animation:msheet-in .25s ease}
+.modal-sheet .ms-ico{font-size:52px;text-align:center;margin-bottom:8px}
+.modal-sheet .ms-h{font-size:22px;font-weight:900;text-align:center;color:#1C1E21;margin-bottom:4px;letter-spacing:-.01em}
+.modal-sheet .ms-sub{font-size:14px;text-align:center;color:#65676B;margin-bottom:18px;line-height:1.45}
+.modal-sheet .ms-timer-card{background:linear-gradient(135deg,#FFF4D6,#FFE0B3);border:1.5px solid #FFA726;border-radius:14px;padding:14px;text-align:center;margin-bottom:16px}
+.modal-sheet .ms-timer-label{font-size:11px;font-weight:800;color:#7A3F00;letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px}
+.modal-sheet .ms-timer-val{font-size:28px;font-weight:900;color:#FF6B35;font-variant-numeric:tabular-nums}
+.modal-sheet .ms-actions{display:flex;flex-direction:column;gap:10px}
+.modal-sheet .ms-btn{padding:14px 16px;border-radius:14px;font-weight:800;font-size:14.5px;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;transition:transform .15s}
+.modal-sheet .ms-btn:active{transform:scale(.98)}
+.modal-sheet .ms-btn-primary{background:linear-gradient(135deg,#1877F2,#0E5BC4);color:#fff;box-shadow:0 4px 12px rgba(24,119,242,.25)}
+.modal-sheet .ms-btn-primary:disabled{background:#D0D3D6;color:#fff;box-shadow:none;cursor:not-allowed}
+.modal-sheet .ms-btn-secondary{background:#fff;color:#1877F2;border:1.5px solid #E4E6EB}
+.modal-sheet .ms-btn-ghost{background:transparent;color:#8A8D91;font-weight:700}
+@keyframes mbd-in{from{opacity:0}to{opacity:1}}
+@keyframes msheet-in{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+
 /* ----- BACKUP card (Ajustes) ----- */
 .backup-card{background:#fff;border:1px solid #E4E6EB;border-radius:16px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:14px}
 .backup-card .bc-title{font-size:11.5px;font-weight:800;color:#1C1E21;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
@@ -555,6 +580,22 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 </head>
 <body>
 <div id="app"></div>
+<div class="modal-bd" id="no-hearts-modal" onclick="if(event.target===this)closeNoHeartsModal()">
+  <div class="modal-sheet" role="dialog" aria-labelledby="nh-title">
+    <div class="ms-ico">💔</div>
+    <div class="ms-h" id="nh-title">¡Sin corazones!</div>
+    <div class="ms-sub">Necesitas corazones para tomar lecciones. Mientras esperás, podés repasar flashcards (no cuestan corazones).</div>
+    <div class="ms-timer-card">
+      <div class="ms-timer-label">Próximo ❤️ en</div>
+      <div class="ms-timer-val" id="nh-timer">--:--</div>
+    </div>
+    <div class="ms-actions">
+      <button class="ms-btn ms-btn-primary" id="nh-buy" onclick="exchangeXpForHeart()">⚡ Cambiar 50 XP por ❤️</button>
+      <button class="ms-btn ms-btn-secondary" onclick="closeNoHeartsModal();navTo('flashcards')">🃏 Practicar flashcards</button>
+      <button class="ms-btn ms-btn-ghost" onclick="closeNoHeartsModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
 <div class="overlay" id="lvlup-overlay" onclick="closeLvlUp()">
   <div class="overlay-inner">
     <div class="overlay-ico" id="lu-ico">🎉</div>
@@ -583,7 +624,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 // CONFIG & CONSTANTS
 // ============================================================
 const STORAGE_KEY = 'cer_v1';
-const HEART_REGEN_MS = 30 * 60 * 1000; // 30 min per heart
+const HEART_REGEN_MS = 15 * 60 * 1000; // 15 min per heart
 const MAX_HEARTS = 5;
 
 const LEVELS = [
@@ -814,8 +855,12 @@ let DB = {
   streakViewMonth: null, // mes navegado en la vista de streak (null = mes actual)
   perfectStreak: 0, // lecciones perfectas consecutivas — para Perfect Combo x2 XP
   comboReady: false, // true si la próxima lección tendrá x2 XP por combo
-  goalBonusClaimed: {} // {'YYYY-MM-DD': true} para no dar el bonus de meta diaria 2 veces
+  goalBonusClaimed: {}, // {'YYYY-MM-DD': true} para no dar el bonus de meta diaria 2 veces
+  shields: 0, // escudos de racha disponibles (1 cada 7 días, máx 3)
+  shieldsEarned: 0 // total acumulado para milestones
 };
+const MAX_SHIELDS = 3;
+const XP_PER_HEART = 50;
 let VIEW = 'home';
 let CURRENT = {courseId:null, dayId:null, lessonId:null, quizKind:null};
 let LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false};
@@ -944,18 +989,23 @@ function updateStreak(){
   if(DB.lastStudyDate === today) return; // already counted today
   const yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
   const yStr = dateStrLocal(yesterday);
+  let usedShield = false;
   if(DB.lastStudyDate === yStr){
     DB.streak += 1;
   }else{
-    // Migración: si lastStudyDate quedó en formato UTC (puede ser hoy o mañana
-    // desde la perspectiva local), darle el beneficio de la duda y seguir la
-    // racha si fue dentro de las últimas 36h.
+    // Migración: si lastStudyDate quedó en formato UTC
     if(DB.lastStudyDate){
       const last = new Date(DB.lastStudyDate + 'T00:00:00');
       const tDate = new Date(today + 'T00:00:00');
       const diff = Math.round((tDate - last) / 86400000);
       if(diff <= 1){
         DB.streak += 1; // tolera off-by-one por migración UTC→local
+      } else if(diff === 2 && (DB.shields||0) > 0){
+        // Streak shield: te saltaste 1 día, consume un escudo y mantenés racha
+        DB.shields -= 1;
+        DB.streak += 1;
+        usedShield = true;
+        setTimeout(() => showToast('🛡️ Escudo de racha consumido · tu racha de '+DB.streak+' días sigue viva', 3200, 'success'), 400);
       } else {
         if(diff >= 3) earnAch('comeback_kid');
         DB.streak = 1;
@@ -965,6 +1015,13 @@ function updateStreak(){
     }
   }
   DB.lastStudyDate = today;
+  // Streak shield earning: 1 escudo por cada milestone de 7 días alcanzado (máx 3)
+  const milestonesPassed = Math.floor(DB.streak / 7);
+  if(milestonesPassed > (DB.shieldsEarned || 0) && (DB.shields||0) < MAX_SHIELDS){
+    DB.shields = Math.min(MAX_SHIELDS, (DB.shields||0) + 1);
+    DB.shieldsEarned = milestonesPassed;
+    if(!usedShield) setTimeout(() => showToast('🛡️ ¡Ganaste un escudo de racha! ('+DB.shields+'/'+MAX_SHIELDS+')', 3000, 'success'), 600);
+  }
   if(DB.streak >= 3) earnAch('streak_3');
   if(DB.streak >= 7) earnAch('streak_7');
   if(DB.streak >= 14) earnAch('streak_14');
@@ -1210,12 +1267,15 @@ function renderHeader(){
   const prevXP = lvl > 1 ? LEVELS[lvl-1].xp : 0;
   const pct = nextXP > prevXP ? Math.min(100, Math.round((DB.xp - prevXP)/(nextXP - prevXP)*100)) : 100;
   const heartsHtml = `<span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}`;
+  const showTimer = DB.hearts < MAX_HEARTS && DB.lastHeartLost;
+  const heartsClick = DB.hearts === 0 ? `onclick="haptic(8);openNoHeartsModal()"` : '';
+  const shieldChip = (DB.shields||0) > 0 ? `<span class="shield-chip clickable" onclick="haptic(8);openStreak()" title="${DB.shields} escudos de racha">🛡️${DB.shields}</span>` : '';
   return `
     <div class="hdr" id="hdr">
       <div class="hdr-top">
         <div class="hdr-stats">
-          <div class="stat stat-streak clickable" onclick="haptic(8);openStreak()"><span class="ico">🔥</span>${DB.streak}</div>
-          <div class="stat stat-hearts">${heartsHtml}</div>
+          <div class="stat stat-streak clickable" onclick="haptic(8);openStreak()"><span class="ico">🔥</span>${DB.streak}${shieldChip}</div>
+          <div class="stat stat-hearts ${DB.hearts===0?'clickable':''}" ${heartsClick}>${heartsHtml}${showTimer?'<span class="hearts-timer" id="hearts-timer-hdr"></span>':''}</div>
           <div class="stat stat-xp"><span class="ico">⚡</span>${DB.xp}</div>
         </div>
         <div class="lvl-badge">${lvlInfo.i} N${lvl}</div>
@@ -2704,12 +2764,14 @@ function renderAchievements(){
           })()}
         </div>
       </div>
-      <div class="practice-row locked">
+      <div class="practice-row">
         <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🛡️</div>
         <div class="pr-info">
-          <div class="pr-title">Escudo de racha <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
-          <div class="pr-meta">Cada 7 días de racha ganás un escudo que te salva si te saltás un día</div>
+          <div class="pr-title">Escudo de racha</div>
+          <div class="pr-meta">${(DB.shields||0) > 0 ? `Tenés ${DB.shields}/${MAX_SHIELDS} · cada uno te salva un día perdido` : `Cada 7 días de racha ganás 1 escudo (máx ${MAX_SHIELDS})`}</div>
+          <div class="pr-progress"><div class="pr-progress-bar" style="width:${Math.min(100,(DB.streak%7)/7*100)}%"></div></div>
         </div>
+        <div style="font-size:18px;font-weight:800;color:#9B59B6;flex-shrink:0">${DB.shields||0}/${MAX_SHIELDS}</div>
       </div>
       <div class="practice-row locked">
         <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">📦</div>
@@ -2819,6 +2881,10 @@ function renderStreak(){
         <div class="sh-num">${DB.streak}</div>
         <div class="sh-label">${DB.streak===1?'día de racha':'días de racha'}</div>
         <div class="sh-sub">${DB.streak > 0 ? 'Sigue así · no la rompas' : 'Empezá hoy completando una lección'}</div>
+        <div style="margin-top:10px;display:flex;align-items:center;gap:6px;position:relative;z-index:1">
+          ${Array.from({length:MAX_SHIELDS}, (_,i) => `<span style="font-size:22px;opacity:${i < (DB.shields||0) ? '1' : '.25'}">🛡️</span>`).join('')}
+          <span style="font-size:12px;font-weight:700;color:#7A3F00;margin-left:6px">${DB.shields||0}/${MAX_SHIELDS} escudos · 1 te salva un día perdido</span>
+        </div>
       </div>
 
       <div class="cal-card">
@@ -3098,7 +3164,7 @@ function openDay(id){
 
 function openLesson(id){
   if(DB.hearts <= 0){
-    showToast('Sin corazones · espera regeneración o repasa flashcards',3000);
+    openNoHeartsModal();
     return;
   }
   haptic(HAPTIC.tap);
@@ -3362,7 +3428,8 @@ function resetAll(){
     streak: 0, lastStudyDate: null, achievements: {},
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
-    dailyGoal: 3, streakViewMonth: null
+    dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
+    goalBonusClaimed: {}, shields: 0, shieldsEarned: 0
   };
   VIEW = 'home';
   render();
@@ -3425,6 +3492,99 @@ function showToast(msg, duration=2000, type=''){
   setTimeout(() => t.classList.remove('show'), duration);
 }
 
+// ============================================================
+// Heart regen timer + canje XP + modal sin hearts
+// ============================================================
+function msToNextHeart(){
+  if(DB.hearts >= MAX_HEARTS || !DB.lastHeartLost) return 0;
+  const elapsed = now() - DB.lastHeartLost;
+  const next = HEART_REGEN_MS - (elapsed % HEART_REGEN_MS);
+  return Math.max(0, next);
+}
+
+function fmtMs(ms){
+  const total = Math.ceil(ms/1000);
+  const mm = String(Math.floor(total/60)).padStart(2,'0');
+  const ss = String(total%60).padStart(2,'0');
+  return mm+':'+ss;
+}
+
+// Tick global cada 1s para actualizar cronómetros visibles sin re-render
+let _heartTickId = null;
+function startHeartTicker(){
+  if(_heartTickId) return;
+  _heartTickId = setInterval(() => {
+    const ms = msToNextHeart();
+    // Update mini-timer en header
+    const hdrEl = document.getElementById('hearts-timer-hdr');
+    if(hdrEl){
+      if(DB.hearts >= MAX_HEARTS || ms <= 0){
+        hdrEl.textContent = '';
+      } else {
+        hdrEl.textContent = fmtMs(ms);
+        hdrEl.classList.toggle('urgent', DB.hearts === 0);
+      }
+    }
+    // Update timer del modal si está abierto
+    const modalEl = document.getElementById('nh-timer');
+    if(modalEl && document.getElementById('no-hearts-modal').classList.contains('open')){
+      modalEl.textContent = ms > 0 ? fmtMs(ms) : 'YA!';
+    }
+    // Si regeneró un heart, re-render
+    if(ms > HEART_REGEN_MS - 1000){
+      regenerateHearts();
+      if(DB.hearts > 0 && document.getElementById('no-hearts-modal').classList.contains('open')){
+        showToast('❤️ ¡Heart regenerado!', 1800, 'success');
+      }
+      render();
+    }
+  }, 1000);
+}
+
+function openNoHeartsModal(){
+  haptic(HAPTIC.wrong);
+  regenerateHearts();
+  if(DB.hearts > 0){ render(); return; }
+  const modal = document.getElementById('no-hearts-modal');
+  modal.classList.add('open');
+  const btn = document.getElementById('nh-buy');
+  if(btn){
+    if(DB.xp >= XP_PER_HEART){
+      btn.disabled = false;
+      btn.textContent = '⚡ Cambiar '+XP_PER_HEART+' XP por ❤️';
+    } else {
+      btn.disabled = true;
+      btn.textContent = '⚡ Faltan '+(XP_PER_HEART-DB.xp)+' XP para canjear';
+    }
+  }
+  const timer = document.getElementById('nh-timer');
+  if(timer) timer.textContent = fmtMs(msToNextHeart());
+}
+
+function closeNoHeartsModal(){
+  haptic(HAPTIC.tap);
+  document.getElementById('no-hearts-modal').classList.remove('open');
+}
+
+function exchangeXpForHeart(){
+  if(DB.xp < XP_PER_HEART){
+    showToast('Te faltan '+(XP_PER_HEART-DB.xp)+' XP para canjear', 2200, 'error');
+    return;
+  }
+  if(DB.hearts >= MAX_HEARTS){
+    showToast('Ya tenés todos los corazones', 1800);
+    return;
+  }
+  haptic(HAPTIC.correct);
+  DB.xp -= XP_PER_HEART;
+  DB.hearts += 1;
+  if(DB.hearts >= MAX_HEARTS) DB.lastHeartLost = null;
+  save();
+  showToast('❤️ +1 corazón · '+XP_PER_HEART+' XP gastados', 2200, 'success');
+  closeNoHeartsModal();
+  render();
+}
+
 
 // ============================================================
 // PWA — manifest + service worker via blob (no extra files)
@@ -3465,6 +3625,7 @@ document.head.appendChild(link);
 // ============================================================
 async function init(){
   load();
+  startHeartTicker();
   // Mostrar pantalla de carga
   document.getElementById('app').innerHTML = `
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;padding:30px;text-align:center">
