@@ -1,31 +1,92 @@
 ---
 name: notebook-study-prompts
-description: Genera prompts customizados para NotebookLM que producen Study Guides densos y de calidad a partir de transcripciones de video, PDFs no estructurados, apuntes propios o cualquier .txt que Randall suba. Úsalo cuando Randall mencione "tengo transcripciones / .txt / apuntes para el curso X y quiero pasarlos a Notebook", "armame el prompt para generar el Study Guide", "necesito que NotebookLM me dé contenido denso de este material", o cuando vaya a arrancar un curso nuevo sin PDF oficial.
+description: Genera prompts customizados para NotebookLM que producen Study Guides densos a partir de transcripciones de video, PDFs no estructurados, apuntes propios o cualquier .txt que Randall suba. Diseñado para el flujo Coursera (especialización → curso → módulo). Úsalo cuando Randall mencione "tengo transcripciones / .txt / apuntes para el curso X", "armame el prompt para generar el Study Guide del módulo Y", "necesito que NotebookLM me dé contenido denso", o cuando arranque una especialización Coursera nueva.
 ---
 
 # NotebookLM — Prompts para Study Guides densos
 
-Randall sube material crudo (transcripciones, apuntes, .txt) a NotebookLM y necesita prompts específicos según el tipo de curso para que la salida sea contenido pedagógico de calidad, no un resumen genérico. Esta skill produce esos prompts.
+Randall sube material crudo (transcripciones de Coursera, apuntes, .txt) a NotebookLM y necesita prompts específicos según el tipo de curso para que la salida sea contenido pedagógico de calidad. Esta skill produce esos prompts.
+
+## Jerarquía Coursera → app (importante)
+
+Randall estudia en Coursera y la jerarquía real es:
+
+```
+Especialización (5 cursos)
+└── Curso (10-20 módulos)
+    └── Módulo (varios videos .txt)
+        └── Video (transcripción .txt)
+```
+
+Mapeo a la app:
+
+| Coursera | App |
+|---|---|
+| Especialización | Etiqueta visual agrupadora en home (`specialization` en courses.json) |
+| 1 Curso | 1 carpeta en `content/<id-curso>/` con su meta.json |
+| 1 Módulo | 1 unit/día dentro de meta.json (5-7 lecciones A→B→C→D) |
+| 1 Video | Material fuente, NO se mapea 1:1 |
+
+## Estructura de notebook óptima (regla de oro)
+
+**1 notebook = 1 curso Coursera entero**. NO uno por módulo, NO uno por especialización.
+
+- Subir TODOS los .txt de TODOS los módulos del curso al mismo notebook
+- Notebook ve el curso completo → entiende conexiones entre módulos y evita repetir
+- Hacés N consultas en ese notebook (1 prompt por módulo, todas con foco específico + exclusiones)
+
+Por qué no "1 notebook por módulo":
+- Notebook no ve el contexto del curso entero → puede repetir o pisar otros módulos
+- Más notebooks que mantener
+
+Por qué no "1 notebook por especialización":
+- Satura el límite de fuentes (~50 docs gratis, ~300 Pro)
+- Calidad baja al diluir el contexto
+
+## Estructura de archivos en el repo
+
+```
+source/
+└── <id-especializacion>/               # ej. google-data-analytics
+    ├── README.md                       # qué es la especialización, cursos contenidos
+    ├── <id-curso-1>/                   # ej. 1-foundations-data
+    │   ├── transcripciones/            # los .txt originales de Coursera
+    │   │   ├── m1-v1-intro.txt
+    │   │   ├── m1-v2-...txt
+    │   │   ├── m2-v1-...txt
+    │   │   └── ...
+    │   ├── m1/                         # outputs Notebook para módulo 1
+    │   │   ├── study-guide.md
+    │   │   ├── mindmap.png             # opcional (ver multimedia skill)
+    │   │   └── audio-link.txt          # opcional
+    │   ├── m2/
+    │   └── ...
+    └── <id-curso-2>/
+        └── ...
+```
 
 ## Workflow al activarse
 
-1. **Identificar el tipo de curso** según contexto o preguntando a Randall:
-   - **Certificación con examen** (ej. Meta 410, ITIL, AWS) → prompts apuntan a "preguntas tipo examen, distractores plausibles, trampas"
-   - **Curso técnico aplicado** (ej. Interconexión Solar, paneles Corella) → prompts apuntan a "cálculos, normativas, casos reales de instalación"
-   - **Curso de habilidades / soft skills** (ej. Liderazgo) → prompts apuntan a "frameworks, autodiagnóstico, ejercicios de aplicación"
-   - **Curso teórico-conceptual** (ej. CVS) → prompts apuntan a "definiciones, contraste de conceptos, ejemplos"
+1. **Identificar nivel**: ¿estamos armando prompt para 1 curso entero (poco común) o 1 módulo específico (lo normal)?
+   - Default: 1 módulo. Es la unidad pedagógica óptima.
 
-2. **Identificar el alcance específico** del módulo/día/sección que se va a generar. **No pedir un Study Guide del curso entero** — saturación de tokens y baja calidad. Mejor pedir por módulo/día.
+2. **Identificar el tipo de curso**:
+   - **Certificación con examen** (ej. Meta 410, ITIL) → preguntas tipo examen, distractores plausibles
+   - **Técnico aplicado** (ej. Interconexión Solar, Coursera Google Data) → cálculos, casos reales, normativas
+   - **Habilidades / soft skills** (ej. Liderazgo) → frameworks, autodiagnóstico, ejercicios
+   - **Teórico-conceptual** (ej. CVS) → definiciones, contraste, ejemplos
 
-3. **Generar el prompt** llenando la plantilla apropiada con:
-   - Nombre del curso
-   - Alcance específico (lista de temas que SÍ se cubren)
-   - Lista de exclusiones (temas que NO van acá, evitar overlap con otros días)
-   - Profundidad y formato deseado
+3. **Identificar el alcance específico del módulo**:
+   - Qué temas SÍ cubre (lista)
+   - Qué temas NO cubre (lista de exclusiones — crítico para evitar overlap con otros módulos del MISMO curso)
 
-4. **Entregar el prompt** a Randall **en un bloque copiable**, sin ningún texto explicativo extra dentro del bloque (para que pueda copy-paste directo a Notebook).
+4. **Generar el prompt** llenando la plantilla apropiada.
 
-5. Decirle qué hacer con la salida: pegarla acá o subirla a `source/<curso>/<modulo>/study-guide.md`.
+5. **Entregar el prompt en bloque copiable** — sin texto explicativo dentro del backtick.
+
+6. Decirle qué hacer con la salida:
+   - Pegarla acá, o
+   - Subirla a `source/<especializacion>/<curso>/<modulo>/study-guide.md`
 
 ## Plantillas por tipo de curso
 
@@ -253,11 +314,15 @@ Tras llenar la plantilla, entregalo así:
 ## Estado de cursos (al iniciar la skill, consultá)
 
 Ver `CLAUDE.md` §9 para la lista de cursos y prioridad. Hoy:
-- meta-410 — Día 1 listo, Día 2-7 pendiente (tiene PDF oficial — usar approach diferente, esta skill no aplica)
-- cfe-interconexion — pendiente (probablemente input transcripciones → SÍ aplica)
-- paneles-corella — pendiente (puede tener PDF + transcripciones)
-- liderazgo — pendiente (input transcripciones de Guillermo → SÍ aplica)
-- itil — pendiente (mix de PDFs y videos)
-- cvs — pendiente
+- **meta-410** — Día 1 listo. **PDF oficial → esta skill NO aplica**, leer el PDF directo.
+- **Coursera especializaciones futuras** — SÍ aplica esta skill (transcripciones .txt)
+- **cfe-interconexion**, **paneles-corella**, **liderazgo**, **itil**, **cvs** — depende del input que tenga Randall (PDF vs transcripciones)
 
-**Importante**: para Meta 410, NO usar esta skill — ya está el PDF oficial. Para los demás cursos sí, asumiendo que Randall sube transcripciones a Notebook.
+## Cómo decidir si esta skill aplica
+
+| Material de Randall | ¿Esta skill? |
+|---|---|
+| PDF oficial estructurado de la certificación | NO — leer el PDF directo |
+| Transcripciones de Coursera (.txt por video) | SÍ — esta skill |
+| Apuntes propios (.md, .txt) sueltos | SÍ — esta skill |
+| Mix de PDF + transcripciones | Depende — si el PDF es completo, usarlo; si es parcial, mezclar |

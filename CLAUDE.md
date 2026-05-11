@@ -59,26 +59,37 @@ Agregar un curso nuevo = crear archivos JSON. **NUNCA modificar `index.html` par
 
 ```
 Centro-de-estudios/
-├── index.html                 ← Motor de la app (NO MODIFICAR para contenido)
-├── CLAUDE.md                  ← Este archivo (manual del proyecto)
-├── README.md                  ← Doc pública del repo
-└── content/
-    ├── courses.json           ← Catálogo de cursos visibles
+├── index.html                       ← Motor (NO MODIFICAR para contenido)
+├── CLAUDE.md                        ← Este archivo
+├── README.md                        ← Doc pública del repo
+├── .claude/skills/                  ← Skills internas (workflow Notebook)
+├── source/                          ← Material crudo (input)
+│   ├── meta-410/
+│   │   └── oficial/Media-Buying-Study-Guide.pdf
+│   └── <id-especializacion>/        ← Por especialización Coursera
+│       ├── README.md
+│       └── <id-curso>/
+│           ├── transcripciones/     ← .txt originales de Coursera
+│           └── <id-modulo>/
+│               ├── study-guide.md   ← output Notebook
+│               ├── mindmap.png      ← opcional
+│               └── audio-link.txt   ← opcional (URL Drive público)
+└── content/                         ← Contenido jugable (output)
+    ├── courses.json                 ← Catálogo + agrupador especializaciones
     ├── meta-410/
-    │   ├── meta.json          ← Metadata del curso
-    │   ├── day1.json          ← Lecciones del Día 1
-    │   ├── day2.json
-    │   ├── ...
-    │   └── day7.json
-    ├── cfe-interconexion/
     │   ├── meta.json
-    │   ├── etapa1.json
-    │   └── ...
-    ├── paneles-corella/
-    ├── liderazgo/
-    ├── itil/
-    └── cvs/
+    │   ├── day1.json
+    │   ├── ...
+    │   └── assets/                  ← mindmaps + imágenes
+    ├── <id-curso-coursera-1>/       ← cada curso Coursera = 1 carpeta
+    │   ├── meta.json                ← con specialization tag
+    │   ├── m1.json                  ← módulos como m<N>.json
+    │   ├── m2.json
+    │   └── assets/
+    └── <id-curso-coursera-2>/
 ```
+
+**Jerarquía Coursera → app**: 1 especialización Coursera = N cursos en `content/` agrupados por `specialization` tag en `courses.json`. 1 curso Coursera = 1 carpeta `content/<id>/`. 1 módulo Coursera = 1 unit en `meta.json` + 1 archivo `m<N>.json`.
 
 ### Cómo funciona la carga de contenido
 
@@ -192,23 +203,48 @@ Ejemplo: *"Procesa este PDF y créame un curso completo."*
 
 ### `content/courses.json`
 
-Lista de cursos. La app los muestra en el home en el orden definido.
+Lista de cursos + especializaciones (agrupadores visuales de cursos relacionados, ej. especializaciones de Coursera).
 
 ```json
 {
+  "specializations": [
+    {
+      "id": "google-data-analytics",
+      "title": "Google Data Analytics",
+      "subtitle": "5 cursos · Coursera",
+      "icon": "📊",
+      "color": "#4285F4",
+      "description": "Especialización completa de Google en análisis de datos"
+    }
+  ],
   "courses": [
     { "id": "meta-410", "active": true, "order": 1 },
     { "id": "cfe-interconexion", "active": false, "order": 2 },
-    { "id": "paneles-corella", "active": false, "order": 3 }
+    { "id": "google-data-foundations", "active": false, "order": 10,
+      "specialization": "google-data-analytics", "specializationOrder": 1 },
+    { "id": "google-data-ask", "active": false, "order": 11,
+      "specialization": "google-data-analytics", "specializationOrder": 2 }
   ]
 }
 ```
 
-Campos:
+Campos de `specializations[]`:
+- `id` — string en kebab-case (slug)
+- `title` — nombre completo de la especialización
+- `subtitle` — descripción corta (ej. "5 cursos · Coursera")
+- `icon` — emoji
+- `color` — hex para el agrupador visual
+- `description` — opcional, para detalle
+
+Campos de `courses[]`:
 - `id` — debe coincidir con el nombre de la carpeta `content/[id]/`
 - `active: true` — curso jugable y visible
-- `active: false` — curso visible pero locked (muestra "Próximamente")
-- `order` — orden de display en home (menor primero)
+- `active: false` — curso visible pero locked
+- `order` — orden global (menor primero)
+- `specialization` (opcional) — id de la especialización a la que pertenece. Si está presente, en el home el curso aparece **bajo el agrupador** de la especialización, no como curso suelto.
+- `specializationOrder` (opcional) — orden dentro de la especialización
+
+Regla: cursos sueltos (sin `specialization`) se muestran primero; los agrupados se muestran después bajo el card de cada especialización.
 
 ### `content/[curso]/meta.json`
 

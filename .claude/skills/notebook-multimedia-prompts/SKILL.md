@@ -7,19 +7,32 @@ description: Genera prompts customizados para NotebookLM enfocados en producir c
 
 NotebookLM genera audio (podcast 2-voces), mind maps (visuales jerárquicos) y video overviews. Randall usa esto para **enriquecer lecciones que ya tienen el texto**, no para reemplazar el texto. Esta skill produce prompts customizados según el output multimedia deseado y el contexto de uso.
 
+## Default para Coursera (decisión de Randall — confirmada)
+
+**1 audio overview + 1 mind map por CURSO** (no por módulo). Cobertura óptima sin inflar el trabajo:
+
+- Audio (~20 min): repaso del curso entero como podcast — bueno para escuchar mientras maneja
+- Mind map: estructura visual del curso con todos los módulos como ramas
+- Ambos se embeben en el **primer módulo** del curso:
+  - Mind map al inicio (sección A) → card `image`
+  - Audio al final (sección D) → card `audio-link`
+
+Si Randall pide explícitamente "por módulo" (más granular), respetar pero advertir el trabajo extra (10-20 audios + 10-20 mindmaps por curso).
+
 ## Workflow al activarse
 
-1. **Identificar qué multimedia querés generar**: audio, mind map, video, o varios.
-2. **Identificar el alcance**: ¿qué tema/módulo cubre? ¿es para repaso, para introducción, para casos aplicados?
-3. **Identificar el tono y duración**:
-   - Audio: 5/10/15/20 min · tono conversacional/didáctico/intensivo
-   - Mind map: nivel de detalle (overview / completo / específico)
+1. **Identificar nivel**: ¿el multimedia es para 1 curso entero (default) o 1 módulo específico (si lo pide)?
+2. **Identificar qué multimedia generar**: audio, mind map, video, o varios.
+3. **Identificar el alcance**: ¿qué cubre? ¿overview, repaso, casos, examen?
+4. **Identificar tono y duración**:
+   - Audio: 15-20 min (curso completo) · 10-15 min (módulo) · tono conversacional/didáctico
+   - Mind map: nivel de detalle (overview / completo)
    - Video: estructura (intro / explicativo / repaso)
-4. **Generar el prompt** llenando la plantilla apropiada.
-5. **Entregarlo en bloque copiable** sin texto explicativo dentro del bloque.
-6. **Explicar dónde usar la salida**:
+5. **Generar el prompt** llenando la plantilla apropiada.
+6. **Entregarlo en bloque copiable** sin texto explicativo dentro del bloque.
+7. **Explicar dónde usar la salida**:
    - Audio → subir MP3 a Drive público o YouTube unlisted → card `audio-link`
-   - Mind map → descargar PNG → `content/<curso>/assets/` → card `image`
+   - Mind map → descargar PNG → `content/<curso>/assets/curso-overview.png` → card `image`
    - Video → YouTube unlisted → card `video-embed`
 
 ## Plantillas por tipo de multimedia
@@ -180,17 +193,37 @@ Tras llenar la plantilla, entregalo así:
 - **Pedir duración concreta**: 5/10/15/20 min en audio; 3/5/8 min en video.
 - **Foco específico es crítico**: sin foco, Notebook hace un overview genérico de todo el material y no sirve para repaso de UN módulo.
 
-## Combinaciones óptimas por módulo
+## Combinaciones óptimas (default: por curso)
 
-Para un módulo nuevo de la app, lo ideal:
+Para un curso Coursera nuevo en la app:
+
+```
+content/<id-curso>/m1.json (PRIMER módulo del curso)
+├── lección 1.1 (sección A — teoría)
+│   ├── [card image]   Mind Map del curso completo
+│   ├── concepts, kvtable, etc.
+├── lecciones 1.2 ... 1.6 (B, C, D)
+└── lección 1.7 (sección D — validación, última del módulo 1)
+    └── [card audio-link] Audio Overview del curso completo (~20 min)
+
+content/<id-curso>/m2.json, m3.json, ... (resto de módulos)
+└── solo texto/MCQs/etc — no necesitan multimedia adicional
+```
+
+**Por qué solo en m1**: el usuario ve el mindmap apenas empieza el curso (orientación) y escucha el audio de cierre cuando termina el primer módulo (repaso panorámico antes de pasar al siguiente). Los módulos siguientes ya tienen el contexto.
+
+Opcional: si el material lo amerita, podés sugerir `video-embed` en módulos específicos para procesos visuales (ej. uso de software, instalaciones).
+
+## Si Randall pide "por módulo" en vez de "por curso"
+
+Confirmar primero el trabajo extra: "10-20 audios + 10-20 mindmaps en NotebookLM, sumando ~3-5 horas de generación. ¿Seguro?".
+
+Si confirma, usar el flujo módulo-por-módulo:
 
 | Card # | Tipo | Multimedia | Cuándo se ve |
 |---|---|---|---|
-| 1 | `image` (mind map) | Mind Map del módulo | Inicio sección A (Teoría) |
-| ... | concept / kvtable / etc | (texto del PDF/study guide) | Resto de la lección |
-| Última | `audio-link` (12 min) | Audio Overview repaso | Final sección D (Validación) |
-
-Opcional si el material lo amerita: `video-embed` en sección C (Aplicación) para procesos visuales.
+| 1 | `image` | Mind Map del módulo | Inicio sección A |
+| Última | `audio-link` (12 min) | Audio Overview del módulo | Final sección D |
 
 ## Estado de cursos para multimedia
 
