@@ -346,12 +346,30 @@ async function loadCourses(){
               if(!r.ok) throw new Error(`No se encontró content/${courseEntry.id}/${unit.id}.json`);
               return r.json();
             });
+            // Cargar diagnostic + unitQuiz si están definidos en meta
+            let diagnostic = null, unitQuiz = null;
+            if(unit.diagnostic?.file){
+              try {
+                const dr = await fetch(`content/${courseEntry.id}/${unit.diagnostic.file}`);
+                if(dr.ok) diagnostic = {...await dr.json(), passingScore: unit.diagnostic.passingScore || 80};
+              } catch(e){ console.warn(`Diagnostic de ${unit.id} no disponible`, e); }
+            }
+            if(unit.unitQuiz?.file){
+              try {
+                const qr = await fetch(`content/${courseEntry.id}/${unit.unitQuiz.file}`);
+                if(qr.ok) unitQuiz = {...await qr.json(), passingScore: unit.unitQuiz.passingScore || 80};
+              } catch(e){ console.warn(`UnitQuiz de ${unit.id} no disponible`, e); }
+            }
             course.days.push({
               id: unit.id,
               title: unit.title,
               subtitle: unit.subtitle || '',
               coverage: unit.coverage || '',
-              lessons: unitData.lessons || []
+              kind: unit.kind || 'unit', // 'unit' o 'mock-exam'
+              lessons: unitData.lessons || [],
+              diagnostic,
+              unitQuiz,
+              mockExam: unit.kind === 'mock-exam' ? unitData : null
             });
           } catch(err){
             console.warn(`No se pudo cargar ${unit.id}:`, err);
@@ -392,12 +410,15 @@ let DB = {
   progress: {}, // {courseId: {dayId: {lessonId: {completed: true, perfect: bool, attempts: n}}}}
   flashcardStats: {}, // {flashId: {good: n, hard: n, fail: n, lastSeen: ts}}
   totalLessons: 0,
-  perfectLessons: 0
+  perfectLessons: 0,
+  quizProgress: {} // {courseId: {dayId: {diagnosticPassed: bool, unitQuizPassed: bool, bestScore: n, attempts: n}}}
 };
 let VIEW = 'home';
-let CURRENT = {courseId:null, dayId:null, lessonId:null};
+let CURRENT = {courseId:null, dayId:null, lessonId:null, quizKind:null};
 let LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false};
 let FLASH_STATE = {idx:0, deck:[], rated:0};
+let QUIZ_STATE = {qIdx:0, answers:{}, deck:[], started:0, timeLimit:0, kind:null, passingScore:80, title:''};
+let QUIZ_TIMER_ID = null;
 let _luq = [];
 let _achq = [];
 
@@ -540,11 +561,59 @@ function isDayUnlocked(courseId, dayIdx){
   const course = COURSES[courseId];
   if(!course) return false;
   if(course.days[dayIdx].locked) return false;
-  // unlock if previous day is fully complete
+  // unlock if previous day is fully complete (quiz passed, or lessons done if no quiz)
   const prevDay = course.days[dayIdx-1];
   if(!prevDay) return false;
-  const prog = getDayProgress(courseId, prevDay.id);
-  return prog.done === prog.total && prog.total > 0;
+  return isDayFinished(courseId, prevDay.id);
+}
+
+function isDayFinished(courseId, dayId){
+  // Día se considera "terminado" si: pasó el unit quiz, O completó todas las lecciones (cuando no hay quiz)
+  const day = COURSES[courseId]?.days.find(d => d.id === dayId);
+  if(!day) return false;
+  const qp = DB.quizProgress[courseId]?.[dayId];
+  if(qp?.unitQuizPassed) return true;
+  if(qp?.diagnosticPassed) return true;
+  if(day.kind === 'mock-exam'){
+    return qp?.bestScore >= 80;
+  }
+  if(!day.unitQuiz){
+    // Sin quiz: termina con todas las lecciones
+    const prog = getDayProgress(courseId, dayId);
+    return prog.total > 0 && prog.done === prog.total;
+  }
+  return false;
+}
+
+function getQuizProgress(courseId, dayId){
+  return DB.quizProgress[courseId]?.[dayId] || {diagnosticPassed:false, unitQuizPassed:false, bestScore:0, attempts:0};
+}
+
+function markQuizResult(courseId, dayId, kind, score, passingScore){
+  if(!DB.quizProgress[courseId]) DB.quizProgress[courseId] = {};
+  if(!DB.quizProgress[courseId][dayId]) DB.quizProgress[courseId][dayId] = {diagnosticPassed:false, unitQuizPassed:false, bestScore:0, attempts:0};
+  const qp = DB.quizProgress[courseId][dayId];
+  qp.attempts = (qp.attempts || 0) + 1;
+  qp.bestScore = Math.max(qp.bestScore || 0, score);
+  const passed = score >= passingScore;
+  if(kind === 'diagnostic' && passed){
+    qp.diagnosticPassed = true;
+    // Marcar todas las lecciones del día como completadas (skip)
+    const day = COURSES[courseId]?.days.find(d => d.id === dayId);
+    if(day){
+      day.lessons.forEach(l => markLessonComplete(courseId, dayId, l.id, false));
+    }
+  }
+  if(kind === 'unit-quiz' && passed){
+    qp.unitQuizPassed = true;
+    const dayProg = getDayProgress(courseId, dayId);
+    if(dayProg.done === dayProg.total) earnAch('day_complete');
+  }
+  if(kind === 'mock-exam'){
+    if(passed) earnAch('mock_pass');
+  }
+  save();
+  return {passed, bestScore: qp.bestScore};
 }
 
 function markLessonComplete(courseId, dayId, lessonId, perfect){
@@ -578,6 +647,8 @@ function render(){
   else if(VIEW === 'day') html = renderDay();
   else if(VIEW === 'lesson') html = renderLesson();
   else if(VIEW === 'lesson_complete') html = renderLessonComplete();
+  else if(VIEW === 'quiz') html = renderQuiz();
+  else if(VIEW === 'quiz_complete') html = renderQuizComplete();
   else if(VIEW === 'flashcards') html = renderFlashcards();
   else if(VIEW === 'achievements') html = renderAchievements();
   else if(VIEW === 'config') html = renderConfig();
@@ -685,20 +756,31 @@ function renderCourse(){
         <h1>${course.title}</h1>
         <p>${course.subtitle}</p>
       </div>
-      <div class="section-title">Plan de 7 días</div>
+      <div class="section-title">Plan de ${course.days.length} unidades</div>
       ${course.days.map((day, idx) => {
         const unlocked = isDayUnlocked(course.id, idx);
+        const finished = isDayFinished(course.id, day.id);
         const prog = getDayProgress(course.id, day.id);
-        const completed = prog.total > 0 && prog.done === prog.total;
-        const current = unlocked && !completed;
-        const cls = completed ? 'complete' : current ? 'current' : !unlocked ? 'locked' : '';
-        const status = completed ? '✅' : current ? '▶' : !unlocked ? '🔒' : '';
+        const qp = getQuizProgress(course.id, day.id);
+        const current = unlocked && !finished;
+        const cls = finished ? 'complete' : current ? 'current' : !unlocked ? 'locked' : '';
+        const isMock = day.kind === 'mock-exam';
+        const status = finished ? '✅' : current ? (isMock?'🏁':'▶') : !unlocked ? '🔒' : '';
+        let subDetail = `${day.subtitle} · ${day.coverage}`;
+        if(isMock){
+          subDetail = `${day.subtitle}` + (qp.bestScore ? ` · mejor: ${qp.bestScore}%` : '');
+        } else {
+          if(qp.diagnosticPassed) subDetail += ` · ⚡ atajo`;
+          else if(prog.total > 0) subDetail += ` · ${prog.done}/${prog.total}`;
+          if(qp.unitQuizPassed) subDetail += ` · ✓ quiz`;
+        }
+        const clickable = unlocked && (day.lessons.length || day.kind === 'mock-exam');
         return `
-          <div class="day-card ${cls}" onclick="${unlocked && day.lessons.length ? `openDay('${day.id}')` : 'showToast("Bloqueado · completa el día anterior",2000)'}">
-            <div class="day-num">${idx+1}</div>
+          <div class="day-card ${cls}" onclick="${clickable ? `openDay('${day.id}')` : 'showToast("Bloqueado · pasa el Quiz de la unidad anterior",2200)'}">
+            <div class="day-num">${isMock?'🏁':idx+1}</div>
             <div class="day-info">
               <div class="day-title">${day.title}</div>
-              <div class="day-sub">${day.subtitle} · ${day.coverage}${prog.total>0?` · ${prog.done}/${prog.total}`:''}</div>
+              <div class="day-sub">${subDetail}</div>
             </div>
             <div class="day-status">${status}</div>
           </div>
@@ -713,6 +795,41 @@ function renderDay(){
   const course = COURSES[CURRENT.courseId];
   const day = course?.days.find(d => d.id === CURRENT.dayId);
   if(!day) return renderHome();
+  const qp = getQuizProgress(course.id, day.id);
+
+  // Mock-exam: vista especial
+  if(day.kind === 'mock-exam' && day.mockExam){
+    const qCount = day.mockExam.questions?.length || 60;
+    const mins = Math.round((day.mockExam.timeLimit || 6300)/60);
+    return `
+      ${renderHeader()}
+      <div class="scroll" id="sc">
+        <div style="margin-bottom:16px">
+          <button class="btn btn-secondary" style="width:auto;padding:8px 14px;font-size:13px" onclick="openCourse('${course.id}')">← ${course.title}</button>
+        </div>
+        <div class="welcome">
+          <h1>${day.title}</h1>
+          <p>${day.subtitle}</p>
+        </div>
+        <div class="card card-concept">
+          <div class="card-h2">Condiciones del simulacro</div>
+          <div class="card-body">
+            <p><strong>${qCount} preguntas</strong> en <strong>${mins} minutos</strong>. Sin retroalimentación hasta el final. Aprobar: ≥80%.</p>
+            <p>No pierdes hearts en el simulacro. Podés reintentar las veces que quieras.</p>
+            ${qp.bestScore ? `<p><em>Tu mejor intento: ${qp.bestScore}% · ${qp.attempts} intento${qp.attempts===1?'':'s'}</em></p>` : ''}
+          </div>
+        </div>
+      </div>
+      <div class="action-bar">
+        <button class="btn btn-primary" onclick="openMockExam('${day.id}')">${qp.attempts ? 'Reintentar simulacro' : 'Empezar simulacro'}</button>
+      </div>
+    `;
+  }
+
+  const allLessonsDone = day.lessons.length > 0 && day.lessons.every(l => isLessonCompleted(course.id, day.id, l.id));
+  const canTakeUnitQuiz = !!day.unitQuiz && (allLessonsDone || qp.diagnosticPassed);
+  const showDiagnostic = !!day.diagnostic && !qp.diagnosticPassed && !qp.unitQuizPassed && !allLessonsDone;
+
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
@@ -723,6 +840,16 @@ function renderDay(){
         <h1>${day.title}</h1>
         <p>${day.subtitle}</p>
       </div>
+      ${showDiagnostic ? `
+        <div class="day-card current" onclick="openQuiz('${day.id}','diagnostic')" style="border-color:#FFA726;background:#FFF8E7">
+          <div class="day-num" style="background:#FFA726;color:#fff">⚡</div>
+          <div class="day-info">
+            <div class="day-title">Atajo · Test diagnóstico</div>
+            <div class="day-sub">${day.diagnostic.questions?.length || 5} preguntas · ≥80% para saltar al Quiz de Unidad</div>
+          </div>
+          <div class="day-status">▶</div>
+        </div>
+      ` : ''}
       <div class="section-title">Lecciones</div>
       ${day.lessons.map((lesson, idx) => {
         const completed = isLessonCompleted(course.id, day.id, lesson.id);
@@ -738,6 +865,17 @@ function renderDay(){
           </div>
         `;
       }).join('')}
+      ${day.unitQuiz ? `
+        <div class="section-title">Quiz de Unidad</div>
+        <div class="day-card ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':'locked'}" onclick="${canTakeUnitQuiz ? `openQuiz('${day.id}','unit-quiz')` : 'quizLockedToast()'}">
+          <div class="day-num">${qp.unitQuizPassed?'🏆':'📝'}</div>
+          <div class="day-info">
+            <div class="day-title">Quiz · ${day.title.replace(/^.*?—\\s*/,'')}</div>
+            <div class="day-sub">${day.unitQuiz.questions?.length || 10} preguntas · ≥${day.unitQuiz.passingScore||80}% para avanzar${qp.bestScore?` · mejor: ${qp.bestScore}%`:''}</div>
+          </div>
+          <div class="day-status">${qp.unitQuizPassed?'✅':canTakeUnitQuiz?'▶':'🔒'}</div>
+        </div>
+      ` : ''}
     </div>
     ${renderNav('home')}
   `;
@@ -863,6 +1001,255 @@ function renderLessonComplete(){
       <button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>
     </div>
   `;
+}
+
+// ============================================================
+// QUIZ (unit-quiz, diagnostic, mock-exam) — sin feedback hasta el final
+// ============================================================
+function renderQuiz(){
+  const deck = QUIZ_STATE.deck;
+  if(!deck.length) return renderHome();
+  const idx = QUIZ_STATE.qIdx;
+  const total = deck.length;
+  const q = deck[idx];
+  const isMulti = !!q.multi;
+  const sel = QUIZ_STATE.answers[idx] || [];
+  const pct = Math.round((idx+1)/total*100);
+
+  let timerHtml = '';
+  if(QUIZ_STATE.timeLimit > 0){
+    timerHtml = `<div class="stat" id="quiz-timer" style="color:#1877F2;font-weight:800;font-size:14px">⏱ --:--</div>`;
+  }
+
+  return `
+    <div class="hdr">
+      <div class="hdr-top">
+        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitQuiz()">✕</button>
+        <div style="flex:1;margin:0 12px">
+          <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+        </div>
+        ${timerHtml || `<div style="font-size:12px;color:#65676B;font-weight:700">${idx+1}/${total}</div>`}
+      </div>
+    </div>
+    <div class="scroll" id="sc">
+      <div class="lesson-header">
+        <div class="lesson-num">${QUIZ_STATE.title} · ${idx+1}/${total}</div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-tag">${isMulti ? 'ELIGE '+q.correct.length : 'PREGUNTA'}</div>
+        <div class="quiz-q">${q.q}</div>
+        ${q.options.map((opt, i) => {
+          const isSel = sel.includes(i);
+          const cls = 'opt' + (isSel ? ' selected' : '');
+          const letter = String.fromCharCode(97+i);
+          return `<div class="${cls}" onclick="quizSelect(${i}, ${isMulti})"><div class="opt-letter">${letter}</div><div class="opt-text">${opt}</div></div>`;
+        }).join('')}
+      </div>
+    </div>
+    <div class="action-bar">
+      ${idx > 0 ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="quizPrev()">←</button>` : ''}
+      <button class="btn ${sel.length ? 'btn-primary' : 'btn-disabled'}" onclick="${sel.length ? (idx+1<total ? 'quizNext()' : 'finishQuiz()') : ''}">${idx+1<total ? 'Siguiente' : 'Terminar'}</button>
+    </div>
+  `;
+}
+
+function renderQuizComplete(){
+  const deck = QUIZ_STATE.deck;
+  let correct = 0;
+  const wrongIdxs = [];
+  deck.forEach((q, i) => {
+    const isMulti = !!q.multi;
+    const correctSet = isMulti ? new Set(q.correct) : new Set([q.correct]);
+    const sel = new Set(QUIZ_STATE.answers[i] || []);
+    const ok = isMulti
+      ? (sel.size === correctSet.size && [...sel].every(x => correctSet.has(x)))
+      : (sel.size === 1 && correctSet.has([...sel][0]));
+    if(ok) correct++;
+    else wrongIdxs.push(i);
+  });
+  const score = Math.round(correct/deck.length*100);
+  const passingScore = QUIZ_STATE.passingScore || 80;
+  const passed = score >= passingScore;
+  const kind = QUIZ_STATE.kind;
+  const kindLabel = kind === 'diagnostic' ? 'Test diagnóstico' : kind === 'mock-exam' ? 'Simulacro' : 'Quiz de Unidad';
+
+  const result = markQuizResult(CURRENT.courseId, CURRENT.dayId, kind, score, passingScore);
+  if(passed && QUIZ_STATE._already !== true){
+    QUIZ_STATE._already = true;
+    addXP(kind === 'mock-exam' ? 100 : kind === 'diagnostic' ? 40 : 60);
+    updateStreak();
+    setTimeout(launchConfetti, 200);
+  }
+
+  const wrongHtml = wrongIdxs.slice(0, 10).map(i => {
+    const q = deck[i];
+    const sel = QUIZ_STATE.answers[i] || [];
+    const isMulti = !!q.multi;
+    const correctIdx = isMulti ? q.correct : [q.correct];
+    const correctText = correctIdx.map(j => `<strong>${String.fromCharCode(97+j)})</strong> ${q.options[j]}`).join('<br/>');
+    const userText = sel.length ? sel.map(j => `${String.fromCharCode(97+j)}) ${q.options[j]}`).join('<br/>') : '(sin responder)';
+    return `
+      <div class="card" style="border-color:#FFD7D5;background:#FFF8F8">
+        <div style="font-size:12px;color:#A8332B;font-weight:800;margin-bottom:6px">PREGUNTA ${i+1} · INCORRECTA</div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:8px">${q.q}</div>
+        <div style="font-size:13px;line-height:1.5"><strong>Tu respuesta:</strong> ${userText}</div>
+        <div style="font-size:13px;line-height:1.5;margin-top:4px"><strong>Correcto:</strong><br/>${correctText}</div>
+        ${q.explanation ? `<div style="font-size:13px;color:#1F6B4A;background:#F0FFF7;padding:10px;border-radius:8px;margin-top:8px;line-height:1.5">${q.explanation}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="hdr">
+      <div class="hdr-top"><div style="font-size:14px;font-weight:700">${kindLabel} · ${passed?'Aprobado':'No aprobado'}</div></div>
+    </div>
+    <div class="scroll" id="sc">
+      <div class="complete-screen" style="padding-bottom:14px">
+        <div class="complete-ico">${passed?'🏆':'💪'}</div>
+        <div class="complete-h">${passed?'¡Aprobaste!':'Sigue practicando'}</div>
+        <div class="complete-sub">${correct} de ${deck.length} correctas</div>
+        <div class="score-big" style="color:${passed?'#42B883':'#E74C3C'}">${score}%</div>
+        <div class="score-label">${passed ? `Necesitabas ${passingScore}%` : `Necesitas ${passingScore}% para avanzar`}</div>
+      </div>
+      ${wrongIdxs.length ? `<div class="section-title">Lo que fallaste</div>${wrongHtml}` : ''}
+      ${wrongIdxs.length > 10 ? `<div style="text-align:center;color:#65676B;font-size:12px;padding:10px">+ ${wrongIdxs.length-10} más</div>` : ''}
+    </div>
+    <div class="action-bar">
+      <button class="btn btn-secondary" onclick="exitQuiz()">Volver</button>
+      <button class="btn btn-primary" onclick="retryQuiz()">${passed ? 'Reintentar' : 'Intentar de nuevo'}</button>
+    </div>
+  `;
+}
+
+function quizLockedToast(){
+  showToast('Completa las lecciones o el diagnóstico para desbloquear',2500);
+}
+
+function startQuizTimer(){
+  stopQuizTimer();
+  if(!QUIZ_STATE.timeLimit) return;
+  const tick = () => {
+    const el = document.getElementById('quiz-timer');
+    if(!el || VIEW !== 'quiz'){ stopQuizTimer(); return; }
+    const elapsed = Math.floor((now() - QUIZ_STATE.started)/1000);
+    const remaining = Math.max(0, QUIZ_STATE.timeLimit - elapsed);
+    const mm = String(Math.floor(remaining/60)).padStart(2,'0');
+    const ss = String(remaining%60).padStart(2,'0');
+    el.textContent = `⏱ ${mm}:${ss}`;
+    el.style.color = remaining < 300 ? '#E74C3C' : '#1877F2';
+    if(remaining === 0){
+      stopQuizTimer();
+      showToast('Tiempo agotado · enviando resultado',2500);
+      setTimeout(finishQuiz, 500);
+    }
+  };
+  tick();
+  QUIZ_TIMER_ID = setInterval(tick, 1000);
+}
+
+function stopQuizTimer(){
+  if(QUIZ_TIMER_ID){ clearInterval(QUIZ_TIMER_ID); QUIZ_TIMER_ID = null; }
+}
+
+function openQuiz(dayId, kind){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === dayId);
+  if(!day) return;
+  const source = kind === 'diagnostic' ? day.diagnostic : day.unitQuiz;
+  if(!source || !source.questions?.length){ showToast('Quiz no disponible',2000); return; }
+  CURRENT.dayId = dayId;
+  CURRENT.quizKind = kind;
+  QUIZ_STATE = {
+    qIdx: 0,
+    answers: {},
+    deck: source.questions,
+    started: now(),
+    timeLimit: source.timeLimit || 0,
+    kind,
+    passingScore: source.passingScore || 80,
+    title: source.title || (kind === 'diagnostic' ? 'Test diagnóstico' : 'Quiz de Unidad'),
+    _already: false
+  };
+  VIEW = 'quiz';
+  render();
+  startQuizTimer();
+}
+
+function openMockExam(dayId){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === dayId);
+  if(!day || day.kind !== 'mock-exam') return;
+  const mock = day.mockExam;
+  if(!mock?.questions?.length){ showToast('Simulacro no disponible',2000); return; }
+  CURRENT.dayId = dayId;
+  CURRENT.quizKind = 'mock-exam';
+  QUIZ_STATE = {
+    qIdx: 0,
+    answers: {},
+    deck: mock.questions,
+    started: now(),
+    timeLimit: mock.timeLimit || 6300, // default 105 min
+    kind: 'mock-exam',
+    passingScore: mock.passingScore || 80,
+    title: mock.title || 'Simulacro',
+    _already: false
+  };
+  VIEW = 'quiz';
+  render();
+  startQuizTimer();
+}
+
+function quizSelect(i, isMulti){
+  const idx = QUIZ_STATE.qIdx;
+  if(!QUIZ_STATE.answers[idx]) QUIZ_STATE.answers[idx] = [];
+  const arr = QUIZ_STATE.answers[idx];
+  if(isMulti){
+    const at = arr.indexOf(i);
+    if(at >= 0) arr.splice(at,1);
+    else arr.push(i);
+  } else {
+    QUIZ_STATE.answers[idx] = [i];
+  }
+  render();
+}
+
+function quizNext(){
+  if(QUIZ_STATE.qIdx + 1 < QUIZ_STATE.deck.length){
+    QUIZ_STATE.qIdx += 1;
+    render();
+    setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+  }
+}
+
+function quizPrev(){
+  if(QUIZ_STATE.qIdx > 0){
+    QUIZ_STATE.qIdx -= 1;
+    render();
+  }
+}
+
+function finishQuiz(){
+  stopQuizTimer();
+  VIEW = 'quiz_complete';
+  render();
+}
+
+function exitQuiz(){
+  if(VIEW === 'quiz' && Object.keys(QUIZ_STATE.answers).length > 0 && !confirm('¿Salir? Perderás las respuestas de este intento.')) return;
+  stopQuizTimer();
+  VIEW = 'day';
+  CURRENT.quizKind = null;
+  render();
+}
+
+function retryQuiz(){
+  const kind = QUIZ_STATE.kind;
+  const dayId = CURRENT.dayId;
+  if(kind === 'mock-exam'){
+    openMockExam(dayId);
+  } else {
+    openQuiz(dayId, kind);
+  }
 }
 
 function renderFlashcards(){
@@ -1160,7 +1547,8 @@ function resetAll(){
   DB = {
     xp: 0, hearts: MAX_HEARTS, lastHeartLost: null,
     streak: 0, lastStudyDate: null, achievements: {},
-    progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0
+    progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
+    quizProgress: {}
   };
   VIEW = 'home';
   render();
