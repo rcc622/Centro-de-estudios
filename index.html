@@ -165,8 +165,8 @@ body{display:flex;flex-direction:column;height:100dvh}
 @keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
 
 /* TOAST */
-.toast{position:fixed;top:max(70px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-120%);background:#1C1E21;color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:13.5px;z-index:200;transition:transform .3s;max-width:90vw;box-shadow:0 8px 24px rgba(0,0,0,.3);display:flex;align-items:center;gap:8px}
-.toast.show{transform:translateX(-50%) translateY(0)}
+.toast{position:fixed;top:max(70px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-200%);background:#1C1E21;color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:13.5px;z-index:200;transition:transform .3s,opacity .2s;max-width:90vw;box-shadow:0 8px 24px rgba(0,0,0,.3);display:none;align-items:center;gap:8px;opacity:0;pointer-events:none}
+.toast.show{display:flex;transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
 .toast.success{background:#1F6B4A}
 .toast.error{background:#A8332B}
 
@@ -414,6 +414,20 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .flash-a{font-size:15px;line-height:1.55}
 .flash-hint{font-size:10.5px;color:#8A8D91;letter-spacing:.4px;text-transform:uppercase;font-weight:700}
 
+/* ----- PRACTICA HUB (Flash tab) ----- */
+.practice-row{display:flex;align-items:center;background:#fff;border:1px solid #E4E6EB;border-radius:14px;padding:14px;gap:14px;margin-bottom:10px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .15s;user-select:none;-webkit-user-select:none;position:relative}
+.practice-row:active{transform:scale(.98)}
+.practice-row .pr-info{flex:1;min-width:0}
+.practice-row .pr-title{font-weight:800;font-size:15px;color:#1C1E21;margin-bottom:3px;line-height:1.2}
+.practice-row .pr-meta{font-size:12px;color:#8A8D91;font-weight:600;line-height:1.3}
+.practice-row .pr-ico{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;color:#fff;box-shadow:0 3px 8px rgba(0,0,0,.12)}
+.practice-row .pr-arrow{font-size:18px;color:#B0B3B8;font-weight:800;flex-shrink:0}
+.practice-row .pr-badge{position:absolute;top:-6px;right:8px;background:#E74C3C;color:#fff;font-size:10px;font-weight:800;padding:3px 7px;border-radius:99px;border:2px solid #fff;box-shadow:0 2px 4px rgba(231,76,60,.3)}
+.practice-row.locked{opacity:.55;cursor:not-allowed}
+.practice-row.locked:active{transform:none}
+.practice-row .pr-progress{height:4px;background:#EEF0F3;border-radius:99px;overflow:hidden;margin-top:6px}
+.practice-row .pr-progress-bar{height:100%;background:linear-gradient(90deg,#1877F2,#42B883);border-radius:99px}
+
 /* ----- SECTION BANDS — más sutil pero claras (vista Día) ----- */
 .section-band{padding:14px 16px;margin:24px 0 14px;box-shadow:0 4px 12px rgba(66,184,131,.18);border-radius:14px}
 .section-band-ico{font-size:26px;width:40px;height:40px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center}
@@ -654,12 +668,15 @@ let DB = {
   flashcardStats: {}, // {flashId: {good: n, hard: n, fail: n, lastSeen: ts}}
   totalLessons: 0,
   perfectLessons: 0,
-  quizProgress: {} // {courseId: {dayId: {diagnosticPassed: bool, unitQuizPassed: bool, bestScore: n, attempts: n}}}
+  quizProgress: {}, // {courseId: {dayId: {diagnosticPassed: bool, unitQuizPassed: bool, bestScore: n, attempts: n}}}
+  wrongAnswers: {} // {key: {courseId, dayId, lessonId, q, a, explanation, wrongCount, lastWrong}}
 };
 let VIEW = 'home';
 let CURRENT = {courseId:null, dayId:null, lessonId:null, quizKind:null};
 let LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false};
 let FLASH_STATE = {idx:0, deck:[], rated:0};
+let PRACTICE_MODE = null; // null = hub | 'lesson' | 'all-flash' | 'day-flash' | 'errors' | 'mix'
+let PRACTICE_SCOPE = null;
 let QUIZ_STATE = {qIdx:0, answers:{}, deck:[], started:0, timeLimit:0, kind:null, passingScore:80, title:''};
 let QUIZ_TIMER_ID = null;
 let MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:null, errors:0, wrongL:null, wrongR:null};
@@ -2111,46 +2128,34 @@ function retryQuiz(){
 }
 
 function renderFlashcards(){
-  // Find flashcard lesson if not in deck mode
+  // Si no hay modo de práctica activo: mostrar el HUB
+  if(!PRACTICE_MODE) return renderPracticeHub();
+
+  // Si hay modo activo, construir el deck si está vacío
   if(FLASH_STATE.deck.length === 0){
-    // Build deck from CURRENT lesson or all flashcards if accessed from nav
-    if(CURRENT.lessonId){
-      const course = COURSES[CURRENT.courseId];
-      const day = course?.days.find(d => d.id === CURRENT.dayId);
-      const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
-      if(lesson?.cards) FLASH_STATE.deck = [...lesson.cards];
-    } else {
-      // Aggregate all flashcards from all completed days
-      const all = [];
-      Object.values(COURSES).forEach(c => {
-        c.days.forEach(d => {
-          if(d.locked) return;
-          d.lessons.forEach(l => {
-            if(l.type === 'flashcards') all.push(...l.cards);
-          });
-        });
-      });
-      FLASH_STATE.deck = all;
-    }
+    FLASH_STATE.deck = buildPracticeDeck(PRACTICE_MODE, PRACTICE_SCOPE);
     FLASH_STATE.idx = 0;
     FLASH_STATE.flipped = false;
     FLASH_STATE.rated = 0;
   }
 
+  // Estado vacío
   if(FLASH_STATE.deck.length === 0){
     return `
       ${renderHeader()}
       <div class="scroll">
         <div class="empty">
           <div class="empty-ico">🎴</div>
-          <div style="font-weight:700;margin-bottom:6px">No hay flashcards aún</div>
-          <div style="font-size:13px">Completa lecciones para desbloquear cards de repaso</div>
+          <div style="font-weight:700;margin-bottom:6px">Sin tarjetas para esta práctica</div>
+          <div style="font-size:13px;margin-bottom:18px">Completá más lecciones o respondé MCQs (los errores se acumulan acá)</div>
+          <button class="btn btn-secondary" style="width:auto;padding:10px 18px" onclick="haptic(8);PRACTICE_MODE=null;FLASH_STATE={idx:0,deck:[],rated:0,flipped:false};render()">← Volver a Práctica</button>
         </div>
       </div>
       ${renderNav('flashcards')}
     `;
   }
 
+  // Pantalla de completado
   if(FLASH_STATE.idx >= FLASH_STATE.deck.length){
     return `
       ${renderHeader()}
@@ -2158,12 +2163,12 @@ function renderFlashcards(){
         <div class="complete-screen">
           <div class="complete-ico">🎴</div>
           <div class="complete-h">¡Repaso completo!</div>
-          <div class="complete-sub">Repasaste ${FLASH_STATE.rated} flashcards</div>
+          <div class="complete-sub">Repasaste ${FLASH_STATE.rated} tarjetas</div>
         </div>
       </div>
       <div class="action-bar">
-        <button class="btn btn-secondary" onclick="resetFlashDeck()">Repasar otra vez</button>
-        <button class="btn btn-primary" onclick="navTo('home')">Inicio</button>
+        <button class="btn btn-secondary" onclick="haptic(8);resetFlashDeck()">Repasar otra vez</button>
+        <button class="btn btn-primary" onclick="haptic(8);PRACTICE_MODE=null;FLASH_STATE={idx:0,deck:[],rated:0,flipped:false};VIEW='flashcards';render()">← Práctica</button>
       </div>
     `;
   }
@@ -2173,8 +2178,9 @@ function renderFlashcards(){
   return `
     ${renderHeader()}
     <div class="scroll">
-      <div style="text-align:center;font-size:12px;color:#65676B;margin-bottom:14px;font-weight:700">
-        ${FLASH_STATE.idx+1} / ${FLASH_STATE.deck.length}
+      <div class="back-row" style="margin-bottom:10px">
+        <button class="back-btn" onclick="haptic(8);PRACTICE_MODE=null;FLASH_STATE={idx:0,deck:[],rated:0,flipped:false};render()" aria-label="Volver">←</button>
+        <div class="crumb">Práctica · ${FLASH_STATE.idx+1}/${FLASH_STATE.deck.length}</div>
       </div>
       <div class="flash-wrap">
         <div class="flash" onclick="flipFlash()">
@@ -2190,6 +2196,122 @@ function renderFlashcards(){
           <button class="rate-btn rate-good" onclick="rateFlash('good')">✅ Fácil</button>
         </div>
       ` : ''}
+    </div>
+    ${renderNav('flashcards')}
+  `;
+}
+
+// ============================================================
+// PRACTICE HUB (Flash tab cuando no hay práctica activa)
+// ============================================================
+function renderPracticeHub(){
+  const courseId = 'meta-410';
+  const course = COURSES[courseId];
+  if(!course){
+    return `
+      ${renderHeader()}
+      <div class="scroll">
+        <div class="empty"><div class="empty-ico">📚</div><div>No hay cursos disponibles</div></div>
+      </div>
+      ${renderNav('flashcards')}
+    `;
+  }
+  const days = course.days.filter(d => !d.locked && d.kind !== 'mock-exam');
+  const allLessons = days.flatMap(d => d.lessons.map(l => ({...l, _dayId: d.id})));
+
+  const flashLessons = allLessons.filter(l => l.type === 'flashcards');
+  const flashCount = flashLessons.reduce((acc, l) => acc + (l.cards?.length || 0), 0);
+  const mcqCount = allLessons.flatMap(l => (l.cards||[]).filter(c => c.type === 'mcq')).length;
+  const matchCount = allLessons.filter(l => l.type === 'match').length;
+  const orderCount = allLessons.filter(l => l.type === 'order').length;
+  const lightningCount = allLessons.filter(l => l.type === 'lightning').length;
+  const errorCount = Object.keys(DB.wrongAnswers || {}).length;
+
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="welcome">
+        <h1>Práctica</h1>
+        <p>Repasá lo que ya viste · Reforzá tus puntos débiles</p>
+      </div>
+
+      ${flashCount > 0 ? `
+        <div class="hero" onclick="haptic(12);startPractice('mix')">
+          <div class="hero-eyebrow">Repaso del día</div>
+          <div class="hero-title">🎯 10 tarjetas mezcladas</div>
+          <div class="hero-sub">Aleatorias de todo lo que ya estudiaste</div>
+          <div class="hero-cta">Empezar repaso <span class="arrow">→</span></div>
+        </div>
+      ` : ''}
+
+      ${errorCount > 0 ? `
+        <div class="section-title">Tus errores</div>
+        <div class="practice-row" onclick="haptic(8);startPractice('errors')">
+          <div class="pr-badge">${errorCount}</div>
+          <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#C03030)">🔁</div>
+          <div class="pr-info">
+            <div class="pr-title">Repasar errores</div>
+            <div class="pr-meta">${errorCount} ${errorCount===1?'pregunta que fallaste':'preguntas que fallaste'} · pulir antes del examen</div>
+          </div>
+          <div class="pr-arrow">→</div>
+        </div>
+      ` : ''}
+
+      <div class="section-title">Por tipo de práctica</div>
+      <div class="practice-row" onclick="haptic(8);startPractice('all-flash')">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">🃏</div>
+        <div class="pr-info">
+          <div class="pr-title">Flashcards</div>
+          <div class="pr-meta">${flashCount} ${flashCount===1?'tarjeta':'tarjetas'} de repaso</div>
+        </div>
+        <div class="pr-arrow">→</div>
+      </div>
+      <div class="practice-row ${mcqCount===0?'locked':''}" onclick="${mcqCount===0?'':`haptic(8);startPractice('quick-quiz')`}">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">⚡</div>
+        <div class="pr-info">
+          <div class="pr-title">Quick Quiz <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
+          <div class="pr-meta">${mcqCount} preguntas tipo examen</div>
+        </div>
+        <div class="pr-arrow">→</div>
+      </div>
+      ${matchCount > 0 ? `
+        <div class="practice-row locked" onclick="haptic(8);startPractice('match')">
+          <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔀</div>
+          <div class="pr-info">
+            <div class="pr-title">Emparejar <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
+            <div class="pr-meta">${matchCount} ${matchCount===1?'ejercicio':'ejercicios'} de match</div>
+          </div>
+          <div class="pr-arrow">→</div>
+        </div>
+      ` : ''}
+      ${orderCount > 0 ? `
+        <div class="practice-row locked" onclick="haptic(8);startPractice('order')">
+          <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🔢</div>
+          <div class="pr-info">
+            <div class="pr-title">Ordenar <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
+            <div class="pr-meta">${orderCount} ${orderCount===1?'ejercicio':'ejercicios'} de secuencia</div>
+          </div>
+          <div class="pr-arrow">→</div>
+        </div>
+      ` : ''}
+
+      <div class="section-title">Por día</div>
+      ${days.map(d => {
+        const prog = getDayProgress(courseId, d.id);
+        const flashInDay = (d.lessons||[]).filter(l => l.type === 'flashcards').reduce((a,l) => a + (l.cards?.length||0), 0);
+        const pct = prog.total ? Math.round(prog.done/prog.total*100) : 0;
+        return `
+          <div class="practice-row ${flashInDay===0?'locked':''}" onclick="${flashInDay===0?'':`haptic(8);startPractice('day-flash',{dayId:'${d.id}'})`}">
+            <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">${d.id === 'day1' ? '1️⃣' : d.id === 'day2' ? '2️⃣' : d.id === 'day3' ? '3️⃣' : d.id === 'day4' ? '4️⃣' : d.id === 'day5' ? '5️⃣' : d.id === 'day6' ? '6️⃣' : '📅'}</div>
+            <div class="pr-info">
+              <div class="pr-title">${d.title}</div>
+              <div class="pr-meta">${flashInDay > 0 ? flashInDay+' tarjetas · '+prog.done+'/'+prog.total+' lecciones' : 'Sin flashcards aún'}</div>
+              ${flashInDay > 0 ? `<div class="pr-progress"><div class="pr-progress-bar" style="width:${pct}%"></div></div>` : ''}
+            </div>
+            <div class="pr-arrow">→</div>
+          </div>
+        `;
+      }).join('')}
     </div>
     ${renderNav('flashcards')}
   `;
@@ -2280,15 +2402,99 @@ function renderConfig(){
 function navTo(view){
   VIEW = view;
   if(view === 'flashcards'){
-    CURRENT.lessonId = null; // aggregate mode
+    PRACTICE_MODE = null;
+    PRACTICE_SCOPE = null;
+    CURRENT.lessonId = null;
     FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
   }
   render();
-  // scroll top
   setTimeout(() => {
     const sc = document.querySelector('.scroll');
     if(sc) sc.scrollTop = 0;
   }, 10);
+}
+
+function startPractice(mode, scope){
+  haptic(HAPTIC.tap);
+  if(mode === 'quick-quiz' || mode === 'match' || mode === 'order' || mode === 'lightning'){
+    showToast('Práctica de '+mode+' próximamente. Por ahora practícalo desde las lecciones del Día 1.', 2800);
+    return;
+  }
+  PRACTICE_MODE = mode;
+  PRACTICE_SCOPE = scope || null;
+  CURRENT.lessonId = null;
+  FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
+  VIEW = 'flashcards';
+  render();
+  setTimeout(() => {
+    const sc = document.querySelector('.scroll');
+    if(sc) sc.scrollTop = 0;
+  }, 10);
+}
+
+function buildPracticeDeck(mode, scope){
+  const courseId = scope?.courseId || 'meta-410';
+  const course = COURSES[courseId];
+  if(!course) return [];
+  const days = course.days.filter(d => !d.locked && d.kind !== 'mock-exam');
+
+  if(mode === 'lesson'){
+    const day = course.days.find(d => d.id === CURRENT.dayId);
+    const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+    return lesson?.cards ? [...lesson.cards] : [];
+  }
+  if(mode === 'all-flash'){
+    return days.flatMap(d => d.lessons.filter(l => l.type === 'flashcards').flatMap(l => l.cards||[]));
+  }
+  if(mode === 'day-flash'){
+    const day = days.find(d => d.id === scope?.dayId);
+    if(!day) return [];
+    return day.lessons.filter(l => l.type === 'flashcards').flatMap(l => l.cards||[]);
+  }
+  if(mode === 'errors'){
+    return Object.values(DB.wrongAnswers||{}).map(e => ({
+      q: e.q,
+      a: (e.a ? '<strong>'+e.a+'</strong>' : '') + (e.explanation ? '<br/><br/>'+e.explanation : '')
+    }));
+  }
+  if(mode === 'mix'){
+    const all = days.flatMap(d => d.lessons.filter(l => l.type === 'flashcards').flatMap(l => l.cards||[]));
+    return all.sort(() => Math.random()-.5).slice(0, 10);
+  }
+  return [];
+}
+
+function recordWrong(card, courseId, dayId, lessonId){
+  if(!card || !card.q) return;
+  if(!DB.wrongAnswers) DB.wrongAnswers = {};
+  const key = (courseId+'|'+dayId+'|'+lessonId+'|'+card.q).slice(0, 200);
+  if(!DB.wrongAnswers[key]){
+    let answerText = '';
+    if(card.options && card.correct !== undefined){
+      const correctIdx = Array.isArray(card.correct) ? card.correct : [card.correct];
+      answerText = correctIdx.map(i => card.options[i]).join(' · ');
+    }
+    DB.wrongAnswers[key] = {
+      courseId, dayId, lessonId,
+      q: card.q,
+      a: answerText,
+      explanation: card.explanation || '',
+      wrongCount: 0,
+      firstWrong: now()
+    };
+  }
+  DB.wrongAnswers[key].wrongCount += 1;
+  DB.wrongAnswers[key].lastWrong = now();
+  save();
+}
+
+function clearWrong(card, courseId, dayId, lessonId){
+  if(!card || !card.q || !DB.wrongAnswers) return;
+  const key = (courseId+'|'+dayId+'|'+lessonId+'|'+card.q).slice(0, 200);
+  if(DB.wrongAnswers[key]){
+    delete DB.wrongAnswers[key];
+    save();
+  }
 }
 
 function openCourse(id){
@@ -2324,6 +2530,8 @@ function openLesson(id){
 function openFlashcards(lessonId){
   haptic(HAPTIC.tap);
   CURRENT.lessonId = lessonId;
+  PRACTICE_MODE = 'lesson';
+  PRACTICE_SCOPE = null;
   FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
   VIEW = 'flashcards';
   render();
@@ -2375,9 +2583,11 @@ function submitAnswer(){
   if(!correct){
     LESSON_STATE.errors += 1;
     haptic(HAPTIC.wrong);
+    recordWrong(card, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
     if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
   } else {
     haptic(HAPTIC.correct);
+    clearWrong(card, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
   }
   render();
 }
