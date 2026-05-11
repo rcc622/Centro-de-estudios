@@ -273,6 +273,151 @@ body{display:flex;flex-direction:column;height:100dvh}
 .scenario-card .scenario-label{font-size:11px;font-weight:800;color:#FF6B35;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .scenario-card .scenario-body{font-size:14.5px;line-height:1.6;color:#1C1E21}
 .scenario-card .scenario-body strong{color:#FF6B35}
+
+/* ============================================================
+   UI v2 — Header refresh, back button, polish, dark mode
+   ============================================================ */
+
+/* Header stats más prominentes */
+.hdr{padding:max(40px,env(safe-area-inset-top)) 16px 14px}
+.hdr-stats{gap:14px}
+.stat{font-size:16px;gap:6px;font-weight:800}
+.stat .ico{font-size:22px}
+.lvl-badge{font-size:13px;padding:6px 12px;box-shadow:0 3px 8px rgba(24,119,242,.2)}
+.progress-wrap{height:10px;margin-top:12px}
+.progress-label{font-size:12px;margin-top:6px;font-weight:600}
+
+/* Botón volver compacto (círculo con flecha) */
+.back-btn{width:42px;height:42px;border-radius:50%;border:2px solid var(--border,#E4E6EB);background:var(--surface,#fff);color:var(--accent,#1877F2);font-size:22px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;user-select:none;-webkit-user-select:none;transition:transform .15s,background .15s}
+.back-btn:active{transform:scale(.92);background:#EBF5FF}
+.back-row{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.back-row .crumb{font-size:11px;font-weight:700;color:var(--muted,#65676B);letter-spacing:.6px;text-transform:uppercase}
+
+/* Welcome titular más grande y aireado en vista day/course */
+.welcome h1{font-size:24px;line-height:1.2;margin-bottom:6px}
+.welcome p{font-size:14px;line-height:1.45}
+
+/* Diagnostic card con gradiente más sabroso */
+.diag-card{background:linear-gradient(135deg,#FFF4D6 0%,#FFE0B3 100%);border:2px solid #FFA726;border-radius:18px;padding:16px;margin-bottom:18px;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;-webkit-user-select:none;box-shadow:0 6px 16px rgba(255,167,38,.18);transition:transform .15s}
+.diag-card:active{transform:scale(.98)}
+.diag-card .diag-ico{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#FFA726,#FF6B35);color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 10px rgba(255,107,53,.35)}
+.diag-card .diag-info{flex:1;min-width:0}
+.diag-card .diag-title{font-weight:800;font-size:15px;color:#7A3F00;margin-bottom:2px;display:flex;align-items:center;gap:8px}
+.diag-card .diag-badge{background:#FF6B35;color:#fff;font-size:10px;padding:2px 8px;border-radius:99px;letter-spacing:.4px;font-weight:800}
+.diag-card .diag-sub{font-size:12.5px;color:#8B4F0E;line-height:1.4}
+.diag-card .diag-arrow{font-size:22px;color:#FF6B35;font-weight:800}
+
+/* Bandas de sección más impactantes con ícono grande */
+.section-band{padding:16px 18px;margin:26px 0 18px;box-shadow:0 6px 16px rgba(66,184,131,.22)}
+.section-band-ico{font-size:34px;width:46px;height:46px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.section-band-title{font-size:11px}
+.section-band-sub{font-size:15.5px}
+
+/* Path bubbles más grandes (mejor tap target) y label más legible */
+.path{gap:20px;padding:10px 0 16px}
+.path-bubble{width:80px;height:80px;font-size:34px;box-shadow:0 7px 0 #2D8F66,0 10px 16px rgba(66,184,131,.32)}
+.path-bubble.complete{box-shadow:0 7px 0 #B8950A,0 10px 16px rgba(255,215,0,.32)}
+.path-bubble.current{box-shadow:0 7px 0 #0E5BC4,0 10px 16px rgba(24,119,242,.42)}
+.path-bubble-label{font-size:12px;margin-top:10px;max-width:240px;font-weight:800;line-height:1.3}
+
+/* Course-back con flecha + curso */
+.course-back{display:inline-flex;align-items:center;gap:8px;background:transparent;border:none;color:var(--accent,#1877F2);font-weight:700;font-size:13px;cursor:pointer;padding:0;margin:0;user-select:none;-webkit-user-select:none}
+.course-back:active{opacity:.6}
+
+/* ============================================================
+   UI v3 — NN/g-aligned: jerarquía tipográfica, espaciado coherente,
+   foco en el hero CTA, minimal-distracción, recognition > recall.
+   App fija en LIGHT MODE (sin dark).
+   ============================================================ */
+
+/* Force light scheme aunque el sistema esté en dark */
+:root{color-scheme:light}
+
+/* ----- Tipografía y elementos base ----- */
+html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
+.welcome{margin-bottom:14px}
+.welcome h1{font-size:26px;font-weight:800;line-height:1.15;letter-spacing:-.02em;color:#1C1E21;margin-bottom:6px}
+.welcome p{font-size:15px;line-height:1.45;color:#65676B}
+.section-title{font-size:12px;font-weight:800;color:#8A8D91;text-transform:uppercase;letter-spacing:1.1px;margin:22px 4px 10px}
+
+/* ----- HEADER simplificado ----- */
+/* Mantenemos streak/hearts/XP/level pero más respirado y con jerarquía: nivel + barra dominan */
+.hdr{padding:max(40px,env(safe-area-inset-top)) 16px 14px;background:#fff}
+.hdr-top{display:flex;align-items:center;gap:10px}
+.hdr-stats{gap:10px}
+.stat{font-size:14px;font-weight:800;gap:5px;color:#1C1E21}
+.stat .ico{font-size:18px}
+.lvl-badge{font-size:12px;padding:6px 12px;background:linear-gradient(135deg,#1877F2,#42B883);box-shadow:0 2px 6px rgba(24,119,242,.18)}
+.progress-wrap{height:10px;background:#EEF0F3;margin-top:12px}
+.progress-bar{background:linear-gradient(90deg,#1877F2 0%,#42B883 100%)}
+.progress-label{font-size:11.5px;color:#8A8D91;font-weight:700;margin-top:5px}
+
+/* ----- HERO CTA (Home) ----- */
+.hero{background:linear-gradient(135deg,#1877F2 0%,#0E5BC4 100%);color:#fff;border-radius:20px;padding:20px;margin-bottom:18px;position:relative;overflow:hidden;box-shadow:0 8px 22px rgba(24,119,242,.28);cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform .15s}
+.hero:active{transform:scale(.985)}
+.hero::after{content:'';position:absolute;right:-30px;top:-30px;width:140px;height:140px;background:rgba(255,255,255,.08);border-radius:50%}
+.hero::before{content:'';position:absolute;right:30px;bottom:-50px;width:90px;height:90px;background:rgba(255,255,255,.06);border-radius:50%}
+.hero-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;opacity:.85;margin-bottom:6px;position:relative;z-index:1}
+.hero-title{font-size:22px;font-weight:800;line-height:1.2;margin-bottom:4px;position:relative;z-index:1}
+.hero-sub{font-size:13.5px;line-height:1.45;opacity:.92;margin-bottom:16px;position:relative;z-index:1}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1877F2;font-weight:800;font-size:14.5px;padding:12px 18px;border-radius:99px;box-shadow:0 4px 12px rgba(0,0,0,.12);position:relative;z-index:1}
+.hero-cta .arrow{font-size:16px}
+.hero-progress{margin-top:14px;height:6px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden;position:relative;z-index:1}
+.hero-progress-bar{height:100%;background:#fff;border-radius:99px}
+.hero-progress-text{font-size:11.5px;opacity:.85;font-weight:700;margin-top:6px;position:relative;z-index:1}
+.hero.review{background:linear-gradient(135deg,#42B883 0%,#2D8F66 100%);box-shadow:0 8px 22px rgba(66,184,131,.28)}
+.hero.review .hero-cta{color:#2D8F66}
+
+/* ----- Course card (Home) — solo si hay >1 curso activo ----- */
+.course{background:#fff;border:1px solid #E4E6EB;border-radius:16px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.course-ico{width:44px;height:44px;border-radius:12px;font-size:22px;background:#1877F2;color:#fff}
+.course-title{font-size:14.5px}
+.course-meta{font-size:12px;color:#8A8D91}
+.course-progress{background:#EEF0F3}
+
+/* Próximamente: lista compacta sin reclamar atención */
+.upcoming-wrap{background:#F5F7FA;border-radius:14px;padding:12px 14px;margin-top:10px}
+.upcoming-title{font-size:11px;font-weight:800;color:#8A8D91;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.upcoming-row{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:#65676B}
+.upcoming-row .upcoming-ico{font-size:16px;width:24px;text-align:center}
+.upcoming-row .upcoming-label{flex:1;font-weight:600}
+.upcoming-row .upcoming-tag{font-size:10px;font-weight:800;color:#B0B3B8;letter-spacing:.4px;text-transform:uppercase}
+
+/* ----- BOTTOM NAV — sentence case, menos agresivo ----- */
+.bnav{padding:8px 0 max(10px,env(safe-area-inset-bottom));background:#fff;border-top:1px solid #EEF0F3}
+.nbtn{font-size:10.5px;letter-spacing:.2px;text-transform:none;font-weight:700;gap:4px;color:#8A8D91}
+.nbtn .ico{font-size:22px}
+.nbtn.active{color:#1877F2}
+.nbtn.active .ico{transform:scale(1.05)}
+
+/* ----- DAY-CARD (lista de cursos en vista course) ----- */
+.day-card{border:1px solid #E4E6EB;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.day-card.current{box-shadow:0 4px 14px rgba(24,119,242,.18)}
+
+/* ----- LOGROS — más aire, badges más grandes ----- */
+.ach-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+.abadge{aspect-ratio:auto;padding:18px 12px;font-size:12px;border-radius:18px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.abadge .abadge-ico{font-size:38px;margin-bottom:10px}
+.abadge .abadge-desc{font-size:10.5px;color:#8A8D91;font-weight:600;margin-top:4px;line-height:1.3}
+
+/* ----- CONFIG — stats grid + secciones separadas ----- */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.stat-tile{background:#fff;border:1px solid #E4E6EB;border-radius:14px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.stat-tile-label{font-size:11px;font-weight:800;color:#8A8D91;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
+.stat-tile-value{font-size:22px;font-weight:800;color:#1C1E21;display:flex;align-items:center;gap:6px}
+.stat-tile-value .ico{font-size:22px}
+.stat-tile-sub{font-size:11.5px;color:#8A8D91;margin-top:2px;font-weight:600}
+
+/* ----- FLASHCARDS — más aireado ----- */
+.flash{padding:32px 22px;min-height:200px;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.flash-q{font-size:17.5px;line-height:1.4}
+.flash-a{font-size:15px;line-height:1.55}
+.flash-hint{font-size:10.5px;color:#8A8D91;letter-spacing:.4px;text-transform:uppercase;font-weight:700}
+
+/* ----- SECTION BANDS — más sutil pero claras (vista Día) ----- */
+.section-band{padding:14px 16px;margin:24px 0 14px;box-shadow:0 4px 12px rgba(66,184,131,.18);border-radius:14px}
+.section-band-ico{font-size:26px;width:40px;height:40px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center}
+
 </style>
 </head>
 <body>
@@ -551,6 +696,24 @@ function todayStr(){
 }
 function now(){return Date.now()}
 
+// Haptic feedback — vibración corta en cada interacción.
+// pattern: número (ms) o array (vibrar/pausar/vibrar...). Silenciable.
+let HAPTIC_ENABLED = true;
+function haptic(pattern){
+  if(!HAPTIC_ENABLED) return;
+  try { if(navigator.vibrate) navigator.vibrate(pattern); } catch(e){}
+}
+const HAPTIC = {
+  tap: 8,
+  select: 12,
+  correct: 22,
+  wrong: [25, 60, 25],
+  submit: 18,
+  complete: [40, 30, 60],
+  levelUp: [60, 40, 60, 40, 100],
+  achievement: [30, 30, 30, 30, 60]
+};
+
 function regenerateHearts(){
   if(DB.hearts >= MAX_HEARTS) return;
   if(!DB.lastHeartLost) return;
@@ -656,6 +819,58 @@ function getDayProgress(courseId, dayId){
 
 function isLessonCompleted(courseId, dayId, lessonId){
   return !!DB.progress[courseId]?.[dayId]?.[lessonId]?.completed;
+}
+
+// Devuelve la siguiente lección incompleta del usuario en el curso indicado
+// (o sugiere el quiz si todas las lecciones del día están completas).
+function getNextLesson(courseId){
+  const course = COURSES[courseId];
+  if(!course) return null;
+  for(const day of course.days){
+    if(day.locked) continue;
+    if(day.kind === 'mock-exam') continue;
+    const qp = DB.quizProgress[courseId]?.[day.id];
+    if(qp?.unitQuizPassed) continue; // día completado vía quiz
+    for(const lesson of (day.lessons||[])){
+      if(!isLessonCompleted(courseId, day.id, lesson.id)){
+        return {
+          courseId,
+          dayId: day.id,
+          lessonId: lesson.id,
+          dayTitle: day.title,
+          lessonTitle: lesson.title,
+          lessonType: lesson.type || 'reading',
+          isFlash: lesson.type === 'flashcards',
+          dayDone: getDayProgress(courseId, day.id).done,
+          dayTotal: day.lessons.length
+        };
+      }
+    }
+    // Lecciones completas pero falta el quiz: sugerirlo
+    if(day.unitQuiz && !qp?.unitQuizPassed){
+      return {
+        courseId, dayId: day.id, isQuiz: true,
+        dayTitle: day.title, lessonTitle: 'Quiz de la unidad',
+        dayDone: (day.lessons||[]).length, dayTotal: (day.lessons||[]).length
+      };
+    }
+  }
+  return null;
+}
+
+function openHeroNext(){
+  const next = getNextLesson('meta-410');
+  if(!next) return;
+  CURRENT.courseId = next.courseId;
+  CURRENT.dayId = next.dayId;
+  if(next.isQuiz){
+    VIEW = 'day'; render();
+    setTimeout(() => openQuiz(next.dayId, 'unit-quiz'), 30);
+  } else if(next.isFlash){
+    openFlashcards(next.lessonId);
+  } else {
+    openLesson(next.lessonId);
+  }
 }
 
 function isDayUnlocked(courseId, dayIdx){
@@ -786,12 +1001,12 @@ function renderHeader(){
 function renderNav(active){
   const tabs = [
     ['home',     '🏠', 'Inicio'],
-    ['flashcards','🎴','Flash'],
+    ['flashcards','🃏','Flash'],
     ['achievements','🏅','Logros'],
-    ['config',   '⚙️', 'Config']
+    ['config',   '⚙️', 'Ajustes']
   ];
   return `<div class="bnav">${tabs.map(([id,i,n]) =>
-    `<button class="nbtn ${active===id?'active':''}" onclick="navTo('${id}')"><span class="ico">${i}</span>${n}</button>`
+    `<button class="nbtn ${active===id?'active':''}" onclick="haptic(6);navTo('${id}')"><span class="ico">${i}</span>${n}</button>`
   ).join('')}</div>`;
 }
 
@@ -799,47 +1014,85 @@ function renderNav(active){
 // VIEWS
 // ============================================================
 function renderHome(){
-  const courseProg = getCourseProgress('meta-410');
-  const greeting = DB.streak > 0
-    ? `🔥 Llevas ${DB.streak} ${DB.streak===1?'día':'días'} de racha. ¡No la rompas!`
-    : `Empieza tu primera lección hoy y arranca tu racha.`;
+  const activeCourses = Object.values(COURSES).filter(c => c.active !== false);
+  const mainCourse = activeCourses[0];
+  const next = mainCourse ? getNextLesson(mainCourse.id) : null;
+  const courseProg = mainCourse ? getCourseProgress(mainCourse.id) : {done:0,total:0,pct:0};
+  const lvl = calcLevel(DB.xp);
+  const lvlName = LEVELS[lvl-1]?.n || 'Novato';
+
+  // HERO CTA — recognition over recall: el usuario VE qué sigue, no tiene que decidir.
+  let heroHtml = '';
+  if(next){
+    const dayPct = next.dayTotal ? Math.round(next.dayDone/next.dayTotal*100) : 0;
+    const eyebrow = `${mainCourse.title} · ${dayPct}% del día`;
+    const cta = next.isQuiz ? 'Tomar quiz' : (next.isFlash ? 'Repasar flashcards' : 'Continuar lección');
+    const heroIco = next.isQuiz ? '📝' : (next.isFlash ? '🃏' : (LESSON_KIND_ICON[next.lessonType] || '📖'));
+    heroHtml = `
+      <div class="hero" onclick="haptic(12);openHeroNext()">
+        <div class="hero-eyebrow">${eyebrow}</div>
+        <div class="hero-title">${heroIco} ${next.dayTitle}</div>
+        <div class="hero-sub">Sigue con: <strong>${next.lessonTitle}</strong></div>
+        <div class="hero-cta">${cta} <span class="arrow">→</span></div>
+        <div class="hero-progress"><div class="hero-progress-bar" style="width:${dayPct}%"></div></div>
+        <div class="hero-progress-text">${next.dayDone} de ${next.dayTotal} lecciones</div>
+      </div>
+    `;
+  } else if(mainCourse){
+    heroHtml = `
+      <div class="hero review" onclick="haptic(12);openCourse('${mainCourse.id}')">
+        <div class="hero-eyebrow">¡Todo el contenido al día!</div>
+        <div class="hero-title">🏆 Listo para repasar</div>
+        <div class="hero-sub">Reforzá con flashcards o revisá lecciones completadas</div>
+        <div class="hero-cta">Abrir curso <span class="arrow">→</span></div>
+      </div>
+    `;
+  }
+
+  const otherCourses = activeCourses.filter(c => c.id !== mainCourse?.id);
+  const otherCoursesHtml = otherCourses.length ? `
+    <div class="section-title">Otros cursos</div>
+    ${otherCourses.map(c => {
+      const p = getCourseProgress(c.id);
+      return `
+        <div class="course" onclick="haptic(8);openCourse('${c.id}')">
+          <div class="course-head">
+            <div class="course-ico" style="background:${c.color||'#1877F2'}">${c.icon}</div>
+            <div class="course-info">
+              <div class="course-title">${c.title}</div>
+              <div class="course-meta">${c.subtitle}</div>
+            </div>
+            <div style="font-size:13px;font-weight:800;color:${c.color||'#1877F2'}">${p.pct}%</div>
+          </div>
+          <div class="course-progress"><div class="course-progress-bar" style="width:${p.pct}%"></div></div>
+        </div>
+      `;
+    }).join('')}
+  ` : '';
+
+  const upcomingHtml = COMING_SOON.length ? `
+    <div class="upcoming-wrap">
+      <div class="upcoming-title">Próximamente</div>
+      ${COMING_SOON.map(c => `
+        <div class="upcoming-row">
+          <div class="upcoming-ico">${c.icon || '📚'}</div>
+          <div class="upcoming-label">${c.title}</div>
+          <div class="upcoming-tag">Pronto</div>
+        </div>
+      `).join('')}
+    </div>
+  ` : '';
+
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
       <div class="welcome">
-        <h1>Bienvenido, Randall</h1>
-        <p>${greeting}</p>
+        <h1>Hola, Randall</h1>
+        <p>${DB.streak > 0 ? `🔥 ${DB.streak} ${DB.streak===1?'día':'días'} de racha` : 'Sin racha — empieza hoy'} · ${lvlName}</p>
       </div>
-      <div class="section-title">Cursos activos</div>
-      ${Object.values(COURSES).filter(c => c.active !== false).map(c => {
-        const p = getCourseProgress(c.id);
-        return `
-          <div class="course" onclick="openCourse('${c.id}')">
-            <div class="course-head">
-              <div class="course-ico" style="background:linear-gradient(135deg,${c.color},${c.color})">${c.icon}</div>
-              <div class="course-info">
-                <div class="course-title">${c.title}</div>
-                <div class="course-meta">${c.subtitle}</div>
-              </div>
-              <div style="font-size:13px;font-weight:800;color:${c.color}">${p.pct}%</div>
-            </div>
-            <div class="course-progress"><div class="course-progress-bar" style="width:${p.pct}%;background:linear-gradient(90deg,${c.color},${c.color})"></div></div>
-            <div style="font-size:11px;color:#65676B;margin-top:6px">${p.done} de ${p.total} lecciones</div>
-          </div>
-        `;
-      }).join('')}
-      ${COMING_SOON.length > 0 ? `<div class="section-title">Próximamente</div>` : ''}
-      ${COMING_SOON.map(c => `
-        <div class="course locked">
-          <div class="course-head">
-            <div class="course-ico" style="background:#90949C">${c.icon || '📚'}</div>
-            <div class="course-info">
-              <div class="course-title">${c.title}</div>
-              <div class="course-meta">${c.subtitle || 'Próximamente'}</div>
-            </div>
-          </div>
-        </div>
-      `).join('')}
+      ${heroHtml}
+      ${otherCoursesHtml}
+      ${upcomingHtml}
     </div>
     ${renderNav('home')}
   `;
@@ -851,8 +1104,9 @@ function renderCourse(){
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
-      <div style="margin-bottom:16px">
-        <button class="btn btn-secondary" style="width:auto;padding:8px 14px;font-size:13px" onclick="navTo('home')">← Inicio</button>
+      <div class="back-row">
+        <button class="back-btn" onclick="navTo('home')" aria-label="Volver al inicio">←</button>
+        <div class="crumb">Inicio</div>
       </div>
       <div class="welcome">
         <h1>${course.title}</h1>
@@ -935,21 +1189,22 @@ function renderDay(){
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
-      <div style="margin-bottom:16px">
-        <button class="btn btn-secondary" style="width:auto;padding:8px 14px;font-size:13px" onclick="openCourse('${course.id}')">← ${course.title}</button>
+      <div class="back-row">
+        <button class="back-btn" onclick="openCourse('${course.id}')" aria-label="Volver al curso">←</button>
+        <div class="crumb">${course.title}</div>
       </div>
       <div class="welcome">
         <h1>${day.title}</h1>
         <p>${day.subtitle}</p>
       </div>
       ${showDiagnostic ? `
-        <div class="day-card current" onclick="openQuiz('${day.id}','diagnostic')" style="border-color:#FFA726;background:#FFF8E7">
-          <div class="day-num" style="background:#FFA726;color:#fff">⚡</div>
-          <div class="day-info">
-            <div class="day-title">Atajo · Test diagnóstico</div>
-            <div class="day-sub">${day.diagnostic.questions?.length || 5} preguntas · ≥80% para saltar al Quiz de Unidad</div>
+        <div class="diag-card" onclick="openQuiz('${day.id}','diagnostic')">
+          <div class="diag-ico">⚡</div>
+          <div class="diag-info">
+            <div class="diag-title">Atajo · Test diagnóstico <span class="diag-badge">PRUÉBALO</span></div>
+            <div class="diag-sub">${day.diagnostic.questions?.length || 5} preguntas · ≥80% para saltar al Quiz de Unidad</div>
           </div>
-          <div class="day-status">▶</div>
+          <div class="diag-arrow">▶</div>
         </div>
       ` : ''}
       ${renderDayLessons(course, day)}
@@ -1021,7 +1276,7 @@ function pathBubble(course, day, lesson, globalIdx){
   const ico = lessonIcon(lesson);
   const zig = `path-zig-${globalIdx % 8}`;
   const cls = completed ? 'complete' : (globalIdx === 0 || isLessonCompleted(course.id, day.id, day.lessons[globalIdx-1]?.id)) ? 'current' : '';
-  const onclick = isFlash ? `openFlashcards('${lesson.id}')` : `openLesson('${lesson.id}')`;
+  const onclick = isFlash ? `haptic(HAPTIC.tap);openFlashcards('${lesson.id}')` : `haptic(HAPTIC.tap);openLesson('${lesson.id}')`;
   const lblCls = cls === 'complete' ? 'complete' : cls === 'current' ? 'current' : '';
   return `
     <div class="path-wrap ${zig}">
@@ -1255,6 +1510,7 @@ function renderLessonMatch(course, day, lesson){
 
 function matchTapL(i){
   if(MATCH_STATE.matched.has(MATCH_STATE.leftSlots[i].id)) return;
+  haptic(HAPTIC.select);
   MATCH_STATE.selL = i;
   MATCH_STATE.wrongL = null;
   MATCH_STATE.wrongR = null;
@@ -1263,6 +1519,7 @@ function matchTapL(i){
 }
 function matchTapR(i){
   if(MATCH_STATE.matched.has(MATCH_STATE.rightSlots[i].id)) return;
+  haptic(HAPTIC.select);
   MATCH_STATE.selR = i;
   MATCH_STATE.wrongL = null;
   MATCH_STATE.wrongR = null;
@@ -1274,10 +1531,12 @@ function tryMatch(){
   const lId = MATCH_STATE.leftSlots[MATCH_STATE.selL].id;
   const rId = MATCH_STATE.rightSlots[MATCH_STATE.selR].id;
   if(lId === rId){
+    haptic(HAPTIC.correct);
     MATCH_STATE.matched.add(lId);
     MATCH_STATE.selL = null;
     MATCH_STATE.selR = null;
   } else {
+    haptic(HAPTIC.wrong);
     MATCH_STATE.errors += 1;
     MATCH_STATE.wrongL = MATCH_STATE.selL;
     MATCH_STATE.wrongR = MATCH_STATE.selR;
@@ -1381,6 +1640,7 @@ function renderLessonOrder(course, day, lesson){
 
 function orderUp(i){
   if(ORDER_STATE.submitted || i===0) return;
+  haptic(HAPTIC.tap);
   const c = ORDER_STATE.current;
   [c[i-1], c[i]] = [c[i], c[i-1]];
   render();
@@ -1389,6 +1649,7 @@ function orderDown(i){
   if(ORDER_STATE.submitted) return;
   const c = ORDER_STATE.current;
   if(i === c.length-1) return;
+  haptic(HAPTIC.tap);
   [c[i], c[i+1]] = [c[i+1], c[i]];
   render();
 }
@@ -1397,12 +1658,16 @@ function submitOrder(){
   ORDER_STATE.submitted = true;
   ORDER_STATE.correct = isCorrect;
   if(!isCorrect){
+    haptic(HAPTIC.wrong);
     ORDER_STATE.errors += 1;
     if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+  } else {
+    haptic(HAPTIC.correct);
   }
   render();
 }
 function retryOrder(){
+  haptic(HAPTIC.tap);
   ORDER_STATE.submitted = false;
   ORDER_STATE.correct = false;
   ORDER_STATE.current = shuffleArr(ORDER_STATE.correctOrder);
@@ -1559,7 +1824,10 @@ function lightningSelect(i){
   LIGHTNING_STATE.answers[idx] = {selected:i, correct};
   if(!correct){
     LIGHTNING_STATE.errors += 1;
+    haptic(HAPTIC.wrong);
     // En Lightning NO se pierden hearts (es modo rápido)
+  } else {
+    haptic(HAPTIC.correct);
   }
   // Avanzar inmediato
   setTimeout(() => {
@@ -1786,6 +2054,7 @@ function openMockExam(dayId){
 }
 
 function quizSelect(i, isMulti){
+  haptic(HAPTIC.select);
   const idx = QUIZ_STATE.qIdx;
   if(!QUIZ_STATE.answers[idx]) QUIZ_STATE.answers[idx] = [];
   const arr = QUIZ_STATE.answers[idx];
@@ -1800,6 +2069,7 @@ function quizSelect(i, isMulti){
 }
 
 function quizNext(){
+  haptic(HAPTIC.tap);
   if(QUIZ_STATE.qIdx + 1 < QUIZ_STATE.deck.length){
     QUIZ_STATE.qIdx += 1;
     render();
@@ -1808,6 +2078,7 @@ function quizNext(){
 }
 
 function quizPrev(){
+  haptic(HAPTIC.tap);
   if(QUIZ_STATE.qIdx > 0){
     QUIZ_STATE.qIdx -= 1;
     render();
@@ -1815,6 +2086,7 @@ function quizPrev(){
 }
 
 function finishQuiz(){
+  haptic(HAPTIC.submit);
   stopQuizTimer();
   VIEW = 'quiz_complete';
   render();
@@ -1924,19 +2196,21 @@ function renderFlashcards(){
 }
 
 function renderAchievements(){
+  const earnedCount = Object.keys(DB.achievements).length;
   return `
     ${renderHeader()}
     <div class="scroll">
       <div class="welcome">
         <h1>Logros</h1>
-        <p>${Object.keys(DB.achievements).length} de ${ACHIEVEMENTS.length} desbloqueados</p>
+        <p>${earnedCount} de ${ACHIEVEMENTS.length} desbloqueados</p>
       </div>
       <div class="ach-grid">
         ${ACHIEVEMENTS.map(a => {
           const earned = !!DB.achievements[a.id];
-          return `<div class="abadge ${earned?'earned':'locked'}" onclick="showToast('${a.n}: ${a.desc}',2500)">
+          return `<div class="abadge ${earned?'earned':'locked'}" onclick="haptic(6)">
             <div class="abadge-ico">${earned?a.i:'🔒'}</div>
             <div>${earned?a.n:'???'}</div>
+            <div class="abadge-desc">${earned?a.desc:'Logro bloqueado'}</div>
           </div>`;
         }).join('')}
       </div>
@@ -1947,26 +2221,52 @@ function renderAchievements(){
 
 function renderConfig(){
   const lvl = calcLevel(DB.xp);
+  const lvlInfo = LEVELS[lvl-1];
+  const nxt = nextLevelXP(lvl);
   return `
     ${renderHeader()}
     <div class="scroll">
       <div class="welcome">
-        <h1>Configuración</h1>
-        <p>Tu progreso global</p>
+        <h1>Tu progreso</h1>
+        <p>Estadísticas y mantenimiento</p>
       </div>
-      <div class="card">
-        <div class="cfg-row"><div class="cfg-label">Nivel</div><div class="cfg-val">${LEVELS[lvl-1].i} ${LEVELS[lvl-1].n} (N${lvl})</div></div>
-        <div class="cfg-row"><div class="cfg-label">XP total</div><div class="cfg-val">${DB.xp}</div></div>
-        <div class="cfg-row"><div class="cfg-label">Racha actual</div><div class="cfg-val">🔥 ${DB.streak} días</div></div>
-        <div class="cfg-row"><div class="cfg-label">Lecciones completadas</div><div class="cfg-val">${DB.totalLessons}</div></div>
-        <div class="cfg-row"><div class="cfg-label">Lecciones perfectas</div><div class="cfg-val">${DB.perfectLessons}</div></div>
-        <div class="cfg-row"><div class="cfg-label">Logros</div><div class="cfg-val">${Object.keys(DB.achievements).length} / ${ACHIEVEMENTS.length}</div></div>
+      <div class="stat-grid">
+        <div class="stat-tile">
+          <div class="stat-tile-label">Nivel</div>
+          <div class="stat-tile-value">${lvlInfo.i} N${lvl}</div>
+          <div class="stat-tile-sub">${lvlInfo.n}</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">XP total</div>
+          <div class="stat-tile-value"><span class="ico">⚡</span>${DB.xp}</div>
+          <div class="stat-tile-sub">${lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} para N${lvl+1}` : 'Nivel máximo'}</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Racha</div>
+          <div class="stat-tile-value"><span class="ico">🔥</span>${DB.streak}</div>
+          <div class="stat-tile-sub">${DB.streak===1?'día':'días'} seguidos</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Logros</div>
+          <div class="stat-tile-value">🏅 ${Object.keys(DB.achievements).length}<span style="color:#8A8D91;font-weight:700">/${ACHIEVEMENTS.length}</span></div>
+          <div class="stat-tile-sub">desbloqueados</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Lecciones</div>
+          <div class="stat-tile-value">📚 ${DB.totalLessons}</div>
+          <div class="stat-tile-sub">completadas</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Perfectas</div>
+          <div class="stat-tile-value">💯 ${DB.perfectLessons}</div>
+          <div class="stat-tile-sub">sin errores</div>
+        </div>
       </div>
       <div class="section-title">Mantenimiento</div>
-      <button class="btn btn-secondary" style="margin-bottom:10px" onclick="if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer.')){resetAll()}">Resetear todo</button>
-      <div style="font-size:11px;color:#65676B;text-align:center;padding:20px 0;line-height:1.5">
+      <button class="btn btn-secondary" style="margin-bottom:10px" onclick="haptic(15);if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer.')){resetAll()}">Resetear todo</button>
+      <div style="font-size:11px;color:#8A8D91;text-align:center;padding:18px 0;line-height:1.55">
         Centro de Estudios Randall<br/>
-        v1.0 · Single-file PWA · localStorage<br/>
+        v1.0 · PWA · localStorage<br/>
         Tu progreso se guarda solo en este dispositivo.
       </div>
     </div>
@@ -1992,12 +2292,14 @@ function navTo(view){
 }
 
 function openCourse(id){
+  haptic(HAPTIC.tap);
   CURRENT.courseId = id;
   VIEW = 'course';
   render();
 }
 
 function openDay(id){
+  haptic(HAPTIC.tap);
   CURRENT.dayId = id;
   VIEW = 'day';
   render();
@@ -2008,6 +2310,7 @@ function openLesson(id){
     showToast('Sin corazones · espera regeneración o repasa flashcards',3000);
     return;
   }
+  haptic(HAPTIC.tap);
   CURRENT.lessonId = id;
   LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[]};
   MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:new Set(), errors:0, wrongL:null, wrongR:null};
@@ -2019,6 +2322,7 @@ function openLesson(id){
 }
 
 function openFlashcards(lessonId){
+  haptic(HAPTIC.tap);
   CURRENT.lessonId = lessonId;
   FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
   VIEW = 'flashcards';
@@ -2044,6 +2348,7 @@ function exitLesson(){
 }
 
 function selectOption(i, isMulti){
+  haptic(HAPTIC.select);
   if(!LESSON_STATE.tempSelected) LESSON_STATE.tempSelected = [];
   if(isMulti){
     const idx = LESSON_STATE.tempSelected.indexOf(i);
@@ -2069,12 +2374,16 @@ function submitAnswer(){
   LESSON_STATE.answers[LESSON_STATE.cardIdx] = {selected:[...LESSON_STATE.tempSelected], correct};
   if(!correct){
     LESSON_STATE.errors += 1;
+    haptic(HAPTIC.wrong);
     if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+  } else {
+    haptic(HAPTIC.correct);
   }
   render();
 }
 
 function nextCard(){
+  haptic(HAPTIC.tap);
   const course = COURSES[CURRENT.courseId];
   const day = course?.days.find(d => d.id === CURRENT.dayId);
   const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
@@ -2097,6 +2406,7 @@ function finishLesson(){
   markLessonComplete(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, perfect);
   updateStreak();
   addXP(xp);
+  haptic(HAPTIC.complete);
   if(perfect) launchConfetti();
   LESSON_STATE.completed = true;
   VIEW = 'lesson_complete';
@@ -2110,11 +2420,13 @@ function finishLessonReturn(){
 }
 
 function flipFlash(){
+  haptic(HAPTIC.tap);
   FLASH_STATE.flipped = !FLASH_STATE.flipped;
   render();
 }
 
 function rateFlash(rating){
+  haptic(rating === 'good' ? HAPTIC.correct : rating === 'hard' ? HAPTIC.select : HAPTIC.submit);
   const card = FLASH_STATE.deck[FLASH_STATE.idx];
   if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {good:0, hard:0, fail:0};
   DB.flashcardStats[card.q][rating] += 1;
@@ -2162,6 +2474,7 @@ function showNextLvlUp(){
   document.getElementById('lu-num').textContent = lvl;
   document.getElementById('lu-name').textContent = info.n;
   document.getElementById('lvlup-overlay').classList.add('show');
+  haptic(HAPTIC.levelUp);
   launchConfetti();
 }
 function closeLvlUp(){
@@ -2177,6 +2490,7 @@ function showNextAch(){
   document.getElementById('ach-name').textContent = ach.n;
   document.getElementById('ach-desc').textContent = ach.desc;
   document.getElementById('ach-overlay').classList.add('show');
+  haptic(HAPTIC.achievement);
 }
 function closeAchOverlay(){
   document.getElementById('ach-overlay').classList.remove('show');
