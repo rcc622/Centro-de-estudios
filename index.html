@@ -201,7 +201,7 @@ body{display:flex;flex-direction:column;height:100dvh}
 .empty{text-align:center;padding:40px 20px;color:#65676B}
 .empty-ico{font-size:48px;margin-bottom:10px}
 .divider{height:1px;background:#E4E6EB;margin:18px 0}
-.heart-empty{filter:grayscale(1);opacity:.4}
+.stat{font-variant-numeric:tabular-nums}
 
 /* SECCIONES (banda verde Duolingo) */
 .section-band{background:linear-gradient(90deg,#42B883,#2D8F66);color:#fff;padding:14px 16px;border-radius:14px;margin:24px 0 16px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 12px rgba(66,184,131,.18)}
@@ -982,7 +982,7 @@ function renderHeader(){
   const nextXP = nextLevelXP(lvl);
   const prevXP = lvl > 1 ? LEVELS[lvl-1].xp : 0;
   const pct = nextXP > prevXP ? Math.min(100, Math.round((DB.xp - prevXP)/(nextXP - prevXP)*100)) : 100;
-  const heartsHtml = Array.from({length:MAX_HEARTS},(_,i) => i < DB.hearts ? '❤️' : '<span class="heart-empty">❤️</span>').join('');
+  const heartsHtml = `<span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}`;
   return `
     <div class="hdr" id="hdr">
       <div class="hdr-top">
@@ -1395,7 +1395,7 @@ function renderLesson(){
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
-        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+        <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
       </div>
     </div>
     <div class="scroll">
@@ -1486,7 +1486,7 @@ function renderLessonMatch(course, day, lesson){
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
-        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+        <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
       </div>
     </div>
     <div class="scroll">
@@ -1589,7 +1589,7 @@ function renderLessonOrder(course, day, lesson){
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${submitted&&correct?100:50}%"></div></div>
         </div>
-        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+        <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
       </div>
     </div>
     <div class="scroll">
@@ -1790,7 +1790,7 @@ function renderLessonLightning(course, day, lesson){
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
-        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+        <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
       </div>
     </div>
     <div class="scroll">
