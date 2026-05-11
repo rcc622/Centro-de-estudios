@@ -414,6 +414,63 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .flash-a{font-size:15px;line-height:1.55}
 .flash-hint{font-size:10.5px;color:#8A8D91;letter-spacing:.4px;text-transform:uppercase;font-weight:700}
 
+/* ----- LOGROS view: niveles + tracking ----- */
+.level-current{background:linear-gradient(135deg,#1877F2,#0E5BC4);color:#fff;border-radius:20px;padding:18px;margin-bottom:18px;box-shadow:0 6px 18px rgba(24,119,242,.24);position:relative;overflow:hidden}
+.level-current::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;background:rgba(255,255,255,.08);border-radius:50%}
+.level-current .lc-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;opacity:.85;margin-bottom:6px;position:relative;z-index:1}
+.level-current .lc-row{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+.level-current .lc-ico{font-size:44px;line-height:1}
+.level-current .lc-info{flex:1;min-width:0}
+.level-current .lc-name{font-size:20px;font-weight:800;margin-bottom:2px}
+.level-current .lc-meta{font-size:12.5px;opacity:.9}
+.level-current .lc-progress{margin-top:14px;height:8px;background:rgba(255,255,255,.22);border-radius:99px;overflow:hidden;position:relative;z-index:1}
+.level-current .lc-progress-bar{height:100%;background:#fff;border-radius:99px}
+
+.level-list{background:#fff;border:1px solid #E4E6EB;border-radius:14px;overflow:hidden;margin-bottom:18px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.level-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid #EEF0F3}
+.level-row:last-child{border-bottom:none}
+.level-row .lr-ico{font-size:22px;width:32px;text-align:center;flex-shrink:0}
+.level-row .lr-info{flex:1;min-width:0}
+.level-row .lr-name{font-size:14.5px;font-weight:700;color:#1C1E21;line-height:1.2}
+.level-row .lr-xp{font-size:11.5px;color:#8A8D91;font-weight:600;margin-top:2px}
+.level-row .lr-status{font-size:11.5px;font-weight:800;color:#1877F2}
+.level-row.locked .lr-name,.level-row.locked .lr-ico{color:#B0B3B8;opacity:.55}
+.level-row.locked .lr-xp{color:#B0B3B8}
+.level-row.current{background:linear-gradient(90deg,rgba(24,119,242,.06),rgba(24,119,242,0))}
+.level-row.current .lr-name{color:#1877F2;font-weight:800}
+.level-row.achieved .lr-name{color:#1C1E21}
+.level-row.achieved .lr-status{color:#42B883}
+
+/* Heatmap semanal */
+.week-chart{background:#fff;border:1px solid #E4E6EB;border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.week-chart-title{font-size:11px;font-weight:800;color:#8A8D91;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end}
+.week-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:6px}
+.week-bar-track{width:100%;height:60px;background:#F0F2F5;border-radius:6px;display:flex;align-items:flex-end;overflow:hidden;position:relative}
+.week-bar-fill{width:100%;background:linear-gradient(180deg,#42B883,#2D8F66);border-radius:6px;transition:height .4s ease}
+.week-bar-fill.today{background:linear-gradient(180deg,#1877F2,#0E5BC4)}
+.week-bar-fill.empty{background:#D9DCE0;height:6px !important}
+.week-day{font-size:11px;font-weight:800;color:#8A8D91;letter-spacing:.3px}
+.week-day.today{color:#1877F2}
+.week-val{font-size:10.5px;font-weight:800;color:#1C1E21;margin-top:-2px}
+
+/* Heatmap anual estilo GitHub */
+.year-heatmap{background:#fff;border:1px solid #E4E6EB;border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.year-heatmap-title{font-size:11px;font-weight:800;color:#8A8D91;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.year-grid{display:grid;grid-template-columns:repeat(13,1fr);gap:3px}
+.year-cell{aspect-ratio:1;background:#EEF0F3;border-radius:3px;min-height:14px}
+.year-cell.l1{background:#C4E5D6}
+.year-cell.l2{background:#7BD8A8}
+.year-cell.l3{background:#42B883}
+.year-cell.l4{background:#2D8F66}
+.year-cell.today{outline:2px solid #1877F2;outline-offset:1px}
+.year-legend{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:10px;font-size:10.5px;color:#8A8D91;font-weight:700}
+.year-legend .yl-sq{width:11px;height:11px;border-radius:2px}
+
+/* Achievement con ??? para hidden */
+.abadge.hidden-locked{background:#F5F7FA}
+.abadge.hidden-locked .abadge-ico{opacity:.5}
+
 /* ----- PRACTICA HUB (Flash tab) ----- */
 .practice-row{display:flex;align-items:center;background:#fff;border:1px solid #E4E6EB;border-radius:14px;padding:14px;gap:14px;margin-bottom:10px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .15s;user-select:none;-webkit-user-select:none;position:relative}
 .practice-row:active{transform:scale(.98)}
@@ -481,18 +538,37 @@ const LEVELS = [
 ];
 
 const ACHIEVEMENTS = [
+  // Visibles desde el inicio (te dicen qué hacer)
   {id:'first_lesson',  i:'📚', n:'Primera Lección',     desc:'Completa tu primera lección'},
+  {id:'perfect_lesson',i:'💯', n:'Perfeccionista',      desc:'Completa una lección sin errores'},
+  {id:'five_perfect',  i:'💎', n:'Cinco Brillantes',    desc:'5 lecciones perfectas'},
+  {id:'ten_perfect',   i:'✨', n:'Diez Diamantes',      desc:'10 lecciones perfectas'},
   {id:'streak_3',      i:'🔥', n:'Racha de 3',          desc:'Estudia 3 días seguidos'},
   {id:'streak_7',      i:'🔥', n:'Semana Completa',     desc:'7 días consecutivos'},
-  {id:'perfect_lesson',i:'💯', n:'Perfeccionista',      desc:'Completa una lección sin errores'},
-  {id:'level_3',       i:'⭐', n:'Nivel 3',             desc:'Alcanza el nivel Estudiante'},
-  {id:'level_5',       i:'🌟', n:'Nivel 5',             desc:'Alcanza el nivel Competente'},
+  {id:'streak_14',     i:'🔥', n:'Quincena Imparable',  desc:'14 días consecutivos'},
+  {id:'streak_30',     i:'🔥', n:'Mes de Foco',         desc:'30 días consecutivos'},
+  {id:'level_3',       i:'🎓', n:'Estudiante',          desc:'Alcanza el nivel 3'},
+  {id:'level_5',       i:'💪', n:'Competente',          desc:'Alcanza el nivel 5'},
+  {id:'level_7',       i:'🏆', n:'Experto',             desc:'Alcanza el nivel 7'},
   {id:'level_10',      i:'👑', n:'Leyenda',             desc:'Alcanza el nivel máximo'},
+  {id:'thousand_xp',   i:'💰', n:'Mil XP',              desc:'Acumula 1.000 XP'},
+  {id:'two_thousand',  i:'🏦', n:'Dos Mil',             desc:'Acumula 2.000 XP'},
   {id:'all_flashcards',i:'🎴', n:'Memoria de Acero',    desc:'Domina 50 flashcards'},
   {id:'day_complete',  i:'✅', n:'Día Conquistado',     desc:'Completa todas las lecciones de un día'},
-  {id:'meta_complete', i:'🎯', n:'Meta Master',         desc:'Termina los 7 días de Meta 410-101'},
-  {id:'mock_pass',     i:'🏁', n:'Listo para Examen',   desc:'Pasa el simulacro con 80%+'},
-  {id:'no_hearts',     i:'💔', n:'Sin Vidas',           desc:'Pierde todos tus corazones (irónicamente)'}
+  {id:'perfect_day',   i:'🏅', n:'Día Perfecto',        desc:'Completa un día sin perder ningún corazón'},
+  {id:'diagnostic_pass',i:'🎯',n:'Atajo Maestro',       desc:'Pasa un diagnóstico con ≥80%'},
+  {id:'unit_quiz_pass',i:'📝', n:'Quiz Aprobado',       desc:'Pasa el quiz de una unidad'},
+  {id:'meta_complete', i:'🚀', n:'Meta Master',         desc:'Termina los 7 días de Meta 410-101'},
+  {id:'mock_pass',     i:'🏁', n:'Listo para Examen',   desc:'Pasa el simulacro con ≥80%'},
+  // Sorpresa (hidden:true → aparecen como ??? hasta desbloquearse)
+  {id:'early_bird',    i:'🌅', n:'Madrugador',          desc:'Estudia antes de las 7 AM', hidden:true},
+  {id:'night_owl',     i:'🦉', n:'Búho Nocturno',       desc:'Estudia después de las 11 PM', hidden:true},
+  {id:'weekend_warrior',i:'⚔️',n:'Guerrero del Finde',  desc:'Estudia sábado Y domingo en la misma semana', hidden:true},
+  {id:'comeback_kid',  i:'💪', n:'Vuelve por Más',      desc:'Regresa tras 3+ días sin estudiar', hidden:true},
+  {id:'error_redeemer',i:'🔁', n:'Redentor',            desc:'Acierta una pregunta que antes habías fallado', hidden:true},
+  {id:'iron_will',     i:'🛡️',n:'Voluntad de Hierro',  desc:'Termina una lección con 5+ errores sin abandonar', hidden:true},
+  {id:'no_hearts',     i:'💔', n:'Sin Vidas',           desc:'Pierde todos tus corazones (irónicamente)', hidden:true},
+  {id:'speedrun',      i:'⚡', n:'Velocista',            desc:'Completa una lección en menos de 3 minutos', hidden:true}
 ];
 
 // Metadata de secciones pedagógicas (A teoría → B práctica → C aplicación → D validación)
@@ -669,7 +745,9 @@ let DB = {
   totalLessons: 0,
   perfectLessons: 0,
   quizProgress: {}, // {courseId: {dayId: {diagnosticPassed: bool, unitQuizPassed: bool, bestScore: n, attempts: n}}}
-  wrongAnswers: {} // {key: {courseId, dayId, lessonId, q, a, explanation, wrongCount, lastWrong}}
+  wrongAnswers: {}, // {key: {courseId, dayId, lessonId, q, a, explanation, wrongCount, lastWrong}}
+  activityLog: {}, // {'YYYY-MM-DD': {xp:n, lessons:n, perfectLessons:n, errors:n, mins:n}}
+  studiedWeekdays: {} // {'YYYY-WW': {0:bool,1:bool,...,6:bool}} para weekend_warrior y constancia
 };
 let VIEW = 'home';
 let CURRENT = {courseId:null, dayId:null, lessonId:null, quizKind:null};
@@ -770,13 +848,15 @@ function addXP(amount){
   if(lvlAfter > lvlBefore){
     for(let l = lvlBefore+1; l <= lvlAfter; l++){
       _luq.push(l);
-      // achievement check
       if(l===3) earnAch('level_3');
       if(l===5) earnAch('level_5');
+      if(l===7) earnAch('level_7');
       if(l===10) earnAch('level_10');
     }
     setTimeout(showNextLvlUp, 400);
   }
+  if(DB.xp >= 1000) earnAch('thousand_xp');
+  if(DB.xp >= 2000) earnAch('two_thousand');
   save();
 }
 
@@ -788,12 +868,52 @@ function updateStreak(){
   if(DB.lastStudyDate === yStr){
     DB.streak += 1;
   }else if(DB.lastStudyDate !== today){
+    // Check comeback: si la última fecha fue hace >= 3 días
+    if(DB.lastStudyDate){
+      const last = new Date(DB.lastStudyDate);
+      const now = new Date(today);
+      const diff = Math.round((now - last) / 86400000);
+      if(diff >= 3) earnAch('comeback_kid');
+    }
     DB.streak = 1;
   }
   DB.lastStudyDate = today;
   if(DB.streak >= 3) earnAch('streak_3');
   if(DB.streak >= 7) earnAch('streak_7');
+  if(DB.streak >= 14) earnAch('streak_14');
+  if(DB.streak >= 30) earnAch('streak_30');
+
+  // Weekend warrior: registra qué día de la semana estudió y chequea sat+sun
+  const d = new Date(today);
+  const dow = d.getDay(); // 0=Sun ... 6=Sat
+  const yr = d.getFullYear();
+  const onejan = new Date(yr,0,1);
+  const week = Math.ceil((((d - onejan) / 86400000) + onejan.getDay()+1)/7);
+  const wkKey = yr + '-' + String(week).padStart(2,'0');
+  if(!DB.studiedWeekdays) DB.studiedWeekdays = {};
+  if(!DB.studiedWeekdays[wkKey]) DB.studiedWeekdays[wkKey] = {};
+  DB.studiedWeekdays[wkKey][dow] = true;
+  if(DB.studiedWeekdays[wkKey][0] && DB.studiedWeekdays[wkKey][6]) earnAch('weekend_warrior');
+
   save();
+}
+
+// Registra actividad del día (XP ganado, lecciones, errores, minutos).
+// Usado por el heatmap anual y el grid semanal.
+function recordActivity(opts){
+  const day = todayStr();
+  if(!DB.activityLog) DB.activityLog = {};
+  if(!DB.activityLog[day]) DB.activityLog[day] = {xp:0, lessons:0, perfectLessons:0, errors:0, mins:0};
+  if(opts.xp) DB.activityLog[day].xp += opts.xp;
+  if(opts.lessons) DB.activityLog[day].lessons += opts.lessons;
+  if(opts.perfectLessons) DB.activityLog[day].perfectLessons += opts.perfectLessons;
+  if(opts.errors) DB.activityLog[day].errors += opts.errors;
+  if(opts.mins) DB.activityLog[day].mins += opts.mins;
+
+  // Logros de horario
+  const h = new Date().getHours();
+  if(h < 7) earnAch('early_bird');
+  if(h >= 23 || h < 5) earnAch('night_owl');
 }
 
 function earnAch(id){
@@ -932,7 +1052,8 @@ function markQuizResult(courseId, dayId, kind, score, passingScore){
   const passed = score >= passingScore;
   if(kind === 'diagnostic' && passed){
     qp.diagnosticPassed = true;
-    // Marcar todas las lecciones del día como completadas (skip)
+    if(score === 100) earnAch('diagnostic_pass');
+    else if(passed) earnAch('diagnostic_pass');
     const day = COURSES[courseId]?.days.find(d => d.id === dayId);
     if(day){
       day.lessons.forEach(l => markLessonComplete(courseId, dayId, l.id, false));
@@ -940,6 +1061,7 @@ function markQuizResult(courseId, dayId, kind, score, passingScore){
   }
   if(kind === 'unit-quiz' && passed){
     qp.unitQuizPassed = true;
+    earnAch('unit_quiz_pass');
     const dayProg = getDayProgress(courseId, dayId);
     if(dayProg.done === dayProg.total) earnAch('day_complete');
   }
@@ -2319,20 +2441,151 @@ function renderPracticeHub(){
 
 function renderAchievements(){
   const earnedCount = Object.keys(DB.achievements).length;
+  const lvl = calcLevel(DB.xp);
+  const lvlInfo = LEVELS[lvl-1];
+  const nxt = nextLevelXP(lvl);
+  const prevXP = lvl > 1 ? LEVELS[lvl-1].xp : 0;
+  const pctToNext = nxt > prevXP ? Math.min(100, Math.round((DB.xp - prevXP)/(nxt - prevXP)*100)) : 100;
+
+  // Build week chart data — domingo a sábado de la semana actual
+  const today = new Date();
+  const dow = today.getDay(); // 0=Dom
+  const sun = new Date(today); sun.setDate(today.getDate() - dow);
+  const weekDays = [];
+  for(let i = 0; i < 7; i++){
+    const d = new Date(sun); d.setDate(sun.getDate() + i);
+    const ds = d.toISOString().slice(0,10);
+    const log = DB.activityLog?.[ds];
+    weekDays.push({
+      date: ds,
+      label: ['D','L','M','X','J','V','S'][i],
+      xp: log?.xp || 0,
+      lessons: log?.lessons || 0,
+      isToday: ds === todayStr(),
+      isFuture: d > today
+    });
+  }
+  const maxWeekXP = Math.max(...weekDays.map(d => d.xp), 30);
+  const totalWeekXP = weekDays.reduce((a,d) => a + d.xp, 0);
+  const totalWeekLessons = weekDays.reduce((a,d) => a + d.lessons, 0);
+
+  // Build year heatmap — últimos 13 meses
+  const yearCells = [];
+  const start = new Date(today); start.setDate(today.getDate() - 13*30);
+  for(let i = 0; i < 13; i++){
+    const month = new Date(start); month.setMonth(start.getMonth() + i);
+    const yr = month.getFullYear();
+    const mo = month.getMonth();
+    const lastDay = new Date(yr, mo+1, 0).getDate();
+    let monthXP = 0, monthLessons = 0;
+    for(let d = 1; d <= lastDay; d++){
+      const ds = `${yr}-${String(mo+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const log = DB.activityLog?.[ds];
+      if(log){ monthXP += log.xp || 0; monthLessons += log.lessons || 0; }
+    }
+    let level = 0;
+    if(monthLessons >= 1) level = 1;
+    if(monthLessons >= 5) level = 2;
+    if(monthLessons >= 15) level = 3;
+    if(monthLessons >= 30) level = 4;
+    yearCells.push({
+      label: ['E','F','M','A','M','J','J','A','S','O','N','D'][mo],
+      level,
+      isCurrent: yr === today.getFullYear() && mo === today.getMonth(),
+      lessons: monthLessons
+    });
+  }
+
   return `
     ${renderHeader()}
     <div class="scroll">
       <div class="welcome">
         <h1>Logros</h1>
-        <p>${earnedCount} de ${ACHIEVEMENTS.length} desbloqueados</p>
+        <p>${earnedCount} de ${ACHIEVEMENTS.length} desbloqueados · Nivel ${lvl}</p>
       </div>
+
+      <div class="level-current">
+        <div class="lc-eyebrow">Tu nivel actual</div>
+        <div class="lc-row">
+          <div class="lc-ico">${lvlInfo.i}</div>
+          <div class="lc-info">
+            <div class="lc-name">N${lvl} · ${lvlInfo.n}</div>
+            <div class="lc-meta">${lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} XP para N${lvl+1}` : '¡Nivel máximo alcanzado!'}</div>
+          </div>
+        </div>
+        <div class="lc-progress"><div class="lc-progress-bar" style="width:${pctToNext}%"></div></div>
+      </div>
+
+      <div class="section-title">Todos los niveles</div>
+      <div class="level-list">
+        ${LEVELS.map((lv, idx) => {
+          const lvlNum = idx + 1;
+          const achieved = lvl > lvlNum;
+          const current = lvl === lvlNum;
+          const cls = current ? 'current' : (achieved ? 'achieved' : 'locked');
+          const status = current ? '← aquí' : (achieved ? '✓' : '');
+          return `
+            <div class="level-row ${cls}">
+              <div class="lr-ico">${achieved || current ? lv.i : '🔒'}</div>
+              <div class="lr-info">
+                <div class="lr-name">${lvlNum}. ${lv.n}</div>
+                <div class="lr-xp">${lv.xp.toLocaleString()} XP</div>
+              </div>
+              <div class="lr-status">${status}</div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+
+      <div class="section-title">Esta semana</div>
+      <div class="week-chart">
+        <div class="week-chart-title">${totalWeekLessons} ${totalWeekLessons===1?'lección':'lecciones'} · ${totalWeekXP} XP</div>
+        <div class="week-grid">
+          ${weekDays.map(d => {
+            const pct = d.xp > 0 ? Math.max(8, Math.round(d.xp/maxWeekXP*100)) : 0;
+            const fillCls = d.xp === 0 ? 'empty' : (d.isToday ? 'today' : '');
+            return `
+              <div class="week-bar-wrap">
+                <div class="week-val">${d.xp || ''}</div>
+                <div class="week-bar-track"><div class="week-bar-fill ${fillCls}" style="height:${pct}%"></div></div>
+                <div class="week-day ${d.isToday?'today':''}">${d.label}</div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
+      <div class="section-title">Últimos 13 meses</div>
+      <div class="year-heatmap">
+        <div class="year-heatmap-title">Mapa anual de estudio</div>
+        <div class="year-grid">
+          ${yearCells.map(c => `
+            <div class="year-cell ${c.level>0?'l'+c.level:''} ${c.isCurrent?'today':''}" title="${c.lessons} lecciones"></div>
+          `).join('')}
+        </div>
+        <div class="year-legend">
+          <span>Menos</span>
+          <div class="yl-sq" style="background:#EEF0F3"></div>
+          <div class="yl-sq" style="background:#C4E5D6"></div>
+          <div class="yl-sq" style="background:#7BD8A8"></div>
+          <div class="yl-sq" style="background:#42B883"></div>
+          <div class="yl-sq" style="background:#2D8F66"></div>
+          <span>Más</span>
+        </div>
+      </div>
+
+      <div class="section-title">Logros (${earnedCount}/${ACHIEVEMENTS.length})</div>
       <div class="ach-grid">
         ${ACHIEVEMENTS.map(a => {
           const earned = !!DB.achievements[a.id];
-          return `<div class="abadge ${earned?'earned':'locked'}" onclick="haptic(6)">
-            <div class="abadge-ico">${earned?a.i:'🔒'}</div>
-            <div>${earned?a.n:'???'}</div>
-            <div class="abadge-desc">${earned?a.desc:'Logro bloqueado'}</div>
+          const isHiddenLocked = !earned && a.hidden;
+          const showName = earned ? a.n : (a.hidden ? '???' : a.n);
+          const showDesc = earned ? a.desc : (a.hidden ? 'Logro sorpresa · sigue jugando' : a.desc);
+          const showIco = earned ? a.i : (a.hidden ? '❓' : '🔒');
+          return `<div class="abadge ${earned?'earned':(isHiddenLocked?'hidden-locked':'locked')}" onclick="haptic(6)">
+            <div class="abadge-ico">${showIco}</div>
+            <div>${showName}</div>
+            <div class="abadge-desc">${showDesc}</div>
           </div>`;
         }).join('')}
       </div>
@@ -2345,6 +2598,7 @@ function renderConfig(){
   const lvl = calcLevel(DB.xp);
   const lvlInfo = LEVELS[lvl-1];
   const nxt = nextLevelXP(lvl);
+  const xpMeta = lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} para N${lvl+1}` : 'Nivel máximo alcanzado';
   return `
     ${renderHeader()}
     <div class="scroll">
@@ -2352,38 +2606,61 @@ function renderConfig(){
         <h1>Tu progreso</h1>
         <p>Estadísticas y mantenimiento</p>
       </div>
-      <div class="stat-grid">
-        <div class="stat-tile">
-          <div class="stat-tile-label">Nivel</div>
-          <div class="stat-tile-value">${lvlInfo.i} N${lvl}</div>
-          <div class="stat-tile-sub">${lvlInfo.n}</div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">${lvlInfo.i}</div>
+        <div class="pr-info">
+          <div class="pr-title">Nivel — ${lvlInfo.n}</div>
+          <div class="pr-meta">${xpMeta}</div>
         </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">XP total</div>
-          <div class="stat-tile-value"><span class="ico">⚡</span>${DB.xp}</div>
-          <div class="stat-tile-sub">${lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} para N${lvl+1}` : 'Nivel máximo'}</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Racha</div>
-          <div class="stat-tile-value"><span class="ico">🔥</span>${DB.streak}</div>
-          <div class="stat-tile-sub">${DB.streak===1?'día':'días'} seguidos</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Logros</div>
-          <div class="stat-tile-value">🏅 ${Object.keys(DB.achievements).length}<span style="color:#8A8D91;font-weight:700">/${ACHIEVEMENTS.length}</span></div>
-          <div class="stat-tile-sub">desbloqueados</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Lecciones</div>
-          <div class="stat-tile-value">📚 ${DB.totalLessons}</div>
-          <div class="stat-tile-sub">completadas</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Perfectas</div>
-          <div class="stat-tile-value">💯 ${DB.perfectLessons}</div>
-          <div class="stat-tile-sub">sin errores</div>
-        </div>
+        <div style="font-size:22px;font-weight:800;color:#42B883;flex-shrink:0">N${lvl}</div>
       </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">⚡</div>
+        <div class="pr-info">
+          <div class="pr-title">XP total</div>
+          <div class="pr-meta">Puntos acumulados</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#1877F2;flex-shrink:0">${DB.xp}</div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔥</div>
+        <div class="pr-info">
+          <div class="pr-title">Racha actual</div>
+          <div class="pr-meta">${DB.streak===1?'día consecutivo':'días consecutivos'} estudiando</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#FF6B35;flex-shrink:0">${DB.streak}</div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#FFD700,#B8950A)">🏅</div>
+        <div class="pr-info">
+          <div class="pr-title">Logros</div>
+          <div class="pr-meta">Insignias desbloqueadas</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#B8950A;flex-shrink:0">${Object.keys(DB.achievements).length}<span style="color:#B0B3B8;font-weight:700;font-size:15px">/${ACHIEVEMENTS.length}</span></div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">📚</div>
+        <div class="pr-info">
+          <div class="pr-title">Lecciones completadas</div>
+          <div class="pr-meta">Total en todos los cursos</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#9B59B6;flex-shrink:0">${DB.totalLessons}</div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">💯</div>
+        <div class="pr-info">
+          <div class="pr-title">Lecciones perfectas</div>
+          <div class="pr-meta">Sin errores · 0 hearts perdidos</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#E74C3C;flex-shrink:0">${DB.perfectLessons}</div>
+      </div>
+
       <div class="section-title">Mantenimiento</div>
       <button class="btn btn-secondary" style="margin-bottom:10px" onclick="haptic(15);if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer.')){resetAll()}">Resetear todo</button>
       <div style="font-size:11px;color:#8A8D91;text-align:center;padding:18px 0;line-height:1.55">
@@ -2492,6 +2769,7 @@ function clearWrong(card, courseId, dayId, lessonId){
   if(!card || !card.q || !DB.wrongAnswers) return;
   const key = (courseId+'|'+dayId+'|'+lessonId+'|'+card.q).slice(0, 200);
   if(DB.wrongAnswers[key]){
+    earnAch('error_redeemer');
     delete DB.wrongAnswers[key];
     save();
   }
@@ -2518,7 +2796,7 @@ function openLesson(id){
   }
   haptic(HAPTIC.tap);
   CURRENT.lessonId = id;
-  LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[]};
+  LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[], started: now()};
   MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:new Set(), errors:0, wrongL:null, wrongR:null};
   ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
   stopLightningTimer();
@@ -2613,9 +2891,31 @@ function nextCard(){
 function finishLesson(){
   const perfect = LESSON_STATE.errors === 0;
   const xp = perfect ? 30 : Math.max(10, 25 - LESSON_STATE.errors*3);
+  const duration = LESSON_STATE.started ? Math.round((now() - LESSON_STATE.started) / 60000) : 0;
+
   markLessonComplete(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, perfect);
   updateStreak();
   addXP(xp);
+  recordActivity({xp, lessons:1, perfectLessons: perfect?1:0, errors: LESSON_STATE.errors, mins: duration});
+
+  // Logros de cantidad de lecciones perfectas
+  if(DB.perfectLessons >= 5) earnAch('five_perfect');
+  if(DB.perfectLessons >= 10) earnAch('ten_perfect');
+
+  // Iron will: 5+ errores en una lección y la terminó
+  if(LESSON_STATE.errors >= 5) earnAch('iron_will');
+
+  // Speedrun: lección perfecta en < 3 minutos
+  if(perfect && duration > 0 && duration < 3) earnAch('speedrun');
+
+  // Día Perfecto: todas las lecciones del día completadas Y todas perfectas
+  const dayProg = getDayProgress(CURRENT.courseId, CURRENT.dayId);
+  if(dayProg.done === dayProg.total){
+    const dayLessons = DB.progress[CURRENT.courseId]?.[CURRENT.dayId] || {};
+    const allPerfect = Object.values(dayLessons).every(l => l.completed && l.perfect);
+    if(allPerfect) earnAch('perfect_day');
+  }
+
   haptic(HAPTIC.complete);
   if(perfect) launchConfetti();
   LESSON_STATE.completed = true;
