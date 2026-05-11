@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#1877F2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Centro Estudios">
+<title>Centro de Estudios Randall</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;color:#1C1E21;background:#F0F2F5}
+body{display:flex;flex-direction:column;height:100dvh}
+#app{display:flex;flex-direction:column;height:100dvh;overflow:hidden;max-width:520px;margin:0 auto;background:#fff;position:relative}
+
+/* HEADER */
+.hdr{padding:max(36px,env(safe-area-inset-top)) 16px 12px;background:#fff;border-bottom:1px solid #E4E6EB;flex-shrink:0;position:relative;z-index:5}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hdr-stats{display:flex;align-items:center;gap:12px;flex:1}
+.stat{display:flex;align-items:center;gap:5px;font-weight:700;font-size:15px}
+.stat .ico{font-size:18px;line-height:1}
+.stat-streak{color:#FF6B35}
+.stat-hearts{color:#E74C3C}
+.stat-xp{color:#1877F2}
+.lvl-badge{background:linear-gradient(135deg,#1877F2,#42B883);color:#fff;font-weight:800;font-size:12px;padding:5px 10px;border-radius:999px;letter-spacing:.3px}
+.progress-wrap{margin-top:10px;height:8px;background:#E4E6EB;border-radius:99px;overflow:hidden;position:relative}
+.progress-bar{height:100%;background:linear-gradient(90deg,#1877F2,#42B883);border-radius:99px;transition:width .4s ease}
+.progress-label{font-size:11px;color:#65676B;margin-top:4px;display:flex;justify-content:space-between}
+
+/* SCROLL */
+.scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:16px}
+.scroll::-webkit-scrollbar{display:none}
+
+/* HOME view */
+.welcome{margin-bottom:18px}
+.welcome h1{font-size:22px;font-weight:800;margin-bottom:4px}
+.welcome p{font-size:14px;color:#65676B}
+.section-title{font-size:13px;font-weight:800;color:#65676B;text-transform:uppercase;letter-spacing:.8px;margin:18px 0 10px}
+
+.course{background:#fff;border:2px solid #E4E6EB;border-radius:16px;padding:14px;margin-bottom:12px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
+.course:active{transform:scale(.98)}
+.course.locked{opacity:.5;cursor:not-allowed}
+.course-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.course-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(135deg,#1877F2,#42B883);color:#fff;flex-shrink:0}
+.course-info{flex:1;min-width:0}
+.course-title{font-weight:800;font-size:15px;margin-bottom:2px}
+.course-meta{font-size:12px;color:#65676B}
+.course-progress{height:6px;background:#E4E6EB;border-radius:99px;overflow:hidden}
+.course-progress-bar{height:100%;background:linear-gradient(90deg,#1877F2,#42B883);border-radius:99px;transition:width .4s}
+
+/* DAYS list */
+.day-card{background:#fff;border:2px solid #E4E6EB;border-radius:14px;padding:14px;margin-bottom:10px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none}
+.day-card:active{transform:scale(.98)}
+.day-card.locked{opacity:.5;background:#F0F2F5}
+.day-card.complete{border-color:#42B883;background:#F0FFF7}
+.day-card.current{border-color:#1877F2;box-shadow:0 4px 12px rgba(24,119,242,.15)}
+.day-num{width:42px;height:42px;border-radius:50%;background:#E7F0FE;color:#1877F2;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.day-card.complete .day-num{background:#42B883;color:#fff}
+.day-card.current .day-num{background:#1877F2;color:#fff}
+.day-info{flex:1;min-width:0}
+.day-title{font-weight:700;font-size:14px;margin-bottom:2px}
+.day-sub{font-size:12px;color:#65676B}
+.day-status{font-size:18px}
+
+/* LESSON */
+.lesson-header{margin-bottom:18px;padding:0 4px}
+.lesson-num{font-size:12px;color:#65676B;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.lesson-title{font-size:20px;font-weight:800;margin-top:4px;line-height:1.25}
+
+.card{background:#fff;border:2px solid #E4E6EB;border-radius:16px;padding:18px;margin-bottom:14px}
+.card-concept{background:linear-gradient(135deg,#F0F8FF 0%,#fff 100%);border-color:#B3D7F5}
+.card-h2{font-size:17px;font-weight:800;color:#1877F2;margin-bottom:10px}
+.card-body{font-size:14.5px;line-height:1.55;color:#1C1E21}
+.card-body p{margin-bottom:10px}
+.card-body p:last-child{margin-bottom:0}
+.card-body strong{color:#1877F2}
+.card-body em{color:#42B883;font-style:normal;font-weight:600}
+
+.quote-box{background:#EBF5FF;border-left:4px solid #1877F2;padding:14px 16px;border-radius:8px;font-style:italic;color:#1877F2;font-size:14.5px;line-height:1.5;margin:12px 0}
+.warn-box{background:#FFF8E7;border-left:4px solid #E74C3C;padding:14px 16px;border-radius:8px;margin:12px 0}
+.warn-box .label{font-weight:800;color:#E74C3C;font-size:12px;letter-spacing:.5px;margin-bottom:6px}
+.tip-box{background:#F0FFF7;border-left:4px solid #42B883;padding:14px 16px;border-radius:8px;margin:12px 0}
+.tip-box .label{font-weight:800;color:#42B883;font-size:12px;letter-spacing:.5px;margin-bottom:6px}
+.info-box{background:#F5F7FA;border-left:4px solid #65676B;padding:14px 16px;border-radius:8px;margin:12px 0}
+
+.kv-table{width:100%;font-size:13.5px;margin-top:10px}
+.kv-table tr{border-bottom:1px solid #E4E6EB}
+.kv-table tr:last-child{border-bottom:none}
+.kv-table td{padding:10px 8px;vertical-align:top}
+.kv-table td:first-child{font-weight:700;color:#1877F2;width:38%}
+
+/* QUIZ cards */
+.quiz-card{background:#fff;border:2px solid #1877F2;border-radius:16px;padding:18px;margin-bottom:14px}
+.quiz-tag{font-size:11px;font-weight:800;color:#1877F2;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
+.quiz-q{font-size:15.5px;line-height:1.5;font-weight:600;margin-bottom:14px}
+.quiz-q .scenario{font-weight:400;color:#65676B;display:block;margin-bottom:8px;font-size:14px}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:2px solid #E4E6EB;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:all .15s;user-select:none;-webkit-user-select:none;font-size:14px;line-height:1.45}
+.opt:active{transform:scale(.99)}
+.opt:hover{border-color:#B3D7F5}
+.opt-letter{width:26px;height:26px;border-radius:50%;background:#E7F0FE;color:#1877F2;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.opt-text{flex:1;padding-top:3px}
+.opt.selected{border-color:#1877F2;background:#EBF5FF}
+.opt.selected .opt-letter{background:#1877F2;color:#fff}
+.opt.correct{border-color:#42B883;background:#F0FFF7}
+.opt.correct .opt-letter{background:#42B883;color:#fff}
+.opt.wrong{border-color:#E74C3C;background:#FFF1F0}
+.opt.wrong .opt-letter{background:#E74C3C;color:#fff}
+.opt.disabled{cursor:default;pointer-events:none}
+
+.quiz-feedback{margin-top:12px;padding:14px;border-radius:12px;font-size:13.5px;line-height:1.5;display:none}
+.quiz-feedback.show{display:block}
+.quiz-feedback.correct{background:#F0FFF7;border-left:4px solid #42B883;color:#1F6B4A}
+.quiz-feedback.wrong{background:#FFF1F0;border-left:4px solid #E74C3C;color:#A8332B}
+.quiz-feedback strong{display:block;margin-bottom:6px;font-size:14px}
+
+/* FLASHCARDS */
+.flash-wrap{perspective:1000px;margin-bottom:14px}
+.flash{background:#fff;border:2px solid #E4E6EB;border-radius:16px;padding:24px 20px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;transition:all .3s;user-select:none;-webkit-user-select:none;position:relative}
+.flash:active{transform:scale(.99)}
+.flash-tag{position:absolute;top:10px;right:14px;font-size:10px;color:#65676B;font-weight:700;letter-spacing:.5px}
+.flash-q{font-size:16.5px;font-weight:700;line-height:1.45;color:#1C1E21}
+.flash-a{font-size:14.5px;line-height:1.5;color:#1877F2;font-weight:600}
+.flash-hint{position:absolute;bottom:12px;font-size:11px;color:#65676B}
+.flash-rating{display:flex;gap:8px;margin-top:12px}
+.rate-btn{flex:1;padding:11px;border-radius:12px;border:2px solid;font-weight:700;font-size:13px;cursor:pointer;background:#fff;user-select:none;-webkit-user-select:none}
+.rate-btn:active{transform:scale(.97)}
+.rate-fail{border-color:#E74C3C;color:#E74C3C}
+.rate-hard{border-color:#FFA726;color:#FFA726}
+.rate-good{border-color:#42B883;color:#42B883}
+
+/* BUTTONS */
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:14px 16px;border-radius:14px;font-weight:800;font-size:15px;border:none;cursor:pointer;width:100%;user-select:none;-webkit-user-select:none;transition:all .15s;letter-spacing:.3px}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:linear-gradient(135deg,#1877F2,#42B883);color:#fff;box-shadow:0 4px 12px rgba(24,119,242,.25)}
+.btn-secondary{background:#fff;color:#1877F2;border:2px solid #1877F2}
+.btn-disabled{background:#E4E6EB;color:#90949C;cursor:not-allowed;box-shadow:none}
+.btn-success{background:linear-gradient(135deg,#42B883,#2D8F66);color:#fff}
+
+/* BOTTOM ACTIONS bar */
+.action-bar{padding:12px 16px max(16px,env(safe-area-inset-bottom));background:#fff;border-top:1px solid #E4E6EB;flex-shrink:0;display:flex;gap:10px}
+
+/* NAV */
+.bnav{display:flex;background:#fff;border-top:1px solid #E4E6EB;padding:6px 0 max(8px,env(safe-area-inset-bottom));flex-shrink:0}
+.nbtn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border:none;background:none;cursor:pointer;color:#65676B;padding:6px 4px}
+.nbtn.active{color:#1877F2}
+.nbtn .ico{font-size:20px;line-height:1}
+
+/* OVERLAYS */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
+.overlay.show{opacity:1;pointer-events:auto}
+.overlay-inner{background:#fff;border-radius:24px;padding:32px 24px;max-width:340px;width:100%;text-align:center;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes popIn{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
+.overlay h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.overlay p{font-size:14px;color:#65676B;margin-bottom:18px;line-height:1.5}
+.overlay-ico{font-size:64px;margin-bottom:12px;display:inline-block;animation:wiggle 1s ease infinite}
+@keyframes wiggle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+.lvl-num{font-size:42px;font-weight:900;color:#1877F2;margin:8px 0}
+.lvl-name{font-size:14px;color:#42B883;font-weight:700;margin-bottom:18px}
+
+/* CONFETTI */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:99;overflow:hidden;display:none}
+.particles.show{display:block}
+.particle{position:absolute;width:10px;height:10px;border-radius:2px;animation:fall 3s linear forwards}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+
+/* TOAST */
+.toast{position:fixed;top:max(70px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-120%);background:#1C1E21;color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:13.5px;z-index:200;transition:transform .3s;max-width:90vw;box-shadow:0 8px 24px rgba(0,0,0,.3);display:flex;align-items:center;gap:8px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.success{background:#1F6B4A}
+.toast.error{background:#A8332B}
+
+/* SUMMARY */
+.score-big{font-size:48px;font-weight:900;color:#1877F2;text-align:center;margin:16px 0 4px}
+.score-label{text-align:center;font-size:13px;color:#65676B;font-weight:600;margin-bottom:18px}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.sum-cell{background:#F5F7FA;border-radius:12px;padding:12px 8px;text-align:center}
+.sum-num{font-size:20px;font-weight:800;color:#1C1E21}
+.sum-lbl{font-size:10px;color:#65676B;font-weight:700;letter-spacing:.4px;text-transform:uppercase;margin-top:2px}
+
+/* CONFIG */
+.cfg-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #E4E6EB}
+.cfg-row:last-child{border:none}
+.cfg-label{font-size:14px;font-weight:600}
+.cfg-val{font-size:13px;color:#65676B}
+
+/* ACHIEVEMENTS */
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.abadge{aspect-ratio:1;background:#fff;border:2px solid #E4E6EB;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;text-align:center;font-size:10px;font-weight:700;color:#65676B}
+.abadge.earned{border-color:#FFD700;background:linear-gradient(135deg,#FFFCE5 0%,#FFF8C5 100%);color:#1C1E21}
+.abadge .abadge-ico{font-size:28px;margin-bottom:4px}
+.abadge.locked{opacity:.4}
+
+/* LESSON COMPLETE */
+.complete-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 20px;flex:1}
+.complete-ico{font-size:80px;margin-bottom:16px}
+.complete-h{font-size:24px;font-weight:800;margin-bottom:6px}
+.complete-sub{font-size:14px;color:#65676B;margin-bottom:24px}
+
+/* MISC */
+.empty{text-align:center;padding:40px 20px;color:#65676B}
+.empty-ico{font-size:48px;margin-bottom:10px}
+.divider{height:1px;background:#E4E6EB;margin:18px 0}
+.heart-empty{filter:grayscale(1);opacity:.4}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="overlay" id="lvlup-overlay" onclick="closeLvlUp()">
+  <div class="overlay-inner">
+    <div class="overlay-ico" id="lu-ico">🎉</div>
+    <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#42B883">¡SUBISTE DE NIVEL!</div>
+    <div class="lvl-num" id="lu-num">2</div>
+    <div class="lvl-name" id="lu-name">Aprendiz</div>
+    <div style="font-size:12px;color:#65676B">Toca para continuar</div>
+  </div>
+</div>
+<div class="overlay" id="ach-overlay" onclick="closeAchOverlay()">
+  <div class="overlay-inner">
+    <div class="overlay-ico" id="ach-ico">🏅</div>
+    <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#FFD700">¡LOGRO DESBLOQUEADO!</div>
+    <div style="font-size:18px;font-weight:800;margin:8px 0 4px" id="ach-name">Primera Lección</div>
+    <div style="font-size:13px;color:#65676B" id="ach-desc">Completaste tu primera lección</div>
+    <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
+  </div>
+</div>
+<div class="particles" id="particles"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+// ============================================================
+// CONFIG & CONSTANTS
+// ============================================================
+const STORAGE_KEY = 'cer_v1';
+const HEART_REGEN_MS = 30 * 60 * 1000; // 30 min per heart
+const MAX_HEARTS = 5;
+
+const LEVELS = [
+  {n:'Novato',           xp:0,    i:'🌱'},
+  {n:'Aprendiz',         xp:100,  i:'📘'},
+  {n:'Estudiante',       xp:250,  i:'🎓'},
+  {n:'Practicante',      xp:500,  i:'⚡'},
+  {n:'Competente',       xp:850,  i:'💪'},
+  {n:'Avanzado',         xp:1300, i:'🚀'},
+  {n:'Experto',          xp:1850, i:'🏆'},
+  {n:'Maestro',          xp:2500, i:'🧠'},
+  {n:'Sabio',            xp:3300, i:'🦉'},
+  {n:'Leyenda Meta',     xp:4200, i:'👑'}
+];
+
+const ACHIEVEMENTS = [
+  {id:'first_lesson',  i:'📚', n:'Primera Lección',     desc:'Completa tu primera lección'},
+  {id:'streak_3',      i:'🔥', n:'Racha de 3',          desc:'Estudia 3 días seguidos'},
+  {id:'streak_7',      i:'🔥', n:'Semana Completa',     desc:'7 días consecutivos'},
+  {id:'perfect_lesson',i:'💯', n:'Perfeccionista',      desc:'Completa una lección sin errores'},
+  {id:'level_3',       i:'⭐', n:'Nivel 3',             desc:'Alcanza el nivel Estudiante'},
+  {id:'level_5',       i:'🌟', n:'Nivel 5',             desc:'Alcanza el nivel Competente'},
+  {id:'level_10',      i:'👑', n:'Leyenda',             desc:'Alcanza el nivel máximo'},
+  {id:'all_flashcards',i:'🎴', n:'Memoria de Acero',    desc:'Domina 50 flashcards'},
+  {id:'day_complete',  i:'✅', n:'Día Conquistado',     desc:'Completa todas las lecciones de un día'},
+  {id:'meta_complete', i:'🎯', n:'Meta Master',         desc:'Termina los 7 días de Meta 410-101'},
+  {id:'mock_pass',     i:'🏁', n:'Listo para Examen',   desc:'Pasa el simulacro con 80%+'},
+  {id:'no_hearts',     i:'💔', n:'Sin Vidas',           desc:'Pierde todos tus corazones (irónicamente)'}
+];
+
+// ============================================================
+// CONTENT LOADER — carga dinámica desde content/*.json
+// ============================================================
+let COURSES = {}; // se llena al cargar
+let COMING_SOON = []; // cursos placeholder visibles como locked
+let COURSES_LOADED = false;
+
+async function loadCourses(){
+  try {
+    // 1. Cargar catálogo de cursos
+    const catalog = await fetch('content/courses.json').then(r => {
+      if(!r.ok) throw new Error('No se encontró content/courses.json');
+      return r.json();
+    });
+
+    // 2. Para cada curso, cargar su meta.json (si existe). Los cursos sin meta.json se omiten.
+    for(const courseEntry of catalog.courses){
+      let meta;
+      try {
+        const r = await fetch(`content/${courseEntry.id}/meta.json`);
+        if(!r.ok) {
+          // Si el curso no es activo y no tiene meta.json, mostrar placeholder si existe
+          if(!courseEntry.active){
+            if(courseEntry.placeholder){
+              COMING_SOON.push({
+                id: courseEntry.id,
+                title: courseEntry.placeholder.title,
+                subtitle: courseEntry.placeholder.subtitle || 'Próximamente',
+                icon: courseEntry.placeholder.icon || '📚'
+              });
+            }
+            continue;
+          }
+          throw new Error(`Curso activo ${courseEntry.id} no tiene meta.json`);
+        }
+        meta = await r.json();
+      } catch(err) {
+        if(!courseEntry.active){
+          if(courseEntry.placeholder){
+            COMING_SOON.push({
+              id: courseEntry.id,
+              title: courseEntry.placeholder.title,
+              subtitle: courseEntry.placeholder.subtitle || 'Próximamente',
+              icon: courseEntry.placeholder.icon || '📚'
+            });
+          }
+          continue;
+        }
+        throw err;
+      }
+
+      // Construir el objeto curso con la estructura que espera la app
+      const course = {
+        id: meta.id,
+        title: meta.title,
+        subtitle: meta.subtitle,
+        icon: meta.icon || '📘',
+        color: meta.color || '#1877F2',
+        active: courseEntry.active,
+        days: []
+      };
+
+      // Cargar cada unit del curso
+      for(const unit of meta.units){
+        if(unit.locked || !courseEntry.active){
+          // Unit bloqueada: mostrarla pero sin cargar contenido
+          course.days.push({
+            id: unit.id,
+            title: unit.title,
+            subtitle: unit.subtitle || 'Próximamente',
+            coverage: unit.coverage || '',
+            locked: true,
+            lessons: []
+          });
+        } else {
+          // Cargar el archivo de la unit
+          try {
+            const unitData = await fetch(`content/${courseEntry.id}/${unit.id}.json`).then(r => {
+              if(!r.ok) throw new Error(`No se encontró content/${courseEntry.id}/${unit.id}.json`);
+              return r.json();
+            });
+            course.days.push({
+              id: unit.id,
+              title: unit.title,
+              subtitle: unit.subtitle || '',
+              coverage: unit.coverage || '',
+              lessons: unitData.lessons || []
+            });
+          } catch(err){
+            console.warn(`No se pudo cargar ${unit.id}:`, err);
+            course.days.push({
+              id: unit.id,
+              title: unit.title,
+              subtitle: 'Error al cargar',
+              coverage: unit.coverage || '',
+              locked: true,
+              lessons: []
+            });
+          }
+        }
+      }
+
+      COURSES[meta.id] = course;
+    }
+
+    COURSES_LOADED = true;
+    return true;
+  } catch(err){
+    console.error('Error cargando cursos:', err);
+    COURSES_LOADED = false;
+    return false;
+  }
+}
+
+// ============================================================
+// STATE
+// ============================================================
+let DB = {
+  xp: 0,
+  hearts: MAX_HEARTS,
+  lastHeartLost: null,
+  streak: 0,
+  lastStudyDate: null,
+  achievements: {},
+  progress: {}, // {courseId: {dayId: {lessonId: {completed: true, perfect: bool, attempts: n}}}}
+  flashcardStats: {}, // {flashId: {good: n, hard: n, fail: n, lastSeen: ts}}
+  totalLessons: 0,
+  perfectLessons: 0
+};
+let VIEW = 'home';
+let CURRENT = {courseId:null, dayId:null, lessonId:null};
+let LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false};
+let FLASH_STATE = {idx:0, deck:[], rated:0};
+let _luq = [];
+let _achq = [];
+
+// ============================================================
+// STORAGE
+// ============================================================
+function load(){
+  try{
+    const r = localStorage.getItem(STORAGE_KEY);
+    if(r){
+      const p = JSON.parse(r);
+      DB = {...DB, ...p};
+    }
+  }catch(e){console.error('Load error',e)}
+  regenerateHearts();
+}
+function save(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(DB)); }
+  catch(e){console.error('Save error',e)}
+}
+
+// ============================================================
+// UTILS
+// ============================================================
+function todayStr(){
+  const d = new Date();
+  return d.toISOString().slice(0,10);
+}
+function now(){return Date.now()}
+
+function regenerateHearts(){
+  if(DB.hearts >= MAX_HEARTS) return;
+  if(!DB.lastHeartLost) return;
+  const elapsed = now() - DB.lastHeartLost;
+  const regenerated = Math.floor(elapsed / HEART_REGEN_MS);
+  if(regenerated > 0){
+    DB.hearts = Math.min(MAX_HEARTS, DB.hearts + regenerated);
+    DB.lastHeartLost = DB.hearts >= MAX_HEARTS ? null : DB.lastHeartLost + (regenerated * HEART_REGEN_MS);
+    save();
+  }
+}
+
+function loseHeart(){
+  if(DB.hearts <= 0) return false;
+  DB.hearts -= 1;
+  if(DB.hearts < MAX_HEARTS && !DB.lastHeartLost) DB.lastHeartLost = now();
+  save();
+  return true;
+}
+
+function calcLevel(xp){
+  let lvl = 1;
+  for(let i=1;i<LEVELS.length;i++){
+    if(xp >= LEVELS[i].xp) lvl = i+1; else break;
+  }
+  return lvl;
+}
+
+function nextLevelXP(lvl){
+  return lvl < LEVELS.length ? LEVELS[lvl].xp : LEVELS[LEVELS.length-1].xp;
+}
+
+function addXP(amount){
+  const lvlBefore = calcLevel(DB.xp);
+  DB.xp += amount;
+  const lvlAfter = calcLevel(DB.xp);
+  if(lvlAfter > lvlBefore){
+    for(let l = lvlBefore+1; l <= lvlAfter; l++){
+      _luq.push(l);
+      // achievement check
+      if(l===3) earnAch('level_3');
+      if(l===5) earnAch('level_5');
+      if(l===10) earnAch('level_10');
+    }
+    setTimeout(showNextLvlUp, 400);
+  }
+  save();
+}
+
+function updateStreak(){
+  const today = todayStr();
+  if(DB.lastStudyDate === today) return; // already counted today
+  const yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
+  const yStr = yesterday.toISOString().slice(0,10);
+  if(DB.lastStudyDate === yStr){
+    DB.streak += 1;
+  }else if(DB.lastStudyDate !== today){
+    DB.streak = 1;
+  }
+  DB.lastStudyDate = today;
+  if(DB.streak >= 3) earnAch('streak_3');
+  if(DB.streak >= 7) earnAch('streak_7');
+  save();
+}
+
+function earnAch(id){
+  if(DB.achievements[id]) return;
+  DB.achievements[id] = todayStr();
+  const ach = ACHIEVEMENTS.find(a => a.id === id);
+  if(ach){
+    _achq.push(ach);
+    setTimeout(showNextAch, 800);
+  }
+  save();
+}
+
+// ============================================================
+// PROGRESS HELPERS
+// ============================================================
+function getCourseProgress(courseId){
+  const course = COURSES[courseId];
+  if(!course) return {done:0,total:0,pct:0};
+  let done = 0, total = 0;
+  course.days.forEach(day => {
+    if(day.locked || !day.lessons.length) return;
+    day.lessons.forEach(lesson => {
+      total++;
+      if(DB.progress[courseId]?.[day.id]?.[lesson.id]?.completed) done++;
+    });
+  });
+  return {done, total, pct: total ? Math.round(done/total*100) : 0};
+}
+
+function getDayProgress(courseId, dayId){
+  const day = COURSES[courseId]?.days.find(d => d.id === dayId);
+  if(!day || !day.lessons.length) return {done:0,total:0,pct:0};
+  let done = 0;
+  day.lessons.forEach(lesson => {
+    if(DB.progress[courseId]?.[dayId]?.[lesson.id]?.completed) done++;
+  });
+  return {done, total: day.lessons.length, pct: Math.round(done/day.lessons.length*100)};
+}
+
+function isLessonCompleted(courseId, dayId, lessonId){
+  return !!DB.progress[courseId]?.[dayId]?.[lessonId]?.completed;
+}
+
+function isDayUnlocked(courseId, dayIdx){
+  if(dayIdx === 0) return true;
+  const course = COURSES[courseId];
+  if(!course) return false;
+  if(course.days[dayIdx].locked) return false;
+  // unlock if previous day is fully complete
+  const prevDay = course.days[dayIdx-1];
+  if(!prevDay) return false;
+  const prog = getDayProgress(courseId, prevDay.id);
+  return prog.done === prog.total && prog.total > 0;
+}
+
+function markLessonComplete(courseId, dayId, lessonId, perfect){
+  if(!DB.progress[courseId]) DB.progress[courseId] = {};
+  if(!DB.progress[courseId][dayId]) DB.progress[courseId][dayId] = {};
+  const wasCompleted = !!DB.progress[courseId][dayId][lessonId]?.completed;
+  DB.progress[courseId][dayId][lessonId] = {completed: true, perfect, ts: now()};
+  if(!wasCompleted){
+    DB.totalLessons += 1;
+    if(perfect) DB.perfectLessons += 1;
+    earnAch('first_lesson');
+    if(perfect) earnAch('perfect_lesson');
+    // Check day completion
+    const dayProg = getDayProgress(courseId, dayId);
+    if(dayProg.done === dayProg.total) earnAch('day_complete');
+    // Check Meta course completion
+    const courseProg = getCourseProgress(courseId);
+    if(courseProg.done === courseProg.total && courseId === 'meta-410') earnAch('meta_complete');
+  }
+  save();
+}
+
+// ============================================================
+// RENDER — main router
+// ============================================================
+function render(){
+  const app = document.getElementById('app');
+  let html = '';
+  if(VIEW === 'home') html = renderHome();
+  else if(VIEW === 'course') html = renderCourse();
+  else if(VIEW === 'day') html = renderDay();
+  else if(VIEW === 'lesson') html = renderLesson();
+  else if(VIEW === 'lesson_complete') html = renderLessonComplete();
+  else if(VIEW === 'flashcards') html = renderFlashcards();
+  else if(VIEW === 'achievements') html = renderAchievements();
+  else if(VIEW === 'config') html = renderConfig();
+  else html = renderHome();
+  app.innerHTML = html;
+}
+
+// ============================================================
+// HEADER (común a varias vistas)
+// ============================================================
+function renderHeader(){
+  const lvl = calcLevel(DB.xp);
+  const lvlInfo = LEVELS[lvl-1];
+  const nextXP = nextLevelXP(lvl);
+  const prevXP = lvl > 1 ? LEVELS[lvl-1].xp : 0;
+  const pct = nextXP > prevXP ? Math.min(100, Math.round((DB.xp - prevXP)/(nextXP - prevXP)*100)) : 100;
+  const heartsHtml = Array.from({length:MAX_HEARTS},(_,i) => i < DB.hearts ? '❤️' : '<span class="heart-empty">❤️</span>').join('');
+  return `
+    <div class="hdr" id="hdr">
+      <div class="hdr-top">
+        <div class="hdr-stats">
+          <div class="stat stat-streak"><span class="ico">🔥</span>${DB.streak}</div>
+          <div class="stat stat-hearts">${heartsHtml}</div>
+          <div class="stat stat-xp"><span class="ico">⚡</span>${DB.xp}</div>
+        </div>
+        <div class="lvl-badge">${lvlInfo.i} N${lvl}</div>
+      </div>
+      <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+      <div class="progress-label"><span>${lvlInfo.n}</span><span>${DB.xp} / ${nextXP} XP</span></div>
+    </div>`;
+}
+
+function renderNav(active){
+  const tabs = [
+    ['home',     '🏠', 'Inicio'],
+    ['flashcards','🎴','Flash'],
+    ['achievements','🏅','Logros'],
+    ['config',   '⚙️', 'Config']
+  ];
+  return `<div class="bnav">${tabs.map(([id,i,n]) =>
+    `<button class="nbtn ${active===id?'active':''}" onclick="navTo('${id}')"><span class="ico">${i}</span>${n}</button>`
+  ).join('')}</div>`;
+}
+
+// ============================================================
+// VIEWS
+// ============================================================
+function renderHome(){
+  const courseProg = getCourseProgress('meta-410');
+  const greeting = DB.streak > 0
+    ? `🔥 Llevas ${DB.streak} ${DB.streak===1?'día':'días'} de racha. ¡No la rompas!`
+    : `Empieza tu primera lección hoy y arranca tu racha.`;
+  return `
+    ${renderHeader()}
+    <div class="scroll" id="sc">
+      <div class="welcome">
+        <h1>Bienvenido, Randall</h1>
+        <p>${greeting}</p>
+      </div>
+      <div class="section-title">Cursos activos</div>
+      ${Object.values(COURSES).filter(c => c.active !== false).map(c => {
+        const p = getCourseProgress(c.id);
+        return `
+          <div class="course" onclick="openCourse('${c.id}')">
+            <div class="course-head">
+              <div class="course-ico" style="background:linear-gradient(135deg,${c.color},${c.color})">${c.icon}</div>
+              <div class="course-info">
+                <div class="course-title">${c.title}</div>
+                <div class="course-meta">${c.subtitle}</div>
+              </div>
+              <div style="font-size:13px;font-weight:800;color:${c.color}">${p.pct}%</div>
+            </div>
+            <div class="course-progress"><div class="course-progress-bar" style="width:${p.pct}%;background:linear-gradient(90deg,${c.color},${c.color})"></div></div>
+            <div style="font-size:11px;color:#65676B;margin-top:6px">${p.done} de ${p.total} lecciones</div>
+          </div>
+        `;
+      }).join('')}
+      ${COMING_SOON.length > 0 ? `<div class="section-title">Próximamente</div>` : ''}
+      ${COMING_SOON.map(c => `
+        <div class="course locked">
+          <div class="course-head">
+            <div class="course-ico" style="background:#90949C">${c.icon || '📚'}</div>
+            <div class="course-info">
+              <div class="course-title">${c.title}</div>
+              <div class="course-meta">${c.subtitle || 'Próximamente'}</div>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    ${renderNav('home')}
+  `;
+}
+
+function renderCourse(){
+  const course = COURSES[CURRENT.courseId];
+  if(!course) return renderHome();
+  return `
+    ${renderHeader()}
+    <div class="scroll" id="sc">
+      <div style="margin-bottom:16px">
+        <button class="btn btn-secondary" style="width:auto;padding:8px 14px;font-size:13px" onclick="navTo('home')">← Inicio</button>
+      </div>
+      <div class="welcome">
+        <h1>${course.title}</h1>
+        <p>${course.subtitle}</p>
+      </div>
+      <div class="section-title">Plan de 7 días</div>
+      ${course.days.map((day, idx) => {
+        const unlocked = isDayUnlocked(course.id, idx);
+        const prog = getDayProgress(course.id, day.id);
+        const completed = prog.total > 0 && prog.done === prog.total;
+        const current = unlocked && !completed;
+        const cls = completed ? 'complete' : current ? 'current' : !unlocked ? 'locked' : '';
+        const status = completed ? '✅' : current ? '▶' : !unlocked ? '🔒' : '';
+        return `
+          <div class="day-card ${cls}" onclick="${unlocked && day.lessons.length ? `openDay('${day.id}')` : 'showToast("Bloqueado · completa el día anterior",2000)'}">
+            <div class="day-num">${idx+1}</div>
+            <div class="day-info">
+              <div class="day-title">${day.title}</div>
+              <div class="day-sub">${day.subtitle} · ${day.coverage}${prog.total>0?` · ${prog.done}/${prog.total}`:''}</div>
+            </div>
+            <div class="day-status">${status}</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+    ${renderNav('home')}
+  `;
+}
+
+function renderDay(){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  if(!day) return renderHome();
+  return `
+    ${renderHeader()}
+    <div class="scroll" id="sc">
+      <div style="margin-bottom:16px">
+        <button class="btn btn-secondary" style="width:auto;padding:8px 14px;font-size:13px" onclick="openCourse('${course.id}')">← ${course.title}</button>
+      </div>
+      <div class="welcome">
+        <h1>${day.title}</h1>
+        <p>${day.subtitle}</p>
+      </div>
+      <div class="section-title">Lecciones</div>
+      ${day.lessons.map((lesson, idx) => {
+        const completed = isLessonCompleted(course.id, day.id, lesson.id);
+        const isFlash = lesson.type === 'flashcards';
+        return `
+          <div class="day-card ${completed?'complete':''}" onclick="${isFlash?`openFlashcards('${lesson.id}')`:`openLesson('${lesson.id}')`}">
+            <div class="day-num">${isFlash?'🎴':idx+1}</div>
+            <div class="day-info">
+              <div class="day-title">${lesson.title}</div>
+              <div class="day-sub">${isFlash ? `${lesson.cards.length} flashcards` : `${lesson.cards.length} cards · ~${Math.max(5, lesson.cards.length*2)} min`}</div>
+            </div>
+            <div class="day-status">${completed ? '✅' : ''}</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+    ${renderNav('home')}
+  `;
+}
+
+function renderLesson(){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  if(!lesson) return renderHome();
+
+  const card = lesson.cards[LESSON_STATE.cardIdx];
+  const total = lesson.cards.length;
+  const idx = LESSON_STATE.cardIdx;
+  const pct = Math.round((idx+1)/total*100);
+
+  let cardHtml = '';
+  if(card.type === 'concept'){
+    cardHtml = `
+      <div class="card card-concept">
+        ${card.h ? `<div class="card-h2">${card.h}</div>` : ''}
+        <div class="card-body">${card.body}</div>
+      </div>`;
+  } else if(card.type === 'quote'){
+    cardHtml = `<div class="quote-box">"${card.body}"</div>`;
+  } else if(card.type === 'tip'){
+    cardHtml = `<div class="tip-box"><div class="label">💡 ${card.label || 'PRO TIP'}</div>${card.body}</div>`;
+  } else if(card.type === 'warn'){
+    cardHtml = `<div class="warn-box"><div class="label">⚠️ ${card.label || 'CUIDADO'}</div>${card.body}</div>`;
+  } else if(card.type === 'kvtable'){
+    cardHtml = `
+      <div class="card">
+        ${card.h ? `<div class="card-h2">${card.h}</div>` : ''}
+        <table class="kv-table">${card.rows.map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>
+      </div>`;
+  } else if(card.type === 'mcq'){
+    const answered = LESSON_STATE.answers[idx];
+    const isMulti = !!card.multi;
+    const correctSet = isMulti ? new Set(card.correct) : new Set([card.correct]);
+    cardHtml = `
+      <div class="quiz-card">
+        <div class="quiz-tag">${isMulti ? 'OPCIÓN MÚLTIPLE · ELIGE ' + card.correct.length : 'PREGUNTA'}</div>
+        <div class="quiz-q">${card.q}</div>
+        ${card.options.map((opt, i) => {
+          let cls = 'opt';
+          if(answered){
+            cls += ' disabled';
+            if(correctSet.has(i)) cls += ' correct';
+            else if(answered.selected.includes(i)) cls += ' wrong';
+          } else if(LESSON_STATE.tempSelected?.includes(i)){
+            cls += ' selected';
+          }
+          const letter = String.fromCharCode(97+i);
+          return `<div class="${cls}" onclick="${answered?'':`selectOption(${i}, ${isMulti})`}"><div class="opt-letter">${letter}</div><div class="opt-text">${opt}</div></div>`;
+        }).join('')}
+        ${answered ? `
+          <div class="quiz-feedback ${answered.correct?'correct':'wrong'} show">
+            <strong>${answered.correct ? '✅ ¡Correcto!' : '❌ Incorrecto'}</strong>
+            ${card.explanation}
+          </div>
+        ` : ''}
+      </div>`;
+  }
+
+  // Action button
+  let actionBtn;
+  if(card.type === 'mcq'){
+    const answered = LESSON_STATE.answers[idx];
+    if(!answered){
+      const hasSel = LESSON_STATE.tempSelected?.length > 0;
+      actionBtn = `<button class="btn ${hasSel?'btn-primary':'btn-disabled'}" onclick="${hasSel?'submitAnswer()':''}">Verificar</button>`;
+    } else {
+      actionBtn = `<button class="btn btn-primary" onclick="nextCard()">${idx+1 < total ? 'Siguiente' : 'Terminar lección'}</button>`;
+    }
+  } else {
+    actionBtn = `<button class="btn btn-primary" onclick="nextCard()">${idx+1 < total ? 'Siguiente' : 'Terminar lección'}</button>`;
+  }
+
+  return `
+    <div class="hdr">
+      <div class="hdr-top">
+        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLesson()">✕</button>
+        <div style="flex:1;margin:0 12px">
+          <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+        </div>
+        <div class="stat stat-hearts" style="font-size:14px">${'❤️'.repeat(DB.hearts)}${'<span class="heart-empty">❤️</span>'.repeat(MAX_HEARTS-DB.hearts)}</div>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="lesson-header">
+        <div class="lesson-num">${lesson.title} · ${idx+1}/${total}</div>
+      </div>
+      ${cardHtml}
+    </div>
+    <div class="action-bar">${actionBtn}</div>
+  `;
+}
+
+function renderLessonComplete(){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  const errors = LESSON_STATE.errors;
+  const perfect = errors === 0;
+  const xpEarned = perfect ? 30 : Math.max(10, 25 - errors*3);
+  return `
+    <div class="hdr">
+      <div class="hdr-top"><div style="font-size:14px;font-weight:700">Lección completada</div></div>
+    </div>
+    <div class="scroll">
+      <div class="complete-screen">
+        <div class="complete-ico">${perfect?'🏆':'🎉'}</div>
+        <div class="complete-h">${perfect?'¡Lección perfecta!':'¡Lección completada!'}</div>
+        <div class="complete-sub">${lesson?.title || ''}</div>
+        <div class="summary-grid" style="width:100%;max-width:300px">
+          <div class="sum-cell"><div class="sum-num">+${xpEarned}</div><div class="sum-lbl">XP</div></div>
+          <div class="sum-cell"><div class="sum-num">${errors}</div><div class="sum-lbl">errores</div></div>
+          <div class="sum-cell"><div class="sum-num">${perfect?'💯':Math.round((1-errors/Math.max(1,Object.keys(LESSON_STATE.answers).length))*100)+'%'}</div><div class="sum-lbl">precisión</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="action-bar">
+      <button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>
+    </div>
+  `;
+}
+
+function renderFlashcards(){
+  // Find flashcard lesson if not in deck mode
+  if(FLASH_STATE.deck.length === 0){
+    // Build deck from CURRENT lesson or all flashcards if accessed from nav
+    if(CURRENT.lessonId){
+      const course = COURSES[CURRENT.courseId];
+      const day = course?.days.find(d => d.id === CURRENT.dayId);
+      const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+      if(lesson?.cards) FLASH_STATE.deck = [...lesson.cards];
+    } else {
+      // Aggregate all flashcards from all completed days
+      const all = [];
+      Object.values(COURSES).forEach(c => {
+        c.days.forEach(d => {
+          if(d.locked) return;
+          d.lessons.forEach(l => {
+            if(l.type === 'flashcards') all.push(...l.cards);
+          });
+        });
+      });
+      FLASH_STATE.deck = all;
+    }
+    FLASH_STATE.idx = 0;
+    FLASH_STATE.flipped = false;
+    FLASH_STATE.rated = 0;
+  }
+
+  if(FLASH_STATE.deck.length === 0){
+    return `
+      ${renderHeader()}
+      <div class="scroll">
+        <div class="empty">
+          <div class="empty-ico">🎴</div>
+          <div style="font-weight:700;margin-bottom:6px">No hay flashcards aún</div>
+          <div style="font-size:13px">Completa lecciones para desbloquear cards de repaso</div>
+        </div>
+      </div>
+      ${renderNav('flashcards')}
+    `;
+  }
+
+  if(FLASH_STATE.idx >= FLASH_STATE.deck.length){
+    return `
+      ${renderHeader()}
+      <div class="scroll">
+        <div class="complete-screen">
+          <div class="complete-ico">🎴</div>
+          <div class="complete-h">¡Repaso completo!</div>
+          <div class="complete-sub">Repasaste ${FLASH_STATE.rated} flashcards</div>
+        </div>
+      </div>
+      <div class="action-bar">
+        <button class="btn btn-secondary" onclick="resetFlashDeck()">Repasar otra vez</button>
+        <button class="btn btn-primary" onclick="navTo('home')">Inicio</button>
+      </div>
+    `;
+  }
+
+  const card = FLASH_STATE.deck[FLASH_STATE.idx];
+  const flipped = FLASH_STATE.flipped;
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div style="text-align:center;font-size:12px;color:#65676B;margin-bottom:14px;font-weight:700">
+        ${FLASH_STATE.idx+1} / ${FLASH_STATE.deck.length}
+      </div>
+      <div class="flash-wrap">
+        <div class="flash" onclick="flipFlash()">
+          <div class="flash-tag">${flipped?'RESPUESTA':'PREGUNTA'}</div>
+          ${flipped ? `<div class="flash-a">${card.a}</div>` : `<div class="flash-q">${card.q}</div>`}
+          <div class="flash-hint">${flipped?'¿Qué tan bien lo sabías?':'Toca para revelar'}</div>
+        </div>
+      </div>
+      ${flipped ? `
+        <div class="flash-rating">
+          <button class="rate-btn rate-fail" onclick="rateFlash('fail')">😣 No supe</button>
+          <button class="rate-btn rate-hard" onclick="rateFlash('hard')">🤔 Difícil</button>
+          <button class="rate-btn rate-good" onclick="rateFlash('good')">✅ Fácil</button>
+        </div>
+      ` : ''}
+    </div>
+    ${renderNav('flashcards')}
+  `;
+}
+
+function renderAchievements(){
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="welcome">
+        <h1>Logros</h1>
+        <p>${Object.keys(DB.achievements).length} de ${ACHIEVEMENTS.length} desbloqueados</p>
+      </div>
+      <div class="ach-grid">
+        ${ACHIEVEMENTS.map(a => {
+          const earned = !!DB.achievements[a.id];
+          return `<div class="abadge ${earned?'earned':'locked'}" onclick="showToast('${a.n}: ${a.desc}',2500)">
+            <div class="abadge-ico">${earned?a.i:'🔒'}</div>
+            <div>${earned?a.n:'???'}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+    ${renderNav('achievements')}
+  `;
+}
+
+function renderConfig(){
+  const lvl = calcLevel(DB.xp);
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="welcome">
+        <h1>Configuración</h1>
+        <p>Tu progreso global</p>
+      </div>
+      <div class="card">
+        <div class="cfg-row"><div class="cfg-label">Nivel</div><div class="cfg-val">${LEVELS[lvl-1].i} ${LEVELS[lvl-1].n} (N${lvl})</div></div>
+        <div class="cfg-row"><div class="cfg-label">XP total</div><div class="cfg-val">${DB.xp}</div></div>
+        <div class="cfg-row"><div class="cfg-label">Racha actual</div><div class="cfg-val">🔥 ${DB.streak} días</div></div>
+        <div class="cfg-row"><div class="cfg-label">Lecciones completadas</div><div class="cfg-val">${DB.totalLessons}</div></div>
+        <div class="cfg-row"><div class="cfg-label">Lecciones perfectas</div><div class="cfg-val">${DB.perfectLessons}</div></div>
+        <div class="cfg-row"><div class="cfg-label">Logros</div><div class="cfg-val">${Object.keys(DB.achievements).length} / ${ACHIEVEMENTS.length}</div></div>
+      </div>
+      <div class="section-title">Mantenimiento</div>
+      <button class="btn btn-secondary" style="margin-bottom:10px" onclick="if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer.')){resetAll()}">Resetear todo</button>
+      <div style="font-size:11px;color:#65676B;text-align:center;padding:20px 0;line-height:1.5">
+        Centro de Estudios Randall<br/>
+        v1.0 · Single-file PWA · localStorage<br/>
+        Tu progreso se guarda solo en este dispositivo.
+      </div>
+    </div>
+    ${renderNav('config')}
+  `;
+}
+
+// ============================================================
+// ACTIONS
+// ============================================================
+function navTo(view){
+  VIEW = view;
+  if(view === 'flashcards'){
+    CURRENT.lessonId = null; // aggregate mode
+    FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
+  }
+  render();
+  // scroll top
+  setTimeout(() => {
+    const sc = document.querySelector('.scroll');
+    if(sc) sc.scrollTop = 0;
+  }, 10);
+}
+
+function openCourse(id){
+  CURRENT.courseId = id;
+  VIEW = 'course';
+  render();
+}
+
+function openDay(id){
+  CURRENT.dayId = id;
+  VIEW = 'day';
+  render();
+}
+
+function openLesson(id){
+  if(DB.hearts <= 0){
+    showToast('Sin corazones · espera regeneración o repasa flashcards',3000);
+    return;
+  }
+  CURRENT.lessonId = id;
+  LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[]};
+  VIEW = 'lesson';
+  render();
+}
+
+function openFlashcards(lessonId){
+  CURRENT.lessonId = lessonId;
+  FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
+  VIEW = 'flashcards';
+  render();
+}
+
+function exitLesson(){
+  if(LESSON_STATE.cardIdx > 0 && !LESSON_STATE.completed){
+    if(!confirm('¿Salir? Perderás el progreso de esta lección.')) return;
+  }
+  if(CURRENT.dayId) {
+    VIEW = 'day';
+  } else {
+    VIEW = 'home';
+  }
+  render();
+}
+
+function selectOption(i, isMulti){
+  if(!LESSON_STATE.tempSelected) LESSON_STATE.tempSelected = [];
+  if(isMulti){
+    const idx = LESSON_STATE.tempSelected.indexOf(i);
+    if(idx >= 0) LESSON_STATE.tempSelected.splice(idx,1);
+    else LESSON_STATE.tempSelected.push(i);
+  } else {
+    LESSON_STATE.tempSelected = [i];
+  }
+  render();
+}
+
+function submitAnswer(){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  const card = lesson.cards[LESSON_STATE.cardIdx];
+  const isMulti = !!card.multi;
+  const correctSet = isMulti ? new Set(card.correct) : new Set([card.correct]);
+  const selSet = new Set(LESSON_STATE.tempSelected);
+  const correct = isMulti
+    ? (selSet.size === correctSet.size && [...selSet].every(x => correctSet.has(x)))
+    : (selSet.size === 1 && correctSet.has([...selSet][0]));
+  LESSON_STATE.answers[LESSON_STATE.cardIdx] = {selected:[...LESSON_STATE.tempSelected], correct};
+  if(!correct){
+    LESSON_STATE.errors += 1;
+    if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+  }
+  render();
+}
+
+function nextCard(){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  if(LESSON_STATE.cardIdx + 1 < lesson.cards.length){
+    LESSON_STATE.cardIdx += 1;
+    LESSON_STATE.tempSelected = [];
+    render();
+    setTimeout(() => {
+      const sc = document.querySelector('.scroll');
+      if(sc) sc.scrollTop = 0;
+    }, 10);
+  } else {
+    finishLesson();
+  }
+}
+
+function finishLesson(){
+  const perfect = LESSON_STATE.errors === 0;
+  const xp = perfect ? 30 : Math.max(10, 25 - LESSON_STATE.errors*3);
+  markLessonComplete(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, perfect);
+  updateStreak();
+  addXP(xp);
+  if(perfect) launchConfetti();
+  LESSON_STATE.completed = true;
+  VIEW = 'lesson_complete';
+  render();
+}
+
+function finishLessonReturn(){
+  VIEW = 'day';
+  CURRENT.lessonId = null;
+  render();
+}
+
+function flipFlash(){
+  FLASH_STATE.flipped = !FLASH_STATE.flipped;
+  render();
+}
+
+function rateFlash(rating){
+  const card = FLASH_STATE.deck[FLASH_STATE.idx];
+  if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {good:0, hard:0, fail:0};
+  DB.flashcardStats[card.q][rating] += 1;
+  DB.flashcardStats[card.q].lastSeen = now();
+  // XP per rating
+  if(rating === 'good') addXP(3);
+  else if(rating === 'hard') addXP(2);
+  else addXP(1);
+  FLASH_STATE.rated += 1;
+  FLASH_STATE.idx += 1;
+  FLASH_STATE.flipped = false;
+  // Achievement: 50 flashcards mastered
+  const masteredCount = Object.values(DB.flashcardStats).filter(s => s.good >= 1).length;
+  if(masteredCount >= 50) earnAch('all_flashcards');
+  save();
+  render();
+}
+
+function resetFlashDeck(){
+  FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
+  render();
+}
+
+function resetAll(){
+  localStorage.removeItem(STORAGE_KEY);
+  DB = {
+    xp: 0, hearts: MAX_HEARTS, lastHeartLost: null,
+    streak: 0, lastStudyDate: null, achievements: {},
+    progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0
+  };
+  VIEW = 'home';
+  render();
+  showToast('Progreso reseteado',2000);
+}
+
+// ============================================================
+// OVERLAYS
+// ============================================================
+function showNextLvlUp(){
+  if(!_luq.length) return;
+  const lvl = _luq[0];
+  const info = LEVELS[lvl-1];
+  document.getElementById('lu-ico').textContent = info.i;
+  document.getElementById('lu-num').textContent = lvl;
+  document.getElementById('lu-name').textContent = info.n;
+  document.getElementById('lvlup-overlay').classList.add('show');
+  launchConfetti();
+}
+function closeLvlUp(){
+  document.getElementById('lvlup-overlay').classList.remove('show');
+  _luq.shift();
+  if(_luq.length) setTimeout(showNextLvlUp, 400);
+}
+
+function showNextAch(){
+  if(!_achq.length) return;
+  const ach = _achq[0];
+  document.getElementById('ach-ico').textContent = ach.i;
+  document.getElementById('ach-name').textContent = ach.n;
+  document.getElementById('ach-desc').textContent = ach.desc;
+  document.getElementById('ach-overlay').classList.add('show');
+}
+function closeAchOverlay(){
+  document.getElementById('ach-overlay').classList.remove('show');
+  _achq.shift();
+  if(_achq.length) setTimeout(showNextAch, 400);
+}
+
+function launchConfetti(){
+  const pc = document.getElementById('particles');
+  pc.innerHTML = '';
+  pc.classList.add('show');
+  const colors = ['#1877F2','#42B883','#FFD700','#FF6B35','#C06BFF'];
+  for(let i=0;i<40;i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `left:${Math.random()*100}%;background:${colors[i%colors.length]};animation-delay:${Math.random()*.5}s`;
+    pc.appendChild(p);
+  }
+  setTimeout(() => pc.classList.remove('show'), 3500);
+}
+
+function showToast(msg, duration=2000, type=''){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (type ? ' ' + type : '') + ' show';
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// ============================================================
+// PWA — manifest + service worker via blob (no extra files)
+// ============================================================
+if('serviceWorker' in navigator){
+  const sw = `
+    self.addEventListener('install', e => self.skipWaiting());
+    self.addEventListener('activate', e => self.clients.claim());
+    self.addEventListener('fetch', e => e.respondWith(
+      fetch(e.request).catch(() => new Response('', {status:200}))
+    ));
+  `;
+  navigator.serviceWorker.register(
+    URL.createObjectURL(new Blob([sw], {type:'text/javascript'}))
+  ).catch(()=>{});
+}
+
+const manifest = {
+  name: 'Centro de Estudios Randall',
+  short_name: 'Estudios',
+  start_url: '.',
+  display: 'standalone',
+  background_color: '#F0F2F5',
+  theme_color: '#1877F2',
+  icons: [{
+    src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231877F2'/><text y='.9em' font-size='62' x='18' fill='white'>📘</text></svg>",
+    sizes: 'any',
+    type: 'image/svg+xml'
+  }]
+};
+const link = document.createElement('link');
+link.rel = 'manifest';
+link.href = URL.createObjectURL(new Blob([JSON.stringify(manifest)], {type:'application/json'}));
+document.head.appendChild(link);
+
+// ============================================================
+// INIT
+// ============================================================
+async function init(){
+  load();
+  // Mostrar pantalla de carga
+  document.getElementById('app').innerHTML = `
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;padding:30px;text-align:center">
+      <div style="font-size:48px;margin-bottom:20px">📘</div>
+      <div style="font-size:18px;font-weight:800;margin-bottom:8px">Centro de Estudios</div>
+      <div style="font-size:13px;color:#65676B">Cargando contenido...</div>
+    </div>
+  `;
+  const ok = await loadCourses();
+  if(!ok){
+    document.getElementById('app').innerHTML = `
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;padding:30px;text-align:center">
+        <div style="font-size:48px;margin-bottom:20px">⚠️</div>
+        <div style="font-size:16px;font-weight:800;margin-bottom:8px">Error al cargar contenido</div>
+        <div style="font-size:13px;color:#65676B;margin-bottom:18px">Verifica tu conexión y refresca la página.</div>
+        <button onclick="location.reload()" style="padding:12px 24px;background:#1877F2;color:#fff;border:none;border-radius:12px;font-weight:700;cursor:pointer">Reintentar</button>
+      </div>
+    `;
+    return;
+  }
+  render();
+}
+init();
+
+</script>
+</body>
+</html>

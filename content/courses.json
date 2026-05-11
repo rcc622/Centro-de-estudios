@@ -1,0 +1,29 @@
+{
+  "courses": [
+    {
+      "id": "meta-410",
+      "active": true,
+      "order": 1
+    },
+    {
+      "id": "cfe-interconexion",
+      "active": false,
+      "order": 2,
+      "placeholder": {
+        "title": "CFE / UV Interconexión Solar",
+        "subtitle": "Disponible después del examen Meta",
+        "icon": "⚡"
+      }
+    },
+    {
+      "id": "paneles-corella",
+      "active": false,
+      "order": 3,
+      "placeholder": {
+        "title": "Sistemas FV — Corella",
+        "subtitle": "Disponible después del examen Meta",
+        "icon": "☀️"
+      }
+    }
+  ]
+}

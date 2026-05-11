@@ -1,0 +1,382 @@
+{
+  "id": "day1",
+  "title": "Día 1 — Reset Mental + Advantage+",
+  "lessons": [
+    {
+      "id": "1.1",
+      "title": "La doctrina oficial de Meta 2025",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El reset mental que necesitas",
+          "body": "Tu reto en el examen <strong>no es técnico</strong>. Tú ya sabes operar Ads Manager. El problema es que las preguntas son <em>case-based con trampa</em>: 3 de 4 respuestas técnicamente funcionan, pero solo una alinea con la metodología oficial de Meta del 2025."
+        },
+        {
+          "type": "quote",
+          "body": "El media buyer humano no puede procesar miles de señales en tiempo real. El algoritmo sí. Tu trabajo no es controlar al algoritmo, es darle señales limpias y dejarlo trabajar."
+        },
+        {
+          "type": "concept",
+          "h": "La regla de oro del examen",
+          "body": "Cuando dudes entre dos respuestas, pregúntate: <strong>¿qué opción le da MÁS libertad al algoritmo?</strong> — esa es casi siempre la correcta. Las opciones con restricciones manuales (audiencias estrechas, ubicaciones manuales, Cost Cap sin justificación) suelen ser distractores."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es el principio rector de la doctrina Meta 2025?",
+          "options": [
+            "El media buyer debe controlar cada detalle de la campaña",
+            "El algoritmo procesa señales que el humano no puede; dale libertad",
+            "Lookalikes manuales son siempre superiores a Advantage+",
+            "Cost Cap garantiza el ROAS objetivo"
+          ],
+          "correct": 1,
+          "explanation": "Meta empuja agresivamente la automatización. La filosofía oficial es darle al algoritmo señales limpias y dejarlo trabajar, no imponerle restricciones manuales."
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "Jerarquía Campaign / Ad set / Ad",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Tres niveles, tres tipos de decisiones",
+          "body": "En Ads Manager las decisiones se toman en <strong>3 niveles jerárquicos</strong>. Saber qué se decide en cada nivel es <em>pregunta directa #5 de la guía oficial</em>."
+        },
+        {
+          "type": "kvtable",
+          "h": "Qué decides en cada nivel",
+          "rows": [
+            ["Campaign", "Buying type · Objective · Budget · Bid strategy · A/B test · Special Ad Category"],
+            ["Ad set", "Conversion · Audience · Placements · Performance goal · Budget &amp; schedule · Dynamic creative"],
+            ["Ad", "Identity (Page/IG) · Ad creative · Destination · Tracking · Languages · Partnership ad"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Memoriza por keyword:</strong> si la pregunta menciona <em>audience, placements o performance goal</em> → siempre <strong>Ad set</strong>. Si menciona <em>objective, buying type, budget o bid strategy</em> → <strong>Campaign</strong>. Si menciona <em>creative, identity o destination</em> → <strong>Ad</strong>."
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué nivel se hacen selecciones de audience, placements y performance goal?",
+          "options": ["Campaign level", "Ad set level", "Ad level", "Account level"],
+          "correct": 1,
+          "explanation": "Audience, placements y performance goal son configuraciones de Ad set. Esta es pregunta oficial #5 de la guía Meta."
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué nivel decides el objetivo de campaña y el bid strategy?",
+          "options": ["Campaign level", "Ad set level", "Ad level", "En cualquiera"],
+          "correct": 0,
+          "explanation": "Objective y bid strategy son decisiones de nivel Campaign. Recuerda: lo macro va en Campaign."
+        }
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "Advantage+ Suite — las 2 categorías",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Meta divide Advantage+ en 2 grupos",
+          "body": "Esta distinción es <em>pregunta directa #19 de la guía oficial</em>. Memorízala bien:"
+        },
+        {
+          "type": "kvtable",
+          "h": "Complete Campaign Solutions",
+          "rows": [
+            ["Advantage+ sales campaigns", "Para objetivo Sales"],
+            ["Advantage+ app campaigns", "Para objetivo App promotion"],
+            ["Advantage+ leads campaigns", "Para objetivo Leads"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA TÍPICA",
+          "body": "NO existe Advantage+ awareness campaign, Advantage+ traffic campaign ni Advantage+ engagement campaign. Si en el examen ves esos términos en una respuesta, es <strong>distractor</strong>."
+        },
+        {
+          "type": "kvtable",
+          "h": "Single-step Solutions (automatizan UN componente)",
+          "rows": [
+            ["Advantage+ audience", "Casi siempre default; AI expande tu audiencia"],
+            ["Advantage+ placements", "Default y recomendado"],
+            ["Advantage+ campaign budget", "Cuando hay 2+ ad sets, distribuye dinámicamente"],
+            ["Advantage+ creative", "Optimiza el creativo (brillo, música, expansión)"],
+            ["Advantage+ destination", "Elige destino óptimo automáticamente"]
+          ]
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué soluciones puedes usar para automatizar una campaña ENTERA usando AI?",
+          "options": [
+            "Advantage+ destination y campaign budget",
+            "Advantage+ audience y placements",
+            "Advantage+ creative y catalog ads",
+            "Advantage+ sales, app y leads campaigns"
+          ],
+          "correct": 3,
+          "explanation": "Solo las complete campaign solutions (sales, app, leads) automatizan la campaña entera. Las single-step solutions automatizan UN componente. Esta es pregunta oficial #19 de la guía Meta."
+        },
+        {
+          "type": "mcq",
+          "q": "Un cliente quiere lanzar una campaña de awareness automatizada con Advantage+. ¿Qué le dices?",
+          "options": [
+            "Usa Advantage+ awareness campaign",
+            "Advantage+ awareness no existe; usa Awareness objective con Advantage+ audience y placements como single-step solutions",
+            "Cambia el objetivo a Sales para poder usar Advantage+",
+            "Solo se puede automatizar con reservation buying"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Complete solo existe para Sales, App y Leads. Para awareness/traffic/engagement usas el objetivo normal pero puedes activar single-step solutions como Advantage+ audience y placements."
+        }
+      ]
+    },
+    {
+      "id": "1.4",
+      "title": "Business Suite + Permisos",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Meta Business Suite",
+          "body": "Es la <strong>superficie centralizada</strong> donde negocios y agencias administran marketing, publicidad y cuentas de clientes en Facebook, Messenger, Instagram y WhatsApp."
+        },
+        {
+          "type": "concept",
+          "h": "Business Portfolio",
+          "body": "Estructura para organizar Pages, ad accounts, catálogos y assets. Junta todo para manejarlo desde un solo lugar y controlar acceso/seguridad."
+        },
+        {
+          "type": "kvtable",
+          "h": "Los 3 tipos de usuarios",
+          "rows": [
+            ["People", "Individuos con partial access o full control"],
+            ["Partners", "Otras empresas con su propio business portfolio (necesitas su business ID)"],
+            ["System users", "Servidores o software que hacen API calls"]
+          ]
+        },
+        {
+          "type": "mcq",
+          "q": "Una empresa contrata una nueva agencia de medios y quiere agregarla a su business portfolio. ¿Qué necesita hacer? Selecciona 2.",
+          "options": [
+            "Agregar la agencia como partner",
+            "Asignar la agencia como system user",
+            "Asignar acceso temporal",
+            "Usar el business ID de la agencia"
+          ],
+          "correct": [0, 3],
+          "multi": true,
+          "explanation": "Las agencias se agregan como PARTNERS y se requiere su business ID. NO es system user (eso es para servidores/software). NO es temporary access (eso es solo 3-75 días). Esta es pregunta oficial #2 de la guía Meta."
+        },
+        {
+          "type": "kvtable",
+          "h": "Permission Levels",
+          "rows": [
+            ["Partial access (default)", "Trabajar en assets asignados; ver quién tiene full control"],
+            ["Full control", "Manejar settings, people, tools; reclamar/remover assets"],
+            ["Advanced - Finance", "Ver/manejar info financiera (transacciones, invoices)"],
+            ["Advanced - Temporary", "Acceso básico de 3 a 75 días"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1.5",
+      "title": "Brand Safety &amp; Suitability",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Los 4 controles oficiales",
+          "body": "Tema con <em>pregunta directa #8 de la guía oficial</em>. Memoriza los 4 y, sobre todo, cuál es <strong>el más simple</strong> para excluir contenido sensible."
+        },
+        {
+          "type": "kvtable",
+          "h": "Los 4 controles",
+          "rows": [
+            ["Inventory filters (EL MÁS SIMPLE)", "Expanded (default) / Moderate / Limited"],
+            ["Publisher block lists", "Listas custom que tú creas"],
+            ["Topic exclusions", "Gaming · News · Politics · Religion"],
+            ["Content type exclusions", "Live video · Non-partner publisher"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Memoria rápida:</strong> ¿Cuál es la forma MÁS SIMPLE de excluir contenido sensible? → <em>Inventory filters</em>. Las otras 3 opciones son más granulares pero menos simples."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es la forma más simple de excluir grupos de contenido sensible en el Brand Safety and Suitability Center?",
+          "options": [
+            "Publisher block lists",
+            "Topic exclusions",
+            "Content type exclusions",
+            "Inventory filters"
+          ],
+          "correct": 3,
+          "explanation": "Inventory filters (Expanded/Moderate/Limited) es la forma más simple. Las otras opciones son válidas pero más granulares y específicas. Esta es pregunta oficial #8 de la guía Meta."
+        },
+        {
+          "type": "mcq",
+          "q": "Un cliente quiere mantener sus ads de FB in-stream fuera de reels sobre política y religión. ¿Qué control usa?",
+          "options": [
+            "Inventory filters",
+            "Publisher block lists",
+            "Topic exclusions",
+            "Content type exclusions"
+          ],
+          "correct": 2,
+          "explanation": "Topic exclusions cubren específicamente Gaming, News, Politics y Religion &amp; spirituality para in-stream ads."
+        }
+      ]
+    },
+    {
+      "id": "1.6",
+      "title": "Las 7 Performance Best Practices",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El framework oficial de Meta",
+          "body": "Las 7 BP son la lente bajo la cual Meta evalúa una campaña. El examen las puede preguntar de muchas formas: cuál falta, cuál soluciona un problema, cuál corresponde a un escenario."
+        },
+        {
+          "type": "kvtable",
+          "h": "Las 7 best practices en orden",
+          "rows": [
+            ["1. Opt into automated campaigns", "Usa Advantage+ para automatizar setup"],
+            ["2. Align objectives and goals", "Objetivo de campaña ↔ goal de negocio"],
+            ["3. Consider your audience", "Combina knowledge + Advantage+ audience"],
+            ["4. Optimize creative &amp; placements", "Diversifica + Advantage+ placements"],
+            ["5. Focus on signals", "Datos de calidad para decisiones"],
+            ["6. Get the most out of budget &amp; bidding", "Advantage+ campaign budget"],
+            ["7. Validate results", "Mide el verdadero impacto"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "El opportunity score solo genera recomendaciones para las BP <strong>1-6</strong>. La BP #7 (Validate results) NO genera recomendaciones automáticas porque depende de tests/experiments que tú ejecutas."
+        },
+        {
+          "type": "mcq",
+          "q": "Un ad set tiene presupuesto fijo y bajo desempeño mientras otros ad sets de la misma campaña sí performan. ¿Qué solución alineada con las BP recomiendas?",
+          "options": [
+            "Cambiar el bid strategy del ad set bajo a Cost Cap",
+            "Refinar manualmente la audiencia del ad set bajo",
+            "Activar Advantage+ campaign budget para que el presupuesto fluya hacia los ad sets top",
+            "Pausar el ad set y crear uno nuevo con Lookalike"
+          ],
+          "correct": 2,
+          "explanation": "BP #6: Get the most out of budget &amp; bidding. La solución oficial Meta es activar Advantage+ campaign budget — distribuye dinámicamente el presupuesto a los ad sets que mejor performan."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál de estas best practices NO genera recomendaciones automáticas en el opportunity score?",
+          "options": [
+            "Opt into automated campaigns",
+            "Focus on signals",
+            "Validate results",
+            "Get the most out of budget and bidding"
+          ],
+          "correct": 2,
+          "explanation": "Las BP 1-6 sí generan recomendaciones. La #7 (Validate results) depende de A/B tests, Brand Lift y Conversion Lift que tú ejecutas — no se pueden recomendar automáticamente."
+        }
+      ]
+    },
+    {
+      "id": "1.7",
+      "title": "Quick Test del Día 1",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Examen sorpresa",
+          "body": "5 preguntas para validar que entendiste el día completo. <strong>Las 4 primeras son preguntas oficiales literales de la guía Meta</strong>. La 5ta es un caso aterrizado a Kenet Solar."
+        },
+        {
+          "type": "mcq",
+          "q": "Una empresa contrata una nueva agencia y quiere agregarla a su business portfolio. ¿Qué necesita? Selecciona 2.",
+          "options": [
+            "Add the agency as a partner",
+            "Assign the agency as a system user",
+            "Assign temporary access",
+            "Use the agency's business ID"
+          ],
+          "correct": [0, 3],
+          "multi": true,
+          "explanation": "Pregunta oficial #2. Partner + Business ID. NO es system user, NO es temporary."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es la forma más simple de excluir grupos de contenido sensible en Brand Safety &amp; Suitability Center?",
+          "options": [
+            "Publisher block lists",
+            "Topic exclusions",
+            "Content type exclusions",
+            "Inventory filters"
+          ],
+          "correct": 3,
+          "explanation": "Pregunta oficial #8. Inventory filters (Expanded/Moderate/Limited) es la opción más simple."
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué nivel de creación de campaña haces selecciones de audience, placements y performance goal?",
+          "options": ["Campaign level", "Ad set level", "Ad level"],
+          "correct": 1,
+          "explanation": "Pregunta oficial #5. Audience, placements y performance goal son siempre Ad set level."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué soluciones puedes usar para automatizar una campaña ENTERA usando AI?",
+          "options": [
+            "Advantage+ destination y campaign budget",
+            "Advantage+ audience y placements",
+            "Advantage+ creative y catalog ads",
+            "Advantage+ sales, app y leads campaigns"
+          ],
+          "correct": 3,
+          "explanation": "Pregunta oficial #19. Solo sales/app/leads campaigns son COMPLETE solutions. Las demás son single-step."
+        },
+        {
+          "type": "mcq",
+          "q": "CASO KENET SOLAR: Quieres lanzar una campaña para captar prospectos de hogares interesados en paneles solares en Monterrey. Tienes Pixel con 8 meses de eventos Lead, base de 12,000 leads en Kommo CRM, y $80,000 MXN/mes. ¿Qué configuración Meta-friendly recomendarías?",
+          "options": [
+            "Traffic objective, Custom Audience visitantes 90 días, Lowest Cost",
+            "Leads objective con Instant Form, Advantage+ Audience usando el CRM como sugerencia, Lowest Cost (default)",
+            "Sales objective, Lookalike 1% del CRM, Cost Cap",
+            "Engagement objective, detailed targeting interés en energía solar, Bid Cap"
+          ],
+          "correct": 1,
+          "explanation": "OPCIÓN B. Razones: 1) Tu objetivo es captar leads, no vender online → Leads objective. 2) Tienes 8 meses de Pixel + CRM = mucha señal de calidad → Advantage+ Audience usa esa señal pero deja al algoritmo expandir. 3) Sin CPA target validado → Lowest Cost default. La A truena por usar Traffic cuando hay objetivo de conversión real. La C truena por restringir con Lookalike manual y Cost Cap sin justificación. La D truena por objetivo equivocado y bid demasiado restrictiva."
+        }
+      ]
+    },
+    {
+      "id": "1.flash",
+      "title": "Flashcards del Día 1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "¿Qué es Advantage+ Audience?", "a": "Configuración donde le das al algoritmo señales opcionales y él busca en toda la plataforma quién va a convertir, sin restricción manual estricta." },
+        { "q": "¿Cuándo NO se puede usar Advantage+ Audience?", "a": "En Special Ad Categories (empleo, vivienda, crédito, política) — por regulación se requiere segmentación restringida." },
+        { "q": "¿Cuál es la diferencia entre Advantage+ Shopping Campaigns y Advantage+ Catalog Ads?", "a": "ASC es la campaña automatizada completa. Catalog Ads es el formato de anuncio dinámico. ASC usa Catalog Ads internamente." },
+        { "q": "¿Cuándo Meta recomienda Lowest Cost como bid strategy?", "a": "Default. Cuando arrancas, cuando no tienes CPA target validado, o cuando quieres maximizar resultados sin restricciones." },
+        { "q": "¿Cuándo se justifica Cost Cap?", "a": "Cuando ya tienes datos históricos sólidos de CPA y quieres escalar volumen manteniendo el costo bajo un techo. NO sirve para garantizar ROAS." },
+        { "q": "¿Cuándo se usa Bid Cap?", "a": "Cuando necesitas control granular de la puja en cada subasta. Es la opción más restrictiva." },
+        { "q": "¿Qué es Highest Value bid strategy?", "a": "Maximiza el VALOR de las conversiones gastando todo el presupuesto. Solo en Sales con Purchase optimization y valor configurado." },
+        { "q": "¿Cuál es la jerarquía de decisión en una campaña Meta?", "a": "1) Objetivo de negocio → 2) Optimization event → 3) Audiencia → 4) Bid strategy → 5) Creativo y ubicaciones." },
+        { "q": "¿Cuántos objetivos de campaña hay en ODAX?", "a": "6: Awareness, Traffic, Engagement, Leads, App Promotion, Sales." },
+        { "q": "¿Qué objetivos tienen Advantage+ Complete Campaign?", "a": "Solo 3: Sales, App Promotion y Leads. NO existe Advantage+ awareness/traffic/engagement." },
+        { "q": "¿Qué es Advantage+ Creative?", "a": "Optimizaciones automáticas: brillo, música, expansión de imagen, recortes por ubicación, traducciones." },
+        { "q": "¿Para qué sirve el Pixel de Meta?", "a": "Rastrear acciones en tu sitio, construir audiencias custom, dar señales al algoritmo, y medir atribución." },
+        { "q": "¿Qué es Conversions API (CAPI)?", "a": "Conexión server-to-server entre tu servidor y Meta. Complementa al Pixel sin depender del navegador. Crítica con iOS 14+." },
+        { "q": "¿Por qué Meta prefiere Advantage+ Audience sobre Lookalikes manuales?", "a": "Porque Advantage+ usa la source como señal pero NO se limita a ella. El algoritmo encuentra audiencias mejores que las que tú definas." },
+        { "q": "¿Qué objetivo usar para generar leads con formulario nativo?", "a": "Leads objective, con Instant Form como destination. Optimization event: leads." },
+        { "q": "¿Qué objetivo usar para conversaciones por WhatsApp/Messenger?", "a": "Engagement objective, con destination Messaging Apps." },
+        { "q": "¿Qué es Advantage Campaign Budget (CBO)?", "a": "Presupuesto a nivel campaña. Meta lo distribuye automáticamente entre los ad sets según cuál genere mejores resultados." },
+        { "q": "¿Cuándo usar ABO en lugar de CBO?", "a": "Cuando necesitas garantizar gasto mínimo en cada ad set (ej. testing controlado, audiencias específicas con presupuesto fijo)." },
+        { "q": "¿Cuáles son los 3 tipos de usuarios en Business Portfolio?", "a": "People (individuos), Partners (otras empresas con business ID), System users (servidores/software)." },
+        { "q": "¿Cuántas Performance Best Practices oficiales hay y cuál NO genera recomendaciones automáticas?", "a": "Hay 7. La #7 (Validate results) NO genera recomendaciones porque depende de tests/experiments que tú ejecutas." }
+      ]
+    }
+  ]
+}
