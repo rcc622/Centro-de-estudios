@@ -1000,8 +1000,9 @@ function renderCourse(){
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
-      <div style="margin-bottom:16px">
-        <button class="btn btn-secondary" style="width:auto;padding:8px 14px;font-size:13px" onclick="navTo('home')">← Inicio</button>
+      <div class="back-row">
+        <button class="back-btn" onclick="navTo('home')" aria-label="Volver al inicio">←</button>
+        <div class="crumb">Inicio</div>
       </div>
       <div class="welcome">
         <h1>${course.title}</h1>
@@ -1084,21 +1085,22 @@ function renderDay(){
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
-      <div style="margin-bottom:16px">
-        <button class="btn btn-secondary" style="width:auto;padding:8px 14px;font-size:13px" onclick="openCourse('${course.id}')">← ${course.title}</button>
+      <div class="back-row">
+        <button class="back-btn" onclick="openCourse('${course.id}')" aria-label="Volver al curso">←</button>
+        <div class="crumb">${course.title}</div>
       </div>
       <div class="welcome">
         <h1>${day.title}</h1>
         <p>${day.subtitle}</p>
       </div>
       ${showDiagnostic ? `
-        <div class="day-card current" onclick="openQuiz('${day.id}','diagnostic')" style="border-color:#FFA726;background:#FFF8E7">
-          <div class="day-num" style="background:#FFA726;color:#fff">⚡</div>
-          <div class="day-info">
-            <div class="day-title">Atajo · Test diagnóstico</div>
-            <div class="day-sub">${day.diagnostic.questions?.length || 5} preguntas · ≥80% para saltar al Quiz de Unidad</div>
+        <div class="diag-card" onclick="openQuiz('${day.id}','diagnostic')">
+          <div class="diag-ico">⚡</div>
+          <div class="diag-info">
+            <div class="diag-title">Atajo · Test diagnóstico <span class="diag-badge">PRUÉBALO</span></div>
+            <div class="diag-sub">${day.diagnostic.questions?.length || 5} preguntas · ≥80% para saltar al Quiz de Unidad</div>
           </div>
-          <div class="day-status">▶</div>
+          <div class="diag-arrow">▶</div>
         </div>
       ` : ''}
       ${renderDayLessons(course, day)}
