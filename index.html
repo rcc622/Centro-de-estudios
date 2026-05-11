@@ -414,6 +414,18 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .flash-a{font-size:15px;line-height:1.55}
 .flash-hint{font-size:10.5px;color:#8A8D91;letter-spacing:.4px;text-transform:uppercase;font-weight:700}
 
+/* ----- BACKUP card (Ajustes) ----- */
+.backup-card{background:#fff;border:1px solid #E4E6EB;border-radius:16px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:14px}
+.backup-card .bc-title{font-size:11.5px;font-weight:800;color:#1C1E21;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.backup-card .bc-title .bc-ico{font-size:14px}
+.backup-card .bc-desc{font-size:13.5px;color:#65676B;line-height:1.5;margin-bottom:14px}
+.backup-card .bc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+.backup-card .bc-btn{padding:13px 12px;border-radius:14px;font-weight:800;font-size:13.5px;cursor:pointer;user-select:none;-webkit-user-select:none;display:flex;align-items:center;justify-content:center;gap:6px;border:none;transition:transform .15s,box-shadow .15s;font-family:inherit}
+.backup-card .bc-btn:active{transform:scale(.97)}
+.backup-card .bc-btn-primary{background:#1C1E21;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.backup-card .bc-btn-outline{background:#fff;color:#1C1E21;border:1.5px solid #E4E6EB}
+.backup-card .bc-hint{font-size:11.5px;color:#8A8D91;text-align:center;font-weight:600;margin-top:8px}
+
 /* ----- LOGROS view: niveles + tracking ----- */
 .level-current{background:linear-gradient(135deg,#1877F2,#0E5BC4);color:#fff;border-radius:20px;padding:18px;margin-bottom:18px;box-shadow:0 6px 18px rgba(24,119,242,.24);position:relative;overflow:hidden}
 .level-current::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;background:rgba(255,255,255,.08);border-radius:50%}
@@ -2661,22 +2673,14 @@ function renderConfig(){
         <div style="font-size:22px;font-weight:800;color:#E74C3C;flex-shrink:0">${DB.perfectLessons}</div>
       </div>
 
-      <div class="section-title">Respaldo</div>
-      <div class="practice-row" onclick="exportBackup()">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">⬇️</div>
-        <div class="pr-info">
-          <div class="pr-title">Exportar progreso</div>
-          <div class="pr-meta">Descarga tu XP, racha, logros y errores en JSON</div>
+      <div class="backup-card">
+        <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
+        <div class="bc-desc">Exportá tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpiás cache o cambiás de celular, importalo para recuperar XP, racha y logros.</div>
+        <div class="bc-row">
+          <button class="bc-btn bc-btn-primary" onclick="exportBackup()">📤 Exportar</button>
+          <button class="bc-btn bc-btn-outline" onclick="triggerImportBackup()">📥 Importar</button>
         </div>
-        <div class="pr-arrow">→</div>
-      </div>
-      <div class="practice-row" onclick="triggerImportBackup()">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">⬆️</div>
-        <div class="pr-info">
-          <div class="pr-title">Importar progreso</div>
-          <div class="pr-meta">Restaura un backup desde un archivo .json</div>
-        </div>
-        <div class="pr-arrow">→</div>
+        <div class="bc-hint">Recomendado: exportar antes del examen</div>
       </div>
 
       <div class="section-title">Mantenimiento</div>
