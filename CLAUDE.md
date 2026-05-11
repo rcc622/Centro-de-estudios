@@ -357,6 +357,49 @@ Estructura:
 - `correct` es array cuando `multi: true`
 - Para que sea correcto, el usuario debe seleccionar exactamente las opciones correctas
 
+#### `image` — diagrama, mind map o screenshot
+```json
+{
+  "type": "image",
+  "h": "Título opcional",
+  "src": "content/meta-410/assets/day2-mindmap.png",
+  "alt": "Texto descriptivo para accesibilidad",
+  "caption": "Caption opcional debajo · NotebookLM"
+}
+```
+- `src` debe ser ruta **relativa** desde la raíz del repo
+- Las imágenes viven en `content/<curso>/assets/`
+- Tamaño recomendado: < 1MB cada una
+- Tap en la imagen abre overlay de zoom fullscreen
+
+#### `audio-link` — Spotify-style botón a audio externo
+```json
+{
+  "type": "audio-link",
+  "title": "Repaso en audio · Día 2",
+  "url": "https://drive.google.com/file/d/.../view",
+  "duration": "12:30",
+  "source": "NotebookLM Audio Overview"
+}
+```
+- NO incrustar MP3 en el repo (saturar GitHub Pages)
+- Audios largos: subir a Google Drive (compartir público) o YouTube unlisted
+- Tap abre el link en pestaña nueva
+- Verde Spotify para distinguirlo visualmente
+
+#### `video-embed` — YouTube/Vimeo embed
+```json
+{
+  "type": "video-embed",
+  "h": "Demo de Ads Manager",
+  "url": "https://www.youtube.com/watch?v=...",
+  "caption": "Tutorial oficial"
+}
+```
+- Acepta URL de YouTube (cualquier formato) o Vimeo
+- Se convierte automáticamente a iframe embebido nocookie
+- Aspect 16:9 responsive
+
 ### Reglas para escribir contenido educativo
 
 1. **Las lecciones tipo "concept"** deben ser breves (máx 3-4 oraciones por card). Si es muy largo, divide en múltiples cards.
