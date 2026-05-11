@@ -2345,6 +2345,7 @@ function renderConfig(){
   const lvl = calcLevel(DB.xp);
   const lvlInfo = LEVELS[lvl-1];
   const nxt = nextLevelXP(lvl);
+  const xpMeta = lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} para N${lvl+1}` : 'Nivel máximo alcanzado';
   return `
     ${renderHeader()}
     <div class="scroll">
@@ -2352,38 +2353,61 @@ function renderConfig(){
         <h1>Tu progreso</h1>
         <p>Estadísticas y mantenimiento</p>
       </div>
-      <div class="stat-grid">
-        <div class="stat-tile">
-          <div class="stat-tile-label">Nivel</div>
-          <div class="stat-tile-value">${lvlInfo.i} N${lvl}</div>
-          <div class="stat-tile-sub">${lvlInfo.n}</div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">${lvlInfo.i}</div>
+        <div class="pr-info">
+          <div class="pr-title">Nivel — ${lvlInfo.n}</div>
+          <div class="pr-meta">${xpMeta}</div>
         </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">XP total</div>
-          <div class="stat-tile-value"><span class="ico">⚡</span>${DB.xp}</div>
-          <div class="stat-tile-sub">${lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} para N${lvl+1}` : 'Nivel máximo'}</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Racha</div>
-          <div class="stat-tile-value"><span class="ico">🔥</span>${DB.streak}</div>
-          <div class="stat-tile-sub">${DB.streak===1?'día':'días'} seguidos</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Logros</div>
-          <div class="stat-tile-value">🏅 ${Object.keys(DB.achievements).length}<span style="color:#8A8D91;font-weight:700">/${ACHIEVEMENTS.length}</span></div>
-          <div class="stat-tile-sub">desbloqueados</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Lecciones</div>
-          <div class="stat-tile-value">📚 ${DB.totalLessons}</div>
-          <div class="stat-tile-sub">completadas</div>
-        </div>
-        <div class="stat-tile">
-          <div class="stat-tile-label">Perfectas</div>
-          <div class="stat-tile-value">💯 ${DB.perfectLessons}</div>
-          <div class="stat-tile-sub">sin errores</div>
-        </div>
+        <div style="font-size:22px;font-weight:800;color:#42B883;flex-shrink:0">N${lvl}</div>
       </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">⚡</div>
+        <div class="pr-info">
+          <div class="pr-title">XP total</div>
+          <div class="pr-meta">Puntos acumulados</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#1877F2;flex-shrink:0">${DB.xp}</div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔥</div>
+        <div class="pr-info">
+          <div class="pr-title">Racha actual</div>
+          <div class="pr-meta">${DB.streak===1?'día consecutivo':'días consecutivos'} estudiando</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#FF6B35;flex-shrink:0">${DB.streak}</div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#FFD700,#B8950A)">🏅</div>
+        <div class="pr-info">
+          <div class="pr-title">Logros</div>
+          <div class="pr-meta">Insignias desbloqueadas</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#B8950A;flex-shrink:0">${Object.keys(DB.achievements).length}<span style="color:#B0B3B8;font-weight:700;font-size:15px">/${ACHIEVEMENTS.length}</span></div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">📚</div>
+        <div class="pr-info">
+          <div class="pr-title">Lecciones completadas</div>
+          <div class="pr-meta">Total en todos los cursos</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#9B59B6;flex-shrink:0">${DB.totalLessons}</div>
+      </div>
+
+      <div class="practice-row">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">💯</div>
+        <div class="pr-info">
+          <div class="pr-title">Lecciones perfectas</div>
+          <div class="pr-meta">Sin errores · 0 hearts perdidos</div>
+        </div>
+        <div style="font-size:22px;font-weight:800;color:#E74C3C;flex-shrink:0">${DB.perfectLessons}</div>
+      </div>
+
       <div class="section-title">Mantenimiento</div>
       <button class="btn btn-secondary" style="margin-bottom:10px" onclick="haptic(15);if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer.')){resetAll()}">Resetear todo</button>
       <div style="font-size:11px;color:#8A8D91;text-align:center;padding:18px 0;line-height:1.55">
