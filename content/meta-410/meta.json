@@ -2,7 +2,7 @@
   "id": "meta-410",
   "title": "Meta Media Buying Professional",
   "subtitle": "Examen 410-101 · 60 preg · 105 min",
-  "description": "Certificación oficial de Meta para media buyers. Cubre Ads Manager, Business Suite, audiencias, optimización, medición y creatividad.",
+  "description": "Certificación oficial de Meta para media buyers. Cubre Ads Manager, Business Suite, objectives, buying types, signals, audiencias, creativos y medición.",
   "icon": "📘",
   "color": "#1877F2",
   "exam_url": "https://www.facebook.com/business/learn/certification/exams/410-101-exam",
@@ -10,50 +10,53 @@
   "units": [
     {
       "id": "day1",
-      "title": "Día 1 — Reset Mental + Advantage+",
-      "subtitle": "Estructura, Business Suite, Best Practices",
-      "coverage": "~20% del examen"
+      "title": "Día 1 — Ads Manager + Business Suite",
+      "subtitle": "Jerarquía, Advantage+, BP, portfolios, billing, brand safety",
+      "coverage": "~16% del examen",
+      "diagnostic": { "file": "day1-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day1-quiz.json", "passingScore": 80 }
     },
     {
       "id": "day2",
       "title": "Día 2 — Campaign Objectives",
       "subtitle": "Próximamente",
-      "coverage": "~12% del examen",
+      "coverage": "~9% del examen",
       "locked": true
     },
     {
       "id": "day3",
       "title": "Día 3 — Buying Types & Bid Strategies",
       "subtitle": "Próximamente",
-      "coverage": "~18% del examen",
+      "coverage": "~13% del examen",
       "locked": true
     },
     {
       "id": "day4",
       "title": "Día 4 — Signals & Data",
       "subtitle": "Próximamente",
-      "coverage": "~18% del examen",
+      "coverage": "~17% del examen",
       "locked": true
     },
     {
       "id": "day5",
       "title": "Día 5 — Audiences & Catalogs",
       "subtitle": "Próximamente",
-      "coverage": "~14% del examen",
+      "coverage": "~20% del examen",
       "locked": true
     },
     {
       "id": "day6",
       "title": "Día 6 — Creative & Measurement",
       "subtitle": "Próximamente",
-      "coverage": "~10% del examen",
+      "coverage": "~25% del examen",
       "locked": true
     },
     {
       "id": "day7",
-      "title": "Día 7 — Simulacro Examen",
+      "title": "Día 7 — Simulacro de examen",
       "subtitle": "60 preguntas · 105 minutos",
       "coverage": "Examen completo",
+      "kind": "mock-exam",
       "locked": true
     }
   ]

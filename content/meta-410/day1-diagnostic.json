@@ -1,0 +1,64 @@
+{
+  "id": "day1-diagnostic",
+  "title": "Diagnóstico · Día 1",
+  "kind": "diagnostic",
+  "passingScore": 80,
+  "timeLimit": 0,
+  "questions": [
+    {
+      "q": "Asocia correctamente: ¿qué decisiones se toman a nivel Campaign?",
+      "options": [
+        "Audience, placements, conversion location",
+        "Creative, destination, tracking",
+        "Buying type, objective, budget, bid",
+        "Pixel installation y CAPI setup"
+      ],
+      "correct": 2,
+      "explanation": "A nivel Campaign: buying type, objective, budget, bid, special ad category. Audience/placements van en Ad set. Creative/destination van en Ad."
+    },
+    {
+      "q": "¿Cuál es la diferencia clave entre Advantage+ campaigns y Advantage+ tools (single-step)?",
+      "options": [
+        "Advantage+ campaigns son gratis, Advantage+ tools son de pago",
+        "Advantage+ campaigns automatizan TODA la campaña (Sales/App/Leads); Advantage+ tools automatizan UN aspecto (audience, placements, budget, creative, destination)",
+        "Advantage+ tools solo están disponibles para sales; Advantage+ campaigns para todos los objetivos",
+        "No hay diferencia, son sinónimos"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ campaigns = complete campaign solutions (automatizan todo). Single-step = un aspecto específico. El examen mete trampas mezclándolos."
+    },
+    {
+      "q": "Un usuario tiene full control de UNA ad account pero solo partial access al portfolio. ¿Es esto posible?",
+      "options": [
+        "No, los permisos son siempre uniformes en todo el portfolio",
+        "Sí, permisos finos por cuenta son posibles sin tener full control del portfolio entero",
+        "Solo si el usuario es un Partner, no si es People",
+        "Solo system users pueden tener este tipo de configuración"
+      ],
+      "correct": 1,
+      "explanation": "Un usuario puede tener full control de una cuenta SIN tener full control del portfolio. Esto permite permisos finos y mantiene oversight a nivel portafolio."
+    },
+    {
+      "q": "Selecciona los 4 tipos de controles del Brand Safety & Suitability Center.",
+      "options": [
+        "Inventory filters, Publisher block lists, Topic exclusions, Content type exclusions",
+        "Age controls, Geography controls, Device controls, Time controls",
+        "Bid caps, Budget caps, Frequency caps, Reach caps",
+        "Conversion controls, Engagement controls, Impression controls, Click controls"
+      ],
+      "correct": 0,
+      "explanation": "Los 4 controles del Brand Safety Center: Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions (Gaming/News/Politics/Religion), Content type exclusions (live video, non-partner)."
+    },
+    {
+      "q": "El Opportunity Score:",
+      "options": [
+        "Predice cuánto va a vender la campaña próxima",
+        "Muestra cuántas recomendaciones experimentalmente probadas no aplicaste y se actualiza al aplicarlas o cambiar la cuenta",
+        "Califica la calidad del creative comparado con otros anunciantes",
+        "Es un score que GARANTIZA tu performance si llegas a 100"
+      ],
+      "correct": 1,
+      "explanation": "Score 0-100 basado en recomendaciones no aplicadas. NO predice ni garantiza performance real. Se actualiza al aplicar recomendaciones o modificar la cuenta."
+    }
+  ]
+}
