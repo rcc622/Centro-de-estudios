@@ -1,11 +1,54 @@
 ---
 name: notebooklm-import
-description: Workflow para convertir contenido de NotebookLM (Study Guides, Briefing Docs, Mind Maps, Audio Overviews) en cursos JSON de Centro de Estudios Randall. Úsalo cuando Randall mencione "tengo el output de Notebook / NotebookLM / un Study Guide / Briefing Doc", quiera "agregar un curso nuevo a partir de transcripciones / videos / .txt", suba archivos a `source/` o `content/<curso>/source/`, o pegue texto largo estructurado por temas que claramente venga de un resumen de Notebook.
+description: Workflow para convertir contenido de NotebookLM (Study Guides, Mind Maps, Audio Overviews) en cursos JSON de la app. Diseñado para flujo Coursera (especialización → curso → módulo). Úsalo cuando Randall mencione "tengo el output de Notebook / un Study Guide", "vamos a procesar el módulo X del curso Y", "agregar la especialización Z a la app", suba archivos a `source/<especializacion>/<curso>/<modulo>/`, o pegue texto largo estructurado que claramente venga de un Study Guide de Notebook.
 ---
 
 # NotebookLM → Centro de Estudios Randall
 
-Randall procesa transcripciones de cursos en video con NotebookLM y quiere que las salidas (Study Guides, Briefing Docs, mind maps, audio overviews) se conviertan en cursos jugables dentro de su PWA. Esta skill cubre el workflow completo: cómo recibir el material, cómo estructurarlo, cómo agregar multimedia, y cómo validar antes de mergear.
+Randall procesa transcripciones de Coursera con NotebookLM y quiere que las salidas se conviertan en cursos jugables dentro de su PWA. Esta skill cubre el workflow completo: cómo recibir el material, cómo estructurarlo respetando la jerarquía Coursera, cómo agregar multimedia, y cómo validar antes de mergear.
+
+## Jerarquía Coursera → app
+
+```
+Especialización Coursera (5 cursos)
+└── Curso Coursera (10-20 módulos)         ─── 1 carpeta en content/<id-curso>/
+    └── Módulo Coursera (varios videos)     ─── 1 unit/día en meta.json
+        └── Video (.txt)                    ─── material fuente
+```
+
+Esto significa:
+- **1 especialización Coursera** = 4-5 cursos en `content/` agrupados por `specialization` tag (ver `CLAUDE.md` §2)
+- **1 curso Coursera** = 1 carpeta `content/<id-curso>/` con su meta.json
+- **1 módulo Coursera** = 1 unit en el meta.json + 1 archivo `<modulo-id>.json` con 5-7 lecciones A→B→C→D
+
+## Estructura de archivos esperada
+
+```
+source/
+└── <id-especializacion>/
+    ├── README.md                              # qué es la especialización
+    ├── <id-curso-1>/
+    │   ├── transcripciones/                   # .txt originales (input para Notebook)
+    │   │   ├── m1-v1.txt
+    │   │   └── ...
+    │   ├── m1/                                # outputs Notebook para módulo 1
+    │   │   ├── study-guide.md
+    │   │   ├── mindmap.png                    # (opcional, ver multimedia skill)
+    │   │   └── audio-link.txt                 # (opcional)
+    │   ├── m2/
+    │   └── ...
+    └── <id-curso-2>/
+
+content/
+├── courses.json                               # con specializations[] + courses[]
+├── <id-curso-1>/                              # cada curso Coursera = 1 carpeta
+│   ├── meta.json                              # specialization: "<id-esp>" + units (módulos)
+│   ├── m1.json                                # lecciones A→B→C→D del módulo 1
+│   ├── m2.json
+│   ├── ...
+│   └── assets/                                # mindmaps + imágenes
+└── <id-curso-2>/
+```
 
 ## 1. Triage al recibir material
 
@@ -47,26 +90,37 @@ Los tipos de card disponibles están en `CLAUDE.md` §5. Resumen rápido:
 - `fill`: huecos con opciones
 - `flashcards`: Q/A para repaso
 
-## 3. Workflow paso-a-paso para un curso nuevo
+## 3. Workflow paso-a-paso
 
-Cuando Randall te diga "armemos el curso X con este material":
+### A) Para una especialización Coursera NUEVA (1ra vez)
 
-1. **Leer el material completo** del Study Guide/Briefing Doc
-2. **Proponerle a Randall la estructura** ANTES de generar contenido:
-   - Cuántos días/módulos
-   - Qué temas por día
-   - Cuántas lecciones por día y de qué tipos
-   - **Pedirle aprobación de la estructura** — no gastés tokens generando 7 días si la estructura está mal
-3. Si aprueba, **crear `content/<curso>/meta.json`** con la lista de days/modules (todos `locked:false` o `locked:true` según ritmo de generación)
-4. **Agregar el curso a `content/courses.json`** con `active:true`
-5. **Generar los días uno por uno**, cada uno respetando A → B → C → D
+1. **Leer el README** de la especialización en `source/<id-esp>/README.md` para entender los 5 cursos.
+2. **Proponer a Randall la estructura completa**:
+   - 1 entrada en `specializations[]` de `courses.json`
+   - 5 entradas en `courses[]`, cada una con `specialization: "<id-esp>"`
+   - Cada curso con su `content/<id-curso>/meta.json` listando N módulos como units
+3. **Pedir aprobación** de los nombres/ids de los 5 cursos antes de crear carpetas.
+4. **Crear todo el esqueleto vacío** (meta.json con units `locked:true`).
+5. **Confirmar**: "Esqueleto listo. Decime con qué curso empezamos."
+
+### B) Para un módulo nuevo (típico flujo iterativo)
+
+1. **Localizar el Study Guide** en `source/<id-esp>/<id-curso>/<id-modulo>/study-guide.md` o pegado en el chat.
+2. **Leer el material completo**.
+3. **Proponer la estructura del módulo** a Randall:
+   - 5-7 lecciones siguiendo A→B→C→D
+   - Cuántos MCQs, match, order, scenario, flashcards
+4. **Pedir aprobación** ANTES de generar contenido (no gastar tokens en algo mal).
+5. Si aprueba:
+   - **Quitar `locked:true`** del módulo en `meta.json`
+   - **Crear `content/<id-curso>/<id-modulo>.json`** con las lecciones
+   - **Si es m1 (primer módulo del curso)**: embeber mind map del curso al inicio (sección A) y audio overview del curso al final (sección D). Ver `notebook-multimedia-prompts` skill.
 6. **Para cada MCQ**:
    - Distractores plausibles, no obvios
-   - `explanation` que enseña (no solo "es B"). Explicar por qué las otras truenan.
-7. **Si hay material multimedia** (mind maps, audios), embeber con cards `image` o `audio-link` en la lección correspondiente
-8. **Validar JSON** mentalmente antes de commit
-9. **Commit por día**: `feat(<curso>): día N — <título corto>`
-10. **Confirmar a Randall**: archivos creados, cantidad de lecciones/MCQs/flashcards, lo que debería revisar
+   - `explanation` enseña (no solo "es B")
+7. **Validar JSON** mentalmente antes de commit.
+8. **Commit**: `feat(<id-curso>): m<N> — <título corto>`
+9. **Confirmar a Randall**: archivos creados, conteos, qué revisar en el celular.
 
 ## 4. Prompts probados para NotebookLM
 
