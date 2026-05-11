@@ -10,9 +10,9 @@
 <title>Centro de Estudios Randall</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
-html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;color:#1C1E21;background:#F0F2F5}
-body{display:flex;flex-direction:column;height:100dvh}
-#app{display:flex;flex-direction:column;height:100dvh;overflow:hidden;max-width:520px;margin:0 auto;background:#fff;position:relative}
+html,body{height:100dvh;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;color:#1C1E21;background:#F0F2F5}
+body{display:block}
+#app{display:flex;flex-direction:column;height:100dvh;overflow:hidden;width:100%;max-width:640px;margin:0 auto;background:#fff;position:relative}
 
 /* HEADER */
 .hdr{padding:max(36px,env(safe-area-inset-top)) 16px 12px;background:#fff;border-bottom:1px solid #E4E6EB;flex-shrink:0;position:relative;z-index:5}
@@ -2607,25 +2607,25 @@ function renderConfig(){
         <p>Estadísticas y mantenimiento</p>
       </div>
 
-      <div class="practice-row">
+      <div class="practice-row" onclick="haptic(8);navTo('achievements')">
         <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">${lvlInfo.i}</div>
         <div class="pr-info">
           <div class="pr-title">Nivel — ${lvlInfo.n}</div>
-          <div class="pr-meta">${xpMeta}</div>
+          <div class="pr-meta">${xpMeta} · Ver lista de niveles →</div>
         </div>
         <div style="font-size:22px;font-weight:800;color:#42B883;flex-shrink:0">N${lvl}</div>
       </div>
 
-      <div class="practice-row">
+      <div class="practice-row" onclick="haptic(8);navTo('achievements')">
         <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">⚡</div>
         <div class="pr-info">
           <div class="pr-title">XP total</div>
-          <div class="pr-meta">Puntos acumulados</div>
+          <div class="pr-meta">Ver progreso semanal y anual →</div>
         </div>
         <div style="font-size:22px;font-weight:800;color:#1877F2;flex-shrink:0">${DB.xp}</div>
       </div>
 
-      <div class="practice-row">
+      <div class="practice-row" onclick="haptic(8);navTo('achievements')">
         <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔥</div>
         <div class="pr-info">
           <div class="pr-title">Racha actual</div>
@@ -2634,25 +2634,25 @@ function renderConfig(){
         <div style="font-size:22px;font-weight:800;color:#FF6B35;flex-shrink:0">${DB.streak}</div>
       </div>
 
-      <div class="practice-row">
+      <div class="practice-row" onclick="haptic(8);navTo('achievements')">
         <div class="pr-ico" style="background:linear-gradient(135deg,#FFD700,#B8950A)">🏅</div>
         <div class="pr-info">
           <div class="pr-title">Logros</div>
-          <div class="pr-meta">Insignias desbloqueadas</div>
+          <div class="pr-meta">Ver insignias desbloqueadas →</div>
         </div>
         <div style="font-size:22px;font-weight:800;color:#B8950A;flex-shrink:0">${Object.keys(DB.achievements).length}<span style="color:#B0B3B8;font-weight:700;font-size:15px">/${ACHIEVEMENTS.length}</span></div>
       </div>
 
-      <div class="practice-row">
+      <div class="practice-row" onclick="haptic(8);navTo('home')">
         <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">📚</div>
         <div class="pr-info">
           <div class="pr-title">Lecciones completadas</div>
-          <div class="pr-meta">Total en todos los cursos</div>
+          <div class="pr-meta">Volver al curso →</div>
         </div>
         <div style="font-size:22px;font-weight:800;color:#9B59B6;flex-shrink:0">${DB.totalLessons}</div>
       </div>
 
-      <div class="practice-row">
+      <div class="practice-row" onclick="haptic(8);navTo('achievements')">
         <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">💯</div>
         <div class="pr-info">
           <div class="pr-title">Lecciones perfectas</div>
@@ -2661,8 +2661,26 @@ function renderConfig(){
         <div style="font-size:22px;font-weight:800;color:#E74C3C;flex-shrink:0">${DB.perfectLessons}</div>
       </div>
 
+      <div class="section-title">Respaldo</div>
+      <div class="practice-row" onclick="exportBackup()">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">⬇️</div>
+        <div class="pr-info">
+          <div class="pr-title">Exportar progreso</div>
+          <div class="pr-meta">Descarga tu XP, racha, logros y errores en JSON</div>
+        </div>
+        <div class="pr-arrow">→</div>
+      </div>
+      <div class="practice-row" onclick="triggerImportBackup()">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">⬆️</div>
+        <div class="pr-info">
+          <div class="pr-title">Importar progreso</div>
+          <div class="pr-meta">Restaura un backup desde un archivo .json</div>
+        </div>
+        <div class="pr-arrow">→</div>
+      </div>
+
       <div class="section-title">Mantenimiento</div>
-      <button class="btn btn-secondary" style="margin-bottom:10px" onclick="haptic(15);if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer.')){resetAll()}">Resetear todo</button>
+      <button class="btn btn-secondary" style="margin-bottom:10px" onclick="haptic(15);if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer. Exportá un backup antes si no querés perderlo.')){resetAll()}">Resetear todo</button>
       <div style="font-size:11px;color:#8A8D91;text-align:center;padding:18px 0;line-height:1.55">
         Centro de Estudios Randall<br/>
         v1.0 · PWA · localStorage<br/>
@@ -2960,13 +2978,70 @@ function resetFlashDeck(){
   render();
 }
 
+function exportBackup(){
+  haptic(HAPTIC.submit);
+  const payload = {
+    schema: 'cer_v1',
+    exportedAt: new Date().toISOString(),
+    data: DB
+  };
+  const json = JSON.stringify(payload, null, 2);
+  const blob = new Blob([json], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cer-backup-${todayStr()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Backup descargado · guárdalo donde te convenga', 2500, 'success');
+}
+
+function triggerImportBackup(){
+  haptic(HAPTIC.tap);
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json,.json';
+  input.onchange = (e) => {
+    const file = e.target.files?.[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(reader.result);
+        const data = parsed?.schema === 'cer_v1' ? parsed.data : parsed;
+        if(!data || typeof data.xp !== 'number'){
+          showToast('Archivo inválido · no es un backup de CER', 2800, 'error');
+          return;
+        }
+        if(!confirm('Esto va a REEMPLAZAR tu progreso actual con el del backup. ¿Continuar?')) return;
+        DB = Object.assign({
+          xp:0, hearts:MAX_HEARTS, lastHeartLost:null, streak:0, lastStudyDate:null,
+          achievements:{}, progress:{}, flashcardStats:{}, totalLessons:0,
+          perfectLessons:0, quizProgress:{}, wrongAnswers:{}, activityLog:{}, studiedWeekdays:{}
+        }, data);
+        save();
+        showToast('Backup restaurado · XP, racha y logros recuperados', 2800, 'success');
+        haptic(HAPTIC.complete);
+        render();
+      } catch(err){
+        console.error(err);
+        showToast('No se pudo leer el archivo: '+err.message, 3000, 'error');
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
 function resetAll(){
   localStorage.removeItem(STORAGE_KEY);
   DB = {
     xp: 0, hearts: MAX_HEARTS, lastHeartLost: null,
     streak: 0, lastStudyDate: null, achievements: {},
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
-    quizProgress: {}
+    quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {}
   };
   VIEW = 'home';
   render();
