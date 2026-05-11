@@ -165,15 +165,6 @@ body{display:block}
 @keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
 
 /* TOAST */
-/* Pull-to-refresh indicator */
-.ptr{position:fixed;top:max(50px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-200%);background:#1877F2;color:#fff;padding:10px 18px;border-radius:99px;font-weight:800;font-size:13px;z-index:300;display:flex;align-items:center;gap:8px;transition:transform .2s ease;box-shadow:0 6px 18px rgba(24,119,242,.35);pointer-events:none;white-space:nowrap}
-.ptr.pulling{transform:translateX(-50%) translateY(var(--ptr-y, 14px))}
-.ptr.refreshing{transform:translateX(-50%) translateY(14px)}
-.ptr .ptr-icon{font-size:15px;font-weight:800;transition:transform .15s}
-.ptr.ready .ptr-icon{transform:rotate(180deg)}
-.ptr-spinner{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:ptr-spin .7s linear infinite}
-@keyframes ptr-spin{to{transform:rotate(360deg)}}
-
 .toast{position:fixed;top:max(70px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-200%);background:#1C1E21;color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:13.5px;z-index:200;transition:transform .3s,opacity .2s;max-width:90vw;box-shadow:0 8px 24px rgba(0,0,0,.3);display:none;align-items:center;gap:8px;opacity:0;pointer-events:none}
 .toast.show{display:flex;transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
 .toast.success{background:#1F6B4A}
@@ -423,6 +414,18 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .flash-a{font-size:15px;line-height:1.55}
 .flash-hint{font-size:10.5px;color:#8A8D91;letter-spacing:.4px;text-transform:uppercase;font-weight:700}
 
+/* ----- BACKUP card (Ajustes) ----- */
+.backup-card{background:#fff;border:1px solid #E4E6EB;border-radius:16px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:14px}
+.backup-card .bc-title{font-size:11.5px;font-weight:800;color:#1C1E21;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.backup-card .bc-title .bc-ico{font-size:14px}
+.backup-card .bc-desc{font-size:13.5px;color:#65676B;line-height:1.5;margin-bottom:14px}
+.backup-card .bc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+.backup-card .bc-btn{padding:13px 12px;border-radius:14px;font-weight:800;font-size:13.5px;cursor:pointer;user-select:none;-webkit-user-select:none;display:flex;align-items:center;justify-content:center;gap:6px;border:none;transition:transform .15s,box-shadow .15s;font-family:inherit}
+.backup-card .bc-btn:active{transform:scale(.97)}
+.backup-card .bc-btn-primary{background:#1C1E21;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.backup-card .bc-btn-outline{background:#fff;color:#1C1E21;border:1.5px solid #E4E6EB}
+.backup-card .bc-hint{font-size:11.5px;color:#8A8D91;text-align:center;font-weight:600;margin-top:8px}
+
 /* ----- LOGROS view: niveles + tracking ----- */
 .level-current{background:linear-gradient(135deg,#1877F2,#0E5BC4);color:#fff;border-radius:20px;padding:18px;margin-bottom:18px;box-shadow:0 6px 18px rgba(24,119,242,.24);position:relative;overflow:hidden}
 .level-current::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;background:rgba(255,255,255,.08);border-radius:50%}
@@ -502,10 +505,6 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 </head>
 <body>
 <div id="app"></div>
-<div class="ptr" id="ptr">
-  <span class="ptr-icon" id="ptr-icon">↓</span>
-  <span class="ptr-text" id="ptr-text">Tira para refrescar</span>
-</div>
 <div class="overlay" id="lvlup-overlay" onclick="closeLvlUp()">
   <div class="overlay-inner">
     <div class="overlay-ico" id="lu-ico">🎉</div>
@@ -2674,22 +2673,14 @@ function renderConfig(){
         <div style="font-size:22px;font-weight:800;color:#E74C3C;flex-shrink:0">${DB.perfectLessons}</div>
       </div>
 
-      <div class="section-title">Respaldo</div>
-      <div class="practice-row" onclick="exportBackup()">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">⬇️</div>
-        <div class="pr-info">
-          <div class="pr-title">Exportar progreso</div>
-          <div class="pr-meta">Descarga tu XP, racha, logros y errores en JSON</div>
+      <div class="backup-card">
+        <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
+        <div class="bc-desc">Exportá tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpiás cache o cambiás de celular, importalo para recuperar XP, racha y logros.</div>
+        <div class="bc-row">
+          <button class="bc-btn bc-btn-primary" onclick="exportBackup()">📤 Exportar</button>
+          <button class="bc-btn bc-btn-outline" onclick="triggerImportBackup()">📥 Importar</button>
         </div>
-        <div class="pr-arrow">→</div>
-      </div>
-      <div class="practice-row" onclick="triggerImportBackup()">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">⬆️</div>
-        <div class="pr-info">
-          <div class="pr-title">Importar progreso</div>
-          <div class="pr-meta">Restaura un backup desde un archivo .json</div>
-        </div>
-        <div class="pr-arrow">→</div>
+        <div class="bc-hint">Recomendado: exportar antes del examen</div>
       </div>
 
       <div class="section-title">Mantenimiento</div>
@@ -3117,82 +3108,6 @@ function showToast(msg, duration=2000, type=''){
   setTimeout(() => t.classList.remove('show'), duration);
 }
 
-// ============================================================
-// PULL-TO-REFRESH custom (overflow:hidden bloquea el nativo)
-// ============================================================
-const PTR_THRESHOLD = 70; // px que hay que jalar para gatillar
-let PTR = { startY:0, dist:0, pulling:false, refreshing:false, scroller:null };
-
-function _ptrEl(){ return document.getElementById('ptr'); }
-function _ptrIcon(){ return document.getElementById('ptr-icon'); }
-function _ptrText(){ return document.getElementById('ptr-text'); }
-
-function _ptrShow(dy){
-  const el = _ptrEl(); if(!el) return;
-  const eased = Math.min(dy, PTR_THRESHOLD * 1.6);
-  el.style.setProperty('--ptr-y', (eased * 0.5) + 'px');
-  el.classList.add('pulling');
-  if(dy >= PTR_THRESHOLD){
-    el.classList.add('ready');
-    _ptrText().textContent = 'Suelta para refrescar';
-  } else {
-    el.classList.remove('ready');
-    _ptrText().textContent = 'Tira para refrescar';
-  }
-}
-
-function _ptrHide(){
-  const el = _ptrEl(); if(!el) return;
-  el.classList.remove('pulling','ready');
-  el.style.removeProperty('--ptr-y');
-}
-
-function _ptrTrigger(){
-  const el = _ptrEl(); if(!el) return;
-  PTR.refreshing = true;
-  el.classList.remove('pulling','ready');
-  el.classList.add('refreshing');
-  _ptrIcon().outerHTML = '<span class="ptr-spinner" id="ptr-icon"></span>';
-  _ptrText().textContent = 'Refrescando...';
-  haptic(HAPTIC.complete);
-  setTimeout(() => location.reload(), 400);
-}
-
-document.addEventListener('touchstart', e => {
-  if(PTR.refreshing) return;
-  const sc = document.querySelector('.scroll');
-  if(!sc || sc.scrollTop > 0) return;
-  PTR.scroller = sc;
-  PTR.startY = e.touches[0].clientY;
-  PTR.pulling = true;
-  PTR.dist = 0;
-}, {passive:true});
-
-document.addEventListener('touchmove', e => {
-  if(!PTR.pulling || PTR.refreshing) return;
-  if(!PTR.scroller || PTR.scroller.scrollTop > 0){
-    PTR.pulling = false; _ptrHide(); return;
-  }
-  const dy = e.touches[0].clientY - PTR.startY;
-  if(dy <= 0){ _ptrHide(); return; }
-  PTR.dist = dy;
-  _ptrShow(dy);
-}, {passive:true});
-
-document.addEventListener('touchend', () => {
-  if(!PTR.pulling || PTR.refreshing){ PTR.pulling = false; return; }
-  if(PTR.dist >= PTR_THRESHOLD){
-    _ptrTrigger();
-  } else {
-    _ptrHide();
-  }
-  PTR.pulling = false;
-}, {passive:true});
-
-document.addEventListener('touchcancel', () => {
-  PTR.pulling = false;
-  if(!PTR.refreshing) _ptrHide();
-}, {passive:true});
 
 // ============================================================
 // PWA — manifest + service worker via blob (no extra files)
