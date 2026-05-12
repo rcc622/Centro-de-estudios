@@ -1,0 +1,118 @@
+{
+  "title": "Quiz de unidad · Día 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuál es la diferencia entre Custom Audience y Lookalike Audience?",
+      "options": [
+        "Custom es nuevos prospectos, Lookalike es clientes existentes",
+        "Custom es gente que YA interactuó con el negocio; Lookalike es gente NUEVA similar al source",
+        "Son lo mismo con distinto nombre",
+        "Custom es solo para offline"
+      ],
+      "correct": 1,
+      "explanation": "Custom = retargeting. Lookalike = prospección de nuevos similares.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Mínimo absoluto de personas en source para crear un Lookalike:",
+      "options": ["50","100 en un solo país","500","1,000"],
+      "correct": 1,
+      "explanation": "100 personas de UN país. Recomendado 1,000-50,000 para calidad.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuáles son audience CONTROLS (rígidos, no se pueden expandir)? Selecciona 2.",
+      "options": [
+        "Location (ej. solo CDMX)",
+        "Detailed targeting (intereses)",
+        "Custom Audience exclusion",
+        "Lookalike audience inclusion",
+        "Age 18-65+ suggestion"
+      ],
+      "correct": [0, 2],
+      "multi": true,
+      "explanation": "Location y exclusions son controls rígidos. Detailed targeting, lookalike inclusion y age suggestion son suggestions (flexibles, AI puede expandir).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Un Lookalike 10% comparado con 1%:",
+      "options": [
+        "Es más similar al source",
+        "Tiene mayor alcance pero menos similitud al source",
+        "Tiene menor alcance",
+        "No existe el 10%"
+      ],
+      "correct": 1,
+      "explanation": "10% = más alcance, menos similar. 1% = máxima similitud, menor alcance.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "El source audience usado para crear un lookalike, ¿se incluye o se excluye?",
+      "options": [
+        "Se incluye (alcance ampliado)",
+        "Se excluye automáticamente",
+        "Depende del setting manual",
+        "Solo en 1%"
+      ],
+      "correct": 1,
+      "explanation": "El source SIEMPRE se excluye. El lookalike busca gente nueva similar, no re-alcanza al source.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Cuál es el máximo de Custom Audiences por ad account y de Lookalikes por source?",
+      "options": [
+        "100 / 50",
+        "250 / 100",
+        "500 / 500",
+        "1,000 / 1,000"
+      ],
+      "correct": 2,
+      "explanation": "500 custom audiences por ad account y hasta 500 lookalikes por source audience.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Qué es Advantage+ Audience y cómo se desactiva (intencional o no)?",
+      "options": [
+        "Solo se desactiva en Reservation",
+        "Es la AI que expande sobre tus suggestions. Se desactiva al elegir 'Switch to original audience options' o 'Further limit the reach of your ads'",
+        "Siempre está ON sin opción de apagar",
+        "Solo para Sales"
+      ],
+      "correct": 1,
+      "explanation": "ON por default. Se desactiva intencional (con esos clicks) o sin querer al limitar manualmente la audiencia.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Para Advantage+ Catalog Ads, ¿cuál es el mínimo recomendado de productos por Product Set?",
+      "options": ["5","10","20","50"],
+      "correct": 2,
+      "explanation": "20 productos mínimo recomendado para variedad suficiente para el ML.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Catalog match rate ideal y qué problema indica si está bajo:",
+      "options": [
+        ">50%, problema de budget",
+        ">75%, problema de setup de Pixel (IDs incorrectos, productos faltantes)",
+        ">90%, audiencia chica",
+        "Cualquier %, sin problema"
+      ],
+      "correct": 1,
+      "explanation": ">75% target. Bajo = problema en mapeo Pixel/CAPI ↔ catalog (Content IDs no coinciden).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Un anunciante con varias líneas de productos. ¿Mejor práctica?",
+      "options": [
+        "Crear un catalog por cada línea para tener separación",
+        "Crear un solo catalog con Product Sets por línea",
+        "No usar catalog",
+        "Crear múltiples Pixels"
+      ],
+      "correct": 1,
+      "explanation": "UN SOLO catalog con Product Sets internos. Múltiples catalogs confunden el matching con Pixel y dificultan setup de Advantage+ Catalog Ads.",
+      "difficulty": "hard"
+    }
+  ]
+}

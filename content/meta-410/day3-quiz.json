@@ -1,0 +1,119 @@
+{
+  "title": "Quiz de unidad · Día 3",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Para qué objectives está disponible Reservation? Selecciona 2.",
+      "options": ["Awareness","Traffic","Engagement","Leads","Sales"],
+      "correct": [0, 2],
+      "multi": true,
+      "explanation": "Solo Awareness y Engagement admiten Reservation. Traffic, Leads, Sales y App Promotion solo Auction.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuáles son las 3 categorías de bid strategies en Meta?",
+      "options": [
+        "Auto / Manual / Hybrid",
+        "Spend-based / Goal-based / Manual",
+        "Daily / Lifetime / Reservation",
+        "Standard / Advanced / Custom"
+      ],
+      "correct": 1,
+      "explanation": "Spend-based (Highest Volume, Highest Value) gastan todo. Goal-based (Cost per Result Goal, ROAS Goal) respetan meta. Manual (Bid Cap).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un anunciante de e-commerce tiene Pixel con value tracking y quiere asegurar un ROAS mínimo de 4x. ¿Cuál bid strategy es óptimo?",
+      "options": [
+        "Highest Volume",
+        "Highest Value",
+        "ROAS Goal de 4x",
+        "Bid Cap"
+      ],
+      "correct": 2,
+      "explanation": "ROAS Goal define el retorno objetivo. Highest Value maximiza valor pero sin meta específica de retorno. Bid Cap no garantiza ROAS.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Una campaña tiene 4 ad sets con audiencias distintas. Querés que Meta asigne más presupuesto al ad set que mejor convierta. ¿Qué setting usás?",
+      "options": [
+        "Daily budget igual por ad set",
+        "Lifetime budget manual por ad set",
+        "Advantage+ Campaign Budget",
+        "Bid Cap idéntico en los 4"
+      ],
+      "correct": 2,
+      "explanation": "Advantage+ Campaign Budget reasigna dinámicamente al ad set ganador. Requiere ≥2 ad sets en la campaña.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuáles de estas SÍ causan Learning Limited? Selecciona 3.",
+      "options": [
+        "Audience demasiado chica",
+        "Budget muy bajo",
+        "Pixel + CAPI ambos instalados",
+        "Demasiados ad sets activos",
+        "Bid Cap muy restrictivo"
+      ],
+      "correct": [0, 1, 4],
+      "multi": true,
+      "explanation": "Audience chica, budget bajo y bid restrictivo causan Learning Limited. Demasiados ad sets también puede causarlo. Pixel + CAPI MEJORA optimización (no es causa).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Cambiar el bid strategy de un ad set en medio del learning phase:",
+      "options": [
+        "Acelera la salida del learning",
+        "Resetea el learning phase y vuelve a empezar a contar events",
+        "No tiene efecto",
+        "Lo pone en pausa hasta que termine"
+      ],
+      "correct": 1,
+      "explanation": "Cambio de bid strategy es edit significativo. Resetea learning. El ad set vuelve a empezar a acumular 50 events desde 0.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Qué afirmación sobre Bid Cap es VERDADERA?",
+      "options": [
+        "Bid Cap garantiza un CPA máximo",
+        "Bid Cap controla el bid máximo en la subasta, NO el CPA final",
+        "Bid Cap es recomendado para principiantes",
+        "Bid Cap solo funciona con Pixel value tracking"
+      ],
+      "correct": 1,
+      "explanation": "Bid Cap = techo al bid de la subasta. El CPA final depende de action rates y quality. Para meta de CPA usar Cost per Result Goal. Recomendado solo para advanced users.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Hasta qué % puede compartirse entre ad sets con Ad Set Budget Sharing?",
+      "options": ["5%","10%","20%","50%"],
+      "correct": 2,
+      "explanation": "20% del daily budget puede compartirse entre ad sets de la misma campaña.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Reservation está disponible en qué placements?",
+      "options": [
+        "Todos los placements",
+        "Solo Facebook + Instagram",
+        "Solo Facebook",
+        "Solo Audience Network"
+      ],
+      "correct": 1,
+      "explanation": "Reservation está limitado a FB + IG. Auction admite todos los placements (incluyendo Audience Network, Messenger, Threads).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Daily budget vs Lifetime budget: ¿cuál afirmación es correcta?",
+      "options": [
+        "Daily nunca puede exceder el monto diario",
+        "Lifetime se distribuye exactamente igual cada día",
+        "Daily es promedio (puede exceder ~25% un día y compensar); Lifetime es tope absoluto durante el periodo",
+        "Son intercambiables"
+      ],
+      "correct": 2,
+      "explanation": "Daily = promedio flexible (excede +25% algunos días y compensa otros). Lifetime = tope durante el periodo, distribución variable día a día.",
+      "difficulty": "medium"
+    }
+  ]
+}

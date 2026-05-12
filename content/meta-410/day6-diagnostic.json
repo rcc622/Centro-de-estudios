@@ -1,0 +1,56 @@
+{
+  "title": "Diagnóstico · Día 6",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuál es el aspect ratio para Stories y Reels?",
+      "options": ["16:9","1:1","4:5","9:16"],
+      "correct": 3,
+      "explanation": "9:16 full portrait vertical para Stories y Reels.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Querés saber cuántas ventas EXTRAS generó tu campaña vs el escenario sin haberla corrido. ¿Qué herramienta?",
+      "options": [
+        "A/B Test",
+        "Brand Lift",
+        "Conversion Lift",
+        "Standard reporting"
+      ],
+      "correct": 2,
+      "explanation": "Conversion Lift mide incrementalidad: ventas causales atribuibles a la campaña.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuántas variables se deben cambiar en un A/B Test correcto?",
+      "options": ["1","2","3","Cuantas más mejor"],
+      "correct": 0,
+      "explanation": "UNA sola variable. Cambiando 2+ no podés aislar la causa del resultado.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Qué modelos de attribution existen en Ads Manager?",
+      "options": [
+        "Standard, Custom y Incremental",
+        "Standard e Incremental",
+        "Last-click, First-click, Linear, Time-decay",
+        "Solo Custom"
+      ],
+      "correct": 1,
+      "explanation": "Solo Standard e Incremental. Custom NO existe en Ads Manager.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Si combinás Advantage+ Creative con Asset Customization, ¿qué prevalece?",
+      "options": [
+        "Advantage+ Creative siempre gana",
+        "Asset Customization (manual) tiene priority en los placements customizados",
+        "Se cancelan entre sí",
+        "Depende del objective"
+      ],
+      "correct": 1,
+      "explanation": "Lo manual gana en los placements donde explícitamente customizaste.",
+      "difficulty": "hard"
+    }
+  ]
+}

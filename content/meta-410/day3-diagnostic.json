@@ -1,0 +1,56 @@
+{
+  "title": "Diagnóstico · Día 3",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuál es el default bid strategy de Meta?",
+      "options": ["Bid Cap","Cost per Result Goal","Highest Volume","ROAS Goal"],
+      "correct": 2,
+      "explanation": "Highest Volume es default: gasta todo y maximiza cantidad sin meta de costo.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Reservation buying type SOLO admite:",
+      "options": [
+        "Daily budget",
+        "Lifetime budget",
+        "Cualquiera de los dos",
+        "Solo Bid Cap"
+      ],
+      "correct": 1,
+      "explanation": "Reservation requiere lifetime budget obligatoriamente. Para Auction podés elegir daily o lifetime.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuántos optimization events necesita un ad set para salir del Learning Phase?",
+      "options": ["10","25","50","100"],
+      "correct": 2,
+      "explanation": "50 events en 7 días desde activación o último edit significativo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Si tu meta es mantener un CPA promedio en $300 MXN y no rebasar, ¿qué bid strategy es óptimo?",
+      "options": [
+        "Highest Volume",
+        "Bid Cap a $300",
+        "Cost per Result Goal con target $300",
+        "Highest Value"
+      ],
+      "correct": 2,
+      "explanation": "Cost per Result Goal respeta el target de CPA. Bid Cap controla el bid en subasta (no el CPA final). Highest Volume no respeta target.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Quién gana la subasta de Meta?",
+      "options": [
+        "El que paga más bid",
+        "El que tiene mayor total value = bid × estimated action rates + ad quality",
+        "El que se publica primero",
+        "El que tiene más budget mensual"
+      ],
+      "correct": 1,
+      "explanation": "Total value combina bid, probabilidad de acción y calidad del ad. Un ad de menor bid puede ganar si tiene mejor action rate y quality.",
+      "difficulty": "hard"
+    }
+  ]
+}
