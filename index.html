@@ -650,8 +650,62 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 // CONFIG & CONSTANTS
 // ============================================================
 const STORAGE_KEY = 'cer_v1';
-const HEART_REGEN_MS = 15 * 60 * 1000; // 15 min per heart
-const MAX_HEARTS = 5;
+const HEART_REGEN_MS_DEFAULT = 15 * 60 * 1000;
+const MAX_HEARTS_DEFAULT = 5;
+
+// Perfiles de dificultad. Cada uno modifica hearts, regen, lightning, passing
+// y XP multiplier. Default 'medium' replica el comportamiento anterior.
+const DIFFICULTY = {
+  easy: {
+    n: 'Fácil',
+    desc: 'Explorá sin presión · regen rápido',
+    icon: '🌱',
+    maxHearts: 7,
+    heartRegenMs: 10*60*1000,
+    passingBonus: -20,
+    lightningTime: 240,
+    xpMult: 1.0
+  },
+  medium: {
+    n: 'Intermedio',
+    desc: 'Balanceado · estándar',
+    icon: '⚖️',
+    maxHearts: 5,
+    heartRegenMs: 15*60*1000,
+    passingBonus: 0,
+    lightningTime: 180,
+    xpMult: 1.0
+  },
+  hard: {
+    n: 'Difícil',
+    desc: 'Exigente · +30% XP',
+    icon: '🔥',
+    maxHearts: 3,
+    heartRegenMs: 30*60*1000,
+    passingBonus: 5,
+    lightningTime: 120,
+    xpMult: 1.3
+  },
+  master: {
+    n: 'Maestro',
+    desc: 'Como el examen real · +50% XP',
+    icon: '🏆',
+    maxHearts: 1,
+    heartRegenMs: 60*60*1000,
+    passingBonus: 10,
+    lightningTime: 90,
+    xpMult: 1.5
+  }
+};
+function getDifficulty(){ return DIFFICULTY[DB.difficulty || 'medium'] || DIFFICULTY.medium; }
+// Aliases backward-compatible
+const MAX_HEARTS = MAX_HEARTS_DEFAULT; // legacy, usar getMaxHearts() para lógica
+const HEART_REGEN_MS = HEART_REGEN_MS_DEFAULT;
+function getMaxHearts(){ return getDifficulty().maxHearts; }
+function getHeartRegenMs(){ return getDifficulty().heartRegenMs; }
+function getXpMult(){ return getDifficulty().xpMult; }
+function getPassingBonus(){ return getDifficulty().passingBonus; }
+function getLightningTime(){ return getDifficulty().lightningTime; }
 
 const LEVELS = [
   {n:'Novato',           xp:0,    i:'🌱'},
@@ -960,13 +1014,15 @@ const HAPTIC = {
 };
 
 function regenerateHearts(){
-  if(DB.hearts >= MAX_HEARTS) return;
+  const maxH = getMaxHearts();
+  const regenMs = getHeartRegenMs();
+  if(DB.hearts >= maxH) return;
   if(!DB.lastHeartLost) return;
   const elapsed = now() - DB.lastHeartLost;
-  const regenerated = Math.floor(elapsed / HEART_REGEN_MS);
+  const regenerated = Math.floor(elapsed / regenMs);
   if(regenerated > 0){
-    DB.hearts = Math.min(MAX_HEARTS, DB.hearts + regenerated);
-    DB.lastHeartLost = DB.hearts >= MAX_HEARTS ? null : DB.lastHeartLost + (regenerated * HEART_REGEN_MS);
+    DB.hearts = Math.min(maxH, DB.hearts + regenerated);
+    DB.lastHeartLost = DB.hearts >= maxH ? null : DB.lastHeartLost + (regenerated * regenMs);
     save();
   }
 }
@@ -974,7 +1030,7 @@ function regenerateHearts(){
 function loseHeart(){
   if(DB.hearts <= 0) return false;
   DB.hearts -= 1;
-  if(DB.hearts < MAX_HEARTS && !DB.lastHeartLost) DB.lastHeartLost = now();
+  if(DB.hearts < getMaxHearts() && !DB.lastHeartLost) DB.lastHeartLost = now();
   save();
   return true;
 }
@@ -992,6 +1048,7 @@ function nextLevelXP(lvl){
 }
 
 function addXP(amount){
+  amount = Math.round(amount * getXpMult());
   const lvlBefore = calcLevel(DB.xp);
   DB.xp += amount;
   const lvlAfter = calcLevel(DB.xp);
@@ -1219,7 +1276,8 @@ function markQuizResult(courseId, dayId, kind, score, passingScore){
   const qp = DB.quizProgress[courseId][dayId];
   qp.attempts = (qp.attempts || 0) + 1;
   qp.bestScore = Math.max(qp.bestScore || 0, score);
-  const passed = score >= passingScore;
+  const adjustedPassing = Math.min(100, Math.max(0, passingScore + getPassingBonus()));
+  const passed = score >= adjustedPassing;
   if(kind === 'diagnostic' && passed){
     qp.diagnosticPassed = true;
     if(score === 100) earnAch('diagnostic_pass');
@@ -1293,7 +1351,7 @@ function renderHeader(){
   const prevXP = lvl > 1 ? LEVELS[lvl-1].xp : 0;
   const pct = nextXP > prevXP ? Math.min(100, Math.round((DB.xp - prevXP)/(nextXP - prevXP)*100)) : 100;
   const heartsHtml = `<span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}`;
-  const showTimer = DB.hearts < MAX_HEARTS && DB.lastHeartLost;
+  const showTimer = DB.hearts < getMaxHearts() && DB.lastHeartLost;
   const heartsClick = DB.hearts === 0 ? `onclick="haptic(8);openNoHeartsModal()"` : '';
   const shieldChip = (DB.shields||0) > 0 ? `<span class="shield-chip clickable" onclick="haptic(8);openStreak()" title="${DB.shields} escudos de racha">🛡️${DB.shields}</span>` : '';
   return `
@@ -2885,6 +2943,27 @@ function setDailyGoal(n){
   save();
   render();
 }
+
+function setDifficulty(level){
+  haptic(HAPTIC.select);
+  if(!DIFFICULTY[level]) return;
+  const oldMaxHearts = getMaxHearts();
+  DB.difficulty = level;
+  const newMaxHearts = getMaxHearts();
+  // Si bajó el max y tenés más hearts que el nuevo cap, ajustar
+  if(DB.hearts > newMaxHearts){
+    DB.hearts = newMaxHearts;
+    if(DB.hearts >= newMaxHearts) DB.lastHeartLost = null;
+  }
+  // Si subió el max y tenías hearts perdiéndose, mantener el contador
+  if(DB.hearts < newMaxHearts && !DB.lastHeartLost){
+    DB.lastHeartLost = now();
+  }
+  save();
+  const d = DIFFICULTY[level];
+  showToast('Dificultad: '+d.icon+' '+d.n+' · '+newMaxHearts+' hearts · XP x'+d.xpMult, 2800, 'success');
+  render();
+}
 function streakNavMonth(delta){
   haptic(HAPTIC.tap);
   // Parsea en hora LOCAL (no UTC). Antes usaba new Date("YYYY-MM") que ECMA
@@ -3069,6 +3148,27 @@ function renderConfig(){
       </div>
 
       ${(() => {
+        const curr = DB.difficulty || 'medium';
+        const d = DIFFICULTY[curr];
+        const opts = ['easy','medium','hard','master'];
+        return `
+          <div class="goal-card">
+            <div class="gc-title"><span>⚙️</span>Dificultad</div>
+            <div class="gc-desc">Ajustá qué tan exigente es la app. Afecta corazones máximos, regen, score para aprobar quizzes, tiempo de lightning y multiplicador de XP.</div>
+            <div class="gc-progress-label" style="margin-bottom:14px">${d.icon} <strong>${d.n}</strong> · ${d.maxHearts}❤️ · regen ${d.heartRegenMs/60000}min · XP x${d.xpMult}</div>
+            <div class="gc-options">
+              ${opts.map(o => {
+                const od = DIFFICULTY[o];
+                return `<button class="gc-opt ${curr===o?'active':''}" onclick="setDifficulty('${o}')">
+                  ${od.icon}<span class="gc-opt-sub">${od.n.toLowerCase()}</span>
+                </button>`;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      })()}
+
+      ${(() => {
         const goal = DB.dailyGoal || 3;
         const todayLog = DB.activityLog?.[todayStr()] || {lessons:0};
         const done = todayLog.lessons || 0;
@@ -3241,7 +3341,7 @@ function openLesson(id){
   MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:new Set(), errors:0, wrongL:null, wrongR:null};
   ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
   stopLightningTimer();
-  LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:180, errors:0, done:false, deadline:0};
+  LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:getLightningTime(), errors:0, done:false, deadline:0};
   VIEW = 'lesson';
   render();
 }
@@ -3564,9 +3664,11 @@ function showToast(msg, duration=2000, type=''){
 // Heart regen timer + canje XP + modal sin hearts
 // ============================================================
 function msToNextHeart(){
-  if(DB.hearts >= MAX_HEARTS || !DB.lastHeartLost) return 0;
+  const maxH = getMaxHearts();
+  const regenMs = getHeartRegenMs();
+  if(DB.hearts >= maxH || !DB.lastHeartLost) return 0;
   const elapsed = now() - DB.lastHeartLost;
-  const next = HEART_REGEN_MS - (elapsed % HEART_REGEN_MS);
+  const next = regenMs - (elapsed % regenMs);
   return Math.max(0, next);
 }
 
@@ -3586,7 +3688,7 @@ function startHeartTicker(){
     // Update mini-timer en header
     const hdrEl = document.getElementById('hearts-timer-hdr');
     if(hdrEl){
-      if(DB.hearts >= MAX_HEARTS || ms <= 0){
+      if(DB.hearts >= getMaxHearts() || ms <= 0){
         hdrEl.textContent = '';
       } else {
         hdrEl.textContent = fmtMs(ms);
@@ -3599,7 +3701,7 @@ function startHeartTicker(){
       modalEl.textContent = ms > 0 ? fmtMs(ms) : 'YA!';
     }
     // Si regeneró un heart, re-render
-    if(ms > HEART_REGEN_MS - 1000){
+    if(ms > getHeartRegenMs() - 1000){
       regenerateHearts();
       if(DB.hearts > 0 && document.getElementById('no-hearts-modal').classList.contains('open')){
         showToast('❤️ ¡Heart regenerado!', 1800, 'success');
@@ -3651,14 +3753,14 @@ function exchangeXpForHeart(){
     showToast('Te faltan '+(XP_PER_HEART-DB.xp)+' XP para canjear', 2200, 'error');
     return;
   }
-  if(DB.hearts >= MAX_HEARTS){
+  if(DB.hearts >= getMaxHearts()){
     showToast('Ya tenés todos los corazones', 1800);
     return;
   }
   haptic(HAPTIC.correct);
   DB.xp -= XP_PER_HEART;
   DB.hearts += 1;
-  if(DB.hearts >= MAX_HEARTS) DB.lastHeartLost = null;
+  if(DB.hearts >= getMaxHearts()) DB.lastHeartLost = null;
   save();
   showToast('❤️ +1 corazón · '+XP_PER_HEART+' XP gastados', 2200, 'success');
   closeNoHeartsModal();
