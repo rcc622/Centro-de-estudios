@@ -1,0 +1,701 @@
+{
+  "id": "day6",
+  "title": "Día 6 — Creative & Measurement",
+  "lessons": [
+    {
+      "id": "6.1",
+      "title": "Formatos de ad · todos los que existen",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "Los 4 formatos principales",
+          "rows": [
+            ["Flexible", "Meta elige automáticamente qué media entregar (single/carousel/etc.) según performance"],
+            ["Single image o video", "Un solo asset. El formato más simple y común."],
+            ["Carousel", "2+ images o videos en swipe horizontal. Ideal para múltiples productos o storytelling."],
+            ["Collection", "Hero video o imagen + grid de productos del catálogo abajo. Solo en mobile. Ideal con catalog."]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Instant Experience",
+          "body": "Experiencia full-screen <strong>post-click</strong> en mobile (antes Canvas). Útil cuando: 1) Tu website no es mobile-friendly, 2) Querés contar toda la historia dentro de Meta sin sacar al usuario, 3) Tenés catalog y querés grid completo."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Flexible</strong> es buena opción cuando NO sabés qué formato rinde mejor. Meta prueba múltiples y entrega el ganador. Es como Advantage+ pero a nivel formato."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál formato muestra un hero (video/imagen) arriba + grid de productos del catalog abajo?",
+          "options": ["Carousel","Single video","Collection","Instant Experience"],
+          "correct": 2,
+          "explanation": "Collection = hero + grid de productos. Ideal con catalog. Carousel es swipe horizontal sin grid.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Querés mostrar 5 SKUs de paneles solares al mismo tiempo en formato swipe. ¿Cuál usás?",
+          "options": ["Collection","Carousel","Single image","Instant Experience"],
+          "correct": 1,
+          "explanation": "Carousel admite 2-10 cards en swipe. Cada card puede ser distinta. Ideal para múltiples productos.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "6.2",
+      "title": "Placements y aspect ratios",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "Placements principales",
+          "rows": [
+            ["Facebook", "Feeds, Stories, Reels, Marketplace, Right column, In-stream video"],
+            ["Instagram", "Feed, Stories, Reels, Explore, Shop"],
+            ["Messenger", "Stories, Status, Inbox"],
+            ["Audience Network", "In-stream video, Native banner, Rewarded video (apps de terceros)"],
+            ["Threads", "Feeds"]
+          ]
+        },
+        {
+          "type": "kvtable",
+          "h": "Aspect ratios por placement",
+          "rows": [
+            ["16:9 (landscape)", "FB Feed/Marketplace · IG Feed (algunos)"],
+            ["1:1 (square)", "FB Feed · IG Feed · Marketplace"],
+            ["4:5 (vertical)", "FB Feed · IG Feed/Explore (recomendado)"],
+            ["9:16 (full portrait)", "FB/IG Stories y Reels (full screen)"]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Advantage+ Placements vs Manual",
+          "body": "<strong>Advantage+ Placements</strong> (default): Meta automatiza placement, maximiza visibility y eficiencia. <strong>Manual placements</strong>: control granular cuando hay creative específica que rinde mejor en un placement, o por brand safety."
+        },
+        {
+          "type": "warn",
+          "label": "SAFE ZONE EN STORIES/REELS",
+          "body": "En Stories y Reels el UI (logo de IG, perfil, botón de mensaje) <strong>cubre las orillas</strong>. Si ponés texto crítico cerca del borde, se corta. Diseñá con la \"safe zone\" central del 9:16 en mente."
+        },
+        {
+          "type": "mcq",
+          "q": "Aspect ratio óptimo para Stories y Reels:",
+          "options": ["16:9","1:1","4:5","9:16"],
+          "correct": 3,
+          "explanation": "9:16 (full portrait vertical) ocupa pantalla completa en Stories y Reels.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Una marca quiere maximizar visibility automatizando placements. ¿Qué setting?",
+          "options": [
+            "Manual placements seleccionando 8 ubicaciones",
+            "Advantage+ Placements (default automatizado)",
+            "Solo FB Feed",
+            "Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Placements automatiza. Manual da control pero suele rendir peor en eficiencia global.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.3",
+      "title": "Advantage+ Creative · diversificación con AI",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Advantage+ Creative",
+          "body": "AI que <strong>optimiza creative para cada viewer y placement</strong>. Hace 3 cosas:<br/>• Genera <strong>variations</strong> automáticas (crops, brillo, música, etc.)<br/>• Enhancements de texto y audio (traducción, mejoras visuales)<br/>• Eficiencia (entrega el mejor variant a cada persona)"
+        },
+        {
+          "type": "concept",
+          "h": "Asset Customization for Placements",
+          "body": "Permite customizar la creative <strong>manualmente por placement</strong>. Para cada placement podés especificar: template, media crop, text per placement, control, priority. <strong>Cuando se combina con Advantage+ Creative, lo manual gana.</strong>"
+        },
+        {
+          "type": "kvtable",
+          "h": "Diversificación creativa: las 3 dimensiones",
+          "rows": [
+            ["Messaging", "Headline, copy, CTA — variá el mensaje"],
+            ["Visuals", "Imagen, video, formato, color, persona en el ad"],
+            ["Formats", "Single image, video, carousel, collection — variá el contenedor"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "MOBILE-FIRST",
+          "body": "Reglas para creative mobile que rinde:<br/>• Video <strong>9:16</strong>, ≤15 segundos<br/>• Branding en los primeros <strong>3 segundos</strong><br/>• <strong>Audio + subtítulos</strong> (audio off es default)<br/>• Elementos clave en la <strong>safe zone</strong> central"
+        },
+        {
+          "type": "mcq",
+          "q": "Si usás Advantage+ Creative Y Asset Customization juntos, ¿qué prevalece?",
+          "options": [
+            "Advantage+ siempre gana",
+            "Asset Customization (manual) gana en los placements donde la configuraste",
+            "Se cancelan entre sí",
+            "Depende del placement"
+          ],
+          "correct": 1,
+          "explanation": "Lo manual gana. Asset Customization tiene priority sobre Advantage+ Creative en los placements donde explícitamente customizaste.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.4",
+      "title": "Métricas, Results & Attribution",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Las 2 métricas KPI principales",
+          "body": "<strong>Results</strong> = veces que se logró el outcome del performance goal (ej. compras, leads, video views).<br/><strong>Cost per Result</strong> = Amount spent / Results. Sale en cualquier reporte de Ads Manager."
+        },
+        {
+          "type": "kvtable",
+          "h": "Métricas por etapa del funnel",
+          "rows": [
+            ["Awareness", "Reach, Frequency, Estimated ad recall lift, Impressions, CPM"],
+            ["Consideration", "Link clicks, CTR, Landing page views, Cost per landing page view, Conversations started"],
+            ["Conversion", "Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase"]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Attribution models en Ads Manager",
+          "body": "Solo 2 modelos disponibles:<br/>• <strong>Standard attribution</strong>: atribuye con reglas (ventana + touchpoint). Cuenta impressions, clicks, video plays.<br/>• <strong>Incremental attribution</strong>: modelo predictivo que identifica conversions <em>causales</em> (\"¿realmente el ad causó la venta?\").<br/><br/><strong>NO existe Custom attribution</strong> en Ads Manager."
+        },
+        {
+          "type": "concept",
+          "h": "Attribution setting (ventana)",
+          "body": "Ventana de tiempo donde se puede atribuir una conversion. Default: <strong>1-day view, 7-day click</strong>. Significa: si el usuario VIO el ad y compró en 1 día, o CLICKEÓ y compró en 7 días, se atribuye al ad."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA DE EXAMEN",
+          "body": "Si te preguntan por \"Custom attribution\" o \"Engaged-view attribution\" en Ads Manager, son <strong>trampas</strong>. Solo existen Standard e Incremental. Custom NO existe.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuáles son los 2 modelos de attribution disponibles en Ads Manager?",
+          "options": [
+            "Standard y Custom",
+            "Standard e Incremental",
+            "Last-click y First-click",
+            "Linear y Time-decay"
+          ],
+          "correct": 1,
+          "explanation": "Solo Standard e Incremental. Custom no existe en Ads Manager. Last-click es un comportamiento dentro de Standard.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.5",
+      "title": "Tests · A/B vs Brand Lift vs Conversion Lift",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "Los 3 tests de Meta",
+          "rows": [
+            ["A/B Test", "Compara 2 versiones de un ad cambiando UNA variable (creative/audience/placement/delivery). Audiencia se divide aleatoriamente, sin overlap. NO tiene minimum spend."],
+            ["Brand Lift", "Encuestas a test group expuesto vs control group no expuesto. Mide impacto en brand awareness, ad recall, message association. SÍ tiene mínimos de budget por región."],
+            ["Conversion Lift", "Compara test vs control para medir conversions INCREMENTALES (sales/leads/app events causales). Responde \"¿cuántas ventas EXTRA generó la campaña?\""]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Dónde corren",
+          "body": "Los 3 tests viven en <strong>Experiments</strong> (Ads Manager o Meta Business Suite). NO en Ads Reporting normal. Estructura: nueva campaña dedicada, no modificar campañas existentes."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA TÍPICA",
+          "body": "Confundir Brand Lift con Conversion Lift. <strong>Brand Lift</strong> = encuestas, mide percepción/marca. <strong>Conversion Lift</strong> = observación, mide ventas/leads reales. Si la pregunta menciona \"¿cuántas ventas extras?\" → Conversion Lift. Si menciona \"impacto en marca/recall\" → Brand Lift."
+        },
+        {
+          "type": "tip",
+          "label": "REGLA DEL A/B TEST",
+          "body": "Una sola variable a la vez. Si cambiás creative Y audience al mismo tiempo, no podés decir cuál causó la diferencia. Audiencia suficiente sin overlap (Meta divide automáticamente). Mínimo 7 días, idealmente 14-30."
+        },
+        {
+          "type": "mcq",
+          "q": "Querés saber cuántas ventas EXTRAS generó tu campaña vs no haberla corrido. ¿Qué test?",
+          "options": [
+            "A/B Test",
+            "Brand Lift",
+            "Conversion Lift",
+            "Standard reporting"
+          ],
+          "correct": 2,
+          "explanation": "Conversion Lift mide incrementalidad: ventas causales atribuibles a la campaña vs el control que no la vio.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Querés saber si una campaña de feria mejoró el recall de marca. ¿Qué test?",
+          "options": [
+            "A/B Test entre 2 creatives",
+            "Brand Lift",
+            "Conversion Lift",
+            "Standard reporting"
+          ],
+          "correct": 1,
+          "explanation": "Brand Lift mide impacto en marca con encuestas. Recall es métrica clásica de Brand Lift.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "En un A/B Test correcto, ¿cuántas variables debés cambiar?",
+          "options": ["1","2","3 o más","Cuantas más mejor"],
+          "correct": 0,
+          "explanation": "UNA sola variable. Si cambiás 2+, no podés aislar cuál causó el resultado.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.6",
+      "title": "Brand Safety controls",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "4 controles de Brand Safety",
+          "rows": [
+            ["Inventory filters", "Expanded (default) / Moderate / Limited — controlan qué inventory se acepta"],
+            ["Publisher block lists", "Excluyen publishers específicos donde NO querés aparecer"],
+            ["Topic exclusions", "Excluyen temas (noticias polémicas, ciertos géneros)"],
+            ["Content type exclusions", "Excluyen formatos (in-stream pre-roll, in-context, etc.)"]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Advertising Standards (lo prohibido)",
+          "body": "Contenido NO permitido o restringido:<br/>• Tobacco · Privacy violations · Violent/graphic<br/>• Deceptive practices · Alcohol (restricción geográfica)<br/>• Financial services >90 días con disclosure<br/>• Drugs · Online gambling con authorization<br/>• Personal attributes (ej. \"perdé peso fácil\")"
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA TÍPICA",
+          "body": "Un ad puede ser rechazado por <strong>personal attributes</strong> aunque el producto sea legal. Ej. \"para los señores mayores\" puede activar la regla de no implicar características personales. Mejor: \"para profesionales experimentados\"."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál NO es un control de Brand Safety?",
+          "options": [
+            "Inventory filter",
+            "Publisher block list",
+            "Topic exclusions",
+            "Bid Cap"
+          ],
+          "correct": 3,
+          "explanation": "Bid Cap es bid strategy, no brand safety. Inventory filter, publisher block list y topic exclusions son los 3 de brand safety + content type exclusions.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.7",
+      "title": "Emparejar test ↔ caso",
+      "section": "B",
+      "type": "match",
+      "instruction": "Asocia cada herramienta con su caso de uso.",
+      "leftLabel": "Herramienta",
+      "rightLabel": "Cuándo usarla",
+      "pairs": [
+        {"id":"ab","left":"A/B Test","right":"Comparar 2 versiones de creative con misma audience"},
+        {"id":"bl","left":"Brand Lift","right":"Medir impacto en recall/awareness con encuestas"},
+        {"id":"cl","left":"Conversion Lift","right":"Medir cuántas ventas extras (causales) generó la campaña"},
+        {"id":"std","left":"Standard attribution","right":"Atribuir conversions con reglas (1d view, 7d click)"},
+        {"id":"inc","left":"Incremental attribution","right":"Identificar conversions CAUSALES (no solo correlación)"},
+        {"id":"reach","left":"Reach + Frequency","right":"Métricas KPI de campañas Awareness"}
+      ],
+      "explanation": "Cada herramienta responde una pregunta distinta. A/B Test compara variantes. Brand Lift mide marca. Conversion Lift mide ventas causales. Atribución asigna crédito."
+    },
+    {
+      "id": "6.8",
+      "title": "Ordenar análisis de resultados (6 pasos)",
+      "section": "B",
+      "type": "order",
+      "instruction": "El PDF oficial define 6 pasos para analizar resultados de campañas. Reordena con ▲▼.",
+      "items": [
+        "Revisar Results (KPI principal del performance goal)",
+        "Revisar other metrics (cost per result, ROAS, CTR, frequency, etc.)",
+        "Revisar setup strategies (creative/budget/audience/placement)",
+        "Evaluar todo en conjunto (results + metrics + setup)",
+        "Comparar ad sets entre sí (identificar ganadores y perdedores)",
+        "Identificar optimization opportunities (qué cambiar para el próximo período)"
+      ],
+      "explanation": "Flujo correcto: KPI primero (¿logró el objetivo?) → métricas secundarias → setup (cómo se logró) → evaluación holística → comparación interna → próximos pasos. Saltar pasos lleva a conclusiones equivocadas."
+    },
+    {
+      "id": "6.9",
+      "title": "Casos B2B aplicados · Kenet Solar",
+      "section": "C",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO 1 · A/B Test de creative",
+          "h": "Testimonial vs animación 3D",
+          "body": "<strong>Kenet</strong> prueba 2 videos para Sales:<br/>• Video A: testimonial real de planta automotriz solarizada<br/>• Video B: animación 3D explicando el ahorro<br/><br/>Una sola variable (creative). Audience idéntica: industriales 35-65 norte de México, 14 días, budget $20,000 MXN cada uno, sin overlap. Resultado: Video A (testimonial) gana con CPA 40% menor."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Kenet asegura que NO haya overlap entre las 2 audiences del A/B?",
+          "options": [
+            "Para que sea más rápido",
+            "Si hay overlap, las mismas personas ven los 2 ads y NO podés saber cuál causó la conversión",
+            "Es opcional",
+            "Para gastar más"
+          ],
+          "correct": 1,
+          "explanation": "Sin separación, el resultado es contaminado. Meta divide automáticamente la audience para asegurar zero overlap entre los 2 ad sets del A/B.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 2 · Brand Lift en feria",
+          "h": "Medir recall pre-evento",
+          "body": "<strong>Kenet</strong> patrocina la Feria Solar+Power México 2026. Quiere medir si la campaña Awareness de 3 semanas previa al evento subió el recall de marca entre industriales.<br/><br/><strong>Solución:</strong> Campaña dedicada Awareness + Brand Lift activado. Encuestas a test group (expuesto) vs control group (no expuesto). Métricas: \"¿Recordás haber visto a Kenet Solar?\", \"¿Asocias Kenet con proveedor industrial confiable?\"."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Brand Lift y NO Conversion Lift en este caso?",
+          "options": [
+            "Brand Lift es más barato",
+            "El objetivo es medir RECALL/PERCEPCIÓN, no ventas. Brand Lift usa encuestas; Conversion Lift mide ventas reales",
+            "Conversion Lift no funciona en B2B",
+            "Son intercambiables"
+          ],
+          "correct": 1,
+          "explanation": "Cada test mide cosa distinta. Brand Lift = encuestas sobre marca. Conversion Lift = ventas causales. La meta de Kenet es percepción, no transacciones.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 3 · Collection ad con catalog",
+          "h": "Industria alimentaria · paneles para frigoríficos",
+          "body": "<strong>Kenet</strong> lanza una colección visual para industria alimentaria. <strong>Hero video 9:16</strong> con instalación en bodega frigorífica + <strong>grid de SKUs abajo</strong> (paneles 550W, inversor central, batería). Conversion location: Messenger. Aspect: 9:16 vertical para Stories y Reels."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Collection y no Carousel en este caso?",
+          "options": [
+            "Collection es más barato",
+            "Collection muestra UN HERO grande (storytelling con el video del frigorífico) + grid de productos abajo. Carousel sería solo swipe de cards sin hero",
+            "Carousel no admite catalog",
+            "Es lo mismo"
+          ],
+          "correct": 1,
+          "explanation": "Collection = hero + grid (storytelling + catalog en uno). Carousel = solo swipe sin hero. Para este caso (contar historia + mostrar SKUs), Collection es óptimo.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.10",
+      "title": "Drill · 12 MCQs de creative & measurement",
+      "section": "D",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Aspect ratio para Stories y Reels:",
+          "options": ["16:9","1:1","4:5","9:16"],
+          "correct": 3,
+          "explanation": "9:16 full portrait.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Brand Lift mide:",
+          "options": [
+            "Ventas causales",
+            "Recall, awareness y percepción con encuestas",
+            "Bid en subasta",
+            "Lookalike similarity"
+          ],
+          "correct": 1,
+          "explanation": "Brand Lift = encuestas sobre marca.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Conversion Lift mide:",
+          "options": [
+            "Recall de marca",
+            "Conversions INCREMENTALES (causales) atribuibles a la campaña",
+            "Click-through rate",
+            "Budget efficiency"
+          ],
+          "correct": 1,
+          "explanation": "Conversion Lift = ventas extras causales.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Modelos de attribution en Ads Manager:",
+          "options": [
+            "Standard, Custom y Incremental",
+            "Standard e Incremental",
+            "Last-click, First-click, Linear",
+            "Custom solamente"
+          ],
+          "correct": 1,
+          "explanation": "Solo Standard e Incremental. Custom NO existe.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Default attribution setting:",
+          "options": [
+            "1-day view, 1-day click",
+            "1-day view, 7-day click",
+            "7-day view, 7-day click",
+            "28-day click"
+          ],
+          "correct": 1,
+          "explanation": "1d view + 7d click es default.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "A/B Test requiere cambiar:",
+          "options": ["1 variable","2","3","Cuantas más mejor"],
+          "correct": 0,
+          "explanation": "Solo 1 variable. Si cambiás 2+ no podés aislar la causa.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Formato con hero + grid de productos:",
+          "options": ["Single","Carousel","Collection","Instant"],
+          "correct": 2,
+          "explanation": "Collection = hero + grid catalog.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Brand Safety controls (NO incluye):",
+          "options": [
+            "Inventory filters",
+            "Publisher block lists",
+            "Topic exclusions",
+            "Bid Cap"
+          ],
+          "correct": 3,
+          "explanation": "Bid Cap es bid strategy. Los 3 primeros son brand safety.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Si Advantage+ Creative y Asset Customization están ambos activados:",
+          "options": [
+            "Advantage+ siempre gana",
+            "Asset Customization (manual) tiene priority en los placements customizados",
+            "Se cancelan",
+            "Solo en Sales"
+          ],
+          "correct": 1,
+          "explanation": "Manual gana. Asset Customization tiene priority.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Dónde se corren A/B Test, Brand Lift y Conversion Lift?",
+          "options": [
+            "Ads Reporting",
+            "Experiments (en Ads Manager o Business Suite)",
+            "Events Manager",
+            "Commerce Manager"
+          ],
+          "correct": 1,
+          "explanation": "Experiments tool.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Mobile-first creative requiere:",
+          "options": [
+            "Branding al final del video",
+            "Aspect 16:9 horizontal",
+            "Audio + subtitles, branding en primeros 3s, aspecto 9:16, ≤15s",
+            "Audio off siempre"
+          ],
+          "correct": 2,
+          "explanation": "Reglas mobile: 9:16, ≤15s, branding inicio, audio + subtitles, safe zone.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuáles son métricas de Awareness? Selecciona 3.",
+          "options": [
+            "Reach",
+            "Frequency",
+            "Purchase ROAS",
+            "Estimated ad recall lift",
+            "Cost per purchase"
+          ],
+          "correct": [0, 1, 3],
+          "multi": true,
+          "explanation": "Reach, Frequency y Estimated ad recall lift son de Awareness. ROAS y cost per purchase son de Conversion.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.11",
+      "title": "Lightning · 10 preguntas en 4 min",
+      "section": "D",
+      "type": "lightning",
+      "instruction": "10 preguntas rápidas — repaso intensivo de creative & measurement. 4 minutos.",
+      "timeLimit": 240,
+      "questions": [
+        {
+          "q": "9:16 para:",
+          "options": ["FB Feed","Stories/Reels","Marketplace","Right column"],
+          "correct": 1,
+          "explanation": "9:16 = Stories y Reels.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Brand Lift =",
+          "options": ["Ventas extras","Encuestas de marca","Bid","Reach"],
+          "correct": 1,
+          "explanation": "Encuestas.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Conversion Lift =",
+          "options": ["Encuestas","Ventas causales","Recall","Frequency"],
+          "correct": 1,
+          "explanation": "Incrementalidad.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Modelos attribution en Ads Manager:",
+          "options": [
+            "Standard, Custom, Incremental",
+            "Standard e Incremental",
+            "Last-click solamente",
+            "Custom solamente"
+          ],
+          "correct": 1,
+          "explanation": "Solo 2: Standard e Incremental.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "A/B Test variables a cambiar:",
+          "options": ["1","2","3","Muchas"],
+          "correct": 0,
+          "explanation": "Solo 1.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Collection muestra:",
+          "options": [
+            "Solo video",
+            "Hero + grid de productos",
+            "5 cards swipe",
+            "Solo imagen"
+          ],
+          "correct": 1,
+          "explanation": "Hero + grid.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Default attribution:",
+          "options": [
+            "1d view 1d click",
+            "1d view 7d click",
+            "7d view 7d click",
+            "28d click"
+          ],
+          "correct": 1,
+          "explanation": "1d view 7d click.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "Advantage+ vs Asset Customization juntos:",
+          "options": [
+            "Advantage+ gana",
+            "Manual gana en los placements customizados",
+            "Se anulan",
+            "Solo en Sales"
+          ],
+          "correct": 1,
+          "explanation": "Manual priority.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "Mobile video óptimo:",
+          "options": [
+            "16:9, 60s",
+            "9:16, ≤15s, branding en 3s, audio+subs",
+            "1:1, 30s",
+            "Cualquier ratio"
+          ],
+          "correct": 1,
+          "explanation": "9:16 corto con branding pronto.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Brand Safety NO incluye:",
+          "options": [
+            "Inventory filter",
+            "Publisher block list",
+            "Topic exclusion",
+            "Bid Cap"
+          ],
+          "correct": 3,
+          "explanation": "Bid Cap es bid strategy.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.flash",
+      "title": "Flashcards del Día 6",
+      "section": "D",
+      "type": "flashcards",
+      "cards": [
+        {"q":"¿Cuáles son los 4 formatos de ad?","a":"Flexible (AI elige), Single image/video, Carousel (2+ swipe), Collection (hero + grid)."},
+        {"q":"¿Cuándo usar Collection vs Carousel?","a":"Collection: hero (video/imagen) + grid de productos abajo. Ideal con catalog. Carousel: solo swipe de cards sin hero, ideal para storytelling sin catalog."},
+        {"q":"¿Aspect ratio para Stories y Reels?","a":"9:16 full portrait vertical."},
+        {"q":"¿Qué es Instant Experience?","a":"Experiencia full-screen post-click en mobile. Útil cuando tu website es malo o querés contar todo dentro de Meta."},
+        {"q":"¿Cuáles son los 2 modelos de attribution en Ads Manager?","a":"Standard (con reglas) e Incremental (modelado causal). Custom NO existe."},
+        {"q":"¿Default attribution setting?","a":"1-day view, 7-day click."},
+        {"q":"¿Diferencia entre A/B Test, Brand Lift y Conversion Lift?","a":"A/B Test = compara 2 variantes (1 variable). Brand Lift = encuestas sobre marca/recall. Conversion Lift = mide ventas causales extras."},
+        {"q":"¿Cuántas variables se cambian en un A/B Test?","a":"UNA sola. Si cambiás 2+ no podés aislar la causa."},
+        {"q":"¿Dónde corren A/B Test, Brand Lift, Conversion Lift?","a":"En Experiments (Ads Manager o Meta Business Suite). NO en Ads Reporting."},
+        {"q":"¿Reglas de mobile-first creative?","a":"Video 9:16, ≤15 segundos, branding en primeros 3s, audio + subtítulos, elementos clave en safe zone central."},
+        {"q":"¿Qué son los 4 brand safety controls?","a":"Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions, Content type exclusions."},
+        {"q":"¿Qué pasa si combinas Advantage+ Creative con Asset Customization?","a":"Asset Customization (manual) tiene priority en los placements donde la configuraste. Advantage+ Creative aplica en los demás placements."},
+        {"q":"¿Las 2 métricas KPI principales?","a":"Results (logros del performance goal) y Cost per Result (spent/results)."},
+        {"q":"Métricas de Awareness:","a":"Reach, Frequency, Estimated ad recall lift, Impressions, CPM."},
+        {"q":"Métricas de Conversion:","a":"Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase, Conversion rate."},
+        {"q":"¿Qué Advertising Standards prohíbe el contenido?","a":"Tobacco, privacy violations, violent/graphic, deceptive practices, drugs, online gambling sin authorization, personal attributes (\"para los señores mayores\")."},
+        {"q":"¿Por qué un ad puede ser rechazado por 'personal attributes' aunque el producto sea legal?","a":"Porque implica una característica personal del usuario (edad, peso, raza, religión). Reformular el copy: \"para profesionales experimentados\" en vez de \"para los señores mayores\"."},
+        {"q":"¿Diferencia entre Standard y Incremental attribution?","a":"Standard = atribuye con reglas (ventana + touchpoint), correlacional. Incremental = modelo predictivo de causalidad (\"¿el ad realmente causó la venta?\")."},
+        {"q":"¿Qué pasa si tu ad creative tiene texto crítico en las orillas en Stories?","a":"Se corta. El UI de Stories (logo IG, perfil, botón) cubre los bordes. Diseñar para safe zone central."},
+        {"q":"Los 6 pasos para analizar resultados de campañas:","a":"1) Revisar Results · 2) Other metrics · 3) Setup strategies · 4) Evaluar holístico · 5) Comparar ad sets · 6) Identificar optimization opportunities."}
+      ]
+    }
+  ]
+}

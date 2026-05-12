@@ -19,37 +19,42 @@
     {
       "id": "day2",
       "title": "Día 2 — Campaign Objectives",
-      "subtitle": "Próximamente",
+      "subtitle": "Los 6 ODAX, optimization events, signal optimization",
       "coverage": "~9% del examen",
-      "locked": true
+      "diagnostic": { "file": "day2-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day2-quiz.json", "passingScore": 80 }
     },
     {
       "id": "day3",
       "title": "Día 3 — Buying Types & Bid Strategies",
-      "subtitle": "Próximamente",
+      "subtitle": "Auction vs Reservation, bid strategies, Learning Phase",
       "coverage": "~13% del examen",
-      "locked": true
+      "diagnostic": { "file": "day3-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day3-quiz.json", "passingScore": 80 }
     },
     {
       "id": "day4",
       "title": "Día 4 — Signals & Data",
-      "subtitle": "Próximamente",
+      "subtitle": "Pixel + CAPI, eventos, AEM y iOS 14+",
       "coverage": "~17% del examen",
-      "locked": true
+      "diagnostic": { "file": "day4-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day4-quiz.json", "passingScore": 80 }
     },
     {
       "id": "day5",
       "title": "Día 5 — Audiences & Catalogs",
-      "subtitle": "Próximamente",
+      "subtitle": "Custom audiences, Lookalike, Advantage+ Audience, Catalog Ads",
       "coverage": "~20% del examen",
-      "locked": true
+      "diagnostic": { "file": "day5-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day5-quiz.json", "passingScore": 80 }
     },
     {
       "id": "day6",
       "title": "Día 6 — Creative & Measurement",
-      "subtitle": "Próximamente",
+      "subtitle": "Formatos, A/B Test, Brand Lift, Conversion Lift, attribution",
       "coverage": "~25% del examen",
-      "locked": true
+      "diagnostic": { "file": "day6-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day6-quiz.json", "passingScore": 80 }
     },
     {
       "id": "day7",

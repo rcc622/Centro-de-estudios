@@ -1,0 +1,605 @@
+{
+  "id": "day5",
+  "title": "Día 5 — Audiences & Catalogs",
+  "lessons": [
+    {
+      "id": "5.1",
+      "title": "Detailed targeting · controls vs suggestions",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Detailed targeting",
+          "body": "Filtros para definir la audiencia: <strong>Demographics</strong> (edad, educación, empleo) + <strong>Interests</strong> (negocio, entretenimiento, familia) + <strong>Behaviors</strong> (uso de dispositivo, intent de compra). Las selecciones son OR dentro de cada categoría, AND entre categorías base."
+        },
+        {
+          "type": "kvtable",
+          "h": "Audience controls vs Audience suggestions",
+          "rows": [
+            ["Controls", "RESTRINGEN delivery. Rígidos. Ej: ubicación, idioma, edad mínima 18-25, custom audience exclusions."],
+            ["Suggestions", "GUÍAN la optimización. Flexibles — AI puede expandir. Ej: edad 18-65+, gender, detailed targeting, custom audience inclusions, lookalike."]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Controls</strong> son rígidos: el sistema NO se sale de ahí. <strong>Suggestions</strong> son punto de partida que <strong>Advantage+ Audience</strong> puede expandir si encuentra gente similar afuera de tus parámetros."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "Si seleccionás \"Switch to original audience options\" o \"Further limit the reach of your ads\", <strong>desactivás Advantage+ Audience</strong> (que está ON por default en campañas nuevas)."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál de estos es un Audience CONTROL (rígido)?",
+          "options": [
+            "Detailed targeting (intereses)",
+            "Custom audience inclusion",
+            "Location restriction (solo CDMX)",
+            "Lookalike audience"
+          ],
+          "correct": 2,
+          "explanation": "Location es control rígido: el sistema NO entrega afuera. Detailed targeting, custom audience inclusion y lookalike son SUGGESTIONS (flexibles, AI puede expandir).",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Custom Audiences · todas las fuentes",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Custom Audience",
+          "body": "Gente que <strong>YA interactuó con tu negocio</strong>. Source puede ser:<br/><br/><strong>Your sources</strong>: Website, App activity, Catalog, Customer list, Offline activity<br/><br/><strong>Meta sources</strong>: Video, Lead form, Instant Experience, Shopping, IG account, Events, FB Page, On-Facebook listings"
+        },
+        {
+          "type": "kvtable",
+          "h": "Límites",
+          "rows": [
+            ["Custom audiences por ad account", "Máximo 500"],
+            ["Customer list", "Archivo CSV con datos hasheados (email, phone)"],
+            ["Retention window", "Configurable: ej. 30/60/90/180 días desde la interacción"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Para construir custom audiences potentes desde Customer List, <strong>hasheá email y phone</strong> antes de subir. Meta los matchea con sus usuarios pero nunca ve los datos en plano."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál de estas NO es una source válida para Custom Audience?",
+          "options": [
+            "Website activity",
+            "Customer list (CSV)",
+            "Video views",
+            "Random audience"
+          ],
+          "correct": 3,
+          "explanation": "Custom Audiences siempre se construyen desde una source específica de interacción previa. 'Random' no existe.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuántas Custom Audiences máximo por ad account?",
+          "options": ["100","250","500","Ilimitadas"],
+          "correct": 2,
+          "explanation": "Límite oficial: 500 custom audiences por ad account.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.3",
+      "title": "Lookalike · 1% vs 10%",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Lookalike Audience",
+          "body": "Gente <strong>similar</strong> a tu source audience. Buscás new prospects que se parecen a tus mejores clientes/leads/visitantes. Requiere un source audience de mínimo <strong>100 personas de un solo país</strong> (recomendado 1,000-50,000)."
+        },
+        {
+          "type": "kvtable",
+          "h": "Tamaño 1% vs 10%",
+          "rows": [
+            ["1% lookalike", "MÁS SIMILAR al source. Alcance menor (pero más calificado)."],
+            ["10% lookalike", "MENOS SIMILAR. Alcance mayor (más volumen pero menos preciso)."],
+            ["Source", "Se EXCLUYE automáticamente del lookalike (no se vuelve a alcanzar)"],
+            ["Por source", "Hasta 500 lookalikes generables desde un mismo source"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA CRÍTICA",
+          "body": "Un lookalike con source de 50 personas <strong>NO funciona</strong>. Mínimo absoluto: 100 personas de UN SOLO PAÍS. Recomendado: 1,000-50,000 para máxima calidad."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Tu mejor source para Lookalike son los <strong>compradores top</strong>: filtrá Purchase events con value alto, agrupá en custom audience, y usá esa como source. El lookalike va a parecerse a esos compradores premium."
+        },
+        {
+          "type": "mcq",
+          "q": "Querés MÁXIMA precisión (no volumen) en un lookalike. ¿Qué tamaño?",
+          "options": [
+            "10% — más volumen",
+            "1% — más similitud",
+            "5% — punto medio",
+            "Es igual"
+          ],
+          "correct": 1,
+          "explanation": "1% lookalike = máxima similitud (top 1% más parecido al source). 10% = máximo alcance pero menos similitud. Para precisión: 1%.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Mínimo de personas requerido en source audience para crear un Lookalike:",
+          "options": ["50","100","500","1000"],
+          "correct": 1,
+          "explanation": "Mínimo absoluto: 100 personas de UN solo país. Recomendado: 1,000-50,000 para calidad.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "El source audience usado para crear un lookalike, ¿se incluye o se excluye del lookalike?",
+          "options": [
+            "Se incluye (alcance ampliado)",
+            "Se excluye automáticamente",
+            "Depende del setting",
+            "Solo en 1%"
+          ],
+          "correct": 1,
+          "explanation": "El source se EXCLUYE siempre. El lookalike busca gente NUEVA similar, no re-alcanza a los del source.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.4",
+      "title": "Advantage+ Audience · el AI default",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Advantage+ Audience",
+          "body": "Solución AI que <strong>expande más allá de tus parámetros sugeridos</strong> para encontrar gente probablemente interesada. Está <strong>automáticamente activada</strong> en nuevas campañas a menos que la desactives."
+        },
+        {
+          "type": "kvtable",
+          "h": "Cómo se desactiva (intencional o no)",
+          "rows": [
+            ["Click 'Switch to original audience options'", "Apaga Advantage+ Audience"],
+            ["Click 'Further limit the reach of your ads'", "Apaga Advantage+ Audience"],
+            ["Por default", "ON (AI expande sobre tus suggestions)"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Broad audience</strong> (solo edad + ubicación) + <strong>Advantage+ Audience</strong> ON suele ser la combinación ganadora en campañas modernas. El sistema tiene la libertad de optimizar dónde encuentra mejor performance."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es el default de Advantage+ Audience en campañas nuevas?",
+          "options": [
+            "Desactivado, hay que activarlo manualmente",
+            "Activado automáticamente",
+            "Solo disponible para Sales",
+            "Solo disponible con catalog"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Audience está ON por default en campañas nuevas. Se desactiva solo si elegís 'Switch to original' o 'Further limit reach'.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.5",
+      "title": "Catálogos · Advantage+ Catalog Ads",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Product Catalog",
+          "body": "Data estructurada de productos en <strong>Commerce Manager</strong>. Atributos requeridos: ID, Title, Description, Price, Availability, Condition, Brand, Image, Link."
+        },
+        {
+          "type": "concept",
+          "h": "Product Sets",
+          "body": "Agrupaciones dentro del catálogo. Ej: 'Fall sale 10% off', 'Best sellers'. <strong>Mínimo 20 productos</strong> recomendado por set para que Advantage+ Catalog Ads tenga material suficiente."
+        },
+        {
+          "type": "concept",
+          "h": "Advantage+ Catalog Ads",
+          "body": "ML que muestra los productos del catálogo más relevantes a cada persona basándose en navegación, búsqueda y eventos previos. Disponible a nivel <strong>campaña en Sales</strong>, o a nivel ad en App Promotion/Engagement/Leads/Traffic."
+        },
+        {
+          "type": "kvtable",
+          "h": "Catalog match rate",
+          "rows": [
+            ["Qué mide", "% de productos con los que la gente interactúa en el sitio que están disponibles en el catálogo"],
+            ["Target", "&gt;75% — match rate bajo indica problema de Pixel setup"],
+            ["Si está bajo", "Revisar IDs de productos en Pixel vs catalog, mapping incorrecto, productos faltantes"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "BEST PRACTICE",
+          "body": "<strong>UN SOLO catálogo</strong> por negocio. Tener varios catálogos por marca/categoría confunde al sistema y dificulta el match con eventos del Pixel. Si tenés sub-líneas, usá Product Sets dentro del mismo catálogo."
+        },
+        {
+          "type": "mcq",
+          "q": "Mínimo recomendado de productos por Product Set para Advantage+ Catalog Ads:",
+          "options": ["5","10","20","50"],
+          "correct": 2,
+          "explanation": "20 productos mínimo recomendado para que el sistema tenga material suficiente para optimizar.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Catalog match rate ideal:",
+          "options": [">50%",">75%",">90%","100%"],
+          "correct": 1,
+          "explanation": ">75% es el target. Bajo eso indica problema de mapeo entre Pixel y catalog.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.6",
+      "title": "Emparejar audience type ↔ caso de uso",
+      "section": "B",
+      "type": "match",
+      "instruction": "Asocia cada tipo de audience con su caso típico.",
+      "leftLabel": "Audience type",
+      "rightLabel": "Caso de uso",
+      "pairs": [
+        {"id":"ca","left":"Custom Audience (Website)","right":"Re-engagement de visitantes del sitio"},
+        {"id":"cl","left":"Customer List","right":"Subir CSV de clientes hasheados para retargeting"},
+        {"id":"lal1","left":"Lookalike 1%","right":"Prospección de máxima similitud (calidad sobre volumen)"},
+        {"id":"lal10","left":"Lookalike 10%","right":"Prospección de máximo alcance (volumen sobre similitud)"},
+        {"id":"adv","left":"Advantage+ Audience","right":"AI expande sobre tus suggestions automáticamente"},
+        {"id":"dt","left":"Detailed targeting","right":"Filtrar por intereses, behaviors y demographics"}
+      ],
+      "explanation": "Conocer qué audience usar según el caso es crítico para el examen. Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos a los que te conocen)."
+    },
+    {
+      "id": "5.7",
+      "title": "Ordenar el setup de Advantage+ Catalog Ads",
+      "section": "B",
+      "type": "order",
+      "instruction": "¿En qué orden configurás Advantage+ Catalog Ads para campaña Sales? Reordena con ▲▼.",
+      "items": [
+        "Crear catalog en Commerce Manager",
+        "Conectar Pixel/CAPI al catalog (Share events)",
+        "Crear Product Set con mínimo 20 productos",
+        "Crear campaña con objective Sales",
+        "Activar Advantage+ Catalog Ads y seleccionar el catalog",
+        "Crear ad set y elegir Product Set como promoted products"
+      ],
+      "explanation": "Setup correcto: infraestructura (catalog + events) → segmentación (product set) → campaña → ad set. Saltarse pasos lleva a ads que no entregan o muestran productos equivocados."
+    },
+    {
+      "id": "5.8",
+      "title": "Casos B2B aplicados · Kenet Solar",
+      "section": "C",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO 1 · Customer List",
+          "h": "Subir CRM industrial",
+          "body": "<strong>Kenet</strong> exporta del CRM 8,000 contactos de prospectos industriales con email, phone y empresa. Quiere reactivarlos con campaña Sales que les muestre el nuevo financiamiento.<br/><br/><strong>Solución:</strong> Hashear email + phone (SHA256). Subir CSV como Custom Audience tipo Customer List. Crear campaña Sales con esa audience como inclusion."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué hay que hashear email y phone antes de subir?",
+          "options": [
+            "Es opcional, no obligatorio",
+            "Para que Meta no vea los datos en plano: Meta matchea hashes con sus usuarios sin nunca conocer el email real",
+            "Para que el archivo sea más liviano",
+            "Para que se procese más rápido"
+          ],
+          "correct": 1,
+          "explanation": "Hashing protege la privacidad: Meta matchea los hashes (no los emails) con sus usuarios. Es requerido para Customer Lists.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 2 · Lookalike 1% México",
+          "h": "Prospección de industriales premium",
+          "body": "<strong>Kenet</strong> tiene 1,500 clientes que firmaron proyectos &gt;$2M MXN. Quiere encontrar nuevos prospectos similares a esos clientes premium.<br/><br/><strong>Solución:</strong> Custom Audience desde Customer List filtrada por value &gt;$2M. Esa custom audience como SOURCE de Lookalike 1% México. Resultado: nueva audiencia de ~125,000 personas con perfil similar a los clientes top."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Lookalike 1% (no 10%) en este caso?",
+          "options": [
+            "1% es más barato",
+            "Kenet quiere MÁXIMA SIMILITUD con los clientes top, aceptando menor alcance. 1% da el top 1% más parecido. 10% diluiría la calidad",
+            "10% no funciona en México",
+            "Son lo mismo"
+          ],
+          "correct": 1,
+          "explanation": "1% = máxima similitud (calidad). 10% = máximo alcance (volumen). Para B2B industrial premium donde cada lead vale mucho: 1%.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 3 · Advantage+ Catalog Ads",
+          "h": "Distribuidores con catálogo de 40 SKUs",
+          "body": "<strong>Kenet</strong> tiene un catálogo de 40 SKUs (paneles, inversores, baterías) en Commerce Manager con Pixel conectado. Quiere que cada distribuidor (segmento existente) vea los productos más relevantes según su navegación previa.<br/><br/><strong>Solución:</strong> Campaña Sales + Advantage+ Catalog Ads + Product Set con los 40 SKUs + Custom Audience 'Distribuidores activos' como inclusion + conversion location Messenger. El ML elige qué productos mostrar a cada uno."
+        },
+        {
+          "type": "mcq",
+          "q": "Si Kenet tiene 40 SKUs y crea un Product Set 'Top sellers' con SOLO 12 productos, ¿es óptimo?",
+          "options": [
+            "Sí, menos opciones = más claridad",
+            "NO. Meta recomienda mínimo 20 productos por Product Set para que el ML tenga material suficiente de selección",
+            "Solo si los SKUs son premium",
+            "Es indiferente"
+          ],
+          "correct": 1,
+          "explanation": "Mínimo 20 productos por Product Set para que Advantage+ Catalog Ads tenga suficiente variedad para optimizar por persona.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.9",
+      "title": "Drill · 12 MCQs de audiences",
+      "section": "D",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Custom Audience vs Lookalike:",
+          "options": [
+            "Custom = nuevos prospectos · Lookalike = clientes existentes",
+            "Custom = clientes existentes que YA interactuaron · Lookalike = nuevos prospectos SIMILARES",
+            "Son lo mismo",
+            "Custom es solo offline"
+          ],
+          "correct": 1,
+          "explanation": "Custom = retargeting (ya te conocen). Lookalike = prospección (parecidos).",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Mínimo de source para Lookalike:",
+          "options": ["50","100 en 1 solo país","500","1,000"],
+          "correct": 1,
+          "explanation": "100 personas de UN país. Recomendado 1,000+ para calidad.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Lookalike 1% es:",
+          "options": [
+            "Menos similar al source",
+            "Top 1% más parecido al source (max similitud, menor alcance)",
+            "1% de tu audience",
+            "Audiencia con 1% de overlap"
+          ],
+          "correct": 1,
+          "explanation": "1% = top 1% más parecido. 10% = más alcance, menos parecido.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "El source de un Lookalike se:",
+          "options": [
+            "Incluye en el lookalike",
+            "Excluye automáticamente",
+            "Solo se incluye si es 10%",
+            "Depende del país"
+          ],
+          "correct": 1,
+          "explanation": "El source siempre se excluye. El lookalike busca gente nueva similar.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Custom Audiences máximas por ad account:",
+          "options": ["100","250","500","1,000"],
+          "correct": 2,
+          "explanation": "500 custom audiences máximo por ad account.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ Audience por default en nuevas campañas:",
+          "options": [
+            "OFF (hay que activarlo)",
+            "ON automáticamente",
+            "Solo para Sales",
+            "Solo con catalog"
+          ],
+          "correct": 1,
+          "explanation": "ON por default. Se desactiva con 'Switch to original' o 'Further limit reach'.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Audience CONTROLS:",
+          "options": [
+            "Sugieren al sistema dónde buscar",
+            "RESTRINGEN delivery (rígido), ej: location, edad mínima",
+            "Son lo mismo que suggestions",
+            "Solo en Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Controls son rígidos: el sistema NO se sale de ahí. Suggestions son flexibles.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Para Advantage+ Catalog Ads, mínimo recomendado de productos por Product Set:",
+          "options": ["5","10","20","50"],
+          "correct": 2,
+          "explanation": "20 productos mínimo para que el ML tenga material suficiente.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Catalog match rate target:",
+          "options": [">50%",">75%",">90%","100%"],
+          "correct": 1,
+          "explanation": ">75% target. Bajo: problema en setup de Pixel.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Para Customer List subido como Custom Audience:",
+          "options": [
+            "Email y phone en plano",
+            "Email y phone hasheados (SHA256)",
+            "Solo email",
+            "Solo nombre"
+          ],
+          "correct": 1,
+          "explanation": "Hash obligatorio. Meta matchea hashes sin ver los datos originales.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Mejor práctica para anunciante con varias líneas de productos:",
+          "options": [
+            "Un catalog por línea",
+            "Un solo catalog con Product Sets por línea",
+            "Sin catalog",
+            "Varios Pixels"
+          ],
+          "correct": 1,
+          "explanation": "UN solo catalog. Product Sets para sub-líneas. Múltiples catalogs confunden el matching con Pixel.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Audience overlap análisis se hace con audiencias de tamaño mínimo:",
+          "options": ["100","1,000","10,000","100,000"],
+          "correct": 2,
+          "explanation": "Mínimo 10,000 personas en cada audience para que el overlap análisis tenga sentido estadístico.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.10",
+      "title": "Lightning · 8 preguntas en 3 min",
+      "section": "D",
+      "type": "lightning",
+      "instruction": "8 preguntas rápidas sobre audiences y catalogs.",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Lookalike mínimo en source:",
+          "options": ["50","100 en 1 país","500","1000"],
+          "correct": 1,
+          "explanation": "100 personas de UN país.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "1% Lookalike = ?",
+          "options": [
+            "Máximo alcance",
+            "Máxima similitud (menor alcance)",
+            "1% de tu CA",
+            "Lookalike más caro"
+          ],
+          "correct": 1,
+          "explanation": "Top 1% más parecido al source.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Custom Audiences máximas por ad account:",
+          "options": ["100","250","500","1000"],
+          "correct": 2,
+          "explanation": "500.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Advantage+ Audience default:",
+          "options": ["OFF","ON","Solo Sales","Solo Catalog"],
+          "correct": 1,
+          "explanation": "ON por default.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Mínimo productos por Product Set:",
+          "options": ["5","10","20","50"],
+          "correct": 2,
+          "explanation": "20 recomendados.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Catalog match rate target:",
+          "options": [">50%",">75%",">90%","100%"],
+          "correct": 1,
+          "explanation": ">75%.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "El source de un Lookalike:",
+          "options": [
+            "Se incluye",
+            "Se excluye automáticamente",
+            "Solo si 1%",
+            "Solo en US"
+          ],
+          "correct": 1,
+          "explanation": "Siempre se excluye.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Customer List requiere:",
+          "options": [
+            "Email en plano",
+            "Email/phone hasheados",
+            "Solo nombre",
+            "Solo phone"
+          ],
+          "correct": 1,
+          "explanation": "Hash SHA256.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.flash",
+      "title": "Flashcards del Día 5",
+      "section": "D",
+      "type": "flashcards",
+      "cards": [
+        {"q":"¿Diferencia entre Custom Audience y Lookalike?","a":"Custom Audience = gente que ya interactuó con tu negocio (retargeting). Lookalike = gente NUEVA similar a tu source (prospección)."},
+        {"q":"¿Mínimo de personas en source audience para Lookalike?","a":"100 personas de UN SOLO país. Recomendado 1,000-50,000 para calidad."},
+        {"q":"¿1% vs 10% Lookalike?","a":"1% = top 1% más similar al source (max calidad, menor alcance). 10% = más alcance, menos similar."},
+        {"q":"¿El source de un Lookalike se incluye o se excluye?","a":"Se EXCLUYE automáticamente. El lookalike busca gente nueva similar, no re-alcanza al source."},
+        {"q":"¿Cuántos Lookalikes podés generar desde una misma source?","a":"Hasta 500 lookalikes por source audience."},
+        {"q":"¿Máximo de Custom Audiences por ad account?","a":"500 custom audiences máximo."},
+        {"q":"¿Default de Advantage+ Audience en campañas nuevas?","a":"ON. Se desactiva con 'Switch to original audience options' o 'Further limit the reach of your ads'."},
+        {"q":"¿Diferencia entre Audience Controls y Suggestions?","a":"Controls RESTRINGEN delivery (rígidos: location, language, edad mínima, exclusions). Suggestions GUÍAN (flexibles, AI puede expandir: edad max, gender, detailed targeting, lookalike, inclusions)."},
+        {"q":"¿Detailed targeting es OR o AND?","a":"OR dentro de cada categoría (intereses, behaviors). AND entre categorías base. Cuantas más categorías agregás, MÁS angosta la audiencia."},
+        {"q":"¿Mínimo de productos recomendado por Product Set?","a":"20 productos para que Advantage+ Catalog Ads tenga material suficiente para optimizar."},
+        {"q":"¿Catalog match rate target y qué significa si está bajo?","a":">75%. Si está bajo: problema en mapeo Pixel ↔ catalog (IDs incorrectos, productos faltantes, parameters mal enviados)."},
+        {"q":"¿Cuántos catálogos recomienda Meta tener?","a":"UN SOLO catálogo por negocio. Para sub-líneas usá Product Sets dentro del mismo catalog."},
+        {"q":"Atributos requeridos en Product Catalog:","a":"ID, Title, Description, Price, Availability, Condition, Brand, Image, Link. Sin esos, productos no se aprueban."},
+        {"q":"¿Para qué objectives está disponible Advantage+ Catalog Ads?","a":"Sales (a nivel campaña, complete solution) · App Promotion, Engagement, Leads, Traffic (a nivel ad, single-step automation)."},
+        {"q":"¿Cuándo Audience Overlap analysis tiene sentido?","a":"Audiencias de mínimo 10,000 personas cada una. Bajo eso el análisis no es estadísticamente confiable."},
+        {"q":"Soluciones para Audience Overlap alto entre ad sets:","a":"Exclusion (excluir custom audience de prospecting), Consolidation (combinar ad sets que se pisan), Refinement (separar más con detailed targeting)."},
+        {"q":"¿Customer List requiere hash de qué campos?","a":"Email y phone como mínimo. Mientras más campos hasheados envíes (nombre, fecha de nacimiento, dirección), mejor el match rate."},
+        {"q":"¿Por qué se hashea el customer list?","a":"Para que Meta nunca vea los datos en plano. Meta matchea los hashes con sus propios hashes de usuarios y nunca conoce el email real."},
+        {"q":"¿Audience definition vs Estimated daily results?","a":"Audience definition = cuántas personas TOTALES cumplen los criterios. Estimated daily results = alcance diario esperado. Ninguno es resultado real."},
+        {"q":"¿Broad audience suele ser mejor que narrow?","a":"Generalmente SÍ. Broad (solo edad + ubicación) deja al sistema encontrar gente. Narrow limita el delivery y suele ser más caro en CPA."}
+      ]
+    }
+  ]
+}

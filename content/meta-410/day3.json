@@ -1,0 +1,603 @@
+{
+  "id": "day3",
+  "title": "Día 3 — Buying Types & Bid Strategies",
+  "lessons": [
+    {
+      "id": "3.1",
+      "title": "Auction vs Reservation",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Auction — subasta en tiempo real",
+          "body": "El sistema de compra default de Meta. <strong>Todos los objectives</strong>. <strong>Todos los placements</strong>. <strong>Todos los bid strategies</strong>. Pricing fluctúa con mercado y competencia. Es lo que vas a usar el 90% del tiempo."
+        },
+        {
+          "type": "concept",
+          "h": "Reservation — compra anticipada",
+          "body": "Compra <strong>CPM fijo</strong> con resultados predecibles. Solo <strong>Awareness y Engagement</strong>. Solo <strong>Facebook + Instagram</strong>. Solo <strong>lifetime budget</strong>. Bid strategy automático. Para campañas grandes (&gt;200,000 personas)."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo gana la subasta",
+          "body": "Gana el ad con mayor <strong>total value</strong> en la subasta:<br/><br/><strong>Total value = Advertiser bid × Estimated action rates + Ad quality</strong><br/><br/>No gana el que más paga — gana el que ofrece mayor valor total considerando probabilidad de acción y calidad."
+        },
+        {
+          "type": "kvtable",
+          "h": "Auction vs Reservation",
+          "rows": [
+            ["Objectives", "Auction: todos · Reservation: Awareness + Engagement"],
+            ["Placements", "Auction: todos · Reservation: FB + IG solamente"],
+            ["Budget", "Auction: daily o lifetime · Reservation: solo lifetime"],
+            ["Pricing", "Auction: fluctúa · Reservation: CPM fijo"],
+            ["Frequency control", "Auction: Frequency cap · Reservation: Target frequency + Cap"],
+            ["Cuándo elegir", "Auction: flexibilidad · Reservation: predictibilidad (feria/evento/launch)"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA TÍPICA",
+          "body": "Pensar que el bid más alto gana la subasta. <strong>FALSO</strong>: gana el mayor total value (bid × action rates + ad quality). Un ad con bid bajo y alta probabilidad de acción puede ganar contra un ad con bid alto y baja probabilidad."
+        },
+        {
+          "type": "mcq",
+          "q": "Una empresa quiere reservar alcance a 50,000 industriales en una feria que dura 2 semanas, con CPM fijo. ¿Qué combinación funciona?",
+          "options": [
+            "Auction + Awareness + daily budget",
+            "Reservation + Sales + lifetime budget",
+            "Reservation + Awareness + lifetime budget",
+            "Auction + Engagement + Frequency cap"
+          ],
+          "correct": 2,
+          "explanation": "Reservation solo admite Awareness o Engagement, requiere lifetime budget, ideal para eventos con duración fija. Sales no admite Reservation. Auction da CPM variable, no fijo.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué afirmación sobre la subasta de Meta es VERDADERA?",
+          "options": [
+            "Gana el ad con mayor bid del anunciante",
+            "Gana el ad con mejor combinación de bid, action rates y ad quality",
+            "Gana el ad con mayor presupuesto diario",
+            "Gana el ad publicado primero"
+          ],
+          "correct": 1,
+          "explanation": "Total value = bid × estimated action rates + ad quality. El sistema premia la probabilidad de acción y la calidad, no solo el dinero ofertado.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.2",
+      "title": "Bid strategies · el catálogo",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "5 bid strategies",
+          "rows": [
+            ["Highest Volume", "Default. Gasta todo y maximiza cantidad de resultados. Sin meta de costo."],
+            ["Highest Value", "Gasta todo y maximiza VALOR (no solo cantidad). Requiere Pixel con value."],
+            ["Cost per Result Goal", "Mantiene CPA promedio en el target. Puede dejar de gastar si los resultados salen caros."],
+            ["ROAS Goal", "Apunta a un ROAS objetivo (ej. 4x). Requiere Pixel con value tracking."],
+            ["Bid Cap", "Controla el BID máximo en la subasta (no el CPA final). Para advanced users."]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Spend-based vs Goal-based vs Manual",
+          "body": "<strong>Spend-based</strong> (Highest Volume, Highest Value): gastan todo el budget. <strong>Goal-based</strong> (Cost per Result Goal, ROAS Goal): respetan una meta de costo/retorno, pueden no gastar todo. <strong>Manual</strong> (Bid Cap): vos controlás el bid de la subasta."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA CRÍTICA",
+          "body": "<strong>Bid Cap NO controla el CPA</strong>. Controla el bid máximo que el sistema pone en la subasta. Si el cap es muy bajo, el ad puede no entregar. Para controlar costo final usá <strong>Cost per Result Goal</strong>."
+        },
+        {
+          "type": "tip",
+          "label": "REGLA DE ELECCIÓN",
+          "body": "<strong>¿Querés controlar costos?</strong><br/>→ NO: Highest Volume (default) o Highest Value (con value tracking).<br/>→ SÍ: Cost per Result Goal (target CPA) o ROAS Goal (target retorno). Bid Cap solo si tenés experiencia."
+        },
+        {
+          "type": "mcq",
+          "q": "Un anunciante quiere maximizar el VOLUMEN de leads sin importar el costo unitario, gastando todo el budget. ¿Bid strategy?",
+          "options": [
+            "Cost per Result Goal con target $200",
+            "Highest Volume",
+            "Bid Cap a $400",
+            "ROAS Goal de 3x"
+          ],
+          "correct": 1,
+          "explanation": "Highest Volume es el default que gasta todo y maximiza cantidad. Cost per Result Goal y Bid Cap controlan costos (pueden no gastar). ROAS Goal optimiza retorno con value.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Una empresa e-commerce tiene Pixel con value tracking y quiere mantener un retorno de 4x mínimo. ¿Qué bid strategy?",
+          "options": [
+            "Highest Volume",
+            "Highest Value",
+            "ROAS Goal de 4x",
+            "Bid Cap"
+          ],
+          "correct": 2,
+          "explanation": "ROAS Goal define el retorno objetivo (4x significa que por cada $1 gastado quiere $4 de ingreso). Highest Value maximiza valor sin meta. ROAS Goal respeta el target.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.3",
+      "title": "Budget · daily vs lifetime + Advantage+",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "Daily budget vs Lifetime budget",
+          "rows": [
+            ["Daily budget", "Gasto promedio DIARIO. Puede gastar +25% un día y compensar otro. Sin tope estricto día a día."],
+            ["Lifetime budget", "Tope ABSOLUTO durante todo el periodo. Distribución variable día a día. Obligatorio en Reservation."]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Advantage+ Campaign Budget",
+          "body": "Distribuye dinámicamente el presupuesto entre <strong>ad sets</strong> según rendimiento. Requiere mínimo <strong>2 ad sets</strong>. Solo en Auction. Es la recomendación default cuando tenés varios ad sets — Meta asigna más a los que convierten mejor."
+        },
+        {
+          "type": "concept",
+          "h": "Ad Set Budget Sharing",
+          "body": "Alternativa a Advantage+ Campaign Budget para advertisers que quieren control. Cada ad set tiene su budget pero pueden <strong>compartir hasta 20%</strong> del daily budget entre ad sets de la misma campaña."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Advantage+ Campaign Budget gana en la mayoría de los casos: deja que Meta encuentre el ad set ganador automáticamente. Solo usá Ad Set Budget Sharing si tenés razones específicas (compliance, presupuesto manual por línea de negocio)."
+        },
+        {
+          "type": "mcq",
+          "q": "Una campaña tiene 4 ad sets con audiencias distintas. Querés que Meta envíe más presupuesto al que mejor convierta. ¿Qué setting?",
+          "options": [
+            "Daily budget por ad set",
+            "Lifetime budget por ad set sin Advantage+",
+            "Advantage+ Campaign Budget",
+            "Bid Cap igual en los 4"
+          ],
+          "correct": 2,
+          "explanation": "Advantage+ Campaign Budget redistribuye automáticamente al ad set ganador. Las otras opciones reparten estático sin reasignación dinámica.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "3.4",
+      "title": "Learning Phase · cómo funciona y cómo salir",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Qué es Learning Phase",
+          "body": "Período donde el sistema <strong>testea</strong> el ad set para encontrar la mejor audiencia. Durante esta fase hay <strong>fluctuaciones</strong> de costo y rendimiento — es normal."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo salir del Learning Phase",
+          "body": "El ad set sale cuando alcanza <strong>50 optimization events en 7 días</strong> tras activación (o edit significativo). Si no llega → status <strong>Learning Limited</strong>."
+        },
+        {
+          "type": "kvtable",
+          "h": "Causas de Learning Limited",
+          "rows": [
+            ["Audience chica", "No hay suficiente gente para encontrar 50 conversions/semana"],
+            ["Budget bajo", "Sin plata para entregar a 50 conversions"],
+            ["Bid restrictivo", "Bid Cap bajo limita entregas; Cost per Result Goal muy ambicioso"],
+            ["Overlap", "Varios ad sets compiten por la misma gente"],
+            ["Optimization event raro", "Si el event ocurre pocas veces (ej. Purchase de alto ticket)"],
+            ["Demasiados ad sets activos", "Diluyen el aprendizaje entre muchos pequeños"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "CUIDADO con \"edits significativos\"",
+          "body": "Cambiar bid strategy, optimization event, audience grande o creative <strong>RESETEA el learning phase</strong>. Si cambiás algo importante a la mitad del learning, volvés a cero y perdés todo lo aprendido."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "El learning phase termina por <strong>volumen</strong> (50 events), no por tiempo. Apurar la edición \"para que aprenda más rápido\" suele empeorar todo. Mejor: dejar correr 7 días sin tocar, evaluar resultados, luego decidir."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuántos optimization events necesita un ad set para salir del Learning Phase y cuánto tiempo tiene?",
+          "options": [
+            "10 events en 3 días",
+            "25 events en 5 días",
+            "50 events en 7 días",
+            "100 events en 14 días"
+          ],
+          "correct": 2,
+          "explanation": "50 events en 7 días es el umbral oficial. Si no llega, queda en Learning Limited.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Un ad set lleva 3 días con costo CPA alto. ¿Qué acción NO recomendarías?",
+          "options": [
+            "Esperar a que termine el learning phase",
+            "Revisar audience y budget",
+            "Cambiar el bid strategy ya para 'apurar la optimización'",
+            "Verificar que no haya audience overlap"
+          ],
+          "correct": 2,
+          "explanation": "Cambiar bid strategy RESETEA el learning phase y perdés todo el aprendizaje acumulado. Mejor esperar los 7 días o revisar setup sin tocar el bid strategy.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuáles de estos pueden causar status Learning Limited? Selecciona 3.",
+          "options": [
+            "Audience demasiado chica",
+            "Budget muy bajo para alcanzar 50 events/semana",
+            "Cambio de creative cada 2 días",
+            "Demasiados ad sets activos en la misma campaña",
+            "Pixel y CAPI ambos instalados"
+          ],
+          "correct": [0, 1, 3],
+          "multi": true,
+          "explanation": "Audience chica, budget bajo y demasiados ad sets son causas clásicas. Cambiar creative reinicia learning pero no es causa de Learning Limited per se. Pixel + CAPI es buena práctica, no problema.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.5",
+      "title": "Emparejar bid strategy ↔ caso de uso",
+      "section": "B",
+      "type": "match",
+      "instruction": "Asocia cada bid strategy con el caso donde se usa típicamente.",
+      "leftLabel": "Bid strategy",
+      "rightLabel": "Caso de uso",
+      "pairs": [
+        {"id":"hv","left":"Highest Volume","right":"Maximizar cantidad de resultados sin meta de costo"},
+        {"id":"hval","left":"Highest Value","right":"Maximizar valor de compra (no solo unidades)"},
+        {"id":"cprg","left":"Cost per Result Goal","right":"Mantener CPA promedio en un target específico"},
+        {"id":"roas","left":"ROAS Goal","right":"Apuntar a un retorno objetivo (ej. 4x)"},
+        {"id":"bcap","left":"Bid Cap","right":"Advertiser experto que controla el bid en la subasta"}
+      ],
+      "explanation": "Identificar el bid strategy correcto según el outcome del negocio es pregunta frecuente de examen. Recordá: Bid Cap NO controla el CPA final, solo el bid en la subasta."
+    },
+    {
+      "id": "3.6",
+      "title": "Ordenar el flujo de elección de bid strategy",
+      "section": "B",
+      "type": "order",
+      "instruction": "Según el decision tree oficial del PDF, ¿en qué orden hacés estas preguntas para elegir tu bid strategy? Reordena con ▲▼.",
+      "items": [
+        "¿Querés controlar costos?",
+        "Si SÍ: ¿optimizar valor de compra?",
+        "Si SÍ optimizar valor: ROAS Goal",
+        "Si NO optimizar valor: Cost per Result Goal o Bid Cap",
+        "Si NO controlás costos: ¿optimizar valor?",
+        "Si SÍ optimizar valor sin control: Highest Value",
+        "Si NO optimizar valor sin control: Highest Volume"
+      ],
+      "explanation": "Decision tree oficial del PDF: primero preguntá si controlás costos. Después dentro de cada rama, preguntá si optimizás valor. Eso te da los 5 strategies posibles."
+    },
+    {
+      "id": "3.7",
+      "title": "Casos B2B aplicados",
+      "section": "C",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO 1 · Advantage+ con 3 ad sets",
+          "h": "Kenet lanza Sales con 3 industrias",
+          "body": "<strong>Kenet Solar</strong> lanza campaña Sales con 3 ad sets (industria alimentaria, automotriz, manufactura). Budget total: $200,000 MXN al mes. Quiere que Meta asigne dinámicamente al ad set ganador sin tocar nada.<br/><br/><strong>Solución:</strong> Advantage+ Campaign Budget activado. Después de 2 semanas: ad set automotriz absorbe el 60% del budget porque los CFOs de plantas automotrices convierten 3x mejor que alimentaria."
+        },
+        {
+          "type": "mcq",
+          "q": "Si en lugar de Advantage+ Campaign Budget Kenet hubiera puesto budget MANUAL por ad set, ¿qué pasaría?",
+          "options": [
+            "Lo mismo, son intercambiables",
+            "Cada ad set gastaría todo su budget aunque convierta mal, desperdiciando el dinero de los ad sets perdedores",
+            "Daría más leads totales",
+            "Acortaría el learning phase"
+          ],
+          "correct": 1,
+          "explanation": "Sin Advantage+ Campaign Budget, cada ad set gasta su parte sin reasignación. Los ad sets perdedores siguen gastando aunque convierten mal. Advantage+ reasigna al ganador.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 2 · Cost per Result Goal",
+          "h": "Lead a costo controlado",
+          "body": "<strong>Kenet</strong> quiere leads de auditoría energética industrial pero el costo unitario NO puede pasar de $300 MXN por lead, sino el proyecto deja de ser rentable. Histórico: el CPA promedio está entre $250-350 MXN.<br/><br/><strong>Solución:</strong> Bid strategy Cost per Result Goal con target $300. Si el sistema no encuentra leads a ese costo, NO gasta. Acepta perder volumen para preservar CPA."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Cost per Result Goal y NO Bid Cap en este caso?",
+          "options": [
+            "Bid Cap es más caro",
+            "Bid Cap controla el bid en la subasta, no el CPA final; podés terminar con CPA fuera del target a pesar del cap",
+            "Bid Cap no admite leads",
+            "Son lo mismo"
+          ],
+          "correct": 1,
+          "explanation": "Bid Cap pone un techo al BID en la subasta, pero el CPA final depende de muchas otras variables (action rates, ad quality). Cost per Result Goal directamente respeta el target de CPA. Para meta de costo: Cost per Result Goal.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 3 · Reservation para Feria Solar+Power",
+          "h": "Recall previo a evento físico",
+          "body": "<strong>Kenet</strong> participa en la <em>Feria Solar+Power México</em> (2 semanas en CDMX). Quiere que 50,000 industriales clave RECUERDEN la marca antes del evento para que se acerquen al stand. Necesita CPM y delivery PREDECIBLES — sin sorpresas.<br/><br/><strong>Solución:</strong> Reservation + Awareness + Target frequency 3/semana + Lifetime budget de $150,000 MXN. CPM fijado, delivery garantizado durante los 14 días."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué es Target frequency y por qué tiene sentido aquí?",
+          "options": [
+            "Es el frequency cap, máximo de impresiones por persona",
+            "Es el promedio semanal de impresiones por persona que apunta a consistencia de recordación",
+            "Es la duración del ad",
+            "Es el costo por impresión"
+          ],
+          "correct": 1,
+          "explanation": "Target frequency = promedio semanal de impresiones. Ideal para recall previo a evento: querés que cada industrial vea el ad ~3 veces/semana para fijar la marca. Solo disponible en Reservation.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.8",
+      "title": "Drill · 10 MCQs de bidding",
+      "section": "D",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Reservation requiere qué tipo de budget:",
+          "options": ["Daily","Lifetime","Cualquiera","Ninguno"],
+          "correct": 1,
+          "explanation": "Reservation solo admite lifetime budget.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Default bid strategy de Meta es:",
+          "options": ["Bid Cap","Highest Volume","ROAS Goal","Cost per Result Goal"],
+          "correct": 1,
+          "explanation": "Highest Volume es default: gasta todo y maximiza cantidad.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Para usar Highest Value o ROAS Goal necesitás:",
+          "options": [
+            "Solo Pixel sin parameters",
+            "Pixel con value tracking",
+            "Customer list",
+            "Catalog"
+          ],
+          "correct": 1,
+          "explanation": "Estos strategies necesitan saber el valor de cada conversion para optimizar.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Cambiar el bid strategy a la mitad del learning phase:",
+          "options": [
+            "Acelera la salida del learning",
+            "Resetea el learning y volvés a empezar",
+            "No tiene efecto",
+            "Solo afecta el budget"
+          ],
+          "correct": 1,
+          "explanation": "Es un edit significativo. Resetea learning. Hay que volver a acumular 50 events.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ Campaign Budget requiere:",
+          "options": [
+            "Un solo ad set",
+            "Mínimo 2 ad sets en la campaña",
+            "Lifetime budget obligatorio",
+            "Pixel con value"
+          ],
+          "correct": 1,
+          "explanation": "Necesita ≥2 ad sets para tener entre dónde elegir reasignar el budget.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Cuál NO es causa de Learning Limited:",
+          "options": [
+            "Audience demasiado chica",
+            "Budget bajo",
+            "Pixel y CAPI ambos instalados",
+            "Demasiados ad sets pequeños"
+          ],
+          "correct": 2,
+          "explanation": "Tener Pixel + CAPI MEJORA la optimización. Las otras 3 son causas reales de Learning Limited.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Bid Cap controla:",
+          "options": [
+            "El CPA final",
+            "El bid máximo en la subasta (no el CPA final)",
+            "El daily budget",
+            "El lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "Bid Cap = techo al bid de la subasta. NO controla CPA final. Para CPA usar Cost per Result Goal.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Quién gana la subasta de Meta:",
+          "options": [
+            "El que paga más",
+            "El que paga más × probabilidad de acción + ad quality",
+            "El publicado primero",
+            "El de mayor presupuesto diario"
+          ],
+          "correct": 1,
+          "explanation": "Total value = bid × estimated action rates + ad quality.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Reservation está disponible para qué objectives:",
+          "options": [
+            "Todos",
+            "Solo Awareness",
+            "Awareness y Engagement",
+            "Sales y Leads"
+          ],
+          "correct": 2,
+          "explanation": "Solo Awareness y Engagement admiten Reservation.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Ad set budget sharing permite compartir hasta qué % entre ad sets:",
+          "options": ["5%","10%","20%","50%"],
+          "correct": 2,
+          "explanation": "Hasta 20% del daily budget puede compartirse entre ad sets de la misma campaña.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.9",
+      "title": "Lightning · 8 preguntas en 3 min",
+      "section": "D",
+      "type": "lightning",
+      "instruction": "8 preguntas rápidas sobre buying types y bidding. Tenés 3 minutos.",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Default bid strategy:",
+          "options": ["Highest Volume","Cost per Result Goal","Bid Cap","ROAS Goal"],
+          "correct": 0,
+          "explanation": "Highest Volume es default.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Reservation NO admite:",
+          "options": ["Awareness","Engagement","Sales","Lifetime budget"],
+          "correct": 2,
+          "explanation": "Sales no admite Reservation.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Salir del Learning Phase requiere:",
+          "options": [
+            "10 events en 3 días",
+            "25 events en 5 días",
+            "50 events en 7 días",
+            "100 events en 14 días"
+          ],
+          "correct": 2,
+          "explanation": "50 events en 7 días.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Ganar la subasta depende de:",
+          "options": [
+            "Solo el bid",
+            "Bid × action rates + ad quality",
+            "Budget mensual",
+            "Tiempo activo"
+          ],
+          "correct": 1,
+          "explanation": "Total value combinado.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Para controlar CPA en target específico:",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "Bid Cap",
+            "Highest Value"
+          ],
+          "correct": 1,
+          "explanation": "Cost per Result Goal respeta el target.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Bid Cap controla:",
+          "options": [
+            "CPA final",
+            "Bid en subasta",
+            "Daily budget",
+            "ROAS"
+          ],
+          "correct": 1,
+          "explanation": "Solo el bid en la subasta.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "Advantage+ Campaign Budget requiere:",
+          "options": [
+            "1 ad set",
+            "≥2 ad sets",
+            "3+ ad sets",
+            "Lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "Mínimo 2 ad sets.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Cambiar bid strategy a mitad del learning:",
+          "options": [
+            "Acelera optimización",
+            "Resetea learning phase",
+            "No afecta",
+            "Reduce CPA"
+          ],
+          "correct": 1,
+          "explanation": "Edit significativo = reset del learning.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "3.flash",
+      "title": "Flashcards del Día 3",
+      "section": "D",
+      "type": "flashcards",
+      "cards": [
+        {"q":"¿Para qué objectives está disponible Reservation?","a":"Solo Awareness y Engagement. Para los demás, Auction es la única opción."},
+        {"q":"¿Cómo se decide el ganador de la subasta de Meta?","a":"Total value = bid × estimated action rates + ad quality. NO gana el bid más alto solo."},
+        {"q":"¿Cuál es el default bid strategy?","a":"Highest Volume: gasta todo y maximiza cantidad de resultados sin meta de costo."},
+        {"q":"¿Cuándo usar Cost per Result Goal vs Bid Cap?","a":"Cost per Result Goal: controlás el CPA promedio final. Bid Cap: controlás el bid máximo de la subasta (no el CPA final). Para meta de costo usar Cost per Result Goal."},
+        {"q":"¿Cuál bid strategy requiere Pixel con value tracking?","a":"Highest Value y ROAS Goal — ambas optimizan por valor de compra."},
+        {"q":"¿Cuánto necesita un ad set para salir del Learning Phase?","a":"50 optimization events en 7 días desde activación (o último edit significativo)."},
+        {"q":"¿Qué pasa si cambiás bid strategy a mitad del learning phase?","a":"Es un edit significativo: resetea el learning y el ad set vuelve a empezar a acumular events desde 0."},
+        {"q":"Lista 3 causas comunes de Learning Limited.","a":"Audience chica, budget bajo, demasiados ad sets activos compitiendo entre sí (overlap), bid restrictivo, optimization event muy infrecuente."},
+        {"q":"¿Qué requiere Advantage+ Campaign Budget?","a":"Mínimo 2 ad sets en la campaña. Reasigna budget dinámicamente al ad set con mejor rendimiento."},
+        {"q":"¿Daily budget vs Lifetime budget?","a":"Daily = promedio diario flexible (puede excederse +25% un día). Lifetime = tope absoluto durante el periodo, distribución variable."},
+        {"q":"¿Cuál es el max que se puede compartir con Ad Set Budget Sharing?","a":"Hasta 20% del daily budget entre ad sets de la misma campaña."},
+        {"q":"¿Reservation admite Daily budget?","a":"NO. Reservation solo admite Lifetime budget."},
+        {"q":"¿Qué es Target frequency y dónde está disponible?","a":"Promedio semanal de impresiones por persona. Solo disponible en Reservation. Útil para asegurar recordación previa a eventos."},
+        {"q":"¿Frequency cap vs Target frequency?","a":"Frequency cap = MÁXIMO (no pasar de X impresiones). Target frequency = PROMEDIO objetivo (apuntar a X impresiones). Auction solo tiene cap; Reservation tiene ambos."},
+        {"q":"¿Cuántos placements admite Reservation?","a":"Solo Facebook + Instagram (no Audience Network, no Threads)."},
+        {"q":"¿Cuántas placements admite Auction?","a":"Todos los placements de Meta: FB Feeds, IG Feed/Stories/Reels, Messenger Stories, Audience Network, Threads."},
+        {"q":"¿Cuándo Bid Cap es buena opción?","a":"Solo para advertisers experimentados que entienden cómo controlar el bid sin afectar delivery. No recomendado para principiantes."},
+        {"q":"¿Qué es ad pacing?","a":"Cómo Meta distribuye el gasto y las entries a la subasta en el tiempo. Budget pacing (gasto parejo) + bid pacing (qué subastas entrar)."},
+        {"q":"¿Cuál bid strategy NO acepta meta de costo?","a":"Highest Volume y Highest Value: spend-based, gastan todo sin meta. Las goal-based (Cost per Result Goal, ROAS Goal) sí respetan target."},
+        {"q":"Si tu campaña Sales tiene 4 ad sets con audiencias distintas, ¿qué setting recomienda Meta?","a":"Advantage+ Campaign Budget para reasignar dinámicamente al ad set ganador."}
+      ]
+    }
+  ]
+}

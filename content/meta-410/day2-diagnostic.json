@@ -1,0 +1,56 @@
+{
+  "title": "Diagnóstico · Día 2",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿En qué nivel de la jerarquía de Meta se selecciona el campaign objective?",
+      "options": ["Account level","Campaign level","Ad set level","Ad level"],
+      "correct": 1,
+      "explanation": "El objective siempre se elige a nivel Campaign. Conversion location y event van en Ad set.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿Cuáles objectives admiten buying type Reservation?",
+      "options": [
+        "Todos los objectives",
+        "Sales y Leads",
+        "Awareness y Engagement",
+        "Awareness, Traffic y Engagement"
+      ],
+      "correct": 2,
+      "explanation": "Reservation solo está disponible para Awareness y Engagement. Para los demás solo Auction.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una empresa B2B quiere demos agendadas con prospectos sin sacarlos del feed. ¿Cuál es la mejor combinación?",
+      "options": [
+        "Sales + conversion location Website",
+        "Leads + conversion location Instant form",
+        "Traffic + landing page externa",
+        "Engagement con Messaging"
+      ],
+      "correct": 1,
+      "explanation": "Leads + Instant form mantiene la fricción mínima dentro de Meta. Sales se reserva para transacciones reales.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál objective NO requiere Pixel, CAPI ni dataset?",
+      "options": ["Sales","Leads (website)","Awareness","App Promotion"],
+      "correct": 2,
+      "explanation": "Awareness optimiza por recall y reach amplio, no necesita tracking de conversions.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Selecciona la diferencia correcta entre conversion event y performance goal.",
+      "options": [
+        "Son sinónimos",
+        "Conversion event = qué acción cuenta; Performance goal = cómo se licita",
+        "Conversion event va en Campaign; Performance goal va en Ad",
+        "Performance goal solo aplica a Sales"
+      ],
+      "correct": 1,
+      "explanation": "Conversion event define la acción (Purchase, Lead). Performance goal define la regla de optimización (Maximize number vs Maximize value).",
+      "difficulty": "hard"
+    }
+  ]
+}

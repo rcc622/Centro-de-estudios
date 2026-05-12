@@ -1,0 +1,129 @@
+{
+  "title": "Quiz de unidad · Día 2",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuáles son los 6 ODAX en Meta?",
+      "options": [
+        "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+        "Awareness, Traffic, Conversions, Catalog, Leads, Sales",
+        "Reach, Traffic, Engagement, Conversions, App Installs, Sales",
+        "Brand, Consideration, Conversion, Retention, Loyalty, Advocacy"
+      ],
+      "correct": 0,
+      "explanation": "Los 6 ODAX oficiales (Outcome-Driven Ad Experiences) son: Awareness, Traffic, Engagement, Leads, App Promotion, Sales. Las otras combinaciones mezclan objectives viejos con conceptos no oficiales.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Reservation buying type está disponible para qué objectives?",
+      "options": [
+        "Awareness y Engagement",
+        "Sales y Leads",
+        "Traffic y Awareness",
+        "Todos los ODAX"
+      ],
+      "correct": 0,
+      "explanation": "Reservation = CPM fijo y delivery predecible. Solo Awareness y Engagement. Sales, Leads, Traffic y App Promotion siempre van por Auction.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca quiere lanzar un programa de financiamiento solar industrial. El usuario final debe firmar contrato digital tras chat con consultor. ¿Cuál es el objective + conversion location ideal?",
+      "options": [
+        "Sales + Website",
+        "Leads + Instant form",
+        "Sales + Messenger",
+        "Engagement + Messaging"
+      ],
+      "correct": 2,
+      "explanation": "Sales con conversion location Messenger captura la conversión final (firma) dentro de la plataforma de chat. Leads sería para captar contactos previos, no la firma misma. Engagement no optimiza para conversión.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Qué requisitos son obligatorios para optimizar Sales website con conversion event Purchase? Selecciona 2.",
+      "options": [
+        "Pixel instalado en el sitio",
+        "Conversions API (CAPI) configurada",
+        "Facebook SDK en app móvil",
+        "Catalog de productos"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Pixel + CAPI son requeridos para Sales website con Purchase. SDK aplica a App Promotion. Catalog aplica a Advantage+ Catalog Ads, no a Sales general.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "El performance goal default de Engagement con engagement type = Video views es:",
+      "options": [
+        "Maximize link clicks",
+        "Maximize impressions",
+        "Maximize ThruPlay views",
+        "Maximize ad recall lift"
+      ],
+      "correct": 2,
+      "explanation": "ThruPlay views (video visto completo o ≥15 segundos) es el performance goal canónico de Engagement Video views. Ad recall lift es de Awareness, link clicks de Traffic.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuáles de las siguientes SON Advantage+ complete solutions (no single-step)? Selecciona 3.",
+      "options": [
+        "Advantage+ Sales campaigns",
+        "Advantage+ Leads campaigns",
+        "Advantage+ Awareness campaigns",
+        "Advantage+ App campaigns",
+        "Advantage+ Traffic campaigns"
+      ],
+      "correct": [0, 1, 3],
+      "multi": true,
+      "explanation": "Las 3 complete solutions oficiales son Sales, Leads y App campaigns. NO existe Advantage+ Awareness ni Advantage+ Traffic como complete solutions (son single-step automations, no end-to-end).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Si querés optimizar para tickets de compra de mayor valor (no solo cantidad), ¿qué performance goal usás?",
+      "options": [
+        "Maximize number of conversions",
+        "Maximize value of conversions",
+        "Maximize link clicks",
+        "Cost per Result Goal"
+      ],
+      "correct": 1,
+      "explanation": "Maximize value of conversions optimiza el monto, no las unidades. Requiere Pixel con value tracking. Cost per Result Goal es bid strategy (de Día 3), no performance goal.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál es la diferencia clave entre Awareness y Engagement con video views?",
+      "options": [
+        "Awareness es más barato",
+        "Awareness optimiza recall amplio; Engagement optimiza la acción concreta de ver/interactuar",
+        "Engagement requiere Pixel y Awareness no",
+        "Son lo mismo con nombres distintos"
+      ],
+      "correct": 1,
+      "explanation": "Awareness mide impacto en memoria (recall lift) con alcance amplio. Engagement con Video Views optimiza la VIDEO COMPLETION concreta. La diferencia es qué outcome del funnel optimizás.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "App Promotion requiere obligatoriamente:",
+      "options": [
+        "Pixel en website",
+        "Conversions API",
+        "Facebook SDK o un MMP (Mobile Measurement Partner)",
+        "Customer list"
+      ],
+      "correct": 2,
+      "explanation": "App Promotion necesita una vía de trackeo de eventos en la app: SDK de Facebook directo, o un MMP autorizado (AppsFlyer, Adjust, Branch, etc.). Pixel y CAPI son para web.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un anunciante quiere que la gente recuerde su rebrand (cambio de logo). NO le interesa enviar tráfico ni conseguir compras. ¿Mejor objective + performance goal?",
+      "options": [
+        "Traffic + Maximize link clicks",
+        "Engagement + Maximize post engagement",
+        "Awareness + Maximize ad recall lift",
+        "Sales + Maximize value"
+      ],
+      "correct": 2,
+      "explanation": "Awareness con Maximize ad recall lift es el match exacto para impacto en memoria. Traffic optimiza clicks (no recall). Engagement optimiza interacción (no recall). Sales no aplica.",
+      "difficulty": "easy"
+    }
+  ]
+}

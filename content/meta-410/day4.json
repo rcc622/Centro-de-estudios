@@ -1,0 +1,561 @@
+{
+  "id": "day4",
+  "title": "Día 4 — Signals & Data",
+  "lessons": [
+    {
+      "id": "4.1",
+      "title": "Signals, events y data sources",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Signals",
+          "body": "Acciones que revelan <strong>intención o interés</strong>: visitar una página, agregar al carrito, comprar, usar una app, entrar a una tienda física. Son la materia prima del sistema de optimización de Meta."
+        },
+        {
+          "type": "concept",
+          "h": "Events",
+          "body": "Las acciones concretas que se registran. Pueden ser <strong>online</strong> (web, app, messaging) u <strong>offline</strong> (compra en tienda, llamada telefónica, reserva)."
+        },
+        {
+          "type": "kvtable",
+          "h": "Data sources · cómo le mandás los signals a Meta",
+          "rows": [
+            ["Meta Pixel", "Código JS en website. Trackea acciones del visitante. Necesario para Custom Audiences web y Sales/Leads website."],
+            ["Conversions API (CAPI)", "Envío server-side desde el servidor del anunciante. Complementa al Pixel para reducir dependencia del browser."],
+            ["Facebook SDK", "Equivalente del Pixel para apps móviles. Necesario para App Promotion. Sustituible por MMP."],
+            ["Offline conversions", "CSV con eventos físicos (compra en tienda, contrato firmado en oficina). Se sube vía CAPI Offline."]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Dataset",
+          "body": "Une múltiples data sources (Pixel + CAPI + SDK + offline) en un solo lugar a nivel <strong>ad set</strong>. Es el punto de conexión entre tus eventos y la optimización de las campañas."
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué nivel se conecta el dataset a una campaña?",
+          "options": ["Account level","Campaign level","Ad set level","Ad level"],
+          "correct": 2,
+          "explanation": "El dataset se conecta a nivel Ad set, junto con conversion location y conversion event.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "4.2",
+      "title": "Pixel vs CAPI · complementarios, no sustitutos",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Meta Pixel — client-side",
+          "body": "Código JavaScript en el website. Captura eventos del browser del visitante (ViewContent, AddToCart, Purchase, etc.). <strong>Limitaciones</strong>: ad blockers, navegación privada, iOS 14+ App Tracking Transparency. La cobertura es parcial."
+        },
+        {
+          "type": "concept",
+          "h": "Conversions API (CAPI) — server-side",
+          "body": "Envío de eventos <strong>server-to-server</strong> desde el servidor del anunciante directo a Meta. NO depende del browser. Captura compras y conversiones incluso si el Pixel falla. Aumenta el Event Match Quality (EMQ)."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA CRÍTICA",
+          "body": "<strong>CAPI NO reemplaza al Pixel</strong>. Son <em>complementarios</em>. La recomendación de Meta es usar AMBOS para máxima cobertura. Pixel para detalle del browser, CAPI para confiabilidad del servidor."
+        },
+        {
+          "type": "concept",
+          "h": "Event Match Quality (EMQ)",
+          "body": "Métrica que mide qué tan bien Meta puede asociar un evento con un usuario. Mejora cuando se envía <strong>customer information rica</strong>: email hasheado, phone hasheado, IP, user agent. CAPI permite enviar más de esto que el Pixel solo."
+        },
+        {
+          "type": "kvtable",
+          "h": "Por qué Pixel + CAPI",
+          "rows": [
+            ["Solo Pixel", "Pierdes ~10-30% de eventos por ad blockers/iOS 14"],
+            ["Solo CAPI", "Pierdes detalle del browser (clicks específicos, time on site)"],
+            ["Pixel + CAPI", "Cobertura máxima (~95%+), mejor EMQ, mejor optimización"],
+            ["iOS 14+ con ATT", "Pixel queda muy limitado por ATT — CAPI cobra mayor importancia"]
+          ]
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál afirmación sobre Pixel y CAPI es CORRECTA?",
+          "options": [
+            "CAPI reemplaza al Pixel",
+            "Pixel es siempre suficiente",
+            "Son complementarios: la recomendación es usar AMBOS",
+            "Solo se elige uno según el tipo de website"
+          ],
+          "correct": 2,
+          "explanation": "Pixel + CAPI juntos dan cobertura máxima. CAPI no reemplaza al Pixel, lo complementa.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué es especialmente importante CAPI después de iOS 14+ App Tracking Transparency?",
+          "options": [
+            "ATT bloquea Pixel solo en Android",
+            "ATT limita el tracking del Pixel en navegadores iOS; CAPI envía server-side y no se ve afectado",
+            "ATT requiere CAPI por ley",
+            "CAPI es más barato"
+          ],
+          "correct": 1,
+          "explanation": "ATT pide consentimiento explícito al usuario para tracking en iOS. Sin consentimiento, el Pixel se ve limitado. CAPI envía server-to-server (independiente del browser) y mantiene cobertura.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.3",
+      "title": "Tipos de events: standard, custom, custom conversions",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "3 tipos de events",
+          "rows": [
+            ["Automatically logged", "Solo en apps (SDK). Sin código adicional. Eventos comunes auto-detectados."],
+            ["Standard events", "Predefinidos por Meta: Purchase, Lead, AddToCart, ViewContent, Subscribe, etc. Web/app/offline/messaging."],
+            ["Custom events", "Creados por el negocio (ej. 'Trial started', 'Quote requested'). Requieren código."]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Parameters · data adicional dentro de un event",
+          "body": "Datos extra que enriquecen el event. Los más importantes (recomendados):<br/>• <strong>Content IDs</strong>: SKU del producto<br/>• <strong>Content type</strong>: 'product', 'service'<br/>• <strong>Value</strong>: monto en moneda local<br/>• <strong>Currency</strong>: USD, MXN, etc.<br/>• <strong>Product catalog IDs</strong>: linkea al catalog"
+        },
+        {
+          "type": "concept",
+          "h": "Custom Conversions",
+          "body": "<strong>Reglas</strong> construidas sobre standard o custom events para medir acciones más específicas. Ejemplo: 'Compra premium' = Purchase + URL contiene '/premium' + Value > $1,000."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA CRÍTICA",
+          "body": "<strong>Custom Conversions NO están disponibles para app events</strong>. Solo aplican a eventos web y offline. Para app, hay que crear Custom Events directos vía SDK."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es la diferencia entre Custom Event y Custom Conversion?",
+          "options": [
+            "Son lo mismo",
+            "Custom Event es un evento nuevo definido por el negocio (requiere código). Custom Conversion es una REGLA sobre un event existente (URL + value, etc.)",
+            "Custom Event es solo web; Custom Conversion solo app",
+            "Custom Conversion reemplaza al Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Custom Event = evento nuevo (necesita código). Custom Conversion = regla sobre un evento existente (no requiere código adicional, solo reglas).",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Querés medir compras de smartphones &gt; $800 USD. Tu Pixel ya registra Purchase con Value. ¿Qué configurás?",
+          "options": [
+            "Un Custom Event nuevo llamado 'PurchasePremium'",
+            "Una Custom Conversion con regla: Purchase + URL contains '/smartphone' + Value > 800",
+            "Un Standard Event modificado",
+            "Otro Pixel solo para premium"
+          ],
+          "correct": 1,
+          "explanation": "Custom Conversion es ideal: aprovecha el Purchase existente y agrega reglas (URL + Value) sin código adicional. Custom Event obliga a tocar código del sitio.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.4",
+      "title": "Aggregated Event Measurement (AEM) e iOS 14+",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "App Tracking Transparency (ATT) — iOS 14+",
+          "body": "Desde iOS 14, Apple obliga a las apps a pedir <strong>consentimiento explícito</strong> antes de trackear al usuario entre apps y sitios. La mayoría de usuarios rechaza. Esto limita los signals que Meta puede recolectar."
+        },
+        {
+          "type": "concept",
+          "h": "Aggregated Event Measurement (AEM)",
+          "body": "Protocolo de Meta para medir web/app events en iOS 14+ respetando privacidad. Hace 3 cosas:<br/>• Quita identificadores personales<br/>• Agrega <strong>differential privacy</strong> (ruido estadístico)<br/>• Reporta data a nivel <strong>agregado</strong>, no individual"
+        },
+        {
+          "type": "kvtable",
+          "h": "Limitaciones de AEM",
+          "rows": [
+            ["Eventos por dominio", "Máximo 8 eventos priorizados por dominio (web)"],
+            ["Latencia", "Reporting con 24-72h de delay (no real-time)"],
+            ["Attribution windows", "Reducidas: 1-day view, 7-day click"],
+            ["Custom audiences web", "Reducidas para usuarios iOS sin consentimiento"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "<strong>AEM aplica solo a iOS 14+</strong>. Android no se ve afectado por ATT. Pero como iOS representa una parte significativa del tráfico mobile, el impacto es grande."
+        },
+        {
+          "type": "tip",
+          "label": "MITIGACIÓN",
+          "body": "Para minimizar el impacto de ATT: 1) Instalar <strong>CAPI</strong> (server-side, no afectado por ATT), 2) Priorizar los <strong>8 eventos correctos por dominio</strong>, 3) Enviar customer info hasheada (email, phone) para mejorar Event Match Quality."
+        },
+        {
+          "type": "mcq",
+          "q": "AEM aplica a:",
+          "options": [
+            "Todos los usuarios mobile",
+            "Solo Android",
+            "Solo iOS 14+",
+            "Solo desktop"
+          ],
+          "correct": 2,
+          "explanation": "AEM es la respuesta de Meta al framework de privacidad ATT de Apple en iOS 14+. Android no usa ATT.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuántos eventos pueden priorizarse por dominio web bajo AEM?",
+          "options": ["3","5","8","Ilimitados"],
+          "correct": 2,
+          "explanation": "Máximo 8 eventos por dominio web. Hay que elegir los más estratégicos (típicamente: Purchase, AddToCart, Lead, InitiateCheckout, etc.).",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.5",
+      "title": "Emparejar event ↔ uso típico",
+      "section": "B",
+      "type": "match",
+      "instruction": "Cada standard event tiene un uso canónico. Asociá el event con el caso donde se reporta típicamente.",
+      "leftLabel": "Standard event",
+      "rightLabel": "Caso típico",
+      "pairs": [
+        {"id":"pur","left":"Purchase","right":"Compra completada (con value)"},
+        {"id":"lead","left":"Lead","right":"Formulario completado con datos de contacto"},
+        {"id":"vc","left":"ViewContent","right":"Visita a página de producto/servicio específico"},
+        {"id":"atc","left":"AddToCart","right":"Producto agregado al carrito"},
+        {"id":"ic","left":"InitiateCheckout","right":"Inicio del proceso de pago"},
+        {"id":"sub","left":"Subscribe","right":"Inscripción a servicio recurrente (SaaS, newsletter)"},
+        {"id":"sch","left":"Schedule","right":"Cita o reunión agendada"},
+        {"id":"contact","left":"Contact","right":"Contacto iniciado (chat, llamada, email)"}
+      ],
+      "explanation": "Cada standard event tiene un caso canónico. En el examen aparecen preguntas tipo \"¿qué event registrarías cuando el usuario X?\"."
+    },
+    {
+      "id": "4.6",
+      "title": "Ordenar el setup completo de Pixel + CAPI",
+      "section": "B",
+      "type": "order",
+      "instruction": "Cuando armás Sales website con Purchase, ¿en qué orden ejecutás estos 6 pasos? Reordena con ▲▼.",
+      "items": [
+        "Crear el Pixel en Events Manager",
+        "Instalar el código del Pixel en el website (header o GTM)",
+        "Configurar CAPI server-side (mapear eventos del servidor a estándar de Meta)",
+        "Mapear standard events (ViewContent, AddToCart, Purchase) con sus parameters (value, currency)",
+        "Crear el Dataset que combina Pixel + CAPI en Events Manager",
+        "Seleccionar el Dataset en el Ad Set y elegir Purchase como conversion event"
+      ],
+      "explanation": "El orden correcto va de infraestructura (crear Pixel) → implementación (código en site) → server-side (CAPI) → mapeo de events → unión en dataset → uso en campaña. Saltarse pasos lleva a optimización rota."
+    },
+    {
+      "id": "4.7",
+      "title": "Casos B2B aplicados · Kenet Solar",
+      "section": "C",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO 1 · Pixel + CAPI para Sales",
+          "h": "Kenet kenetsolar.com",
+          "body": "<strong>Kenet Solar</strong> instala Pixel en kenetsolar.com con eventos: <em>ViewContent</em> en /servicios, <em>Lead</em> en form de cotización, <em>Purchase</em> cuando se firma contrato (con value en MXN). Adicionalmente configuran <strong>CAPI</strong> server-to-server desde el CRM para capturar Purchase reales incluso si el Pixel falla por ad blockers."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Kenet configura CAPI además del Pixel si el Pixel ya captura los eventos?",
+          "options": [
+            "Para reemplazar el Pixel",
+            "Para tener cobertura adicional cuando el Pixel falla (ad blockers, iOS ATT, navegación privada) y mejorar Event Match Quality",
+            "Porque CAPI es obligatorio en México",
+            "CAPI no aporta nada extra"
+          ],
+          "correct": 1,
+          "explanation": "Pixel + CAPI es la práctica recomendada: cobertura máxima (~95% vs ~70% solo Pixel) + mejor EMQ. CAPI no es obligatorio pero es altamente recomendado.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 2 · Offline events",
+          "h": "Cierres en oficina",
+          "body": "<strong>Kenet</strong> cierra muchos contratos <strong>presencialmente</strong> en oficinas, no online. Cada mes el equipo de ventas exporta CSV de los contratos firmados con: email del cliente (hasheado), phone (hasheado), valor del proyecto en MXN, fecha de cierre. Lo suben vía <strong>CAPI Offline</strong> events para que Meta atribuya esos cierres a los ads online que el cliente vio antes."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué tipo de event registra Kenet para los contratos firmados en oficina?",
+          "options": [
+            "Standard event ViewContent",
+            "Standard event Purchase con value (vía CAPI Offline)",
+            "Custom event LeadConverted",
+            "AEM event"
+          ],
+          "correct": 1,
+          "explanation": "Purchase es el standard event canónico para transacciones completadas, incluyendo offline. Se sube vía CAPI Offline channel.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "scenario",
+          "label": "CASO 3 · Custom Conversion",
+          "h": "Lead industrial premium",
+          "body": "<strong>Kenet</strong> quiere optimizar campañas Leads sólo para prospectos con consumo declarado <strong>&gt;50,000 kWh/mes</strong> (los grandes). Su Pixel ya registra Lead cuando se completa el form de auditoría. <br/><br/><strong>Solución:</strong> Crea una <strong>Custom Conversion</strong> 'Lead industrial premium' con regla = Lead AND URL contiene '/industrial' AND consumo_declarado parameter &gt; 50000. Optimiza la campaña sobre esa custom conversion."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Custom Conversion y no un Custom Event nuevo?",
+          "options": [
+            "Custom Conversion es más caro",
+            "Custom Conversion no requiere código adicional — usa el Lead existente con reglas. Custom Event obliga a tocar el código del Pixel.",
+            "Custom Event no acepta parameters",
+            "Son lo mismo"
+          ],
+          "correct": 1,
+          "explanation": "Custom Conversion = regla sobre evento existente, sin tocar código. Custom Event = evento nuevo, requiere modificar el Pixel/CAPI. En este caso el Pixel ya manda Lead con parameters; mejor agregar regla.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.8",
+      "title": "Drill · 10 MCQs de signals",
+      "section": "D",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Pixel y CAPI:",
+          "options": [
+            "Son intercambiables",
+            "Son complementarios — usar ambos",
+            "CAPI reemplaza al Pixel",
+            "Solo se necesita uno"
+          ],
+          "correct": 1,
+          "explanation": "Complementarios. Pixel cubre browser, CAPI cubre server-side.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Custom Conversions disponibles para:",
+          "options": [
+            "Solo app events",
+            "Web y offline events",
+            "Todos los events",
+            "Solo standard events"
+          ],
+          "correct": 1,
+          "explanation": "Custom Conversions NO aplican a app events. Solo web y offline.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Para App Promotion necesitás:",
+          "options": [
+            "Pixel",
+            "CAPI",
+            "Facebook SDK o MMP",
+            "Customer list"
+          ],
+          "correct": 2,
+          "explanation": "SDK (o MMP autorizado como AppsFlyer/Adjust) es obligatorio para App Promotion.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "AEM aplica a:",
+          "options": ["Android","iOS 14+","Desktop","Todos"],
+          "correct": 1,
+          "explanation": "Aggregated Event Measurement responde a la framework ATT de iOS 14+.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Eventos máximos priorizados por dominio web bajo AEM:",
+          "options": ["3","5","8","16"],
+          "correct": 2,
+          "explanation": "8 eventos por dominio web.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "El dataset se conecta a nivel:",
+          "options": ["Campaign","Ad set","Ad","Account"],
+          "correct": 1,
+          "explanation": "Dataset se conecta en Ad set.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Custom Event requiere:",
+          "options": [
+            "Solo reglas en Events Manager",
+            "Código nuevo en Pixel/CAPI/SDK",
+            "Customer list",
+            "Catalog"
+          ],
+          "correct": 1,
+          "explanation": "Custom Event = código nuevo. Custom Conversion = regla sin código.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Event Match Quality (EMQ) mejora con:",
+          "options": [
+            "Más impresiones",
+            "Customer info rica enviada por CAPI (email/phone hasheados, IP, user agent)",
+            "Más budget",
+            "Bid Cap alto"
+          ],
+          "correct": 1,
+          "explanation": "EMQ mejora con calidad de la data enviada — CAPI permite mandar más info hasheada que Pixel solo.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Standard event para suscripción a SaaS mensual:",
+          "options": ["Purchase","Subscribe","Lead","Schedule"],
+          "correct": 1,
+          "explanation": "Subscribe es el canónico para cobro recurrente.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Standard event para contrato firmado presencialmente en oficina (offline):",
+          "options": [
+            "ViewContent",
+            "Purchase con value, enviado vía CAPI Offline",
+            "Custom event manual",
+            "AEM event"
+          ],
+          "correct": 1,
+          "explanation": "Purchase con value vía CAPI Offline es el path canónico para cierres offline.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.9",
+      "title": "Lightning · 8 preguntas en 3 min",
+      "section": "D",
+      "type": "lightning",
+      "instruction": "8 preguntas rápidas sobre signals y data. Tenés 3 minutos.",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Pixel vs CAPI:",
+          "options": [
+            "CAPI reemplaza Pixel",
+            "Complementarios",
+            "Pixel reemplaza CAPI",
+            "Solo Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Complementarios. Pixel + CAPI = cobertura máxima.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "App Promotion necesita:",
+          "options": ["Pixel","CAPI","SDK o MMP","Catalog"],
+          "correct": 2,
+          "explanation": "SDK de FB o MMP autorizado.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "AEM aplica a:",
+          "options": ["Android","iOS 14+","Desktop","Todos"],
+          "correct": 1,
+          "explanation": "iOS 14+ por ATT.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Custom Conversions NO aplican a:",
+          "options": ["Web","Offline","App","Messaging"],
+          "correct": 2,
+          "explanation": "Solo web y offline. App necesita Custom Events.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "Dataset se configura en:",
+          "options": ["Campaign","Ad set","Ad","Account"],
+          "correct": 1,
+          "explanation": "Ad set level.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "EMQ mejora cuando:",
+          "options": [
+            "Subís el budget",
+            "Mandás customer info rica hasheada",
+            "Cambiás bid strategy",
+            "Reducís audience"
+          ],
+          "correct": 1,
+          "explanation": "Calidad de data en CAPI mejora EMQ.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Custom Event vs Custom Conversion:",
+          "options": [
+            "Mismo",
+            "Custom Event = código nuevo · Custom Conversion = regla sobre evento existente",
+            "Custom Conversion requiere SDK",
+            "Custom Event solo en offline"
+          ],
+          "correct": 1,
+          "explanation": "Event = código. Conversion = regla.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Para offline events (cierres en tienda física):",
+          "options": [
+            "Solo Pixel",
+            "Solo SDK",
+            "CAPI Offline channel",
+            "Customer list"
+          ],
+          "correct": 2,
+          "explanation": "CAPI Offline events.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.flash",
+      "title": "Flashcards del Día 4",
+      "section": "D",
+      "type": "flashcards",
+      "cards": [
+        {"q":"¿Qué son signals en Meta?","a":"Acciones que revelan intención o interés: visitar web, agregar al carrito, comprar, usar app, entrar a tienda."},
+        {"q":"¿Las 4 data sources principales de Meta?","a":"Pixel (web), CAPI (server-side), Facebook SDK (app), Offline events (vía CAPI Offline)."},
+        {"q":"¿Cómo se conecta el dataset a una campaña y en qué nivel?","a":"Se conecta a nivel Ad set, junto con conversion location y conversion event."},
+        {"q":"¿Pixel reemplaza a CAPI o son complementarios?","a":"Complementarios. La recomendación de Meta es usar AMBOS para máxima cobertura (~95%)."},
+        {"q":"¿Por qué CAPI es especialmente importante después de iOS 14?","a":"ATT limita el Pixel en navegadores iOS sin consentimiento. CAPI es server-side y no se ve afectado por ATT."},
+        {"q":"¿Diferencia entre Custom Event y Custom Conversion?","a":"Custom Event = evento NUEVO (requiere código). Custom Conversion = REGLA sobre un evento existente (no requiere código, solo definir condiciones)."},
+        {"q":"¿Custom Conversions están disponibles para app events?","a":"NO. Solo aplican a eventos web y offline. Para app hay que crear Custom Events vía SDK."},
+        {"q":"¿Qué es AEM y a qué plataforma aplica?","a":"Aggregated Event Measurement: protocolo de Meta para medir eventos en iOS 14+ respetando privacidad (ATT). Solo aplica a iOS, no a Android."},
+        {"q":"¿Cuántos eventos priorizados por dominio web bajo AEM?","a":"Máximo 8 eventos por dominio. Hay que elegir los más estratégicos del funnel."},
+        {"q":"¿Las 3 cosas que hace AEM para preservar privacidad?","a":"Quita identificadores personales · Agrega differential privacy (ruido estadístico) · Reporta data a nivel agregado, no individual."},
+        {"q":"¿Qué es Event Match Quality (EMQ)?","a":"Métrica que mide qué tan bien Meta puede asociar un evento con un usuario. Mejora con customer info rica hasheada (email, phone, IP, user agent)."},
+        {"q":"Lista 5 standard events comunes.","a":"Purchase, Lead, ViewContent, AddToCart, InitiateCheckout, Subscribe, Schedule, Contact."},
+        {"q":"¿Qué standard event para SaaS con cobro recurrente?","a":"Subscribe (no Purchase). Purchase es para compra única."},
+        {"q":"¿Qué standard event para contrato firmado presencialmente?","a":"Purchase con value, enviado vía CAPI Offline channel."},
+        {"q":"¿Qué requiere App Promotion?","a":"Facebook SDK instalado en la app, o un MMP autorizado (AppsFlyer, Adjust, Branch, etc.)."},
+        {"q":"¿Qué parameters recomienda Meta enviar con Purchase?","a":"Value (monto), Currency, Content IDs (SKU), Content type, Product catalog IDs si hay catálogo."},
+        {"q":"¿En qué orden se setea Pixel + CAPI?","a":"Crear Pixel → instalar código en site → configurar CAPI server-side → mapear standard events con parameters → crear Dataset → conectar Dataset en Ad set."},
+        {"q":"¿Pixel solo cubre browser; CAPI cubre qué?","a":"CAPI cubre server-side: eventos del servidor del anunciante directo a Meta, sin pasar por el browser. No se ve afectado por ad blockers ni ATT."},
+        {"q":"¿Por qué tener varios eventos triviales en el Pixel es contraproducente?","a":"En iOS bajo AEM, solo 8 eventos por dominio se priorizan. Si los 8 slots están ocupados por eventos triviales, los importantes (Purchase, Lead) quedan limitados."},
+        {"q":"¿Customer List sirve para optimización de Sales?","a":"NO directamente. Customer List es para construir Custom Audiences (audiencias para targeting). La optimización de Sales se hace sobre conversion events del Pixel/CAPI."}
+      ]
+    }
+  ]
+}

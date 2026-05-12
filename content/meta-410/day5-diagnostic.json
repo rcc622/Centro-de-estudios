@@ -1,0 +1,51 @@
+{
+  "title": "Diagnóstico · Día 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuál es el mínimo de personas requerido en source audience para crear un Lookalike?",
+      "options": ["50","100 en un solo país","500","1,000"],
+      "correct": 1,
+      "explanation": "100 personas de UN SOLO país es el mínimo. Recomendado 1,000-50,000 para calidad.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Un Lookalike 1% es:",
+      "options": [
+        "Lookalike de menor calidad",
+        "Top 1% más SIMILAR al source (máxima similitud, menor alcance)",
+        "1% de tu custom audience",
+        "Equivalente al 10%"
+      ],
+      "correct": 1,
+      "explanation": "1% = máxima similitud al source. 10% = más alcance pero menos similar.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál es el máximo de Custom Audiences por ad account?",
+      "options": ["100","250","500","Ilimitadas"],
+      "correct": 2,
+      "explanation": "500 custom audiences máximo por ad account.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Advantage+ Audience en campañas nuevas:",
+      "options": [
+        "Desactivado por default",
+        "Activado automáticamente por default",
+        "Solo disponible para Sales",
+        "Requiere catalog"
+      ],
+      "correct": 1,
+      "explanation": "ON por default. Se desactiva con 'Switch to original' o 'Further limit reach'.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Querés Advantage+ Catalog Ads para una tienda con 30 SKUs. ¿Cuál es el mínimo recomendado de productos por Product Set?",
+      "options": ["5","10","20","50"],
+      "correct": 2,
+      "explanation": "20 productos mínimo recomendado para que el ML tenga material suficiente.",
+      "difficulty": "hard"
+    }
+  ]
+}

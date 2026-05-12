@@ -1,0 +1,132 @@
+{
+  "title": "Quiz de unidad · Día 6",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuáles son los 4 formatos de ad disponibles? Selecciona 4.",
+      "options": [
+        "Flexible (AI elige)",
+        "Single image o video",
+        "Carousel (2+ swipe)",
+        "Collection (hero + grid)",
+        "Banner (popup)"
+      ],
+      "correct": [0, 1, 2, 3],
+      "multi": true,
+      "explanation": "Flexible, Single, Carousel y Collection son los 4 formatos. Banner popup no existe en Meta Ads.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál es la diferencia entre Brand Lift y Conversion Lift?",
+      "options": [
+        "Brand Lift es más caro",
+        "Brand Lift mide impacto en marca con encuestas; Conversion Lift mide conversions causales (ventas/leads incrementales)",
+        "Son lo mismo",
+        "Conversion Lift solo funciona con catalog"
+      ],
+      "correct": 1,
+      "explanation": "Brand Lift = encuestas sobre marca. Conversion Lift = ventas causales. Distintos propósitos.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Querés correr A/B Test entre 2 creatives. ¿Qué hacés bien?",
+      "options": [
+        "Cambiás creative + audience al mismo tiempo",
+        "Una sola variable cambiada (creative), misma audience dividida automáticamente sin overlap, ≥7 días",
+        "Audience superpuesta para tener más volumen",
+        "Sin minimum spend importa"
+      ],
+      "correct": 1,
+      "explanation": "A/B Test correcto: 1 sola variable, audience dividida sin overlap, mínimo 7 días.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál es el default attribution setting en Ads Manager?",
+      "options": [
+        "1-day view, 1-day click",
+        "1-day view, 7-day click",
+        "7-day view, 7-day click",
+        "28-day click"
+      ],
+      "correct": 1,
+      "explanation": "Default: 1-day view + 7-day click.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Cuáles son los 2 modelos de attribution disponibles en Ads Manager?",
+      "options": [
+        "Standard y Custom",
+        "Standard e Incremental",
+        "Last-click y First-click",
+        "Linear y Time-decay"
+      ],
+      "correct": 1,
+      "explanation": "Solo Standard e Incremental. Custom NO existe en Ads Manager.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Selecciona los 4 controles de Brand Safety. Selecciona 4.",
+      "options": [
+        "Inventory filters",
+        "Publisher block lists",
+        "Topic exclusions",
+        "Content type exclusions",
+        "Bid Cap restrictions"
+      ],
+      "correct": [0, 1, 2, 3],
+      "multi": true,
+      "explanation": "Inventory filters + Publisher block lists + Topic exclusions + Content type exclusions = 4 brand safety controls. Bid Cap es bid strategy.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Qué afirmación sobre Advantage+ Creative + Asset Customization es correcta?",
+      "options": [
+        "Solo se puede usar uno a la vez",
+        "Si están ambos activos, Asset Customization (manual) tiene priority en los placements donde la configuraste; Advantage+ Creative actúa en el resto",
+        "Asset Customization no es compatible con Advantage+",
+        "Advantage+ siempre prevalece"
+      ],
+      "correct": 1,
+      "explanation": "Manual gana donde la configuraste. Advantage+ Creative aplica en placements no customizados.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Reglas de mobile-first creative (Stories/Reels):",
+      "options": [
+        "Aspect 16:9, branding al final",
+        "Aspect 9:16, ≤15s, branding en primeros 3s, audio + subtítulos, elementos clave en safe zone",
+        "Cualquier aspect, audio off por default",
+        "Solo imagen estática"
+      ],
+      "correct": 1,
+      "explanation": "9:16, corto, branding pronto, audio + subs (audio off default en feed), safe zone central.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Cuáles son métricas típicas de Awareness? Selecciona 3.",
+      "options": [
+        "Reach",
+        "Frequency",
+        "Purchase ROAS",
+        "Estimated ad recall lift",
+        "Cost per purchase"
+      ],
+      "correct": [0, 1, 3],
+      "multi": true,
+      "explanation": "Reach, Frequency y Estimated ad recall lift son métricas Awareness. ROAS y cost per purchase son de Conversion.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un ad de paneles solares fue rechazado por 'personal attributes' aunque el producto es legal. ¿Por qué?",
+      "options": [
+        "Meta odia paneles solares",
+        "El copy probablemente implica una característica personal del usuario (edad, raza, salud, peso). Hay que reformular para hablar de la oferta sin implicar características",
+        "Solo afecta a USA",
+        "Es un bug"
+      ],
+      "correct": 1,
+      "explanation": "Advertising Standards prohíbe ads que implican características personales del usuario. Ej: 'para los señores mayores' viola la regla. Reformular: 'para profesionales experimentados'.",
+      "difficulty": "hard"
+    }
+  ]
+}

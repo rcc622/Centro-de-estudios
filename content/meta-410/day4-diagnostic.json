@@ -1,0 +1,61 @@
+{
+  "title": "Diagnóstico · Día 4",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuál afirmación sobre Pixel y CAPI es CORRECTA?",
+      "options": [
+        "CAPI reemplaza al Pixel",
+        "Pixel reemplaza a CAPI",
+        "Son complementarios: usar ambos da máxima cobertura",
+        "Pixel se usa solo en mobile"
+      ],
+      "correct": 2,
+      "explanation": "Pixel (browser) + CAPI (server-side) = cobertura ~95% vs ~70% solo Pixel.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿Qué tipo de events NO admiten Custom Conversions?",
+      "options": ["Web","Offline","App","Messaging"],
+      "correct": 2,
+      "explanation": "Custom Conversions solo aplican a eventos web y offline. Para app hay que crear Custom Events directos.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "AEM (Aggregated Event Measurement) aplica a:",
+      "options": [
+        "Todos los dispositivos",
+        "Solo Android",
+        "Solo iOS 14+",
+        "Solo desktop"
+      ],
+      "correct": 2,
+      "explanation": "AEM responde a la framework ATT (App Tracking Transparency) de Apple en iOS 14+.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "App Promotion requiere obligatoriamente:",
+      "options": [
+        "Pixel en website",
+        "Conversions API server-side",
+        "Facebook SDK o un MMP autorizado",
+        "Customer list importada"
+      ],
+      "correct": 2,
+      "explanation": "Apps necesitan SDK de FB instalado o un MMP (AppsFlyer, Adjust, etc.).",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Querés medir compras de un producto específico (Purchase con URL contiene '/premium' Y value &gt; 1000). ¿Qué usás?",
+      "options": [
+        "Un nuevo Custom Event llamado PremiumPurchase",
+        "Una Custom Conversion con reglas sobre el Purchase existente",
+        "Un nuevo Pixel solo para premium",
+        "Solo offline events"
+      ],
+      "correct": 1,
+      "explanation": "Custom Conversion = regla sobre evento existente sin requerir código. Custom Event obliga a tocar código del Pixel.",
+      "difficulty": "hard"
+    }
+  ]
+}
