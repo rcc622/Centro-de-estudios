@@ -1903,7 +1903,7 @@ function renderLesson(){
   return `
     <div class="hdr">
       <div class="hdr-top">
-        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLesson()">✕</button>
+        <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
@@ -1994,7 +1994,7 @@ function renderLessonMatch(course, day, lesson){
   return `
     <div class="hdr">
       <div class="hdr-top">
-        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLesson()">✕</button>
+        <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
@@ -2097,7 +2097,7 @@ function renderLessonOrder(course, day, lesson){
   return `
     <div class="hdr">
       <div class="hdr-top">
-        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLesson()">✕</button>
+        <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${submitted&&correct?100:50}%"></div></div>
         </div>
