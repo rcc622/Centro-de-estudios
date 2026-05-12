@@ -451,6 +451,24 @@ Estructura:
 - Acepta URL de YouTube (cualquier formato) o Vimeo
 - Se convierte automáticamente a iframe embebido nocookie
 - Aspect 16:9 responsive
+- Recomendado para videos >5MB (YouTube unlisted hospeda gratis)
+
+#### `video-local` — reproductor inline para video LOCAL del repo
+```json
+{
+  "type": "video-local",
+  "h": "Prep Exprés · ODAX",
+  "src": "content/meta-410/assets/meta-410-day2-prep-express.mp4",
+  "poster": "content/meta-410/assets/meta-410-day2-cover.jpg",
+  "caption": "NotebookLM Video Overview"
+}
+```
+- Renderea `<video controls playsinline>` HTML5 inline
+- `src` debe ser ruta **relativa** desde la raíz del repo
+- Soporta `.mp4`, `.webm`, `.mov`
+- `poster` opcional (imagen estática mientras carga)
+- Pesos: < 15MB por archivo (GitHub Pages tiene 1GB total y 100GB/mes bandwidth)
+- Si es > 15MB o varios videos, preferir `video-embed` con YouTube unlisted
 
 ### Reglas para escribir contenido educativo
 

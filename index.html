@@ -449,6 +449,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .audio-card .audio-play{font-size:22px;flex-shrink:0;background:rgba(255,255,255,.22);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800}
 .video-wrap{margin:8px 0;border-radius:12px;overflow:hidden;background:#000;position:relative;aspect-ratio:16/9}
 .video-wrap iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0}
+.video-wrap video{width:100%;height:100%;display:block;position:absolute;inset:0;object-fit:contain;background:#000}
 
 /* Image zoom overlay */
 .img-zoom{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:400;display:none;align-items:center;justify-content:center;padding:max(40px,env(safe-area-inset-top)) 12px max(40px,env(safe-area-inset-bottom)) 12px;animation:mbd-in .2s ease}
@@ -1838,6 +1839,18 @@ function renderLesson(){
         ${card.h ? `<div class="card-h2">${card.h}</div>` : ''}
         <div class="video-wrap">
           <iframe src="${embed}" frameborder="0" allowfullscreen loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture"></iframe>
+        </div>
+        ${card.caption ? `<div class="img-caption">${card.caption}</div>` : ''}
+      </div>`;
+  } else if(card.type === 'video-local'){
+    // Reproductor inline para video LOCAL del repo (.mp4)
+    cardHtml = `
+      <div class="card">
+        ${card.h ? `<div class="card-h2">${card.h}</div>` : ''}
+        <div class="video-wrap">
+          <video controls preload="metadata" playsinline src="${card.src}" poster="${card.poster || ''}">
+            Tu navegador no soporta video HTML5. <a href="${card.src}" target="_blank">Descargar</a>.
+          </video>
         </div>
         ${card.caption ? `<div class="img-caption">${card.caption}</div>` : ''}
       </div>`;
