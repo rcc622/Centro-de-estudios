@@ -977,6 +977,24 @@ const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
 let VIEW = 'home';
 let CURRENT = {courseId:null, dayId:null, lessonId:null, quizKind:null};
+// Scroll guardado de la vista 'day' por dayId. Se captura antes de entrar a
+// una lección/quiz/flashcards y se restaura al volver al sendero.
+let _dayScroll = {};
+
+function rememberDayScroll(){
+  if(VIEW !== 'day' || !CURRENT.dayId) return;
+  const sc = document.querySelector('.scroll');
+  if(sc) _dayScroll[CURRENT.dayId] = sc.scrollTop;
+}
+function restoreDayScroll(){
+  if(VIEW !== 'day' || !CURRENT.dayId) return;
+  const saved = _dayScroll[CURRENT.dayId];
+  if(saved == null) return;
+  setTimeout(() => {
+    const sc = document.querySelector('.scroll');
+    if(sc) sc.scrollTop = saved;
+  }, 30);
+}
 let LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false};
 let FLASH_STATE = {idx:0, deck:[], rated:0};
 let PRACTICE_MODE = null; // null = hub | 'lesson' | 'all-flash' | 'day-flash' | 'errors' | 'mix'
@@ -1266,6 +1284,7 @@ function openHeroNext(){
   if(!next) return;
   CURRENT.courseId = next.courseId;
   CURRENT.dayId = next.dayId;
+  delete _dayScroll[next.dayId]; // tap Hero = enfocar la current bubble, no scroll viejo
   VIEW = 'day';
   render();
   // Después del render, scrollear hasta la burbuja current si existe
@@ -1381,6 +1400,7 @@ function render(){
   else if(VIEW === 'streak') html = renderStreak();
   else html = renderHome();
   app.innerHTML = html;
+  if(VIEW === 'day') restoreDayScroll();
 }
 
 // ============================================================
@@ -2502,6 +2522,7 @@ function openQuiz(dayId, kind){
   if(!day) return;
   const source = kind === 'diagnostic' ? day.diagnostic : day.unitQuiz;
   if(!source || !source.questions?.length){ showToast('Quiz no disponible',2000); return; }
+  rememberDayScroll();
   CURRENT.dayId = dayId;
   CURRENT.quizKind = kind;
   QUIZ_STATE = {
@@ -3426,6 +3447,7 @@ function openCourse(id){
 function openDay(id){
   haptic(HAPTIC.tap);
   CURRENT.dayId = id;
+  delete _dayScroll[id]; // tap explícito al día = empezar desde arriba
   VIEW = 'day';
   render();
 }
@@ -3436,6 +3458,7 @@ function openLesson(id){
     return;
   }
   haptic(HAPTIC.tap);
+  rememberDayScroll();
   CURRENT.lessonId = id;
   LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[], started: now()};
   MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:new Set(), errors:0, wrongL:null, wrongR:null};
@@ -3448,6 +3471,7 @@ function openLesson(id){
 
 function openFlashcards(lessonId){
   haptic(HAPTIC.tap);
+  rememberDayScroll();
   CURRENT.lessonId = lessonId;
   PRACTICE_MODE = 'lesson';
   PRACTICE_SCOPE = null;
