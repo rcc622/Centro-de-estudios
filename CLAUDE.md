@@ -423,6 +423,22 @@ Estructura:
 - Tap abre el link en pestaña nueva
 - Verde Spotify para distinguirlo visualmente
 
+#### `audio-embed` — reproductor inline para audio LOCAL del repo
+```json
+{
+  "type": "audio-embed",
+  "title": "Resumen rápido · Día 1",
+  "src": "content/meta-410/assets/meta-410-day1-resumen.m4a",
+  "duration": "12:30",
+  "source": "NotebookLM Audio Overview"
+}
+```
+- A diferencia de `audio-link` (que abre URL externa en pestaña nueva), este renderea `<audio controls>` HTML5 inline
+- `src` debe ser ruta **relativa** desde la raíz del repo (audio dentro de `content/<curso>/assets/`)
+- Soporta `.mp3`, `.m4a`, `.ogg`, `.wav`
+- Pesos: <5MB por archivo (GitHub Pages tiene 1GB total y 100GB/mes bandwidth)
+- Si es >5MB o audio largo (>15 min), preferir `audio-link` con Drive público
+
 #### `video-embed` — YouTube/Vimeo embed
 ```json
 {
