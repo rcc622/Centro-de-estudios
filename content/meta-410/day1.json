@@ -9,6 +9,13 @@
       "type": "reading",
       "cards": [
         {
+          "type": "image",
+          "h": "🗺️ El mapa del curso completo",
+          "src": "content/meta-410/assets/meta-410-overview.png",
+          "alt": "Mind map de la certificación Meta 410-101 con los 6 temas principales del examen",
+          "caption": "Vista panorámica de las 6 áreas del examen 410-101 · Generado en NotebookLM · Tap para zoom"
+        },
+        {
           "type": "concept",
           "h": "Más que un creador de campañas",
           "body": "<strong>Meta Ads Manager</strong> es el centro de control. Sí, sirve para crear campañas, pero también es el punto de acceso a herramientas para administrar el negocio, anunciar, probar y vender productos y servicios."
