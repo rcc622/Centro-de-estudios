@@ -122,12 +122,20 @@ body{display:block}
 .flash-q{font-size:16.5px;font-weight:700;line-height:1.45;color:#1C1E21}
 .flash-a{font-size:14.5px;line-height:1.5;color:#1877F2;font-weight:600}
 .flash-hint{position:absolute;bottom:12px;font-size:11px;color:#65676B}
-.flash-rating{display:flex;gap:8px;margin-top:12px}
-.rate-btn{flex:1;padding:11px;border-radius:12px;border:2px solid;font-weight:700;font-size:13px;cursor:pointer;background:#fff;user-select:none;-webkit-user-select:none}
-.rate-btn:active{transform:scale(.97)}
-.rate-fail{border-color:#E74C3C;color:#E74C3C}
-.rate-hard{border-color:#FFA726;color:#FFA726}
-.rate-good{border-color:#42B883;color:#42B883}
+/* Flashcards v2: nav binario (← ✗ ✓ →) + botón info ⓘ */
+.flash-nav{display:grid;grid-template-columns:auto 1fr 1fr auto;gap:10px;margin-top:14px;align-items:stretch}
+.fn-btn{padding:14px 10px;border-radius:16px;border:1.5px solid #E4E6EB;background:#fff;font-weight:800;font-size:18px;cursor:pointer;user-select:none;-webkit-user-select:none;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;transition:transform .15s,opacity .15s}
+.fn-btn:not(:disabled):active{transform:scale(.95)}
+.fn-btn:disabled{opacity:.4;cursor:not-allowed}
+.fn-side{width:54px;min-width:54px;color:#1877F2;font-size:20px;padding:0}
+.fn-wrong{color:#E74C3C;border-color:#E74C3C}
+.fn-right{color:#42B883;border-color:#42B883}
+.fn-btn .fn-ico{font-size:20px;line-height:1}
+.fn-btn .fn-count{font-size:16px;font-weight:800}
+.flash-info-btn{margin-left:auto;width:36px;height:36px;border-radius:50%;border:1.5px solid #1877F2;background:#fff;color:#1877F2;font-size:18px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;padding:0}
+.flash-info-btn:active{transform:scale(.92);background:#EBF5FF}
+.flash-explanation{margin-top:14px;padding:14px;background:linear-gradient(135deg,#FFF8E7,#FFF1D0);border-left:4px solid #FFA726;border-radius:10px;font-size:13.5px;line-height:1.55;color:#5C3A00;text-align:left;animation:expl-in .25s ease}
+@keyframes expl-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 
 /* BUTTONS */
 .btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:14px 16px;border-radius:14px;font-weight:800;font-size:15px;border:none;cursor:pointer;width:100%;user-select:none;-webkit-user-select:none;transition:all .15s;letter-spacing:.3px}
@@ -2609,27 +2617,36 @@ function renderFlashcards(){
 
   const card = FLASH_STATE.deck[FLASH_STATE.idx];
   const flipped = FLASH_STATE.flipped;
+  const rightN = FLASH_STATE.rightCount || 0;
+  const wrongN = FLASH_STATE.wrongCount || 0;
+  const hasExpl = !!card.explanation;
+  const showExpl = FLASH_STATE.showExpl && hasExpl;
   return `
     ${renderHeader()}
     <div class="scroll">
       <div class="back-row" style="margin-bottom:10px">
         <button class="back-btn" onclick="haptic(8);PRACTICE_MODE=null;FLASH_STATE={idx:0,deck:[],rated:0,flipped:false};render()" aria-label="Volver">←</button>
-        <div class="crumb">Práctica · ${FLASH_STATE.idx+1}/${FLASH_STATE.deck.length}</div>
+        <div class="crumb">${FLASH_STATE.idx+1} / ${FLASH_STATE.deck.length}</div>
+        ${flipped && hasExpl ? `<button class="flash-info-btn" onclick="flashToggleExpl()" aria-label="Explicación">ⓘ</button>` : ''}
       </div>
       <div class="flash-wrap">
         <div class="flash" onclick="flipFlash()">
           <div class="flash-tag">${flipped?'RESPUESTA':'PREGUNTA'}</div>
           ${flipped ? `<div class="flash-a">${card.a}</div>` : `<div class="flash-q">${card.q}</div>`}
-          <div class="flash-hint">${flipped?'¿Qué tan bien lo sabías?':'Toca para revelar'}</div>
+          ${showExpl ? `<div class="flash-explanation">💡 ${card.explanation}</div>` : ''}
+          <div class="flash-hint">${flipped?'¿La acertaste?':'Toca para revelar'}</div>
         </div>
       </div>
-      ${flipped ? `
-        <div class="flash-rating">
-          <button class="rate-btn rate-fail" onclick="rateFlash('fail')">😣 No supe</button>
-          <button class="rate-btn rate-hard" onclick="rateFlash('hard')">🤔 Difícil</button>
-          <button class="rate-btn rate-good" onclick="rateFlash('good')">✅ Fácil</button>
-        </div>
-      ` : ''}
+      <div class="flash-nav">
+        <button class="fn-btn fn-side" onclick="flashPrev()" ${FLASH_STATE.idx===0?'disabled':''} aria-label="Anterior">←</button>
+        <button class="fn-btn fn-wrong ${flipped?'':'disabled'}" onclick="${flipped?'flashAnswer(\'wrong\')':''}" ${flipped?'':'disabled'}>
+          <span class="fn-ico">✗</span><span class="fn-count">${wrongN}</span>
+        </button>
+        <button class="fn-btn fn-right ${flipped?'':'disabled'}" onclick="${flipped?'flashAnswer(\'right\')':''}" ${flipped?'':'disabled'}>
+          <span class="fn-count">${rightN}</span><span class="fn-ico">✓</span>
+        </button>
+        <button class="fn-btn fn-side" onclick="flashSkip()" aria-label="Saltar">→</button>
+      </div>
     </div>
     ${renderNav('flashcards')}
   `;
@@ -3539,23 +3556,60 @@ function flipFlash(){
   render();
 }
 
-function rateFlash(rating){
-  haptic(rating === 'good' ? HAPTIC.correct : rating === 'hard' ? HAPTIC.select : HAPTIC.submit);
+// Binario: 'right' = acerté, 'wrong' = no acerté. Marca y avanza al siguiente.
+function flashAnswer(result){
+  haptic(result === 'right' ? HAPTIC.correct : HAPTIC.wrong);
   const card = FLASH_STATE.deck[FLASH_STATE.idx];
-  if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {good:0, hard:0, fail:0};
-  DB.flashcardStats[card.q][rating] += 1;
-  DB.flashcardStats[card.q].lastSeen = now();
-  // XP per rating
-  if(rating === 'good') addXP(3);
-  else if(rating === 'hard') addXP(2);
-  else addXP(1);
+  if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {right:0, wrong:0};
+  // Migración suave de stats viejos (good/hard/fail → right/wrong)
+  const s = DB.flashcardStats[card.q];
+  if(s.good !== undefined){ s.right = (s.right||0) + (s.good||0); delete s.good; }
+  if(s.hard !== undefined){ s.wrong = (s.wrong||0) + (s.hard||0); delete s.hard; }
+  if(s.fail !== undefined){ s.wrong = (s.wrong||0) + (s.fail||0); delete s.fail; }
+  s[result] = (s[result]||0) + 1;
+  s.lastSeen = now();
+  // XP: acertar da 3, fallar da 1 (sigue siendo aprendizaje)
+  addXP(result === 'right' ? 3 : 1);
+  // Counters de la sesión actual
+  if(result === 'right') FLASH_STATE.rightCount = (FLASH_STATE.rightCount||0) + 1;
+  else FLASH_STATE.wrongCount = (FLASH_STATE.wrongCount||0) + 1;
   FLASH_STATE.rated += 1;
   FLASH_STATE.idx += 1;
   FLASH_STATE.flipped = false;
-  // Achievement: 50 flashcards mastered
-  const masteredCount = Object.values(DB.flashcardStats).filter(s => s.good >= 1).length;
+  // Achievement: 50 flashcards dominadas (right >= 1)
+  const masteredCount = Object.values(DB.flashcardStats).filter(st => (st.right||0) >= 1).length;
   if(masteredCount >= 50) earnAch('all_flashcards');
   save();
+  render();
+}
+
+// Anterior (sin contar)
+function flashPrev(){
+  if(FLASH_STATE.idx === 0) return;
+  haptic(HAPTIC.tap);
+  FLASH_STATE.idx -= 1;
+  FLASH_STATE.flipped = false;
+  render();
+}
+
+// Skip (sin contar)
+function flashSkip(){
+  haptic(HAPTIC.tap);
+  FLASH_STATE.idx += 1;
+  FLASH_STATE.flipped = false;
+  FLASH_STATE.showExpl = false;
+  render();
+}
+
+// Toggle de explicación expandida en la flashcard actual
+function flashToggleExpl(){
+  const card = FLASH_STATE.deck[FLASH_STATE.idx];
+  if(!card?.explanation){
+    showToast('Sin contexto adicional para esta tarjeta', 1800);
+    return;
+  }
+  haptic(HAPTIC.tap);
+  FLASH_STATE.showExpl = !FLASH_STATE.showExpl;
   render();
 }
 
