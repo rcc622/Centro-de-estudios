@@ -2298,7 +2298,7 @@ function renderLessonLightning(course, day, lesson){
   return `
     <div class="hdr">
       <div class="hdr-top">
-        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitLightning()">✕</button>
+        <button class="back-btn" onclick="exitLightning()" aria-label="Salir">✕</button>
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
@@ -2390,7 +2390,7 @@ function renderQuiz(){
   return `
     <div class="hdr">
       <div class="hdr-top">
-        <button class="nbtn" style="padding:0;color:#1877F2;font-size:20px" onclick="exitQuiz()">✕</button>
+        <button class="back-btn" onclick="exitQuiz()" aria-label="Salir">✕</button>
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
