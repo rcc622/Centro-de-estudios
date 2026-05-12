@@ -454,7 +454,8 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 /* Image zoom overlay */
 .img-zoom{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:400;display:none;align-items:center;justify-content:center;padding:max(40px,env(safe-area-inset-top)) 12px max(40px,env(safe-area-inset-bottom)) 12px;animation:mbd-in .2s ease}
 .img-zoom.open{display:flex}
-.img-zoom img{max-width:100%;max-height:100%;border-radius:8px;cursor:zoom-out}
+.img-zoom img{max-width:100%;max-height:100%;border-radius:8px;cursor:zoom-out;touch-action:none;transform-origin:center;will-change:transform;user-select:none;-webkit-user-select:none;-webkit-user-drag:none}
+.img-zoom-hint{position:absolute;bottom:max(20px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:11.5px;font-weight:600;letter-spacing:.3px;text-align:center;pointer-events:none}
 .img-zoom-close{position:absolute;top:max(20px,env(safe-area-inset-top));right:14px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;border:none;font-size:22px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center}
 
 /* ----- Heart timer en header + modal sin hearts ----- */
@@ -625,7 +626,8 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 <div id="app"></div>
 <div class="img-zoom" id="img-zoom" onclick="closeImgZoom()">
   <button class="img-zoom-close" onclick="event.stopPropagation();closeImgZoom()" aria-label="Cerrar">×</button>
-  <img id="img-zoom-src" src="" alt=""/>
+  <img id="img-zoom-src" src="" alt="" onclick="event.stopPropagation()"/>
+  <div class="img-zoom-hint">Pinch para zoom · Doble tap para acercar · Arrastrá para mover</div>
 </div>
 <div class="modal-bd" id="no-hearts-modal" onclick="if(event.target===this)closeNoHeartsModal()">
   <div class="modal-sheet" role="dialog" aria-labelledby="nh-title">
@@ -3923,16 +3925,101 @@ function closeNoHeartsModal(){
   document.getElementById('no-hearts-modal').classList.remove('open');
 }
 
+// Estado de pinch-zoom + pan + doble-tap del overlay de imagen
+let _imgZ = {
+  scale:1, tx:0, ty:0,
+  isPinching:false, startDist:0, startScale:1,
+  isPanning:false, startTouchX:0, startTouchY:0, startTx:0, startTy:0,
+  lastTap:0
+};
+function _imgZApply(){
+  const img = document.getElementById('img-zoom-src');
+  if(img) img.style.transform = `translate3d(${_imgZ.tx}px, ${_imgZ.ty}px, 0) scale(${_imgZ.scale})`;
+}
+function _imgZReset(animated){
+  _imgZ.scale = 1; _imgZ.tx = 0; _imgZ.ty = 0;
+  const img = document.getElementById('img-zoom-src');
+  if(img){
+    img.style.transition = animated ? 'transform .2s ease-out' : 'none';
+    _imgZApply();
+    if(animated) setTimeout(() => { if(img) img.style.transition = 'none'; }, 220);
+  }
+}
+function _imgZSetup(){
+  const img = document.getElementById('img-zoom-src');
+  if(!img || img._imgZWired) return;
+  img._imgZWired = true;
+  img.addEventListener('touchstart', e => {
+    if(e.touches.length === 2){
+      e.preventDefault();
+      _imgZ.isPinching = true;
+      _imgZ.startDist = Math.hypot(
+        e.touches[1].clientX - e.touches[0].clientX,
+        e.touches[1].clientY - e.touches[0].clientY
+      );
+      _imgZ.startScale = _imgZ.scale;
+      img.style.transition = 'none';
+    } else if(e.touches.length === 1 && _imgZ.scale > 1){
+      _imgZ.isPanning = true;
+      _imgZ.startTouchX = e.touches[0].clientX;
+      _imgZ.startTouchY = e.touches[0].clientY;
+      _imgZ.startTx = _imgZ.tx;
+      _imgZ.startTy = _imgZ.ty;
+      img.style.transition = 'none';
+    } else if(e.touches.length === 1){
+      const now = Date.now();
+      if(now - _imgZ.lastTap < 300){
+        e.preventDefault();
+        if(_imgZ.scale === 1){
+          _imgZ.scale = 2.5;
+          img.style.transition = 'transform .2s ease-out';
+          _imgZApply();
+        } else {
+          _imgZReset(true);
+        }
+      }
+      _imgZ.lastTap = now;
+    }
+  }, {passive:false});
+  img.addEventListener('touchmove', e => {
+    if(_imgZ.isPinching && e.touches.length === 2){
+      e.preventDefault();
+      const dist = Math.hypot(
+        e.touches[1].clientX - e.touches[0].clientX,
+        e.touches[1].clientY - e.touches[0].clientY
+      );
+      _imgZ.scale = Math.max(1, Math.min(5, _imgZ.startScale * (dist / _imgZ.startDist)));
+      if(_imgZ.scale === 1){ _imgZ.tx = 0; _imgZ.ty = 0; }
+      _imgZApply();
+    } else if(_imgZ.isPanning && e.touches.length === 1 && _imgZ.scale > 1){
+      e.preventDefault();
+      _imgZ.tx = _imgZ.startTx + (e.touches[0].clientX - _imgZ.startTouchX);
+      _imgZ.ty = _imgZ.startTy + (e.touches[0].clientY - _imgZ.startTouchY);
+      _imgZApply();
+    }
+  }, {passive:false});
+  img.addEventListener('touchend', e => {
+    if(e.touches.length === 0){
+      _imgZ.isPinching = false;
+      _imgZ.isPanning = false;
+      if(_imgZ.scale === 1){ _imgZReset(true); }
+    }
+  }, {passive:true});
+}
+
 function openImgZoom(src, alt){
   const el = document.getElementById('img-zoom');
   const img = document.getElementById('img-zoom-src');
   img.src = src;
   img.alt = alt || '';
+  _imgZReset(false);
+  _imgZSetup();
   el.classList.add('open');
 }
 function closeImgZoom(){
   haptic(HAPTIC.tap);
   document.getElementById('img-zoom').classList.remove('open');
+  _imgZReset(false);
 }
 
 function exchangeXpForHeart(){
