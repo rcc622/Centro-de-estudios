@@ -315,15 +315,13 @@
       "section": "B",
       "type": "match",
       "instruction": "Asocia cada herramienta con su caso de uso.",
-      "leftLabel": "Herramienta",
-      "rightLabel": "Cuándo usarla",
       "pairs": [
-        {"id":"ab","left":"A/B Test","right":"Comparar 2 versiones de creative con misma audience"},
-        {"id":"bl","left":"Brand Lift","right":"Medir impacto en recall/awareness con encuestas"},
-        {"id":"cl","left":"Conversion Lift","right":"Medir cuántas ventas extras (causales) generó la campaña"},
-        {"id":"std","left":"Standard attribution","right":"Atribuir conversions con reglas (1d view, 7d click)"},
-        {"id":"inc","left":"Incremental attribution","right":"Identificar conversions CAUSALES (no solo correlación)"},
-        {"id":"reach","left":"Reach + Frequency","right":"Métricas KPI de campañas Awareness"}
+        ["A/B Test", "Comparar 2 versiones de creative con misma audience"],
+        ["Brand Lift", "Medir impacto en recall/awareness con encuestas"],
+        ["Conversion Lift", "Medir cuántas ventas extras (causales) generó la campaña"],
+        ["Standard attribution", "Atribuir conversions con reglas (1d view, 7d click)"],
+        ["Incremental attribution", "Identificar conversions CAUSALES (no solo correlación)"],
+        ["Reach + Frequency", "Métricas KPI de campañas Awareness"]
       ],
       "explanation": "Cada herramienta responde una pregunta distinta. A/B Test compara variantes. Brand Lift mide marca. Conversion Lift mide ventas causales. Atribución asigna crédito."
     },

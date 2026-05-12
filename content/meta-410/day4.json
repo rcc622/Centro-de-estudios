@@ -230,17 +230,15 @@
       "section": "B",
       "type": "match",
       "instruction": "Cada standard event tiene un uso canónico. Asociá el event con el caso donde se reporta típicamente.",
-      "leftLabel": "Standard event",
-      "rightLabel": "Caso típico",
       "pairs": [
-        {"id":"pur","left":"Purchase","right":"Compra completada (con value)"},
-        {"id":"lead","left":"Lead","right":"Formulario completado con datos de contacto"},
-        {"id":"vc","left":"ViewContent","right":"Visita a página de producto/servicio específico"},
-        {"id":"atc","left":"AddToCart","right":"Producto agregado al carrito"},
-        {"id":"ic","left":"InitiateCheckout","right":"Inicio del proceso de pago"},
-        {"id":"sub","left":"Subscribe","right":"Inscripción a servicio recurrente (SaaS, newsletter)"},
-        {"id":"sch","left":"Schedule","right":"Cita o reunión agendada"},
-        {"id":"contact","left":"Contact","right":"Contacto iniciado (chat, llamada, email)"}
+        ["Purchase", "Compra completada (con value)"],
+        ["Lead", "Formulario completado con datos de contacto"],
+        ["ViewContent", "Visita a página de producto/servicio específico"],
+        ["AddToCart", "Producto agregado al carrito"],
+        ["InitiateCheckout", "Inicio del proceso de pago"],
+        ["Subscribe", "Inscripción a servicio recurrente (SaaS, newsletter)"],
+        ["Schedule", "Cita o reunión agendada"],
+        ["Contact", "Contacto iniciado (chat, llamada, email)"]
       ],
       "explanation": "Cada standard event tiene un caso canónico. En el examen aparecen preguntas tipo \"¿qué event registrarías cuando el usuario X?\"."
     },

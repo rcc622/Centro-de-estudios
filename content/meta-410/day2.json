@@ -207,15 +207,13 @@
       "section": "B",
       "type": "match",
       "instruction": "Cada objective tiene un performance goal típico. Asocia el objective con su métrica de optimización principal.",
-      "leftLabel": "Objective",
-      "rightLabel": "Performance goal típico",
       "pairs": [
-        {"id":"awr","left":"Awareness","right":"Maximize ad recall lift"},
-        {"id":"trf","left":"Traffic","right":"Maximize link clicks"},
-        {"id":"eng","left":"Engagement (video)","right":"Maximize ThruPlay views"},
-        {"id":"lea","left":"Leads","right":"Maximize number of leads"},
-        {"id":"app","left":"App Promotion","right":"Maximize number of app events"},
-        {"id":"sal","left":"Sales","right":"Maximize number of conversions"}
+        ["Awareness", "Maximize ad recall lift"],
+        ["Traffic", "Maximize link clicks"],
+        ["Engagement (video)", "Maximize ThruPlay views"],
+        ["Leads", "Maximize number of leads"],
+        ["App Promotion", "Maximize number of app events"],
+        ["Sales", "Maximize number of conversions"]
       ],
       "explanation": "Cada objective tiene un performance goal default alineado con su outcome. Recordar estas asociaciones es clave para responder preguntas de \"¿qué setting elegir?\" en el examen."
     },

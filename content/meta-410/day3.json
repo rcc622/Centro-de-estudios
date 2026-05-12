@@ -259,14 +259,12 @@
       "section": "B",
       "type": "match",
       "instruction": "Asocia cada bid strategy con el caso donde se usa típicamente.",
-      "leftLabel": "Bid strategy",
-      "rightLabel": "Caso de uso",
       "pairs": [
-        {"id":"hv","left":"Highest Volume","right":"Maximizar cantidad de resultados sin meta de costo"},
-        {"id":"hval","left":"Highest Value","right":"Maximizar valor de compra (no solo unidades)"},
-        {"id":"cprg","left":"Cost per Result Goal","right":"Mantener CPA promedio en un target específico"},
-        {"id":"roas","left":"ROAS Goal","right":"Apuntar a un retorno objetivo (ej. 4x)"},
-        {"id":"bcap","left":"Bid Cap","right":"Advertiser experto que controla el bid en la subasta"}
+        ["Highest Volume", "Maximizar cantidad de resultados sin meta de costo"],
+        ["Highest Value", "Maximizar valor de compra (no solo unidades)"],
+        ["Cost per Result Goal", "Mantener CPA promedio en un target específico"],
+        ["ROAS Goal", "Apuntar a un retorno objetivo (ej. 4x)"],
+        ["Bid Cap", "Advertiser experto que controla el bid en la subasta"]
       ],
       "explanation": "Identificar el bid strategy correcto según el outcome del negocio es pregunta frecuente de examen. Recordá: Bid Cap NO controla el CPA final, solo el bid en la subasta."
     },
