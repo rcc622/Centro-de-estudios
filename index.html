@@ -3032,11 +3032,11 @@ function renderConfig(){
         <div style="font-size:22px;font-weight:800;color:#1877F2;flex-shrink:0">${DB.xp}</div>
       </div>
 
-      <div class="practice-row" onclick="haptic(8);navTo('achievements')">
+      <div class="practice-row" onclick="haptic(8);openStreak()">
         <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔥</div>
         <div class="pr-info">
           <div class="pr-title">Racha actual</div>
-          <div class="pr-meta">${DB.streak===1?'día consecutivo':'días consecutivos'} estudiando</div>
+          <div class="pr-meta">${DB.streak===1?'día consecutivo':'días consecutivos'} estudiando · Ver calendario →</div>
         </div>
         <div style="font-size:22px;font-weight:800;color:#FF6B35;flex-shrink:0">${DB.streak}</div>
       </div>
