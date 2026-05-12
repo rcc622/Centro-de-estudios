@@ -4,7 +4,12 @@
   "questions": [
     {
       "q": "¿Cuál es el aspect ratio para Stories y Reels?",
-      "options": ["16:9","1:1","4:5","9:16"],
+      "options": [
+        "16:9",
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
       "correct": 3,
       "explanation": "9:16 full portrait vertical para Stories y Reels.",
       "difficulty": "easy"
@@ -19,11 +24,16 @@
       ],
       "correct": 2,
       "explanation": "Conversion Lift mide incrementalidad: ventas causales atribuibles a la campaña.",
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
       "q": "¿Cuántas variables se deben cambiar en un A/B Test correcto?",
-      "options": ["1","2","3","Cuantas más mejor"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "Cuantas más mejor"
+      ],
       "correct": 0,
       "explanation": "UNA sola variable. Cambiando 2+ no podés aislar la causa del resultado.",
       "difficulty": "medium"

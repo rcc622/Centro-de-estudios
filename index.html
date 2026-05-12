@@ -2216,7 +2216,7 @@ function initLightningState(lesson){
   LIGHTNING_STATE = {
     idx: 0,
     answers: {},
-    deck: lesson.questions || [],
+    deck: filterByDifficulty(lesson.questions || []),
     started: now(),
     timeLimit: lesson.timeLimit || 180,
     errors: 0,
@@ -2533,6 +2533,21 @@ function stopQuizTimer(){
   if(QUIZ_TIMER_ID){ clearInterval(QUIZ_TIMER_ID); QUIZ_TIMER_ID = null; }
 }
 
+// Filtra un array de preguntas/MCQs por el nivel de dificultad actual.
+// Cada item puede tener difficulty: 'easy' | 'medium' | 'hard' (default medium).
+// Si después del filtro queda <3 preguntas, devuelve todas (UX mínima).
+function filterByDifficulty(items){
+  const filter = {
+    easy:          ['easy','medium'],
+    medium:        ['easy','medium','hard'],
+    hard:          ['medium','hard'],
+    expert:        ['hard'],
+    perfectionist: ['hard']
+  }[DB.difficulty || 'medium'] || ['easy','medium','hard'];
+  const filtered = (items || []).filter(it => filter.includes(it.difficulty || 'medium'));
+  return filtered.length >= 3 ? filtered : (items || []);
+}
+
 function openQuiz(dayId, kind){
   const course = COURSES[CURRENT.courseId];
   const day = course?.days.find(d => d.id === dayId);
@@ -2545,7 +2560,7 @@ function openQuiz(dayId, kind){
   QUIZ_STATE = {
     qIdx: 0,
     answers: {},
-    deck: source.questions,
+    deck: filterByDifficulty(source.questions),
     started: now(),
     timeLimit: source.timeLimit || 0,
     kind,
@@ -2569,7 +2584,7 @@ function openMockExam(dayId){
   QUIZ_STATE = {
     qIdx: 0,
     answers: {},
-    deck: mock.questions,
+    deck: filterByDifficulty(mock.questions),
     started: now(),
     timeLimit: mock.timeLimit || 6300, // default 105 min
     kind: 'mock-exam',

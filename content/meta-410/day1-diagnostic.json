@@ -14,7 +14,8 @@
         "Pixel installation y CAPI setup"
       ],
       "correct": 2,
-      "explanation": "A nivel Campaign: buying type, objective, budget, bid, special ad category. Audience/placements van en Ad set. Creative/destination van en Ad."
+      "explanation": "A nivel Campaign: buying type, objective, budget, bid, special ad category. Audience/placements van en Ad set. Creative/destination van en Ad.",
+      "difficulty": "easy"
     },
     {
       "q": "¿Cuál es la diferencia clave entre Advantage+ campaigns y Advantage+ tools (single-step)?",
@@ -25,7 +26,8 @@
         "No hay diferencia, son sinónimos"
       ],
       "correct": 1,
-      "explanation": "Advantage+ campaigns = complete campaign solutions (automatizan todo). Single-step = un aspecto específico. El examen mete trampas mezclándolos."
+      "explanation": "Advantage+ campaigns = complete campaign solutions (automatizan todo). Single-step = un aspecto específico. El examen mete trampas mezclándolos.",
+      "difficulty": "hard"
     },
     {
       "q": "Un usuario tiene full control de UNA ad account pero solo partial access al portfolio. ¿Es esto posible?",
@@ -36,7 +38,8 @@
         "Solo system users pueden tener este tipo de configuración"
       ],
       "correct": 1,
-      "explanation": "Un usuario puede tener full control de una cuenta SIN tener full control del portfolio. Esto permite permisos finos y mantiene oversight a nivel portafolio."
+      "explanation": "Un usuario puede tener full control de una cuenta SIN tener full control del portfolio. Esto permite permisos finos y mantiene oversight a nivel portafolio.",
+      "difficulty": "hard"
     },
     {
       "q": "Selecciona los 4 tipos de controles del Brand Safety & Suitability Center.",
@@ -47,7 +50,8 @@
         "Conversion controls, Engagement controls, Impression controls, Click controls"
       ],
       "correct": 0,
-      "explanation": "Los 4 controles del Brand Safety Center: Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions (Gaming/News/Politics/Religion), Content type exclusions (live video, non-partner)."
+      "explanation": "Los 4 controles del Brand Safety Center: Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions (Gaming/News/Politics/Religion), Content type exclusions (live video, non-partner).",
+      "difficulty": "medium"
     },
     {
       "q": "El Opportunity Score:",
@@ -58,7 +62,8 @@
         "Es un score que GARANTIZA tu performance si llegas a 100"
       ],
       "correct": 1,
-      "explanation": "Score 0-100 basado en recomendaciones no aplicadas. NO predice ni garantiza performance real. Se actualiza al aplicar recomendaciones o modificar la cuenta."
+      "explanation": "Score 0-100 basado en recomendaciones no aplicadas. NO predice ni garantiza performance real. Se actualiza al aplicar recomendaciones o modificar la cuenta.",
+      "difficulty": "hard"
     }
   ]
 }
