@@ -260,15 +260,13 @@
       "section": "B",
       "type": "match",
       "instruction": "Asocia cada tipo de audience con su caso típico.",
-      "leftLabel": "Audience type",
-      "rightLabel": "Caso de uso",
       "pairs": [
-        {"id":"ca","left":"Custom Audience (Website)","right":"Re-engagement de visitantes del sitio"},
-        {"id":"cl","left":"Customer List","right":"Subir CSV de clientes hasheados para retargeting"},
-        {"id":"lal1","left":"Lookalike 1%","right":"Prospección de máxima similitud (calidad sobre volumen)"},
-        {"id":"lal10","left":"Lookalike 10%","right":"Prospección de máximo alcance (volumen sobre similitud)"},
-        {"id":"adv","left":"Advantage+ Audience","right":"AI expande sobre tus suggestions automáticamente"},
-        {"id":"dt","left":"Detailed targeting","right":"Filtrar por intereses, behaviors y demographics"}
+        ["Custom Audience (Website)", "Re-engagement de visitantes del sitio"],
+        ["Customer List", "Subir CSV de clientes hasheados para retargeting"],
+        ["Lookalike 1%", "Prospección de máxima similitud (calidad sobre volumen)"],
+        ["Lookalike 10%", "Prospección de máximo alcance (volumen sobre similitud)"],
+        ["Advantage+ Audience", "AI expande sobre tus suggestions automáticamente"],
+        ["Detailed targeting", "Filtrar por intereses, behaviors y demographics"]
       ],
       "explanation": "Conocer qué audience usar según el caso es crítico para el examen. Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos a los que te conocen)."
     },

@@ -213,6 +213,15 @@ Igual que audio: externo (YouTube preferido), embeber con tipo `video-embed`.
 ### En cards `match`
 **Cada lado del match debe ser autónomo.** Si el lado izquierdo dice "1. Algo" y el derecho dice "Definición de 1", el match es trivial. Los pares deben emparejarse por significado, no por número.
 
+**Schema correcto del match**: el campo `pairs` debe ser **array de arrays de 2 strings**, NO objetos:
+```json
+"pairs": [
+  ["término A", "definición A"],
+  ["término B", "definición B"]
+]
+```
+NO usar `{"id":"x","left":"...","right":"..."}` — el motor accede a `pair[0]` y `pair[1]` directo, los objetos rompen el render (cards salen como "undefined"). Ver `content/meta-410/day1.json` lección 1.7 como referencia.
+
 ### En MCQs
 - **Distractores plausibles**: si las 3 opciones erradas son obviamente absurdas, no hay reto.
 - **La respuesta no debe ser siempre la opción más larga.** Variá longitudes.
