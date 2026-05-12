@@ -684,6 +684,30 @@
       ]
     },
     {
+      "id": "1.audio",
+      "title": "Repaso en audio · Día 1",
+      "section": "D",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "🎙️ Repaso conversacional",
+          "body": "Escuchá este resumen rápido del Día 1 antes de pasar a flashcards. Útil para fijar los conceptos clave en otro formato — podés escucharlo manejando o caminando."
+        },
+        {
+          "type": "audio-embed",
+          "title": "Resumen rápido · Examen Meta 410-101",
+          "src": "content/meta-410/assets/meta-410-day1-resumen.m4a",
+          "source": "NotebookLM Audio Overview"
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Escuchalo 2 veces: la primera en velocidad normal para entender, la segunda a 1.5x o 2x como repaso rápido antes del examen."
+        }
+      ]
+    },
+    {
       "id": "1.flash",
       "title": "Flashcards del Día 1",
       "section": "D",
