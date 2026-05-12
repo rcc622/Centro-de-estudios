@@ -686,8 +686,8 @@ const DIFFICULTY = {
     lightningTime: 120,
     xpMult: 1.3
   },
-  master: {
-    n: 'Maestro',
+  expert: {
+    n: 'Experto',
     desc: 'Como el examen real · +50% XP',
     icon: '🏆',
     maxHearts: 1,
@@ -695,8 +695,24 @@ const DIFFICULTY = {
     passingBonus: 10,
     lightningTime: 90,
     xpMult: 1.5
+  },
+  perfectionist: {
+    n: 'Perfeccionista',
+    desc: 'Sin margen de error · +100% XP',
+    icon: '💎',
+    maxHearts: 1,
+    heartRegenMs: 90*60*1000,
+    passingBonus: 15,
+    lightningTime: 60,
+    xpMult: 2.0,
+    unlockable: true // requiere 99% de tasa de éxito
   }
 };
+// Perfeccionista se desbloquea al tener ≥99% de tasa de éxito sobre ≥20 lecciones
+function isPerfectionistUnlocked(){
+  if(!DB.totalLessons || DB.totalLessons < 20) return false;
+  return (DB.perfectLessons / DB.totalLessons) >= 0.99;
+}
 function getDifficulty(){ return DIFFICULTY[DB.difficulty || 'medium'] || DIFFICULTY.medium; }
 // Aliases backward-compatible
 const MAX_HEARTS = MAX_HEARTS_DEFAULT; // legacy, usar getMaxHearts() para lógica
@@ -967,6 +983,8 @@ function load(){
       DB = {...DB, ...p};
     }
   }catch(e){console.error('Load error',e)}
+  // Migración: nivel 'master' viejo → 'expert' nuevo
+  if(DB.difficulty === 'master') DB.difficulty = 'expert';
   regenerateHearts();
 }
 function save(){
@@ -2947,6 +2965,10 @@ function setDailyGoal(n){
 function setDifficulty(level){
   haptic(HAPTIC.select);
   if(!DIFFICULTY[level]) return;
+  if(DIFFICULTY[level].unlockable && !isPerfectionistUnlocked()){
+    showToast('Bloqueado · necesitás 99% de tasa de éxito sobre 20+ lecciones', 3000, 'error');
+    return;
+  }
   const oldMaxHearts = getMaxHearts();
   DB.difficulty = level;
   const newMaxHearts = getMaxHearts();
@@ -3150,13 +3172,15 @@ function renderConfig(){
       ${(() => {
         const curr = DB.difficulty || 'medium';
         const d = DIFFICULTY[curr];
-        const opts = ['easy','medium','hard','master'];
+        const opts = ['easy','medium','hard','expert'];
+        const perfUnlocked = isPerfectionistUnlocked();
+        const successRate = DB.totalLessons ? Math.round((DB.perfectLessons/DB.totalLessons)*100) : 0;
         return `
           <div class="goal-card">
             <div class="gc-title"><span>⚙️</span>Dificultad</div>
             <div class="gc-desc">Ajustá qué tan exigente es la app. Afecta corazones máximos, regen, score para aprobar quizzes, tiempo de lightning y multiplicador de XP.</div>
             <div class="gc-progress-label" style="margin-bottom:14px">${d.icon} <strong>${d.n}</strong> · ${d.maxHearts}❤️ · regen ${d.heartRegenMs/60000}min · XP x${d.xpMult}</div>
-            <div class="gc-options">
+            <div class="gc-options" style="grid-template-columns:repeat(4,1fr)">
               ${opts.map(o => {
                 const od = DIFFICULTY[o];
                 return `<button class="gc-opt ${curr===o?'active':''}" onclick="setDifficulty('${o}')">
@@ -3164,6 +3188,14 @@ function renderConfig(){
                 </button>`;
               }).join('')}
             </div>
+            <button class="gc-opt ${curr==='perfectionist'?'active':''}"
+              style="width:100%;margin-top:10px;${perfUnlocked?'':'opacity:.55;cursor:not-allowed'}"
+              onclick="${perfUnlocked?`setDifficulty('perfectionist')`:`showToast('Bloqueado · necesitás 99% de éxito en ≥20 lecciones (vas en ${successRate}% sobre ${DB.totalLessons||0})', 3500)`}">
+              ${perfUnlocked?'💎':'🔒'} Perfeccionista
+              <span class="gc-opt-sub" style="display:block;margin-top:2px">
+                ${perfUnlocked?'XP x2.0 · sin margen de error':`Desbloquear con 99% de éxito (${successRate}% / 99%)`}
+              </span>
+            </button>
           </div>
         `;
       })()}
