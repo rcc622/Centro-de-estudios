@@ -1249,18 +1249,24 @@ function getNextLesson(courseId){
 }
 
 function openHeroNext(){
+  // Lleva al sendero del día (vista 'day') donde el usuario ve el path con
+  // todas las burbujas y cuál sigue. No abre la lección directa para que
+  // tenga visibilidad de su progreso en el día.
   const next = getNextLesson('meta-410');
   if(!next) return;
   CURRENT.courseId = next.courseId;
   CURRENT.dayId = next.dayId;
-  if(next.isQuiz){
-    VIEW = 'day'; render();
-    setTimeout(() => openQuiz(next.dayId, 'unit-quiz'), 30);
-  } else if(next.isFlash){
-    openFlashcards(next.lessonId);
-  } else {
-    openLesson(next.lessonId);
-  }
+  VIEW = 'day';
+  render();
+  // Después del render, scrollear hasta la burbuja current si existe
+  setTimeout(() => {
+    const sc = document.querySelector('.scroll');
+    const bubble = document.querySelector('.path-bubble.current');
+    if(sc && bubble){
+      const offset = bubble.getBoundingClientRect().top - sc.getBoundingClientRect().top - 100;
+      sc.scrollTo({top: sc.scrollTop + offset, behavior:'smooth'});
+    }
+  }, 100);
 }
 
 function isDayUnlocked(courseId, dayIdx){
@@ -2599,18 +2605,37 @@ function renderFlashcards(){
 
   // Pantalla de completado
   if(FLASH_STATE.idx >= FLASH_STATE.deck.length){
+    // Si veniste desde una lección del sendero (path bubble), marcar como
+    // completada y dejarte volver al sendero. Lo hacemos una sola vez con
+    // el flag FLASH_STATE.marked para evitar duplicar progreso.
+    const fromPath = PRACTICE_MODE === 'lesson' && CURRENT.lessonId && CURRENT.courseId && CURRENT.dayId;
+    if(fromPath && !FLASH_STATE.marked){
+      FLASH_STATE.marked = true;
+      const wasIncomplete = !isLessonCompleted(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
+      const perfect = (FLASH_STATE.wrongCount||0) === 0 && (FLASH_STATE.rated||0) > 0;
+      markLessonComplete(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, perfect);
+      if(wasIncomplete){
+        updateStreak();
+        recordActivity({lessons:1, perfectLessons: perfect?1:0});
+      }
+    }
+    const rightN = FLASH_STATE.rightCount || 0;
+    const wrongN = FLASH_STATE.wrongCount || 0;
     return `
       ${renderHeader()}
       <div class="scroll">
         <div class="complete-screen">
           <div class="complete-ico">🎴</div>
-          <div class="complete-h">¡Repaso completo!</div>
-          <div class="complete-sub">Repasaste ${FLASH_STATE.rated} tarjetas</div>
+          <div class="complete-h">${fromPath ? '¡Lección completada!' : '¡Repaso completo!'}</div>
+          <div class="complete-sub">${rightN} ✓ · ${wrongN} ✗ · ${FLASH_STATE.rated} tarjetas</div>
         </div>
       </div>
       <div class="action-bar">
         <button class="btn btn-secondary" onclick="haptic(8);resetFlashDeck()">Repasar otra vez</button>
-        <button class="btn btn-primary" onclick="haptic(8);PRACTICE_MODE=null;FLASH_STATE={idx:0,deck:[],rated:0,flipped:false};VIEW='flashcards';render()">← Práctica</button>
+        ${fromPath
+          ? `<button class="btn btn-primary" onclick="haptic(8);PRACTICE_MODE=null;FLASH_STATE={idx:0,deck:[],rated:0,flipped:false};VIEW='day';render()">Continuar sendero →</button>`
+          : `<button class="btn btn-primary" onclick="haptic(8);PRACTICE_MODE=null;FLASH_STATE={idx:0,deck:[],rated:0,flipped:false};VIEW='flashcards';render()">← Práctica</button>`
+        }
       </div>
     `;
   }
