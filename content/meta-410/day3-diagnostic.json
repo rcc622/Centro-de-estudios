@@ -4,7 +4,12 @@
   "questions": [
     {
       "q": "¿Cuál es el default bid strategy de Meta?",
-      "options": ["Bid Cap","Cost per Result Goal","Highest Volume","ROAS Goal"],
+      "options": [
+        "Bid Cap",
+        "Cost per Result Goal",
+        "Highest Volume",
+        "ROAS Goal"
+      ],
       "correct": 2,
       "explanation": "Highest Volume es default: gasta todo y maximiza cantidad sin meta de costo.",
       "difficulty": "easy"
@@ -19,11 +24,16 @@
       ],
       "correct": 1,
       "explanation": "Reservation requiere lifetime budget obligatoriamente. Para Auction podés elegir daily o lifetime.",
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
       "q": "¿Cuántos optimization events necesita un ad set para salir del Learning Phase?",
-      "options": ["10","25","50","100"],
+      "options": [
+        "10",
+        "25",
+        "50",
+        "100"
+      ],
       "correct": 2,
       "explanation": "50 events en 7 días desde activación o último edit significativo.",
       "difficulty": "medium"

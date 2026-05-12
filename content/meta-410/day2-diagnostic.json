@@ -4,7 +4,12 @@
   "questions": [
     {
       "q": "¿En qué nivel de la jerarquía de Meta se selecciona el campaign objective?",
-      "options": ["Account level","Campaign level","Ad set level","Ad level"],
+      "options": [
+        "Account level",
+        "Campaign level",
+        "Ad set level",
+        "Ad level"
+      ],
       "correct": 1,
       "explanation": "El objective siempre se elige a nivel Campaign. Conversion location y event van en Ad set.",
       "difficulty": "easy"
@@ -31,14 +36,19 @@
       ],
       "correct": 1,
       "explanation": "Leads + Instant form mantiene la fricción mínima dentro de Meta. Sales se reserva para transacciones reales.",
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
       "q": "¿Cuál objective NO requiere Pixel, CAPI ni dataset?",
-      "options": ["Sales","Leads (website)","Awareness","App Promotion"],
+      "options": [
+        "Sales",
+        "Leads (website)",
+        "Awareness",
+        "App Promotion"
+      ],
       "correct": 2,
       "explanation": "Awareness optimiza por recall y reach amplio, no necesita tracking de conversions.",
-      "difficulty": "medium"
+      "difficulty": "hard"
     },
     {
       "q": "Selecciona la diferencia correcta entre conversion event y performance goal.",
