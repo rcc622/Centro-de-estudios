@@ -816,7 +816,13 @@ const LESSON_KIND_ICON = {
 function lessonIcon(lesson){
   if(lesson.icon) return lesson.icon;
   if(lesson.type === 'flashcards') return LESSON_KIND_ICON.flashcards;
-  if(lesson.type && LESSON_KIND_ICON[lesson.type]) return LESSON_KIND_ICON[lesson.type];
+  if(lesson.type && lesson.type !== 'reading' && LESSON_KIND_ICON[lesson.type]) return LESSON_KIND_ICON[lesson.type];
+  // Para lecciones tipo 'reading', inspeccionar las cards para detectar
+  // multimedia o casos prácticos y elegir un ícono más específico.
+  const cards = lesson.cards || [];
+  if(cards.some(c => c && (c.type === 'video-local' || c.type === 'video-embed'))) return '🎥';
+  if(cards.some(c => c && (c.type === 'audio-embed' || c.type === 'audio-link'))) return '🎙️';
+  if(cards.some(c => c && c.type === 'scenario')) return '📓';
   return LESSON_KIND_ICON.reading;
 }
 
