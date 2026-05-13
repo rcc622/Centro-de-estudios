@@ -635,7 +635,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
     <div class="ms-h" id="nh-title">¡Sin corazones!</div>
     <div class="ms-sub">Necesitas corazones para tomar lecciones. Mientras esperás, podés repasar flashcards (no cuestan corazones).</div>
     <div class="ms-timer-card">
-      <div class="ms-timer-label">Próximo ❤️ en</div>
+      <div class="ms-timer-label">Hearts se recargan en</div>
       <div class="ms-timer-val" id="nh-timer">--:--</div>
     </div>
     <div class="ms-actions">
@@ -1076,14 +1076,15 @@ function regenerateHearts(){
   const maxH = getMaxHearts();
   const regenMs = getHeartRegenMs();
   if(DB.hearts >= maxH){ DB.lastHeartLost = null; return; }
-  // Self-heal: si hay hearts < max sin timestamp (estado inconsistente por
-  // migración o bug previo), arrancar el contador ahora desde 0.
+  // Self-heal: si hay hearts < max sin timestamp, arrancar el contador ahora.
   if(!DB.lastHeartLost){ DB.lastHeartLost = now(); save(); return; }
+  // Full refill: después de UN ciclo completo (regenMs), recargás TODOS los
+  // hearts de una. Más amigable y alineado con la expectativa (Duolingo-style):
+  // esperás el timer y volvés al máximo, sin importar cuántos perdiste.
   const elapsed = now() - DB.lastHeartLost;
-  const regenerated = Math.floor(elapsed / regenMs);
-  if(regenerated > 0){
-    DB.hearts = Math.min(maxH, DB.hearts + regenerated);
-    DB.lastHeartLost = DB.hearts >= maxH ? null : DB.lastHeartLost + (regenerated * regenMs);
+  if(elapsed >= regenMs){
+    DB.hearts = maxH;
+    DB.lastHeartLost = null;
     save();
   }
 }
@@ -3918,7 +3919,7 @@ function startHeartTicker(){
     if(ms > getHeartRegenMs() - 1000){
       regenerateHearts();
       if(DB.hearts > 0 && document.getElementById('no-hearts-modal').classList.contains('open')){
-        showToast('❤️ ¡Heart regenerado!', 1800, 'success');
+        showToast('❤️ ¡Hearts recargados al máximo!', 2000, 'success');
       }
       render();
     }
