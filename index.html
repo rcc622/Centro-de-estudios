@@ -746,18 +746,32 @@ function getXpMult(){ return getDifficulty().xpMult; }
 function getPassingBonus(){ return getDifficulty().passingBonus; }
 function getLightningTime(){ return getDifficulty().lightningTime; }
 
-const LEVELS = [
-  {n:'Novato',           xp:0,    i:'🌱'},
-  {n:'Aprendiz',         xp:100,  i:'📘'},
-  {n:'Estudiante',       xp:250,  i:'🎓'},
-  {n:'Practicante',      xp:500,  i:'⚡'},
-  {n:'Competente',       xp:850,  i:'💪'},
-  {n:'Avanzado',         xp:1300, i:'🚀'},
-  {n:'Experto',          xp:1850, i:'🏆'},
-  {n:'Maestro',          xp:2500, i:'🧠'},
-  {n:'Sabio',            xp:3300, i:'🦉'},
-  {n:'Leyenda Meta',     xp:4200, i:'👑'}
+// 10 rangos. Cada uno cubre 10 niveles consecutivos (1-9 Novato, 10-19
+// Aprendiz, 20-29 Estudiante, ..., 90-100 Leyenda Meta).
+const LEVEL_RANKS = [
+  {n:'Novato',       i:'🌱', from:1,  to:9},
+  {n:'Aprendiz',     i:'📘', from:10, to:19},
+  {n:'Estudiante',   i:'🎓', from:20, to:29},
+  {n:'Practicante',  i:'⚡', from:30, to:39},
+  {n:'Competente',   i:'💪', from:40, to:49},
+  {n:'Avanzado',     i:'🚀', from:50, to:59},
+  {n:'Experto',      i:'🏆', from:60, to:69},
+  {n:'Maestro',      i:'🧠', from:70, to:79},
+  {n:'Sabio',        i:'🦉', from:80, to:89},
+  {n:'Leyenda Meta', i:'👑', from:90, to:100}
 ];
+// Curva de XP: round(20 * (n-1)^1.5). Empinada pero accesible.
+// N1=0, N10=540, N20=1656, N50=7855, N100=25520.
+const LEVELS = Array.from({length:100}, (_, idx) => {
+  const n = idx + 1;
+  const xp = Math.round(20 * Math.pow(n - 1, 1.5));
+  const rank = LEVEL_RANKS.find(r => n >= r.from && n <= r.to);
+  return { n: rank.n, xp, i: rank.i, num: n };
+});
+// Helper: rango (con nombre e ícono) del nivel dado
+function getLevelRank(lvl){
+  return LEVEL_RANKS.find(r => lvl >= r.from && lvl <= r.to) || LEVEL_RANKS[0];
+}
 
 const ACHIEVEMENTS = [
   // Visibles desde el inicio (te dicen qué hacer)
@@ -769,10 +783,10 @@ const ACHIEVEMENTS = [
   {id:'streak_7',      i:'🔥', n:'Semana Completa',     desc:'7 días consecutivos'},
   {id:'streak_14',     i:'🔥', n:'Quincena Imparable',  desc:'14 días consecutivos'},
   {id:'streak_30',     i:'🔥', n:'Mes de Foco',         desc:'30 días consecutivos'},
-  {id:'level_3',       i:'🎓', n:'Estudiante',          desc:'Alcanza el nivel 3'},
-  {id:'level_5',       i:'💪', n:'Competente',          desc:'Alcanza el nivel 5'},
-  {id:'level_7',       i:'🏆', n:'Experto',             desc:'Alcanza el nivel 7'},
-  {id:'level_10',      i:'👑', n:'Leyenda',             desc:'Alcanza el nivel máximo'},
+  {id:'level_3',       i:'🎓', n:'Estudiante',          desc:'Alcanza el rango Estudiante (N20)'},
+  {id:'level_5',       i:'💪', n:'Competente',          desc:'Alcanza el rango Competente (N40)'},
+  {id:'level_7',       i:'🏆', n:'Experto',             desc:'Alcanza el rango Experto (N60)'},
+  {id:'level_10',      i:'👑', n:'Leyenda',             desc:'Alcanza el rango Leyenda (N90)'},
   {id:'thousand_xp',   i:'💰', n:'Mil XP',              desc:'Acumula 1.000 XP'},
   {id:'two_thousand',  i:'🏦', n:'Dos Mil',             desc:'Acumula 2.000 XP'},
   {id:'all_flashcards',i:'🎴', n:'Memoria de Acero',    desc:'Domina 50 flashcards'},
@@ -1123,10 +1137,10 @@ function addXP(amount){
   if(lvlAfter > lvlBefore){
     for(let l = lvlBefore+1; l <= lvlAfter; l++){
       _luq.push(l);
-      if(l===3) earnAch('level_3');
-      if(l===5) earnAch('level_5');
-      if(l===7) earnAch('level_7');
-      if(l===10) earnAch('level_10');
+      if(l===20) earnAch('level_3');  // Rango Estudiante
+      if(l===40) earnAch('level_5');  // Rango Competente
+      if(l===60) earnAch('level_7');  // Rango Experto
+      if(l===90) earnAch('level_10'); // Rango Leyenda
     }
     setTimeout(showNextLvlUp, 400);
   }
@@ -1438,7 +1452,7 @@ function renderHeader(){
           <div class="stat stat-hearts ${DB.hearts===0?'clickable':''}" ${heartsClick}>${heartsHtml}${showTimer?'<span class="hearts-timer" id="hearts-timer-hdr"></span>':''}</div>
           <div class="stat stat-xp"><span class="ico">⚡</span>${DB.xp}</div>
         </div>
-        <div class="lvl-badge">${lvlInfo.i} N${lvl}</div>
+        <div class="lvl-badge">N${lvl}</div>
       </div>
       <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
       <div class="progress-label"><span>${lvlInfo.n}</span><span>${DB.xp} / ${nextXP} XP</span></div>
@@ -2947,31 +2961,32 @@ function renderAchievements(){
       </div>
 
       <div class="level-current">
-        <div class="lc-eyebrow">Tu nivel actual</div>
+        <div class="lc-eyebrow">Tu nivel actual · ${lvlInfo.n}</div>
         <div class="lc-row">
           <div class="lc-ico">${lvlInfo.i}</div>
           <div class="lc-info">
-            <div class="lc-name">N${lvl} · ${lvlInfo.n}</div>
+            <div class="lc-name">Nivel ${lvl}</div>
             <div class="lc-meta">${lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} XP para N${lvl+1}` : '¡Nivel máximo alcanzado!'}</div>
           </div>
         </div>
         <div class="lc-progress"><div class="lc-progress-bar" style="width:${pctToNext}%"></div></div>
       </div>
 
-      <div class="section-title">Todos los niveles</div>
+      <div class="section-title">Rangos · 100 niveles</div>
       <div class="level-list">
-        ${LEVELS.map((lv, idx) => {
-          const lvlNum = idx + 1;
-          const achieved = lvl > lvlNum;
-          const current = lvl === lvlNum;
+        ${LEVEL_RANKS.map(rank => {
+          const achieved = lvl > rank.to;
+          const current = lvl >= rank.from && lvl <= rank.to;
           const cls = current ? 'current' : (achieved ? 'achieved' : 'locked');
-          const status = current ? '← aquí' : (achieved ? '✓' : '');
+          const fromXp = LEVELS[rank.from-1].xp;
+          const toXp = LEVELS[rank.to-1].xp;
+          const status = current ? `N${lvl} · aquí` : (achieved ? '✓' : '');
           return `
             <div class="level-row ${cls}">
-              <div class="lr-ico">${achieved || current ? lv.i : '🔒'}</div>
+              <div class="lr-ico">${achieved || current ? rank.i : '🔒'}</div>
               <div class="lr-info">
-                <div class="lr-name">${lvlNum}. ${lv.n}</div>
-                <div class="lr-xp">${lv.xp.toLocaleString()} XP</div>
+                <div class="lr-name">${rank.n} <span style="font-weight:600;color:#8A8D91;font-size:12px">· N${rank.from}–N${rank.to}</span></div>
+                <div class="lr-xp">${fromXp.toLocaleString()}–${toXp.toLocaleString()} XP</div>
               </div>
               <div class="lr-status">${status}</div>
             </div>
