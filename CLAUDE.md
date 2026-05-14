@@ -470,6 +470,66 @@ Estructura:
 - Pesos: < 15MB por archivo (GitHub Pages tiene 1GB total y 100GB/mes bandwidth)
 - Si es > 15MB o varios videos, preferir `video-embed` con YouTube unlisted
 
+#### `decision-tree` — lección de árbol de decisión interactivo (full-lesson)
+
+Tipo de **lección completa** (no card individual). Usar cuando el contenido fuente es un árbol/diagrama de decisión con bifurcaciones Sí/No (o múltiples ramas), donde forzar un `order` lineal rompe la lógica.
+
+```json
+{
+  "id": "3.6",
+  "title": "Árbol oficial de elección de bid strategy",
+  "type": "decision-tree",
+  "instruction": "Para cada escenario, recorré el árbol respondiendo Sí/No.",
+  "tree": {
+    "q": "¿Querés controlar costos?",
+    "branches": [
+      {
+        "label": "Sí",
+        "next": {
+          "q": "¿Optimizás valor?",
+          "branches": [
+            { "label": "Sí", "leaf": "ROAS Goal" },
+            { "label": "No", "leaf": "Cost per Result Goal / Bid Cap" }
+          ]
+        }
+      },
+      {
+        "label": "No",
+        "next": {
+          "q": "¿Optimizás valor?",
+          "branches": [
+            { "label": "Sí", "leaf": "Highest Value" },
+            { "label": "No", "leaf": "Highest Volume" }
+          ]
+        }
+      }
+    ]
+  },
+  "scenarios": [
+    { "context": "Cliente exige ROAS 4x estricto y optimiza por valor.", "expected": "ROAS Goal" },
+    { "context": "DTC nuevo busca máximo volumen sin metas de costo.", "expected": "Highest Volume" }
+  ],
+  "explanation": "Sí+Sí→ROAS · Sí+No→Cost Cap · No+Sí→Highest Value · No+No→Highest Volume."
+}
+```
+
+**Schema del nodo `tree`:**
+- Nodo interno: `{ "q": "pregunta", "branches": [{"label": "Sí", "next": <nodo>}, {"label": "No", "next": <nodo>}] }`
+- Hoja terminal (en lugar de `next`): `{ "label": "Sí", "leaf": "Texto del resultado" }`
+- Las ramas pueden ser cualquier cantidad (no limitado a 2), pero el ícono ✓/✕ solo se aplica si el label es "Sí"/"No". Otros labels muestran ▸.
+
+**Flujo de la lección:**
+1. Se muestra el escenario actual (de `scenarios[]`).
+2. Usuario navega el árbol clickeando ramas.
+3. Al llegar a una hoja, se compara con `scenarios[i].expected`.
+4. Si correcto → "Siguiente escenario". Si incorrecto → -1 ❤️ y "Reintentar".
+5. Al resolver todos los escenarios → `finishLesson()`.
+
+**Cuándo usarlo (en lugar de `order` o `match`):**
+- Contenido fuente es un diagrama/árbol con ramas (no secuencia lineal).
+- El usuario debe aprender qué resultado aplica según condiciones múltiples.
+- Ej: bid strategy según costos+valor, attribution según industria+tipo de evento, troubleshooting según síntoma.
+
 ### Reglas para escribir contenido educativo
 
 1. **Las lecciones tipo "concept"** deben ser breves (máx 3-4 oraciones por card). Si es muy largo, divide en múltiples cards.
