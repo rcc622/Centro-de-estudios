@@ -270,20 +270,54 @@
     },
     {
       "id": "3.6",
-      "title": "Ordenar el flujo de elección de bid strategy",
+      "title": "Árbol oficial de elección de bid strategy",
       "section": "B",
-      "type": "order",
-      "instruction": "Según el decision tree oficial del PDF, ¿en qué orden hacés estas preguntas para elegir tu bid strategy? Reordena con ▲▼.",
-      "items": [
-        "¿Querés controlar costos?",
-        "Si SÍ: ¿optimizar valor de compra?",
-        "Si SÍ optimizar valor: ROAS Goal",
-        "Si NO optimizar valor: Cost per Result Goal o Bid Cap",
-        "Si NO controlás costos: ¿optimizar valor?",
-        "Si SÍ optimizar valor sin control: Highest Value",
-        "Si NO optimizar valor sin control: Highest Volume"
+      "type": "decision-tree",
+      "instruction": "Para cada escenario, recorré el árbol del PDF respondiendo Sí/No y llegá a la bid strategy correcta.",
+      "tree": {
+        "q": "¿Querés controlar costos?",
+        "branches": [
+          {
+            "label": "Sí",
+            "next": {
+              "q": "¿Optimizás por valor de compra?",
+              "branches": [
+                { "label": "Sí", "leaf": "ROAS Goal" },
+                { "label": "No", "leaf": "Cost per Result Goal / Bid Cap" }
+              ]
+            }
+          },
+          {
+            "label": "No",
+            "next": {
+              "q": "¿Optimizás por valor de compra?",
+              "branches": [
+                { "label": "Sí", "leaf": "Highest Value" },
+                { "label": "No", "leaf": "Highest Volume" }
+              ]
+            }
+          }
+        ]
+      },
+      "scenarios": [
+        {
+          "context": "Tu cliente exige ROAS estricto de 4x y la campaña está optimizada por valor de compra del catálogo.",
+          "expected": "ROAS Goal"
+        },
+        {
+          "context": "DTC nuevo sin metas de costo todavía; quiere el mayor volumen de conversiones posible con el budget.",
+          "expected": "Highest Volume"
+        },
+        {
+          "context": "Prospecting puro: el cliente busca atraer compradores con mayor LTV, sin limitar costo por adquisición.",
+          "expected": "Highest Value"
+        },
+        {
+          "context": "Lead gen B2B con un CPL máximo tolerable de $40 MXN; no optimiza por valor sino por leads.",
+          "expected": "Cost per Result Goal / Bid Cap"
+        }
       ],
-      "explanation": "Decision tree oficial del PDF: primero preguntá si controlás costos. Después dentro de cada rama, preguntá si optimizás valor. Eso te da los 5 strategies posibles."
+      "explanation": "El árbol oficial tiene 2 preguntas: (1) ¿controlás costos? (2) ¿optimizás valor? · Sí+Sí→ROAS · Sí+No→Cost Cap · No+Sí→Highest Value · No+No→Highest Volume."
     },
     {
       "id": "3.7",

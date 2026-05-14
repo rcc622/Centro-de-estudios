@@ -266,6 +266,32 @@ body{display:block}
 .order-arrow:active{transform:scale(.93)}
 .order-arrow:disabled{opacity:.3;cursor:not-allowed}
 
+/* DECISION TREE (árbol de decisión interactivo) */
+.dtree-scenario{background:linear-gradient(135deg,#EBF5FF,#F0F7FF);border:2px solid #1877F2;border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.dtree-scenario-label{font-size:10px;font-weight:800;color:#1877F2;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.dtree-scenario-text{font-size:14.5px;line-height:1.45;color:#1c1e21;font-weight:600}
+.dtree-progress{text-align:center;font-size:11px;font-weight:800;color:#65676B;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px}
+.dtree-flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin-bottom:16px}
+.dtree-node{background:#fff;border:2px solid #E4E6EB;border-radius:14px;padding:14px 16px;position:relative}
+.dtree-node.active{border-color:#1877F2;background:#fff;box-shadow:0 4px 14px rgba(24,119,242,.15)}
+.dtree-node.past{background:#F0FFF7;border-color:#42B883}
+.dtree-node.leaf{background:linear-gradient(135deg,#42B883,#2D9968);border-color:#2D9968;color:#fff;text-align:center}
+.dtree-node.leaf.wrong{background:linear-gradient(135deg,#E74C3C,#C0392B);border-color:#C0392B}
+.dtree-node-q{font-size:14.5px;font-weight:700;line-height:1.4;color:#1c1e21}
+.dtree-node.past .dtree-node-q{font-size:13px;color:#42B883;font-weight:700;display:flex;align-items:center;gap:8px}
+.dtree-node.past .dtree-node-q::before{content:'✓';font-size:14px}
+.dtree-node-chosen{display:inline-block;margin-left:6px;background:#fff;color:#42B883;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:800;letter-spacing:.5px}
+.dtree-branches{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.dtree-branch-btn{background:#fff;border:2px solid #1877F2;color:#1877F2;border-radius:12px;padding:12px 14px;font-size:14px;font-weight:700;cursor:pointer;user-select:none;-webkit-user-select:none;text-align:left;display:flex;align-items:center;gap:10px;transition:all .15s}
+.dtree-branch-btn:active{transform:scale(.98)}
+.dtree-branch-btn:hover{background:#EBF5FF}
+.dtree-branch-icon{width:24px;height:24px;border-radius:50%;background:#EBF5FF;color:#1877F2;font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dtree-arrow{align-self:center;color:#1877F2;font-size:18px;font-weight:900;padding:4px 0}
+.dtree-node.past + .dtree-arrow{color:#42B883}
+.dtree-leaf-label{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;opacity:.9;margin-bottom:4px}
+.dtree-leaf-result{font-size:18px;font-weight:900;line-height:1.3}
+.dtree-leaf-feedback{font-size:13px;margin-top:8px;opacity:.95;font-weight:600;line-height:1.4}
+
 /* LIGHTNING */
 .lightning-banner{background:linear-gradient(135deg,#FFA726,#FF6B35);color:#fff;padding:14px 16px;border-radius:14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;font-weight:800;box-shadow:0 4px 12px rgba(255,107,53,.25)}
 .lightning-banner-ico{font-size:24px}
@@ -1034,6 +1060,7 @@ let QUIZ_TIMER_ID = null;
 let MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:null, errors:0, wrongL:null, wrongR:null};
 let ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
 let LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:180, errors:0, done:false, deadline:0};
+let DTREE_STATE = {scenarioIdx:0, path:[], leaf:null, leafCorrect:null, errors:0, done:false};
 let LIGHTNING_TIMER_ID = null;
 let _luq = [];
 let _achq = [];
@@ -1778,9 +1805,10 @@ function renderLesson(){
   const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
   if(!lesson) return renderHome();
   // Dispatch a renderers especiales por tipo
-  if(lesson.type === 'match')     return renderLessonMatch(course, day, lesson);
-  if(lesson.type === 'order')     return renderLessonOrder(course, day, lesson);
-  if(lesson.type === 'lightning') return renderLessonLightning(course, day, lesson);
+  if(lesson.type === 'match')         return renderLessonMatch(course, day, lesson);
+  if(lesson.type === 'order')         return renderLessonOrder(course, day, lesson);
+  if(lesson.type === 'lightning')     return renderLessonLightning(course, day, lesson);
+  if(lesson.type === 'decision-tree') return renderLessonDecisionTree(course, day, lesson);
   // Tipos 'reading' (default) | 'drill' | 'scenario' usan el flujo de cards estándar
 
   const card = lesson.cards[LESSON_STATE.cardIdx];
@@ -2234,6 +2262,177 @@ function retryOrder(){
 }
 function finishOrder(){
   LESSON_STATE.errors = ORDER_STATE.errors;
+  finishLesson();
+}
+
+// ============================================================
+// LESSON · DECISION TREE (árbol de decisión interactivo)
+// ============================================================
+function dtreeNodeAt(root, path){
+  let node = root;
+  for(const label of path){
+    const branch = (node && node.branches || []).find(b => b.label === label);
+    if(!branch) return null;
+    if(branch.leaf !== undefined) return {_leaf: branch.leaf};
+    node = branch.next;
+  }
+  return node;
+}
+
+function dtreeCurrentScenario(lesson){
+  const scenarios = lesson.scenarios || [];
+  return scenarios[DTREE_STATE.scenarioIdx] || null;
+}
+
+function renderLessonDecisionTree(course, day, lesson){
+  const scenarios = lesson.scenarios || [];
+  const total = scenarios.length;
+  const scen = dtreeCurrentScenario(lesson);
+  const idx = DTREE_STATE.scenarioIdx;
+  const pct = total ? Math.round((idx + (DTREE_STATE.leaf ? 1 : 0)) / total * 100) : 0;
+  const currentNode = DTREE_STATE.leaf ? null : dtreeNodeAt(lesson.tree, DTREE_STATE.path);
+  const atLeaf = currentNode && currentNode._leaf !== undefined;
+  const reachedLeaf = DTREE_STATE.leaf !== null || atLeaf;
+
+  if(atLeaf && DTREE_STATE.leaf === null){
+    DTREE_STATE.leaf = currentNode._leaf;
+    DTREE_STATE.leafCorrect = scen && (currentNode._leaf === scen.expected);
+    if(!DTREE_STATE.leafCorrect){
+      DTREE_STATE.errors += 1;
+      haptic(HAPTIC.wrong);
+      if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+    } else {
+      haptic(HAPTIC.correct);
+    }
+  }
+
+  const pathChips = DTREE_STATE.path.map((label, i) => {
+    let n = lesson.tree;
+    for(let j=0;j<i;j++){
+      const b = (n.branches||[]).find(x => x.label === DTREE_STATE.path[j]);
+      n = b && b.next;
+    }
+    const q = n && n.q ? n.q : '';
+    return `<div class="dtree-node past"><div class="dtree-node-q">${q}<span class="dtree-node-chosen">${label}</span></div></div><div class="dtree-arrow">▼</div>`;
+  }).join('');
+
+  let activeBlock = '';
+  if(reachedLeaf){
+    const leafCls = 'dtree-node leaf' + (DTREE_STATE.leafCorrect ? '' : ' wrong');
+    const feedback = DTREE_STATE.leafCorrect
+      ? `Correcto. Esa es la bid strategy que pide el escenario.`
+      : `No. La respuesta esperada era <strong>${scen.expected}</strong>. Revisá las ramas y reintenta.`;
+    activeBlock = `
+      <div class="${leafCls}">
+        <div class="dtree-leaf-label">${DTREE_STATE.leafCorrect ? '🎯 Resultado correcto' : '❌ Resultado incorrecto'}</div>
+        <div class="dtree-leaf-result">${DTREE_STATE.leaf}</div>
+        <div class="dtree-leaf-feedback">${feedback}</div>
+      </div>`;
+  } else if(currentNode && currentNode.q){
+    const branches = (currentNode.branches || []).map(b => {
+      const norm = (b.label || '').toLowerCase();
+      const isYes = norm === 'sí' || norm === 'si' || norm === 'yes';
+      const isNo  = norm === 'no';
+      const ico = isYes ? '✓' : isNo ? '✕' : '▸';
+      return `
+      <button class="dtree-branch-btn" onclick="dtreeChoose('${b.label.replace(/'/g, "\\'")}')">
+        <span class="dtree-branch-icon">${ico}</span>
+        <span>${b.label}</span>
+      </button>
+    `;
+    }).join('');
+    activeBlock = `
+      <div class="dtree-node active">
+        <div class="dtree-node-q">${currentNode.q}</div>
+        <div class="dtree-branches">${branches}</div>
+      </div>`;
+  }
+
+  let cta = '';
+  if(DTREE_STATE.done){
+    cta = `<button class="btn btn-primary" onclick="finishDecisionTree()">Terminar lección</button>`;
+  } else if(reachedLeaf){
+    if(DTREE_STATE.leafCorrect){
+      const isLast = idx >= total - 1;
+      cta = `<button class="btn btn-primary" onclick="dtreeNextScenario()">${isLast ? 'Cerrar lección' : 'Siguiente escenario'}</button>`;
+    } else {
+      cta = `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="dtreeRetryScenario()">Reintentar</button>`;
+    }
+  } else {
+    cta = `<button class="btn btn-disabled">Elegí una rama</button>`;
+  }
+
+  return `
+    <div class="hdr">
+      <div class="hdr-top">
+        <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
+        <div style="flex:1;margin:0 12px">
+          <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
+        </div>
+        <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="lesson-header">
+        <div class="lesson-num">🌳 ÁRBOL DE DECISIÓN · ${Math.min(idx+1,total)}/${total}</div>
+        <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
+        <div style="font-size:13px;color:#65676B;margin-top:6px">${lesson.instruction || 'Recorré el árbol según el escenario y llegá a la hoja correcta.'}</div>
+      </div>
+      ${scen ? `
+        <div class="dtree-scenario">
+          <div class="dtree-scenario-label">Escenario ${idx+1}</div>
+          <div class="dtree-scenario-text">${scen.context}</div>
+        </div>
+      ` : ''}
+      <div class="dtree-flow">
+        ${pathChips}
+        ${activeBlock}
+      </div>
+      ${DTREE_STATE.done ? `
+        <div class="quiz-feedback correct show">
+          <strong>✅ Todos los escenarios resueltos</strong>
+          ${lesson.explanation || ''}
+        </div>
+      ` : ''}
+    </div>
+    <div class="action-bar">${cta}</div>
+  `;
+}
+
+function dtreeChoose(label){
+  if(DTREE_STATE.leaf !== null || DTREE_STATE.done) return;
+  haptic(HAPTIC.tap);
+  DTREE_STATE.path.push(label);
+  render();
+}
+
+function dtreeRetryScenario(){
+  haptic(HAPTIC.tap);
+  DTREE_STATE.path = [];
+  DTREE_STATE.leaf = null;
+  DTREE_STATE.leafCorrect = null;
+  render();
+}
+
+function dtreeNextScenario(){
+  haptic(HAPTIC.tap);
+  const course = COURSES[CURRENT.courseId];
+  const day = course && (course.days || []).find(d => d.id === CURRENT.dayId);
+  const lesson = day && (day.lessons || []).find(l => l.id === CURRENT.lessonId);
+  const total = lesson && lesson.scenarios ? lesson.scenarios.length : 0;
+  if(DTREE_STATE.scenarioIdx >= total - 1){
+    DTREE_STATE.done = true;
+  } else {
+    DTREE_STATE.scenarioIdx += 1;
+    DTREE_STATE.path = [];
+    DTREE_STATE.leaf = null;
+    DTREE_STATE.leafCorrect = null;
+  }
+  render();
+}
+
+function finishDecisionTree(){
+  LESSON_STATE.errors = DTREE_STATE.errors;
   finishLesson();
 }
 
@@ -3526,6 +3725,7 @@ function openLesson(id){
   ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
   stopLightningTimer();
   LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:getLightningTime(), errors:0, done:false, deadline:0};
+  DTREE_STATE = {scenarioIdx:0, path:[], leaf:null, leafCorrect:null, errors:0, done:false};
   VIEW = 'lesson';
   render();
 }
@@ -3546,7 +3746,8 @@ function exitLesson(){
     (LESSON_STATE.cardIdx > 0) ||
     (MATCH_STATE.matched && MATCH_STATE.matched.size > 0) ||
     (ORDER_STATE.submitted) ||
-    (LIGHTNING_STATE.idx > 0 || Object.keys(LIGHTNING_STATE.answers || {}).length > 0);
+    (LIGHTNING_STATE.idx > 0 || Object.keys(LIGHTNING_STATE.answers || {}).length > 0) ||
+    (DTREE_STATE.scenarioIdx > 0 || DTREE_STATE.path.length > 0);
   if(someProgress && !LESSON_STATE.completed){
     if(!confirm('¿Salir? Perderás el progreso de esta lección.')) return;
   }
