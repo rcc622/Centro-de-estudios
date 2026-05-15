@@ -286,7 +286,7 @@
         {
           "type": "concept",
           "h": "Billing and payments",
-          "body": "En Meta Business Suite, <strong>Billing and payments</strong> es donde manejás todos los detalles de pago. Podés agregar un método propio o compartir uno desde otro portfolio. Requerís acceso <strong>admin</strong> o rol <strong>finance (view and manage)</strong> para cambiar payment methods."
+          "body": "En Meta Business Suite, <strong>Billing and payments</strong> es donde manejás todos los detalles de pago. Puedes agregar un método propio o compartir uno desde otro portfolio. Requerís acceso <strong>admin</strong> o rol <strong>finance (view and manage)</strong> para cambiar payment methods."
         },
         {
           "type": "kvtable",
@@ -318,7 +318,7 @@
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "Para excluir grupos de contenido sensible de manera más simple, usá los <strong>inventory filters</strong> (Moderate o Limited). Los block lists requieren que vos construyas la lista; los topic exclusions solo funcionan en placements muy específicos."
+          "body": "Para excluir grupos de contenido sensible de manera más simple, usa los <strong>inventory filters</strong> (Moderate o Limited). Los block lists requieren que tú construyas la lista; los topic exclusions solo funcionan en placements muy específicos."
         },
         {
           "type": "mcq",
@@ -465,7 +465,7 @@
         },
         {
           "type": "fill",
-          "q": "Para excluir grupos de contenido sensible de la forma más simple, usá los ___.",
+          "q": "Para excluir grupos de contenido sensible de la forma más simple, usa los ___.",
           "options": ["block lists", "topic exclusions", "inventory filters", "publisher allow lists"],
           "correct": 2,
           "explanation": "<strong>Inventory filters</strong> (Expanded/Moderate/Limited) son el control más simple y de mayor alcance. Block lists requieren armar la lista manualmente."
@@ -592,7 +592,7 @@
           "q": "Cuando creás una campaña, el opportunity score que aparece a NIVEL CAMPAIGN:",
           "options": [
             "Reemplaza tu score global del account",
-            "Suma puntos al global cuando aplicás recomendaciones",
+            "Suma puntos al global cuando aplicas recomendaciones",
             "NO afecta el global y solo refleja esa campaña",
             "Se calcula 24 horas después de publicar"
           ],
@@ -676,7 +676,7 @@
           "explanation": "Topic exclusions aplican exclusivamente a Facebook in-stream y reels."
         },
         {
-          "q": "¿Si pasás el diagnostic con ≥80%, podés saltar las lecciones del día?",
+          "q": "¿Si pasas el diagnostic con ≥80%, puedes saltar las lecciones del día?",
           "options": ["Sí, salta directo al Quiz de Unidad", "No, debes hacer las lecciones siempre"],
           "correct": 0,
           "explanation": "El diagnostic es el atajo: si dominás el contenido, ≥80% te permite saltar al Quiz de Unidad directamente."
@@ -692,7 +692,7 @@
         {
           "type": "concept",
           "h": "🎙️ Repaso conversacional",
-          "body": "Escuchá este resumen rápido del Día 1 antes de pasar a flashcards. Útil para fijar los conceptos clave en otro formato — podés escucharlo manejando o caminando."
+          "body": "Escucha este resumen rápido del Día 1 antes de pasar a flashcards. Útil para fijar los conceptos clave en otro formato — puedes escucharlo manejando o caminando."
         },
         {
           "type": "audio-embed",

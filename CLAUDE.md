@@ -8,7 +8,7 @@
 
 **Nombre:** Randall (Gerente de Operaciones en Kenet Solar, Monterrey)
 **Cómo trabajo:** desde celular, con Claude Code móvil, sin terminal local. No edito código manualmente. Conversamos, tú modificas archivos, haces commit, y la app se actualiza sola en GitHub Pages.
-**Idioma:** todo en español. Nombres técnicos pueden quedar en inglés (ej. "Advantage+ Audience", "Pixel", "Lookalike").
+**Idioma:** todo en **español mexicano**. Usa tuteo (tú: "quieres", "tienes", "puedes", "recorre", "elige"). **Nunca voseo argentino** ("querés", "tenés", "podés", "recorré", "elegí", "vos", "mirá", "fijate"). Esto aplica tanto al contenido de los JSON como a tus respuestas en el chat. Nombres técnicos pueden quedar en inglés (ej. "Advantage+ Audience", "Pixel", "Lookalike"). No metas jerga sin explicarla primero (ej. "DTC", "LTV"): o la defines en una card previa o usas el término en español.
 **Tono:** directo, sin relleno, sin "muy buena pregunta". Si me equivoco, corrígeme. Si algo no se puede o es mala idea, dímelo de frente.
 
 ---

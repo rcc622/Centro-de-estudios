@@ -78,7 +78,7 @@
       "difficulty": "hard"
     },
     {
-      "q": "Si querés optimizar para tickets de compra de mayor valor (no solo cantidad), ¿qué performance goal usás?",
+      "q": "Si quieres optimizar para tickets de compra de mayor valor (no solo cantidad), ¿qué performance goal usas?",
       "options": [
         "Maximize number of conversions",
         "Maximize value of conversions",
@@ -98,7 +98,7 @@
         "Son lo mismo con nombres distintos"
       ],
       "correct": 1,
-      "explanation": "Awareness mide impacto en memoria (recall lift) con alcance amplio. Engagement con Video Views optimiza la VIDEO COMPLETION concreta. La diferencia es qué outcome del funnel optimizás.",
+      "explanation": "Awareness mide impacto en memoria (recall lift) con alcance amplio. Engagement con Video Views optimiza la VIDEO COMPLETION concreta. La diferencia es qué outcome del funnel optimizas.",
       "difficulty": "hard"
     },
     {

@@ -29,7 +29,7 @@
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Si seleccionás \"Switch to original audience options\" o \"Further limit the reach of your ads\", <strong>desactivás Advantage+ Audience</strong> (que está ON por default en campañas nuevas)."
+          "body": "Si seleccionas \"Switch to original audience options\" o \"Further limit the reach of your ads\", <strong>desactivás Advantage+ Audience</strong> (que está ON por default en campañas nuevas)."
         },
         {
           "type": "mcq",
@@ -123,11 +123,11 @@
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "Tu mejor source para Lookalike son los <strong>compradores top</strong>: filtrá Purchase events con value alto, agrupá en custom audience, y usá esa como source. El lookalike va a parecerse a esos compradores premium."
+          "body": "Tu mejor source para Lookalike son los <strong>compradores top</strong>: filtra Purchase events con value alto, agrupa en custom audience, y usa esa como source. El lookalike va a parecerse a esos compradores premium."
         },
         {
           "type": "mcq",
-          "q": "Querés MÁXIMA precisión (no volumen) en un lookalike. ¿Qué tamaño?",
+          "q": "Quieres MÁXIMA precisión (no volumen) en un lookalike. ¿Qué tamaño?",
           "options": [
             "10% — más volumen",
             "1% — más similitud",
@@ -196,7 +196,7 @@
             "Solo disponible con catalog"
           ],
           "correct": 1,
-          "explanation": "Advantage+ Audience está ON por default en campañas nuevas. Se desactiva solo si elegís 'Switch to original' o 'Further limit reach'.",
+          "explanation": "Advantage+ Audience está ON por default en campañas nuevas. Se desactiva solo si eliges 'Switch to original' o 'Further limit reach'.",
           "difficulty": "medium"
         }
       ]
@@ -234,7 +234,7 @@
         {
           "type": "tip",
           "label": "BEST PRACTICE",
-          "body": "<strong>UN SOLO catálogo</strong> por negocio. Tener varios catálogos por marca/categoría confunde al sistema y dificulta el match con eventos del Pixel. Si tenés sub-líneas, usá Product Sets dentro del mismo catálogo."
+          "body": "<strong>UN SOLO catálogo</strong> por negocio. Tener varios catálogos por marca/categoría confunde al sistema y dificulta el match con eventos del Pixel. Si tienes sub-líneas, usa Product Sets dentro del mismo catálogo."
         },
         {
           "type": "mcq",
@@ -275,7 +275,7 @@
       "title": "Ordenar el setup de Advantage+ Catalog Ads",
       "section": "B",
       "type": "order",
-      "instruction": "¿En qué orden configurás Advantage+ Catalog Ads para campaña Sales? Reordena con ▲▼.",
+      "instruction": "¿En qué orden configuras Advantage+ Catalog Ads para campaña Sales? Reordena con ▲▼.",
       "items": [
         "Crear catalog en Commerce Manager",
         "Conectar Pixel/CAPI al catalog (Share events)",
@@ -581,14 +581,14 @@
         {"q":"¿Mínimo de personas en source audience para Lookalike?","a":"100 personas de UN SOLO país. Recomendado 1,000-50,000 para calidad."},
         {"q":"¿1% vs 10% Lookalike?","a":"1% = top 1% más similar al source (max calidad, menor alcance). 10% = más alcance, menos similar."},
         {"q":"¿El source de un Lookalike se incluye o se excluye?","a":"Se EXCLUYE automáticamente. El lookalike busca gente nueva similar, no re-alcanza al source."},
-        {"q":"¿Cuántos Lookalikes podés generar desde una misma source?","a":"Hasta 500 lookalikes por source audience."},
+        {"q":"¿Cuántos Lookalikes puedes generar desde una misma source?","a":"Hasta 500 lookalikes por source audience."},
         {"q":"¿Máximo de Custom Audiences por ad account?","a":"500 custom audiences máximo."},
         {"q":"¿Default de Advantage+ Audience en campañas nuevas?","a":"ON. Se desactiva con 'Switch to original audience options' o 'Further limit the reach of your ads'."},
         {"q":"¿Diferencia entre Audience Controls y Suggestions?","a":"Controls RESTRINGEN delivery (rígidos: location, language, edad mínima, exclusions). Suggestions GUÍAN (flexibles, AI puede expandir: edad max, gender, detailed targeting, lookalike, inclusions)."},
         {"q":"¿Detailed targeting es OR o AND?","a":"OR dentro de cada categoría (intereses, behaviors). AND entre categorías base. Cuantas más categorías agregás, MÁS angosta la audiencia."},
         {"q":"¿Mínimo de productos recomendado por Product Set?","a":"20 productos para que Advantage+ Catalog Ads tenga material suficiente para optimizar."},
         {"q":"¿Catalog match rate target y qué significa si está bajo?","a":">75%. Si está bajo: problema en mapeo Pixel ↔ catalog (IDs incorrectos, productos faltantes, parameters mal enviados)."},
-        {"q":"¿Cuántos catálogos recomienda Meta tener?","a":"UN SOLO catálogo por negocio. Para sub-líneas usá Product Sets dentro del mismo catalog."},
+        {"q":"¿Cuántos catálogos recomienda Meta tener?","a":"UN SOLO catálogo por negocio. Para sub-líneas usa Product Sets dentro del mismo catalog."},
         {"q":"Atributos requeridos en Product Catalog:","a":"ID, Title, Description, Price, Availability, Condition, Brand, Image, Link. Sin esos, productos no se aprueban."},
         {"q":"¿Para qué objectives está disponible Advantage+ Catalog Ads?","a":"Sales (a nivel campaña, complete solution) · App Promotion, Engagement, Leads, Traffic (a nivel ad, single-step automation)."},
         {"q":"¿Cuándo Audience Overlap analysis tiene sentido?","a":"Audiencias de mínimo 10,000 personas cada una. Bajo eso el análisis no es estadísticamente confiable."},

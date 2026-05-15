@@ -88,17 +88,17 @@
         {
           "type": "concept",
           "h": "Spend-based vs Goal-based vs Manual",
-          "body": "<strong>Spend-based</strong> (Highest Volume, Highest Value): gastan todo el budget. <strong>Goal-based</strong> (Cost per Result Goal, ROAS Goal): respetan una meta de costo/retorno, pueden no gastar todo. <strong>Manual</strong> (Bid Cap): vos controlás el bid de la subasta."
+          "body": "<strong>Spend-based</strong> (Highest Volume, Highest Value): gastan todo el budget. <strong>Goal-based</strong> (Cost per Result Goal, ROAS Goal): respetan una meta de costo/retorno, pueden no gastar todo. <strong>Manual</strong> (Bid Cap): tú controlas el bid de la subasta."
         },
         {
           "type": "warn",
           "label": "TRAMPA CRÍTICA",
-          "body": "<strong>Bid Cap NO controla el CPA</strong>. Controla el bid máximo que el sistema pone en la subasta. Si el cap es muy bajo, el ad puede no entregar. Para controlar costo final usá <strong>Cost per Result Goal</strong>."
+          "body": "<strong>Bid Cap NO controla el CPA</strong>. Controla el bid máximo que el sistema pone en la subasta. Si el cap es muy bajo, el ad puede no entregar. Para controlar costo final usa <strong>Cost per Result Goal</strong>."
         },
         {
           "type": "tip",
           "label": "REGLA DE ELECCIÓN",
-          "body": "<strong>¿Querés controlar costos?</strong><br/>→ NO: Highest Volume (default) o Highest Value (con value tracking).<br/>→ SÍ: Cost per Result Goal (target CPA) o ROAS Goal (target retorno). Bid Cap solo si tenés experiencia."
+          "body": "<strong>¿Quieres controlar costos?</strong><br/>→ NO: Highest Volume (default) o Highest Value (con value tracking).<br/>→ SÍ: Cost per Result Goal (target CPA) o ROAS Goal (target retorno). Bid Cap solo si tienes experiencia."
         },
         {
           "type": "mcq",
@@ -145,7 +145,7 @@
         {
           "type": "concept",
           "h": "Advantage+ Campaign Budget",
-          "body": "Distribuye dinámicamente el presupuesto entre <strong>ad sets</strong> según rendimiento. Requiere mínimo <strong>2 ad sets</strong>. Solo en Auction. Es la recomendación default cuando tenés varios ad sets — Meta asigna más a los que convierten mejor."
+          "body": "Distribuye dinámicamente el presupuesto entre <strong>ad sets</strong> según rendimiento. Requiere mínimo <strong>2 ad sets</strong>. Solo en Auction. Es la recomendación default cuando tienes varios ad sets — Meta asigna más a los que convierten mejor."
         },
         {
           "type": "concept",
@@ -155,11 +155,11 @@
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "Advantage+ Campaign Budget gana en la mayoría de los casos: deja que Meta encuentre el ad set ganador automáticamente. Solo usá Ad Set Budget Sharing si tenés razones específicas (compliance, presupuesto manual por línea de negocio)."
+          "body": "Advantage+ Campaign Budget gana en la mayoría de los casos: deja que Meta encuentre el ad set ganador automáticamente. Solo usa Ad Set Budget Sharing si tienes razones específicas (compliance, presupuesto manual por línea de negocio)."
         },
         {
           "type": "mcq",
-          "q": "Una campaña tiene 4 ad sets con audiencias distintas. Querés que Meta envíe más presupuesto al que mejor convierta. ¿Qué setting?",
+          "q": "Una campaña tiene 4 ad sets con audiencias distintas. Quieres que Meta envíe más presupuesto al que mejor convierta. ¿Qué setting?",
           "options": [
             "Daily budget por ad set",
             "Lifetime budget por ad set sin Advantage+",
@@ -203,7 +203,7 @@
         {
           "type": "warn",
           "label": "CUIDADO con \"edits significativos\"",
-          "body": "Cambiar bid strategy, optimization event, audience grande o creative <strong>RESETEA el learning phase</strong>. Si cambiás algo importante a la mitad del learning, volvés a cero y perdés todo lo aprendido."
+          "body": "Cambiar bid strategy, optimization event, audience grande o creative <strong>RESETEA el learning phase</strong>. Si cambias algo importante a la mitad del learning, vuelves a cero y pierdes todo lo aprendido."
         },
         {
           "type": "tip",
@@ -233,7 +233,7 @@
             "Verificar que no haya audience overlap"
           ],
           "correct": 2,
-          "explanation": "Cambiar bid strategy RESETEA el learning phase y perdés todo el aprendizaje acumulado. Mejor esperar los 7 días o revisar setup sin tocar el bid strategy.",
+          "explanation": "Cambiar bid strategy RESETEA el learning phase y pierdes todo el aprendizaje acumulado. Mejor esperar los 7 días o revisar setup sin tocar el bid strategy.",
           "difficulty": "hard"
         },
         {
@@ -273,14 +273,14 @@
       "title": "Árbol oficial de elección de bid strategy",
       "section": "B",
       "type": "decision-tree",
-      "instruction": "Para cada escenario, recorré el árbol del PDF respondiendo Sí/No y llegá a la bid strategy correcta.",
+      "instruction": "Para cada escenario, recorre el árbol respondiendo Sí/No hasta llegar a la bid strategy correcta.",
       "tree": {
-        "q": "¿Querés controlar costos?",
+        "q": "¿Necesitas que Meta respete una meta de costo (CPA objetivo o ROAS objetivo)?",
         "branches": [
           {
             "label": "Sí",
             "next": {
-              "q": "¿Optimizás por valor de compra?",
+              "q": "¿Optimizas por el valor de la compra (ingresos), no solo por la cantidad de resultados?",
               "branches": [
                 { "label": "Sí", "leaf": "ROAS Goal" },
                 { "label": "No", "leaf": "Cost per Result Goal / Bid Cap" }
@@ -290,7 +290,7 @@
           {
             "label": "No",
             "next": {
-              "q": "¿Optimizás por valor de compra?",
+              "q": "¿Optimizas por el valor de la compra (ingresos), no solo por la cantidad de resultados?",
               "branches": [
                 { "label": "Sí", "leaf": "Highest Value" },
                 { "label": "No", "leaf": "Highest Volume" }
@@ -301,23 +301,23 @@
       },
       "scenarios": [
         {
-          "context": "Tu cliente exige ROAS estricto de 4x y la campaña está optimizada por valor de compra del catálogo.",
+          "context": "Un cliente exige un ROAS estricto de 4x y la campaña optimiza por el valor de las compras del catálogo.",
           "expected": "ROAS Goal"
         },
         {
-          "context": "DTC nuevo sin metas de costo todavía; quiere el mayor volumen de conversiones posible con el budget.",
+          "context": "Una tienda en línea nueva, todavía sin una meta de costo definida. Quiere la mayor cantidad de conversiones posible gastando todo el presupuesto.",
           "expected": "Highest Volume"
         },
         {
-          "context": "Prospecting puro: el cliente busca atraer compradores con mayor LTV, sin limitar costo por adquisición.",
+          "context": "Campaña de prospección: el cliente busca atraer compradores que gasten más (ticket alto), sin ponerle un tope al costo de adquisición.",
           "expected": "Highest Value"
         },
         {
-          "context": "Lead gen B2B con un CPL máximo tolerable de $40 MXN; no optimiza por valor sino por leads.",
+          "context": "Generación de leads B2B con un costo por lead máximo tolerable de $40 MXN. No optimiza por valor, sino por cantidad de leads.",
           "expected": "Cost per Result Goal / Bid Cap"
         }
       ],
-      "explanation": "El árbol oficial tiene 2 preguntas: (1) ¿controlás costos? (2) ¿optimizás valor? · Sí+Sí→ROAS · Sí+No→Cost Cap · No+Sí→Highest Value · No+No→Highest Volume."
+      "explanation": "El árbol oficial tiene 2 preguntas: (1) ¿hay meta de costo? (2) ¿optimizas por valor? · Con meta + valor → ROAS Goal · Con meta + cantidad → Cost per Result Goal/Bid Cap · Sin meta + valor → Highest Value · Sin meta + cantidad → Highest Volume."
     },
     {
       "id": "3.7",
@@ -355,7 +355,7 @@
           "q": "¿Por qué Cost per Result Goal y NO Bid Cap en este caso?",
           "options": [
             "Bid Cap es más caro",
-            "Bid Cap controla el bid en la subasta, no el CPA final; podés terminar con CPA fuera del target a pesar del cap",
+            "Bid Cap controla el bid en la subasta, no el CPA final; puedes terminar con CPA fuera del target a pesar del cap",
             "Bid Cap no admite leads",
             "Son lo mismo"
           ],
@@ -379,7 +379,7 @@
             "Es el costo por impresión"
           ],
           "correct": 1,
-          "explanation": "Target frequency = promedio semanal de impresiones. Ideal para recall previo a evento: querés que cada industrial vea el ad ~3 veces/semana para fijar la marca. Solo disponible en Reservation.",
+          "explanation": "Target frequency = promedio semanal de impresiones. Ideal para recall previo a evento: quieres que cada industrial vea el ad ~3 veces/semana para fijar la marca. Solo disponible en Reservation.",
           "difficulty": "hard"
         }
       ]
@@ -408,7 +408,7 @@
         },
         {
           "type": "mcq",
-          "q": "Para usar Highest Value o ROAS Goal necesitás:",
+          "q": "Para usar Highest Value o ROAS Goal necesitas:",
           "options": [
             "Solo Pixel sin parameters",
             "Pixel con value tracking",
@@ -424,7 +424,7 @@
           "q": "Cambiar el bid strategy a la mitad del learning phase:",
           "options": [
             "Acelera la salida del learning",
-            "Resetea el learning y volvés a empezar",
+            "Resetea el learning y vuelves a empezar",
             "No tiene efecto",
             "Solo afecta el budget"
           ],
@@ -512,7 +512,7 @@
       "title": "Lightning · 8 preguntas en 3 min",
       "section": "D",
       "type": "lightning",
-      "instruction": "8 preguntas rápidas sobre buying types y bidding. Tenés 3 minutos.",
+      "instruction": "8 preguntas rápidas sobre buying types y bidding. Tienes 3 minutos.",
       "timeLimit": 180,
       "questions": [
         {
@@ -612,10 +612,10 @@
         {"q":"¿Para qué objectives está disponible Reservation?","a":"Solo Awareness y Engagement. Para los demás, Auction es la única opción."},
         {"q":"¿Cómo se decide el ganador de la subasta de Meta?","a":"Total value = bid × estimated action rates + ad quality. NO gana el bid más alto solo."},
         {"q":"¿Cuál es el default bid strategy?","a":"Highest Volume: gasta todo y maximiza cantidad de resultados sin meta de costo."},
-        {"q":"¿Cuándo usar Cost per Result Goal vs Bid Cap?","a":"Cost per Result Goal: controlás el CPA promedio final. Bid Cap: controlás el bid máximo de la subasta (no el CPA final). Para meta de costo usar Cost per Result Goal."},
+        {"q":"¿Cuándo usar Cost per Result Goal vs Bid Cap?","a":"Cost per Result Goal: controlas el CPA promedio final. Bid Cap: controlas el bid máximo de la subasta (no el CPA final). Para meta de costo usar Cost per Result Goal."},
         {"q":"¿Cuál bid strategy requiere Pixel con value tracking?","a":"Highest Value y ROAS Goal — ambas optimizan por valor de compra."},
         {"q":"¿Cuánto necesita un ad set para salir del Learning Phase?","a":"50 optimization events en 7 días desde activación (o último edit significativo)."},
-        {"q":"¿Qué pasa si cambiás bid strategy a mitad del learning phase?","a":"Es un edit significativo: resetea el learning y el ad set vuelve a empezar a acumular events desde 0."},
+        {"q":"¿Qué pasa si cambias bid strategy a mitad del learning phase?","a":"Es un edit significativo: resetea el learning y el ad set vuelve a empezar a acumular events desde 0."},
         {"q":"Lista 3 causas comunes de Learning Limited.","a":"Audience chica, budget bajo, demasiados ad sets activos compitiendo entre sí (overlap), bid restrictivo, optimization event muy infrecuente."},
         {"q":"¿Qué requiere Advantage+ Campaign Budget?","a":"Mínimo 2 ad sets en la campaña. Reasigna budget dinámicamente al ad set con mejor rendimiento."},
         {"q":"¿Daily budget vs Lifetime budget?","a":"Daily = promedio diario flexible (puede excederse +25% un día). Lifetime = tope absoluto durante el periodo, distribución variable."},
