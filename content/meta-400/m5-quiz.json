@@ -1,0 +1,127 @@
+{
+  "title": "Quiz de unidad · Módulo 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Advantage+ placements:",
+      "options": [
+        "Restringe a un solo placement",
+        "Deja a Meta entregar donde mejor rinde, maximizando alcance y eficiencia",
+        "Solo funciona con Reservation",
+        "Fija el CPM"
+      ],
+      "correct": 1,
+      "explanation": "Más superficies = más subastas para optimizar; default recomendado.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Restringir placements sin razón de negocio normalmente:",
+      "options": [
+        "Baja el costo",
+        "Sube el costo por resultado y reduce el delivery",
+        "No tiene efecto",
+        "Mejora el ad review"
+      ],
+      "correct": 1,
+      "explanation": "Menos placements limita la optimización: encarece y reduce entrega.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Por qué el creativo es palanca de costo en Auction?",
+      "options": [
+        "Cambia el budget",
+        "Afecta estimated action rates y ad quality (parte del total value)",
+        "Define el buying type",
+        "Reemplaza la audiencia"
+      ],
+      "correct": 1,
+      "explanation": "Creativo relevante/calidad sube esos componentes y puede ganar subastas más barato.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Advantage+ creative hace:",
+      "options": [
+        "Elegir el placement",
+        "Optimizaciones automáticas del creativo por persona",
+        "Fijar el CPM",
+        "Crear lookalikes"
+      ],
+      "correct": 1,
+      "explanation": "Adapta recortes, brillo, música y texto por persona.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuándo SÍ se justifica restringir placements? Selecciona 2.",
+      "options": [
+        "Requisito de marca que prohíbe ciertas superficies",
+        "El creativo no es apto para algún placement",
+        "Preferencia estética sin razón de negocio",
+        "Para que el reporte se vea más simple"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Solo con razón real (marca o creativo no apto). Lo estético sin negocio no justifica encarecer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Best practice de creativo mobile-first:",
+      "options": [
+        "Horizontal con audio obligatorio",
+        "Vertical (9:16), marca temprano, legible sin sonido",
+        "Una imagen para toda la campaña",
+        "Texto largo encima de la imagen"
+      ],
+      "correct": 1,
+      "explanation": "Consumo vertical y muchas veces sin sonido; marca temprana.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿Por qué varios creativos por ad set?",
+      "options": [
+        "Para gastar más",
+        "Dan material para encontrar la mejor combinación persona-creativo y reducen fatiga",
+        "Para evitar el ad review",
+        "Para activar Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Diversidad creativa amplía el espacio de optimización y retrasa la fatiga.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Marca de consumo, alcance amplio y eficiente, tiene video vertical, imágenes y carousel:",
+      "options": [
+        "Manual solo Feed + 1 video horizontal",
+        "Advantage+ placements + varios creativos verticales + Advantage+ creative",
+        "Solo Stories con 1 imagen",
+        "Solo Audience Network"
+      ],
+      "correct": 1,
+      "explanation": "Maximizar superficies y variedad creativa con adaptación automática rinde mejor.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Placements son:",
+      "options": [
+        "Las bid strategies",
+        "Las superficies donde aparece el anuncio across Meta technologies",
+        "Los objectives",
+        "Las fuentes de datos"
+      ],
+      "correct": 1,
+      "explanation": "Feeds, Stories, Reels, In-stream, Marketplace, Search, Audience Network, etc.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Un cliente quiere control total porque su creativo no funciona en cierto formato vertical de terceros. ¿Qué haces?",
+      "options": [
+        "Advantage+ placements igual, sin tocar nada",
+        "Placements manuales excluyendo esa superficie por razón de creativo",
+        "Cambiar el objective",
+        "Subir el budget"
+      ],
+      "correct": 1,
+      "explanation": "Hay razón real (creativo no apto): se justifica restringir ese placement de forma manual.",
+      "difficulty": "hard"
+    }
+  ]
+}

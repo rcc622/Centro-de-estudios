@@ -1,0 +1,61 @@
+{
+  "title": "Diagnóstico · Módulo 2",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Reservation buying type está disponible solo para:",
+      "options": [
+        "Sales y Leads",
+        "Awareness y Engagement",
+        "Traffic y Awareness",
+        "Todos los objectives"
+      ],
+      "correct": 1,
+      "explanation": "Reservation = entrega y precio predecibles, limitado a Awareness y Engagement. Lo demás va por Auction.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "El total value de la subasta se compone de:",
+      "options": [
+        "Advertiser bid + estimated action rates + ad quality",
+        "Advertiser bid + budget + placements",
+        "Bid strategy + frequency + reach",
+        "CPM + CTR + CPC"
+      ],
+      "correct": 0,
+      "explanation": "Total value = advertiser bid + estimated action rates + ad quality. La bid strategy/cost control NO entra.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Las 5 bid strategies son:",
+      "options": [
+        "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap",
+        "Daily, Lifetime, CBO, ABO, Bid Cap",
+        "Awareness, Traffic, Engagement, Leads, Sales",
+        "CPM, CPC, CPA, ROAS, CTR"
+      ],
+      "correct": 0,
+      "explanation": "Spend-based (Highest Volume/Value), goal-based (Cost per Result/ROAS Goal) y manual (Bid Cap).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Cliente con CPA tope estricto que optimiza por cantidad de resultados:",
+      "options": ["Highest Volume", "Cost per Result Goal", "Highest Value", "Reservation"],
+      "correct": 1,
+      "explanation": "Cost per Result Goal mantiene un costo objetivo por resultado mientras busca volumen. Highest Volume no respeta techo de costo.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Cuándo conviene Reservation sobre Auction?",
+      "options": [
+        "Cuando se quiere el menor costo posible",
+        "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada",
+        "Cuando el objective es Sales",
+        "Cuando se usa Bid Cap"
+      ],
+      "correct": 1,
+      "explanation": "Reservation da predecibilidad: entrega y precio fijos. No es necesariamente más barato ni soporta Sales.",
+      "difficulty": "medium"
+    }
+  ]
+}

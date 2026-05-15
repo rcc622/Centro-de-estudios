@@ -1,0 +1,66 @@
+{
+  "title": "Diagnóstico · Módulo 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Qué recomienda Meta como default de placements?",
+      "options": [
+        "Manual, solo Feed",
+        "Advantage+ placements",
+        "Solo Stories",
+        "Solo Audience Network"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ placements da al sistema más superficies para optimizar: más alcance y eficiencia.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Efecto típico de restringir placements sin razón de negocio:",
+      "options": [
+        "Baja el costo y sube el alcance",
+        "Sube el costo por resultado y baja el delivery",
+        "No tiene efecto",
+        "Mejora el ad review"
+      ],
+      "correct": 1,
+      "explanation": "Menos placements = menos subastas/combinaciones; normalmente encarece y limita el delivery.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Por qué el creativo afecta el costo en Auction?",
+      "options": [
+        "Cambia el budget",
+        "Influye en estimated action rates y ad quality (parte del total value)",
+        "Define el buying type",
+        "Sustituye al Pixel"
+      ],
+      "correct": 1,
+      "explanation": "Un creativo relevante y de calidad sube esos componentes del total value y puede ganar subastas más barato.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Advantage+ creative sirve para:",
+      "options": [
+        "Elegir dónde se muestra el anuncio",
+        "Optimizaciones automáticas del creativo por persona (recortes, música, texto)",
+        "Fijar el CPM",
+        "Crear lookalikes"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ creative adapta el creativo por persona. Advantage+ placements es sobre dónde se entrega.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Best practice de creativo mobile-first:",
+      "options": [
+        "Video horizontal con audio obligatorio",
+        "Vertical (9:16), marca temprano y diseñado para verse sin sonido",
+        "Una sola imagen para toda la campaña",
+        "Texto largo en la imagen"
+      ],
+      "correct": 1,
+      "explanation": "El consumo es vertical y muchas veces sin sonido; marca temprana y formato vertical rinden mejor.",
+      "difficulty": "easy"
+    }
+  ]
+}

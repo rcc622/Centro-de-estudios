@@ -1,0 +1,752 @@
+{
+  "id": "day7",
+  "title": "Simulacro — Meta Media Buying 410-101",
+  "kind": "mock-exam",
+  "passingScore": 80,
+  "timeLimit": 6300,
+  "questions": [
+    {
+      "q": "El equipo de marketing de una app de citas para personas mayores de 50 años tiene su anuncio rechazado. El anuncio incluía el mensaje: 'Conoce a otros adultos mayores. ¡Regístrate hoy!'. ¿Qué pudo causar el rechazo?",
+      "options": [
+        "El anuncio asumió un atributo personal del espectador al decir 'otros adultos mayores'",
+        "Los anuncios no se pueden segmentar a adultos mayores en Facebook, Messenger e Instagram",
+        "Las apps de citas no se pueden anunciar en Meta",
+        "El contenido es controversial porque los adultos mayores no usan apps"
+      ],
+      "correct": 0,
+      "explanation": "Las Advertising Standards no permiten anuncios que impliquen que el anunciante conoce un atributo personal del usuario o de su familia. Decir 'otros adultos mayores' afirma la edad del espectador. Las apps de citas y la segmentación por edad SÍ están permitidas; el problema es la redacción que asume el atributo personal.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un negocio contrató una nueva media agency y quiere agregarla a su business portfolio. ¿Qué necesita hacer? Selecciona 2.",
+      "options": [
+        "Agregar a la agencia como partner",
+        "Asignar a la agencia como system user",
+        "Asignar a la agencia acceso temporary",
+        "Usar el business ID de la agencia"
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "multi": true,
+      "explanation": "Para sumar una agencia a un business portfolio existente, el negocio la agrega como partner y necesita el business ID de la agencia (la agencia ya debe tener su propio portfolio). System user es para servidores/software con API; temporary access es acceso básico limitado en tiempo, no el mecanismo para una agencia.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Si quieres elegir una bid strategy, usar Advantage+ campaign budget y entregar anuncios across Meta technologies, ¿qué buying type debes seleccionar?",
+      "options": [
+        "Auction",
+        "Reservation",
+        "Daily",
+        "Lifetime"
+      ],
+      "correct": 0,
+      "explanation": "Auction permite elegir entre 5 bid strategies, usar daily/lifetime/Advantage+ campaign budget y entregar across Meta technologies. Reservation NO ofrece Advantage+ campaign budget y solo entrega en Facebook e Instagram. Daily y Lifetime son tipos de budget, no buying types.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál de los siguientes NO se usa en la ad auction para determinar el total value de un anuncio?",
+      "options": [
+        "Advertiser bid",
+        "Estimated action rates",
+        "Cost control",
+        "Ad quality"
+      ],
+      "correct": 2,
+      "explanation": "El total value = advertiser bid + estimated action rates + ad quality. El cost control (ej. cost per result goal o bid cap) influye en cómo se puja, pero NO es uno de los tres componentes del total value que decide al ganador de la subasta.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿En qué nivel de la creación de campaña haces las selecciones de audiencia, placements y performance goal?",
+      "options": [
+        "Campaign level",
+        "Ad set level",
+        "Ad level"
+      ],
+      "correct": 1,
+      "explanation": "Audiencia, placements y performance goal (sección Conversion/Awareness/App promotion según el objetivo) se definen a nivel Ad set. El Campaign level define buying type, objective, budget y bid; el Ad level define creative, destination y tracking.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Corres una campaña con bid strategy highest volume y el mismo budget en cada ad set. Notas conversiones más bajas y cost per result más alto de lo esperado. ¿Qué ajuste puede ayudar a subir conversiones y bajar el cost per result?",
+      "options": [
+        "Subir el frequency cap de tus anuncios",
+        "Cambiar la bid strategy a bid cap",
+        "Refinar tu audiencia con controls",
+        "Usar Advantage+ campaign budget"
+      ],
+      "correct": 3,
+      "explanation": "Advantage+ campaign budget fija el budget a nivel campaña y lo distribuye en tiempo real a los ad sets con mejor desempeño, lo que ayuda a subir conversiones y bajar el cost per result. Repartir budget fijo por ad set desperdicia gasto en los de bajo rendimiento.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Corres una campaña de Sales y quieres crear un Custom Audience de personas que mostraron interés en productos de tu sitio web pero no compraron. También quieres mejorar la attribution a cuentas across Meta technologies. ¿Qué data sources te ayudan? Selecciona 2.",
+      "options": [
+        "Custom conversions",
+        "Meta Pixel",
+        "Facebook SDK",
+        "Conversions API"
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "multi": true,
+      "explanation": "El Meta Pixel rastrea acciones en el sitio web (ver producto, add to cart) para crear el Custom Audience de interesados que no compraron. La Conversions API envía eventos web desde tu servidor directo a Meta, mejorando precisión y attribution cuando el tracking del navegador es limitado. El Facebook SDK es para apps, no web.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál es la forma más simple de excluir grupos de contenido sensible en el Brand Safety and Suitability Center?",
+      "options": [
+        "Publisher block lists",
+        "Topic exclusions",
+        "Content type exclusions",
+        "Inventory filters"
+      ],
+      "correct": 3,
+      "explanation": "Los inventory filters (expanded, moderate o limited) son el control más simple y de mayor cobertura para ajustar la sensibilidad del contenido junto al que aparecen tus anuncios. Las block lists requieren trabajo manual; los topic/content type exclusions son más granulares y de alcance limitado.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Construyes una audiencia con Advantage+ audience y tienes claro los intereses, comportamientos, edad y género de tu audiencia típica. ¿Qué acción tomas para incorporar esos insights?",
+      "options": [
+        "Suggest an audience (sugerir una audiencia)",
+        "Usar audience controls",
+        "Excluir custom audiences",
+        "Apagar Advantage+ audience"
+      ],
+      "correct": 0,
+      "explanation": "Con Advantage+ audience usas audience suggestions (detailed targeting, edad, género) para guiar a la IA sin limitar estrictamente quién ve el anuncio. Los audience controls son restricciones duras y limitadas (edad mínima, ubicación, idioma, excluir custom audiences) y no incluyen detailed targeting para estos parámetros.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Quieres adquirir clientes nuevos en Chile creando un Lookalike Audience basado en los miembros del programa de lealtad de tu app. Tu source audience son 150 clientes frecuentes de alto valor. ¿Qué debes hacer para maximizar performance y relevancia?",
+      "options": [
+        "El seed list es muy grande. Usa una fuente más pequeña antes del lookalike",
+        "El seed list es muy pequeño. Crece la audiencia antes del lookalike",
+        "El seed list está en el tamaño máximo. Crea el lookalike y evita aumentar la fuente",
+        "El seed list cumple el mínimo requerido. Crea el lookalike y monitorea/refresca la fuente para aumentar su tamaño"
+      ],
+      "correct": 3,
+      "explanation": "Un Lookalike Audience requiere mínimo 100 personas de un solo país de origen en la source audience; se recomienda al menos 1,000. 150 cumple el mínimo, así que se crea el lookalike y se mantiene/refresca la fuente para mejorar calidad con el tiempo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál describe mejor el learning phase?",
+      "options": [
+        "El periodo en que el sistema de delivery recopila datos para optimizar el desempeño antes de que los resultados se estabilicen",
+        "El tiempo después de que termina la campaña, cuando se analizan resultados",
+        "La etapa en que el anunciante define objetivo, budget y optimización",
+        "El punto en que un ad set se pausa por bajo desempeño"
+      ],
+      "correct": 0,
+      "explanation": "El learning phase es el periodo en que el delivery system prueba formas de entregar el ad set y aprende qué funciona mejor antes de que el desempeño se vuelva consistente (típicamente tras ~50 optimization events). Es aprendizaje de la máquina, no tuyo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente configura una campaña across Meta technologies. Quiere compras en su sitio web, tiene el Pixel instalado y todos los resultados valen igual. La meta es el mayor número de resultados posible por menos de $30 cada uno. ¿Qué bid, budget y optimización recomiendas?",
+      "options": [
+        "Cost per result goal, daily budget, optimización por conversión",
+        "Bid cap, lifetime budget, optimización por landing page view",
+        "Daily budget, optimización por conversión",
+        "Lifetime budget, link clicks"
+      ],
+      "correct": 0,
+      "explanation": "Hay un costo objetivo específico ($30): cost per result goal limita el costo por resultado. Como no importa cuánto se gaste mientras esté bajo ese monto, un daily budget alto sirve. Como todas las conversiones valen igual, se optimiza por la conversión misma (no por valor).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Al analizar resultados de campaña en Ads Reporting, ¿qué áreas clave debes considerar? Selecciona 2.",
+      "options": [
+        "Estrategias de ad creative, budget, audiencia y placement",
+        "El número de veces que se editaron tus anuncios durante la campaña",
+        "El buying type seleccionado para la campaña",
+        "Results, cost per result y otras métricas relevantes"
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "multi": true,
+      "explanation": "Primero revisas results y cost per result para ver si lograste tu performance goal; luego métricas relevantes a tu business goal/objetivo. Después analizas cómo las estrategias de setup (budget, audiencia, placements, creative) impactan el desempeño. El conteo de ediciones o el buying type no son focos del análisis de resultados.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente quiere anunciar el lanzamiento de 3 shampoos nuevos. Cada uno tiene un ingrediente natural con beneficios propios. Su sitio web está desactualizado, así que prefiere que la gente obtenga toda la info desde los anuncios. ¿Qué ad format debe usar?",
+      "options": [
+        "Collection ad",
+        "Instant experience",
+        "Single image ad",
+        "Offer ad"
+      ],
+      "correct": 1,
+      "explanation": "Instant experience es una landing page interna fullscreen que carga al instante en mobile y permite contar toda la información del producto dentro del anuncio, sin depender del sitio web desactualizado.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál describe mejor el propósito del opportunity score en Ads Manager?",
+      "options": [
+        "Estimar cuánto subirá tu budget si agregas más creative",
+        "Mostrar el total de personas que vieron tus anuncios across Meta technologies",
+        "Rankear tus anuncios contra competidores de tu industria",
+        "Mostrar qué tan optimizadas están tus campañas y dar recomendaciones probadas experimentalmente para mejorar"
+      ],
+      "correct": 3,
+      "explanation": "El opportunity score muestra qué tan optimizadas están campañas, ad sets y ads según el número e impacto de recomendaciones probadas experimentalmente que aplicas. Sirve antes, durante y después de crear la campaña. NO predice ni garantiza performance.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Qué attribution models están disponibles en Ads Manager? Selecciona 2.",
+      "options": [
+        "Custom attribution",
+        "Standard attribution",
+        "Incremental attribution",
+        "Engaged-view attribution"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "multi": true,
+      "explanation": "Ads Manager ofrece standard attribution (optimiza delivery según ventanas de tiempo y comportamiento para acreditar conversiones) e incremental attribution (usa modelos predictivos para optimizar por conversiones incrementales, identificando si el anuncio causó la conversión).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Dónde puedes correr un A/B test o un lift test para tus campañas?",
+      "options": [
+        "Durante la creación de campaña a nivel ad set",
+        "Desde tu business portfolio en Meta Business Suite",
+        "Desde Ads Reporting en Ads Manager",
+        "Desde Experiments en Ads Manager o Meta Business Suite"
+      ],
+      "correct": 3,
+      "explanation": "Experiments es la herramienta dedicada en Ads Manager y Meta Business Suite para configurar y analizar A/B Testing, Brand Lift y Conversion Lift. Los A/B tests además se pueden crear durante la creación de campaña a nivel campaña, pero la respuesta que cubre A/B y lift tests es Experiments.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál puedes usar para crear y mantener un catálogo de items?",
+      "options": [
+        "Ads Manager",
+        "Commerce Manager",
+        "Meta Pixel",
+        "Meta Business Suite"
+      ],
+      "correct": 1,
+      "explanation": "Aunque puedes hacer acciones básicas con un catálogo desde Ads Manager, la herramienta principal para crear y administrar el catálogo es Commerce Manager.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Qué soluciones puedes usar para automatizar una campaña completa usando IA?",
+      "options": [
+        "Advantage+ destination y campaign budget",
+        "Advantage+ audience y placements",
+        "Advantage+ creative y catalog ads",
+        "Advantage+ sales, app y leads campaigns"
+      ],
+      "correct": 3,
+      "explanation": "Advantage+ sales, app y leads campaigns son complete campaign solutions: la IA determina los ajustes óptimos de toda la campaña. Las demás (audience, placements, budget, creative, destination, catalog ads) son single-step solutions que aplican IA a un solo aspecto.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuáles son áreas clave que ayudan a mejorar el performance del ad creative? Selecciona 2.",
+      "options": [
+        "Aumentar el budget y los bids de la campaña",
+        "Diversificación de visuals, messaging y placements",
+        "Optimizaciones que soportan la experiencia mobile",
+        "Consistencia de ad formats y aspect ratios entre ad sets"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "multi": true,
+      "explanation": "El creative mejora con diversificación de visuals/messaging/placements (reduce creative fatigue) y con optimizaciones mobile-first. Subir budget/bids no mejora el creative directamente; mantener formatos y aspect ratios idénticos NO es una best practice (se busca diversificar).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una farmacéutica corrió una campaña para concientizar sobre su medicamento para psoriasis. Un anuncio fue rechazado; incluía: 'Pon tu psoriasis en placas bajo control hoy'. ¿Por qué se rechazó?",
+      "options": [
+        "El anuncio promueve un producto o servicio ilegal",
+        "El anuncio afirma o implica que la audiencia tiene una condición médica",
+        "El anuncio contiene lenguaje explícito ofensivo",
+        "El anuncio intenta generar una autopercepción negativa para promover un producto"
+      ],
+      "correct": 1,
+      "explanation": "La política de Personal Attributes prohíbe afirmar o implicar que el espectador tiene una condición médica. Decir 'tu psoriasis' implica que la persona la padece. No es ilegal ni explícito; el problema es implicar el atributo de salud.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Qué contenido está prohibido al anunciar en Instagram?",
+      "options": [
+        "Apuestas en línea",
+        "Anuncios sobre elecciones",
+        "Cigarros electrónicos",
+        "Productos para bajar de peso"
+      ],
+      "correct": 2,
+      "explanation": "El tabaco y productos relacionados, incluidos los cigarros electrónicos/vapes, están prohibidos. Apuestas y anuncios políticos/electorales son restringidos (requieren autorización), y los productos de pérdida de peso son restringidos por edad, no prohibidos.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una empresa de e-commerce corre anuncios en TV y en Meta y cuestiona el valor de Meta. Quiere medir el impacto incremental de su publicidad en Meta. ¿Qué test recomiendas?",
+      "options": [
+        "Brand lift test",
+        "Multi-cell conversion lift test",
+        "AB-test",
+        "Single-cell conversion lift test"
+      ],
+      "correct": 3,
+      "explanation": "Para medir la incrementalidad pura de Meta se usa un single-cell Conversion Lift (un grupo de test expuesto vs. un holdout no expuesto). El multi-cell compara estrategias entre sí; el A/B test compara variables, no incrementalidad; brand lift mide recordación/actitud, no conversiones incrementales.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca corre un Brand Survey de una campaña de awareness (video de 15s, branding al final). Resultados: Ad Recall Lift +8.2, Purchase Intent Lift +1.3. ¿Qué debe implementar el media buyer?",
+      "options": [
+        "Resaltar beneficios del producto en el creative y poner el branding al inicio",
+        "Mantener la frequency baja para asegurar alto ad recall lift",
+        "Cambiar la campaña al objetivo de Leads",
+        "Reducir el tamaño de la audiencia para subir la intención de compra"
+      ],
+      "correct": 0,
+      "explanation": "Alto Ad Recall pero bajo Purchase Intent indica que la gente recuerda el anuncio pero no se mueve a comprar. La solución es reforzar mensajes de beneficio del producto y mostrar el branding desde el inicio, no al final.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Ad A entra a una subasta con bid cap de $1.00. Ad B entra a la misma subasta con bid cap de $0.50. Ambos tienen igual estimated conversion rate y creative score. Ad A gana. ¿Cuánto se le cobra al anunciante?",
+      "options": [
+        "$0.51",
+        "$0.75",
+        "$0.50",
+        "$1.00"
+      ],
+      "correct": 0,
+      "explanation": "La subasta de Meta es de segundo precio: el ganador paga lo mínimo necesario para ganar, es decir apenas por encima del competidor siguiente ($0.50) → $0.51. No paga su bid cap completo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Dos marcas de moda anuncian al mismo tiempo. Mid-level: precio $50, bid cap $25, estimated action rate 0.9%. Luxury: precio $500, bid cap $250, estimated action rate 0.5%. Misma ad quality. ¿Quién debería ver mayor delivery?",
+      "options": [
+        "La marca luxury tendrá 10x más delivery que la mid-level",
+        "La mid-level tendrá más delivery por menor precio de item",
+        "La mid-level tendrá más delivery por menor bid cap",
+        "La marca luxury tendrá más delivery por su mayor total value en la subasta"
+      ],
+      "correct": 3,
+      "explanation": "Total value ≈ bid x estimated action rate (+ ad quality). Luxury: 250 x 0.5% = 1.25. Mid-level: 25 x 0.9% = 0.225. Luxury tiene mayor total value, por lo que gana más subastas y obtiene más delivery (no exactamente 10x).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente acaba de gestionar su nuevo catálogo en Commerce Manager. El inventario es grande, cambia seguido y requiere subidas programadas cada hora. ¿Qué método debe usar para agregar items?",
+      "options": [
+        "Data Feed",
+        "Pixel",
+        "Manual Update",
+        "Conversions API"
+      ],
+      "correct": 0,
+      "explanation": "Un Data Feed programado soporta actualizaciones automáticas (incluso cada hora) para inventarios grandes y cambiantes. La carga manual no escala; Pixel y Conversions API son data sources de eventos, no métodos de alta de items.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un retailer con 75 items quiere organizar productos por distintos atributos para correr una campaña de Advantage+ catalog ads. ¿Qué herramienta debe usar?",
+      "options": [
+        "Categories",
+        "Labels",
+        "Product sets",
+        "Item tags"
+      ],
+      "correct": 2,
+      "explanation": "Los product sets agrupan items de un catálogo por atributos relevantes (sales, best sellers, eventos) para usarlos en campañas como Advantage+ catalog ads.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente con preocupaciones de brand safety en el perfil/feed de Instagram nunca quiere que sus anuncios aparezcan en ciertas cuentas de creadores. ¿Cómo debe el media buyer averiguar dónde podrían aparecer los anuncios en ese placement?",
+      "options": [
+        "Descargar la publisher list",
+        "Crear una publisher allow list",
+        "Usar inventory filter",
+        "Aplicar block lists"
+      ],
+      "correct": 0,
+      "explanation": "La pregunta es de descubrimiento ('dónde podrían aparecer'): se descarga/revisa la publisher list de ese placement para ver dónde puede entregarse. Allow/block lists e inventory filters sirven para controlar, no para descubrir la lista de publishers.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un media buyer corre una campaña con videos con text overlays y rinde mal. ¿Qué debe recomendar sobre el uso de text overlays?",
+      "options": [
+        "Usar overlays que obstruyan los visuales",
+        "Usar fuentes estilizadas, pequeñas y monocromáticas",
+        "Usar una fuente moderna y limpia, en tamaño suficientemente grande y con un tono contrastante",
+        "Usar text overlays para comunicar varios mensajes a la vez"
+      ],
+      "correct": 2,
+      "explanation": "La best practice de creative es texto legible: fuente moderna y limpia, tamaño suficiente y color/tono con buen contraste. Fuentes pequeñas, overlays que tapan el visual o saturar de mensajes empeoran el desempeño.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente con un mensaje de venta complejo (campaña de TV exitosa) quiere correr el mismo anuncio solo en placements de video de Meta, con sonido y alta atención. ¿Qué placements debe elegir el media buyer?",
+      "options": [
+        "Facebook Business Explore, Facebook Stories, Instagram Stories, Facebook Reels",
+        "Facebook Stories, Messenger Sponsored Messages, Instagram Stories, Messenger Stories",
+        "Facebook video feeds, Instagram Reels, Facebook Reels, Facebook in-stream videos",
+        "Facebook video feeds, Instagram Reels, Facebook Reels, Facebook Instant Articles"
+      ],
+      "correct": 2,
+      "explanation": "Para un mensaje complejo con sonido y atención se eligen placements de video: Facebook video feeds, Instagram Reels, Facebook Reels y Facebook in-stream videos (este último es visualización atenta con sonido). Instant Articles y Stories/Messenger no son los placements de video idóneos para mensajes largos con sonido.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente históricamente tiene problemas para alcanzar a usuarios en niveles altos de frequency y quiere más control sobre la distribución de frequency usando el buying type reservation. ¿Qué debe hacer?",
+      "options": [
+        "Segmentar a un área local",
+        "Alcanzar menos de 100,000 personas",
+        "Alcanzar un mínimo de 200,000 personas",
+        "Usar el objetivo de Sales optimizado por conversiones"
+      ],
+      "correct": 2,
+      "explanation": "Reservation (Reach & Frequency) requiere un tamaño mínimo de audiencia (alrededor de 200,000 personas) para habilitar el control predecible de reach y frequency. Áreas locales muy pequeñas o Sales por conversión no aplican a reservation.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un media buyer prioriza el ROAS al configurar su campaña mensual, pero necesita gastar todo el budget de la campaña. ¿Qué bid strategy debe usar?",
+      "options": [
+        "ROAS goal",
+        "Highest Value",
+        "Highest Volume",
+        "Cost per result goal"
+      ],
+      "correct": 1,
+      "explanation": "Highest Value es una bid strategy spend-based: gasta todo el budget mientras maximiza el valor de compra (favorece ROAS). ROAS goal es goal-based y puede subgastar el budget; Highest Volume maximiza cantidad sin priorizar valor; cost per result goal controla costo, no valor.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca corre un A/B test para determinar qué creative es más efectivo logrando conversiones en web. ¿Qué métrica determina el ad set ganador?",
+      "options": [
+        "Lowest cost per result (menor costo por resultado)",
+        "Link clicks por ad set",
+        "Amount spent por ad set",
+        "Highest reservation"
+      ],
+      "correct": 0,
+      "explanation": "El ganador de un A/B test se decide por el menor cost per result (costo por conversión). Link clicks o gasto no determinan eficiencia de conversión; 'highest reservation' no es una métrica de A/B.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Campaña de Sales con los mismos assets para todas las audiencias. Cost Per Result: Ad Set 1 (Feed y Stories, hombres 18-45) $5.65; Ad Set 2 (Instagram Feed, mujeres 18-45) $4.35; Ad Set 3 (Advantage+ placements, mujeres 18-45) $3.67; Ad Set 4 (Reels, mixto 18-45) $6.52. ¿Qué ad set usar en la próxima campaña?",
+      "options": [
+        "Ad Set 2",
+        "Ad Set 4",
+        "Ad Set 1",
+        "Ad Set 3"
+      ],
+      "correct": 3,
+      "explanation": "Ad Set 3 tiene el menor cost per result ($3.67) y usa Advantage+ placements, la configuración más eficiente para escalar en la próxima campaña.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente cree que los placements full-screen (cubren toda la pantalla mobile) son los más inmersivos y pide usar todos los placements full-screen. ¿Cuáles debe elegir el media buyer?",
+      "options": [
+        "Facebook Feed, Facebook Stories, Facebook Instant Articles, Instagram Stories",
+        "Stories, Reels, Audience Network Rewarded Videos, In-stream Video",
+        "Reels, Stories, Instagram Feed, Instagram Explore",
+        "Stories, Reels, Audience Network In-Stream Videos, Facebook Feed"
+      ],
+      "correct": 1,
+      "explanation": "Stories, Reels, Audience Network Rewarded Videos e In-stream Video son placements inmersivos full-screen. Las opciones con Feed/Explore/Instant Articles incluyen placements que NO son full-screen.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una empresa de cupcakes lanzó su sitio y en unas semanas tomará pedidos online. Mientras tanto quiere que clientes potenciales se suscriban a su newsletter. Según su meta, ¿qué objetivo debe tener la campaña?",
+      "options": [
+        "Leads",
+        "Engagement",
+        "Sales",
+        "Awareness"
+      ],
+      "correct": 0,
+      "explanation": "Captar suscripciones al newsletter es generación de leads (recolectar un identificador de contacto). Sales aplicaría a compras; Engagement/Awareness no recolectan el lead.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente de cosméticos tiene miles de seguidores comprometidos en su cuenta profesional de Instagram, a menudo clientes de alto gasto. Pide crear un Custom Audience de esa audiencia de Instagram para un anuncio de retargeting. ¿Qué tipo de Custom Audience debe crear el media buyer?",
+      "options": [
+        "Lookalike Audience del Custom Audience de video viewers",
+        "Custom Audience de video viewers y/o quienes interactuaron con la cuenta",
+        "Lookalike Audience de video viewers y/o quienes interactuaron con la cuenta",
+        "Custom Audience de seguidores y/o quienes interactuaron con la cuenta"
+      ],
+      "correct": 3,
+      "explanation": "Retargeting de seguidores/engagers de Instagram = un Custom Audience de engagement que incluye seguidores y quienes interactuaron con la cuenta. Un Lookalike busca gente nueva similar, no es retargeting de la audiencia existente.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente quiere segmentar a personas que vieron sus videos y que visitaron su sitio de producto en los últimos 2 meses. Aún no tiene el Meta Pixel instalado. ¿Qué tipo de audiencia debe incluir?",
+      "options": [
+        "Lookalike Audience",
+        "Website Visitors Custom Audience",
+        "Engagement Custom Audience",
+        "Value-Based Lookalike Audience"
+      ],
+      "correct": 2,
+      "explanation": "Sin Pixel no se puede crear un Website Custom Audience. La audiencia alcanzable es un Engagement Custom Audience (video viewers), que no requiere Pixel. Los Lookalike requieren una fuente y no son retargeting directo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un media buyer corrió una campaña de Augmented Reality de galletas en Alemania. El cliente quiere lanzar en Francia y segmentar al mismo tipo de gente que interactuó con la campaña AR exitosa en Alemania. ¿Qué debe hacer?",
+      "options": [
+        "Crear un AR Experience Custom Audience y luego un Lookalike Audience",
+        "Crear un Website Lookalike Audience y usar traducción automática de idioma",
+        "Crear un AR Experience Custom Audience y usar traducción automática de idioma",
+        "Crear un Website Custom Audience y luego un Lookalike Audience"
+      ],
+      "correct": 0,
+      "explanation": "Se crea un Custom Audience de quienes interactuaron con la experiencia AR (engagement) y luego un Lookalike de esa fuente para encontrar gente similar en Francia. La traducción de idioma no resuelve la segmentación por similitud.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Campaña de Sales (moisturizer), debe gastar todo el budget, KPI primario ROAS, ya salió del learning phase. Setup: 1 ad set con 1% Lookalike de top purchasers (30 días), video de 6s, bid Highest volume, $10,000/día. ROAS por semana: $2.00, $1.00, $0.75, $0.50. ¿Qué optimización considerar para mejorar ROAS?",
+      "options": [
+        "Ampliar la segmentación para incluir un 2% Lookalike",
+        "Cambiar al objetivo Traffic",
+        "Cambiar el formato de creative a imágenes estáticas",
+        "Cambiar a un cost per result goal de $2.00"
+      ],
+      "correct": 0,
+      "explanation": "Un único ad set con 1% Lookalike y ROAS en caída sostenida indica saturación/fatiga de audiencia. Ampliar a un 2% Lookalike refresca la audiencia y ayuda a sostener ROAS gastando todo el budget. Cambiar a Traffic o a estáticas no atiende la causa (saturación de audiencia).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca de autos quiere generar leads de personas interesadas en su nuevo convertible y mostrar imágenes de las características interiores y exteriores. ¿Qué creative format debe usar el media buyer?",
+      "options": [
+        "Video",
+        "Audience Network",
+        "Image",
+        "Carousel"
+      ],
+      "correct": 3,
+      "explanation": "Carousel permite mostrar múltiples imágenes (interior y exterior) en tarjetas desplazables, ideal para destacar varias características. Audience Network es un placement/red, no un format; una sola Image no muestra múltiples features.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca de belleza prepara el lanzamiento de una línea de skincare aún no disponible. En fase uno quiere que la gente se conecte con la marca en Messenger para una consulta 1:1 personalizada. ¿Qué solución implementar?",
+      "options": [
+        "Campaña de Leads con Instant form que recolecta nombre y email",
+        "Campaña de Engagement con conversion location Messaging Apps",
+        "Campaña de App promotion con Messenger como placement",
+        "Campaña de Sales con CTA 'Contact Us'"
+      ],
+      "correct": 1,
+      "explanation": "Para abrir conversaciones 1:1 en Messenger se usa el objetivo Engagement con la conversion location de Messaging Apps. Un Instant form recolecta datos, no abre chat; App promotion es para apps; Sales no inicia la conversación.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca configura una campaña de awareness; su agencia entrega videos de 30s que revelan la marca en el segundo 10 y usan aspect ratio 1:1. Los anuncios solo correrán en Facebook app e Instagram mobile feed. ¿Qué necesita la marca?",
+      "options": [
+        "Video más corto (<15s) y cambiar a 16:9",
+        "Video más corto (<15s) y cambiar a 4:5",
+        "Video más largo (1 min) y cambiar a 16:9",
+        "Video más largo (1 min) y cambiar a 9:16"
+      ],
+      "correct": 1,
+      "explanation": "Best practice mobile feed: video corto (<15s), branding temprano y aspect ratio vertical 4:5 que aprovecha la pantalla del feed mobile. 16:9 es horizontal (desperdicia pantalla) y 1 min es demasiado largo para awareness en feed.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál call to action viola las políticas de Meta?",
+      "options": [
+        "Lose weight (baja de peso)",
+        "Buy now",
+        "Learn more",
+        "Click here"
+      ],
+      "correct": 0,
+      "explanation": "'Lose weight' implica un atributo personal/de salud y autopercepción negativa, lo que viola la política de Personal Attributes; además no es un CTA estándar. 'Buy now', 'Learn more' y 'Click here' son CTAs válidos.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "En diciembre una marca quiere gastar todo el budget restante de marketing antes de fin de año. En enero su meta es mantener el cost per action en promedio de $40. ¿Qué bidding recomiendas?",
+      "options": [
+        "Cost per result goal en diciembre; Bid cap en enero",
+        "Highest volume o value goal en diciembre; Cost per view en enero",
+        "Highest volume o value goal en diciembre; Cost per result goal en enero",
+        "ROAS goal en diciembre; Bid cap en enero"
+      ],
+      "correct": 2,
+      "explanation": "Gastar todo el budget = bid strategy spend-based (Highest volume/value). Mantener un CPA promedio de $40 = cost per result goal (provee un benchmark de costo). Bid cap/cost per view no controlan el CPA promedio igual de bien.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente quiere entender el número promedio de veces que una persona vio un anuncio durante una campaña. ¿Qué columna de reporte debe revisar?",
+      "options": [
+        "Frequency",
+        "Impressions",
+        "Reach",
+        "Clicks"
+      ],
+      "correct": 0,
+      "explanation": "Frequency = impresiones / reach = promedio de veces que cada persona vio el anuncio. Impressions es el total de veces mostrado; Reach es personas únicas; Clicks son clics.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca prepara sus primeras campañas en Meta. Corre principalmente campañas basadas en conversión y vende globalmente por su sitio web. ¿Qué herramientas debe implementar el media buyer? Selecciona 2.",
+      "options": [
+        "SDK",
+        "Pixel",
+        "Offline Conversions",
+        "Conversions API"
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "multi": true,
+      "explanation": "Conversiones en sitio web global = Meta Pixel + Conversions API (configuración redundante recomendada para precisión y attribution). El SDK es para apps; Offline Conversions es para eventos fuera de línea (tienda física).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una tienda de e-commerce corre una campaña 6 meses sin cambios. Inicialmente daba resultados eficientes pero el cost per result subió con el tiempo (Highest volume, objetivo Sales, optimization event Purchase, $150/día). ¿Cómo optimizar?",
+      "options": [
+        "Agregar creative nuevo",
+        "Cambiar el optimization event a link clicks",
+        "Aumentar el daily budget",
+        "Disminuir el tamaño de la audiencia"
+      ],
+      "correct": 0,
+      "explanation": "Tras 6 meses sin cambios el deterioro se debe a creative fatigue. Refrescar con creative nuevo recupera eficiencia. Cambiar el optimization event a link clicks degrada la calidad de conversión; subir budget o reducir audiencia no resuelve la fatiga.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca corre una campaña de awareness en varias plataformas y quiere determinar rápido el mensaje más efectivo, audiencia hombres y mujeres 18-35, budget $50,000. ¿Qué debe implementar el media buyer?",
+      "options": [
+        "Audience Split Test",
+        "Creative Split Test",
+        "Brand Lift single cell",
+        "Marketing Mix Modeling"
+      ],
+      "correct": 1,
+      "explanation": "Determinar qué mensaje/creative es más efectivo = Creative Split Test (A/B de creatives). Audience split prueba audiencias; Brand Lift mide recordación; MMM es modelado de mezcla de marketing, no comparación rápida de mensajes.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca con campaña always-on (lifetime budgets, optimizando Purchase) recibe ~20 ventas por semana por ad set; varios ad sets siguen en learning phase o learning limited. ¿Qué cambio recomienda el media buyer?",
+      "options": [
+        "Cambiar el optimization event a Engagement",
+        "Cambiar al objetivo de traffic",
+        "Introducir influencer marketing",
+        "Combinar ad sets"
+      ],
+      "correct": 3,
+      "explanation": "Para salir del learning phase un ad set necesita ~50 optimization events por semana. Con solo ~20 ventas por ad set, combinar ad sets concentra conversiones y permite estabilizar el aprendizaje. Cambiar el evento o el objetivo degrada el resultado de compra.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente retail quiere adquirir 200 clientes nuevos en febrero y alcanzar a personas lo más parecidas posible a sus clientes de mayor valor. ¿Qué estrategia de targeting debe adoptar?",
+      "options": [
+        "High Lifetime Value Customer List",
+        "Value-Based Lookalike Audience",
+        "Engagement Lookalike Audience",
+        "Core Interest-Based Audiences"
+      ],
+      "correct": 1,
+      "explanation": "Para encontrar gente similar a los clientes de MAYOR VALOR se usa un Value-Based Lookalike Audience (usa el valor de los clientes como semilla). Una lista de clientes es retargeting, no prospección similar; engagement/interest no priorizan el valor.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un media buyer lanza una campaña de Sales y nota que el cost per result es muy alto después de 2 días. ¿Qué debe hacer?",
+      "options": [
+        "Cambiar el creative para evitar fatiga",
+        "Agregar múltiples ad sets para entender el impacto",
+        "Disminuir el budget para bajar el cost per result",
+        "Esperar a que la campaña salga del learning phase"
+      ],
+      "correct": 3,
+      "explanation": "A 2 días la campaña sigue en learning phase y los resultados aún no se estabilizan. La best practice es esperar a que salga del learning (sin ediciones significativas que lo reinicien) antes de juzgar el cost per result.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente quiere lanzar una campaña de Sales con 4 ad sets por 1 mes con $100,000, priorizando obtener la mayor cantidad de ventas con todo el budget. ¿Cómo configurar el budget?",
+      "options": [
+        "Daily budget a nivel ad set",
+        "Lifetime budget a nivel campaña",
+        "Lifetime budget a nivel ad set",
+        "Daily budget a nivel campaña"
+      ],
+      "correct": 1,
+      "explanation": "Lifetime budget a nivel campaña (Advantage+ campaign budget) distribuye automáticamente el gasto entre los 4 ad sets hacia los de mejor desempeño para maximizar ventas con todo el budget en el periodo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un media buyer necesita agregar items a un catálogo para un cliente. El inventario es pequeño y no cambia seguido. ¿Cómo debe agregar los items?",
+      "options": [
+        "Data feed con un spreadsheet",
+        "Importar automáticamente con un Meta Pixel",
+        "Catalog Batch API con un HTTP request",
+        "Manualmente en Commerce Manager"
+      ],
+      "correct": 3,
+      "explanation": "Inventario pequeño y estático = carga manual en Commerce Manager (lo más simple). Data feed, Pixel o Batch API se justifican con inventarios grandes o cambiantes.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente preocupado por brand safety quiere la misma block list aplicada a todas las campañas que corren en su cuenta. ¿Dónde debe aplicar el media buyer la block list?",
+      "options": [
+        "Creative Hub",
+        "Commerce Manager",
+        "Ads Manager",
+        "Brand Safety Hub"
+      ],
+      "correct": 3,
+      "explanation": "Para aplicar una block list a nivel cuenta (todas las campañas) se usa el Brand Safety Hub / Brand Safety and Suitability Center. Creative Hub es para crear/mockups; Commerce Manager para catálogos.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una organización sin fines de lucro corre una campaña de awareness con Advantage+ placements. Un miembro nota que el anuncio aparece como in-stream video durante un video largo de un partido político. Según sus lineamientos, no debe aparecer en videos políticos. ¿Qué recomienda el media buyer?",
+      "options": [
+        "Aplicar una topic exclusion para Politics en Brand Safety settings",
+        "Usar manual placements y excluir in-stream video",
+        "Bloquear al partido político en la configuración de su Facebook Page",
+        "Revisar los delivery reports para ver dónde aparecieron los anuncios"
+      ],
+      "correct": 0,
+      "explanation": "Una content topic exclusion de Politics (en Brand Safety settings/inventory) evita que el anuncio aparezca junto a contenido político manteniendo Advantage+ placements. Quitar in-stream o revisar reports no impide específicamente el contenido político.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "El admin registrado de un Business Manager le da employee access a un nuevo miembro. Al construir la campaña, el miembro no puede agregar la Facebook Page a nivel ad. ¿Qué paso debe tomar el admin para darle acceso?",
+      "options": [
+        "Dar task access vía Page settings para crear contenido",
+        "Asignar la Facebook Page como asset al miembro",
+        "Hacer al miembro analyst del Business Manager",
+        "Pedir al miembro configurar autenticación de dos factores"
+      ],
+      "correct": 1,
+      "explanation": "El employee necesita que se le asigne la Facebook Page como asset (con task access) para poder usarla a nivel ad. 2FA o el rol analyst no otorgan acceso al asset Page.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente quiere ser dueño de su ad account pero que su media agency corra las campañas. ¿Qué niveles de permiso debe otorgar el cliente a la agencia?",
+      "options": [
+        "Agregar al cliente al Business Manager de la agencia con admin access y seleccionar el ad account como asset",
+        "Agregar al cliente al Business Manager de la agencia con partner access y seleccionar el ad account como asset",
+        "Agregar a la media agency al Business Manager del cliente con partner access y seleccionar el ad account como asset",
+        "Agregar a la media agency al Business Manager del cliente con admin access y seleccionar el ad account como asset"
+      ],
+      "correct": 2,
+      "explanation": "El cliente debe ser dueño del asset, así que agrega a la agencia a SU Business Manager mediante partner access y le comparte el ad account como asset. Dar admin access o mover el asset al BM de la agencia cede el control/propiedad.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente corre una campaña con objetivo awareness y quiere entender a cuántas personas les quedó el recuerdo de haber visto sus anuncios. ¿Qué debe implementar el media buyer?",
+      "options": [
+        "A/B test",
+        "Brand Lift",
+        "Conversion Lift study",
+        "MMM"
+      ],
+      "correct": 1,
+      "explanation": "Medir recordación de anuncio (ad recall) y actitudes de marca = Brand Lift. A/B test compara variantes; Conversion Lift mide conversiones incrementales; MMM es modelado de mezcla de marketing.",
+      "difficulty": "medium"
+    }
+  ]
+}

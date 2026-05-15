@@ -1,0 +1,261 @@
+{
+  "id": "m1",
+  "title": "Módulo 1 — Objetivos de negocio y campaign objectives",
+  "lessons": [
+    {
+      "id": "1.1",
+      "title": "Del business goal al campaign objective",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El media planner empieza por el negocio",
+          "body": "Como media planner tu primer paso <strong>nunca</strong> es elegir un objective en Ads Manager. Es entender el <strong>business goal</strong> del cliente (vender, generar leads, construir marca) y traducirlo al campaign objective que lo soporta."
+        },
+        {
+          "type": "kvtable",
+          "h": "Los 6 ODAX por etapa del funnel",
+          "rows": [
+            ["Awareness", "Maximizar personas que recordarán el anuncio (recall, reach)"],
+            ["Traffic", "Llevar gente a un destino: web, app, llamada o mensajes"],
+            ["Engagement", "Generar interacción: mensajes, video views, post engagement"],
+            ["Leads", "Recolectar contactos: Instant form, calls, sign-ups"],
+            ["App Promotion", "Instalar la app o aumentar su uso"],
+            ["Sales", "Encontrar a quienes más probablemente compren"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "REGLA DE PLANEACIÓN",
+          "body": "Siempre vas <strong>de arriba hacia abajo</strong>: business goal → etapa del funnel → campaign objective → conversion location → performance goal. Si inviertes el orden, terminas optimizando para la métrica equivocada."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA TÍPICA",
+          "body": "Elegir <strong>Traffic</strong> cuando el negocio quiere ventas. Traffic optimiza <em>link clicks</em>, no compras. Más clics no es más ingresos. Si la meta es venta real, el objective es <strong>Sales</strong>."
+        },
+        {
+          "type": "mcq",
+          "q": "Un cliente DTC quiere maximizar ingresos en su tienda online esta temporada. ¿Qué campaign objective propones?",
+          "options": [
+            "Traffic, para llevar más gente al sitio",
+            "Engagement, para que interactúen con el catálogo",
+            "Sales, optimizando para el evento Purchase",
+            "Awareness, para que la marca esté top of mind"
+          ],
+          "correct": 2,
+          "explanation": "El business goal es ingresos → etapa de conversión → objective Sales con conversion event Purchase. Traffic optimiza clics (no compra), Engagement interacción, Awareness recall. Ninguno optimiza ventas reales.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Una marca nueva sin reconocimiento quiere que el mercado la conozca antes de pedir compras. El planner debe priorizar:",
+          "options": [
+            "Sales desde el día uno para recuperar inversión rápido",
+            "Awareness para construir recall, y luego escalar a conversión",
+            "Leads para juntar correos cuanto antes",
+            "App Promotion aunque no tenga app"
+          ],
+          "correct": 1,
+          "explanation": "Sin reconocimiento previo, empujar Sales directo desperdicia presupuesto en una audiencia que no te conoce. Awareness construye la base del funnel; luego se baja a consideración y conversión.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "Data sources que soportan el objective",
+      "section": "B",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Sin señal no hay optimización",
+          "body": "Cada objective de conversión necesita una <strong>fuente de datos</strong> que le diga a Meta qué pasó. El planner valida que esa fuente exista y esté bien configurada <strong>antes</strong> de proponer el plan, no después."
+        },
+        {
+          "type": "kvtable",
+          "h": "Objective → data source requerida",
+          "rows": [
+            ["Sales (web)", "Pixel + Conversions API (CAPI)"],
+            ["Sales (catálogo)", "Pixel/CAPI + Catalog conectado"],
+            ["Leads (Instant form)", "No requiere Pixel; los datos quedan en Meta"],
+            ["Leads (website)", "Pixel + CAPI"],
+            ["App Promotion", "Facebook SDK o un MMP autorizado"],
+            ["Awareness / Engagement", "No requieren tracking de conversión"]
+          ]
+        },
+        {
+          "type": "quote",
+          "body": "Mientras más completa y de calidad sea la señal (Pixel + CAPI juntos), mejor optimiza el sistema de Meta y más estables son los resultados del plan."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Pixel + CAPI <strong>juntos</strong> (no uno u otro) es el estándar. CAPI recupera señal que el navegador pierde por bloqueadores e iOS, y mejora el match quality de eventos."
+        },
+        {
+          "type": "mcq",
+          "q": "El plan propone Sales website con evento Purchase, pero el cliente solo tiene Pixel y nada más. ¿Qué recomiendas antes de lanzar?",
+          "options": [
+            "Lanzar igual; el Pixel solo es suficiente",
+            "Sumar Conversions API para recuperar señal perdida y mejorar match quality",
+            "Cambiar el objective a Awareness",
+            "Quitar el evento Purchase y dejar el ad set sin optimización"
+          ],
+          "correct": 1,
+          "explanation": "Pixel solo deja escapar señal por bloqueo de cookies/iOS. CAPI (server-side) recupera esos eventos y mejora el matching. Cambiar a Awareness abandonaría el business goal de venta.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Un cliente quiere instalar su app móvil. ¿Qué fuente de datos es obligatoria para el objective App Promotion?",
+          "options": [
+            "Pixel de website",
+            "Customer list subida manualmente",
+            "Facebook SDK o un MMP (Mobile Measurement Partner)",
+            "Catálogo de productos"
+          ],
+          "correct": 2,
+          "explanation": "Los eventos in-app se miden con el SDK de Facebook o un MMP autorizado (AppsFlyer, Adjust, Branch). El Pixel es para web; el catálogo es para Advantage+ catalog ads.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "Conversion location, conversion event y performance goal",
+      "section": "C",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Tres decisiones distintas, mismo objective",
+          "body": "Dentro de un objective configuras 3 cosas en el ad set: <strong>conversion location</strong> (dónde sucede), <strong>conversion event</strong> (qué acción cuenta) y <strong>performance goal</strong> (cómo se licita)."
+        },
+        {
+          "type": "kvtable",
+          "h": "Las tres capas",
+          "rows": [
+            ["Conversion location", "Dónde ocurre: Website, App, Messaging, Calls, Instant form"],
+            ["Conversion event", "La acción que cuenta: Purchase, Lead, Add to cart, View content"],
+            ["Performance goal", "La regla de licitación: maximizar cantidad, valor, clics, recall"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "DISTINCIÓN DE EXAMEN",
+          "body": "<strong>Conversion event</strong> = QUÉ acción cuenta. <strong>Performance goal</strong> = CÓMO se optimiza. No son sinónimos y el examen los confunde a propósito en los distractores."
+        },
+        {
+          "type": "tip",
+          "label": "VALOR VS CANTIDAD",
+          "body": "<strong>Maximize number of conversions</strong> busca más unidades. <strong>Maximize value of conversions</strong> busca tickets de mayor monto (requiere value tracking en el Pixel). Si el negocio quiere ROI, casi siempre es valor."
+        },
+        {
+          "type": "mcq",
+          "q": "Una empresa B2B quiere demos agendadas sin sacar al prospecto del feed. ¿Mejor conversion location?",
+          "options": [
+            "Website con landing externa",
+            "Instant form (Leads)",
+            "App",
+            "Calls"
+          ],
+          "correct": 1,
+          "explanation": "Instant form mantiene la fricción mínima: el prospecto llena el formulario dentro de Meta sin salir del feed. Una landing externa agrega fricción y caída de conversión.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "El cliente vende productos de ticket muy variable y quiere maximizar ingreso, no número de pedidos. ¿Qué performance goal propones?",
+          "options": [
+            "Maximize number of conversions",
+            "Maximize value of conversions",
+            "Maximize link clicks",
+            "Maximize landing page views"
+          ],
+          "correct": 1,
+          "explanation": "Con ticket variable, maximizar cantidad puede traer muchas ventas pequeñas. Maximize value optimiza por monto de la conversión (requiere value en el Pixel) y se alinea al business goal de ingreso.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Selecciona la afirmación correcta sobre dónde se configura cada cosa.",
+          "options": [
+            "El objective se elige a nivel ad set",
+            "El conversion location y el performance goal se configuran a nivel ad set",
+            "El performance goal se elige a nivel ad",
+            "El conversion event se elige a nivel campaña"
+          ],
+          "correct": 1,
+          "explanation": "El campaign objective va a nivel campaña. Conversion location, conversion event y performance goal se configuran a nivel ad set. El nivel ad es para creativos.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "1.4",
+      "title": "Caso integrador · armar el media plan",
+      "section": "D",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Escenario",
+          "body": "Cliente: financiera que ofrece créditos solares. Quiere <strong>contratos firmados</strong>. El proceso: el prospecto deja datos, un asesor lo contacta por chat y cierra. Tiene Pixel + CAPI y un dataset con eventos web."
+        },
+        {
+          "type": "mcq",
+          "q": "Para captar a los prospectos que dejan datos antes del contacto del asesor, ¿qué objective + conversion location propones en esa fase?",
+          "options": [
+            "Sales + Website",
+            "Leads + Instant form",
+            "Awareness + ninguno",
+            "Traffic + landing externa"
+          ],
+          "correct": 1,
+          "explanation": "La acción de esa fase es dejar contacto (no firmar todavía). Leads con Instant form minimiza fricción y alimenta al equipo de ventas. Sales sería para la conversión final; Traffic solo manda clics.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Si el cliente además quiere optimizar para la firma del contrato que ocurre tras chat con el asesor, ¿qué combinación se acerca más?",
+          "options": [
+            "Sales con conversion location Messaging/Website según dónde se firme y evento de conversión = la firma",
+            "Awareness con recall lift",
+            "Engagement con post engagement",
+            "Traffic con link clicks"
+          ],
+          "correct": 0,
+          "explanation": "La firma es la conversión de valor: objective Sales, con el conversion location donde realmente sucede el cierre y el evento que representa la firma. Awareness/Engagement/Traffic no optimizan la conversión final.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "tip",
+          "label": "CIERRE DEL MÓDULO",
+          "body": "Un buen media plan separa fases del funnel en objectives distintos: captar lead arriba, optimizar conversión abajo. No fuerces un solo objective para todo el recorrido."
+        }
+      ]
+    },
+    {
+      "id": "1.flash",
+      "title": "Flashcards · Módulo 1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "¿Cuál es el primer paso del media planner?", "a": "Entender el business goal del cliente, no elegir un objective en Ads Manager." },
+        { "q": "Los 6 ODAX", "a": "Awareness, Traffic, Engagement, Leads, App Promotion, Sales." },
+        { "q": "¿En qué nivel se elige el campaign objective?", "a": "A nivel campaña." },
+        { "q": "¿Dónde se configuran conversion location, event y performance goal?", "a": "A nivel ad set." },
+        { "q": "Conversion event vs performance goal", "a": "Event = qué acción cuenta. Performance goal = cómo se licita/optimiza." },
+        { "q": "Data source para Sales website", "a": "Pixel + Conversions API (CAPI)." },
+        { "q": "Data source para App Promotion", "a": "Facebook SDK o un MMP autorizado." },
+        { "q": "¿Leads con Instant form requiere Pixel?", "a": "No; los datos se capturan dentro de Meta." },
+        { "q": "Maximize number vs value of conversions", "a": "Number = más unidades. Value = mayor monto por conversión (requiere value tracking)." },
+        { "q": "¿Por qué Pixel + CAPI juntos?", "a": "CAPI recupera señal que el navegador pierde (bloqueadores, iOS) y mejora match quality." },
+        { "q": "Objectives que NO requieren tracking de conversión", "a": "Awareness y Engagement." },
+        { "q": "Trampa clásica: querer ventas y elegir…", "a": "Traffic. Traffic optimiza link clicks, no compras." }
+      ]
+    }
+  ]
+}

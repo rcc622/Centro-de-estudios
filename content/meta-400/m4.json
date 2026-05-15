@@ -1,0 +1,217 @@
+{
+  "id": "m4",
+  "title": "Módulo 4 — Planeación de audiencia",
+  "lessons": [
+    {
+      "id": "4.1",
+      "title": "Audience selection y Advantage+ Audience",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El default cambió",
+          "body": "Meta recomienda <strong>Advantage+ Audience</strong> como punto de partida: tú das señales (audiencias sugeridas) y el sistema busca a quien más probablemente convierta sin límites duros de targeting. La audiencia original (manual) sigue disponible cuando se necesita control estricto."
+        },
+        {
+          "type": "kvtable",
+          "h": "Advantage+ Audience vs audiencia original",
+          "rows": [
+            ["Advantage+ Audience", "Señales como sugerencia; Meta expande para encontrar conversiones"],
+            ["Audiencia original", "Targeting definido por el planner; control estricto"],
+            ["Cuándo Advantage+", "Maximizar resultados, prospección, señal de conversión disponible"],
+            ["Cuándo original", "Restricciones legales/marca, públicos muy acotados"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "AUDIENCE SUGGESTIONS",
+          "body": "En Advantage+ Audience, las custom audiences y el detailed targeting que agregas funcionan como <strong>sugerencias</strong> que priorizan, no como límites rígidos. El sistema puede ir más allá si encuentra conversiones."
+        },
+        {
+          "type": "mcq",
+          "q": "Un anunciante de un sector regulado debe NO mostrar anuncios fuera de un público estrictamente definido por ley. ¿Qué eliges?",
+          "options": [
+            "Advantage+ Audience, que es el default",
+            "Audiencia original con targeting definido",
+            "Lookalike al 10%",
+            "Detailed targeting expansion activado"
+          ],
+          "correct": 1,
+          "explanation": "Cuando hay un límite legal duro, necesitas control estricto: audiencia original con targeting definido. Advantage+ Audience trata las señales como sugerencias y puede expandir fuera del público.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "4.2",
+      "title": "Detailed targeting",
+      "section": "B",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Intereses, comportamientos, demográficos",
+          "body": "El <strong>detailed targeting</strong> acota por intereses, comportamientos y datos demográficos. Es útil para definir audiencias frías cuando no hay señal propia suficiente."
+        },
+        {
+          "type": "kvtable",
+          "h": "Conceptos clave",
+          "rows": [
+            ["Narrow / exclude", "Afina con AND/NOT para precisar el público"],
+            ["Detailed targeting expansion", "Permite a Meta ir más allá del interés si mejora resultados (en audiencia original)"],
+            ["Riesgo", "Audiencia demasiado chica = costo alto y poco delivery"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "Sobre-segmentar (muchos intereses + narrowing agresivo) crea audiencias minúsculas: el sistema no tiene espacio para optimizar y el costo se dispara. Audiencias amplias suelen rendir mejor con buena señal."
+        },
+        {
+          "type": "mcq",
+          "q": "Un planner arma una audiencia con 8 intereses anidados y triple narrowing. El delivery es casi nulo y el CPM altísimo. ¿Causa más probable?",
+          "options": [
+            "El creativo es malo",
+            "La audiencia quedó demasiado pequeña para optimizar",
+            "Falta el Pixel",
+            "El objective es Awareness"
+          ],
+          "correct": 1,
+          "explanation": "El over-targeting reduce la audiencia a un tamaño donde el sistema no puede optimizar; sube el costo y cae el delivery. La solución es ampliar y dejar que la señal trabaje.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "4.3",
+      "title": "Custom audiences",
+      "section": "C",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Tu gente (remarketing)",
+          "body": "Una <strong>custom audience</strong> se construye con personas que ya tienen relación con el negocio: visitantes web, usuarios de app, lista de clientes o gente que interactuó con contenido de Meta."
+        },
+        {
+          "type": "kvtable",
+          "h": "Fuentes de custom audience",
+          "rows": [
+            ["Website", "Visitantes / eventos del Pixel (ej. añadió al carrito)"],
+            ["App activity", "Usuarios y eventos in-app (SDK/MMP)"],
+            ["Customer list", "Lista propia (emails/teléfonos), hasheada"],
+            ["Engagement", "Vieron video, interactuaron con página/IG, abrieron Instant form"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "USO EN EL PLAN",
+          "body": "Las custom audiences sirven para <strong>remarketing</strong> (recuperar carritos) y como <strong>semilla</strong> de lookalikes. También se excluyen para no gastar en quien ya convirtió."
+        },
+        {
+          "type": "mcq",
+          "q": "El cliente quiere recuperar a quienes agregaron al carrito y no compraron en 7 días. ¿Qué fuente de custom audience?",
+          "options": [
+            "Customer list de compradores",
+            "Website custom audience por evento AddToCart, excluyendo Purchase",
+            "Engagement de video",
+            "Lookalike 1%"
+          ],
+          "correct": 1,
+          "explanation": "Es remarketing por comportamiento web: custom audience de Website con el evento AddToCart, excluyendo a quienes dispararon Purchase. La customer list de compradores es justo a quien NO quieres reimpactar.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "4.4",
+      "title": "Lookalike audiences",
+      "section": "D",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Encontrar más como tus mejores",
+          "body": "Una <strong>lookalike audience</strong> parte de una <strong>seed</strong> (custom audience de calidad) y busca personas con perfil parecido. Sirve para prospección a escala."
+        },
+        {
+          "type": "kvtable",
+          "h": "Palancas del lookalike",
+          "rows": [
+            ["Seed (semilla)", "Cuanto mejor la seed (clientes de alto valor), mejor el lookalike"],
+            ["Tamaño 1%", "Más parecido a la seed, más preciso, menos alcance"],
+            ["Tamaño 5–10%", "Más alcance, menos parecido, más amplio"],
+            ["País", "El lookalike se genera por país objetivo"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "CALIDAD DE LA SEED",
+          "body": "Una seed de <strong>compradores de alto valor</strong> produce mejores lookalikes que una de simples visitantes. Tamaño de seed recomendado: ~1,000–50,000 personas."
+        },
+        {
+          "type": "mcq",
+          "q": "Buscas máxima precisión para prospectar parecidos a tus mejores clientes. ¿Qué configuración?",
+          "options": [
+            "Lookalike 10% sobre todos los visitantes web",
+            "Lookalike 1% sobre seed de compradores de alto valor",
+            "Detailed targeting con 10 intereses",
+            "Custom audience de engagement de video"
+          ],
+          "correct": 1,
+          "explanation": "Máxima precisión = lookalike 1% (más parecido a la seed) y una seed de calidad (compradores de alto valor). 10% amplía pero diluye el parecido; los intereses no usan tu señal propia.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.5",
+      "title": "Caso · estrategia de audiencia por funnel",
+      "section": "E",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Escenario",
+          "body": "Ecommerce con buen volumen de ventas y Pixel + CAPI sólidos. Quiere escalar adquisición sin canibalizar a clientes actuales."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué arquitectura de audiencias propones?",
+          "options": [
+            "Solo remarketing a compradores",
+            "Advantage+ Audience / lookalike 1% de compradores de alto valor para prospección, excluyendo clientes actuales; remarketing aparte",
+            "Un solo ad set con 12 intereses",
+            "Reservation con frequency cap"
+          ],
+          "correct": 1,
+          "explanation": "Escalar adquisición sin canibalizar = prospección con Advantage+/lookalike de alto valor excluyendo clientes, y un esfuerzo separado de remarketing. Solo remarketing no escala; 12 intereses sobre-segmenta.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "tip",
+          "label": "CIERRE",
+          "body": "Audiencia se planea por funnel: prospección (Advantage+/lookalike) arriba, remarketing (custom audiences) abajo, y exclusiones para no pagar dos veces por el mismo usuario."
+        }
+      ]
+    },
+    {
+      "id": "4.flash",
+      "title": "Flashcards · Módulo 4",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Advantage+ Audience", "a": "Default recomendado: das señales como sugerencia y Meta busca a quien convierte, sin límites duros." },
+        { "q": "¿Cuándo audiencia original (manual)?", "a": "Cuando hay restricciones legales/marca o se necesita control estricto del público." },
+        { "q": "Custom audience", "a": "Personas con relación previa al negocio: web, app, customer list, engagement." },
+        { "q": "Fuentes de custom audience", "a": "Website, App activity, Customer list, Engagement." },
+        { "q": "Lookalike audience", "a": "Personas parecidas a una seed (custom audience de calidad); para prospección." },
+        { "q": "Lookalike 1% vs 10%", "a": "1% = más parecido y preciso, menos alcance. 10% = más alcance, menos parecido." },
+        { "q": "¿Qué hace mejor a un lookalike?", "a": "Una seed de calidad (ej. compradores de alto valor)." },
+        { "q": "Riesgo de over-targeting", "a": "Audiencia muy chica: el sistema no optimiza, sube el costo y cae el delivery." },
+        { "q": "Uso doble de custom audiences", "a": "Remarketing e inclusión/exclusión, y como seed de lookalikes." },
+        { "q": "En Advantage+ Audience, ¿las custom audiences son límite?", "a": "No; funcionan como sugerencias que priorizan, no como límite rígido." }
+      ]
+    }
+  ]
+}

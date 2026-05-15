@@ -1,0 +1,56 @@
+{
+  "title": "Diagnóstico · Módulo 3",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "El ad scheduling (mostrar anuncios solo en ciertos horarios) requiere:",
+      "options": ["Daily budget", "Lifetime budget", "Bid Cap", "Reservation"],
+      "correct": 1,
+      "explanation": "El dayparting solo es posible con lifetime budget.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Advantage+ campaign budget (CBO) sirve para:",
+      "options": [
+        "Fijar budget por ad set manualmente",
+        "Que Meta reparta el budget entre ad sets según oportunidad",
+        "Garantizar CPM fijo",
+        "Activar Reservation"
+      ],
+      "correct": 1,
+      "explanation": "CBO mueve el gasto al ad set con mejor desempeño; ABO fija el budget por ad set.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Estimación de budget en Auction:",
+      "options": [
+        "Impresiones × CPM ÷ 1000",
+        "Resultados objetivo × costo por resultado esperado",
+        "Reach × frequency",
+        "Budget fijo aprobado por dirección"
+      ],
+      "correct": 1,
+      "explanation": "En Auction el costo es variable; se estima con resultados deseados y costo por resultado esperado.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Plan Reservation: 400,000 personas, frequency 2, CPM fijo $5. Budget aproximado:",
+      "options": ["$2,000", "$4,000", "$8,000", "$40,000"],
+      "correct": 1,
+      "explanation": "Impresiones = 400,000 × 2 = 800,000. Budget = 800,000 × 5 ÷ 1000 = $4,000.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Riesgo principal de un budget demasiado bajo en Auction:",
+      "options": [
+        "El anuncio se rechaza",
+        "El ad set no sale de learning phase y el desempeño es inestable",
+        "Se activa Reservation",
+        "Sube el ROAS"
+      ],
+      "correct": 1,
+      "explanation": "Sin ~50 eventos de optimización por semana el ad set se queda en learning; resultados volátiles.",
+      "difficulty": "medium"
+    }
+  ]
+}

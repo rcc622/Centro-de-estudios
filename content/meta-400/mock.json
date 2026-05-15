@@ -1,0 +1,316 @@
+{
+  "id": "mock",
+  "title": "Simulacro — Meta Media Planning 400-101",
+  "kind": "mock-exam",
+  "passingScore": 80,
+  "timeLimit": 3600,
+  "questions": [
+    {
+      "q": "El cliente quiere maximizar ingresos en su tienda online. ¿Campaign objective?",
+      "options": ["Traffic", "Engagement", "Sales", "Awareness"],
+      "correct": 2,
+      "explanation": "Ingreso = etapa de conversión = Sales con evento Purchase. Traffic optimiza clics, no compras.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿En qué nivel se elige el campaign objective?",
+      "options": ["Account", "Campaña", "Ad set", "Ad"],
+      "correct": 1,
+      "explanation": "El objective va a nivel campaña; conversion location/event/performance goal a nivel ad set.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Sales website con Purchase requiere como data sources. Selecciona 2.",
+      "options": ["Pixel", "Conversions API", "Facebook SDK", "Catálogo"],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Pixel + CAPI. SDK es para apps; catálogo es para Advantage+ catalog ads.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Reservation está disponible solo para:",
+      "options": ["Awareness y Engagement", "Sales y Leads", "Traffic", "Todos"],
+      "correct": 0,
+      "explanation": "Reservation = entrega/precio predecibles, solo Awareness y Engagement.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "El total value de la subasta NO incluye:",
+      "options": [
+        "Advertiser bid",
+        "Estimated action rates",
+        "Ad quality",
+        "La bid strategy / cost control"
+      ],
+      "correct": 3,
+      "explanation": "Total value = bid + estimated action rates + ad quality. El cost control no entra.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Cliente con ROAS mínimo de 4x que optimiza por valor:",
+      "options": ["Highest Volume", "Cost per Result Goal", "ROAS Goal", "Bid Cap"],
+      "correct": 2,
+      "explanation": "ROAS Goal apunta a un retorno objetivo; requiere value tracking.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Cliente con CPA tope estricto, optimiza por cantidad de leads:",
+      "options": ["Highest Volume", "Cost per Result Goal", "Highest Value", "Reservation"],
+      "correct": 1,
+      "explanation": "Cost per Result Goal mantiene el costo objetivo por resultado buscando volumen.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Las 5 bid strategies son:",
+      "options": [
+        "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap",
+        "Daily, Lifetime, CBO, ABO, Bid Cap",
+        "Awareness, Traffic, Engagement, Leads, Sales",
+        "CPM, CPC, CPA, ROAS, CTR"
+      ],
+      "correct": 0,
+      "explanation": "Spend-based, goal-based y manual (Bid Cap).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "El ad scheduling (dayparting) requiere:",
+      "options": ["Daily budget", "Lifetime budget", "Bid Cap", "Reservation"],
+      "correct": 1,
+      "explanation": "Solo con lifetime budget se restringen horarios de entrega.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Advantage+ campaign budget (CBO):",
+      "options": [
+        "Fija budget por ad set manualmente",
+        "Reparte el budget entre ad sets hacia el de mejor desempeño",
+        "Garantiza CPM fijo",
+        "Es solo de Awareness"
+      ],
+      "correct": 1,
+      "explanation": "CBO mueve el gasto al mejor ad set; ABO lo fija por ad set.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Reservation: 600,000 personas, frequency 2, CPM fijo $5. Budget:",
+      "options": ["$3,000", "$6,000", "$60,000", "$1,200"],
+      "correct": 1,
+      "explanation": "Impresiones = 600,000 × 2 = 1,200,000. Budget = 1,200,000 × 5 ÷ 1000 = $6,000.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Umbral aproximado de learning phase:",
+      "options": [
+        "~10 eventos en 30 días",
+        "~50 eventos de optimización en ~7 días",
+        "~500 clics diarios",
+        "No existe"
+      ],
+      "correct": 1,
+      "explanation": "~50 eventos en ~7 días estabilizan el ad set.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Advantage+ Audience trata tus custom audiences como:",
+      "options": [
+        "Límite duro inquebrantable",
+        "Sugerencias que priorizan, no límites rígidos",
+        "Exclusiones",
+        "Lookalikes"
+      ],
+      "correct": 1,
+      "explanation": "Son señales; el sistema puede expandir si encuentra conversiones.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Cliente regulado que NO puede salir de un público definido por ley:",
+      "options": [
+        "Advantage+ Audience",
+        "Audiencia original con targeting definido",
+        "Lookalike 10%",
+        "Detailed targeting expansion"
+      ],
+      "correct": 1,
+      "explanation": "Restricción legal dura = control estricto (audiencia original).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Máxima precisión para parecidos a tus mejores clientes:",
+      "options": [
+        "Lookalike 10% de visitantes",
+        "Lookalike 1% sobre seed de compradores de alto valor",
+        "10 intereses",
+        "Engagement de video"
+      ],
+      "correct": 1,
+      "explanation": "1% = más parecido; seed de alto valor = mejor lookalike.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Recuperar carritos abandonados (AddToCart sin Purchase en 7 días):",
+      "options": [
+        "Customer list de compradores",
+        "Website custom audience por AddToCart excluyendo Purchase",
+        "Lookalike 1%",
+        "Engagement de página"
+      ],
+      "correct": 1,
+      "explanation": "Remarketing por comportamiento web excluyendo a quienes ya compraron.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Síntoma de over-targeting:",
+      "options": [
+        "CPM bajo y mucho delivery",
+        "Delivery casi nulo y CPM alto",
+        "Más recall",
+        "Más conversiones"
+      ],
+      "correct": 1,
+      "explanation": "Audiencia muy chica = el sistema no optimiza; sube costo y cae delivery.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Qué recomienda Meta como default de placements?",
+      "options": ["Manual solo Feed", "Advantage+ placements", "Solo Stories", "Solo Audience Network"],
+      "correct": 1,
+      "explanation": "Más superficies = más optimización; default recomendado.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿Por qué el creativo afecta el costo en Auction?",
+      "options": [
+        "Cambia el budget",
+        "Influye en estimated action rates y ad quality (total value)",
+        "Define el buying type",
+        "Reemplaza al Pixel"
+      ],
+      "correct": 1,
+      "explanation": "Creativo relevante/calidad sube el total value y puede ganar subastas más barato.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Advantage+ creative:",
+      "options": [
+        "Elige el placement",
+        "Optimiza el creativo automáticamente por persona",
+        "Fija el CPM",
+        "Crea lookalikes"
+      ],
+      "correct": 1,
+      "explanation": "Adapta recortes, brillo, música y texto por persona.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuándo se justifica restringir placements? Selecciona 2.",
+      "options": [
+        "Requisito de marca que prohíbe superficies",
+        "Creativo no apto para algún placement",
+        "Preferencia estética sin razón de negocio",
+        "Para simplificar el reporte"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Solo con razón real (marca o creativo no apto).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Awareness se evalúa por:",
+      "options": [
+        "CPC y compras",
+        "Reach, frequency y estimated ad recall lift",
+        "ROAS",
+        "Cost per lead"
+      ],
+      "correct": 1,
+      "explanation": "Awareness mide recall y reach eficiente, no clics ni ventas.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "El cliente duda si las ventas habrían pasado sin pauta. ¿Metodología?",
+      "options": [
+        "Attribution last-click",
+        "Conversion Lift con holdout",
+        "Más frequency",
+        "Cambiar a Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Conversion Lift aísla conversiones incrementales con grupo control.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Medir cambio en recall e intención de una campaña de marca:",
+      "options": ["Conversion Lift", "Brand Lift", "A/B Test", "MMM"],
+      "correct": 1,
+      "explanation": "Brand Lift mide métricas de marca por encuesta (expuestos vs. control).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Ver cómo TODOS los canales (TV, search, social, offline) aportan a ventas anuales:",
+      "options": ["Attribution de Meta", "Brand Lift", "Marketing Mix Modeling (MMM)", "A/B Test"],
+      "correct": 2,
+      "explanation": "MMM modela el impacto agregado macro de todos los canales.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Attribution vs incrementalidad:",
+      "options": [
+        "Son lo mismo",
+        "Attribution = crédito por touchpoint; incrementalidad = efecto causal",
+        "Incrementalidad reparte crédito por clic",
+        "Attribution usa holdout"
+      ],
+      "correct": 1,
+      "explanation": "Attribution asigna crédito; incrementalidad mide causalidad con holdout.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Customer list para custom audience:",
+      "options": [
+        "Se sube en texto plano",
+        "Se sube hasheada; matching sin exponer datos en claro",
+        "No permitida",
+        "Solo con Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Hashing antes de subir; Meta hace matching con hashes.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Un anuncio dice 'Sabemos que tienes problemas de espalda; esto es para ti'. Se rechaza porque:",
+      "options": [
+        "La categoría salud está prohibida",
+        "Implica/afirma un atributo personal del espectador",
+        "No tiene Pixel",
+        "Usó Advantage+ placements"
+      ],
+      "correct": 1,
+      "explanation": "Prohibido implicar un atributo personal del usuario; el problema es la redacción.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Trade-off de controles de brand safety más estrictos:",
+      "options": [
+        "Más alcance y menor costo",
+        "Más seguridad pero menor alcance y posible mayor costo",
+        "Sin efecto",
+        "Mejora el ROAS siempre"
+      ],
+      "correct": 1,
+      "explanation": "Menos inventario: balance entre riesgo de marca y eficiencia.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Lanzamiento de marca con reach/frequency garantizados y presupuesto cerrado:",
+      "options": [
+        "Auction + Highest Volume",
+        "Reservation",
+        "Auction + Bid Cap bajo",
+        "Auction + ROAS Goal"
+      ],
+      "correct": 1,
+      "explanation": "Garantía de entrega a precio fijo = Reservation; Auction no garantiza.",
+      "difficulty": "medium"
+    }
+  ]
+}
