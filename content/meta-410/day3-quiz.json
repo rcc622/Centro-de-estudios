@@ -52,12 +52,12 @@
         "Audience demasiado chica",
         "Budget muy bajo",
         "Pixel + CAPI ambos instalados",
-        "Demasiados ad sets activos",
+        "Usar Advantage+ campaign budget",
         "Bid Cap muy restrictivo"
       ],
       "correct": [0, 1, 4],
       "multi": true,
-      "explanation": "Audience chica, budget bajo y bid restrictivo causan Learning Limited. Demasiados ad sets también puede causarlo. Pixel + CAPI MEJORA optimización (no es causa).",
+      "explanation": "Audience chica, budget bajo y Bid Cap restrictivo causan Learning Limited (muy pocos optimization events para que el sistema aprenda). Pixel + CAPI MEJORA la optimización y Advantage+ campaign budget consolida el gasto: ninguno de esos dos es causa.",
       "difficulty": "hard"
     },
     {

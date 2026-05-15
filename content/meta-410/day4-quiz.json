@@ -69,10 +69,10 @@
     {
       "q": "Event Match Quality (EMQ) mejora cuando:",
       "options": [
-        "Subís el budget",
+        "Subes el budget",
         "Cambias bid strategy",
-        "Enviás customer info rica hasheada (email, phone, IP, user agent) vía CAPI",
-        "Reducís audience"
+        "Envías customer info rica hasheada (email, phone, IP, user agent) vía CAPI",
+        "Reduces audience"
       ],
       "correct": 2,
       "explanation": "EMQ mejora con calidad de la data enviada — CAPI permite mandar más info hasheada que Pixel solo.",
