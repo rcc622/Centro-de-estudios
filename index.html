@@ -659,7 +659,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
   <div class="modal-sheet" role="dialog" aria-labelledby="nh-title">
     <div class="ms-ico">💔</div>
     <div class="ms-h" id="nh-title">¡Sin corazones!</div>
-    <div class="ms-sub">Necesitas corazones para tomar lecciones. Mientras esperás, podés repasar flashcards (no cuestan corazones).</div>
+    <div class="ms-sub">Necesitas corazones para tomar lecciones. Mientras esperas, puedes repasar flashcards (no cuestan corazones).</div>
     <div class="ms-timer-card">
       <div class="ms-timer-label">Hearts se recargan en</div>
       <div class="ms-timer-val" id="nh-timer">--:--</div>
@@ -707,9 +707,10 @@ const MAX_HEARTS_DEFAULT = 5;
 const DIFFICULTY = {
   easy: {
     n: 'Fácil',
-    desc: 'Explorá sin presión · regen rápido',
+    desc: 'Principiante · 5 vidas · 3 escudos',
     icon: '🌱',
-    maxHearts: 7,
+    maxHearts: 5,
+    maxShields: 3,
     heartRegenMs: 10*60*1000,
     passingBonus: -20,
     lightningTime: 240,
@@ -717,19 +718,21 @@ const DIFFICULTY = {
   },
   medium: {
     n: 'Intermedio',
-    desc: 'Balanceado · estándar',
+    desc: 'Intermedio · 3 vidas · 2 escudos',
     icon: '⚖️',
-    maxHearts: 5,
+    maxHearts: 3,
+    maxShields: 2,
     heartRegenMs: 15*60*1000,
     passingBonus: 0,
     lightningTime: 180,
     xpMult: 1.0
   },
   hard: {
-    n: 'Difícil',
-    desc: 'Exigente · +30% XP',
+    n: 'Avanzado',
+    desc: 'Avanzado · 2 vidas · 1 escudo · +30% XP',
     icon: '🔥',
-    maxHearts: 3,
+    maxHearts: 2,
+    maxShields: 1,
     heartRegenMs: 30*60*1000,
     passingBonus: 5,
     lightningTime: 120,
@@ -737,9 +740,10 @@ const DIFFICULTY = {
   },
   expert: {
     n: 'Experto',
-    desc: 'Como el examen real · +50% XP',
+    desc: 'Senior · 1 vida · 0 escudos · bonos por perfección · +50% XP',
     icon: '🏆',
     maxHearts: 1,
+    maxShields: 0,
     heartRegenMs: 60*60*1000,
     passingBonus: 10,
     lightningTime: 90,
@@ -750,6 +754,7 @@ const DIFFICULTY = {
     desc: 'Sin margen de error · +100% XP',
     icon: '💎',
     maxHearts: 1,
+    maxShields: 0,
     heartRegenMs: 90*60*1000,
     passingBonus: 15,
     lightningTime: 60,
@@ -767,6 +772,7 @@ function getDifficulty(){ return DIFFICULTY[DB.difficulty || 'medium'] || DIFFIC
 const MAX_HEARTS = MAX_HEARTS_DEFAULT; // legacy, usar getMaxHearts() para lógica
 const HEART_REGEN_MS = HEART_REGEN_MS_DEFAULT;
 function getMaxHearts(){ return getDifficulty().maxHearts; }
+function getMaxShields(){ return getDifficulty().maxShields ?? 0; }
 function getHeartRegenMs(){ return getDifficulty().heartRegenMs; }
 function getXpMult(){ return getDifficulty().xpMult; }
 function getPassingBonus(){ return getDifficulty().passingBonus; }
@@ -1026,8 +1032,9 @@ let DB = {
   perfectStreak: 0, // lecciones perfectas consecutivas — para Perfect Combo x2 XP
   comboReady: false, // true si la próxima lección tendrá x2 XP por combo
   goalBonusClaimed: {}, // {'YYYY-MM-DD': true} para no dar el bonus de meta diaria 2 veces
-  shields: 0, // escudos de racha disponibles (1 cada 7 días, máx 3)
-  shieldsEarned: 0 // total acumulado para milestones
+  shields: 0, // escudos disponibles (banco por nivel, recarga semanal)
+  shieldsEarned: 0, // legacy — ya no se usa para milestones
+  lastShieldRefill: null // fecha del último relleno semanal de escudos
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1078,6 +1085,12 @@ function load(){
   }catch(e){console.error('Load error',e)}
   // Migración: nivel 'master' viejo → 'expert' nuevo
   if(DB.difficulty === 'master') DB.difficulty = 'expert';
+  // Migración escudos v2: banco por nivel + recarga semanal
+  if(DB.lastShieldRefill == null){
+    DB.shields = getMaxShields();
+    DB.lastShieldRefill = todayStr();
+  }
+  refillShieldsWeekly();
   regenerateHearts();
 }
 function save(){
@@ -1132,11 +1145,26 @@ function regenerateHearts(){
   if(!DB.lastHeartLost){ DB.lastHeartLost = now(); save(); return; }
   // Full refill: después de UN ciclo completo (regenMs), recargás TODOS los
   // hearts de una. Más amigable y alineado con la expectativa (Duolingo-style):
-  // esperás el timer y volvés al máximo, sin importar cuántos perdiste.
+  // esperas el timer y vuelves al máximo, sin importar cuántos perdiste.
   const elapsed = now() - DB.lastHeartLost;
   if(elapsed >= regenMs){
     DB.hearts = maxH;
     DB.lastHeartLost = null;
+    save();
+  }
+}
+
+// Escudos: banco por nivel. Se recargan al máximo cada 7 días. Nunca bajan
+// por debajo de lo ganado (ej. bonos de Experto); tope global MAX_SHIELDS.
+function refillShieldsWeekly(){
+  const maxS = getMaxShields();
+  if(!DB.lastShieldRefill){ DB.lastShieldRefill = todayStr(); save(); return; }
+  const last = new Date(DB.lastShieldRefill + 'T00:00:00');
+  const tDate = new Date(todayStr() + 'T00:00:00');
+  const days = Math.round((tDate - last) / 86400000);
+  if(days >= 7){
+    DB.shields = Math.min(MAX_SHIELDS, Math.max(DB.shields || 0, maxS));
+    DB.lastShieldRefill = todayStr();
     save();
   }
 }
@@ -1198,7 +1226,7 @@ function updateStreak(){
       if(diff <= 1){
         DB.streak += 1; // tolera off-by-one por migración UTC→local
       } else if(diff === 2 && (DB.shields||0) > 0){
-        // Streak shield: te saltaste 1 día, consume un escudo y mantenés racha
+        // Streak shield: te saltaste 1 día, consume un escudo y mantienes racha
         DB.shields -= 1;
         DB.streak += 1;
         usedShield = true;
@@ -1212,13 +1240,8 @@ function updateStreak(){
     }
   }
   DB.lastStudyDate = today;
-  // Streak shield earning: 1 escudo por cada milestone de 7 días alcanzado (máx 3)
-  const milestonesPassed = Math.floor(DB.streak / 7);
-  if(milestonesPassed > (DB.shieldsEarned || 0) && (DB.shields||0) < MAX_SHIELDS){
-    DB.shields = Math.min(MAX_SHIELDS, (DB.shields||0) + 1);
-    DB.shieldsEarned = milestonesPassed;
-    if(!usedShield) setTimeout(() => showToast('🛡️ ¡Ganaste un escudo de racha! ('+DB.shields+'/'+MAX_SHIELDS+')', 3000, 'success'), 600);
-  }
+  // Los escudos ya no se ganan por milestones de racha: ahora son un banco
+  // por nivel de dificultad con recarga semanal (ver refillShieldsWeekly).
   if(DB.streak >= 3) earnAch('streak_3');
   if(DB.streak >= 7) earnAch('streak_7');
   if(DB.streak >= 14) earnAch('streak_14');
@@ -1411,6 +1434,11 @@ function markQuizResult(courseId, dayId, kind, score, passingScore){
   if(kind === 'unit-quiz' && passed){
     qp.unitQuizPassed = true;
     earnAch('unit_quiz_pass');
+    // Experto: examen del día perfecto (100%) → +1 escudo (tope global)
+    if(DB.difficulty === 'expert' && score === 100){
+      DB.shields = Math.min(MAX_SHIELDS, (DB.shields||0) + 1);
+      setTimeout(() => showToast('🛡️ Examen del día perfecto · +1 escudo (Experto)', 3000, 'success'), 700);
+    }
     const dayProg = getDayProgress(courseId, dayId);
     if(dayProg.done === dayProg.total) earnAch('day_complete');
   }
@@ -1596,7 +1624,7 @@ function renderHome(){
           <div class="pb-ico" style="animation:none">🎯</div>
           <div class="pb-info">
             <div class="pb-title">COMBO ${DB.perfectStreak}/3 · siguiente x2</div>
-            <div class="pb-sub">Mantené la racha sin errores para multiplicar XP</div>
+            <div class="pb-sub">Mantén la racha sin errores para multiplicar XP</div>
           </div>
           <div class="combo-pip-wrap">
             ${[0,1,2].map(i => `<div class="combo-pip ${i < DB.perfectStreak ? 'on':''}"></div>`).join('')}
@@ -2376,7 +2404,7 @@ function renderLessonDecisionTree(course, day, lesson){
       <div class="lesson-header">
         <div class="lesson-num">🌳 ÁRBOL DE DECISIÓN · ${Math.min(idx+1,total)}/${total}</div>
         <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
-        <div style="font-size:13px;color:#65676B;margin-top:6px">${lesson.instruction || 'Recorré el árbol según el escenario y llegá a la hoja correcta.'}</div>
+        <div style="font-size:13px;color:#65676B;margin-top:6px">${lesson.instruction || 'Recorre el árbol según el escenario y llega a la hoja correcta.'}</div>
       </div>
       ${scen ? `
         <div class="dtree-scenario">
@@ -2901,7 +2929,7 @@ function renderFlashcards(){
         <div class="empty">
           <div class="empty-ico">🎴</div>
           <div style="font-weight:700;margin-bottom:6px">Sin tarjetas para esta práctica</div>
-          <div style="font-size:13px;margin-bottom:18px">Completá más lecciones o respondé MCQs (los errores se acumulan acá)</div>
+          <div style="font-size:13px;margin-bottom:18px">Completa más lecciones o responde MCQs (los errores se acumulan aquí)</div>
           <button class="btn btn-secondary" style="width:auto;padding:10px 18px" onclick="exitFlashSession()">← Volver</button>
         </div>
       </div>
@@ -3248,7 +3276,7 @@ function renderAchievements(){
         <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">🏆</div>
         <div class="pr-info">
           <div class="pr-title">Meta diaria — bonus +50 XP</div>
-          <div class="pr-meta">Completá tu meta del día y recibí 50 XP bonus (una vez por día)</div>
+          <div class="pr-meta">Completa tu meta del día y recibe 50 XP bonus (una vez por día)</div>
           ${(() => {
             const goal = DB.dailyGoal || 3;
             const done = DB.activityLog?.[todayStr()]?.lessons || 0;
@@ -3260,17 +3288,17 @@ function renderAchievements(){
       <div class="practice-row">
         <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🛡️</div>
         <div class="pr-info">
-          <div class="pr-title">Escudo de racha</div>
-          <div class="pr-meta">${(DB.shields||0) > 0 ? `Tenés ${DB.shields}/${MAX_SHIELDS} · cada uno te salva un día perdido` : `Cada 7 días de racha ganás 1 escudo (máx ${MAX_SHIELDS})`}</div>
-          <div class="pr-progress"><div class="pr-progress-bar" style="width:${Math.min(100,(DB.streak%7)/7*100)}%"></div></div>
+          <div class="pr-title">Escudos de racha</div>
+          <div class="pr-meta">Banco por nivel (${getDifficulty().n}: ${getMaxShields()}). Cada escudo te salva un día perdido. Se recargan al máximo cada semana.</div>
+          <div class="pr-progress"><div class="pr-progress-bar" style="width:${(()=>{const m=Math.max(getMaxShields(),DB.shields||0);return m?Math.min(100,(DB.shields||0)/m*100):0;})()}%"></div></div>
         </div>
-        <div style="font-size:18px;font-weight:800;color:#9B59B6;flex-shrink:0">${DB.shields||0}/${MAX_SHIELDS}</div>
+        <div style="font-size:18px;font-weight:800;color:#9B59B6;flex-shrink:0">${DB.shields||0}/${Math.max(getMaxShields(),DB.shields||0)}</div>
       </div>
       <div class="practice-row locked">
         <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">📦</div>
         <div class="pr-info">
           <div class="pr-title">Caja misteriosa <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
-          <div class="pr-meta">Cada 5 lecciones perfectas ganás una caja con recompensa aleatoria (XP extra, hearts, multiplicadores)</div>
+          <div class="pr-meta">Cada 5 lecciones perfectas ganas una caja con recompensa aleatoria (XP extra, hearts, multiplicadores)</div>
         </div>
       </div>
 
@@ -3315,13 +3343,13 @@ function setDifficulty(level){
   haptic(HAPTIC.select);
   if(!DIFFICULTY[level]) return;
   if(DIFFICULTY[level].unlockable && !isPerfectionistUnlocked()){
-    showToast('Bloqueado · necesitás 99% de tasa de éxito sobre 20+ lecciones', 3000, 'error');
+    showToast('Bloqueado · necesitas 99% de tasa de éxito sobre 20+ lecciones', 3000, 'error');
     return;
   }
   const oldMaxHearts = getMaxHearts();
   DB.difficulty = level;
   const newMaxHearts = getMaxHearts();
-  // Si bajó el max y tenés más hearts que el nuevo cap, ajustar
+  // Si bajó el max y tienes más hearts que el nuevo cap, ajustar
   if(DB.hearts > newMaxHearts){
     DB.hearts = newMaxHearts;
     if(DB.hearts >= newMaxHearts) DB.lastHeartLost = null;
@@ -3330,9 +3358,13 @@ function setDifficulty(level){
   if(DB.hearts < newMaxHearts && !DB.lastHeartLost){
     DB.lastHeartLost = now();
   }
+  // Escudos: banco fresco del nuevo nivel + reinicia el ciclo semanal
+  const newMaxShields = getMaxShields();
+  DB.shields = newMaxShields;
+  DB.lastShieldRefill = todayStr();
   save();
   const d = DIFFICULTY[level];
-  showToast('Dificultad: '+d.icon+' '+d.n+' · '+newMaxHearts+' hearts · XP x'+d.xpMult, 2800, 'success');
+  showToast('Dificultad: '+d.icon+' '+d.n+' · '+newMaxHearts+' ❤️ · '+newMaxShields+' 🛡️ · XP x'+d.xpMult, 3000, 'success');
   render();
 }
 function streakNavMonth(delta){
@@ -3398,10 +3430,9 @@ function renderStreak(){
       <div class="streak-hero">
         <div class="sh-num">${DB.streak}</div>
         <div class="sh-label">${DB.streak===1?'día de racha':'días de racha'}</div>
-        <div class="sh-sub">${DB.streak > 0 ? 'Sigue así · no la rompas' : 'Empezá hoy completando una lección'}</div>
+        <div class="sh-sub">${DB.streak > 0 ? 'Sigue así · no la rompas' : 'Empieza hoy completando una lección'}</div>
         <div style="margin-top:10px;display:flex;align-items:center;gap:6px;position:relative;z-index:1">
-          ${Array.from({length:MAX_SHIELDS}, (_,i) => `<span style="font-size:22px;opacity:${i < (DB.shields||0) ? '1' : '.25'}">🛡️</span>`).join('')}
-          <span style="font-size:12px;font-weight:700;color:#7A3F00;margin-left:6px">${DB.shields||0}/${MAX_SHIELDS} escudos · 1 te salva un día perdido</span>
+          ${(()=>{const shMax=Math.max(getMaxShields(),DB.shields||0);if(shMax===0)return `<span style="font-size:12px;font-weight:700;color:#7A3F00">🛡️ ${getDifficulty().n}: 0 escudos · gana 1 con examen del día perfecto</span>`;return Array.from({length:shMax}, (_,i) => `<span style="font-size:22px;opacity:${i < (DB.shields||0) ? '1' : '.25'}">🛡️</span>`).join('')+`<span style="font-size:12px;font-weight:700;color:#7A3F00;margin-left:6px">${DB.shields||0}/${shMax} escudos · 1 te salva un día perdido</span>`;})()}
         </div>
       </div>
 
@@ -3539,7 +3570,7 @@ function renderConfig(){
             </div>
             <button class="gc-opt ${curr==='perfectionist'?'active':''}"
               style="width:100%;margin-top:10px;${perfUnlocked?'':'opacity:.55;cursor:not-allowed'}"
-              onclick="${perfUnlocked?`setDifficulty('perfectionist')`:`showToast('Bloqueado · necesitás 99% de éxito en ≥20 lecciones (vas en ${successRate}% sobre ${DB.totalLessons||0})', 3500)`}">
+              onclick="${perfUnlocked?`setDifficulty('perfectionist')`:`showToast('Bloqueado · necesitas 99% de éxito en ≥20 lecciones (vas en ${successRate}% sobre ${DB.totalLessons||0})', 3500)`}">
               ${perfUnlocked?'💎':'🔒'} Perfeccionista
               <span class="gc-opt-sub" style="display:block;margin-top:2px">
                 ${perfUnlocked?'XP x2.0 · sin margen de error':`Desbloquear con 99% de éxito (${successRate}% / 99%)`}
@@ -3559,7 +3590,7 @@ function renderConfig(){
         return `
           <div class="goal-card">
             <div class="gc-title"><span>🎯</span>Meta diaria</div>
-            <div class="gc-desc">Cuántas lecciones querés completar por día. Cuando alcances tu meta, mantenés la racha sin riesgo.</div>
+            <div class="gc-desc">Cuántas lecciones quieres completar por día. Cuando alcances tu meta, mantienes la racha sin riesgo.</div>
             <div class="gc-progress-wrap"><div class="gc-progress-bar ${complete?'complete':''}" style="width:${pct}%"></div></div>
             <div class="gc-progress-label">${complete?'🏆 ¡Meta de hoy alcanzada!':`Hoy: ${done} / ${goal} ${goal===1?'lección':'lecciones'}`}</div>
             <div class="gc-options">
@@ -3575,7 +3606,7 @@ function renderConfig(){
 
       <div class="backup-card">
         <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
-        <div class="bc-desc">Exportá tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpiás cache o cambiás de celular, importalo para recuperar XP, racha y logros.</div>
+        <div class="bc-desc">Exporta tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpias cache o cambias de celular, impórtalo para recuperar XP, racha y logros.</div>
         <div class="bc-row">
           <button class="bc-btn bc-btn-primary" onclick="exportBackup()">📤 Exportar</button>
           <button class="bc-btn bc-btn-outline" onclick="triggerImportBackup()">📥 Importar</button>
@@ -3584,7 +3615,7 @@ function renderConfig(){
       </div>
 
       <div class="section-title">Mantenimiento</div>
-      <button class="btn btn-secondary" style="margin-bottom:10px" onclick="haptic(15);if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer. Exportá un backup antes si no querés perderlo.')){resetAll()}">Resetear todo</button>
+      <button class="btn btn-secondary" style="margin-bottom:10px" onclick="haptic(15);if(confirm('¿Resetear TODO el progreso? Esta acción NO se puede deshacer. Exporta un backup antes si no quieres perderlo.')){resetAll()}">Resetear todo</button>
       <div style="font-size:11px;color:#8A8D91;text-align:center;padding:18px 0;line-height:1.55">
         Centro de Estudios Randall<br/>
         v1.0 · PWA · localStorage<br/>
@@ -3828,10 +3859,16 @@ function finishLesson(){
     comboUsed = true;
   }
   // Trackear racha de perfectas
+  let expertHeartBonus = false;
   if(perfect){
     DB.perfectStreak = (DB.perfectStreak || 0) + 1;
     if(DB.perfectStreak >= 3 && !DB.comboReady){
       DB.comboReady = true;
+    }
+    // Experto: +1 vida extra por cada 3 lecciones perfectas seguidas (tope 5)
+    if(DB.difficulty === 'expert' && DB.perfectStreak % 3 === 0){
+      DB.hearts = Math.min(5, (DB.hearts || 0) + 1);
+      expertHeartBonus = true;
     }
   } else {
     DB.perfectStreak = 0;
@@ -3841,6 +3878,10 @@ function finishLesson(){
   updateStreak();
   addXP(xp);
   recordActivity({xp, lessons:1, perfectLessons: perfect?1:0, errors: LESSON_STATE.errors, mins: duration});
+
+  if(expertHeartBonus){
+    setTimeout(() => showToast('🏆 Racha perfecta x3 · +1 ❤️ extra (Experto)', 2800, 'success'), 500);
+  }
 
   // POWER: Daily Goal Bonus — +50 XP al alcanzar la meta del día (una vez por día)
   const goal = DB.dailyGoal || 3;
@@ -3930,7 +3971,7 @@ function flashPrev(){
 }
 
 // Salir de la sesión de flashcards. Si veniste desde una burbuja del
-// sendero (PRACTICE_MODE === 'lesson'), volvés al sendero; sino al hub.
+// sendero (PRACTICE_MODE === 'lesson'), vuelves al sendero; sino al hub.
 function exitFlashSession(){
   haptic(HAPTIC.tap);
   const fromPath = PRACTICE_MODE === 'lesson';
@@ -4031,8 +4072,10 @@ function resetAll(){
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
-    goalBonusClaimed: {}, shields: 0, shieldsEarned: 0
+    goalBonusClaimed: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null
   };
+  DB.shields = getMaxShields();
+  DB.lastShieldRefill = todayStr();
   VIEW = 'home';
   render();
   showToast('Progreso reseteado',2000);
@@ -4281,7 +4324,7 @@ function exchangeXpForHeart(){
     return;
   }
   if(DB.hearts >= getMaxHearts()){
-    showToast('Ya tenés todos los corazones', 1800);
+    showToast('Ya tienes todos los corazones', 1800);
     return;
   }
   haptic(HAPTIC.correct);
