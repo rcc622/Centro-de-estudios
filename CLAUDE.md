@@ -565,15 +565,39 @@ El motor implementa estas mecánicas. Si Randall pide cambios, modifica `index.h
 9. Sabio — 3300 XP
 10. Leyenda Meta — 4200 XP
 
+### Dificultad — vidas, escudos y nivel de contenido
+
+4 niveles visibles + 1 oculto. Cada uno define cuántas vidas (corazones) y escudos tiene el usuario, además del nivel cognitivo esperado del contenido:
+
+| Nivel | key | Vidas | Escudos | Contenido esperado |
+|---|---|---|---|---|
+| 🌱 Fácil | `easy` | 5 | 3 | Principiante. Conceptos directos, sin trampas. |
+| ⚖️ Intermedio | `medium` | 3 | 2 | Intermedio. Distractores plausibles. |
+| 🔥 Avanzado | `hard` | 2 | 1 | Avanzado. Abreviaciones **con** el nombre completo entre paréntesis, ej. "CAPI (Conversions API)". |
+| 🏆 Experto | `expert` | 1 | 0 | Senior. Abreviaciones de términos en inglés **sin** ayuda, casos prácticos complejos, escenarios multi-variable. |
+| 💎 Perfeccionista | `perfectionist` | 1 | 0 | Oculto (se desbloquea al 99% de éxito sobre ≥20 lecciones). +100% XP. |
+
+**Regla de autoría (contenido nuevo):** los MCQ ya se filtran por su tag `difficulty` (`easy`/`medium`/`hard`). Al escribir contenido nuevo, calibra el fraseo al nivel: paréntesis explicativos en `hard`, abreviaciones en inglés y casos complejos en preguntas tag `hard` pensadas para Experto. **No reescribir contenido viejo retroactivamente** salvo que Randall lo pida.
+
 ### Corazones (vidas)
-- Empieza con 5 corazones
+- Máximo según nivel de dificultad (ver tabla arriba)
 - Cada respuesta incorrecta = -1 corazón
-- Regeneración: 1 corazón cada 30 minutos
+- Regeneración: **full refill** al máximo del nivel tras un ciclo (10/15/30/60 min según nivel)
 - Si llegan a 0, el usuario debe esperar para empezar nueva lección
+- **Bono Experto:** cada 3 lecciones perfectas seguidas → +1 vida extra (tope 5)
+
+### Escudos de racha
+- Banco fijo por nivel de dificultad (Fácil 3 · Intermedio 2 · Avanzado 1 · Experto 0)
+- Si faltas **exactamente 1 día**, se consume 1 escudo automáticamente y la racha sobrevive
+- **No** se ganan por milestones de racha (lógica vieja eliminada)
+- Se recargan al máximo del nivel **cada 7 días** (`refillShieldsWeekly`). Nunca bajan lo ya ganado; tope global `MAX_SHIELDS = 3`
+- Al cambiar de dificultad, el banco se resetea al máximo del nuevo nivel
+- **Bono Experto:** examen del día (unit-quiz) con 100% → +1 escudo
 
 ### Racha
 - +1 día si estudia hoy y estudió ayer
-- Reset si pasa más de 1 día sin estudiar
+- Si falta 1 día y hay escudo → se consume, racha sobrevive
+- Reset si pasa más de 1 día sin estudiar y no hay escudo
 - Achievements: 3 días, 7 días
 
 ### Logros (12 badges)
