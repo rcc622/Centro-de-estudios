@@ -113,6 +113,18 @@
       "correct": 1,
       "explanation": "UN SOLO catalog con Product Sets internos. Múltiples catalogs confunden el matching con Pixel y dificultan setup de Advantage+ Catalog Ads.",
       "difficulty": "hard"
+    },
+    {
+      "q": "Un negocio sube items a su catálogo mediante un data feed y no sabe cómo escribir el precio. ¿Qué formato de precio soporta el feed de productos?",
+      "options": [
+        "5.99 US Dollars",
+        "$5.99",
+        "5,99",
+        "5.99 USD"
+      ],
+      "correct": 3,
+      "explanation": "El formato válido es el número con punto decimal seguido del código ISO de moneda: '5.99 USD'. Escribir el nombre de la moneda ('US Dollars'), usar el símbolo ('$5.99') o coma decimal ('5,99') no es el formato aceptado por el data feed del catálogo.",
+      "difficulty": "medium"
     }
   ]
 }

@@ -127,6 +127,78 @@
       "correct": 1,
       "explanation": "Advertising Standards prohíbe ads que implican características personales del usuario. Ej: 'para los señores mayores' viola la regla. Reformular: 'para profesionales experimentados'.",
       "difficulty": "hard"
+    },
+    {
+      "q": "Un cliente quiere ver cómo se verá su anuncio en distintos placements, pero no es parte de la audiencia objetivo, así que no lo verá publicado. ¿Qué debe hacer el media buyer para verlo como lo vería la audiencia?",
+      "options": [
+        "Usar Ad preview a nivel ad en Ads Manager para ver el anuncio en los distintos placements",
+        "Ir a Placements a nivel ad set y elegir Manual placements para verlo",
+        "Usar Advantage+ creative a nivel ad y activar todas las optimizaciones",
+        "Editar el ad creative y elegir el recorte de medios por placement"
+      ],
+      "correct": 0,
+      "explanation": "Ad preview (a nivel ad en Ads Manager) renderiza el anuncio tal como aparecería en cada placement sin necesidad de publicarlo ni de pertenecer a la audiencia. Las demás opciones cambian configuración o creative, no muestran la vista previa por placement.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca de ropa infantil corre una campaña de Sales con videos de 15 segundos. Su objetivo secundario es entender si los videos resultan atractivos para el público. ¿Qué debe recomendar el media buyer para evaluar ese segundo objetivo?",
+      "options": [
+        "Crear una campaña de Engagement con optimización Video View",
+        "Personalizar las columnas para ver las métricas de video ads",
+        "Analizar solo los comentarios, reacciones y compartidos del anuncio",
+        "Cambiar los videos creativos cada mes"
+      ],
+      "correct": 1,
+      "explanation": "Sin abrir otra campaña, puedes personalizar las columnas de Ads Manager para ver métricas de video (ThruPlay, % reproducido, retención) y medir si el video atrae, sin afectar el objetivo primario de Sales. Crear otra campaña o ver solo reacciones no responde si el video es atractivo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una marca quiere crear un reporte de métricas para ver cuántos hombres vieron su anuncio durante el fin de semana. ¿Desde dónde debe sacar el reporte el media buyer?",
+      "options": [
+        "Meta Business Suite",
+        "Ads Manager",
+        "La Facebook Page",
+        "Events Manager"
+      ],
+      "correct": 1,
+      "explanation": "Ads Manager (Ads Reporting) es el único lugar donde puedes crear reportes personalizados con breakdowns por demografía, tiempo y placement. Business Suite y la Page solo muestran vistas básicas; Events Manager es para datasets/eventos, no para reportes de campaña.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál de los siguientes anuncios cumple con las políticas de Meta (Advertising Standards)?",
+      "options": [
+        "Anuncios que llevan a una landing page que no funciona",
+        "Anuncios que promueven una oportunidad de empleo",
+        "Anuncios que promueven penny auctions (subastas de centavos)",
+        "Anuncios con contenido sensacionalista"
+      ],
+      "correct": 1,
+      "explanation": "Promover una oportunidad de empleo está permitido (es una categoría legítima, aunque empleo cae en special ad category). Las landing pages rotas, las penny auctions y el contenido sensacionalista (shocking/sensational) están prohibidos por las Advertising Standards.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un cliente quiere entender en qué lugares se mostraron sus anuncios durante una campaña. ¿Qué detalle de Ads Manager debe consultar el media buyer?",
+      "options": [
+        "Placement",
+        "Impressions",
+        "Reach",
+        "Frequency"
+      ],
+      "correct": 0,
+      "explanation": "El breakdown por Placement muestra DÓNDE se entregaron los anuncios (Feed, Reels, Stories, etc.). Impressions es cuántas veces se mostró, Reach son personas únicas y Frequency es el promedio de veces por persona: ninguno indica el lugar de entrega.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Una campaña con imágenes de paisajes naturales rinde mal. El media buyer recomienda usar imágenes con personas. ¿Cuál es el razonamiento detrás de esa recomendación?",
+      "options": [
+        "Para ayudar a la gente a visualizarse a sí misma usando el producto o servicio",
+        "Para mostrar un grupo diverso de personas",
+        "Porque las imágenes artísticas de personas son las más efectivas en Meta",
+        "Porque las fotos de personas siempre rinden más que las de stock"
+      ],
+      "correct": 0,
+      "explanation": "La best practice de creative con personas funciona porque el usuario se proyecta usando el producto/servicio, lo que sube relevancia e intención. Las otras razones (diversidad, 'arte', stock vs no stock) no son el fundamento de la recomendación.",
+      "difficulty": "medium"
     }
   ]
 }

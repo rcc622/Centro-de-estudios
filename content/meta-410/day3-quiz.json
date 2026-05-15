@@ -114,6 +114,30 @@
       "correct": 2,
       "explanation": "Daily = promedio flexible (excede +25% algunos días y compensa otros). Lifetime = tope durante el periodo, distribución variable día a día.",
       "difficulty": "medium"
+    },
+    {
+      "q": "Un media buyer decide entre Auction y Reservation para su próxima campaña. ¿Cuál de las siguientes opciones es compatible con Auction buying?",
+      "options": [
+        "Programar la entrega en distintos días de la semana (scheduling)",
+        "Entrega secuenciada de anuncios (sequenced ad delivery)",
+        "CPM predecible y estable en el tiempo",
+        "Garantía de reach y frequency fijos"
+      ],
+      "correct": 0,
+      "explanation": "Auction permite ad scheduling/dayparting (programar por días u horas, usando lifetime budget). La entrega secuenciada, el CPM predecible y el control fijo de reach/frequency son características de Reservation (Reach & Frequency), no de Auction.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Un cliente dio $100,000 para una campaña de Sales de 4 semanas. Gastó $40,000 la primera semana y $20,000 la segunda. ¿Cómo asegura que el budget se reparta de forma pareja cada semana?",
+      "options": [
+        "Seleccionar un Daily budget",
+        "Usar varios creativos",
+        "Seleccionar optimization events",
+        "Usar varios ad sets"
+      ],
+      "correct": 0,
+      "explanation": "Un Daily budget marca un gasto promedio por día, lo que mantiene el pacing parejo semana a semana. Un Lifetime budget puede concentrar el gasto en los periodos de mayor oportunidad y producir semanas disparejas como las del escenario. Cambiar creativos, eventos o ad sets no controla el pacing.",
+      "difficulty": "medium"
     }
   ]
 }

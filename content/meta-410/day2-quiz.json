@@ -124,6 +124,18 @@
       "correct": 2,
       "explanation": "Awareness con Maximize ad recall lift es el match exacto para impacto en memoria. Traffic optimiza clicks (no recall). Engagement optimiza interacción (no recall). Sales no aplica.",
       "difficulty": "easy"
+    },
+    {
+      "q": "Un retailer lanzará una campaña con video para promover una línea de ropa que aún no está a la venta: primero quiere mandar gente a una landing page del producto en su sitio y después retargetear a quienes la vieron. ¿Qué acción debe tomar?",
+      "options": [
+        "Elegir el objetivo Awareness con audiencia amplia y crear un Custom Audience de quienes vieron el video",
+        "Elegir el objetivo Traffic con audiencia amplia y crear un Website Custom Audience de quienes visitaron el sitio",
+        "Elegir el objetivo Awareness segmentando a un Custom Audience que vio el video",
+        "Elegir el objetivo Traffic segmentando a un Custom Audience que ya visitó su sitio"
+      ],
+      "correct": 1,
+      "explanation": "Traffic optimiza para llevar gente a la landing page; con audiencia amplia maximizas el volumen de visitas y luego creas un Website Custom Audience de esos visitantes para retargetear. Awareness optimiza recall (no visitas) y segmentar de entrada a un Custom Audience que ya visitó el sitio no aplica porque esa audiencia todavía no existe.",
+      "difficulty": "hard"
     }
   ]
 }

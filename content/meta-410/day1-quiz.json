@@ -120,6 +120,30 @@
       "correct": 2,
       "explanation": "Cambiar payment methods requiere acceso admin O el rol finance (view and manage). El rol finance es uno de los Advanced options del portfolio.",
       "difficulty": "hard"
+    },
+    {
+      "q": "A un account manager se le da employee access dentro de Business Manager. ¿Qué tarea puede realizar ese usuario?",
+      "options": [
+        "Eliminar el negocio del Business Manager",
+        "Acceder solo a las cuentas y herramientas que le fueron asignadas",
+        "Agregar o quitar a otros empleados",
+        "Crear nuevas cuentas y Pages"
+      ],
+      "correct": 1,
+      "explanation": "Employee access = acceso limitado: el usuario solo puede trabajar con las cuentas y assets que un admin le asigne. Eliminar el negocio, gestionar otros empleados o crear cuentas/Pages son tareas exclusivas de admin access.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una empresa usó Advantage+ placements y obtuvo resultados ligeramente mejores en Instagram. ¿Qué debe hacer el media buyer en la próxima campaña?",
+      "options": [
+        "Poner los anuncios solo en Instagram de ahora en adelante",
+        "Separar las audiencias por placement",
+        "Seguir usando la misma estrategia con Advantage+ placements",
+        "Hacer A/B test de Instagram feed vs Instagram stories"
+      ],
+      "correct": 2,
+      "explanation": "Una diferencia ligera no justifica romper Advantage+ placements: el sistema ya distribuye la entrega al placement más eficiente en tiempo real. Limitar a un solo placement o fragmentar por placement reduce el pool de optimización y suele empeorar el costo por resultado.",
+      "difficulty": "medium"
     }
   ]
 }
