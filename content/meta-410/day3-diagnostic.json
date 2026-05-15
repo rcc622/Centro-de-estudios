@@ -23,7 +23,7 @@
         "Solo Bid Cap"
       ],
       "correct": 1,
-      "explanation": "Reservation requiere lifetime budget obligatoriamente. Para Auction podés elegir daily o lifetime.",
+      "explanation": "Reservation requiere lifetime budget obligatoriamente. Para Auction puedes elegir daily o lifetime.",
       "difficulty": "hard"
     },
     {

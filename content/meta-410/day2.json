@@ -35,12 +35,12 @@
         {
           "type": "tip",
           "label": "REGLA DEL FUNNEL",
-          "body": "<strong>Awareness</strong> arriba (recordar) → <strong>Traffic/Engagement/Leads/App Promotion</strong> en el medio (considerar) → <strong>Sales</strong> abajo (convertir). Siempre empezás por la meta de negocio y bajás al objective alineado."
+          "body": "<strong>Awareness</strong> arriba (recordar) → <strong>Traffic/Engagement/Leads/App Promotion</strong> en el medio (considerar) → <strong>Sales</strong> abajo (convertir). Siempre empiezas por la meta de negocio y bajas al objective alineado."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Elegir <strong>Traffic</strong> cuando lo que querés son compras. Traffic optimiza por <em>link clicks</em>, NO por compras. Si tu meta es venta real, usá <strong>Sales</strong>."
+          "body": "Elegir <strong>Traffic</strong> cuando lo que quieres son compras. Traffic optimiza por <em>link clicks</em>, NO por compras. Si tu meta es venta real, usa <strong>Sales</strong>."
         },
         {
           "type": "mcq",
@@ -108,7 +108,7 @@
         },
         {
           "type": "mcq",
-          "q": "Querés reservar alcance con CPM fijo para promocionar una feria industrial durante 2 semanas. ¿Qué combinación es válida?",
+          "q": "Quieres reservar alcance con CPM fijo para promocionar una feria industrial durante 2 semanas. ¿Qué combinación es válida?",
           "options": [
             "Reservation + Traffic",
             "Reservation + Sales",
@@ -222,7 +222,7 @@
       "title": "Ordenar el setup de una campaña",
       "section": "B",
       "type": "order",
-      "instruction": "Cuando armás una campaña Sales en website, ¿en qué orden configurás estos cinco settings? Reordena con ▲▼.",
+      "instruction": "Cuando armas una campaña Sales en website, ¿en qué orden configuras estos cinco settings? Reordena con ▲▼.",
       "items": [
         "Elegir objective (Sales) — campaign level",
         "Seleccionar conversion location (Website) — ad set level",
@@ -254,7 +254,7 @@
             "Reservation tiene más placements"
           ],
           "correct": 1,
-          "explanation": "Reservation se elige cuando necesitás <strong>predictibilidad</strong> de costo y delivery (típico en eventos, ferias, lanzamientos). Auction es flexible pero el costo fluctúa con el mercado. Auction sí soporta Awareness — la diferencia es predictibilidad.",
+          "explanation": "Reservation se elige cuando necesitas <strong>predictibilidad</strong> de costo y delivery (típico en eventos, ferias, lanzamientos). Auction es flexible pero el costo fluctúa con el mercado. Auction sí soporta Awareness — la diferencia es predictibilidad.",
           "difficulty": "medium"
         },
         {
@@ -265,7 +265,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué pasaría si en este caso usás Traffic con landing page externa en vez de Leads con Instant form?",
+          "q": "¿Qué pasaría si en este caso usas Traffic con landing page externa en vez de Leads con Instant form?",
           "options": [
             "Lo mismo, son intercambiables",
             "Optimizarías por link clicks (no por leads completados), perdiendo prospectos en la fricción de cargar la landing y rellenar form",
@@ -420,7 +420,7 @@
       "title": "Lightning · 8 preguntas en 3 min",
       "section": "D",
       "type": "lightning",
-      "instruction": "8 preguntas rápidas. Tenés 3 minutos en total. Una sola respuesta por pregunta.",
+      "instruction": "8 preguntas rápidas. Tienes 3 minutos en total. Una sola respuesta por pregunta.",
       "timeLimit": 180,
       "questions": [
         {
@@ -534,7 +534,7 @@
         {
           "type": "concept",
           "h": "🎙️ Preguntas tipo examen en formato podcast",
-          "body": "Escuchá este audio antes de las flashcards. Es formato preguntas tipo examen con discusión de trampas — ideal para repasar mientras manejás o caminás."
+          "body": "Escucha este audio antes de las flashcards. Es formato preguntas tipo examen con discusión de trampas — ideal para repasar mientras manejás o caminás."
         },
         {
           "type": "audio-embed",
@@ -545,7 +545,7 @@
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "Reproducí a 1.5x si ya tenés el contenido fresco. A 2x para repaso final 15 min antes del examen."
+          "body": "Reproduce a 1.5x si ya tienes el contenido fresco. A 2x para repaso final 15 min antes del examen."
         }
       ]
     },
@@ -573,8 +573,8 @@
         {"q":"¿Para conversaciones en WhatsApp Business, qué objective?","a":"Engagement con type = Messaging (si la meta es iniciar charla). Sales si la meta es cierre de venta dentro de WhatsApp."},
         {"q":"¿Auction admite todos los objectives?","a":"Sí. Reservation NO (solo Awareness y Engagement)."},
         {"q":"¿Qué es ODAX?","a":"Outcome-Driven Ad Experiences: el agrupamiento de Meta de los 6 objectives según el outcome de negocio."},
-        {"q":"Si tu meta es venta real pero usás Traffic, ¿qué problema tenés?","a":"Traffic optimiza por link clicks, no por compras. Pagás por visitas pero el sistema no busca compradores. Hay que usar Sales."},
-        {"q":"¿Qué pasa si elegís Engagement sin Engagement type?","a":"No se puede; en Engagement es obligatorio seleccionar el type (Video views, Post engagement, Messaging, etc.). No hay 'conversion event' tradicional."}
+        {"q":"Si tu meta es venta real pero usas Traffic, ¿qué problema tienes?","a":"Traffic optimiza por link clicks, no por compras. Pagás por visitas pero el sistema no busca compradores. Hay que usar Sales."},
+        {"q":"¿Qué pasa si eliges Engagement sin Engagement type?","a":"No se puede; en Engagement es obligatorio seleccionar el type (Video views, Post engagement, Messaging, etc.). No hay 'conversion event' tradicional."}
       ]
     }
   ]

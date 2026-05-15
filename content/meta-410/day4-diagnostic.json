@@ -51,7 +51,7 @@
       "difficulty": "hard"
     },
     {
-      "q": "Querés medir compras de un producto específico (Purchase con URL contiene '/premium' Y value &gt; 1000). ¿Qué usás?",
+      "q": "Quieres medir compras de un producto específico (Purchase con URL contiene '/premium' Y value &gt; 1000). ¿Qué usas?",
       "options": [
         "Un nuevo Custom Event llamado PremiumPurchase",
         "Una Custom Conversion con reglas sobre el Purchase existente",

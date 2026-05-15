@@ -29,9 +29,9 @@
       "difficulty": "medium"
     },
     {
-      "q": "Querés correr A/B Test entre 2 creatives. ¿Qué hacés bien?",
+      "q": "Quieres correr A/B Test entre 2 creatives. ¿Qué haces bien?",
       "options": [
-        "Cambiás creative + audience al mismo tiempo",
+        "Cambias creative + audience al mismo tiempo",
         "Una sola variable cambiada (creative), misma audience dividida automáticamente sin overlap, ≥7 días",
         "Audience superpuesta para tener más volumen",
         "Sin minimum spend importa"

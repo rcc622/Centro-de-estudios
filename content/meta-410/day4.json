@@ -20,7 +20,7 @@
         },
         {
           "type": "kvtable",
-          "h": "Data sources · cómo le mandás los signals a Meta",
+          "h": "Data sources · cómo le mandas los signals a Meta",
           "rows": [
             ["Meta Pixel", "Código JS en website. Trackea acciones del visitante. Necesario para Custom Audiences web y Sales/Leads website."],
             ["Conversions API (CAPI)", "Envío server-side desde el servidor del anunciante. Complementa al Pixel para reducir dependencia del browser."],
@@ -152,7 +152,7 @@
         },
         {
           "type": "mcq",
-          "q": "Querés medir compras de smartphones &gt; $800 USD. Tu Pixel ya registra Purchase con Value. ¿Qué configurás?",
+          "q": "Quieres medir compras de smartphones &gt; $800 USD. Tu Pixel ya registra Purchase con Value. ¿Qué configuras?",
           "options": [
             "Un Custom Event nuevo llamado 'PurchasePremium'",
             "Una Custom Conversion con regla: Purchase + URL contains '/smartphone' + Value > 800",
@@ -247,7 +247,7 @@
       "title": "Ordenar el setup completo de Pixel + CAPI",
       "section": "B",
       "type": "order",
-      "instruction": "Cuando armás Sales website con Purchase, ¿en qué orden ejecutás estos 6 pasos? Reordena con ▲▼.",
+      "instruction": "Cuando armas Sales website con Purchase, ¿en qué orden ejecutas estos 6 pasos? Reordena con ▲▼.",
       "items": [
         "Crear el Pixel en Events Manager",
         "Instalar el código del Pixel en el website (header o GTM)",
@@ -357,7 +357,7 @@
         },
         {
           "type": "mcq",
-          "q": "Para App Promotion necesitás:",
+          "q": "Para App Promotion necesitas:",
           "options": [
             "Pixel",
             "CAPI",
@@ -446,7 +446,7 @@
       "title": "Lightning · 8 preguntas en 3 min",
       "section": "D",
       "type": "lightning",
-      "instruction": "8 preguntas rápidas sobre signals y data. Tenés 3 minutos.",
+      "instruction": "8 preguntas rápidas sobre signals y data. Tienes 3 minutos.",
       "timeLimit": 180,
       "questions": [
         {
@@ -493,8 +493,8 @@
           "q": "EMQ mejora cuando:",
           "options": [
             "Subís el budget",
-            "Mandás customer info rica hasheada",
-            "Cambiás bid strategy",
+            "Mandas customer info rica hasheada",
+            "Cambias bid strategy",
             "Reducís audience"
           ],
           "correct": 1,

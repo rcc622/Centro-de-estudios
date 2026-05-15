@@ -21,12 +21,12 @@
         {
           "type": "concept",
           "h": "Instant Experience",
-          "body": "Experiencia full-screen <strong>post-click</strong> en mobile (antes Canvas). Útil cuando: 1) Tu website no es mobile-friendly, 2) Querés contar toda la historia dentro de Meta sin sacar al usuario, 3) Tenés catalog y querés grid completo."
+          "body": "Experiencia full-screen <strong>post-click</strong> en mobile (antes Canvas). Útil cuando: 1) Tu website no es mobile-friendly, 2) Quieres contar toda la historia dentro de Meta sin sacar al usuario, 3) Tienes catalog y quieres grid completo."
         },
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "<strong>Flexible</strong> es buena opción cuando NO sabés qué formato rinde mejor. Meta prueba múltiples y entrega el ganador. Es como Advantage+ pero a nivel formato."
+          "body": "<strong>Flexible</strong> es buena opción cuando NO sabes qué formato rinde mejor. Meta prueba múltiples y entrega el ganador. Es como Advantage+ pero a nivel formato."
         },
         {
           "type": "mcq",
@@ -38,7 +38,7 @@
         },
         {
           "type": "mcq",
-          "q": "Querés mostrar 5 SKUs de paneles solares al mismo tiempo en formato swipe. ¿Cuál usás?",
+          "q": "Quieres mostrar 5 SKUs de paneles solares al mismo tiempo en formato swipe. ¿Cuál usas?",
           "options": ["Collection","Carousel","Single image","Instant Experience"],
           "correct": 1,
           "explanation": "Carousel admite 2-10 cards en swipe. Cada card puede ser distinta. Ideal para múltiples productos.",
@@ -81,7 +81,7 @@
         {
           "type": "warn",
           "label": "SAFE ZONE EN STORIES/REELS",
-          "body": "En Stories y Reels el UI (logo de IG, perfil, botón de mensaje) <strong>cubre las orillas</strong>. Si ponés texto crítico cerca del borde, se corta. Diseñá con la \"safe zone\" central del 9:16 en mente."
+          "body": "En Stories y Reels el UI (logo de IG, perfil, botón de mensaje) <strong>cubre las orillas</strong>. Si pones texto crítico cerca del borde, se corta. Diseña con la \"safe zone\" central del 9:16 en mente."
         },
         {
           "type": "mcq",
@@ -120,7 +120,7 @@
         {
           "type": "concept",
           "h": "Asset Customization for Placements",
-          "body": "Permite customizar la creative <strong>manualmente por placement</strong>. Para cada placement podés especificar: template, media crop, text per placement, control, priority. <strong>Cuando se combina con Advantage+ Creative, lo manual gana.</strong>"
+          "body": "Permite customizar la creative <strong>manualmente por placement</strong>. Para cada placement puedes especificar: template, media crop, text per placement, control, priority. <strong>Cuando se combina con Advantage+ Creative, lo manual gana.</strong>"
         },
         {
           "type": "kvtable",
@@ -138,7 +138,7 @@
         },
         {
           "type": "mcq",
-          "q": "Si usás Advantage+ Creative Y Asset Customization juntos, ¿qué prevalece?",
+          "q": "Si usas Advantage+ Creative Y Asset Customization juntos, ¿qué prevalece?",
           "options": [
             "Advantage+ siempre gana",
             "Asset Customization (manual) gana en los placements donde la configuraste",
@@ -230,11 +230,11 @@
         {
           "type": "tip",
           "label": "REGLA DEL A/B TEST",
-          "body": "Una sola variable a la vez. Si cambiás creative Y audience al mismo tiempo, no podés decir cuál causó la diferencia. Audiencia suficiente sin overlap (Meta divide automáticamente). Mínimo 7 días, idealmente 14-30."
+          "body": "Una sola variable a la vez. Si cambias creative Y audience al mismo tiempo, no puedes decir cuál causó la diferencia. Audiencia suficiente sin overlap (Meta divide automáticamente). Mínimo 7 días, idealmente 14-30."
         },
         {
           "type": "mcq",
-          "q": "Querés saber cuántas ventas EXTRAS generó tu campaña vs no haberla corrido. ¿Qué test?",
+          "q": "Quieres saber cuántas ventas EXTRAS generó tu campaña vs no haberla corrido. ¿Qué test?",
           "options": [
             "A/B Test",
             "Brand Lift",
@@ -247,7 +247,7 @@
         },
         {
           "type": "mcq",
-          "q": "Querés saber si una campaña de feria mejoró el recall de marca. ¿Qué test?",
+          "q": "Quieres saber si una campaña de feria mejoró el recall de marca. ¿Qué test?",
           "options": [
             "A/B Test entre 2 creatives",
             "Brand Lift",
@@ -260,10 +260,10 @@
         },
         {
           "type": "mcq",
-          "q": "En un A/B Test correcto, ¿cuántas variables debés cambiar?",
+          "q": "En un A/B Test correcto, ¿cuántas variables debes cambiar?",
           "options": ["1","2","3 o más","Cuantas más mejor"],
           "correct": 0,
-          "explanation": "UNA sola variable. Si cambiás 2+, no podés aislar cuál causó el resultado.",
+          "explanation": "UNA sola variable. Si cambias 2+, no puedes aislar cuál causó el resultado.",
           "difficulty": "medium"
         }
       ]
@@ -279,7 +279,7 @@
           "h": "4 controles de Brand Safety",
           "rows": [
             ["Inventory filters", "Expanded (default) / Moderate / Limited — controlan qué inventory se acepta"],
-            ["Publisher block lists", "Excluyen publishers específicos donde NO querés aparecer"],
+            ["Publisher block lists", "Excluyen publishers específicos donde NO quieres aparecer"],
             ["Topic exclusions", "Excluyen temas (noticias polémicas, ciertos géneros)"],
             ["Content type exclusions", "Excluyen formatos (in-stream pre-roll, in-context, etc.)"]
           ]
@@ -358,7 +358,7 @@
           "q": "¿Por qué Kenet asegura que NO haya overlap entre las 2 audiences del A/B?",
           "options": [
             "Para que sea más rápido",
-            "Si hay overlap, las mismas personas ven los 2 ads y NO podés saber cuál causó la conversión",
+            "Si hay overlap, las mismas personas ven los 2 ads y NO puedes saber cuál causó la conversión",
             "Es opcional",
             "Para gastar más"
           ],
@@ -477,7 +477,7 @@
           "q": "A/B Test requiere cambiar:",
           "options": ["1 variable","2","3","Cuantas más mejor"],
           "correct": 0,
-          "explanation": "Solo 1 variable. Si cambiás 2+ no podés aislar la causa.",
+          "explanation": "Solo 1 variable. Si cambias 2+ no puedes aislar la causa.",
           "difficulty": "easy"
         },
         {
@@ -676,11 +676,11 @@
         {"q":"¿Cuáles son los 4 formatos de ad?","a":"Flexible (AI elige), Single image/video, Carousel (2+ swipe), Collection (hero + grid)."},
         {"q":"¿Cuándo usar Collection vs Carousel?","a":"Collection: hero (video/imagen) + grid de productos abajo. Ideal con catalog. Carousel: solo swipe de cards sin hero, ideal para storytelling sin catalog."},
         {"q":"¿Aspect ratio para Stories y Reels?","a":"9:16 full portrait vertical."},
-        {"q":"¿Qué es Instant Experience?","a":"Experiencia full-screen post-click en mobile. Útil cuando tu website es malo o querés contar todo dentro de Meta."},
+        {"q":"¿Qué es Instant Experience?","a":"Experiencia full-screen post-click en mobile. Útil cuando tu website es malo o quieres contar todo dentro de Meta."},
         {"q":"¿Cuáles son los 2 modelos de attribution en Ads Manager?","a":"Standard (con reglas) e Incremental (modelado causal). Custom NO existe."},
         {"q":"¿Default attribution setting?","a":"1-day view, 7-day click."},
         {"q":"¿Diferencia entre A/B Test, Brand Lift y Conversion Lift?","a":"A/B Test = compara 2 variantes (1 variable). Brand Lift = encuestas sobre marca/recall. Conversion Lift = mide ventas causales extras."},
-        {"q":"¿Cuántas variables se cambian en un A/B Test?","a":"UNA sola. Si cambiás 2+ no podés aislar la causa."},
+        {"q":"¿Cuántas variables se cambian en un A/B Test?","a":"UNA sola. Si cambias 2+ no puedes aislar la causa."},
         {"q":"¿Dónde corren A/B Test, Brand Lift, Conversion Lift?","a":"En Experiments (Ads Manager o Meta Business Suite). NO en Ads Reporting."},
         {"q":"¿Reglas de mobile-first creative?","a":"Video 9:16, ≤15 segundos, branding en primeros 3s, audio + subtítulos, elementos clave en safe zone central."},
         {"q":"¿Qué son los 4 brand safety controls?","a":"Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions, Content type exclusions."},

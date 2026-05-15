@@ -70,7 +70,7 @@
       "q": "Event Match Quality (EMQ) mejora cuando:",
       "options": [
         "Subís el budget",
-        "Cambiás bid strategy",
+        "Cambias bid strategy",
         "Enviás customer info rica hasheada (email, phone, IP, user agent) vía CAPI",
         "Reducís audience"
       ],

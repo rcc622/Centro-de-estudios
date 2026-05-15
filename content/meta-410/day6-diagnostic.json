@@ -15,7 +15,7 @@
       "difficulty": "easy"
     },
     {
-      "q": "Querés saber cuántas ventas EXTRAS generó tu campaña vs el escenario sin haberla corrido. ¿Qué herramienta?",
+      "q": "Quieres saber cuántas ventas EXTRAS generó tu campaña vs el escenario sin haberla corrido. ¿Qué herramienta?",
       "options": [
         "A/B Test",
         "Brand Lift",
@@ -35,7 +35,7 @@
         "Cuantas más mejor"
       ],
       "correct": 0,
-      "explanation": "UNA sola variable. Cambiando 2+ no podés aislar la causa del resultado.",
+      "explanation": "UNA sola variable. Cambiando 2+ no puedes aislar la causa del resultado.",
       "difficulty": "medium"
     },
     {
