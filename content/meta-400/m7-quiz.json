@@ -1,0 +1,123 @@
+{
+  "title": "Quiz de unidad · Módulo 7",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Customer list para custom audience:",
+      "options": [
+        "Se sube en texto plano",
+        "Se sube hasheada; el matching ocurre sin exponer datos en claro",
+        "No está permitida",
+        "Solo con Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Hashing antes de subir; Meta hace matching con hashes.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "El inventory filter controla:",
+      "options": [
+        "El budget",
+        "El nivel de idoneidad del contenido adyacente (expanded/moderate/limited)",
+        "La bid strategy",
+        "El conversion event"
+      ],
+      "correct": 1,
+      "explanation": "Ajusta qué tan estricto es el contenido junto al que aparece el anuncio.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Block list vs allow list:",
+      "options": [
+        "Block = permitir solo aprobados; allow = bloquear",
+        "Block = excluir publishers concretos; allow = permitir solo aprobados",
+        "Son lo mismo",
+        "Solo aplican a Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Block excluye; allow restringe a una lista permitida.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Trade-off de brand safety más estricto:",
+      "options": [
+        "Más alcance y menor costo",
+        "Más seguridad pero menor alcance y posible mayor costo",
+        "Sin efecto en la entrega",
+        "Mejora el ROAS siempre"
+      ],
+      "correct": 1,
+      "explanation": "Menos inventario disponible: balance entre riesgo de marca y eficiencia.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un anuncio dice 'Sabemos que tienes diabetes; esto es para ti'. Se rechaza porque:",
+      "options": [
+        "La categoría salud está prohibida",
+        "Implica/afirma un atributo personal del espectador",
+        "No tiene Pixel",
+        "Usó Advantage+ creative"
+      ],
+      "correct": 1,
+      "explanation": "Las Advertising Standards prohíben implicar atributos personales del usuario; el problema es la redacción.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "El ad review revisa: Selecciona 3.",
+      "options": [
+        "Texto y creativo (imagen/video)",
+        "Targeting",
+        "Landing page de destino",
+        "El nombre interno de la campaña",
+        "El color del logo del cliente"
+      ],
+      "correct": [0, 1, 2],
+      "multi": true,
+      "explanation": "Evalúa creativo, targeting y la landing de destino contra las Advertising Standards.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Tiempo típico del ad review:",
+      "options": ["~1 minuto", "~24 horas", "~7 días", "~1 mes"],
+      "correct": 1,
+      "explanation": "Suele resolverse en ~24 horas, combinando automatización y revisión humana.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Si un anuncio se rechaza, el anunciante puede:",
+      "options": [
+        "Nada, queda bloqueado para siempre",
+        "Editarlo o solicitar una revisión (appeal)",
+        "Cambiar de cuenta",
+        "Forzar la entrega con más budget"
+      ],
+      "correct": 1,
+      "explanation": "Se puede corregir el anuncio o apelar la decisión.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿Privacidad y performance están necesariamente peleadas?",
+      "options": [
+        "Sí, siempre",
+        "No; señal de servidor con consentimiento (CAPI) mejora medición y cumplimiento",
+        "Sí, salvo en Reservation",
+        "Solo en Awareness"
+      ],
+      "correct": 1,
+      "explanation": "Bien diseñadas, privacidad y performance se refuerzan (CAPI con consentimiento).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Marca conservadora que no quiere aparecer junto a contenido maduro en placements de terceros:",
+      "options": [
+        "Subir el budget",
+        "Inventory filter más estricto + block lists según necesidad",
+        "Cambiar el objective a Awareness",
+        "Activar Advantage+ creative"
+      ],
+      "correct": 1,
+      "explanation": "Inventory filter ajusta la adyacencia; block lists excluyen publishers concretos.",
+      "difficulty": "hard"
+    }
+  ]
+}
