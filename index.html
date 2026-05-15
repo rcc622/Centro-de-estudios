@@ -671,6 +671,18 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
     </div>
   </div>
 </div>
+<div class="modal-bd" id="diff-modal" onclick="if(event.target===this)closeDiffModal()">
+  <div class="modal-sheet" role="dialog" aria-labelledby="dm-title">
+    <div class="ms-ico" id="dm-ico">⚙️</div>
+    <div class="ms-h" id="dm-title">Cambiar dificultad</div>
+    <div class="ms-sub" id="dm-sub">Revisa qué cambia antes de confirmar.</div>
+    <div id="dm-body" style="margin-bottom:16px"></div>
+    <div class="ms-actions">
+      <button class="ms-btn ms-btn-primary" id="dm-confirm">Confirmar cambio</button>
+      <button class="ms-btn ms-btn-ghost" onclick="closeDiffModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
 <div class="overlay" id="lvlup-overlay" onclick="closeLvlUp()">
   <div class="overlay-inner">
     <div class="overlay-ico" id="lu-ico">🎉</div>
@@ -3339,6 +3351,7 @@ function setDailyGoal(n){
   render();
 }
 
+let PENDING_DIFF = null;
 function setDifficulty(level){
   haptic(HAPTIC.select);
   if(!DIFFICULTY[level]) return;
@@ -3346,6 +3359,37 @@ function setDifficulty(level){
     showToast('Bloqueado · necesitas 99% de tasa de éxito sobre 20+ lecciones', 3000, 'error');
     return;
   }
+  const curr = DB.difficulty || 'medium';
+  if(curr === level){ showToast('Ya estás en '+DIFFICULTY[level].n, 1800); return; }
+  PENDING_DIFF = level;
+  const cd = DIFFICULTY[curr], nd = DIFFICULTY[level];
+  const arrow = (a, b) => `<b>${a}</b> <span style="color:#8A8D91">→</span> <b style="color:#1877F2">${b}</b>`;
+  const line = (lbl, val) => `<div style="display:flex;justify-content:space-between;align-items:center;font-size:13.5px;padding:9px 0;border-bottom:1px solid #E4E6EB"><span style="color:#65676B">${lbl}</span><span>${val}</span></div>`;
+  let body = `<div style="background:#F2F4F7;border-radius:14px;padding:4px 14px 6px;text-align:left">`;
+  body += line('❤️ Vidas máximas', arrow(cd.maxHearts, nd.maxHearts));
+  body += line('🛡️ Escudos', arrow(cd.maxShields ?? 0, nd.maxShields ?? 0));
+  body += line('⏱️ Regen vidas', arrow((cd.heartRegenMs/60000)+' min', (nd.heartRegenMs/60000)+' min'));
+  body += line('⚡ Multiplicador XP', arrow('x'+cd.xpMult, 'x'+nd.xpMult));
+  body = body.slice(0, -1) + `</div>`;
+  const warns = [];
+  if((DB.hearts||0) > nd.maxHearts) warns.push(`Tus vidas se recortan a ${nd.maxHearts}.`);
+  warns.push(`Los escudos se reinician al banco del nuevo nivel (${nd.maxShields ?? 0}).`);
+  if(nd.maxHearts < cd.maxHearts || (nd.maxShields ?? 0) < (cd.maxShields ?? 0)) warns.push('Nivel más exigente: menos margen de error.');
+  body += `<div style="background:#FFF4E5;border:1px solid #FFB74D;border-radius:12px;padding:11px 13px;margin-top:12px;text-align:left;font-size:12.5px;color:#7A3F00;line-height:1.5">⚠️ ${warns.join('<br/>')}</div>`;
+  document.getElementById('dm-ico').textContent = nd.icon;
+  document.getElementById('dm-title').textContent = 'Cambiar a '+nd.n;
+  document.getElementById('dm-sub').textContent = nd.desc;
+  document.getElementById('dm-body').innerHTML = body;
+  document.getElementById('dm-confirm').onclick = () => { closeDiffModal(); applyDifficulty(level); };
+  document.getElementById('diff-modal').classList.add('open');
+  haptic(HAPTIC.tap);
+}
+function closeDiffModal(){
+  PENDING_DIFF = null;
+  document.getElementById('diff-modal').classList.remove('open');
+}
+function applyDifficulty(level){
+  if(!DIFFICULTY[level]) return;
   const oldMaxHearts = getMaxHearts();
   DB.difficulty = level;
   const newMaxHearts = getMaxHearts();
@@ -3558,7 +3602,7 @@ function renderConfig(){
         return `
           <div class="goal-card">
             <div class="gc-title"><span>⚙️</span>Dificultad</div>
-            <div class="gc-desc">Ajustá qué tan exigente es la app. Afecta corazones máximos, regen, score para aprobar quizzes, tiempo de lightning y multiplicador de XP.</div>
+            <div class="gc-desc">Ajusta qué tan exigente es la app. Afecta corazones máximos, regen, score para aprobar quizzes, tiempo de lightning y multiplicador de XP.</div>
             <div class="gc-progress-label" style="margin-bottom:14px">${d.icon} <strong>${d.n}</strong> · ${d.maxHearts}❤️ · regen ${d.heartRegenMs/60000}min · XP x${d.xpMult}</div>
             <div class="gc-options" style="grid-template-columns:repeat(4,1fr)">
               ${opts.map(o => {
