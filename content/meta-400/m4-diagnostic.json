@@ -1,0 +1,66 @@
+{
+  "title": "Diagnóstico · Módulo 4",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Qué es Advantage+ Audience?",
+      "options": [
+        "Una lista de clientes hasheada",
+        "El enfoque recomendado donde das señales como sugerencia y Meta busca a quien convierte",
+        "Un placement automático",
+        "Una bid strategy"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ Audience usa tus audiencias como sugerencia, no como límite duro; busca conversiones más allá.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Una custom audience se construye con:",
+      "options": [
+        "Intereses y comportamientos genéricos",
+        "Personas con relación previa al negocio (web, app, lista, engagement)",
+        "Solo lookalikes",
+        "Placements de terceros"
+      ],
+      "correct": 1,
+      "explanation": "Custom audience = tu gente: visitantes, usuarios de app, customer list o quienes interactuaron.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Lookalike 1% vs 10%:",
+      "options": [
+        "1% más alcance; 10% más preciso",
+        "1% más parecido/preciso y menos alcance; 10% más alcance y menos parecido",
+        "Son iguales",
+        "Solo cambia el país"
+      ],
+      "correct": 1,
+      "explanation": "1% es lo más parecido a la seed (preciso, poco alcance); 10% amplía pero diluye el parecido.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Síntoma típico de over-targeting (audiencia muy chica):",
+      "options": [
+        "CPM bajo y mucho delivery",
+        "Delivery casi nulo y CPM alto",
+        "Más conversiones",
+        "Mejor recall"
+      ],
+      "correct": 1,
+      "explanation": "Audiencia minúscula = el sistema no puede optimizar; sube el costo y cae el delivery.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Cliente de sector regulado que NO puede mostrar anuncios fuera de un público definido por ley:",
+      "options": [
+        "Advantage+ Audience",
+        "Audiencia original con targeting definido",
+        "Lookalike 10%",
+        "Detailed targeting expansion activado"
+      ],
+      "correct": 1,
+      "explanation": "Restricción legal dura = control estricto: audiencia original. Advantage+ trata las señales como sugerencia y puede expandir.",
+      "difficulty": "hard"
+    }
+  ]
+}

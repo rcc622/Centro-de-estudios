@@ -1,0 +1,81 @@
+{
+  "id": "meta-400",
+  "title": "Meta Media Planning Professional",
+  "subtitle": "Examen 400-101 · 60 preg · 105 min",
+  "description": "Certificación oficial de Meta para media planners. Cubre alineación de objetivos de negocio, buying types, bid strategies, presupuesto, audiencias, placements, creativo, medición e incrementalidad, privacidad y brand safety.",
+  "icon": "📊",
+  "color": "#0A66C2",
+  "exam_url": "https://www.facebook.com/business/learn/certification/exams/400-101-exam",
+  "structure": "modules",
+  "units": [
+    {
+      "id": "m1",
+      "title": "Módulo 1 — Objetivos de negocio y campaign objectives",
+      "subtitle": "Del business goal al objective, data sources, conversion location/event/performance goal",
+      "coverage": "~14% del examen",
+      "diagnostic": { "file": "m1-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m1-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m2",
+      "title": "Módulo 2 — Buying types y bid strategies",
+      "subtitle": "Auction vs Reservation, las 5 bid strategies, árbol de decisión",
+      "coverage": "~18% del examen",
+      "diagnostic": { "file": "m2-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m2-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m3",
+      "title": "Módulo 3 — Presupuesto de campaña",
+      "subtitle": "Daily vs lifetime, Advantage+ campaign budget, presupuesto en auction y reservation",
+      "coverage": "~14% del examen",
+      "diagnostic": { "file": "m3-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m3-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m4",
+      "title": "Módulo 4 — Planeación de audiencia",
+      "subtitle": "Advantage+ Audience, detailed targeting, custom y lookalike",
+      "coverage": "~16% del examen",
+      "diagnostic": { "file": "m4-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m4-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m5",
+      "title": "Módulo 5 — Placements y creativo",
+      "subtitle": "Advantage+ placements, formatos, Advantage+ creative, best practices",
+      "coverage": "~12% del examen",
+      "diagnostic": { "file": "m5-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m5-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m6",
+      "title": "Módulo 6 — Reporting y medición",
+      "subtitle": "Métricas vs business goals, incrementalidad, experiments, attribution",
+      "coverage": "~18% del examen",
+      "diagnostic": { "file": "m6-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m6-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m7",
+      "title": "Módulo 7 — Privacidad y brand safety",
+      "subtitle": "Data privacy, brand safety controls, ad review process",
+      "coverage": "~8% del examen",
+      "diagnostic": { "file": "m7-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m7-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "mock",
+      "title": "Simulacro — Media Planning 400-101",
+      "subtitle": "30 preguntas · estilo examen real",
+      "coverage": "Examen completo",
+      "kind": "mock-exam"
+    },
+    {
+      "id": "glosario",
+      "title": "Glosario oficial Meta 400-101",
+      "subtitle": "Flashcards · 3 bloques de repaso",
+      "coverage": "Repaso de términos del examen"
+    }
+  ]
+}

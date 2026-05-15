@@ -1,0 +1,66 @@
+{
+  "title": "Diagnóstico · Módulo 7",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Al subir una customer list para crear una custom audience:",
+      "options": [
+        "Meta recibe los emails en texto plano",
+        "La lista se sube hasheada y el matching ocurre sin exponer datos en claro",
+        "No se permite usar listas propias",
+        "Solo funciona con Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Las listas se hashean antes de subirse; Meta hace matching con hashes, no con datos en claro.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "El inventory filter controla:",
+      "options": [
+        "El presupuesto diario",
+        "El nivel de idoneidad del contenido junto al que aparece el anuncio",
+        "La bid strategy",
+        "El conversion event"
+      ],
+      "correct": 1,
+      "explanation": "El inventory filter (expanded/moderate/limited) ajusta qué tan estricto es el contenido adyacente.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Trade-off de controles de brand safety más estrictos:",
+      "options": [
+        "Más alcance y menor costo",
+        "Más seguridad de marca pero menor alcance y posible mayor costo",
+        "No afectan la entrega",
+        "Solo aplican a Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Mayor seguridad reduce el inventario disponible: menos alcance y a veces mayor costo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un anuncio dice: 'Sabemos que tienes problemas de espalda; esto es para ti'. Se rechaza porque:",
+      "options": [
+        "La categoría salud está prohibida",
+        "Implica/afirma un atributo personal del espectador",
+        "No tiene Pixel",
+        "Usó Advantage+ placements"
+      ],
+      "correct": 1,
+      "explanation": "Las Advertising Standards prohíben implicar un atributo personal del usuario; el problema es la redacción.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Qué revisa el ad review process?",
+      "options": [
+        "Solo la imagen",
+        "Texto, imagen, video, targeting y la landing page de destino",
+        "Solo el presupuesto",
+        "Solo el objective"
+      ],
+      "correct": 1,
+      "explanation": "El ad review evalúa todos los componentes del anuncio y su destino contra las Advertising Standards.",
+      "difficulty": "easy"
+    }
+  ]
+}

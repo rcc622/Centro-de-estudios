@@ -1,0 +1,73 @@
+{
+  "id": "glosario",
+  "title": "Glosario oficial Meta 400-101",
+  "lessons": [
+    {
+      "id": "glo.1",
+      "title": "Objetivos, señal y buying types",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Business goal", "a": "La meta real del negocio (vender, generar leads, construir marca). El plan parte de aquí." },
+        { "q": "Los 6 ODAX", "a": "Awareness, Traffic, Engagement, Leads, App Promotion, Sales." },
+        { "q": "Conversion location", "a": "Dónde ocurre la conversión: Website, App, Messaging, Calls, Instant form." },
+        { "q": "Conversion event", "a": "La acción que cuenta como resultado: Purchase, Lead, AddToCart, etc." },
+        { "q": "Performance goal", "a": "La regla de optimización/licitación: maximizar cantidad, valor, clics o recall." },
+        { "q": "Pixel", "a": "Señal web del navegador para medir y optimizar eventos del sitio." },
+        { "q": "Conversions API (CAPI)", "a": "Señal server-side que recupera eventos perdidos y mejora match quality. Se usa junto al Pixel." },
+        { "q": "MMP (Mobile Measurement Partner)", "a": "Socio autorizado para medir eventos in-app (alternativa al Facebook SDK)." },
+        { "q": "Buying type", "a": "Método para comprar anuncios across Meta technologies: Auction o Reservation." },
+        { "q": "Auction", "a": "Buying type por subasta: más objectives, 5 bid strategies, todos los placements; precio variable." },
+        { "q": "Reservation", "a": "Buying type predecible: reach/frequency garantizados a CPM fijo; solo Awareness y Engagement." },
+        { "q": "Total value (subasta)", "a": "Advertiser bid + estimated action rates + ad quality. El cost control NO entra." },
+        { "q": "Estimated action rates", "a": "Probabilidad estimada de que la persona realice la acción deseada." },
+        { "q": "Ad quality", "a": "Calidad y relevancia del anuncio para la audiencia." }
+      ]
+    },
+    {
+      "id": "glo.2",
+      "title": "Bid strategies, presupuesto y audiencias",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Highest Volume", "a": "Bid strategy spend-based: máximo de resultados con el budget." },
+        { "q": "Highest Value", "a": "Bid strategy spend-based: máximo valor de compra con el budget." },
+        { "q": "Cost per Result Goal", "a": "Bid strategy goal-based: mantener un costo objetivo por resultado." },
+        { "q": "ROAS Goal", "a": "Bid strategy goal-based: mantener un retorno sobre ad spend objetivo." },
+        { "q": "Bid Cap", "a": "Bid strategy manual: tope máximo de bid por subasta. Si es muy bajo, frena el delivery." },
+        { "q": "Daily budget", "a": "Gasto promedio por día; campañas continuas." },
+        { "q": "Lifetime budget", "a": "Total del periodo; necesario para ad scheduling y Reservation." },
+        { "q": "Advantage+ campaign budget (CBO)", "a": "Budget a nivel campaña; Meta lo reparte entre ad sets según oportunidad." },
+        { "q": "Ad set budget (ABO)", "a": "Budget fijo por ad set; reparto manual." },
+        { "q": "Learning phase", "a": "Periodo de aprendizaje del ad set (~50 eventos en ~7 días); antes los resultados son inestables." },
+        { "q": "Budget en Auction", "a": "Estimación: resultados objetivo × costo por resultado esperado." },
+        { "q": "Budget en Reservation", "a": "Cálculo: impresiones × CPM ÷ 1000 (impresiones = reach × frequency)." },
+        { "q": "Advantage+ Audience", "a": "Enfoque recomendado: tus audiencias son sugerencias, no límites; Meta busca conversiones." },
+        { "q": "Custom audience", "a": "Personas con relación previa: web, app, customer list, engagement." },
+        { "q": "Lookalike audience", "a": "Personas parecidas a una seed de calidad; para prospección. 1% = más preciso, 10% = más alcance." },
+        { "q": "Over-targeting", "a": "Audiencia tan acotada que el sistema no optimiza: poco delivery, CPM alto." }
+      ]
+    },
+    {
+      "id": "glo.3",
+      "title": "Placements, medición, privacidad",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Placements", "a": "Superficies donde aparece el anuncio across Meta technologies (Feeds, Stories, Reels, etc.)." },
+        { "q": "Advantage+ placements", "a": "Default recomendado: Meta entrega donde mejor rinde; más alcance y eficiencia." },
+        { "q": "Advantage+ creative", "a": "Optimizaciones automáticas del creativo por persona (recortes, música, texto)." },
+        { "q": "Incrementalidad", "a": "Efecto causal de la pauta: conversiones que NO habrían ocurrido sin anuncios." },
+        { "q": "Conversion Lift", "a": "Experimento con holdout que mide conversiones incrementales." },
+        { "q": "Brand Lift", "a": "Mide recall/awareness/intención vía encuesta (expuestos vs. control)." },
+        { "q": "A/B Test", "a": "Compara variantes (creativo, audiencia, estrategia) con audiencias separadas." },
+        { "q": "Holdout", "a": "Grupo que NO ve anuncios; base de comparación para la incrementalidad." },
+        { "q": "Attribution", "a": "Asignación de crédito a touchpoints; no prueba causalidad por sí sola." },
+        { "q": "Attribution setting", "a": "Ventana (ej. 7-day click / 1-day view) que define qué conversiones se le acreditan a Meta." },
+        { "q": "Marketing Mix Modeling (MMM)", "a": "Modela el impacto agregado de todos los canales (on/offline) a nivel macro." },
+        { "q": "Hashing de customer list", "a": "Las listas se suben hasheadas; Meta hace matching sin recibir datos en claro." },
+        { "q": "Inventory filter", "a": "Control de idoneidad del contenido adyacente (expanded / moderate / limited)." },
+        { "q": "Block list / Allow list", "a": "Block = excluir publishers concretos. Allow = permitir solo publishers aprobados." },
+        { "q": "Ad review", "a": "Revisión del anuncio (texto, creativo, targeting, landing) contra las Advertising Standards (~24 h)." },
+        { "q": "Atributo personal", "a": "Prohibido implicar/afirmar que conoces un atributo personal del usuario o su familia." }
+      ]
+    }
+  ]
+}

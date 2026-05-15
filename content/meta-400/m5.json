@@ -1,0 +1,151 @@
+{
+  "id": "m5",
+  "title": "Módulo 5 — Placements y creativo",
+  "lessons": [
+    {
+      "id": "5.1",
+      "title": "Placement selection",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Dónde se ve el anuncio",
+          "body": "Los <strong>placements</strong> son las superficies donde aparece el anuncio across Meta technologies: Feeds, Stories, Reels, In-stream, Marketplace, Search, Audience Network, etc. Meta recomienda <strong>Advantage+ placements</strong> (antes Automatic Placements)."
+        },
+        {
+          "type": "kvtable",
+          "h": "Advantage+ placements vs manual",
+          "rows": [
+            ["Advantage+ placements", "Meta entrega donde haya mejor resultado por costo; máximo alcance eficiente"],
+            ["Manual placements", "Tú eliges superficies; control para casos de marca o creativo específico"],
+            ["Recomendación Meta", "Advantage+ placements como default salvo restricción justificada"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "POR QUÉ ADVANTAGE+ PLACEMENTS",
+          "body": "Dar más placements le da al sistema más subastas y combinaciones para optimizar: normalmente baja el costo por resultado y amplía el alcance. Restringir placements casi siempre encarece."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "Limitar a un solo placement por 'preferencia estética' sin razón de negocio sube el costo y reduce el delivery. Solo restringe si hay una razón real (creativo no apto, requisito de marca)."
+        },
+        {
+          "type": "mcq",
+          "q": "El cliente quiere máximo alcance al menor costo posible sin requisitos de marca específicos. ¿Qué placement strategy?",
+          "options": [
+            "Manual, solo Feed de Facebook",
+            "Advantage+ placements",
+            "Solo Stories",
+            "Solo Audience Network"
+          ],
+          "correct": 1,
+          "explanation": "Sin restricciones, Advantage+ placements maximiza eficiencia y alcance dándole al sistema todas las superficies para optimizar. Restringir a una sola superficie encarece y limita.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Ad creative strategy y Advantage+ creative",
+      "section": "B",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El creativo es palanca de performance",
+          "body": "El creativo influye en estimated action rates y ad quality, así que <strong>impacta el costo en subasta</strong>. Planear creativo no es decoración: es parte de la estrategia de medios."
+        },
+        {
+          "type": "kvtable",
+          "h": "Best practices de creativo",
+          "rows": [
+            ["Mobile-first / vertical", "Diseña para pantalla vertical (9:16) y sin sonido"],
+            ["Marca temprano", "Logo/mensaje en los primeros segundos"],
+            ["Varía formatos", "Video, imagen, carousel, colección según el objetivo"],
+            ["Advantage+ creative", "Optimizaciones automáticas por persona (recortes, brillo, música, texto)"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "DIVERSIDAD CREATIVA",
+          "body": "Varios creativos distintos por ad set le dan al sistema material para encontrar la mejor combinación persona-creativo. Pocos creativos = menos espacio de optimización y fatiga más rápida."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué el creativo afecta el costo en la subasta de Auction?",
+          "options": [
+            "Porque cambia el advertiser bid automáticamente",
+            "Porque influye en estimated action rates y ad quality, parte del total value",
+            "Porque define el buying type",
+            "Porque sustituye al Pixel"
+          ],
+          "correct": 1,
+          "explanation": "El total value = advertiser bid + estimated action rates + ad quality. Un creativo relevante y de calidad sube esos dos componentes y puede ganar subastas a menor costo.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "El cliente quiere que el sistema adapte automáticamente recortes, música y mejoras por persona. ¿Qué activas?",
+          "options": [
+            "Advantage+ placements",
+            "Advantage+ creative",
+            "Bid Cap",
+            "Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ creative aplica optimizaciones automáticas del creativo por persona (ajustes de imagen/video, música, texto). Advantage+ placements es sobre dónde se muestra, no sobre el creativo.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.3",
+      "title": "Caso · placements + creativo coherentes",
+      "section": "C",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Escenario",
+          "body": "Marca de consumo quiere un lanzamiento con alcance amplio y eficiente. Tiene video vertical, imágenes y un carousel de producto."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué recomendación de placements + creativo das?",
+          "options": [
+            "Manual solo Feed + un único video horizontal",
+            "Advantage+ placements + varios creativos verticales mobile-first y Advantage+ creative",
+            "Solo Stories con una imagen",
+            "Audience Network únicamente"
+          ],
+          "correct": 1,
+          "explanation": "Alcance amplio y eficiente = Advantage+ placements; varios creativos verticales le dan al sistema material para optimizar; Advantage+ creative adapta por persona. Restringir placement o usar un solo creativo limita la optimización.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "tip",
+          "label": "CIERRE",
+          "body": "Placements y creativo se planean juntos: maximiza superficies (Advantage+ placements), aporta variedad creativa mobile-first y deja que Advantage+ creative encuentre la mejor combinación."
+        }
+      ]
+    },
+    {
+      "id": "5.flash",
+      "title": "Flashcards · Módulo 5",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Placements", "a": "Superficies donde aparece el anuncio across Meta technologies (Feeds, Stories, Reels, etc.)." },
+        { "q": "Advantage+ placements", "a": "Default recomendado: Meta entrega donde mejor rinde; más alcance y eficiencia." },
+        { "q": "¿Cuándo placements manuales?", "a": "Solo con razón real: requisito de marca o creativo no apto para ciertas superficies." },
+        { "q": "Efecto de restringir placements", "a": "Normalmente sube el costo por resultado y reduce el delivery." },
+        { "q": "¿Por qué el creativo afecta el costo?", "a": "Influye en estimated action rates y ad quality (parte del total value de la subasta)." },
+        { "q": "Advantage+ creative", "a": "Optimizaciones automáticas del creativo por persona (recortes, brillo, música, texto)." },
+        { "q": "Best practices de creativo", "a": "Vertical/mobile-first, marca temprano, varios formatos, diseñar sin depender del sonido." },
+        { "q": "¿Por qué varios creativos por ad set?", "a": "Le dan al sistema material para encontrar la mejor combinación persona-creativo y reducen fatiga." }
+      ]
+    }
+  ]
+}

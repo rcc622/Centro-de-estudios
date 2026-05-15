@@ -1,0 +1,119 @@
+{
+  "title": "Quiz de unidad · Módulo 1",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cuáles son los 6 ODAX?",
+      "options": [
+        "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+        "Reach, Traffic, Conversions, Catalog, Leads, Sales",
+        "Brand, Consideration, Conversion, Retention, Loyalty, Advocacy",
+        "Awareness, Clicks, Engagement, Forms, Installs, Revenue"
+      ],
+      "correct": 0,
+      "explanation": "Los 6 ODAX oficiales: Awareness, Traffic, Engagement, Leads, App Promotion, Sales.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿Dónde se configuran conversion location, conversion event y performance goal?",
+      "options": ["Campaña", "Ad set", "Ad", "Account"],
+      "correct": 1,
+      "explanation": "A nivel ad set. El objective va a nivel campaña; los creativos a nivel ad.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "El cliente quiere ingresos, con tickets muy variables. ¿Qué performance goal?",
+      "options": [
+        "Maximize number of conversions",
+        "Maximize value of conversions",
+        "Maximize link clicks",
+        "Maximize landing page views"
+      ],
+      "correct": 1,
+      "explanation": "Maximize value optimiza el monto, no la cantidad de pedidos; se alinea al business goal de ingreso.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Qué fuentes de datos requiere Sales website con evento Purchase? Selecciona 2.",
+      "options": [
+        "Pixel",
+        "Conversions API (CAPI)",
+        "Facebook SDK",
+        "Catálogo de productos"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Pixel + CAPI. El SDK es para apps; el catálogo es para Advantage+ catalog ads, no para Sales general.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Qué objective NO requiere tracking de conversión?",
+      "options": ["Sales", "Leads website", "Awareness", "App Promotion"],
+      "correct": 2,
+      "explanation": "Awareness optimiza recall/reach; no necesita Pixel/CAPI/SDK.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Marca nueva sin reconocimiento que quiere vender a largo plazo. Mejor arranque:",
+      "options": [
+        "Sales directo desde el día 1",
+        "Awareness para construir base y luego bajar a conversión",
+        "App Promotion",
+        "Solo remarketing"
+      ],
+      "correct": 1,
+      "explanation": "Empujar Sales a una audiencia que no te conoce desperdicia budget; Awareness construye la base del funnel.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Leads con Instant form se prefiere sobre Traffic a landing externa porque:",
+      "options": [
+        "Es más caro pero más bonito",
+        "Minimiza fricción al capturar el contacto dentro de Meta",
+        "No necesita creativo",
+        "Garantiza compras"
+      ],
+      "correct": 1,
+      "explanation": "Instant form reduce la caída de conversión: el usuario no sale del feed. Traffic solo manda clics a una landing.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "¿Por qué se recomienda Pixel + CAPI juntos y no solo Pixel?",
+      "options": [
+        "CAPI reemplaza al Pixel",
+        "CAPI recupera señal que el navegador pierde y mejora el match quality",
+        "Es un requisito legal",
+        "Baja el CPM automáticamente"
+      ],
+      "correct": 1,
+      "explanation": "CAPI es server-side: recupera eventos perdidos por bloqueadores/iOS y mejora el matching.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Selecciona la afirmación correcta.",
+      "options": [
+        "El objective se elige a nivel ad set",
+        "Conversion event = qué acción cuenta; performance goal = cómo se optimiza",
+        "Performance goal se elige a nivel ad",
+        "Awareness requiere Pixel"
+      ],
+      "correct": 1,
+      "explanation": "Event define la acción; performance goal define la regla de licitación. El objective va en campaña.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Cuáles son data sources válidas para objectives de conversión? Selecciona 3.",
+      "options": [
+        "Pixel",
+        "Conversions API",
+        "Facebook SDK / MMP (apps)",
+        "El color del creativo",
+        "El nombre de la campaña"
+      ],
+      "correct": [0, 1, 2],
+      "multi": true,
+      "explanation": "Pixel y CAPI para web; SDK o MMP para apps. El creativo y el naming no son fuentes de datos de conversión.",
+      "difficulty": "medium"
+    }
+  ]
+}

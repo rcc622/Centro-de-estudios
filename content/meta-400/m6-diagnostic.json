@@ -1,0 +1,61 @@
+{
+  "title": "Diagnóstico · Módulo 6",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cómo se mide una campaña de Awareness?",
+      "options": [
+        "CPC y conversiones",
+        "Reach, frequency y estimated ad recall lift",
+        "ROAS",
+        "Cost per lead"
+      ],
+      "correct": 1,
+      "explanation": "Awareness no optimiza clics ni ventas; su métrica es recall y reach eficiente.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "La incrementalidad responde a:",
+      "options": [
+        "Qué touchpoint recibe el crédito",
+        "Cuántas conversiones NO habrían ocurrido sin la pauta",
+        "Cuál es el CPM",
+        "Qué creativo tiene más CTR"
+      ],
+      "correct": 1,
+      "explanation": "Incrementalidad = efecto causal; se mide con un grupo holdout (control).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Para medir cambios en recall e intención de compra de una campaña de marca:",
+      "options": ["Conversion Lift", "Brand Lift", "A/B Test", "ROAS Goal"],
+      "correct": 1,
+      "explanation": "Brand Lift mide métricas de marca (recall, awareness, intención) vía encuesta entre expuestos y control.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Marketing Mix Modeling (MMM) se usa para:",
+      "options": [
+        "Optimización táctica diaria de un ad set",
+        "Ver el impacto agregado de todos los canales (on/offline) a nivel macro",
+        "Aprobar anuncios",
+        "Crear custom audiences"
+      ],
+      "correct": 1,
+      "explanation": "MMM modela la contribución macro de todos los canales; attribution solo ve touchpoints digitales.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Cambiar la ventana de atribución (attribution setting):",
+      "options": [
+        "Cambia las ventas reales del negocio",
+        "Cambia qué conversiones se le cuentan a Meta, sin cambiar las ventas reales",
+        "Desactiva el Pixel",
+        "Activa Reservation"
+      ],
+      "correct": 1,
+      "explanation": "La ventana define el crédito reportado; las ventas reales no cambian. Hay que comunicarlo al cliente.",
+      "difficulty": "medium"
+    }
+  ]
+}
