@@ -24,12 +24,30 @@
           "type": "kvtable",
           "h": "Las 6 acciones clave en Ads Manager",
           "rows": [
-            ["Opportunity score", "Revisar qué tan optimizadas están tus campañas"],
-            ["Monitor reporting", "Ver el rendimiento de los anuncios"],
-            ["Create audiences", "Crear audiencias para tus campañas"],
-            ["Set up billing", "Configurar el método de pago"],
-            ["Connect data sources", "Conectar Pixel, CAPI, datasets"],
-            ["Advertiser settings", "Configurar settings del anunciante"]
+            [
+              "Opportunity score",
+              "Revisar qué tan optimizadas están tus campañas"
+            ],
+            [
+              "Monitor reporting",
+              "Ver el rendimiento de los anuncios"
+            ],
+            [
+              "Create audiences",
+              "Crear audiencias para tus campañas"
+            ],
+            [
+              "Set up billing",
+              "Configurar el método de pago"
+            ],
+            [
+              "Connect data sources",
+              "Conectar Pixel, CAPI, datasets"
+            ],
+            [
+              "Advertiser settings",
+              "Configurar settings del anunciante"
+            ]
           ]
         },
         {
@@ -71,9 +89,18 @@
           "type": "kvtable",
           "h": "¿Qué decides en cada nivel?",
           "rows": [
-            ["Campaign", "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"],
-            ["Ad set", "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"],
-            ["Ad", "Partnership ad · Identity · Ad setup · Ad creative · Destination · Tracking · Languages"]
+            [
+              "Campaign",
+              "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"
+            ],
+            [
+              "Ad set",
+              "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"
+            ],
+            [
+              "Ad",
+              "Partnership ad · Identity · Ad setup · Ad creative · Destination · Tracking · Languages"
+            ]
           ]
         },
         {
@@ -115,8 +142,14 @@
           "type": "kvtable",
           "h": "Dos categorías de Advantage+",
           "rows": [
-            ["Complete campaign solutions", "Automatizan TODA la campaña: Advantage+ Sales, App, Leads"],
-            ["Single-step solutions", "Automatizan UN aspecto: Audience, Placement, Budget, Creative, Destination"]
+            [
+              "Complete campaign solutions",
+              "Automatizan TODA la campaña: Advantage+ Sales, App, Leads"
+            ],
+            [
+              "Single-step solutions",
+              "Automatizan UN aspecto: Audience, Placement, Budget, Creative, Destination"
+            ]
           ]
         },
         {
@@ -128,11 +161,26 @@
           "type": "kvtable",
           "h": "Single-step solutions (disponibles para todos los objetivos)",
           "rows": [
-            ["Audience", "Advantage+ audience, custom audience, lookalike, detailed targeting"],
-            ["Placement", "Advantage+ placements"],
-            ["Budget", "Advantage+ campaign budget (antes CBO)"],
-            ["Creative", "Advantage+ creative, Advantage+ catalog ads"],
-            ["Destination", "Advantage+ destination"]
+            [
+              "Audience",
+              "Advantage+ audience, custom audience, lookalike, detailed targeting"
+            ],
+            [
+              "Placement",
+              "Advantage+ placements"
+            ],
+            [
+              "Budget",
+              "Advantage+ campaign budget (antes CBO)"
+            ],
+            [
+              "Creative",
+              "Advantage+ creative, Advantage+ catalog ads"
+            ],
+            [
+              "Destination",
+              "Advantage+ destination"
+            ]
           ]
         },
         {
@@ -161,7 +209,10 @@
             "Advantage+ Leads campaigns",
             "Advantage+ audience"
           ],
-          "correct": [1, 3],
+          "correct": [
+            1,
+            3
+          ],
           "multi": true,
           "explanation": "<strong>Placements</strong> y <strong>audience</strong> son single-step (automatizan un aspecto). <strong>Sales</strong> y <strong>Leads campaigns</strong> son complete campaign solutions (automatizan toda la campaña)."
         }
@@ -182,13 +233,34 @@
           "type": "kvtable",
           "h": "Las 7 BP — memorízalas",
           "rows": [
-            ["1. Automate campaign setup", "Usa Advantage+ para automatizar setup y optimizar performance"],
-            ["2. Align objectives & goals", "Que el objetivo de campaña esté alineado con el goal del negocio"],
-            ["3. Consider your audience", "Combina lo que ya sabes con lo que Advantage+ audience descubre"],
-            ["4. Optimize creative & placements", "Diversifica messages, visuals, formatos. Usa Advantage+ placements"],
-            ["5. Focus on signals", "Decisiones con data de alta calidad (Pixel, CAPI, datasets)"],
-            ["6. Get the most out of budget & bidding", "Asigna budget dinámicamente con Advantage+ campaign budget"],
-            ["7. Validate results", "Mide el impacto real para informar estrategias futuras"]
+            [
+              "1. Automate campaign setup",
+              "Usa Advantage+ para automatizar setup y optimizar performance"
+            ],
+            [
+              "2. Align objectives & goals",
+              "Que el objetivo de campaña esté alineado con el goal del negocio"
+            ],
+            [
+              "3. Consider your audience",
+              "Combina lo que ya sabes con lo que Advantage+ audience descubre"
+            ],
+            [
+              "4. Optimize creative & placements",
+              "Diversifica messages, visuals, formatos. Usa Advantage+ placements"
+            ],
+            [
+              "5. Focus on signals",
+              "Decisiones con data de alta calidad (Pixel, CAPI, datasets)"
+            ],
+            [
+              "6. Get the most out of budget & bidding",
+              "Asigna budget dinámicamente con Advantage+ campaign budget"
+            ],
+            [
+              "7. Validate results",
+              "Mide el impacto real para informar estrategias futuras"
+            ]
           ]
         },
         {
@@ -242,20 +314,44 @@
           "type": "kvtable",
           "h": "Tipos de usuarios en un portfolio",
           "rows": [
-            ["People", "Individuos con acceso parcial o control total"],
-            ["Partners", "Otros negocios que pueden recibir/dar acceso (requieren su propio portfolio + business ID)"],
-            ["System users", "Servidores o software con API access (no todas las cuentas tienen acceso a esto)"]
+            [
+              "People",
+              "Individuos con acceso parcial o control total"
+            ],
+            [
+              "Partners",
+              "Otros negocios que pueden recibir/dar acceso (requieren su propio portfolio + business ID)"
+            ],
+            [
+              "System users",
+              "Servidores o software con API access (no todas las cuentas tienen acceso a esto)"
+            ]
           ]
         },
         {
           "type": "kvtable",
           "h": "Niveles de permiso en un portfolio",
           "rows": [
-            ["Partial access (basic)", "Ver quién tiene full control · trabajar solo en los assets asignados"],
-            ["Partial access (apps)", "Configurar CAPI · monitor events · editar applications · crear access tokens"],
-            ["Full control", "Manejar todo: settings, gente, tools, assets · borrar el portfolio"],
-            ["Advanced — Finance", "Ver o manejar info financiera (transactions, invoices)"],
-            ["Advanced — Temporary", "Acceso básico por min 3 días, max 75 días"]
+            [
+              "Partial access (basic)",
+              "Ver quién tiene full control · trabajar solo en los assets asignados"
+            ],
+            [
+              "Partial access (apps)",
+              "Configurar CAPI · monitor events · editar applications · crear access tokens"
+            ],
+            [
+              "Full control",
+              "Manejar todo: settings, gente, tools, assets · borrar el portfolio"
+            ],
+            [
+              "Advanced — Finance",
+              "Ver o manejar info financiera (transactions, invoices)"
+            ],
+            [
+              "Advanced — Temporary",
+              "Acceso básico por min 3 días, max 75 días"
+            ]
           ]
         },
         {
@@ -292,12 +388,30 @@
           "type": "kvtable",
           "h": "Opciones dentro de Billing & payments",
           "rows": [
-            ["Accounts", "Ver y manejar todas las cuentas"],
-            ["Payment activity", "Spending limits y transactions"],
-            ["Invoices", "Ver, filtrar y descargar facturas"],
-            ["Payment methods", "Agregar métodos y conectar credit lines"],
-            ["Credit lines", "Ver crédito disponible · aplicar a monthly invoicing"],
-            ["Legal entities", "Manejar billing details y payment responsibilities con partners"]
+            [
+              "Accounts",
+              "Ver y manejar todas las cuentas"
+            ],
+            [
+              "Payment activity",
+              "Spending limits y transactions"
+            ],
+            [
+              "Invoices",
+              "Ver, filtrar y descargar facturas"
+            ],
+            [
+              "Payment methods",
+              "Agregar métodos y conectar credit lines"
+            ],
+            [
+              "Credit lines",
+              "Ver crédito disponible · aplicar a monthly invoicing"
+            ],
+            [
+              "Legal entities",
+              "Manejar billing details y payment responsibilities con partners"
+            ]
           ]
         },
         {
@@ -309,10 +423,22 @@
           "type": "kvtable",
           "h": "Los 4 tipos de controles",
           "rows": [
-            ["Inventory filters", "Control sobre tipo de contenido (Expanded default, Moderate, Limited) — afecta reach"],
-            ["Publisher block lists", "Listas que TÚ creás para evitar ciertos publishers"],
-            ["Topic exclusions", "Excluir reels sobre Gaming, News, Politics, Religion (solo FB in-stream/reels)"],
-            ["Content type exclusions", "Live video exclusions · non-partner publisher exclusions"]
+            [
+              "Inventory filters",
+              "Control sobre tipo de contenido (Expanded default, Moderate, Limited) — afecta reach"
+            ],
+            [
+              "Publisher block lists",
+              "Listas que TÚ creás para evitar ciertos publishers"
+            ],
+            [
+              "Topic exclusions",
+              "Excluir reels sobre Gaming, News, Politics, Religion (solo FB in-stream/reels)"
+            ],
+            [
+              "Content type exclusions",
+              "Live video exclusions · non-partner publisher exclusions"
+            ]
           ]
         },
         {
@@ -341,18 +467,54 @@
       "type": "match",
       "instruction": "Tap el término y luego su definición. Cada error cuesta 1 ❤️.",
       "pairs": [
-        ["Opportunity Score", "Score 0-100 de optimización basado en recomendaciones experimentalmente probadas"],
-        ["Decisiones a nivel Campaign", "Buying type, objective, budget, bid, A/B test"],
-        ["Decisiones a nivel Ad set", "Audience, placements, schedule, conversion settings"],
-        ["Decisiones a nivel Ad", "Creative, destination, tracking, identity, languages"],
-        ["Advantage+ Sales", "Complete campaign solution que automatiza toda una campaña de ventas"],
-        ["Advantage+ audience", "Single-step solution que automatiza la selección de audiencia"],
-        ["Advantage+ campaign budget", "Asigna budget dinámicamente al ad set con mejor performance (antes CBO)"],
-        ["BP 5 — Focus on signals", "Tomar decisiones con data de alta calidad: Pixel, CAPI, datasets"],
-        ["Business Portfolio", "Agrupador de assets (Pages, IG, ad accounts, catálogos) con permisos centralizados"],
-        ["Partners en portfolio", "Otros negocios con su propio portfolio + business ID"],
-        ["Inventory filters", "Control simple del Brand Safety Center: Expanded, Moderate, Limited"],
-        ["Acceso temporal", "Min 3 días, max 75 días en un business portfolio"]
+        [
+          "Opportunity Score",
+          "Score 0-100 de optimización basado en recomendaciones experimentalmente probadas"
+        ],
+        [
+          "Decisiones a nivel Campaign",
+          "Buying type, objective, budget, bid, A/B test"
+        ],
+        [
+          "Decisiones a nivel Ad set",
+          "Audience, placements, schedule, conversion settings"
+        ],
+        [
+          "Decisiones a nivel Ad",
+          "Creative, destination, tracking, identity, languages"
+        ],
+        [
+          "Advantage+ Sales",
+          "Complete campaign solution que automatiza toda una campaña de ventas"
+        ],
+        [
+          "Advantage+ audience",
+          "Single-step solution que automatiza la selección de audiencia"
+        ],
+        [
+          "Advantage+ campaign budget",
+          "Asigna budget dinámicamente al ad set con mejor performance (antes CBO)"
+        ],
+        [
+          "BP 5 — Focus on signals",
+          "Tomar decisiones con data de alta calidad: Pixel, CAPI, datasets"
+        ],
+        [
+          "Business Portfolio",
+          "Agrupador de assets (Pages, IG, ad accounts, catálogos) con permisos centralizados"
+        ],
+        [
+          "Partners en portfolio",
+          "Otros negocios con su propio portfolio + business ID"
+        ],
+        [
+          "Inventory filters",
+          "Control simple del Brand Safety Center: Expanded, Moderate, Limited"
+        ],
+        [
+          "Acceso temporal",
+          "Min 3 días, max 75 días en un business portfolio"
+        ]
       ]
     },
     {
@@ -431,56 +593,96 @@
         {
           "type": "fill",
           "q": "El ___ es un score 0-100 que muestra qué tan optimizadas están tus campañas según recomendaciones experimentalmente probadas.",
-          "options": ["Opportunity Score", "ROAS Score", "Pixel Score", "Auction Score"],
+          "options": [
+            "Opportunity Score",
+            "ROAS Score",
+            "Pixel Score",
+            "Auction Score"
+          ],
           "correct": 0,
           "explanation": "El <strong>Opportunity Score</strong> mide adopción de recomendaciones, NO performance real."
         },
         {
           "type": "fill",
           "q": "Las decisiones de audiencia, placements y schedule se hacen a nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
           "correct": 1,
           "explanation": "<strong>Ad set</strong> = a quién, dónde, cuándo. Campaign = qué objetivo y cuánto. Ad = cómo se ve."
         },
         {
           "type": "fill",
           "q": "El default de optimization de presupuesto a nivel campaña se llama Advantage+ ___ budget.",
-          "options": ["audience", "campaign", "creative", "placement"],
+          "options": [
+            "audience",
+            "campaign",
+            "creative",
+            "placement"
+          ],
           "correct": 1,
           "explanation": "<strong>Advantage+ campaign budget</strong> (antes CBO) reparte el presupuesto dinámicamente entre ad sets."
         },
         {
           "type": "fill",
           "q": "Las 3 Advantage+ complete campaign solutions son Sales, App y ___.",
-          "options": ["Reach", "Engagement", "Leads", "Conversion"],
+          "options": [
+            "Reach",
+            "Engagement",
+            "Leads",
+            "Conversion"
+          ],
           "correct": 2,
           "explanation": "Las 3 complete campaigns son <strong>Advantage+ Sales · App · Leads</strong>. Las demás son objectives, no campañas Advantage+ completas."
         },
         {
           "type": "fill",
           "q": "La BP ___ se llama Focus on signals y se refiere a usar data de alta calidad para informar decisiones.",
-          "options": ["3", "4", "5", "6"],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "correct": 2,
           "explanation": "<strong>BP 5 — Focus on signals</strong>. Las signals = Pixel, CAPI, datasets, eventos."
         },
         {
           "type": "fill",
           "q": "Para excluir grupos de contenido sensible de la forma más simple, usa los ___.",
-          "options": ["block lists", "topic exclusions", "inventory filters", "publisher allow lists"],
+          "options": [
+            "block lists",
+            "topic exclusions",
+            "inventory filters",
+            "publisher allow lists"
+          ],
           "correct": 2,
           "explanation": "<strong>Inventory filters</strong> (Expanded/Moderate/Limited) son el control más simple y de mayor alcance. Block lists requieren armar la lista manualmente."
         },
         {
           "type": "fill",
           "q": "Los usuarios tipo ___ users son servidores o software con API access en un business portfolio.",
-          "options": ["Partner", "People", "System", "Agency"],
+          "options": [
+            "Partner",
+            "People",
+            "System",
+            "Agency"
+          ],
           "correct": 2,
           "explanation": "<strong>System users</strong> = servidores/software/APIs. Partner = otro negocio. People = personas físicas."
         },
         {
           "type": "fill",
           "q": "El acceso temporal en un portfolio dura mínimo 3 días y máximo ___ días.",
-          "options": ["30", "60", "75", "90"],
+          "options": [
+            "30",
+            "60",
+            "75",
+            "90"
+          ],
           "correct": 2,
           "explanation": "Máximo <strong>75 días</strong>. Es una pregunta literal del examen — memorízala."
         }
@@ -495,28 +697,48 @@
         {
           "type": "mcq",
           "q": "Un advertiser quiere una surface para gestionar billing, brand safety y permisos de múltiples cuentas. ¿Cuál le recomiendas?",
-          "options": ["Ads Manager", "Meta Business Suite", "Events Manager", "Account Quality"],
+          "options": [
+            "Ads Manager",
+            "Meta Business Suite",
+            "Events Manager",
+            "Account Quality"
+          ],
           "correct": 1,
           "explanation": "<strong>Meta Business Suite</strong> es el centro unificado para gestionar portfolios, billing, brand safety y permisos. Ads Manager es para crear/gestionar campañas, no para gestionar el negocio."
         },
         {
           "type": "mcq",
           "q": "Buying type es una selección que SOLO puede hacerse a nivel:",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
           "correct": 0,
           "explanation": "<strong>Buying type</strong> es la primera decisión y va a nivel Campaign (Auction o Reservation). Ad set y Ad no permiten cambiarlo."
         },
         {
           "type": "mcq",
           "q": "¿Cuál de estas NO es una Advantage+ complete campaign solution?",
-          "options": ["Advantage+ Sales", "Advantage+ Leads", "Advantage+ App", "Advantage+ Catalog Ads"],
+          "options": [
+            "Advantage+ Sales",
+            "Advantage+ Leads",
+            "Advantage+ App",
+            "Advantage+ Catalog Ads"
+          ],
           "correct": 3,
           "explanation": "Las 3 <strong>complete campaign solutions</strong> son Sales, App y Leads. <strong>Advantage+ Catalog Ads</strong> es una feature dentro de Sales (single-step para mostrar productos de un catálogo)."
         },
         {
           "type": "mcq",
           "q": "Para colaborar con una agencia que tiene su propio portfolio, ¿cómo la agregás a tu portfolio?",
-          "options": ["Como Person", "Como Partner", "Como System user", "Como Vendor"],
+          "options": [
+            "Como Person",
+            "Como Partner",
+            "Como System user",
+            "Como Vendor"
+          ],
           "correct": 1,
           "explanation": "Las agencias se agregan como <strong>Partners</strong> porque tienen su propio business portfolio + business ID. People son individuos; System users son servidores/APIs."
         },
@@ -559,7 +781,12 @@
         {
           "type": "mcq",
           "q": "Inventory filters tiene 3 niveles. ¿Cuál da MÁS reach?",
-          "options": ["Limited", "Moderate", "Expanded", "Strict"],
+          "options": [
+            "Limited",
+            "Moderate",
+            "Expanded",
+            "Strict"
+          ],
           "correct": 2,
           "explanation": "<strong>Expanded</strong> (default) = más reach, menos filtering. <strong>Moderate</strong> = balance. <strong>Limited</strong> = menos reach, más exclusión de contenido sensible. <em>Strict</em> no existe."
         },
@@ -608,7 +835,11 @@
             "Audience Insights (datos demográficos)",
             "Credit lines (crédito disponible y monthly invoicing)"
           ],
-          "correct": [0, 1, 3],
+          "correct": [
+            0,
+            1,
+            3
+          ],
           "multi": true,
           "explanation": "<strong>Billing and payments</strong> incluye: Accounts, Payment activity, Invoices, Payment methods, Credit lines, Legal entities. <strong>Audience Insights</strong> es una herramienta separada de análisis, no parte de billing."
         }
@@ -623,61 +854,91 @@
       "questions": [
         {
           "q": "¿El Opportunity Score predice el ROAS de la campaña?",
-          "options": ["Sí, predice ROAS", "No, solo mide adopción de recomendaciones"],
+          "options": [
+            "Sí, predice ROAS",
+            "No, solo mide adopción de recomendaciones"
+          ],
           "correct": 1,
           "explanation": "El Opportunity Score NO predice performance — mide adopción de recomendaciones probadas."
         },
         {
           "q": "¿El budget puede definirse a nivel Campaign Y Ad set simultáneamente?",
-          "options": ["Sí, en ambos al mismo tiempo", "No, solo en uno de los dos"],
+          "options": [
+            "Sí, en ambos al mismo tiempo",
+            "No, solo en uno de los dos"
+          ],
           "correct": 1,
           "explanation": "El budget va EN UNO de los dos niveles, nunca en ambos. Default: nivel Campaign (Advantage+ campaign budget)."
         },
         {
           "q": "¿Advantage+ Sales es una single-step solution?",
-          "options": ["Sí, automatiza un paso", "No, es complete campaign (automatiza todo)"],
+          "options": [
+            "Sí, automatiza un paso",
+            "No, es complete campaign (automatiza todo)"
+          ],
           "correct": 1,
           "explanation": "Advantage+ Sales es complete campaign. Las single-step son: audience, placements, budget, creative, destination."
         },
         {
           "q": "¿Las 7 Performance Best Practices incluyen 'Maximize frequency caps'?",
-          "options": ["Sí", "No"],
+          "options": [
+            "Sí",
+            "No"
+          ],
           "correct": 1,
           "explanation": "Frequency caps NO es una BP. Las 7 BP son: Automate · Align · Audience · Creative & placements · Signals · Budget & bidding · Validate."
         },
         {
           "q": "¿El acceso temporal en un portfolio dura máximo 90 días?",
-          "options": ["Sí, 90 días", "No, máximo 75 días"],
+          "options": [
+            "Sí, 90 días",
+            "No, máximo 75 días"
+          ],
           "correct": 1,
           "explanation": "Mínimo 3 días, máximo 75 días. Memorizar literal."
         },
         {
           "q": "¿Partners en un portfolio necesitan tener su propio business ID?",
-          "options": ["Sí, requieren su propio portfolio + ID", "No, basta con un email"],
+          "options": [
+            "Sí, requieren su propio portfolio + ID",
+            "No, basta con un email"
+          ],
           "correct": 0,
           "explanation": "Los Partners son OTROS negocios. Por eso necesitan su propio portfolio + business ID separados."
         },
         {
           "q": "¿Inventory filter 'Limited' da MENOS reach que 'Expanded'?",
-          "options": ["Sí (más filtrado = menos reach)", "No, da más reach"],
+          "options": [
+            "Sí (más filtrado = menos reach)",
+            "No, da más reach"
+          ],
           "correct": 0,
           "explanation": "Limited = más exclusión = menos reach. Expanded (default) = menos filtrado = más reach."
         },
         {
           "q": "¿Brand Safety Center es accesible SOLO desde Business Suite?",
-          "options": ["Sí, solo Business Suite", "No, también a nivel ad set en Ads Manager (placements)"],
+          "options": [
+            "Sí, solo Business Suite",
+            "No, también a nivel ad set en Ads Manager (placements)"
+          ],
           "correct": 1,
           "explanation": "Los controles de Brand Safety también están disponibles a nivel <strong>ad set → placements</strong> en Ads Manager."
         },
         {
           "q": "¿Topic exclusions funcionan en Audience Network?",
-          "options": ["Sí, todos los placements", "No, solo FB in-stream y reels"],
+          "options": [
+            "Sí, todos los placements",
+            "No, solo FB in-stream y reels"
+          ],
           "correct": 1,
           "explanation": "Topic exclusions aplican exclusivamente a Facebook in-stream y reels."
         },
         {
           "q": "¿Si pasas el diagnostic con ≥80%, puedes saltar las lecciones del día?",
-          "options": ["Sí, salta directo al Quiz de Unidad", "No, debes hacer las lecciones siempre"],
+          "options": [
+            "Sí, salta directo al Quiz de Unidad",
+            "No, debes hacer las lecciones siempre"
+          ],
           "correct": 0,
           "explanation": "El diagnostic es el atajo: si dominás el contenido, ≥80% te permite saltar al Quiz de Unidad directamente."
         }
@@ -713,26 +974,102 @@
       "section": "D",
       "type": "flashcards",
       "cards": [
-        {"q": "¿Qué es Ads Manager?", "a": "El centro de control de Meta: crear campañas, configurar billing, manejar audiencias, ver reporting, conectar data sources, ajustar advertiser settings. NO solo es para crear ads."},
-        {"q": "¿Qué mide el Opportunity Score?", "a": "Un 0-100 que muestra qué tan optimizadas están tus campañas según recomendaciones experimentalmente probadas que aún no aplicaste. NO predice performance real."},
-        {"q": "Tres momentos en que el Opportunity Score te sirve", "a": "Before (Account overview, antes de crear campañas) · During (score de campaña al crearla, no afecta el global) · After (recomendaciones continuas mientras corre)."},
-        {"q": "Los 3 niveles de una campaña en orden", "a": "Campaign → Ad set → Ad"},
-        {"q": "¿Qué se decide a nivel Campaign?", "a": "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"},
-        {"q": "¿Qué se decide a nivel Ad set?", "a": "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"},
-        {"q": "¿Qué se decide a nivel Ad?", "a": "Partnership ad · Identity · Ad setup · Ad creative · Destination · Tracking · Languages"},
-        {"q": "¿Qué es Meta Advantage+?", "a": "Suite de soluciones que usa AI + automation en tiempo real para hacer match entre ads y personas con más probabilidad de actuar. Optimiza por real-time data, efectividad y relevancia."},
-        {"q": "Las 2 categorías de Advantage+", "a": "Complete campaign solutions (automatizan toda la campaña: Sales, App, Leads) · Single-step solutions (automatizan un aspecto: Audience, Placement, Budget, Creative, Destination)."},
-        {"q": "Las 3 Advantage+ complete campaign solutions", "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"},
-        {"q": "¿Qué hace Advantage+ campaign budget?", "a": "Asigna dinámicamente el budget al ad set/ad con mejor performance. Es la default single-step solution para budget automation. (Antes se llamaba CBO.)"},
-        {"q": "¿Qué hace Advantage+ catalog ads?", "a": "Muestra productos de un catálogo a las personas más propensas a encontrarlos relevantes. Disponible al elegir Sales como objetivo."},
-        {"q": "¿Cuáles son las 7 Performance Best Practices?", "a": "1. Automate setup · 2. Align objectives & goals · 3. Consider audience · 4. Optimize creative & placements · 5. Focus on signals · 6. Get the most out of budget & bidding · 7. Validate results"},
-        {"q": "¿Qué BP corresponden a las recomendaciones del Opportunity Score?", "a": "Las BP 1-6. La BP 7 (Validate results) ocurre post-campaña."},
-        {"q": "¿Qué es Meta Business Suite?", "a": "Surface centralizada para administrar marketing, ads y cuentas de clientes en Facebook, Instagram, Messenger y WhatsApp."},
-        {"q": "¿Qué es un Business Portfolio?", "a": "Agrupador de activos (Facebook Page, Instagram, ad account, catálogo, etc.) en un solo lugar, con gestión unificada de assets y accesos."},
-        {"q": "Los 3 tipos de usuarios en un portfolio", "a": "People (individuos) · Partners (otros negocios con su propio portfolio + business ID) · System users (servidores/software con API access)."},
-        {"q": "Diferencia: Partial access vs Full control en portfolio", "a": "Partial: trabajar solo en assets asignados, ver quién tiene full control. Full: manejar todo (settings, gente, tools, assets, claim/remove) + borrar el portfolio."},
-        {"q": "Acceso temporal en un portfolio: ¿cuánto tiempo?", "a": "Mínimo 3 días, máximo 75 días."},
-        {"q": "Los 4 tipos de controles del Brand Safety Center", "a": "Inventory filters (Expanded/Moderate/Limited) · Publisher block lists · Topic exclusions (Gaming/News/Politics/Religion) · Content type exclusions (live video, non-partner)."}
+        {
+          "q": "¿Qué es Ads Manager?",
+          "a": "El centro de control de Meta: crear campañas, configurar billing, manejar audiencias, ver reporting, conectar data sources, ajustar advertiser settings. NO solo es para crear ads."
+        },
+        {
+          "q": "¿Qué mide el Opportunity Score?",
+          "a": "Un 0-100 que muestra qué tan optimizadas están tus campañas según recomendaciones experimentalmente probadas que aún no aplicaste. NO predice performance real."
+        },
+        {
+          "q": "Tres momentos en que el Opportunity Score te sirve",
+          "a": "Before (Account overview, antes de crear campañas) · During (score de campaña al crearla, no afecta el global) · After (recomendaciones continuas mientras corre)."
+        },
+        {
+          "q": "Los 3 niveles de una campaña en orden",
+          "a": "Campaign → Ad set → Ad"
+        },
+        {
+          "q": "¿Qué se decide a nivel Campaign?",
+          "a": "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"
+        },
+        {
+          "q": "¿Qué se decide a nivel Ad set?",
+          "a": "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"
+        },
+        {
+          "q": "¿Qué se decide a nivel Ad?",
+          "a": "Partnership ad · Identity · Ad setup · Ad creative · Destination · Tracking · Languages"
+        },
+        {
+          "q": "¿Qué es Meta Advantage+?",
+          "a": "Suite de soluciones que usa AI + automation en tiempo real para hacer match entre ads y personas con más probabilidad de actuar. Optimiza por real-time data, efectividad y relevancia."
+        },
+        {
+          "q": "Las 2 categorías de Advantage+",
+          "a": "Complete campaign solutions (automatizan toda la campaña: Sales, App, Leads) · Single-step solutions (automatizan un aspecto: Audience, Placement, Budget, Creative, Destination)."
+        },
+        {
+          "q": "Las 3 Advantage+ complete campaign solutions",
+          "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
+        },
+        {
+          "q": "¿Qué hace Advantage+ campaign budget?",
+          "a": "Asigna dinámicamente el budget al ad set/ad con mejor performance. Es la default single-step solution para budget automation. (Antes se llamaba CBO.)"
+        },
+        {
+          "q": "¿Qué hace Advantage+ catalog ads?",
+          "a": "Muestra productos de un catálogo a las personas más propensas a encontrarlos relevantes. Disponible al elegir Sales como objetivo."
+        },
+        {
+          "q": "¿Cuáles son las 7 Performance Best Practices?",
+          "a": "1. Automate setup · 2. Align objectives & goals · 3. Consider audience · 4. Optimize creative & placements · 5. Focus on signals · 6. Get the most out of budget & bidding · 7. Validate results"
+        },
+        {
+          "q": "¿Qué BP corresponden a las recomendaciones del Opportunity Score?",
+          "a": "Las BP 1-6. La BP 7 (Validate results) ocurre post-campaña."
+        },
+        {
+          "q": "¿Qué es Meta Business Suite?",
+          "a": "Surface centralizada para administrar marketing, ads y cuentas de clientes en Facebook, Instagram, Messenger y WhatsApp."
+        },
+        {
+          "q": "¿Qué es un Business Portfolio?",
+          "a": "Agrupador de activos (Facebook Page, Instagram, ad account, catálogo, etc.) en un solo lugar, con gestión unificada de assets y accesos."
+        },
+        {
+          "q": "Los 3 tipos de usuarios en un portfolio",
+          "a": "People (individuos) · Partners (otros negocios con su propio portfolio + business ID) · System users (servidores/software con API access)."
+        },
+        {
+          "q": "Diferencia: Partial access vs Full control en portfolio",
+          "a": "Partial: trabajar solo en assets asignados, ver quién tiene full control. Full: manejar todo (settings, gente, tools, assets, claim/remove) + borrar el portfolio."
+        },
+        {
+          "q": "Acceso temporal en un portfolio: ¿cuánto tiempo?",
+          "a": "Mínimo 3 días, máximo 75 días."
+        },
+        {
+          "q": "Los 4 tipos de controles del Brand Safety Center",
+          "a": "Inventory filters (Expanded/Moderate/Limited) · Publisher block lists · Topic exclusions (Gaming/News/Politics/Religion) · Content type exclusions (live video, non-partner)."
+        },
+        {
+          "q": "Inventory filters (niveles)",
+          "a": "Expanded, Moderate o Limited. Es el control más simple y de mayor cobertura para excluir contenido sensible en el Brand Safety and Suitability Center."
+        },
+        {
+          "q": "Advantage+ complete campaign solutions",
+          "a": "Advantage+ sales, app y leads campaigns: la IA automatiza TODA la campaña. Single-step (un solo aspecto): audience, placements, campaign budget, creative, destination, catalog ads."
+        },
+        {
+          "q": "Employee access vs admin access (Business Manager)",
+          "a": "Employee solo accede a los assets asignados. Agregar/quitar personas, crear cuentas/Pages o eliminar el negocio requieren admin access."
+        },
+        {
+          "q": "Niveles de creación y qué se decide en cada uno",
+          "a": "Campaign: buying type, objective, budget, bid. Ad set: conversion/performance goal, budget/schedule, audiencia, placements. Ad: creative, destination, tracking."
+        }
       ]
     }
   ]

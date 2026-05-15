@@ -12,10 +12,22 @@
           "type": "kvtable",
           "h": "Los 4 formatos principales",
           "rows": [
-            ["Flexible", "Meta elige automáticamente qué media entregar (single/carousel/etc.) según performance"],
-            ["Single image o video", "Un solo asset. El formato más simple y común."],
-            ["Carousel", "2+ images o videos en swipe horizontal. Ideal para múltiples productos o storytelling."],
-            ["Collection", "Hero video o imagen + grid de productos del catálogo abajo. Solo en mobile. Ideal con catalog."]
+            [
+              "Flexible",
+              "Meta elige automáticamente qué media entregar (single/carousel/etc.) según performance"
+            ],
+            [
+              "Single image o video",
+              "Un solo asset. El formato más simple y común."
+            ],
+            [
+              "Carousel",
+              "2+ images o videos en swipe horizontal. Ideal para múltiples productos o storytelling."
+            ],
+            [
+              "Collection",
+              "Hero video o imagen + grid de productos del catálogo abajo. Solo en mobile. Ideal con catalog."
+            ]
           ]
         },
         {
@@ -31,7 +43,12 @@
         {
           "type": "mcq",
           "q": "¿Cuál formato muestra un hero (video/imagen) arriba + grid de productos del catalog abajo?",
-          "options": ["Carousel","Single video","Collection","Instant Experience"],
+          "options": [
+            "Carousel",
+            "Single video",
+            "Collection",
+            "Instant Experience"
+          ],
           "correct": 2,
           "explanation": "Collection = hero + grid de productos. Ideal con catalog. Carousel es swipe horizontal sin grid.",
           "difficulty": "medium"
@@ -39,7 +56,12 @@
         {
           "type": "mcq",
           "q": "Quieres mostrar 5 SKUs de paneles solares al mismo tiempo en formato swipe. ¿Cuál usas?",
-          "options": ["Collection","Carousel","Single image","Instant Experience"],
+          "options": [
+            "Collection",
+            "Carousel",
+            "Single image",
+            "Instant Experience"
+          ],
           "correct": 1,
           "explanation": "Carousel admite 2-10 cards en swipe. Cada card puede ser distinta. Ideal para múltiples productos.",
           "difficulty": "easy"
@@ -56,21 +78,48 @@
           "type": "kvtable",
           "h": "Placements principales",
           "rows": [
-            ["Facebook", "Feeds, Stories, Reels, Marketplace, Right column, In-stream video"],
-            ["Instagram", "Feed, Stories, Reels, Explore, Shop"],
-            ["Messenger", "Stories, Status, Inbox"],
-            ["Audience Network", "In-stream video, Native banner, Rewarded video (apps de terceros)"],
-            ["Threads", "Feeds"]
+            [
+              "Facebook",
+              "Feeds, Stories, Reels, Marketplace, Right column, In-stream video"
+            ],
+            [
+              "Instagram",
+              "Feed, Stories, Reels, Explore, Shop"
+            ],
+            [
+              "Messenger",
+              "Stories, Status, Inbox"
+            ],
+            [
+              "Audience Network",
+              "In-stream video, Native banner, Rewarded video (apps de terceros)"
+            ],
+            [
+              "Threads",
+              "Feeds"
+            ]
           ]
         },
         {
           "type": "kvtable",
           "h": "Aspect ratios por placement",
           "rows": [
-            ["16:9 (landscape)", "FB Feed/Marketplace · IG Feed (algunos)"],
-            ["1:1 (square)", "FB Feed · IG Feed · Marketplace"],
-            ["4:5 (vertical)", "FB Feed · IG Feed/Explore (recomendado)"],
-            ["9:16 (full portrait)", "FB/IG Stories y Reels (full screen)"]
+            [
+              "16:9 (landscape)",
+              "FB Feed/Marketplace · IG Feed (algunos)"
+            ],
+            [
+              "1:1 (square)",
+              "FB Feed · IG Feed · Marketplace"
+            ],
+            [
+              "4:5 (vertical)",
+              "FB Feed · IG Feed/Explore (recomendado)"
+            ],
+            [
+              "9:16 (full portrait)",
+              "FB/IG Stories y Reels (full screen)"
+            ]
           ]
         },
         {
@@ -86,7 +135,12 @@
         {
           "type": "mcq",
           "q": "Aspect ratio óptimo para Stories y Reels:",
-          "options": ["16:9","1:1","4:5","9:16"],
+          "options": [
+            "16:9",
+            "1:1",
+            "4:5",
+            "9:16"
+          ],
           "correct": 3,
           "explanation": "9:16 (full portrait vertical) ocupa pantalla completa en Stories y Reels.",
           "difficulty": "easy"
@@ -126,9 +180,18 @@
           "type": "kvtable",
           "h": "Diversificación creativa: las 3 dimensiones",
           "rows": [
-            ["Messaging", "Headline, copy, CTA — variá el mensaje"],
-            ["Visuals", "Imagen, video, formato, color, persona en el ad"],
-            ["Formats", "Single image, video, carousel, collection — variá el contenedor"]
+            [
+              "Messaging",
+              "Headline, copy, CTA — variá el mensaje"
+            ],
+            [
+              "Visuals",
+              "Imagen, video, formato, color, persona en el ad"
+            ],
+            [
+              "Formats",
+              "Single image, video, carousel, collection — variá el contenedor"
+            ]
           ]
         },
         {
@@ -166,9 +229,18 @@
           "type": "kvtable",
           "h": "Métricas por etapa del funnel",
           "rows": [
-            ["Awareness", "Reach, Frequency, Estimated ad recall lift, Impressions, CPM"],
-            ["Consideration", "Link clicks, CTR, Landing page views, Cost per landing page view, Conversations started"],
-            ["Conversion", "Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase"]
+            [
+              "Awareness",
+              "Reach, Frequency, Estimated ad recall lift, Impressions, CPM"
+            ],
+            [
+              "Consideration",
+              "Link clicks, CTR, Landing page views, Cost per landing page view, Conversations started"
+            ],
+            [
+              "Conversion",
+              "Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase"
+            ]
           ]
         },
         {
@@ -212,9 +284,18 @@
           "type": "kvtable",
           "h": "Los 3 tests de Meta",
           "rows": [
-            ["A/B Test", "Compara 2 versiones de un ad cambiando UNA variable (creative/audience/placement/delivery). Audiencia se divide aleatoriamente, sin overlap. NO tiene minimum spend."],
-            ["Brand Lift", "Encuestas a test group expuesto vs control group no expuesto. Mide impacto en brand awareness, ad recall, message association. SÍ tiene mínimos de budget por región."],
-            ["Conversion Lift", "Compara test vs control para medir conversions INCREMENTALES (sales/leads/app events causales). Responde \"¿cuántas ventas EXTRA generó la campaña?\""]
+            [
+              "A/B Test",
+              "Compara 2 versiones de un ad cambiando UNA variable (creative/audience/placement/delivery). Audiencia se divide aleatoriamente, sin overlap. NO tiene minimum spend."
+            ],
+            [
+              "Brand Lift",
+              "Encuestas a test group expuesto vs control group no expuesto. Mide impacto en brand awareness, ad recall, message association. SÍ tiene mínimos de budget por región."
+            ],
+            [
+              "Conversion Lift",
+              "Compara test vs control para medir conversions INCREMENTALES (sales/leads/app events causales). Responde \"¿cuántas ventas EXTRA generó la campaña?\""
+            ]
           ]
         },
         {
@@ -261,7 +342,12 @@
         {
           "type": "mcq",
           "q": "En un A/B Test correcto, ¿cuántas variables debes cambiar?",
-          "options": ["1","2","3 o más","Cuantas más mejor"],
+          "options": [
+            "1",
+            "2",
+            "3 o más",
+            "Cuantas más mejor"
+          ],
           "correct": 0,
           "explanation": "UNA sola variable. Si cambias 2+, no puedes aislar cuál causó el resultado.",
           "difficulty": "medium"
@@ -278,10 +364,22 @@
           "type": "kvtable",
           "h": "4 controles de Brand Safety",
           "rows": [
-            ["Inventory filters", "Expanded (default) / Moderate / Limited — controlan qué inventory se acepta"],
-            ["Publisher block lists", "Excluyen publishers específicos donde NO quieres aparecer"],
-            ["Topic exclusions", "Excluyen temas (noticias polémicas, ciertos géneros)"],
-            ["Content type exclusions", "Excluyen formatos (in-stream pre-roll, in-context, etc.)"]
+            [
+              "Inventory filters",
+              "Expanded (default) / Moderate / Limited — controlan qué inventory se acepta"
+            ],
+            [
+              "Publisher block lists",
+              "Excluyen publishers específicos donde NO quieres aparecer"
+            ],
+            [
+              "Topic exclusions",
+              "Excluyen temas (noticias polémicas, ciertos géneros)"
+            ],
+            [
+              "Content type exclusions",
+              "Excluyen formatos (in-stream pre-roll, in-context, etc.)"
+            ]
           ]
         },
         {
@@ -316,12 +414,30 @@
       "type": "match",
       "instruction": "Asocia cada herramienta con su caso de uso.",
       "pairs": [
-        ["A/B Test", "Comparar 2 versiones de creative con misma audience"],
-        ["Brand Lift", "Medir impacto en recall/awareness con encuestas"],
-        ["Conversion Lift", "Medir cuántas ventas extras (causales) generó la campaña"],
-        ["Standard attribution", "Atribuir conversions con reglas (1d view, 7d click)"],
-        ["Incremental attribution", "Identificar conversions CAUSALES (no solo correlación)"],
-        ["Reach + Frequency", "Métricas KPI de campañas Awareness"]
+        [
+          "A/B Test",
+          "Comparar 2 versiones de creative con misma audience"
+        ],
+        [
+          "Brand Lift",
+          "Medir impacto en recall/awareness con encuestas"
+        ],
+        [
+          "Conversion Lift",
+          "Medir cuántas ventas extras (causales) generó la campaña"
+        ],
+        [
+          "Standard attribution",
+          "Atribuir conversions con reglas (1d view, 7d click)"
+        ],
+        [
+          "Incremental attribution",
+          "Identificar conversions CAUSALES (no solo correlación)"
+        ],
+        [
+          "Reach + Frequency",
+          "Métricas KPI de campañas Awareness"
+        ]
       ],
       "explanation": "Cada herramienta responde una pregunta distinta. A/B Test compara variantes. Brand Lift mide marca. Conversion Lift mide ventas causales. Atribución asigna crédito."
     },
@@ -415,7 +531,12 @@
         {
           "type": "mcq",
           "q": "Aspect ratio para Stories y Reels:",
-          "options": ["16:9","1:1","4:5","9:16"],
+          "options": [
+            "16:9",
+            "1:1",
+            "4:5",
+            "9:16"
+          ],
           "correct": 3,
           "explanation": "9:16 full portrait.",
           "difficulty": "easy"
@@ -475,7 +596,12 @@
         {
           "type": "mcq",
           "q": "A/B Test requiere cambiar:",
-          "options": ["1 variable","2","3","Cuantas más mejor"],
+          "options": [
+            "1 variable",
+            "2",
+            "3",
+            "Cuantas más mejor"
+          ],
           "correct": 0,
           "explanation": "Solo 1 variable. Si cambias 2+ no puedes aislar la causa.",
           "difficulty": "easy"
@@ -483,7 +609,12 @@
         {
           "type": "mcq",
           "q": "Formato con hero + grid de productos:",
-          "options": ["Single","Carousel","Collection","Instant"],
+          "options": [
+            "Single",
+            "Carousel",
+            "Collection",
+            "Instant"
+          ],
           "correct": 2,
           "explanation": "Collection = hero + grid catalog.",
           "difficulty": "medium"
@@ -550,7 +681,11 @@
             "Estimated ad recall lift",
             "Cost per purchase"
           ],
-          "correct": [0, 1, 3],
+          "correct": [
+            0,
+            1,
+            3
+          ],
           "multi": true,
           "explanation": "Reach, Frequency y Estimated ad recall lift son de Awareness. ROAS y cost per purchase son de Conversion.",
           "difficulty": "hard"
@@ -567,21 +702,36 @@
       "questions": [
         {
           "q": "9:16 para:",
-          "options": ["FB Feed","Stories/Reels","Marketplace","Right column"],
+          "options": [
+            "FB Feed",
+            "Stories/Reels",
+            "Marketplace",
+            "Right column"
+          ],
           "correct": 1,
           "explanation": "9:16 = Stories y Reels.",
           "difficulty": "easy"
         },
         {
           "q": "Brand Lift =",
-          "options": ["Ventas extras","Encuestas de marca","Bid","Reach"],
+          "options": [
+            "Ventas extras",
+            "Encuestas de marca",
+            "Bid",
+            "Reach"
+          ],
           "correct": 1,
           "explanation": "Encuestas.",
           "difficulty": "easy"
         },
         {
           "q": "Conversion Lift =",
-          "options": ["Encuestas","Ventas causales","Recall","Frequency"],
+          "options": [
+            "Encuestas",
+            "Ventas causales",
+            "Recall",
+            "Frequency"
+          ],
           "correct": 1,
           "explanation": "Incrementalidad.",
           "difficulty": "medium"
@@ -600,7 +750,12 @@
         },
         {
           "q": "A/B Test variables a cambiar:",
-          "options": ["1","2","3","Muchas"],
+          "options": [
+            "1",
+            "2",
+            "3",
+            "Muchas"
+          ],
           "correct": 0,
           "explanation": "Solo 1.",
           "difficulty": "easy"
@@ -673,26 +828,102 @@
       "section": "D",
       "type": "flashcards",
       "cards": [
-        {"q":"¿Cuáles son los 4 formatos de ad?","a":"Flexible (AI elige), Single image/video, Carousel (2+ swipe), Collection (hero + grid)."},
-        {"q":"¿Cuándo usar Collection vs Carousel?","a":"Collection: hero (video/imagen) + grid de productos abajo. Ideal con catalog. Carousel: solo swipe de cards sin hero, ideal para storytelling sin catalog."},
-        {"q":"¿Aspect ratio para Stories y Reels?","a":"9:16 full portrait vertical."},
-        {"q":"¿Qué es Instant Experience?","a":"Experiencia full-screen post-click en mobile. Útil cuando tu website es malo o quieres contar todo dentro de Meta."},
-        {"q":"¿Cuáles son los 2 modelos de attribution en Ads Manager?","a":"Standard (con reglas) e Incremental (modelado causal). Custom NO existe."},
-        {"q":"¿Default attribution setting?","a":"1-day view, 7-day click."},
-        {"q":"¿Diferencia entre A/B Test, Brand Lift y Conversion Lift?","a":"A/B Test = compara 2 variantes (1 variable). Brand Lift = encuestas sobre marca/recall. Conversion Lift = mide ventas causales extras."},
-        {"q":"¿Cuántas variables se cambian en un A/B Test?","a":"UNA sola. Si cambias 2+ no puedes aislar la causa."},
-        {"q":"¿Dónde corren A/B Test, Brand Lift, Conversion Lift?","a":"En Experiments (Ads Manager o Meta Business Suite). NO en Ads Reporting."},
-        {"q":"¿Reglas de mobile-first creative?","a":"Video 9:16, ≤15 segundos, branding en primeros 3s, audio + subtítulos, elementos clave en safe zone central."},
-        {"q":"¿Qué son los 4 brand safety controls?","a":"Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions, Content type exclusions."},
-        {"q":"¿Qué pasa si combinas Advantage+ Creative con Asset Customization?","a":"Asset Customization (manual) tiene priority en los placements donde la configuraste. Advantage+ Creative aplica en los demás placements."},
-        {"q":"¿Las 2 métricas KPI principales?","a":"Results (logros del performance goal) y Cost per Result (spent/results)."},
-        {"q":"Métricas de Awareness:","a":"Reach, Frequency, Estimated ad recall lift, Impressions, CPM."},
-        {"q":"Métricas de Conversion:","a":"Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase, Conversion rate."},
-        {"q":"¿Qué Advertising Standards prohíbe el contenido?","a":"Tobacco, privacy violations, violent/graphic, deceptive practices, drugs, online gambling sin authorization, personal attributes (\"para los señores mayores\")."},
-        {"q":"¿Por qué un ad puede ser rechazado por 'personal attributes' aunque el producto sea legal?","a":"Porque implica una característica personal del usuario (edad, peso, raza, religión). Reformular el copy: \"para profesionales experimentados\" en vez de \"para los señores mayores\"."},
-        {"q":"¿Diferencia entre Standard y Incremental attribution?","a":"Standard = atribuye con reglas (ventana + touchpoint), correlacional. Incremental = modelo predictivo de causalidad (\"¿el ad realmente causó la venta?\")."},
-        {"q":"¿Qué pasa si tu ad creative tiene texto crítico en las orillas en Stories?","a":"Se corta. El UI de Stories (logo IG, perfil, botón) cubre los bordes. Diseñar para safe zone central."},
-        {"q":"Los 6 pasos para analizar resultados de campañas:","a":"1) Revisar Results · 2) Other metrics · 3) Setup strategies · 4) Evaluar holístico · 5) Comparar ad sets · 6) Identificar optimization opportunities."}
+        {
+          "q": "¿Cuáles son los 4 formatos de ad?",
+          "a": "Flexible (AI elige), Single image/video, Carousel (2+ swipe), Collection (hero + grid)."
+        },
+        {
+          "q": "¿Cuándo usar Collection vs Carousel?",
+          "a": "Collection: hero (video/imagen) + grid de productos abajo. Ideal con catalog. Carousel: solo swipe de cards sin hero, ideal para storytelling sin catalog."
+        },
+        {
+          "q": "¿Aspect ratio para Stories y Reels?",
+          "a": "9:16 full portrait vertical."
+        },
+        {
+          "q": "¿Qué es Instant Experience?",
+          "a": "Experiencia full-screen post-click en mobile. Útil cuando tu website es malo o quieres contar todo dentro de Meta."
+        },
+        {
+          "q": "¿Cuáles son los 2 modelos de attribution en Ads Manager?",
+          "a": "Standard (con reglas) e Incremental (modelado causal). Custom NO existe."
+        },
+        {
+          "q": "¿Default attribution setting?",
+          "a": "1-day view, 7-day click."
+        },
+        {
+          "q": "¿Diferencia entre A/B Test, Brand Lift y Conversion Lift?",
+          "a": "A/B Test = compara 2 variantes (1 variable). Brand Lift = encuestas sobre marca/recall. Conversion Lift = mide ventas causales extras."
+        },
+        {
+          "q": "¿Cuántas variables se cambian en un A/B Test?",
+          "a": "UNA sola. Si cambias 2+ no puedes aislar la causa."
+        },
+        {
+          "q": "¿Dónde corren A/B Test, Brand Lift, Conversion Lift?",
+          "a": "En Experiments (Ads Manager o Meta Business Suite). NO en Ads Reporting."
+        },
+        {
+          "q": "¿Reglas de mobile-first creative?",
+          "a": "Video 9:16, ≤15 segundos, branding en primeros 3s, audio + subtítulos, elementos clave en safe zone central."
+        },
+        {
+          "q": "¿Qué son los 4 brand safety controls?",
+          "a": "Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions, Content type exclusions."
+        },
+        {
+          "q": "¿Qué pasa si combinas Advantage+ Creative con Asset Customization?",
+          "a": "Asset Customization (manual) tiene priority en los placements donde la configuraste. Advantage+ Creative aplica en los demás placements."
+        },
+        {
+          "q": "¿Las 2 métricas KPI principales?",
+          "a": "Results (logros del performance goal) y Cost per Result (spent/results)."
+        },
+        {
+          "q": "Métricas de Awareness:",
+          "a": "Reach, Frequency, Estimated ad recall lift, Impressions, CPM."
+        },
+        {
+          "q": "Métricas de Conversion:",
+          "a": "Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase, Conversion rate."
+        },
+        {
+          "q": "¿Qué Advertising Standards prohíbe el contenido?",
+          "a": "Tobacco, privacy violations, violent/graphic, deceptive practices, drugs, online gambling sin authorization, personal attributes (\"para los señores mayores\")."
+        },
+        {
+          "q": "¿Por qué un ad puede ser rechazado por 'personal attributes' aunque el producto sea legal?",
+          "a": "Porque implica una característica personal del usuario (edad, peso, raza, religión). Reformular el copy: \"para profesionales experimentados\" en vez de \"para los señores mayores\"."
+        },
+        {
+          "q": "¿Diferencia entre Standard y Incremental attribution?",
+          "a": "Standard = atribuye con reglas (ventana + touchpoint), correlacional. Incremental = modelo predictivo de causalidad (\"¿el ad realmente causó la venta?\")."
+        },
+        {
+          "q": "¿Qué pasa si tu ad creative tiene texto crítico en las orillas en Stories?",
+          "a": "Se corta. El UI de Stories (logo IG, perfil, botón) cubre los bordes. Diseñar para safe zone central."
+        },
+        {
+          "q": "Los 6 pasos para analizar resultados de campañas:",
+          "a": "1) Revisar Results · 2) Other metrics · 3) Setup strategies · 4) Evaluar holístico · 5) Comparar ad sets · 6) Identificar optimization opportunities."
+        },
+        {
+          "q": "Attribution models en Ads Manager",
+          "a": "Standard e Incremental. Incremental usa modelos predictivos para optimizar por conversiones incrementales (identifica si el anuncio causó la conversión)."
+        },
+        {
+          "q": "Conversion Lift: best practices estadisticas",
+          "a": "≥ $10,000 de gasto, 10% holdout y > 500 conversiones para resultados estadísticamente significativos. Fuente de datos recomendada: Conversions API."
+        },
+        {
+          "q": "Brand Lift vs Conversion Lift vs A/B test",
+          "a": "Brand Lift = ad recall y actitud de marca. Conversion Lift = conversiones incrementales (RCT, single o multi-cell). A/B = comparar variables. Los 3 se configuran en Experiments (Ads Manager / Business Suite)."
+        },
+        {
+          "q": "Mobile-first creative: best practices",
+          "a": "Aspect ratio 9:16, captar atención rápido, audio con subtítulos, respetar la safe zone en Reels/Stories. Usar Advantage+ creative para adaptar por persona y placement; diversificar para reducir creative fatigue."
+        }
       ]
     }
   ]

@@ -61,8 +61,13 @@
       "title": "Día 7 — Simulacro de examen",
       "subtitle": "60 preguntas · 105 minutos",
       "coverage": "Examen completo",
-      "kind": "mock-exam",
-      "locked": true
+      "kind": "mock-exam"
+    },
+    {
+      "id": "glosario",
+      "title": "Glosario oficial Meta 410-101",
+      "subtitle": "74 flashcards · 3 bloques de repaso",
+      "coverage": "Repaso de términos del examen"
     }
   ]
 }
