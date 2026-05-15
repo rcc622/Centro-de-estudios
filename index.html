@@ -2992,6 +2992,9 @@ function renderFlashcards(){
   const wrongN = FLASH_STATE.wrongCount || 0;
   const hasExpl = !!card.explanation;
   const showExpl = FLASH_STATE.showExpl && hasExpl;
+  const prevResult = FLASH_STATE.answered ? FLASH_STATE.answered[FLASH_STATE.idx] : undefined;
+  const answeredThis = prevResult !== undefined;
+  const canRate = flipped && !answeredThis;
   return `
     ${renderHeader()}
     <div class="scroll">
@@ -3005,15 +3008,15 @@ function renderFlashcards(){
           <div class="flash-tag">${flipped?'RESPUESTA':'PREGUNTA'}</div>
           ${flipped ? `<div class="flash-a">${card.a}</div>` : `<div class="flash-q">${card.q}</div>`}
           ${showExpl ? `<div class="flash-explanation">💡 ${card.explanation}</div>` : ''}
-          <div class="flash-hint">${flipped?'¿La acertaste?':'Toca para revelar'}</div>
+          <div class="flash-hint">${!flipped ? 'Toca para revelar' : (answeredThis ? ('Ya la calificaste ' + (prevResult==='right'?'✓':'✗') + ' · usa →') : '¿La acertaste?')}</div>
         </div>
       </div>
       <div class="flash-nav">
         <button class="fn-btn fn-side" onclick="flashPrev()" ${FLASH_STATE.idx===0?'disabled':''} aria-label="Anterior">←</button>
-        <button class="fn-btn fn-wrong ${flipped?'':'disabled'}" onclick="${flipped?'flashAnswer(\'wrong\')':''}" ${flipped?'':'disabled'}>
+        <button class="fn-btn fn-wrong ${canRate?'':'disabled'}" onclick="${canRate?'flashAnswer(\'wrong\')':''}" ${canRate?'':'disabled'}>
           <span class="fn-ico">✗</span><span class="fn-count">${wrongN}</span>
         </button>
-        <button class="fn-btn fn-right ${flipped?'':'disabled'}" onclick="${flipped?'flashAnswer(\'right\')':''}" ${flipped?'':'disabled'}>
+        <button class="fn-btn fn-right ${canRate?'':'disabled'}" onclick="${canRate?'flashAnswer(\'right\')':''}" ${canRate?'':'disabled'}>
           <span class="fn-count">${rightN}</span><span class="fn-ico">✓</span>
         </button>
         <button class="fn-btn fn-side" onclick="flashSkip()" aria-label="Saltar">→</button>
@@ -3980,6 +3983,11 @@ function flipFlash(){
 
 // Binario: 'right' = acerté, 'wrong' = no acerté. Marca y avanza al siguiente.
 function flashAnswer(result){
+  // Cada tarjeta se califica UNA sola vez por sesión. Si el usuario regresa
+  // con ← a una tarjeta ya calificada y la vuelve a marcar, se ignora: así
+  // no se puede inflar el contador/XP repitiendo la misma pregunta.
+  if(!FLASH_STATE.answered) FLASH_STATE.answered = {};
+  if(FLASH_STATE.answered[FLASH_STATE.idx] !== undefined) return;
   haptic(result === 'right' ? HAPTIC.correct : HAPTIC.wrong);
   const card = FLASH_STATE.deck[FLASH_STATE.idx];
   if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {right:0, wrong:0};
@@ -3995,6 +4003,7 @@ function flashAnswer(result){
   // Counters de la sesión actual
   if(result === 'right') FLASH_STATE.rightCount = (FLASH_STATE.rightCount||0) + 1;
   else FLASH_STATE.wrongCount = (FLASH_STATE.wrongCount||0) + 1;
+  FLASH_STATE.answered[FLASH_STATE.idx] = result;
   FLASH_STATE.rated += 1;
   FLASH_STATE.idx += 1;
   FLASH_STATE.flipped = false;
