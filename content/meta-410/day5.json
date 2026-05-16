@@ -3,15 +3,115 @@
   "title": "Día 5 — Audiences & Catalogs",
   "lessons": [
     {
+      "id": "5.0",
+      "title": "Repaso espaciado · Día 4",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Recupéralo antes de avanzar",
+          "body": "Antes de meter conceptos nuevos de audiencias, vamos a recuperar lo del Día 4 (signals y data). Traer algo de memoria con esfuerzo —sin volver a leerlo— es lo que de verdad lo fija. Si te cuesta, perfecto: ese esfuerzo es el que aprende."
+        },
+        {
+          "type": "fill",
+          "q": "Pixel y CAPI no se sustituyen: son ___.",
+          "options": ["complementarios", "intercambiables", "idénticos", "opcionales"],
+          "correct": 0,
+          "explanation": "Pixel cubre el browser, CAPI cubre server-side. Juntos = cobertura máxima (~95%)."
+        },
+        {
+          "type": "fill",
+          "q": "El dataset (Pixel + CAPI + SDK + offline) se conecta a nivel ___.",
+          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "correct": 1,
+          "explanation": "El dataset se conecta a nivel Ad set, junto con conversion location y conversion event."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué CAPI cobra más importancia después de iOS 14+ App Tracking Transparency?",
+          "options": [
+            "ATT bloquea CAPI en Android",
+            "ATT limita el Pixel en navegadores iOS sin consentimiento; CAPI envía server-side y no se ve afectado",
+            "ATT obliga por ley a usar CAPI",
+            "CAPI es más barato que el Pixel"
+          ],
+          "correct": 1,
+          "explanation": "ATT pide consentimiento explícito en iOS. Sin él, el Pixel queda limitado. CAPI es server-to-server (independiente del browser) y mantiene cobertura."
+        },
+        {
+          "type": "fill",
+          "q": "Custom Conversion = una ___ sobre un evento existente; Custom Event = un evento nuevo que requiere código.",
+          "options": ["regla", "etiqueta", "campaña", "audiencia"],
+          "correct": 0,
+          "explanation": "Custom Conversion no toca código (regla sobre URL/value). Custom Event sí requiere modificar el Pixel/CAPI/SDK."
+        },
+        {
+          "type": "fill",
+          "q": "Bajo AEM en iOS 14+, el máximo de eventos priorizados por dominio web es ___.",
+          "options": ["3", "5", "8", "16"],
+          "correct": 2,
+          "explanation": "Máximo 8 eventos por dominio web. Por eso conviene reservar esos slots para los eventos del funnel que importan (Purchase, Lead)."
+        },
+        {
+          "type": "mcq",
+          "q": "Kenet cierra contratos presencialmente en oficina. ¿Qué event registra y por qué canal?",
+          "options": [
+            "ViewContent vía Pixel",
+            "Purchase con value, enviado vía CAPI Offline",
+            "Un Custom Event sin value",
+            "Un AEM event"
+          ],
+          "correct": 1,
+          "explanation": "Purchase es el standard event canónico para una transacción completada, incluida la offline. Se sube vía CAPI Offline para atribuir el cierre a los ads que el cliente vio antes."
+        }
+      ]
+    },
+    {
       "id": "5.1",
-      "title": "Detailed targeting · controls vs suggestions",
+      "title": "Detailed targeting · qué es y cómo combina",
       "section": "A",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
           "h": "Detailed targeting",
-          "body": "Filtros para definir la audiencia: <strong>Demographics</strong> (edad, educación, empleo) + <strong>Interests</strong> (negocio, entretenimiento, familia) + <strong>Behaviors</strong> (uso de dispositivo, intent de compra). Las selecciones son OR dentro de cada categoría, AND entre categorías base."
+          "body": "Filtros para definir la audiencia: <strong>Demographics</strong> (edad, educación, empleo) + <strong>Interests</strong> (negocio, entretenimiento, familia) + <strong>Behaviors</strong> (uso de dispositivo, intent de compra). Sirve para decirle a Meta a qué perfil apuntar."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se combinan las selecciones",
+          "body": "Dentro de una misma categoría las opciones son <strong>OR</strong> (cualquiera cuenta). Entre categorías base son <strong>AND</strong> (deben cumplirse las dos). Por eso, cuantas más categorías agregas, <em>más angosta</em> queda la audiencia, no más grande."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Para Kenet eliges Interests = \"energía renovable\" OR \"ahorro de energía\" (OR, suma perfiles), y aparte Behaviors = \"dueños de PyME\". El AND entre ambas deja solo a quien cumple las dos: dueño de negocio <em>y</em> con interés en energía. Agregar 5 filtros más no amplía: angosta."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "Sobre-segmentar (apilar muchas categorías AND) reduce el delivery y suele <strong>encarecer el CPA</strong>. El examen presenta \"agregar más intereses\" como si ampliara la audiencia: hace lo contrario."
+        },
+        {
+          "type": "fill",
+          "q": "Dentro de una misma categoría de detailed targeting, las opciones se combinan con ___.",
+          "options": ["OR", "AND", "NOT", "XOR"],
+          "correct": 0,
+          "explanation": "OR dentro de cada categoría (suma perfiles). AND entre categorías base (intersecta y angosta)."
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Controls vs Suggestions",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Dos formas de hablarle al sistema",
+          "body": "Al armar la audiencia, algunas decisiones le ponen un <strong>límite duro</strong> al sistema y otras solo le dan una <strong>pista</strong>. Distinguirlas es clave: una restringe, la otra orienta."
         },
         {
           "type": "kvtable",
@@ -33,9 +133,14 @@
           "body": "<strong>Controls</strong> son rígidos: el sistema NO se sale de ahí. <strong>Suggestions</strong> son punto de partida que <strong>Advantage+ Audience</strong> puede expandir si encuentra gente similar afuera de tus parámetros."
         },
         {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Kenet pone como <em>control</em> \"solo Nuevo León\" (el sistema jamás entrega fuera de NL) y como <em>suggestion</em> el lookalike de clientes premium (la AI puede ampliarlo si halla perfiles parecidos). El control marca el cerco; la suggestion marca el rumbo."
+        },
+        {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Si seleccionas \"Switch to original audience options\" o \"Further limit the reach of your ads\", <strong>desactivás Advantage+ Audience</strong> (que está ON por default en campañas nuevas)."
+          "body": "Si seleccionas \"Switch to original audience options\" o \"Further limit the reach of your ads\", <strong>desactivas Advantage+ Audience</strong> (que está ON por default en campañas nuevas)."
         },
         {
           "type": "mcq",
@@ -53,15 +158,15 @@
       ]
     },
     {
-      "id": "5.2",
-      "title": "Custom Audiences · todas las fuentes",
+      "id": "5.3",
+      "title": "Custom Audiences · qué son y sus fuentes",
       "section": "A",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
           "h": "Custom Audience",
-          "body": "Gente que <strong>YA interactuó con tu negocio</strong>. Source puede ser:<br/><br/><strong>Your sources</strong>: Website, App activity, Catalog, Customer list, Offline activity<br/><br/><strong>Meta sources</strong>: Video, Lead form, Instant Experience, Shopping, IG account, Events, FB Page, On-Facebook listings"
+          "body": "Gente que <strong>YA interactuó con tu negocio</strong>. Es retargeting: vuelves a alcanzar a quien ya te conoce. Source puede ser:<br/><br/><strong>Your sources</strong>: Website, App activity, Catalog, Customer list, Offline activity<br/><br/><strong>Meta sources</strong>: Video, Lead form, Instant Experience, Shopping, IG account, Events, FB Page, On-Facebook listings"
         },
         {
           "type": "kvtable",
@@ -82,9 +187,14 @@
           ]
         },
         {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Kenet crea una Custom Audience tipo <em>Website</em> con quien visitó /cotizacion en los últimos 30 días, y otra tipo <em>Customer list</em> con su CRM de prospectos. Ambas son gente que ya tocó la marca: ideales para reactivar, no para prospectar en frío."
+        },
+        {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "Para construir custom audiences potentes desde Customer List, <strong>hasheá email y phone</strong> antes de subir. Meta los matchea con sus usuarios pero nunca ve los datos en plano."
+          "body": "Para construir custom audiences potentes desde Customer List, <strong>hashea email y phone</strong> antes de subir. Meta los matchea con sus usuarios pero nunca ve los datos en plano."
         },
         {
           "type": "mcq",
@@ -115,15 +225,56 @@
       ]
     },
     {
-      "id": "5.3",
-      "title": "Lookalike · 1% vs 10%",
+      "id": "5.4",
+      "title": "Lookalike · qué es y mínimos",
       "section": "A",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
           "h": "Lookalike Audience",
-          "body": "Gente <strong>similar</strong> a tu source audience. Buscás new prospects que se parecen a tus mejores clientes/leads/visitantes. Requiere un source audience de mínimo <strong>100 personas de un solo país</strong> (recomendado 1,000-50,000)."
+          "body": "Gente <strong>similar</strong> a tu source audience. Buscas nuevos prospectos que se parecen a tus mejores clientes/leads/visitantes. Es prospección: gente nueva, no la que ya te conoce. Requiere un source de mínimo <strong>100 personas de un solo país</strong> (recomendado 1,000-50,000)."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Kenet toma su Custom Audience de clientes que firmaron contrato y la usa como <em>source</em> de un Lookalike. Meta busca afuera gente que se parece a esos clientes. El source debe tener mínimo 100 personas de un solo país; con 50 no se genera."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA CRÍTICA",
+          "body": "Un lookalike con source de 50 personas <strong>NO funciona</strong>. Mínimo absoluto: 100 personas de UN SOLO PAÍS. Recomendado: 1,000-50,000 para máxima calidad."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Tu mejor source para Lookalike son los <strong>compradores top</strong>: filtra Purchase events con value alto, agrupa en custom audience, y usa esa como source. El lookalike va a parecerse a esos compradores premium."
+        },
+        {
+          "type": "mcq",
+          "q": "Mínimo de personas requerido en source audience para crear un Lookalike:",
+          "options": [
+            "50",
+            "100",
+            "500",
+            "1000"
+          ],
+          "correct": 1,
+          "explanation": "Mínimo absoluto: 100 personas de UN solo país. Recomendado: 1,000-50,000 para calidad.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.5",
+      "title": "Lookalike · 1% vs 10% y exclusión del source",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El porcentaje define similitud vs alcance",
+          "body": "El % del lookalike es un trade-off entre qué tan parecido es al source y a cuánta gente llega. No hay un \"mejor\" universal: depende de si priorizas calidad o volumen."
         },
         {
           "type": "kvtable",
@@ -148,14 +299,14 @@
           ]
         },
         {
-          "type": "warn",
-          "label": "TRAMPA CRÍTICA",
-          "body": "Un lookalike con source de 50 personas <strong>NO funciona</strong>. Mínimo absoluto: 100 personas de UN SOLO PAÍS. Recomendado: 1,000-50,000 para máxima calidad."
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Cada lead industrial de Kenet vale mucho, así que prioriza calidad: <strong>1%</strong> (el top 1% más parecido a sus clientes top). Si fuera una campaña de awareness masiva donde importa el volumen, el <strong>10%</strong> tendría más sentido."
         },
         {
-          "type": "tip",
-          "label": "PRO TIP",
-          "body": "Tu mejor source para Lookalike son los <strong>compradores top</strong>: filtra Purchase events con value alto, agrupa en custom audience, y usa esa como source. El lookalike va a parecerse a esos compradores premium."
+          "type": "concept",
+          "h": "El source se excluye solo",
+          "body": "El source audience NO entra en el lookalike: Meta lo excluye automáticamente. El lookalike sirve para encontrar gente <em>nueva</em> similar, no para re-alcanzar a quien ya está en el source (eso lo hace una Custom Audience)."
         },
         {
           "type": "mcq",
@@ -168,19 +319,6 @@
           ],
           "correct": 1,
           "explanation": "1% lookalike = máxima similitud (top 1% más parecido al source). 10% = máximo alcance pero menos similitud. Para precisión: 1%.",
-          "difficulty": "medium"
-        },
-        {
-          "type": "mcq",
-          "q": "Mínimo de personas requerido en source audience para crear un Lookalike:",
-          "options": [
-            "50",
-            "100",
-            "500",
-            "1000"
-          ],
-          "correct": 1,
-          "explanation": "Mínimo absoluto: 100 personas de UN solo país. Recomendado: 1,000-50,000 para calidad.",
           "difficulty": "medium"
         },
         {
@@ -199,7 +337,7 @@
       ]
     },
     {
-      "id": "5.4",
+      "id": "5.6",
       "title": "Advantage+ Audience · el AI default",
       "section": "A",
       "type": "reading",
@@ -233,6 +371,11 @@
           "body": "<strong>Broad audience</strong> (solo edad + ubicación) + <strong>Advantage+ Audience</strong> ON suele ser la combinación ganadora en campañas modernas. El sistema tiene la libertad de optimizar dónde encuentra mejor performance."
         },
         {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Kenet deja Advantage+ Audience ON, le da como suggestion su lookalike de clientes y solo pone como control \"México, 25-65, dueños de negocio\". La AI parte de esas pistas y expande hacia perfiles que convierten, sin que Kenet adivine cada interés."
+        },
+        {
           "type": "mcq",
           "q": "¿Cuál es el default de Advantage+ Audience en campañas nuevas?",
           "options": [
@@ -248,8 +391,8 @@
       ]
     },
     {
-      "id": "5.5",
-      "title": "Catálogos · Advantage+ Catalog Ads",
+      "id": "5.7",
+      "title": "Catálogo y Product Sets",
       "section": "A",
       "type": "reading",
       "cards": [
@@ -263,6 +406,37 @@
           "h": "Product Sets",
           "body": "Agrupaciones dentro del catálogo. Ej: 'Fall sale 10% off', 'Best sellers'. <strong>Mínimo 20 productos</strong> recomendado por set para que Advantage+ Catalog Ads tenga material suficiente."
         },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Kenet sube un solo catálogo en Commerce Manager con paneles, inversores y baterías (ID, precio, imagen, link de cada SKU). Dentro arma Product Sets como \"Residencial\" y \"Comercial\", cada uno con 20+ productos para que el sistema tenga de dónde elegir."
+        },
+        {
+          "type": "tip",
+          "label": "BEST PRACTICE",
+          "body": "<strong>UN SOLO catálogo</strong> por negocio. Tener varios catálogos por marca/categoría confunde al sistema y dificulta el match con eventos del Pixel. Si tienes sub-líneas, usa Product Sets dentro del mismo catálogo."
+        },
+        {
+          "type": "mcq",
+          "q": "Mínimo recomendado de productos por Product Set para Advantage+ Catalog Ads:",
+          "options": [
+            "5",
+            "10",
+            "20",
+            "50"
+          ],
+          "correct": 2,
+          "explanation": "20 productos mínimo recomendado para que el sistema tenga material suficiente para optimizar.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.8",
+      "title": "Advantage+ Catalog Ads y match rate",
+      "section": "A",
+      "type": "reading",
+      "cards": [
         {
           "type": "concept",
           "h": "Advantage+ Catalog Ads",
@@ -287,22 +461,9 @@
           ]
         },
         {
-          "type": "tip",
-          "label": "BEST PRACTICE",
-          "body": "<strong>UN SOLO catálogo</strong> por negocio. Tener varios catálogos por marca/categoría confunde al sistema y dificulta el match con eventos del Pixel. Si tienes sub-líneas, usa Product Sets dentro del mismo catálogo."
-        },
-        {
-          "type": "mcq",
-          "q": "Mínimo recomendado de productos por Product Set para Advantage+ Catalog Ads:",
-          "options": [
-            "5",
-            "10",
-            "20",
-            "50"
-          ],
-          "correct": 2,
-          "explanation": "20 productos mínimo recomendado para que el sistema tenga material suficiente para optimizar.",
-          "difficulty": "medium"
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "El Pixel de Kenet manda Content IDs cuando alguien ve un panel. Si esos IDs coinciden con los del catálogo, el match rate sube de 75%. Si están en 40%, no es problema de presupuesto: es que los IDs del Pixel no empatan con los del catálogo."
         },
         {
           "type": "mcq",
@@ -320,7 +481,97 @@
       ]
     },
     {
-      "id": "5.6",
+      "id": "5.9",
+      "title": "Audience overlap · cuándo y cómo se arregla",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Audience overlap",
+          "body": "Pasa cuando audiencias muy similares de distintos ad sets <strong>compiten entre sí</strong> en la subasta. Es como pujar contra ti mismo: encarece y confunde la optimización. Se monitorea en la pestaña Audiences."
+        },
+        {
+          "type": "concept",
+          "h": "Cuándo el análisis sirve",
+          "body": "El análisis de overlap solo es confiable con audiencias de <strong>mínimo 10,000 personas</strong> cada una. Por debajo de eso el dato no es estadísticamente sólido y puede engañarte."
+        },
+        {
+          "type": "kvtable",
+          "h": "Cómo se maneja el overlap alto",
+          "rows": [
+            ["Exclusion", "Excluir la custom audience del ad set de prospecting"],
+            ["Consolidation", "Combinar los ad sets que se pisan en uno solo"],
+            ["Refinement", "Separar más con detailed targeting para que no se solapen"]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Kenet tiene un ad set de retargeting (Custom Audience web) y otro de prospección (Lookalike). Como se pisan, <em>excluye</em> la custom audience del ad set de lookalike: cada uno alcanza a su gente y dejan de competir entre sí."
+        },
+        {
+          "type": "fill",
+          "q": "El análisis de audience overlap es confiable solo con audiencias de mínimo ___ personas cada una.",
+          "options": ["100", "1,000", "10,000", "100,000"],
+          "correct": 2,
+          "explanation": "Mínimo 10,000 personas en cada audience para que el overlap tenga sentido estadístico."
+        }
+      ]
+    },
+    {
+      "id": "5.10",
+      "title": "Guía resuelta · Distribuidora Eléctrica del Bajío (B2B)",
+      "section": "A",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO GUIADO",
+          "h": "Distribuidora Eléctrica del Bajío",
+          "body": "Es una distribuidora B2B de material eléctrico en Querétaro. Tiene un CRM con <strong>6,000 talleres compradores</strong> (email y phone), un catálogo de <strong>60 SKUs</strong> en Commerce Manager con Pixel conectado, y quiere <strong>prospectar nuevos talleres parecidos a sus mejores clientes</strong> y mostrarles los productos relevantes. Vamos a resolverlo juntos, paso a paso."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 1 · Convertir el CRM en una Custom Audience",
+          "body": "El CRM es gente que ya compró → <strong>Custom Audience tipo Customer List</strong>. Hashea email y phone (SHA256) antes de subir el CSV: Meta matchea hashes sin ver los datos en plano. Filtra solo los compradores de mayor valor."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 2 · Crear el Lookalike",
+          "body": "Como quiere talleres <em>nuevos</em> similares a los buenos, usa esa Custom Audience como <strong>source de un Lookalike</strong>. Tiene de sobra el mínimo (6,000 &gt; 100 de un país). Para B2B donde cada cuenta vale mucho, elige <strong>1%</strong> (máxima similitud) sobre 10%."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 3 · Conectar el catálogo",
+          "body": "Para mostrar producto relevante por persona → campaña <strong>Sales + Advantage+ Catalog Ads</strong>, un solo catálogo, un Product Set con los 60 SKUs (supera el mínimo de 20). El Lookalike 1% va como suggestion del ad set."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 4 · Revisar el match rate",
+          "body": "Antes de escalar, verifica el <strong>catalog match rate &gt;75%</strong>. Si está bajo, no subas budget: revisa que los Content IDs que manda el Pixel empaten con los IDs del catálogo."
+        },
+        {
+          "type": "tip",
+          "label": "EL RAZONAMIENTO",
+          "body": "Fíjate en el patrón: <em>fuente propia → custom audience → lookalike para prospectar → catálogo para mostrar producto → validar match rate antes de escalar</em>. Ese orden resuelve casi cualquier caso de audiencias del examen."
+        },
+        {
+          "type": "mcq",
+          "q": "En el mismo caso, ¿por qué el CRM se vuelve Custom Audience y NO directamente un Lookalike?",
+          "options": [
+            "Porque el Lookalike no acepta listas",
+            "Porque el Lookalike necesita una source audience; la Custom Audience del CRM es esa source para luego prospectar similares",
+            "Porque Custom Audience es más barata",
+            "Porque son lo mismo"
+          ],
+          "correct": 1,
+          "explanation": "El CRM es gente que YA compró → Custom Audience (retargeting). Para encontrar gente NUEVA similar se crea un Lookalike usando esa Custom Audience como source. El Lookalike siempre parte de una source existente."
+        }
+      ]
+    },
+    {
+      "id": "5.11",
       "title": "Emparejar audience type ↔ caso de uso",
       "section": "B",
       "type": "match",
@@ -354,7 +605,7 @@
       "explanation": "Conocer qué audience usar según el caso es crítico para el examen. Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos a los que te conocen)."
     },
     {
-      "id": "5.7",
+      "id": "5.12",
       "title": "Ordenar el setup de Advantage+ Catalog Ads",
       "section": "B",
       "type": "order",
@@ -370,7 +621,7 @@
       "explanation": "Setup correcto: infraestructura (catalog + events) → segmentación (product set) → campaña → ad set. Saltarse pasos lleva a ads que no entregan o muestran productos equivocados."
     },
     {
-      "id": "5.8",
+      "id": "5.13",
       "title": "Casos B2B aplicados · Kenet Solar",
       "section": "C",
       "type": "reading",
@@ -435,7 +686,64 @@
       ]
     },
     {
-      "id": "5.9",
+      "id": "5.14",
+      "title": "Completar frases del Día 5",
+      "section": "C",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Una ___ Audience es gente que YA interactuó con tu negocio (retargeting).",
+          "options": ["Custom", "Lookalike", "Saved", "Broad"],
+          "correct": 0,
+          "explanation": "Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos)."
+        },
+        {
+          "type": "fill",
+          "q": "El mínimo absoluto de source para crear un Lookalike es ___ personas de un solo país.",
+          "options": ["50", "100", "500", "1,000"],
+          "correct": 1,
+          "explanation": "100 mínimo de un solo país. Recomendado 1,000-50,000 para calidad."
+        },
+        {
+          "type": "fill",
+          "q": "El Lookalike de ___% es el más similar al source (calidad sobre volumen).",
+          "options": ["1", "5", "10", "20"],
+          "correct": 0,
+          "explanation": "1% = top 1% más parecido al source. 10% = más alcance, menos similitud."
+        },
+        {
+          "type": "fill",
+          "q": "El máximo de Custom Audiences por ad account es ___.",
+          "options": ["100", "250", "500", "1,000"],
+          "correct": 2,
+          "explanation": "500 custom audiences máximo por ad account."
+        },
+        {
+          "type": "fill",
+          "q": "Advantage+ Audience está ___ por default en campañas nuevas.",
+          "options": ["OFF", "ON", "solo en Sales", "solo con catalog"],
+          "correct": 1,
+          "explanation": "ON por default. Se desactiva con 'Switch to original' o 'Further limit reach'."
+        },
+        {
+          "type": "fill",
+          "q": "El catálogo de productos se gestiona en ___.",
+          "options": ["Ads Manager", "Commerce Manager", "Events Manager", "Business Suite"],
+          "correct": 1,
+          "explanation": "El catálogo (inventario de productos) se administra en Commerce Manager."
+        },
+        {
+          "type": "fill",
+          "q": "El catalog match rate target es &gt; ___ %.",
+          "options": ["50", "75", "90", "100"],
+          "correct": 1,
+          "explanation": ">75%. Por debajo: problema de mapeo entre Pixel y catalog."
+        }
+      ]
+    },
+    {
+      "id": "5.15",
       "title": "Drill · 12 MCQs de audiences",
       "section": "D",
       "type": "drill",
@@ -599,7 +907,7 @@
       ]
     },
     {
-      "id": "5.10",
+      "id": "5.16",
       "title": "Lightning · 8 preguntas en 3 min",
       "section": "D",
       "type": "lightning",
@@ -744,7 +1052,7 @@
         },
         {
           "q": "¿Detailed targeting es OR o AND?",
-          "a": "OR dentro de cada categoría (intereses, behaviors). AND entre categorías base. Cuantas más categorías agregás, MÁS angosta la audiencia."
+          "a": "OR dentro de cada categoría (intereses, behaviors). AND entre categorías base. Cuantas más categorías agregas, MÁS angosta la audiencia."
         },
         {
           "q": "¿Mínimo de productos recomendado por Product Set?",
@@ -791,7 +1099,7 @@
           "a": "Generalmente SÍ. Broad (solo edad + ubicación) deja al sistema encontrar gente. Narrow limita el delivery y suele ser más caro en CPA."
         },
         {
-          "q": "Lookalike audience: tamano minimo de source",
+          "q": "Lookalike audience: tamaño mínimo de source",
           "a": "Mínimo 100 personas de un solo país de origen; recomendado al menos 1,000. Monitorea y refresca la fuente para mejorar calidad y relevancia."
         },
         {
@@ -803,7 +1111,7 @@
           "a": "Custom = tus audiencias existentes (retargeting: web, engagement, lista, video viewers). Lookalike = gente NUEVA similar a una fuente; Value-Based Lookalike usa el valor del cliente."
         },
         {
-          "q": "Catalogo: donde se gestiona y product sets",
+          "q": "Catálogo: dónde se gestiona y product sets",
           "a": "El catálogo se administra en Commerce Manager. Los product sets agrupan items por atributos (sales, best sellers, eventos) para campañas como Advantage+ catalog ads."
         }
       ]
