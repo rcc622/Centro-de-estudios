@@ -10,9 +10,9 @@
 <title>Centro de Estudios Randall</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
-html,body{height:100dvh;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;color:#1C1E21;background:#F0F2F5}
+html,body{height:100vh;height:100svh;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;color:#1C1E21;background:#F0F2F5}
 body{display:block}
-#app{display:flex;flex-direction:column;height:100dvh;overflow:hidden;width:100%;max-width:640px;margin:0 auto;background:#fff;position:relative}
+#app{display:flex;flex-direction:column;height:100vh;height:100svh;overflow:hidden;width:100%;max-width:640px;margin:0 auto;background:#fff;position:relative}
 
 /* HEADER */
 .hdr{padding:max(36px,env(safe-area-inset-top)) 16px 12px;background:#fff;border-bottom:1px solid #E4E6EB;flex-shrink:0;position:relative;z-index:5}
@@ -29,7 +29,7 @@ body{display:block}
 .progress-label{font-size:11px;color:#65676B;margin-top:4px;display:flex;justify-content:space-between}
 
 /* SCROLL */
-.scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:16px}
+.scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:16px}
 .scroll::-webkit-scrollbar{display:none}
 
 /* HOME view */
@@ -4453,7 +4453,7 @@ async function init(){
   startHeartTicker();
   // Mostrar pantalla de carga
   document.getElementById('app').innerHTML = `
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;padding:30px;text-align:center">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center">
       <div style="font-size:48px;margin-bottom:20px">📘</div>
       <div style="font-size:18px;font-weight:800;margin-bottom:8px">Centro de Estudios</div>
       <div style="font-size:13px;color:#65676B">Cargando contenido...</div>
@@ -4462,7 +4462,7 @@ async function init(){
   const ok = await loadCourses();
   if(!ok){
     document.getElementById('app').innerHTML = `
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;padding:30px;text-align:center">
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center">
         <div style="font-size:48px;margin-bottom:20px">⚠️</div>
         <div style="font-size:16px;font-weight:800;margin-bottom:8px">Error al cargar contenido</div>
         <div style="font-size:13px;color:#65676B;margin-bottom:18px">Verifica tu conexión y refresca la página.</div>
