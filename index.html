@@ -991,6 +991,7 @@ async function loadCourses(){
               coverage: unit.coverage || '',
               kind: unit.kind || 'unit', // 'unit' o 'mock-exam'
               lessons: unitData.lessons || [],
+              sections: unitData.sections || null, // mapa opcional de metadata de secciones por dato
               diagnostic,
               unitQuiz,
               mockExam: unit.kind === 'mock-exam' ? unitData : null
@@ -1808,7 +1809,7 @@ function renderDayLessons(course, day){
   let html = '';
   let globalIdx = 0;
   order.forEach(s => {
-    const meta = SECTION_META[s] || {ico:'📚', title:`Sección ${s}`, sub:''};
+    const meta = (day.sections && day.sections[s]) || SECTION_META[s] || {ico:'📚', title:`Sección ${s}`, sub:''};
     html += `
       <div class="section-band">
         <div class="section-band-ico">${meta.ico}</div>

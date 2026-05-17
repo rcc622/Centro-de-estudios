@@ -1,11 +1,48 @@
 {
   "id": "day1",
   "title": "Día 1 — Ads Manager + Business Suite",
+  "sections": {
+    "b1": {
+      "ico": "🎛️",
+      "title": "Bloque 1",
+      "sub": "Ads Manager & Opportunity Score"
+    },
+    "b2": {
+      "ico": "🧱",
+      "title": "Bloque 2",
+      "sub": "Jerarquía: Campaign → Ad set → Ad"
+    },
+    "b3": {
+      "ico": "🤖",
+      "title": "Bloque 3",
+      "sub": "Meta Advantage+"
+    },
+    "b4": {
+      "ico": "✅",
+      "title": "Bloque 4",
+      "sub": "Las 7 Performance Best Practices"
+    },
+    "b5": {
+      "ico": "🏢",
+      "title": "Bloque 5",
+      "sub": "Business Suite, Portfolio & Permisos"
+    },
+    "b6": {
+      "ico": "🛡️",
+      "title": "Bloque 6",
+      "sub": "Billing & Brand Safety"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Repaso final",
+      "sub": "Consolidación antes del examen"
+    }
+  },
   "lessons": [
     {
       "id": "1.1",
-      "title": "Ads Manager: tu sala de máquinas",
-      "section": "A",
+      "title": "Explica · Ads Manager y Opportunity Score",
+      "section": "b1",
       "type": "reading",
       "cards": [
         {
@@ -24,25 +61,63 @@
           "type": "kvtable",
           "h": "Las 6 acciones clave en Ads Manager",
           "rows": [
-            ["Opportunity score", "Revisar qué tan optimizadas están tus campañas"],
-            ["Monitor reporting", "Ver el rendimiento de los anuncios"],
-            ["Create audiences", "Crear audiencias para tus campañas"],
-            ["Set up billing", "Configurar el método de pago"],
-            ["Connect data sources", "Conectar Pixel, CAPI, datasets"],
-            ["Advertiser settings", "Configurar settings del anunciante"]
+            [
+              "Opportunity score",
+              "Revisar qué tan optimizadas están tus campañas"
+            ],
+            [
+              "Monitor reporting",
+              "Ver el rendimiento de los anuncios"
+            ],
+            [
+              "Create audiences",
+              "Crear audiencias para tus campañas"
+            ],
+            [
+              "Set up billing",
+              "Configurar el método de pago"
+            ],
+            [
+              "Connect data sources",
+              "Conectar Pixel, CAPI, datasets"
+            ],
+            [
+              "Advertiser settings",
+              "Configurar settings del anunciante"
+            ]
           ]
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Imagina que vas a lanzar anuncios de paneles solares para Kenet. En Ads Manager no solo diseñas el anuncio: en el <em>mismo</em> lugar conectas el Pixel del sitio, configuras la tarjeta para pagar, creas la audiencia de empresas que buscan ahorro de energía y revisas el reporte de resultados. Es una sala de máquinas, no un editor de imágenes."
+          "body": "Vas a lanzar anuncios de paneles solares para Kenet. En Ads Manager no solo diseñas el anuncio: en el <em>mismo</em> lugar conectas el Pixel, configuras la tarjeta para pagar, creas la audiencia y revisas el reporte. Es una sala de máquinas, no un editor de imágenes."
+        },
+        {
+          "type": "concept",
+          "h": "Opportunity Score",
+          "body": "Es un score de <strong>0-100</strong> que muestra qué tan optimizadas están tus campañas, basado en recomendaciones experimentalmente probadas que aún <em>no has aplicado</em>. Cada punto que falta es una recomendación pendiente, no una predicción."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA TÍPICA",
+          "body": "El Opportunity Score <strong>NO predice ni garantiza performance real</strong> (no dice tu ROAS futuro). Solo refleja el grado de adopción de recomendaciones probadas."
+        },
+        {
+          "type": "tip",
+          "label": "TRES MOMENTOS",
+          "body": "Te ayuda <strong>before</strong> (desde Account overview, antes de crear campañas), <strong>during</strong> (como score de campaña al crearla — no afecta el global) y <strong>after</strong> (recomendaciones continuas mientras corre)."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Tu campaña marca <strong>68/100</strong>. Eso <em>no</em> significa 68% de ROAS. Significa que hay recomendaciones probadas que no aplicaste — por ejemplo activar Advantage+ audience o sumar CAPI. Aplicarlas sube el score; los resultados reales dependen de la subasta."
         },
         {
           "type": "mcq",
-          "q": "Un compañero dice: \"Ads Manager solo sirve para diseñar el creative del anuncio.\" ¿Qué le respondes?",
+          "q": "Un compañero dice: \"Ads Manager solo sirve para diseñar el creative.\" ¿Qué le respondes?",
           "options": [
-            "Tiene razón, para todo lo demás se usa otra herramienta",
-            "Es incompleto: Ads Manager también gestiona billing, audiencias, data sources y reporting",
+            "Tiene razón, para lo demás se usa otra herramienta",
+            "Es incompleto: también gestiona billing, audiencias, data sources y reporting",
             "Tiene razón, el creative se diseña fuera y solo se sube ahí",
             "Solo es cierto para campañas Advantage+"
           ],
@@ -53,266 +128,424 @@
     },
     {
       "id": "1.2",
-      "title": "Opportunity Score: qué mide y qué NO",
-      "section": "A",
-      "type": "reading",
+      "title": "Ejercita la memoria · Bloque 1",
+      "section": "b1",
+      "type": "drill",
       "cards": [
         {
-          "type": "concept",
-          "h": "Qué es el Opportunity Score",
-          "body": "Es un score de <strong>0-100</strong> que muestra qué tan optimizadas están tus campañas, basado en recomendaciones experimentalmente probadas que aún <em>no has aplicado</em>. Cada punto que falta representa una recomendación pendiente, no una predicción."
-        },
-        {
-          "type": "warn",
-          "label": "TRAMPA TÍPICA",
-          "body": "El Opportunity Score <strong>NO predice ni garantiza performance real</strong> (no dice tu ROAS futuro). Solo refleja el grado de adopción de recomendaciones probadas. El examen mete distractores que lo presentan como un predictor de resultados."
-        },
-        {
-          "type": "tip",
-          "label": "TRES MOMENTOS",
-          "body": "Te ayuda <strong>before</strong> (desde Account overview, antes de crear campañas), <strong>during</strong> (como score de campaña al crearla — no afecta el global) y <strong>after</strong> (recomendaciones continuas mientras corre)."
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Tu campaña de paneles marca <strong>68/100</strong>. Eso <em>no</em> significa que tendrás 68% de ROAS. Significa que hay recomendaciones probadas que no has aplicado — por ejemplo, activar Advantage+ audience o sumar la Conversions API. Aplicarlas sube el score; los resultados reales dependen de la subasta."
-        },
-        {
           "type": "mcq",
-          "q": "¿Cuál de los siguientes describe mejor el propósito del Opportunity Score en Ads Manager?",
+          "q": "¿Cuál describe mejor el propósito del Opportunity Score?",
           "options": [
             "Predice el ROAS que tendrá la campaña",
-            "Muestra cuántas recomendaciones experimentalmente probadas no has aplicado y cómo aplicarlas",
-            "Mide la calidad del creative comparado con benchmarks de industria",
-            "Estima el costo por resultado promedio del próximo mes"
+            "Muestra cuántas recomendaciones probadas no has aplicado y cómo aplicarlas",
+            "Mide la calidad del creative vs benchmarks de industria",
+            "Estima el costo por resultado del próximo mes"
           ],
           "correct": 1,
-          "explanation": "El Opportunity Score es un 0-100 + un set de recomendaciones reales personalizadas al perfil del negocio. <strong>NO predice ni garantiza performance</strong> — solo refleja el grado de adopción de best practices comprobadas."
+          "explanation": "Es un 0-100 + recomendaciones personalizadas. NO predice performance — refleja adopción de best practices comprobadas."
         },
         {
           "type": "fill",
           "q": "El Opportunity Score te sirve en tres momentos: before, ___ y after.",
-          "options": ["during", "instead", "between", "around"],
+          "options": [
+            "during",
+            "instead",
+            "between",
+            "around"
+          ],
           "correct": 0,
-          "explanation": "Before (antes de crear campañas), <strong>during</strong> (al crearla, sin afectar el global) y after (mientras corre)."
+          "explanation": "Before (antes de crear), during (al crearla, sin afectar el global) y after (mientras corre)."
+        },
+        {
+          "type": "mcq",
+          "q": "Cuando creas una campaña, el opportunity score que aparece a NIVEL CAMPAIGN:",
+          "options": [
+            "Reemplaza tu score global del account",
+            "Suma puntos al global cuando aplicas recomendaciones",
+            "NO afecta el global y solo refleja esa campaña",
+            "Se calcula 24 horas después de publicar"
+          ],
+          "correct": 2,
+          "explanation": "El score a nivel campaign no afecta el global del account. Refleja solo esa campaña. El global solo cuenta acciones desde Account overview."
+        },
+        {
+          "type": "fill",
+          "q": "Conectar Pixel, CAPI y datasets se hace desde Ads Manager en la acción ___ data sources.",
+          "options": [
+            "connect",
+            "monitor",
+            "create",
+            "set up"
+          ],
+          "correct": 0,
+          "explanation": "Connect data sources: Pixel, CAPI, datasets. Las 6 acciones clave de Ads Manager."
+        },
+        {
+          "type": "mcq",
+          "q": "El Opportunity Score pasa de 60 a 78 tras aplicar 3 recomendaciones. ¿Qué puedes afirmar?",
+          "options": [
+            "Que el ROAS subirá ~30%",
+            "Que adoptaste más best practices probadas; el resultado real lo decide la subasta",
+            "Que la campaña ya está garantizada",
+            "Que el creative mejoró"
+          ],
+          "correct": 1,
+          "explanation": "El score mide adopción de recomendaciones, no resultados. Subirlo es bueno, pero no garantiza performance."
         }
       ]
     },
     {
       "id": "1.3",
-      "title": "¿Por qué la jerarquía lo es todo?",
-      "section": "A",
-      "type": "reading",
+      "title": "Caso a resolver · Bloque 1",
+      "section": "b1",
+      "type": "scenario",
       "cards": [
         {
-          "type": "concept",
-          "h": "Tres niveles, tres decisiones",
-          "body": "Al crear una campaña haces selecciones en <strong>tres niveles</strong>: Campaign, Ad set y Ad. Cada nivel decide cosas distintas y no se mezclan."
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "El cliente malinterpreta el score",
+          "body": "El dueño de Kenet ve que su campaña tiene <strong>Opportunity Score 64/100</strong> y te dice: \"Entonces solo voy a recuperar el 64% de lo que invierta, ¿verdad? Bájale al presupuesto.\" Tienes que corregir el malentendido."
         },
         {
-          "type": "concept",
-          "h": "Por qué es lo más preguntado",
-          "body": "El examen ama preguntar <em>\"¿en qué nivel se decide X?\"</em> con distractores que mueven una decisión al nivel equivocado. Si dominas en qué nivel vive cada decisión, ganas varios puntos casi gratis."
-        },
-        {
-          "type": "tip",
-          "label": "REGLA MENTAL",
-          "body": "Si la pregunta es sobre <em>qué objetivo, qué buying type, cuánto pagar</em> → <strong>Campaign</strong>. Si es <em>a quién, dónde, cuándo</em> → <strong>Ad set</strong>. Si es <em>cómo se ve, a dónde manda, qué medir</em> → <strong>Ad</strong>."
-        },
-        {
-          "type": "fill",
-          "q": "La pregunta \"¿a quién le muestro el anuncio?\" se resuelve a nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "type": "mcq",
+          "q": "¿Qué le explicas al dueño de Kenet?",
+          "options": [
+            "Tiene razón, 64/100 es la proyección de retorno",
+            "El score mide adopción de recomendaciones probadas, NO predice ROAS; conviene aplicarlas en vez de recortar a ciegas",
+            "Hay que esperar a que llegue a 100 para invertir",
+            "El score solo aplica a campañas Advantage+"
+          ],
           "correct": 1,
-          "explanation": "A quién / dónde / cuándo = <strong>Ad set</strong>. Lo memorizas con la regla mental."
+          "explanation": "64/100 = hay recomendaciones pendientes por aplicar. No es una proyección de retorno. La acción correcta es revisar y aplicar esas recomendaciones, no recortar presupuesto por un malentendido."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Dónde reviso esas recomendaciones ANTES de crear más campañas?",
+          "options": [
+            "En el reporte de facturación",
+            "En Account overview (momento 'before' del opportunity score)",
+            "Solo después de que la campaña termine",
+            "En el Brand Safety Center"
+          ],
+          "correct": 1,
+          "explanation": "El momento 'before' del opportunity score vive en Account overview: te ayuda antes de crear campañas. 'During' es al crearla, 'after' mientras corre."
         }
       ]
     },
     {
       "id": "1.4",
-      "title": "Nivel Campaign: el qué y el cuánto",
-      "section": "A",
-      "type": "reading",
+      "title": "Mini-flashcards · Bloque 1",
+      "section": "b1",
+      "type": "flashcards",
       "cards": [
         {
-          "type": "concept",
-          "h": "Qué decides en Campaign",
-          "body": "El nivel <strong>Campaign</strong> define las decisiones estratégicas: cómo compras, qué quieres lograr y cuánto gastas. Es el primer nivel y condiciona todo lo de abajo."
+          "q": "¿Qué es Ads Manager?",
+          "a": "El centro de control de Meta: crear campañas, billing, audiencias, reporting, conectar data sources, advertiser settings. NO solo es para crear ads."
         },
         {
-          "type": "kvtable",
-          "h": "Decisiones a nivel Campaign",
-          "rows": [
-            ["Buying type", "Auction o Reservation (la primera decisión)"],
-            ["Objective", "El resultado de negocio que buscas (Sales, Leads, etc.)"],
-            ["Budget", "Cuánto gastas (si lo pones aquí: Advantage+ campaign budget)"],
-            ["Bid strategy", "Cómo Meta puja por ti"],
-            ["Special Ad Category", "Vivienda, empleo, crédito, etc. (restricciones legales)"],
-            ["A/B test", "Activar prueba comparativa"]
-          ]
+          "q": "¿Qué mide el Opportunity Score?",
+          "a": "Un 0-100 que muestra qué tan optimizadas están tus campañas según recomendaciones probadas que aún no aplicaste. NO predice performance real."
         },
         {
-          "type": "warn",
-          "label": "TRAMPA DEL BUDGET",
-          "body": "El <strong>Budget</strong> puede definirse en <strong>Campaign O Ad set</strong>, no en ambos simultáneamente. A nivel Campaign se llama <strong>Advantage+ campaign budget</strong> (antes CBO) y es la opción default."
+          "q": "Tres momentos en que el Opportunity Score te sirve",
+          "a": "Before (Account overview, antes de crear) · During (score de campaña al crearla, no afecta el global) · After (recomendaciones mientras corre)."
         },
         {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para Kenet decides en Campaign: comprar por <em>Auction</em> (flexible), objetivo <em>Sales</em> (quieres cotizaciones cerradas) y un budget mensual con Advantage+ campaign budget. Aún no decides a quién ni con qué imagen — eso viene después."
+          "q": "El score a nivel campaign, ¿afecta el global?",
+          "a": "No. Refleja solo esa campaña. El global solo cuenta acciones tomadas desde Account overview."
         },
         {
-          "type": "mcq",
-          "q": "Buying type es una selección que SOLO puede hacerse a nivel:",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
-          "correct": 0,
-          "explanation": "<strong>Buying type</strong> es la primera decisión y va a nivel Campaign (Auction o Reservation). Ad set y Ad no permiten cambiarlo."
+          "q": "Las 6 acciones clave en Ads Manager",
+          "a": "Opportunity score · Monitor reporting · Create audiences · Set up billing · Connect data sources · Advertiser settings."
         }
       ]
     },
     {
       "id": "1.5",
-      "title": "Nivel Ad set: el a quién, dónde y cuándo",
-      "section": "A",
+      "title": "Explica · Jerarquía Campaign → Ad set → Ad",
+      "section": "b2",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
-          "h": "Qué decides en Ad set",
-          "body": "El <strong>Ad set</strong> define la entrega: a quién le llega, en qué placements, cuándo y bajo qué configuración de conversión. Es donde vive la audiencia."
+          "h": "Tres niveles, tres decisiones",
+          "body": "Al crear una campaña haces selecciones en <strong>tres niveles</strong>: Campaign, Ad set y Ad. Cada nivel decide cosas distintas y no se mezclan. Es lo más preguntado del examen."
+        },
+        {
+          "type": "tip",
+          "label": "REGLA MENTAL",
+          "body": "Si la pregunta es <em>qué objetivo, qué buying type, cuánto pagar</em> → <strong>Campaign</strong>. Si es <em>a quién, dónde, cuándo</em> → <strong>Ad set</strong>. Si es <em>cómo se ve, a dónde manda, qué medir</em> → <strong>Ad</strong>."
         },
         {
           "type": "kvtable",
-          "h": "Decisiones a nivel Ad set",
+          "h": "Qué decides en cada nivel",
           "rows": [
-            ["Conversion", "Location, event, performance goal, dataset, attribution"],
-            ["Budget & schedule", "Si el budget no está en Campaign, va aquí + calendario"],
-            ["Audience", "Advantage+ audience, custom, lookalike, detailed targeting"],
-            ["Placements", "Dónde aparece el anuncio (o Advantage+ placements)"],
-            ["Dynamic creative", "Activar combinaciones automáticas de creative"]
+            [
+              "Campaign",
+              "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"
+            ],
+            [
+              "Ad set",
+              "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"
+            ],
+            [
+              "Ad",
+              "Partnership ad · Identity · Ad creative · Destination · Tracking · Languages"
+            ]
           ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA DEL BUDGET",
+          "body": "El <strong>Budget</strong> se define en <strong>Campaign O Ad set</strong>, nunca en ambos a la vez. A nivel Campaign se llama <strong>Advantage+ campaign budget</strong> (antes CBO) y es la opción default."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "En el Ad set decides: audiencia de empresas con consumo eléctrico alto en el norte, placements automáticos (Advantage+ placements), evento de conversión <em>Lead/Purchase</em> y la ventana de atribución. Aquí se afina <em>a quién</em>, no <em>qué objetivo</em>."
+          "body": "Para Kenet decides en <em>Campaign</em>: Auction + objetivo Sales + budget mensual. En <em>Ad set</em>: audiencia de empresas con consumo alto + placements + evento de conversión. En <em>Ad</em>: el video de una instalación real, destino al formulario, tracking con Pixel."
         },
         {
           "type": "mcq",
-          "q": "¿En qué nivel de la creación de una campaña haces las selecciones de audiencia, ubicación de conversión y placements?",
-          "options": ["Campaign level", "Ad set level", "Ad level", "Account level"],
+          "q": "¿En qué nivel haces las selecciones de audiencia, ubicación de conversión y placements?",
+          "options": [
+            "Campaign level",
+            "Ad set level",
+            "Ad level",
+            "Account level"
+          ],
           "correct": 1,
-          "explanation": "<strong>Audience, conversion settings y placements</strong> son decisiones a nivel <strong>Ad set</strong>. El nivel Campaign decide buying type, objective y budget. El Ad decide creative, destination y tracking."
+          "explanation": "Audience, conversion settings y placements son decisiones a nivel Ad set. Campaign decide buying type/objective/budget; Ad decide creative/destination/tracking."
         }
       ]
     },
     {
       "id": "1.6",
-      "title": "Nivel Ad: el cómo se ve y a dónde manda",
-      "section": "A",
-      "type": "reading",
+      "title": "Ejercita la memoria · Bloque 2",
+      "section": "b2",
+      "type": "drill",
       "cards": [
         {
-          "type": "concept",
-          "h": "Qué decides en Ad",
-          "body": "El <strong>Ad</strong> es lo que el usuario realmente ve y la acción que dispara: el creative, la identidad que publica, el destino y qué se trackea."
+          "type": "fill",
+          "q": "Elegir el Objective de la campaña → nivel ___.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "Objective = qué quieres lograr = Campaign."
         },
         {
-          "type": "kvtable",
-          "h": "Decisiones a nivel Ad",
-          "rows": [
-            ["Identity", "Qué Página/cuenta de Instagram publica el anuncio"],
-            ["Partnership ad", "Colaboración con un creador/marca"],
-            ["Ad creative", "Imagen, video, copy, formato"],
-            ["Destination", "Sitio web, app, WhatsApp, formulario"],
-            ["Tracking", "Qué se mide (Pixel, parámetros URL)"],
-            ["Languages", "Versiones por idioma"]
-          ]
+          "type": "fill",
+          "q": "Definir los placements → nivel ___.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "Placements (dónde aparece) = Ad set."
         },
         {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "En el Ad eliges: publicar con la Página de Kenet, un video de una instalación real, destino al formulario de cotización y el tracking con el Pixel de leads. Misma campaña, mismo Ad set, pero <em>aquí</em> se decide cómo se ve."
+          "type": "fill",
+          "q": "Escoger la imagen/video y el copy → nivel ___.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 2,
+          "explanation": "Creative = cómo se ve = Ad."
+        },
+        {
+          "type": "fill",
+          "q": "Elegir Auction vs Reservation → nivel ___.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "Buying type = Campaign, y es la primera decisión."
+        },
+        {
+          "type": "mcq",
+          "q": "Buying type es una selección que SOLO puede hacerse a nivel:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "Buying type es la primera decisión y va a nivel Campaign (Auction o Reservation)."
         },
         {
           "type": "mcq",
           "q": "El destino del anuncio (sitio web, WhatsApp, formulario) y el tracking se configuran a nivel:",
-          "options": ["Campaign", "Ad set", "Ad", "Portfolio"],
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Portfolio"
+          ],
           "correct": 2,
-          "explanation": "Destination, creative, identity y tracking son decisiones a nivel <strong>Ad</strong>. El \"cómo se ve y a dónde manda\" siempre es Ad."
+          "explanation": "Destination, creative, identity y tracking son decisiones a nivel Ad."
+        },
+        {
+          "type": "mcq",
+          "q": "El budget puede definirse a nivel Campaign Y Ad set a la vez:",
+          "options": [
+            "Verdadero",
+            "Falso: va en uno de los dos, nunca en ambos"
+          ],
+          "correct": 1,
+          "explanation": "El budget va EN UNO de los dos niveles. Default: Campaign (Advantage+ campaign budget)."
         }
       ]
     },
     {
       "id": "1.7",
-      "title": "Repaso relámpago · ¿en qué nivel?",
-      "section": "A",
-      "type": "reading",
+      "title": "Caso a resolver · Bloque 2",
+      "section": "b2",
+      "type": "scenario",
       "cards": [
         {
-          "type": "concept",
-          "h": "Recupéralo de memoria",
-          "body": "Sin volver atrás, ubica cada decisión en su nivel. Recordar bajo esfuerzo es lo que fija el conocimiento (práctica de recuperación)."
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Armando la campaña de Kenet",
+          "body": "Estás configurando una campaña de Sales para Kenet. Tienes estas decisiones pendientes: (1) audiencia de empresas industriales, (2) el video de la instalación, (3) Auction como forma de compra. Ubica cada una en su nivel."
         },
         {
-          "type": "fill",
-          "q": "Elegir el Objective de la campaña → nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
-          "correct": 0,
-          "explanation": "Objective = qué quieres lograr = <strong>Campaign</strong>."
-        },
-        {
-          "type": "fill",
-          "q": "Definir los placements → nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "type": "mcq",
+          "q": "La audiencia de empresas industriales se define a nivel:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
           "correct": 1,
-          "explanation": "Placements (dónde aparece) = <strong>Ad set</strong>."
+          "explanation": "Audience = a quién = Ad set. Junto con placements, schedule y conversion settings."
         },
         {
-          "type": "fill",
-          "q": "Escoger la imagen/video y el copy → nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
-          "correct": 2,
-          "explanation": "Creative = cómo se ve = <strong>Ad</strong>."
-        },
-        {
-          "type": "fill",
-          "q": "Elegir Auction vs Reservation → nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "type": "mcq",
+          "q": "El video de la instalación y Auction se deciden, respectivamente, en:",
+          "options": [
+            "Ad y Campaign",
+            "Campaign y Ad set",
+            "Ad set y Ad",
+            "Ambos en Ad set"
+          ],
           "correct": 0,
-          "explanation": "Buying type = <strong>Campaign</strong>, y es la primera decisión."
-        },
-        {
-          "type": "fill",
-          "q": "Definir la audiencia (custom, lookalike) → nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
-          "correct": 1,
-          "explanation": "Audience = a quién = <strong>Ad set</strong>."
+          "explanation": "El creative (video) = Ad. El buying type (Auction) = Campaign, y es la primera decisión."
         }
       ]
     },
     {
       "id": "1.8",
-      "title": "Advantage+: el corazón de la doctrina",
-      "section": "A",
+      "title": "Mini-flashcards · Bloque 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Los 3 niveles de una campaña en orden",
+          "a": "Campaign → Ad set → Ad"
+        },
+        {
+          "q": "¿Qué se decide a nivel Campaign?",
+          "a": "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"
+        },
+        {
+          "q": "¿Qué se decide a nivel Ad set?",
+          "a": "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"
+        },
+        {
+          "q": "¿Qué se decide a nivel Ad?",
+          "a": "Partnership ad · Identity · Ad creative · Destination · Tracking · Languages"
+        },
+        {
+          "q": "Trampa del budget",
+          "a": "Se define en Campaign O Ad set, nunca en ambos. Default: Campaign = Advantage+ campaign budget (antes CBO)."
+        }
+      ]
+    },
+    {
+      "id": "1.9",
+      "title": "Explica · Meta Advantage+",
+      "section": "b3",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
           "h": "Qué es Advantage+",
-          "body": "<strong>Advantage+</strong> es la suite de soluciones de Meta que usa AI y automation en tiempo real para hacer match entre anuncios y las personas con mayor probabilidad de tomar acción. Optimiza performance respondiendo a data en tiempo real, entregando los ads más efectivos y experiencias más relevantes."
+          "body": "<strong>Advantage+</strong> es la suite de soluciones de Meta que usa AI y automation en tiempo real para hacer match entre anuncios y las personas con mayor probabilidad de tomar acción. Optimiza con data en tiempo real, entregando los ads más efectivos y experiencias más relevantes."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "En vez de que tú adivines exactamente quién quiere paneles solares, Advantage+ deja que la IA explore señales en tiempo real y encuentre a esas personas/empresas mientras la campaña corre. Tú das la dirección; la IA optimiza la ejecución."
+          "body": "En vez de adivinar quién quiere paneles, Advantage+ deja que la IA explore señales en tiempo real y encuentre a esas empresas mientras la campaña corre. Tú das la dirección; la IA optimiza la ejecución."
+        },
+        {
+          "type": "kvtable",
+          "h": "Dos categorías de Advantage+",
+          "rows": [
+            [
+              "Complete campaign solutions",
+              "Automatizan TODA la campaña: Advantage+ Sales, App, Leads"
+            ],
+            [
+              "Single-step solutions",
+              "Automatizan UN aspecto: Audience, Placement, Budget, Creative, Destination"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Complete campaign solutions",
+          "body": "Las 3 campañas Advantage+ que existen: <strong>Advantage+ Sales</strong>, <strong>Advantage+ App</strong> y <strong>Advantage+ Leads</strong>. Aplican AI a toda la estructura, no a pasos sueltos."
+        },
+        {
+          "type": "kvtable",
+          "h": "Single-step solutions (para todos los objetivos)",
+          "rows": [
+            [
+              "Audience",
+              "Advantage+ audience, custom, lookalike, detailed targeting"
+            ],
+            [
+              "Placement",
+              "Advantage+ placements"
+            ],
+            [
+              "Budget",
+              "Advantage+ campaign budget (antes CBO)"
+            ],
+            [
+              "Creative",
+              "Advantage+ creative, Advantage+ catalog ads"
+            ],
+            [
+              "Destination",
+              "Advantage+ destination"
+            ]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA TÍPICA",
+          "body": "No confundas <strong>Advantage+ campaigns</strong> (completas: Sales/App/Leads) con <strong>Advantage+ tools</strong> (single-step: Audience, Placement, Budget, Creative, Destination). El examen mezcla ambos en los distractores."
         },
         {
           "type": "mcq",
           "q": "¿Qué describe mejor a Meta Advantage+?",
           "options": [
             "Una herramienta de diseño gráfico para anuncios",
-            "Una suite de AI/automation que hace match entre ads y las personas con más probabilidad de actuar, optimizando con data en tiempo real",
+            "Una suite de AI/automation que hace match entre ads y quien más probablemente actúe, con data en tiempo real",
             "Un reporte mensual de performance",
             "Un método de pago para campañas grandes"
           ],
@@ -322,48 +555,14 @@
       ]
     },
     {
-      "id": "1.9",
-      "title": "Advantage+: complete vs single-step",
-      "section": "A",
-      "type": "reading",
+      "id": "1.10",
+      "title": "Ejercita la memoria · Bloque 3",
+      "section": "b3",
+      "type": "drill",
       "cards": [
         {
-          "type": "kvtable",
-          "h": "Dos categorías de Advantage+",
-          "rows": [
-            ["Complete campaign solutions", "Automatizan TODA la campaña: Advantage+ Sales, App, Leads"],
-            ["Single-step solutions", "Automatizan UN aspecto: Audience, Placement, Budget, Creative, Destination"]
-          ]
-        },
-        {
-          "type": "concept",
-          "h": "Complete campaign solutions",
-          "body": "Las 3 campañas Advantage+ que existen: <strong>Advantage+ Sales</strong>, <strong>Advantage+ App</strong> y <strong>Advantage+ Leads</strong>. Aplican AI a toda la estructura de la campaña, no a pasos sueltos."
-        },
-        {
-          "type": "kvtable",
-          "h": "Single-step solutions (disponibles para todos los objetivos)",
-          "rows": [
-            ["Audience", "Advantage+ audience, custom audience, lookalike, detailed targeting"],
-            ["Placement", "Advantage+ placements"],
-            ["Budget", "Advantage+ campaign budget (antes CBO)"],
-            ["Creative", "Advantage+ creative, Advantage+ catalog ads"],
-            ["Destination", "Advantage+ destination"]
-          ]
-        },
-        {
-          "type": "warn",
-          "label": "TRAMPA TÍPICA",
-          "body": "No confundas <strong>Advantage+ campaigns</strong> (las completas: Sales/App/Leads) con <strong>Advantage+ tools/levers</strong> (single-step: Audience, Placement, Budget, Creative, Destination). El examen mete distractores que mezclan ambos."
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Si quieres que la IA maneje <em>toda</em> la campaña de ventas → Advantage+ Sales (complete). Si solo quieres que automatice la audiencia pero tú controlas lo demás → Advantage+ audience (single-step). Misma marca, decisión distinta según cuánto delegas."
-        },
-        {
           "type": "mcq",
-          "q": "Un cliente quiere automatizar TODA su campaña usando AI para campañas de ventas en sitio web. ¿Qué solución le recomiendas?",
+          "q": "Un cliente quiere automatizar TODA su campaña usando AI para ventas en sitio web. ¿Qué le recomiendas?",
           "options": [
             "Advantage+ audience",
             "Advantage+ Sales campaigns",
@@ -371,57 +570,150 @@
             "Advantage+ catalog ads"
           ],
           "correct": 1,
-          "explanation": "Para automatizar <strong>toda la campaña</strong> (no solo un aspecto) la respuesta es <strong>Advantage+ Sales campaigns</strong> — una de las 3 soluciones complete campaign. Las demás son single-step (automatizan solo audiencia, budget o creative)."
+          "explanation": "Automatizar TODA la campaña = complete campaign solution = Advantage+ Sales. Las demás son single-step."
         },
         {
           "type": "mcq",
-          "q": "¿Cuáles de las siguientes son soluciones single-step de Advantage+? Selecciona 2.",
+          "q": "¿Cuáles son soluciones single-step de Advantage+? Selecciona 2.",
           "options": [
             "Advantage+ Sales campaigns",
             "Advantage+ placements",
             "Advantage+ Leads campaigns",
             "Advantage+ audience"
           ],
-          "correct": [1, 3],
+          "correct": [
+            1,
+            3
+          ],
           "multi": true,
-          "explanation": "<strong>Placements</strong> y <strong>audience</strong> son single-step (automatizan un aspecto). <strong>Sales</strong> y <strong>Leads campaigns</strong> son complete campaign solutions (automatizan toda la campaña)."
+          "explanation": "Placements y audience son single-step. Sales y Leads campaigns son complete campaign solutions."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál de estas NO es una Advantage+ complete campaign solution?",
+          "options": [
+            "Advantage+ Sales",
+            "Advantage+ Leads",
+            "Advantage+ App",
+            "Advantage+ Catalog Ads"
+          ],
+          "correct": 3,
+          "explanation": "Las 3 complete son Sales, App y Leads. Advantage+ Catalog Ads es single-step (mostrar productos de un catálogo)."
+        },
+        {
+          "type": "mcq",
+          "q": "Si una pregunta dice 'CBO', ¿a qué se refiere?",
+          "options": [
+            "Cost Bidding Optimization",
+            "Campaign Budget Optimization",
+            "Cross-Border Operations",
+            "Centralized Business Operations"
+          ],
+          "correct": 1,
+          "explanation": "CBO = Campaign Budget Optimization, hoy renombrada a Advantage+ campaign budget."
         }
       ]
     },
     {
-      "id": "1.10",
-      "title": "Las 7 Best Practices · Parte 1 (BP 1-4)",
-      "section": "A",
+      "id": "1.11",
+      "title": "Caso a resolver · Bloque 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Dos clientes, dos niveles de delegación",
+          "body": "Cliente A quiere que la IA maneje <strong>toda</strong> su campaña de ventas. Cliente B quiere controlar él la campaña pero que la IA solo le <strong>elija la audiencia</strong>. ¿Qué le das a cada uno?"
+        },
+        {
+          "type": "mcq",
+          "q": "Cliente A (automatizar toda la campaña de ventas):",
+          "options": [
+            "Advantage+ audience",
+            "Advantage+ Sales campaign",
+            "Advantage+ placements",
+            "Advantage+ creative"
+          ],
+          "correct": 1,
+          "explanation": "Toda la campaña de ventas = complete campaign = Advantage+ Sales."
+        },
+        {
+          "type": "mcq",
+          "q": "Cliente B (solo automatizar la audiencia):",
+          "options": [
+            "Advantage+ Sales campaign",
+            "Advantage+ Leads campaign",
+            "Advantage+ audience (single-step)",
+            "Advantage+ App campaign"
+          ],
+          "correct": 2,
+          "explanation": "Automatizar solo un aspecto = single-step. Audiencia = Advantage+ audience."
+        }
+      ]
+    },
+    {
+      "id": "1.12",
+      "title": "Mini-flashcards · Bloque 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Qué es Meta Advantage+?",
+          "a": "Suite de AI + automation en tiempo real para hacer match entre ads y personas con más probabilidad de actuar. Optimiza por real-time data, efectividad y relevancia."
+        },
+        {
+          "q": "Las 2 categorías de Advantage+",
+          "a": "Complete campaign solutions (toda la campaña: Sales, App, Leads) · Single-step (un aspecto: Audience, Placement, Budget, Creative, Destination)."
+        },
+        {
+          "q": "Las 3 Advantage+ complete campaign solutions",
+          "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
+        },
+        {
+          "q": "¿Qué hace Advantage+ campaign budget?",
+          "a": "Asigna dinámicamente el budget al ad set/ad con mejor performance. Default single-step de budget. (Antes CBO.)"
+        },
+        {
+          "q": "¿Qué hace Advantage+ catalog ads?",
+          "a": "Muestra productos de un catálogo a quien más probablemente los encuentre relevantes. Disponible al elegir Sales."
+        }
+      ]
+    },
+    {
+      "id": "1.13",
+      "title": "Explica · Best Practices 1-4",
+      "section": "b4",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
           "h": "El marco oficial de Meta",
-          "body": "Meta define <strong>7 Performance Best Practices</strong> para construir campañas que rindan. No las memorices como lista suelta: entiende qué resuelve cada una. Aquí van las primeras 4."
+          "body": "Meta define <strong>7 Performance Best Practices</strong> para campañas que rindan. No las memorices como lista suelta: entiende qué resuelve cada una. Aquí las primeras 4."
         },
         {
           "type": "concept",
           "h": "BP 1 — Automate campaign setup",
-          "body": "Usa Advantage+ para automatizar el armado de la campaña y dejar que la IA optimice. <em>Ejemplo:</em> en lugar de armar 8 ad sets a mano para Kenet, dejas que Advantage+ Sales estructure la campaña."
+          "body": "Usa Advantage+ para automatizar el armado y dejar que la IA optimice. <em>Ejemplo:</em> en vez de armar 8 ad sets a mano para Kenet, dejas que Advantage+ Sales estructure la campaña."
         },
         {
           "type": "concept",
           "h": "BP 2 — Align objectives & goals",
-          "body": "El objetivo de campaña debe coincidir con el goal real del negocio. <em>Ejemplo:</em> si Kenet quiere cotizaciones cerradas, el objective es Sales/Leads, no Awareness — alinear evita gastar optimizando la métrica equivocada."
+          "body": "El objetivo de campaña debe coincidir con el goal del negocio. <em>Ejemplo:</em> si Kenet quiere cotizaciones cerradas, el objective es Sales/Leads, no Awareness."
         },
         {
           "type": "concept",
           "h": "BP 3 — Consider your audience",
-          "body": "Combina lo que ya sabes de tu cliente con lo que Advantage+ audience descubre. <em>Ejemplo:</em> das tu lista de clientes Kenet como señal y dejas que la IA expanda a perfiles similares."
+          "body": "Combina lo que ya sabes del cliente con lo que Advantage+ audience descubre. <em>Ejemplo:</em> das tu lista de clientes Kenet y la IA expande a perfiles similares."
         },
         {
           "type": "concept",
           "h": "BP 4 — Optimize creative & placements",
-          "body": "Diversifica mensajes, visuales y formatos, y usa Advantage+ placements. <em>Ejemplo:</em> varios videos/imágenes de instalaciones distintas en todos los placements, no un solo anuncio estático."
+          "body": "Diversifica mensajes, visuales y formatos, y usa Advantage+ placements. <em>Ejemplo:</em> varios videos/imágenes de instalaciones en todos los placements, no un solo anuncio estático."
         },
         {
           "type": "mcq",
-          "q": "Kenet está optimizando por 'visitas a la página' pero la meta real es cerrar cotizaciones. ¿Qué Best Practice está fallando?",
+          "q": "Kenet optimiza por 'visitas a la página' pero la meta real es cerrar cotizaciones. ¿Qué Best Practice falla?",
           "options": [
             "BP 1 — Automate campaign setup",
             "BP 2 — Align objectives & goals",
@@ -429,25 +721,25 @@
             "BP 4 — Optimize creative & placements"
           ],
           "correct": 1,
-          "explanation": "<strong>BP 2 — Align objectives & goals</strong>: el objetivo de campaña debe alinearse con el goal del negocio. Optimizar por visitas cuando quieres ventas es la falla clásica."
+          "explanation": "BP 2 — Align objectives & goals: el objetivo de campaña debe alinearse con el goal del negocio. Optimizar por visitas cuando quieres ventas es la falla clásica."
         }
       ]
     },
     {
-      "id": "1.11",
-      "title": "Las 7 Best Practices · Parte 2 (BP 5-7)",
-      "section": "A",
+      "id": "1.14",
+      "title": "Explica · Best Practices 5-7",
+      "section": "b4",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
           "h": "BP 5 — Focus on signals",
-          "body": "Toma decisiones con data de alta calidad: Pixel, CAPI, datasets, eventos. <em>Ejemplo:</em> Kenet con 3 meses de Pixel + CAPI le da a Meta señales sólidas para optimizar conversiones."
+          "body": "Decisiones con data de alta calidad: Pixel, CAPI, datasets, eventos. <em>Ejemplo:</em> Kenet con 3 meses de Pixel + CAPI le da a Meta señales sólidas para optimizar conversiones."
         },
         {
           "type": "concept",
           "h": "BP 6 — Get the most out of budget & bidding",
-          "body": "Asigna el presupuesto dinámicamente con Advantage+ campaign budget en lugar de repartirlo a mano. <em>Ejemplo:</em> dejas que el budget fluya al ad set que cierra más cotizaciones."
+          "body": "Asigna el presupuesto dinámicamente con Advantage+ campaign budget en lugar de repartirlo a mano. <em>Ejemplo:</em> el budget fluye al ad set que cierra más cotizaciones."
         },
         {
           "type": "concept",
@@ -461,19 +753,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Cuál de los siguientes NO es una de las 7 Performance Best Practices oficiales de Meta?",
-          "options": [
-            "Automate campaign setup",
-            "Maximize daily frequency caps",
-            "Focus on signals",
-            "Validate results"
-          ],
-          "correct": 1,
-          "explanation": "Las 7 BP son: Automate, Align objectives, Consider audience, Optimize creative & placements, Focus on signals, Get the most out of budget & bidding, Validate results. <strong>Frequency caps NO está en la lista</strong> — es un control, no una best practice."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Cuál Best Practice se enfoca en informar la toma de decisiones con data de alta calidad?",
+          "q": "¿Cuál Best Practice se enfoca en informar decisiones con data de alta calidad?",
           "options": [
             "BP 2 — Align objectives & goals",
             "BP 5 — Focus on signals",
@@ -481,253 +761,14 @@
             "BP 7 — Validate results"
           ],
           "correct": 1,
-          "explanation": "<strong>BP 5 — Focus on signals</strong>: \"Inform decision making and optimize your strategy with high-quality data.\" Signals = data sources (Pixel, CAPI, datasets, eventos)."
-        }
-      ]
-    },
-    {
-      "id": "1.12",
-      "title": "Business Suite y el Portfolio",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "Meta Business Suite",
-          "body": "<strong>Meta Business Suite</strong> es un centro unificado para administrar marketing, ads y cuentas de clientes en <strong>Facebook, Instagram, Messenger y WhatsApp</strong>. Desde ahí gestionas business portfolios, contenido, billing, brand safety y todas las herramientas."
-        },
-        {
-          "type": "concept",
-          "h": "Business portfolio",
-          "body": "Un <strong>business portfolio</strong> agrupa activos (Página de Facebook, cuenta de Instagram, ad account, catálogo, etc.) en un solo lugar. Beneficios: gestión unificada, control de acceso, colaboración con agencias/partners y notificaciones centralizadas."
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet tiene Página de Facebook, Instagram, ad account y catálogo de paneles. Si los metes en un solo business portfolio, controlas quién accede a qué y das/quitas permiso a la agencia sin compartir contraseñas."
-        },
-        {
-          "type": "mcq",
-          "q": "Un advertiser quiere una surface para gestionar billing, brand safety y permisos de múltiples cuentas. ¿Cuál le recomiendas?",
-          "options": ["Ads Manager", "Meta Business Suite", "Events Manager", "Account Quality"],
-          "correct": 1,
-          "explanation": "<strong>Meta Business Suite</strong> es el centro unificado para gestionar portfolios, billing, brand safety y permisos. Ads Manager es para crear/gestionar campañas, no para gestionar el negocio."
-        }
-      ]
-    },
-    {
-      "id": "1.13",
-      "title": "Usuarios y permisos en el portfolio",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "kvtable",
-          "h": "Tipos de usuarios en un portfolio",
-          "rows": [
-            ["People", "Individuos con acceso parcial o control total"],
-            ["Partners", "Otros negocios que pueden recibir/dar acceso (requieren su propio portfolio + business ID)"],
-            ["System users", "Servidores o software con API access (no todas las cuentas tienen acceso a esto)"]
-          ]
-        },
-        {
-          "type": "kvtable",
-          "h": "Niveles de permiso en un portfolio",
-          "rows": [
-            ["Partial access (basic)", "Ver quién tiene full control · trabajar solo en los assets asignados"],
-            ["Partial access (apps)", "Configurar CAPI · monitor events · editar applications · crear access tokens"],
-            ["Full control", "Manejar todo: settings, gente, tools, assets · borrar el portfolio"],
-            ["Advanced — Finance", "Ver o manejar info financiera (transactions, invoices)"],
-            ["Advanced — Temporary", "Acceso básico por min 3 días, max 75 días"]
-          ]
-        },
-        {
-          "type": "tip",
-          "label": "DIFERENCIA SUTIL",
-          "body": "Un usuario puede tener <strong>full control de UNA cuenta</strong> sin tener full control del <strong>portfolio entero</strong>. Esto permite permisos finos sin perder oversight a nivel portafolio."
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "A tu agencia de marketing la agregas como <strong>Partner</strong> (tiene su propio portfolio). Al contador le das <strong>Advanced — Finance</strong> para que vea facturas sin tocar campañas. A un freelance temporal: acceso <strong>Temporary</strong> (máx 75 días)."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Cuál es la diferencia principal entre People, Partners y System users en un business portfolio?",
-          "options": [
-            "Solo difieren en el monto de descuento de billing",
-            "People son individuos, Partners son otros negocios con su propio portfolio, System users son servidores/software con API access",
-            "Partners siempre tienen full control, People siempre tienen partial access",
-            "System users son los administradores del portfolio"
-          ],
-          "correct": 1,
-          "explanation": "<strong>People</strong> = personas físicas. <strong>Partners</strong> = otros negocios (necesitan SU portfolio + business ID). <strong>System users</strong> = servidores/software con API access. No todos los portfolios tienen acceso a system users."
-        }
-      ]
-    },
-    {
-      "id": "1.14",
-      "title": "Billing and payments",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "Dónde se maneja el dinero",
-          "body": "En Meta Business Suite, <strong>Billing and payments</strong> es donde manejas todos los detalles de pago. Puedes agregar un método propio o compartir uno desde otro portfolio. Requieres acceso <strong>admin</strong> o rol <strong>finance (view and manage)</strong> para cambiar payment methods."
-        },
-        {
-          "type": "kvtable",
-          "h": "Opciones dentro de Billing & payments",
-          "rows": [
-            ["Accounts", "Ver y manejar todas las cuentas"],
-            ["Payment activity", "Spending limits y transactions"],
-            ["Invoices", "Ver, filtrar y descargar facturas"],
-            ["Payment methods", "Agregar métodos y conectar credit lines"],
-            ["Credit lines", "Ver crédito disponible · aplicar a monthly invoicing"],
-            ["Legal entities", "Manejar billing details y payment responsibilities con partners"]
-          ]
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "El contador de Kenet entra a <em>Invoices</em> para descargar facturas del mes y a <em>Payment activity</em> para ver el gasto. Si necesita cambiar la tarjeta, requiere rol admin o finance (view and manage) — no le basta acceso básico."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Qué acceso se necesita para cambiar el payment method en Business Suite?",
-          "options": [
-            "Cualquier usuario con partial access",
-            "Acceso admin o rol finance (view and manage)",
-            "Solo un System user",
-            "Acceso Temporary basta"
-          ],
-          "correct": 1,
-          "explanation": "Cambiar payment methods requiere acceso <strong>admin</strong> o el rol <strong>finance (view and manage)</strong>. El acceso básico/temporal no alcanza."
+          "explanation": "BP 5 — Focus on signals: \"Inform decision making and optimize your strategy with high-quality data.\" Signals = Pixel, CAPI, datasets, eventos."
         }
       ]
     },
     {
       "id": "1.15",
-      "title": "Brand Safety & Suitability Center",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "Para qué sirve",
-          "body": "Este centro ofrece <strong>controles</strong> para incluir/excluir tipos de contenido o publishers donde corren tus ads, y <strong>tools de transparencia</strong> que muestran publisher info y delivery. También accesibles a nivel <strong>ad set → placements</strong> en Ads Manager."
-        },
-        {
-          "type": "kvtable",
-          "h": "Los 4 tipos de controles",
-          "rows": [
-            ["Inventory filters", "Control sobre tipo de contenido (Expanded default, Moderate, Limited) — afecta reach"],
-            ["Publisher block lists", "Listas que TÚ creas para evitar ciertos publishers"],
-            ["Topic exclusions", "Excluir reels sobre Gaming, News, Politics, Religion (solo FB in-stream/reels)"],
-            ["Content type exclusions", "Live video exclusions · non-partner publisher exclusions"]
-          ]
-        },
-        {
-          "type": "tip",
-          "label": "PRO TIP",
-          "body": "Para excluir grupos de contenido sensible de manera más simple, usa los <strong>inventory filters</strong> (Moderate o Limited). Los block lists requieren que tú construyas la lista; los topic exclusions solo funcionan en placements muy específicos."
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet no quiere que sus anuncios salgan junto a contenido polémico. La vía más simple y de mayor alcance es subir el <em>inventory filter</em> a Moderate o Limited — no armar a mano una block list publisher por publisher."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Cuál es la forma más simple de excluir grupos de contenido sensible en el Brand Safety Center?",
-          "options": [
-            "Crear publisher block lists manuales",
-            "Usar inventory filters (Moderate o Limited)",
-            "Excluir topics como Gaming, News, Politics",
-            "Activar content type exclusions para live video"
-          ],
-          "correct": 1,
-          "explanation": "Los <strong>inventory filters</strong> (Expanded/Moderate/Limited) son el control más simple y de mayor alcance. Block lists requieren trabajo manual, topic exclusions solo aplican a FB in-stream/reels, y content exclusions son específicos a live video y non-partner publishers."
-        }
-      ]
-    },
-    {
-      "id": "1.16",
-      "title": "Guía resuelta · arma el setup de un cliente",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "scenario",
-          "label": "CASO GUIADO",
-          "h": "Refaccionaria del Norte (B2B)",
-          "body": "Vendes refacciones industriales a talleres. Tienes <strong>Pixel instalado hace 4 meses</strong> con eventos de compra, una agencia que te ayuda y un presupuesto fijo mensual. La meta: <strong>cerrar ventas en el sitio</strong>. Vamos a resolverlo juntos, paso a paso."
-        },
-        {
-          "type": "concept",
-          "h": "Paso 1 · Surface y permisos",
-          "body": "Como hay una agencia involucrada, gestionas todo desde <strong>Business Suite</strong> con un <strong>business portfolio</strong>, y agregas a la agencia como <strong>Partner</strong> (tiene su propio portfolio). Así controlas accesos sin compartir contraseñas."
-        },
-        {
-          "type": "concept",
-          "h": "Paso 2 · Objective",
-          "body": "La meta es vender en el sitio → <strong>Objective: Sales</strong> (BP 2 — align objectives & goals). No Awareness ni Traffic: optimizarías la métrica equivocada."
-        },
-        {
-          "type": "concept",
-          "h": "Paso 3 · Advantage+",
-          "body": "Quieres delegar toda la campaña a la IA → <strong>Advantage+ Sales campaign</strong> (complete), no solo un single-step. Esto cubre BP 1 — automate campaign setup."
-        },
-        {
-          "type": "concept",
-          "h": "Paso 4 · Qué BP priorizar",
-          "body": "Ya tienes 4 meses de Pixel con eventos de compra → priorizas <strong>BP 5 — Focus on signals</strong>, y de ser posible sumas la <strong>Conversions API (CAPI)</strong> para reforzar la señal."
-        },
-        {
-          "type": "tip",
-          "label": "EL RAZONAMIENTO",
-          "body": "Fíjate en el patrón: <em>surface → objective alineado al goal → nivel de automatización → señal de datos</em>. Ese orden de preguntas resuelve casi cualquier caso del examen."
-        },
-        {
-          "type": "mcq",
-          "q": "Mismo caso, pero ahora la agencia debe configurar la Conversions API. ¿Qué nivel de acceso le das?",
-          "options": [
-            "Partial access (basic)",
-            "Partial access (apps)",
-            "Advanced — Finance",
-            "Advanced — Temporary"
-          ],
-          "correct": 1,
-          "explanation": "<strong>Partial access (apps)</strong> permite configurar CAPI, monitorear events, editar applications y crear access tokens. Finance es para facturas; basic no alcanza para CAPI."
-        }
-      ]
-    },
-    {
-      "id": "1.17",
-      "title": "Emparejar conceptos clave del Día 1",
-      "section": "B",
-      "type": "match",
-      "instruction": "Tap el término y luego su definición. Cada error cuesta 1 ❤️.",
-      "pairs": [
-        ["Opportunity Score", "Score 0-100 de optimización basado en recomendaciones experimentalmente probadas"],
-        ["Decisiones a nivel Campaign", "Buying type, objective, budget, bid, A/B test"],
-        ["Decisiones a nivel Ad set", "Audience, placements, schedule, conversion settings"],
-        ["Decisiones a nivel Ad", "Creative, destination, tracking, identity, languages"],
-        ["Advantage+ Sales", "Complete campaign solution que automatiza toda una campaña de ventas"],
-        ["Advantage+ audience", "Single-step solution que automatiza la selección de audiencia"],
-        ["Advantage+ campaign budget", "Asigna budget dinámicamente al ad set con mejor performance (antes CBO)"],
-        ["BP 5 — Focus on signals", "Tomar decisiones con data de alta calidad: Pixel, CAPI, datasets"],
-        ["Business Portfolio", "Agrupador de assets (Pages, IG, ad accounts, catálogos) con permisos centralizados"],
-        ["Partners en portfolio", "Otros negocios con su propio portfolio + business ID"],
-        ["Inventory filters", "Control simple del Brand Safety Center: Expanded, Moderate, Limited"],
-        ["Acceso temporal", "Min 3 días, max 75 días en un business portfolio"]
-      ]
-    },
-    {
-      "id": "1.18",
-      "title": "Ordena las 7 Performance Best Practices",
-      "section": "B",
+      "title": "Ejercita la memoria · ordena las 7 BP",
+      "section": "b4",
       "type": "order",
       "instruction": "Las 7 BP de Meta van en un orden específico. Reordena con ▲▼ y verifica.",
       "items": [
@@ -742,9 +783,585 @@
       "explanation": "Las recomendaciones del Opportunity Score corresponden a las BP 1-6. La BP 7 (Validate results) ocurre <strong>post-campaña</strong> y no se mide en el opportunity score."
     },
     {
+      "id": "1.16",
+      "title": "Ejercita la memoria · Bloque 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "¿Cuál NO es una de las 7 Performance Best Practices oficiales?",
+          "options": [
+            "Automate campaign setup",
+            "Maximize daily frequency caps",
+            "Focus on signals",
+            "Validate results"
+          ],
+          "correct": 1,
+          "explanation": "Frequency caps NO está en la lista. Las 7 son: Automate · Align · Audience · Creative & placements · Signals · Budget & bidding · Validate."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué la BP 7 (Validate results) NO está en las recomendaciones del Opportunity Score?",
+          "options": [
+            "Porque Meta la deprecó",
+            "Porque solo aplica a campañas Advantage+",
+            "Porque ocurre post-campaña, mientras el score mide adopción pre/durante",
+            "Porque requiere herramientas externas"
+          ],
+          "correct": 2,
+          "explanation": "El Opportunity Score evalúa recomendaciones aplicables antes o durante (BP 1-6). Validate results ocurre después de que la campaña terminó."
+        },
+        {
+          "type": "fill",
+          "q": "La BP ___ se llama Focus on signals y usa data de alta calidad para informar decisiones.",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correct": 2,
+          "explanation": "BP 5 — Focus on signals. Signals = Pixel, CAPI, datasets, eventos."
+        },
+        {
+          "type": "fill",
+          "q": "Las recomendaciones del Opportunity Score corresponden a las BP 1 a la ___.",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correct": 2,
+          "explanation": "BP 1-6. La BP 7 (Validate results) ocurre post-campaña."
+        }
+      ]
+    },
+    {
+      "id": "1.17",
+      "title": "Caso a resolver · Bloque 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "La campaña gasta pero no vende",
+          "body": "Kenet lleva 2 semanas con una campaña que junta muchos clics pero cero cotizaciones. Revisas y el objetivo configurado es <strong>Traffic</strong>, aunque el cliente quiere ventas. Además solo hay 1 anuncio estático y el Pixel no está conectado."
+        },
+        {
+          "type": "mcq",
+          "q": "La falla principal de objetivo desalineado corresponde a:",
+          "options": [
+            "BP 4 — Optimize creative & placements",
+            "BP 2 — Align objectives & goals",
+            "BP 6 — Budget & bidding",
+            "BP 7 — Validate results"
+          ],
+          "correct": 1,
+          "explanation": "Objetivo (Traffic) ≠ goal del negocio (ventas) → BP 2 — Align objectives & goals."
+        },
+        {
+          "type": "mcq",
+          "q": "Que el Pixel no esté conectado incumple sobre todo:",
+          "options": [
+            "BP 5 — Focus on signals",
+            "BP 1 — Automate campaign setup",
+            "BP 3 — Consider your audience",
+            "BP 7 — Validate results"
+          ],
+          "correct": 0,
+          "explanation": "Sin Pixel no hay señales de calidad para optimizar conversiones → BP 5 — Focus on signals."
+        }
+      ]
+    },
+    {
+      "id": "1.18",
+      "title": "Mini-flashcards · Bloque 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Cuáles son las 7 Performance Best Practices?",
+          "a": "1. Automate setup · 2. Align objectives & goals · 3. Consider audience · 4. Optimize creative & placements · 5. Focus on signals · 6. Get the most out of budget & bidding · 7. Validate results"
+        },
+        {
+          "q": "¿Qué BP corresponden al Opportunity Score?",
+          "a": "Las BP 1-6. La BP 7 (Validate results) ocurre post-campaña."
+        },
+        {
+          "q": "En una frase, ¿qué resuelve la BP 2?",
+          "a": "Que el objective de campaña coincida con el goal del negocio (no optimizar la métrica equivocada, ej. tráfico cuando quieres ventas)."
+        },
+        {
+          "q": "¿Qué resuelve la BP 5 — Focus on signals?",
+          "a": "Informar/optimizar decisiones con data de alta calidad: Pixel, CAPI, datasets, eventos."
+        }
+      ]
+    },
+    {
       "id": "1.19",
-      "title": "Caso: Industrial Suite (B2B Shopify)",
-      "section": "C",
+      "title": "Explica · Business Suite, Portfolio & Permisos",
+      "section": "b5",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Meta Business Suite",
+          "body": "<strong>Meta Business Suite</strong> es un centro unificado para administrar marketing, ads y cuentas de clientes en <strong>Facebook, Instagram, Messenger y WhatsApp</strong>. Desde ahí gestionas portfolios, contenido, billing, brand safety y todas las herramientas."
+        },
+        {
+          "type": "concept",
+          "h": "Business portfolio",
+          "body": "Un <strong>business portfolio</strong> agrupa activos (Página de FB, Instagram, ad account, catálogo, etc.) en un solo lugar. Beneficios: gestión unificada, control de acceso, colaboración con partners y notificaciones centralizadas."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "Kenet tiene Página de FB, Instagram, ad account y catálogo. En un solo portfolio controlas quién accede a qué y das/quitas permiso a la agencia sin compartir contraseñas."
+        },
+        {
+          "type": "kvtable",
+          "h": "Tipos de usuarios en un portfolio",
+          "rows": [
+            [
+              "People",
+              "Individuos con acceso parcial o control total"
+            ],
+            [
+              "Partners",
+              "Otros negocios (requieren su propio portfolio + business ID)"
+            ],
+            [
+              "System users",
+              "Servidores o software con API access (no todas las cuentas lo tienen)"
+            ]
+          ]
+        },
+        {
+          "type": "kvtable",
+          "h": "Niveles de permiso",
+          "rows": [
+            [
+              "Partial access (basic)",
+              "Ver quién tiene full control · trabajar solo en assets asignados"
+            ],
+            [
+              "Partial access (apps)",
+              "Configurar CAPI · monitor events · editar applications · crear access tokens"
+            ],
+            [
+              "Full control",
+              "Manejar todo: settings, gente, tools, assets · borrar el portfolio"
+            ],
+            [
+              "Advanced — Finance",
+              "Ver o manejar info financiera (transactions, invoices)"
+            ],
+            [
+              "Advanced — Temporary",
+              "Acceso básico por min 3 días, max 75 días"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "DIFERENCIA SUTIL",
+          "body": "Un usuario puede tener <strong>full control de UNA cuenta</strong> sin tener full control del <strong>portfolio entero</strong>. Permite permisos finos sin perder oversight."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Diferencia principal entre People, Partners y System users?",
+          "options": [
+            "Solo difieren en el descuento de billing",
+            "People = individuos; Partners = otros negocios con su propio portfolio; System users = servidores/software con API access",
+            "Partners siempre tienen full control",
+            "System users son los administradores"
+          ],
+          "correct": 1,
+          "explanation": "People = personas físicas. Partners = otros negocios (su portfolio + business ID). System users = servidores/software con API access."
+        }
+      ]
+    },
+    {
+      "id": "1.20",
+      "title": "Ejercita la memoria · Bloque 5",
+      "section": "b5",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Un advertiser quiere una surface para gestionar billing, brand safety y permisos de varias cuentas. ¿Cuál?",
+          "options": [
+            "Ads Manager",
+            "Meta Business Suite",
+            "Events Manager",
+            "Account Quality"
+          ],
+          "correct": 1,
+          "explanation": "Meta Business Suite es el centro unificado. Ads Manager es para crear/gestionar campañas."
+        },
+        {
+          "type": "mcq",
+          "q": "Para colaborar con una agencia que tiene su propio portfolio, la agregas como:",
+          "options": [
+            "Person",
+            "Partner",
+            "System user",
+            "Vendor"
+          ],
+          "correct": 1,
+          "explanation": "Las agencias se agregan como Partners (tienen su propio portfolio + business ID)."
+        },
+        {
+          "type": "mcq",
+          "q": "'Advanced — Finance' permite:",
+          "options": [
+            "Crear y editar campañas",
+            "Ver y manejar info financiera (transactions, invoices)",
+            "Acceder a system users y APIs",
+            "Crear lookalikes"
+          ],
+          "correct": 1,
+          "explanation": "Advanced — Finance es un permiso específico para temas financieros. Separado del Full control."
+        },
+        {
+          "type": "fill",
+          "q": "Los usuarios tipo ___ users son servidores o software con API access.",
+          "options": [
+            "Partner",
+            "People",
+            "System",
+            "Agency"
+          ],
+          "correct": 2,
+          "explanation": "System users = servidores/software/APIs."
+        },
+        {
+          "type": "fill",
+          "q": "El acceso temporal dura mínimo 3 días y máximo ___ días.",
+          "options": [
+            "30",
+            "60",
+            "75",
+            "90"
+          ],
+          "correct": 2,
+          "explanation": "Máximo 75 días. Pregunta literal del examen."
+        },
+        {
+          "type": "fill",
+          "q": "Para configurar la CAPI necesitas Partial access (___).",
+          "options": [
+            "basic",
+            "apps",
+            "finance",
+            "temporary"
+          ],
+          "correct": 1,
+          "explanation": "Partial access (apps): configurar CAPI, monitor events, editar applications, crear access tokens."
+        }
+      ]
+    },
+    {
+      "id": "1.21",
+      "title": "Caso a resolver · Bloque 5",
+      "section": "b5",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Repartir accesos en Kenet",
+          "body": "Necesitas dar accesos: (1) una <strong>agencia</strong> que tiene su propio portfolio y configurará la CAPI, (2) el <strong>contador</strong> que solo ve facturas, (3) un <strong>freelance</strong> que ayuda 2 semanas. Asigna lo correcto a cada uno."
+        },
+        {
+          "type": "mcq",
+          "q": "La agencia (su propio portfolio + configurar CAPI):",
+          "options": [
+            "People con Partial access (basic)",
+            "Partner, con Partial access (apps) para CAPI",
+            "System user",
+            "Advanced — Finance"
+          ],
+          "correct": 1,
+          "explanation": "Agencia con su portfolio = Partner. Para configurar CAPI necesita Partial access (apps)."
+        },
+        {
+          "type": "mcq",
+          "q": "El contador (solo facturas) y el freelance (2 semanas):",
+          "options": [
+            "Ambos Full control",
+            "Contador: Advanced — Finance · Freelance: Advanced — Temporary",
+            "Contador: System user · Freelance: Partner",
+            "Ambos Partial access (apps)"
+          ],
+          "correct": 1,
+          "explanation": "Contador → Advanced — Finance (facturas/transactions). Freelance temporal → Advanced — Temporary (3-75 días)."
+        }
+      ]
+    },
+    {
+      "id": "1.22",
+      "title": "Mini-flashcards · Bloque 5",
+      "section": "b5",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Qué es Meta Business Suite?",
+          "a": "Surface centralizada para administrar marketing, ads y cuentas de clientes en Facebook, Instagram, Messenger y WhatsApp."
+        },
+        {
+          "q": "¿Qué es un Business Portfolio?",
+          "a": "Agrupador de activos (FB Page, IG, ad account, catálogo) en un solo lugar, con gestión unificada de assets y accesos."
+        },
+        {
+          "q": "Los 3 tipos de usuarios en un portfolio",
+          "a": "People (individuos) · Partners (otros negocios con su portfolio + business ID) · System users (servidores/software con API access)."
+        },
+        {
+          "q": "¿Qué acceso permite configurar la CAPI?",
+          "a": "Partial access (apps): configurar CAPI, monitor events, editar applications, crear access tokens."
+        },
+        {
+          "q": "Acceso temporal en un portfolio: ¿cuánto dura?",
+          "a": "Mínimo 3 días, máximo 75 días."
+        },
+        {
+          "q": "Partial access vs Full control",
+          "a": "Partial: solo assets asignados, ver quién tiene full control. Full: manejar todo (settings, gente, tools, assets) + borrar el portfolio."
+        }
+      ]
+    },
+    {
+      "id": "1.23",
+      "title": "Explica · Billing & Brand Safety",
+      "section": "b6",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Billing and payments",
+          "body": "En Business Suite, <strong>Billing and payments</strong> es donde manejas todos los detalles de pago. Puedes agregar un método propio o compartir uno de otro portfolio. Requieres acceso <strong>admin</strong> o rol <strong>finance (view and manage)</strong> para cambiar payment methods."
+        },
+        {
+          "type": "kvtable",
+          "h": "Opciones dentro de Billing & payments",
+          "rows": [
+            [
+              "Accounts",
+              "Ver y manejar todas las cuentas"
+            ],
+            [
+              "Payment activity",
+              "Spending limits y transactions"
+            ],
+            [
+              "Invoices",
+              "Ver, filtrar y descargar facturas"
+            ],
+            [
+              "Payment methods",
+              "Agregar métodos y conectar credit lines"
+            ],
+            [
+              "Credit lines",
+              "Ver crédito disponible · aplicar a monthly invoicing"
+            ],
+            [
+              "Legal entities",
+              "Billing details y payment responsibilities con partners"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Kenet Solar",
+          "body": "El contador de Kenet entra a <em>Invoices</em> para descargar facturas y a <em>Payment activity</em> para ver el gasto. Para cambiar la tarjeta necesita rol admin o finance (view and manage) — no le basta acceso básico."
+        },
+        {
+          "type": "concept",
+          "h": "Brand Safety & Suitability Center",
+          "body": "Ofrece <strong>controles</strong> para incluir/excluir contenido o publishers donde corren tus ads, y <strong>tools de transparencia</strong> que muestran publisher info y delivery. También accesibles a nivel <strong>ad set → placements</strong> en Ads Manager."
+        },
+        {
+          "type": "kvtable",
+          "h": "Los 4 tipos de controles",
+          "rows": [
+            [
+              "Inventory filters",
+              "Tipo de contenido: Expanded (default), Moderate, Limited — afecta reach"
+            ],
+            [
+              "Publisher block lists",
+              "Listas que TÚ creas para evitar ciertos publishers"
+            ],
+            [
+              "Topic exclusions",
+              "Gaming, News, Politics, Religion (solo FB in-stream/reels)"
+            ],
+            [
+              "Content type exclusions",
+              "Live video · non-partner publisher exclusions"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Para excluir contenido sensible de la forma más simple, usa los <strong>inventory filters</strong> (Moderate o Limited). Las block lists requieren armar la lista; los topic exclusions solo funcionan en placements muy específicos."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Forma más simple de excluir grupos de contenido sensible en el Brand Safety Center?",
+          "options": [
+            "Crear publisher block lists manuales",
+            "Usar inventory filters (Moderate o Limited)",
+            "Excluir topics como Gaming, News, Politics",
+            "Activar content type exclusions para live video"
+          ],
+          "correct": 1,
+          "explanation": "Los inventory filters (Expanded/Moderate/Limited) son el control más simple y de mayor alcance. Block lists = trabajo manual; topic exclusions solo FB in-stream/reels."
+        }
+      ]
+    },
+    {
+      "id": "1.24",
+      "title": "Ejercita la memoria · Bloque 6",
+      "section": "b6",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Inventory filters tiene 3 niveles. ¿Cuál da MÁS reach?",
+          "options": [
+            "Limited",
+            "Moderate",
+            "Expanded",
+            "Strict"
+          ],
+          "correct": 2,
+          "explanation": "Expanded (default) = más reach. Moderate = balance. Limited = menos reach, más exclusión. Strict no existe."
+        },
+        {
+          "type": "mcq",
+          "q": "Topic exclusions (Gaming, News, Politics, Religion) están SOLO en:",
+          "options": [
+            "Todos los placements",
+            "Facebook in-stream y reels",
+            "Reels de Instagram",
+            "Audience Network"
+          ],
+          "correct": 1,
+          "explanation": "Topic exclusions aplican exclusivamente a Facebook in-stream y reels."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué acceso se necesita para cambiar el payment method?",
+          "options": [
+            "Cualquier partial access",
+            "Acceso admin o rol finance (view and manage)",
+            "Solo un System user",
+            "Acceso Temporary basta"
+          ],
+          "correct": 1,
+          "explanation": "Cambiar payment methods requiere acceso admin o el rol finance (view and manage)."
+        },
+        {
+          "type": "fill",
+          "q": "Para excluir contenido sensible de la forma más simple, usa los ___.",
+          "options": [
+            "block lists",
+            "topic exclusions",
+            "inventory filters",
+            "allow lists"
+          ],
+          "correct": 2,
+          "explanation": "Inventory filters (Expanded/Moderate/Limited): el control más simple y de mayor alcance."
+        },
+        {
+          "type": "mcq",
+          "q": "El Brand Safety Center es accesible SOLO desde Business Suite:",
+          "options": [
+            "Verdadero",
+            "Falso: también a nivel ad set → placements en Ads Manager"
+          ],
+          "correct": 1,
+          "explanation": "Los controles de Brand Safety también están a nivel ad set → placements en Ads Manager."
+        }
+      ]
+    },
+    {
+      "id": "1.25",
+      "title": "Caso a resolver · Bloque 6",
+      "section": "b6",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Kenet cuida su marca",
+          "body": "El dueño de Kenet no quiere que sus anuncios de paneles aparezcan junto a contenido polémico, y no tiene tiempo de armar listas publisher por publisher. Además el contador necesita poder descargar las facturas del mes."
+        },
+        {
+          "type": "mcq",
+          "q": "Para evitar contenido sensible sin armar listas a mano, la vía más simple es:",
+          "options": [
+            "Publisher block lists manuales",
+            "Subir el inventory filter a Moderate o Limited",
+            "Topic exclusions (cubren todos los placements)",
+            "Desactivar Advantage+ placements"
+          ],
+          "correct": 1,
+          "explanation": "Inventory filters (Moderate/Limited) = control más simple y de mayor alcance, sin armar listas manuales. Topic exclusions NO cubren todos los placements (solo FB in-stream/reels)."
+        },
+        {
+          "type": "mcq",
+          "q": "Para que el contador descargue facturas, ¿qué necesita?",
+          "options": [
+            "Full control del portfolio",
+            "Acceso a Invoices dentro de Billing & payments (rol con vista financiera)",
+            "Ser System user",
+            "Partial access (apps)"
+          ],
+          "correct": 1,
+          "explanation": "Invoices vive en Billing & payments. Para temas financieros se usa el rol finance / Advanced — Finance, no Full control ni system user."
+        }
+      ]
+    },
+    {
+      "id": "1.26",
+      "title": "Mini-flashcards · Bloque 6",
+      "section": "b6",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Qué acceso se necesita para cambiar el payment method?",
+          "a": "Acceso admin o rol finance (view and manage). El acceso básico/temporal no alcanza."
+        },
+        {
+          "q": "Opciones dentro de Billing & payments",
+          "a": "Accounts · Payment activity · Invoices · Payment methods · Credit lines · Legal entities."
+        },
+        {
+          "q": "Los 4 tipos de controles del Brand Safety Center",
+          "a": "Inventory filters (Expanded/Moderate/Limited) · Publisher block lists · Topic exclusions (Gaming/News/Politics/Religion) · Content type exclusions."
+        },
+        {
+          "q": "Inventory filters: niveles y cuál da más reach",
+          "a": "Expanded (default, más reach) · Moderate · Limited (menos reach, más exclusión). Es el control más simple."
+        },
+        {
+          "q": "¿Topic exclusions dónde funcionan?",
+          "a": "Solo en Facebook in-stream y reels. Por eso los inventory filters son más útiles para exclusión general."
+        }
+      ]
+    },
+    {
+      "id": "1.27",
+      "title": "Caso integrador · Industrial Suite (B2B Shopify)",
+      "section": "bz",
       "type": "scenario",
       "cards": [
         {
@@ -792,114 +1409,241 @@
       ]
     },
     {
-      "id": "1.20",
+      "id": "1.28",
+      "title": "Emparejar conceptos clave del Día 1",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Tap el término y luego su definición. Cada error cuesta 1 ❤️.",
+      "pairs": [
+        [
+          "Opportunity Score",
+          "Score 0-100 de optimización basado en recomendaciones experimentalmente probadas"
+        ],
+        [
+          "Decisiones a nivel Campaign",
+          "Buying type, objective, budget, bid, A/B test"
+        ],
+        [
+          "Decisiones a nivel Ad set",
+          "Audience, placements, schedule, conversion settings"
+        ],
+        [
+          "Decisiones a nivel Ad",
+          "Creative, destination, tracking, identity, languages"
+        ],
+        [
+          "Advantage+ Sales",
+          "Complete campaign solution que automatiza toda una campaña de ventas"
+        ],
+        [
+          "Advantage+ audience",
+          "Single-step solution que automatiza la selección de audiencia"
+        ],
+        [
+          "Advantage+ campaign budget",
+          "Asigna budget dinámicamente al ad set con mejor performance (antes CBO)"
+        ],
+        [
+          "BP 5 — Focus on signals",
+          "Tomar decisiones con data de alta calidad: Pixel, CAPI, datasets"
+        ],
+        [
+          "Business Portfolio",
+          "Agrupador de assets (Pages, IG, ad accounts, catálogos) con permisos centralizados"
+        ],
+        [
+          "Partners en portfolio",
+          "Otros negocios con su propio portfolio + business ID"
+        ],
+        [
+          "Inventory filters",
+          "Control simple del Brand Safety Center: Expanded, Moderate, Limited"
+        ],
+        [
+          "Acceso temporal",
+          "Min 3 días, max 75 días en un business portfolio"
+        ]
+      ]
+    },
+    {
+      "id": "1.29",
       "title": "Completar frases del Día 1",
-      "section": "C",
+      "section": "bz",
       "type": "fill",
       "cards": [
         {
           "type": "fill",
           "q": "El ___ es un score 0-100 que muestra qué tan optimizadas están tus campañas según recomendaciones experimentalmente probadas.",
-          "options": ["Opportunity Score", "ROAS Score", "Pixel Score", "Auction Score"],
+          "options": [
+            "Opportunity Score",
+            "ROAS Score",
+            "Pixel Score",
+            "Auction Score"
+          ],
           "correct": 0,
           "explanation": "El <strong>Opportunity Score</strong> mide adopción de recomendaciones, NO performance real."
         },
         {
           "type": "fill",
           "q": "Las decisiones de audiencia, placements y schedule se hacen a nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
           "correct": 1,
           "explanation": "<strong>Ad set</strong> = a quién, dónde, cuándo. Campaign = qué objetivo y cuánto. Ad = cómo se ve."
         },
         {
           "type": "fill",
           "q": "El default de optimization de presupuesto a nivel campaña se llama Advantage+ ___ budget.",
-          "options": ["audience", "campaign", "creative", "placement"],
+          "options": [
+            "audience",
+            "campaign",
+            "creative",
+            "placement"
+          ],
           "correct": 1,
           "explanation": "<strong>Advantage+ campaign budget</strong> (antes CBO) reparte el presupuesto dinámicamente entre ad sets."
         },
         {
           "type": "fill",
           "q": "Las 3 Advantage+ complete campaign solutions son Sales, App y ___.",
-          "options": ["Reach", "Engagement", "Leads", "Conversion"],
+          "options": [
+            "Reach",
+            "Engagement",
+            "Leads",
+            "Conversion"
+          ],
           "correct": 2,
           "explanation": "Las 3 complete campaigns son <strong>Advantage+ Sales · App · Leads</strong>. Las demás son objectives, no campañas Advantage+ completas."
         },
         {
           "type": "fill",
           "q": "La BP ___ se llama Focus on signals y se refiere a usar data de alta calidad para informar decisiones.",
-          "options": ["3", "4", "5", "6"],
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
           "correct": 2,
           "explanation": "<strong>BP 5 — Focus on signals</strong>. Las signals = Pixel, CAPI, datasets, eventos."
         },
         {
           "type": "fill",
           "q": "Para excluir grupos de contenido sensible de la forma más simple, usa los ___.",
-          "options": ["block lists", "topic exclusions", "inventory filters", "publisher allow lists"],
+          "options": [
+            "block lists",
+            "topic exclusions",
+            "inventory filters",
+            "publisher allow lists"
+          ],
           "correct": 2,
           "explanation": "<strong>Inventory filters</strong> (Expanded/Moderate/Limited) son el control más simple y de mayor alcance. Block lists requieren armar la lista manualmente."
         },
         {
           "type": "fill",
           "q": "Los usuarios tipo ___ users son servidores o software con API access en un business portfolio.",
-          "options": ["Partner", "People", "System", "Agency"],
+          "options": [
+            "Partner",
+            "People",
+            "System",
+            "Agency"
+          ],
           "correct": 2,
           "explanation": "<strong>System users</strong> = servidores/software/APIs. Partner = otro negocio. People = personas físicas."
         },
         {
           "type": "fill",
           "q": "El acceso temporal en un portfolio dura mínimo 3 días y máximo ___ días.",
-          "options": ["30", "60", "75", "90"],
+          "options": [
+            "30",
+            "60",
+            "75",
+            "90"
+          ],
           "correct": 2,
           "explanation": "Máximo <strong>75 días</strong>. Es una pregunta literal del examen — memorízala."
         },
         {
           "type": "fill",
           "q": "Para cambiar el payment method se necesita acceso admin o el rol ___.",
-          "options": ["finance (view and manage)", "system user", "partner", "temporary"],
+          "options": [
+            "finance (view and manage)",
+            "system user",
+            "partner",
+            "temporary"
+          ],
           "correct": 0,
           "explanation": "Cambiar payment methods requiere acceso admin o el rol <strong>finance (view and manage)</strong>."
         },
         {
           "type": "fill",
           "q": "La Best Practice que ocurre post-campaña y NO entra en el Opportunity Score es la BP ___.",
-          "options": ["5", "6", "7", "1"],
+          "options": [
+            "5",
+            "6",
+            "7",
+            "1"
+          ],
           "correct": 2,
           "explanation": "<strong>BP 7 — Validate results</strong> ocurre después de la campaña; el Opportunity Score solo cubre BP 1-6."
         }
       ]
     },
     {
-      "id": "1.21",
+      "id": "1.30",
       "title": "Drill — 12 MCQs del Día 1",
-      "section": "D",
+      "section": "bz",
       "type": "drill",
       "cards": [
         {
           "type": "mcq",
           "q": "Un advertiser quiere una surface para gestionar billing, brand safety y permisos de múltiples cuentas. ¿Cuál le recomiendas?",
-          "options": ["Ads Manager", "Meta Business Suite", "Events Manager", "Account Quality"],
+          "options": [
+            "Ads Manager",
+            "Meta Business Suite",
+            "Events Manager",
+            "Account Quality"
+          ],
           "correct": 1,
           "explanation": "<strong>Meta Business Suite</strong> es el centro unificado para gestionar portfolios, billing, brand safety y permisos. Ads Manager es para crear/gestionar campañas, no para gestionar el negocio."
         },
         {
           "type": "mcq",
           "q": "Buying type es una selección que SOLO puede hacerse a nivel:",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
           "correct": 0,
           "explanation": "<strong>Buying type</strong> es la primera decisión y va a nivel Campaign (Auction o Reservation). Ad set y Ad no permiten cambiarlo."
         },
         {
           "type": "mcq",
           "q": "¿Cuál de estas NO es una Advantage+ complete campaign solution?",
-          "options": ["Advantage+ Sales", "Advantage+ Leads", "Advantage+ App", "Advantage+ Catalog Ads"],
+          "options": [
+            "Advantage+ Sales",
+            "Advantage+ Leads",
+            "Advantage+ App",
+            "Advantage+ Catalog Ads"
+          ],
           "correct": 3,
           "explanation": "Las 3 <strong>complete campaign solutions</strong> son Sales, App y Leads. <strong>Advantage+ Catalog Ads</strong> es una feature dentro de Sales (single-step para mostrar productos de un catálogo)."
         },
         {
           "type": "mcq",
           "q": "Para colaborar con una agencia que tiene su propio portfolio, ¿cómo la agregas a tu portfolio?",
-          "options": ["Como Person", "Como Partner", "Como System user", "Como Vendor"],
+          "options": [
+            "Como Person",
+            "Como Partner",
+            "Como System user",
+            "Como Vendor"
+          ],
           "correct": 1,
           "explanation": "Las agencias se agregan como <strong>Partners</strong> porque tienen su propio business portfolio + business ID. People son individuos; System users son servidores/APIs."
         },
@@ -942,7 +1686,12 @@
         {
           "type": "mcq",
           "q": "Inventory filters tiene 3 niveles. ¿Cuál da MÁS reach?",
-          "options": ["Limited", "Moderate", "Expanded", "Strict"],
+          "options": [
+            "Limited",
+            "Moderate",
+            "Expanded",
+            "Strict"
+          ],
           "correct": 2,
           "explanation": "<strong>Expanded</strong> (default) = más reach, menos filtering. <strong>Moderate</strong> = balance. <strong>Limited</strong> = menos reach, más exclusión de contenido sensible. <em>Strict</em> no existe."
         },
@@ -991,76 +1740,110 @@
             "Audience Insights (datos demográficos)",
             "Credit lines (crédito disponible y monthly invoicing)"
           ],
-          "correct": [0, 1, 3],
+          "correct": [
+            0,
+            1,
+            3
+          ],
           "multi": true,
           "explanation": "<strong>Billing and payments</strong> incluye: Accounts, Payment activity, Invoices, Payment methods, Credit lines, Legal entities. <strong>Audience Insights</strong> es una herramienta separada de análisis, no parte de billing."
         }
       ]
     },
     {
-      "id": "1.22",
+      "id": "1.31",
       "title": "Lightning — 10 preguntas rápidas",
-      "section": "D",
+      "section": "bz",
       "type": "lightning",
       "timeLimit": 180,
       "questions": [
         {
           "q": "¿El Opportunity Score predice el ROAS de la campaña?",
-          "options": ["Sí, predice ROAS", "No, solo mide adopción de recomendaciones"],
+          "options": [
+            "Sí, predice ROAS",
+            "No, solo mide adopción de recomendaciones"
+          ],
           "correct": 1,
           "explanation": "El Opportunity Score NO predice performance — mide adopción de recomendaciones probadas."
         },
         {
           "q": "¿El budget puede definirse a nivel Campaign Y Ad set simultáneamente?",
-          "options": ["Sí, en ambos al mismo tiempo", "No, solo en uno de los dos"],
+          "options": [
+            "Sí, en ambos al mismo tiempo",
+            "No, solo en uno de los dos"
+          ],
           "correct": 1,
           "explanation": "El budget va EN UNO de los dos niveles, nunca en ambos. Default: nivel Campaign (Advantage+ campaign budget)."
         },
         {
           "q": "¿Advantage+ Sales es una single-step solution?",
-          "options": ["Sí, automatiza un paso", "No, es complete campaign (automatiza todo)"],
+          "options": [
+            "Sí, automatiza un paso",
+            "No, es complete campaign (automatiza todo)"
+          ],
           "correct": 1,
           "explanation": "Advantage+ Sales es complete campaign. Las single-step son: audience, placements, budget, creative, destination."
         },
         {
           "q": "¿Las 7 Performance Best Practices incluyen 'Maximize frequency caps'?",
-          "options": ["Sí", "No"],
+          "options": [
+            "Sí",
+            "No"
+          ],
           "correct": 1,
           "explanation": "Frequency caps NO es una BP. Las 7 BP son: Automate · Align · Audience · Creative & placements · Signals · Budget & bidding · Validate."
         },
         {
           "q": "¿El acceso temporal en un portfolio dura máximo 90 días?",
-          "options": ["Sí, 90 días", "No, máximo 75 días"],
+          "options": [
+            "Sí, 90 días",
+            "No, máximo 75 días"
+          ],
           "correct": 1,
           "explanation": "Mínimo 3 días, máximo 75 días. Memorizar literal."
         },
         {
           "q": "¿Partners en un portfolio necesitan tener su propio business ID?",
-          "options": ["Sí, requieren su propio portfolio + ID", "No, basta con un email"],
+          "options": [
+            "Sí, requieren su propio portfolio + ID",
+            "No, basta con un email"
+          ],
           "correct": 0,
           "explanation": "Los Partners son OTROS negocios. Por eso necesitan su propio portfolio + business ID separados."
         },
         {
           "q": "¿Inventory filter 'Limited' da MENOS reach que 'Expanded'?",
-          "options": ["Sí (más filtrado = menos reach)", "No, da más reach"],
+          "options": [
+            "Sí (más filtrado = menos reach)",
+            "No, da más reach"
+          ],
           "correct": 0,
           "explanation": "Limited = más exclusión = menos reach. Expanded (default) = menos filtrado = más reach."
         },
         {
           "q": "¿Brand Safety Center es accesible SOLO desde Business Suite?",
-          "options": ["Sí, solo Business Suite", "No, también a nivel ad set en Ads Manager (placements)"],
+          "options": [
+            "Sí, solo Business Suite",
+            "No, también a nivel ad set en Ads Manager (placements)"
+          ],
           "correct": 1,
           "explanation": "Los controles de Brand Safety también están disponibles a nivel <strong>ad set → placements</strong> en Ads Manager."
         },
         {
           "q": "¿Topic exclusions funcionan en Audience Network?",
-          "options": ["Sí, todos los placements", "No, solo FB in-stream y reels"],
+          "options": [
+            "Sí, todos los placements",
+            "No, solo FB in-stream y reels"
+          ],
           "correct": 1,
           "explanation": "Topic exclusions aplican exclusivamente a Facebook in-stream y reels."
         },
         {
           "q": "¿Si pasas el diagnostic con ≥80%, puedes saltar las lecciones del día?",
-          "options": ["Sí, salta directo al Quiz de Unidad", "No, debes hacer las lecciones siempre"],
+          "options": [
+            "Sí, salta directo al Quiz de Unidad",
+            "No, debes hacer las lecciones siempre"
+          ],
           "correct": 0,
           "explanation": "El diagnostic es el atajo: si dominas el contenido, ≥80% te permite saltar al Quiz de Unidad directamente."
         }
@@ -1069,13 +1852,13 @@
     {
       "id": "1.audio",
       "title": "Repaso en audio · Día 1",
-      "section": "D",
+      "section": "bz",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
           "h": "🎙️ Repaso conversacional",
-          "body": "Escucha este resumen rápido del Día 1 antes de pasar a flashcards. Útil para fijar los conceptos clave en otro formato — puedes escucharlo manejando o caminando."
+          "body": "Escucha este resumen rápido del Día 1 antes de las flashcards finales. Útil para fijar los conceptos en otro formato — puedes escucharlo manejando o caminando."
         },
         {
           "type": "audio-embed",
@@ -1092,8 +1875,8 @@
     },
     {
       "id": "1.flash",
-      "title": "Flashcards del Día 1",
-      "section": "D",
+      "title": "Flashcards del Día 1 (todo)",
+      "section": "bz",
       "type": "flashcards",
       "cards": [
         {
