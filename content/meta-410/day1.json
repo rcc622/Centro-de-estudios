@@ -127,6 +127,44 @@
       ]
     },
     {
+      "id": "1.3",
+      "title": "Caso a resolver · Bloque 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "El cliente malinterpreta el score",
+          "body": "El dueño de Kenet ve que su campaña tiene <strong>Opportunity Score 64/100</strong> y te dice: \"Entonces solo voy a recuperar el 64% de lo que invierta, ¿verdad? Bájale al presupuesto.\" Tienes que corregir el malentendido."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué le explicas al dueño de Kenet?",
+          "options": [
+            "Tiene razón, 64/100 es la proyección de retorno",
+            "El score mide adopción de recomendaciones probadas, NO predice ROAS; conviene aplicarlas en vez de recortar a ciegas",
+            "Hay que esperar a que llegue a 100 para invertir",
+            "El score solo aplica a campañas Advantage+"
+          ],
+          "correct": 1,
+          "explanation": "64/100 = hay recomendaciones pendientes por aplicar. No es una proyección de retorno. La acción correcta es revisar y aplicar esas recomendaciones, no recortar presupuesto por un malentendido."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Dónde reviso esas recomendaciones ANTES de crear más campañas?",
+          "options": [
+            "En el reporte de facturación",
+            "En Account overview (momento 'before' del opportunity score)",
+            "Solo después de que la campaña termine",
+            "En el Brand Safety Center"
+          ],
+          "correct": 1,
+          "explanation": "El momento 'before' del opportunity score vive en Account overview: te ayuda antes de crear campañas. 'During' es al crearla, 'after' mientras corre."
+        }
+      ]
+    },
+    {
       "id": "1.2",
       "title": "Ejercita la memoria · Bloque 1",
       "section": "b1",
@@ -191,44 +229,6 @@
           ],
           "correct": 1,
           "explanation": "El score mide adopción de recomendaciones, no resultados. Subirlo es bueno, pero no garantiza performance."
-        }
-      ]
-    },
-    {
-      "id": "1.3",
-      "title": "Caso a resolver · Bloque 1",
-      "section": "b1",
-      "type": "scenario",
-      "cards": [
-        {
-          "type": "scenario",
-          "label": "CASO A RESOLVER",
-          "h": "El cliente malinterpreta el score",
-          "body": "El dueño de Kenet ve que su campaña tiene <strong>Opportunity Score 64/100</strong> y te dice: \"Entonces solo voy a recuperar el 64% de lo que invierta, ¿verdad? Bájale al presupuesto.\" Tienes que corregir el malentendido."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Qué le explicas al dueño de Kenet?",
-          "options": [
-            "Tiene razón, 64/100 es la proyección de retorno",
-            "El score mide adopción de recomendaciones probadas, NO predice ROAS; conviene aplicarlas en vez de recortar a ciegas",
-            "Hay que esperar a que llegue a 100 para invertir",
-            "El score solo aplica a campañas Advantage+"
-          ],
-          "correct": 1,
-          "explanation": "64/100 = hay recomendaciones pendientes por aplicar. No es una proyección de retorno. La acción correcta es revisar y aplicar esas recomendaciones, no recortar presupuesto por un malentendido."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Dónde reviso esas recomendaciones ANTES de crear más campañas?",
-          "options": [
-            "En el reporte de facturación",
-            "En Account overview (momento 'before' del opportunity score)",
-            "Solo después de que la campaña termine",
-            "En el Brand Safety Center"
-          ],
-          "correct": 1,
-          "explanation": "El momento 'before' del opportunity score vive en Account overview: te ayuda antes de crear campañas. 'During' es al crearla, 'after' mientras corre."
         }
       ]
     },
@@ -555,6 +555,34 @@
       ]
     },
     {
+      "id": "1.12",
+      "title": "Mini-flashcards · Bloque 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Qué es Meta Advantage+?",
+          "a": "Suite de AI + automation en tiempo real para hacer match entre ads y personas con más probabilidad de actuar. Optimiza por real-time data, efectividad y relevancia."
+        },
+        {
+          "q": "Las 2 categorías de Advantage+",
+          "a": "Complete campaign solutions (toda la campaña: Sales, App, Leads) · Single-step (un aspecto: Audience, Placement, Budget, Creative, Destination)."
+        },
+        {
+          "q": "Las 3 Advantage+ complete campaign solutions",
+          "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
+        },
+        {
+          "q": "¿Qué hace Advantage+ campaign budget?",
+          "a": "Asigna dinámicamente el budget al ad set/ad con mejor performance. Default single-step de budget. (Antes CBO.)"
+        },
+        {
+          "q": "¿Qué hace Advantage+ catalog ads?",
+          "a": "Muestra productos de un catálogo a quien más probablemente los encuentre relevantes. Disponible al elegir Sales."
+        }
+      ]
+    },
+    {
       "id": "1.10",
       "title": "Ejercita la memoria · Bloque 3",
       "section": "b3",
@@ -649,34 +677,6 @@
           ],
           "correct": 2,
           "explanation": "Automatizar solo un aspecto = single-step. Audiencia = Advantage+ audience."
-        }
-      ]
-    },
-    {
-      "id": "1.12",
-      "title": "Mini-flashcards · Bloque 3",
-      "section": "b3",
-      "type": "flashcards",
-      "cards": [
-        {
-          "q": "¿Qué es Meta Advantage+?",
-          "a": "Suite de AI + automation en tiempo real para hacer match entre ads y personas con más probabilidad de actuar. Optimiza por real-time data, efectividad y relevancia."
-        },
-        {
-          "q": "Las 2 categorías de Advantage+",
-          "a": "Complete campaign solutions (toda la campaña: Sales, App, Leads) · Single-step (un aspecto: Audience, Placement, Budget, Creative, Destination)."
-        },
-        {
-          "q": "Las 3 Advantage+ complete campaign solutions",
-          "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
-        },
-        {
-          "q": "¿Qué hace Advantage+ campaign budget?",
-          "a": "Asigna dinámicamente el budget al ad set/ad con mejor performance. Default single-step de budget. (Antes CBO.)"
-        },
-        {
-          "q": "¿Qué hace Advantage+ catalog ads?",
-          "a": "Muestra productos de un catálogo a quien más probablemente los encuentre relevantes. Disponible al elegir Sales."
         }
       ]
     },
@@ -783,6 +783,44 @@
       "explanation": "Las recomendaciones del Opportunity Score corresponden a las BP 1-6. La BP 7 (Validate results) ocurre <strong>post-campaña</strong> y no se mide en el opportunity score."
     },
     {
+      "id": "1.17",
+      "title": "Caso a resolver · Bloque 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "La campaña gasta pero no vende",
+          "body": "Kenet lleva 2 semanas con una campaña que junta muchos clics pero cero cotizaciones. Revisas y el objetivo configurado es <strong>Traffic</strong>, aunque el cliente quiere ventas. Además solo hay 1 anuncio estático y el Pixel no está conectado."
+        },
+        {
+          "type": "mcq",
+          "q": "La falla principal de objetivo desalineado corresponde a:",
+          "options": [
+            "BP 4 — Optimize creative & placements",
+            "BP 2 — Align objectives & goals",
+            "BP 6 — Budget & bidding",
+            "BP 7 — Validate results"
+          ],
+          "correct": 1,
+          "explanation": "Objetivo (Traffic) ≠ goal del negocio (ventas) → BP 2 — Align objectives & goals."
+        },
+        {
+          "type": "mcq",
+          "q": "Que el Pixel no esté conectado incumple sobre todo:",
+          "options": [
+            "BP 5 — Focus on signals",
+            "BP 1 — Automate campaign setup",
+            "BP 3 — Consider your audience",
+            "BP 7 — Validate results"
+          ],
+          "correct": 0,
+          "explanation": "Sin Pixel no hay señales de calidad para optimizar conversiones → BP 5 — Focus on signals."
+        }
+      ]
+    },
+    {
       "id": "1.16",
       "title": "Ejercita la memoria · Bloque 4",
       "section": "b4",
@@ -835,44 +873,6 @@
           ],
           "correct": 2,
           "explanation": "BP 1-6. La BP 7 (Validate results) ocurre post-campaña."
-        }
-      ]
-    },
-    {
-      "id": "1.17",
-      "title": "Caso a resolver · Bloque 4",
-      "section": "b4",
-      "type": "scenario",
-      "cards": [
-        {
-          "type": "scenario",
-          "label": "CASO A RESOLVER",
-          "h": "La campaña gasta pero no vende",
-          "body": "Kenet lleva 2 semanas con una campaña que junta muchos clics pero cero cotizaciones. Revisas y el objetivo configurado es <strong>Traffic</strong>, aunque el cliente quiere ventas. Además solo hay 1 anuncio estático y el Pixel no está conectado."
-        },
-        {
-          "type": "mcq",
-          "q": "La falla principal de objetivo desalineado corresponde a:",
-          "options": [
-            "BP 4 — Optimize creative & placements",
-            "BP 2 — Align objectives & goals",
-            "BP 6 — Budget & bidding",
-            "BP 7 — Validate results"
-          ],
-          "correct": 1,
-          "explanation": "Objetivo (Traffic) ≠ goal del negocio (ventas) → BP 2 — Align objectives & goals."
-        },
-        {
-          "type": "mcq",
-          "q": "Que el Pixel no esté conectado incumple sobre todo:",
-          "options": [
-            "BP 5 — Focus on signals",
-            "BP 1 — Automate campaign setup",
-            "BP 3 — Consider your audience",
-            "BP 7 — Validate results"
-          ],
-          "correct": 0,
-          "explanation": "Sin Pixel no hay señales de calidad para optimizar conversiones → BP 5 — Focus on signals."
         }
       ]
     },
@@ -1065,6 +1065,38 @@
       ]
     },
     {
+      "id": "1.22",
+      "title": "Mini-flashcards · Bloque 5",
+      "section": "b5",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Qué es Meta Business Suite?",
+          "a": "Surface centralizada para administrar marketing, ads y cuentas de clientes en Facebook, Instagram, Messenger y WhatsApp."
+        },
+        {
+          "q": "¿Qué es un Business Portfolio?",
+          "a": "Agrupador de activos (FB Page, IG, ad account, catálogo) en un solo lugar, con gestión unificada de assets y accesos."
+        },
+        {
+          "q": "Los 3 tipos de usuarios en un portfolio",
+          "a": "People (individuos) · Partners (otros negocios con su portfolio + business ID) · System users (servidores/software con API access)."
+        },
+        {
+          "q": "¿Qué acceso permite configurar la CAPI?",
+          "a": "Partial access (apps): configurar CAPI, monitor events, editar applications, crear access tokens."
+        },
+        {
+          "q": "Acceso temporal en un portfolio: ¿cuánto dura?",
+          "a": "Mínimo 3 días, máximo 75 días."
+        },
+        {
+          "q": "Partial access vs Full control",
+          "a": "Partial: solo assets asignados, ver quién tiene full control. Full: manejar todo (settings, gente, tools, assets) + borrar el portfolio."
+        }
+      ]
+    },
+    {
       "id": "1.21",
       "title": "Caso a resolver · Bloque 5",
       "section": "b5",
@@ -1099,38 +1131,6 @@
           ],
           "correct": 1,
           "explanation": "Contador → Advanced — Finance (facturas/transactions). Freelance temporal → Advanced — Temporary (3-75 días)."
-        }
-      ]
-    },
-    {
-      "id": "1.22",
-      "title": "Mini-flashcards · Bloque 5",
-      "section": "b5",
-      "type": "flashcards",
-      "cards": [
-        {
-          "q": "¿Qué es Meta Business Suite?",
-          "a": "Surface centralizada para administrar marketing, ads y cuentas de clientes en Facebook, Instagram, Messenger y WhatsApp."
-        },
-        {
-          "q": "¿Qué es un Business Portfolio?",
-          "a": "Agrupador de activos (FB Page, IG, ad account, catálogo) en un solo lugar, con gestión unificada de assets y accesos."
-        },
-        {
-          "q": "Los 3 tipos de usuarios en un portfolio",
-          "a": "People (individuos) · Partners (otros negocios con su portfolio + business ID) · System users (servidores/software con API access)."
-        },
-        {
-          "q": "¿Qué acceso permite configurar la CAPI?",
-          "a": "Partial access (apps): configurar CAPI, monitor events, editar applications, crear access tokens."
-        },
-        {
-          "q": "Acceso temporal en un portfolio: ¿cuánto dura?",
-          "a": "Mínimo 3 días, máximo 75 días."
-        },
-        {
-          "q": "Partial access vs Full control",
-          "a": "Partial: solo assets asignados, ver quién tiene full control. Full: manejar todo (settings, gente, tools, assets) + borrar el portfolio."
         }
       ]
     },
@@ -1227,6 +1227,44 @@
       ]
     },
     {
+      "id": "1.25",
+      "title": "Caso a resolver · Bloque 6",
+      "section": "b6",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Kenet cuida su marca",
+          "body": "El dueño de Kenet no quiere que sus anuncios de paneles aparezcan junto a contenido polémico, y no tiene tiempo de armar listas publisher por publisher. Además el contador necesita poder descargar las facturas del mes."
+        },
+        {
+          "type": "mcq",
+          "q": "Para evitar contenido sensible sin armar listas a mano, la vía más simple es:",
+          "options": [
+            "Publisher block lists manuales",
+            "Subir el inventory filter a Moderate o Limited",
+            "Topic exclusions (cubren todos los placements)",
+            "Desactivar Advantage+ placements"
+          ],
+          "correct": 1,
+          "explanation": "Inventory filters (Moderate/Limited) = control más simple y de mayor alcance, sin armar listas manuales. Topic exclusions NO cubren todos los placements (solo FB in-stream/reels)."
+        },
+        {
+          "type": "mcq",
+          "q": "Para que el contador descargue facturas, ¿qué necesita?",
+          "options": [
+            "Full control del portfolio",
+            "Acceso a Invoices dentro de Billing & payments (rol con vista financiera)",
+            "Ser System user",
+            "Partial access (apps)"
+          ],
+          "correct": 1,
+          "explanation": "Invoices vive en Billing & payments. Para temas financieros se usa el rol finance / Advanced — Finance, no Full control ni system user."
+        }
+      ]
+    },
+    {
       "id": "1.24",
       "title": "Ejercita la memoria · Bloque 6",
       "section": "b6",
@@ -1289,44 +1327,6 @@
           ],
           "correct": 1,
           "explanation": "Los controles de Brand Safety también están a nivel ad set → placements en Ads Manager."
-        }
-      ]
-    },
-    {
-      "id": "1.25",
-      "title": "Caso a resolver · Bloque 6",
-      "section": "b6",
-      "type": "scenario",
-      "cards": [
-        {
-          "type": "scenario",
-          "label": "CASO A RESOLVER",
-          "h": "Kenet cuida su marca",
-          "body": "El dueño de Kenet no quiere que sus anuncios de paneles aparezcan junto a contenido polémico, y no tiene tiempo de armar listas publisher por publisher. Además el contador necesita poder descargar las facturas del mes."
-        },
-        {
-          "type": "mcq",
-          "q": "Para evitar contenido sensible sin armar listas a mano, la vía más simple es:",
-          "options": [
-            "Publisher block lists manuales",
-            "Subir el inventory filter a Moderate o Limited",
-            "Topic exclusions (cubren todos los placements)",
-            "Desactivar Advantage+ placements"
-          ],
-          "correct": 1,
-          "explanation": "Inventory filters (Moderate/Limited) = control más simple y de mayor alcance, sin armar listas manuales. Topic exclusions NO cubren todos los placements (solo FB in-stream/reels)."
-        },
-        {
-          "type": "mcq",
-          "q": "Para que el contador descargue facturas, ¿qué necesita?",
-          "options": [
-            "Full control del portfolio",
-            "Acceso a Invoices dentro de Billing & payments (rol con vista financiera)",
-            "Ser System user",
-            "Partial access (apps)"
-          ],
-          "correct": 1,
-          "explanation": "Invoices vive en Billing & payments. Para temas financieros se usa el rol finance / Advanced — Finance, no Full control ni system user."
         }
       ]
     },

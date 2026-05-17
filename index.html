@@ -242,6 +242,21 @@ body{display:block}
 .path-zig-6{transform:translateX(78px)}
 .path-zig-7{transform:translateX(44px)}
 
+/* PATH continuo estilo Duolingo: separadores finos, conector y cofre */
+.path{gap:0}
+.path-link{width:7px;height:26px;border-radius:4px;margin:0 auto;background:#D8DBE0}
+.path-wrap.complete .path-link{background:#FFD700}
+.path-divider{display:flex;align-items:center;gap:12px;margin:18px 6px 8px;color:#8A8D91;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.path-divider span{flex-shrink:0;display:flex;align-items:center;gap:7px}
+.path-divider .pd-ico{font-size:16px}
+.path-divider::before,.path-divider::after{content:'';flex:1;height:2px;background:#E4E6EB;border-radius:2px}
+.path-bubble.chest{background:linear-gradient(180deg,#C68B3C,#8A5A22);box-shadow:0 6px 0 #5E3D17,0 8px 14px rgba(138,90,34,.3);cursor:pointer}
+.path-bubble.chest.locked{filter:grayscale(.55);opacity:.5;box-shadow:0 6px 0 #5E3D17}
+.path-bubble.chest.done::after{content:'✓';position:absolute;bottom:-4px;right:-4px;background:#42B883;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;border:2px solid #fff}
+.day-block-bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#1877F2,#0E5BC4);color:#fff;padding:10px 14px;border-radius:12px;margin:6px 0 4px;box-shadow:0 4px 12px rgba(24,119,242,.25)}
+.day-block-bar .dbb-ico{font-size:19px;line-height:1}
+.day-block-bar .dbb-s{font-size:14px;font-weight:800;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
 /* MATCH (emparejar) */
 .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .match-col-title{font-size:11px;font-weight:800;color:#65676B;text-transform:uppercase;letter-spacing:.8px;text-align:center;padding-bottom:4px}
@@ -1071,6 +1086,32 @@ function restoreDayScroll(){
     if(sc) sc.scrollTop = saved;
   }, 30);
 }
+// Header pegajoso: muestra el bloque actual según el scroll del sendero.
+function initDayBlockBar(){
+  const sc = document.getElementById('sc');
+  const bar = document.getElementById('dayBlockBar');
+  if(!sc || !bar) return;
+  const divs = [...sc.querySelectorAll('.path-divider[data-block]')];
+  if(!divs.length){ bar.style.display = 'none'; return; }
+  const icoEl = bar.querySelector('.dbb-ico'), sEl = bar.querySelector('.dbb-s');
+  const upd = () => {
+    const scTop = sc.getBoundingClientRect().top;
+    let cur = divs[0];
+    for(const d of divs){
+      if(d.getBoundingClientRect().top - scTop <= 64) cur = d; else break;
+    }
+    icoEl.textContent = cur.dataset.ico || '📘';
+    sEl.textContent = cur.dataset.block || '';
+    bar.style.display = 'flex';
+  };
+  upd();
+  if(sc._dbb) sc.removeEventListener('scroll', sc._dbb);
+  sc._dbb = () => {
+    if(sc._dbbRAF) return;
+    sc._dbbRAF = requestAnimationFrame(() => { sc._dbbRAF = 0; upd(); });
+  };
+  sc.addEventListener('scroll', sc._dbb, {passive:true});
+}
 let LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false};
 let FLASH_STATE = {idx:0, deck:[], rated:0};
 let PRACTICE_MODE = null; // null = hub | 'lesson' | 'all-flash' | 'day-flash' | 'errors' | 'mix'
@@ -1501,7 +1542,7 @@ function render(){
   else if(VIEW === 'streak') html = renderStreak();
   else html = renderHome();
   app.innerHTML = html;
-  if(VIEW === 'day') restoreDayScroll();
+  if(VIEW === 'day'){ restoreDayScroll(); initDayBlockBar(); }
 }
 
 // ============================================================
@@ -1751,6 +1792,7 @@ function renderDay(){
         <h1>${day.title}</h1>
         <p>${day.subtitle}</p>
       </div>
+      <div class="day-block-bar" id="dayBlockBar" style="display:none"><span class="dbb-ico">📘</span><span class="dbb-s"></span></div>
       ${showDiagnostic ? `
         <div class="diag-card" onclick="openQuiz('${day.id}','diagnostic')">
           <div class="diag-ico">⚡</div>
@@ -1763,14 +1805,9 @@ function renderDay(){
       ` : ''}
       ${renderDayLessons(course, day)}
       ${day.unitQuiz ? `
-        <div class="section-band" style="background:linear-gradient(90deg,#1877F2,#0E5BC4)">
-          <div class="section-band-ico">📝</div>
-          <div class="section-band-info">
-            <div class="section-band-title">Quiz de unidad</div>
-            <div class="section-band-sub">${qp.unitQuizPassed?'¡Aprobado!':canTakeUnitQuiz?'Listo para tomar':'Completa las lecciones primero'}</div>
-          </div>
-        </div>
+        <div class="path-divider" data-block="Quiz de unidad" data-ico="📝"><span><span class="pd-ico">📝</span>Quiz de unidad</span></div>
         <div class="path"><div class="path-wrap path-zig-0">
+          <div class="path-link"></div>
           <div class="path-bubble ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':'locked'}" onclick="${canTakeUnitQuiz ? `openQuiz('${day.id}','unit-quiz')` : 'quizLockedToast()'}">${qp.unitQuizPassed?'🏆':canTakeUnitQuiz?'📝':'🔒'}</div>
           <div class="path-bubble-label ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':''}">Quiz · ${day.unitQuiz.questions?.length || 10} preg · ≥${day.unitQuiz.passingScore||80}%${qp.bestScore?` · mejor ${qp.bestScore}%`:''}</div>
         </div></div>
@@ -1806,22 +1843,31 @@ function renderDayLessons(course, day){
     if(!groups[s]){ groups[s] = []; order.push(s); }
     groups[s].push(l);
   });
-  let html = '';
-  let globalIdx = 0;
+  const idxOf = new Map(day.lessons.map((l, i) => [l, i]));
+  const escA = t => String(t).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  // Un solo sendero continuo: divisor fino + burbujas + cofre por bloque
+  let html = '<div class="path">';
   order.forEach(s => {
     const meta = (day.sections && day.sections[s]) || SECTION_META[s] || {ico:'📚', title:`Sección ${s}`, sub:''};
-    html += `
-      <div class="section-band">
-        <div class="section-band-ico">${meta.ico}</div>
-        <div class="section-band-info">
-          <div class="section-band-title">${meta.title}</div>
-          <div class="section-band-sub">${meta.sub}</div>
-        </div>
-      </div>
-      <div class="path">${groups[s].map(l => { const html = pathBubble(course, day, l, globalIdx); globalIdx++; return html; }).join('')}</div>
-    `;
+    const label = meta.sub || meta.title;
+    html += `<div class="path-divider" data-block="${escA(label)}" data-ico="${escA(meta.ico)}"><span><span class="pd-ico">${meta.ico}</span>${label}</span></div>`;
+    groups[s].forEach(l => { html += pathBubble(course, day, l, idxOf.get(l)); });
+    const done = groups[s].every(l => isLessonCompleted(course.id, day.id, l.id));
+    html += chestNode(done);
   });
+  html += '</div>';
   return html;
+}
+
+function chestNode(done){
+  const msg = done ? '¡Bloque completado! 🎉' : 'Termina las lecciones de este bloque para abrir el cofre';
+  return `
+    <div class="path-wrap path-zig-0${done?' complete':''}">
+      <div class="path-link"></div>
+      <div class="path-bubble chest ${done?'done':'locked'}" onclick="haptic(HAPTIC.tap);showToast('${msg}',2200)">${done?'🎁':'🔒'}</div>
+      <div class="path-bubble-label ${done?'complete':''}">${done?'Bloque completado':'Cofre del bloque'}</div>
+    </div>
+  `;
 }
 
 function pathBubble(course, day, lesson, globalIdx){
@@ -1832,8 +1878,10 @@ function pathBubble(course, day, lesson, globalIdx){
   const cls = completed ? 'complete' : (globalIdx === 0 || isLessonCompleted(course.id, day.id, day.lessons[globalIdx-1]?.id)) ? 'current' : '';
   const onclick = isFlash ? `haptic(HAPTIC.tap);openFlashcards('${lesson.id}')` : `haptic(HAPTIC.tap);openLesson('${lesson.id}')`;
   const lblCls = cls === 'complete' ? 'complete' : cls === 'current' ? 'current' : '';
+  const link = globalIdx > 0 ? '<div class="path-link"></div>' : '';
   return `
-    <div class="path-wrap ${zig}">
+    <div class="path-wrap ${zig}${completed?' complete':''}">
+      ${link}
       <div class="path-bubble ${cls}" onclick="${onclick}">${ico}</div>
       <div class="path-bubble-label ${lblCls}">${lesson.title}</div>
     </div>
