@@ -717,6 +717,15 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
     <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
   </div>
 </div>
+<div class="overlay" id="chest-overlay" onclick="closeChestOverlay()">
+  <div class="overlay-inner">
+    <div class="overlay-ico" id="ch-ico">🎁</div>
+    <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#C68B3C">¡COFRE ABIERTO!</div>
+    <div class="lvl-num" id="ch-xp" style="color:#C68B3C">+20 XP</div>
+    <div style="font-size:13px;color:#65676B">Bono por completar el bloque</div>
+    <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
+  </div>
+</div>
 <div class="particles" id="particles"></div>
 <div class="toast" id="toast"></div>
 
@@ -1891,9 +1900,14 @@ function openChest(courseId, dayId, section){
   if(DB.chests[key]) return;
   DB.chests[key] = true;
   const gain = Math.round(CHEST_BONUS * getXpMult());
-  haptic(HAPTIC.complete);
   addXP(CHEST_BONUS); // addXP aplica xpMult y persiste
-  showToast(`🎁 ¡Cofre abierto! +${gain} XP`, 2600, 'success');
+  document.getElementById('ch-xp').textContent = `+${gain} XP`;
+  document.getElementById('chest-overlay').classList.add('show');
+  haptic(HAPTIC.levelUp);
+  launchConfetti();
+}
+function closeChestOverlay(){
+  document.getElementById('chest-overlay').classList.remove('show');
   const sc = document.getElementById('sc');
   if(sc) _dayScroll[CURRENT.dayId] = sc.scrollTop;
   render();
