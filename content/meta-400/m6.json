@@ -1,11 +1,33 @@
 {
   "id": "m6",
   "title": "Módulo 6 — Reporting y medición",
+  "sections": {
+    "b1": {
+      "ico": "🎯",
+      "title": "Bloque 1",
+      "sub": "Interpretar métricas según el business goal"
+    },
+    "b2": {
+      "ico": "🧪",
+      "title": "Bloque 2",
+      "sub": "Incrementalidad y experiments"
+    },
+    "b3": {
+      "ico": "🔭",
+      "title": "Bloque 3",
+      "sub": "Metodologías de medición y plan"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Repaso final",
+      "sub": "Consolidación antes del examen"
+    }
+  },
   "lessons": [
     {
       "id": "6.1",
-      "title": "Interpretar métricas según el business goal",
-      "section": "A",
+      "title": "Explica · Interpretar métricas según el business goal",
+      "section": "b1",
       "type": "reading",
       "cards": [
         {
@@ -45,8 +67,140 @@
     },
     {
       "id": "6.2",
-      "title": "Incrementalidad y experiments",
-      "section": "B",
+      "title": "Ejercita la memoria · Bloque 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "¿Existe una 'mejor métrica' universal para juzgar cualquier campaña?",
+          "options": [
+            "Sí, siempre es el ROAS",
+            "Sí, siempre es el CPC",
+            "No, la métrica relevante depende del business goal",
+            "Sí, siempre es el reach"
+          ],
+          "correct": 2,
+          "explanation": "No hay métrica universal. La métrica relevante depende del business goal: recall para Awareness, costo por resultado para conversión, ROAS para ingreso."
+        },
+        {
+          "type": "fill",
+          "q": "Para un business goal de Awareness, las métricas clave son reach, frequency y estimated ad recall ___.",
+          "options": [
+            "lift",
+            "score",
+            "rate",
+            "value"
+          ],
+          "correct": 0,
+          "explanation": "Awareness se mide por reach, frequency y estimated ad recall lift."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué métrica clave corresponde a un business goal de Ingreso?",
+          "options": [
+            "Link clicks y CPC",
+            "Purchase value y ROAS",
+            "Reach y frequency",
+            "Estimated ad recall lift"
+          ],
+          "correct": 1,
+          "explanation": "El goal de Ingreso se mide con purchase value y ROAS. Clicks/CPC son de Traffic; reach/recall son de Awareness."
+        },
+        {
+          "type": "fill",
+          "q": "Para un goal de Traffic, las métricas clave son link clicks, landing page views y ___.",
+          "options": [
+            "CPC",
+            "ROAS",
+            "recall lift",
+            "frequency"
+          ],
+          "correct": 0,
+          "explanation": "Traffic se mide por link clicks, landing page views y CPC."
+        },
+        {
+          "type": "mcq",
+          "q": "Para un goal de Leads / Sales, ¿cuáles son las métricas clave?",
+          "options": [
+            "Reach, frequency, recall lift",
+            "Resultados, cost per result, conversion rate",
+            "Purchase value y ROAS únicamente",
+            "Solo CPC"
+          ],
+          "correct": 1,
+          "explanation": "Leads / Sales se mide por resultados, cost per result y conversion rate."
+        }
+      ]
+    },
+    {
+      "id": "6.3",
+      "title": "Caso a resolver · Bloque 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "PyME de muebles en Monterrey, rebrand",
+          "body": "Una mueblería regiomontana hizo rebrand y lanzó una campaña con objective <strong>Awareness</strong>. A la semana, el dueño te llama molesto: \"El reporte dice que el CPC está carísimo y casi no hay compras. Esta campaña es un desastre.\" Tienes que ordenar la conversación de medición."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es el primer punto que le aclaras al dueño?",
+          "options": [
+            "Que el CPC y las compras son las métricas correctas para juzgar Awareness",
+            "Que Awareness no optimiza clics ni ventas; se evalúa por reach, frequency y estimated ad recall lift",
+            "Que hay que pausar la campaña de inmediato",
+            "Que debe subir el bid para que baje el CPC"
+          ],
+          "correct": 1,
+          "explanation": "Awareness no optimiza para clics ni ventas: juzgarla por CPC o compras es un error de medición. Se evalúa por reach, frequency y estimated ad recall lift."
+        },
+        {
+          "type": "mcq",
+          "q": "El dueño dice: 'Entonces cámbiala a Traffic para que el CPC baje.' ¿Qué le respondes?",
+          "options": [
+            "Buena idea, así el reporte se ve mejor",
+            "Cambiar a Traffic abandonaría el business goal de dar a conocer la marca tras el rebrand",
+            "Da igual el objective, todas las métricas son intercambiables",
+            "Solo si primero sube la frequency"
+          ],
+          "correct": 1,
+          "explanation": "El business goal es dar a conocer la marca (rebrand). Cambiar a Traffic solo para 'mejorar' el CPC abandona el objetivo real. La métrica debe seguir al objetivo, no al revés."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Con qué métricas debería juzgarse realmente esta campaña de Awareness del rebrand?",
+          "options": [
+            "Purchase value y ROAS",
+            "Reach, frequency y estimated ad recall lift",
+            "Cost per result y conversion rate",
+            "Solo el CPC"
+          ],
+          "correct": 1,
+          "explanation": "Awareness se mide por reach, frequency y estimated ad recall lift, no por CPC, conversion rate ni ROAS."
+        }
+      ]
+    },
+    {
+      "id": "6.4",
+      "title": "Mini-flashcards · Bloque 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "¿Existe una 'mejor métrica' universal?", "a": "No. La métrica relevante depende del business goal." },
+        { "q": "¿Cómo se mide Awareness?", "a": "Reach, frequency y estimated ad recall lift (no CPC ni ventas)." },
+        { "q": "¿Cómo se mide Traffic?", "a": "Link clicks, landing page views y CPC." },
+        { "q": "¿Cómo se miden Leads / Sales?", "a": "Resultados, cost per result y conversion rate." },
+        { "q": "¿Cómo se mide el goal de Ingreso?", "a": "Purchase value y ROAS." },
+        { "q": "Trampa típica de medición", "a": "Juzgar Awareness por CPC o por compras: ese objective no optimiza clics ni ventas." }
+      ]
+    },
+    {
+      "id": "6.5",
+      "title": "Explica · Incrementalidad y experiments",
+      "section": "b2",
       "type": "reading",
       "cards": [
         {
@@ -81,26 +235,145 @@
           "correct": 1,
           "explanation": "La pregunta es causal (incrementalidad). Conversion Lift compara expuestos vs. holdout para aislar las conversiones que la pauta realmente generó. La attribution no responde causalidad.",
           "difficulty": "hard"
-        },
-        {
-          "type": "mcq",
-          "q": "Quieres saber si una campaña de marca movió el recall y la intención de compra. ¿Qué experimento?",
-          "options": [
-            "A/B Test de creativo",
-            "Brand Lift",
-            "Conversion Lift",
-            "ROAS Goal"
-          ],
-          "correct": 1,
-          "explanation": "Brand Lift mide cambios en métricas de marca (recall, awareness, intención) vía encuesta entre expuestos y control. Conversion Lift es para conversiones; A/B Test compara variantes; ROAS Goal es bid strategy.",
-          "difficulty": "medium"
         }
       ]
     },
     {
-      "id": "6.3",
-      "title": "Metodologías adicionales de medición",
-      "section": "C",
+      "id": "6.6",
+      "title": "Ejercita la memoria · Bloque 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "¿Qué mide la incrementalidad?",
+          "options": [
+            "El crédito que se le asigna a cada touchpoint",
+            "El efecto causal de la pauta: conversiones que NO habrían ocurrido sin anuncios",
+            "El CPC promedio de la campaña",
+            "El recall de marca por encuesta"
+          ],
+          "correct": 1,
+          "explanation": "La incrementalidad mide el efecto causal de la publicidad: cuántas conversiones NO habrían ocurrido sin los anuncios."
+        },
+        {
+          "type": "fill",
+          "q": "El grupo que NO ve anuncios y sirve de base para comparar incrementalidad se llama ___.",
+          "options": [
+            "holdout",
+            "lookalike",
+            "core audience",
+            "retargeting"
+          ],
+          "correct": 0,
+          "explanation": "El holdout es el grupo control que NO ve anuncios; es la base para comparar incrementalidad."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué experimento mide cambios en recall, awareness o intención por encuesta?",
+          "options": [
+            "Conversion Lift",
+            "A/B Test",
+            "Brand Lift",
+            "Holdout"
+          ],
+          "correct": 2,
+          "explanation": "Brand Lift mide cambios en recall, awareness o intención por encuesta (expuestos vs. control)."
+        },
+        {
+          "type": "fill",
+          "q": "El experimento que compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas es el ___ Test.",
+          "options": [
+            "A/B",
+            "Lift",
+            "Holdout",
+            "Brand"
+          ],
+          "correct": 0,
+          "explanation": "El A/B Test compara dos variantes con audiencias separadas."
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué se diferencia la attribution de la incrementalidad?",
+          "options": [
+            "Son sinónimos",
+            "Attribution asigna crédito a touchpoints; incrementalidad pregunta qué habría pasado sin el anuncio",
+            "Attribution mide recall; incrementalidad mide CPC",
+            "Attribution es un experimento de lift; incrementalidad no"
+          ],
+          "correct": 1,
+          "explanation": "La attribution asigna crédito a touchpoints; la incrementalidad pregunta qué habría pasado sin el anuncio. Para probar valor real, el estándar de oro es el experimento de lift."
+        }
+      ]
+    },
+    {
+      "id": "6.7",
+      "title": "Caso a resolver · Bloque 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "B2B de software en Guadalajara duda del valor de la pauta",
+          "body": "Una empresa B2B de software en Guadalajara invierte fuerte en Meta. El director de marketing dice: \"Las ventas que el reporte le atribuye a Meta probablemente igual hubieran entrado por nuestro equipo comercial. ¿Cómo me pruebas que la pauta de verdad genera ventas extra?\" Diseña la respuesta de medición."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué tipo de pregunta está haciendo el director?",
+          "options": [
+            "Una pregunta de crédito por touchpoint (attribution)",
+            "Una pregunta causal de incrementalidad",
+            "Una pregunta de recall de marca",
+            "Una pregunta de CPC"
+          ],
+          "correct": 1,
+          "explanation": "Pregunta si las ventas habrían ocurrido igual sin pauta: eso es incrementalidad (efecto causal), no attribution."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué experimento de Meta responde directamente esa duda?",
+          "options": [
+            "A/B Test de creativo",
+            "Conversion Lift con grupo holdout",
+            "Brand Lift",
+            "Subir la frequency y comparar semanas"
+          ],
+          "correct": 1,
+          "explanation": "Conversion Lift compara expuestos vs. holdout para aislar las conversiones que la pauta realmente generó. La attribution no responde causalidad."
+        },
+        {
+          "type": "mcq",
+          "q": "Además, quieren saber si la campaña de marca movió el recall y la intención de compra del público B2B. ¿Qué experimento agregas?",
+          "options": [
+            "Otro Conversion Lift",
+            "Brand Lift",
+            "A/B Test de audiencia",
+            "ROAS Goal"
+          ],
+          "correct": 1,
+          "explanation": "Brand Lift mide cambios en recall, awareness o intención por encuesta entre expuestos y control. Conversion Lift es para conversiones; A/B Test compara variantes; ROAS Goal es bid strategy."
+        }
+      ]
+    },
+    {
+      "id": "6.8",
+      "title": "Mini-flashcards · Bloque 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Incrementalidad", "a": "Efecto causal de la pauta: conversiones que NO habrían ocurrido sin anuncios." },
+        { "q": "Conversion Lift", "a": "Experimento con grupo holdout que mide conversiones incrementales." },
+        { "q": "Brand Lift", "a": "Mide cambios en recall/awareness/intención vía encuesta (expuestos vs. control)." },
+        { "q": "A/B Test", "a": "Compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas." },
+        { "q": "Holdout", "a": "Grupo que NO ve anuncios; base para comparar incrementalidad." },
+        { "q": "Attribution vs incrementalidad", "a": "Attribution = crédito por touchpoint. Incrementalidad = qué pasó por causa de la pauta." }
+      ]
+    },
+    {
+      "id": "6.9",
+      "title": "Explica · Metodologías de medición y plan",
+      "section": "b3",
       "type": "reading",
       "cards": [
         {
@@ -124,6 +397,11 @@
           "body": "La ventana de atribución (ej. 7-day click, 1-day view) define qué conversiones se le cuentan a Meta. Cambiarla cambia el número reportado sin cambiar las ventas reales: comunícalo al cliente."
         },
         {
+          "type": "concept",
+          "h": "Cierre del módulo",
+          "body": "Mide según el business goal, prueba el valor real con experiments de lift y usa attribution + MMM como capas complementarias, no como prueba única de causalidad."
+        },
+        {
           "type": "mcq",
           "q": "El CMO quiere entender cómo TODOS los canales (TV, search, social, offline) contribuyen a las ventas anuales. ¿Qué metodología?",
           "options": [
@@ -139,15 +417,84 @@
       ]
     },
     {
-      "id": "6.4",
-      "title": "Caso · plan de medición",
-      "section": "D",
-      "type": "reading",
+      "id": "6.10",
+      "title": "Ejercita la memoria · Bloque 3",
+      "section": "b3",
+      "type": "drill",
       "cards": [
         {
-          "type": "concept",
-          "h": "Escenario",
-          "body": "Cliente con presupuesto grande exige demostrar que la inversión en Meta genera ventas reales, no solo ventas que igual hubieran ocurrido."
+          "type": "mcq",
+          "q": "¿Cuáles son los tres enfoques de medición que Meta describe como complementarios?",
+          "options": [
+            "Reach, frequency y recall",
+            "Experiments, attribution y marketing mix modeling (MMM)",
+            "CPC, CPM y CTR",
+            "Awareness, Traffic y Sales"
+          ],
+          "correct": 1,
+          "explanation": "Meta describe experiments (causalidad), attribution (crédito por touchpoint) y MMM (impacto agregado de todos los canales)."
+        },
+        {
+          "type": "fill",
+          "q": "El enfoque que da la visión macro de cómo todos los canales on/offline aportan a ventas es ___.",
+          "options": [
+            "MMM",
+            "attribution",
+            "A/B Test",
+            "holdout"
+          ],
+          "correct": 0,
+          "explanation": "Marketing Mix Modeling (MMM) da la visión macro del aporte de todos los canales on/offline a las ventas."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es el gold standard para probar causalidad de una táctica o canal?",
+          "options": [
+            "Attribution",
+            "Experiments",
+            "MMM",
+            "Cambiar el attribution setting"
+          ],
+          "correct": 1,
+          "explanation": "Los experiments son el gold standard para probar causalidad de una táctica o canal."
+        },
+        {
+          "type": "fill",
+          "q": "Combinar experiments + attribution + MMM para una lectura robusta se llama ___.",
+          "options": [
+            "triangulación",
+            "atribución",
+            "incrementalidad",
+            "optimización"
+          ],
+          "correct": 0,
+          "explanation": "Triangulación = combinar experiments + attribution + MMM para una lectura robusta."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué hace el attribution setting (ej. 7-day click, 1-day view)?",
+          "options": [
+            "Cambia las ventas reales del negocio",
+            "Define qué conversiones se le cuentan a Meta; cambiarlo cambia el número reportado, no las ventas reales",
+            "Mide la incrementalidad causal",
+            "Es un experimento de lift"
+          ],
+          "correct": 1,
+          "explanation": "La ventana de atribución define qué conversiones se le cuentan a Meta. Cambiarla cambia el número reportado sin cambiar las ventas reales."
+        }
+      ]
+    },
+    {
+      "id": "6.11",
+      "title": "Caso a resolver · Bloque 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Cliente B2B con presupuesto grande exige pruebas",
+          "body": "Un cliente B2B con presupuesto grande exige demostrar que la inversión en Meta genera ventas reales, no solo ventas que igual hubieran ocurrido. Tienes que armar el plan de medición que vas a defender ante su dirección."
         },
         {
           "type": "mcq",
@@ -163,15 +510,129 @@
           "difficulty": "medium"
         },
         {
-          "type": "tip",
-          "label": "CIERRE",
-          "body": "Mide según el business goal, prueba el valor real con experiments de lift y usa attribution + MMM como capas complementarias, no como prueba única de causalidad."
+          "type": "mcq",
+          "q": "El cliente luego quiere una visión macro de cómo Meta encaja junto a TV, search y su fuerza de ventas offline. ¿Qué capa agregas?",
+          "options": [
+            "Otro Conversion Lift",
+            "Marketing Mix Modeling (MMM)",
+            "Cambiar el attribution setting",
+            "Brand Lift"
+          ],
+          "correct": 1,
+          "explanation": "MMM modela el impacto agregado de todos los canales on/offline a nivel macro. Es la capa correcta para esa visión global."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cómo describes el rol de la attribution en este plan?",
+          "options": [
+            "Como la prueba única de causalidad",
+            "Como capa complementaria para optimización táctica diaria, no como prueba única de causalidad",
+            "Como reemplazo del Conversion Lift",
+            "Como medición de recall de marca"
+          ],
+          "correct": 1,
+          "explanation": "Mide según el business goal, prueba el valor real con experiments de lift y usa attribution + MMM como capas complementarias, no como prueba única de causalidad."
+        }
+      ]
+    },
+    {
+      "id": "6.12",
+      "title": "Mini-flashcards · Bloque 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Marketing Mix Modeling (MMM)", "a": "Modela el impacto agregado de todos los canales (on/offline) a nivel macro." },
+        { "q": "Gold standard para probar valor causal", "a": "Experiments de lift (holdout)." },
+        { "q": "¿Qué hace el attribution setting?", "a": "Define la ventana (ej. 7-day click/1-day view) que decide qué conversiones se le cuentan a Meta." },
+        { "q": "Triangulación de medición", "a": "Combinar experiments + attribution + MMM para una lectura robusta." },
+        { "q": "Rol de la attribution en el plan", "a": "Optimización táctica diaria; capa complementaria, no prueba única de causalidad." },
+        { "q": "Cierre del módulo", "a": "Mide según el business goal, prueba el valor con experiments de lift, usa attribution + MMM como capas complementarias." }
+      ]
+    },
+    {
+      "id": "6.13",
+      "title": "Ejercita la memoria · Repaso final",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Una campaña de Awareness reporta CPC alto. ¿Cómo se evalúa correctamente?",
+          "options": [
+            "Por CPC y compras",
+            "Por reach, frequency y estimated ad recall lift",
+            "Por ROAS",
+            "Por conversion rate"
+          ],
+          "correct": 1,
+          "explanation": "Awareness no optimiza clics ni ventas. Se evalúa por reach, frequency y estimated ad recall lift."
+        },
+        {
+          "type": "fill",
+          "q": "El experimento con grupo holdout que mide conversiones incrementales es el ___ Lift.",
+          "options": [
+            "Conversion",
+            "Brand",
+            "A/B",
+            "Reach"
+          ],
+          "correct": 0,
+          "explanation": "Conversion Lift usa grupo holdout para medir conversiones incrementales (efecto causal)."
+        },
+        {
+          "type": "mcq",
+          "q": "El CMO quiere ver el aporte agregado de TODOS los canales on/offline a las ventas anuales. ¿Qué metodología?",
+          "options": [
+            "Attribution de Meta",
+            "Marketing Mix Modeling (MMM)",
+            "Brand Lift",
+            "A/B Test"
+          ],
+          "correct": 1,
+          "explanation": "MMM modela el impacto agregado de todos los canales (online y offline) a nivel macro."
+        },
+        {
+          "type": "fill",
+          "q": "Cambiar el attribution setting cambia el número reportado, pero NO cambia las ventas ___.",
+          "options": [
+            "reales",
+            "incrementales",
+            "atribuidas",
+            "proyectadas"
+          ],
+          "correct": 0,
+          "explanation": "La ventana de atribución define qué conversiones se le cuentan a Meta; cambiarla cambia el número reportado sin cambiar las ventas reales."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es el cierre conceptual del módulo de medición?",
+          "options": [
+            "Usar siempre last-click como prueba única",
+            "Medir según el business goal, probar valor con experiments de lift y usar attribution + MMM como capas complementarias",
+            "Juzgar todo por ROAS sin importar el objetivo",
+            "Solo confiar en el reporte de attribution"
+          ],
+          "correct": 1,
+          "explanation": "Mide según el business goal, prueba el valor real con experiments de lift y usa attribution + MMM como capas complementarias, no como prueba única de causalidad."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué experimento mide cambios en recall, awareness o intención por encuesta?",
+          "options": [
+            "Conversion Lift",
+            "Brand Lift",
+            "A/B Test",
+            "MMM"
+          ],
+          "correct": 1,
+          "explanation": "Brand Lift mide cambios en recall/awareness/intención vía encuesta entre expuestos y control."
         }
       ]
     },
     {
       "id": "6.flash",
-      "title": "Flashcards · Módulo 6",
+      "title": "Flashcards · Módulo 6 (todo)",
+      "section": "bz",
       "type": "flashcards",
       "cards": [
         { "q": "¿Cómo se mide Awareness?", "a": "Reach, frequency y estimated ad recall lift (no CPC ni ventas)." },
