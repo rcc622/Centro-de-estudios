@@ -242,10 +242,8 @@ body{display:block}
 .path-zig-6{transform:translateX(78px)}
 .path-zig-7{transform:translateX(44px)}
 
-/* PATH continuo estilo Duolingo: separadores finos, conector y cofre */
-.path{gap:0}
-.path-link{width:7px;height:26px;border-radius:4px;margin:0 auto;background:#D8DBE0}
-.path-wrap.complete .path-link{background:#FFD700}
+/* PATH continuo estilo Duolingo: separadores finos y cofre */
+.path{gap:14px}
 .path-divider{display:flex;align-items:center;gap:12px;margin:18px 6px 8px;color:#8A8D91;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
 .path-divider span{flex-shrink:0;display:flex;align-items:center;gap:7px}
 .path-divider .pd-ico{font-size:16px}
@@ -253,6 +251,9 @@ body{display:block}
 .path-bubble.chest{background:linear-gradient(180deg,#C68B3C,#8A5A22);box-shadow:0 6px 0 #5E3D17,0 8px 14px rgba(138,90,34,.3);cursor:pointer}
 .path-bubble.chest.locked{filter:grayscale(.55);opacity:.5;box-shadow:0 6px 0 #5E3D17}
 .path-bubble.chest.done::after{content:'✓';position:absolute;bottom:-4px;right:-4px;background:#42B883;color:#fff;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;border:2px solid #fff}
+.path-bubble.chest.done{opacity:.78}
+.path-bubble.chest.ready{filter:brightness(1.06);animation:chestGlow 1.5s infinite}
+@keyframes chestGlow{0%,100%{box-shadow:0 6px 0 #5E3D17,0 8px 14px rgba(138,90,34,.35),0 0 0 0 rgba(255,196,0,.55)}50%{box-shadow:0 6px 0 #5E3D17,0 10px 18px rgba(138,90,34,.45),0 0 0 13px rgba(255,196,0,0)}}
 .day-block-bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#1877F2,#0E5BC4);color:#fff;padding:10px 14px;border-radius:12px;margin:6px 0 4px;box-shadow:0 4px 12px rgba(24,119,242,.25)}
 .day-block-bar .dbb-ico{font-size:19px;line-height:1}
 .day-block-bar .dbb-s{font-size:14px;font-weight:800;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -1060,6 +1061,7 @@ let DB = {
   perfectStreak: 0, // lecciones perfectas consecutivas — para Perfect Combo x2 XP
   comboReady: false, // true si la próxima lección tendrá x2 XP por combo
   goalBonusClaimed: {}, // {'YYYY-MM-DD': true} para no dar el bonus de meta diaria 2 veces
+  chests: {}, // {'courseId|dayId|section': true} cofres de bloque ya reclamados
   shields: 0, // escudos disponibles (banco por nivel, recarga semanal)
   shieldsEarned: 0, // legacy — ya no se usa para milestones
   lastShieldRefill: null // fecha del último relleno semanal de escudos
@@ -1807,7 +1809,6 @@ function renderDay(){
       ${day.unitQuiz ? `
         <div class="path-divider" data-block="Quiz de unidad" data-ico="📝"><span><span class="pd-ico">📝</span>Quiz de unidad</span></div>
         <div class="path"><div class="path-wrap path-zig-0">
-          <div class="path-link"></div>
           <div class="path-bubble ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':'locked'}" onclick="${canTakeUnitQuiz ? `openQuiz('${day.id}','unit-quiz')` : 'quizLockedToast()'}">${qp.unitQuizPassed?'🏆':canTakeUnitQuiz?'📝':'🔒'}</div>
           <div class="path-bubble-label ${qp.unitQuizPassed?'complete':canTakeUnitQuiz?'current':''}">Quiz · ${day.unitQuiz.questions?.length || 10} preg · ≥${day.unitQuiz.passingScore||80}%${qp.bestScore?` · mejor ${qp.bestScore}%`:''}</div>
         </div></div>
@@ -1852,22 +1853,50 @@ function renderDayLessons(course, day){
     const label = meta.sub || meta.title;
     html += `<div class="path-divider" data-block="${escA(label)}" data-ico="${escA(meta.ico)}"><span><span class="pd-ico">${meta.ico}</span>${label}</span></div>`;
     groups[s].forEach(l => { html += pathBubble(course, day, l, idxOf.get(l)); });
-    const done = groups[s].every(l => isLessonCompleted(course.id, day.id, l.id));
-    html += chestNode(done);
+    html += chestNode(course, day, s, groups[s]);
   });
   html += '</div>';
   return html;
 }
 
-function chestNode(done){
-  const msg = done ? '¡Bloque completado! 🎉' : 'Termina las lecciones de este bloque para abrir el cofre';
+const CHEST_BONUS = 20; // XP base por cofre de bloque (se multiplica por xpMult)
+
+function chestNode(course, day, section, lessons){
+  const done = lessons.length > 0 && lessons.every(l => isLessonCompleted(course.id, day.id, l.id));
+  const key = `${course.id}|${day.id}|${section}`;
+  const claimed = !!(DB.chests && DB.chests[key]);
+  const gain = Math.round(CHEST_BONUS * getXpMult());
+  let cls, ico, label, lblCls, onclick;
+  if(!done){
+    cls = 'locked'; ico = '🔒'; label = `Cofre del bloque · +${gain} XP`; lblCls = '';
+    onclick = `haptic(HAPTIC.tap);showToast('Termina las lecciones de este bloque para abrir el cofre',2400)`;
+  } else if(!claimed){
+    cls = 'ready'; ico = '🎁'; label = `¡Ábrelo! +${gain} XP`; lblCls = 'current';
+    onclick = `openChest('${course.id}','${day.id}','${section}')`;
+  } else {
+    cls = 'done'; ico = '🎁'; label = `Cofre abierto · +${gain} XP`; lblCls = 'complete';
+    onclick = `haptic(HAPTIC.tap);showToast('Ya reclamaste este cofre · +${gain} XP 🎁',2400)`;
+  }
   return `
-    <div class="path-wrap path-zig-0${done?' complete':''}">
-      <div class="path-link"></div>
-      <div class="path-bubble chest ${done?'done':'locked'}" onclick="haptic(HAPTIC.tap);showToast('${msg}',2200)">${done?'🎁':'🔒'}</div>
-      <div class="path-bubble-label ${done?'complete':''}">${done?'Bloque completado':'Cofre del bloque'}</div>
+    <div class="path-wrap path-zig-0">
+      <div class="path-bubble chest ${cls}" onclick="${onclick}">${ico}</div>
+      <div class="path-bubble-label ${lblCls}">${label}</div>
     </div>
   `;
+}
+
+function openChest(courseId, dayId, section){
+  const key = `${courseId}|${dayId}|${section}`;
+  if(!DB.chests) DB.chests = {};
+  if(DB.chests[key]) return;
+  DB.chests[key] = true;
+  const gain = Math.round(CHEST_BONUS * getXpMult());
+  haptic(HAPTIC.complete);
+  addXP(CHEST_BONUS); // addXP aplica xpMult y persiste
+  showToast(`🎁 ¡Cofre abierto! +${gain} XP`, 2600, 'success');
+  const sc = document.getElementById('sc');
+  if(sc) _dayScroll[CURRENT.dayId] = sc.scrollTop;
+  render();
 }
 
 function pathBubble(course, day, lesson, globalIdx){
@@ -1878,10 +1907,8 @@ function pathBubble(course, day, lesson, globalIdx){
   const cls = completed ? 'complete' : (globalIdx === 0 || isLessonCompleted(course.id, day.id, day.lessons[globalIdx-1]?.id)) ? 'current' : '';
   const onclick = isFlash ? `haptic(HAPTIC.tap);openFlashcards('${lesson.id}')` : `haptic(HAPTIC.tap);openLesson('${lesson.id}')`;
   const lblCls = cls === 'complete' ? 'complete' : cls === 'current' ? 'current' : '';
-  const link = globalIdx > 0 ? '<div class="path-link"></div>' : '';
   return `
-    <div class="path-wrap ${zig}${completed?' complete':''}">
-      ${link}
+    <div class="path-wrap ${zig}">
       <div class="path-bubble ${cls}" onclick="${onclick}">${ico}</div>
       <div class="path-bubble-label ${lblCls}">${lesson.title}</div>
     </div>
@@ -4150,7 +4177,7 @@ function triggerImportBackup(){
         DB = Object.assign({
           xp:0, hearts:MAX_HEARTS, lastHeartLost:null, streak:0, lastStudyDate:null,
           achievements:{}, progress:{}, flashcardStats:{}, totalLessons:0,
-          perfectLessons:0, quizProgress:{}, wrongAnswers:{}, activityLog:{}, studiedWeekdays:{}
+          perfectLessons:0, quizProgress:{}, wrongAnswers:{}, activityLog:{}, studiedWeekdays:{}, chests:{}
         }, data);
         save();
         showToast('Backup restaurado · XP, racha y logros recuperados', 2800, 'success');
@@ -4174,7 +4201,7 @@ function resetAll(){
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
-    goalBonusClaimed: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null
+    goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
