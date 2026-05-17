@@ -1,11 +1,38 @@
 {
   "id": "m2",
   "title": "Módulo 2 — Buying types y bid strategies",
+  "sections": {
+    "b1": {
+      "ico": "🛒",
+      "title": "Bloque 1",
+      "sub": "Auction vs Reservation"
+    },
+    "b2": {
+      "ico": "⚖️",
+      "title": "Bloque 2",
+      "sub": "La subasta y el total value"
+    },
+    "b3": {
+      "ico": "🎯",
+      "title": "Bloque 3",
+      "sub": "Las 5 bid strategies"
+    },
+    "b4": {
+      "ico": "📅",
+      "title": "Bloque 4",
+      "sub": "Reservation buying type"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Repaso final",
+      "sub": "Consolidación antes del examen"
+    }
+  },
   "lessons": [
     {
       "id": "2.1",
-      "title": "Auction vs Reservation",
-      "section": "A",
+      "title": "Explica · Auction vs Reservation",
+      "section": "b1",
       "type": "reading",
       "cards": [
         {
@@ -45,26 +72,144 @@
           "correct": 1,
           "explanation": "Reach y frequency garantizados a precio fijo = Reservation. Auction no garantiza entrega ni costo; fluctúa con la subasta.",
           "difficulty": "easy"
-        },
-        {
-          "type": "mcq",
-          "q": "El cliente quiere una campaña de Sales con máxima eficiencia. ¿Qué buying type es viable?",
-          "options": [
-            "Reservation, porque es más barato",
-            "Auction, porque Reservation no soporta Sales",
-            "Cualquiera de los dos",
-            "Reservation solo si usa catálogo"
-          ],
-          "correct": 1,
-          "explanation": "Reservation solo soporta Awareness y Engagement. Para Sales el único buying type posible es Auction.",
-          "difficulty": "medium"
         }
       ]
     },
     {
+      "id": "2.1d",
+      "title": "Ejercita la memoria · Bloque 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El método con el que compras anuncios across Meta technologies se llama ___.",
+          "options": [
+            "buying type",
+            "bid strategy",
+            "optimization event",
+            "placement"
+          ],
+          "correct": 0,
+          "explanation": "Buying type = el método para comprar anuncios. Hay dos: Auction y Reservation."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuáles son los dos buying types que existen?",
+          "options": [
+            "Auction y Manual",
+            "Auction y Reservation",
+            "Reservation y Spend-based",
+            "Awareness y Engagement"
+          ],
+          "correct": 1,
+          "explanation": "Los dos buying types son Auction (flexible, subasta) y Reservation (predecible, reservas anticipadas)."
+        },
+        {
+          "type": "fill",
+          "q": "Reservation solo soporta los objectives Awareness y ___.",
+          "options": [
+            "Engagement",
+            "Sales",
+            "Leads",
+            "Traffic"
+          ],
+          "correct": 0,
+          "explanation": "Reservation está limitado a Awareness y Engagement. Sales, Leads, Traffic y App Promotion van por Auction."
+        },
+        {
+          "type": "mcq",
+          "q": "Con Auction, ¿cómo se comporta el precio?",
+          "options": [
+            "Fijo y conocido por adelantado",
+            "Variable, fluctúa con la subasta",
+            "Siempre más alto que Reservation",
+            "Lo decide el frequency cap"
+          ],
+          "correct": 1,
+          "explanation": "Auction tiene precio variable que fluctúa con la subasta. El precio fijo y conocido por adelantado es de Reservation."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué buying type ofrece reach y frequency garantizados a CPM fijo?",
+          "options": [
+            "Auction",
+            "Reservation",
+            "Ambos",
+            "Ninguno"
+          ],
+          "correct": 1,
+          "explanation": "Reservation garantiza reach y frequency a CPM fijo. Auction optimiza eficiencia y escala, sin garantías de entrega ni costo."
+        }
+      ]
+    },
+    {
+      "id": "2.1s",
+      "title": "Caso a resolver · Bloque 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Lanzamiento de una panadería regiomontana",
+          "body": "Una cadena de panaderías de Monterrey va a abrir 5 sucursales el mismo mes. Marketing quiere <strong>garantizar</strong> que la audiencia de la zona vea el anuncio un número exacto de veces, con presupuesto cerrado aprobado por dirección. El objetivo es awareness de la nueva marca."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué buying type recomiendas?",
+          "options": [
+            "Auction con Highest Volume",
+            "Reservation",
+            "Auction con Bid Cap",
+            "Auction con Cost per Result Goal"
+          ],
+          "correct": 1,
+          "explanation": "Necesitan reach y frequency garantizados, presupuesto cerrado y objetivo Awareness: ese perfil es exactamente Reservation."
+        },
+        {
+          "type": "mcq",
+          "q": "El director pregunta si con ese buying type sabrá de antemano cuánto cuesta cada mil impresiones. ¿Qué le dices?",
+          "options": [
+            "No, el costo solo se sabe al terminar la campaña",
+            "Sí, Reservation tiene CPM fijo conocido por adelantado",
+            "Solo si activa Pixel",
+            "Depende de la subasta de cada día"
+          ],
+          "correct": 1,
+          "explanation": "Reservation tiene precio (CPM) fijo y conocido por adelantado: predecibilidad tipo medios tradicionales."
+        },
+        {
+          "type": "mcq",
+          "q": "Después quieren agregar una campaña de Sales para vender pan en línea. ¿Pueden seguir con Reservation?",
+          "options": [
+            "Sí, Reservation soporta Sales",
+            "No, Reservation solo soporta Awareness y Engagement; Sales va por Auction",
+            "Sí, pero solo con catálogo",
+            "Solo si bajan el presupuesto"
+          ],
+          "correct": 1,
+          "explanation": "Reservation está limitado a Awareness y Engagement. Para Sales el único buying type posible es Auction."
+        }
+      ]
+    },
+    {
+      "id": "2.1f",
+      "title": "Mini-flashcards · Bloque 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Buying type", "a": "Método para comprar anuncios across Meta technologies: Auction o Reservation." },
+        { "q": "Objectives que soporta Reservation", "a": "Solo Awareness y Engagement." },
+        { "q": "¿Cuándo Reservation sobre Auction?", "a": "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada." },
+        { "q": "Precio en Auction vs Reservation", "a": "Auction: variable, fluctúa con la subasta. Reservation: CPM fijo conocido por adelantado." },
+        { "q": "Objectives que NO soporta Reservation", "a": "Sales, Leads, Traffic y App Promotion: esos van por Auction." }
+      ]
+    },
+    {
       "id": "2.2",
-      "title": "Auction buying type a fondo",
-      "section": "B",
+      "title": "Explica · La subasta y el total value",
+      "section": "b2",
       "type": "reading",
       "cards": [
         {
@@ -101,9 +246,128 @@
       ]
     },
     {
+      "id": "2.2d",
+      "title": "Ejercita la memoria · Bloque 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El total value se compone de advertiser bid + estimated action rates + ___.",
+          "options": [
+            "ad quality",
+            "bid strategy",
+            "budget",
+            "frequency cap"
+          ],
+          "correct": 0,
+          "explanation": "Total value = advertiser bid + estimated action rates + ad quality."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Quién gana la subasta?",
+          "options": [
+            "Quien tenga el advertiser bid más alto",
+            "Quien tenga el mayor total value",
+            "Quien use Bid Cap",
+            "Quien tenga mayor presupuesto diario"
+          ],
+          "correct": 1,
+          "explanation": "Gana el anuncio con el mayor total value, no el de mayor bid. Por eso la calidad y relevancia importan."
+        },
+        {
+          "type": "fill",
+          "q": "La probabilidad de que la persona haga la acción deseada es el componente ___.",
+          "options": [
+            "estimated action rates",
+            "advertiser bid",
+            "ad quality",
+            "total value"
+          ],
+          "correct": 0,
+          "explanation": "Estimated action rates = probabilidad de que la persona realice la acción deseada."
+        },
+        {
+          "type": "mcq",
+          "q": "Un anuncio con bid más bajo pero muy relevante y de alta calidad, ¿puede ganarle a uno con bid más alto?",
+          "options": [
+            "No, siempre gana el bid más alto",
+            "Sí, porque el total value incluye estimated action rates y ad quality",
+            "Solo en Reservation",
+            "Solo con ROAS Goal"
+          ],
+          "correct": 1,
+          "explanation": "Un anuncio relevante y de calidad puede ganarle a uno con bid más alto: el creativo y el match con la audiencia son palancas de costo."
+        },
+        {
+          "type": "mcq",
+          "q": "¿La bid strategy elegida forma parte del total value?",
+          "options": [
+            "Sí, es el cuarto componente",
+            "No, controla cómo gastas pero no entra en la fórmula",
+            "Solo si es Bid Cap",
+            "Solo en campañas de Sales"
+          ],
+          "correct": 1,
+          "explanation": "El cost control / bid strategy no es parte del total value. Controla cómo gastas, no cómo se gana la subasta."
+        }
+      ]
+    },
+    {
+      "id": "2.2s",
+      "title": "Caso a resolver · Bloque 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "El distribuidor B2B que solo quiere subir el bid",
+          "body": "Un distribuidor industrial de Monterrey vende refacciones a fábricas. Te dice: \"Si quiero ganarle a la competencia en la subasta, simplemente subo mi bid al máximo, ¿no?\" Su anuncio actual es un texto plano sin imagen y a una audiencia muy amplia."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué le explicas sobre cómo se gana la subasta?",
+          "options": [
+            "Tiene razón, el bid más alto siempre gana",
+            "Gana el mayor total value: bid + estimated action rates + ad quality, no solo el bid",
+            "Debe cambiar a Reservation",
+            "Debe subir el presupuesto diario"
+          ],
+          "correct": 1,
+          "explanation": "El ganador es el de mayor total value, no el de mayor bid. Subir el bid sin mejorar relevancia y calidad es ineficiente."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué palancas le recomiendas trabajar además del bid?",
+          "options": [
+            "Solo el presupuesto",
+            "Mejorar ad quality y el match con la audiencia para subir estimated action rates",
+            "Cambiar a buying type Reservation",
+            "Activar más placements únicamente"
+          ],
+          "correct": 1,
+          "explanation": "Creativo de calidad y match con la audiencia suben ad quality y estimated action rates: son palancas de costo, no solo el presupuesto."
+        }
+      ]
+    },
+    {
+      "id": "2.2f",
+      "title": "Mini-flashcards · Bloque 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Total value de la subasta", "a": "Advertiser bid + estimated action rates + ad quality." },
+        { "q": "¿El cost control entra en el total value?", "a": "No." },
+        { "q": "¿Quién gana la subasta?", "a": "El anuncio con el mayor total value, no el del bid más alto." },
+        { "q": "Estimated action rates", "a": "Probabilidad de que la persona haga la acción deseada." },
+        { "q": "¿Puede ganar un bid más bajo?", "a": "Sí, si el anuncio es más relevante y de mayor calidad: el creativo y el match son palancas de costo." }
+      ]
+    },
+    {
       "id": "2.3",
-      "title": "Las 5 bid strategies",
-      "section": "C",
+      "title": "Explica · Las 5 bid strategies",
+      "section": "b3",
       "type": "reading",
       "cards": [
         {
@@ -161,9 +425,192 @@
       ]
     },
     {
+      "id": "2.3d",
+      "title": "Ejercita la memoria · Bloque 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Highest Volume y Highest Value son bid strategies de la familia ___.",
+          "options": [
+            "spend-based",
+            "goal-based",
+            "manual",
+            "Reservation"
+          ],
+          "correct": 0,
+          "explanation": "Spend-based gasta todo el budget: Highest Volume (resultados) y Highest Value (valor)."
+        },
+        {
+          "type": "fill",
+          "q": "Cost per Result Goal y ROAS Goal son de la familia ___.",
+          "options": [
+            "goal-based",
+            "spend-based",
+            "manual",
+            "Reservation"
+          ],
+          "correct": 0,
+          "explanation": "Goal-based apunta a un costo/retorno objetivo: Cost per Result Goal y ROAS Goal."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es la única bid strategy manual?",
+          "options": [
+            "Highest Volume",
+            "ROAS Goal",
+            "Bid Cap",
+            "Cost per Result Goal"
+          ],
+          "correct": 2,
+          "explanation": "Bid Cap es la manual: tope máximo de bid en cada subasta. Es la más delicada."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué pasa si pones un Bid Cap demasiado bajo?",
+          "options": [
+            "La campaña gasta más rápido",
+            "El anuncio casi no entra a subastas y la campaña no gasta",
+            "Sube el ROAS automáticamente",
+            "Se convierte en Highest Volume"
+          ],
+          "correct": 1,
+          "explanation": "Un Bid Cap mal calibrado limita el delivery: cap muy bajo = casi no entra a subastas, la campaña no gasta."
+        },
+        {
+          "type": "fill",
+          "q": "Si no hay metas estrictas de costo, lo más simple y de buen rendimiento es Highest Volume / Highest ___.",
+          "options": [
+            "Value",
+            "Cap",
+            "Goal",
+            "ROAS"
+          ],
+          "correct": 0,
+          "explanation": "Highest Volume / Highest Value es el default recomendado cuando no hay metas estrictas de costo."
+        },
+        {
+          "type": "mcq",
+          "q": "Highest Value, ¿qué maximiza?",
+          "options": [
+            "El número de resultados con el budget",
+            "El valor de compra con el budget",
+            "El retorno objetivo fijo",
+            "El bid por subasta"
+          ],
+          "correct": 1,
+          "explanation": "Highest Value es spend-based: busca el máximo valor de compra con el budget. Highest Volume maximiza cantidad de resultados."
+        }
+      ]
+    },
+    {
+      "id": "2.3s",
+      "title": "Caso a resolver · Bloque 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "PyME de muebles con un CPA tope cerrado",
+          "body": "Una PyME mexicana que vende muebles a oficinas te dice: \"Mi contador me autorizó máximo 350 pesos por lead. Dentro de ese límite quiero la mayor cantidad de leads posible. Optimizo por cantidad, no por valor de compra.\""
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué bid strategy le configuras?",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "ROAS Goal",
+            "Bid Cap"
+          ],
+          "correct": 1,
+          "explanation": "Hay un techo de costo por resultado (350 pesos) y optimiza por cantidad: Cost per Result Goal mantiene ese costo objetivo mientras busca volumen."
+        },
+        {
+          "type": "mcq",
+          "q": "El cliente pregunta por qué no usar Highest Volume. ¿Qué le explicas?",
+          "options": [
+            "Highest Volume es lo mismo que Cost per Result Goal",
+            "Highest Volume no respeta un techo de costo por resultado; gastaría sin garantizar el límite de 350 pesos",
+            "Highest Volume solo sirve para Reservation",
+            "Highest Volume optimiza por valor de compra"
+          ],
+          "correct": 1,
+          "explanation": "Highest Volume no respeta un techo de costo. Si hay un CPA tope estricto, la opción correcta es Cost per Result Goal."
+        },
+        {
+          "type": "mcq",
+          "q": "Más adelante abre tienda en línea y le exigen un ROAS mínimo de 4x optimizando por valor. ¿Qué bid strategy se alinea?",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "ROAS Goal",
+            "Bid Cap"
+          ],
+          "correct": 2,
+          "explanation": "ROAS Goal mantiene un retorno sobre ad spend objetivo (4x) y requiere value tracking. Cost per Result controla costo, no retorno."
+        }
+      ]
+    },
+    {
+      "id": "2.5",
+      "title": "Árbol oficial de elección de bid strategy",
+      "section": "b3",
+      "type": "decision-tree",
+      "instruction": "Para cada escenario, recorre el árbol respondiendo Sí/No según lo que pide el cliente.",
+      "tree": {
+        "q": "¿El cliente exige controlar el costo (techo de costo o retorno)?",
+        "branches": [
+          {
+            "label": "Sí",
+            "next": {
+              "q": "¿Optimiza por valor de compra (no solo cantidad)?",
+              "branches": [
+                { "label": "Sí", "leaf": "ROAS Goal" },
+                { "label": "No", "leaf": "Cost per Result Goal (o Bid Cap si controla el bid por subasta)" }
+              ]
+            }
+          },
+          {
+            "label": "No",
+            "next": {
+              "q": "¿Optimiza por valor de compra (no solo cantidad)?",
+              "branches": [
+                { "label": "Sí", "leaf": "Highest Value" },
+                { "label": "No", "leaf": "Highest Volume" }
+              ]
+            }
+          }
+        ]
+      },
+      "scenarios": [
+        { "context": "Ecommerce exige ROAS 4x estricto y optimiza por valor.", "expected": "ROAS Goal" },
+        { "context": "DTC nuevo quiere máximo de resultados sin metas de costo ni valor.", "expected": "Highest Volume" },
+        { "context": "Cliente con CPA tope claro, optimiza por cantidad de leads.", "expected": "Cost per Result Goal (o Bid Cap si controla el bid por subasta)" },
+        { "context": "Tienda que quiere el mayor valor total de compras sin techo de costo.", "expected": "Highest Value" }
+      ],
+      "explanation": "Sí+Sí→ROAS Goal · Sí+No→Cost per Result/Bid Cap · No+Sí→Highest Value · No+No→Highest Volume."
+    },
+    {
+      "id": "2.3f",
+      "title": "Mini-flashcards · Bloque 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Las 5 bid strategies", "a": "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap." },
+        { "q": "Bid strategies spend-based", "a": "Highest Volume y Highest Value." },
+        { "q": "Bid strategies goal-based", "a": "Cost per Result Goal y ROAS Goal." },
+        { "q": "Bid strategy manual", "a": "Bid Cap." },
+        { "q": "Riesgo de Bid Cap mal calibrado", "a": "Limita el delivery: cap muy bajo = casi no entra a subastas, la campaña no gasta." },
+        { "q": "Default recomendado si no hay metas estrictas", "a": "Highest Volume / Highest Value: lo más simple y suele rendir bien." }
+      ]
+    },
+    {
       "id": "2.4",
-      "title": "Reservation buying type",
-      "section": "D",
+      "title": "Explica · Reservation buying type",
+      "section": "b4",
       "type": "reading",
       "cards": [
         {
@@ -202,46 +649,220 @@
       ]
     },
     {
-      "id": "2.5",
-      "title": "Árbol oficial de elección de bid strategy",
-      "type": "decision-tree",
-      "instruction": "Para cada escenario, recorre el árbol respondiendo Sí/No según lo que pide el cliente.",
-      "tree": {
-        "q": "¿El cliente exige controlar el costo (techo de costo o retorno)?",
-        "branches": [
-          {
-            "label": "Sí",
-            "next": {
-              "q": "¿Optimiza por valor de compra (no solo cantidad)?",
-              "branches": [
-                { "label": "Sí", "leaf": "ROAS Goal" },
-                { "label": "No", "leaf": "Cost per Result Goal (o Bid Cap si controla el bid por subasta)" }
-              ]
-            }
-          },
-          {
-            "label": "No",
-            "next": {
-              "q": "¿Optimiza por valor de compra (no solo cantidad)?",
-              "branches": [
-                { "label": "Sí", "leaf": "Highest Value" },
-                { "label": "No", "leaf": "Highest Volume" }
-              ]
-            }
-          }
-        ]
-      },
-      "scenarios": [
-        { "context": "Ecommerce exige ROAS 4x estricto y optimiza por valor.", "expected": "ROAS Goal" },
-        { "context": "DTC nuevo quiere máximo de resultados sin metas de costo ni valor.", "expected": "Highest Volume" },
-        { "context": "Cliente con CPA tope claro, optimiza por cantidad de leads.", "expected": "Cost per Result Goal (o Bid Cap si controla el bid por subasta)" },
-        { "context": "Tienda que quiere el mayor valor total de compras sin techo de costo.", "expected": "Highest Value" }
-      ],
-      "explanation": "Sí+Sí→ROAS Goal · Sí+No→Cost per Result/Bid Cap · No+Sí→Highest Value · No+No→Highest Volume."
+      "id": "2.4d",
+      "title": "Ejercita la memoria · Bloque 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Reservation reserva un número fijo de personas a una frequency específica por un precio fijo (___).",
+          "options": [
+            "CPM",
+            "CPA",
+            "ROAS",
+            "CPC"
+          ],
+          "correct": 0,
+          "explanation": "Reservation reserva personas a frequency específica por un CPM fijo, planeado por adelantado."
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué plataformas está disponible Reservation?",
+          "options": [
+            "Solo Facebook",
+            "Facebook e Instagram",
+            "Todas las Meta technologies",
+            "Solo Instagram"
+          ],
+          "correct": 1,
+          "explanation": "Reservation está disponible en Facebook e Instagram."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Reservation usa bid strategies de Auction?",
+          "options": [
+            "Sí, las 5 disponibles",
+            "No; precio y entrega son fijos, no se licita",
+            "Solo ROAS Goal",
+            "Solo Bid Cap"
+          ],
+          "correct": 1,
+          "explanation": "Reservation no usa bid strategies: precio y entrega son fijos, no se licita."
+        },
+        {
+          "type": "fill",
+          "q": "En Reservation puedes definir ___ caps precisos para no quemar a la audiencia.",
+          "options": [
+            "frequency",
+            "budget",
+            "bid",
+            "ROAS"
+          ],
+          "correct": 0,
+          "explanation": "Los frequency caps (ej. máx 2 impresiones por persona por semana) son clave en planes de awareness con Reservation."
+        },
+        {
+          "type": "mcq",
+          "q": "\"Reservation siempre es más barato que Auction.\" ¿Verdadero o falso?",
+          "options": [
+            "Verdadero, por eso se usa",
+            "Falso, no es necesariamente más barato; da predecibilidad, no precio mínimo",
+            "Verdadero solo en Awareness",
+            "Verdadero solo con frequency cap"
+          ],
+          "correct": 1,
+          "explanation": "Reservation no es necesariamente más barato. Su ventaja es la predecibilidad de entrega y precio (CPM fijo), no un costo mínimo."
+        }
+      ]
+    },
+    {
+      "id": "2.4s",
+      "title": "Caso a resolver · Bloque 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Constructora que planea como medios tradicionales",
+          "body": "Una constructora de Nuevo León lanza un desarrollo residencial. El área de mercadotecnia viene de TV y prensa: quiere un plan cerrado de awareness con número garantizado de personas alcanzadas, tope de impresiones por persona y CPM aprobado por adelantado en Facebook e Instagram."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué buying type se ajusta a esta forma de planear?",
+          "options": [
+            "Auction con Highest Volume",
+            "Reservation",
+            "Auction con Bid Cap",
+            "Auction con ROAS Goal"
+          ],
+          "correct": 1,
+          "explanation": "Plan cerrado, reach garantizado, CPM por adelantado y objetivo Awareness en Facebook e Instagram: ese perfil es Reservation, predecibilidad tipo medios tradicionales."
+        },
+        {
+          "type": "mcq",
+          "q": "Quieren limitar a máximo 2 impresiones por persona por semana. ¿Cómo lo logras?",
+          "options": [
+            "Con un Bid Cap bajo",
+            "Con frequency caps en Reservation",
+            "Con ROAS Goal",
+            "No se puede controlar la frequency"
+          ],
+          "correct": 1,
+          "explanation": "Reservation permite definir frequency caps precisos, clave en awareness para no quemar a la audiencia."
+        },
+        {
+          "type": "mcq",
+          "q": "El gerente asume que Reservation le saldrá más barato que Auction. ¿Qué le aclaras?",
+          "options": [
+            "Tiene razón, siempre es más barato",
+            "No necesariamente; Reservation da predecibilidad de entrega y precio, no un costo mínimo",
+            "Solo es más barato en Engagement",
+            "Solo si activa Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Reservation no es necesariamente más barato que Auction. Su valor es la predecibilidad (CPM fijo, reach y frequency garantizados)."
+        }
+      ]
+    },
+    {
+      "id": "2.4f",
+      "title": "Mini-flashcards · Bloque 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        { "q": "¿Qué reserva Reservation?", "a": "Un número fijo de personas a una frequency específica por un precio fijo (CPM), planeado por adelantado." },
+        { "q": "Plataformas de Reservation", "a": "Facebook e Instagram." },
+        { "q": "¿Reservation usa bid strategies?", "a": "No; precio y entrega son fijos, no se licita." },
+        { "q": "Frequency cap en Reservation", "a": "Tope preciso de impresiones por persona (ej. máx 2 por semana) para no quemar a la audiencia." },
+        { "q": "¿Reservation es siempre más barato?", "a": "No; da predecibilidad de entrega y precio, no un costo mínimo." }
+      ]
+    },
+    {
+      "id": "2.zd",
+      "title": "Drill consolidador · Repaso final",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Cliente quiere Sales con máxima eficiencia. ¿Qué buying type es viable?",
+          "options": [
+            "Reservation, porque es más barato",
+            "Auction, porque Reservation no soporta Sales",
+            "Cualquiera de los dos",
+            "Reservation solo si usa catálogo"
+          ],
+          "correct": 1,
+          "explanation": "Reservation solo soporta Awareness y Engagement. Para Sales el único buying type posible es Auction."
+        },
+        {
+          "type": "fill",
+          "q": "El total value = advertiser bid + estimated action rates + ___.",
+          "options": [
+            "ad quality",
+            "bid strategy",
+            "frequency cap",
+            "budget"
+          ],
+          "correct": 0,
+          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. El cost control NO entra."
+        },
+        {
+          "type": "mcq",
+          "q": "Ecommerce con ROAS mínimo de 4x optimizando por valor. ¿Bid strategy?",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "ROAS Goal",
+            "Bid Cap"
+          ],
+          "correct": 2,
+          "explanation": "ROAS Goal mantiene un retorno sobre ad spend objetivo y requiere value tracking."
+        },
+        {
+          "type": "mcq",
+          "q": "CPA tope estricto optimizando por cantidad de leads. ¿Bid strategy?",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "ROAS Goal",
+            "Highest Value"
+          ],
+          "correct": 1,
+          "explanation": "Cost per Result Goal mantiene el costo objetivo por resultado mientras busca volumen."
+        },
+        {
+          "type": "fill",
+          "q": "La única bid strategy manual es ___.",
+          "options": [
+            "Bid Cap",
+            "ROAS Goal",
+            "Highest Volume",
+            "Cost per Result Goal"
+          ],
+          "correct": 0,
+          "explanation": "Bid Cap es la manual: tope máximo de bid en cada subasta."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál afirmación sobre Reservation es correcta?",
+          "options": [
+            "Soporta todos los objectives si tienes Pixel",
+            "Reach y frequency garantizados a CPM fijo, solo Awareness y Engagement",
+            "Es siempre más barato que Auction",
+            "Permite ROAS Goal como bid strategy"
+          ],
+          "correct": 1,
+          "explanation": "Reservation = entrega y precio predecibles (CPM fijo), limitado a Awareness y Engagement."
+        }
+      ]
     },
     {
       "id": "2.flash",
-      "title": "Flashcards · Módulo 2",
+      "title": "Flashcards · Módulo 2 (todo)",
+      "section": "bz",
       "type": "flashcards",
       "cards": [
         { "q": "Buying type", "a": "Método para comprar anuncios across Meta technologies: Auction o Reservation." },
