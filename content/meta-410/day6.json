@@ -1,11 +1,48 @@
 {
   "id": "day6",
   "title": "Día 6 — Creative & Measurement",
+  "sections": {
+    "b1": {
+      "ico": "🎨",
+      "title": "Bloque 1",
+      "sub": "Formatos de ad & Instant Experience"
+    },
+    "b2": {
+      "ico": "📐",
+      "title": "Bloque 2",
+      "sub": "Placements & aspect ratios"
+    },
+    "b3": {
+      "ico": "🤖",
+      "title": "Bloque 3",
+      "sub": "Advantage+ Creative & mobile-first"
+    },
+    "b4": {
+      "ico": "📊",
+      "title": "Bloque 4",
+      "sub": "Métricas KPI & Attribution"
+    },
+    "b5": {
+      "ico": "🧪",
+      "title": "Bloque 5",
+      "sub": "A/B Test, Brand Lift & Conversion Lift"
+    },
+    "b6": {
+      "ico": "🛡️",
+      "title": "Bloque 6",
+      "sub": "Brand Safety & Advertising Standards"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Repaso final",
+      "sub": "Consolidación antes del examen"
+    }
+  },
   "lessons": [
     {
-      "id": "6.0",
-      "title": "Repaso espaciado · Día 5",
-      "section": "A",
+      "id": "6.1",
+      "title": "Explica · Formatos de ad e Instant Experience",
+      "section": "b1",
       "type": "reading",
       "cards": [
         {
@@ -13,66 +50,6 @@
           "h": "Recupéralo antes de avanzar",
           "body": "Antes de entrar a creative y medición, recupera de memoria lo de audiences. Forzar el recuerdo <em>antes</em> de releer (recuperación bajo esfuerzo) es lo que fija el conocimiento a largo plazo. Si fallas alguna, no te preocupes: el error también enseña."
         },
-        {
-          "type": "fill",
-          "q": "Audiencia de gente que YA interactuó con tu negocio (retargeting) = ___ Audience.",
-          "options": ["Custom", "Lookalike", "Advantage+", "Broad"],
-          "correct": 0,
-          "explanation": "<strong>Custom Audience</strong> = retargeting (ya te conocen). Lookalike = prospección de gente nueva similar."
-        },
-        {
-          "type": "fill",
-          "q": "Mínimo de personas en el source audience para crear un Lookalike: ___ de un solo país.",
-          "options": ["50", "100", "500", "1,000"],
-          "correct": 1,
-          "explanation": "<strong>100 personas de UN solo país</strong> es el mínimo absoluto. Recomendado 1,000-50,000 para calidad."
-        },
-        {
-          "type": "mcq",
-          "q": "Quieres MÁXIMA similitud con tus mejores clientes (calidad sobre volumen). ¿Qué lookalike?",
-          "options": [
-            "10% — más alcance",
-            "1% — más similar al source",
-            "5% — punto medio",
-            "Da igual el tamaño"
-          ],
-          "correct": 1,
-          "explanation": "<strong>1% lookalike</strong> = el top 1% más parecido al source (máxima calidad, menor alcance). 10% = más volumen, menos similitud."
-        },
-        {
-          "type": "fill",
-          "q": "El source usado para crear un Lookalike se ___ automáticamente del lookalike.",
-          "options": ["incluye", "excluye", "duplica", "ignora"],
-          "correct": 1,
-          "explanation": "El source siempre se <strong>excluye</strong>. El lookalike busca gente nueva similar, no re-alcanza a los del source."
-        },
-        {
-          "type": "mcq",
-          "q": "En campañas nuevas, ¿cuál es el default de Advantage+ Audience?",
-          "options": [
-            "OFF, hay que activarlo a mano",
-            "ON automáticamente (la IA expande sobre tus suggestions)",
-            "Solo disponible para Sales",
-            "Solo disponible con catálogo"
-          ],
-          "correct": 1,
-          "explanation": "<strong>Advantage+ Audience está ON por default</strong> en campañas nuevas. Se desactiva con 'Switch to original' o 'Further limit reach'."
-        },
-        {
-          "type": "fill",
-          "q": "El catálogo de productos se gestiona en ___.",
-          "options": ["Ads Manager", "Commerce Manager", "Events Manager", "Business Suite"],
-          "correct": 1,
-          "explanation": "El <strong>catálogo se administra en Commerce Manager</strong>. Los Product Sets agrupan items por atributos para usarlos en campañas."
-        }
-      ]
-    },
-    {
-      "id": "6.1",
-      "title": "Formatos de ad · qué es cada uno",
-      "section": "A",
-      "type": "reading",
-      "cards": [
         {
           "type": "concept",
           "h": "Qué es un ad format",
@@ -102,8 +79,23 @@
         },
         {
           "type": "concept",
+          "h": "Qué es Instant Experience",
+          "body": "Es una landing page interna full-screen que carga al instante al tocar el anuncio (antes se llamaba Canvas). <strong>Solo en placements y dispositivos mobile</strong>. Es experiencia <em>post-click</em>: el usuario nunca sale de Meta."
+        },
+        {
+          "type": "concept",
+          "h": "Cuándo usar Instant Experience",
+          "body": "Tres casos clásicos: 1) tu website no es mobile-friendly, 2) quieres contar toda la historia dentro de Meta sin sacar al usuario, 3) tienes catálogo y quieres mostrar el grid completo sin enviar a un sitio externo."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Flexible</strong> es buena opción cuando NO sabes qué formato rinde mejor. Meta prueba múltiples y entrega el ganador. Es como Advantage+ pero a nivel formato."
+        },
+        {
+          "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para Kenet: si solo tienes un video de instalación → <em>Single video</em>. Si quieres mostrar 5 modelos de panel deslizables → <em>Carousel</em>. Si quieres contar una historia con video grande y debajo el catálogo de SKUs → <em>Collection</em>. Mismo cliente, formato distinto según qué quieras mostrar."
+          "body": "Para Kenet: si solo tienes un video de instalación → <em>Single video</em>. Si quieres mostrar 5 modelos de panel deslizables → <em>Carousel</em>. Si quieres contar una historia con video grande y debajo el catálogo de SKUs → <em>Collection</em>. Y si el sitio carga lento en celular, usas <em>Instant Experience</em> para mantener todo dentro de Meta."
         },
         {
           "type": "mcq",
@@ -117,6 +109,21 @@
           "correct": 2,
           "explanation": "Collection = hero + grid de productos. Ideal con catalog. Carousel es swipe horizontal sin grid.",
           "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.2",
+      "title": "Ejercita la memoria · Bloque 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El formato donde Meta elige automáticamente qué media entregar según performance es ___.",
+          "options": ["Flexible", "Collection", "Carousel", "Single video"],
+          "correct": 0,
+          "explanation": "<strong>Flexible</strong> deja que Meta pruebe y entregue el formato ganador. Útil cuando no sabes cuál rinde mejor."
         },
         {
           "type": "mcq",
@@ -130,34 +137,13 @@
           "correct": 1,
           "explanation": "Carousel admite 2-10 cards en swipe. Cada card puede ser distinta. Ideal para múltiples productos.",
           "difficulty": "easy"
-        }
-      ]
-    },
-    {
-      "id": "6.2",
-      "title": "Instant Experience · cuándo conviene",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "Qué es Instant Experience",
-          "body": "Es una landing page interna full-screen que carga al instante al tocar el anuncio (antes se llamaba Canvas). <strong>Solo en placements y dispositivos mobile</strong>. Es experiencia <em>post-click</em>: el usuario nunca sale de Meta."
         },
         {
-          "type": "concept",
-          "h": "Cuándo usarla",
-          "body": "Tres casos clásicos: 1) tu website no es mobile-friendly, 2) quieres contar toda la historia dentro de Meta sin sacar al usuario, 3) tienes catálogo y quieres mostrar el grid completo sin enviar a un sitio externo."
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "El sitio de Kenet carga lento en celular. En vez de mandar al prospecto a una página pesada, usas un <em>Instant Experience</em>: video de la planta solarizada + beneficios + botón de cotización, todo dentro de Meta. Cero fricción de carga."
-        },
-        {
-          "type": "tip",
-          "label": "PRO TIP",
-          "body": "<strong>Flexible</strong> es buena opción cuando NO sabes qué formato rinde mejor. Meta prueba múltiples y entrega el ganador. Es como Advantage+ pero a nivel formato."
+          "type": "fill",
+          "q": "Instant Experience solo funciona en dispositivos y placements de ___.",
+          "options": ["mobile", "desktop", "tablet", "TV"],
+          "correct": 0,
+          "explanation": "Instant Experience es full-screen post-click <strong>solo en mobile</strong>. No existe en desktop."
         },
         {
           "type": "mcq",
@@ -169,14 +155,114 @@
             "Solo en desktop"
           ],
           "correct": 0,
-          "explanation": "Instant Experience es full-screen post-click <strong>solo en mobile</strong>. Útil si tu website no es mobile-friendly o quieres mantener al usuario dentro de Meta. No funciona en desktop."
+          "explanation": "Instant Experience es full-screen post-click solo en mobile. Útil si tu website no es mobile-friendly o quieres mantener al usuario dentro de Meta."
+        },
+        {
+          "type": "fill",
+          "q": "El formato más simple, con un solo asset, es ___ image o video.",
+          "options": ["Single", "Flexible", "Collection", "Dynamic"],
+          "correct": 0,
+          "explanation": "<strong>Single</strong> image/video = un solo asset. El formato más simple y común."
+        },
+        {
+          "type": "mcq",
+          "q": "Collection solo está disponible en:",
+          "options": [
+            "Desktop",
+            "Mobile",
+            "Audience Network únicamente",
+            "Cualquier dispositivo"
+          ],
+          "correct": 1,
+          "explanation": "Collection (hero + grid) es solo mobile. Ideal con catalog para mostrar productos sin sacar al usuario.",
+          "difficulty": "medium"
         }
       ]
     },
     {
       "id": "6.3",
-      "title": "Placements · dónde aparece el ad",
-      "section": "A",
+      "title": "Caso a resolver · Bloque 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Industria alimentaria · paneles para frigoríficos",
+          "body": "<strong>Kenet</strong> lanza una colección visual para industria alimentaria. Tiene un video de instalación en bodega frigorífica y quiere contar esa historia <em>y además</em> mostrar el grid de SKUs (paneles 550W, inversor central, batería) del catálogo, todo dentro de Meta y sin enviar al usuario a un sitio externo lento."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué Collection y no Carousel en este caso?",
+          "options": [
+            "Collection es más barato",
+            "Collection muestra UN HERO grande (storytelling con el video del frigorífico) + grid de productos abajo. Carousel sería solo swipe de cards sin hero",
+            "Carousel no admite catalog",
+            "Es lo mismo"
+          ],
+          "correct": 1,
+          "explanation": "Collection = hero + grid (storytelling + catalog en uno). Carousel = solo swipe sin hero. Para este caso (contar historia + mostrar SKUs), Collection es óptimo.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "El sitio de Kenet carga lento en celular. ¿Qué herramienta evita esa fricción manteniendo al usuario dentro de Meta?",
+          "options": [
+            "Mandar tráfico al sitio igual",
+            "Instant Experience (landing full-screen post-click en mobile)",
+            "Cambiar a placement de desktop",
+            "Usar Single image sin link"
+          ],
+          "correct": 1,
+          "explanation": "Instant Experience carga al instante dentro de Meta. Resuelve exactamente el problema de un website lento en mobile."
+        },
+        {
+          "type": "mcq",
+          "q": "Kenet no sabe si Collection o Carousel rendirá mejor con esta audiencia. ¿Qué opción deja que Meta decida?",
+          "options": [
+            "Single video",
+            "Flexible (Meta prueba y entrega el formato ganador)",
+            "Instant Experience",
+            "Manual placements"
+          ],
+          "correct": 1,
+          "explanation": "Flexible deja que Meta entregue el formato que mejor rinde por persona. Es como Advantage+ pero a nivel formato.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.4",
+      "title": "Mini-flashcards · Bloque 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Cuáles son los 4 formatos de ad?",
+          "a": "Flexible (AI elige), Single image/video, Carousel (2+ swipe), Collection (hero + grid)."
+        },
+        {
+          "q": "¿Cuándo usar Collection vs Carousel?",
+          "a": "Collection: hero (video/imagen) + grid de productos abajo. Ideal con catalog, solo mobile. Carousel: solo swipe de cards sin hero, ideal para storytelling sin catalog."
+        },
+        {
+          "q": "¿Qué es Instant Experience?",
+          "a": "Experiencia full-screen post-click en mobile (antes Canvas). Útil cuando tu website es malo en mobile o quieres contar todo dentro de Meta."
+        },
+        {
+          "q": "¿Cuándo conviene el formato Flexible?",
+          "a": "Cuando NO sabes qué formato rinde mejor. Meta prueba múltiples y entrega el ganador por persona."
+        },
+        {
+          "q": "¿En qué dispositivos funciona Collection e Instant Experience?",
+          "a": "Solo en mobile (dispositivos y placements). No existen en desktop."
+        }
+      ]
+    },
+    {
+      "id": "6.5",
+      "title": "Explica · Placements y aspect ratios",
+      "section": "b2",
       "type": "reading",
       "cards": [
         {
@@ -217,32 +303,6 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para Kenet, lo normal es <em>Advantage+ Placements</em>: dejas que Meta encuentre dónde rinde mejor el anuncio de paneles. Solo cambiarías a <em>Manual</em> si quisieras, por ejemplo, salir únicamente en Facebook Feed por una razón de marca específica."
-        },
-        {
-          "type": "mcq",
-          "q": "Una marca quiere maximizar visibility automatizando placements. ¿Qué setting?",
-          "options": [
-            "Manual placements seleccionando 8 ubicaciones",
-            "Advantage+ Placements (default automatizado)",
-            "Solo FB Feed",
-            "Reservation"
-          ],
-          "correct": 1,
-          "explanation": "Advantage+ Placements automatiza. Manual da control pero suele rendir peor en eficiencia global.",
-          "difficulty": "medium"
-        }
-      ]
-    },
-    {
-      "id": "6.4",
-      "title": "Aspect ratios y safe zone",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
           "h": "Por qué el aspect ratio importa",
           "body": "Cada placement tiene su forma. Un creative diseñado horizontal se ve diminuto en Stories; uno vertical desperdicia espacio en Feed. El aspect ratio correcto es la diferencia entre un ad que llena pantalla y uno que se pierde."
         },
@@ -276,7 +336,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "El video de Kenet para Reels tiene el teléfono de contacto pegado abajo. Mala idea: el botón de mensaje de IG lo tapa. Solución: subir ese dato al centro del 9:16, dentro de la safe zone, para que nada lo corte."
+          "body": "Para Kenet, lo normal es <em>Advantage+ Placements</em>: dejas que Meta encuentre dónde rinde mejor el anuncio. El video para Reels tiene el teléfono pegado abajo — mala idea: el botón de mensaje de IG lo tapa. Solución: subir ese dato al centro del 9:16, dentro de la safe zone."
         },
         {
           "type": "mcq",
@@ -294,9 +354,156 @@
       ]
     },
     {
-      "id": "6.5",
-      "title": "Advantage+ Creative · qué hace la AI",
-      "section": "A",
+      "id": "6.6",
+      "title": "Ejercita la memoria · Bloque 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El aspect ratio full portrait que ocupa pantalla completa en Stories y Reels es ___.",
+          "options": ["9:16", "16:9", "1:1", "4:5"],
+          "correct": 0,
+          "explanation": "<strong>9:16</strong> = full portrait vertical. Llena la pantalla en Stories y Reels."
+        },
+        {
+          "type": "mcq",
+          "q": "Una marca quiere maximizar visibility automatizando placements. ¿Qué setting?",
+          "options": [
+            "Manual placements seleccionando 8 ubicaciones",
+            "Advantage+ Placements (default automatizado)",
+            "Solo FB Feed",
+            "Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Placements automatiza. Manual da control pero suele rendir peor en eficiencia global.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "El placement Right column y In-stream video pertenecen a la plataforma ___.",
+          "options": ["Facebook", "Instagram", "Messenger", "Threads"],
+          "correct": 0,
+          "explanation": "Right column e In-stream video son placements de <strong>Facebook</strong>. Threads solo tiene Feeds."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué hay que diseñar el creative pensando en la safe zone en Stories/Reels?",
+          "options": [
+            "Por estética nada más",
+            "El UI (logo, perfil, botón de mensaje) cubre las orillas y corta el texto crítico",
+            "Para que pese menos",
+            "Para que cargue más rápido"
+          ],
+          "correct": 1,
+          "explanation": "El UI de Stories/Reels tapa los bordes. Texto crítico cerca del borde se corta. Diseña dentro de la safe zone central."
+        },
+        {
+          "type": "fill",
+          "q": "Cuando necesitas control granular por brand safety o creative específica, usas ___ placements.",
+          "options": ["Manual", "Advantage+", "Reservation", "Automáticos"],
+          "correct": 0,
+          "explanation": "<strong>Manual placements</strong> dan control granular. Advantage+ Placements automatiza pero pierde ese control."
+        },
+        {
+          "type": "mcq",
+          "q": "Audience Network ofrece ads en:",
+          "options": [
+            "Solo Facebook Feed",
+            "Apps de terceros (in-stream video, native banner, rewarded video)",
+            "Solo Instagram Reels",
+            "Solo Messenger Inbox"
+          ],
+          "correct": 1,
+          "explanation": "Audience Network extiende los ads a apps de terceros: in-stream video, native banner y rewarded video.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.7",
+      "title": "Caso a resolver · Bloque 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "El número de contacto se corta en Reels",
+          "body": "<strong>Aceros del Bajío</strong> (PyME de perfiles de acero) sube un video a Reels con el teléfono de ventas pegado al borde inferior. En pruebas notan que el botón de mensaje de Instagram tapa el número y nadie llama. El director cree que el problema es la audiencia."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es el verdadero problema y la solución?",
+          "options": [
+            "La audiencia está mal segmentada; hay que rehacerla",
+            "El número está fuera de la safe zone: el UI de Reels lo tapa. Solución: subir el dato al centro del 9:16",
+            "El video pesa demasiado",
+            "Reels no permite teléfonos en el video"
+          ],
+          "correct": 1,
+          "explanation": "El UI de Stories/Reels (perfil, botón de mensaje) cubre las orillas. El dato crítico debe ir en la safe zone central del 9:16, no pegado al borde.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "El mismo video lo quieren usar también en Feed. ¿Qué deben revisar?",
+          "options": [
+            "Nada, 9:16 se ve igual en todos lados",
+            "El aspect ratio: 9:16 desperdicia espacio en Feed; conviene adaptar a 4:5 o 1:1",
+            "Cambiar la audiencia otra vez",
+            "Usar solo Right column"
+          ],
+          "correct": 1,
+          "explanation": "Cada placement tiene su forma. 9:16 es óptimo en Stories/Reels pero en Feed conviene 4:5 o 1:1. Por eso el creative se diseña por placement.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "No saben en qué placement rinde mejor el video. ¿Qué setting deja que Meta lo decida?",
+          "options": [
+            "Manual placements",
+            "Advantage+ Placements (default automatizado)",
+            "Solo Audience Network",
+            "Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Placements automatiza y encuentra dónde rinde mejor el anuncio. Manual solo si necesitas control específico."
+        }
+      ]
+    },
+    {
+      "id": "6.8",
+      "title": "Mini-flashcards · Bloque 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Aspect ratio para Stories y Reels?",
+          "a": "9:16 full portrait vertical (pantalla completa)."
+        },
+        {
+          "q": "¿Aspect ratio recomendado para Feed?",
+          "a": "4:5 (vertical) o 1:1 (square). 16:9 también en FB Feed/Marketplace."
+        },
+        {
+          "q": "¿Advantage+ Placements vs Manual placements?",
+          "a": "Advantage+ (default): Meta automatiza, maximiza visibility/eficiencia. Manual: control granular por brand safety o creative específica."
+        },
+        {
+          "q": "¿Qué pasa si tu ad tiene texto crítico en las orillas en Stories/Reels?",
+          "a": "Se corta. El UI (logo IG, perfil, botón de mensaje) cubre los bordes. Diseñar para la safe zone central del 9:16."
+        },
+        {
+          "q": "¿Qué ofrece Audience Network?",
+          "a": "Ads en apps de terceros: in-stream video, native banner, rewarded video."
+        }
+      ]
+    },
+    {
+      "id": "6.9",
+      "title": "Explica · Advantage+ Creative y mobile-first",
+      "section": "b3",
       "type": "reading",
       "cards": [
         {
@@ -309,32 +516,6 @@
           "h": "Asset Customization for Placements",
           "body": "Permite customizar la creative <strong>manualmente por placement</strong>. Para cada placement puedes especificar: template, media crop, text per placement, control, priority. <strong>Cuando se combina con Advantage+ Creative, lo manual gana.</strong>"
         },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet sube un video y deja Advantage+ Creative ON: la AI prueba crops y subtítulos por persona. Pero para Reels Kenet tiene un corte vertical específico que ya sabe que funciona — lo fija con Asset Customization. En Reels gana el manual; en el resto, la AI."
-        },
-        {
-          "type": "mcq",
-          "q": "Si usas Advantage+ Creative Y Asset Customization juntos, ¿qué prevalece?",
-          "options": [
-            "Advantage+ siempre gana",
-            "Asset Customization (manual) gana en los placements donde la configuraste",
-            "Se cancelan entre sí",
-            "Depende del placement"
-          ],
-          "correct": 1,
-          "explanation": "Lo manual gana. Asset Customization tiene priority sobre Advantage+ Creative en los placements donde explícitamente customizaste.",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
-      "id": "6.6",
-      "title": "Diversificación creativa y mobile-first",
-      "section": "A",
-      "type": "reading",
-      "cards": [
         {
           "type": "concept",
           "h": "Por qué diversificar el creative",
@@ -366,8 +547,29 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet no usa un solo video todo el trimestre. Rota: testimonial de cliente, animación de ahorro y caso de planta industrial (visuals + messaging distintos), cada uno en 9:16 ≤15s. Así evita que la audiencia se sature y el CPA suba."
+          "body": "Kenet sube un video y deja Advantage+ Creative ON: la AI prueba crops y subtítulos por persona. Pero para Reels tiene un corte vertical específico que ya sabe que funciona — lo fija con Asset Customization. En Reels gana el manual; en el resto, la AI. Además rota testimonial, animación de ahorro y caso de planta para evitar creative fatigue."
         },
+        {
+          "type": "mcq",
+          "q": "Si usas Advantage+ Creative Y Asset Customization juntos, ¿qué prevalece?",
+          "options": [
+            "Advantage+ siempre gana",
+            "Asset Customization (manual) gana en los placements donde la configuraste",
+            "Se cancelan entre sí",
+            "Depende del placement"
+          ],
+          "correct": 1,
+          "explanation": "Lo manual gana. Asset Customization tiene priority sobre Advantage+ Creative en los placements donde explícitamente customizaste.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.10",
+      "title": "Ejercita la memoria · Bloque 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
         {
           "type": "mcq",
           "q": "Mobile-first creative requiere:",
@@ -380,13 +582,140 @@
           "correct": 2,
           "explanation": "Reglas mobile: 9:16, ≤15s, branding inicio, audio + subtitles, safe zone.",
           "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "Un solo anuncio repetido produce creative ___ (el performance cae por sobreexposición).",
+          "options": ["fatigue", "boost", "lift", "scale"],
+          "correct": 0,
+          "explanation": "<strong>Creative fatigue</strong> = caída de performance por sobreexposición. Se combate diversificando el creative."
+        },
+        {
+          "type": "fill",
+          "q": "Las 3 dimensiones para diversificar el creative son messaging, visuals y ___.",
+          "options": ["formats", "audiences", "placements", "budgets"],
+          "correct": 0,
+          "explanation": "Las 3 dimensiones: <strong>messaging</strong> (mensaje), <strong>visuals</strong> (imagen/video) y <strong>formats</strong> (contenedor)."
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ Creative hace 3 cosas. ¿Cuál NO es una de ellas?",
+          "options": [
+            "Genera variations automáticas (crops, brillo, música)",
+            "Enhancements de texto y audio",
+            "Entrega el mejor variant a cada persona",
+            "Define el presupuesto de la campaña"
+          ],
+          "correct": 3,
+          "explanation": "Advantage+ Creative optimiza el creative (variations, enhancements, eficiencia por persona). El presupuesto no es función del creative.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "El branding en un video mobile debe aparecer en los primeros ___ segundos.",
+          "options": ["3", "10", "15", "30"],
+          "correct": 0,
+          "explanation": "Branding en los primeros <strong>3 segundos</strong>: el usuario decide rápido si sigue viendo."
+        },
+        {
+          "type": "mcq",
+          "q": "El audio en mobile por default está:",
+          "options": [
+            "ON, siempre con sonido",
+            "OFF — por eso se necesitan subtítulos",
+            "Solo en Reels",
+            "Solo en desktop"
+          ],
+          "correct": 1,
+          "explanation": "Audio off es el default en mobile. Por eso el creative necesita subtítulos para comunicar sin sonido.",
+          "difficulty": "easy"
         }
       ]
     },
     {
-      "id": "6.7",
-      "title": "Métricas KPI y el funnel",
-      "section": "A",
+      "id": "6.11",
+      "title": "Caso a resolver · Bloque 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "El CPA de Kenet sube cada mes",
+          "body": "<strong>Kenet</strong> corre el mismo video todo el trimestre a la misma audiencia. El primer mes el costo por cotización es bajo; al tercer mes se dispara y el director culpa al algoritmo. Tú detectas la causa real."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué está pasando y cómo se resuelve?",
+          "options": [
+            "El algoritmo falló; hay que pausar todo",
+            "Creative fatigue por usar un solo anuncio repetido. Solución: diversificar en messaging, visuals y formats",
+            "La audiencia es muy chica; hay que ampliar el budget",
+            "El Pixel dejó de funcionar"
+          ],
+          "correct": 1,
+          "explanation": "Un solo creative repetido produce creative fatigue: el performance cae por sobreexposición. Se combate rotando mensaje, visuales y formatos.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Kenet quiere que la AI adapte el creative por persona y placement, pero en Reels ya tiene un corte que funciona. ¿Cómo lo configura?",
+          "options": [
+            "Solo Advantage+ Creative; ignora el corte de Reels",
+            "Advantage+ Creative ON + Asset Customization para fijar el corte de Reels (manual gana en Reels)",
+            "Manual placements para todo",
+            "Apaga Advantage+ Creative por completo"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Creative optimiza por persona; Asset Customization fija el manual en el placement donde ya hay un ganador. En Reels gana el manual; en el resto, la AI.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "El nuevo video de Kenet para Reels dura 30s con el logo al final. ¿Qué corriges?",
+          "options": [
+            "Nada, está bien",
+            "Acortar a ≤15s y poner branding en los primeros 3s, con audio + subtítulos",
+            "Subirlo a 60s para contar más",
+            "Quitar los subtítulos para que pese menos"
+          ],
+          "correct": 1,
+          "explanation": "Mobile-first: ≤15s, branding en los primeros 3s, audio + subtítulos (audio off es default), elementos clave en safe zone."
+        }
+      ]
+    },
+    {
+      "id": "6.12",
+      "title": "Mini-flashcards · Bloque 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Qué hace Advantage+ Creative?",
+          "a": "AI que optimiza creative por viewer y placement: genera variations automáticas, enhancements de texto/audio y entrega el mejor variant a cada persona."
+        },
+        {
+          "q": "¿Qué pasa si combinas Advantage+ Creative con Asset Customization?",
+          "a": "Asset Customization (manual) tiene priority en los placements donde la configuraste. Advantage+ Creative aplica en los demás."
+        },
+        {
+          "q": "¿Reglas de mobile-first creative?",
+          "a": "Video 9:16, ≤15 segundos, branding en primeros 3s, audio + subtítulos, elementos clave en safe zone central."
+        },
+        {
+          "q": "¿Qué es creative fatigue y cómo se combate?",
+          "a": "Caída de performance por sobreexposición de un mismo anuncio. Se combate diversificando en messaging, visuals y formats."
+        },
+        {
+          "q": "Las 3 dimensiones de diversificación creativa:",
+          "a": "Messaging (headline/copy/CTA), Visuals (imagen/video/formato/color) y Formats (single/video/carousel/collection)."
+        }
+      ]
+    },
+    {
+      "id": "6.13",
+      "title": "Explica · Métricas KPI y Attribution",
+      "section": "b4",
       "type": "reading",
       "cards": [
         {
@@ -414,8 +743,56 @@
         },
         {
           "type": "concept",
+          "h": "Qué es attribution",
+          "body": "<strong>Attribution</strong> es el proceso de asignar crédito a los touchpoints del customer journey por una conversión. Sin attribution no sabes qué anuncio merece el crédito de una venta."
+        },
+        {
+          "type": "concept",
+          "h": "Attribution models en Ads Manager",
+          "body": "Solo 2 modelos disponibles:<br/>• <strong>Standard attribution</strong>: atribuye con reglas (ventana + touchpoint). Cuenta impressions, clicks, video plays.<br/>• <strong>Incremental attribution</strong>: modelo predictivo que identifica conversions <em>causales</em> (\"¿realmente el ad causó la venta?\").<br/><br/><strong>NO existe Custom attribution</strong> en Ads Manager."
+        },
+        {
+          "type": "concept",
+          "h": "Attribution setting (ventana)",
+          "body": "Ventana de tiempo donde se puede atribuir una conversion. Default: <strong>1-day view, 7-day click</strong>. Significa: si el usuario VIO el ad y compró en 1 día, o CLICKEÓ y compró en 7 días, se atribuye al ad."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA DE EXAMEN",
+          "body": "Si te preguntan por \"Custom attribution\" o \"Engaged-view attribution\" en Ads Manager, son <strong>trampas</strong>. Solo existen Standard e Incremental. Custom NO existe."
+        },
+        {
+          "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Si Kenet corre una campaña de marca pre-feria, mira <em>Reach</em> y <em>Estimated ad recall lift</em> (Awareness). Si corre una de cotizaciones, mira <em>Leads</em> y <em>Cost per purchase</em> (Conversion). Mirar la métrica del funnel equivocado lleva a conclusiones falsas."
+          "body": "Un prospecto vio el ad de Kenet el lunes, no hizo clic, y cotizó el martes. Con la ventana default (1-day view) esa cotización SÍ se atribuye al ad. Si hubiera cotizado 5 días después sin clic, ya no entraría en la ventana de view. Y si es campaña de marca, miras Reach y recall; si es de cotizaciones, miras Leads y cost per purchase."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuáles son los 2 modelos de attribution disponibles en Ads Manager?",
+          "options": [
+            "Standard y Custom",
+            "Standard e Incremental",
+            "Last-click y First-click",
+            "Linear y Time-decay"
+          ],
+          "correct": 1,
+          "explanation": "Solo Standard e Incremental. Custom no existe en Ads Manager. Last-click es un comportamiento dentro de Standard.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.14",
+      "title": "Ejercita la memoria · Bloque 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El default attribution setting en Ads Manager es 1-day view, ___-day click.",
+          "options": ["1", "7", "28", "30"],
+          "correct": 1,
+          "explanation": "Default = <strong>1-day view, 7-day click</strong>. Memorízalo literal: el examen lo pregunta así."
         },
         {
           "type": "mcq",
@@ -435,67 +812,138 @@
           "multi": true,
           "explanation": "Reach, Frequency y Estimated ad recall lift son de Awareness. ROAS y cost per purchase son de Conversion.",
           "difficulty": "hard"
-        }
-      ]
-    },
-    {
-      "id": "6.8",
-      "title": "Attribution · modelos y ventana",
-      "section": "A",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "Qué es attribution",
-          "body": "<strong>Attribution</strong> es el proceso de asignar crédito a los touchpoints del customer journey por una conversión. Sin attribution no sabes qué anuncio merece el crédito de una venta."
         },
         {
-          "type": "concept",
-          "h": "Attribution models en Ads Manager",
-          "body": "Solo 2 modelos disponibles:<br/>• <strong>Standard attribution</strong>: atribuye con reglas (ventana + touchpoint). Cuenta impressions, clicks, video plays.<br/>• <strong>Incremental attribution</strong>: modelo predictivo que identifica conversions <em>causales</em> (\"¿realmente el ad causó la venta?\").<br/><br/><strong>NO existe Custom attribution</strong> en Ads Manager."
-        },
-        {
-          "type": "concept",
-          "h": "Attribution setting (ventana)",
-          "body": "Ventana de tiempo donde se puede atribuir una conversion. Default: <strong>1-day view, 7-day click</strong>. Significa: si el usuario VIO el ad y compró en 1 día, o CLICKEÓ y compró en 7 días, se atribuye al ad."
-        },
-        {
-          "type": "warn",
-          "label": "TRAMPA DE EXAMEN",
-          "body": "Si te preguntan por \"Custom attribution\" o \"Engaged-view attribution\" en Ads Manager, son <strong>trampas</strong>. Solo existen Standard e Incremental. Custom NO existe.",
-          "difficulty": "hard"
-        },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Un prospecto vio el ad de Kenet el lunes, no hizo clic, y cotizó el martes. Con la ventana default (1-day view) esa cotización SÍ se atribuye al ad. Si hubiera cotizado 5 días después sin clic, ya no entraría en la ventana de view."
+          "type": "fill",
+          "q": "Cost per Result se calcula como Amount spent dividido entre ___.",
+          "options": ["Results", "Impressions", "Clicks", "Reach"],
+          "correct": 0,
+          "explanation": "<strong>Cost per Result = Amount spent / Results</strong>. Results = veces que se logró el performance goal."
         },
         {
           "type": "mcq",
-          "q": "¿Cuáles son los 2 modelos de attribution disponibles en Ads Manager?",
+          "q": "Standard attribution se diferencia de Incremental en que:",
           "options": [
-            "Standard y Custom",
-            "Standard e Incremental",
-            "Last-click y First-click",
-            "Linear y Time-decay"
+            "Standard usa reglas (ventana + touchpoint); Incremental modela conversions causales",
+            "Standard mide ventas; Incremental mide recall",
+            "Son lo mismo",
+            "Incremental no existe en Ads Manager"
           ],
-          "correct": 1,
-          "explanation": "Solo Standard e Incremental. Custom no existe en Ads Manager. Last-click es un comportamiento dentro de Standard.",
+          "correct": 0,
+          "explanation": "Standard atribuye con reglas (correlacional). Incremental es predictivo: identifica si el ad realmente CAUSÓ la conversión.",
           "difficulty": "hard"
         },
         {
           "type": "fill",
-          "q": "El default attribution setting en Ads Manager es 1-day view, ___-day click.",
-          "options": ["1", "7", "28", "30"],
+          "q": "Purchase ROAS y Cost per purchase son métricas de la etapa de ___.",
+          "options": ["Conversion", "Awareness", "Consideration", "Reach"],
+          "correct": 0,
+          "explanation": "<strong>Conversion</strong>: Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase. Reach/Frequency son de Awareness."
+        },
+        {
+          "type": "mcq",
+          "q": "Te preguntan por 'Custom attribution' en Ads Manager. ¿Qué respondes?",
+          "options": [
+            "Es el modelo default",
+            "Es trampa: en Ads Manager solo existen Standard e Incremental",
+            "Es lo mismo que Incremental",
+            "Solo aplica a campañas Awareness"
+          ],
           "correct": 1,
-          "explanation": "Default = <strong>1-day view, 7-day click</strong>. Memorízalo literal: el examen lo pregunta así."
+          "explanation": "Custom attribution NO existe en Ads Manager. Solo Standard e Incremental. Es una trampa típica de examen.",
+          "difficulty": "hard"
         }
       ]
     },
     {
-      "id": "6.9",
-      "title": "A/B Test · qué es y la regla de oro",
-      "section": "A",
+      "id": "6.15",
+      "title": "Caso a resolver · Bloque 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "El director mira la métrica equivocada",
+          "body": "<strong>Aceros del Bajío</strong> corre una campaña Awareness pre-expo y el director la juzga por número de cotizaciones (Leads), concluye que \"no sirvió\" y la quiere cancelar. También cree que una venta a los 5 días sin clic se debe atribuir al ad."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué el director está evaluando mal la campaña Awareness?",
+          "options": [
+            "Tiene razón, Awareness debe medirse por Leads",
+            "Awareness se mide con Reach, Frequency y Estimated ad recall lift, no con Leads (que es métrica de Conversion)",
+            "Hay que esperar más tiempo",
+            "El Pixel está mal configurado"
+          ],
+          "correct": 1,
+          "explanation": "Mirar la métrica del funnel equivocado lleva a conclusiones falsas. Awareness = Reach/Frequency/recall. Leads es de Conversion.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Un prospecto vio el ad, NO hizo clic, y cotizó 5 días después. Con la ventana default, ¿se atribuye al ad?",
+          "options": [
+            "Sí, siempre se atribuye",
+            "No: la ventana default de view es 1 día. A los 5 días sin clic queda fuera de la ventana",
+            "Sí, porque hay clic implícito",
+            "Depende del presupuesto"
+          ],
+          "correct": 1,
+          "explanation": "Default = 1-day view, 7-day click. Vio sin clic → solo cuenta si compró dentro de 1 día. A los 5 días sin clic queda fuera.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "El director quiere saber si el ad REALMENTE causó las conversiones, no solo si correlacionó. ¿Qué attribution model?",
+          "options": [
+            "Standard attribution",
+            "Incremental attribution (modela conversions causales)",
+            "Custom attribution",
+            "Last-click"
+          ],
+          "correct": 1,
+          "explanation": "Incremental attribution es el modelo predictivo que identifica conversions causales. Standard solo atribuye con reglas (correlacional).",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.16",
+      "title": "Mini-flashcards · Bloque 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Las 2 métricas KPI principales?",
+          "a": "Results (logros del performance goal) y Cost per Result (Amount spent / Results)."
+        },
+        {
+          "q": "Métricas de Awareness:",
+          "a": "Reach, Frequency, Estimated ad recall lift, Impressions, CPM."
+        },
+        {
+          "q": "Métricas de Conversion:",
+          "a": "Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase."
+        },
+        {
+          "q": "¿Cuáles son los 2 modelos de attribution en Ads Manager?",
+          "a": "Standard (con reglas, correlacional) e Incremental (modelado causal predictivo). Custom NO existe."
+        },
+        {
+          "q": "¿Default attribution setting?",
+          "a": "1-day view, 7-day click."
+        },
+        {
+          "q": "¿Diferencia entre Standard y Incremental attribution?",
+          "a": "Standard = atribuye con reglas (ventana + touchpoint), correlacional. Incremental = modelo predictivo de causalidad."
+        }
+      ]
+    },
+    {
+      "id": "6.17",
+      "title": "Explica · A/B Test, Brand Lift y Conversion Lift",
+      "section": "b5",
       "type": "reading",
       "cards": [
         {
@@ -508,32 +956,6 @@
           "label": "REGLA DEL A/B TEST",
           "body": "Una sola variable a la vez. Si cambias creative Y audience al mismo tiempo, no puedes decir cuál causó la diferencia. Audiencia suficiente sin overlap (Meta divide automáticamente). Mínimo 7 días, idealmente 14-30."
         },
-        {
-          "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet prueba video testimonial vs animación 3D, MISMA audiencia, mismo budget. Una sola variable (el creative). Si además cambiara la audiencia, no sabría si ganó por el video o por a quién se lo mostró. Por eso: una variable."
-        },
-        {
-          "type": "mcq",
-          "q": "En un A/B Test correcto, ¿cuántas variables debes cambiar?",
-          "options": [
-            "1",
-            "2",
-            "3 o más",
-            "Cuantas más mejor"
-          ],
-          "correct": 0,
-          "explanation": "UNA sola variable. Si cambias 2+, no puedes aislar cuál causó el resultado.",
-          "difficulty": "medium"
-        }
-      ]
-    },
-    {
-      "id": "6.10",
-      "title": "Brand Lift vs Conversion Lift",
-      "section": "A",
-      "type": "reading",
-      "cards": [
         {
           "type": "concept",
           "h": "Brand Lift",
@@ -557,7 +979,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet patrocina una feria y quiere saber si los industriales <em>recuerdan</em> la marca → Brand Lift (encuestas). Otro trimestre quiere saber cuántas cotizaciones <em>extra</em> generó la campaña vs no haberla corrido → Conversion Lift (ventas causales)."
+          "body": "Kenet patrocina una feria y quiere saber si los industriales <em>recuerdan</em> la marca → Brand Lift (encuestas). Otro trimestre quiere saber cuántas cotizaciones <em>extra</em> generó la campaña vs no haberla corrido → Conversion Lift (ventas causales). Y para comparar 2 videos cambiando solo el creative → A/B Test."
         },
         {
           "type": "mcq",
@@ -571,6 +993,61 @@
           "correct": 2,
           "explanation": "Conversion Lift mide incrementalidad: ventas causales atribuibles a la campaña vs el control que no la vio.",
           "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.18",
+      "title": "Ejercita la memoria · Bloque 5",
+      "section": "b5",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "En un A/B Test correcto, ¿cuántas variables debes cambiar?",
+          "options": [
+            "1",
+            "2",
+            "3 o más",
+            "Cuantas más mejor"
+          ],
+          "correct": 0,
+          "explanation": "UNA sola variable. Si cambias 2+, no puedes aislar cuál causó el resultado.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "Brand Lift mide impacto en marca usando ___ a test group vs control group.",
+          "options": ["encuestas", "ventas", "clics", "impresiones"],
+          "correct": 0,
+          "explanation": "<strong>Brand Lift</strong> usa encuestas (ad recall, awareness, message association). Es percepción, no ventas."
+        },
+        {
+          "type": "fill",
+          "q": "Conversion Lift mide conversions ___ (causales) atribuibles a la campaña.",
+          "options": ["incrementales", "correlacionales", "totales", "estimadas"],
+          "correct": 0,
+          "explanation": "<strong>Conversion Lift</strong> mide conversions incrementales: las ventas EXTRA que causó la campaña vs el control."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Dónde se configuran A/B Test, Brand Lift y Conversion Lift?",
+          "options": [
+            "Ads Reporting",
+            "Experiments (en Ads Manager o Business Suite)",
+            "Events Manager",
+            "Commerce Manager"
+          ],
+          "correct": 1,
+          "explanation": "Los 3 viven en Experiments, en campañas dedicadas. NO en Ads Reporting normal.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "El A/B Test divide la audiencia aleatoriamente sin ___ para no contaminar el resultado.",
+          "options": ["overlap", "budget", "creative", "schedule"],
+          "correct": 0,
+          "explanation": "Sin <strong>overlap</strong>: si las mismas personas ven los 2 ads, no puedes saber cuál causó la conversión. Meta divide automáticamente."
         },
         {
           "type": "mcq",
@@ -588,9 +1065,93 @@
       ]
     },
     {
-      "id": "6.11",
-      "title": "Brand Safety controls",
-      "section": "A",
+      "id": "6.19",
+      "title": "Caso a resolver · Bloque 5",
+      "section": "b5",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Aceros del Bajío · 3 preguntas, 3 herramientas",
+          "body": "<strong>Aceros del Bajío</strong> (B2B, perfiles de acero) corrió una campaña de marca de 3 semanas antes de una expo y luego una de cotizaciones. El director pregunta: ¿la gente recuerda la marca? ¿cuántas cotizaciones <em>extra</em> generó la campaña? y ¿qué headline funciona mejor entre dos versiones?"
+        },
+        {
+          "type": "mcq",
+          "q": "Para saber si los industriales RECUERDAN la marca, ¿qué herramienta?",
+          "options": [
+            "A/B Test",
+            "Brand Lift (encuestas test vs control sobre ad recall)",
+            "Conversion Lift",
+            "Standard reporting"
+          ],
+          "correct": 1,
+          "explanation": "Recall/percepción → Brand Lift: encuestas a test group (expuesto) vs control group (no expuesto). No mide ventas.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Para saber cuántas cotizaciones EXTRA causó la campaña vs no haberla corrido, ¿qué herramienta?",
+          "options": [
+            "Brand Lift",
+            "Conversion Lift (RCT, conversions incrementales)",
+            "A/B Test",
+            "Standard reporting"
+          ],
+          "correct": 1,
+          "explanation": "Cotizaciones extra causales = incrementalidad → Conversion Lift. Fuente recomendada: Conversions API.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Para comparar 2 versiones del mismo anuncio cambiando solo el headline, ¿qué herramienta?",
+          "options": [
+            "Brand Lift",
+            "Conversion Lift",
+            "A/B Test (una sola variable: el headline)",
+            "Standard reporting"
+          ],
+          "correct": 2,
+          "explanation": "Comparar 2 variantes cambiando UNA sola variable (el headline) es exactamente un A/B Test. Los 3 tests viven en Experiments."
+        }
+      ]
+    },
+    {
+      "id": "6.20",
+      "title": "Mini-flashcards · Bloque 5",
+      "section": "b5",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Diferencia entre A/B Test, Brand Lift y Conversion Lift?",
+          "a": "A/B Test = compara 2 variantes (1 variable). Brand Lift = encuestas sobre marca/recall. Conversion Lift = mide ventas causales extras."
+        },
+        {
+          "q": "¿Cuántas variables se cambian en un A/B Test?",
+          "a": "UNA sola. Si cambias 2+ no puedes aislar la causa. Sin overlap (Meta divide automáticamente)."
+        },
+        {
+          "q": "¿Brand Lift mide qué y cómo?",
+          "a": "Mide brand awareness, ad recall y message association con encuestas a test group vs control group. Es percepción, no ventas."
+        },
+        {
+          "q": "¿Conversion Lift mide qué y cómo?",
+          "a": "Conversions incrementales (ventas/leads causales) con randomized control trials. Fuente recomendada: Conversions API."
+        },
+        {
+          "q": "¿Dónde corren A/B Test, Brand Lift, Conversion Lift?",
+          "a": "En Experiments (Ads Manager o Meta Business Suite), en campañas dedicadas. NO en Ads Reporting."
+        },
+        {
+          "q": "¿El A/B Test tiene minimum spend? ¿Y Brand Lift?",
+          "a": "A/B Test NO tiene minimum spend. Brand Lift SÍ tiene mínimos de budget por región."
+        }
+      ]
+    },
+    {
+      "id": "6.21",
+      "title": "Explica · Brand Safety y Advertising Standards",
+      "section": "b6",
       "type": "reading",
       "cards": [
         {
@@ -651,14 +1212,163 @@
       ]
     },
     {
-      "id": "6.12",
-      "title": "Guía resuelta · medir una campaña B2B",
-      "section": "A",
-      "type": "reading",
+      "id": "6.22",
+      "title": "Ejercita la memoria · Bloque 6",
+      "section": "b6",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El control de Brand Safety más simple y de mayor alcance son los ___.",
+          "options": ["inventory filters", "publisher block lists", "topic exclusions", "content type exclusions"],
+          "correct": 0,
+          "explanation": "Los <strong>inventory filters</strong> (Expanded/Moderate/Limited) son el control más simple. Block lists requieren armar la lista a mano."
+        },
+        {
+          "type": "fill",
+          "q": "El inventory filter por default es ___.",
+          "options": ["Expanded", "Moderate", "Limited", "Restricted"],
+          "correct": 0,
+          "explanation": "<strong>Expanded</strong> es el default (mayor alcance). Moderate y Limited restringen más el inventory."
+        },
+        {
+          "type": "mcq",
+          "q": "Un ad de un producto legal es rechazado. La causa probable:",
+          "options": [
+            "El presupuesto es muy bajo",
+            "Personal attributes: el copy implica una característica personal del usuario (edad, peso, raza)",
+            "El Pixel no está instalado",
+            "La audiencia es muy grande"
+          ],
+          "correct": 1,
+          "explanation": "Personal attributes: no se puede implicar edad, peso, raza o religión del usuario. Reformula el copy de forma neutral.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "fill",
+          "q": "Para excluir publishers específicos donde NO quieres aparecer usas publisher ___ lists.",
+          "options": ["block", "white", "allow", "topic"],
+          "correct": 0,
+          "explanation": "<strong>Publisher block lists</strong> excluyen publishers concretos. Hay que armarlas a mano, por eso son menos simples que el inventory filter."
+        },
+        {
+          "type": "mcq",
+          "q": "Kenet no quiere aparecer junto a noticias polémicas. ¿Cuál es el control más simple?",
+          "options": [
+            "Armar una publisher block list manual de cada sitio",
+            "Subir el inventory filter a Moderate o Limited",
+            "Pausar todas las campañas",
+            "Cambiar el objetivo de campaña"
+          ],
+          "correct": 1,
+          "explanation": "El inventory filter (Moderate/Limited) es el control más simple y de mayor alcance. Block lists y topic exclusions son más manuales.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Las financial services pueden anunciarse si:",
+          "options": [
+            "Nunca, están prohibidas",
+            "Cumplen requisitos (>90 días con disclosure adecuado)",
+            "Solo en desktop",
+            "Solo con catálogo"
+          ],
+          "correct": 1,
+          "explanation": "Financial services están restringidas pero permitidas con disclosure adecuado (>90 días). Es contenido restringido, no prohibido absoluto.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "6.23",
+      "title": "Caso a resolver · Bloque 6",
+      "section": "b6",
+      "type": "scenario",
       "cards": [
         {
           "type": "scenario",
-          "label": "CASO GUIADO",
+          "label": "CASO A RESOLVER",
+          "h": "Kenet · marca cuidada en industria",
+          "body": "<strong>Kenet</strong> vende a corporativos y le importa la imagen. Su anuncio dice \"ideal para los señores mayores que quieren ahorrar\" y fue rechazado. Además, el director no quiere que la marca aparezca junto a noticias polémicas y pregunta por la forma más simple de evitarlo."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué se rechazó el anuncio y cómo se corrige?",
+          "options": [
+            "Por el presupuesto; subirlo",
+            "Por personal attributes (implica edad). Reformular: \"para profesionales experimentados que quieren ahorrar\"",
+            "Por usar video; cambiar a imagen",
+            "Por la audiencia; ampliarla"
+          ],
+          "correct": 1,
+          "explanation": "\"Para los señores mayores\" implica una característica personal (edad). Reformula de forma neutral aunque el producto sea legal.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Para evitar aparecer junto a noticias polémicas de la forma MÁS simple, ¿qué hace?",
+          "options": [
+            "Armar a mano una publisher block list de todos los sitios de noticias",
+            "Subir el inventory filter a Moderate o Limited",
+            "Cambiar el objetivo de campaña",
+            "Apagar Advantage+ Placements"
+          ],
+          "correct": 1,
+          "explanation": "El inventory filter (Moderate/Limited) es el control más simple y de mayor alcance. La block list es más manual.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Si además quiere excluir un sitio publisher específico que detesta, ¿qué control usa?",
+          "options": [
+            "Inventory filter",
+            "Publisher block list",
+            "Bid Cap",
+            "Topic exclusions"
+          ],
+          "correct": 1,
+          "explanation": "Publisher block list excluye publishers concretos. El inventory filter es más amplio; las block lists son para sitios específicos.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "6.24",
+      "title": "Mini-flashcards · Bloque 6",
+      "section": "b6",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "¿Qué son los 4 brand safety controls?",
+          "a": "Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions, Content type exclusions."
+        },
+        {
+          "q": "¿Cuál es el control de Brand Safety más simple?",
+          "a": "El inventory filter (Expanded default / Moderate / Limited). Mayor alcance y menos trabajo manual que las block lists."
+        },
+        {
+          "q": "¿Qué Advertising Standards prohíbe o restringe el contenido?",
+          "a": "Tobacco, privacy violations, violent/graphic, deceptive practices, alcohol (geo), drugs, online gambling sin authorization, personal attributes."
+        },
+        {
+          "q": "¿Por qué un ad puede ser rechazado por 'personal attributes' aunque el producto sea legal?",
+          "a": "Porque implica una característica personal del usuario (edad, peso, raza, religión). Reformular: \"para profesionales experimentados\" en vez de \"para los señores mayores\"."
+        },
+        {
+          "q": "¿Bid Cap es un control de Brand Safety?",
+          "a": "No. Bid Cap es bid strategy. Los controles de Brand Safety son inventory filters, publisher block lists, topic exclusions y content type exclusions."
+        }
+      ]
+    },
+    {
+      "id": "6.25",
+      "title": "Caso integrador · medir una campaña B2B",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "ESCENARIO REAL",
           "h": "Aceros del Bajío (B2B)",
           "body": "<strong>Aceros del Bajío</strong> vende perfiles de acero a constructoras. Corrió una campaña de marca de 3 semanas antes de una expo y ahora una campaña de cotizaciones. El director pregunta: ¿la gente recuerda la marca? ¿y cuántas cotizaciones <em>extra</em> generó la campaña? Vamos a resolverlo juntos, paso a paso."
         },
@@ -702,15 +1412,15 @@
       ]
     },
     {
-      "id": "6.13",
-      "title": "Emparejar test ↔ caso",
-      "section": "B",
+      "id": "6.26",
+      "title": "Emparejar conceptos clave del Día 6",
+      "section": "bz",
       "type": "match",
-      "instruction": "Asocia cada herramienta con su caso de uso.",
+      "instruction": "Tap el término y luego su definición. Cada error cuesta 1 ❤️.",
       "pairs": [
         [
           "A/B Test",
-          "Comparar 2 versiones de creative con misma audience"
+          "Comparar 2 versiones de creative con misma audience (1 variable)"
         ],
         [
           "Brand Lift",
@@ -731,14 +1441,30 @@
         [
           "Reach + Frequency",
           "Métricas KPI de campañas Awareness"
+        ],
+        [
+          "Collection",
+          "Hero (video/imagen) + grid de productos del catálogo, solo mobile"
+        ],
+        [
+          "9:16",
+          "Aspect ratio full portrait de Stories y Reels"
+        ],
+        [
+          "Advantage+ Creative",
+          "AI que optimiza variations/enhancements por persona y placement"
+        ],
+        [
+          "Inventory filters",
+          "Control de Brand Safety más simple: Expanded, Moderate, Limited"
         ]
       ],
-      "explanation": "Cada herramienta responde una pregunta distinta. A/B Test compara variantes. Brand Lift mide marca. Conversion Lift mide ventas causales. Atribución asigna crédito."
+      "explanation": "Cada herramienta responde una pregunta distinta. A/B Test compara variantes. Brand Lift mide marca. Conversion Lift mide ventas causales. Atribución asigna crédito. Collection y 9:16 son creative; inventory filters es brand safety."
     },
     {
-      "id": "6.14",
+      "id": "6.27",
       "title": "Ordenar análisis de resultados (6 pasos)",
-      "section": "B",
+      "section": "bz",
       "type": "order",
       "instruction": "El PDF oficial define 6 pasos para analizar resultados de campañas. Reordena con ▲▼.",
       "items": [
@@ -752,74 +1478,9 @@
       "explanation": "Flujo correcto: KPI primero (¿logró el objetivo?) → métricas secundarias → setup (cómo se logró) → evaluación holística → comparación interna → próximos pasos. Saltar pasos lleva a conclusiones equivocadas."
     },
     {
-      "id": "6.15",
-      "title": "Casos B2B aplicados · Kenet Solar",
-      "section": "C",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "scenario",
-          "label": "CASO 1 · A/B Test de creative",
-          "h": "Testimonial vs animación 3D",
-          "body": "<strong>Kenet</strong> prueba 2 videos para Sales:<br/>• Video A: testimonial real de planta automotriz solarizada<br/>• Video B: animación 3D explicando el ahorro<br/><br/>Una sola variable (creative). Audience idéntica: industriales 35-65 norte de México, 14 días, budget $20,000 MXN cada uno, sin overlap. Resultado: Video A (testimonial) gana con CPA 40% menor."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Por qué Kenet asegura que NO haya overlap entre las 2 audiences del A/B?",
-          "options": [
-            "Para que sea más rápido",
-            "Si hay overlap, las mismas personas ven los 2 ads y NO puedes saber cuál causó la conversión",
-            "Es opcional",
-            "Para gastar más"
-          ],
-          "correct": 1,
-          "explanation": "Sin separación, el resultado es contaminado. Meta divide automáticamente la audience para asegurar zero overlap entre los 2 ad sets del A/B.",
-          "difficulty": "medium"
-        },
-        {
-          "type": "scenario",
-          "label": "CASO 2 · Brand Lift en feria",
-          "h": "Medir recall pre-evento",
-          "body": "<strong>Kenet</strong> patrocina la Feria Solar+Power México 2026. Quiere medir si la campaña Awareness de 3 semanas previa al evento subió el recall de marca entre industriales.<br/><br/><strong>Solución:</strong> Campaña dedicada Awareness + Brand Lift activado. Encuestas a test group (expuesto) vs control group (no expuesto). Métricas: \"¿Recuerdas haber visto a Kenet Solar?\", \"¿Asocias Kenet con proveedor industrial confiable?\"."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Por qué Brand Lift y NO Conversion Lift en este caso?",
-          "options": [
-            "Brand Lift es más barato",
-            "El objetivo es medir RECALL/PERCEPCIÓN, no ventas. Brand Lift usa encuestas; Conversion Lift mide ventas reales",
-            "Conversion Lift no funciona en B2B",
-            "Son intercambiables"
-          ],
-          "correct": 1,
-          "explanation": "Cada test mide cosa distinta. Brand Lift = encuestas sobre marca. Conversion Lift = ventas causales. La meta de Kenet es percepción, no transacciones.",
-          "difficulty": "hard"
-        },
-        {
-          "type": "scenario",
-          "label": "CASO 3 · Collection ad con catalog",
-          "h": "Industria alimentaria · paneles para frigoríficos",
-          "body": "<strong>Kenet</strong> lanza una colección visual para industria alimentaria. <strong>Hero video 9:16</strong> con instalación en bodega frigorífica + <strong>grid de SKUs abajo</strong> (paneles 550W, inversor central, batería). Conversion location: Messenger. Aspect: 9:16 vertical para Stories y Reels."
-        },
-        {
-          "type": "mcq",
-          "q": "¿Por qué Collection y no Carousel en este caso?",
-          "options": [
-            "Collection es más barato",
-            "Collection muestra UN HERO grande (storytelling con el video del frigorífico) + grid de productos abajo. Carousel sería solo swipe de cards sin hero",
-            "Carousel no admite catalog",
-            "Es lo mismo"
-          ],
-          "correct": 1,
-          "explanation": "Collection = hero + grid (storytelling + catalog en uno). Carousel = solo swipe sin hero. Para este caso (contar historia + mostrar SKUs), Collection es óptimo.",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
-      "id": "6.16",
+      "id": "6.28",
       "title": "Completar frases del Día 6",
-      "section": "C",
+      "section": "bz",
       "type": "fill",
       "cards": [
         {
@@ -881,9 +1542,9 @@
       ]
     },
     {
-      "id": "6.17",
-      "title": "Drill · 12 MCQs de creative & measurement",
-      "section": "D",
+      "id": "6.29",
+      "title": "Drill — 12 MCQs del Día 6",
+      "section": "bz",
       "type": "drill",
       "cards": [
         {
@@ -1051,9 +1712,9 @@
       ]
     },
     {
-      "id": "6.18",
-      "title": "Lightning · 10 preguntas en 4 min",
-      "section": "D",
+      "id": "6.30",
+      "title": "Lightning — 10 preguntas rápidas",
+      "section": "bz",
       "type": "lightning",
       "instruction": "10 preguntas rápidas — repaso intensivo de creative & measurement. 4 minutos.",
       "timeLimit": 240,
@@ -1182,8 +1843,8 @@
     },
     {
       "id": "6.flash",
-      "title": "Flashcards del Día 6",
-      "section": "D",
+      "title": "Flashcards del Día 6 (todo)",
+      "section": "bz",
       "type": "flashcards",
       "cards": [
         {
@@ -1267,16 +1928,16 @@
           "a": "1) Revisar Results · 2) Other metrics · 3) Setup strategies · 4) Evaluar holístico · 5) Comparar ad sets · 6) Identificar optimization opportunities."
         },
         {
-          "q": "Attribution models en Ads Manager",
-          "a": "Standard e Incremental. Incremental usa modelos predictivos para optimizar por conversiones incrementales (identifica si el anuncio causó la conversión)."
+          "q": "¿Qué hace Advantage+ Creative?",
+          "a": "AI que optimiza creative por viewer y placement: variations automáticas, enhancements de texto/audio y entrega el mejor variant a cada persona."
         },
         {
-          "q": "Conversion Lift: best practices estadisticas",
+          "q": "Conversion Lift: best practices estadísticas",
           "a": "≥ $10,000 de gasto, 10% holdout y > 500 conversiones para resultados estadísticamente significativos. Fuente de datos recomendada: Conversions API."
         },
         {
-          "q": "Brand Lift vs Conversion Lift vs A/B test",
-          "a": "Brand Lift = ad recall y actitud de marca. Conversion Lift = conversiones incrementales (RCT, single o multi-cell). A/B = comparar variables. Los 3 se configuran en Experiments (Ads Manager / Business Suite)."
+          "q": "¿Qué es creative fatigue y cómo se combate?",
+          "a": "Caída de performance por sobreexposición de un mismo anuncio. Se combate diversificando en messaging, visuals y formats."
         },
         {
           "q": "Mobile-first creative: best practices",
