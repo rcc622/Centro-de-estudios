@@ -360,6 +360,19 @@ body{display:block}
 .back-btn:active{transform:scale(.92);background:#EBF5FF}
 .back-row{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .back-row .crumb{font-size:11px;font-weight:700;color:var(--muted,#65676B);letter-spacing:.6px;text-transform:uppercase}
+/* ----- Glosario (consulta en Ajustes) ----- */
+.glo-search{width:100%;box-sizing:border-box;padding:13px 14px;border:2px solid #E4E6EB;border-radius:14px;font-size:15px;font-family:inherit;margin-bottom:14px;background:#fff;color:#1C1E21;outline:none}
+.glo-search:focus{border-color:#1877F2}
+.glo-section-lbl{font-size:15px;font-weight:800;color:#1C1E21;margin:18px 2px 8px}
+.glo-section-lbl:first-child{margin-top:2px}
+.glo-item{background:#fff;border:1px solid #E4E6EB;border-radius:12px;margin-bottom:8px;overflow:hidden}
+.glo-item>summary{list-style:none;cursor:pointer;padding:13px 15px;font-size:14.5px;font-weight:700;color:#1C1E21;display:flex;justify-content:space-between;align-items:center;gap:10px;user-select:none;-webkit-user-select:none}
+.glo-item>summary::-webkit-details-marker{display:none}
+.glo-item>summary::after{content:'+';font-size:18px;font-weight:800;color:#1877F2;flex-shrink:0;line-height:1}
+.glo-item[open]>summary::after{content:'–'}
+.glo-item[open]>summary{border-bottom:1px solid #EEF0F2}
+.glo-def{padding:12px 15px;font-size:13.5px;line-height:1.55;color:#444}
+.glo-empty{text-align:center;color:#8A8D91;font-size:14px;padding:30px 10px}
 
 /* Welcome titular más grande y aireado en vista day/course */
 .welcome h1{font-size:24px;line-height:1.2;margin-bottom:6px}
@@ -1042,6 +1055,7 @@ async function loadCourses(){
               kind: unit.kind || 'unit', // 'unit' o 'mock-exam'
               lessons: unitData.lessons || [],
               sections: unitData.sections || null, // mapa opcional de metadata de secciones por dato
+              conceptos: unitData.conceptos || null, // conceptos clave (glosario) — opcional
               diagnostic,
               unitQuiz,
               mockExam: unit.kind === 'mock-exam' ? unitData : null
@@ -1575,6 +1589,7 @@ function render(){
   else if(VIEW === 'flashcards') html = renderFlashcards();
   else if(VIEW === 'achievements') html = renderAchievements();
   else if(VIEW === 'config') html = renderConfig();
+  else if(VIEW === 'glossary') html = renderGlossary();
   else if(VIEW === 'streak') html = renderStreak();
   else html = renderHome();
   app.innerHTML = html;
@@ -3462,6 +3477,141 @@ function openStreak(){
   render();
 }
 
+// ============================================================
+// GLOSARIO (vista de consulta — Ajustes)
+// ============================================================
+let GLOSSARY = { courseId: null };
+
+function glossaryCourses(){
+  return Object.values(COURSES).filter(c => {
+    const g = (c.days || []).find(d => d.id === 'glosario');
+    return g && (((g.lessons || []).length > 0) || ((g.conceptos || []).length > 0));
+  });
+}
+
+function gloNorm(s){
+  return (s == null ? '' : '' + s).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/<[^>]+>/g, ' ').toLowerCase();
+}
+
+function gloScrollTop(){
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+
+function openGlossary(){
+  haptic(HAPTIC.tap);
+  const list = glossaryCourses();
+  GLOSSARY = { courseId: list.length === 1 ? list[0].id : null };
+  VIEW = 'glossary';
+  render();
+  gloScrollTop();
+}
+
+function glossarySelectCourse(id){
+  haptic(HAPTIC.tap);
+  GLOSSARY.courseId = id;
+  render();
+  gloScrollTop();
+}
+
+function glossaryBack(){
+  haptic(8);
+  GLOSSARY.courseId = null;
+  render();
+  gloScrollTop();
+}
+
+function filterGlossary(q){
+  const nq = gloNorm(q).trim();
+  const root = document.getElementById('glo-list');
+  if(!root) return;
+  let total = 0;
+  root.querySelectorAll('.glo-group').forEach(grp => {
+    let shown = 0;
+    grp.querySelectorAll('.glo-item').forEach(it => {
+      const match = !nq || (it.getAttribute('data-k') || '').indexOf(nq) !== -1;
+      it.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    grp.style.display = shown ? '' : 'none';
+    total += shown;
+  });
+  root.querySelectorAll('.glo-section-lbl').forEach(lbl => {
+    let any = false, n = lbl.nextElementSibling;
+    while(n && !n.classList.contains('glo-section-lbl')){
+      if(n.classList.contains('glo-group') && n.style.display !== 'none') any = true;
+      n = n.nextElementSibling;
+    }
+    lbl.style.display = any ? '' : 'none';
+  });
+  const empty = document.getElementById('glo-empty');
+  if(empty) empty.style.display = total ? 'none' : '';
+}
+
+function renderGlossary(){
+  const courses = glossaryCourses();
+
+  if(!GLOSSARY.courseId || !COURSES[GLOSSARY.courseId]){
+    return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="back-row">
+        <button class="back-btn" onclick="haptic(8);navTo('config')" aria-label="Volver a Ajustes">←</button>
+        <div class="crumb">Glosario</div>
+      </div>
+      <div class="welcome"><h1>📖 Glosario</h1><p>Consulta términos y conceptos clave por curso</p></div>
+      ${courses.length ? courses.map(c => {
+        const g = c.days.find(d => d.id === 'glosario');
+        const terms = (g.lessons || []).reduce((a, l) => a + (l.cards || []).length, 0);
+        const keys = (g.conceptos || []).reduce((a, x) => a + (x.items || []).length, 0);
+        return `
+        <div class="practice-row" onclick="haptic(8);glossarySelectCourse('${c.id}')">
+          <div class="pr-ico" style="background:linear-gradient(135deg,${c.color || '#1877F2'},#0E5BC4)">${c.icon || '📘'}</div>
+          <div class="pr-info">
+            <div class="pr-title">${c.title}</div>
+            <div class="pr-meta">${keys} conceptos · ${terms} términos →</div>
+          </div>
+        </div>`;
+      }).join('') : `<div class="card">Aún no hay glosarios cargados. Abre la app con conexión para descargar el contenido.</div>`}
+    </div>`;
+  }
+
+  const course = COURSES[GLOSSARY.courseId];
+  const glo = course.days.find(d => d.id === 'glosario') || {};
+  const conceptos = glo.conceptos || [];
+  const termGroups = (glo.lessons || []).map(l => ({
+    title: l.title || 'Términos',
+    items: (l.cards || []).map(c => ({ t: c.q, d: c.a }))
+  }));
+  const multi = courses.length > 1;
+
+  const groupHtml = (title, items) => `
+    <div class="glo-group">
+      <div class="section-title">${title}</div>
+      ${items.map(it => `
+        <details class="glo-item" data-k="${gloNorm((it.t || '') + ' ' + (it.d || '')).replace(/"/g, '&quot;')}">
+          <summary>${it.t || ''}</summary>
+          <div class="glo-def">${it.d || ''}</div>
+        </details>`).join('')}
+    </div>`;
+
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="back-row">
+        <button class="back-btn" onclick="${multi ? 'glossaryBack()' : "haptic(8);navTo('config')"}" aria-label="Volver">←</button>
+        <div class="crumb">Glosario · ${course.title}</div>
+      </div>
+      <input class="glo-search" type="search" inputmode="search" autocomplete="off" placeholder="🔍 Buscar término o concepto…" oninput="filterGlossary(this.value)" aria-label="Buscar en el glosario"/>
+      <div id="glo-list">
+        ${conceptos.length ? `<div class="glo-section-lbl">⭐ Conceptos clave</div>` : ''}
+        ${conceptos.map(c => groupHtml(c.cat, c.items || [])).join('')}
+        ${termGroups.length ? `<div class="glo-section-lbl">🔤 Términos del examen</div>` : ''}
+        ${termGroups.map(g => groupHtml(g.title, g.items)).join('')}
+        <div id="glo-empty" class="glo-empty" style="display:none">Sin resultados para tu búsqueda.</div>
+      </div>
+    </div>`;
+}
+
 function setDailyGoal(n){
   haptic(HAPTIC.select);
   DB.dailyGoal = n;
@@ -3709,6 +3859,15 @@ function renderConfig(){
           <div class="pr-meta">Sin errores · 0 hearts perdidos</div>
         </div>
         <div style="font-size:22px;font-weight:800;color:#E74C3C;flex-shrink:0">${DB.perfectLessons}</div>
+      </div>
+
+      <div class="practice-row" onclick="haptic(8);openGlossary()">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1ABC9C,#138D75)">📖</div>
+        <div class="pr-info">
+          <div class="pr-title">Glosario</div>
+          <div class="pr-meta">Términos y conceptos clave por curso →</div>
+        </div>
+        <div style="font-size:22px;flex-shrink:0">📚</div>
       </div>
 
       ${(() => {

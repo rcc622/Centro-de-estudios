@@ -7,30 +7,102 @@
       "title": "Estructura, subasta y buying types",
       "type": "flashcards",
       "cards": [
-        { "q": "Ad auction", "a": "Componente del ad delivery donde declaras el precio máximo que pagarías por un clic, impresión o conversión; decide qué anuncio se muestra." },
-        { "q": "Total value (de un anuncio en subasta)", "a": "advertiser bid + estimated action rates + ad quality. El cost control NO es parte del total value." },
-        { "q": "Estimated action rates", "a": "Valor calculado de qué tan probable es que tu anuncio logre el resultado deseado después de mostrarse a una persona." },
-        { "q": "Ad quality", "a": "Valor calculado según la calidad del anuncio y qué tan relevante es para la audiencia seleccionada." },
-        { "q": "Advertiser bid", "a": "El monto que pujas en una ad auction." },
-        { "q": "Buying type", "a": "El método por el que compras anuncios across Meta technologies: auction o reservation." },
-        { "q": "Auction (buying type)", "a": "Buying type donde participas en una subasta. Soporta más objetivos, 5 bid strategies, más placements y entrega across Meta technologies." },
-        { "q": "Reservation (buying type)", "a": "Buying type que alcanza un número fijo de personas a una frequency específica por un precio fijo. Solo objetivos Awareness y Engagement; solo Facebook e Instagram." },
-        { "q": "Bid strategy", "a": "Configuración que determina cómo gastar tu budget en alineación con la meta de la campaña." },
-        { "q": "Bid cap", "a": "Bid strategy que fija un bid máximo a usar en cada subasta." },
-        { "q": "Cost per result goal", "a": "Bid strategy que da un costo benchmark por resultado; el promedio se entrega sobre la vida de la campaña y PUEDE exceder el monto fijado al pujar dinámicamente." },
-        { "q": "Highest value", "a": "Bid strategy spend-based que prioriza gastar el budget enfocándose en las compras de mayor valor." },
-        { "q": "Highest volume", "a": "Bid strategy spend-based que maximiza la cantidad de resultados gastando el budget, sin priorizar valor." },
-        { "q": "Bid pacing", "a": "Parte del pacing que ajusta tu bid o a qué subastas entrar según el budget y tiempo restante del ad set." },
-        { "q": "Budget (Ads Manager)", "a": "Monto máximo que estás dispuesto a gastar por ad set o campaña, en promedio diario (daily) o durante toda la vida (lifetime)." },
-        { "q": "Advantage+ campaign budget", "a": "Setting que distribuye tu gasto entre los ad sets de la campaña hacia los de mejor desempeño en tiempo real." },
-        { "q": "Campaign level", "a": "Etapa de creación donde defines buying type, objective, budget y bid para toda la campaña." },
-        { "q": "Ad set level", "a": "Etapa donde construyes un grupo de anuncios: conversion/performance goal, budget y schedule, audiencia y placements." },
-        { "q": "Ad level", "a": "Etapa donde construyes el anuncio individual: ad creative, destination y tracking." },
-        { "q": "Ad set", "a": "Grupo de anuncios que comparten budget, schedule, bid e información de audiencia." },
-        { "q": "Campaign objective", "a": "La meta que el anunciante selecciona y refleja lo que quiere lograr: awareness, traffic, engagement, leads, app promotion o sales." },
-        { "q": "Learning phase", "a": "Periodo en que el delivery system recopila información para optimizar la entrega; termina al estabilizarse (~50 optimization events). Es aprendizaje de la máquina." },
-        { "q": "Standard delivery", "a": "Opción de delivery que gasta tu budget de forma pareja durante la campaña." },
-        { "q": "Opportunity score", "a": "Indica qué tan optimizadas están campañas/ad sets/ads según recomendaciones probadas experimentalmente; útil antes, durante y después. No predice performance." }
+        {
+          "q": "Ad auction",
+          "a": "Componente del ad delivery donde declaras el precio máximo que pagarías por un clic, impresión o conversión; decide qué anuncio se muestra."
+        },
+        {
+          "q": "Total value (de un anuncio en subasta)",
+          "a": "advertiser bid + estimated action rates + ad quality. El cost control NO es parte del total value."
+        },
+        {
+          "q": "Estimated action rates",
+          "a": "Valor calculado de qué tan probable es que tu anuncio logre el resultado deseado después de mostrarse a una persona."
+        },
+        {
+          "q": "Ad quality",
+          "a": "Valor calculado según la calidad del anuncio y qué tan relevante es para la audiencia seleccionada."
+        },
+        {
+          "q": "Advertiser bid",
+          "a": "El monto que pujas en una ad auction."
+        },
+        {
+          "q": "Buying type",
+          "a": "El método por el que compras anuncios across Meta technologies: auction o reservation."
+        },
+        {
+          "q": "Auction (buying type)",
+          "a": "Buying type donde participas en una subasta. Soporta más objetivos, 5 bid strategies, más placements y entrega across Meta technologies."
+        },
+        {
+          "q": "Reservation (buying type)",
+          "a": "Buying type que alcanza un número fijo de personas a una frequency específica por un precio fijo. Solo objetivos Awareness y Engagement; solo Facebook e Instagram."
+        },
+        {
+          "q": "Bid strategy",
+          "a": "Configuración que determina cómo gastar tu budget en alineación con la meta de la campaña."
+        },
+        {
+          "q": "Bid cap",
+          "a": "Bid strategy que fija un bid máximo a usar en cada subasta."
+        },
+        {
+          "q": "Cost per result goal",
+          "a": "Bid strategy que da un costo benchmark por resultado; el promedio se entrega sobre la vida de la campaña y PUEDE exceder el monto fijado al pujar dinámicamente."
+        },
+        {
+          "q": "Highest value",
+          "a": "Bid strategy spend-based que prioriza gastar el budget enfocándose en las compras de mayor valor."
+        },
+        {
+          "q": "Highest volume",
+          "a": "Bid strategy spend-based que maximiza la cantidad de resultados gastando el budget, sin priorizar valor."
+        },
+        {
+          "q": "Bid pacing",
+          "a": "Parte del pacing que ajusta tu bid o a qué subastas entrar según el budget y tiempo restante del ad set."
+        },
+        {
+          "q": "Budget (Ads Manager)",
+          "a": "Monto máximo que estás dispuesto a gastar por ad set o campaña, en promedio diario (daily) o durante toda la vida (lifetime)."
+        },
+        {
+          "q": "Advantage+ campaign budget",
+          "a": "Setting que distribuye tu gasto entre los ad sets de la campaña hacia los de mejor desempeño en tiempo real."
+        },
+        {
+          "q": "Campaign level",
+          "a": "Etapa de creación donde defines buying type, objective, budget y bid para toda la campaña."
+        },
+        {
+          "q": "Ad set level",
+          "a": "Etapa donde construyes un grupo de anuncios: conversion/performance goal, budget y schedule, audiencia y placements."
+        },
+        {
+          "q": "Ad level",
+          "a": "Etapa donde construyes el anuncio individual: ad creative, destination y tracking."
+        },
+        {
+          "q": "Ad set",
+          "a": "Grupo de anuncios que comparten budget, schedule, bid e información de audiencia."
+        },
+        {
+          "q": "Campaign objective",
+          "a": "La meta que el anunciante selecciona y refleja lo que quiere lograr: awareness, traffic, engagement, leads, app promotion o sales."
+        },
+        {
+          "q": "Learning phase",
+          "a": "Periodo en que el delivery system recopila información para optimizar la entrega; termina al estabilizarse (~50 optimization events). Es aprendizaje de la máquina."
+        },
+        {
+          "q": "Standard delivery",
+          "a": "Opción de delivery que gasta tu budget de forma pareja durante la campaña."
+        },
+        {
+          "q": "Opportunity score",
+          "a": "Indica qué tan optimizadas están campañas/ad sets/ads según recomendaciones probadas experimentalmente; útil antes, durante y después. No predice performance."
+        }
       ]
     },
     {
@@ -38,30 +110,102 @@
       "title": "Signals, data, catálogo y audiencias",
       "type": "flashcards",
       "cards": [
-        { "q": "Data source", "a": "Herramienta/código que recolecta información (Conversions API, Meta Pixel, Facebook SDK, offline conversions) usada para medición y optimización." },
-        { "q": "Meta Pixel", "a": "Pieza de código instalada en tu sitio web que captura website events." },
-        { "q": "Facebook SDK", "a": "Pieza de código instalada en tu app que captura app events." },
-        { "q": "Conversions API", "a": "API que envía eventos web (u offline/app/messaging) directo desde tu servidor a Meta; se conecta a un Pixel ID y mejora precisión y attribution." },
-        { "q": "Standard event", "a": "Acción registrada predefinida por Meta." },
-        { "q": "Custom event", "a": "Acción registrada que tú defines según una acción específica en web, app u offline." },
-        { "q": "Custom conversion", "a": "Objeto de medición creado aplicando reglas a eventos existentes para capturar resultados únicos." },
-        { "q": "Parameter", "a": "Modificador o valor asignado a un evento para añadir contexto de medición (predefinido o custom)." },
-        { "q": "Value (parameter)", "a": "Parámetro junto a eventos que mide el valor de precio del inventario con que la gente interactúa." },
-        { "q": "Offline event", "a": "Acción que ocurre fuera de Meta y fuera del sitio/app: visitas a tienda, ventas por teléfono, compras en tienda." },
-        { "q": "Events Manager", "a": "Herramienta accesible desde Ads Manager para configurar y administrar data sources y optimizar para eventos específicos." },
-        { "q": "Aggregated Event Measurement (AEM)", "a": "Protocolo que preserva la privacidad de las personas al medir eventos web." },
-        { "q": "Catalog", "a": "Asset de negocio para almacenar y administrar el inventario que se quiere anunciar across Meta technologies. Se gestiona en Commerce Manager." },
-        { "q": "Product set", "a": "Grupo de items dentro de un catálogo organizado por atributos (sales, best sellers, eventos) para usar en campañas." },
-        { "q": "Advantage+ catalog ads", "a": "Tipo de anuncio que muestra productos del catálogo y elige el más relevante para cada persona. Disponible para sales, app, engagement, leads y traffic." },
-        { "q": "Custom audience", "a": "Audiencia creada para encontrar tus audiencias existentes entre personas que usan Meta technologies (retargeting)." },
-        { "q": "Lookalike audience", "a": "Grupo de personas similares a una audiencia existente (custom audience). Mínimo 100 personas de un país; recomendado ≥1,000." },
-        { "q": "Value-Based Lookalike", "a": "Lookalike construido a partir del valor de los clientes, para encontrar gente similar a los clientes de mayor valor." },
-        { "q": "Advantage+ audience", "a": "Solución que usa IA para expandir más allá de los parámetros sugeridos; se aplica por defecto a campañas nuevas." },
-        { "q": "Audience controls", "a": "Restricciones duras en Advantage+ audience: edad mínima, ubicación, idioma o excluir custom audiences." },
-        { "q": "Audience suggestions", "a": "Inputs (detailed targeting, custom/lookalike audiences, edad, género) que guían a la IA sin limitar estrictamente quién ve el anuncio." },
-        { "q": "Detailed targeting", "a": "Definir audiencia por intereses, datos demográficos o comportamientos; evitar la oversegmentación." },
-        { "q": "Audience overlap", "a": "Cuando audiencias muy similares compiten entre sí; se monitorea en la pestaña Audiences y se maneja con exclusiones o consolidación." },
-        { "q": "Audience Network", "a": "Red de publishers de apps móviles aprobados para mostrar anuncios across Meta technologies." }
+        {
+          "q": "Data source",
+          "a": "Herramienta/código que recolecta información (Conversions API, Meta Pixel, Facebook SDK, offline conversions) usada para medición y optimización."
+        },
+        {
+          "q": "Meta Pixel",
+          "a": "Pieza de código instalada en tu sitio web que captura website events."
+        },
+        {
+          "q": "Facebook SDK",
+          "a": "Pieza de código instalada en tu app que captura app events."
+        },
+        {
+          "q": "Conversions API",
+          "a": "API que envía eventos web (u offline/app/messaging) directo desde tu servidor a Meta; se conecta a un Pixel ID y mejora precisión y attribution."
+        },
+        {
+          "q": "Standard event",
+          "a": "Acción registrada predefinida por Meta."
+        },
+        {
+          "q": "Custom event",
+          "a": "Acción registrada que tú defines según una acción específica en web, app u offline."
+        },
+        {
+          "q": "Custom conversion",
+          "a": "Objeto de medición creado aplicando reglas a eventos existentes para capturar resultados únicos."
+        },
+        {
+          "q": "Parameter",
+          "a": "Modificador o valor asignado a un evento para añadir contexto de medición (predefinido o custom)."
+        },
+        {
+          "q": "Value (parameter)",
+          "a": "Parámetro junto a eventos que mide el valor de precio del inventario con que la gente interactúa."
+        },
+        {
+          "q": "Offline event",
+          "a": "Acción que ocurre fuera de Meta y fuera del sitio/app: visitas a tienda, ventas por teléfono, compras en tienda."
+        },
+        {
+          "q": "Events Manager",
+          "a": "Herramienta accesible desde Ads Manager para configurar y administrar data sources y optimizar para eventos específicos."
+        },
+        {
+          "q": "Aggregated Event Measurement (AEM)",
+          "a": "Protocolo que preserva la privacidad de las personas al medir eventos web."
+        },
+        {
+          "q": "Catalog",
+          "a": "Asset de negocio para almacenar y administrar el inventario que se quiere anunciar across Meta technologies. Se gestiona en Commerce Manager."
+        },
+        {
+          "q": "Product set",
+          "a": "Grupo de items dentro de un catálogo organizado por atributos (sales, best sellers, eventos) para usar en campañas."
+        },
+        {
+          "q": "Advantage+ catalog ads",
+          "a": "Tipo de anuncio que muestra productos del catálogo y elige el más relevante para cada persona. Disponible para sales, app, engagement, leads y traffic."
+        },
+        {
+          "q": "Custom audience",
+          "a": "Audiencia creada para encontrar tus audiencias existentes entre personas que usan Meta technologies (retargeting)."
+        },
+        {
+          "q": "Lookalike audience",
+          "a": "Grupo de personas similares a una audiencia existente (custom audience). Mínimo 100 personas de un país; recomendado ≥1,000."
+        },
+        {
+          "q": "Value-Based Lookalike",
+          "a": "Lookalike construido a partir del valor de los clientes, para encontrar gente similar a los clientes de mayor valor."
+        },
+        {
+          "q": "Advantage+ audience",
+          "a": "Solución que usa IA para expandir más allá de los parámetros sugeridos; se aplica por defecto a campañas nuevas."
+        },
+        {
+          "q": "Audience controls",
+          "a": "Restricciones duras en Advantage+ audience: edad mínima, ubicación, idioma o excluir custom audiences."
+        },
+        {
+          "q": "Audience suggestions",
+          "a": "Inputs (detailed targeting, custom/lookalike audiences, edad, género) que guían a la IA sin limitar estrictamente quién ve el anuncio."
+        },
+        {
+          "q": "Detailed targeting",
+          "a": "Definir audiencia por intereses, datos demográficos o comportamientos; evitar la oversegmentación."
+        },
+        {
+          "q": "Audience overlap",
+          "a": "Cuando audiencias muy similares compiten entre sí; se monitorea en la pestaña Audiences y se maneja con exclusiones o consolidación."
+        },
+        {
+          "q": "Audience Network",
+          "a": "Red de publishers de apps móviles aprobados para mostrar anuncios across Meta technologies."
+        }
       ]
     },
     {
@@ -69,32 +213,284 @@
       "title": "Creative, medición y métricas",
       "type": "flashcards",
       "cards": [
-        { "q": "Ad format", "a": "El layout del anuncio: cómo se ve y cuántas imágenes o videos contiene (single image, video, carousel, collection, slideshow)." },
-        { "q": "Carousel (ad format)", "a": "Contenido que muestra múltiples imágenes o videos que se desplazan de izquierda a derecha." },
-        { "q": "Collection (ad format)", "a": "Agrupación de items promocionales ordenados sistemáticamente." },
-        { "q": "Instant experience", "a": "Landing page interna fullscreen que carga al instante al tocar un anuncio; solo en placements y dispositivos mobile." },
-        { "q": "Dynamic creative", "a": "Provees múltiples assets y el sistema los combina/empareja automáticamente a la audiencia." },
-        { "q": "Advantage+ creative", "a": "Solución single-step que ajusta y adapta automáticamente el creative para distintas personas y placements." },
-        { "q": "Advantage+ placements", "a": "Muestra el anuncio en el rango más amplio de placements across Meta technologies." },
-        { "q": "Manual placements", "a": "Opción para elegir las ubicaciones específicas donde quieres que aparezcan tus anuncios." },
-        { "q": "Creative fatigue", "a": "Cuando el desempeño del anuncio cae por sobreexposición; se combate diversificando creative." },
-        { "q": "Advertising Standards", "a": "Lineamientos que tu anuncio debe cumplir para aprobarse; no permiten implicar atributos personales del usuario." },
-        { "q": "Special Ad Category", "a": "Categorías con reglas especiales: productos y servicios financieros, empleo, vivienda, y temas sociales/elecciones/política." },
-        { "q": "A/B test", "a": "Experimento controlado que compara múltiples ad sets para determinar cuál rinde mejor; ganador = menor cost per result." },
-        { "q": "Brand lift", "a": "Métrica (brand affinity) que da insight sobre actitudes hacia la marca y awareness; mide ad recall." },
-        { "q": "Conversion Lift", "a": "Experimento con randomized control trials que mide las conversiones incrementales causadas por los anuncios. Fuente recomendada: Conversions API." },
-        { "q": "Single-cell (test)", "a": "Estudio con un grupo de test: grupo A ve el anuncio, grupo B no. Mide incrementalidad pura." },
-        { "q": "Multi-cell (test)", "a": "Estudio con varios grupos de test (A ve un anuncio, B otro, C ninguno); compara estrategias." },
-        { "q": "Experiments", "a": "Herramienta en Ads Manager y Meta Business Suite para configurar A/B Testing, Brand Lift y Conversion Lift." },
-        { "q": "Attribution", "a": "Proceso de asignar crédito a los touchpoints del customer journey por una conversión." },
-        { "q": "Attribution model", "a": "Lógica que determina cómo se da crédito. Ads Manager: standard e incremental (incremental usa modelos predictivos para conversiones incrementales)." },
-        { "q": "Attribution setting", "a": "Periodo de tiempo durante el cual las conversiones pueden acreditarse a un anuncio." },
-        { "q": "Frequency", "a": "Número promedio de veces que una persona vio tu anuncio (impressions ÷ reach)." },
-        { "q": "Reach", "a": "Número de personas únicas que vieron tu anuncio." },
-        { "q": "CPM (cost per thousand impressions)", "a": "Costo promedio pagado por 1,000 impresiones del anuncio." },
-        { "q": "CTR (click-through rate)", "a": "Número de clics dividido entre el número de veces que se mostró." },
-        { "q": "Cost per result", "a": "El costo cada vez que se realiza una acción a causa de tu anuncio; métrica clave para evaluar performance goal." },
-        { "q": "Conversion Lift best practices", "a": "≥ $10,000 de gasto, 10% holdout y > 500 conversiones para resultados estadísticamente significativos." }
+        {
+          "q": "Ad format",
+          "a": "El layout del anuncio: cómo se ve y cuántas imágenes o videos contiene (single image, video, carousel, collection, slideshow)."
+        },
+        {
+          "q": "Carousel (ad format)",
+          "a": "Contenido que muestra múltiples imágenes o videos que se desplazan de izquierda a derecha."
+        },
+        {
+          "q": "Collection (ad format)",
+          "a": "Agrupación de items promocionales ordenados sistemáticamente."
+        },
+        {
+          "q": "Instant experience",
+          "a": "Landing page interna fullscreen que carga al instante al tocar un anuncio; solo en placements y dispositivos mobile."
+        },
+        {
+          "q": "Dynamic creative",
+          "a": "Provees múltiples assets y el sistema los combina/empareja automáticamente a la audiencia."
+        },
+        {
+          "q": "Advantage+ creative",
+          "a": "Solución single-step que ajusta y adapta automáticamente el creative para distintas personas y placements."
+        },
+        {
+          "q": "Advantage+ placements",
+          "a": "Muestra el anuncio en el rango más amplio de placements across Meta technologies."
+        },
+        {
+          "q": "Manual placements",
+          "a": "Opción para elegir las ubicaciones específicas donde quieres que aparezcan tus anuncios."
+        },
+        {
+          "q": "Creative fatigue",
+          "a": "Cuando el desempeño del anuncio cae por sobreexposición; se combate diversificando creative."
+        },
+        {
+          "q": "Advertising Standards",
+          "a": "Lineamientos que tu anuncio debe cumplir para aprobarse; no permiten implicar atributos personales del usuario."
+        },
+        {
+          "q": "Special Ad Category",
+          "a": "Categorías con reglas especiales: productos y servicios financieros, empleo, vivienda, y temas sociales/elecciones/política."
+        },
+        {
+          "q": "A/B test",
+          "a": "Experimento controlado que compara múltiples ad sets para determinar cuál rinde mejor; ganador = menor cost per result."
+        },
+        {
+          "q": "Brand lift",
+          "a": "Métrica (brand affinity) que da insight sobre actitudes hacia la marca y awareness; mide ad recall."
+        },
+        {
+          "q": "Conversion Lift",
+          "a": "Experimento con randomized control trials que mide las conversiones incrementales causadas por los anuncios. Fuente recomendada: Conversions API."
+        },
+        {
+          "q": "Single-cell (test)",
+          "a": "Estudio con un grupo de test: grupo A ve el anuncio, grupo B no. Mide incrementalidad pura."
+        },
+        {
+          "q": "Multi-cell (test)",
+          "a": "Estudio con varios grupos de test (A ve un anuncio, B otro, C ninguno); compara estrategias."
+        },
+        {
+          "q": "Experiments",
+          "a": "Herramienta en Ads Manager y Meta Business Suite para configurar A/B Testing, Brand Lift y Conversion Lift."
+        },
+        {
+          "q": "Attribution",
+          "a": "Proceso de asignar crédito a los touchpoints del customer journey por una conversión."
+        },
+        {
+          "q": "Attribution model",
+          "a": "Lógica que determina cómo se da crédito. Ads Manager: standard e incremental (incremental usa modelos predictivos para conversiones incrementales)."
+        },
+        {
+          "q": "Attribution setting",
+          "a": "Periodo de tiempo durante el cual las conversiones pueden acreditarse a un anuncio."
+        },
+        {
+          "q": "Frequency",
+          "a": "Número promedio de veces que una persona vio tu anuncio (impressions ÷ reach)."
+        },
+        {
+          "q": "Reach",
+          "a": "Número de personas únicas que vieron tu anuncio."
+        },
+        {
+          "q": "CPM (cost per thousand impressions)",
+          "a": "Costo promedio pagado por 1,000 impresiones del anuncio."
+        },
+        {
+          "q": "CTR (click-through rate)",
+          "a": "Número de clics dividido entre el número de veces que se mostró."
+        },
+        {
+          "q": "Cost per result",
+          "a": "El costo cada vez que se realiza una acción a causa de tu anuncio; métrica clave para evaluar performance goal."
+        },
+        {
+          "q": "Conversion Lift best practices",
+          "a": "≥ $10,000 de gasto, 10% holdout y > 500 conversiones para resultados estadísticamente significativos."
+        }
+      ]
+    }
+  ],
+  "conceptos": [
+    {
+      "cat": "🧭 Frameworks oficiales",
+      "items": [
+        {
+          "t": "Las 7 Performance Best Practices",
+          "d": "Orden oficial: 1) Automate campaign setup · 2) Align objectives &amp; goals · 3) Consider your audience · 4) Optimize creative &amp; placements · 5) Focus on signals · 6) Get the most out of budget &amp; bidding · 7) Validate results.<br/>Las BP 1-6 son recomendaciones del Opportunity Score; la BP 7 (<strong>Validate results</strong>) ocurre <em>post-campaña</em> y NO se mide en el opportunity score."
+        },
+        {
+          "t": "Los 3 niveles de la campaña",
+          "d": "<strong>Campaign</strong>: buying type, objective, budget, bid, A/B test. <strong>Ad set</strong>: audience, placements, schedule, conversion settings. <strong>Ad</strong>: creative, destination, tracking, identity, languages."
+        },
+        {
+          "t": "Opportunity Score",
+          "d": "Score 0-100 que muestra qué tan optimizadas están tus campañas según recomendaciones experimentalmente probadas que aún <strong>no aplicaste</strong>. NO predice performance real ni tu ROAS futuro."
+        },
+        {
+          "t": "Advantage+ (la suite)",
+          "d": "<strong>Advantage+ Sales</strong> = complete campaign solution (automatiza toda la campaña de ventas). Single-step solutions: <strong>Advantage+ audience</strong>, <strong>Advantage+ placements</strong>, <strong>Advantage+ campaign budget</strong> (antes CBO, asigna budget dinámico al ad set con mejor performance) y <strong>Advantage+ creative</strong>."
+        }
+      ]
+    },
+    {
+      "cat": "🎯 Los 6 objectives (ODAX)",
+      "items": [
+        {
+          "t": "Awareness",
+          "d": "Llegar al máximo de personas que recordarán el ad. Top funnel."
+        },
+        {
+          "t": "Traffic",
+          "d": "Enviar gente a un destino: web, app, llamada o mensajes."
+        },
+        {
+          "t": "Engagement",
+          "d": "Hacer que la gente interactúe con el negocio (mensajes, video views, post engagement, etc.)."
+        },
+        {
+          "t": "Leads",
+          "d": "Recolectar contactos: forms (instant o web), llamadas, sign-ups."
+        },
+        {
+          "t": "App Promotion",
+          "d": "Instalar la app o aumentar su uso. Requiere SDK/MMP."
+        },
+        {
+          "t": "Sales",
+          "d": "Encontrar a las personas más propensas a comprar. Bottom funnel; requiere Pixel + CAPI."
+        }
+      ]
+    },
+    {
+      "cat": "💰 Compra y puja",
+      "items": [
+        {
+          "t": "Buying types: Auction vs Reservation",
+          "d": "<strong>Auction</strong>: flexible, optimiza por subasta, todos los objectives, sin garantía de precio. <strong>Reservation</strong>: compras por adelantado con CPM y entrega predecibles (planeación tipo TV), solo ciertos objectives."
+        },
+        {
+          "t": "Las 5 bid strategies",
+          "d": "<strong>Highest Volume</strong> (default, gasta todo, máx resultados) · <strong>Highest Value</strong> (gasta todo, máx valor; requiere Pixel con value) · <strong>Cost per Result Goal</strong> (mantiene CPA promedio en target) · <strong>ROAS Goal</strong> (apunta a un ROAS objetivo) · <strong>Bid Cap</strong> (fija el bid máximo en la subasta, advanced). Solo existen en Auction."
+        },
+        {
+          "t": "Spend-based vs Goal-based vs Manual",
+          "d": "<strong>Spend-based</strong> (Highest Volume / Highest Value): gastan todo el budget. <strong>Goal-based</strong> (Cost per Result Goal / ROAS Goal): respetan una meta de costo/retorno. <strong>Manual</strong> (Bid Cap): tú controlas el bid."
+        },
+        {
+          "t": "Cómo se gana la subasta",
+          "d": "Total value = <strong>bid × estimated action rate + user value</strong>. No siempre gana quien más puja: gana el mayor total value."
+        }
+      ]
+    },
+    {
+      "cat": "📈 Entrega y aprendizaje",
+      "items": [
+        {
+          "t": "Learning Phase",
+          "d": "Período donde el sistema testea el ad set para encontrar la mejor audiencia; hay fluctuaciones de costo (es normal). Sale al alcanzar <strong>~50 optimization events en 7 días</strong> tras activación o edit significativo."
+        },
+        {
+          "t": "Learning Limited",
+          "d": "Si el ad set no logra los ~50 events en 7 días, queda en <strong>Learning Limited</strong>: poca señal para optimizar y rendimiento inestable. Solución típica: ampliar audiencia, consolidar ad sets, evento más arriba del funnel o subir budget."
+        },
+        {
+          "t": "Budget: Campaign vs Ad set",
+          "d": "El budget va en <strong>UN solo</strong> nivel, nunca en ambos. Default: nivel Campaign (Advantage+ campaign budget) reparte dinámico entre ad sets. Daily vs Lifetime: lifetime permite scheduling/dayparting."
+        }
+      ]
+    },
+    {
+      "cat": "🔌 Señales y datos",
+      "items": [
+        {
+          "t": "Las 4 fuentes de datos",
+          "d": "<strong>Pixel</strong> (web), <strong>Conversions API / CAPI</strong> (server-side, resiliente a iOS/ad blockers), <strong>SDK / MMP</strong> (app) y <strong>offline / datasets</strong>. Pixel + CAPI juntos = redundancia y mejor señal."
+        },
+        {
+          "t": "Event Match Quality (EMQ)",
+          "d": "Calidad del matcheo de eventos según los parámetros de customer information que mandas (email, phone, etc., hasheados). Más y mejores parámetros → mejor EMQ → mejor optimización y atribución."
+        },
+        {
+          "t": "Attribution settings",
+          "d": "Ventana de atribución por default: <strong>7-day click + 1-day view</strong>. Define a qué conversiones se les da crédito; afecta el reporting, no la optimización en sí."
+        },
+        {
+          "t": "iOS 14+ / ATT / AEM",
+          "d": "App Tracking Transparency redujo señal de iOS. <strong>Aggregated Event Measurement</strong>: máximo 8 eventos por dominio priorizados; verifica el dominio y prioriza el evento de conversión clave."
+        }
+      ]
+    },
+    {
+      "cat": "👥 Audiencias",
+      "items": [
+        {
+          "t": "Core / Saved Audience",
+          "d": "Audiencia definida por ti con detailed targeting: demografía, intereses, comportamientos, ubicación. Es la audiencia 'original' (no automatizada)."
+        },
+        {
+          "t": "Custom Audience",
+          "d": "Gente que YA interactuó contigo: lista de clientes (hasheada), tráfico web/app (Pixel/SDK), engagement en Meta, video viewers. Base para retargeting y para Lookalikes."
+        },
+        {
+          "t": "Lookalike Audience",
+          "d": "Personas parecidas a una source (Custom Audience de calidad). Tamaño 1%–10% del país: 1% = más parecido/menor alcance; 10% = más alcance/menos preciso."
+        },
+        {
+          "t": "Advantage+ Audience",
+          "d": "Single-step solution que automatiza la selección de audiencia: tus inputs (Custom Audiences, sugerencias) son una guía, no un límite rígido; el sistema explora más allá."
+        }
+      ]
+    },
+    {
+      "cat": "🎨 Creative y medición",
+      "items": [
+        {
+          "t": "A/B Test (split test)",
+          "d": "Compara 2+ variables aisladas (creative, audiencia, placement) con audiencias mutuamente excluyentes para hallar un ganador con significancia estadística. Mide diferencia entre variantes."
+        },
+        {
+          "t": "Brand Lift",
+          "d": "Estudio de encuestas que mide el efecto en métricas de marca (recall, awareness, consideration). Es <em>upper-funnel</em>, no ventas."
+        },
+        {
+          "t": "Conversion Lift",
+          "d": "Mide la conversión <strong>incremental</strong> real con grupo de control (holdout): cuántas conversiones de más generó Meta. Best practices: ≥ $10,000 de gasto, ~10% holdout y &gt; 500 conversiones."
+        },
+        {
+          "t": "Métricas clave",
+          "d": "<strong>ROAS</strong> = ingreso / gasto · <strong>CPR</strong> = costo por resultado · <strong>CPM</strong> = costo por mil impresiones · <strong>CTR</strong> = clics / impresiones · <strong>Frequency</strong> = impresiones promedio por persona."
+        }
+      ]
+    },
+    {
+      "cat": "🛡️ Cuenta y brand safety",
+      "items": [
+        {
+          "t": "Business Portfolio",
+          "d": "Agrupador de assets (Pages, IG, ad accounts, catálogos, pixels) con permisos centralizados. Los <strong>Partners</strong> son otros negocios con su propio portfolio + business ID."
+        },
+        {
+          "t": "Acceso temporal",
+          "d": "En un business portfolio el acceso temporal dura mínimo <strong>3 días</strong> y máximo <strong>75 días</strong> (memorizar literal)."
+        },
+        {
+          "t": "Inventory filters",
+          "d": "Control del Brand Safety Center: <strong>Expanded</strong> (default, más reach) · <strong>Moderate</strong> · <strong>Limited</strong> (más exclusión, menos reach). También configurable a nivel ad set → placements."
+        },
+        {
+          "t": "Topic exclusions",
+          "d": "Aplican exclusivamente a <strong>Facebook in-stream y reels</strong>, no a todos los placements ni a Audience Network."
+        }
       ]
     }
   ]
