@@ -175,10 +175,26 @@ body{display:block}
 @keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
 
 /* TOAST */
-.toast{position:fixed;top:max(70px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-200%);background:#1C1E21;color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;font-size:13.5px;z-index:200;transition:transform .3s,opacity .2s;max-width:90vw;box-shadow:0 8px 24px rgba(0,0,0,.3);display:none;align-items:center;gap:8px;opacity:0;pointer-events:none}
-.toast.show{display:flex;transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
-.toast.success{background:#1F6B4A}
-.toast.error{background:#A8332B}
+.toast{position:fixed;top:max(14px,env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-170%);width:min(420px,92vw);background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);color:#1C1E21;padding:13px 15px;border-radius:20px;z-index:200;transition:transform .44s cubic-bezier(.21,1.18,.36,1),opacity .25s;box-shadow:0 14px 38px rgba(0,0,0,.22),0 3px 8px rgba(0,0,0,.09);border:1px solid rgba(255,255,255,.55);display:none;align-items:flex-start;gap:12px;opacity:0;pointer-events:none;cursor:pointer}
+.toast.show{display:flex;transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto;animation:toastPop .44s cubic-bezier(.21,1.18,.36,1)}
+@keyframes toastPop{0%{transform:translateX(-50%) translateY(-170%) scale(.92)}60%{transform:translateX(-50%) translateY(6px) scale(1.01)}100%{transform:translateX(-50%) translateY(0) scale(1)}}
+.toast::after{content:'';position:absolute;left:0;top:13px;bottom:13px;width:4px;border-radius:0 4px 4px 0;background:#1877F2}
+.toast.success::after{background:#23A06A}
+.toast.error::after{background:#E0463B}
+.toast-ico{flex-shrink:0;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#1877F2,#0E5BC4);display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 3px 9px rgba(24,119,242,.32)}
+.toast.success .toast-ico{background:linear-gradient(135deg,#23A06A,#15784D);box-shadow:0 3px 9px rgba(35,160,106,.32)}
+.toast.error .toast-ico{background:linear-gradient(135deg,#E0463B,#B5281F);box-shadow:0 3px 9px rgba(224,70,59,.32)}
+.toast-content{flex:1;min-width:0;padding-top:1px}
+.toast-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:2px}
+.toast-app{font-size:12px;font-weight:800;letter-spacing:.2px;color:#1C1E21}
+.toast-time{font-size:11px;color:#8A8D91;font-weight:600;flex-shrink:0}
+.toast-msg{font-size:13.5px;font-weight:600;color:#3A3D42;line-height:1.36;word-break:break-word}
+@media (prefers-color-scheme:dark){
+  .toast{background:rgba(38,40,43,.8);color:#fff;border:1px solid rgba(255,255,255,.09)}
+  .toast-app{color:#fff}
+  .toast-msg{color:#D6D8DB}
+  .toast-time{color:#9A9DA1}
+}
 
 /* SUMMARY */
 .score-big{font-size:48px;font-weight:900;color:#1877F2;text-align:center;margin:16px 0 4px}
@@ -727,7 +743,16 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
   </div>
 </div>
 <div class="particles" id="particles"></div>
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" onclick="hideToast()" role="alert">
+  <div class="toast-ico" id="toast-ico">🔔</div>
+  <div class="toast-content">
+    <div class="toast-top">
+      <span class="toast-app">Centro de Estudios</span>
+      <span class="toast-time">ahora</span>
+    </div>
+    <div class="toast-msg" id="toast-msg"></div>
+  </div>
+</div>
 
 <script>
 'use strict';
@@ -4273,11 +4298,19 @@ function launchConfetti(){
   setTimeout(() => pc.classList.remove('show'), 3500);
 }
 
+let _toastTimer = null;
 function showToast(msg, duration=2000, type=''){
   const t = document.getElementById('toast');
-  t.textContent = msg;
+  const ico = type === 'success' ? '✅' : type === 'error' ? '⚠️' : '🔔';
+  document.getElementById('toast-ico').textContent = ico;
+  document.getElementById('toast-msg').textContent = msg;
   t.className = 'toast' + (type ? ' ' + type : '') + ' show';
-  setTimeout(() => t.classList.remove('show'), duration);
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(hideToast, duration);
+}
+function hideToast(){
+  const t = document.getElementById('toast');
+  if(t) t.classList.remove('show');
 }
 
 // ============================================================
