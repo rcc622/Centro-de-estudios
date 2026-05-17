@@ -1,11 +1,33 @@
 {
   "id": "m7",
   "title": "Módulo 7 — Privacidad y brand safety",
+  "sections": {
+    "b1": {
+      "ico": "🔐",
+      "title": "Bloque 1",
+      "sub": "Data privacy policies"
+    },
+    "b2": {
+      "ico": "🛡️",
+      "title": "Bloque 2",
+      "sub": "Brand safety controls"
+    },
+    "b3": {
+      "ico": "✅",
+      "title": "Bloque 3",
+      "sub": "Ad review process"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Repaso final",
+      "sub": "Consolidación antes del examen"
+    }
+  },
   "lessons": [
     {
       "id": "7.1",
-      "title": "Data privacy policies",
-      "section": "A",
+      "title": "Explica · Data privacy policies",
+      "section": "b1",
       "type": "reading",
       "cards": [
         {
@@ -44,9 +66,128 @@
       ]
     },
     {
+      "id": "7.1d",
+      "title": "Ejercita la memoria · Bloque 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Las customer lists se suben ___ ; Meta hace el matching sin recibir datos en claro.",
+          "options": [
+            "hasheadas",
+            "en texto plano",
+            "comprimidas",
+            "encriptadas con tu llave"
+          ],
+          "correct": 0,
+          "explanation": "El hashing se aplica antes de subir la lista; el matching ocurre con hashes, no con datos en claro."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es la base correcta para recolectar y usar datos en publicidad?",
+          "options": [
+            "Usar cualquier dato disponible sin restricción",
+            "Solo con base legal o consentimiento adecuado",
+            "Solo si el cliente lo pide por escrito",
+            "Solo en campañas con Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Recolectar y usar datos exige base legal/consentimiento adecuado; es un principio de las políticas de privacidad."
+        },
+        {
+          "type": "fill",
+          "q": "No se permite segmentar usando categorías ___ inferidas.",
+          "options": [
+            "sensibles",
+            "demográficas",
+            "geográficas",
+            "de interés"
+          ],
+          "correct": 0,
+          "explanation": "Las categorías sensibles inferidas no se pueden usar para segmentar."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué privacidad y performance NO están peleadas?",
+          "options": [
+            "Porque la privacidad no afecta la medición",
+            "Porque una señal de servidor con consentimiento (CAPI) mejora medición y cumplimiento",
+            "Porque el consentimiento es opcional",
+            "Porque Meta ignora las políticas si hay buen ROAS"
+          ],
+          "correct": 1,
+          "explanation": "Diseñadas juntas, una señal de servidor bien gobernada (CAPI con consentimiento) mejora la medición y a la vez el cumplimiento."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué debe respetar el media planner además de las políticas de Meta?",
+          "options": [
+            "Solo el budget del cliente",
+            "La regulación de privacidad de datos aplicable",
+            "Únicamente el calendario de la campaña",
+            "Solo las Advertising Standards"
+          ],
+          "correct": 1,
+          "explanation": "El cumplimiento implica respetar las políticas de Meta y la regulación de privacidad de datos aplicable."
+        }
+      ]
+    },
+    {
+      "id": "7.1s",
+      "title": "Caso a resolver · Bloque 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "La PyME quiere subir su base",
+          "body": "Una distribuidora de refacciones en Monterrey quiere subir su lista de clientes B2B para retargeting. El dueño teme que Meta \"se quede con los correos de mis clientes\" y pregunta si es legal usar su propia base."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué le explicas sobre cómo se sube la lista?",
+          "options": [
+            "Meta guarda los emails en texto plano para hacer el match",
+            "La lista se sube hasheada y el matching ocurre sin exponer los datos en claro",
+            "No puede usar su propia base de clientes",
+            "Debe enviarle los correos a Meta por separado"
+          ],
+          "correct": 1,
+          "explanation": "Las customer lists se hashean antes de subirse; Meta hace el matching con hashes, no recibe los datos en claro."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Es válido usar su propia base de clientes para la custom audience?",
+          "options": [
+            "No, las listas propias están prohibidas",
+            "Sí, siempre que exista la base legal/consentimiento adecuado",
+            "Solo si la campaña usa Reservation",
+            "Solo si Meta recibe los datos en claro"
+          ],
+          "correct": 1,
+          "explanation": "Usar listas propias está permitido con la base legal o consentimiento adecuado para recolectar y usar esos datos."
+        }
+      ]
+    },
+    {
+      "id": "7.1f",
+      "title": "Mini-flashcards · Bloque 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "¿Cómo se suben las customer lists?", "a": "Hasheadas; Meta hace matching sin recibir datos en claro." },
+        { "q": "¿Privacidad y performance están peleadas?", "a": "No; señal de servidor con consentimiento (CAPI) mejora medición y cumplimiento." },
+        { "q": "Base para recolectar y usar datos", "a": "Solo con base legal o consentimiento adecuado." },
+        { "q": "Datos sensibles", "a": "No se permite segmentar usando categorías sensibles inferidas." },
+        { "q": "¿Qué implica el cumplimiento?", "a": "Respetar políticas de Meta y la regulación de privacidad de datos aplicable." }
+      ]
+    },
+    {
       "id": "7.2",
-      "title": "Brand safety controls",
-      "section": "B",
+      "title": "Explica · Brand safety controls",
+      "section": "b2",
       "type": "reading",
       "cards": [
         {
@@ -85,9 +226,140 @@
       ]
     },
     {
+      "id": "7.2d",
+      "title": "Ejercita la memoria · Bloque 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El ___ ajusta el nivel de idoneidad del contenido adyacente: expanded / moderate / limited.",
+          "options": [
+            "inventory filter",
+            "ad review",
+            "Pixel",
+            "objective"
+          ],
+          "correct": 0,
+          "explanation": "El inventory filter define qué tan estricto es el contenido adyacente permitido."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es la diferencia entre block list y allow list?",
+          "options": [
+            "Block = permitir solo publishers aprobados; Allow = excluir publishers",
+            "Block = excluir publishers concretos; Allow = permitir solo publishers aprobados",
+            "Ambas excluyen el mismo contenido",
+            "Solo la allow list aplica a Reels"
+          ],
+          "correct": 1,
+          "explanation": "Block list excluye publishers/sitios/cuentas concretos; publisher allow list permite solo los publishers aprobados."
+        },
+        {
+          "type": "fill",
+          "q": "Controles más estrictos = mayor seguridad de marca pero menor ___ y posible mayor costo.",
+          "options": [
+            "alcance",
+            "consentimiento",
+            "presupuesto",
+            "frecuencia"
+          ],
+          "correct": 0,
+          "explanation": "Es el trade-off de brand safety: más estricto reduce el alcance y puede subir el costo."
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué placements importan más los brand safety controls?",
+          "options": [
+            "Solo en el feed propio de la marca",
+            "En placements con contenido de terceros (in-stream, Audience Network, Reels)",
+            "Solo en Stories propias",
+            "En ningún placement, son automáticos"
+          ],
+          "correct": 1,
+          "explanation": "El riesgo de adyacencia surge donde hay contenido de terceros: in-stream, Audience Network y Reels."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Para qué sirve content type exclusions?",
+          "options": [
+            "Para excluir categorías o tipos de contenido sensibles",
+            "Para subir el presupuesto automáticamente",
+            "Para acelerar el ad review",
+            "Para crear custom audiences"
+          ],
+          "correct": 0,
+          "explanation": "Content type exclusions excluye categorías o tipos de contenido sensibles donde la marca no quiere aparecer."
+        }
+      ]
+    },
+    {
+      "id": "7.2s",
+      "title": "Caso a resolver · Bloque 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Banco regional, marca conservadora",
+          "body": "Un banco regional en Guadalajara aprueba campaña en Reels y Audience Network, pero exige no aparecer junto a contenido maduro ni en ciertos sitios que le han dado mala prensa. Te pide el plan de protección."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué control aplicas primero para la adyacencia de contenido?",
+          "options": [
+            "Subir el budget para tener más alcance",
+            "Inventory filter más estricto (p. ej. limited) y block lists según necesidad",
+            "Cambiar el objective a Awareness",
+            "Activar Advantage+ creative"
+          ],
+          "correct": 1,
+          "explanation": "El inventory filter ajusta la idoneidad del contenido adyacente; las block lists excluyen los publishers concretos que le preocupan."
+        },
+        {
+          "type": "mcq",
+          "q": "El banco se queja de que bajó el alcance tras endurecer los controles. ¿Cómo lo explicas?",
+          "options": [
+            "Es un error de configuración",
+            "Es el trade-off esperado: más seguridad de marca implica menor alcance y posible mayor costo",
+            "Hay que quitar todos los controles",
+            "El problema es el ad review"
+          ],
+          "correct": 1,
+          "explanation": "Controles más estrictos protegen la marca pero reducen el alcance y pueden subir el costo; el planner balancea riesgo vs. eficiencia."
+        },
+        {
+          "type": "mcq",
+          "q": "El banco solo quiere aparecer en una lista corta de medios aprobados. ¿Qué usas?",
+          "options": [
+            "Block list de todos los demás manualmente",
+            "Publisher allow list para permitir solo los publishers aprobados",
+            "Content type exclusions de todo",
+            "Inventory filter expanded"
+          ],
+          "correct": 1,
+          "explanation": "La publisher allow list permite mostrar el anuncio solo en los publishers aprobados, ideal para una lista corta de medios."
+        }
+      ]
+    },
+    {
+      "id": "7.2f",
+      "title": "Mini-flashcards · Bloque 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Inventory filter", "a": "Control de idoneidad del contenido adyacente (expanded / moderate / limited)." },
+        { "q": "Block list vs allow list", "a": "Block = excluir publishers concretos. Allow = permitir solo publishers aprobados." },
+        { "q": "Trade-off de brand safety", "a": "Más estricto = más seguro pero menos alcance y posible mayor costo." },
+        { "q": "Content type exclusions", "a": "Excluir categorías o tipos de contenido sensibles." },
+        { "q": "¿Dónde importan más los brand safety controls?", "a": "En placements con contenido de terceros: in-stream, Audience Network, Reels." }
+      ]
+    },
+    {
       "id": "7.3",
-      "title": "Ad review process",
-      "section": "C",
+      "title": "Explica · Ad review process",
+      "section": "b3",
       "type": "reading",
       "cards": [
         {
@@ -126,8 +398,208 @@
       ]
     },
     {
+      "id": "7.3d",
+      "title": "Ejercita la memoria · Bloque 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El ad review revisa texto, imagen, video, targeting y la ___ de destino.",
+          "options": [
+            "landing page",
+            "custom audience",
+            "block list",
+            "factura"
+          ],
+          "correct": 0,
+          "explanation": "El ad review evalúa también la landing page de destino, no solo el creative."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuánto tarda típicamente el ad review?",
+          "options": [
+            "Inmediato, sin revisión",
+            "Aproximadamente 24 horas, combinando automatización y revisión humana",
+            "Exactamente 7 días",
+            "Solo si se edita el anuncio"
+          ],
+          "correct": 1,
+          "explanation": "El ad review suele resolverse en ~24 horas y combina sistemas automatizados con revisión humana."
+        },
+        {
+          "type": "fill",
+          "q": "Si un anuncio se rechaza, se puede editar o solicitar una revisión (___).",
+          "options": [
+            "appeal",
+            "refund",
+            "boost",
+            "hash"
+          ],
+          "correct": 0,
+          "explanation": "Ante un rechazo puedes editar el anuncio o pedir una revisión (appeal)."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuándo se vuelve a revisar un anuncio ya aprobado?",
+          "options": [
+            "Nunca, una vez aprobado queda fijo",
+            "Cuando se edita (cambios significativos vuelven a revisión)",
+            "Cada 24 horas siempre",
+            "Solo al cambiar el budget"
+          ],
+          "correct": 1,
+          "explanation": "El ad review re-revisa ediciones: los cambios significativos vuelven a pasar por revisión."
+        },
+        {
+          "type": "mcq",
+          "q": "Un copy dice 'Conoce a otras personas como tú con diabetes'. ¿Qué problema tiene?",
+          "options": [
+            "Falta el Pixel",
+            "Implica un atributo personal del espectador, prohibido por las Advertising Standards",
+            "Usó Advantage+ placements",
+            "El targeting es muy amplio"
+          ],
+          "correct": 1,
+          "explanation": "Implicar o afirmar un atributo personal del usuario (salud) está prohibido, aunque el producto y la segmentación sean válidos."
+        }
+      ]
+    },
+    {
+      "id": "7.3s",
+      "title": "Caso a resolver · Bloque 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASO A RESOLVER",
+          "h": "Clínica de fisioterapia rechazada",
+          "body": "Una clínica de fisioterapia en Puebla lanza anuncios y el copy dice: \"Sabemos que tienes problemas de espalda; esta terapia es para ti\". El anuncio se rechaza y el dueño pide corregirlo rápido para no perder días."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Por qué se rechazó el anuncio?",
+          "options": [
+            "Porque la categoría salud está prohibida en Meta",
+            "Porque el copy implica/afirma un atributo personal del espectador",
+            "Porque no conectó el Pixel",
+            "Porque usó brand safety controls"
+          ],
+          "correct": 1,
+          "explanation": "Las Advertising Standards prohíben implicar o afirmar un atributo personal del usuario; el problema es la redacción, no la categoría ni la técnica."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Qué puede hacer la clínica tras el rechazo?",
+          "options": [
+            "Solo crear una cuenta nueva",
+            "Editar el anuncio (reformular el copy) o solicitar una revisión (appeal)",
+            "Esperar 7 días sin hacer nada",
+            "Subir el presupuesto para forzar la aprobación"
+          ],
+          "correct": 1,
+          "explanation": "Ante un rechazo se puede editar el anuncio o pedir una revisión (appeal); reformular el copy sin implicar el atributo personal lo destraba."
+        },
+        {
+          "type": "mcq",
+          "q": "Tras editar el copy, ¿qué pasa antes de volver a entregar?",
+          "options": [
+            "Entrega inmediata sin pasar por nada",
+            "Vuelve al ad review porque las ediciones se re-revisan",
+            "Se cobra una multa",
+            "Se borra la campaña"
+          ],
+          "correct": 1,
+          "explanation": "El ad review re-revisa las ediciones antes de volver a entregar; suele resolverse en ~24 horas."
+        }
+      ]
+    },
+    {
+      "id": "7.3f",
+      "title": "Mini-flashcards · Bloque 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        { "q": "¿Qué revisa el ad review?", "a": "Texto, imagen, video, targeting y la landing page de destino." },
+        { "q": "Tiempo típico de ad review", "a": "Aproximadamente 24 horas; combina automatización y revisión humana." },
+        { "q": "¿Cuándo se re-revisa un anuncio?", "a": "Al editarlo (cambios significativos vuelven a revisión)." },
+        { "q": "Atributo personal", "a": "Prohibido implicar/afirmar que conoces un atributo personal del usuario o su familia." },
+        { "q": "Si un anuncio se rechaza", "a": "Se puede editar o solicitar una revisión (appeal)." }
+      ]
+    },
+    {
+      "id": "7.zd",
+      "title": "Ejercita la memoria · Repaso final",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Sobre customer lists, ¿qué es correcto?",
+          "options": [
+            "Meta recibe los emails en claro",
+            "Se suben hasheadas; el matching ocurre sin exponer datos en claro",
+            "Las listas propias están prohibidas",
+            "Solo funcionan con Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Las customer lists se hashean antes de subirse; Meta hace el matching con hashes, sin recibir datos en claro."
+        },
+        {
+          "type": "fill",
+          "q": "El ___ ajusta el nivel de idoneidad del contenido adyacente: expanded / moderate / limited.",
+          "options": [
+            "inventory filter",
+            "ad review",
+            "consentimiento",
+            "objective"
+          ],
+          "correct": 0,
+          "explanation": "El inventory filter define qué tan estricto es el contenido adyacente permitido."
+        },
+        {
+          "type": "mcq",
+          "q": "El trade-off de brand safety implica que controles más estrictos:",
+          "options": [
+            "Aumentan el alcance",
+            "Dan más seguridad de marca pero reducen alcance y pueden subir el costo",
+            "No afectan nada",
+            "Aceleran el ad review"
+          ],
+          "correct": 1,
+          "explanation": "Más estricto = más seguro pero menor alcance y posible mayor costo; el planner balancea riesgo vs. eficiencia."
+        },
+        {
+          "type": "mcq",
+          "q": "Un anuncio se rechaza por implicar un atributo personal. ¿Qué se puede hacer?",
+          "options": [
+            "Nada, queda bloqueado",
+            "Editar el anuncio o solicitar una revisión (appeal)",
+            "Solo subir el budget",
+            "Esperar 7 días"
+          ],
+          "correct": 1,
+          "explanation": "Ante un rechazo se puede editar el anuncio o pedir una revisión (appeal); reformular el copy lo destraba."
+        },
+        {
+          "type": "fill",
+          "q": "El ad review revisa texto, imagen, video, targeting y la ___ de destino.",
+          "options": [
+            "landing page",
+            "custom audience",
+            "allow list",
+            "factura"
+          ],
+          "correct": 0,
+          "explanation": "El ad review evalúa también la landing page de destino, no solo el creative."
+        }
+      ]
+    },
+    {
       "id": "7.flash",
       "title": "Flashcards · Módulo 7",
+      "section": "bz",
       "type": "flashcards",
       "cards": [
         { "q": "¿Cómo se suben las customer lists?", "a": "Hasheadas; Meta hace matching sin recibir datos en claro." },
