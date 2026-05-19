@@ -694,38 +694,37 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 /* ============================================================
    BATTLE SCREEN — retro Pokémon Red/Blue
    ============================================================ */
-/* Rediseño Gen 2 limpio: fondo blanco, líneas finas, sin overlap.
-   Layout: foe arriba-derecha · me abajo-izquierda · pregunta en diálogo. */
+/* Rediseño v3: fondo blanco, sprites grandes 140px, arena altura fija
+   320px (las opciones suben), sin fila de Pokéballs (reemplazada por
+   barra HP real que se vacía con cada acierto/error). */
 .battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
-.battle-arena{flex:1 1 auto;min-height:240px;position:relative;background:#fff;overflow:hidden}
-/* Plataforma: una linea horizontal negra simple, no gradiente */
-.battle-platform{position:absolute;height:3px;background:#0F380F;z-index:1}
-.battle-platform.foe{top:48%;right:6%;width:38%}
-.battle-platform.me{top:78%;left:6%;width:38%}
-/* Sprites — escalado x2 (96→96px) para pixel art crujiente */
-.battle-sprite{position:absolute;width:120px;height:120px;display:flex;align-items:flex-end;justify-content:center;z-index:2;pointer-events:none}
+.battle-arena{flex:0 0 320px;position:relative;background:#fff;overflow:hidden;border-bottom:2px solid #0F380F}
+/* Plataforma: línea negra fina horizontal bajo cada sprite */
+.battle-platform{position:absolute;height:3px;background:#0F380F;border-radius:2px;z-index:1}
+.battle-platform.foe{top:150px;right:4%;width:55%;max-width:200px}
+.battle-platform.me{top:312px;left:4%;width:55%;max-width:200px}
+/* Sprites grandes — 140x140, pixel art crisp con image-rendering */
+.battle-sprite{position:absolute;width:140px;height:140px;display:flex;align-items:flex-end;justify-content:center;z-index:2;pointer-events:none}
 .battle-sprite img{width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor}
-.battle-sprite.foe{top:calc(48% - 110px);right:8%;animation:bfoe-in .55s ease-out}
-.battle-sprite.me{top:calc(78% - 110px);left:8%;animation:bme-in .55s ease-out}
-@keyframes bfoe-in{from{transform:translateX(120px);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes bme-in{from{transform:translateX(-120px);opacity:0}to{transform:translateX(0);opacity:1}}
-/* Cajas de nombre: simple, ancho fijo, border ligero, sin sombras pesadas */
-.battle-namebox{position:absolute;background:#fff;border:2px solid #0F380F;padding:5px 9px 6px;font-family:'Courier New',monospace;color:#0F380F;width:175px;z-index:3;box-sizing:border-box;box-shadow:2px 2px 0 #0F380F}
+.battle-sprite.foe{top:10px;right:6%;animation:bfoe-in .55s ease-out}
+.battle-sprite.me{top:172px;left:6%;animation:bme-in .55s ease-out}
+@keyframes bfoe-in{from{transform:translateX(140px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes bme-in{from{transform:translateX(-140px);opacity:0}to{transform:translateX(0);opacity:1}}
+/* Namebox: nombre + nivel + barra HP estilo Pokémon. Sin pokeballs row. */
+.battle-namebox{position:absolute;background:#fff;border:2px solid #0F380F;padding:6px 10px 7px;font-family:'Courier New',monospace;color:#0F380F;width:170px;z-index:3;box-sizing:border-box;box-shadow:2px 2px 0 #0F380F}
 .battle-namebox.foe{top:14px;left:10px}
-.battle-namebox.me{top:calc(78% + 10px);right:10px}
-.battle-namebox .bn-name{font-size:13px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;line-height:1.15;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
-.battle-namebox .bn-lvl{font-size:11px;font-weight:700;color:#0F380F;letter-spacing:0;text-transform:none}
-.battle-namebox .bn-sub{font-size:9.5px;font-weight:700;color:#5a7a47;margin-top:1px;line-height:1.1}
-.battle-namebox .bn-balls{display:flex;gap:3px;margin-top:5px;flex-wrap:nowrap;align-items:center;height:13px;min-width:0}
-/* Mini Pokéball Gen 2 — círculo sólido naranja con banda fina */
-.mini-pokeball{display:inline-block;width:11px;height:11px;flex:0 0 11px;border-radius:50%;border:1.2px solid #0F380F;box-sizing:border-box;background:#FFA726;position:relative;line-height:0;overflow:hidden}
-.mini-pokeball::before{content:'';position:absolute;top:50%;left:-1px;right:-1px;height:1.2px;background:#0F380F;transform:translateY(-50%)}
-.mini-pokeball::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#fff;border:1px solid #0F380F;box-sizing:border-box;z-index:1}
-.mini-pokeball.empty{background:#fff}
-.mini-pokeball.empty::before{background:#0F380F}
-.mini-pokeball.cracked{background:#FFE082}
-.mini-pokeball.lost{background:#bbb;opacity:.5}
-.mini-pokeball.lost::after{background:#888}
+.battle-namebox.me{top:178px;right:10px}
+.battle-namebox .bn-name{font-size:14px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;line-height:1.15;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.battle-namebox .bn-lvl{font-size:11px;font-weight:700;letter-spacing:0;text-transform:none;color:#0F380F}
+.battle-namebox .bn-sub{font-size:10px;font-weight:700;color:#5a7a47;margin-top:2px;line-height:1.1}
+/* Barra HP estilo Gen 2: track oscuro + relleno verde/amarillo/rojo */
+.battle-namebox .bn-hp-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+.battle-namebox .bn-hp-tag{font-size:10px;font-weight:900;color:#FFC107;background:#0F380F;padding:1px 4px;border-radius:2px;letter-spacing:.5px}
+.battle-namebox .bn-hp{flex:1;height:7px;background:#0F380F;border-radius:3px;overflow:hidden;border:1px solid #0F380F;box-sizing:border-box}
+.battle-namebox .bn-hp-fill{height:100%;background:linear-gradient(180deg,#5DDD53 0%,#2BAA40 100%);transition:width .45s ease-out;border-radius:2px}
+.battle-namebox .bn-hp-fill.low{background:linear-gradient(180deg,#F8D34C,#E69500)}
+.battle-namebox .bn-hp-fill.crit{background:linear-gradient(180deg,#FF7676,#C0392B)}
+.battle-namebox .bn-hp-num{font-size:10px;font-weight:700;color:#0F380F;text-align:right;margin-top:2px;font-family:'Courier New',monospace;letter-spacing:.2px}
 
 /* Diálogo: contiene la pregunta (durante question) o mensaje narrativo.
    Borde estilo GameBoy: doble línea negra. */
@@ -5244,18 +5243,16 @@ function renderBattle(){
   const mode = BATTLE_STATE.mode;
   const badge = BADGES.find(b => b.id === leader.badgeId);
 
-  // Mis medallas (orden fijo) → mini Pokéballs (CSS puro, 13x13)
-  const myBallsHtml = LEADERS.map(l => {
-    const st = DB.badges[l.id];
-    let cls = 'mini-pokeball empty';
-    if(st === 'won') cls = 'mini-pokeball';
-    else if(st === 'cracked') cls = 'mini-pokeball cracked';
-    else if(st === 'lost') cls = 'mini-pokeball lost';
-    const badge = BADGES.find(b => b.id === l.badgeId);
-    return `<span class="${cls}" title="${badge ? badge.name : l.name}"></span>`;
-  }).join('');
-  // El rival siempre muestra 1 Pokéball (el que está en juego/poseído)
-  const foeBallsHtml = `<span class="mini-pokeball"></span>`;
+  // Barras HP estilo Pokémon: cada acierto resta HP al foe, cada error
+  // resta HP al jugador. Valor visual fake (no afecta a la lógica del battle).
+  const wrongAns = (BATTLE_STATE.answers || []).filter(a => !a.correct).length;
+  const foeHpPct = total > 0 ? Math.max(0, Math.round(100 - (BATTLE_STATE.correctCount / total) * 100)) : 100;
+  const meHpPct  = total > 0 ? Math.max(0, Math.round(100 - (wrongAns / total) * 100)) : 100;
+  const hpCls = (pct) => pct < 25 ? 'crit' : pct < 50 ? 'low' : '';
+  const foeHpFillCls = hpCls(foeHpPct);
+  const meHpFillCls  = hpCls(meHpPct);
+  const foeHpRemaining = Math.max(0, total - BATTLE_STATE.correctCount);
+  const meHpRemaining  = Math.max(0, total - wrongAns);
 
   // Sprite hit states durante feedback
   let foeCls = 'battle-sprite foe';
@@ -5338,18 +5335,26 @@ function renderBattle(){
       <div class="battle-arena">
         ${vsOverlay}
         <div class="battle-namebox foe">
-          <div class="bn-name"><span>${leader.pokemon.toUpperCase()}</span><span class="bn-lvl">Lv. ${qIdx+1}</span></div>
+          <div class="bn-name"><span>${leader.pokemon.toUpperCase()}</span><span class="bn-lvl">Lv. 50</span></div>
           <div class="bn-sub">Líder ${leader.name}</div>
-          <div class="bn-balls">${foeBallsHtml}</div>
+          <div class="bn-hp-row">
+            <span class="bn-hp-tag">HP</span>
+            <div class="bn-hp"><div class="bn-hp-fill ${foeHpFillCls}" style="width:${foeHpPct}%"></div></div>
+          </div>
+          <div class="bn-hp-num">${foeHpRemaining} / ${total}</div>
         </div>
         <div class="battle-platform foe"></div>
         <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
         <div class="${meCls}"><img src="content/battles/pokemon/25-back.png" alt="Pikachu (back)"/></div>
         <div class="battle-platform me"></div>
         <div class="battle-namebox me">
-          <div class="bn-name"><span>PIKACHU</span><span class="bn-lvl">Randall</span></div>
-          <div class="bn-sub">${mode === 'conquest' ? 'Conquista' : 'Defensa de medalla'}</div>
-          <div class="bn-balls">${myBallsHtml}</div>
+          <div class="bn-name"><span>PIKACHU</span><span class="bn-lvl">Lv. 50</span></div>
+          <div class="bn-sub">Randall · ${mode === 'conquest' ? 'Conquista' : 'Defensa'}</div>
+          <div class="bn-hp-row">
+            <span class="bn-hp-tag">HP</span>
+            <div class="bn-hp"><div class="bn-hp-fill ${meHpFillCls}" style="width:${meHpPct}%"></div></div>
+          </div>
+          <div class="bn-hp-num">${meHpRemaining} / ${total}</div>
         </div>
       </div>
       <div class="battle-dialog">
