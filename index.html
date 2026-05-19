@@ -1014,16 +1014,17 @@ const BATTLE_CONFIG = {
   enabled: true,
   triggerChance: 0.20,          // 20% al terminar lección elegible
   cooldownMs: 2 * 3600 * 1000,  // 2h entre battles
-  // Sistema HP: cada lado arranca con 3 vidas. Acierto = -1 al foe.
-  // Error/timeout = -1 al jugador. Primero en llegar a 0 HP pierde.
-  // Resultado: battles duran 3-5 preguntas (best of 5, primero a 3 gana).
-  maxLives: 3,
-  poolSize: 7,                  // fetch 7 MCQs (battle termina en 3-5)
-  minPoolSize: 5,               // mínimo necesario para arrancar battle
+  // Sistema HP en porcentaje: cada lado arranca con 100%. Cada acierto
+  // resta 25% al foe; cada error/timeout resta 25% al jugador. Primero
+  // en llegar a 0% pierde. Resultado: battles duran 4-7 preguntas
+  // (avg ~5-6). Display oculta el conteo: solo se ve "100%/75%/50%/25%/0%".
+  maxLives: 4,                  // 4 hits = KO → 25% por hit
+  poolSize: 10,                 // fetch 10 MCQs (max battle = 7, margen 3)
+  minPoolSize: 7,               // mínimo necesario para arrancar battle
   secondsPerQuestion: 20,
   minLessonsToday: 2,           // no en la 1ra del día
   minHearts: 2,                 // no si está en racha mala
-  xpWin: 25,                    // ganaste (foe HP→0): +25 XP base
+  xpWin: 25,                    // ganaste (foe HP→0%): +25 XP base
   xpPerCorrect: 2               // bono +2 XP por cada acierto en el battle
 };
 
@@ -5298,7 +5299,9 @@ function renderBattle(){
   }
 
   // Contenido del diálogo: en 'question' es la pregunta misma; en 'intro'
-  // y 'feedback' es texto narrativo. Tag arriba muestra "PREGUNTA N/M" + timer.
+  // y 'feedback' es texto narrativo. Tag muestra solo nombre del Pokémon
+  // que ataca + timer. No se expone el conteo de preguntas (HP es la única
+  // métrica de progreso visible).
   let dialogTag = '';
   let dialogText = '';
   let dialogCursor = true;
@@ -5370,7 +5373,7 @@ function renderBattle(){
             <span class="bn-hp-tag">HP</span>
             <div class="bn-hp"><div class="bn-hp-fill ${foeHpFillCls}" style="width:${foeHpPct}%"></div></div>
           </div>
-          <div class="bn-hp-num">${foeHpRemaining} / ${maxLives}</div>
+          <div class="bn-hp-num">${foeHpPct}%</div>
         </div>
         <div class="battle-platform foe"></div>
         <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
@@ -5383,7 +5386,7 @@ function renderBattle(){
             <span class="bn-hp-tag">HP</span>
             <div class="bn-hp"><div class="bn-hp-fill ${meHpFillCls}" style="width:${meHpPct}%"></div></div>
           </div>
-          <div class="bn-hp-num">${meHpRemaining} / ${maxLives}</div>
+          <div class="bn-hp-num">${meHpPct}%</div>
         </div>
       </div>
       <div class="battle-dialog">
