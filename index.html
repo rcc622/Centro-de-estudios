@@ -691,6 +691,114 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .section-band{padding:14px 16px;margin:24px 0 14px;box-shadow:0 4px 12px rgba(66,184,131,.18);border-radius:14px}
 .section-band-ico{font-size:26px;width:40px;height:40px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center}
 
+/* ============================================================
+   BATTLE SCREEN — retro Pokémon Red/Blue
+   ============================================================ */
+.battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;background:#9BBC0F;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
+.battle-arena{flex:1;min-height:0;position:relative;background:linear-gradient(180deg,#79b454 0%,#9BBC0F 55%,#bcd96a 100%);overflow:hidden;border-bottom:4px solid #0F380F}
+.battle-arena::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent 0 4px,rgba(15,56,15,.04) 4px 5px);pointer-events:none}
+.battle-platform{position:absolute;width:42%;height:18px;border-radius:50%;background:radial-gradient(ellipse,#5d8a3e 0%,rgba(93,138,62,.6) 50%,transparent 75%)}
+.battle-platform.foe{top:24%;right:4%}
+.battle-platform.me{bottom:18%;left:4%}
+.battle-sprite{position:absolute;font-size:64px;line-height:1;filter:drop-shadow(2px 3px 0 rgba(15,56,15,.45));image-rendering:pixelated;text-shadow:0 0 0 transparent}
+.battle-sprite.foe{top:8%;right:9%;animation:bfoe-in .7s ease-out}
+.battle-sprite.me{bottom:22%;left:11%;transform:scaleX(-1);animation:bme-in .7s ease-out}
+@keyframes bfoe-in{from{transform:translateX(120px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes bme-in{from{transform:scaleX(-1) translateX(-120px);opacity:0}to{transform:scaleX(-1) translateX(0);opacity:1}}
+.battle-namebox{position:absolute;background:#fff;border:3px solid #0F380F;border-radius:0 0 12px 0;padding:8px 12px 10px;box-shadow:inset 0 0 0 2px #0F380F,3px 3px 0 #306230;font-family:'Courier New',monospace;color:#0F380F;min-width:160px}
+.battle-namebox.foe{top:8px;left:8px;border-radius:0 12px 0 0}
+.battle-namebox.me{bottom:128px;right:8px}
+.battle-namebox .bn-name{font-size:13px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}
+.battle-namebox .bn-sub{font-size:10px;font-weight:700;color:#306230;margin-top:2px}
+.battle-namebox .bn-balls{display:flex;gap:3px;margin-top:6px}
+.battle-namebox .bn-ball{width:10px;height:10px;border-radius:50%;background:#0F380F;box-shadow:inset 0 -3px 0 rgba(255,255,255,.25)}
+.battle-namebox .bn-ball.empty{background:transparent;border:1.5px solid #0F380F}
+.battle-namebox .bn-ball.lost{background:repeating-linear-gradient(45deg,#0F380F 0 2px,transparent 2px 4px);opacity:.55}
+
+.battle-dialog{flex:0 0 auto;background:#fff;border-top:4px solid #0F380F;padding:16px 16px 14px;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 5px #0F380F;font-family:'Courier New',monospace;color:#0F380F}
+.battle-dialog .bd-text{font-size:14px;font-weight:700;line-height:1.45;min-height:42px;letter-spacing:.2px}
+.battle-dialog .bd-text.with-cursor::after{content:'▼';display:inline-block;margin-left:8px;animation:bcursor 1s steps(2,end) infinite;color:#306230}
+@keyframes bcursor{0%,50%{opacity:1}51%,100%{opacity:0}}
+
+/* VS intro overlay */
+.battle-vs{position:absolute;inset:0;background:#0F380F;display:flex;align-items:center;justify-content:center;z-index:10;animation:bvs-flash .45s steps(3,end)}
+.battle-vs-inner{font-family:'Courier New',monospace;font-size:96px;font-weight:900;color:#fff;text-shadow:4px 4px 0 #E74C3C,-2px -2px 0 #1877F2;letter-spacing:8px;animation:bvs-pop .5s ease-out}
+@keyframes bvs-flash{0%{background:#fff}50%{background:#0F380F}100%{background:#0F380F}}
+@keyframes bvs-pop{from{transform:scale(.3) rotate(-15deg);opacity:0}60%{transform:scale(1.2) rotate(8deg)}to{transform:scale(1) rotate(0)}}
+
+/* Timer bar */
+.battle-timer-bar{position:absolute;top:0;left:0;right:0;height:8px;background:rgba(15,56,15,.18);z-index:6}
+.battle-timer-fill{height:100%;background:linear-gradient(90deg,#0F380F,#306230);transition:width .15s linear}
+.battle-timer-fill.warn{background:linear-gradient(90deg,#E74C3C,#FF8042);animation:btim-pulse .4s ease-in-out infinite}
+@keyframes btim-pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.battle-timer-num{position:absolute;top:14px;right:14px;background:#0F380F;color:#9BBC0F;font-family:'Courier New',monospace;font-weight:900;font-size:14px;padding:3px 9px;border-radius:6px;letter-spacing:.5px;z-index:7;border:2px solid #fff;box-shadow:0 0 0 2px #0F380F}
+.battle-timer-num.warn{background:#E74C3C;color:#fff;animation:btim-pulse .4s ease-in-out infinite}
+
+/* 4-option grid (estilo FIGHT/BAG/POKE/RUN) */
+.battle-opts{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0F380F;border-top:4px solid #0F380F;padding:0}
+.battle-opt{background:#fff;border:3px solid #0F380F;margin:0;padding:14px 12px;font-family:'Courier New',monospace;font-weight:800;color:#0F380F;cursor:pointer;text-align:left;display:flex;align-items:flex-start;gap:8px;min-height:74px;line-height:1.3;font-size:13px;user-select:none;-webkit-user-select:none;transition:transform .08s}
+.battle-opt:active{transform:translate(1px,2px)}
+.battle-opt[data-c="0"]{background:#FFE4DD;box-shadow:inset 0 -5px 0 #E74C3C}
+.battle-opt[data-c="1"]{background:#FFEFCB;box-shadow:inset 0 -5px 0 #E69500}
+.battle-opt[data-c="2"]{background:#DBF3D8;box-shadow:inset 0 -5px 0 #2D8C3F}
+.battle-opt[data-c="3"]{background:#D7E8FF;box-shadow:inset 0 -5px 0 #1877F2}
+.battle-opt.disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.5)}
+.battle-opt.right{background:#9BBC0F;color:#0F380F;animation:bopt-win .35s ease-out;box-shadow:inset 0 -5px 0 #2D8C3F,0 0 0 3px #2D8C3F}
+.battle-opt.wrong{background:#FFB4B4;color:#0F380F;animation:bopt-shake .35s ease-out;box-shadow:inset 0 -5px 0 #C0392B}
+@keyframes bopt-win{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes bopt-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.battle-opt .bo-arrow{color:#0F380F;font-weight:900;flex-shrink:0;width:14px}
+.battle-opt .bo-text{flex:1;min-width:0}
+
+/* Question banner */
+.battle-question-banner{position:absolute;left:8px;right:8px;top:48px;background:#fff;border:3px solid #0F380F;border-radius:8px;padding:10px 12px;box-shadow:3px 3px 0 #306230;font-family:'Courier New',monospace;color:#0F380F;font-weight:700;font-size:13px;line-height:1.4;z-index:5;max-height:34vh;overflow-y:auto}
+.battle-question-banner .bqb-tag{font-size:10px;font-weight:900;letter-spacing:1px;color:#306230;margin-bottom:4px}
+
+/* Hit flash on sprite */
+.battle-sprite.hit{animation:bhit .35s ease-out}
+@keyframes bhit{0%{filter:brightness(2.5) drop-shadow(2px 3px 0 rgba(15,56,15,.45))}25%,75%{transform:translateX(-6px);filter:brightness(.4)}50%{transform:translateX(6px);filter:brightness(.4)}100%{filter:none}}
+.battle-sprite.faint{animation:bfaint .9s ease-in forwards}
+@keyframes bfaint{0%{transform:translateY(0)}100%{transform:translateY(120px);opacity:0}}
+.battle-sprite.foe.hit{animation:bhit-foe .35s ease-out}
+@keyframes bhit-foe{0%{filter:brightness(2.5) drop-shadow(2px 3px 0 rgba(15,56,15,.45))}25%,75%{transform:translateX(6px);filter:brightness(.4)}50%{transform:translateX(-6px);filter:brightness(.4)}100%{filter:none}}
+
+/* RESULT screen */
+.battle-result{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;background:linear-gradient(180deg,#0F380F 0%,#306230 100%);color:#9BBC0F;font-family:'Courier New',monospace}
+.battle-result.win{background:linear-gradient(180deg,#306230 0%,#9BBC0F 100%);color:#0F380F}
+.battle-result-h{font-size:28px;font-weight:900;letter-spacing:3px;margin-bottom:8px;text-transform:uppercase}
+.battle-result-sub{font-size:14px;font-weight:700;opacity:.85;margin-bottom:20px}
+.battle-badge-anim{margin:18px 0;padding:24px;background:rgba(255,255,255,.18);border:3px solid currentColor;border-radius:12px;box-shadow:3px 3px 0 rgba(0,0,0,.25);animation:bbadge-pop .8s ease-out}
+@keyframes bbadge-pop{0%{transform:scale(0) rotate(-180deg);opacity:0}60%{transform:scale(1.2) rotate(15deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+.battle-badge-anim .bba-ico{font-size:64px;line-height:1;filter:drop-shadow(0 0 12px rgba(255,255,255,.6))}
+.battle-badge-anim .bba-name{font-size:14px;font-weight:900;margin-top:8px;letter-spacing:1px;text-transform:uppercase}
+.battle-result-stats{display:flex;gap:20px;margin:14px 0 22px;font-size:13px;font-weight:700}
+.battle-result-stats .brs-cell{display:flex;flex-direction:column;align-items:center;gap:2px}
+.battle-result-stats .brs-num{font-size:22px;font-weight:900}
+.battle-result-actions{display:flex;flex-direction:column;gap:8px;width:100%;max-width:280px}
+.battle-result-btn{background:#fff;border:3px solid #0F380F;color:#0F380F;font-family:'Courier New',monospace;font-weight:900;font-size:14px;padding:12px;letter-spacing:1px;cursor:pointer;text-transform:uppercase;box-shadow:3px 3px 0 #0F380F}
+.battle-result-btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 #0F380F}
+
+/* TRAINER CARD (vitrina de medallas) */
+.tcard{background:linear-gradient(135deg,#FCE38A 0%,#F38181 100%);border:4px solid #0F380F;border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:4px 4px 0 #0F380F;font-family:'Courier New',monospace;color:#0F380F}
+.tcard-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tcard-avatar{width:54px;height:54px;border-radius:8px;background:#fff;border:3px solid #0F380F;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0}
+.tcard-h{flex:1;min-width:0}
+.tcard-name{font-size:16px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.tcard-meta{font-size:11px;font-weight:700;margin-top:2px;opacity:.85}
+.tcard-count{background:#0F380F;color:#FCE38A;padding:6px 10px;border-radius:6px;font-weight:900;font-size:13px;letter-spacing:.5px}
+.tcard-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:rgba(255,255,255,.45);padding:10px;border-radius:8px;border:2px solid #0F380F}
+.tc-badge{position:relative;aspect-ratio:1;background:#fff;border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:2px 2px 0 rgba(15,56,15,.4)}
+.tc-badge.locked{background:#3a3a3a;color:transparent;opacity:.85;box-shadow:inset 0 0 0 2px #555}
+.tc-badge.locked::before{content:'?';color:#FCE38A;font-family:'Courier New',monospace;font-weight:900;font-size:22px;position:absolute}
+.tc-badge.cracked::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 45%,rgba(231,76,60,.85) 45%,rgba(231,76,60,.85) 55%,transparent 55%);border-radius:8px;pointer-events:none}
+.tc-badge.lost{filter:grayscale(1) brightness(.6);opacity:.65}
+.tc-badge.lost::after{content:'✕';position:absolute;color:#E74C3C;font-size:30px;font-weight:900;text-shadow:0 0 4px #fff}
+.tc-badge .tcb-name{position:absolute;bottom:-3px;left:0;right:0;text-align:center;font-size:9px;font-weight:900;letter-spacing:.4px;background:#0F380F;color:#FCE38A;padding:1px 0;border-radius:0 0 6px 6px;text-transform:uppercase}
+.tcard-foot{margin-top:12px;font-size:11px;font-weight:700;text-align:center;opacity:.85;line-height:1.4}
+
+.battle-test-btn{display:block;width:100%;background:#0F380F;color:#9BBC0F;border:3px solid #0F380F;font-family:'Courier New',monospace;font-weight:900;letter-spacing:1px;padding:12px;border-radius:8px;cursor:pointer;font-size:13px;text-transform:uppercase;box-shadow:3px 3px 0 #306230;margin-top:10px}
+.battle-test-btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 #306230}
+
 </style>
 </head>
 <body>
@@ -853,6 +961,47 @@ function getXpMult(){ return getDifficulty().xpMult; }
 function getPassingBonus(){ return getDifficulty().passingBonus; }
 function getLightningTime(){ return getDifficulty().lightningTime; }
 
+// ============================================================
+// BATTLES — medallas estilo Pokémon Red/Blue
+// ============================================================
+// Las 8 medallas que el usuario puede coleccionar. Cada una pertenece a un
+// líder (LEADERS) en el mismo orden de conquista.
+const BADGES = [
+  {id:'roca',     name:'Roca',     ico:'⛰️'},
+  {id:'cascada',  name:'Cascada',  ico:'💧'},
+  {id:'trueno',   name:'Trueno',   ico:'⚡'},
+  {id:'flor',     name:'Flor',     ico:'🌸'},
+  {id:'alma',     name:'Alma',     ico:'👻'},
+  {id:'pantano',  name:'Pantano',  ico:'🌿'},
+  {id:'volcan',   name:'Volcán',   ico:'🔥'},
+  {id:'tierra',   name:'Tierra',   ico:'🌍'}
+];
+// Líderes. sprite es un emoji (pixel-ish a tamaño grande con sombra).
+// No usar IP de Nintendo: nombres y temas originales.
+const LEADERS = [
+  {id:'roca',    name:'Brek',  title:'El cantero',     sprite:'🧗',   accent:'#A0826D', badgeId:'roca'},
+  {id:'cascada', name:'Mari',  title:'La del agua',    sprite:'🏄‍♀️', accent:'#5DADEC', badgeId:'cascada'},
+  {id:'trueno',  name:'Volt',  title:'El relámpago',   sprite:'⚡',    accent:'#F2C94C', badgeId:'trueno'},
+  {id:'flor',    name:'Lila',  title:'La jardinera',   sprite:'💐',    accent:'#FF8FB3', badgeId:'flor'},
+  {id:'alma',    name:'Astra', title:'La psíquica',    sprite:'🔮',    accent:'#B68BD6', badgeId:'alma'},
+  {id:'pantano', name:'Toxi',  title:'El sigiloso',    sprite:'🥷',    accent:'#8FBF7F', badgeId:'pantano'},
+  {id:'volcan',  name:'Pyro',  title:'El piromaníaco', sprite:'🔥',    accent:'#FF7B54', badgeId:'volcan'},
+  {id:'tierra',  name:'Don',   title:'El jefe',        sprite:'😎',    accent:'#9DD15C', badgeId:'tierra'}
+];
+const BATTLE_CONFIG = {
+  enabled: true,
+  triggerChance: 0.20,          // 20% al terminar lección elegible
+  cooldownMs: 2 * 3600 * 1000,  // 2h entre battles
+  questionsPerBattle: 3,
+  secondsPerQuestion: 8,
+  minLessonsToday: 2,           // no en la 1ra del día
+  minHearts: 2,                 // no si está en racha mala
+  defenseMinCorrect: 2,         // 2/3 ó más defiende
+  crackMinCorrect: 1,           // 1/3 agrieta · 0 pierde
+  xpWin: 25,
+  xpDraw: 10
+};
+
 // 10 rangos. Cada uno cubre 10 niveles consecutivos (1-9 Novato, 10-19
 // Aprendiz, 20-29 Estudiante, ..., 90-100 Leyenda Meta).
 const LEVEL_RANKS = [
@@ -916,7 +1065,9 @@ const ACHIEVEMENTS = [
   {id:'error_redeemer',i:'🔁', n:'Redentor',            desc:'Acierta una pregunta que antes habías fallado', hidden:true},
   {id:'iron_will',     i:'🛡️',n:'Voluntad de Hierro',  desc:'Termina una lección con 5+ errores sin abandonar', hidden:true},
   {id:'no_hearts',     i:'💔', n:'Sin Vidas',           desc:'Pierde todos tus corazones (irónicamente)', hidden:true},
-  {id:'speedrun',      i:'⚡', n:'Velocista',            desc:'Completa una lección en menos de 3 minutos', hidden:true}
+  {id:'speedrun',      i:'⚡', n:'Velocista',            desc:'Completa una lección en menos de 3 minutos', hidden:true},
+  {id:'first_badge',   i:'🎖️',n:'Primera Medalla',      desc:'Gana tu primera medalla en un battle'},
+  {id:'champion',      i:'👑', n:'Campeón',              desc:'Conquista las 8 medallas', hidden:true}
 ];
 
 // Metadata de secciones pedagógicas (A teoría → B práctica → C aplicación → D validación)
@@ -1112,7 +1263,12 @@ let DB = {
   chests: {}, // {'courseId|dayId|section': true} cofres de bloque ya reclamados
   shields: 0, // escudos disponibles (banco por nivel, recarga semanal)
   shieldsEarned: 0, // legacy — ya no se usa para milestones
-  lastShieldRefill: null // fecha del último relleno semanal de escudos
+  lastShieldRefill: null, // fecha del último relleno semanal de escudos
+  badges: {}, // {leaderId: 'won' | 'cracked' | 'lost'} — medallas Pokémon-style
+  lastBattleTs: 0, // timestamp del último battle (para cooldown)
+  battlesTotal: 0, // contador total de battles jugados
+  battlesWon: 0, // ganados (perfectos o defensa exitosa)
+  battlesEnabled: true // toggle desde Ajustes
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1173,6 +1329,16 @@ let ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, 
 let LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:180, errors:0, done:false, deadline:0};
 let DTREE_STATE = {scenarioIdx:0, path:[], leaf:null, leafCorrect:null, errors:0, done:false};
 let LIGHTNING_TIMER_ID = null;
+// Battle state — pelea retro vs un líder por una medalla
+let BATTLE_STATE = {
+  active:false, phase:'intro', // 'intro' | 'question' | 'feedback' | 'result'
+  leader:null, mode:'conquest', // 'conquest' | 'defense'
+  defendingBadgeId:null,
+  deck:[], qIdx:0, answers:[], deadline:0,
+  correctCount:0, lastFeedback:null,
+  resumeAction:null
+};
+let BATTLE_TIMER_ID = null;
 let _luq = [];
 let _achq = [];
 
@@ -1194,6 +1360,12 @@ function load(){
     DB.shields = getMaxShields();
     DB.lastShieldRefill = todayStr();
   }
+  // Migración battles v1
+  if(!DB.badges) DB.badges = {};
+  if(typeof DB.lastBattleTs !== 'number') DB.lastBattleTs = 0;
+  if(typeof DB.battlesTotal !== 'number') DB.battlesTotal = 0;
+  if(typeof DB.battlesWon !== 'number') DB.battlesWon = 0;
+  if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
   refillShieldsWeekly();
   regenerateHearts();
 }
@@ -1591,6 +1763,8 @@ function render(){
   else if(VIEW === 'config') html = renderConfig();
   else if(VIEW === 'glossary') html = renderGlossary();
   else if(VIEW === 'streak') html = renderStreak();
+  else if(VIEW === 'battle') html = renderBattle();
+  else if(VIEW === 'trainer_card') html = renderTrainerCard();
   else html = renderHome();
   app.innerHTML = html;
   if(VIEW === 'day'){ restoreDayScroll(); initDayBlockBar(); }
@@ -3329,6 +3503,18 @@ function renderAchievements(){
     });
   }
 
+  // Resumen de medallas (chip clickeable arriba)
+  const ownedBadges = LEADERS.filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked').length;
+  const badgesChip = `
+    <div onclick="haptic(8);navTo('trainer_card')" style="background:linear-gradient(135deg,#FCE38A,#F38181);border:2px solid #0F380F;border-radius:12px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:3px 3px 0 #0F380F;font-family:'Courier New',monospace;color:#0F380F">
+      <div style="font-size:28px">🎖️</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:900;font-size:14px;letter-spacing:1px;text-transform:uppercase">Trainer Card</div>
+        <div style="font-size:11px;font-weight:700;opacity:.85">${ownedBadges}/8 medallas · ${DB.battlesTotal||0} battles</div>
+      </div>
+      <div style="font-size:18px;font-weight:900">▸</div>
+    </div>`;
+
   return `
     ${renderHeader()}
     <div class="scroll">
@@ -3336,6 +3522,8 @@ function renderAchievements(){
         <h1>Logros</h1>
         <p>${earnedCount} de ${ACHIEVEMENTS.length} desbloqueados · Nivel ${lvl}</p>
       </div>
+
+      ${badgesChip}
 
       <div class="level-current">
         <div class="lc-eyebrow">Tu nivel actual · ${lvlInfo.n}</div>
@@ -3616,6 +3804,14 @@ function setDailyGoal(n){
   haptic(HAPTIC.select);
   DB.dailyGoal = n;
   save();
+  render();
+}
+
+function setBattlesEnabled(on){
+  haptic(HAPTIC.select);
+  DB.battlesEnabled = !!on;
+  save();
+  showToast(on ? '⚔️ Battles activados' : '🚫 Battles desactivados', 1600);
   render();
 }
 
@@ -3925,6 +4121,17 @@ function renderConfig(){
         `;
       })()}
 
+      <div class="goal-card">
+        <div class="gc-title"><span>⚔️</span>Battles de medallas</div>
+        <div class="gc-desc">De forma aleatoria al terminar una lección, aparece un líder estilo Pokémon que te reta con preguntas de repaso. Ganar conquista o defiende medallas (8 totales).</div>
+        <div class="gc-progress-label" style="margin-bottom:14px">${DB.battlesEnabled?'🟢 Activados':'⚪ Desactivados'} · ~20% al terminar lección · cooldown 2h</div>
+        <div class="gc-options" style="grid-template-columns:1fr 1fr">
+          <button class="gc-opt ${DB.battlesEnabled?'active':''}" onclick="setBattlesEnabled(true)">⚔️<span class="gc-opt-sub">activar</span></button>
+          <button class="gc-opt ${!DB.battlesEnabled?'active':''}" onclick="setBattlesEnabled(false)">🚫<span class="gc-opt-sub">desactivar</span></button>
+        </div>
+        <button class="gc-opt" style="width:100%;margin-top:10px" onclick="navTo('trainer_card')">🎖️ Ver Trainer Card y medallas</button>
+      </div>
+
       <div class="backup-card">
         <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
         <div class="bc-desc">Exporta tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpias cache o cambias de celular, impórtalo para recuperar XP, racha y logros.</div>
@@ -4168,6 +4375,9 @@ function nextCard(){
 }
 
 function finishLesson(){
+  // Idempotente: si ya se completó (porque el delay del battle aún corre),
+  // no volver a contar XP/streak/etc.
+  if(LESSON_STATE.completed) return;
   const perfect = LESSON_STATE.errors === 0;
   let xp = perfect ? 30 : Math.max(10, 25 - LESSON_STATE.errors*3);
   const duration = LESSON_STATE.started ? Math.round((now() - LESSON_STATE.started) / 60000) : 0;
@@ -4239,8 +4449,13 @@ function finishLesson(){
   haptic(HAPTIC.complete);
   if(perfect) launchConfetti();
   LESSON_STATE.completed = true;
-  VIEW = 'lesson_complete';
-  render();
+  // Intentar disparar un battle estilo Pokémon antes de mostrar lesson_complete.
+  // Si las gates fallan, va directo al complete normal.
+  const resume = () => { VIEW = 'lesson_complete'; render(); };
+  const battleDelay = perfect ? 900 : 400; // dejar respirar el confetti
+  setTimeout(() => {
+    if(!maybeStartBattle(resume)){ resume(); }
+  }, battleDelay);
 }
 
 function finishLessonReturn(){
@@ -4399,7 +4614,8 @@ function resetAll(){
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
-    goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null
+    goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
+    badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
@@ -4707,6 +4923,534 @@ if('serviceWorker' in navigator){
       });
     });
   }).catch(()=>{});
+}
+
+// ============================================================
+// BATTLES — flujo retro estilo Pokémon Red/Blue
+// ============================================================
+
+// Pool de MCQs para repaso: junta MCQ single-choice de 4 opciones de
+// lecciones COMPLETADAS del curso actual (excluyendo la lección que se
+// acaba de terminar). Si no hay suficientes, cae al conjunto del curso.
+function gatherBattleQuestions(courseId, currentLessonId, n){
+  const course = COURSES[courseId];
+  if(!course) return [];
+  const completedPool = [];
+  const fullPool = [];
+  const courseProg = DB.progress?.[courseId] || {};
+  for(const day of course.days || []){
+    const dayProg = courseProg[day.id] || {};
+    for(const lesson of day.lessons || []){
+      const isCompleted = !!dayProg[lesson.id]?.completed;
+      if(lesson.id === currentLessonId) continue;
+      for(const card of lesson.cards || []){
+        if(card.type !== 'mcq') continue;
+        if(card.multi) continue;
+        if(!Array.isArray(card.options) || card.options.length !== 4) continue;
+        if(typeof card.correct !== 'number') continue;
+        fullPool.push(card);
+        if(isCompleted) completedPool.push(card);
+      }
+    }
+  }
+  const src = completedPool.length >= n ? completedPool : fullPool;
+  return shuffleArr(src).slice(0, n);
+}
+
+// Gates: decide si arrancamos un battle al terminar una lección.
+// Si arrancamos, devuelve true y la lógica del battle eventualmente llama
+// a resumeAction(); si no, devuelve false y el caller debe llamar resume él.
+function maybeStartBattle(resumeAction, opts){
+  opts = opts || {};
+  const force = !!opts.force;
+  if(BATTLE_STATE.active) return false;
+  if(!DB.battlesEnabled) return false;
+  if(!BATTLE_CONFIG.enabled && !force) return false;
+  // Cooldown
+  if(!force && (now() - (DB.lastBattleTs || 0)) < BATTLE_CONFIG.cooldownMs) return false;
+  // No en la 1ra lección del día (ni si las vidas están en rojo)
+  if(!force){
+    const todayKey = todayStr();
+    const todayLessons = DB.activityLog?.[todayKey]?.lessons || 0;
+    if(todayLessons < BATTLE_CONFIG.minLessonsToday) return false;
+    if((DB.hearts || 0) < BATTLE_CONFIG.minHearts) return false;
+    if(Math.random() >= BATTLE_CONFIG.triggerChance) return false;
+  }
+  // Necesita curso activo y suficientes preguntas
+  const courseId = CURRENT.courseId;
+  if(!courseId) return false;
+  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.questionsPerBattle);
+  if(deck.length < BATTLE_CONFIG.questionsPerBattle) return false;
+  // Elegir líder según modo
+  const ownedLeaderIds = LEADERS
+    .filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked')
+    .map(l => l.id);
+  const allOwned = ownedLeaderIds.length >= LEADERS.length;
+  let mode, leader, defendingBadgeId = null;
+  if(!allOwned){
+    // Conquista: siguiente líder en orden que no tengas (o que tengas 'lost')
+    leader = LEADERS.find(l => {
+      const st = DB.badges[l.id];
+      return !st || st === 'lost';
+    });
+    if(!leader) return false;
+    mode = 'conquest';
+  } else {
+    // Defensa: random entre las que tengas (won o cracked)
+    const candidates = LEADERS.filter(l => ['won','cracked'].includes(DB.badges[l.id]));
+    if(!candidates.length) return false;
+    leader = candidates[Math.floor(Math.random() * candidates.length)];
+    mode = 'defense';
+    defendingBadgeId = leader.badgeId;
+  }
+  startBattle({mode, leader, deck, defendingBadgeId, resumeAction});
+  return true;
+}
+
+function startBattle({mode, leader, deck, defendingBadgeId, resumeAction}){
+  BATTLE_STATE = {
+    active: true,
+    phase: 'intro',
+    leader,
+    mode,
+    defendingBadgeId,
+    deck,
+    qIdx: 0,
+    answers: [],
+    deadline: 0,
+    correctCount: 0,
+    lastFeedback: null,
+    resumeAction: resumeAction || (() => { VIEW = 'home'; render(); })
+  };
+  DB.lastBattleTs = now();
+  DB.battlesTotal = (DB.battlesTotal || 0) + 1;
+  save();
+  VIEW = 'battle';
+  haptic(HAPTIC.complete);
+  render();
+  // Avanza de intro a 1ra pregunta a los ~2.4s
+  setTimeout(() => {
+    if(BATTLE_STATE.active && BATTLE_STATE.phase === 'intro') battleStartQuestion();
+  }, 2400);
+}
+
+function battleStartQuestion(){
+  BATTLE_STATE.phase = 'question';
+  BATTLE_STATE.deadline = now() + BATTLE_CONFIG.secondsPerQuestion * 1000;
+  startBattleTimer();
+  render();
+}
+
+function startBattleTimer(){
+  stopBattleTimer();
+  BATTLE_TIMER_ID = setInterval(() => {
+    if(VIEW !== 'battle' || BATTLE_STATE.phase !== 'question'){ stopBattleTimer(); return; }
+    const remaining = Math.max(0, BATTLE_STATE.deadline - now());
+    const total = BATTLE_CONFIG.secondsPerQuestion * 1000;
+    const pct = (remaining / total) * 100;
+    const fillEl = document.getElementById('battle-tfill');
+    const numEl = document.getElementById('battle-tnum');
+    if(fillEl){
+      fillEl.style.width = pct + '%';
+      if(remaining < 3000) fillEl.classList.add('warn'); else fillEl.classList.remove('warn');
+    }
+    if(numEl){
+      numEl.textContent = Math.ceil(remaining/1000);
+      if(remaining < 3000) numEl.classList.add('warn'); else numEl.classList.remove('warn');
+    }
+    if(remaining === 0){
+      stopBattleTimer();
+      battleAnswer(-1, true);
+    }
+  }, 100);
+}
+
+function stopBattleTimer(){
+  if(BATTLE_TIMER_ID){ clearInterval(BATTLE_TIMER_ID); BATTLE_TIMER_ID = null; }
+}
+
+function battleSelect(i){
+  if(BATTLE_STATE.phase !== 'question') return;
+  battleAnswer(i, false);
+}
+
+function battleAnswer(i, timedOut){
+  stopBattleTimer();
+  const q = BATTLE_STATE.deck[BATTLE_STATE.qIdx];
+  const correct = !timedOut && i === q.correct;
+  BATTLE_STATE.answers.push({selected:i, correct, timedOut});
+  if(correct){
+    BATTLE_STATE.correctCount += 1;
+    haptic(HAPTIC.correct);
+  } else {
+    haptic(HAPTIC.wrong);
+  }
+  BATTLE_STATE.lastFeedback = {
+    correctIdx: q.correct,
+    selectedIdx: i,
+    correct,
+    timedOut,
+    explanation: q.explanation || ''
+  };
+  BATTLE_STATE.phase = 'feedback';
+  render();
+  setTimeout(() => {
+    if(!BATTLE_STATE.active) return;
+    if(BATTLE_STATE.qIdx + 1 < BATTLE_STATE.deck.length){
+      BATTLE_STATE.qIdx += 1;
+      BATTLE_STATE.lastFeedback = null;
+      battleStartQuestion();
+    } else {
+      battleFinish();
+    }
+  }, 1500);
+}
+
+function battleFinish(){
+  stopBattleTimer();
+  const cc = BATTLE_STATE.correctCount;
+  const total = BATTLE_STATE.deck.length;
+  const mode = BATTLE_STATE.mode;
+  const leader = BATTLE_STATE.leader;
+  let outcome, xp = 0, msg = '';
+  if(mode === 'conquest'){
+    // Solo 3/3 te lleva la medalla nueva
+    if(cc === total){
+      DB.badges[leader.id] = 'won';
+      DB.battlesWon = (DB.battlesWon || 0) + 1;
+      xp = BATTLE_CONFIG.xpWin;
+      outcome = 'badge_won';
+      msg = `¡Medalla ${leader.badgeId.toUpperCase()} obtenida!`;
+    } else if(cc >= 1){
+      xp = BATTLE_CONFIG.xpDraw;
+      outcome = 'no_badge';
+      msg = `${leader.name} no quedó convencido. Vuelve más fuerte.`;
+    } else {
+      outcome = 'no_badge';
+      msg = `${leader.name} te aplastó. No hay medalla esta vez.`;
+    }
+  } else {
+    // Defensa
+    const prevState = DB.badges[leader.id]; // 'won' o 'cracked'
+    if(cc >= BATTLE_CONFIG.defenseMinCorrect){
+      // Defendida → si estaba agrietada vuelve a brillante
+      DB.badges[leader.id] = 'won';
+      DB.battlesWon = (DB.battlesWon || 0) + 1;
+      xp = BATTLE_CONFIG.xpWin;
+      outcome = prevState === 'cracked' ? 'badge_restored' : 'badge_defended';
+      msg = prevState === 'cracked'
+        ? `¡Defendiste y restauraste la medalla ${leader.badgeId.toUpperCase()}!`
+        : `¡Medalla ${leader.badgeId.toUpperCase()} defendida!`;
+    } else if(cc >= BATTLE_CONFIG.crackMinCorrect){
+      // Agrietada (si ya estaba agrietada, se pierde)
+      if(prevState === 'cracked'){
+        DB.badges[leader.id] = 'lost';
+        outcome = 'badge_lost';
+        msg = `¡Perdiste la medalla ${leader.badgeId.toUpperCase()}!`;
+      } else {
+        DB.badges[leader.id] = 'cracked';
+        xp = BATTLE_CONFIG.xpDraw;
+        outcome = 'badge_cracked';
+        msg = `La medalla ${leader.badgeId.toUpperCase()} se agrietó. La próxima derrota la pierdes.`;
+      }
+    } else {
+      DB.badges[leader.id] = 'lost';
+      outcome = 'badge_lost';
+      msg = `¡Perdiste la medalla ${leader.badgeId.toUpperCase()}!`;
+    }
+  }
+  if(xp > 0) addXP(xp);
+  // Logros
+  const wonCount = Object.values(DB.badges).filter(s => s === 'won' || s === 'cracked').length;
+  if(wonCount >= 1 && !DB.achievements?.first_badge) earnAch('first_badge');
+  if(wonCount === 8 && !DB.achievements?.champion) earnAch('champion');
+  save();
+  BATTLE_STATE.phase = 'result';
+  BATTLE_STATE.lastOutcome = {outcome, xp, msg, cc, total};
+  if(outcome === 'badge_won' || outcome === 'badge_defended' || outcome === 'badge_restored'){
+    launchConfetti();
+  }
+  render();
+}
+
+function battleContinue(){
+  haptic(HAPTIC.tap);
+  const resume = BATTLE_STATE.resumeAction;
+  stopBattleTimer();
+  BATTLE_STATE = {
+    active:false, phase:'intro', leader:null, mode:'conquest',
+    defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
+    correctCount:0, lastFeedback:null, resumeAction:null
+  };
+  if(typeof resume === 'function') resume();
+  else { VIEW = 'home'; render(); }
+}
+
+function battleOpenTrainerCard(){
+  haptic(HAPTIC.tap);
+  // Saltamos el resume (la lección ya quedó marcada como completa con XP y
+  // racha desde finishLesson). Vamos directo a la Trainer Card. El usuario
+  // navega luego con el bottom nav.
+  stopBattleTimer();
+  BATTLE_STATE = {
+    active:false, phase:'intro', leader:null, mode:'conquest',
+    defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
+    correctCount:0, lastFeedback:null, resumeAction:null
+  };
+  VIEW = 'trainer_card';
+  render();
+}
+
+// ----- RENDER -----
+function renderBattle(){
+  const phase = BATTLE_STATE.phase;
+  const leader = BATTLE_STATE.leader;
+  if(!leader) return renderHome();
+  const total = BATTLE_STATE.deck.length;
+  const qIdx = BATTLE_STATE.qIdx;
+  const q = BATTLE_STATE.deck[qIdx];
+  const mode = BATTLE_STATE.mode;
+  const badge = BADGES.find(b => b.id === leader.badgeId);
+
+  // Mis medallas (orden fijo) → balls
+  const myBallsHtml = BADGES.map(b => {
+    const st = DB.badges[b.id];
+    let cls = 'bn-ball empty';
+    if(st === 'won' || st === 'cracked') cls = 'bn-ball';
+    else if(st === 'lost') cls = 'bn-ball lost';
+    return `<div class="${cls}" title="${b.name}"></div>`;
+  }).join('');
+  const foeBallsHtml = `<div class="bn-ball"></div>`.repeat(mode === 'conquest' ? 1 : 1);
+
+  // Diálogo según fase
+  let dialogText = '';
+  let dialogCursor = true;
+  if(phase === 'intro'){
+    if(mode === 'conquest'){
+      dialogText = `¡Líder ${leader.name.toUpperCase()} te reta por la medalla ${badge.name.toUpperCase()}!`;
+    } else {
+      const st = DB.badges[leader.id];
+      const ext = st === 'cracked' ? '¡Tu medalla está agrietada!' : '';
+      dialogText = `¡${leader.name.toUpperCase()} apareció! Viene por tu medalla ${badge.name.toUpperCase()}. ${ext}`.trim();
+    }
+  } else if(phase === 'question'){
+    dialogText = `${leader.name.toUpperCase()} pregunta…`;
+    dialogCursor = false;
+  } else if(phase === 'feedback'){
+    const fb = BATTLE_STATE.lastFeedback;
+    if(fb?.timedOut) dialogText = '¡Se acabó el tiempo!';
+    else if(fb?.correct) dialogText = '¡Acierto crítico!';
+    else dialogText = '¡Fallaste el golpe!';
+    dialogCursor = false;
+  }
+
+  // Sprite hit states durante feedback
+  let foeCls = 'battle-sprite foe';
+  let meCls = 'battle-sprite me';
+  if(phase === 'feedback'){
+    const fb = BATTLE_STATE.lastFeedback;
+    if(fb?.correct) foeCls += ' hit';
+    else meCls += ' hit';
+  }
+
+  // RESULT phase = pantalla distinta
+  if(phase === 'result'){
+    return renderBattleResult();
+  }
+
+  // Question banner (durante question + feedback)
+  const showQuestion = phase === 'question' || phase === 'feedback';
+  const questionBanner = showQuestion && q ? `
+    <div class="battle-question-banner">
+      <div class="bqb-tag">PREGUNTA ${qIdx+1}/${total}</div>
+      <div>${q.q}</div>
+    </div>` : '';
+
+  // Timer (solo en question)
+  const timer = phase === 'question' ? `
+    <div class="battle-timer-bar"><div class="battle-timer-fill" id="battle-tfill" style="width:100%"></div></div>
+    <div class="battle-timer-num" id="battle-tnum">${BATTLE_CONFIG.secondsPerQuestion}</div>` : '';
+
+  // 4 botones (siempre estable; en feedback se marcan right/wrong)
+  let optsHtml = '';
+  if(showQuestion && q){
+    const fb = BATTLE_STATE.lastFeedback;
+    optsHtml = q.options.map((opt, i) => {
+      let cls = 'battle-opt';
+      let click = `onclick="battleSelect(${i})"`;
+      if(phase === 'feedback'){
+        click = '';
+        cls += ' disabled';
+        if(i === fb.correctIdx) cls = 'battle-opt right';
+        else if(i === fb.selectedIdx && !fb.correct && !fb.timedOut) cls = 'battle-opt wrong';
+      }
+      const arrows = ['▶','▶','▶','▶'];
+      return `<button class="${cls}" data-c="${i}" ${click}>
+        <span class="bo-arrow">${arrows[i]}</span>
+        <span class="bo-text">${opt}</span>
+      </button>`;
+    }).join('');
+  } else {
+    // intro: 4 botones grises invitando "Adelante"
+    optsHtml = ['¡Adelante!','¡A pelear!','No retroceder','Pelear con honor'].map((t,i) =>
+      `<button class="battle-opt disabled" data-c="${i}">
+        <span class="bo-arrow">▶</span><span class="bo-text">${t}</span>
+      </button>`
+    ).join('');
+  }
+
+  const vsOverlay = phase === 'intro' ? `<div class="battle-vs"><div class="battle-vs-inner">VS</div></div>` : '';
+
+  return `
+    <div class="battle-wrap">
+      <div class="battle-arena">
+        ${timer}
+        ${vsOverlay}
+        <div class="battle-namebox foe">
+          <div class="bn-name">LÍDER ${leader.name.toUpperCase()}</div>
+          <div class="bn-sub">${leader.title}</div>
+          <div class="bn-balls">${foeBallsHtml}</div>
+        </div>
+        <div class="battle-platform foe"></div>
+        <div class="${foeCls}" style="color:${leader.accent}">${leader.sprite}</div>
+        <div class="battle-platform me"></div>
+        <div class="${meCls}">🧑‍🎓</div>
+        <div class="battle-namebox me">
+          <div class="bn-name">RANDALL</div>
+          <div class="bn-sub">${mode === 'conquest' ? 'Conquista' : 'Defensa'}</div>
+          <div class="bn-balls">${myBallsHtml}</div>
+        </div>
+        ${questionBanner}
+      </div>
+      <div class="battle-dialog">
+        <div class="bd-text ${dialogCursor?'with-cursor':''}">${dialogText}</div>
+      </div>
+      <div class="battle-opts">${optsHtml}</div>
+    </div>
+  `;
+}
+
+function renderBattleResult(){
+  const r = BATTLE_STATE.lastOutcome || {};
+  const leader = BATTLE_STATE.leader;
+  const badge = BADGES.find(b => b.id === leader.badgeId);
+  const isWin = ['badge_won','badge_defended','badge_restored'].includes(r.outcome);
+  const isDraw = r.outcome === 'badge_cracked' || r.outcome === 'no_badge';
+  const cls = isWin ? 'battle-result win' : 'battle-result';
+  let h, sub;
+  if(r.outcome === 'badge_won'){ h = '¡Victoria!'; sub = `Conquistaste a Líder ${leader.name}.`; }
+  else if(r.outcome === 'badge_defended'){ h = '¡Defendiste!'; sub = `Líder ${leader.name} se retira derrotado.`; }
+  else if(r.outcome === 'badge_restored'){ h = '¡Restaurada!'; sub = `Tu medalla vuelve a brillar.`; }
+  else if(r.outcome === 'badge_cracked'){ h = 'Medalla agrietada'; sub = `Otra derrota y la pierdes.`; }
+  else if(r.outcome === 'badge_lost'){ h = 'Derrota'; sub = `Perdiste tu medalla.`; }
+  else { h = 'Sin medalla'; sub = `No te llevas nada esta vez.`; }
+
+  const badgeAnimIco = isWin ? badge.ico : (r.outcome === 'badge_cracked' ? '⚠️' : (r.outcome === 'badge_lost' ? '💔' : '🔒'));
+  const badgeAnimName = badge.name;
+
+  return `
+    <div class="${cls}">
+      <div class="battle-result-h">${h}</div>
+      <div class="battle-result-sub">${sub}</div>
+      <div class="battle-badge-anim">
+        <div class="bba-ico">${badgeAnimIco}</div>
+        <div class="bba-name">${badgeAnimName}</div>
+      </div>
+      <div class="battle-result-stats">
+        <div class="brs-cell"><div class="brs-num">${r.cc}/${r.total}</div><div>aciertos</div></div>
+        ${r.xp ? `<div class="brs-cell"><div class="brs-num">+${r.xp}</div><div>XP</div></div>` : ''}
+      </div>
+      <div class="battle-result-msg" style="font-size:13px;font-weight:700;max-width:280px;margin-bottom:18px;line-height:1.4">${r.msg||''}</div>
+      <div class="battle-result-actions">
+        <button class="battle-result-btn" onclick="battleContinue()">Continuar</button>
+        <button class="battle-result-btn" onclick="battleOpenTrainerCard()" style="background:#9BBC0F">Ver Trainer Card</button>
+      </div>
+    </div>
+  `;
+}
+
+// ----- TRAINER CARD -----
+function renderTrainerCard(){
+  const owned = LEADERS.filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked').length;
+  const lost = LEADERS.filter(l => DB.badges[l.id] === 'lost').length;
+  const lvl = calcLevel(DB.xp);
+  const lvlInfo = LEVELS[lvl-1];
+
+  const badgeCells = LEADERS.map(leader => {
+    const badge = BADGES.find(b => b.id === leader.badgeId);
+    const st = DB.badges[leader.id];
+    let cls = 'tc-badge';
+    let ico = badge.ico;
+    if(!st){ cls += ' locked'; ico = ''; }
+    else if(st === 'cracked') cls += ' cracked';
+    else if(st === 'lost') cls += ' lost';
+    return `<div class="${cls}" title="${badge.name} · ${leader.name}">${st ? ico : ''}</div>`;
+  }).join('');
+
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <button class="back-btn" onclick="navTo('home')" aria-label="Volver">✕</button>
+        <div style="font-size:18px;font-weight:800">Trainer Card</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-head">
+          <div class="tcard-avatar">🧑‍🎓</div>
+          <div class="tcard-h">
+            <div class="tcard-name">Randall</div>
+            <div class="tcard-meta">${lvlInfo.n} · ${DB.xp} XP · 🔥 ${DB.streak}d</div>
+          </div>
+          <div class="tcard-count">${owned}/8</div>
+        </div>
+        <div class="tcard-badges">${badgeCells}</div>
+        <div class="tcard-foot">
+          ${owned === 0 ? 'Sin medallas todavía. Termina lecciones para que aparezcan los líderes.'
+            : owned === 8 ? '¡Las 8 medallas conquistadas! Ahora defiéndelas.'
+            : `${owned} ganadas · ${lost ? lost+' perdidas · ' : ''}faltan ${8-owned}.`}
+        </div>
+        ${DB.battlesTotal ? `<div style="margin-top:10px;font-size:11px;text-align:center;opacity:.75">${DB.battlesTotal} battles totales · ${DB.battlesWon} ganados</div>` : ''}
+      </div>
+
+      <div class="section-title">Líderes</div>
+      ${LEADERS.map(l => {
+        const b = BADGES.find(x => x.id === l.badgeId);
+        const st = DB.badges[l.id];
+        const stLabel = st === 'won' ? '✅ Defendida'
+          : st === 'cracked' ? '⚠️ Agrietada'
+          : st === 'lost' ? '💔 Perdida'
+          : '🔒 No conquistada';
+        return `
+          <div class="card" style="display:flex;align-items:center;gap:12px;padding:12px">
+            <div style="width:42px;height:42px;background:${l.accent};border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${l.sprite}</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-weight:800;font-size:14px">Líder ${l.name} <span style="color:#65676B;font-weight:600">· ${l.title}</span></div>
+              <div style="font-size:12px;color:#65676B;margin-top:2px">Medalla ${b.name} · ${stLabel}</div>
+            </div>
+            <div style="font-size:22px">${b.ico}</div>
+          </div>`;
+      }).join('')}
+
+      <button class="battle-test-btn" onclick="testBattle()">⚔️ Probar battle ahora</button>
+      <div style="font-size:11px;color:#65676B;text-align:center;margin-top:6px">Botón para preview · ignora cooldown y random</div>
+    </div>
+    ${renderNav('achievements')}
+  `;
+}
+
+function testBattle(){
+  haptic(HAPTIC.tap);
+  if(!CURRENT.courseId){
+    // Toma el primer curso activo
+    const active = Object.values(COURSES).filter(c => c.active !== false);
+    if(active.length) CURRENT.courseId = active[0].id;
+  }
+  if(!CURRENT.courseId){
+    showToast('Abre un curso primero para probar el battle', 2400);
+    return;
+  }
+  const ok = maybeStartBattle(() => { VIEW = 'trainer_card'; render(); }, {force:true});
+  if(!ok) showToast('No hay suficientes preguntas en este curso para un battle', 2800);
 }
 
 const manifest = {
