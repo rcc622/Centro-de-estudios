@@ -4934,19 +4934,18 @@ function exchangeXpForHeart(){
 
 
 // ============================================================
-// PWA — manifest + service worker via blob (no extra files)
+// PWA — manifest + service worker (cache-first, ver sw.js)
 // ============================================================
 if('serviceWorker' in navigator){
-  const sw = `
-    self.addEventListener('install', e => self.skipWaiting());
-    self.addEventListener('activate', e => self.clients.claim());
-    self.addEventListener('fetch', e => e.respondWith(
-      fetch(e.request).catch(() => new Response('', {status:200}))
-    ));
-  `;
-  navigator.serviceWorker.register(
-    URL.createObjectURL(new Blob([sw], {type:'text/javascript'}))
-  ).then(reg => {
+  // Cleanup: si quedó algún SW viejo registrado vía blob: URL (versiones
+  // anteriores), desregistrarlo antes de instalar el nuevo sw.js.
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(reg => {
+      const url = reg.active?.scriptURL || reg.installing?.scriptURL || reg.waiting?.scriptURL || '';
+      if(url.startsWith('blob:')) reg.unregister().catch(()=>{});
+    });
+  }).catch(()=>{});
+  navigator.serviceWorker.register('sw.js').then(reg => {
     // Chequea por nueva versión cada vez que la app vuelve a foreground
     document.addEventListener('visibilitychange', () => {
       if(document.visibilityState === 'visible') reg.update().catch(()=>{});
@@ -4979,10 +4978,18 @@ if('serviceWorker' in navigator){
 // preguntar sobre lo que aún no ha estudiado rompe el flow educativo.
 // allowAny=true (testBattle force) acepta cualquier MCQ del curso para
 // poder ver el preview sin haber completado lecciones aún.
+//
+// FILTRO de auto-contenido: descarta MCQs que dependen de un "caso" o
+// "escenario" previo (cards tipo 'scenario' que las anteceden), porque
+// en el battle se muestran fuera de contexto. Solo dejamos pasar las
+// preguntas que se entienden por sí solas.
 function gatherBattleQuestions(courseId, currentLessonId, n, opts){
   opts = opts || {};
   const course = COURSES[courseId];
   if(!course) return [];
+  // Patrones que delatan dependencia de contexto previo
+  const CONTEXT_REGEX = /\b(?:el|este|esta|ese)\s+(?:caso|escenario|ejemplo|cliente|caso anterior)\b|\besta situación\b|\bcambia de opinión\b|\bsegún (?:lo|el) (?:anterior|caso|ejemplo)\b|\bdel ejemplo\b|\bel cliente\b/i;
+  // Texto que la pregunta debe tener para sentirse self-contained
   const completedPool = [];
   const fullPool = [];
   const courseProg = DB.progress?.[courseId] || {};
@@ -4991,11 +4998,25 @@ function gatherBattleQuestions(courseId, currentLessonId, n, opts){
     for(const lesson of day.lessons || []){
       const isCompleted = !!dayProg[lesson.id]?.completed;
       if(lesson.id === currentLessonId) continue;
-      for(const card of lesson.cards || []){
+      const cards = lesson.cards || [];
+      for(let i = 0; i < cards.length; i++){
+        const card = cards[i];
         if(card.type !== 'mcq') continue;
         if(card.multi) continue;
         if(!Array.isArray(card.options) || card.options.length !== 4) continue;
         if(typeof card.correct !== 'number') continue;
+        // Filtro 1: si la card inmediatamente anterior es un 'scenario'
+        // (caso a resolver) o 'quote' grande, esta MCQ pertenece al caso
+        // y no se entiende sola.
+        const prev = cards[i - 1];
+        if(prev && (prev.type === 'scenario' || prev.type === 'quote')) continue;
+        // Filtro 2: el texto de la pregunta no debe referenciar contexto
+        // externo. Si lo hace, skipear.
+        const qText = card.q || '';
+        if(CONTEXT_REGEX.test(qText)) continue;
+        // Filtro 3: preguntas extremadamente cortas (<20 chars) suelen ser
+        // continuaciones de un caso ("¿Y ahora?", "¿Y si cambia?").
+        if(qText.replace(/<[^>]+>/g, '').length < 20) continue;
         fullPool.push(card);
         if(isCompleted) completedPool.push(card);
       }
