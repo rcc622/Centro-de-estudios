@@ -709,8 +709,8 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 /* Sprites 180x180 — proporción balanceada (vuelta atrás del experimento 250px) */
 .battle-sprite{position:absolute;width:180px;height:180px;display:flex;align-items:flex-end;justify-content:center;z-index:2;pointer-events:none}
 .battle-sprite img{width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor}
-.battle-sprite.foe{top:8px;right:5%;animation:bfoe-in .55s ease-out}
-.battle-sprite.me{bottom:8px;left:5%;animation:bme-in .55s ease-out}
+.battle-sprite.foe{top:8px;right:14%;animation:bfoe-in .55s ease-out}
+.battle-sprite.me{bottom:8px;left:14%;animation:bme-in .55s ease-out}
 @keyframes bfoe-in{from{transform:translateX(140px);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes bme-in{from{transform:translateX(-140px);opacity:0}to{transform:translateX(0);opacity:1}}
 /* Namebox: nombre + nivel + barra HP estilo Pokémon. Sin pokeballs row. */
@@ -1015,12 +1015,12 @@ const BATTLE_CONFIG = {
   triggerChance: 0.20,          // 20% al terminar lección elegible
   cooldownMs: 2 * 3600 * 1000,  // 2h entre battles
   // Sistema HP en porcentaje: cada lado arranca con 100%. Cada acierto
-  // resta 25% al foe; cada error/timeout resta 25% al jugador. Primero
-  // en llegar a 0% pierde. Resultado: battles duran 4-7 preguntas
-  // (avg ~5-6). Display oculta el conteo: solo se ve "100%/75%/50%/25%/0%".
-  maxLives: 4,                  // 4 hits = KO → 25% por hit
-  poolSize: 10,                 // fetch 10 MCQs (max battle = 7, margen 3)
-  minPoolSize: 7,               // mínimo necesario para arrancar battle
+  // resta 20% al foe; cada error/timeout resta 20% al jugador. Primero
+  // en llegar a 0% pierde. Resultado: battles duran 5-9 preguntas
+  // (avg ~6-7). Display oculta el conteo: solo se ve "100%/80%/60%/40%/20%/0%".
+  maxLives: 5,                  // 5 hits = KO → 20% por hit
+  poolSize: 12,                 // fetch 12 MCQs (max battle = 9, margen 3)
+  minPoolSize: 9,               // mínimo necesario para arrancar battle
   secondsPerQuestion: 20,
   minLessonsToday: 2,           // no en la 1ra del día
   minHearts: 2,                 // no si está en racha mala
