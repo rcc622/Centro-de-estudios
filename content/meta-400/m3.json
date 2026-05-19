@@ -5,7 +5,7 @@
     "b1": {
       "ico": "💰",
       "title": "Bloque 1",
-      "sub": "Estrategias de presupuesto: Daily/Lifetime, CBO/ABO"
+      "sub": "Repaso M2 + Daily/Lifetime, CBO/ABO"
     },
     "b2": {
       "ico": "📈",
@@ -19,11 +19,57 @@
     },
     "bz": {
       "ico": "🏆",
-      "title": "Repaso final",
-      "sub": "Consolidación antes del examen"
+      "title": "Cierre del módulo",
+      "sub": "Caso integrador, repaso y consolidación"
     }
   },
   "lessons": [
+    {
+      "id": "3.0",
+      "title": "Repaso espaciado · Módulo 2",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El budget depende del buying type",
+          "body": "Antes de presupuestar, recuerda lo del Módulo 2: el buying type (Auction o Reservation) cambia cómo derivas el presupuesto. Repaso rápido."
+        },
+        {
+          "type": "fill",
+          "q": "Reservation solo soporta los objectives Awareness y ___.",
+          "options": ["Engagement", "Sales", "Leads", "Traffic"],
+          "correct": 0,
+          "explanation": "Awareness y Engagement: los únicos objectives de Reservation."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Quién gana la subasta en Auction?",
+          "options": ["El bid más alto", "El mayor total value", "El mayor budget", "Quien use Bid Cap"],
+          "correct": 1,
+          "explanation": "Gana el mayor total value (bid + estimated action rates + ad quality), no el bid más alto."
+        },
+        {
+          "type": "fill",
+          "q": "Con CPA tope estricto optimizando por cantidad, la bid strategy es ___.",
+          "options": ["Cost per Result Goal", "Highest Value", "ROAS Goal", "Highest Volume"],
+          "correct": 0,
+          "explanation": "Cost per Result Goal mantiene el costo objetivo por resultado."
+        },
+        {
+          "type": "mcq",
+          "q": "El precio en Auction vs Reservation:",
+          "options": [
+            "Ambos fijos",
+            "Auction variable (se estima); Reservation CPM fijo (se calcula)",
+            "Ambos variables",
+            "Auction fijo; Reservation variable"
+          ],
+          "correct": 1,
+          "explanation": "Eso define la lógica de presupuesto de este módulo: en Auction se estima, en Reservation se calcula."
+        }
+      ]
+    },
     {
       "id": "3.1",
       "title": "Explica · Estrategias de presupuesto",
@@ -34,6 +80,11 @@
           "type": "concept",
           "h": "Daily vs Lifetime",
           "body": "<strong>Daily budget</strong>: gasto promedio por día, ideal para campañas continuas. <strong>Lifetime budget</strong>: monto total para todo el periodo, necesario para scheduling (dayparting) y para Reservation."
+        },
+        {
+          "type": "concept",
+          "h": "CBO vs ABO: dónde vive el budget",
+          "body": "<strong>Advantage+ campaign budget (CBO)</strong>: el budget va a nivel campaña y Meta lo reparte al ad set de mejor desempeño. <strong>Ad set budget (ABO)</strong>: budget fijo por ad set, reparto manual y control granular."
         },
         {
           "type": "kvtable",
@@ -67,6 +118,19 @@
           "correct": 1,
           "explanation": "El ad scheduling (dayparting) requiere lifetime budget. Con daily budget no puedes restringir horarios específicos de entrega.",
           "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "El cliente tiene 6 ad sets y no quiere ajustar el reparto a mano. ¿Qué le conviene?",
+          "options": [
+            "ABO con daily igual en cada uno",
+            "Advantage+ campaign budget (CBO)",
+            "Bid Cap bajo en cada ad set",
+            "Un lifetime por ad set"
+          ],
+          "correct": 1,
+          "explanation": "CBO reparte dinámicamente el gasto hacia el ad set de mejor desempeño, sin micromanagear. ABO obliga a repartir y ajustar manualmente.",
+          "difficulty": "easy"
         }
       ]
     },
@@ -213,7 +277,12 @@
         {
           "type": "concept",
           "h": "Estimar, no garantizar",
-          "body": "En Auction el costo es variable. El planner estima el presupuesto a partir de resultados deseados y un costo por resultado esperado (de benchmarks o histórico): <strong>budget ≈ resultados objetivo × costo por resultado esperado</strong>."
+          "body": "En Auction el costo es variable. El planner estima el presupuesto a partir de resultados deseados y un costo por resultado esperado: <strong>budget ≈ resultados objetivo × costo por resultado esperado</strong>."
+        },
+        {
+          "type": "concept",
+          "h": "El budget debe alimentar la señal",
+          "body": "El presupuesto no solo cubre los resultados deseados: debe permitir que el ad set junte suficiente señal para optimizar. Si es muy bajo, el sistema nunca aprende y los resultados son volátiles."
         },
         {
           "type": "kvtable",
@@ -231,6 +300,11 @@
           "body": "Un ad set necesita ~50 eventos de optimización en ~7 días para salir de la learning phase. Si el budget es muy bajo no junta esa señal y el desempeño queda inestable. Planea el budget para alcanzarla."
         },
         {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "Tratar la estimación como una <strong>garantía</strong>. En Auction el costo real fluctúa con la subasta y la competencia: el número estimado es un punto de partida, no un compromiso."
+        },
+        {
           "type": "mcq",
           "q": "El cliente necesita ~400 leads en el mes y el CPL histórico es ~$5 USD. ¿Cuál es la estimación de presupuesto base?",
           "options": [
@@ -242,6 +316,19 @@
           "correct": 2,
           "explanation": "400 leads × $5 CPL ≈ $2,000 USD. Es una estimación, no una garantía: en Auction el costo real fluctúa con la subasta y la competencia.",
           "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Un budget tan bajo que el ad set solo junta ~20 eventos por semana. ¿Riesgo?",
+          "options": [
+            "Sube el ROAS",
+            "No sale de learning phase; resultados inestables",
+            "Se activa Reservation",
+            "El anuncio se rechaza"
+          ],
+          "correct": 1,
+          "explanation": "Por debajo de ~50 eventos/7 días el ad set no sale de learning phase: el sistema no optimiza bien.",
+          "difficulty": "hard"
         }
       ]
     },
@@ -389,7 +476,12 @@
         {
           "type": "concept",
           "h": "Precio conocido por adelantado",
-          "body": "En Reservation el CPM es <strong>fijo</strong> y el reach/frequency se planean antes de lanzar. El presupuesto se calcula desde impresiones objetivo: <strong>budget = impresiones planeadas × CPM ÷ 1000</strong>."
+          "body": "En Reservation el CPM es <strong>fijo</strong> y el reach/frequency se planean antes de lanzar. El presupuesto se calcula, no se estima: <strong>budget = impresiones planeadas × CPM ÷ 1000</strong>."
+        },
+        {
+          "type": "concept",
+          "h": "De reach a impresiones a budget",
+          "body": "Primero defines reach (personas únicas) y frequency (impresiones por persona). <strong>Impresiones = reach × frequency</strong>. Luego el budget sale directo del CPM fijo cotizado."
         },
         {
           "type": "kvtable",
@@ -405,6 +497,11 @@
           "type": "tip",
           "label": "VENTAJA DE PLANEACIÓN",
           "body": "Reservation permite cotizar el plan completo antes de gastar: ideal cuando el cliente firma un presupuesto cerrado y exige garantías de entrega (lanzamientos, campañas de marca con fecha)."
+        },
+        {
+          "type": "warn",
+          "label": "TRAMPA",
+          "body": "Usar la fórmula de Auction (resultados × costo) en Reservation. En Reservation no estimas conversiones: calculas desde <strong>impresiones (reach × frequency) × CPM</strong>."
         },
         {
           "type": "mcq",
@@ -558,20 +655,20 @@
       ]
     },
     {
-      "id": "3.z.scn",
+      "id": "3.integ",
       "title": "Caso integrador · proponer el budget correcto",
       "section": "bz",
       "type": "scenario",
       "cards": [
         {
           "type": "scenario",
-          "label": "ESCENARIO REAL",
+          "label": "CASO INTEGRADOR",
           "h": "Retailer mexicano · lanzamiento de marca",
-          "body": "Cliente de retail quiere un lanzamiento de marca con <strong>alcance garantizado</strong> de 1M de personas y frequency controlada, presupuesto cerrado aprobado por dirección."
+          "body": "Cliente de retail quiere un lanzamiento de marca con <strong>alcance garantizado</strong> de 1M de personas y frequency controlada, presupuesto cerrado aprobado por dirección. Después quiere una segunda etapa de ventas con CPA tope."
         },
         {
           "type": "mcq",
-          "q": "¿Qué buying type y lógica de presupuesto propones?",
+          "q": "¿Qué buying type y lógica de presupuesto propones para el lanzamiento de marca?",
           "options": [
             "Auction con Highest Volume y daily budget estimado",
             "Reservation, calculando budget = impresiones planeadas × CPM ÷ 1000",
@@ -584,7 +681,20 @@
         },
         {
           "type": "mcq",
-          "q": "Si en cambio el cliente quiere máximas ventas con un CPA tope, ¿cómo cambia la propuesta de budget?",
+          "q": "Si el frequency es 4 y el reach 1,000,000 con CPM fijo $5 USD, ¿budget?",
+          "options": [
+            "$5,000 USD",
+            "$20,000 USD",
+            "$2,000 USD",
+            "$50,000 USD"
+          ],
+          "correct": 1,
+          "explanation": "Impresiones = 1,000,000 × 4 = 4,000,000. Budget = 4,000,000 × $5 ÷ 1000 = $20,000 USD.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Para la etapa de ventas con CPA tope, ¿cómo cambia la propuesta de budget?",
           "options": [
             "Reservation con CPM fijo",
             "Auction (Sales), budget = ventas objetivo × CPA esperado, con Cost per Result Goal",
@@ -610,78 +720,280 @@
       ]
     },
     {
-      "id": "3.z.drill",
-      "title": "Repaso consolidador · Módulo 3",
+      "id": "3.match",
+      "title": "Emparejar conceptos clave del Módulo 3",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Tap el término y luego su definición. Cada error cuesta 1 ❤️.",
+      "pairs": [
+        ["Daily budget", "Gasto promedio por día; campañas continuas"],
+        ["Lifetime budget", "Total del periodo; permite ad scheduling y Reservation"],
+        ["CBO (Advantage+ campaign budget)", "Budget a nivel campaña; Meta reparte al mejor ad set"],
+        ["ABO (Ad set budget)", "Budget fijo por ad set; reparto manual"],
+        ["Ad scheduling (dayparting)", "Requiere lifetime budget"],
+        ["Budget en Auction", "Resultados objetivo × costo por resultado esperado"],
+        ["Budget en Reservation", "Impresiones planeadas × CPM ÷ 1000"],
+        ["Impresiones", "Reach × frequency"],
+        ["Learning phase", "~50 eventos de optimización en ~7 días por ad set"],
+        ["Variación de daily budget", "Hasta ~25% día a día, respetando el promedio"],
+        ["Costo en Auction", "Variable; se estima, no se garantiza"],
+        ["Costo en Reservation", "CPM fijo, conocido por adelantado"]
+      ]
+    },
+    {
+      "id": "3.order",
+      "title": "Ordenar el cálculo del presupuesto",
+      "section": "bz",
+      "type": "order",
+      "instruction": "Así deriva el planner el presupuesto. Reordena con ▲▼ y verifica.",
+      "items": [
+        "Definir el business goal y el objective",
+        "Determinar el buying type (Auction o Reservation)",
+        "Definir resultados objetivo (Auction) o reach × frequency (Reservation)",
+        "Aplicar el costo: costo por resultado esperado o CPM fijo",
+        "Verificar que el budget alcance la learning phase (si es Auction)"
+      ],
+      "explanation": "El buying type define la fórmula: Auction estima (resultados × costo), Reservation calcula (impresiones × CPM). El budget debe alcanzar la learning phase en Auction."
+    },
+    {
+      "id": "3.fill",
+      "title": "Completar frases del Módulo 3",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "El ad scheduling (dayparting) requiere ___ budget.",
+          "options": ["lifetime", "daily", "CBO", "ABO"],
+          "correct": 0,
+          "explanation": "Solo lifetime budget permite restringir días/horarios."
+        },
+        {
+          "type": "fill",
+          "q": "CBO reparte el gasto hacia el ad set de mejor ___.",
+          "options": ["desempeño", "CPM", "reach", "frequency"],
+          "correct": 0,
+          "explanation": "Advantage+ campaign budget manda el gasto al ad set de mejor desempeño."
+        },
+        {
+          "type": "fill",
+          "q": "Budget en Auction = resultados objetivo × costo por ___ esperado.",
+          "options": ["resultado", "impresión", "CPM", "clic"],
+          "correct": 0,
+          "explanation": "Estimación: resultados × costo por resultado esperado."
+        },
+        {
+          "type": "fill",
+          "q": "Budget en Reservation = impresiones planeadas × CPM ÷ ___.",
+          "options": ["1000", "100", "10", "frequency"],
+          "correct": 0,
+          "explanation": "El CPM es por mil impresiones, por eso se divide entre 1000."
+        },
+        {
+          "type": "fill",
+          "q": "Impresiones = reach × ___.",
+          "options": ["frequency", "CPM", "budget", "duración"],
+          "correct": 0,
+          "explanation": "Reach (personas únicas) × frequency (impresiones por persona)."
+        },
+        {
+          "type": "fill",
+          "q": "Un ad set sale de learning phase con ~___ eventos de optimización en ~7 días.",
+          "options": ["50", "10", "100", "500"],
+          "correct": 0,
+          "explanation": "Umbral ~50 eventos en ~7 días."
+        },
+        {
+          "type": "fill",
+          "q": "Daily budget puede variar hasta ~___% día a día respetando el promedio.",
+          "options": ["25", "10", "50", "5"],
+          "correct": 0,
+          "explanation": "No garantiza gasto exacto diario; respeta el promedio del periodo."
+        }
+      ]
+    },
+    {
+      "id": "3.drill",
+      "title": "Drill — 12 MCQs del Módulo 3",
       "section": "bz",
       "type": "drill",
       "cards": [
         {
-          "type": "fill",
-          "q": "Estimar budget en Auction = resultados objetivo × costo por ___ esperado.",
-          "options": [
-            "resultado",
-            "impresión",
-            "CPM",
-            "clic"
-          ],
-          "correct": 0,
-          "explanation": "Auction: budget ≈ resultados objetivo × costo por resultado esperado (estimación, no garantía)."
-        },
-        {
-          "type": "fill",
-          "q": "Calcular budget en Reservation = impresiones planeadas × ___ ÷ 1000.",
-          "options": [
-            "CPM",
-            "frequency",
-            "reach",
-            "CPL"
-          ],
-          "correct": 0,
-          "explanation": "Reservation: budget = impresiones planeadas × CPM ÷ 1000 (CPM fijo)."
-        },
-        {
           "type": "mcq",
           "q": "¿Qué budget exige el ad scheduling (dayparting)?",
-          "options": [
-            "Daily budget",
-            "Lifetime budget",
-            "Cualquiera",
-            "Solo Reservation"
-          ],
+          "options": ["Daily budget", "Lifetime budget", "Cualquiera", "Solo Reservation"],
           "correct": 1,
-          "explanation": "El ad scheduling requiere lifetime budget; con daily no se restringen horarios.",
-          "difficulty": "medium"
+          "explanation": "El ad scheduling requiere lifetime budget."
         },
         {
           "type": "mcq",
-          "q": "¿Qué pasa si el budget en Auction es muy bajo?",
+          "q": "CBO vs ABO:",
           "options": [
-            "Sube el ROAS automáticamente",
-            "El ad set no sale de learning phase (~50 eventos/7 días) y el desempeño es inestable",
-            "Se cambia solo a Reservation",
+            "CBO reparte manual; ABO automático",
+            "CBO budget a nivel campaña que Meta reparte; ABO budget por ad set manual",
+            "Son lo mismo",
+            "Solo existen en Reservation"
+          ],
+          "correct": 1,
+          "explanation": "CBO = nivel campaña, Meta reparte. ABO = por ad set, manual."
+        },
+        {
+          "type": "mcq",
+          "q": "¿Daily budget gasta exacto cada día?",
+          "options": ["Sí, siempre", "No, varía ~25% respetando el promedio", "Solo en Reservation", "Solo con CBO"],
+          "correct": 1,
+          "explanation": "Variación de hasta ~25% día a día."
+        },
+        {
+          "type": "mcq",
+          "q": "Budget en Auction:",
+          "options": [
+            "Impresiones × CPM ÷ 1000",
+            "Resultados objetivo × costo por resultado esperado",
+            "Reach ÷ frequency",
+            "Daily × días siempre exacto"
+          ],
+          "correct": 1,
+          "explanation": "Se estima: resultados × costo por resultado esperado."
+        },
+        {
+          "type": "mcq",
+          "q": "400 leads, CPL histórico $5 USD. Budget base:",
+          "options": ["~$400", "~$800", "~$2,000", "~$5,000"],
+          "correct": 2,
+          "explanation": "400 × $5 ≈ $2,000 USD (estimación, no garantía)."
+        },
+        {
+          "type": "mcq",
+          "q": "Umbral de learning phase:",
+          "options": ["~10 eventos/día", "~50 eventos en ~7 días", "~100 eventos/día", "~500 eventos/mes"],
+          "correct": 1,
+          "explanation": "~50 eventos de optimización en ~7 días por ad set."
+        },
+        {
+          "type": "mcq",
+          "q": "Budget muy bajo en Auction. Riesgo:",
+          "options": [
+            "Sube el ROAS",
+            "No sale de learning phase; resultados inestables",
+            "Se activa Reservation",
             "El anuncio se rechaza"
           ],
           "correct": 1,
-          "explanation": "Sin ~50 eventos de optimización en ~7 días el ad set no sale de learning phase: resultados volátiles.",
-          "difficulty": "hard"
+          "explanation": "Sin señal suficiente el ad set no aprende."
         },
         {
-          "type": "fill",
-          "q": "CBO reparte el gasto hacia el ad set de mejor ___; ABO obliga a repartir a mano.",
+          "type": "mcq",
+          "q": "Budget en Reservation:",
           "options": [
-            "desempeño",
-            "CPM",
-            "reach",
-            "frequency"
+            "Resultados × costo esperado",
+            "Impresiones planeadas × CPM ÷ 1000",
+            "Reach × CPM",
+            "Daily × días"
           ],
+          "correct": 1,
+          "explanation": "Impresiones (reach × frequency) × CPM ÷ 1000."
+        },
+        {
+          "type": "mcq",
+          "q": "500,000 personas, freq 3, CPM $4 USD. Budget:",
+          "options": ["$2,000", "$6,000", "$60,000", "$600"],
+          "correct": 1,
+          "explanation": "1,500,000 impresiones × $4 ÷ 1000 = $6,000 USD."
+        },
+        {
+          "type": "mcq",
+          "q": "Costo en Auction vs Reservation:",
+          "options": [
+            "Ambos fijos",
+            "Auction variable (se estima); Reservation CPM fijo (se calcula)",
+            "Ambos variables",
+            "Auction fijo; Reservation variable"
+          ],
+          "correct": 1,
+          "explanation": "Auction se estima; Reservation se calcula con CPM fijo."
+        },
+        {
+          "type": "mcq",
+          "q": "Cliente con 6 ad sets, no quiere micromanagear el reparto. ¿Qué le conviene?",
+          "options": ["ABO", "CBO (Advantage+ campaign budget)", "Bid Cap bajo", "Daily por ad set"],
+          "correct": 1,
+          "explanation": "CBO reparte dinámicamente al mejor ad set."
+        },
+        {
+          "type": "mcq",
+          "q": "Ventas con CPA tope. Lógica de budget:",
+          "options": [
+            "Reservation con CPM fijo",
+            "Auction Sales, budget = ventas × CPA esperado, Cost per Result Goal",
+            "Awareness con recall",
+            "Lifetime sin bid strategy"
+          ],
+          "correct": 1,
+          "explanation": "Sales solo va por Auction; con techo de costo: Cost per Result Goal."
+        }
+      ]
+    },
+    {
+      "id": "3.lightning",
+      "title": "Lightning — 8 preguntas rápidas",
+      "section": "bz",
+      "type": "lightning",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "¿El ad scheduling requiere lifetime budget?",
+          "options": ["Sí", "No, daily basta"],
           "correct": 0,
-          "explanation": "Advantage+ campaign budget (CBO) reparte dinámicamente al ad set de mejor desempeño; ABO es reparto manual."
+          "explanation": "Solo lifetime permite restringir días/horarios."
+        },
+        {
+          "q": "¿CBO reparte el budget Meta o tú?",
+          "options": ["Meta", "Tú manualmente"],
+          "correct": 0,
+          "explanation": "CBO = Meta reparte al mejor ad set. ABO = manual."
+        },
+        {
+          "q": "¿Daily budget gasta exacto cada día?",
+          "options": ["Sí", "No, ~25% de variación"],
+          "correct": 1,
+          "explanation": "Respeta el promedio del periodo, no el día exacto."
+        },
+        {
+          "q": "¿En Auction el budget se estima o se calcula?",
+          "options": ["Se estima", "Se calcula exacto"],
+          "correct": 0,
+          "explanation": "Resultados × costo esperado; el costo fluctúa."
+        },
+        {
+          "q": "¿El budget de Reservation usa CPM fijo?",
+          "options": ["Sí", "No, variable"],
+          "correct": 0,
+          "explanation": "CPM fijo conocido por adelantado."
+        },
+        {
+          "q": "¿Learning phase: ~50 eventos en ~7 días?",
+          "options": ["Sí", "No, ~500"],
+          "correct": 0,
+          "explanation": "Umbral ~50 eventos de optimización en ~7 días."
+        },
+        {
+          "q": "¿Budget muy bajo afecta la learning phase?",
+          "options": ["Sí, no sale de aprendizaje", "No, da igual"],
+          "correct": 0,
+          "explanation": "Sin señal suficiente el ad set no aprende."
+        },
+        {
+          "q": "Impresiones = reach × frequency, ¿verdadero?",
+          "options": ["Verdadero", "Falso"],
+          "correct": 0,
+          "explanation": "Reach (personas únicas) × frequency (impresiones por persona)."
         }
       ]
     },
     {
       "id": "3.flash",
-      "title": "Flashcards · Módulo 3 (todo)",
+      "title": "Flashcards del Módulo 3 (todo)",
       "section": "bz",
       "type": "flashcards",
       "cards": [
@@ -690,15 +1002,23 @@
         { "q": "Advantage+ campaign budget (CBO)", "a": "Budget a nivel campaña; Meta lo reparte entre ad sets según oportunidad." },
         { "q": "Ad set budget (ABO)", "a": "Budget fijo por ad set; reparto manual." },
         { "q": "¿Daily budget gasta exacto cada día?", "a": "No; puede variar (~25%) día a día, respetando el promedio del periodo." },
+        { "q": "¿Qué budget exige el ad scheduling?", "a": "Lifetime budget." },
         { "q": "Estimar budget en Auction", "a": "Resultados objetivo × costo por resultado esperado." },
+        { "q": "¿De dónde sale el costo por resultado esperado?", "a": "Del histórico de la cuenta o de un benchmark de industria." },
         { "q": "Calcular budget en Reservation", "a": "Impresiones planeadas × CPM ÷ 1000 (impresiones = reach × frequency)." },
+        { "q": "Impresiones en Reservation", "a": "Reach (personas únicas) × frequency (impresiones por persona)." },
         { "q": "Umbral de learning phase", "a": "~50 eventos de optimización en ~7 días por ad set." },
         { "q": "Riesgo de budget muy bajo", "a": "El ad set no sale de learning phase; desempeño inestable." },
-        { "q": "¿Qué budget exige el ad scheduling?", "a": "Lifetime budget." },
         { "q": "¿Cómo es el CPM en Reservation?", "a": "Fijo, conocido por adelantado; reach/frequency se planean antes de lanzar." },
-        { "q": "¿Cuándo conviene Reservation?", "a": "Presupuesto cerrado + garantías de entrega: lanzamientos, campañas de marca con fecha." },
+        { "q": "¿Cuándo conviene Reservation?", "a": "Presupuesto cerrado + garantías de entrega: lanzamientos, marca con fecha." },
+        { "q": "¿El costo en Auction es fijo o variable?", "a": "Variable; se estima, no se garantiza (fluctúa con la subasta)." },
+        { "q": "Ejemplo: 400 leads y CPL $5 USD", "a": "Budget base ≈ 400 × $5 = ~$2,000 USD." },
+        { "q": "Ejemplo: 500,000 personas, freq 3, CPM $4 USD", "a": "Impresiones 1,500,000 × $4 ÷ 1000 = ~$6,000 USD." },
         { "q": "Regla general del budget", "a": "Auction: se estima (resultados × costo esperado). Reservation: se calcula (impresiones × CPM)." },
-        { "q": "Ventas con CPA tope", "a": "Auction (Sales), budget = ventas objetivo × CPA esperado, bid Cost per Result Goal." }
+        { "q": "Ventas con CPA tope", "a": "Auction (Sales), budget = ventas objetivo × CPA esperado, bid Cost per Result Goal." },
+        { "q": "¿Cuándo CBO sobre ABO?", "a": "Varios ad sets y quieres eficiencia sin micromanagear el reparto." },
+        { "q": "¿La estimación de Auction es garantía?", "a": "No; es un punto de partida, el costo real fluctúa con la subasta." },
+        { "q": "Variación de daily budget", "a": "Hasta ~25% día a día, respetando el promedio del periodo." }
       ]
     }
   ]
