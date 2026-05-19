@@ -694,75 +694,77 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 /* ============================================================
    BATTLE SCREEN — retro Pokémon Red/Blue
    ============================================================ */
-.battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;background:#9BBC0F;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
-.battle-arena{flex:1;min-height:0;position:relative;background:linear-gradient(180deg,#79b454 0%,#9BBC0F 55%,#bcd96a 100%);overflow:hidden;border-bottom:4px solid #0F380F}
-.battle-arena::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent 0 4px,rgba(15,56,15,.04) 4px 5px);pointer-events:none}
-.battle-platform{position:absolute;width:46%;height:22px;border-radius:50%;background:radial-gradient(ellipse,#5d8a3e 0%,rgba(93,138,62,.55) 55%,transparent 80%);z-index:1}
-.battle-platform.foe{top:30%;right:2%}
-.battle-platform.me{bottom:16%;left:2%}
-/* Sprite contenedor (img dentro). image-rendering:pixelated → mantiene
-   el look pixel art crujiente al escalar el sprite 96x96 a tamaño grande. */
-.battle-sprite{position:absolute;width:128px;height:128px;display:flex;align-items:flex-end;justify-content:center;filter:drop-shadow(3px 4px 0 rgba(15,56,15,.35));z-index:3;pointer-events:none}
+/* Rediseño Gen 2 limpio: fondo blanco, líneas finas, sin overlap.
+   Layout: foe arriba-derecha · me abajo-izquierda · pregunta en diálogo. */
+.battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
+.battle-arena{flex:1 1 auto;min-height:240px;position:relative;background:#fff;overflow:hidden}
+/* Plataforma: una linea horizontal negra simple, no gradiente */
+.battle-platform{position:absolute;height:3px;background:#0F380F;z-index:1}
+.battle-platform.foe{top:48%;right:6%;width:38%}
+.battle-platform.me{top:78%;left:6%;width:38%}
+/* Sprites — escalado x2 (96→96px) para pixel art crujiente */
+.battle-sprite{position:absolute;width:120px;height:120px;display:flex;align-items:flex-end;justify-content:center;z-index:2;pointer-events:none}
 .battle-sprite img{width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor}
-.battle-sprite.foe{top:8%;right:4%;animation:bfoe-in .7s ease-out}
-.battle-sprite.me{bottom:18%;left:4%;animation:bme-in .7s ease-out}
-.battle-sprite.me img{width:140%;height:auto}
-@keyframes bfoe-in{from{transform:translateX(140px);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes bme-in{from{transform:translateX(-140px);opacity:0}to{transform:translateX(0);opacity:1}}
-/* Cajas de nombre/HP estilo Gen 1. Ancho fijo para no estirarse. */
-.battle-namebox{position:absolute;background:#fff;border:3px solid #0F380F;padding:6px 10px 8px;box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px #0F380F,3px 3px 0 #306230;font-family:'Courier New',monospace;color:#0F380F;width:200px;max-width:55%;z-index:4;box-sizing:border-box}
-.battle-namebox.foe{top:10px;left:10px;border-radius:0 8px 0 0}
-.battle-namebox.me{bottom:18px;right:10px;border-radius:8px 0 0 0}
-.battle-namebox .bn-name{font-size:13px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;line-height:1.15}
-.battle-namebox .bn-sub{font-size:10px;font-weight:700;color:#306230;margin-top:2px;line-height:1.1}
-.battle-namebox .bn-balls{display:flex;gap:3px;margin-top:6px;flex-wrap:nowrap;align-items:center}
-/* Mini Pokéball — CSS puro, render crisp en cualquier tamaño. */
-.mini-pokeball{display:block;width:13px;height:13px;flex:0 0 13px;border-radius:50%;border:1.5px solid #0F380F;box-sizing:border-box;background:linear-gradient(to bottom,#E53935 0 45%,#0F380F 45% 55%,#fff 55% 100%);position:relative}
-.mini-pokeball::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#fff;border:1.2px solid #0F380F;box-sizing:border-box}
+.battle-sprite.foe{top:calc(48% - 110px);right:8%;animation:bfoe-in .55s ease-out}
+.battle-sprite.me{top:calc(78% - 110px);left:8%;animation:bme-in .55s ease-out}
+@keyframes bfoe-in{from{transform:translateX(120px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes bme-in{from{transform:translateX(-120px);opacity:0}to{transform:translateX(0);opacity:1}}
+/* Cajas de nombre: simple, ancho fijo, border ligero, sin sombras pesadas */
+.battle-namebox{position:absolute;background:#fff;border:2px solid #0F380F;padding:5px 9px 6px;font-family:'Courier New',monospace;color:#0F380F;width:175px;z-index:3;box-sizing:border-box;box-shadow:2px 2px 0 #0F380F}
+.battle-namebox.foe{top:14px;left:10px}
+.battle-namebox.me{top:calc(78% + 10px);right:10px}
+.battle-namebox .bn-name{font-size:13px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;line-height:1.15;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.battle-namebox .bn-lvl{font-size:11px;font-weight:700;color:#0F380F;letter-spacing:0;text-transform:none}
+.battle-namebox .bn-sub{font-size:9.5px;font-weight:700;color:#5a7a47;margin-top:1px;line-height:1.1}
+.battle-namebox .bn-balls{display:flex;gap:3px;margin-top:5px;flex-wrap:nowrap;align-items:center;height:13px;min-width:0}
+/* Mini Pokéball Gen 2 — círculo sólido naranja con banda fina */
+.mini-pokeball{display:inline-block;width:11px;height:11px;flex:0 0 11px;border-radius:50%;border:1.2px solid #0F380F;box-sizing:border-box;background:#FFA726;position:relative;line-height:0;overflow:hidden}
+.mini-pokeball::before{content:'';position:absolute;top:50%;left:-1px;right:-1px;height:1.2px;background:#0F380F;transform:translateY(-50%)}
+.mini-pokeball::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#fff;border:1px solid #0F380F;box-sizing:border-box;z-index:1}
 .mini-pokeball.empty{background:#fff}
-.mini-pokeball.empty::after{background:#fff}
-.mini-pokeball.cracked{background:linear-gradient(to bottom,#FFB74D 0 45%,#0F380F 45% 55%,#fff 55% 100%)}
-.mini-pokeball.lost{background:#888;opacity:.55}
-.mini-pokeball.lost::after{background:#666}
+.mini-pokeball.empty::before{background:#0F380F}
+.mini-pokeball.cracked{background:#FFE082}
+.mini-pokeball.lost{background:#bbb;opacity:.5}
+.mini-pokeball.lost::after{background:#888}
 
-.battle-dialog{flex:0 0 auto;background:#fff;border-top:4px solid #0F380F;padding:16px 16px 14px;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 5px #0F380F;font-family:'Courier New',monospace;color:#0F380F}
-.battle-dialog .bd-text{font-size:14px;font-weight:700;line-height:1.45;min-height:42px;letter-spacing:.2px}
-.battle-dialog .bd-text.with-cursor::after{content:'▼';display:inline-block;margin-left:8px;animation:bcursor 1s steps(2,end) infinite;color:#306230}
+/* Diálogo: contiene la pregunta (durante question) o mensaje narrativo.
+   Borde estilo GameBoy: doble línea negra. */
+.battle-dialog{flex:0 0 auto;background:#fff;border-top:3px solid #0F380F;padding:14px 14px 12px;font-family:'Courier New',monospace;color:#0F380F;position:relative;box-shadow:inset 0 4px 0 #fff,inset 0 5px 0 #0F380F}
+.battle-dialog .bd-tag{font-size:10px;font-weight:900;letter-spacing:1px;color:#5a7a47;margin-bottom:5px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.battle-dialog .bd-text{font-size:14px;font-weight:700;line-height:1.45;min-height:42px;letter-spacing:.1px}
+.battle-dialog .bd-text.with-cursor::after{content:'▼';display:inline-block;margin-left:8px;animation:bcursor 1s steps(2,end) infinite;color:#5a7a47}
 @keyframes bcursor{0%,50%{opacity:1}51%,100%{opacity:0}}
 
+/* Timer compacto dentro del diálogo (chip en la esquina) */
+.battle-timer-chip{font-family:'Courier New',monospace;font-weight:900;font-size:12px;letter-spacing:.5px;background:#0F380F;color:#fff;padding:2px 8px;border-radius:4px;min-width:32px;text-align:center}
+.battle-timer-chip.warn{background:#E74C3C;animation:btim-pulse .4s ease-in-out infinite}
+@keyframes btim-pulse{0%,100%{opacity:1}50%{opacity:.55}}
+/* Barra de timer fina arriba del diálogo */
+.battle-timer-bar{position:absolute;top:-3px;left:0;right:0;height:3px;background:transparent;z-index:5}
+.battle-timer-fill{height:100%;background:#0F380F;transition:width .15s linear}
+.battle-timer-fill.warn{background:#E74C3C}
+
 /* VS intro overlay */
-.battle-vs{position:absolute;inset:0;background:#0F380F;display:flex;align-items:center;justify-content:center;z-index:10;animation:bvs-flash .45s steps(3,end)}
-.battle-vs-inner{font-family:'Courier New',monospace;font-size:96px;font-weight:900;color:#fff;text-shadow:4px 4px 0 #E74C3C,-2px -2px 0 #1877F2;letter-spacing:8px;animation:bvs-pop .5s ease-out}
-@keyframes bvs-flash{0%{background:#fff}50%{background:#0F380F}100%{background:#0F380F}}
+.battle-vs{position:absolute;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10;animation:bvs-flash .45s steps(3,end)}
+.battle-vs-inner{font-family:'Courier New',monospace;font-size:84px;font-weight:900;color:#0F380F;text-shadow:3px 3px 0 #E74C3C;letter-spacing:6px;animation:bvs-pop .5s ease-out}
+@keyframes bvs-flash{0%{background:#0F380F;color:#fff}50%{background:#fff}100%{background:#fff}}
 @keyframes bvs-pop{from{transform:scale(.3) rotate(-15deg);opacity:0}60%{transform:scale(1.2) rotate(8deg)}to{transform:scale(1) rotate(0)}}
 
-/* Timer bar */
-.battle-timer-bar{position:absolute;top:0;left:0;right:0;height:8px;background:rgba(15,56,15,.18);z-index:6}
-.battle-timer-fill{height:100%;background:linear-gradient(90deg,#0F380F,#306230);transition:width .15s linear}
-.battle-timer-fill.warn{background:linear-gradient(90deg,#E74C3C,#FF8042);animation:btim-pulse .4s ease-in-out infinite}
-@keyframes btim-pulse{0%,100%{opacity:1}50%{opacity:.55}}
-.battle-timer-num{position:absolute;top:14px;right:14px;background:#0F380F;color:#9BBC0F;font-family:'Courier New',monospace;font-weight:900;font-size:14px;padding:3px 9px;border-radius:6px;letter-spacing:.5px;z-index:7;border:2px solid #fff;box-shadow:0 0 0 2px #0F380F}
-.battle-timer-num.warn{background:#E74C3C;color:#fff;animation:btim-pulse .4s ease-in-out infinite}
-
 /* 4-option grid (estilo FIGHT/BAG/POKE/RUN) */
-.battle-opts{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0F380F;border-top:4px solid #0F380F;padding:0}
-.battle-opt{background:#fff;border:3px solid #0F380F;margin:0;padding:14px 12px;font-family:'Courier New',monospace;font-weight:800;color:#0F380F;cursor:pointer;text-align:left;display:flex;align-items:flex-start;gap:8px;min-height:74px;line-height:1.3;font-size:13px;user-select:none;-webkit-user-select:none;transition:transform .08s}
+.battle-opts{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0F380F;border-top:3px solid #0F380F;padding:0}
+.battle-opt{background:#fff;border:2px solid #0F380F;margin:0;padding:12px 11px;font-family:'Courier New',monospace;font-weight:800;color:#0F380F;cursor:pointer;text-align:left;display:flex;align-items:flex-start;gap:6px;min-height:62px;line-height:1.3;font-size:13px;user-select:none;-webkit-user-select:none;transition:transform .08s}
 .battle-opt:active{transform:translate(1px,2px)}
-.battle-opt[data-c="0"]{background:#FFE4DD;box-shadow:inset 0 -5px 0 #E74C3C}
-.battle-opt[data-c="1"]{background:#FFEFCB;box-shadow:inset 0 -5px 0 #E69500}
-.battle-opt[data-c="2"]{background:#DBF3D8;box-shadow:inset 0 -5px 0 #2D8C3F}
-.battle-opt[data-c="3"]{background:#D7E8FF;box-shadow:inset 0 -5px 0 #1877F2}
-.battle-opt.disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.5)}
-.battle-opt.right{background:#9BBC0F;color:#0F380F;animation:bopt-win .35s ease-out;box-shadow:inset 0 -5px 0 #2D8C3F,0 0 0 3px #2D8C3F}
-.battle-opt.wrong{background:#FFB4B4;color:#0F380F;animation:bopt-shake .35s ease-out;box-shadow:inset 0 -5px 0 #C0392B}
-@keyframes bopt-win{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+.battle-opt[data-c="0"]{background:#FFEDEA}
+.battle-opt[data-c="1"]{background:#FFF6E0}
+.battle-opt[data-c="2"]{background:#E8F5E5}
+.battle-opt[data-c="3"]{background:#E5EFFB}
+.battle-opt.disabled{opacity:.5;cursor:not-allowed}
+.battle-opt.right{background:#B8E5B5;animation:bopt-win .35s ease-out;box-shadow:inset 0 0 0 2px #2D8C3F}
+.battle-opt.wrong{background:#FFC7C7;animation:bopt-shake .35s ease-out;box-shadow:inset 0 0 0 2px #C0392B}
+@keyframes bopt-win{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
 @keyframes bopt-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
-.battle-opt .bo-arrow{color:#0F380F;font-weight:900;flex-shrink:0;width:14px}
+.battle-opt .bo-arrow{color:#0F380F;font-weight:900;flex-shrink:0;width:12px}
 .battle-opt .bo-text{flex:1;min-width:0}
-
-/* Question banner */
-.battle-question-banner{position:absolute;left:8px;right:8px;top:48px;background:#fff;border:3px solid #0F380F;border-radius:8px;padding:10px 12px;box-shadow:3px 3px 0 #306230;font-family:'Courier New',monospace;color:#0F380F;font-weight:700;font-size:13px;line-height:1.4;z-index:5;max-height:34vh;overflow-y:auto}
-.battle-question-banner .bqb-tag{font-size:10px;font-weight:900;letter-spacing:1px;color:#306230;margin-bottom:4px}
 
 /* Hit flash on sprite */
 .battle-sprite.hit{animation:bhit .35s ease-out}
@@ -5085,7 +5087,7 @@ function startBattleTimer(){
       if(remaining < 3000) fillEl.classList.add('warn'); else fillEl.classList.remove('warn');
     }
     if(numEl){
-      numEl.textContent = Math.ceil(remaining/1000);
+      numEl.textContent = Math.ceil(remaining/1000) + 's';
       if(remaining < 3000) numEl.classList.add('warn'); else numEl.classList.remove('warn');
     }
     if(remaining === 0){
@@ -5255,28 +5257,6 @@ function renderBattle(){
   // El rival siempre muestra 1 Pokéball (el que está en juego/poseído)
   const foeBallsHtml = `<span class="mini-pokeball"></span>`;
 
-  // Diálogo según fase
-  let dialogText = '';
-  let dialogCursor = true;
-  if(phase === 'intro'){
-    if(mode === 'conquest'){
-      dialogText = `¡LÍDER ${leader.name.toUpperCase()} envió a ${leader.pokemon.toUpperCase()}! Gana por la medalla ${badge.name.toUpperCase()}.`;
-    } else {
-      const st = DB.badges[leader.id];
-      const ext = st === 'cracked' ? '¡Tu medalla está agrietada!' : '';
-      dialogText = `¡${leader.name.toUpperCase()} regresó con ${leader.pokemon.toUpperCase()}! Viene por tu medalla ${badge.name.toUpperCase()}. ${ext}`.trim();
-    }
-  } else if(phase === 'question'){
-    dialogText = `${leader.pokemon.toUpperCase()} usó ATAQUE MENTAL…`;
-    dialogCursor = false;
-  } else if(phase === 'feedback'){
-    const fb = BATTLE_STATE.lastFeedback;
-    if(fb?.timedOut) dialogText = '¡Se acabó el tiempo!';
-    else if(fb?.correct) dialogText = '¡Golpe crítico! Es muy efectivo.';
-    else dialogText = `¡${leader.pokemon.toUpperCase()} no se inmutó!`;
-    dialogCursor = false;
-  }
-
   // Sprite hit states durante feedback
   let foeCls = 'battle-sprite foe';
   let meCls = 'battle-sprite me';
@@ -5291,22 +5271,43 @@ function renderBattle(){
     return renderBattleResult();
   }
 
-  // Question banner (durante question + feedback)
-  const showQuestion = phase === 'question' || phase === 'feedback';
-  const questionBanner = showQuestion && q ? `
-    <div class="battle-question-banner">
-      <div class="bqb-tag">PREGUNTA ${qIdx+1}/${total}</div>
-      <div>${q.q}</div>
-    </div>` : '';
+  // Contenido del diálogo: en 'question' es la pregunta misma; en 'intro'
+  // y 'feedback' es texto narrativo. Tag arriba muestra "PREGUNTA N/M" + timer.
+  let dialogTag = '';
+  let dialogText = '';
+  let dialogCursor = true;
+  if(phase === 'intro'){
+    dialogTag = `<span>¡COMBATE!</span><span>${mode === 'conquest' ? 'CONQUISTA' : 'DEFENSA'}</span>`;
+    if(mode === 'conquest'){
+      dialogText = `¡LÍDER ${leader.name.toUpperCase()} envió a ${leader.pokemon.toUpperCase()}! En juego: medalla ${badge.name.toUpperCase()}.`;
+    } else {
+      const st = DB.badges[leader.id];
+      const ext = st === 'cracked' ? ' ¡Tu medalla está agrietada!' : '';
+      dialogText = `¡${leader.name.toUpperCase()} regresó con ${leader.pokemon.toUpperCase()}! Viene por tu medalla ${badge.name.toUpperCase()}.${ext}`;
+    }
+  } else if(phase === 'question' && q){
+    const timerHtml = `<span class="battle-timer-chip" id="battle-tnum">${BATTLE_CONFIG.secondsPerQuestion}s</span>`;
+    dialogTag = `<span>PREGUNTA ${qIdx+1}/${total}</span>${timerHtml}`;
+    dialogText = q.q;
+    dialogCursor = false;
+  } else if(phase === 'feedback' && q){
+    const fb = BATTLE_STATE.lastFeedback;
+    dialogTag = `<span>RESULTADO ${qIdx+1}/${total}</span>`;
+    if(fb?.timedOut) dialogText = `¡Se acabó el tiempo! La correcta era: ${q.options[q.correct]}.`;
+    else if(fb?.correct) dialogText = `¡Correcto! ${q.options[q.correct]}.`;
+    else dialogText = `Fallaste. La correcta: ${q.options[q.correct]}.`;
+    dialogCursor = false;
+  }
 
-  // Timer (solo en question)
-  const timer = phase === 'question' ? `
-    <div class="battle-timer-bar"><div class="battle-timer-fill" id="battle-tfill" style="width:100%"></div></div>
-    <div class="battle-timer-num" id="battle-tnum">${BATTLE_CONFIG.secondsPerQuestion}</div>` : '';
+  // Timer bar (línea fina arriba del diálogo, solo en question)
+  const timerBar = phase === 'question'
+    ? `<div class="battle-timer-bar"><div class="battle-timer-fill" id="battle-tfill" style="width:100%"></div></div>`
+    : '';
 
-  // 4 botones (siempre estable; en feedback se marcan right/wrong)
+  // 4 botones (durante question/feedback; en intro deshabilitados con "Adelante")
+  const showOptions = phase === 'question' || phase === 'feedback';
   let optsHtml = '';
-  if(showQuestion && q){
+  if(showOptions && q){
     const fb = BATTLE_STATE.lastFeedback;
     optsHtml = q.options.map((opt, i) => {
       let cls = 'battle-opt';
@@ -5317,15 +5318,13 @@ function renderBattle(){
         if(i === fb.correctIdx) cls = 'battle-opt right';
         else if(i === fb.selectedIdx && !fb.correct && !fb.timedOut) cls = 'battle-opt wrong';
       }
-      const arrows = ['▶','▶','▶','▶'];
       return `<button class="${cls}" data-c="${i}" ${click}>
-        <span class="bo-arrow">${arrows[i]}</span>
+        <span class="bo-arrow">▶</span>
         <span class="bo-text">${opt}</span>
       </button>`;
     }).join('');
   } else {
-    // intro: 4 botones grises invitando "Adelante"
-    optsHtml = ['¡Adelante!','¡A pelear!','No retroceder','Pelear con honor'].map((t,i) =>
+    optsHtml = ['¡Adelante!','¡A pelear!','No retroceder','Con honor'].map((t,i) =>
       `<button class="battle-opt disabled" data-c="${i}">
         <span class="bo-arrow">▶</span><span class="bo-text">${t}</span>
       </button>`
@@ -5337,25 +5336,25 @@ function renderBattle(){
   return `
     <div class="battle-wrap">
       <div class="battle-arena">
-        ${timer}
         ${vsOverlay}
         <div class="battle-namebox foe">
-          <div class="bn-name">${leader.pokemon.toUpperCase()}</div>
+          <div class="bn-name"><span>${leader.pokemon.toUpperCase()}</span><span class="bn-lvl">Lv. ${qIdx+1}</span></div>
           <div class="bn-sub">Líder ${leader.name}</div>
           <div class="bn-balls">${foeBallsHtml}</div>
         </div>
         <div class="battle-platform foe"></div>
         <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
-        <div class="battle-platform me"></div>
         <div class="${meCls}"><img src="content/battles/pokemon/25-back.png" alt="Pikachu (back)"/></div>
+        <div class="battle-platform me"></div>
         <div class="battle-namebox me">
-          <div class="bn-name">PIKACHU</div>
-          <div class="bn-sub">Randall · ${mode === 'conquest' ? 'Conquista' : 'Defensa'}</div>
+          <div class="bn-name"><span>PIKACHU</span><span class="bn-lvl">Randall</span></div>
+          <div class="bn-sub">${mode === 'conquest' ? 'Conquista' : 'Defensa de medalla'}</div>
           <div class="bn-balls">${myBallsHtml}</div>
         </div>
-        ${questionBanner}
       </div>
       <div class="battle-dialog">
+        ${timerBar}
+        ${dialogTag ? `<div class="bd-tag">${dialogTag}</div>` : ''}
         <div class="bd-text ${dialogCursor?'with-cursor':''}">${dialogText}</div>
       </div>
       <div class="battle-opts">${optsHtml}</div>
