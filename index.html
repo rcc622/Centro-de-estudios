@@ -697,24 +697,26 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 /* Rediseño v3: fondo blanco, sprites grandes 140px, arena altura fija
    320px (las opciones suben), sin fila de Pokéballs (reemplazada por
    barra HP real que se vacía con cada acierto/error). v4: fondo negro
-   para el espacio vacío arriba/abajo, contenido centrado vertical. */
+   para el espacio vacío arriba/abajo, contenido centrado vertical.
+   v5: arena 400px + sprites 180px (más grandes), nameboxes anclados
+   arriba (foe) y abajo (me) para acomodar sprites grandes. */
 .battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;background:#000;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
-.battle-arena{flex:0 0 320px;position:relative;background:#fff;overflow:hidden;border-top:2px solid #0F380F;border-bottom:2px solid #0F380F}
+.battle-arena{flex:0 0 400px;position:relative;background:#fff;overflow:hidden;border-top:2px solid #0F380F;border-bottom:2px solid #0F380F}
 /* Plataforma: línea negra fina horizontal bajo cada sprite */
 .battle-platform{position:absolute;height:3px;background:#0F380F;border-radius:2px;z-index:1}
-.battle-platform.foe{top:150px;right:4%;width:55%;max-width:200px}
-.battle-platform.me{top:312px;left:4%;width:55%;max-width:200px}
-/* Sprites grandes — 140x140, pixel art crisp con image-rendering */
-.battle-sprite{position:absolute;width:140px;height:140px;display:flex;align-items:flex-end;justify-content:center;z-index:2;pointer-events:none}
+.battle-platform.foe{top:188px;right:4%;width:60%;max-width:220px}
+.battle-platform.me{bottom:2px;left:4%;width:60%;max-width:220px}
+/* Sprites grandes — 180x180, pixel art crisp con image-rendering */
+.battle-sprite{position:absolute;width:180px;height:180px;display:flex;align-items:flex-end;justify-content:center;z-index:2;pointer-events:none}
 .battle-sprite img{width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor}
-.battle-sprite.foe{top:10px;right:6%;animation:bfoe-in .55s ease-out}
-.battle-sprite.me{top:172px;left:6%;animation:bme-in .55s ease-out}
+.battle-sprite.foe{top:8px;right:5%;animation:bfoe-in .55s ease-out}
+.battle-sprite.me{bottom:8px;left:5%;animation:bme-in .55s ease-out}
 @keyframes bfoe-in{from{transform:translateX(140px);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes bme-in{from{transform:translateX(-140px);opacity:0}to{transform:translateX(0);opacity:1}}
 /* Namebox: nombre + nivel + barra HP estilo Pokémon. Sin pokeballs row. */
 .battle-namebox{position:absolute;background:#fff;border:2px solid #0F380F;padding:6px 10px 7px;font-family:'Courier New',monospace;color:#0F380F;width:170px;z-index:3;box-sizing:border-box;box-shadow:2px 2px 0 #0F380F}
 .battle-namebox.foe{top:14px;left:10px}
-.battle-namebox.me{top:178px;right:10px}
+.battle-namebox.me{bottom:14px;right:10px}
 .battle-namebox .bn-name{font-size:14px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;line-height:1.15;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
 .battle-namebox .bn-lvl{font-size:11px;font-weight:700;letter-spacing:0;text-transform:none;color:#0F380F}
 .battle-namebox .bn-sub{font-size:10px;font-weight:700;color:#5a7a47;margin-top:2px;line-height:1.1}
@@ -1012,14 +1014,17 @@ const BATTLE_CONFIG = {
   enabled: true,
   triggerChance: 0.20,          // 20% al terminar lección elegible
   cooldownMs: 2 * 3600 * 1000,  // 2h entre battles
-  questionsPerBattle: 3,
+  // Sistema HP: cada lado arranca con 3 vidas. Acierto = -1 al foe.
+  // Error/timeout = -1 al jugador. Primero en llegar a 0 HP pierde.
+  // Resultado: battles duran 3-5 preguntas (best of 5, primero a 3 gana).
+  maxLives: 3,
+  poolSize: 7,                  // fetch 7 MCQs (battle termina en 3-5)
+  minPoolSize: 5,               // mínimo necesario para arrancar battle
   secondsPerQuestion: 20,
   minLessonsToday: 2,           // no en la 1ra del día
   minHearts: 2,                 // no si está en racha mala
-  defenseMinCorrect: 2,         // 2/3 ó más defiende
-  crackMinCorrect: 1,           // 1/3 agrieta · 0 pierde
-  xpWin: 25,
-  xpDraw: 10
+  xpWin: 25,                    // ganaste (foe HP→0): +25 XP base
+  xpPerCorrect: 2               // bono +2 XP por cada acierto en el battle
 };
 
 // 10 rangos. Cada uno cubre 10 niveles consecutivos (1-9 Novato, 10-19
@@ -1349,13 +1354,17 @@ let ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, 
 let LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:180, errors:0, done:false, deadline:0};
 let DTREE_STATE = {scenarioIdx:0, path:[], leaf:null, leafCorrect:null, errors:0, done:false};
 let LIGHTNING_TIMER_ID = null;
-// Battle state — pelea retro vs un líder por una medalla
+// Battle state — pelea retro vs un líder por una medalla.
+// foeLives/meLives arrancan en BATTLE_CONFIG.maxLives. El primero que
+// llegue a 0 pierde. correctCount y wrongCount tracking aparte para XP.
 let BATTLE_STATE = {
   active:false, phase:'intro', // 'intro' | 'question' | 'feedback' | 'result'
   leader:null, mode:'conquest', // 'conquest' | 'defense'
   defendingBadgeId:null,
   deck:[], qIdx:0, answers:[], deadline:0,
-  correctCount:0, lastFeedback:null,
+  correctCount:0, wrongCount:0,
+  foeLives:3, meLives:3,
+  lastFeedback:null,
   resumeAction:null
 };
 let BATTLE_TIMER_ID = null;
@@ -5016,8 +5025,8 @@ function maybeStartBattle(resumeAction, opts){
   // Necesita curso activo y suficientes preguntas
   const courseId = CURRENT.courseId;
   if(!courseId) return false;
-  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.questionsPerBattle, {allowAny: force});
-  if(deck.length < BATTLE_CONFIG.questionsPerBattle) return false;
+  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.poolSize, {allowAny: force});
+  if(deck.length < BATTLE_CONFIG.minPoolSize) return false;
   // Elegir líder según modo
   const ownedLeaderIds = LEADERS
     .filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked')
@@ -5045,6 +5054,7 @@ function maybeStartBattle(resumeAction, opts){
 }
 
 function startBattle({mode, leader, deck, defendingBadgeId, resumeAction}){
+  const maxLives = BATTLE_CONFIG.maxLives;
   BATTLE_STATE = {
     active: true,
     phase: 'intro',
@@ -5056,6 +5066,9 @@ function startBattle({mode, leader, deck, defendingBadgeId, resumeAction}){
     answers: [],
     deadline: 0,
     correctCount: 0,
+    wrongCount: 0,
+    foeLives: maxLives,
+    meLives: maxLives,
     lastFeedback: null,
     resumeAction: resumeAction || (() => { VIEW = 'home'; render(); })
   };
@@ -5118,8 +5131,11 @@ function battleAnswer(i, timedOut){
   BATTLE_STATE.answers.push({selected:i, correct, timedOut});
   if(correct){
     BATTLE_STATE.correctCount += 1;
+    BATTLE_STATE.foeLives = Math.max(0, BATTLE_STATE.foeLives - 1);
     haptic(HAPTIC.correct);
   } else {
+    BATTLE_STATE.wrongCount += 1;
+    BATTLE_STATE.meLives = Math.max(0, BATTLE_STATE.meLives - 1);
     haptic(HAPTIC.wrong);
   }
   BATTLE_STATE.lastFeedback = {
@@ -5133,12 +5149,16 @@ function battleAnswer(i, timedOut){
   render();
   setTimeout(() => {
     if(!BATTLE_STATE.active) return;
-    if(BATTLE_STATE.qIdx + 1 < BATTLE_STATE.deck.length){
+    // Termina cuando uno de los dos llega a 0 HP. Si por alguna razón
+    // se agota el deck sin KO (raro), también termina.
+    const someoneKO = BATTLE_STATE.foeLives <= 0 || BATTLE_STATE.meLives <= 0;
+    const noMoreCards = BATTLE_STATE.qIdx + 1 >= BATTLE_STATE.deck.length;
+    if(someoneKO || noMoreCards){
+      battleFinish();
+    } else {
       BATTLE_STATE.qIdx += 1;
       BATTLE_STATE.lastFeedback = null;
       battleStartQuestion();
-    } else {
-      battleFinish();
     }
   }, 1500);
 }
@@ -5146,54 +5166,56 @@ function battleAnswer(i, timedOut){
 function battleFinish(){
   stopBattleTimer();
   const cc = BATTLE_STATE.correctCount;
-  const total = BATTLE_STATE.deck.length;
+  const wc = BATTLE_STATE.wrongCount;
+  const totalAnswered = cc + wc;
+  // Gana quien tenga más vidas restantes; empate (raro) lo decide el
+  // contador de aciertos. En la práctica el sistema HP garantiza un
+  // KO claro antes de quedarse sin deck.
+  const won = BATTLE_STATE.foeLives <= 0 && BATTLE_STATE.meLives > 0
+    ? true
+    : BATTLE_STATE.meLives <= 0 && BATTLE_STATE.foeLives > 0
+      ? false
+      : cc > wc;
   const mode = BATTLE_STATE.mode;
   const leader = BATTLE_STATE.leader;
   let outcome, xp = 0, msg = '';
   if(mode === 'conquest'){
-    // Solo 3/3 te lleva la medalla nueva
-    if(cc === total){
+    if(won){
       DB.badges[leader.id] = 'won';
       DB.battlesWon = (DB.battlesWon || 0) + 1;
-      xp = BATTLE_CONFIG.xpWin;
+      xp = BATTLE_CONFIG.xpWin + cc * BATTLE_CONFIG.xpPerCorrect;
       outcome = 'badge_won';
       msg = `¡Medalla ${leader.badgeId.toUpperCase()} obtenida!`;
-    } else if(cc >= 1){
-      xp = BATTLE_CONFIG.xpDraw;
-      outcome = 'no_badge';
-      msg = `${leader.name} no quedó convencido. Vuelve más fuerte.`;
     } else {
+      // Consolación: XP por aciertos aunque hayas perdido el battle
+      xp = cc * BATTLE_CONFIG.xpPerCorrect;
       outcome = 'no_badge';
-      msg = `${leader.name} te aplastó. No hay medalla esta vez.`;
+      msg = `${leader.name} sigue con su medalla. Vuelve más fuerte.`;
     }
   } else {
-    // Defensa
+    // Defensa de medalla
     const prevState = DB.badges[leader.id]; // 'won' o 'cracked'
-    if(cc >= BATTLE_CONFIG.defenseMinCorrect){
-      // Defendida → si estaba agrietada vuelve a brillante
+    if(won){
       DB.badges[leader.id] = 'won';
       DB.battlesWon = (DB.battlesWon || 0) + 1;
-      xp = BATTLE_CONFIG.xpWin;
+      xp = BATTLE_CONFIG.xpWin + cc * BATTLE_CONFIG.xpPerCorrect;
       outcome = prevState === 'cracked' ? 'badge_restored' : 'badge_defended';
       msg = prevState === 'cracked'
         ? `¡Defendiste y restauraste la medalla ${leader.badgeId.toUpperCase()}!`
         : `¡Medalla ${leader.badgeId.toUpperCase()} defendida!`;
-    } else if(cc >= BATTLE_CONFIG.crackMinCorrect){
-      // Agrietada (si ya estaba agrietada, se pierde)
+    } else {
+      // Perdiste el battle: si la medalla estaba intacta se agrieta;
+      // si ya estaba agrietada, se pierde.
+      xp = cc * BATTLE_CONFIG.xpPerCorrect;
       if(prevState === 'cracked'){
         DB.badges[leader.id] = 'lost';
         outcome = 'badge_lost';
         msg = `¡Perdiste la medalla ${leader.badgeId.toUpperCase()}!`;
       } else {
         DB.badges[leader.id] = 'cracked';
-        xp = BATTLE_CONFIG.xpDraw;
         outcome = 'badge_cracked';
-        msg = `La medalla ${leader.badgeId.toUpperCase()} se agrietó. La próxima derrota la pierdes.`;
+        msg = `La medalla ${leader.badgeId.toUpperCase()} se agrietó. Otra derrota y la pierdes.`;
       }
-    } else {
-      DB.badges[leader.id] = 'lost';
-      outcome = 'badge_lost';
-      msg = `¡Perdiste la medalla ${leader.badgeId.toUpperCase()}!`;
     }
   }
   if(xp > 0) addXP(xp);
@@ -5203,7 +5225,7 @@ function battleFinish(){
   if(wonCount === 8 && !DB.achievements?.champion) earnAch('champion');
   save();
   BATTLE_STATE.phase = 'result';
-  BATTLE_STATE.lastOutcome = {outcome, xp, msg, cc, total};
+  BATTLE_STATE.lastOutcome = {outcome, xp, msg, cc, total: totalAnswered, won};
   if(outcome === 'badge_won' || outcome === 'badge_defended' || outcome === 'badge_restored'){
     launchConfetti();
   }
@@ -5249,16 +5271,17 @@ function renderBattle(){
   const mode = BATTLE_STATE.mode;
   const badge = BADGES.find(b => b.id === leader.badgeId);
 
-  // Barras HP estilo Pokémon: cada acierto resta HP al foe, cada error
-  // resta HP al jugador. Valor visual fake (no afecta a la lógica del battle).
-  const wrongAns = (BATTLE_STATE.answers || []).filter(a => !a.correct).length;
-  const foeHpPct = total > 0 ? Math.max(0, Math.round(100 - (BATTLE_STATE.correctCount / total) * 100)) : 100;
-  const meHpPct  = total > 0 ? Math.max(0, Math.round(100 - (wrongAns / total) * 100)) : 100;
-  const hpCls = (pct) => pct < 25 ? 'crit' : pct < 50 ? 'low' : '';
+  // Barras HP reales: foeLives y meLives arrancan en maxLives. Cada
+  // acierto del jugador resta 1 a foeLives; cada error/timeout resta
+  // 1 a meLives. El primero en llegar a 0 pierde el battle.
+  const maxLives = BATTLE_CONFIG.maxLives;
+  const foeHpRemaining = BATTLE_STATE.foeLives;
+  const meHpRemaining  = BATTLE_STATE.meLives;
+  const foeHpPct = Math.round((foeHpRemaining / maxLives) * 100);
+  const meHpPct  = Math.round((meHpRemaining  / maxLives) * 100);
+  const hpCls = (pct) => pct <= 33 ? 'crit' : pct <= 66 ? 'low' : '';
   const foeHpFillCls = hpCls(foeHpPct);
   const meHpFillCls  = hpCls(meHpPct);
-  const foeHpRemaining = Math.max(0, total - BATTLE_STATE.correctCount);
-  const meHpRemaining  = Math.max(0, total - wrongAns);
 
   // Sprite hit states durante feedback
   let foeCls = 'battle-sprite foe';
@@ -5290,12 +5313,12 @@ function renderBattle(){
     }
   } else if(phase === 'question' && q){
     const timerHtml = `<span class="battle-timer-chip" id="battle-tnum">${BATTLE_CONFIG.secondsPerQuestion}s</span>`;
-    dialogTag = `<span>PREGUNTA ${qIdx+1}/${total}</span>${timerHtml}`;
+    dialogTag = `<span>${leader.pokemon.toUpperCase()} ATACA</span>${timerHtml}`;
     dialogText = q.q;
     dialogCursor = false;
   } else if(phase === 'feedback' && q){
     const fb = BATTLE_STATE.lastFeedback;
-    dialogTag = `<span>RESULTADO ${qIdx+1}/${total}</span>`;
+    dialogTag = `<span>RESULTADO</span>`;
     if(fb?.timedOut) dialogText = `¡Se acabó el tiempo! La correcta era: ${q.options[q.correct]}.`;
     else if(fb?.correct) dialogText = `¡Correcto! ${q.options[q.correct]}.`;
     else dialogText = `Fallaste. La correcta: ${q.options[q.correct]}.`;
@@ -5347,7 +5370,7 @@ function renderBattle(){
             <span class="bn-hp-tag">HP</span>
             <div class="bn-hp"><div class="bn-hp-fill ${foeHpFillCls}" style="width:${foeHpPct}%"></div></div>
           </div>
-          <div class="bn-hp-num">${foeHpRemaining} / ${total}</div>
+          <div class="bn-hp-num">${foeHpRemaining} / ${maxLives}</div>
         </div>
         <div class="battle-platform foe"></div>
         <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
@@ -5360,7 +5383,7 @@ function renderBattle(){
             <span class="bn-hp-tag">HP</span>
             <div class="bn-hp"><div class="bn-hp-fill ${meHpFillCls}" style="width:${meHpPct}%"></div></div>
           </div>
-          <div class="bn-hp-num">${meHpRemaining} / ${total}</div>
+          <div class="bn-hp-num">${meHpRemaining} / ${maxLives}</div>
         </div>
       </div>
       <div class="battle-dialog">
