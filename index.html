@@ -5498,6 +5498,12 @@ async function init(){
     return;
   }
   render();
+  // Atajo de preview: si la URL trae #battle o ?battle=1 dispara un battle
+  // de prueba a los ~700ms. Útil para mostrar la dinámica sin esperar las
+  // gates random/cooldown. Quitar `#battle` y recargar para uso normal.
+  if(location.hash === '#battle' || /[?&]battle=1/.test(location.search)){
+    setTimeout(() => { try { testBattle(); } catch(e){ console.error(e); } }, 700);
+  }
 }
 init();
 
