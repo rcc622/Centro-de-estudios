@@ -697,23 +697,33 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;background:#9BBC0F;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
 .battle-arena{flex:1;min-height:0;position:relative;background:linear-gradient(180deg,#79b454 0%,#9BBC0F 55%,#bcd96a 100%);overflow:hidden;border-bottom:4px solid #0F380F}
 .battle-arena::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent 0 4px,rgba(15,56,15,.04) 4px 5px);pointer-events:none}
-.battle-platform{position:absolute;width:42%;height:18px;border-radius:50%;background:radial-gradient(ellipse,#5d8a3e 0%,rgba(93,138,62,.6) 50%,transparent 75%)}
-.battle-platform.foe{top:24%;right:4%}
-.battle-platform.me{bottom:18%;left:4%}
-.battle-sprite{position:absolute;font-size:64px;line-height:1;filter:drop-shadow(2px 3px 0 rgba(15,56,15,.45));image-rendering:pixelated;text-shadow:0 0 0 transparent}
-.battle-sprite.foe{top:8%;right:9%;animation:bfoe-in .7s ease-out}
-.battle-sprite.me{bottom:22%;left:11%;transform:scaleX(-1);animation:bme-in .7s ease-out}
-@keyframes bfoe-in{from{transform:translateX(120px);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes bme-in{from{transform:scaleX(-1) translateX(-120px);opacity:0}to{transform:scaleX(-1) translateX(0);opacity:1}}
-.battle-namebox{position:absolute;background:#fff;border:3px solid #0F380F;border-radius:0 0 12px 0;padding:8px 12px 10px;box-shadow:inset 0 0 0 2px #0F380F,3px 3px 0 #306230;font-family:'Courier New',monospace;color:#0F380F;min-width:160px}
-.battle-namebox.foe{top:8px;left:8px;border-radius:0 12px 0 0}
-.battle-namebox.me{bottom:128px;right:8px}
-.battle-namebox .bn-name{font-size:13px;font-weight:900;letter-spacing:.5px;text-transform:uppercase}
-.battle-namebox .bn-sub{font-size:10px;font-weight:700;color:#306230;margin-top:2px}
-.battle-namebox .bn-balls{display:flex;gap:3px;margin-top:6px}
-.battle-namebox .bn-ball{width:10px;height:10px;border-radius:50%;background:#0F380F;box-shadow:inset 0 -3px 0 rgba(255,255,255,.25)}
-.battle-namebox .bn-ball.empty{background:transparent;border:1.5px solid #0F380F}
-.battle-namebox .bn-ball.lost{background:repeating-linear-gradient(45deg,#0F380F 0 2px,transparent 2px 4px);opacity:.55}
+.battle-platform{position:absolute;width:46%;height:22px;border-radius:50%;background:radial-gradient(ellipse,#5d8a3e 0%,rgba(93,138,62,.55) 55%,transparent 80%);z-index:1}
+.battle-platform.foe{top:30%;right:2%}
+.battle-platform.me{bottom:16%;left:2%}
+/* Sprite contenedor (img dentro). image-rendering:pixelated → mantiene
+   el look pixel art crujiente al escalar el sprite 96x96 a tamaño grande. */
+.battle-sprite{position:absolute;width:128px;height:128px;display:flex;align-items:flex-end;justify-content:center;filter:drop-shadow(3px 4px 0 rgba(15,56,15,.35));z-index:3;pointer-events:none}
+.battle-sprite img{width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor}
+.battle-sprite.foe{top:8%;right:4%;animation:bfoe-in .7s ease-out}
+.battle-sprite.me{bottom:18%;left:4%;animation:bme-in .7s ease-out}
+.battle-sprite.me img{width:140%;height:auto}
+@keyframes bfoe-in{from{transform:translateX(140px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes bme-in{from{transform:translateX(-140px);opacity:0}to{transform:translateX(0);opacity:1}}
+/* Cajas de nombre/HP estilo Gen 1. Ancho fijo para no estirarse. */
+.battle-namebox{position:absolute;background:#fff;border:3px solid #0F380F;padding:6px 10px 8px;box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px #0F380F,3px 3px 0 #306230;font-family:'Courier New',monospace;color:#0F380F;width:200px;max-width:55%;z-index:4;box-sizing:border-box}
+.battle-namebox.foe{top:10px;left:10px;border-radius:0 8px 0 0}
+.battle-namebox.me{bottom:18px;right:10px;border-radius:8px 0 0 0}
+.battle-namebox .bn-name{font-size:13px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;line-height:1.15}
+.battle-namebox .bn-sub{font-size:10px;font-weight:700;color:#306230;margin-top:2px;line-height:1.1}
+.battle-namebox .bn-balls{display:flex;gap:3px;margin-top:6px;flex-wrap:nowrap;align-items:center}
+/* Mini Pokéball — CSS puro, render crisp en cualquier tamaño. */
+.mini-pokeball{display:block;width:13px;height:13px;flex:0 0 13px;border-radius:50%;border:1.5px solid #0F380F;box-sizing:border-box;background:linear-gradient(to bottom,#E53935 0 45%,#0F380F 45% 55%,#fff 55% 100%);position:relative}
+.mini-pokeball::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#fff;border:1.2px solid #0F380F;box-sizing:border-box}
+.mini-pokeball.empty{background:#fff}
+.mini-pokeball.empty::after{background:#fff}
+.mini-pokeball.cracked{background:linear-gradient(to bottom,#FFB74D 0 45%,#0F380F 45% 55%,#fff 55% 100%)}
+.mini-pokeball.lost{background:#888;opacity:.55}
+.mini-pokeball.lost::after{background:#666}
 
 .battle-dialog{flex:0 0 auto;background:#fff;border-top:4px solid #0F380F;padding:16px 16px 14px;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 5px #0F380F;font-family:'Courier New',monospace;color:#0F380F}
 .battle-dialog .bd-text{font-size:14px;font-weight:700;line-height:1.45;min-height:42px;letter-spacing:.2px}
@@ -786,14 +796,15 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .tcard-name{font-size:16px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
 .tcard-meta{font-size:11px;font-weight:700;margin-top:2px;opacity:.85}
 .tcard-count{background:#0F380F;color:#FCE38A;padding:6px 10px;border-radius:6px;font-weight:900;font-size:13px;letter-spacing:.5px}
-.tcard-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:rgba(255,255,255,.45);padding:10px;border-radius:8px;border:2px solid #0F380F}
-.tc-badge{position:relative;aspect-ratio:1;background:#fff;border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:2px 2px 0 rgba(15,56,15,.4)}
-.tc-badge.locked{background:#3a3a3a;color:transparent;opacity:.85;box-shadow:inset 0 0 0 2px #555}
-.tc-badge.locked::before{content:'?';color:#FCE38A;font-family:'Courier New',monospace;font-weight:900;font-size:22px;position:absolute}
-.tc-badge.cracked::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 45%,rgba(231,76,60,.85) 45%,rgba(231,76,60,.85) 55%,transparent 55%);border-radius:8px;pointer-events:none}
-.tc-badge.lost{filter:grayscale(1) brightness(.6);opacity:.65}
-.tc-badge.lost::after{content:'✕';position:absolute;color:#E74C3C;font-size:30px;font-weight:900;text-shadow:0 0 4px #fff}
-.tc-badge .tcb-name{position:absolute;bottom:-3px;left:0;right:0;text-align:center;font-size:9px;font-weight:900;letter-spacing:.4px;background:#0F380F;color:#FCE38A;padding:1px 0;border-radius:0 0 6px 6px;text-transform:uppercase}
+.tcard-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:rgba(255,255,255,.55);padding:10px;border-radius:8px;border:2px solid #0F380F}
+.tc-badge{position:relative;aspect-ratio:1;background:#fff;border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:2px 2px 0 rgba(15,56,15,.4);overflow:hidden}
+.tc-badge img{width:78%;height:78%;object-fit:contain;image-rendering:pixelated;image-rendering:crisp-edges}
+.tc-badge.locked{background:#2a2a2a;box-shadow:inset 0 0 0 2px #444}
+.tc-badge.locked img{display:none}
+.tc-badge.locked::before{content:'?';color:#FCE38A;font-family:'Courier New',monospace;font-weight:900;font-size:26px;position:absolute}
+.tc-badge.cracked::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 46%,rgba(231,76,60,.85) 46%,rgba(231,76,60,.85) 54%,transparent 54%);border-radius:8px;pointer-events:none}
+.tc-badge.lost img{filter:grayscale(1) brightness(.55);opacity:.6}
+.tc-badge.lost::after{content:'✕';position:absolute;color:#E74C3C;font-size:36px;font-weight:900;text-shadow:0 0 6px #fff,0 0 6px #fff}
 .tcard-foot{margin-top:12px;font-size:11px;font-weight:700;text-align:center;opacity:.85;line-height:1.4}
 
 .battle-test-btn{display:block;width:100%;background:#0F380F;color:#9BBC0F;border:3px solid #0F380F;font-family:'Courier New',monospace;font-weight:900;letter-spacing:1px;padding:12px;border-radius:8px;cursor:pointer;font-size:13px;text-transform:uppercase;box-shadow:3px 3px 0 #306230;margin-top:10px}
@@ -964,30 +975,37 @@ function getLightningTime(){ return getDifficulty().lightningTime; }
 // ============================================================
 // BATTLES — medallas estilo Pokémon Red/Blue
 // ============================================================
-// Las 8 medallas que el usuario puede coleccionar. Cada una pertenece a un
-// líder (LEADERS) en el mismo orden de conquista.
+// Las 8 medallas oficiales de Kanto. El número corresponde al archivo PNG
+// en content/battles/badges/<num>.png (de PokéAPI sprites repo, MIT code).
 const BADGES = [
-  {id:'roca',     name:'Roca',     ico:'⛰️'},
-  {id:'cascada',  name:'Cascada',  ico:'💧'},
-  {id:'trueno',   name:'Trueno',   ico:'⚡'},
-  {id:'flor',     name:'Flor',     ico:'🌸'},
-  {id:'alma',     name:'Alma',     ico:'👻'},
-  {id:'pantano',  name:'Pantano',  ico:'🌿'},
-  {id:'volcan',   name:'Volcán',   ico:'🔥'},
-  {id:'tierra',   name:'Tierra',   ico:'🌍'}
+  {id:'boulder',  name:'Boulder',  num:1, color:'#A0826D'},
+  {id:'cascade',  name:'Cascade',  num:2, color:'#5DADEC'},
+  {id:'thunder',  name:'Thunder',  num:3, color:'#F2C94C'},
+  {id:'rainbow',  name:'Rainbow',  num:4, color:'#FF8FB3'},
+  {id:'soul',     name:'Soul',     num:5, color:'#FF7BAA'},
+  {id:'marsh',    name:'Marsh',    num:6, color:'#B68BD6'},
+  {id:'volcano',  name:'Volcano',  num:7, color:'#FF7B54'},
+  {id:'earth',    name:'Earth',    num:8, color:'#9DD15C'}
 ];
-// Líderes. sprite es un emoji (pixel-ish a tamaño grande con sombra).
-// No usar IP de Nintendo: nombres y temas originales.
+// Líderes de gimnasio de Kanto, cada uno con su Pokémon estrella en sprite
+// Gen 1 Red/Blue transparente (96x96, ~500 bytes). pokeId = National Dex.
+// PokémonAPI: content/battles/pokemon/<pokeId>.png
 const LEADERS = [
-  {id:'roca',    name:'Brek',  title:'El cantero',     sprite:'🧗',   accent:'#A0826D', badgeId:'roca'},
-  {id:'cascada', name:'Mari',  title:'La del agua',    sprite:'🏄‍♀️', accent:'#5DADEC', badgeId:'cascada'},
-  {id:'trueno',  name:'Volt',  title:'El relámpago',   sprite:'⚡',    accent:'#F2C94C', badgeId:'trueno'},
-  {id:'flor',    name:'Lila',  title:'La jardinera',   sprite:'💐',    accent:'#FF8FB3', badgeId:'flor'},
-  {id:'alma',    name:'Astra', title:'La psíquica',    sprite:'🔮',    accent:'#B68BD6', badgeId:'alma'},
-  {id:'pantano', name:'Toxi',  title:'El sigiloso',    sprite:'🥷',    accent:'#8FBF7F', badgeId:'pantano'},
-  {id:'volcan',  name:'Pyro',  title:'El piromaníaco', sprite:'🔥',    accent:'#FF7B54', badgeId:'volcan'},
-  {id:'tierra',  name:'Don',   title:'El jefe',        sprite:'😎',    accent:'#9DD15C', badgeId:'tierra'}
+  {id:'brock',    name:'Brock',    title:'Líder Plateado',  pokemon:'Onix',     pokeId:95,  badgeId:'boulder'},
+  {id:'misty',    name:'Misty',    title:'Líder Celeste',   pokemon:'Starmie',  pokeId:121, badgeId:'cascade'},
+  {id:'surge',    name:'Lt. Surge',title:'Líder Carmín',    pokemon:'Raichu',   pokeId:26,  badgeId:'thunder'},
+  {id:'erika',    name:'Erika',    title:'Líder Azulona',   pokemon:'Vileplume',pokeId:45,  badgeId:'rainbow'},
+  {id:'koga',     name:'Koga',     title:'Líder Fucsia',    pokemon:'Weezing',  pokeId:110, badgeId:'soul'},
+  {id:'sabrina',  name:'Sabrina',  title:'Líder Azafrán',   pokemon:'Alakazam', pokeId:65,  badgeId:'marsh'},
+  {id:'blaine',   name:'Blaine',   title:'Líder Cinabrio',  pokemon:'Arcanine', pokeId:59,  badgeId:'volcano'},
+  {id:'giovanni', name:'Giovanni', title:'Team Rocket',     pokemon:'Rhydon',   pokeId:112, badgeId:'earth'}
 ];
+// Migración de IDs viejos (v1 con nombres inventados) → IDs Kanto reales.
+// Solo se usa una vez al cargar DB si detecta el formato viejo.
+const BADGE_ID_MIGRATION_V1 = {
+  roca:'brock', cascada:'misty', trueno:'surge', flor:'erika',
+  alma:'sabrina', pantano:'koga', volcan:'blaine', tierra:'giovanni'
+};
 const BATTLE_CONFIG = {
   enabled: true,
   triggerChance: 0.20,          // 20% al terminar lección elegible
@@ -1366,6 +1384,18 @@ function load(){
   if(typeof DB.battlesTotal !== 'number') DB.battlesTotal = 0;
   if(typeof DB.battlesWon !== 'number') DB.battlesWon = 0;
   if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
+  // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
+  // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
+  const oldIds = Object.keys(BADGE_ID_MIGRATION_V1);
+  let migratedBadges = false;
+  for(const oldId of oldIds){
+    if(DB.badges[oldId] && !DB.badges[BADGE_ID_MIGRATION_V1[oldId]]){
+      DB.badges[BADGE_ID_MIGRATION_V1[oldId]] = DB.badges[oldId];
+      delete DB.badges[oldId];
+      migratedBadges = true;
+    }
+  }
+  if(migratedBadges) try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(DB)); }catch(e){}
   refillShieldsWeekly();
   regenerateHearts();
 }
@@ -5212,35 +5242,38 @@ function renderBattle(){
   const mode = BATTLE_STATE.mode;
   const badge = BADGES.find(b => b.id === leader.badgeId);
 
-  // Mis medallas (orden fijo) → balls
-  const myBallsHtml = BADGES.map(b => {
-    const st = DB.badges[b.id];
-    let cls = 'bn-ball empty';
-    if(st === 'won' || st === 'cracked') cls = 'bn-ball';
-    else if(st === 'lost') cls = 'bn-ball lost';
-    return `<div class="${cls}" title="${b.name}"></div>`;
+  // Mis medallas (orden fijo) → mini Pokéballs (CSS puro, 13x13)
+  const myBallsHtml = LEADERS.map(l => {
+    const st = DB.badges[l.id];
+    let cls = 'mini-pokeball empty';
+    if(st === 'won') cls = 'mini-pokeball';
+    else if(st === 'cracked') cls = 'mini-pokeball cracked';
+    else if(st === 'lost') cls = 'mini-pokeball lost';
+    const badge = BADGES.find(b => b.id === l.badgeId);
+    return `<span class="${cls}" title="${badge ? badge.name : l.name}"></span>`;
   }).join('');
-  const foeBallsHtml = `<div class="bn-ball"></div>`.repeat(mode === 'conquest' ? 1 : 1);
+  // El rival siempre muestra 1 Pokéball (el que está en juego/poseído)
+  const foeBallsHtml = `<span class="mini-pokeball"></span>`;
 
   // Diálogo según fase
   let dialogText = '';
   let dialogCursor = true;
   if(phase === 'intro'){
     if(mode === 'conquest'){
-      dialogText = `¡Líder ${leader.name.toUpperCase()} te reta por la medalla ${badge.name.toUpperCase()}!`;
+      dialogText = `¡LÍDER ${leader.name.toUpperCase()} envió a ${leader.pokemon.toUpperCase()}! Gana por la medalla ${badge.name.toUpperCase()}.`;
     } else {
       const st = DB.badges[leader.id];
       const ext = st === 'cracked' ? '¡Tu medalla está agrietada!' : '';
-      dialogText = `¡${leader.name.toUpperCase()} apareció! Viene por tu medalla ${badge.name.toUpperCase()}. ${ext}`.trim();
+      dialogText = `¡${leader.name.toUpperCase()} regresó con ${leader.pokemon.toUpperCase()}! Viene por tu medalla ${badge.name.toUpperCase()}. ${ext}`.trim();
     }
   } else if(phase === 'question'){
-    dialogText = `${leader.name.toUpperCase()} pregunta…`;
+    dialogText = `${leader.pokemon.toUpperCase()} usó ATAQUE MENTAL…`;
     dialogCursor = false;
   } else if(phase === 'feedback'){
     const fb = BATTLE_STATE.lastFeedback;
     if(fb?.timedOut) dialogText = '¡Se acabó el tiempo!';
-    else if(fb?.correct) dialogText = '¡Acierto crítico!';
-    else dialogText = '¡Fallaste el golpe!';
+    else if(fb?.correct) dialogText = '¡Golpe crítico! Es muy efectivo.';
+    else dialogText = `¡${leader.pokemon.toUpperCase()} no se inmutó!`;
     dialogCursor = false;
   }
 
@@ -5307,17 +5340,17 @@ function renderBattle(){
         ${timer}
         ${vsOverlay}
         <div class="battle-namebox foe">
-          <div class="bn-name">LÍDER ${leader.name.toUpperCase()}</div>
-          <div class="bn-sub">${leader.title}</div>
+          <div class="bn-name">${leader.pokemon.toUpperCase()}</div>
+          <div class="bn-sub">Líder ${leader.name}</div>
           <div class="bn-balls">${foeBallsHtml}</div>
         </div>
         <div class="battle-platform foe"></div>
-        <div class="${foeCls}" style="color:${leader.accent}">${leader.sprite}</div>
+        <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
         <div class="battle-platform me"></div>
-        <div class="${meCls}">🧑‍🎓</div>
+        <div class="${meCls}"><img src="content/battles/pokemon/25-back.png" alt="Pikachu (back)"/></div>
         <div class="battle-namebox me">
-          <div class="bn-name">RANDALL</div>
-          <div class="bn-sub">${mode === 'conquest' ? 'Conquista' : 'Defensa'}</div>
+          <div class="bn-name">PIKACHU</div>
+          <div class="bn-sub">Randall · ${mode === 'conquest' ? 'Conquista' : 'Defensa'}</div>
           <div class="bn-balls">${myBallsHtml}</div>
         </div>
         ${questionBanner}
@@ -5335,27 +5368,29 @@ function renderBattleResult(){
   const leader = BATTLE_STATE.leader;
   const badge = BADGES.find(b => b.id === leader.badgeId);
   const isWin = ['badge_won','badge_defended','badge_restored'].includes(r.outcome);
-  const isDraw = r.outcome === 'badge_cracked' || r.outcome === 'no_badge';
   const cls = isWin ? 'battle-result win' : 'battle-result';
   let h, sub;
-  if(r.outcome === 'badge_won'){ h = '¡Victoria!'; sub = `Conquistaste a Líder ${leader.name}.`; }
-  else if(r.outcome === 'badge_defended'){ h = '¡Defendiste!'; sub = `Líder ${leader.name} se retira derrotado.`; }
+  if(r.outcome === 'badge_won'){ h = '¡Victoria!'; sub = `${leader.pokemon} de ${leader.name} fue derrotado.`; }
+  else if(r.outcome === 'badge_defended'){ h = '¡Defendiste!'; sub = `${leader.name} se retira con ${leader.pokemon} derrotado.`; }
   else if(r.outcome === 'badge_restored'){ h = '¡Restaurada!'; sub = `Tu medalla vuelve a brillar.`; }
   else if(r.outcome === 'badge_cracked'){ h = 'Medalla agrietada'; sub = `Otra derrota y la pierdes.`; }
-  else if(r.outcome === 'badge_lost'){ h = 'Derrota'; sub = `Perdiste tu medalla.`; }
-  else { h = 'Sin medalla'; sub = `No te llevas nada esta vez.`; }
+  else if(r.outcome === 'badge_lost'){ h = 'Derrota'; sub = `${leader.pokemon} te aplastó.`; }
+  else { h = 'Sin medalla'; sub = `${leader.pokemon} sobrevivió. Vuelve más fuerte.`; }
 
-  const badgeAnimIco = isWin ? badge.ico : (r.outcome === 'badge_cracked' ? '⚠️' : (r.outcome === 'badge_lost' ? '💔' : '🔒'));
-  const badgeAnimName = badge.name;
+  // Mostrar la medalla real cuando se gana/defiende/restaura; ícono CSS en otros casos.
+  let badgeBlock;
+  if(isWin){
+    badgeBlock = `<div class="battle-badge-anim"><img src="content/battles/badges/${badge.num}.png" alt="${badge.name} Badge" style="width:96px;height:96px;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(0 0 12px rgba(255,255,255,.7))"/><div class="bba-name">Medalla ${badge.name}</div></div>`;
+  } else {
+    const fallbackIco = r.outcome === 'badge_cracked' ? '⚠️' : (r.outcome === 'badge_lost' ? '💔' : '🔒');
+    badgeBlock = `<div class="battle-badge-anim"><div class="bba-ico">${fallbackIco}</div><div class="bba-name">Medalla ${badge.name}</div></div>`;
+  }
 
   return `
     <div class="${cls}">
       <div class="battle-result-h">${h}</div>
       <div class="battle-result-sub">${sub}</div>
-      <div class="battle-badge-anim">
-        <div class="bba-ico">${badgeAnimIco}</div>
-        <div class="bba-name">${badgeAnimName}</div>
-      </div>
+      ${badgeBlock}
       <div class="battle-result-stats">
         <div class="brs-cell"><div class="brs-num">${r.cc}/${r.total}</div><div>aciertos</div></div>
         ${r.xp ? `<div class="brs-cell"><div class="brs-num">+${r.xp}</div><div>XP</div></div>` : ''}
@@ -5380,11 +5415,10 @@ function renderTrainerCard(){
     const badge = BADGES.find(b => b.id === leader.badgeId);
     const st = DB.badges[leader.id];
     let cls = 'tc-badge';
-    let ico = badge.ico;
-    if(!st){ cls += ' locked'; ico = ''; }
+    if(!st) cls += ' locked';
     else if(st === 'cracked') cls += ' cracked';
     else if(st === 'lost') cls += ' lost';
-    return `<div class="${cls}" title="${badge.name} · ${leader.name}">${st ? ico : ''}</div>`;
+    return `<div class="${cls}" title="${badge.name} Badge · ${leader.name}"><img src="content/battles/badges/${badge.num}.png" alt="${badge.name} Badge"/></div>`;
   }).join('');
 
   return `
@@ -5412,7 +5446,7 @@ function renderTrainerCard(){
         ${DB.battlesTotal ? `<div style="margin-top:10px;font-size:11px;text-align:center;opacity:.75">${DB.battlesTotal} battles totales · ${DB.battlesWon} ganados</div>` : ''}
       </div>
 
-      <div class="section-title">Líderes</div>
+      <div class="section-title">Líderes de Kanto</div>
       ${LEADERS.map(l => {
         const b = BADGES.find(x => x.id === l.badgeId);
         const st = DB.badges[l.id];
@@ -5421,18 +5455,22 @@ function renderTrainerCard(){
           : st === 'lost' ? '💔 Perdida'
           : '🔒 No conquistada';
         return `
-          <div class="card" style="display:flex;align-items:center;gap:12px;padding:12px">
-            <div style="width:42px;height:42px;background:${l.accent};border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${l.sprite}</div>
+          <div class="card" style="display:flex;align-items:center;gap:12px;padding:10px">
+            <div style="width:54px;height:54px;background:#fff;border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden">
+              <img src="content/battles/pokemon/${l.pokeId}.png" alt="${l.pokemon}" style="width:48px;height:48px;image-rendering:pixelated;image-rendering:crisp-edges"/>
+            </div>
             <div style="flex:1;min-width:0">
               <div style="font-weight:800;font-size:14px">Líder ${l.name} <span style="color:#65676B;font-weight:600">· ${l.title}</span></div>
-              <div style="font-size:12px;color:#65676B;margin-top:2px">Medalla ${b.name} · ${stLabel}</div>
+              <div style="font-size:12px;color:#65676B;margin-top:2px">Pokémon: <strong>${l.pokemon}</strong> · Medalla ${b.name}</div>
+              <div style="font-size:11px;color:#65676B;margin-top:1px">${stLabel}</div>
             </div>
-            <div style="font-size:22px">${b.ico}</div>
+            <img src="content/battles/badges/${b.num}.png" alt="${b.name} Badge" style="width:36px;height:36px;image-rendering:pixelated;image-rendering:crisp-edges;flex-shrink:0;opacity:${st?1:.3}"/>
           </div>`;
       }).join('')}
 
       <button class="battle-test-btn" onclick="testBattle()">⚔️ Probar battle ahora</button>
       <div style="font-size:11px;color:#65676B;text-align:center;margin-top:6px">Botón para preview · ignora cooldown y random</div>
+      <div style="font-size:10px;color:#8A8D91;text-align:center;margin-top:18px;padding:0 12px;line-height:1.5">Sprites: PokéAPI (PokeAPI/sprites · MIT). Pokémon™ © Nintendo/Creatures Inc./GAME FREAK Inc. Uso educativo fan, sin fines comerciales.</div>
     </div>
     ${renderNav('achievements')}
   `;
