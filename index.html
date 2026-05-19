@@ -696,9 +696,10 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
    ============================================================ */
 /* Rediseño v3: fondo blanco, sprites grandes 140px, arena altura fija
    320px (las opciones suben), sin fila de Pokéballs (reemplazada por
-   barra HP real que se vacía con cada acierto/error). */
-.battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
-.battle-arena{flex:0 0 320px;position:relative;background:#fff;overflow:hidden;border-bottom:2px solid #0F380F}
+   barra HP real que se vacía con cada acierto/error). v4: fondo negro
+   para el espacio vacío arriba/abajo, contenido centrado vertical. */
+.battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;background:#000;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
+.battle-arena{flex:0 0 320px;position:relative;background:#fff;overflow:hidden;border-top:2px solid #0F380F;border-bottom:2px solid #0F380F}
 /* Plataforma: línea negra fina horizontal bajo cada sprite */
 .battle-platform{position:absolute;height:3px;background:#0F380F;border-radius:2px;z-index:1}
 .battle-platform.foe{top:150px;right:4%;width:55%;max-width:200px}
@@ -750,7 +751,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 @keyframes bvs-pop{from{transform:scale(.3) rotate(-15deg);opacity:0}60%{transform:scale(1.2) rotate(8deg)}to{transform:scale(1) rotate(0)}}
 
 /* 4-option grid (estilo FIGHT/BAG/POKE/RUN) */
-.battle-opts{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0F380F;border-top:3px solid #0F380F;padding:0}
+.battle-opts{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0F380F;border-top:3px solid #0F380F;border-bottom:2px solid #0F380F;padding:0}
 .battle-opt{background:#fff;border:2px solid #0F380F;margin:0;padding:12px 11px;font-family:'Courier New',monospace;font-weight:800;color:#0F380F;cursor:pointer;text-align:left;display:flex;align-items:flex-start;gap:6px;min-height:62px;line-height:1.3;font-size:13px;user-select:none;-webkit-user-select:none;transition:transform .08s}
 .battle-opt:active{transform:translate(1px,2px)}
 .battle-opt[data-c="0"]{background:#FFEDEA}
@@ -4960,10 +4961,14 @@ if('serviceWorker' in navigator){
 // BATTLES — flujo retro estilo Pokémon Red/Blue
 // ============================================================
 
-// Pool de MCQs para repaso: junta MCQ single-choice de 4 opciones de
-// lecciones COMPLETADAS del curso actual (excluyendo la lección que se
-// acaba de terminar). Si no hay suficientes, cae al conjunto del curso.
-function gatherBattleQuestions(courseId, currentLessonId, n){
+// Pool de MCQs para repaso: SOLO MCQ single-choice de 4 opciones de
+// lecciones que el usuario YA COMPLETÓ en el curso actual (excluyendo
+// la lección que se acaba de terminar). Sin fallback a no-vistas:
+// preguntar sobre lo que aún no ha estudiado rompe el flow educativo.
+// allowAny=true (testBattle force) acepta cualquier MCQ del curso para
+// poder ver el preview sin haber completado lecciones aún.
+function gatherBattleQuestions(courseId, currentLessonId, n, opts){
+  opts = opts || {};
   const course = COURSES[courseId];
   if(!course) return [];
   const completedPool = [];
@@ -4984,7 +4989,8 @@ function gatherBattleQuestions(courseId, currentLessonId, n){
       }
     }
   }
-  const src = completedPool.length >= n ? completedPool : fullPool;
+  // Estricto: solo completadas. allowAny solo lo activa el preview.
+  const src = (opts.allowAny && completedPool.length < n) ? fullPool : completedPool;
   return shuffleArr(src).slice(0, n);
 }
 
@@ -5010,7 +5016,7 @@ function maybeStartBattle(resumeAction, opts){
   // Necesita curso activo y suficientes preguntas
   const courseId = CURRENT.courseId;
   if(!courseId) return false;
-  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.questionsPerBattle);
+  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.questionsPerBattle, {allowAny: force});
   if(deck.length < BATTLE_CONFIG.questionsPerBattle) return false;
   // Elegir líder según modo
   const ownedLeaderIds = LEADERS
