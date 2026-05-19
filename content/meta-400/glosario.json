@@ -62,6 +62,46 @@
         {
           "q": "Ad quality",
           "a": "Calidad y relevancia del anuncio para la audiencia."
+        },
+        {
+          "q": "Primer paso del media planner",
+          "a": "Entender el business goal del cliente, no elegir un objective en Ads Manager."
+        },
+        {
+          "q": "Orden de planeación",
+          "a": "Business goal → etapa del funnel → objective → conversion location → event → performance goal."
+        },
+        {
+          "q": "Funnel de los 6 ODAX",
+          "a": "Top: Awareness/Traffic · Mid: Engagement/Leads · Bottom: Sales/App Promotion."
+        },
+        {
+          "q": "Nivel campaña vs ad set",
+          "a": "Objective = nivel campaña. Conversion location, event y performance goal = nivel ad set."
+        },
+        {
+          "q": "Maximize number vs value of conversions",
+          "a": "Number = más unidades. Value = mayor monto por conversión (requiere value tracking)."
+        },
+        {
+          "q": "Data source para Sales web",
+          "a": "Pixel + Conversions API (CAPI) juntos."
+        },
+        {
+          "q": "Data source para App Promotion",
+          "a": "Facebook SDK o un MMP autorizado."
+        },
+        {
+          "q": "Leads con Instant form",
+          "a": "No requiere Pixel; el contacto se captura dentro de Meta."
+        },
+        {
+          "q": "Objectives sin tracking de conversión",
+          "a": "Awareness y Engagement (justo los únicos que soporta Reservation)."
+        },
+        {
+          "q": "Trampa: querer ventas y elegir Traffic",
+          "a": "Traffic optimiza link clicks, no compras. Venta real = Sales."
         }
       ]
     },
@@ -133,6 +173,46 @@
         {
           "q": "Over-targeting",
           "a": "Audiencia tan acotada que el sistema no optimiza: poco delivery, CPM alto."
+        },
+        {
+          "q": "Familias de bid strategies",
+          "a": "Spend-based (Volume/Value), goal-based (Cost per Result/ROAS Goal), manual (Bid Cap)."
+        },
+        {
+          "q": "Default de bid strategy recomendado",
+          "a": "Highest Volume / Highest Value si no hay metas estrictas de costo."
+        },
+        {
+          "q": "Riesgo de Bid Cap mal calibrado",
+          "a": "Cap muy bajo: el anuncio casi no entra a subastas y la campaña no gasta."
+        },
+        {
+          "q": "Ejemplo de budget en Reservation",
+          "a": "500,000 personas × frequency 3 × CPM $4 ÷ 1000 = ~$6,000 USD."
+        },
+        {
+          "q": "Ejemplo de budget en Auction",
+          "a": "400 leads × CPL $5 ≈ ~$2,000 USD (estimación, no garantía)."
+        },
+        {
+          "q": "Variación de daily budget",
+          "a": "Hasta ~25% día a día, respetando el promedio del periodo."
+        },
+        {
+          "q": "Fuentes de custom audience",
+          "a": "Website, App activity, Customer list, Engagement."
+        },
+        {
+          "q": "Usos de una custom audience",
+          "a": "Remarketing, seed de lookalike y exclusión de quien ya convirtió."
+        },
+        {
+          "q": "Detailed targeting",
+          "a": "Acota por intereses, comportamientos y demográficos; para audiencias frías sin señal propia."
+        },
+        {
+          "q": "Detailed targeting expansion",
+          "a": "Permite a Meta ir más allá del interés si mejora resultados (en audiencia original)."
         }
       ]
     },
@@ -204,6 +284,54 @@
         {
           "q": "Atributo personal",
           "a": "Prohibido implicar/afirmar que conoces un atributo personal del usuario o su familia."
+        },
+        {
+          "q": "¿Cuándo manual placements?",
+          "a": "Solo con razón de negocio real: requisito de marca o creativo no apto. No por estética."
+        },
+        {
+          "q": "Efecto de restringir placements sin razón",
+          "a": "Sube el costo por resultado y reduce el delivery."
+        },
+        {
+          "q": "El creativo y el costo",
+          "a": "Sube estimated action rates y ad quality (total value) → menor costo por resultado."
+        },
+        {
+          "q": "Mobile-first",
+          "a": "Diseñar vertical 9:16 sin depender del sonido; marca temprano; varios formatos."
+        },
+        {
+          "q": "Diversidad creativa",
+          "a": "Varios creativos por ad set: más espacio de optimización y menos fatiga."
+        },
+        {
+          "q": "Métrica según business goal",
+          "a": "Awareness=recall/reach · Traffic=clics/CPC · Leads/Sales=cost per result · Ingreso=ROAS."
+        },
+        {
+          "q": "Vanity metrics",
+          "a": "Likes/impresiones/clics que se ven bien pero no prueban el business goal."
+        },
+        {
+          "q": "Triangulación de medición",
+          "a": "Combinar experiments + attribution + MMM para una lectura robusta."
+        },
+        {
+          "q": "Base legal / consentimiento",
+          "a": "Requisito para recolectar y usar datos en publicidad."
+        },
+        {
+          "q": "Categorías sensibles",
+          "a": "Prohibido segmentar usando categorías sensibles inferidas (salud, religión, etc.)."
+        },
+        {
+          "q": "Trade-off de brand safety",
+          "a": "Más estricto = más seguro pero menos alcance y posible mayor costo."
+        },
+        {
+          "q": "Appeal / re-revisión",
+          "a": "Un anuncio rechazado se puede editar o apelar; las ediciones vuelven al ad review."
         }
       ]
     }
