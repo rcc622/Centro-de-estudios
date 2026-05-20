@@ -691,6 +691,144 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .section-band{padding:14px 16px;margin:24px 0 14px;box-shadow:0 4px 12px rgba(66,184,131,.18);border-radius:14px}
 .section-band-ico{font-size:26px;width:40px;height:40px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center}
 
+/* ============================================================
+   BATTLE SCREEN — retro Pokémon Red/Blue
+   ============================================================ */
+/* Rediseño v3: fondo blanco, sprites grandes 140px, arena altura fija
+   320px (las opciones suben), sin fila de Pokéballs (reemplazada por
+   barra HP real que se vacía con cada acierto/error). v4: fondo negro
+   para el espacio vacío arriba/abajo, contenido centrado vertical.
+   v5: arena 400px + sprites 180px (más grandes), nameboxes anclados
+   arriba (foe) y abajo (me) para acomodar sprites grandes.
+   v6: sprites 250px sin plataforma (línea bajo el sprite oculta).
+   v7: vuelta a sprites 180px / arena 400px (era el balance correcto). */
+.battle-wrap{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;background:#000;position:relative;overflow:hidden;font-family:'Courier New','Lucida Console',monospace;color:#0F380F}
+.battle-arena{flex:0 0 420px;position:relative;background:#fff;overflow:hidden;border-top:2px solid #0F380F;border-bottom:2px solid #0F380F}
+/* Plataforma (línea negra bajo el sprite) — oculta a pedido del usuario */
+.battle-platform{display:none}
+/* Sprites 165x165 con sprites recortados al bbox del Pokémon (no padding
+   transparente desperdiciado). Margen al borde de arena: 14% (right/left)
+   + 14px (top/bottom). Container más chico = más gap al namebox HP card. */
+.battle-sprite{position:absolute;width:165px;height:165px;display:flex;align-items:flex-end;justify-content:center;z-index:2;pointer-events:none}
+.battle-sprite img{width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor}
+.battle-sprite.foe{top:14px;right:30px;animation:bfoe-in .55s ease-out}
+.battle-sprite.me{bottom:14px;left:30px;animation:bme-in .55s ease-out}
+/* PNGs back-sprite normalizados a frame uniforme 85×85 con body anclado
+   al piso → todos los starters renderean a la misma altura visible (107px
+   en container 165). No necesita transform:scale per-starter. */
+.battle-sprite.me img{transform-origin:bottom center}
+@keyframes bfoe-in{from{transform:translateX(140px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes bme-in{from{transform:translateX(-140px);opacity:0}to{transform:translateX(0);opacity:1}}
+/* Namebox: nombre + nivel + barra HP estilo Pokémon. Sin pokeballs row. */
+.battle-namebox{position:absolute;background:#fff;border:2px solid #0F380F;padding:6px 10px 7px;font-family:'Courier New',monospace;color:#0F380F;width:170px;z-index:3;box-sizing:border-box;box-shadow:2px 2px 0 #0F380F}
+.battle-namebox.foe{top:14px;left:10px}
+.battle-namebox.me{bottom:14px;right:10px}
+.battle-namebox .bn-name{font-size:14px;font-weight:900;letter-spacing:.4px;text-transform:uppercase;line-height:1.15;display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.battle-namebox .bn-lvl{font-size:11px;font-weight:700;letter-spacing:0;text-transform:none;color:#0F380F}
+.battle-namebox .bn-sub{font-size:10px;font-weight:700;color:#5a7a47;margin-top:2px;line-height:1.1}
+/* Barra HP estilo Gen 2: track oscuro + relleno verde/amarillo/rojo */
+.battle-namebox .bn-hp-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+.battle-namebox .bn-hp-tag{font-size:10px;font-weight:900;color:#FFC107;background:#0F380F;padding:1px 4px;border-radius:2px;letter-spacing:.5px}
+.battle-namebox .bn-hp{flex:1;height:7px;background:#0F380F;border-radius:3px;overflow:hidden;border:1px solid #0F380F;box-sizing:border-box}
+.battle-namebox .bn-hp-fill{height:100%;background:linear-gradient(180deg,#5DDD53 0%,#2BAA40 100%);transition:width .45s ease-out;border-radius:2px}
+.battle-namebox .bn-hp-fill.low{background:linear-gradient(180deg,#F8D34C,#E69500)}
+.battle-namebox .bn-hp-fill.crit{background:linear-gradient(180deg,#FF7676,#C0392B)}
+.battle-namebox .bn-hp-num{font-size:10px;font-weight:700;color:#0F380F;text-align:right;margin-top:2px;font-family:'Courier New',monospace;letter-spacing:.2px}
+
+/* Diálogo: contiene la pregunta (durante question) o mensaje narrativo.
+   Borde estilo GameBoy: doble línea negra. */
+.battle-dialog{flex:0 0 auto;background:#fff;border-top:3px solid #0F380F;padding:14px 14px 12px;font-family:'Courier New',monospace;color:#0F380F;position:relative;box-shadow:inset 0 4px 0 #fff,inset 0 5px 0 #0F380F}
+.battle-dialog .bd-tag{font-size:10px;font-weight:900;letter-spacing:1px;color:#5a7a47;margin-bottom:5px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.battle-dialog .bd-text{font-size:14px;font-weight:700;line-height:1.45;min-height:42px;letter-spacing:.1px}
+.battle-dialog .bd-text.with-cursor::after{content:'▼';display:inline-block;margin-left:8px;animation:bcursor 1s steps(2,end) infinite;color:#5a7a47}
+@keyframes bcursor{0%,50%{opacity:1}51%,100%{opacity:0}}
+
+/* Timer compacto dentro del diálogo (chip en la esquina) */
+.battle-timer-chip{font-family:'Courier New',monospace;font-weight:900;font-size:12px;letter-spacing:.5px;background:#0F380F;color:#fff;padding:2px 8px;border-radius:4px;min-width:32px;text-align:center}
+.battle-timer-chip.warn{background:#E74C3C;animation:btim-pulse .4s ease-in-out infinite}
+/* Botón HUIR (equivalente al RUN del menú clásico Pokémon) */
+.battle-flee-btn{font-family:'Courier New',monospace;font-weight:900;font-size:10px;letter-spacing:.6px;background:#fff;color:#E74C3C;border:2px solid #E74C3C;padding:3px 8px;border-radius:4px;cursor:pointer;text-transform:uppercase;line-height:1}
+.battle-flee-btn:active{transform:translate(1px,1px);background:#FFE4DD}
+@keyframes btim-pulse{0%,100%{opacity:1}50%{opacity:.55}}
+/* Barra de timer fina arriba del diálogo */
+.battle-timer-bar{position:absolute;top:-3px;left:0;right:0;height:3px;background:transparent;z-index:5}
+.battle-timer-fill{height:100%;background:#0F380F;transition:width .15s linear}
+.battle-timer-fill.warn{background:#E74C3C}
+
+/* VS intro overlay */
+.battle-vs{position:absolute;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10;animation:bvs-flash .45s steps(3,end)}
+.battle-vs-inner{font-family:'Courier New',monospace;font-size:84px;font-weight:900;color:#0F380F;text-shadow:3px 3px 0 #E74C3C;letter-spacing:6px;animation:bvs-pop .5s ease-out}
+@keyframes bvs-flash{0%{background:#0F380F;color:#fff}50%{background:#fff}100%{background:#fff}}
+@keyframes bvs-pop{from{transform:scale(.3) rotate(-15deg);opacity:0}60%{transform:scale(1.2) rotate(8deg)}to{transform:scale(1) rotate(0)}}
+
+/* 4-option grid (estilo FIGHT/BAG/POKE/RUN) */
+.battle-opts{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0F380F;border-top:3px solid #0F380F;border-bottom:2px solid #0F380F;padding:0}
+.battle-opt{background:#fff;border:2px solid #0F380F;margin:0;padding:12px 11px;font-family:'Courier New',monospace;font-weight:800;color:#0F380F;cursor:pointer;text-align:left;display:flex;align-items:flex-start;gap:6px;min-height:62px;line-height:1.3;font-size:13px;user-select:none;-webkit-user-select:none;transition:transform .08s}
+.battle-opt:active{transform:translate(1px,2px)}
+.battle-opt[data-c="0"]{background:#FFEDEA}
+.battle-opt[data-c="1"]{background:#FFF6E0}
+.battle-opt[data-c="2"]{background:#E8F5E5}
+.battle-opt[data-c="3"]{background:#E5EFFB}
+.battle-opt.disabled{opacity:.5;cursor:not-allowed}
+.battle-opt.right{background:#B8E5B5;animation:bopt-win .35s ease-out;box-shadow:inset 0 0 0 2px #2D8C3F}
+.battle-opt.wrong{background:#FFC7C7;animation:bopt-shake .35s ease-out;box-shadow:inset 0 0 0 2px #C0392B}
+@keyframes bopt-win{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes bopt-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.battle-opt .bo-arrow{color:#0F380F;font-weight:900;flex-shrink:0;width:12px}
+.battle-opt .bo-text{flex:1;min-width:0}
+
+/* Hit flash on sprite */
+.battle-sprite.hit{animation:bhit .35s ease-out}
+@keyframes bhit{0%{filter:brightness(2.5) drop-shadow(2px 3px 0 rgba(15,56,15,.45))}25%,75%{transform:translateX(-6px);filter:brightness(.4)}50%{transform:translateX(6px);filter:brightness(.4)}100%{filter:none}}
+.battle-sprite.faint{animation:bfaint .9s ease-in forwards}
+@keyframes bfaint{0%{transform:translateY(0)}100%{transform:translateY(120px);opacity:0}}
+.battle-sprite.foe.hit{animation:bhit-foe .35s ease-out}
+@keyframes bhit-foe{0%{filter:brightness(2.5) drop-shadow(2px 3px 0 rgba(15,56,15,.45))}25%,75%{transform:translateX(6px);filter:brightness(.4)}50%{transform:translateX(-6px);filter:brightness(.4)}100%{filter:none}}
+
+/* RESULT screen */
+.battle-result{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;background:#fff;color:#0F380F;font-family:'Courier New',monospace}
+.battle-result.win{background:#fff;color:#0F380F}
+.battle-result-h{font-size:28px;font-weight:900;letter-spacing:3px;margin-bottom:8px;text-transform:uppercase}
+.battle-result-sub{font-size:14px;font-weight:700;opacity:.75;margin-bottom:20px}
+.battle-badge-anim{margin:18px 0;padding:24px;background:#FFF8E7;border:3px solid #0F380F;border-radius:12px;box-shadow:4px 4px 0 #0F380F;animation:bbadge-pop .8s ease-out}
+@keyframes bbadge-pop{0%{transform:scale(0) rotate(-180deg);opacity:0}60%{transform:scale(1.2) rotate(15deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+.battle-badge-anim .bba-ico{font-size:64px;line-height:1;filter:drop-shadow(0 0 10px rgba(15,56,15,.3))}
+.battle-badge-anim .bba-name{font-size:14px;font-weight:900;margin-top:8px;letter-spacing:1px;text-transform:uppercase}
+.battle-result-stats{display:flex;gap:20px;margin:14px 0 22px;font-size:13px;font-weight:700}
+.battle-result-stats .brs-cell{display:flex;flex-direction:column;align-items:center;gap:2px}
+.battle-result-stats .brs-num{font-size:22px;font-weight:900}
+.battle-result-actions{display:flex;flex-direction:column;gap:8px;width:100%;max-width:280px}
+.battle-result-btn{background:#fff;border:3px solid #0F380F;color:#0F380F;font-family:'Courier New',monospace;font-weight:900;font-size:14px;padding:12px;letter-spacing:1px;cursor:pointer;text-transform:uppercase;box-shadow:3px 3px 0 #0F380F}
+.battle-result-btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 #0F380F}
+
+/* TRAINER CARD (vitrina de medallas) */
+.tcard{background:linear-gradient(135deg,#FCE38A 0%,#F38181 100%);border:4px solid #0F380F;border-radius:14px;padding:16px;margin-bottom:16px;box-shadow:4px 4px 0 #0F380F;font-family:'Courier New',monospace;color:#0F380F}
+.tcard-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tcard-avatar{width:54px;height:54px;border-radius:8px;background:#fff;border:3px solid #0F380F;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0}
+.tcard-h{flex:1;min-width:0}
+.tcard-name{font-size:16px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.tcard-meta{font-size:11px;font-weight:700;margin-top:2px;opacity:.85}
+.tcard-count{background:#0F380F;color:#FCE38A;padding:6px 10px;border-radius:6px;font-weight:900;font-size:13px;letter-spacing:.5px}
+.tcard-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:rgba(255,255,255,.55);padding:10px;border-radius:8px;border:2px solid #0F380F}
+.tc-badge{position:relative;aspect-ratio:1;background:#fff;border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:2px 2px 0 rgba(15,56,15,.4);overflow:hidden}
+.tc-badge img{width:78%;height:78%;object-fit:contain;image-rendering:pixelated;image-rendering:crisp-edges}
+.tc-badge.locked{background:#2a2a2a;box-shadow:inset 0 0 0 2px #444}
+.tc-badge.locked img{display:none}
+.tc-badge.locked::before{content:'?';color:#FCE38A;font-family:'Courier New',monospace;font-weight:900;font-size:26px;position:absolute}
+.tc-badge.cracked::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 46%,rgba(231,76,60,.85) 46%,rgba(231,76,60,.85) 54%,transparent 54%);border-radius:8px;pointer-events:none}
+.tc-badge.lost img{filter:grayscale(1) brightness(.55);opacity:.6}
+.tc-badge.lost::after{content:'✕';position:absolute;color:#E74C3C;font-size:36px;font-weight:900;text-shadow:0 0 6px #fff,0 0 6px #fff}
+.tcard-foot{margin-top:12px;font-size:11px;font-weight:700;text-align:center;opacity:.85;line-height:1.4}
+
+.battle-test-btn{display:block;width:100%;background:#0F380F;color:#9BBC0F;border:3px solid #0F380F;font-family:'Courier New',monospace;font-weight:900;letter-spacing:1px;padding:12px;border-radius:8px;cursor:pointer;font-size:13px;text-transform:uppercase;box-shadow:3px 3px 0 #306230;margin-top:10px}
+.battle-test-btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 #306230}
+
+/* Loading overlay para lazy load de cursos */
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.loading-overlay-spinner{width:42px;height:42px;border:4px solid #E4E6EB;border-top-color:#1877F2;border-radius:50%;animation:loSpin .8s linear infinite}
+@keyframes loSpin{to{transform:rotate(360deg)}}
+.loading-overlay-text{font-size:14px;color:#65676B;font-weight:700}
+
 </style>
 </head>
 <body>
@@ -853,6 +991,70 @@ function getXpMult(){ return getDifficulty().xpMult; }
 function getPassingBonus(){ return getDifficulty().passingBonus; }
 function getLightningTime(){ return getDifficulty().lightningTime; }
 
+// ============================================================
+// BATTLES — medallas estilo Pokémon Red/Blue
+// ============================================================
+// Las 8 medallas oficiales de Kanto. El número corresponde al archivo PNG
+// en content/battles/badges/<num>.png (de PokéAPI sprites repo, MIT code).
+const BADGES = [
+  {id:'boulder',  name:'Boulder',  num:1, color:'#A0826D'},
+  {id:'cascade',  name:'Cascade',  num:2, color:'#5DADEC'},
+  {id:'thunder',  name:'Thunder',  num:3, color:'#F2C94C'},
+  {id:'rainbow',  name:'Rainbow',  num:4, color:'#FF8FB3'},
+  {id:'soul',     name:'Soul',     num:5, color:'#FF7BAA'},
+  {id:'marsh',    name:'Marsh',    num:6, color:'#B68BD6'},
+  {id:'volcano',  name:'Volcano',  num:7, color:'#FF7B54'},
+  {id:'earth',    name:'Earth',    num:8, color:'#9DD15C'}
+];
+// Líderes de gimnasio de Kanto, cada uno con su Pokémon estrella en sprite
+// Gen 1 Red/Blue transparente (96x96, ~500 bytes). pokeId = National Dex.
+// PokémonAPI: content/battles/pokemon/<pokeId>.png
+const LEADERS = [
+  {id:'brock',    name:'Brock',    title:'Líder Plateado',  pokemon:'Onix',     pokeId:95,  badgeId:'boulder'},
+  {id:'misty',    name:'Misty',    title:'Líder Celeste',   pokemon:'Starmie',  pokeId:121, badgeId:'cascade'},
+  {id:'surge',    name:'Lt. Surge',title:'Líder Carmín',    pokemon:'Raichu',   pokeId:26,  badgeId:'thunder'},
+  {id:'erika',    name:'Erika',    title:'Líder Azulona',   pokemon:'Vileplume',pokeId:45,  badgeId:'rainbow'},
+  {id:'koga',     name:'Koga',     title:'Líder Fucsia',    pokemon:'Weezing',  pokeId:110, badgeId:'soul'},
+  {id:'sabrina',  name:'Sabrina',  title:'Líder Azafrán',   pokemon:'Alakazam', pokeId:65,  badgeId:'marsh'},
+  {id:'blaine',   name:'Blaine',   title:'Líder Cinabrio',  pokemon:'Arcanine', pokeId:59,  badgeId:'volcano'},
+  {id:'giovanni', name:'Giovanni', title:'Team Rocket',     pokemon:'Rhydon',   pokeId:112, badgeId:'earth'}
+];
+// Migración de IDs viejos (v1 con nombres inventados) → IDs Kanto reales.
+// Solo se usa una vez al cargar DB si detecta el formato viejo.
+const BADGE_ID_MIGRATION_V1 = {
+  roca:'brock', cascada:'misty', trueno:'surge', flor:'erika',
+  alma:'sabrina', pantano:'koga', volcan:'blaine', tierra:'giovanni'
+};
+// Starters Gen 1 que el usuario puede elegir como su Pokémon en battles.
+// Los PNGs back-sprite están normalizados a frame uniforme 85×85 con body
+// height 55px anclado al piso (ver script crop). scale opcional para
+// fine-tuning visual. bottomOffset opcional override del margen al piso.
+const STARTERS = {
+  pikachu:    {id:'pikachu',    name:'PIKACHU',    pokeId:25, scale:1.32, bottomOffset:0,  color:'#F5C518'},
+  charmander: {id:'charmander', name:'CHARMANDER', pokeId:4,  scale:1.0,                    color:'#F5A845'},
+  squirtle:   {id:'squirtle',   name:'SQUIRTLE',   pokeId:7,  scale:1.0,                    color:'#3DB4E5'},
+  bulbasaur:  {id:'bulbasaur',  name:'BULBASAUR',  pokeId:1,  scale:1.0,                    color:'#7BC74D'}
+};
+function getStarter(){ return STARTERS[DB.starter] || STARTERS.pikachu; }
+
+const BATTLE_CONFIG = {
+  enabled: true,
+  triggerChance: 0.20,          // 20% al terminar lección elegible
+  cooldownMs: 2 * 3600 * 1000,  // 2h entre battles
+  // Sistema HP en porcentaje: cada lado arranca con 100%. Cada acierto
+  // resta 20% al foe; cada error/timeout resta 20% al jugador. Primero
+  // en llegar a 0% pierde. Resultado: battles duran 5-9 preguntas
+  // (avg ~6-7). Display oculta el conteo: solo se ve "100%/80%/60%/40%/20%/0%".
+  maxLives: 5,                  // 5 hits = KO → 20% por hit
+  poolSize: 12,                 // fetch 12 MCQs (max battle = 9, margen 3)
+  minPoolSize: 9,               // mínimo necesario para arrancar battle
+  secondsPerQuestion: 20,
+  minLessonsToday: 2,           // no en la 1ra del día
+  minHearts: 2,                 // no si está en racha mala
+  xpWin: 25,                    // ganaste (foe HP→0%): +25 XP base
+  xpPerCorrect: 2               // bono +2 XP por cada acierto en el battle
+};
+
 // 10 rangos. Cada uno cubre 10 niveles consecutivos (1-9 Novato, 10-19
 // Aprendiz, 20-29 Estudiante, ..., 90-100 Leyenda Meta).
 const LEVEL_RANKS = [
@@ -916,7 +1118,9 @@ const ACHIEVEMENTS = [
   {id:'error_redeemer',i:'🔁', n:'Redentor',            desc:'Acierta una pregunta que antes habías fallado', hidden:true},
   {id:'iron_will',     i:'🛡️',n:'Voluntad de Hierro',  desc:'Termina una lección con 5+ errores sin abandonar', hidden:true},
   {id:'no_hearts',     i:'💔', n:'Sin Vidas',           desc:'Pierde todos tus corazones (irónicamente)', hidden:true},
-  {id:'speedrun',      i:'⚡', n:'Velocista',            desc:'Completa una lección en menos de 3 minutos', hidden:true}
+  {id:'speedrun',      i:'⚡', n:'Velocista',            desc:'Completa una lección en menos de 3 minutos', hidden:true},
+  {id:'first_badge',   i:'🎖️',n:'Primera Medalla',      desc:'Gana tu primera medalla en un battle'},
+  {id:'champion',      i:'👑', n:'Campeón',              desc:'Conquista las 8 medallas', hidden:true}
 ];
 
 // Metadata de secciones pedagógicas (A teoría → B práctica → C aplicación → D validación)
@@ -958,123 +1162,59 @@ function lessonIcon(lesson){
 let COURSES = {}; // se llena al cargar
 let COMING_SOON = []; // cursos placeholder visibles como locked
 let COURSES_LOADED = false;
+let COURSES_CATALOG = null; // raw catalog (courses.json)
 
+// Lazy-load por curso. Al iniciar la app SOLO se cargan:
+//   1. content/courses.json (catálogo)
+//   2. content/<curso>/meta.json de cada curso activo (chico, ~2KB c/u)
+//   3. Días del CURSO PRIMARIO (el primer activo) — necesario para el hero
+//
+// Los días de OTROS cursos activos se cargan cuando el usuario abre ese
+// curso (loadCourseDays). Esto escala bien al agregar más cursos: nuevo
+// curso = 0 KB extra al cargar la app, solo cuando el usuario tap su card.
 async function loadCourses(){
   try {
-    // 1. Cargar catálogo de cursos
+    // 1. Catálogo
     const catalog = await fetch('content/courses.json').then(r => {
       if(!r.ok) throw new Error('No se encontró content/courses.json');
       return r.json();
     });
+    COURSES_CATALOG = catalog;
 
-    // 2. Para cada curso, cargar su meta.json (si existe). Los cursos sin meta.json se omiten.
-    for(const courseEntry of catalog.courses){
-      let meta;
+    const activeCourses = (catalog.courses || []).filter(c => c.active);
+    const primaryId = activeCourses[0]?.id;
+
+    // 2. Metas en paralelo (fetch todas las meta.json a la vez)
+    const metaPromises = activeCourses.map(async entry => {
       try {
-        const r = await fetch(`content/${courseEntry.id}/meta.json`);
-        if(!r.ok) {
-          // Si el curso no es activo y no tiene meta.json, mostrar placeholder si existe
-          if(!courseEntry.active){
-            if(courseEntry.placeholder){
-              COMING_SOON.push({
-                id: courseEntry.id,
-                title: courseEntry.placeholder.title,
-                subtitle: courseEntry.placeholder.subtitle || 'Próximamente',
-                icon: courseEntry.placeholder.icon || '📚'
-              });
-            }
-            continue;
-          }
-          throw new Error(`Curso activo ${courseEntry.id} no tiene meta.json`);
-        }
-        meta = await r.json();
-      } catch(err) {
-        if(!courseEntry.active){
-          if(courseEntry.placeholder){
-            COMING_SOON.push({
-              id: courseEntry.id,
-              title: courseEntry.placeholder.title,
-              subtitle: courseEntry.placeholder.subtitle || 'Próximamente',
-              icon: courseEntry.placeholder.icon || '📚'
-            });
-          }
-          continue;
-        }
-        throw err;
+        const r = await fetch(`content/${entry.id}/meta.json`);
+        if(!r.ok) return null;
+        return {entry, meta: await r.json()};
+      } catch(err){ return null; }
+    });
+    const metaResults = (await Promise.all(metaPromises)).filter(Boolean);
+
+    // 3. Construir shell de cada curso (sin días cargados)
+    for(const {entry, meta} of metaResults){
+      COURSES[meta.id] = buildCourseShell(meta, entry);
+    }
+
+    // 4. Placeholders / coming soon (cursos no activos con .placeholder)
+    for(const entry of catalog.courses){
+      if(!entry.active && entry.placeholder){
+        COMING_SOON.push({
+          id: entry.id,
+          title: entry.placeholder.title,
+          subtitle: entry.placeholder.subtitle || 'Próximamente',
+          icon: entry.placeholder.icon || '📚'
+        });
       }
+    }
 
-      // Construir el objeto curso con la estructura que espera la app
-      const course = {
-        id: meta.id,
-        title: meta.title,
-        subtitle: meta.subtitle,
-        icon: meta.icon || '📘',
-        color: meta.color || '#1877F2',
-        active: courseEntry.active,
-        days: []
-      };
-
-      // Cargar cada unit del curso
-      for(const unit of meta.units){
-        if(unit.locked || !courseEntry.active){
-          // Unit bloqueada: mostrarla pero sin cargar contenido
-          course.days.push({
-            id: unit.id,
-            title: unit.title,
-            subtitle: unit.subtitle || 'Próximamente',
-            coverage: unit.coverage || '',
-            locked: true,
-            lessons: []
-          });
-        } else {
-          // Cargar el archivo de la unit
-          try {
-            const unitData = await fetch(`content/${courseEntry.id}/${unit.id}.json`).then(r => {
-              if(!r.ok) throw new Error(`No se encontró content/${courseEntry.id}/${unit.id}.json`);
-              return r.json();
-            });
-            // Cargar diagnostic + unitQuiz si están definidos en meta
-            let diagnostic = null, unitQuiz = null;
-            if(unit.diagnostic?.file){
-              try {
-                const dr = await fetch(`content/${courseEntry.id}/${unit.diagnostic.file}`);
-                if(dr.ok) diagnostic = {...await dr.json(), passingScore: unit.diagnostic.passingScore || 80};
-              } catch(e){ console.warn(`Diagnostic de ${unit.id} no disponible`, e); }
-            }
-            if(unit.unitQuiz?.file){
-              try {
-                const qr = await fetch(`content/${courseEntry.id}/${unit.unitQuiz.file}`);
-                if(qr.ok) unitQuiz = {...await qr.json(), passingScore: unit.unitQuiz.passingScore || 80};
-              } catch(e){ console.warn(`UnitQuiz de ${unit.id} no disponible`, e); }
-            }
-            course.days.push({
-              id: unit.id,
-              title: unit.title,
-              subtitle: unit.subtitle || '',
-              coverage: unit.coverage || '',
-              kind: unit.kind || 'unit', // 'unit' o 'mock-exam'
-              lessons: unitData.lessons || [],
-              sections: unitData.sections || null, // mapa opcional de metadata de secciones por dato
-              conceptos: unitData.conceptos || null, // conceptos clave (glosario) — opcional
-              diagnostic,
-              unitQuiz,
-              mockExam: unit.kind === 'mock-exam' ? unitData : null
-            });
-          } catch(err){
-            console.warn(`No se pudo cargar ${unit.id}:`, err);
-            course.days.push({
-              id: unit.id,
-              title: unit.title,
-              subtitle: 'Error al cargar',
-              coverage: unit.coverage || '',
-              locked: true,
-              lessons: []
-            });
-          }
-        }
-      }
-
-      COURSES[meta.id] = course;
+    // 5. Eager-load: días del curso PRIMARIO (necesario para que el hero
+    //    de home muestre "siguiente lección"). Otros cursos quedan en shell.
+    if(primaryId && COURSES[primaryId]){
+      await loadCourseDays(primaryId);
     }
 
     COURSES_LOADED = true;
@@ -1084,6 +1224,106 @@ async function loadCourses(){
     COURSES_LOADED = false;
     return false;
   }
+}
+
+// Construye el shell de un curso: metadatos del curso + lista de días
+// con metadatos pero SIN lessons/diagnostic/unitQuiz cargados.
+function buildCourseShell(meta, entry){
+  return {
+    id: meta.id,
+    title: meta.title,
+    subtitle: meta.subtitle,
+    icon: meta.icon || '📘',
+    color: meta.color || '#1877F2',
+    active: entry.active,
+    _daysLoaded: false,
+    days: (meta.units || []).map(u => ({
+      id: u.id,
+      title: u.title,
+      subtitle: u.subtitle || (u.locked ? 'Próximamente' : ''),
+      coverage: u.coverage || '',
+      kind: u.kind || 'unit',
+      locked: !!u.locked,
+      lessons: [],
+      sections: null,
+      conceptos: null,
+      diagnostic: null,
+      unitQuiz: null,
+      mockExam: null,
+      _diagnosticFile: u.diagnostic?.file,
+      _diagnosticPassing: u.diagnostic?.passingScore,
+      _unitQuizFile: u.unitQuiz?.file,
+      _unitQuizPassing: u.unitQuiz?.passingScore
+    }))
+  };
+}
+
+// Carga los días (lessons + diagnostic + unitQuiz) de un curso. Fetch
+// en paralelo para velocidad. Idempotente: si ya están cargados, no hace
+// nada (gracias al flag _daysLoaded).
+async function loadCourseDays(courseId){
+  const course = COURSES[courseId];
+  if(!course || course._daysLoaded) return;
+  await Promise.all(course.days.map(async day => {
+    if(day.locked) return;
+    try {
+      const [unitData, diagData, quizData] = await Promise.all([
+        fetch(`content/${courseId}/${day.id}.json`).then(r => r.ok ? r.json() : null).catch(()=>null),
+        day._diagnosticFile
+          ? fetch(`content/${courseId}/${day._diagnosticFile}`).then(r => r.ok ? r.json() : null).catch(()=>null)
+          : Promise.resolve(null),
+        day._unitQuizFile
+          ? fetch(`content/${courseId}/${day._unitQuizFile}`).then(r => r.ok ? r.json() : null).catch(()=>null)
+          : Promise.resolve(null)
+      ]);
+      if(!unitData){
+        day.locked = true;
+        day.subtitle = 'Error al cargar';
+        return;
+      }
+      day.lessons = unitData.lessons || [];
+      day.sections = unitData.sections || null;
+      day.conceptos = unitData.conceptos || null;
+      if(day.kind === 'mock-exam') day.mockExam = unitData;
+      if(diagData) day.diagnostic = {...diagData, passingScore: day._diagnosticPassing || 80};
+      if(quizData) day.unitQuiz = {...quizData, passingScore: day._unitQuizPassing || 80};
+    } catch(err){
+      console.warn(`No se pudo cargar ${day.id}:`, err);
+      day.locked = true;
+    }
+  }));
+  course._daysLoaded = true;
+}
+
+// Garantiza que los días de un curso estén cargados antes de navegar a
+// vistas que los necesitan. Muestra spinner si la carga toma >150ms.
+async function ensureCourseDaysLoaded(courseId){
+  const course = COURSES[courseId];
+  if(!course || course._daysLoaded) return true;
+  // Spinner solo si la carga se demora (evita flash en redes rápidas)
+  const spinnerTimer = setTimeout(() => showLoadingOverlay('Cargando curso…'), 150);
+  await loadCourseDays(courseId);
+  clearTimeout(spinnerTimer);
+  hideLoadingOverlay();
+  return true;
+}
+
+function showLoadingOverlay(msg){
+  let overlay = document.getElementById('loading-overlay');
+  if(!overlay){
+    overlay = document.createElement('div');
+    overlay.id = 'loading-overlay';
+    overlay.className = 'loading-overlay';
+    overlay.innerHTML = `<div class="loading-overlay-spinner"></div><div class="loading-overlay-text">${msg||'Cargando…'}</div>`;
+    document.body.appendChild(overlay);
+  } else {
+    overlay.querySelector('.loading-overlay-text').textContent = msg || 'Cargando…';
+    overlay.style.display = 'flex';
+  }
+}
+function hideLoadingOverlay(){
+  const overlay = document.getElementById('loading-overlay');
+  if(overlay) overlay.style.display = 'none';
 }
 
 // ============================================================
@@ -1112,7 +1352,13 @@ let DB = {
   chests: {}, // {'courseId|dayId|section': true} cofres de bloque ya reclamados
   shields: 0, // escudos disponibles (banco por nivel, recarga semanal)
   shieldsEarned: 0, // legacy — ya no se usa para milestones
-  lastShieldRefill: null // fecha del último relleno semanal de escudos
+  lastShieldRefill: null, // fecha del último relleno semanal de escudos
+  badges: {}, // {leaderId: 'won' | 'cracked' | 'lost'} — medallas Pokémon-style
+  lastBattleTs: 0, // timestamp del último battle (para cooldown)
+  battlesTotal: 0, // contador total de battles jugados
+  battlesWon: 0, // ganados (perfectos o defensa exitosa)
+  battlesEnabled: true, // toggle desde Ajustes
+  starter: 'pikachu' // pokemon starter elegido (ver STARTERS)
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1173,6 +1419,20 @@ let ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, 
 let LIGHTNING_STATE = {idx:0, answers:{}, deck:[], started:0, timeLimit:180, errors:0, done:false, deadline:0};
 let DTREE_STATE = {scenarioIdx:0, path:[], leaf:null, leafCorrect:null, errors:0, done:false};
 let LIGHTNING_TIMER_ID = null;
+// Battle state — pelea retro vs un líder por una medalla.
+// foeLives/meLives arrancan en BATTLE_CONFIG.maxLives. El primero que
+// llegue a 0 pierde. correctCount y wrongCount tracking aparte para XP.
+let BATTLE_STATE = {
+  active:false, phase:'intro', // 'intro' | 'question' | 'feedback' | 'result'
+  leader:null, mode:'conquest', // 'conquest' | 'defense'
+  defendingBadgeId:null,
+  deck:[], qIdx:0, answers:[], deadline:0,
+  correctCount:0, wrongCount:0,
+  foeLives:3, meLives:3,
+  lastFeedback:null,
+  resumeAction:null
+};
+let BATTLE_TIMER_ID = null;
 let _luq = [];
 let _achq = [];
 
@@ -1194,6 +1454,25 @@ function load(){
     DB.shields = getMaxShields();
     DB.lastShieldRefill = todayStr();
   }
+  // Migración battles v1
+  if(!DB.badges) DB.badges = {};
+  if(typeof DB.lastBattleTs !== 'number') DB.lastBattleTs = 0;
+  if(typeof DB.battlesTotal !== 'number') DB.battlesTotal = 0;
+  if(typeof DB.battlesWon !== 'number') DB.battlesWon = 0;
+  if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
+  if(!DB.starter || !STARTERS[DB.starter]) DB.starter = 'pikachu';
+  // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
+  // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
+  const oldIds = Object.keys(BADGE_ID_MIGRATION_V1);
+  let migratedBadges = false;
+  for(const oldId of oldIds){
+    if(DB.badges[oldId] && !DB.badges[BADGE_ID_MIGRATION_V1[oldId]]){
+      DB.badges[BADGE_ID_MIGRATION_V1[oldId]] = DB.badges[oldId];
+      delete DB.badges[oldId];
+      migratedBadges = true;
+    }
+  }
+  if(migratedBadges) try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(DB)); }catch(e){}
   refillShieldsWeekly();
   regenerateHearts();
 }
@@ -1591,6 +1870,8 @@ function render(){
   else if(VIEW === 'config') html = renderConfig();
   else if(VIEW === 'glossary') html = renderGlossary();
   else if(VIEW === 'streak') html = renderStreak();
+  else if(VIEW === 'battle') html = renderBattle();
+  else if(VIEW === 'trainer_card') html = renderTrainerCard();
   else html = renderHome();
   app.innerHTML = html;
   if(VIEW === 'day'){ restoreDayScroll(); initDayBlockBar(); }
@@ -3329,6 +3610,18 @@ function renderAchievements(){
     });
   }
 
+  // Resumen de medallas (chip clickeable arriba)
+  const ownedBadges = LEADERS.filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked').length;
+  const badgesChip = `
+    <div onclick="haptic(8);navTo('trainer_card')" style="background:linear-gradient(135deg,#FCE38A,#F38181);border:2px solid #0F380F;border-radius:12px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:3px 3px 0 #0F380F;font-family:'Courier New',monospace;color:#0F380F">
+      <div style="font-size:28px">🎖️</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:900;font-size:14px;letter-spacing:1px;text-transform:uppercase">Trainer Card</div>
+        <div style="font-size:11px;font-weight:700;opacity:.85">${ownedBadges}/8 medallas · ${DB.battlesTotal||0} battles</div>
+      </div>
+      <div style="font-size:18px;font-weight:900">▸</div>
+    </div>`;
+
   return `
     ${renderHeader()}
     <div class="scroll">
@@ -3336,6 +3629,8 @@ function renderAchievements(){
         <h1>Logros</h1>
         <p>${earnedCount} de ${ACHIEVEMENTS.length} desbloqueados · Nivel ${lvl}</p>
       </div>
+
+      ${badgesChip}
 
       <div class="level-current">
         <div class="lc-eyebrow">Tu nivel actual · ${lvlInfo.n}</div>
@@ -3616,6 +3911,24 @@ function setDailyGoal(n){
   haptic(HAPTIC.select);
   DB.dailyGoal = n;
   save();
+  render();
+}
+
+function setBattlesEnabled(on){
+  haptic(HAPTIC.select);
+  DB.battlesEnabled = !!on;
+  save();
+  showToast(on ? '⚔️ Battles activados' : '🚫 Battles desactivados', 1600);
+  render();
+}
+
+function setStarter(starterId){
+  haptic(HAPTIC.select);
+  if(!STARTERS[starterId]) return;
+  DB.starter = starterId;
+  save();
+  const s = STARTERS[starterId];
+  showToast(`🐾 ¡${s.name} ahora es tu Pokémon!`, 2000, 'success');
   render();
 }
 
@@ -3925,6 +4238,31 @@ function renderConfig(){
         `;
       })()}
 
+      <div class="goal-card">
+        <div class="gc-title"><span>🐾</span>Tu starter Pokémon</div>
+        <div class="gc-desc">El Pokémon que te acompaña en los battles. Cada uno tiene su sprite Gen 1 Red/Blue original. Cambia cuando quieras.</div>
+        <div class="gc-progress-label" style="margin-bottom:14px">Actual: <strong>${getStarter().name}</strong></div>
+        <div class="gc-options" style="grid-template-columns:repeat(4,1fr);gap:8px">
+          ${Object.values(STARTERS).map(s => `
+            <button class="gc-opt ${DB.starter===s.id?'active':''}" onclick="setStarter('${s.id}')" style="padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <img src="content/battles/pokemon/${s.pokeId}-back.png" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;image-rendering:crisp-edges" alt="${s.name}"/>
+              <span class="gc-opt-sub" style="font-size:10px">${s.name.toLowerCase()}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="gc-title"><span>⚔️</span>Battles de medallas</div>
+        <div class="gc-desc">De forma aleatoria al terminar una lección, aparece un líder estilo Pokémon que te reta con preguntas de repaso. Ganar conquista o defiende medallas (8 totales).</div>
+        <div class="gc-progress-label" style="margin-bottom:14px">${DB.battlesEnabled?'🟢 Activados':'⚪ Desactivados'} · ~20% al terminar lección · cooldown 2h</div>
+        <div class="gc-options" style="grid-template-columns:1fr 1fr">
+          <button class="gc-opt ${DB.battlesEnabled?'active':''}" onclick="setBattlesEnabled(true)">⚔️<span class="gc-opt-sub">activar</span></button>
+          <button class="gc-opt ${!DB.battlesEnabled?'active':''}" onclick="setBattlesEnabled(false)">🚫<span class="gc-opt-sub">desactivar</span></button>
+        </div>
+        <button class="gc-opt" style="width:100%;margin-top:10px" onclick="navTo('trainer_card')">🎖️ Ver Trainer Card y medallas</button>
+      </div>
+
       <div class="backup-card">
         <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
         <div class="bc-desc">Exporta tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpias cache o cambias de celular, impórtalo para recuperar XP, racha y logros.</div>
@@ -4049,9 +4387,13 @@ function clearWrong(card, courseId, dayId, lessonId){
   }
 }
 
-function openCourse(id){
+async function openCourse(id){
   haptic(HAPTIC.tap);
   CURRENT.courseId = id;
+  // Lazy load: si los días de este curso no están cargados, cargarlos ahora.
+  // El primer curso activo (primario) ya viene loaded del init, así que para
+  // ese curso esta llamada es no-op rápido. Para otros cursos = fetch al tap.
+  await ensureCourseDaysLoaded(id);
   VIEW = 'course';
   render();
 }
@@ -4168,6 +4510,9 @@ function nextCard(){
 }
 
 function finishLesson(){
+  // Idempotente: si ya se completó (porque el delay del battle aún corre),
+  // no volver a contar XP/streak/etc.
+  if(LESSON_STATE.completed) return;
   const perfect = LESSON_STATE.errors === 0;
   let xp = perfect ? 30 : Math.max(10, 25 - LESSON_STATE.errors*3);
   const duration = LESSON_STATE.started ? Math.round((now() - LESSON_STATE.started) / 60000) : 0;
@@ -4239,8 +4584,13 @@ function finishLesson(){
   haptic(HAPTIC.complete);
   if(perfect) launchConfetti();
   LESSON_STATE.completed = true;
-  VIEW = 'lesson_complete';
-  render();
+  // Intentar disparar un battle estilo Pokémon antes de mostrar lesson_complete.
+  // Si las gates fallan, va directo al complete normal.
+  const resume = () => { VIEW = 'lesson_complete'; render(); };
+  const battleDelay = perfect ? 900 : 400; // dejar respirar el confetti
+  setTimeout(() => {
+    if(!maybeStartBattle(resume)){ resume(); }
+  }, battleDelay);
 }
 
 function finishLessonReturn(){
@@ -4399,7 +4749,9 @@ function resetAll(){
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
-    goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null
+    goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
+    badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
+    starter: 'pikachu'
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
@@ -4674,19 +5026,18 @@ function exchangeXpForHeart(){
 
 
 // ============================================================
-// PWA — manifest + service worker via blob (no extra files)
+// PWA — manifest + service worker (cache-first, ver sw.js)
 // ============================================================
 if('serviceWorker' in navigator){
-  const sw = `
-    self.addEventListener('install', e => self.skipWaiting());
-    self.addEventListener('activate', e => self.clients.claim());
-    self.addEventListener('fetch', e => e.respondWith(
-      fetch(e.request).catch(() => new Response('', {status:200}))
-    ));
-  `;
-  navigator.serviceWorker.register(
-    URL.createObjectURL(new Blob([sw], {type:'text/javascript'}))
-  ).then(reg => {
+  // Cleanup: si quedó algún SW viejo registrado vía blob: URL (versiones
+  // anteriores), desregistrarlo antes de instalar el nuevo sw.js.
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(reg => {
+      const url = reg.active?.scriptURL || reg.installing?.scriptURL || reg.waiting?.scriptURL || '';
+      if(url.startsWith('blob:')) reg.unregister().catch(()=>{});
+    });
+  }).catch(()=>{});
+  navigator.serviceWorker.register('sw.js').then(reg => {
     // Chequea por nueva versión cada vez que la app vuelve a foreground
     document.addEventListener('visibilitychange', () => {
       if(document.visibilityState === 'visible') reg.update().catch(()=>{});
@@ -4707,6 +5058,610 @@ if('serviceWorker' in navigator){
       });
     });
   }).catch(()=>{});
+}
+
+// ============================================================
+// BATTLES — flujo retro estilo Pokémon Red/Blue
+// ============================================================
+
+// Pool de MCQs para repaso: SOLO MCQ single-choice de 4 opciones de
+// lecciones que el usuario YA COMPLETÓ en el curso actual (excluyendo
+// la lección que se acaba de terminar). Sin fallback a no-vistas:
+// preguntar sobre lo que aún no ha estudiado rompe el flow educativo.
+// allowAny=true (testBattle force) acepta cualquier MCQ del curso para
+// poder ver el preview sin haber completado lecciones aún.
+//
+// FILTRO de auto-contenido: descarta MCQs que dependen de un "caso" o
+// "escenario" previo (cards tipo 'scenario' que las anteceden), porque
+// en el battle se muestran fuera de contexto. Solo dejamos pasar las
+// preguntas que se entienden por sí solas.
+function gatherBattleQuestions(courseId, currentLessonId, n, opts){
+  opts = opts || {};
+  const course = COURSES[courseId];
+  if(!course) return [];
+  // Patrones que delatan dependencia de contexto previo
+  const CONTEXT_REGEX = /\b(?:el|este|esta|ese)\s+(?:caso|escenario|ejemplo|cliente|caso anterior)\b|\besta situación\b|\bcambia de opinión\b|\bsegún (?:lo|el) (?:anterior|caso|ejemplo)\b|\bdel ejemplo\b|\bel cliente\b/i;
+  // Texto que la pregunta debe tener para sentirse self-contained
+  const completedPool = [];
+  const fullPool = [];
+  const courseProg = DB.progress?.[courseId] || {};
+  for(const day of course.days || []){
+    const dayProg = courseProg[day.id] || {};
+    for(const lesson of day.lessons || []){
+      const isCompleted = !!dayProg[lesson.id]?.completed;
+      if(lesson.id === currentLessonId) continue;
+      const cards = lesson.cards || [];
+      for(let i = 0; i < cards.length; i++){
+        const card = cards[i];
+        if(card.type !== 'mcq') continue;
+        if(card.multi) continue;
+        if(!Array.isArray(card.options) || card.options.length !== 4) continue;
+        if(typeof card.correct !== 'number') continue;
+        // Filtro 1: si la card inmediatamente anterior es un 'scenario'
+        // (caso a resolver) o 'quote' grande, esta MCQ pertenece al caso
+        // y no se entiende sola.
+        const prev = cards[i - 1];
+        if(prev && (prev.type === 'scenario' || prev.type === 'quote')) continue;
+        // Filtro 2: el texto de la pregunta no debe referenciar contexto
+        // externo. Si lo hace, skipear.
+        const qText = card.q || '';
+        if(CONTEXT_REGEX.test(qText)) continue;
+        // Filtro 3: preguntas extremadamente cortas (<20 chars) suelen ser
+        // continuaciones de un caso ("¿Y ahora?", "¿Y si cambia?").
+        if(qText.replace(/<[^>]+>/g, '').length < 20) continue;
+        fullPool.push(card);
+        if(isCompleted) completedPool.push(card);
+      }
+    }
+  }
+  // Estricto: solo completadas. allowAny solo lo activa el preview.
+  const src = (opts.allowAny && completedPool.length < n) ? fullPool : completedPool;
+  return shuffleArr(src).slice(0, n);
+}
+
+// Gates: decide si arrancamos un battle al terminar una lección.
+// Si arrancamos, devuelve true y la lógica del battle eventualmente llama
+// a resumeAction(); si no, devuelve false y el caller debe llamar resume él.
+function maybeStartBattle(resumeAction, opts){
+  opts = opts || {};
+  const force = !!opts.force;
+  if(BATTLE_STATE.active) return false;
+  if(!DB.battlesEnabled) return false;
+  if(!BATTLE_CONFIG.enabled && !force) return false;
+  // Cooldown
+  if(!force && (now() - (DB.lastBattleTs || 0)) < BATTLE_CONFIG.cooldownMs) return false;
+  // No en la 1ra lección del día (ni si las vidas están en rojo)
+  if(!force){
+    const todayKey = todayStr();
+    const todayLessons = DB.activityLog?.[todayKey]?.lessons || 0;
+    if(todayLessons < BATTLE_CONFIG.minLessonsToday) return false;
+    if((DB.hearts || 0) < BATTLE_CONFIG.minHearts) return false;
+    if(Math.random() >= BATTLE_CONFIG.triggerChance) return false;
+  }
+  // Necesita curso activo y suficientes preguntas
+  const courseId = CURRENT.courseId;
+  if(!courseId) return false;
+  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.poolSize, {allowAny: force});
+  if(deck.length < BATTLE_CONFIG.minPoolSize) return false;
+  // Elegir líder según modo
+  const ownedLeaderIds = LEADERS
+    .filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked')
+    .map(l => l.id);
+  const allOwned = ownedLeaderIds.length >= LEADERS.length;
+  let mode, leader, defendingBadgeId = null;
+  if(!allOwned){
+    // Conquista: siguiente líder en orden que no tengas (o que tengas 'lost')
+    leader = LEADERS.find(l => {
+      const st = DB.badges[l.id];
+      return !st || st === 'lost';
+    });
+    if(!leader) return false;
+    mode = 'conquest';
+  } else {
+    // Defensa: random entre las que tengas (won o cracked)
+    const candidates = LEADERS.filter(l => ['won','cracked'].includes(DB.badges[l.id]));
+    if(!candidates.length) return false;
+    leader = candidates[Math.floor(Math.random() * candidates.length)];
+    mode = 'defense';
+    defendingBadgeId = leader.badgeId;
+  }
+  startBattle({mode, leader, deck, defendingBadgeId, resumeAction});
+  return true;
+}
+
+function startBattle({mode, leader, deck, defendingBadgeId, resumeAction}){
+  const maxLives = BATTLE_CONFIG.maxLives;
+  BATTLE_STATE = {
+    active: true,
+    phase: 'intro',
+    leader,
+    mode,
+    defendingBadgeId,
+    deck,
+    qIdx: 0,
+    answers: [],
+    deadline: 0,
+    correctCount: 0,
+    wrongCount: 0,
+    foeLives: maxLives,
+    meLives: maxLives,
+    lastFeedback: null,
+    resumeAction: resumeAction || (() => { VIEW = 'home'; render(); })
+  };
+  DB.lastBattleTs = now();
+  DB.battlesTotal = (DB.battlesTotal || 0) + 1;
+  save();
+  VIEW = 'battle';
+  haptic(HAPTIC.complete);
+  render();
+  // Avanza de intro a 1ra pregunta a los ~2.4s
+  setTimeout(() => {
+    if(BATTLE_STATE.active && BATTLE_STATE.phase === 'intro') battleStartQuestion();
+  }, 2400);
+}
+
+function battleStartQuestion(){
+  BATTLE_STATE.phase = 'question';
+  BATTLE_STATE.deadline = now() + BATTLE_CONFIG.secondsPerQuestion * 1000;
+  startBattleTimer();
+  render();
+}
+
+function startBattleTimer(){
+  stopBattleTimer();
+  BATTLE_TIMER_ID = setInterval(() => {
+    if(VIEW !== 'battle' || BATTLE_STATE.phase !== 'question'){ stopBattleTimer(); return; }
+    const remaining = Math.max(0, BATTLE_STATE.deadline - now());
+    const total = BATTLE_CONFIG.secondsPerQuestion * 1000;
+    const pct = (remaining / total) * 100;
+    const fillEl = document.getElementById('battle-tfill');
+    const numEl = document.getElementById('battle-tnum');
+    if(fillEl){
+      fillEl.style.width = pct + '%';
+      if(remaining < 3000) fillEl.classList.add('warn'); else fillEl.classList.remove('warn');
+    }
+    if(numEl){
+      numEl.textContent = Math.ceil(remaining/1000) + 's';
+      if(remaining < 3000) numEl.classList.add('warn'); else numEl.classList.remove('warn');
+    }
+    if(remaining === 0){
+      stopBattleTimer();
+      battleAnswer(-1, true);
+    }
+  }, 100);
+}
+
+function stopBattleTimer(){
+  if(BATTLE_TIMER_ID){ clearInterval(BATTLE_TIMER_ID); BATTLE_TIMER_ID = null; }
+}
+
+function battleSelect(i){
+  if(BATTLE_STATE.phase !== 'question') return;
+  battleAnswer(i, false);
+}
+
+function battleAnswer(i, timedOut){
+  stopBattleTimer();
+  const q = BATTLE_STATE.deck[BATTLE_STATE.qIdx];
+  const correct = !timedOut && i === q.correct;
+  BATTLE_STATE.answers.push({selected:i, correct, timedOut});
+  if(correct){
+    BATTLE_STATE.correctCount += 1;
+    BATTLE_STATE.foeLives = Math.max(0, BATTLE_STATE.foeLives - 1);
+    haptic(HAPTIC.correct);
+  } else {
+    BATTLE_STATE.wrongCount += 1;
+    BATTLE_STATE.meLives = Math.max(0, BATTLE_STATE.meLives - 1);
+    haptic(HAPTIC.wrong);
+  }
+  BATTLE_STATE.lastFeedback = {
+    correctIdx: q.correct,
+    selectedIdx: i,
+    correct,
+    timedOut,
+    explanation: q.explanation || ''
+  };
+  BATTLE_STATE.phase = 'feedback';
+  render();
+  setTimeout(() => {
+    if(!BATTLE_STATE.active) return;
+    // Termina cuando uno de los dos llega a 0 HP. Si por alguna razón
+    // se agota el deck sin KO (raro), también termina.
+    const someoneKO = BATTLE_STATE.foeLives <= 0 || BATTLE_STATE.meLives <= 0;
+    const noMoreCards = BATTLE_STATE.qIdx + 1 >= BATTLE_STATE.deck.length;
+    if(someoneKO || noMoreCards){
+      battleFinish();
+    } else {
+      BATTLE_STATE.qIdx += 1;
+      BATTLE_STATE.lastFeedback = null;
+      battleStartQuestion();
+    }
+  }, 1500);
+}
+
+function battleFinish(){
+  stopBattleTimer();
+  const cc = BATTLE_STATE.correctCount;
+  const wc = BATTLE_STATE.wrongCount;
+  const totalAnswered = cc + wc;
+  // Gana quien tenga más vidas restantes; empate (raro) lo decide el
+  // contador de aciertos. En la práctica el sistema HP garantiza un
+  // KO claro antes de quedarse sin deck.
+  const won = BATTLE_STATE.foeLives <= 0 && BATTLE_STATE.meLives > 0
+    ? true
+    : BATTLE_STATE.meLives <= 0 && BATTLE_STATE.foeLives > 0
+      ? false
+      : cc > wc;
+  const mode = BATTLE_STATE.mode;
+  const leader = BATTLE_STATE.leader;
+  let outcome, xp = 0, msg = '';
+  if(mode === 'conquest'){
+    if(won){
+      DB.badges[leader.id] = 'won';
+      DB.battlesWon = (DB.battlesWon || 0) + 1;
+      xp = BATTLE_CONFIG.xpWin + cc * BATTLE_CONFIG.xpPerCorrect;
+      outcome = 'badge_won';
+      msg = `¡Medalla ${leader.badgeId.toUpperCase()} obtenida!`;
+    } else {
+      // Consolación: XP por aciertos aunque hayas perdido el battle
+      xp = cc * BATTLE_CONFIG.xpPerCorrect;
+      outcome = 'no_badge';
+      msg = `${leader.name} sigue con su medalla. Vuelve más fuerte.`;
+    }
+  } else {
+    // Defensa de medalla
+    const prevState = DB.badges[leader.id]; // 'won' o 'cracked'
+    if(won){
+      DB.badges[leader.id] = 'won';
+      DB.battlesWon = (DB.battlesWon || 0) + 1;
+      xp = BATTLE_CONFIG.xpWin + cc * BATTLE_CONFIG.xpPerCorrect;
+      outcome = prevState === 'cracked' ? 'badge_restored' : 'badge_defended';
+      msg = prevState === 'cracked'
+        ? `¡Defendiste y restauraste la medalla ${leader.badgeId.toUpperCase()}!`
+        : `¡Medalla ${leader.badgeId.toUpperCase()} defendida!`;
+    } else {
+      // Perdiste el battle: si la medalla estaba intacta se agrieta;
+      // si ya estaba agrietada, se pierde.
+      xp = cc * BATTLE_CONFIG.xpPerCorrect;
+      if(prevState === 'cracked'){
+        DB.badges[leader.id] = 'lost';
+        outcome = 'badge_lost';
+        msg = `¡Perdiste la medalla ${leader.badgeId.toUpperCase()}!`;
+      } else {
+        DB.badges[leader.id] = 'cracked';
+        outcome = 'badge_cracked';
+        msg = `La medalla ${leader.badgeId.toUpperCase()} se agrietó. Otra derrota y la pierdes.`;
+      }
+    }
+  }
+  if(xp > 0) addXP(xp);
+  // Logros
+  const wonCount = Object.values(DB.badges).filter(s => s === 'won' || s === 'cracked').length;
+  if(wonCount >= 1 && !DB.achievements?.first_badge) earnAch('first_badge');
+  if(wonCount === 8 && !DB.achievements?.champion) earnAch('champion');
+  save();
+  BATTLE_STATE.phase = 'result';
+  BATTLE_STATE.lastOutcome = {outcome, xp, msg, cc, total: totalAnswered, won};
+  if(outcome === 'badge_won' || outcome === 'badge_defended' || outcome === 'badge_restored'){
+    launchConfetti();
+  }
+  render();
+}
+
+function battleContinue(){
+  haptic(HAPTIC.tap);
+  const resume = BATTLE_STATE.resumeAction;
+  stopBattleTimer();
+  BATTLE_STATE = {
+    active:false, phase:'intro', leader:null, mode:'conquest',
+    defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
+    correctCount:0, lastFeedback:null, resumeAction:null
+  };
+  if(typeof resume === 'function') resume();
+  else { VIEW = 'home'; render(); }
+}
+
+// Huir del battle: equivalente al RUN del menú Pokémon. La medalla queda
+// como estaba (no se agrieta ni se pierde), no se gana XP, pero el
+// cooldown sí cuenta (usaste tu intento). Solo disponible en fase intro
+// o question — durante feedback/result hay que esperar.
+function battleFlee(){
+  if(!confirm('¿Huir del combate? La medalla queda intacta, pero no ganas XP y se cuenta como battle usado (cooldown 2h).')) return;
+  haptic(HAPTIC.wrong);
+  showToast('🏃 ¡Escapaste con éxito!', 2000);
+  const resume = BATTLE_STATE.resumeAction;
+  stopBattleTimer();
+  BATTLE_STATE = {
+    active:false, phase:'intro', leader:null, mode:'conquest',
+    defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
+    correctCount:0, lastFeedback:null, resumeAction:null
+  };
+  if(typeof resume === 'function') resume();
+  else { VIEW = 'home'; render(); }
+}
+
+function battleOpenTrainerCard(){
+  haptic(HAPTIC.tap);
+  // Saltamos el resume (la lección ya quedó marcada como completa con XP y
+  // racha desde finishLesson). Vamos directo a la Trainer Card. El usuario
+  // navega luego con el bottom nav.
+  stopBattleTimer();
+  BATTLE_STATE = {
+    active:false, phase:'intro', leader:null, mode:'conquest',
+    defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
+    correctCount:0, lastFeedback:null, resumeAction:null
+  };
+  VIEW = 'trainer_card';
+  render();
+}
+
+// ----- RENDER -----
+function renderBattle(){
+  const phase = BATTLE_STATE.phase;
+  const leader = BATTLE_STATE.leader;
+  if(!leader) return renderHome();
+  const total = BATTLE_STATE.deck.length;
+  const qIdx = BATTLE_STATE.qIdx;
+  const q = BATTLE_STATE.deck[qIdx];
+  const mode = BATTLE_STATE.mode;
+  const badge = BADGES.find(b => b.id === leader.badgeId);
+  const starter = getStarter();
+
+  // Barras HP reales: foeLives y meLives arrancan en maxLives. Cada
+  // acierto del jugador resta 1 a foeLives; cada error/timeout resta
+  // 1 a meLives. El primero en llegar a 0 pierde el battle.
+  const maxLives = BATTLE_CONFIG.maxLives;
+  const foeHpRemaining = BATTLE_STATE.foeLives;
+  const meHpRemaining  = BATTLE_STATE.meLives;
+  const foeHpPct = Math.round((foeHpRemaining / maxLives) * 100);
+  const meHpPct  = Math.round((meHpRemaining  / maxLives) * 100);
+  const hpCls = (pct) => pct <= 33 ? 'crit' : pct <= 66 ? 'low' : '';
+  const foeHpFillCls = hpCls(foeHpPct);
+  const meHpFillCls  = hpCls(meHpPct);
+
+  // Sprite hit states durante feedback
+  let foeCls = 'battle-sprite foe';
+  let meCls = 'battle-sprite me';
+  if(phase === 'feedback'){
+    const fb = BATTLE_STATE.lastFeedback;
+    if(fb?.correct) foeCls += ' hit';
+    else meCls += ' hit';
+  }
+
+  // RESULT phase = pantalla distinta
+  if(phase === 'result'){
+    return renderBattleResult();
+  }
+
+  // Contenido del diálogo: en 'question' es la pregunta misma; en 'intro'
+  // y 'feedback' es texto narrativo. Tag muestra solo nombre del Pokémon
+  // que ataca + timer. No se expone el conteo de preguntas (HP es la única
+  // métrica de progreso visible).
+  let dialogTag = '';
+  let dialogText = '';
+  let dialogCursor = true;
+  // Botón HUIR (RUN clásico Pokémon): disponible en intro y question.
+  // No durante feedback (espera a que termine la animación) ni result.
+  const fleeBtn = (phase === 'intro' || phase === 'question')
+    ? `<button class="battle-flee-btn" onclick="battleFlee()" aria-label="Huir del combate">HUIR</button>` : '';
+  if(phase === 'intro'){
+    dialogTag = `<span>¡COMBATE!</span><span style="display:flex;gap:8px;align-items:center">${fleeBtn}<span style="font-size:10px;font-weight:900;color:#5a7a47;letter-spacing:1px">${mode === 'conquest' ? 'CONQUISTA' : 'DEFENSA'}</span></span>`;
+    if(mode === 'conquest'){
+      dialogText = `¡LÍDER ${leader.name.toUpperCase()} envió a ${leader.pokemon.toUpperCase()}! En juego: medalla ${badge.name.toUpperCase()}.`;
+    } else {
+      const st = DB.badges[leader.id];
+      const ext = st === 'cracked' ? ' ¡Tu medalla está agrietada!' : '';
+      dialogText = `¡${leader.name.toUpperCase()} regresó con ${leader.pokemon.toUpperCase()}! Viene por tu medalla ${badge.name.toUpperCase()}.${ext}`;
+    }
+  } else if(phase === 'question' && q){
+    const timerHtml = `<span class="battle-timer-chip" id="battle-tnum">${BATTLE_CONFIG.secondsPerQuestion}s</span>`;
+    dialogTag = `<span>${leader.pokemon.toUpperCase()} ATACA</span><span style="display:flex;gap:8px;align-items:center">${fleeBtn}${timerHtml}</span>`;
+    dialogText = q.q;
+    dialogCursor = false;
+  } else if(phase === 'feedback' && q){
+    const fb = BATTLE_STATE.lastFeedback;
+    dialogTag = `<span>RESULTADO</span>`;
+    if(fb?.timedOut) dialogText = `¡Se acabó el tiempo! La correcta era: ${q.options[q.correct]}.`;
+    else if(fb?.correct) dialogText = `¡Correcto! ${q.options[q.correct]}.`;
+    else dialogText = `Fallaste. La correcta: ${q.options[q.correct]}.`;
+    dialogCursor = false;
+  }
+
+  // Timer bar (línea fina arriba del diálogo, solo en question)
+  const timerBar = phase === 'question'
+    ? `<div class="battle-timer-bar"><div class="battle-timer-fill" id="battle-tfill" style="width:100%"></div></div>`
+    : '';
+
+  // 4 botones (durante question/feedback; en intro deshabilitados con "Adelante")
+  const showOptions = phase === 'question' || phase === 'feedback';
+  let optsHtml = '';
+  if(showOptions && q){
+    const fb = BATTLE_STATE.lastFeedback;
+    optsHtml = q.options.map((opt, i) => {
+      let cls = 'battle-opt';
+      let click = `onclick="battleSelect(${i})"`;
+      if(phase === 'feedback'){
+        click = '';
+        cls += ' disabled';
+        if(i === fb.correctIdx) cls = 'battle-opt right';
+        else if(i === fb.selectedIdx && !fb.correct && !fb.timedOut) cls = 'battle-opt wrong';
+      }
+      return `<button class="${cls}" data-c="${i}" ${click}>
+        <span class="bo-arrow">▶</span>
+        <span class="bo-text">${opt}</span>
+      </button>`;
+    }).join('');
+  } else {
+    optsHtml = ['¡Adelante!','¡A pelear!','No retroceder','Con honor'].map((t,i) =>
+      `<button class="battle-opt disabled" data-c="${i}">
+        <span class="bo-arrow">▶</span><span class="bo-text">${t}</span>
+      </button>`
+    ).join('');
+  }
+
+  const vsOverlay = phase === 'intro' ? `<div class="battle-vs"><div class="battle-vs-inner">VS</div></div>` : '';
+
+  return `
+    <div class="battle-wrap">
+      <div class="battle-arena">
+        ${vsOverlay}
+        <div class="battle-namebox foe">
+          <div class="bn-name"><span>${leader.pokemon.toUpperCase()}</span><span class="bn-lvl">Lv. 50</span></div>
+          <div class="bn-sub">Líder ${leader.name}</div>
+          <div class="bn-hp-row">
+            <span class="bn-hp-tag">HP</span>
+            <div class="bn-hp"><div class="bn-hp-fill ${foeHpFillCls}" style="width:${foeHpPct}%"></div></div>
+          </div>
+          <div class="bn-hp-num">${foeHpPct}%</div>
+        </div>
+        <div class="battle-platform foe"></div>
+        <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
+        <div class="${meCls}"${starter.bottomOffset != null ? ` style="bottom:${starter.bottomOffset}px"` : ''}><img src="content/battles/pokemon/${starter.pokeId}-back.png" alt="${starter.name} (back)"${starter.scale && starter.scale !== 1 ? ` style="transform:scale(${starter.scale})"` : ''}/></div>
+        <div class="battle-platform me"></div>
+        <div class="battle-namebox me">
+          <div class="bn-name"><span>${starter.name}</span><span class="bn-lvl">Lv. 50</span></div>
+          <div class="bn-sub">Randall · ${mode === 'conquest' ? 'Conquista' : 'Defensa'}</div>
+          <div class="bn-hp-row">
+            <span class="bn-hp-tag">HP</span>
+            <div class="bn-hp"><div class="bn-hp-fill ${meHpFillCls}" style="width:${meHpPct}%"></div></div>
+          </div>
+          <div class="bn-hp-num">${meHpPct}%</div>
+        </div>
+      </div>
+      <div class="battle-dialog">
+        ${timerBar}
+        ${dialogTag ? `<div class="bd-tag">${dialogTag}</div>` : ''}
+        <div class="bd-text ${dialogCursor?'with-cursor':''}">${dialogText}</div>
+      </div>
+      <div class="battle-opts">${optsHtml}</div>
+    </div>
+  `;
+}
+
+function renderBattleResult(){
+  const r = BATTLE_STATE.lastOutcome || {};
+  const leader = BATTLE_STATE.leader;
+  const badge = BADGES.find(b => b.id === leader.badgeId);
+  const isWin = ['badge_won','badge_defended','badge_restored'].includes(r.outcome);
+  const cls = isWin ? 'battle-result win' : 'battle-result';
+  let h, sub;
+  if(r.outcome === 'badge_won'){ h = '¡Victoria!'; sub = `${leader.pokemon} de ${leader.name} fue derrotado.`; }
+  else if(r.outcome === 'badge_defended'){ h = '¡Defendiste!'; sub = `${leader.name} se retira con ${leader.pokemon} derrotado.`; }
+  else if(r.outcome === 'badge_restored'){ h = '¡Restaurada!'; sub = `Tu medalla vuelve a brillar.`; }
+  else if(r.outcome === 'badge_cracked'){ h = 'Medalla agrietada'; sub = `Otra derrota y la pierdes.`; }
+  else if(r.outcome === 'badge_lost'){ h = 'Derrota'; sub = `${leader.pokemon} te aplastó.`; }
+  else { h = 'Sin medalla'; sub = `${leader.pokemon} sobrevivió. Vuelve más fuerte.`; }
+
+  // Mostrar la medalla real cuando se gana/defiende/restaura; ícono CSS en otros casos.
+  let badgeBlock;
+  if(isWin){
+    badgeBlock = `<div class="battle-badge-anim"><img src="content/battles/badges/${badge.num}.png" alt="${badge.name} Badge" style="width:96px;height:96px;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(0 0 12px rgba(255,255,255,.7))"/><div class="bba-name">Medalla ${badge.name}</div></div>`;
+  } else {
+    const fallbackIco = r.outcome === 'badge_cracked' ? '⚠️' : (r.outcome === 'badge_lost' ? '💔' : '🔒');
+    badgeBlock = `<div class="battle-badge-anim"><div class="bba-ico">${fallbackIco}</div><div class="bba-name">Medalla ${badge.name}</div></div>`;
+  }
+
+  return `
+    <div class="${cls}">
+      <div class="battle-result-h">${h}</div>
+      <div class="battle-result-sub">${sub}</div>
+      ${badgeBlock}
+      ${r.xp ? `<div class="battle-result-stats">
+        <div class="brs-cell"><div class="brs-num">+${r.xp}</div><div>XP</div></div>
+      </div>` : ''}
+      <div class="battle-result-msg" style="font-size:13px;font-weight:700;max-width:280px;margin-bottom:18px;line-height:1.4">${r.msg||''}</div>
+      <div class="battle-result-actions">
+        <button class="battle-result-btn" onclick="battleContinue()">Continuar</button>
+        <button class="battle-result-btn" onclick="battleOpenTrainerCard()" style="background:#9BBC0F">Ver Trainer Card</button>
+      </div>
+    </div>
+  `;
+}
+
+// ----- TRAINER CARD -----
+function renderTrainerCard(){
+  const owned = LEADERS.filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked').length;
+  const lost = LEADERS.filter(l => DB.badges[l.id] === 'lost').length;
+  const lvl = calcLevel(DB.xp);
+  const lvlInfo = LEVELS[lvl-1];
+
+  const badgeCells = LEADERS.map(leader => {
+    const badge = BADGES.find(b => b.id === leader.badgeId);
+    const st = DB.badges[leader.id];
+    let cls = 'tc-badge';
+    if(!st) cls += ' locked';
+    else if(st === 'cracked') cls += ' cracked';
+    else if(st === 'lost') cls += ' lost';
+    return `<div class="${cls}" title="${badge.name} Badge · ${leader.name}"><img src="content/battles/badges/${badge.num}.png" alt="${badge.name} Badge"/></div>`;
+  }).join('');
+
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <button class="back-btn" onclick="navTo('home')" aria-label="Volver">✕</button>
+        <div style="font-size:18px;font-weight:800">Trainer Card</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-head">
+          <div class="tcard-h">
+            <div class="tcard-name">Randall</div>
+            <div class="tcard-meta">${lvlInfo.n} · ${DB.xp} XP · 🔥 ${DB.streak}d</div>
+          </div>
+          <div class="tcard-count">${owned}/8</div>
+        </div>
+        <div class="tcard-badges">${badgeCells}</div>
+        <div class="tcard-foot">
+          ${owned === 0 ? 'Sin medallas todavía. Termina lecciones para que aparezcan los líderes.'
+            : owned === 8 ? '¡Las 8 medallas conquistadas! Ahora defiéndelas.'
+            : `${owned} ganadas · ${lost ? lost+' perdidas · ' : ''}faltan ${8-owned}.`}
+        </div>
+        ${DB.battlesTotal ? `<div style="margin-top:10px;font-size:11px;text-align:center;opacity:.75">${DB.battlesTotal} battles totales · ${DB.battlesWon} ganados</div>` : ''}
+      </div>
+
+      <div class="section-title">Líderes de Kanto</div>
+      ${LEADERS.map(l => {
+        const b = BADGES.find(x => x.id === l.badgeId);
+        const st = DB.badges[l.id];
+        const stLabel = st === 'won' ? '✅ Defendida'
+          : st === 'cracked' ? '⚠️ Agrietada'
+          : st === 'lost' ? '💔 Perdida'
+          : '🔒 No conquistada';
+        return `
+          <div class="card" style="display:flex;align-items:center;gap:12px;padding:10px">
+            <div style="width:54px;height:54px;background:#fff;border:2px solid #0F380F;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden">
+              <img src="content/battles/pokemon/${l.pokeId}.png" alt="${l.pokemon}" style="width:48px;height:48px;image-rendering:pixelated;image-rendering:crisp-edges"/>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="font-weight:800;font-size:14px">Líder ${l.name} <span style="color:#65676B;font-weight:600">· ${l.title}</span></div>
+              <div style="font-size:12px;color:#65676B;margin-top:2px">Pokémon: <strong>${l.pokemon}</strong> · Medalla ${b.name}</div>
+              <div style="font-size:11px;color:#65676B;margin-top:1px">${stLabel}</div>
+            </div>
+            <img src="content/battles/badges/${b.num}.png" alt="${b.name} Badge" style="width:36px;height:36px;image-rendering:pixelated;image-rendering:crisp-edges;flex-shrink:0;opacity:${st?1:.3}"/>
+          </div>`;
+      }).join('')}
+
+      <button class="battle-test-btn" onclick="testBattle()">⚔️ Probar battle ahora</button>
+      <div style="font-size:11px;color:#65676B;text-align:center;margin-top:6px">Botón para preview · ignora cooldown y random</div>
+      <div style="font-size:10px;color:#8A8D91;text-align:center;margin-top:18px;padding:0 12px;line-height:1.5">Sprites: PokéAPI (PokeAPI/sprites · MIT). Pokémon™ © Nintendo/Creatures Inc./GAME FREAK Inc. Uso educativo fan, sin fines comerciales.</div>
+    </div>
+    ${renderNav('achievements')}
+  `;
+}
+
+function testBattle(){
+  haptic(HAPTIC.tap);
+  if(!CURRENT.courseId){
+    // Toma el primer curso activo
+    const active = Object.values(COURSES).filter(c => c.active !== false);
+    if(active.length) CURRENT.courseId = active[0].id;
+  }
+  if(!CURRENT.courseId){
+    showToast('Abre un curso primero para probar el battle', 2400);
+    return;
+  }
+  const ok = maybeStartBattle(() => { VIEW = 'trainer_card'; render(); }, {force:true});
+  if(!ok) showToast('No hay suficientes preguntas en este curso para un battle', 2800);
 }
 
 const manifest = {
@@ -4754,6 +5709,12 @@ async function init(){
     return;
   }
   render();
+  // Atajo de preview: si la URL trae #battle o ?battle=1 dispara un battle
+  // de prueba a los ~700ms. Útil para mostrar la dinámica sin esperar las
+  // gates random/cooldown. Quitar `#battle` y recargar para uso normal.
+  if(location.hash === '#battle' || /[?&]battle=1/.test(location.search)){
+    setTimeout(() => { try { testBattle(); } catch(e){ console.error(e); } }, 700);
+  }
 }
 init();
 
