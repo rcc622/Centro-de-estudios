@@ -764,11 +764,9 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .battle-timer-fill{height:100%;background:#0F380F;transition:width .15s linear}
 .battle-timer-fill.warn{background:#E74C3C}
 
-/* Overlay intro: mensaje "Un entrenador ha aparecido" estilo retro
-   Pokémon, con flash blanco/oscuro y pop al entrar. */
+/* Overlay intro: mensaje retador, directo, sin VS. Flash + pop al entrar. */
 .battle-vs{position:absolute;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10;padding:24px;animation:bvs-flash .45s steps(3,end)}
-.battle-vs-inner{font-family:'Courier New',monospace;font-size:22px;font-weight:900;color:#0F380F;text-shadow:2px 2px 0 #E74C3C,-1px -1px 0 #1877F2;letter-spacing:1.2px;text-align:center;line-height:1.4;animation:bvs-pop .5s ease-out;max-width:90%}
-.battle-vs-inner .bvs-vs{display:block;font-size:48px;letter-spacing:8px;margin-bottom:14px;color:#E74C3C;text-shadow:3px 3px 0 #0F380F}
+.battle-vs-inner{font-family:'Courier New',monospace;font-size:30px;font-weight:900;color:#0F380F;text-shadow:3px 3px 0 #E74C3C;letter-spacing:2px;text-align:center;line-height:1.2;animation:bvs-pop .5s ease-out;max-width:90%}
 @keyframes bvs-flash{0%{background:#0F380F;color:#fff}50%{background:#fff}100%{background:#fff}}
 @keyframes bvs-pop{from{transform:scale(.3) rotate(-8deg);opacity:0}60%{transform:scale(1.08) rotate(2deg)}to{transform:scale(1) rotate(0)}}
 
@@ -1472,6 +1470,7 @@ function load(){
   if(typeof DB.battlesWon !== 'number') DB.battlesWon = 0;
   if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
   if(!DB.starter || !STARTERS[DB.starter]) DB.starter = 'pikachu';
+  if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
   const oldIds = Object.keys(BADGE_ID_MIGRATION_V1);
@@ -5105,18 +5104,24 @@ if('serviceWorker' in navigator){
 // allowAny=true (testBattle force) acepta cualquier MCQ del curso para
 // poder ver el preview sin haber completado lecciones aún.
 //
-// FILTRO de auto-contenido: descarta MCQs que dependen de un "caso" o
-// "escenario" previo (cards tipo 'scenario' que las anteceden), porque
-// en el battle se muestran fuera de contexto. Solo dejamos pasar las
-// preguntas que se entienden por sí solas.
+// FILTROS:
+// - Descarta MCQs que dependen de un "caso" o "escenario" previo
+// - Descarta MCQs cuyas opciones sean muy largas (no caben en 4 cards)
+// - Descarta MCQs ya vistas en battles recientes (DB.recentBattleQuestions)
+// - PREFIERE preguntas estilo concepto→definición (ej. "¿a qué se refiere
+//   X?", "¿qué describe mejor Y?") cuando hay suficientes; cae a las
+//   otras si no.
 function gatherBattleQuestions(courseId, currentLessonId, n, opts){
   opts = opts || {};
   const course = COURSES[courseId];
   if(!course) return [];
-  // Patrones que delatan dependencia de contexto previo
   const CONTEXT_REGEX = /\b(?:el|este|esta|ese)\s+(?:caso|escenario|ejemplo|cliente|caso anterior)\b|\besta situación\b|\bcambia de opinión\b|\bsegún (?:lo|el) (?:anterior|caso|ejemplo)\b|\bdel ejemplo\b|\bel cliente\b/i;
-  // Texto que la pregunta debe tener para sentirse self-contained
-  const completedPool = [];
+  // Patrón concepto→definición: típicamente con opciones cortas
+  const CONCEPT_PATTERN = /¿\s*(?:qu[ée]\s+(?:es|significa|describe(?:\s+mejor)?|define|representa)|a\s+qu[ée]\s+se\s+refiere|c[óo]mo\s+se\s+define|cu[áa]l\s+(?:es\s+la\s+definici[óo]n|describe))/i;
+  const MAX_OPTION_LEN = 60; // chars sin HTML; >60 no cabe en 4 cards
+  const recentSet = new Set((DB.recentBattleQuestions || []));
+  const completedConcept = [];
+  const completedOther = [];
   const fullPool = [];
   const courseProg = DB.progress?.[courseId] || {};
   for(const day of course.days || []){
@@ -5127,30 +5132,49 @@ function gatherBattleQuestions(courseId, currentLessonId, n, opts){
       const cards = lesson.cards || [];
       for(let i = 0; i < cards.length; i++){
         const card = cards[i];
-        if(card.type !== 'mcq') continue;
+        // Aceptar MCQ single-choice de 4 opciones Y fill (completar frase).
+        // Las 'fill' cards son ideales para battle: opciones cortas tipo
+        // concepto (Custom, Lookalike, etc.).
+        if(card.type !== 'mcq' && card.type !== 'fill') continue;
         if(card.multi) continue;
         if(!Array.isArray(card.options) || card.options.length !== 4) continue;
         if(typeof card.correct !== 'number') continue;
-        // Filtro 1: si la card inmediatamente anterior es un 'scenario'
-        // (caso a resolver) o 'quote' grande, esta MCQ pertenece al caso
-        // y no se entiende sola.
         const prev = cards[i - 1];
         if(prev && (prev.type === 'scenario' || prev.type === 'quote')) continue;
-        // Filtro 2: el texto de la pregunta no debe referenciar contexto
-        // externo. Si lo hace, skipear.
-        const qText = card.q || '';
+        const qText = (card.q || '').replace(/<[^>]+>/g, '');
         if(CONTEXT_REGEX.test(qText)) continue;
-        // Filtro 3: preguntas extremadamente cortas (<20 chars) suelen ser
-        // continuaciones de un caso ("¿Y ahora?", "¿Y si cambia?").
-        if(qText.replace(/<[^>]+>/g, '').length < 20) continue;
+        if(qText.length < 20) continue;
+        // Filtro: opciones largas → skip
+        const hasLongOption = card.options.some(opt =>
+          (opt || '').replace(/<[^>]+>/g, '').length > MAX_OPTION_LEN
+        );
+        if(hasLongOption) continue;
+        // Filtro: ya vista recientemente → skip
+        if(recentSet.has(qText)) continue;
+        // Fill cards son auto-concepto (concepto en el blank). MCQs se
+        // detectan por patrón en el texto.
+        const isConcept = card.type === 'fill' || CONCEPT_PATTERN.test(qText);
+        if(isCompleted){
+          if(isConcept) completedConcept.push(card);
+          else completedOther.push(card);
+        }
         fullPool.push(card);
-        if(isCompleted) completedPool.push(card);
       }
     }
   }
-  // Estricto: solo completadas. allowAny solo lo activa el preview.
-  const src = (opts.allowAny && completedPool.length < n) ? fullPool : completedPool;
-  return shuffleArr(src).slice(0, n);
+  // Preferencia: concepto→definición primero. Si hay >=n, usar solo esos.
+  // Si no, mezclar concepto con otros. allowAny solo en force mode (preview).
+  let pool;
+  if(completedConcept.length >= n){
+    pool = completedConcept;
+  } else if(completedConcept.length + completedOther.length >= n){
+    pool = [...completedConcept, ...completedOther];
+  } else if(opts.allowAny){
+    pool = fullPool;
+  } else {
+    pool = [];
+  }
+  return shuffleArr(pool).slice(0, n);
 }
 
 // Gates: decide si arrancamos un battle al terminar una lección.
@@ -5369,6 +5393,17 @@ function battleFinish(){
     }
   }
   if(xp > 0) addXP(xp);
+  // Memorizar las preguntas vistas para no repetirlas en próximos battles.
+  // FIFO de 40: después de unas ~8 battles el ciclo permite reasking.
+  if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
+  for(const q of BATTLE_STATE.deck){
+    const qText = (q.q || '').replace(/<[^>]+>/g, '');
+    if(qText) DB.recentBattleQuestions.push(qText);
+  }
+  const MAX_RECENT = 40;
+  if(DB.recentBattleQuestions.length > MAX_RECENT){
+    DB.recentBattleQuestions = DB.recentBattleQuestions.slice(-MAX_RECENT);
+  }
   // Logros
   const wonCount = Object.values(DB.badges).filter(s => s === 'won' || s === 'cracked').length;
   if(wonCount >= 1 && !DB.achievements?.first_badge) earnAch('first_badge');
@@ -5490,7 +5525,10 @@ function renderBattle(){
   } else if(phase === 'question' && q){
     const timerHtml = `<span class="battle-timer-chip" id="battle-tnum">${BATTLE_CONFIG.secondsPerQuestion}s</span>`;
     dialogTag = `<span>${leader.pokemon.toUpperCase()} ATACA</span><span style="display:flex;gap:8px;align-items:center">${fleeBtn}${timerHtml}</span>`;
-    dialogText = q.q;
+    // Para cards 'fill', reemplazar el blank "___" por un underline visible
+    dialogText = q.type === 'fill'
+      ? q.q.replace(/___+/g, '<span style="display:inline-block;min-width:60px;border-bottom:3px solid #0F380F;text-align:center">&nbsp;</span>')
+      : q.q;
     dialogCursor = false;
   } else if(phase === 'feedback' && q){
     const fb = BATTLE_STATE.lastFeedback;
@@ -5533,7 +5571,7 @@ function renderBattle(){
     ).join('');
   }
 
-  const vsOverlay = phase === 'intro' ? `<div class="battle-vs"><div class="battle-vs-inner"><span class="bvs-vs">VS</span>¡Un entrenador ha aparecido<br/>y te ha retado a un duelo!</div></div>` : '';
+  const vsOverlay = phase === 'intro' ? `<div class="battle-vs"><div class="battle-vs-inner">¡UN RETADOR<br/>APARECIÓ!</div></div>` : '';
 
   return `
     <div class="battle-wrap">
