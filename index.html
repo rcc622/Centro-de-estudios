@@ -1021,13 +1021,13 @@ const BADGE_ID_MIGRATION_V1 = {
 };
 // Starters Gen 1 que el usuario puede elegir como su Pokémon en battles.
 // Los PNGs back-sprite están normalizados a frame uniforme 85×85 con body
-// height 55px anclado al piso (ver script crop). No necesita scale per-
-// starter — todos renderean a la misma altura visual en CSS.
+// height 55px anclado al piso (ver script crop). scale opcional para
+// fine-tuning visual (Pikachu un poco más grande por preferencia).
 const STARTERS = {
-  pikachu:    {id:'pikachu',    name:'PIKACHU',    pokeId:25, color:'#F5C518'},
-  charmander: {id:'charmander', name:'CHARMANDER', pokeId:4,  color:'#F5A845'},
-  squirtle:   {id:'squirtle',   name:'SQUIRTLE',   pokeId:7,  color:'#3DB4E5'},
-  bulbasaur:  {id:'bulbasaur',  name:'BULBASAUR',  pokeId:1,  color:'#7BC74D'}
+  pikachu:    {id:'pikachu',    name:'PIKACHU',    pokeId:25, scale:1.2,  color:'#F5C518'},
+  charmander: {id:'charmander', name:'CHARMANDER', pokeId:4,  scale:1.0,  color:'#F5A845'},
+  squirtle:   {id:'squirtle',   name:'SQUIRTLE',   pokeId:7,  scale:1.0,  color:'#3DB4E5'},
+  bulbasaur:  {id:'bulbasaur',  name:'BULBASAUR',  pokeId:1,  scale:1.0,  color:'#7BC74D'}
 };
 function getStarter(){ return STARTERS[DB.starter] || STARTERS.pikachu; }
 
@@ -5470,7 +5470,7 @@ function renderBattle(){
         </div>
         <div class="battle-platform foe"></div>
         <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
-        <div class="${meCls}"><img src="content/battles/pokemon/${starter.pokeId}-back.png" alt="${starter.name} (back)"/></div>
+        <div class="${meCls}"><img src="content/battles/pokemon/${starter.pokeId}-back.png" alt="${starter.name} (back)"${starter.scale && starter.scale !== 1 ? ` style="transform:scale(${starter.scale})"` : ''}/></div>
         <div class="battle-platform me"></div>
         <div class="battle-namebox me">
           <div class="bn-name"><span>${starter.name}</span><span class="bn-lvl">Lv. 50</span></div>
