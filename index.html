@@ -713,11 +713,9 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .battle-sprite img{width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;-ms-interpolation-mode:nearest-neighbor}
 .battle-sprite.foe{top:14px;right:30px;animation:bfoe-in .55s ease-out}
 .battle-sprite.me{bottom:14px;left:30px;animation:bme-in .55s ease-out}
-/* Compensar el aspect ratio achatado del back-sprite de Pikachu (cuerpo
-   54×42 vs cuerpo de Onix 50×55). Se ve ~22% más chico verticalmente
-   en el container cuadrado. Escala el img 1.25x manteniendo los pies
-   en el piso del container. */
-.battle-sprite.me img{transform:scale(1.25);transform-origin:bottom center}
+/* El back-sprite del starter se escala según STARTERS[id].scale para
+   compensar aspect ratio (algunos Gen 1 back-sprites son achatados). */
+.battle-sprite.me img{transform-origin:bottom center}
 @keyframes bfoe-in{from{transform:translateX(140px);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes bme-in{from{transform:translateX(-140px);opacity:0}to{transform:translateX(0);opacity:1}}
 /* Namebox: nombre + nivel + barra HP estilo Pokémon. Sin pokeballs row. */
@@ -1017,6 +1015,17 @@ const BADGE_ID_MIGRATION_V1 = {
   roca:'brock', cascada:'misty', trueno:'surge', flor:'erika',
   alma:'sabrina', pantano:'koga', volcan:'blaine', tierra:'giovanni'
 };
+// Starters Gen 1 que el usuario puede elegir como su Pokémon en battles.
+// scale compensa el aspect ratio del back-sprite (cada uno llena distinto
+// porcentaje vertical del frame, ver crop_to_content output).
+const STARTERS = {
+  pikachu:    {id:'pikachu',    name:'PIKACHU',    pokeId:25, scale:1.25, color:'#F5C518'},
+  charmander: {id:'charmander', name:'CHARMANDER', pokeId:4,  scale:1.25, color:'#F5A845'},
+  squirtle:   {id:'squirtle',   name:'SQUIRTLE',   pokeId:7,  scale:1.05, color:'#3DB4E5'},
+  bulbasaur:  {id:'bulbasaur',  name:'BULBASAUR',  pokeId:1,  scale:1.35, color:'#7BC74D'}
+};
+function getStarter(){ return STARTERS[DB.starter] || STARTERS.pikachu; }
+
 const BATTLE_CONFIG = {
   enabled: true,
   triggerChance: 0.20,          // 20% al terminar lección elegible
@@ -1301,7 +1310,8 @@ let DB = {
   lastBattleTs: 0, // timestamp del último battle (para cooldown)
   battlesTotal: 0, // contador total de battles jugados
   battlesWon: 0, // ganados (perfectos o defensa exitosa)
-  battlesEnabled: true // toggle desde Ajustes
+  battlesEnabled: true, // toggle desde Ajustes
+  starter: 'pikachu' // pokemon starter elegido (ver STARTERS)
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1403,6 +1413,7 @@ function load(){
   if(typeof DB.battlesTotal !== 'number') DB.battlesTotal = 0;
   if(typeof DB.battlesWon !== 'number') DB.battlesWon = 0;
   if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
+  if(!DB.starter || !STARTERS[DB.starter]) DB.starter = 'pikachu';
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
   const oldIds = Object.keys(BADGE_ID_MIGRATION_V1);
@@ -3864,6 +3875,16 @@ function setBattlesEnabled(on){
   render();
 }
 
+function setStarter(starterId){
+  haptic(HAPTIC.select);
+  if(!STARTERS[starterId]) return;
+  DB.starter = starterId;
+  save();
+  const s = STARTERS[starterId];
+  showToast(`🐾 ¡${s.name} ahora es tu Pokémon!`, 2000, 'success');
+  render();
+}
+
 let PENDING_DIFF = null;
 function setDifficulty(level){
   haptic(HAPTIC.select);
@@ -4169,6 +4190,20 @@ function renderConfig(){
           </div>
         `;
       })()}
+
+      <div class="goal-card">
+        <div class="gc-title"><span>🐾</span>Tu starter Pokémon</div>
+        <div class="gc-desc">El Pokémon que te acompaña en los battles. Cada uno tiene su sprite Gen 1 Red/Blue original. Cambia cuando quieras.</div>
+        <div class="gc-progress-label" style="margin-bottom:14px">Actual: <strong>${getStarter().name}</strong></div>
+        <div class="gc-options" style="grid-template-columns:repeat(4,1fr);gap:8px">
+          ${Object.values(STARTERS).map(s => `
+            <button class="gc-opt ${DB.starter===s.id?'active':''}" onclick="setStarter('${s.id}')" style="padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <img src="content/battles/pokemon/${s.pokeId}-back.png" style="width:40px;height:40px;object-fit:contain;image-rendering:pixelated;image-rendering:crisp-edges" alt="${s.name}"/>
+              <span class="gc-opt-sub" style="font-size:10px">${s.name.toLowerCase()}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
 
       <div class="goal-card">
         <div class="gc-title"><span>⚔️</span>Battles de medallas</div>
@@ -4664,7 +4699,8 @@ function resetAll(){
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
     goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
-    badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true
+    badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
+    starter: 'pikachu'
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
@@ -5299,6 +5335,7 @@ function renderBattle(){
   const q = BATTLE_STATE.deck[qIdx];
   const mode = BATTLE_STATE.mode;
   const badge = BADGES.find(b => b.id === leader.badgeId);
+  const starter = getStarter();
 
   // Barras HP reales: foeLives y meLives arrancan en maxLives. Cada
   // acierto del jugador resta 1 a foeLives; cada error/timeout resta
@@ -5405,10 +5442,10 @@ function renderBattle(){
         </div>
         <div class="battle-platform foe"></div>
         <div class="${foeCls}"><img src="content/battles/pokemon/${leader.pokeId}.png" alt="${leader.pokemon}"/></div>
-        <div class="${meCls}"><img src="content/battles/pokemon/25-back.png" alt="Pikachu (back)"/></div>
+        <div class="${meCls}"><img src="content/battles/pokemon/${starter.pokeId}-back.png" alt="${starter.name} (back)" style="transform:scale(${starter.scale})"/></div>
         <div class="battle-platform me"></div>
         <div class="battle-namebox me">
-          <div class="bn-name"><span>PIKACHU</span><span class="bn-lvl">Lv. 50</span></div>
+          <div class="bn-name"><span>${starter.name}</span><span class="bn-lvl">Lv. 50</span></div>
           <div class="bn-sub">Randall · ${mode === 'conquest' ? 'Conquista' : 'Defensa'}</div>
           <div class="bn-hp-row">
             <span class="bn-hp-tag">HP</span>
