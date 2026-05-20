@@ -1564,7 +1564,14 @@ function refillShieldsWeekly(){
 }
 
 function loseHeart(){
-  if(DB.hearts <= 0) return false;
+  if(DB.hearts <= 0){
+    // Ya estás en 0 vidas (común en Experto, 1 vida max). El error
+    // sigue contando para LESSON_STATE.errors (penaliza XP) pero no
+    // hay corazones que perder. Mostrar feedback igual para que el
+    // usuario sepa que el error fue registrado.
+    showToast('❌ Error · ya estás en 0 vidas (cuenta para XP)', 1800, 'error');
+    return false;
+  }
   DB.hearts -= 1;
   if(DB.hearts < getMaxHearts() && !DB.lastHeartLost) DB.lastHeartLost = now();
   save();
