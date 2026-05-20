@@ -745,6 +745,9 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 /* Timer compacto dentro del diálogo (chip en la esquina) */
 .battle-timer-chip{font-family:'Courier New',monospace;font-weight:900;font-size:12px;letter-spacing:.5px;background:#0F380F;color:#fff;padding:2px 8px;border-radius:4px;min-width:32px;text-align:center}
 .battle-timer-chip.warn{background:#E74C3C;animation:btim-pulse .4s ease-in-out infinite}
+/* Botón HUIR (equivalente al RUN del menú clásico Pokémon) */
+.battle-flee-btn{font-family:'Courier New',monospace;font-weight:900;font-size:10px;letter-spacing:.6px;background:#fff;color:#E74C3C;border:2px solid #E74C3C;padding:3px 8px;border-radius:4px;cursor:pointer;text-transform:uppercase;line-height:1}
+.battle-flee-btn:active{transform:translate(1px,1px);background:#FFE4DD}
 @keyframes btim-pulse{0%,100%{opacity:1}50%{opacity:.55}}
 /* Barra de timer fina arriba del diálogo */
 .battle-timer-bar{position:absolute;top:-3px;left:0;right:0;height:3px;background:transparent;z-index:5}
@@ -5310,6 +5313,25 @@ function battleContinue(){
   else { VIEW = 'home'; render(); }
 }
 
+// Huir del battle: equivalente al RUN del menú Pokémon. La medalla queda
+// como estaba (no se agrieta ni se pierde), no se gana XP, pero el
+// cooldown sí cuenta (usaste tu intento). Solo disponible en fase intro
+// o question — durante feedback/result hay que esperar.
+function battleFlee(){
+  if(!confirm('¿Huir del combate? La medalla queda intacta, pero no ganas XP y se cuenta como battle usado (cooldown 2h).')) return;
+  haptic(HAPTIC.wrong);
+  showToast('🏃 ¡Escapaste con éxito!', 2000);
+  const resume = BATTLE_STATE.resumeAction;
+  stopBattleTimer();
+  BATTLE_STATE = {
+    active:false, phase:'intro', leader:null, mode:'conquest',
+    defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
+    correctCount:0, lastFeedback:null, resumeAction:null
+  };
+  if(typeof resume === 'function') resume();
+  else { VIEW = 'home'; render(); }
+}
+
 function battleOpenTrainerCard(){
   haptic(HAPTIC.tap);
   // Saltamos el resume (la lección ya quedó marcada como completa con XP y
@@ -5370,8 +5392,12 @@ function renderBattle(){
   let dialogTag = '';
   let dialogText = '';
   let dialogCursor = true;
+  // Botón HUIR (RUN clásico Pokémon): disponible en intro y question.
+  // No durante feedback (espera a que termine la animación) ni result.
+  const fleeBtn = (phase === 'intro' || phase === 'question')
+    ? `<button class="battle-flee-btn" onclick="battleFlee()" aria-label="Huir del combate">HUIR</button>` : '';
   if(phase === 'intro'){
-    dialogTag = `<span>¡COMBATE!</span><span>${mode === 'conquest' ? 'CONQUISTA' : 'DEFENSA'}</span>`;
+    dialogTag = `<span>¡COMBATE!</span><span style="display:flex;gap:8px;align-items:center">${fleeBtn}<span style="font-size:10px;font-weight:900;color:#5a7a47;letter-spacing:1px">${mode === 'conquest' ? 'CONQUISTA' : 'DEFENSA'}</span></span>`;
     if(mode === 'conquest'){
       dialogText = `¡LÍDER ${leader.name.toUpperCase()} envió a ${leader.pokemon.toUpperCase()}! En juego: medalla ${badge.name.toUpperCase()}.`;
     } else {
@@ -5381,7 +5407,7 @@ function renderBattle(){
     }
   } else if(phase === 'question' && q){
     const timerHtml = `<span class="battle-timer-chip" id="battle-tnum">${BATTLE_CONFIG.secondsPerQuestion}s</span>`;
-    dialogTag = `<span>${leader.pokemon.toUpperCase()} ATACA</span>${timerHtml}`;
+    dialogTag = `<span>${leader.pokemon.toUpperCase()} ATACA</span><span style="display:flex;gap:8px;align-items:center">${fleeBtn}${timerHtml}</span>`;
     dialogText = q.q;
     dialogCursor = false;
   } else if(phase === 'feedback' && q){
