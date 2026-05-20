@@ -275,8 +275,8 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "¿Detailed targeting es OR o AND?",
-          "a": "OR dentro de cada categoría (intereses, behaviors). AND entre categorías base. Cuantas más categorías agregas, MÁS angosta la audiencia."
+          "q": "¿Detailed targeting combina las categorías con OR o con AND?",
+          "a": "Las dos lógicas a la vez: <strong>OR</strong> dentro de cada categoría (intereses, behaviors) sumando perfiles que cumplen al menos uno, y <strong>AND</strong> entre categorías distintas intersectando (hay que cumplir todas). Por eso entre más categorías agregas, más estrecha queda la audiencia."
         },
         {
           "q": "¿Qué tres tipos de filtro tiene detailed targeting?",
@@ -1576,8 +1576,8 @@
           "a": "Controls RESTRINGEN delivery (rígidos: location, language, edad mínima, exclusions). Suggestions GUÍAN (flexibles, AI puede expandir: edad max, gender, detailed targeting, lookalike, inclusions)."
         },
         {
-          "q": "¿Detailed targeting es OR o AND?",
-          "a": "OR dentro de cada categoría (intereses, behaviors). AND entre categorías base. Cuantas más categorías agregas, MÁS angosta la audiencia."
+          "q": "¿Detailed targeting combina las categorías con OR o con AND?",
+          "a": "Las dos lógicas a la vez: <strong>OR</strong> dentro de cada categoría (intereses, behaviors) sumando perfiles que cumplen al menos uno, y <strong>AND</strong> entre categorías distintas intersectando (hay que cumplir todas). Por eso entre más categorías agregas, más estrecha queda la audiencia."
         },
         {
           "q": "¿Mínimo de productos recomendado por Product Set?",
