@@ -755,11 +755,13 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .battle-timer-fill{height:100%;background:#0F380F;transition:width .15s linear}
 .battle-timer-fill.warn{background:#E74C3C}
 
-/* VS intro overlay */
-.battle-vs{position:absolute;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10;animation:bvs-flash .45s steps(3,end)}
-.battle-vs-inner{font-family:'Courier New',monospace;font-size:84px;font-weight:900;color:#0F380F;text-shadow:3px 3px 0 #E74C3C;letter-spacing:6px;animation:bvs-pop .5s ease-out}
+/* Overlay intro: mensaje "Un entrenador ha aparecido" estilo retro
+   Pokémon, con flash blanco/oscuro y pop al entrar. */
+.battle-vs{position:absolute;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10;padding:24px;animation:bvs-flash .45s steps(3,end)}
+.battle-vs-inner{font-family:'Courier New',monospace;font-size:22px;font-weight:900;color:#0F380F;text-shadow:2px 2px 0 #E74C3C,-1px -1px 0 #1877F2;letter-spacing:1.2px;text-align:center;line-height:1.4;animation:bvs-pop .5s ease-out;max-width:90%}
+.battle-vs-inner .bvs-vs{display:block;font-size:48px;letter-spacing:8px;margin-bottom:14px;color:#E74C3C;text-shadow:3px 3px 0 #0F380F}
 @keyframes bvs-flash{0%{background:#0F380F;color:#fff}50%{background:#fff}100%{background:#fff}}
-@keyframes bvs-pop{from{transform:scale(.3) rotate(-15deg);opacity:0}60%{transform:scale(1.2) rotate(8deg)}to{transform:scale(1) rotate(0)}}
+@keyframes bvs-pop{from{transform:scale(.3) rotate(-8deg);opacity:0}60%{transform:scale(1.08) rotate(2deg)}to{transform:scale(1) rotate(0)}}
 
 /* 4-option grid (estilo FIGHT/BAG/POKE/RUN) */
 .battle-opts{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0F380F;border-top:3px solid #0F380F;border-bottom:2px solid #0F380F;padding:0}
@@ -1030,7 +1032,7 @@ const BADGE_ID_MIGRATION_V1 = {
 // height 55px anclado al piso (ver script crop). scale opcional para
 // fine-tuning visual. bottomOffset opcional override del margen al piso.
 const STARTERS = {
-  pikachu:    {id:'pikachu',    name:'PIKACHU',    pokeId:25, scale:1.32, bottomOffset:0,  color:'#F5C518'},
+  pikachu:    {id:'pikachu',    name:'PIKACHU',    pokeId:25, scale:1.24, bottomOffset:0,  color:'#F5C518'},
   charmander: {id:'charmander', name:'CHARMANDER', pokeId:4,  scale:1.0,                    color:'#F5A845'},
   squirtle:   {id:'squirtle',   name:'SQUIRTLE',   pokeId:7,  scale:1.0,                    color:'#3DB4E5'},
   bulbasaur:  {id:'bulbasaur',  name:'BULBASAUR',  pokeId:1,  scale:1.0,                    color:'#7BC74D'}
@@ -5499,7 +5501,7 @@ function renderBattle(){
     ).join('');
   }
 
-  const vsOverlay = phase === 'intro' ? `<div class="battle-vs"><div class="battle-vs-inner">VS</div></div>` : '';
+  const vsOverlay = phase === 'intro' ? `<div class="battle-vs"><div class="battle-vs-inner"><span class="bvs-vs">VS</span>¡Un entrenador ha aparecido<br/>y te ha retado a un duelo!</div></div>` : '';
 
   return `
     <div class="battle-wrap">
