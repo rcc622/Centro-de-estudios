@@ -5220,25 +5220,38 @@ function maybeStartBattle(resumeAction, opts){
   // Necesita curso activo
   const courseId = CURRENT.courseId;
   if(!courseId) return false;
-  // Elegir líder PRIMERO (necesario para decidir dificultad)
-  const ownedLeaderIds = LEADERS
-    .filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked')
-    .map(l => l.id);
-  const allOwned = ownedLeaderIds.length >= LEADERS.length;
+  // Elegir líder PRIMERO (necesario para decidir dificultad).
+  // opts.forceLeader (preview/test) bypassea la lógica natural.
   let mode, leader, defendingBadgeId = null;
-  if(!allOwned){
-    leader = LEADERS.find(l => {
-      const st = DB.badges[l.id];
-      return !st || st === 'lost';
-    });
+  if(opts.forceLeader){
+    leader = LEADERS.find(l => l.id === opts.forceLeader);
     if(!leader) return false;
-    mode = 'conquest';
+    const currentSt = DB.badges[leader.id];
+    if(currentSt === 'won' || currentSt === 'cracked'){
+      mode = 'defense';
+      defendingBadgeId = leader.badgeId;
+    } else {
+      mode = 'conquest';
+    }
   } else {
-    const candidates = LEADERS.filter(l => ['won','cracked'].includes(DB.badges[l.id]));
-    if(!candidates.length) return false;
-    leader = candidates[Math.floor(Math.random() * candidates.length)];
-    mode = 'defense';
-    defendingBadgeId = leader.badgeId;
+    const ownedLeaderIds = LEADERS
+      .filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked')
+      .map(l => l.id);
+    const allOwned = ownedLeaderIds.length >= LEADERS.length;
+    if(!allOwned){
+      leader = LEADERS.find(l => {
+        const st = DB.badges[l.id];
+        return !st || st === 'lost';
+      });
+      if(!leader) return false;
+      mode = 'conquest';
+    } else {
+      const candidates = LEADERS.filter(l => ['won','cracked'].includes(DB.badges[l.id]));
+      if(!candidates.length) return false;
+      leader = candidates[Math.floor(Math.random() * candidates.length)];
+      mode = 'defense';
+      defendingBadgeId = leader.badgeId;
+    }
   }
   // Giovanni siempre pelea con dificultad MÁXIMA (solo MCQs tag 'hard')
   // entre la actual del user y perfeccionista. El resto de líderes
@@ -5784,7 +5797,7 @@ function renderTrainerCard(){
   `;
 }
 
-function testBattle(){
+function testBattle(forceLeaderId){
   haptic(HAPTIC.tap);
   if(!CURRENT.courseId){
     // Toma el primer curso activo
@@ -5795,7 +5808,11 @@ function testBattle(){
     showToast('Abre un curso primero para probar el battle', 2400);
     return;
   }
-  const ok = maybeStartBattle(() => { VIEW = 'trainer_card'; render(); }, {force:true});
+  const opts = {force:true};
+  if(forceLeaderId && LEADERS.find(l => l.id === forceLeaderId)){
+    opts.forceLeader = forceLeaderId;
+  }
+  const ok = maybeStartBattle(() => { VIEW = 'trainer_card'; render(); }, opts);
   if(!ok) showToast('No hay suficientes preguntas en este curso para un battle', 2800);
 }
 
@@ -5847,8 +5864,15 @@ async function init(){
   // Atajo de preview: si la URL trae #battle o ?battle=1 dispara un battle
   // de prueba a los ~700ms. Útil para mostrar la dinámica sin esperar las
   // gates random/cooldown. Quitar `#battle` y recargar para uso normal.
+  // Atajos de preview vía URL hash:
+  //   #battle              → battle aleatorio (next leader o random defense)
+  //   #battle=<leaderId>   → fuerza un líder específico (giovanni, brock, etc)
+  //   ?battle=1            → equivalente a #battle (back-compat)
   if(location.hash === '#battle' || /[?&]battle=1/.test(location.search)){
     setTimeout(() => { try { testBattle(); } catch(e){ console.error(e); } }, 700);
+  } else if(location.hash.startsWith('#battle=')){
+    const leaderId = location.hash.slice(8).toLowerCase();
+    setTimeout(() => { try { testBattle(leaderId); } catch(e){ console.error(e); } }, 700);
   }
 }
 init();
