@@ -835,10 +835,10 @@
           "type": "mcq",
           "q": "¿Qué ocurrió al hacer click en 'Further limit the reach of your ads'?",
           "options": [
-            "Nada, solo agregó un filtro extra",
-            "Desactivó Advantage+ Audience (que estaba ON por default); la AI ya no expande y el delivery se reduce",
-            "Subió el budget automáticamente",
-            "Cambió el objective de la campaña"
+            "Agregó un filtro extra sin ningún otro efecto",
+            "Desactivó Advantage+ Audience: la AI ya no expande",
+            "Subió el budget de la campaña automáticamente",
+            "Cambió el objective de ventas a tráfico"
           ],
           "correct": 1,
           "explanation": "'Further limit the reach of your ads' (igual que 'Switch to original audience options') apaga Advantage+ Audience. Sin la expansión de la AI, el delivery se restringe a los parámetros originales."
