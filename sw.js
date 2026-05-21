@@ -4,7 +4,7 @@
 // sirve lo cacheado (PWA funcional sin red).
 //
 // Cómo invalidar el cache: bumpear CACHE_VERSION (forces purge en activate).
-const CACHE_VERSION = 'cer-v2026-05-20d';
+const CACHE_VERSION = 'cer-v2026-05-21a';
 
 // Lista de assets críticos que se precargan al instalar el SW. La app
 // arranca con esto disponible sin red. El resto se cachea on-demand.

@@ -832,6 +832,24 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .battle-test-btn{display:block;width:100%;background:#0F380F;color:#9BBC0F;border:3px solid #0F380F;font-family:'Courier New',monospace;font-weight:900;letter-spacing:1px;padding:12px;border-radius:8px;cursor:pointer;font-size:13px;text-transform:uppercase;box-shadow:3px 3px 0 #306230;margin-top:10px}
 .battle-test-btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 #306230}
 
+/* GIOVANNI GAME OVER — pantalla cinemática cuando pierdes contra el jefe.
+   Fondo negro, sprite Giovanni grande pixel-art, diálogo villano. */
+.giovanni-gameover{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;background:#000;color:#E74C3C;font-family:'Courier New','Lucida Console',monospace;text-align:center;animation:goFadeIn 1s ease-in}
+@keyframes goFadeIn{from{opacity:0;background:#400}to{opacity:1;background:#000}}
+.giovanni-go-title{font-size:34px;font-weight:900;letter-spacing:6px;color:#E74C3C;text-shadow:2px 2px 0 #fff,4px 4px 0 #000;margin-bottom:18px;animation:goShake .8s ease-out}
+@keyframes goShake{0%,100%{transform:translateX(0)}10%,30%,50%,70%,90%{transform:translateX(-6px)}20%,40%,60%,80%{transform:translateX(6px)}}
+.giovanni-go-sprite-wrap{margin:8px 0 6px;padding:12px;background:rgba(231,76,60,.1);border:3px solid #E74C3C;box-shadow:0 0 24px rgba(231,76,60,.6),inset 0 0 16px rgba(231,76,60,.3);animation:goPulse 1.6s ease-in-out infinite}
+@keyframes goPulse{0%,100%{box-shadow:0 0 24px rgba(231,76,60,.6),inset 0 0 16px rgba(231,76,60,.3)}50%{box-shadow:0 0 36px rgba(231,76,60,.9),inset 0 0 24px rgba(231,76,60,.5)}}
+.giovanni-go-sprite{width:160px;height:160px;image-rendering:pixelated;image-rendering:crisp-edges;display:block}
+.giovanni-go-name{font-size:13px;font-weight:900;letter-spacing:2px;color:#fff;margin:10px 0 16px;text-shadow:0 0 8px rgba(231,76,60,.8)}
+.giovanni-go-dialog{background:#fff;color:#0F380F;border:3px solid #E74C3C;padding:14px 16px;max-width:340px;width:100%;box-shadow:4px 4px 0 #E74C3C,8px 8px 0 #000;font-family:'Courier New',monospace;font-size:13px;line-height:1.5;font-weight:700;text-align:left;margin-bottom:18px}
+.giovanni-go-dialog p{margin:0 0 8px}
+.giovanni-go-dialog p:last-child{margin-bottom:0}
+.giovanni-go-dialog strong{color:#E74C3C;font-weight:900}
+.giovanni-go-medals-wiped{font-size:13px;font-weight:900;color:#FFC107;letter-spacing:1.5px;margin-bottom:22px;background:#0F380F;padding:8px 14px;border:2px solid #FFC107;box-shadow:0 0 12px rgba(255,193,7,.4)}
+.giovanni-go-btn{background:#E74C3C;color:#fff;border:3px solid #fff;font-family:'Courier New',monospace;font-weight:900;font-size:14px;padding:13px 28px;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;box-shadow:4px 4px 0 #fff,8px 8px 0 #E74C3C;transition:transform .1s}
+.giovanni-go-btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #fff,4px 4px 0 #E74C3C}
+
 /* Loading overlay para lazy load de cursos */
 .loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
 .loading-overlay-spinner{width:42px;height:42px;border:4px solid #E4E6EB;border-top-color:#1877F2;border-radius:50%;animation:loSpin .8s linear infinite}
@@ -5132,9 +5150,6 @@ function gatherBattleQuestions(courseId, currentLessonId, n, opts){
       const cards = lesson.cards || [];
       for(let i = 0; i < cards.length; i++){
         const card = cards[i];
-        // Aceptar MCQ single-choice de 4 opciones Y fill (completar frase).
-        // Las 'fill' cards son ideales para battle: opciones cortas tipo
-        // concepto (Custom, Lookalike, etc.).
         if(card.type !== 'mcq' && card.type !== 'fill') continue;
         if(card.multi) continue;
         if(!Array.isArray(card.options) || card.options.length !== 4) continue;
@@ -5151,6 +5166,12 @@ function gatherBattleQuestions(courseId, currentLessonId, n, opts){
         if(hasLongOption) continue;
         // Filtro: ya vista recientemente → skip
         if(recentSet.has(qText)) continue;
+        // Filtro de dificultad override: para Giovanni se fuerza a 'hard'.
+        // MCQs sin tag de difficulty se asumen 'medium'.
+        if(opts.difficultyOverride){
+          const cardDifficulty = card.difficulty || 'medium';
+          if(opts.difficultyOverride === 'hard' && cardDifficulty !== 'hard') continue;
+        }
         // Fill cards son auto-concepto (concepto en el blank). MCQs se
         // detectan por patrón en el texto.
         const isConcept = card.type === 'fill' || CONCEPT_PATTERN.test(qText);
@@ -5196,19 +5217,16 @@ function maybeStartBattle(resumeAction, opts){
     if((DB.hearts || 0) < BATTLE_CONFIG.minHearts) return false;
     if(Math.random() >= BATTLE_CONFIG.triggerChance) return false;
   }
-  // Necesita curso activo y suficientes preguntas
+  // Necesita curso activo
   const courseId = CURRENT.courseId;
   if(!courseId) return false;
-  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.poolSize, {allowAny: force});
-  if(deck.length < BATTLE_CONFIG.minPoolSize) return false;
-  // Elegir líder según modo
+  // Elegir líder PRIMERO (necesario para decidir dificultad)
   const ownedLeaderIds = LEADERS
     .filter(l => DB.badges[l.id] === 'won' || DB.badges[l.id] === 'cracked')
     .map(l => l.id);
   const allOwned = ownedLeaderIds.length >= LEADERS.length;
   let mode, leader, defendingBadgeId = null;
   if(!allOwned){
-    // Conquista: siguiente líder en orden que no tengas (o que tengas 'lost')
     leader = LEADERS.find(l => {
       const st = DB.badges[l.id];
       return !st || st === 'lost';
@@ -5216,13 +5234,19 @@ function maybeStartBattle(resumeAction, opts){
     if(!leader) return false;
     mode = 'conquest';
   } else {
-    // Defensa: random entre las que tengas (won o cracked)
     const candidates = LEADERS.filter(l => ['won','cracked'].includes(DB.badges[l.id]));
     if(!candidates.length) return false;
     leader = candidates[Math.floor(Math.random() * candidates.length)];
     mode = 'defense';
     defendingBadgeId = leader.badgeId;
   }
+  // Giovanni siempre pelea con dificultad MÁXIMA (solo MCQs tag 'hard')
+  // entre la actual del user y perfeccionista. El resto de líderes
+  // usan el pool normal.
+  const gatherOpts = {allowAny: force};
+  if(leader.id === 'giovanni') gatherOpts.difficultyOverride = 'hard';
+  const deck = gatherBattleQuestions(courseId, CURRENT.lessonId, BATTLE_CONFIG.poolSize, gatherOpts);
+  if(deck.length < BATTLE_CONFIG.minPoolSize) return false;
   startBattle({mode, leader, deck, defendingBadgeId, resumeAction});
   return true;
 }
@@ -5353,7 +5377,15 @@ function battleFinish(){
   const mode = BATTLE_STATE.mode;
   const leader = BATTLE_STATE.leader;
   let outcome, xp = 0, msg = '';
-  if(mode === 'conquest'){
+  // CASO ESPECIAL: derrota contra Giovanni. Game over. Te roba TODAS
+  // las medallas (Team Rocket vibe). El usuario tiene que conquistar
+  // todo desde cero.
+  if(leader.id === 'giovanni' && !won){
+    DB.badges = {}; // wipe completo
+    xp = 0;
+    outcome = 'giovanni_gameover';
+    msg = '¡INSOLENTE! Las medallas vuelven a Team Rocket. Empieza de nuevo.';
+  } else if(mode === 'conquest'){
     if(won){
       DB.badges[leader.id] = 'won';
       DB.battlesWon = (DB.battlesWon || 0) + 1;
@@ -5614,6 +5646,13 @@ function renderBattleResult(){
   const r = BATTLE_STATE.lastOutcome || {};
   const leader = BATTLE_STATE.leader;
   const badge = BADGES.find(b => b.id === leader.badgeId);
+
+  // GAME OVER especial contra Giovanni — pantalla negra, sprite del jefe
+  // del Team Rocket, diálogo villano, todas las medallas robadas.
+  if(r.outcome === 'giovanni_gameover'){
+    return renderGiovanniGameOver();
+  }
+
   const isWin = ['badge_won','badge_defended','badge_restored'].includes(r.outcome);
   const cls = isWin ? 'battle-result win' : 'battle-result';
   let h, sub;
@@ -5646,6 +5685,30 @@ function renderBattleResult(){
         <button class="battle-result-btn" onclick="battleContinue()">Continuar</button>
         <button class="battle-result-btn" onclick="battleOpenTrainerCard()" style="background:#9BBC0F">Ver Trainer Card</button>
       </div>
+    </div>
+  `;
+}
+
+// Pantalla especial cuando pierdes contra Giovanni: fondo negro, sprite
+// del jefe del Team Rocket, diálogo villano, mensaje de que TODAS las
+// medallas fueron robadas. Reset completo del badge collection.
+function renderGiovanniGameOver(){
+  return `
+    <div class="giovanni-gameover">
+      <div class="giovanni-go-title">GAME OVER</div>
+      <div class="giovanni-go-sprite-wrap">
+        <img src="content/battles/trainers/giovanni.png" alt="Giovanni" class="giovanni-go-sprite"/>
+      </div>
+      <div class="giovanni-go-name">GIOVANNI · TEAM ROCKET</div>
+      <div class="giovanni-go-dialog">
+        <p>«Patético. Pensabas que tus medallitas significaban algo.</p>
+        <p>Las acabo de tomar todas. <strong>Team Rocket prevalece.</strong></p>
+        <p>Cuando seas digno de retarme, vuelve. Mientras tanto, empieza de nuevo desde el principio.»</p>
+      </div>
+      <div class="giovanni-go-medals-wiped">
+        🎖️ × 8 → ROBADAS
+      </div>
+      <button class="giovanni-go-btn" onclick="battleContinue()">Aceptar mi destino</button>
     </div>
   `;
 }
