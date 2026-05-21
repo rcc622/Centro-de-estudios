@@ -832,6 +832,43 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .battle-test-btn{display:block;width:100%;background:#0F380F;color:#9BBC0F;border:3px solid #0F380F;font-family:'Courier New',monospace;font-weight:900;letter-spacing:1px;padding:12px;border-radius:8px;cursor:pointer;font-size:13px;text-transform:uppercase;box-shadow:3px 3px 0 #306230;margin-top:10px}
 .battle-test-btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 #306230}
 
+/* RESULTADO CINEMÁTICO — todos los líderes (excepto Giovanni game over).
+   Win: fondo verde, líder admitiendo derrota, medalla brillante.
+   Loss: fondo oscuro, líder retando, medalla opaca/agrietada. */
+.cinematic-result{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:18px 16px 20px;text-align:center;font-family:'Courier New','Lucida Console',monospace;animation:cinFadeIn .7s ease-in;overflow-y:auto}
+.cinematic-result.win{background:linear-gradient(180deg,#2D8C3F 0%,#1A4A1A 100%);color:#fff}
+.cinematic-result.loss{background:linear-gradient(180deg,#4a4a4a 0%,#1A1A1A 100%);color:#fff}
+@keyframes cinFadeIn{from{opacity:0}to{opacity:1}}
+
+.cin-title{font-size:26px;font-weight:900;letter-spacing:5px;margin-bottom:10px;text-shadow:2px 2px 0 #000,4px 4px 0 rgba(0,0,0,.5);animation:cinTitlePop .6s ease-out}
+@keyframes cinTitlePop{from{transform:scale(.3) rotate(-5deg);opacity:0}60%{transform:scale(1.1) rotate(2deg)}to{transform:scale(1);opacity:1}}
+
+.cin-trainer-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:12px}
+.cin-trainer-img{width:120px;height:120px;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(2px 3px 0 rgba(0,0,0,.55));animation:cinTrainerIn .8s ease-out}
+@keyframes cinTrainerIn{from{transform:translateY(-25px) scale(.85);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+.cin-trainer-name{font-size:12px;font-weight:900;letter-spacing:1.5px;text-shadow:1px 1px 0 #000}
+
+.cin-dialog{background:#fff;color:#0F380F;border:3px solid #fff;padding:11px 13px;max-width:340px;width:100%;box-shadow:3px 3px 0 #000,5px 5px 0 rgba(255,255,255,.3);font-family:'Courier New',monospace;font-size:12.5px;line-height:1.45;font-weight:700;text-align:left;margin-bottom:14px}
+.cin-dialog p{margin:0 0 6px}
+.cin-dialog p:last-child{margin-bottom:0}
+
+.cin-badge-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:12px;animation:cinBadgeIn .9s .2s ease-out backwards}
+@keyframes cinBadgeIn{0%{transform:scale(0) rotate(-180deg);opacity:0}60%{transform:scale(1.2) rotate(15deg)}100%{transform:scale(1) rotate(0)}}
+.cin-badge{width:64px;height:64px;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(0 0 10px rgba(255,255,255,.7))}
+.cin-badge.dim{filter:grayscale(.7) brightness(.55);opacity:.5}
+.cin-badge.cracked{filter:none;position:relative}
+.cin-badge-wrap .cin-badge.cracked + .cin-badge-name::before{content:'⚠️ ';color:#FFC107}
+.cin-badge-name{font-size:11px;font-weight:900;letter-spacing:1.5px;text-shadow:1px 1px 0 #000}
+
+.cin-xp{background:#FFC107;color:#0F380F;font-weight:900;padding:6px 14px;border-radius:4px;font-size:13px;letter-spacing:1.5px;margin-bottom:14px;box-shadow:2px 2px 0 #000,0 0 12px rgba(255,193,7,.5);animation:cinXpIn .5s .5s ease-out backwards}
+@keyframes cinXpIn{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+
+.cin-actions{display:flex;flex-direction:column;gap:8px;width:100%;max-width:280px}
+.cin-btn{font-family:'Courier New',monospace;font-weight:900;font-size:13px;padding:12px;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;border:3px solid #fff;box-shadow:3px 3px 0 #fff;transition:transform .1s}
+.cin-btn:active{transform:translate(1px,2px);box-shadow:1px 1px 0 #fff}
+.cin-btn.primary{background:#fff;color:#0F380F}
+.cin-btn.secondary{background:transparent;color:#fff}
+
 /* GIOVANNI GAME OVER — pantalla cinemática cuando pierdes contra el jefe.
    Fondo negro, sprite Giovanni grande pixel-art, diálogo villano. */
 .giovanni-gameover{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;background:#000;color:#E74C3C;font-family:'Courier New','Lucida Console',monospace;text-align:center;animation:goFadeIn 1s ease-in}
@@ -1046,6 +1083,55 @@ const LEADERS = [
   {id:'blaine',   name:'Blaine',   title:'Líder Cinabrio',  pokemon:'Arcanine', pokeId:59,  badgeId:'volcano'},
   {id:'giovanni', name:'Giovanni', title:'Team Rocket',     pokemon:'Mewtwo',   pokeId:150, badgeId:'earth'}
 ];
+// Diálogos cinemáticos por líder, agrupados por outcome:
+//   win    → ganaste la medalla nueva o defendiste/restauraste con éxito
+//   defend → líder defendió (tu intento agrietó tu medalla en su defensa)
+//   loss   → perdiste por completo (no_badge en conquista o lost en defensa)
+// Cada array es de 2 líneas: la 1ra reacciona al combate, la 2da concluye.
+// Tono Pokémon Gen 1 canónico: líderes son orgullosos pero respetuosos.
+const LEADER_DIALOGS = {
+  brock: {
+    win:    ["¡Mi defensa de roca... agrietada!", "Te subestimé. La MEDALLA ROCA es tuya por derecho."],
+    defend: ["¡Mis rocas siguen en pie, retador!", "Vuelve cuando tu técnica sea más sólida."],
+    loss:   ["Las rocas no ceden ante cualquiera.", "Endurece tu espíritu y vuelve."]
+  },
+  misty: {
+    win:    ["¡Wow! Tu corriente arrastró la mía.", "Eres digno. Llévate la MEDALLA CASCADA."],
+    defend: ["¡El agua siempre encuentra su camino!", "Practica más, retador."],
+    loss:   ["Bonito intento, pero el agua prevalece.", "Cuando entrenes más, te recibiré."]
+  },
+  surge: {
+    win:    ["¡Sentí la descarga, MOCOSO!", "Tienes mi respeto. La MEDALLA TRUENO es tuya."],
+    defend: ["¡Te falta voltaje, civilón!", "Recarga energía y vuelve, soldado."],
+    loss:   ["¡La electricidad te dejó frito!", "Sal del calabozo y entrena duro."]
+  },
+  erika: {
+    win:    ["Oh... el viento trae el aroma de mi derrota.", "Mereces la MEDALLA ARCOÍRIS."],
+    defend: ["Mis flores aún están firmes...", "Vuelve cuando hayas florecido."],
+    loss:   ["Ohh... fue un duelo agradable.", "Cuando crezcas, te recibiré con gusto."]
+  },
+  koga: {
+    win:    ["¡Humph! Tu espíritu es más letal que mi veneno.", "Toma la MEDALLA ALMA, retador."],
+    defend: ["¡Mi veneno aún corre por tus venas!", "El arte ninja se entrena en silencio."],
+    loss:   ["¡Humph! Ni siquiera me viste atacar.", "Aprende el sigilo y vuelve."]
+  },
+  sabrina: {
+    win:    ["Lo... lo predije, pero no lo creí posible.", "Tu mente es fuerte. La MEDALLA PANTANO es tuya."],
+    defend: ["Vi tu derrota antes de que llegaras.", "Tu mente aún no está lista."],
+    loss:   ["Tu mente cedió. Predije este momento.", "Vuelve cuando seas mentalmente más fuerte."]
+  },
+  blaine: {
+    win:    ["¡Mi llama se ha apagado!", "Acepto mi derrota. Toma la MEDALLA VOLCÁN."],
+    defend: ["¡El fuego aún arde, retador!", "Vuelve cuando tu llama queme con fuerza."],
+    loss:   ["¡Quemaste tus naves demasiado pronto!", "Atiza tu llama interna y vuelve."]
+  },
+  giovanni: {
+    // Giovanni game over usa renderGiovanniGameOver. Estos solo aplican
+    // si ganas/defiendes/agrietas (no si pierdes completo).
+    win:    ["Hmpf... Has demostrado tu valía.", "Toma la MEDALLA TIERRA. Por ahora."],
+    defend: ["¡Insolente! Crees que has crecido...", "El TEAM ROCKET nunca duerme."]
+  }
+};
 // Migración de IDs viejos (v1 con nombres inventados) → IDs Kanto reales.
 // Solo se usa una vez al cargar DB si detecta el formato viejo.
 const BADGE_ID_MIGRATION_V1 = {
@@ -5667,36 +5753,45 @@ function renderBattleResult(){
   }
 
   const isWin = ['badge_won','badge_defended','badge_restored'].includes(r.outcome);
-  const cls = isWin ? 'battle-result win' : 'battle-result';
-  let h, sub;
-  if(r.outcome === 'badge_won'){ h = '¡Victoria!'; sub = `${leader.pokemon} de ${leader.name} fue derrotado.`; }
-  else if(r.outcome === 'badge_defended'){ h = '¡Defendiste!'; sub = `${leader.name} se retira con ${leader.pokemon} derrotado.`; }
-  else if(r.outcome === 'badge_restored'){ h = '¡Restaurada!'; sub = `Tu medalla vuelve a brillar.`; }
-  else if(r.outcome === 'badge_cracked'){ h = 'Medalla agrietada'; sub = `Otra derrota y la pierdes.`; }
-  else if(r.outcome === 'badge_lost'){ h = 'Derrota'; sub = `${leader.pokemon} te aplastó.`; }
-  else { h = 'Sin medalla'; sub = `${leader.pokemon} sobrevivió. Vuelve más fuerte.`; }
+  // Título + dialog key según outcome
+  let title, dialogKey;
+  if(r.outcome === 'badge_won'){ title = '¡VICTORIA!'; dialogKey = 'win'; }
+  else if(r.outcome === 'badge_defended'){ title = '¡DEFENDIDA!'; dialogKey = 'win'; }
+  else if(r.outcome === 'badge_restored'){ title = '¡RESTAURADA!'; dialogKey = 'win'; }
+  else if(r.outcome === 'badge_cracked'){ title = 'AGRIETADA'; dialogKey = 'defend'; }
+  else if(r.outcome === 'badge_lost'){ title = 'DERROTA'; dialogKey = 'loss'; }
+  else { title = 'SIN MEDALLA'; dialogKey = 'loss'; }
 
-  // Mostrar la medalla real cuando se gana/defiende/restaura; ícono CSS en otros casos.
-  let badgeBlock;
-  if(isWin){
-    badgeBlock = `<div class="battle-badge-anim"><img src="content/battles/badges/${badge.num}.png" alt="${badge.name} Badge" style="width:96px;height:96px;image-rendering:pixelated;image-rendering:crisp-edges;filter:drop-shadow(0 0 12px rgba(255,255,255,.7))"/><div class="bba-name">Medalla ${badge.name}</div></div>`;
-  } else {
-    const fallbackIco = r.outcome === 'badge_cracked' ? '⚠️' : (r.outcome === 'badge_lost' ? '💔' : '🔒');
-    badgeBlock = `<div class="battle-badge-anim"><div class="bba-ico">${fallbackIco}</div><div class="bba-name">Medalla ${badge.name}</div></div>`;
-  }
+  // Diálogo del líder según outcome
+  const lines = (LEADER_DIALOGS[leader.id]?.[dialogKey]) || [];
+  const dialogHtml = lines.length
+    ? lines.map(l => `<p>${l}</p>`).join('')
+    : `<p>${r.msg || ''}</p>`;
 
+  // Sprite del entrenador
+  const trainerImg = `<img src="content/battles/trainers/${leader.id}.png" alt="${leader.name}" class="cin-trainer-img"/>`;
+
+  // Medalla: brillante si ganas, opaca si no
+  const badgeCls = isWin ? 'cin-badge' : (r.outcome === 'badge_cracked' ? 'cin-badge cracked' : 'cin-badge dim');
+  const badgeImg = `<img src="content/battles/badges/${badge.num}.png" alt="${badge.name}" class="${badgeCls}"/>`;
+
+  const cls = 'cinematic-result ' + (isWin ? 'win' : 'loss');
   return `
     <div class="${cls}">
-      <div class="battle-result-h">${h}</div>
-      <div class="battle-result-sub">${sub}</div>
-      ${badgeBlock}
-      ${r.xp ? `<div class="battle-result-stats">
-        <div class="brs-cell"><div class="brs-num">+${r.xp}</div><div>XP</div></div>
-      </div>` : ''}
-      <div class="battle-result-msg" style="font-size:13px;font-weight:700;max-width:280px;margin-bottom:18px;line-height:1.4">${r.msg||''}</div>
-      <div class="battle-result-actions">
-        <button class="battle-result-btn" onclick="battleContinue()">Continuar</button>
-        <button class="battle-result-btn" onclick="battleOpenTrainerCard()" style="background:#9BBC0F">Ver Trainer Card</button>
+      <div class="cin-title">${title}</div>
+      <div class="cin-trainer-wrap">
+        ${trainerImg}
+        <div class="cin-trainer-name">LÍDER ${leader.name.toUpperCase()}</div>
+      </div>
+      <div class="cin-dialog">${dialogHtml}</div>
+      <div class="cin-badge-wrap">
+        ${badgeImg}
+        <div class="cin-badge-name">MEDALLA ${badge.name.toUpperCase()}</div>
+      </div>
+      ${r.xp ? `<div class="cin-xp">+${r.xp} XP</div>` : ''}
+      <div class="cin-actions">
+        <button class="cin-btn primary" onclick="battleContinue()">Continuar</button>
+        <button class="cin-btn secondary" onclick="battleOpenTrainerCard()">Ver Trainer Card</button>
       </div>
     </div>
   `;
@@ -5714,9 +5809,11 @@ function renderGiovanniGameOver(){
       </div>
       <div class="giovanni-go-name">GIOVANNI · TEAM ROCKET</div>
       <div class="giovanni-go-dialog">
-        <p>«Patético. Pensabas que tus medallitas significaban algo.</p>
-        <p>Las acabo de tomar todas. <strong>Team Rocket prevalece.</strong></p>
-        <p>Cuando seas digno de retarme, vuelve. Mientras tanto, empieza de nuevo desde el principio.»</p>
+        <p>«¡Ja! Patético MOCOSO...</p>
+        <p>¿De verdad creíste que tus medallitas significaban algo? Baratijas coleccionadas por un aprendiz que se atrevió a desafiar al TEAM ROCKET.</p>
+        <p>Ahora me pertenecen. <strong>Las ocho.</strong> Cada una decorará mi pared como recordatorio de tu humillación.</p>
+        <p>Pule tus habilidades, niñato. Si te atreves a volver sin estar listo... no habrá una segunda lección.</p>
+        <p><strong>El TEAM ROCKET siempre prevalece.»</strong></p>
       </div>
       <div class="giovanni-go-medals-wiped">
         🎖️ × 8 → ROBADAS
