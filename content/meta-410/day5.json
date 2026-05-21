@@ -814,7 +814,7 @@
             "Reservation + detailed targeting denso"
           ],
           "correct": 1,
-          "explanation": "Broad audience + Advantage+ Audience ON deja al sistema optimizar dónde encuentra mejor performance.",
+          "explanation": "Broad audience + Advantage+ Audience ON deja al sistema optimizar dónde encuentra mejor performance. Los <strong>lookalike</strong> y los intereses no desaparecen: con Advantage+ Audience ON dejan de ser targeting rígido y se pasan como <strong>suggestions</strong> (sugerencias/semilla), que el sistema puede respetar o expandir si encuentra mejor rendimiento fuera de ellas.",
           "difficulty": "medium"
         }
       ]
