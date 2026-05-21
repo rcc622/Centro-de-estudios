@@ -3351,6 +3351,26 @@ function stopQuizTimer(){
 // Filtra un array de preguntas/MCQs por el nivel de dificultad actual.
 // Cada item puede tener difficulty: 'easy' | 'medium' | 'hard' (default medium).
 // Si después del filtro queda <3 preguntas, devuelve todas (UX mínima).
+// Detecta si una MCQ tiene opciones BALANCEADAS — similar largo, ningún
+// outlier obvio que delate la respuesta correcta sin saber el concepto.
+// Filtra los "tells" típicos de exámenes mal redactados:
+//   - Opción correcta mucho más larga que las otras (escape: respuesta "completa")
+//   - Una opción mucho más corta que otras (escape: respuesta "default")
+//   - Variance extrema entre opciones (escape: pattern matching)
+function mcqHasBalancedOptions(card){
+  if(!Array.isArray(card.options) || card.options.length !== 4) return false;
+  const lens = card.options.map(o => (o || '').replace(/<[^>]+>/g, '').length);
+  const maxL = Math.max(...lens);
+  const minL = Math.min(...lens);
+  if(maxL > 60) return false;              // demasiado larga (no cabe + revelador)
+  if(minL < 2) return false;               // demasiado corta (revelador)
+  if(maxL - minL > 40) return false;       // diff absoluta > 40 chars = revelador
+  // Ratio: tolerante con opciones cortas (Custom/Saved/Broad), estricto con largas
+  if(minL <= 8  && maxL > minL * 4.0) return false;
+  if(minL  > 8  && maxL > minL * 2.2) return false;
+  return true;
+}
+
 function filterByDifficulty(items){
   const filter = {
     easy:          ['easy','medium'],
@@ -3359,7 +3379,17 @@ function filterByDifficulty(items){
     expert:        ['hard'],
     perfectionist: ['hard']
   }[DB.difficulty || 'medium'] || ['easy','medium','hard'];
-  const filtered = (items || []).filter(it => filter.includes(it.difficulty || 'medium'));
+  let filtered = (items || []).filter(it => filter.includes(it.difficulty || 'medium'));
+  // En Experto y Perfeccionista: filtro adicional de OPCIONES BALANCEADAS.
+  // Solo deja pasar MCQs donde las 4 opciones son similares en largo y estilo,
+  // forzando al usuario a saber el concepto (no adivinar por pattern matching).
+  // Si el resultado queda <3, se mantiene el filtro original (no romper lessons
+  // con pocos MCQs).
+  const isElite = DB.difficulty === 'expert' || DB.difficulty === 'perfectionist';
+  if(isElite){
+    const balanced = filtered.filter(it => it.type !== 'mcq' || mcqHasBalancedOptions(it));
+    if(balanced.length >= 3) filtered = balanced;
+  }
   return filtered.length >= 3 ? filtered : (items || []);
 }
 
@@ -5250,6 +5280,9 @@ function gatherBattleQuestions(courseId, currentLessonId, n, opts){
           (opt || '').replace(/<[^>]+>/g, '').length > MAX_OPTION_LEN
         );
         if(hasLongOption) continue;
+        // Filtro: opciones balanceadas (sin "tells" por largo).
+        // Battle es competitivo y debe forzar a saber el concepto.
+        if(card.type === 'mcq' && !mcqHasBalancedOptions(card)) continue;
         // Filtro: ya vista recientemente → skip
         if(recentSet.has(qText)) continue;
         // Filtro de dificultad override: para Giovanni se fuerza a 'hard'.
