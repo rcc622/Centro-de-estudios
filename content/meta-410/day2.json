@@ -209,10 +209,10 @@
           "type": "mcq",
           "q": "¿Qué le explicas al gerente?",
           "options": [
-            "Tiene razón, Traffic es lo mismo que Sales si la página tiene botón de cotizar",
-            "Traffic optimiza por link clicks, no por cotizaciones; si la meta es venta real el objective correcto es Sales",
-            "Hay que usar Awareness para que primero conozcan la marca",
-            "Traffic solo funciona con catálogo, así que no se puede"
+            "Tiene razón: Traffic y Sales son lo mismo",
+            "No: Traffic optimiza por clicks, no ventas",
+            "Hay que usar Awareness para que conozcan la marca",
+            "Traffic solo funciona si la cuenta tiene catálogo"
           ],
           "correct": 1,
           "explanation": "El objective se elige por el <strong>outcome de negocio</strong>. La meta es vender → Sales. Traffic solo optimiza clics: el sistema buscaría visitantes, no compradores.",
@@ -222,10 +222,10 @@
           "type": "mcq",
           "q": "El gerente insiste: \"¿Y en qué nivel cambio eso, en el ad?\" ¿Qué le respondes?",
           "options": [
-            "El objective se cambia a nivel Ad, junto al creative",
-            "El objective se elige a nivel Campaign; es la primera decisión y condiciona todo lo de abajo",
-            "El objective se elige a nivel Ad set, junto a la audiencia",
-            "El objective se elige a nivel Account, una sola vez"
+            "El objective se elige a nivel Ad, con el creative",
+            "El objective se elige a nivel Campaign, primero",
+            "El objective se elige a nivel Ad set, con audiencia",
+            "El objective se elige a nivel Account, una vez"
           ],
           "correct": 1,
           "explanation": "El objective vive a nivel <strong>Campaign</strong>. Conversion location/event van en Ad set; creative y links en Ad.",
@@ -334,9 +334,9 @@
           "q": "Un anunciante quiere maximizar reproducciones de un video tutorial sin sacar al usuario a ningún sitio externo. ¿Cuál es el objective más adecuado?",
           "options": [
             "Traffic con video views como performance goal",
-            "Engagement con type = Video views",
-            "Awareness con Reach",
-            "Sales con conversion event = ViewContent"
+            "Engagement con el type Video views",
+            "Awareness optimizando por Reach",
+            "Sales con conversion event ViewContent"
           ],
           "correct": 1,
           "explanation": "Engagement con type Video views optimiza específicamente para reproducciones del video DENTRO de Meta (no link clicks). Traffic envía afuera del feed. Awareness con Reach optimiza alcance, no consumo del video.",
@@ -443,10 +443,10 @@
           "type": "mcq",
           "q": "¿Qué objective resuelve este caso?",
           "options": [
-            "Sales con conversion event = Purchase",
-            "Awareness, porque busca recall y no requiere Pixel/CAPI/dataset",
-            "Traffic, para llevarlos al sitio nuevo",
-            "Leads con Instant form"
+            "Sales con conversion event Purchase",
+            "Awareness: busca recall, sin Pixel ni dataset",
+            "Traffic para llevarlos al sitio nuevo",
+            "Leads con un Instant form nativo"
           ],
           "correct": 1,
           "explanation": "La meta es <strong>recordar la marca</strong> sin medir conversiones, y no hay Pixel. Awareness es el único que no requiere dataset y optimiza recall.",
@@ -697,10 +697,10 @@
           "type": "mcq",
           "q": "¿Qué objective y conversion location resuelve este caso?",
           "options": [
-            "Sales + Website",
-            "Leads + Instant form",
-            "Traffic + landing externa",
-            "Awareness + Reach"
+            "Awareness con optimización por Reach",
+            "Sales con conversion location Messenger",
+            "Engagement con el type Messaging",
+            "Traffic con landing de financiamiento"
           ],
           "correct": 1,
           "explanation": "Recolectar contacto sin salir del feed = <strong>Leads + Instant form</strong>. El usuario completa los campos dentro de Meta, con fricción mínima.",
@@ -723,10 +723,10 @@
           "type": "mcq",
           "q": "Kenet ahora quiere que el cliente firme un contrato digital de financiamiento dentro de Messenger. Para que Sales optimice bien, ¿qué requisitos son obligatorios?",
           "options": [
-            "Solo el Pixel en el sitio web",
-            "Solo CAPI",
-            "Pixel + CAPI configurados en kenetsolar.com",
-            "Customer list de clientes anteriores"
+            "Solo el Pixel instalado en el sitio web",
+            "Solo la CAPI configurada en el server",
+            "Pixel + CAPI configurados en el sitio",
+            "Una customer list de clientes anteriores"
           ],
           "correct": 2,
           "explanation": "Sales con eventos importantes requiere Pixel + CAPI para máxima cobertura. Aunque la conversión final esté en Messenger, los eventos de navegación previa en el sitio alimentan el modelo. Customer list sirve para audiencias, no optimización.",
@@ -853,10 +853,10 @@
           "type": "mcq",
           "q": "¿Cuál afirmación describe correctamente la diferencia entre conversion event y performance goal?",
           "options": [
-            "Son sinónimos, se eligen en el mismo paso",
-            "Conversion event = qué acción cuenta; performance goal = cómo se licita por ella",
-            "Conversion event va a nivel Campaign; performance goal a nivel Ad",
-            "Performance goal solo existe en Awareness"
+            "Son sinónimos: se eligen en el mismo paso",
+            "Event = qué acción cuenta; goal = cómo licitar",
+            "El event va a nivel Campaign; el goal a nivel Ad",
+            "El performance goal solo existe en Awareness"
           ],
           "correct": 1,
           "explanation": "<strong>Conversion event</strong> = QUÉ acción cuenta (Purchase, Lead). <strong>Performance goal</strong> = CÓMO se licita (Maximize number vs Maximize value). Ambos viven en Ad set, no se mezclan.",
@@ -1166,10 +1166,10 @@
           "type": "mcq",
           "q": "¿Qué objective y conversion location resuelve este caso?",
           "options": [
-            "Awareness + Reach",
-            "Sales + conversion location = Messenger",
-            "Engagement + type = Messaging",
-            "Traffic + landing de financiamiento"
+            "Awareness con optimización por Reach",
+            "Sales con conversion location Messenger",
+            "Engagement con el type Messaging",
+            "Traffic con landing de financiamiento"
           ],
           "correct": 1,
           "explanation": "La conversión final es una transacción (firma de contrato/cierre) → <strong>Sales</strong>. Como ocurre en chat, conversion location = Messenger. Engagement solo iniciaría la charla, no el cierre.",
@@ -1179,10 +1179,10 @@
           "type": "mcq",
           "q": "Para que Sales optimice correctamente en este caso, ¿qué requisitos son obligatorios?",
           "options": [
-            "Solo el Pixel en el sitio web",
-            "Solo CAPI",
-            "Pixel + CAPI configurados en kenetsolar.com",
-            "Customer list de clientes anteriores"
+            "Solo el Pixel instalado en el sitio web",
+            "Solo la CAPI configurada en el server",
+            "Pixel + CAPI configurados en el sitio",
+            "Una customer list de clientes anteriores"
           ],
           "correct": 2,
           "explanation": "Sales con eventos importantes requiere Pixel + CAPI para máxima cobertura. Aunque la conversión final esté en Messenger, los eventos de navegación previa en el sitio alimentan el modelo de optimización. Customer list sirve para audiencias, no optimización.",
@@ -1410,10 +1410,10 @@
           "type": "mcq",
           "q": "Un retailer quiere visitas a su nueva tienda en CDMX. Tiene un dataset offline configurado. ¿Cuál es la mejor combinación?",
           "options": [
-            "Awareness + Reach",
-            "Traffic + Calls",
-            "Sales + Offline conversion location",
-            "Engagement + Video views"
+            "Awareness optimizando por Reach",
+            "Traffic optimizando por Calls",
+            "Sales con Offline conversion location",
+            "Engagement con type Video views"
           ],
           "correct": 2,
           "explanation": "Sales con offline conversion location (visita a tienda física) usa el dataset offline para atribuir visitas a ads online. Es el path correcto para foot traffic medible.",

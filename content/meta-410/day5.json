@@ -249,10 +249,10 @@
           "type": "mcq",
           "q": "Audience SUGGESTIONS:",
           "options": [
-            "Restringen delivery de forma dura",
-            "Guían la optimización; la AI puede expandir más allá de ellas",
-            "Son sinónimo de location restriction",
-            "Solo aplican en Reservation"
+            "Restringen el delivery de forma rígida",
+            "Guían la AI, que puede expandir más allá",
+            "Son sinónimo de la location restriction",
+            "Solo aplican en el modo Reservation"
           ],
           "correct": 1,
           "explanation": "Suggestions son flexibles (detailed targeting, edad max, gender, lookalike, inclusions). Advantage+ Audience puede expandir sobre ellas.",
@@ -288,10 +288,10 @@
           "type": "mcq",
           "q": "El cliente quiere fijar \"solo Nuevo León\". ¿Eso es control o suggestion y qué implica?",
           "options": [
-            "Suggestion: la AI puede entregar fuera de NL si conviene",
-            "Control: es rígido, el sistema NO entrega fuera de Nuevo León",
-            "Ninguno, la ubicación no se configura en la audiencia",
-            "Control, pero la AI lo ignora con Advantage+ Audience ON"
+            "Suggestion: la AI puede entregar fuera de NL",
+            "Control: es rígido, no entrega fuera de NL",
+            "Ninguno: la ubicación no va en la audiencia",
+            "Control, pero la AI lo ignora si está ON"
           ],
           "correct": 1,
           "explanation": "Location es un CONTROL rígido. El sistema nunca entrega fuera del área definida, esté o no Advantage+ Audience activado."
@@ -427,10 +427,10 @@
           "type": "mcq",
           "q": "Para Customer List subido como Custom Audience:",
           "options": [
-            "Email y phone en plano",
+            "Email y phone en texto plano",
             "Email y phone hasheados (SHA256)",
-            "Solo email",
-            "Solo nombre"
+            "Únicamente el email del cliente",
+            "Únicamente el nombre del cliente"
           ],
           "correct": 1,
           "explanation": "Hash obligatorio. Meta matchea hashes sin ver los datos originales.",
@@ -878,10 +878,10 @@
           "type": "mcq",
           "q": "Combinación ganadora moderna según best practice:",
           "options": [
-            "Audiencia ultra-segmentada + Advantage+ Audience OFF",
-            "Broad audience (solo edad + ubicación) + Advantage+ Audience ON",
-            "Solo intereses, sin lookalike",
-            "Reservation + detailed targeting denso"
+            "Audiencia ultra-segmentada, Advantage+ OFF",
+            "Broad audience (edad + ubicación), Advantage+ ON",
+            "Solo intereses, sin lookalike ni broad",
+            "Reservation con detailed targeting denso"
           ],
           "correct": 1,
           "explanation": "Broad audience + Advantage+ Audience ON deja al sistema optimizar dónde encuentra mejor performance. Los <strong>lookalike</strong> y los intereses no desaparecen: con Advantage+ Audience ON dejan de ser targeting rígido y se pasan como <strong>suggestions</strong> (sugerencias/semilla), que el sistema puede respetar o expandir si encuentra mejor rendimiento fuera de ellas.",
@@ -1523,10 +1523,10 @@
           "type": "mcq",
           "q": "Para Customer List subido como Custom Audience:",
           "options": [
-            "Email y phone en plano",
+            "Email y phone en texto plano",
             "Email y phone hasheados (SHA256)",
-            "Solo email",
-            "Solo nombre"
+            "Únicamente el email del cliente",
+            "Únicamente el nombre del cliente"
           ],
           "correct": 1,
           "explanation": "Hash obligatorio. Meta matchea hashes sin ver los datos originales.",

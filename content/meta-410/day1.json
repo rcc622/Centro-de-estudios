@@ -116,10 +116,10 @@
           "type": "mcq",
           "q": "Un compañero dice: \"Ads Manager solo sirve para diseñar el creative.\" ¿Qué le respondes?",
           "options": [
-            "Tiene razón, para lo demás se usa otra herramienta",
-            "Es incompleto: también gestiona billing, audiencias, data sources y reporting",
-            "Tiene razón, el creative se diseña fuera y solo se sube ahí",
-            "Solo es cierto para campañas Advantage+"
+            "Tiene razón: solo sirve para el creative",
+            "Es incompleto: también billing, audiencias, data",
+            "Tiene razón: el creative se sube ya hecho ahí",
+            "Solo es cierto en campañas Advantage+"
           ],
           "correct": 1,
           "explanation": "Ads Manager es el centro de control: además de crear ads, sirve para opportunity score, reporting, audiencias, billing, conectar data sources y advertiser settings."
@@ -154,10 +154,10 @@
           "type": "mcq",
           "q": "¿Dónde reviso esas recomendaciones ANTES de crear más campañas?",
           "options": [
-            "En el reporte de facturación",
-            "En Account overview (momento 'before' del opportunity score)",
+            "En el reporte mensual de facturación",
+            "En Account overview, antes de la campaña",
             "Solo después de que la campaña termine",
-            "En el Brand Safety Center"
+            "En el Brand Safety Center de la cuenta"
           ],
           "correct": 1,
           "explanation": "El momento 'before' del opportunity score vive en Account overview: te ayuda antes de crear campañas. 'During' es al crearla, 'after' mientras corre."
@@ -175,8 +175,8 @@
           "q": "¿Cuál describe mejor el propósito del Opportunity Score?",
           "options": [
             "Predice el ROAS que tendrá la campaña",
-            "Muestra cuántas recomendaciones probadas no has aplicado y cómo aplicarlas",
-            "Mide la calidad del creative vs benchmarks de industria",
+            "Muestra qué best practices faltan aplicar",
+            "Mide la calidad del creative vs la industria",
             "Estima el costo por resultado del próximo mes"
           ],
           "correct": 1,
@@ -1113,9 +1113,9 @@
           "q": "La agencia (su propio portfolio + configurar CAPI):",
           "options": [
             "People con Partial access (basic)",
-            "Partner, con Partial access (apps) para CAPI",
-            "System user",
-            "Advanced — Finance"
+            "Partner con Partial access (apps)",
+            "System user del portfolio",
+            "Rol Advanced — Finance"
           ],
           "correct": 1,
           "explanation": "Agencia con su portfolio = Partner. Para configurar CAPI necesita Partial access (apps)."

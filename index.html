@@ -3363,7 +3363,11 @@ function mcqHasBalancedOptions(card){
   const maxL = Math.max(...lens);
   const minL = Math.min(...lens);
   if(maxL > 60) return false;              // demasiado larga (no cabe + revelador)
-  if(minL < 2) return false;               // demasiado corta (revelador)
+  // Si TODAS las opciones son cortas (≤18 chars) están balanceadas: son
+  // respuestas numéricas o de una palabra (4/5/6/7, Campaign/Ad set/Ad…)
+  // donde el largo no revela nada. No aplica el chequeo de variance.
+  if(maxL <= 18) return true;
+  if(minL < 2) return false;               // mezcla larga+vacía = revelador
   if(maxL - minL > 40) return false;       // diff absoluta > 40 chars = revelador
   // Ratio: tolerante con opciones cortas (Custom/Saved/Broad), estricto con largas
   if(minL <= 8  && maxL > minL * 4.0) return false;

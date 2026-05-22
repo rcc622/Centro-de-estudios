@@ -395,10 +395,10 @@
           "type": "mcq",
           "q": "¿Qué afirmación sobre la subasta de Meta es VERDADERA?",
           "options": [
-            "Gana el ad con mayor bid del anunciante",
-            "Gana el ad con mejor combinación de bid, action rates y ad quality",
-            "Gana el ad con mayor presupuesto diario",
-            "Gana el ad publicado primero"
+            "Gana el ad con el mayor bid del anunciante",
+            "Gana el de mejor bid × action rate + quality",
+            "Gana el ad con el mayor presupuesto diario",
+            "Gana el ad que se publicó primero"
           ],
           "correct": 1,
           "explanation": "Total value = bid × estimated action rates + ad quality. El sistema premia la probabilidad de acción y la calidad, no solo el dinero ofertado.",
@@ -687,10 +687,10 @@
           "type": "mcq",
           "q": "Un anunciante quiere maximizar el VOLUMEN de leads sin importar el costo unitario, gastando todo el budget. ¿Bid strategy?",
           "options": [
-            "Cost per Result Goal con target $200",
-            "Highest Volume",
-            "Bid Cap a $400",
-            "ROAS Goal de 3x"
+            "Cost per Result Goal con un target",
+            "Highest Volume sin metas de costo",
+            "Bid Cap fijado en $400 por subasta",
+            "ROAS Goal de 3x sobre el gasto"
           ],
           "correct": 1,
           "explanation": "Highest Volume es el default que gasta todo y maximiza cantidad. Cost per Result Goal y Bid Cap controlan costos (pueden no gastar). ROAS Goal optimiza retorno con value.",
@@ -1107,8 +1107,8 @@
           "q": "Un ad set lleva 3 días con costo CPA alto. ¿Qué acción NO recomendarías?",
           "options": [
             "Esperar a que termine el learning phase",
-            "Revisar audience y budget",
-            "Cambiar el bid strategy ya para 'apurar la optimización'",
+            "Revisar la audience y el budget del set",
+            "Cambiar el bid strategy ya para apurar",
             "Verificar que no haya audience overlap"
           ],
           "correct": 2,
@@ -1566,10 +1566,10 @@
           "type": "mcq",
           "q": "Cambiar el bid strategy a la mitad del learning phase:",
           "options": [
-            "Acelera la salida del learning",
-            "Resetea el learning y vuelves a empezar",
-            "No tiene efecto",
-            "Solo afecta el budget"
+            "Acelera la salida del learning phase",
+            "Resetea el learning y empiezas de cero",
+            "No tiene ningún efecto en la campaña",
+            "Solo afecta el budget, no el learning"
           ],
           "correct": 1,
           "explanation": "Es un edit significativo. Resetea learning. Hay que volver a acumular 50 events.",
@@ -1592,10 +1592,10 @@
           "type": "mcq",
           "q": "Cuál NO es causa de Learning Limited:",
           "options": [
-            "Audience demasiado chica",
-            "Budget bajo",
-            "Pixel y CAPI ambos instalados",
-            "Demasiados ad sets pequeños"
+            "La audience es demasiado chica",
+            "El budget del ad set es muy bajo",
+            "El Pixel y la CAPI están instalados",
+            "Hay demasiados ad sets pequeños"
           ],
           "correct": 2,
           "explanation": "Tener Pixel + CAPI MEJORA la optimización. Las otras 3 son causas reales de Learning Limited.",
@@ -1631,10 +1631,10 @@
           "type": "mcq",
           "q": "Reservation está disponible para qué objectives:",
           "options": [
-            "Todos",
-            "Solo Awareness",
-            "Awareness y Engagement",
-            "Sales y Leads"
+            "Para todos los objectives",
+            "Solo para Awareness",
+            "Para Awareness y Engagement",
+            "Solo para Sales y Leads"
           ],
           "correct": 2,
           "explanation": "Solo Awareness y Engagement admiten Reservation.",

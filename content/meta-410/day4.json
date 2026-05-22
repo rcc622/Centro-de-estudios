@@ -157,10 +157,10 @@
           "type": "mcq",
           "q": "El evento pasa fuera de internet (contrato firmado en oficina). ¿Qué data source lo cubre?",
           "options": [
-            "Meta Pixel",
-            "Facebook SDK",
+            "El Meta Pixel del sitio web",
+            "El Facebook SDK de la app",
             "Offline conversions vía CAPI Offline",
-            "Ninguna, es inmedible"
+            "Ninguna: el evento es inmedible"
           ],
           "correct": 2,
           "explanation": "Los eventos físicos (oficina, tienda, teléfono) se cubren con <strong>Offline conversions vía CAPI Offline</strong>: un CSV con customer info hasheada y el value."
@@ -356,10 +356,10 @@
           "type": "mcq",
           "q": "¿Cuál afirmación sobre Pixel y CAPI es CORRECTA?",
           "options": [
-            "CAPI reemplaza al Pixel",
-            "Pixel es siempre suficiente",
-            "Son complementarios: la recomendación es usar AMBOS",
-            "Solo se elige uno según el tipo de website"
+            "La CAPI reemplaza por completo al Pixel",
+            "El Pixel por sí solo siempre es suficiente",
+            "Son complementarios: se recomienda usar ambos",
+            "Se elige uno según el tipo de website"
           ],
           "correct": 2,
           "explanation": "Pixel + CAPI juntos dan cobertura máxima. CAPI no reemplaza al Pixel, lo complementa.",
@@ -1458,10 +1458,10 @@
           "type": "mcq",
           "q": "Custom Event requiere:",
           "options": [
-            "Solo reglas en Events Manager",
-            "Código nuevo en Pixel/CAPI/SDK",
-            "Customer list",
-            "Catalog"
+            "Solo reglas en el Events Manager",
+            "Código nuevo en Pixel, CAPI o SDK",
+            "Una customer list ya cargada",
+            "Un catalog de productos conectado"
           ],
           "correct": 1,
           "explanation": "Custom Event = código nuevo. Custom Conversion = regla sin código.",

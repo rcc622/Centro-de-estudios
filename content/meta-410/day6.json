@@ -183,10 +183,10 @@
           "type": "mcq",
           "q": "Collection solo está disponible en:",
           "options": [
-            "Desktop",
-            "Mobile",
-            "Audience Network únicamente",
-            "Cualquier dispositivo"
+            "Únicamente en desktop",
+            "Únicamente en mobile",
+            "Solo en Audience Network",
+            "En cualquier dispositivo"
           ],
           "correct": 1,
           "explanation": "Collection (hero + grid) es solo mobile. Ideal con catalog para mostrar productos sin sacar al usuario.",
@@ -390,10 +390,10 @@
           "type": "mcq",
           "q": "Una marca quiere maximizar visibility automatizando placements. ¿Qué setting?",
           "options": [
-            "Manual placements seleccionando 8 ubicaciones",
-            "Advantage+ Placements (default automatizado)",
-            "Solo FB Feed",
-            "Reservation"
+            "Manual placements eligiendo ubicaciones",
+            "Advantage+ Placements automatizado",
+            "Usar solo el placement FB Feed",
+            "Usar el modo de compra Reservation"
           ],
           "correct": 1,
           "explanation": "Advantage+ Placements automatiza. Manual da control pero suele rendir peor en eficiencia global.",
@@ -666,10 +666,10 @@
           "type": "mcq",
           "q": "El audio en mobile por default está:",
           "options": [
-            "ON, siempre con sonido",
-            "OFF — por eso se necesitan subtítulos",
-            "Solo en Reels",
-            "Solo en desktop"
+            "ON: siempre se reproduce con sonido",
+            "OFF: por eso se necesitan subtítulos",
+            "Activo solo en el placement Reels",
+            "Activo solo en el placement desktop"
           ],
           "correct": 1,
           "explanation": "Audio off es el default en mobile. Por eso el creative necesita subtítulos para comunicar sin sonido.",
@@ -1128,10 +1128,10 @@
           "type": "mcq",
           "q": "Quieres saber si una campaña de feria mejoró el recall de marca. ¿Qué test?",
           "options": [
-            "A/B Test entre 2 creatives",
-            "Brand Lift",
-            "Conversion Lift",
-            "Standard reporting"
+            "Un A/B Test entre dos creatives",
+            "Un Brand Lift con encuestas",
+            "Un Conversion Lift sobre ventas",
+            "El Standard reporting de ads"
           ],
           "correct": 1,
           "explanation": "Brand Lift mide impacto en marca con encuestas. Recall es métrica clásica de Brand Lift.",
@@ -1398,10 +1398,10 @@
           "type": "mcq",
           "q": "Para evitar aparecer junto a noticias polémicas de la forma MÁS simple, ¿qué hace?",
           "options": [
-            "Armar a mano una publisher block list de todos los sitios de noticias",
-            "Subir el inventory filter a Moderate o Limited",
-            "Cambiar el objetivo de campaña",
-            "Apagar Advantage+ Placements"
+            "Armar a mano una publisher block list",
+            "Subir el inventory filter a Moderate",
+            "Cambiar el objetivo de la campaña",
+            "Apagar Advantage+ Placements del set"
           ],
           "correct": 1,
           "explanation": "El inventory filter (Moderate/Limited) es el control más simple y de mayor alcance. La block list es más manual.",
