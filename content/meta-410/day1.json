@@ -142,9 +142,9 @@
           "type": "mcq",
           "q": "¿Qué le explicas al dueño de Kenet?",
           "options": [
-            "Tiene razón, 64/100 es la proyección de retorno",
-            "El score mide adopción de recomendaciones probadas, NO predice ROAS; conviene aplicarlas en vez de recortar a ciegas",
-            "Hay que esperar a que llegue a 100 para invertir",
+            "Tiene razón: 64/100 proyecta el retorno esperado",
+            "El score mide adopción de best practices, no ROAS",
+            "Hay que esperar a 100/100 antes de invertir",
             "El score solo aplica a campañas Advantage+"
           ],
           "correct": 1,
@@ -222,10 +222,10 @@
           "type": "mcq",
           "q": "El Opportunity Score pasa de 60 a 78 tras aplicar 3 recomendaciones. ¿Qué puedes afirmar?",
           "options": [
-            "Que el ROAS subirá ~30%",
-            "Que adoptaste más best practices probadas; el resultado real lo decide la subasta",
-            "Que la campaña ya está garantizada",
-            "Que el creative mejoró"
+            "Que el ROAS de la campaña subirá cerca de 30%",
+            "Que adoptaste más best practices ya probadas",
+            "Que la campaña ya tiene su éxito garantizado",
+            "Que el creative de los anuncios mejoró solo"
           ],
           "correct": 1,
           "explanation": "El score mide adopción de recomendaciones, no resultados. Subirlo es bueno, pero no garantiza performance."
@@ -544,9 +544,9 @@
           "type": "mcq",
           "q": "¿Qué describe mejor a Meta Advantage+?",
           "options": [
-            "Una herramienta de diseño gráfico para anuncios",
-            "Una suite de AI/automation que hace match entre ads y quien más probablemente actúe, con data en tiempo real",
-            "Un reporte mensual de performance",
+            "Una herramienta de diseño gráfico para ads",
+            "Una suite de AI que empareja ads y público",
+            "Un reporte mensual de performance de ads",
             "Un método de pago para campañas grandes"
           ],
           "correct": 1,
@@ -842,9 +842,9 @@
           "type": "mcq",
           "q": "¿Por qué la BP 7 (Validate results) NO está en las recomendaciones del Opportunity Score?",
           "options": [
-            "Porque Meta la deprecó",
+            "Porque Meta la deprecó hace varios años",
             "Porque solo aplica a campañas Advantage+",
-            "Porque ocurre post-campaña, mientras el score mide adopción pre/durante",
+            "Porque ocurre post-campaña, no antes",
             "Porque requiere herramientas externas"
           ],
           "correct": 2,
@@ -975,9 +975,9 @@
           "q": "¿Diferencia principal entre People, Partners y System users?",
           "options": [
             "Solo difieren en el descuento de billing",
-            "People = individuos; Partners = otros negocios con su propio portfolio; System users = servidores/software con API access",
-            "Partners siempre tienen full control",
-            "System users son los administradores"
+            "Personas, otros negocios y servers con API",
+            "Partners siempre tienen el full control",
+            "System users son siempre administradores"
           ],
           "correct": 1,
           "explanation": "People = personas físicas. Partners = otros negocios (su portfolio + business ID). System users = servidores/software con API access."
@@ -1018,10 +1018,10 @@
           "type": "mcq",
           "q": "'Advanced — Finance' permite:",
           "options": [
-            "Crear y editar campañas",
-            "Ver y manejar info financiera (transactions, invoices)",
-            "Acceder a system users y APIs",
-            "Crear lookalikes"
+            "Crear y editar campañas de anuncios",
+            "Ver y manejar transactions e invoices",
+            "Acceder a system users y APIs externas",
+            "Crear y gestionar lookalike audiences"
           ],
           "correct": 1,
           "explanation": "Advanced — Finance es un permiso específico para temas financieros. Separado del Full control."
@@ -1124,10 +1124,10 @@
           "type": "mcq",
           "q": "El contador (solo facturas) y el freelance (2 semanas):",
           "options": [
-            "Ambos Full control",
-            "Contador: Advanced — Finance · Freelance: Advanced — Temporary",
-            "Contador: System user · Freelance: Partner",
-            "Ambos Partial access (apps)"
+            "Full control del portfolio para ambos",
+            "Finance al contador, Temporary al freelance",
+            "System user al contador, Partner al freelance",
+            "Partial access (apps) para los dos casos"
           ],
           "correct": 1,
           "explanation": "Contador → Advanced — Finance (facturas/transactions). Freelance temporal → Advanced — Temporary (3-75 días)."
@@ -1254,10 +1254,10 @@
           "type": "mcq",
           "q": "Para que el contador descargue facturas, ¿qué necesita?",
           "options": [
-            "Full control del portfolio",
-            "Acceso a Invoices dentro de Billing & payments (rol con vista financiera)",
-            "Ser System user",
-            "Partial access (apps)"
+            "Full control de todo el portfolio",
+            "Rol financiero con acceso a Invoices",
+            "Ser System user del portfolio",
+            "Tener Partial access (apps)"
           ],
           "correct": 1,
           "explanation": "Invoices vive en Billing & payments. Para temas financieros se usa el rol finance / Advanced — Finance, no Full control ni system user."
@@ -1298,10 +1298,10 @@
           "type": "mcq",
           "q": "¿Qué acceso se necesita para cambiar el payment method?",
           "options": [
-            "Cualquier partial access",
-            "Acceso admin o rol finance (view and manage)",
-            "Solo un System user",
-            "Acceso Temporary basta"
+            "Cualquier nivel de partial access",
+            "Acceso admin o rol finance (manage)",
+            "Basta con ser un System user",
+            "El acceso Temporary es suficiente"
           ],
           "correct": 1,
           "explanation": "Cambiar payment methods requiere acceso admin o el rol finance (view and manage)."
@@ -1663,9 +1663,9 @@
           "type": "mcq",
           "q": "¿Por qué la BP 7 (Validate results) NO está en las recomendaciones del Opportunity Score?",
           "options": [
-            "Porque Meta la deprecó",
+            "Porque Meta la deprecó hace varios años",
             "Porque solo aplica a campañas Advantage+",
-            "Porque ocurre post-campaña, mientras el opportunity score mide adopción pre/durante",
+            "Porque ocurre post-campaña, no antes",
             "Porque requiere herramientas externas"
           ],
           "correct": 2,
@@ -1675,9 +1675,9 @@
           "type": "mcq",
           "q": "El nivel de permiso 'Advanced — Finance' permite:",
           "options": [
-            "Crear y editar campañas",
-            "Ver y manejar info financiera del portfolio (transactions, invoices)",
-            "Acceder a system users y APIs",
+            "Crear y editar campañas de anuncios",
+            "Ver y manejar transactions e invoices",
+            "Acceder a system users y APIs externas",
             "Crear lookalike audiences avanzadas"
           ],
           "correct": 1,

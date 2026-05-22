@@ -121,7 +121,12 @@
         {
           "type": "fill",
           "q": "El formato donde Meta elige automáticamente qué media entregar según performance es ___.",
-          "options": ["Flexible", "Collection", "Carousel", "Single video"],
+          "options": [
+            "Flexible",
+            "Collection",
+            "Carousel",
+            "Single video"
+          ],
           "correct": 0,
           "explanation": "<strong>Flexible</strong> deja que Meta pruebe y entregue el formato ganador. Útil cuando no sabes cuál rinde mejor."
         },
@@ -141,7 +146,12 @@
         {
           "type": "fill",
           "q": "Instant Experience solo funciona en dispositivos y placements de ___.",
-          "options": ["mobile", "desktop", "tablet", "TV"],
+          "options": [
+            "mobile",
+            "desktop",
+            "tablet",
+            "TV"
+          ],
           "correct": 0,
           "explanation": "Instant Experience es full-screen post-click <strong>solo en mobile</strong>. No existe en desktop."
         },
@@ -149,10 +159,10 @@
           "type": "mcq",
           "q": "¿En qué caso conviene más usar Instant Experience?",
           "options": [
-            "Cuando el sitio web es lento en mobile o quieres contar todo dentro de Meta",
+            "Cuando el sitio es lento o quieres todo en Meta",
             "Cuando quieres mandar tráfico a una landing externa",
-            "Cuando el objetivo es Awareness puro",
-            "Solo en desktop"
+            "Cuando el objetivo de la campaña es Awareness puro",
+            "Únicamente cuando el placement es desktop"
           ],
           "correct": 0,
           "explanation": "Instant Experience es full-screen post-click solo en mobile. Útil si tu website no es mobile-friendly o quieres mantener al usuario dentro de Meta."
@@ -160,7 +170,12 @@
         {
           "type": "fill",
           "q": "El formato más simple, con un solo asset, es ___ image o video.",
-          "options": ["Single", "Flexible", "Collection", "Dynamic"],
+          "options": [
+            "Single",
+            "Flexible",
+            "Collection",
+            "Dynamic"
+          ],
           "correct": 0,
           "explanation": "<strong>Single</strong> image/video = un solo asset. El formato más simple y común."
         },
@@ -195,10 +210,10 @@
           "type": "mcq",
           "q": "¿Por qué Collection y no Carousel en este caso?",
           "options": [
-            "Collection es más barato",
-            "Collection muestra UN HERO grande (storytelling con el video del frigorífico) + grid de productos abajo. Carousel sería solo swipe de cards sin hero",
-            "Carousel no admite catalog",
-            "Es lo mismo"
+            "Porque Collection siempre resulta más barato",
+            "Collection da un hero grande + grid; Carousel no",
+            "Porque el Carousel no admite catalog conectado",
+            "Porque Collection y Carousel son lo mismo"
           ],
           "correct": 1,
           "explanation": "Collection = hero + grid (storytelling + catalog en uno). Carousel = solo swipe sin hero. Para este caso (contar historia + mostrar SKUs), Collection es óptimo.",
@@ -208,10 +223,10 @@
           "type": "mcq",
           "q": "El sitio de Kenet carga lento en celular. ¿Qué herramienta evita esa fricción manteniendo al usuario dentro de Meta?",
           "options": [
-            "Mandar tráfico al sitio igual",
-            "Instant Experience (landing full-screen post-click en mobile)",
-            "Cambiar a placement de desktop",
-            "Usar Single image sin link"
+            "Mandar tráfico al sitio web de todos modos",
+            "Instant Experience (landing full-screen mobile)",
+            "Cambiar al placement de desktop solamente",
+            "Usar Single image sin ningún link"
           ],
           "correct": 1,
           "explanation": "Instant Experience carga al instante dentro de Meta. Resuelve exactamente el problema de un website lento en mobile."
@@ -220,10 +235,10 @@
           "type": "mcq",
           "q": "Kenet no sabe si Collection o Carousel rendirá mejor con esta audiencia. ¿Qué opción deja que Meta decida?",
           "options": [
-            "Single video",
-            "Flexible (Meta prueba y entrega el formato ganador)",
-            "Instant Experience",
-            "Manual placements"
+            "Usar siempre Single video",
+            "Flexible: Meta entrega el formato ganador",
+            "Usar Instant Experience fijo",
+            "Configurar Manual placements"
           ],
           "correct": 1,
           "explanation": "Flexible deja que Meta entregue el formato que mejor rinde por persona. Es como Advantage+ pero a nivel formato.",
@@ -362,7 +377,12 @@
         {
           "type": "fill",
           "q": "El aspect ratio full portrait que ocupa pantalla completa en Stories y Reels es ___.",
-          "options": ["9:16", "16:9", "1:1", "4:5"],
+          "options": [
+            "9:16",
+            "16:9",
+            "1:1",
+            "4:5"
+          ],
           "correct": 0,
           "explanation": "<strong>9:16</strong> = full portrait vertical. Llena la pantalla en Stories y Reels."
         },
@@ -382,7 +402,12 @@
         {
           "type": "fill",
           "q": "El placement Right column y In-stream video pertenecen a la plataforma ___.",
-          "options": ["Facebook", "Instagram", "Messenger", "Threads"],
+          "options": [
+            "Facebook",
+            "Instagram",
+            "Messenger",
+            "Threads"
+          ],
           "correct": 0,
           "explanation": "Right column e In-stream video son placements de <strong>Facebook</strong>. Threads solo tiene Feeds."
         },
@@ -390,10 +415,10 @@
           "type": "mcq",
           "q": "¿Por qué hay que diseñar el creative pensando en la safe zone en Stories/Reels?",
           "options": [
-            "Por estética nada más",
-            "El UI (logo, perfil, botón de mensaje) cubre las orillas y corta el texto crítico",
-            "Para que pese menos",
-            "Para que cargue más rápido"
+            "Solo por una cuestión de estética",
+            "El UI cubre las orillas y corta el texto crítico",
+            "Para que el archivo del video pese menos",
+            "Para que el video cargue más rápido"
           ],
           "correct": 1,
           "explanation": "El UI de Stories/Reels tapa los bordes. Texto crítico cerca del borde se corta. Diseña dentro de la safe zone central."
@@ -401,7 +426,12 @@
         {
           "type": "fill",
           "q": "Cuando necesitas control granular por brand safety o creative específica, usas ___ placements.",
-          "options": ["Manual", "Advantage+", "Reservation", "Automáticos"],
+          "options": [
+            "Manual",
+            "Advantage+",
+            "Reservation",
+            "Automáticos"
+          ],
           "correct": 0,
           "explanation": "<strong>Manual placements</strong> dan control granular. Advantage+ Placements automatiza pero pierde ese control."
         },
@@ -409,10 +439,10 @@
           "type": "mcq",
           "q": "Audience Network ofrece ads en:",
           "options": [
-            "Solo Facebook Feed",
-            "Apps de terceros (in-stream video, native banner, rewarded video)",
-            "Solo Instagram Reels",
-            "Solo Messenger Inbox"
+            "Únicamente en el Facebook Feed",
+            "Apps de terceros (in-stream, native, rewarded)",
+            "Únicamente en Instagram Reels",
+            "Únicamente en el Messenger Inbox"
           ],
           "correct": 1,
           "explanation": "Audience Network extiende los ads a apps de terceros: in-stream video, native banner y rewarded video.",
@@ -436,10 +466,10 @@
           "type": "mcq",
           "q": "¿Cuál es el verdadero problema y la solución?",
           "options": [
-            "La audiencia está mal segmentada; hay que rehacerla",
-            "El número está fuera de la safe zone: el UI de Reels lo tapa. Solución: subir el dato al centro del 9:16",
-            "El video pesa demasiado",
-            "Reels no permite teléfonos en el video"
+            "La audiencia está mal segmentada; rehacerla",
+            "El dato está fuera de la safe zone; subirlo al centro",
+            "El video pesa demasiado; comprimirlo",
+            "Reels no permite teléfonos dentro del video"
           ],
           "correct": 1,
           "explanation": "El UI de Stories/Reels (perfil, botón de mensaje) cubre las orillas. El dato crítico debe ir en la safe zone central del 9:16, no pegado al borde.",
@@ -449,10 +479,10 @@
           "type": "mcq",
           "q": "El mismo video lo quieren usar también en Feed. ¿Qué deben revisar?",
           "options": [
-            "Nada, 9:16 se ve igual en todos lados",
-            "El aspect ratio: 9:16 desperdicia espacio en Feed; conviene adaptar a 4:5 o 1:1",
-            "Cambiar la audiencia otra vez",
-            "Usar solo Right column"
+            "Nada: el 9:16 se ve igual en todos lados",
+            "El aspect ratio: 9:16 desperdicia espacio en Feed",
+            "Cambiar la audiencia de la campaña otra vez",
+            "Usar únicamente el placement Right column"
           ],
           "correct": 1,
           "explanation": "Cada placement tiene su forma. 9:16 es óptimo en Stories/Reels pero en Feed conviene 4:5 o 1:1. Por eso el creative se diseña por placement.",
@@ -462,10 +492,10 @@
           "type": "mcq",
           "q": "No saben en qué placement rinde mejor el video. ¿Qué setting deja que Meta lo decida?",
           "options": [
-            "Manual placements",
+            "Configurar Manual placements",
             "Advantage+ Placements (default automatizado)",
-            "Solo Audience Network",
-            "Reservation"
+            "Limitarlo solo a Audience Network",
+            "Cambiar la campaña a Reservation"
           ],
           "correct": 1,
           "explanation": "Advantage+ Placements automatiza y encuentra dónde rinde mejor el anuncio. Manual solo si necesitas control específico."
@@ -553,10 +583,10 @@
           "type": "mcq",
           "q": "Si usas Advantage+ Creative Y Asset Customization juntos, ¿qué prevalece?",
           "options": [
-            "Advantage+ siempre gana",
-            "Asset Customization (manual) gana en los placements donde la configuraste",
-            "Se cancelan entre sí",
-            "Depende del placement"
+            "Advantage+ Creative gana siempre",
+            "Asset Customization gana donde la configuraste",
+            "Se cancelan entre sí y no aplica ninguno",
+            "Depende del placement de forma aleatoria"
           ],
           "correct": 1,
           "explanation": "Lo manual gana. Asset Customization tiene priority sobre Advantage+ Creative en los placements donde explícitamente customizaste.",
@@ -574,10 +604,10 @@
           "type": "mcq",
           "q": "Mobile-first creative requiere:",
           "options": [
-            "Branding al final del video",
-            "Aspect 16:9 horizontal",
-            "Audio + subtitles, branding en primeros 3s, aspecto 9:16, ≤15s",
-            "Audio off siempre"
+            "Poner el branding al final del video",
+            "Aspect ratio 16:9 horizontal",
+            "Audio + subtítulos, branding en 3s, 9:16, ≤15s",
+            "Mantener el audio apagado siempre"
           ],
           "correct": 2,
           "explanation": "Reglas mobile: 9:16, ≤15s, branding inicio, audio + subtitles, safe zone.",
@@ -586,14 +616,24 @@
         {
           "type": "fill",
           "q": "Un solo anuncio repetido produce creative ___ (el performance cae por sobreexposición).",
-          "options": ["fatigue", "boost", "lift", "scale"],
+          "options": [
+            "fatigue",
+            "boost",
+            "lift",
+            "scale"
+          ],
           "correct": 0,
           "explanation": "<strong>Creative fatigue</strong> = caída de performance por sobreexposición. Se combate diversificando el creative."
         },
         {
           "type": "fill",
           "q": "Las 3 dimensiones para diversificar el creative son messaging, visuals y ___.",
-          "options": ["formats", "audiences", "placements", "budgets"],
+          "options": [
+            "formats",
+            "audiences",
+            "placements",
+            "budgets"
+          ],
           "correct": 0,
           "explanation": "Las 3 dimensiones: <strong>messaging</strong> (mensaje), <strong>visuals</strong> (imagen/video) y <strong>formats</strong> (contenedor)."
         },
@@ -613,7 +653,12 @@
         {
           "type": "fill",
           "q": "El branding en un video mobile debe aparecer en los primeros ___ segundos.",
-          "options": ["3", "10", "15", "30"],
+          "options": [
+            "3",
+            "10",
+            "15",
+            "30"
+          ],
           "correct": 0,
           "explanation": "Branding en los primeros <strong>3 segundos</strong>: el usuario decide rápido si sigue viendo."
         },
@@ -649,9 +694,9 @@
           "q": "¿Qué está pasando y cómo se resuelve?",
           "options": [
             "El algoritmo falló; hay que pausar todo",
-            "Creative fatigue por usar un solo anuncio repetido. Solución: diversificar en messaging, visuals y formats",
-            "La audiencia es muy chica; hay que ampliar el budget",
-            "El Pixel dejó de funcionar"
+            "Creative fatigue; diversificar mensaje y formato",
+            "La audiencia es muy chica; ampliar el budget",
+            "El Pixel dejó de funcionar; reinstalarlo"
           ],
           "correct": 1,
           "explanation": "Un solo creative repetido produce creative fatigue: el performance cae por sobreexposición. Se combate rotando mensaje, visuales y formatos.",
@@ -661,10 +706,10 @@
           "type": "mcq",
           "q": "Kenet quiere que la AI adapte el creative por persona y placement, pero en Reels ya tiene un corte que funciona. ¿Cómo lo configura?",
           "options": [
-            "Solo Advantage+ Creative; ignora el corte de Reels",
-            "Advantage+ Creative ON + Asset Customization para fijar el corte de Reels (manual gana en Reels)",
-            "Manual placements para todo",
-            "Apaga Advantage+ Creative por completo"
+            "Solo Advantage+ Creative, ignorando el corte",
+            "Advantage+ Creative ON + Asset Customization en Reels",
+            "Configurar Manual placements para todo",
+            "Apagar Advantage+ Creative por completo"
           ],
           "correct": 1,
           "explanation": "Advantage+ Creative optimiza por persona; Asset Customization fija el manual en el placement donde ya hay un ganador. En Reels gana el manual; en el resto, la AI.",
@@ -674,9 +719,9 @@
           "type": "mcq",
           "q": "El nuevo video de Kenet para Reels dura 30s con el logo al final. ¿Qué corriges?",
           "options": [
-            "Nada, está bien",
-            "Acortar a ≤15s y poner branding en los primeros 3s, con audio + subtítulos",
-            "Subirlo a 60s para contar más",
+            "Nada: el video está bien como está",
+            "Acortar a ≤15s y poner branding en los primeros 3s",
+            "Subirlo a 60s para poder contar más",
             "Quitar los subtítulos para que pese menos"
           ],
           "correct": 1,
@@ -790,7 +835,12 @@
         {
           "type": "fill",
           "q": "El default attribution setting en Ads Manager es 1-day view, ___-day click.",
-          "options": ["1", "7", "28", "30"],
+          "options": [
+            "1",
+            "7",
+            "28",
+            "30"
+          ],
           "correct": 1,
           "explanation": "Default = <strong>1-day view, 7-day click</strong>. Memorízalo literal: el examen lo pregunta así."
         },
@@ -816,7 +866,12 @@
         {
           "type": "fill",
           "q": "Cost per Result se calcula como Amount spent dividido entre ___.",
-          "options": ["Results", "Impressions", "Clicks", "Reach"],
+          "options": [
+            "Results",
+            "Impressions",
+            "Clicks",
+            "Reach"
+          ],
           "correct": 0,
           "explanation": "<strong>Cost per Result = Amount spent / Results</strong>. Results = veces que se logró el performance goal."
         },
@@ -824,10 +879,10 @@
           "type": "mcq",
           "q": "Standard attribution se diferencia de Incremental en que:",
           "options": [
-            "Standard usa reglas (ventana + touchpoint); Incremental modela conversions causales",
-            "Standard mide ventas; Incremental mide recall",
-            "Son lo mismo",
-            "Incremental no existe en Ads Manager"
+            "Standard usa reglas; Incremental modela causalidad",
+            "Standard mide ventas; Incremental mide el recall",
+            "Son exactamente lo mismo, distinto nombre",
+            "Incremental no existe dentro de Ads Manager"
           ],
           "correct": 0,
           "explanation": "Standard atribuye con reglas (correlacional). Incremental es predictivo: identifica si el ad realmente CAUSÓ la conversión.",
@@ -836,7 +891,12 @@
         {
           "type": "fill",
           "q": "Purchase ROAS y Cost per purchase son métricas de la etapa de ___.",
-          "options": ["Conversion", "Awareness", "Consideration", "Reach"],
+          "options": [
+            "Conversion",
+            "Awareness",
+            "Consideration",
+            "Reach"
+          ],
           "correct": 0,
           "explanation": "<strong>Conversion</strong>: Purchases, Purchase ROAS, Leads, Adds to cart, Cost per purchase. Reach/Frequency son de Awareness."
         },
@@ -844,10 +904,10 @@
           "type": "mcq",
           "q": "Te preguntan por 'Custom attribution' en Ads Manager. ¿Qué respondes?",
           "options": [
-            "Es el modelo default",
-            "Es trampa: en Ads Manager solo existen Standard e Incremental",
-            "Es lo mismo que Incremental",
-            "Solo aplica a campañas Awareness"
+            "Que es el modelo de atribución default",
+            "Es trampa: solo hay Standard e Incremental",
+            "Que es exactamente lo mismo que Incremental",
+            "Que solo aplica a las campañas de Awareness"
           ],
           "correct": 1,
           "explanation": "Custom attribution NO existe en Ads Manager. Solo Standard e Incremental. Es una trampa típica de examen.",
@@ -871,10 +931,10 @@
           "type": "mcq",
           "q": "¿Por qué el director está evaluando mal la campaña Awareness?",
           "options": [
-            "Tiene razón, Awareness debe medirse por Leads",
-            "Awareness se mide con Reach, Frequency y Estimated ad recall lift, no con Leads (que es métrica de Conversion)",
-            "Hay que esperar más tiempo",
-            "El Pixel está mal configurado"
+            "Tiene razón: Awareness se mide por Leads",
+            "Awareness se mide por Reach y recall, no Leads",
+            "Hay que esperar más tiempo para evaluarla",
+            "El Pixel del sitio está mal configurado"
           ],
           "correct": 1,
           "explanation": "Mirar la métrica del funnel equivocado lleva a conclusiones falsas. Awareness = Reach/Frequency/recall. Leads es de Conversion.",
@@ -884,10 +944,10 @@
           "type": "mcq",
           "q": "Un prospecto vio el ad, NO hizo clic, y cotizó 5 días después. Con la ventana default, ¿se atribuye al ad?",
           "options": [
-            "Sí, siempre se atribuye",
-            "No: la ventana default de view es 1 día. A los 5 días sin clic queda fuera de la ventana",
-            "Sí, porque hay clic implícito",
-            "Depende del presupuesto"
+            "Sí: el ad siempre se atribuye la conversión",
+            "No: la ventana de view es 1 día; quedó fuera",
+            "Sí, porque hubo un clic implícito al ver",
+            "Depende del presupuesto de la campaña"
           ],
           "correct": 1,
           "explanation": "Default = 1-day view, 7-day click. Vio sin clic → solo cuenta si compró dentro de 1 día. A los 5 días sin clic queda fuera.",
@@ -897,10 +957,10 @@
           "type": "mcq",
           "q": "El director quiere saber si el ad REALMENTE causó las conversiones, no solo si correlacionó. ¿Qué attribution model?",
           "options": [
-            "Standard attribution",
-            "Incremental attribution (modela conversions causales)",
-            "Custom attribution",
-            "Last-click"
+            "Usar Standard attribution por reglas",
+            "Incremental attribution (modela causalidad)",
+            "Usar Custom attribution personalizado",
+            "Usar el modelo Last-click clásico"
           ],
           "correct": 1,
           "explanation": "Incremental attribution es el modelo predictivo que identifica conversions causales. Standard solo atribuye con reglas (correlacional).",
@@ -1018,14 +1078,24 @@
         {
           "type": "fill",
           "q": "Brand Lift mide impacto en marca usando ___ a test group vs control group.",
-          "options": ["encuestas", "ventas", "clics", "impresiones"],
+          "options": [
+            "encuestas",
+            "ventas",
+            "clics",
+            "impresiones"
+          ],
           "correct": 0,
           "explanation": "<strong>Brand Lift</strong> usa encuestas (ad recall, awareness, message association). Es percepción, no ventas."
         },
         {
           "type": "fill",
           "q": "Conversion Lift mide conversions ___ (causales) atribuibles a la campaña.",
-          "options": ["incrementales", "correlacionales", "totales", "estimadas"],
+          "options": [
+            "incrementales",
+            "correlacionales",
+            "totales",
+            "estimadas"
+          ],
           "correct": 0,
           "explanation": "<strong>Conversion Lift</strong> mide conversions incrementales: las ventas EXTRA que causó la campaña vs el control."
         },
@@ -1033,10 +1103,10 @@
           "type": "mcq",
           "q": "¿Dónde se configuran A/B Test, Brand Lift y Conversion Lift?",
           "options": [
-            "Ads Reporting",
-            "Experiments (en Ads Manager o Business Suite)",
-            "Events Manager",
-            "Commerce Manager"
+            "En la sección Ads Reporting",
+            "En Experiments (Ads Manager o Business Suite)",
+            "En la sección Events Manager",
+            "En la sección Commerce Manager"
           ],
           "correct": 1,
           "explanation": "Los 3 viven en Experiments, en campañas dedicadas. NO en Ads Reporting normal.",
@@ -1045,7 +1115,12 @@
         {
           "type": "fill",
           "q": "El A/B Test divide la audiencia aleatoriamente sin ___ para no contaminar el resultado.",
-          "options": ["overlap", "budget", "creative", "schedule"],
+          "options": [
+            "overlap",
+            "budget",
+            "creative",
+            "schedule"
+          ],
           "correct": 0,
           "explanation": "Sin <strong>overlap</strong>: si las mismas personas ven los 2 ads, no puedes saber cuál causó la conversión. Meta divide automáticamente."
         },
@@ -1080,10 +1155,10 @@
           "type": "mcq",
           "q": "Para saber si los industriales RECUERDAN la marca, ¿qué herramienta?",
           "options": [
-            "A/B Test",
-            "Brand Lift (encuestas test vs control sobre ad recall)",
-            "Conversion Lift",
-            "Standard reporting"
+            "Un A/B Test entre variantes",
+            "Brand Lift (encuestas test vs control)",
+            "Conversion Lift sobre las ventas",
+            "El Standard reporting de Ads Manager"
           ],
           "correct": 1,
           "explanation": "Recall/percepción → Brand Lift: encuestas a test group (expuesto) vs control group (no expuesto). No mide ventas.",
@@ -1093,10 +1168,10 @@
           "type": "mcq",
           "q": "Para saber cuántas cotizaciones EXTRA causó la campaña vs no haberla corrido, ¿qué herramienta?",
           "options": [
-            "Brand Lift",
+            "Brand Lift sobre el recall de marca",
             "Conversion Lift (RCT, conversions incrementales)",
-            "A/B Test",
-            "Standard reporting"
+            "Un A/B Test entre dos variantes",
+            "El Standard reporting de Ads Manager"
           ],
           "correct": 1,
           "explanation": "Cotizaciones extra causales = incrementalidad → Conversion Lift. Fuente recomendada: Conversions API.",
@@ -1106,10 +1181,10 @@
           "type": "mcq",
           "q": "Para comparar 2 versiones del mismo anuncio cambiando solo el headline, ¿qué herramienta?",
           "options": [
-            "Brand Lift",
-            "Conversion Lift",
+            "Brand Lift sobre el recall de marca",
+            "Conversion Lift sobre las ventas extra",
             "A/B Test (una sola variable: el headline)",
-            "Standard reporting"
+            "El Standard reporting de Ads Manager"
           ],
           "correct": 2,
           "explanation": "Comparar 2 variantes cambiando UNA sola variable (el headline) es exactamente un A/B Test. Los 3 tests viven en Experiments."
@@ -1220,14 +1295,24 @@
         {
           "type": "fill",
           "q": "El control de Brand Safety más simple y de mayor alcance son los ___.",
-          "options": ["inventory filters", "publisher block lists", "topic exclusions", "content type exclusions"],
+          "options": [
+            "inventory filters",
+            "publisher block lists",
+            "topic exclusions",
+            "content type exclusions"
+          ],
           "correct": 0,
           "explanation": "Los <strong>inventory filters</strong> (Expanded/Moderate/Limited) son el control más simple. Block lists requieren armar la lista a mano."
         },
         {
           "type": "fill",
           "q": "El inventory filter por default es ___.",
-          "options": ["Expanded", "Moderate", "Limited", "Restricted"],
+          "options": [
+            "Expanded",
+            "Moderate",
+            "Limited",
+            "Restricted"
+          ],
           "correct": 0,
           "explanation": "<strong>Expanded</strong> es el default (mayor alcance). Moderate y Limited restringen más el inventory."
         },
@@ -1235,10 +1320,10 @@
           "type": "mcq",
           "q": "Un ad de un producto legal es rechazado. La causa probable:",
           "options": [
-            "El presupuesto es muy bajo",
-            "Personal attributes: el copy implica una característica personal del usuario (edad, peso, raza)",
-            "El Pixel no está instalado",
-            "La audiencia es muy grande"
+            "El presupuesto de la campaña es muy bajo",
+            "Personal attributes: el copy implica un rasgo personal",
+            "El Pixel del sitio no está instalado",
+            "La audiencia de la campaña es muy grande"
           ],
           "correct": 1,
           "explanation": "Personal attributes: no se puede implicar edad, peso, raza o religión del usuario. Reformula el copy de forma neutral.",
@@ -1247,7 +1332,12 @@
         {
           "type": "fill",
           "q": "Para excluir publishers específicos donde NO quieres aparecer usas publisher ___ lists.",
-          "options": ["block", "white", "allow", "topic"],
+          "options": [
+            "block",
+            "white",
+            "allow",
+            "topic"
+          ],
           "correct": 0,
           "explanation": "<strong>Publisher block lists</strong> excluyen publishers concretos. Hay que armarlas a mano, por eso son menos simples que el inventory filter."
         },
@@ -1268,10 +1358,10 @@
           "type": "mcq",
           "q": "Las financial services pueden anunciarse si:",
           "options": [
-            "Nunca, están prohibidas",
-            "Cumplen requisitos (>90 días con disclosure adecuado)",
-            "Solo en desktop",
-            "Solo con catálogo"
+            "Nunca: están del todo prohibidas",
+            "Cumplen requisitos (>90 días, disclosure)",
+            "Solo si se anuncian en desktop",
+            "Solo si la cuenta tiene un catálogo"
           ],
           "correct": 1,
           "explanation": "Financial services están restringidas pero permitidas con disclosure adecuado (>90 días). Es contenido restringido, no prohibido absoluto.",
@@ -1295,10 +1385,10 @@
           "type": "mcq",
           "q": "¿Por qué se rechazó el anuncio y cómo se corrige?",
           "options": [
-            "Por el presupuesto; subirlo",
-            "Por personal attributes (implica edad). Reformular: \"para profesionales experimentados que quieren ahorrar\"",
-            "Por usar video; cambiar a imagen",
-            "Por la audiencia; ampliarla"
+            "Por el presupuesto bajo; hay que subirlo",
+            "Por personal attributes (edad); reformular el copy",
+            "Por usar video; cambiar el ad a imagen",
+            "Por la audiencia chica; hay que ampliarla"
           ],
           "correct": 1,
           "explanation": "\"Para los señores mayores\" implica una característica personal (edad). Reformula de forma neutral aunque el producto sea legal.",
@@ -1486,56 +1576,96 @@
         {
           "type": "fill",
           "q": "El formato con un hero grande arriba + grid de productos del catálogo abajo es ___.",
-          "options": ["Carousel", "Collection", "Single video", "Flexible"],
+          "options": [
+            "Carousel",
+            "Collection",
+            "Single video",
+            "Flexible"
+          ],
           "correct": 1,
           "explanation": "<strong>Collection</strong> = hero + grid de productos del catálogo (solo mobile). Carousel es swipe sin hero."
         },
         {
           "type": "fill",
           "q": "El aspect ratio full portrait para Stories y Reels es ___.",
-          "options": ["16:9", "1:1", "4:5", "9:16"],
+          "options": [
+            "16:9",
+            "1:1",
+            "4:5",
+            "9:16"
+          ],
           "correct": 3,
           "explanation": "<strong>9:16</strong> ocupa pantalla completa en Stories y Reels. Diseña dentro de la safe zone central."
         },
         {
           "type": "fill",
           "q": "En Ads Manager solo existen 2 modelos de attribution: Standard e ___.",
-          "options": ["Custom", "Incremental", "Linear", "Last-click"],
+          "options": [
+            "Custom",
+            "Incremental",
+            "Linear",
+            "Last-click"
+          ],
           "correct": 1,
           "explanation": "Solo <strong>Standard e Incremental</strong>. Custom NO existe en Ads Manager — es trampa típica."
         },
         {
           "type": "fill",
           "q": "Un A/B Test correcto cambia ___ variable a la vez.",
-          "options": ["1", "2", "3", "varias"],
+          "options": [
+            "1",
+            "2",
+            "3",
+            "varias"
+          ],
           "correct": 0,
           "explanation": "<strong>UNA</strong> sola variable. Si cambias 2+, no puedes aislar cuál causó el resultado."
         },
         {
           "type": "fill",
           "q": "El test que mide cuántas ventas EXTRA (causales) generó la campaña es ___ Lift.",
-          "options": ["Brand", "Conversion", "Engagement", "Reach"],
+          "options": [
+            "Brand",
+            "Conversion",
+            "Engagement",
+            "Reach"
+          ],
           "correct": 1,
           "explanation": "<strong>Conversion Lift</strong> mide incrementalidad (ventas causales). Brand Lift mide recall/percepción con encuestas."
         },
         {
           "type": "fill",
           "q": "Los 3 tests (A/B, Brand Lift, Conversion Lift) se configuran en ___.",
-          "options": ["Ads Reporting", "Experiments", "Events Manager", "Commerce Manager"],
+          "options": [
+            "Ads Reporting",
+            "Experiments",
+            "Events Manager",
+            "Commerce Manager"
+          ],
           "correct": 1,
           "explanation": "Los 3 viven en <strong>Experiments</strong> (Ads Manager o Business Suite), en campañas dedicadas."
         },
         {
           "type": "fill",
           "q": "El control de Brand Safety más simple y de mayor alcance son los ___.",
-          "options": ["publisher block lists", "topic exclusions", "inventory filters", "content type exclusions"],
+          "options": [
+            "publisher block lists",
+            "topic exclusions",
+            "inventory filters",
+            "content type exclusions"
+          ],
           "correct": 2,
           "explanation": "Los <strong>inventory filters</strong> (Expanded/Moderate/Limited) son el control más simple. Block lists requieren armar la lista a mano."
         },
         {
           "type": "fill",
           "q": "Un ad puede ser rechazado por implicar ___ personales aunque el producto sea legal.",
-          "options": ["atributos", "precios", "horarios", "ubicaciones"],
+          "options": [
+            "atributos",
+            "precios",
+            "horarios",
+            "ubicaciones"
+          ],
           "correct": 0,
           "explanation": "<strong>Personal attributes</strong>: no se puede implicar edad, peso, raza o religión del usuario. Reformula el copy de forma neutral."
         }
@@ -1564,10 +1694,10 @@
           "type": "mcq",
           "q": "Brand Lift mide:",
           "options": [
-            "Ventas causales",
-            "Recall, awareness y percepción con encuestas",
-            "Bid en subasta",
-            "Lookalike similarity"
+            "Las ventas causales de la campaña",
+            "Recall, awareness y percepción (encuestas)",
+            "El bid del anuncio en la subasta",
+            "La similitud de un Lookalike"
           ],
           "correct": 1,
           "explanation": "Brand Lift = encuestas sobre marca.",
@@ -1577,10 +1707,10 @@
           "type": "mcq",
           "q": "Conversion Lift mide:",
           "options": [
-            "Recall de marca",
-            "Conversions INCREMENTALES (causales) atribuibles a la campaña",
-            "Click-through rate",
-            "Budget efficiency"
+            "El recall de marca del público",
+            "Conversions incrementales causales de la campaña",
+            "El click-through rate de los ads",
+            "La eficiencia del budget asignado"
           ],
           "correct": 1,
           "explanation": "Conversion Lift = ventas extras causales.",
@@ -1655,10 +1785,10 @@
           "type": "mcq",
           "q": "Si Advantage+ Creative y Asset Customization están ambos activados:",
           "options": [
-            "Advantage+ siempre gana",
-            "Asset Customization (manual) tiene priority en los placements customizados",
-            "Se cancelan",
-            "Solo en Sales"
+            "Advantage+ Creative gana siempre",
+            "Asset Customization tiene prioridad donde aplica",
+            "Se cancelan y no aplica ninguno",
+            "Solo aplica en campañas de Sales"
           ],
           "correct": 1,
           "explanation": "Manual gana. Asset Customization tiene priority.",
@@ -1668,10 +1798,10 @@
           "type": "mcq",
           "q": "¿Dónde se corren A/B Test, Brand Lift y Conversion Lift?",
           "options": [
-            "Ads Reporting",
-            "Experiments (en Ads Manager o Business Suite)",
-            "Events Manager",
-            "Commerce Manager"
+            "En la sección Ads Reporting",
+            "En Experiments (Ads Manager o Business Suite)",
+            "En la sección Events Manager",
+            "En la sección Commerce Manager"
           ],
           "correct": 1,
           "explanation": "Experiments tool.",
@@ -1681,10 +1811,10 @@
           "type": "mcq",
           "q": "Mobile-first creative requiere:",
           "options": [
-            "Branding al final del video",
-            "Aspect 16:9 horizontal",
-            "Audio + subtitles, branding en primeros 3s, aspecto 9:16, ≤15s",
-            "Audio off siempre"
+            "Poner el branding al final del video",
+            "Aspect ratio 16:9 horizontal",
+            "Audio + subtítulos, branding en 3s, 9:16, ≤15s",
+            "Mantener el audio apagado siempre"
           ],
           "correct": 2,
           "explanation": "Reglas mobile: 9:16, ≤15s, branding inicio, audio + subtitles, safe zone.",

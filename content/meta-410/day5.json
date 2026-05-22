@@ -48,14 +48,24 @@
         {
           "type": "fill",
           "q": "Pixel y CAPI no se sustituyen: son ___.",
-          "options": ["complementarios", "intercambiables", "idénticos", "opcionales"],
+          "options": [
+            "complementarios",
+            "intercambiables",
+            "idénticos",
+            "opcionales"
+          ],
           "correct": 0,
           "explanation": "Pixel cubre el browser, CAPI cubre server-side. Juntos = cobertura máxima (~95%)."
         },
         {
           "type": "fill",
           "q": "El dataset (Pixel + CAPI + SDK + offline) se conecta a nivel ___.",
-          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
           "correct": 1,
           "explanation": "El dataset se conecta a nivel Ad set, junto con conversion location y conversion event."
         },
@@ -63,10 +73,10 @@
           "type": "mcq",
           "q": "¿Por qué CAPI cobra más importancia después de iOS 14+ App Tracking Transparency?",
           "options": [
-            "ATT bloquea CAPI en Android",
-            "ATT limita el Pixel en navegadores iOS sin consentimiento; CAPI envía server-side y no se ve afectado",
-            "ATT obliga por ley a usar CAPI",
-            "CAPI es más barato que el Pixel"
+            "Porque ATT bloquea CAPI en Android",
+            "ATT limita el Pixel en iOS; CAPI va server-side",
+            "Porque ATT obliga por ley a usar CAPI",
+            "Porque CAPI es más barato que el Pixel"
           ],
           "correct": 1,
           "explanation": "ATT pide consentimiento explícito en iOS. Sin él, el Pixel queda limitado. CAPI es server-to-server (independiente del browser) y mantiene cobertura."
@@ -74,7 +84,12 @@
         {
           "type": "fill",
           "q": "Custom Conversion = una ___ sobre un evento existente; Custom Event = un evento nuevo que requiere código.",
-          "options": ["regla", "etiqueta", "campaña", "audiencia"],
+          "options": [
+            "regla",
+            "etiqueta",
+            "campaña",
+            "audiencia"
+          ],
           "correct": 0,
           "explanation": "Custom Conversion no toca código (regla sobre URL/value). Custom Event sí requiere modificar el Pixel/CAPI/SDK."
         },
@@ -82,10 +97,10 @@
           "type": "mcq",
           "q": "Kenet cierra contratos presencialmente en oficina. ¿Qué event registra y por qué canal?",
           "options": [
-            "ViewContent vía Pixel",
-            "Purchase con value, enviado vía CAPI Offline",
-            "Un Custom Event sin value",
-            "Un AEM event"
+            "ViewContent enviado vía el Pixel web",
+            "Purchase con value, vía CAPI Offline",
+            "Un Custom Event configurado sin value",
+            "Un AEM event priorizado en el dominio"
           ],
           "correct": 1,
           "explanation": "Purchase es el standard event canónico para una transacción completada, incluida la offline. Se sube vía CAPI Offline para atribuir el cierre a los ads que el cliente vio antes."
@@ -171,14 +186,24 @@
         {
           "type": "fill",
           "q": "Dentro de una misma categoría de detailed targeting, las opciones se combinan con ___.",
-          "options": ["OR", "AND", "NOT", "XOR"],
+          "options": [
+            "OR",
+            "AND",
+            "NOT",
+            "XOR"
+          ],
           "correct": 0,
           "explanation": "OR dentro de cada categoría (suma perfiles). AND entre categorías base (intersecta y angosta)."
         },
         {
           "type": "fill",
           "q": "Entre categorías base de detailed targeting, las selecciones se combinan con ___.",
-          "options": ["AND", "OR", "NOT", "XOR"],
+          "options": [
+            "AND",
+            "OR",
+            "NOT",
+            "XOR"
+          ],
           "correct": 0,
           "explanation": "AND entre categorías base: deben cumplirse las dos, por eso agregar más categorías angosta la audiencia."
         },
@@ -198,7 +223,12 @@
         {
           "type": "fill",
           "q": "Agregar más categorías AND a detailed targeting hace la audiencia más ___.",
-          "options": ["angosta", "amplia", "barata", "estable"],
+          "options": [
+            "angosta",
+            "amplia",
+            "barata",
+            "estable"
+          ],
           "correct": 0,
           "explanation": "Más categorías AND = audiencia más angosta. Sobre-segmentar reduce delivery y encarece el CPA."
         },
@@ -206,10 +236,10 @@
           "type": "mcq",
           "q": "Audience CONTROLS:",
           "options": [
-            "Sugieren al sistema dónde buscar",
-            "RESTRINGEN delivery (rígido), ej: location, edad mínima",
-            "Son lo mismo que suggestions",
-            "Solo en Reservation"
+            "Sugieren al sistema dónde buscar gente",
+            "RESTRINGEN delivery (rígido): location, edad",
+            "Son exactamente lo mismo que las suggestions",
+            "Solo están disponibles en modo Reservation"
           ],
           "correct": 1,
           "explanation": "Controls son rígidos: el sistema NO se sale de ahí. Suggestions son flexibles.",
@@ -246,10 +276,10 @@
           "type": "mcq",
           "q": "¿Qué le explicas sobre apilar 6 intereses más y un behavior?",
           "options": [
-            "Tiene razón, así la audiencia crece",
-            "Lo contrario: dentro de una categoría suma (OR), pero entre categorías intersecta (AND); apilar categorías ANGOSTA la audiencia y suele encarecer el CPA",
+            "Tiene razón: así la audiencia crece más",
+            "Al revés: apilar categorías ANGOSTA la audiencia",
             "Da igual, detailed targeting no afecta el tamaño",
-            "Solo crece si usa Reservation"
+            "Solo crece si la campaña usa Reservation"
           ],
           "correct": 1,
           "explanation": "OR dentro de una categoría suma perfiles; AND entre categorías intersecta. Sumar otra categoría (behaviors) angosta, no amplía. Sobre-segmentar baja el delivery y encarece el CPA."
@@ -359,14 +389,24 @@
         {
           "type": "fill",
           "q": "Una ___ Audience es gente que YA interactuó con tu negocio (retargeting).",
-          "options": ["Custom", "Lookalike", "Saved", "Broad"],
+          "options": [
+            "Custom",
+            "Lookalike",
+            "Saved",
+            "Broad"
+          ],
           "correct": 0,
           "explanation": "Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos)."
         },
         {
           "type": "fill",
           "q": "El máximo de Custom Audiences por ad account es ___.",
-          "options": ["100", "250", "500", "1,000"],
+          "options": [
+            "100",
+            "250",
+            "500",
+            "1,000"
+          ],
           "correct": 2,
           "explanation": "500 custom audiences máximo por ad account."
         },
@@ -400,10 +440,10 @@
           "type": "mcq",
           "q": "¿Para qué sirve una Custom Audience principalmente?",
           "options": [
-            "Prospectar gente nueva en frío",
-            "Retargeting: re-alcanzar a quien ya interactuó con tu negocio",
-            "Reemplazar el Pixel",
-            "Bajar el costo de billing"
+            "Para prospectar gente nueva en frío",
+            "Retargeting: re-alcanzar a quien ya te conoce",
+            "Para reemplazar al Pixel del sitio web",
+            "Para bajar el costo de billing de la cuenta"
           ],
           "correct": 1,
           "explanation": "Custom Audience = gente que YA te conoce. Es retargeting, no prospección en frío (eso lo hace el Lookalike).",
@@ -412,7 +452,12 @@
         {
           "type": "fill",
           "q": "El retention window de una Custom Audience tipo Website es ___.",
-          "options": ["configurable (ej. 30/60/90/180 días)", "fijo en 7 días", "fijo en 1 año", "no existe"],
+          "options": [
+            "configurable (ej. 30/60/90/180 días)",
+            "fijo en 7 días",
+            "fijo en 1 año",
+            "no existe"
+          ],
           "correct": 0,
           "explanation": "El retention window es configurable: 30/60/90/180 días desde la interacción, según qué tan reciente quieras la audiencia."
         }
@@ -434,10 +479,10 @@
           "type": "mcq",
           "q": "¿Qué tipo de Custom Audience usas para el CRM y cómo subes los datos?",
           "options": [
-            "Custom Audience Website, sin subir nada",
-            "Custom Audience tipo Customer List con email y phone hasheados (SHA256), como inclusion de la campaña Sales",
-            "Lookalike directo desde el CSV",
-            "Saved Audience con intereses"
+            "Custom Audience Website, sin subir ningún dato",
+            "Customer List con email/phone hasheados (SHA256)",
+            "Un Lookalike creado directo desde el CSV",
+            "Una Saved Audience armada con intereses"
           ],
           "correct": 1,
           "explanation": "Un CRM de gente que ya interactuó = Custom Audience tipo Customer List. Email/phone se hashean antes de subir y se usa como inclusion de la campaña Sales."
@@ -446,10 +491,10 @@
           "type": "mcq",
           "q": "¿Por qué hay que hashear email y phone antes de subir?",
           "options": [
-            "Es opcional, no obligatorio",
-            "Para que Meta no vea los datos en plano: Meta matchea hashes con sus usuarios sin nunca conocer el email real",
-            "Para que el archivo sea más liviano",
-            "Para que se procese más rápido"
+            "Es opcional, no es un paso obligatorio",
+            "Para que Meta matchee sin ver los datos en plano",
+            "Para que el archivo CSV sea más liviano",
+            "Para que el archivo se procese más rápido"
           ],
           "correct": 1,
           "explanation": "Hashing protege la privacidad: Meta matchea los hashes (no los emails) con sus usuarios. Es requerido para Customer Lists.",
@@ -557,14 +602,24 @@
         {
           "type": "fill",
           "q": "El mínimo absoluto de source para crear un Lookalike es ___ personas de un solo país.",
-          "options": ["50", "100", "500", "1,000"],
+          "options": [
+            "50",
+            "100",
+            "500",
+            "1,000"
+          ],
           "correct": 1,
           "explanation": "100 mínimo de un solo país. Recomendado 1,000-50,000 para calidad."
         },
         {
           "type": "fill",
           "q": "El Lookalike de ___% es el más similar al source (calidad sobre volumen).",
-          "options": ["1", "5", "10", "20"],
+          "options": [
+            "1",
+            "5",
+            "10",
+            "20"
+          ],
           "correct": 0,
           "explanation": "1% = top 1% más parecido al source. 10% = más alcance, menos similitud."
         },
@@ -572,10 +627,10 @@
           "type": "mcq",
           "q": "Lookalike 1% es:",
           "options": [
-            "Menos similar al source",
-            "Top 1% más parecido al source (max similitud, menor alcance)",
-            "1% de tu audience",
-            "Audiencia con 1% de overlap"
+            "El segmento menos similar al source",
+            "El top 1% más parecido (max similitud)",
+            "El 1% de tu propia audience actual",
+            "Una audiencia con 1% de overlap"
           ],
           "correct": 1,
           "explanation": "1% = top 1% más parecido. 10% = más alcance, menos parecido.",
@@ -598,10 +653,10 @@
           "type": "mcq",
           "q": "¿Para qué sirve un Lookalike?",
           "options": [
-            "Retargeting de quien ya te conoce",
-            "Prospección: encontrar gente NUEVA similar a tu source",
-            "Subir un CSV de clientes",
-            "Bloquear ubicaciones"
+            "Para retargeting de quien ya te conoce",
+            "Prospección: gente NUEVA similar al source",
+            "Para subir un CSV de clientes existentes",
+            "Para bloquear ubicaciones no deseadas"
           ],
           "correct": 1,
           "explanation": "Lookalike = prospección (gente nueva similar al source). El retargeting lo hace una Custom Audience.",
@@ -610,7 +665,12 @@
         {
           "type": "fill",
           "q": "Desde un mismo source puedes generar hasta ___ lookalikes.",
-          "options": ["10", "100", "500", "1,000"],
+          "options": [
+            "10",
+            "100",
+            "500",
+            "1,000"
+          ],
           "correct": 2,
           "explanation": "Hasta 500 lookalikes por source audience."
         }
@@ -632,9 +692,9 @@
           "type": "mcq",
           "q": "¿Cómo construyes el source y qué tipo de audiencia creas?",
           "options": [
-            "Lookalike directo del CSV sin pasar por Custom Audience",
-            "Custom Audience desde Customer List filtrada por value >$2M, y esa custom audience como SOURCE del Lookalike",
-            "Saved Audience con intereses de energía",
+            "Lookalike directo del CSV, sin Custom Audience",
+            "Customer List filtrada como source del Lookalike",
+            "Una Saved Audience con intereses de energía",
             "Detailed targeting de dueños de negocio"
           ],
           "correct": 1,
@@ -644,10 +704,10 @@
           "type": "mcq",
           "q": "¿Por qué Lookalike 1% (no 10%) en este caso?",
           "options": [
-            "1% es más barato",
-            "Kenet quiere MÁXIMA SIMILITUD con los clientes top, aceptando menor alcance. 1% da el top 1% más parecido. 10% diluiría la calidad",
-            "10% no funciona en México",
-            "Son lo mismo"
+            "Porque el Lookalike 1% es más barato",
+            "Quiere máxima similitud con sus clientes top",
+            "Porque el 10% no funciona en México",
+            "Porque el 1% y el 10% son lo mismo"
           ],
           "correct": 1,
           "explanation": "1% = máxima similitud (calidad). 10% = máximo alcance (volumen). Para B2B industrial premium donde cada lead vale mucho: 1%.",
@@ -657,10 +717,10 @@
           "type": "mcq",
           "q": "¿1,500 clientes alcanzan para crear el Lookalike?",
           "options": [
-            "No, se necesitan 5,000 mínimo",
-            "Sí, supera el mínimo de 100 de un solo país (recomendado 1,000-50,000)",
-            "Solo si son de varios países",
-            "No, el mínimo es 50,000"
+            "No: se necesitan 5,000 clientes mínimo",
+            "Sí: supera el mínimo de 100 de un país",
+            "Solo si los clientes son de varios países",
+            "No: el mínimo requerido es 50,000"
           ],
           "correct": 1,
           "explanation": "El mínimo absoluto es 100 de un solo país; 1,500 cae dentro del rango recomendado (1,000-50,000), así que la calidad será buena."
@@ -767,7 +827,12 @@
         {
           "type": "fill",
           "q": "Advantage+ Audience está ___ por default en campañas nuevas.",
-          "options": ["OFF", "ON", "solo en Sales", "solo con catalog"],
+          "options": [
+            "OFF",
+            "ON",
+            "solo en Sales",
+            "solo con catalog"
+          ],
           "correct": 1,
           "explanation": "ON por default. Se desactiva con 'Switch to original' o 'Further limit reach'."
         },
@@ -788,10 +853,10 @@
           "type": "mcq",
           "q": "¿Qué hace exactamente Advantage+ Audience?",
           "options": [
-            "Bloquea ubicaciones que no quieres",
-            "Expande más allá de tus parámetros sugeridos con AI para hallar gente probablemente interesada",
-            "Sube un CSV de clientes",
-            "Reemplaza el catálogo"
+            "Bloquea las ubicaciones que no quieres",
+            "Expande tus parámetros con AI para hallar gente",
+            "Sube un CSV de clientes a la cuenta",
+            "Reemplaza al catálogo de productos"
           ],
           "correct": 1,
           "explanation": "Advantage+ Audience es AI que expande sobre tus suggestions buscando gente con probabilidad de interés. No bloquea ni reemplaza nada.",
@@ -800,7 +865,12 @@
         {
           "type": "fill",
           "q": "Hacer click en 'Switch to original audience options' ___ Advantage+ Audience.",
-          "options": ["desactiva", "activa", "no afecta", "duplica"],
+          "options": [
+            "desactiva",
+            "activa",
+            "no afecta",
+            "duplica"
+          ],
           "correct": 0,
           "explanation": "'Switch to original audience options' y 'Further limit the reach of your ads' desactivan Advantage+ Audience."
         },
@@ -848,9 +918,9 @@
           "q": "¿Qué recomiendas para campañas modernas de prospección?",
           "options": [
             "Mantener todo ultra-segmentado y la AI apagada",
-            "Broad audience + Advantage+ Audience ON, dando el lookalike como suggestion",
-            "Quitar la ubicación como control",
-            "Usar solo Reservation"
+            "Broad audience + Advantage+ Audience ON",
+            "Quitar la ubicación como control rígido",
+            "Usar únicamente el modo Reservation"
           ],
           "correct": 1,
           "explanation": "La combinación ganadora moderna es Broad (edad + ubicación) + Advantage+ Audience ON, con el lookalike como suggestion para orientar a la AI."
@@ -920,9 +990,18 @@
           "type": "kvtable",
           "h": "Cómo se maneja el overlap alto",
           "rows": [
-            ["Exclusion", "Excluir la custom audience del ad set de prospecting"],
-            ["Consolidation", "Combinar los ad sets que se pisan en uno solo"],
-            ["Refinement", "Separar más con detailed targeting para que no se solapen"]
+            [
+              "Exclusion",
+              "Excluir la custom audience del ad set de prospecting"
+            ],
+            [
+              "Consolidation",
+              "Combinar los ad sets que se pisan en uno solo"
+            ],
+            [
+              "Refinement",
+              "Separar más con detailed targeting para que no se solapen"
+            ]
           ]
         },
         {
@@ -954,14 +1033,24 @@
         {
           "type": "fill",
           "q": "El catálogo de productos se gestiona en ___.",
-          "options": ["Ads Manager", "Commerce Manager", "Events Manager", "Business Suite"],
+          "options": [
+            "Ads Manager",
+            "Commerce Manager",
+            "Events Manager",
+            "Business Suite"
+          ],
           "correct": 1,
           "explanation": "El catálogo (inventario de productos) se administra en Commerce Manager."
         },
         {
           "type": "fill",
           "q": "El catalog match rate target es &gt; ___ %.",
-          "options": ["50", "75", "90", "100"],
+          "options": [
+            "50",
+            "75",
+            "90",
+            "100"
+          ],
           "correct": 1,
           "explanation": ">75%. Por debajo: problema de mapeo entre Pixel y catalog."
         },
@@ -982,10 +1071,10 @@
           "type": "mcq",
           "q": "Mejor práctica para anunciante con varias líneas de productos:",
           "options": [
-            "Un catalog por línea",
+            "Un catalog separado por cada línea",
             "Un solo catalog con Product Sets por línea",
-            "Sin catalog",
-            "Varios Pixels"
+            "No usar catalog en ningún caso",
+            "Crear varios Pixels, uno por línea"
           ],
           "correct": 1,
           "explanation": "UN solo catalog. Product Sets para sub-líneas. Múltiples catalogs confunden el matching con Pixel.",
@@ -994,7 +1083,12 @@
         {
           "type": "fill",
           "q": "El análisis de audience overlap es confiable solo con audiencias de mínimo ___ personas cada una.",
-          "options": ["100", "1,000", "10,000", "100,000"],
+          "options": [
+            "100",
+            "1,000",
+            "10,000",
+            "100,000"
+          ],
           "correct": 2,
           "explanation": "Mínimo 10,000 personas en cada audience para que el overlap tenga sentido estadístico."
         },
@@ -1015,10 +1109,10 @@
           "type": "mcq",
           "q": "¿Para qué objectives está disponible Advantage+ Catalog Ads?",
           "options": [
-            "Solo Awareness",
-            "Sales (a nivel campaña) · App Promotion, Engagement, Leads, Traffic (a nivel ad)",
-            "Solo Reservation",
-            "Ninguno, es independiente del objective"
+            "Únicamente para el objetivo Awareness",
+            "Sales (campaña) y Engagement/Leads/Traffic (ad)",
+            "Únicamente disponible en modo Reservation",
+            "Ninguno: es independiente del objective"
           ],
           "correct": 1,
           "explanation": "Sales lo activa a nivel campaña (complete solution); App Promotion/Engagement/Leads/Traffic lo permiten a nivel ad.",
@@ -1042,10 +1136,10 @@
           "type": "mcq",
           "q": "Si Kenet crea un Product Set 'Top sellers' con SOLO 12 productos, ¿es óptimo?",
           "options": [
-            "Sí, menos opciones = más claridad",
-            "NO. Meta recomienda mínimo 20 productos por Product Set para que el ML tenga material suficiente de selección",
-            "Solo si los SKUs son premium",
-            "Es indiferente"
+            "Sí: menos opciones dan más claridad",
+            "No: Meta recomienda mínimo 20 productos",
+            "Solo es óptimo si los SKUs son premium",
+            "Es indiferente la cantidad de productos"
           ],
           "correct": 1,
           "explanation": "Mínimo 20 productos por Product Set para que Advantage+ Catalog Ads tenga suficiente variedad para optimizar por persona.",
@@ -1055,10 +1149,10 @@
           "type": "mcq",
           "q": "El catalog match rate marca 40%. ¿Qué haces antes de subir budget?",
           "options": [
-            "Subir el budget igual, el match rate no importa",
-            "Revisar que los Content IDs que manda el Pixel empaten con los IDs del catálogo (mapeo, productos faltantes)",
-            "Cambiar el objective a Awareness",
-            "Crear un segundo catálogo"
+            "Subir el budget igual: el match rate no importa",
+            "Revisar que los Content IDs empaten con el catálogo",
+            "Cambiar el objective de la campaña a Awareness",
+            "Crear un segundo catálogo desde cero"
           ],
           "correct": 1,
           "explanation": "40% está muy debajo del target >75%. No es problema de presupuesto: es mapeo entre Pixel y catálogo. Se corrige antes de escalar."
@@ -1067,10 +1161,10 @@
           "type": "mcq",
           "q": "¿Qué campaña y setup usas para que cada distribuidor vea el producto relevante?",
           "options": [
-            "Awareness + detailed targeting denso",
-            "Sales + Advantage+ Catalog Ads + Product Set con los 40 SKUs + Custom Audience 'Distribuidores activos' como inclusion",
-            "Reservation con un solo producto",
-            "Lookalike 10% sin catálogo"
+            "Awareness con detailed targeting muy denso",
+            "Sales + Catalog Ads + Product Set + Custom Audience",
+            "Reservation mostrando un solo producto",
+            "Un Lookalike 10% sin catálogo conectado"
           ],
           "correct": 1,
           "explanation": "Sales + Advantage+ Catalog Ads deja que el ML elija qué productos mostrar a cada persona; el Product Set (40 SKUs supera el mínimo de 20) y la Custom Audience como inclusion completan el setup."
@@ -1150,10 +1244,10 @@
           "type": "mcq",
           "q": "En el mismo caso, ¿por qué el CRM se vuelve Custom Audience y NO directamente un Lookalike?",
           "options": [
-            "Porque el Lookalike no acepta listas",
-            "Porque el Lookalike necesita una source audience; la Custom Audience del CRM es esa source para luego prospectar similares",
-            "Porque Custom Audience es más barata",
-            "Porque son lo mismo"
+            "Porque el Lookalike no acepta listas de clientes",
+            "Porque el Lookalike necesita una source audience",
+            "Porque la Custom Audience resulta más barata",
+            "Porque en realidad ambas son lo mismo"
           ],
           "correct": 1,
           "explanation": "El CRM es gente que YA compró → Custom Audience (retargeting). Para encontrar gente NUEVA similar se crea un Lookalike usando esa Custom Audience como source. El Lookalike siempre parte de una source existente."
@@ -1219,49 +1313,84 @@
         {
           "type": "fill",
           "q": "Una ___ Audience es gente que YA interactuó con tu negocio (retargeting).",
-          "options": ["Custom", "Lookalike", "Saved", "Broad"],
+          "options": [
+            "Custom",
+            "Lookalike",
+            "Saved",
+            "Broad"
+          ],
           "correct": 0,
           "explanation": "Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos)."
         },
         {
           "type": "fill",
           "q": "El mínimo absoluto de source para crear un Lookalike es ___ personas de un solo país.",
-          "options": ["50", "100", "500", "1,000"],
+          "options": [
+            "50",
+            "100",
+            "500",
+            "1,000"
+          ],
           "correct": 1,
           "explanation": "100 mínimo de un solo país. Recomendado 1,000-50,000 para calidad."
         },
         {
           "type": "fill",
           "q": "El Lookalike de ___% es el más similar al source (calidad sobre volumen).",
-          "options": ["1", "5", "10", "20"],
+          "options": [
+            "1",
+            "5",
+            "10",
+            "20"
+          ],
           "correct": 0,
           "explanation": "1% = top 1% más parecido al source. 10% = más alcance, menos similitud."
         },
         {
           "type": "fill",
           "q": "El máximo de Custom Audiences por ad account es ___.",
-          "options": ["100", "250", "500", "1,000"],
+          "options": [
+            "100",
+            "250",
+            "500",
+            "1,000"
+          ],
           "correct": 2,
           "explanation": "500 custom audiences máximo por ad account."
         },
         {
           "type": "fill",
           "q": "Advantage+ Audience está ___ por default en campañas nuevas.",
-          "options": ["OFF", "ON", "solo en Sales", "solo con catalog"],
+          "options": [
+            "OFF",
+            "ON",
+            "solo en Sales",
+            "solo con catalog"
+          ],
           "correct": 1,
           "explanation": "ON por default. Se desactiva con 'Switch to original' o 'Further limit reach'."
         },
         {
           "type": "fill",
           "q": "El catálogo de productos se gestiona en ___.",
-          "options": ["Ads Manager", "Commerce Manager", "Events Manager", "Business Suite"],
+          "options": [
+            "Ads Manager",
+            "Commerce Manager",
+            "Events Manager",
+            "Business Suite"
+          ],
           "correct": 1,
           "explanation": "El catálogo (inventario de productos) se administra en Commerce Manager."
         },
         {
           "type": "fill",
           "q": "El catalog match rate target es &gt; ___ %.",
-          "options": ["50", "75", "90", "100"],
+          "options": [
+            "50",
+            "75",
+            "90",
+            "100"
+          ],
           "correct": 1,
           "explanation": ">75%. Por debajo: problema de mapeo entre Pixel y catalog."
         }
@@ -1277,10 +1406,10 @@
           "type": "mcq",
           "q": "Custom Audience vs Lookalike:",
           "options": [
-            "Custom = nuevos prospectos · Lookalike = clientes existentes",
-            "Custom = clientes existentes que YA interactuaron · Lookalike = nuevos prospectos SIMILARES",
-            "Son lo mismo",
-            "Custom es solo offline"
+            "Custom = prospectos nuevos; Lookalike = clientes",
+            "Custom = clientes que ya interactuaron; LAL = nuevos",
+            "Son exactamente lo mismo, distinto nombre",
+            "La Custom Audience funciona solo offline"
           ],
           "correct": 1,
           "explanation": "Custom = retargeting (ya te conocen). Lookalike = prospección (parecidos).",
@@ -1303,10 +1432,10 @@
           "type": "mcq",
           "q": "Lookalike 1% es:",
           "options": [
-            "Menos similar al source",
-            "Top 1% más parecido al source (max similitud, menor alcance)",
-            "1% de tu audience",
-            "Audiencia con 1% de overlap"
+            "El segmento menos similar al source",
+            "El top 1% más parecido (max similitud)",
+            "El 1% de tu propia audience actual",
+            "Una audiencia con 1% de overlap"
           ],
           "correct": 1,
           "explanation": "1% = top 1% más parecido. 10% = más alcance, menos parecido.",
@@ -1355,10 +1484,10 @@
           "type": "mcq",
           "q": "Audience CONTROLS:",
           "options": [
-            "Sugieren al sistema dónde buscar",
-            "RESTRINGEN delivery (rígido), ej: location, edad mínima",
-            "Son lo mismo que suggestions",
-            "Solo en Reservation"
+            "Sugieren al sistema dónde buscar gente",
+            "RESTRINGEN delivery (rígido): location, edad",
+            "Son exactamente lo mismo que las suggestions",
+            "Solo están disponibles en modo Reservation"
           ],
           "correct": 1,
           "explanation": "Controls son rígidos: el sistema NO se sale de ahí. Suggestions son flexibles.",
@@ -1407,10 +1536,10 @@
           "type": "mcq",
           "q": "Mejor práctica para anunciante con varias líneas de productos:",
           "options": [
-            "Un catalog por línea",
+            "Un catalog separado por cada línea",
             "Un solo catalog con Product Sets por línea",
-            "Sin catalog",
-            "Varios Pixels"
+            "No usar catalog en ningún caso",
+            "Crear varios Pixels, uno por línea"
           ],
           "correct": 1,
           "explanation": "UN solo catalog. Product Sets para sub-líneas. Múltiples catalogs confunden el matching con Pixel.",

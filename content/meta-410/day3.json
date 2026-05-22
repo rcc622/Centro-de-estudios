@@ -85,10 +85,10 @@
           "type": "mcq",
           "q": "¿Cuál es la diferencia clave entre Leads y Sales?",
           "options": [
-            "Leads es siempre más barato",
-            "Leads = recolectar contacto (consideración) · Sales = transacción (conversión)",
-            "Sales solo funciona con catálogo",
-            "Leads no admite Instant form"
+            "Leads es siempre más barato que Sales",
+            "Leads recolecta contacto; Sales = transacción",
+            "Sales solo funciona si hay un catálogo",
+            "Leads no admite el Instant form nativo"
           ],
           "correct": 1,
           "explanation": "Etapa del funnel: <strong>Leads</strong> en consideración (recolectar contacto), <strong>Sales</strong> en conversión (cobro/compra real)."
@@ -109,9 +109,9 @@
           "type": "mcq",
           "q": "Si tu meta es venta real pero eliges Traffic, ¿qué problema tienes?",
           "options": [
-            "Ninguno, son intercambiables",
-            "Traffic optimiza por link clicks, no por compras: pagas visitas pero el sistema no busca compradores",
-            "Traffic es más caro que Sales siempre",
+            "Ninguno, son objetivos intercambiables",
+            "Traffic optimiza por clicks, no por compras",
+            "Traffic es siempre más caro que Sales",
             "Traffic no permite anuncios con video"
           ],
           "correct": 1,
@@ -309,10 +309,10 @@
           "type": "mcq",
           "q": "¿Qué control de frecuencia tiene sentido para asegurar recordación durante las 2 semanas?",
           "options": [
-            "Frequency cap, máximo de impresiones por persona",
-            "Target frequency: promedio semanal de impresiones por persona, solo disponible en Reservation",
-            "Daily budget alto",
-            "Bid Cap bajo"
+            "Frequency cap: tope de impresiones por persona",
+            "Target frequency: promedio semanal (Reservation)",
+            "Subir el daily budget lo más alto posible",
+            "Poner un Bid Cap deliberadamente bajo"
           ],
           "correct": 1,
           "explanation": "Target frequency = promedio semanal de impresiones por persona; ideal para recall previo a evento (que cada industrial vea el ad ~3 veces/semana). Solo disponible en Reservation.",
@@ -322,10 +322,10 @@
           "type": "mcq",
           "q": "Si después la dirección pide CERRAR ventas en sitio durante la feria, ¿qué cambia?",
           "options": [
-            "Nada, Reservation también vende",
-            "Hay que pasar a Auction: Sales solo existe ahí, perdiendo el CPM fijo",
-            "Se sube el lifetime budget",
-            "Se cambia a Engagement"
+            "Nada: Reservation también cierra ventas",
+            "Hay que pasar a Auction y se pierde el CPM fijo",
+            "Solo se sube el lifetime budget de la campaña",
+            "Se cambia el objetivo a Engagement directo"
           ],
           "correct": 1,
           "explanation": "Sales solo existe en <strong>Auction</strong>. Pasar a vender obliga a abandonar Reservation y aceptar pricing variable. Por eso se elige el buying type según la meta real.",
@@ -440,10 +440,10 @@
           "type": "mcq",
           "q": "Un ad puja $20 con alta probabilidad de acción y buena calidad; otro puja $35 con banner genérico. ¿Quién puede ganar?",
           "options": [
-            "Siempre el de $35",
+            "Siempre el que puja más alto ($35)",
             "El de $20 si su total value es mayor",
-            "Empatan",
-            "El publicado primero"
+            "Empatan y se reparten las impresiones",
+            "El que se publicó primero en el tiempo"
           ],
           "correct": 1,
           "explanation": "Gana el mayor <strong>total value</strong>. Un bid bajo con alta probabilidad de acción y buena calidad puede ganar contra un bid alto y baja relevancia."
@@ -464,10 +464,10 @@
           "type": "mcq",
           "q": "¿Cuál describe mejor Ad quality dentro del total value?",
           "options": [
-            "El presupuesto de la campaña",
-            "Qué tan relevante y bueno es el anuncio para esa audiencia",
-            "El bid máximo permitido",
-            "El número de placements"
+            "El presupuesto total de la campaña",
+            "Qué tan relevante y bueno es el anuncio",
+            "El bid máximo permitido en la subasta",
+            "El número de placements seleccionados"
           ],
           "correct": 1,
           "explanation": "<strong>Ad quality</strong> = qué tan relevante y bueno es el anuncio para esa audiencia. Es una de las 3 piezas del total value."
@@ -490,10 +490,10 @@
           "type": "mcq",
           "q": "¿Qué le explicas al dueño de Kenet?",
           "options": [
-            "Tiene razón, el que más puja siempre gana",
-            "Gana el mayor total value (bid × action rates + ad quality): un ad relevante con alta probabilidad de acción puede ganarle a uno con bid alto",
-            "Hay que igualar exactamente el bid del competidor",
-            "El presupuesto diario decide el ganador"
+            "Tiene razón: el que más puja siempre gana",
+            "Gana el mayor total value, no el mayor bid",
+            "Hay que igualar el bid exacto del rival",
+            "El presupuesto diario decide al ganador"
           ],
           "correct": 1,
           "explanation": "El bid no es lo único: <strong>total value = bid × estimated action rates + ad quality</strong>. Mejorar relevancia y probabilidad de acción puede ganar sin inflar el bid a ciegas.",
@@ -504,9 +504,9 @@
           "q": "¿Qué palanca tiene más sentido trabajar primero en Kenet sin reventar el presupuesto?",
           "options": [
             "Subir el bid hasta superar al competidor",
-            "Mejorar la calidad y relevancia del anuncio para subir action rates y ad quality",
+            "Mejorar la calidad y relevancia del anuncio",
             "Aumentar el daily budget al doble",
-            "Cambiar a Reservation"
+            "Cambiar la campaña al modo Reservation"
           ],
           "correct": 1,
           "explanation": "Subir <strong>estimated action rates</strong> y <strong>ad quality</strong> aumenta el total value sin pagar más por puja. Es la palanca más eficiente frente a un competidor con más dinero.",
@@ -701,9 +701,9 @@
           "q": "El target de Cost per Result Goal es:",
           "options": [
             "Un tope estricto que nunca se excede",
-            "Un promedio sobre la vida de la campaña que PUEDE excederse",
-            "El bid máximo de la subasta",
-            "El mismo que ROAS Goal"
+            "Un promedio de campaña que puede excederse",
+            "El bid máximo permitido en la subasta",
+            "Exactamente el mismo valor que ROAS Goal"
           ],
           "correct": 1,
           "explanation": "Es un <strong>promedio</strong> sobre la vida de la campaña, no un tope estricto. El sistema puja dinámicamente, así que el cost per result promedio puede exceder el monto fijado."
@@ -726,10 +726,10 @@
           "type": "mcq",
           "q": "¿Qué bid strategy resuelve el caso?",
           "options": [
-            "Highest Volume",
-            "Cost per Result Goal con target $300",
-            "Bid Cap a $300",
-            "Highest Value"
+            "Highest Volume sin ningún target",
+            "Cost per Result Goal con target de $300",
+            "Bid Cap fijado en $300 por subasta",
+            "Highest Value optimizando por valor"
           ],
           "correct": 1,
           "explanation": "Cost per Result Goal con target $300: el sistema busca leads a ese costo y frena si solo encuentra leads caros. Highest Volume gasta todo sin meta; Bid Cap controla el bid, no el CPA.",
@@ -739,10 +739,10 @@
           "type": "mcq",
           "q": "¿Por qué Cost per Result Goal y NO Bid Cap en este caso?",
           "options": [
-            "Bid Cap es más caro",
-            "Bid Cap controla el bid en la subasta, no el CPA final; puedes terminar con CPA fuera del target a pesar del cap",
-            "Bid Cap no admite leads",
-            "Son lo mismo"
+            "Porque el Bid Cap resulta más caro",
+            "Bid Cap controla el bid, no el CPA final",
+            "Porque el Bid Cap no admite leads",
+            "Porque en la práctica son lo mismo"
           ],
           "correct": 1,
           "explanation": "Bid Cap pone un techo al BID en la subasta, pero el CPA final depende de muchas otras variables (action rates, ad quality). Cost per Result Goal directamente respeta el target de CPA. Para meta de costo: Cost per Result Goal.",
@@ -952,10 +952,10 @@
           "type": "mcq",
           "q": "Si en lugar de Advantage+ Campaign Budget Kenet hubiera puesto budget MANUAL por ad set, ¿qué pasaría?",
           "options": [
-            "Lo mismo, son intercambiables",
-            "Cada ad set gastaría todo su budget aunque convierta mal, desperdiciando el dinero de los ad sets perdedores",
-            "Daría más leads totales",
-            "Acortaría el learning phase"
+            "Lo mismo: ambas opciones son equivalentes",
+            "Cada ad set gastaría todo aunque convierta mal",
+            "Daría más leads totales a la campaña",
+            "Acortaría la duración del learning phase"
           ],
           "correct": 1,
           "explanation": "Sin Advantage+ Campaign Budget, cada ad set gasta su parte sin reasignación. Los ad sets perdedores siguen gastando aunque convierten mal. Advantage+ reasigna al ganador.",
@@ -1164,10 +1164,10 @@
           "type": "mcq",
           "q": "¿Por qué está Learning Limited este ad set?",
           "options": [
-            "Porque tiene Pixel y CAPI instalados",
-            "Porque el optimization event (Purchase de alto ticket) ocurre pocas veces y no llega a 50 events/7 días",
-            "Porque el creative es video",
-            "Porque usa Auction"
+            "Porque tiene Pixel y CAPI bien instalados",
+            "Porque el optimization event ocurre muy pocas veces",
+            "Porque el creative del anuncio es video",
+            "Porque la campaña está en modo Auction"
           ],
           "correct": 1,
           "explanation": "Un optimization event muy infrecuente impide alcanzar 50 events en 7 días → Learning Limited. Pixel + CAPI ayuda, no estorba.",
@@ -1178,9 +1178,9 @@
           "q": "¿Qué le recomiendas al dueño en lugar de cambiar el bid strategy?",
           "options": [
             "Cambiar el bid strategy de inmediato",
-            "Ampliar la audiencia o subir el budget; cambiar el bid strategy RESETEA el learning a cero",
-            "Pausar la campaña una semana",
-            "Bajar el lifetime budget"
+            "Ampliar la audiencia o subir el budget",
+            "Pausar la campaña durante una semana",
+            "Bajar el lifetime budget de la campaña"
           ],
           "correct": 1,
           "explanation": "Cambiar bid strategy es un edit significativo que <strong>resetea</strong> el learning. Para Learning Limited por event raro: ampliar audiencia o subir budget, sin tocar el bid strategy.",
@@ -1376,10 +1376,10 @@
           "type": "mcq",
           "q": "Si en lugar de Advantage+ Campaign Budget Kenet hubiera puesto budget MANUAL por ad set, ¿qué pasaría?",
           "options": [
-            "Lo mismo, son intercambiables",
-            "Cada ad set gastaría todo su budget aunque convierta mal, desperdiciando el dinero de los ad sets perdedores",
-            "Daría más leads totales",
-            "Acortaría el learning phase"
+            "Lo mismo: ambas opciones son equivalentes",
+            "Cada ad set gastaría todo aunque convierta mal",
+            "Daría más leads totales a la campaña",
+            "Acortaría la duración del learning phase"
           ],
           "correct": 1,
           "explanation": "Sin Advantage+ Campaign Budget, cada ad set gasta su parte sin reasignación. Los ad sets perdedores siguen gastando aunque convierten mal. Advantage+ reasigna al ganador.",
@@ -1395,10 +1395,10 @@
           "type": "mcq",
           "q": "¿Por qué Cost per Result Goal y NO Bid Cap en este caso?",
           "options": [
-            "Bid Cap es más caro",
-            "Bid Cap controla el bid en la subasta, no el CPA final; puedes terminar con CPA fuera del target a pesar del cap",
-            "Bid Cap no admite leads",
-            "Son lo mismo"
+            "Porque el Bid Cap resulta más caro",
+            "Bid Cap controla el bid, no el CPA final",
+            "Porque el Bid Cap no admite leads",
+            "Porque en la práctica son lo mismo"
           ],
           "correct": 1,
           "explanation": "Bid Cap pone un techo al BID en la subasta, pero el CPA final depende de muchas otras variables (action rates, ad quality). Cost per Result Goal directamente respeta el target de CPA. Para meta de costo: Cost per Result Goal.",
@@ -1414,10 +1414,10 @@
           "type": "mcq",
           "q": "¿Qué es Target frequency y por qué tiene sentido aquí?",
           "options": [
-            "Es el frequency cap, máximo de impresiones por persona",
-            "Es el promedio semanal de impresiones por persona que apunta a consistencia de recordación",
-            "Es la duración del ad",
-            "Es el costo por impresión"
+            "Es el frequency cap: tope por persona",
+            "Es el promedio semanal de impresiones",
+            "Es la duración total del anuncio",
+            "Es el costo por cada impresión servida"
           ],
           "correct": 1,
           "explanation": "Target frequency = promedio semanal de impresiones. Ideal para recall previo a evento: quieres que cada industrial vea el ad ~3 veces/semana para fijar la marca. Solo disponible en Reservation.",
@@ -1605,10 +1605,10 @@
           "type": "mcq",
           "q": "Bid Cap controla:",
           "options": [
-            "El CPA final",
-            "El bid máximo en la subasta (no el CPA final)",
-            "El daily budget",
-            "El lifetime budget"
+            "El CPA final de cada conversión",
+            "El bid máximo en la subasta, no el CPA",
+            "El daily budget del ad set",
+            "El lifetime budget de la campaña"
           ],
           "correct": 1,
           "explanation": "Bid Cap = techo al bid de la subasta. NO controla CPA final. Para CPA usar Cost per Result Goal.",
@@ -1618,10 +1618,10 @@
           "type": "mcq",
           "q": "Quién gana la subasta de Meta:",
           "options": [
-            "El que paga más",
-            "El que paga más × probabilidad de acción + ad quality",
-            "El publicado primero",
-            "El de mayor presupuesto diario"
+            "El que paga el bid más alto",
+            "El de mayor bid × action rate + ad quality",
+            "El anuncio que se publicó primero",
+            "El de mayor presupuesto diario asignado"
           ],
           "correct": 1,
           "explanation": "Total value = bid × estimated action rates + ad quality.",
