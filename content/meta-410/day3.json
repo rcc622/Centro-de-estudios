@@ -2,6 +2,11 @@
   "id": "day3",
   "title": "Día 3 — Buying Types & Bid Strategies",
   "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Repaso",
+      "sub": "Conceptos previos antes de empezar"
+    },
     "b1": {
       "ico": "🛒",
       "title": "Bloque 1",
@@ -37,7 +42,7 @@
     {
       "id": "3.0",
       "title": "Repaso espaciado · Día 2",
-      "section": "b1",
+      "section": "b0",
       "type": "reading",
       "cards": [
         {

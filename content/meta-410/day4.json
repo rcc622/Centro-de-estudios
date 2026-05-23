@@ -2,6 +2,11 @@
   "id": "day4",
   "title": "Día 4 — Signals & Data",
   "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Repaso",
+      "sub": "Conceptos previos antes de empezar"
+    },
     "b1": {
       "ico": "📡",
       "title": "Bloque 1",
@@ -34,6 +39,116 @@
     }
   },
   "lessons": [
+    {
+      "id": "4.0",
+      "title": "Repaso · Días 1-3",
+      "section": "b0",
+      "icon": "🧠",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Recupéralo antes de avanzar",
+          "body": "Antes de entrar a <strong>Signals & Data</strong> (Pixel, CAPI, eventos), retrieva los conceptos de objectives y bid strategies que ya viste."
+        },
+        {
+          "type": "kvtable",
+          "h": "Anclas mentales",
+          "rows": [
+            [
+              "6 ODAX",
+              "Awareness · Traffic · Engagement · Leads · App · Sales"
+            ],
+            [
+              "Total value",
+              "bid × action rates + ad quality. Gana en la subasta el mayor total."
+            ],
+            [
+              "5 bid strategies",
+              "Highest Volume · Highest Value · Cost per Result Goal · ROAS Goal · Bid Cap"
+            ],
+            [
+              "Learning phase",
+              "~50 events / 7 días. Cambiar bid strategy RESETEA el learning."
+            ],
+            [
+              "Advantage+ Budget",
+              "Meta reparte budget entre ad sets vs manual por set."
+            ]
+          ]
+        },
+        {
+          "type": "mcq",
+          "q": "¿Quién gana la subasta de Meta?",
+          "options": [
+            "El que paga el bid más alto",
+            "El de mayor bid × action rate + quality",
+            "El anuncio publicado primero",
+            "El de mayor presupuesto diario"
+          ],
+          "correct": 1,
+          "explanation": "Total value = bid × probabilidad de acción + ad quality. Un ad con bajo bid pero alta relevancia puede ganarle a uno con bid alto y banner genérico.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Cliente quiere MAXIMIZAR VOLUMEN de leads sin importar costo unitario. Bid strategy:",
+          "options": [
+            "Cost per Result Goal con target",
+            "Highest Volume sin metas de costo",
+            "Bid Cap fijado en $400",
+            "ROAS Goal de 3x sobre gasto"
+          ],
+          "correct": 1,
+          "explanation": "Highest Volume = maximizar cantidad sin restricción de costo. Cost per Result Goal serviría si hubiera meta de CPA. ROAS Goal es para optimizar valor.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Cambiar bid strategy a mitad del learning phase:",
+          "options": [
+            "Acelera la salida del learning",
+            "Resetea el learning y empiezas de cero",
+            "No tiene efecto en la campaña",
+            "Solo afecta el budget del set"
+          ],
+          "correct": 1,
+          "explanation": "Cambios fuertes (bid strategy, budget grande, audience grande) resetean el learning. Toca esperar 50 events/7 días nuevamente.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Bid Cap controla:",
+          "options": [
+            "El CPA final de cada conversión",
+            "El bid máximo en la subasta",
+            "El daily budget del ad set",
+            "El lifetime budget de la campaña"
+          ],
+          "correct": 1,
+          "explanation": "Bid Cap = tope al bid que Meta puja en cada subasta. NO controla el CPA final (puede salir caro a pesar del cap). Cost per Result Goal sí apunta al CPA.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Cliente quiere VENTAS. ¿Qué requiere para que Sales optimice bien?",
+          "options": [
+            "Solo el Pixel instalado en el sitio",
+            "Solo la CAPI configurada en el server",
+            "Pixel + CAPI configurados en el sitio",
+            "Una customer list de clientes"
+          ],
+          "correct": 2,
+          "explanation": "Sales requiere Pixel + CAPI + dataset. Solo Pixel pierde 10-30% de eventos. Solo CAPI pierde el match con el usuario en el browser. Ambos juntos cubren ~95%.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "concept",
+          "h": "Listo. ¡Adelante!",
+          "body": "Ya con bid strategies en la cabeza, Día 4 te muestra <strong>la materia prima</strong> que el algoritmo usa para optimizar: las señales (Pixel, CAPI, events) que tu sitio le manda."
+        }
+      ]
+    },
     {
       "id": "4.1",
       "title": "Explica · Signals, events y las 4 data sources",

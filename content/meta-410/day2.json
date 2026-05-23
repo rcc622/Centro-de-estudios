@@ -2,6 +2,11 @@
   "id": "day2",
   "title": "Día 2 — Campaign Objectives",
   "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Repaso",
+      "sub": "Conceptos previos antes de empezar"
+    },
     "b1": {
       "ico": "🧭",
       "title": "Bloque 1",
@@ -29,6 +34,116 @@
     }
   },
   "lessons": [
+    {
+      "id": "2.0",
+      "title": "Repaso · Día 1",
+      "section": "b0",
+      "icon": "🧠",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Recupéralo antes de avanzar",
+          "body": "Antes de entrar a <strong>Campaign Objectives</strong>, recupera de memoria lo de Ads Manager y permisos del Día 1. Retrievar bajo esfuerzo (antes de releer) fija el conocimiento. Si fallas alguna, el error también enseña."
+        },
+        {
+          "type": "kvtable",
+          "h": "Anclas mentales",
+          "rows": [
+            [
+              "3 niveles",
+              "Campaign (objective) → Ad set (audience, budget, dataset) → Ad (creative)"
+            ],
+            [
+              "Opportunity Score",
+              "Mide qué best practices probadas faltan aplicar. NO predice ROAS."
+            ],
+            [
+              "Account overview",
+              "Donde revisas el Opportunity Score y las recomendaciones."
+            ],
+            [
+              "Roles",
+              "Full control · Advanced—Finance · Partial access · System user."
+            ],
+            [
+              "Best practice 7",
+              "Validate results: ocurre POST-campaña (por eso no entra al score)."
+            ]
+          ]
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál describe mejor el propósito del Opportunity Score?",
+          "options": [
+            "Predice el ROAS que tendrá la campaña",
+            "Muestra qué best practices faltan aplicar",
+            "Mide la calidad del creative vs benchmarks",
+            "Estima el costo por resultado del mes"
+          ],
+          "correct": 1,
+          "explanation": "El score mide ADOPCIÓN de recomendaciones probadas. Subirlo es bueno pero no garantiza performance.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "¿En qué nivel se elige el objective de una campaña?",
+          "options": [
+            "Nivel Ad, junto con el creative",
+            "Nivel Ad set, con la audiencia",
+            "Nivel Campaign, la primera decisión",
+            "Nivel Account, una sola vez"
+          ],
+          "correct": 2,
+          "explanation": "El objective se elige en Campaign y condiciona todo lo de abajo (qué configuraciones aparecen en Ad set y Ad).",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "El permiso 'Advanced — Finance' permite:",
+          "options": [
+            "Crear y editar campañas de anuncios",
+            "Ver y manejar transactions e invoices",
+            "Acceder a system users y APIs",
+            "Crear lookalike audiences avanzadas"
+          ],
+          "correct": 1,
+          "explanation": "Advanced — Finance es un permiso específico para temas financieros del portfolio. Separado del Full control.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "El dataset (Pixel + CAPI) se conecta a la campaña en:",
+          "options": [
+            "Nivel Campaign",
+            "Nivel Ad",
+            "Nivel Ad set",
+            "Nivel Account"
+          ],
+          "correct": 2,
+          "explanation": "El dataset se conecta a nivel Ad set, junto con conversion location y conversion event. Es donde Meta sabe qué señales optimizar.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Un Partner en tu portfolio es:",
+          "options": [
+            "Un empleado interno con sueldo",
+            "Un agente con su business + portfolio",
+            "Un servidor con API access",
+            "Un rol de billing temporal"
+          ],
+          "correct": 1,
+          "explanation": "Partner = otro negocio (agencia, freelancer con su business) que tiene su propio portfolio + business ID. People = individuos. System users = servidores.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "concept",
+          "h": "Listo. ¡Adelante!",
+          "body": "Listo. Con esto fresco, ahora Día 2 entra a los <strong>6 ODAX</strong>: cuáles son, cuándo elegir cada uno, y qué configura el conversion location y el performance goal."
+        }
+      ]
+    },
     {
       "id": "2.1",
       "title": "Explica · ODAX y el catálogo de los 6 objectives",

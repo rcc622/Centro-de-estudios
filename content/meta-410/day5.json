@@ -2,6 +2,11 @@
   "id": "day5",
   "title": "Día 5 — Audiences & Catalogs",
   "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Repaso",
+      "sub": "Conceptos previos antes de empezar"
+    },
     "b1": {
       "ico": "🎯",
       "title": "Bloque 1",
@@ -37,7 +42,7 @@
     {
       "id": "5.0",
       "title": "Repaso espaciado · Día 4",
-      "section": "b1",
+      "section": "b0",
       "type": "reading",
       "cards": [
         {

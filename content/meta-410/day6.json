@@ -2,6 +2,11 @@
   "id": "day6",
   "title": "Día 6 — Creative & Measurement",
   "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Repaso",
+      "sub": "Conceptos previos antes de empezar"
+    },
     "b1": {
       "ico": "🎨",
       "title": "Bloque 1",
@@ -39,6 +44,116 @@
     }
   },
   "lessons": [
+    {
+      "id": "6.0",
+      "title": "Repaso · Días 1-5",
+      "section": "b0",
+      "icon": "🧠",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Recupéralo antes de avanzar",
+          "body": "Día 6 entra a <strong>creative</strong> y <strong>measurement</strong>, pero todo se construye sobre lo de días 1-5. Retrieva las anclas mentales antes de avanzar."
+        },
+        {
+          "type": "kvtable",
+          "h": "Anclas mentales",
+          "rows": [
+            [
+              "6 ODAX",
+              "Awareness · Traffic · Engagement · Leads · App · Sales"
+            ],
+            [
+              "Pixel + CAPI",
+              "Complementarios. Sin ambos pierdes 10-30% por ATT y ad blockers."
+            ],
+            [
+              "AEM",
+              "8 eventos priorizados por dominio (iOS 14+ ATT)."
+            ],
+            [
+              "Custom vs Lookalike",
+              "Custom = retargeting (ya te conocen). LAL = prospección (similares)."
+            ],
+            [
+              "Combo ganador",
+              "Broad (edad + ubicación) + Advantage+ Audience ON."
+            ]
+          ]
+        },
+        {
+          "type": "mcq",
+          "q": "¿Cuál es el objective correcto para vender en el sitio web?",
+          "options": [
+            "Traffic con video views",
+            "Sales con conversion event Purchase",
+            "Awareness con Reach",
+            "Engagement con Messaging"
+          ],
+          "correct": 1,
+          "explanation": "Para transacción en sitio: Sales con Purchase. Traffic optimiza por clicks (no compras), Awareness por recall.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Custom Audience vs Lookalike — la diferencia clave:",
+          "options": [
+            "Custom = nuevos; LAL = clientes existentes",
+            "Custom = retargeting; LAL = prospección",
+            "Son lo mismo, distinto nombre",
+            "Custom es solo offline; LAL solo online"
+          ],
+          "correct": 1,
+          "explanation": "Custom Audience = gente que YA interactuó (retargeting). Lookalike = NUEVA gente similar a una source (prospección).",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Cambiar bid strategy a mitad del learning phase:",
+          "options": [
+            "Acelera la salida del learning",
+            "No tiene efecto en la campaña",
+            "Resetea el learning y empiezas de cero",
+            "Solo afecta el budget del set"
+          ],
+          "correct": 2,
+          "explanation": "Cambios fuertes resetean el learning. Toca esperar otros 50 events/7 días.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "La combinación moderna ganadora de audiencia:",
+          "options": [
+            "Detailed targeting denso + Advantage+ OFF",
+            "Broad (edad + ubicación) + Advantage+ ON",
+            "Solo Custom sin lookalike",
+            "Reservation con audiencia ultra-segmentada"
+          ],
+          "correct": 1,
+          "explanation": "Best practice: deja al algo encontrar al público. Broad + Advantage+ Audience ON da máximo espacio; lookalike e intereses pasan como suggestions.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Pixel y CAPI son:",
+          "options": [
+            "Lo mismo, solo cambia el nombre",
+            "Sustitutos: usar uno o el otro",
+            "Complementarios: se recomienda usar ambos",
+            "Solo para campañas en iOS"
+          ],
+          "correct": 2,
+          "explanation": "Pixel (browser) + CAPI (server) cubren ~95%. Solo Pixel pierde 10-30% por ATT y ad blockers.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "concept",
+          "h": "Listo. ¡Adelante!",
+          "body": "Listo. Día 6 te muestra cómo <strong>comunicar</strong> ese audience (creative: formatos, placements, mobile-first) y cómo <strong>medir</strong> si funcionó (KPIs, attribution, A/B test, Brand/Conversion Lift)."
+        }
+      ]
+    },
     {
       "id": "6.1",
       "title": "Explica · Formatos de ad e Instant Experience",
