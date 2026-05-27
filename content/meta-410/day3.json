@@ -152,8 +152,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet va a una feria industrial de 2 semanas y quiere que 50,000 directores recuerden la marca con un CPM cerrado, sin sorpresas. Eso es Reservation: predictibilidad de costo y delivery para un periodo fijo. La paga: se limita a Awareness/Engagement y solo FB + IG."
+          "h": "Ejemplo aplicado · Hotel Lumière",
+          "body": "Hotel Lumière lanza una temporada alta de 2 semanas y quiere que 50,000 viajeros frecuentes recuerden la marca con un CPM cerrado, sin sorpresas. Eso es Reservation: predictibilidad de costo y delivery para un periodo fijo. La paga: se limita a Awareness/Engagement y solo FB + IG."
         },
         {
           "type": "kvtable",
@@ -273,7 +273,7 @@
         },
         {
           "type": "mcq",
-          "q": "Una campaña Sales para cerrar cotizaciones de paneles, ¿en qué buying type vive?",
+          "q": "Una campaña Sales para cerrar cotizaciones de departamentos, ¿en qué buying type vive?",
           "options": [
             "Reservation, por la predictibilidad",
             "Auction: Sales solo existe ahí",
@@ -295,7 +295,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Feria Solar+Power México",
-          "body": "<strong>Kenet</strong> participa en la <em>Feria Solar+Power México</em> (2 semanas en CDMX). Quiere que 50,000 industriales clave RECUERDEN la marca antes del evento para que se acerquen al stand. Necesita CPM y delivery PREDECIBLES — sin sorpresas. Tienes que armar la campaña correcta."
+          "body": "<strong>Hotel Lumière</strong> lanza la <em>temporada alta de verano</em> (2 semanas en CDMX). Quiere que 50,000 viajeros clave RECUERDEN la marca antes del periodo para que reserven con anticipación. Necesita CPM y delivery PREDECIBLES — sin sorpresas. Tienes que armar la campaña correcta."
         },
         {
           "type": "mcq",
@@ -388,8 +388,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "El anuncio de Kenet puja $20 pero su video real de instalaciones tiene alta probabilidad de clic y buena calidad. Un competidor puja $35 con un banner genérico de baja relevancia. Kenet puede <em>ganar</em> la subasta aunque pujó menos: su total value es mayor."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "El anuncio de Tienda Urbana puja $20 pero su video real con outfits modelados tiene alta probabilidad de clic y buena calidad. Un competidor puja $35 con un banner genérico de baja relevancia. Tienda Urbana puede <em>ganar</em> la subasta aunque pujó menos: su total value es mayor."
         },
         {
           "type": "warn",
@@ -489,11 +489,11 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "El competidor que puja más",
-          "body": "El dueño de <strong>Kenet</strong> ve que un competidor más grande puja mucho más alto por la misma audiencia industrial y te dice: \"Entonces ellos siempre nos van a ganar la subasta, ¿no? Subámosle al bid sin importar el costo.\" Tienes que corregir el razonamiento."
+          "body": "El dueño de <strong>Tienda Urbana</strong> ve que un competidor más grande puja mucho más alto por la misma audiencia y te dice: \"Entonces ellos siempre nos van a ganar la subasta, ¿no? Subámosle al bid sin importar el costo.\" Tienes que corregir el razonamiento."
         },
         {
           "type": "mcq",
-          "q": "¿Qué le explicas al dueño de Kenet?",
+          "q": "¿Qué le explicas al dueño de Tienda Urbana?",
           "options": [
             "Tiene razón: el que más puja siempre gana",
             "Gana el mayor total value, no el mayor bid",
@@ -506,7 +506,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué palanca tiene más sentido trabajar primero en Kenet sin reventar el presupuesto?",
+          "q": "¿Qué palanca tiene más sentido trabajar primero en Tienda Urbana sin reventar el presupuesto?",
           "options": [
             "Subir el bid hasta superar al competidor",
             "Mejorar la calidad y relevancia del anuncio",
@@ -725,7 +725,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Lead a costo controlado",
-          "body": "<strong>Kenet</strong> quiere leads de auditoría energética industrial pero el costo unitario NO puede pasar de $300 MXN por lead, sino el proyecto deja de ser rentable. Histórico: el CPA promedio está entre $250-350 MXN. Tienes que elegir el bid strategy correcto."
+          "body": "<strong>FitZone</strong> quiere leads de prueba gratuita pero el costo unitario NO puede pasar de $300 MXN por lead, sino la membresía deja de ser rentable. Histórico: el CPA promedio está entre $250-350 MXN. Tienes que elegir el bid strategy correcto."
         },
         {
           "type": "mcq",
@@ -937,8 +937,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Kenet lanza Sales con 3 industrias",
-          "body": "<strong>Kenet Solar</strong> lanza campaña Sales con 3 ad sets (industria alimentaria, automotriz, manufactura). Budget total: $200,000 MXN al mes. Quiere que Meta asigne dinámicamente al ad set ganador sin tocar nada manualmente."
+          "h": "Edu Premium lanza Sales con 3 carreras",
+          "body": "<strong>Edu Premium</strong> (cursos online) lanza campaña Sales con 3 ad sets (carrera marketing, carrera diseño, carrera negocios). Budget total: $200,000 MXN al mes. Quiere que Meta asigne dinámicamente al ad set ganador sin tocar nada manualmente."
         },
         {
           "type": "mcq",
@@ -955,7 +955,7 @@
         },
         {
           "type": "mcq",
-          "q": "Si en lugar de Advantage+ Campaign Budget Kenet hubiera puesto budget MANUAL por ad set, ¿qué pasaría?",
+          "q": "Si en lugar de Advantage+ Campaign Budget Edu Premium hubiera puesto budget MANUAL por ad set, ¿qué pasaría?",
           "options": [
             "Lo mismo: ambas opciones son equivalentes",
             "Cada ad set gastaría todo aunque convierta mal",
@@ -1059,8 +1059,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "El ad set de Purchase de kits caros de Kenet queda Learning Limited porque ese evento ocurre pocas veces al mes. Solución típica: ampliar audiencia o subir budget — NO cambiar el bid strategy, porque eso resetea todo a cero."
+          "h": "Ejemplo aplicado · AutoMax",
+          "body": "El ad set de Purchase de SUVs caros de AutoMax queda Learning Limited porque ese evento ocurre pocas veces al mes. Solución típica: ampliar audiencia o subir budget — NO cambiar el bid strategy, porque eso resetea todo a cero."
         },
         {
           "type": "mcq",
@@ -1163,7 +1163,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Ad set caro de kits de alto ticket",
-          "body": "El ad set de Purchase de kits caros de <strong>Kenet</strong> (compra de $90,000 MXN) lleva 5 días con CPA alto y status <strong>Learning Limited</strong>. Ese evento de compra ocurre solo unas pocas veces al mes. El dueño quiere que cambies el bid strategy \"para que aprenda más rápido\"."
+          "body": "El ad set de Purchase de SUVs premium de <strong>AutoMax</strong> (compra de $900,000 MXN) lleva 5 días con CPA alto y status <strong>Learning Limited</strong>. Ese evento de compra ocurre solo unas pocas veces al mes. El dueño quiere que cambies el bid strategy \"para que aprenda más rápido\"."
         },
         {
           "type": "mcq",
@@ -1374,12 +1374,12 @@
         {
           "type": "scenario",
           "label": "CASO 1 · Advantage+ con 3 ad sets",
-          "h": "Kenet lanza Sales con 3 industrias",
-          "body": "<strong>Kenet Solar</strong> lanza campaña Sales con 3 ad sets (industria alimentaria, automotriz, manufactura). Budget total: $200,000 MXN al mes. Quiere que Meta asigne dinámicamente al ad set ganador sin tocar nada.<br/><br/><strong>Solución:</strong> Advantage+ Campaign Budget activado. Después de 2 semanas: ad set automotriz absorbe el 60% del budget porque los CFOs de plantas automotrices convierten 3x mejor que alimentaria."
+          "h": "Edu Premium lanza Sales con 3 carreras",
+          "body": "<strong>Edu Premium</strong> (cursos online) lanza campaña Sales con 3 ad sets (carrera marketing, diseño, negocios). Budget total: $200,000 MXN al mes. Quiere que Meta asigne dinámicamente al ad set ganador sin tocar nada.<br/><br/><strong>Solución:</strong> Advantage+ Campaign Budget activado. Después de 2 semanas: el ad set de marketing absorbe el 60% del budget porque sus prospectos convierten 3x mejor que negocios."
         },
         {
           "type": "mcq",
-          "q": "Si en lugar de Advantage+ Campaign Budget Kenet hubiera puesto budget MANUAL por ad set, ¿qué pasaría?",
+          "q": "Si en lugar de Advantage+ Campaign Budget Edu Premium hubiera puesto budget MANUAL por ad set, ¿qué pasaría?",
           "options": [
             "Lo mismo: ambas opciones son equivalentes",
             "Cada ad set gastaría todo aunque convierta mal",
@@ -1394,7 +1394,7 @@
           "type": "scenario",
           "label": "CASO 2 · Cost per Result Goal",
           "h": "Lead a costo controlado",
-          "body": "<strong>Kenet</strong> quiere leads de auditoría energética industrial pero el costo unitario NO puede pasar de $300 MXN por lead, sino el proyecto deja de ser rentable. Histórico: el CPA promedio está entre $250-350 MXN.<br/><br/><strong>Solución:</strong> Bid strategy Cost per Result Goal con target $300. Si el sistema no encuentra leads a ese costo, NO gasta. Acepta perder volumen para preservar CPA."
+          "body": "<strong>FitZone</strong> quiere leads de prueba gratuita pero el costo unitario NO puede pasar de $300 MXN por lead, sino la membresía deja de ser rentable. Histórico: el CPA promedio está entre $250-350 MXN.<br/><br/><strong>Solución:</strong> Bid strategy Cost per Result Goal con target $300. Si el sistema no encuentra leads a ese costo, NO gasta. Acepta perder volumen para preservar CPA."
         },
         {
           "type": "mcq",
@@ -1413,7 +1413,7 @@
           "type": "scenario",
           "label": "CASO 3 · Reservation para Feria Solar+Power",
           "h": "Recall previo a evento físico",
-          "body": "<strong>Kenet</strong> participa en la <em>Feria Solar+Power México</em> (2 semanas en CDMX). Quiere que 50,000 industriales clave RECUERDEN la marca antes del evento para que se acerquen al stand. Necesita CPM y delivery PREDECIBLES — sin sorpresas.<br/><br/><strong>Solución:</strong> Reservation + Awareness + Target frequency 3/semana + Lifetime budget de $150,000 MXN. CPM fijado, delivery garantizado durante los 14 días."
+          "body": "<strong>Hotel Lumière</strong> lanza la <em>temporada alta de verano</em> (2 semanas en CDMX). Quiere que 50,000 viajeros clave RECUERDEN la marca antes del periodo para que reserven con anticipación. Necesita CPM y delivery PREDECIBLES — sin sorpresas.<br/><br/><strong>Solución:</strong> Reservation + Awareness + Target frequency 3/semana + Lifetime budget de $150,000 MXN. CPM fijado, delivery garantizado durante los 14 días."
         },
         {
           "type": "mcq",

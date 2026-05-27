@@ -117,9 +117,9 @@
       "difficulty": "medium"
     },
     {
-      "q": "Un ad de paneles solares fue rechazado por 'personal attributes' aunque el producto es legal. ¿Por qué?",
+      "q": "Un ad de servicios financieros fue rechazado por 'personal attributes' aunque el producto es legal. ¿Por qué?",
       "options": [
-        "Meta odia paneles solares",
+        "Meta odia los servicios financieros",
         "El copy probablemente implica una característica personal del usuario (edad, raza, salud, peso). Hay que reformular para hablar de la oferta sin implicar características",
         "Solo afecta a USA",
         "Es un bug"

@@ -89,8 +89,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Vas a lanzar anuncios de paneles solares para Kenet. En Ads Manager no solo diseñas el anuncio: en el <em>mismo</em> lugar conectas el Pixel, configuras la tarjeta para pagar, creas la audiencia y revisas el reporte. Es una sala de máquinas, no un editor de imágenes."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "Vas a lanzar anuncios de tu nueva colección para Tienda Urbana (e-commerce de moda). En Ads Manager no solo diseñas el anuncio: en el <em>mismo</em> lugar conectas el Pixel, configuras la tarjeta para pagar, creas la audiencia y revisas el reporte. Es una sala de máquinas, no un editor de imágenes."
         },
         {
           "type": "concept",
@@ -109,7 +109,7 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
+          "h": "Ejemplo aplicado · Cocina Sazón",
           "body": "Tu campaña marca <strong>68/100</strong>. Eso <em>no</em> significa 68% de ROAS. Significa que hay recomendaciones probadas que no aplicaste — por ejemplo activar Advantage+ audience o sumar CAPI. Aplicarlas sube el score; los resultados reales dependen de la subasta."
         },
         {
@@ -136,11 +136,11 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "El cliente malinterpreta el score",
-          "body": "El dueño de Kenet ve que su campaña tiene <strong>Opportunity Score 64/100</strong> y te dice: \"Entonces solo voy a recuperar el 64% de lo que invierta, ¿verdad? Bájale al presupuesto.\" Tienes que corregir el malentendido."
+          "body": "El dueño de Cocina Sazón (restaurante de delivery) ve que su campaña tiene <strong>Opportunity Score 64/100</strong> y te dice: \"Entonces solo voy a recuperar el 64% de lo que invierta, ¿verdad? Bájale al presupuesto.\" Tienes que corregir el malentendido."
         },
         {
           "type": "mcq",
-          "q": "¿Qué le explicas al dueño de Kenet?",
+          "q": "¿Qué le explicas al dueño de Cocina Sazón?",
           "options": [
             "Tiene razón: 64/100 proyecta el retorno esperado",
             "El score mide adopción de best practices, no ROAS",
@@ -301,8 +301,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para Kenet decides en <em>Campaign</em>: Auction + objetivo Sales + budget mensual. En <em>Ad set</em>: audiencia de empresas con consumo alto + placements + evento de conversión. En <em>Ad</em>: el video de una instalación real, destino al formulario, tracking con Pixel."
+          "h": "Ejemplo aplicado · FlowApp",
+          "body": "Para FlowApp (SaaS B2B de gestión) decides en <em>Campaign</em>: Auction + objetivo Sales + budget mensual. En <em>Ad set</em>: audiencia de equipos de operaciones + placements + evento de conversión. En <em>Ad</em>: el video demo del producto, destino al formulario de prueba gratis, tracking con Pixel."
         },
         {
           "type": "mcq",
@@ -417,8 +417,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Armando la campaña de Kenet",
-          "body": "Estás configurando una campaña de Sales para Kenet. Tienes estas decisiones pendientes: (1) audiencia de empresas industriales, (2) el video de la instalación, (3) Auction como forma de compra. Ubica cada una en su nivel."
+          "h": "Armando la campaña de FlowApp",
+          "body": "Estás configurando una campaña de Sales para FlowApp (SaaS B2B). Tienes estas decisiones pendientes: (1) audiencia de equipos de operaciones, (2) el video demo del producto, (3) Auction como forma de compra. Ubica cada una en su nivel."
         },
         {
           "type": "mcq",
@@ -487,8 +487,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "En vez de adivinar quién quiere paneles, Advantage+ deja que la IA explore señales en tiempo real y encuentre a esas empresas mientras la campaña corre. Tú das la dirección; la IA optimiza la ejecución."
+          "h": "Ejemplo aplicado · DentalCare",
+          "body": "En vez de adivinar quién quiere un blanqueamiento dental, Advantage+ deja que la IA explore señales en tiempo real y encuentre a esos prospectos mientras la campaña corre. Tú das la dirección; la IA optimiza la ejecución."
         },
         {
           "type": "kvtable",
@@ -694,17 +694,17 @@
         {
           "type": "concept",
           "h": "BP 1 — Automate campaign setup",
-          "body": "Usa Advantage+ para automatizar el armado y dejar que la IA optimice. <em>Ejemplo:</em> en vez de armar 8 ad sets a mano para Kenet, dejas que Advantage+ Sales estructure la campaña."
+          "body": "Usa Advantage+ para automatizar el armado y dejar que la IA optimice. <em>Ejemplo:</em> en vez de armar 8 ad sets a mano para una clínica dental, dejas que Advantage+ Sales estructure la campaña."
         },
         {
           "type": "concept",
           "h": "BP 2 — Align objectives & goals",
-          "body": "El objetivo de campaña debe coincidir con el goal del negocio. <em>Ejemplo:</em> si Kenet quiere cotizaciones cerradas, el objective es Sales/Leads, no Awareness."
+          "body": "El objetivo de campaña debe coincidir con el goal del negocio. <em>Ejemplo:</em> si una inmobiliaria quiere cotizaciones cerradas, el objective es Sales/Leads, no Awareness."
         },
         {
           "type": "concept",
           "h": "BP 3 — Consider your audience",
-          "body": "Combina lo que ya sabes del cliente con lo que Advantage+ audience descubre. <em>Ejemplo:</em> das tu lista de clientes Kenet y la IA expande a perfiles similares."
+          "body": "Combina lo que ya sabes del cliente con lo que Advantage+ audience descubre. <em>Ejemplo:</em> das tu lista de clientes top y la IA expande a perfiles similares."
         },
         {
           "type": "concept",
@@ -713,7 +713,7 @@
         },
         {
           "type": "mcq",
-          "q": "Kenet optimiza por 'visitas a la página' pero la meta real es cerrar cotizaciones. ¿Qué Best Practice falla?",
+          "q": "FitZone (gimnasio) optimiza por 'visitas a la página' pero la meta real es cerrar membresías. ¿Qué Best Practice falla?",
           "options": [
             "BP 1 — Automate campaign setup",
             "BP 2 — Align objectives & goals",
@@ -734,7 +734,7 @@
         {
           "type": "concept",
           "h": "BP 5 — Focus on signals",
-          "body": "Decisiones con data de alta calidad: Pixel, CAPI, datasets, eventos. <em>Ejemplo:</em> Kenet con 3 meses de Pixel + CAPI le da a Meta señales sólidas para optimizar conversiones."
+          "body": "Decisiones con data de alta calidad: Pixel, CAPI, datasets, eventos. <em>Ejemplo:</em> una tienda online con 3 meses de Pixel + CAPI le da a Meta señales sólidas para optimizar conversiones."
         },
         {
           "type": "concept",
@@ -792,7 +792,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "La campaña gasta pero no vende",
-          "body": "Kenet lleva 2 semanas con una campaña que junta muchos clics pero cero cotizaciones. Revisas y el objetivo configurado es <strong>Traffic</strong>, aunque el cliente quiere ventas. Además solo hay 1 anuncio estático y el Pixel no está conectado."
+          "body": "Casa Plus (inmobiliaria) lleva 2 semanas con una campaña que junta muchos clics pero cero cotizaciones. Revisas y el objetivo configurado es <strong>Traffic</strong>, aunque el cliente quiere ventas. Además solo hay 1 anuncio estático y el Pixel no está conectado."
         },
         {
           "type": "mcq",
@@ -918,8 +918,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet tiene Página de FB, Instagram, ad account y catálogo. En un solo portfolio controlas quién accede a qué y das/quitas permiso a la agencia sin compartir contraseñas."
+          "h": "Ejemplo aplicado · AutoMax",
+          "body": "AutoMax (concesionaria) tiene Página de FB, Instagram, ad account y catálogo de autos. En un solo portfolio controlas quién accede a qué y das/quitas permiso a la agencia sin compartir contraseñas."
         },
         {
           "type": "kvtable",
@@ -1105,7 +1105,7 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Repartir accesos en Kenet",
+          "h": "Repartir accesos en AutoMax",
           "body": "Necesitas dar accesos: (1) una <strong>agencia</strong> que tiene su propio portfolio y configurará la CAPI, (2) el <strong>contador</strong> que solo ve facturas, (3) un <strong>freelance</strong> que ayuda 2 semanas. Asigna lo correcto a cada uno."
         },
         {
@@ -1177,8 +1177,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "El contador de Kenet entra a <em>Invoices</em> para descargar facturas y a <em>Payment activity</em> para ver el gasto. Para cambiar la tarjeta necesita rol admin o finance (view and manage) — no le basta acceso básico."
+          "h": "Ejemplo aplicado · Hotel Lumière",
+          "body": "El contador del Hotel Lumière entra a <em>Invoices</em> para descargar facturas y a <em>Payment activity</em> para ver el gasto. Para cambiar la tarjeta necesita rol admin o finance (view and manage) — no le basta acceso básico."
         },
         {
           "type": "concept",
@@ -1235,8 +1235,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Kenet cuida su marca",
-          "body": "El dueño de Kenet no quiere que sus anuncios de paneles aparezcan junto a contenido polémico, y no tiene tiempo de armar listas publisher por publisher. Además el contador necesita poder descargar las facturas del mes."
+          "h": "PetCare cuida su marca",
+          "body": "El dueño de PetCare (productos para mascotas) no quiere que sus anuncios aparezcan junto a contenido polémico, y no tiene tiempo de armar listas publisher por publisher. Además el contador necesita poder descargar las facturas del mes."
         },
         {
           "type": "mcq",

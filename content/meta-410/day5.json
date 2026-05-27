@@ -100,7 +100,7 @@
         },
         {
           "type": "mcq",
-          "q": "Kenet cierra contratos presencialmente en oficina. ¿Qué event registra y por qué canal?",
+          "q": "AutoMax cierra ventas presencialmente en la agencia. ¿Qué event registra y por qué canal?",
           "options": [
             "ViewContent enviado vía el Pixel web",
             "Purchase con value, vía CAPI Offline",
@@ -130,8 +130,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para Kenet eliges Interests = \"energía renovable\" OR \"ahorro de energía\" (OR, suma perfiles), y aparte Behaviors = \"dueños de PyME\". El AND entre ambas deja solo a quien cumple las dos: dueño de negocio <em>y</em> con interés en energía. Agregar 5 filtros más no amplía: angosta."
+          "h": "Ejemplo aplicado · DentalCare",
+          "body": "Para DentalCare eliges Interests = \"odontología estética\" OR \"blanqueamiento dental\" (OR, suma perfiles), y aparte Behaviors = \"compradores premium\". El AND entre ambas deja solo a quien cumple las dos: comprador premium <em>y</em> con interés en estética. Agregar 5 filtros más no amplía: angosta."
         },
         {
           "type": "warn",
@@ -164,8 +164,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet pone como <em>control</em> \"solo Nuevo León\" (el sistema jamás entrega fuera de NL) y como <em>suggestion</em> el lookalike de clientes premium (la AI puede ampliarlo si halla perfiles parecidos). El control marca el cerco; la suggestion marca el rumbo."
+          "h": "Ejemplo aplicado · Casa Plus",
+          "body": "Casa Plus pone como <em>control</em> \"solo Nuevo León\" (el sistema jamás entrega fuera de NL) y como <em>suggestion</em> el lookalike de compradores premium (la AI puede ampliarlo si halla perfiles parecidos). El control marca el cerco; la suggestion marca el rumbo."
         },
         {
           "type": "mcq",
@@ -362,8 +362,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet crea una Custom Audience tipo <em>Website</em> con quien visitó /cotizacion en los últimos 30 días, y otra tipo <em>Customer list</em> con su CRM de prospectos. Ambas son gente que ya tocó la marca: ideales para reactivar, no para prospectar en frío."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "Tienda Urbana crea una Custom Audience tipo <em>Website</em> con quien visitó /checkout en los últimos 30 días, y otra tipo <em>Customer list</em> con su CRM de clientes. Ambas son gente que ya tocó la marca: ideales para reactivar, no para prospectar en frío."
         },
         {
           "type": "tip",
@@ -477,8 +477,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Kenet quiere reactivar su CRM industrial",
-          "body": "<strong>Kenet</strong> exporta del CRM 8,000 contactos de prospectos industriales con email, phone y empresa. Quiere reactivarlos con campaña Sales que les muestre el nuevo financiamiento. Te pregunta cómo subirlos y por qué."
+          "h": "Edu Premium quiere reactivar su CRM de alumnos",
+          "body": "<strong>Edu Premium</strong> exporta del CRM 8,000 contactos de alumnos antiguos con email, phone y carrera. Quiere reactivarlos con campaña Sales que les muestre el nuevo catálogo de cursos. Te pregunta cómo subirlos y por qué."
         },
         {
           "type": "mcq",
@@ -580,8 +580,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet toma su Custom Audience de clientes que firmaron contrato y la usa como <em>source</em> de un Lookalike. Meta busca afuera gente que se parece a esos clientes. Cada lead industrial vale mucho, así que prioriza calidad: <strong>1%</strong> (el top 1% más parecido). El source se excluye solo: el lookalike es para gente <em>nueva</em>."
+          "h": "Ejemplo aplicado · Casa Plus",
+          "body": "Casa Plus toma su Custom Audience de clientes que apartaron departamento y la usa como <em>source</em> de un Lookalike. Meta busca afuera gente que se parece a esos compradores. Cada lead inmobiliario vale mucho, así que prioriza calidad: <strong>1%</strong> (el top 1% más parecido). El source se excluye solo: el lookalike es para gente <em>nueva</em>."
         },
         {
           "type": "mcq",
@@ -690,8 +690,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Prospección de industriales premium · Kenet",
-          "body": "<strong>Kenet</strong> tiene 1,500 clientes que firmaron proyectos &gt;$2M MXN. Quiere encontrar nuevos prospectos similares a esos clientes premium. Te pregunta cómo armarlo y qué porcentaje elegir."
+          "h": "Prospección de compradores premium · Casa Plus",
+          "body": "<strong>Casa Plus</strong> tiene 1,500 clientes que apartaron departamentos &gt;$2M MXN. Quiere encontrar nuevos prospectos similares a esos compradores premium. Te pregunta cómo armarlo y qué porcentaje elegir."
         },
         {
           "type": "mcq",
@@ -805,8 +805,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet deja Advantage+ Audience ON, le da como suggestion su lookalike de clientes y solo pone como control \"México, 25-65, dueños de negocio\". La AI parte de esas pistas y expande hacia perfiles que convierten, sin que Kenet adivine cada interés."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "Tienda Urbana deja Advantage+ Audience ON, le da como suggestion su lookalike de compradoras frecuentes y solo pone como control \"México, 18-45, género femenino\". La AI parte de esas pistas y expande hacia perfiles que convierten, sin que Tienda Urbana adivine cada interés."
         },
         {
           "type": "mcq",
@@ -1011,8 +1011,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet sube un solo catálogo con paneles, inversores y baterías; arma Product Sets \"Residencial\" y \"Comercial\" (20+ productos cada uno). El Pixel manda Content IDs; si empatan con el catálogo el match rate sube de 75%. Tiene un ad set de retargeting y otro de lookalike: como se pisan, <em>excluye</em> la custom audience del de lookalike para que dejen de competir."
+          "h": "Ejemplo aplicado · PetCare",
+          "body": "PetCare sube un solo catálogo con alimento, juguetes y accesorios; arma Product Sets \"Perros\" y \"Gatos\" (20+ productos cada uno). El Pixel manda Content IDs; si empatan con el catálogo el match rate sube de 75%. Tiene un ad set de retargeting y otro de lookalike: como se pisan, <em>excluye</em> la custom audience del de lookalike para que dejen de competir."
         },
         {
           "type": "mcq",
@@ -1134,12 +1134,12 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Distribuidores con catálogo de 40 SKUs · Kenet",
-          "body": "<strong>Kenet</strong> tiene un catálogo de 40 SKUs (paneles, inversores, baterías) en Commerce Manager con Pixel conectado. Quiere que cada distribuidor (segmento existente) vea los productos más relevantes según su navegación previa, y revisar que todo esté bien antes de escalar."
+          "h": "Catálogo de 40 SKUs · PetCare",
+          "body": "<strong>PetCare</strong> tiene un catálogo de 40 SKUs (alimento, juguetes, accesorios) en Commerce Manager con Pixel conectado. Quiere que cada cliente (segmento existente) vea los productos más relevantes según su navegación previa, y revisar que todo esté bien antes de escalar."
         },
         {
           "type": "mcq",
-          "q": "Si Kenet crea un Product Set 'Top sellers' con SOLO 12 productos, ¿es óptimo?",
+          "q": "Si PetCare crea un Product Set 'Top sellers' con SOLO 12 productos, ¿es óptimo?",
           "options": [
             "Sí: menos opciones dan más claridad",
             "No: Meta recomienda mínimo 20 productos",

@@ -169,8 +169,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Cuando armas la campaña de paneles para Kenet, lo primero que tocas es el objective. Si te equivocas ahí, todo lo de abajo optimiza para la meta incorrecta — aunque la audiencia y el creative sean perfectos."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "Cuando armas la campaña de la nueva colección para Tienda Urbana (e-commerce de moda), lo primero que tocas es el objective. Si te equivocas ahí, todo lo de abajo optimiza para la meta incorrecta — aunque la audiencia y el creative sean perfectos."
         },
         {
           "type": "concept",
@@ -214,8 +214,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Si Kenet quiere que más directores conozcan la marca → Awareness (arriba). Si quiere que llenen un formulario de auditoría → Leads (medio). Si quiere cerrar contratos firmados → Sales (abajo). La misma marca usa objectives distintos según la etapa."
+          "h": "Ejemplo aplicado · Cocina Sazón",
+          "body": "Si Cocina Sazón (restaurante de delivery) quiere que más familias conozcan la marca → Awareness (arriba). Si quiere que llenen un formulario para evento corporativo → Leads (medio). Si quiere cerrar pedidos en su app → Sales (abajo). La misma marca usa objectives distintos según la etapa."
         },
         {
           "type": "warn",
@@ -318,7 +318,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "El gerente quiere ventas pero pide Traffic",
-          "body": "El gerente de <strong>Kenet Solar</strong> te dice: \"Quiero más visitas a la página de cotización para vender más sistemas. Pon el objective en Traffic, total, ahí está el botón de cotizar.\" Tienes que corregir la elección antes de armar la campaña."
+          "body": "El gerente de <strong>Cocina Sazón</strong> te dice: \"Quiero más visitas a la página del menú para vender más pedidos. Pon el objective en Traffic, total, ahí está el botón de ordenar.\" Tienes que corregir la elección antes de armar la campaña."
         },
         {
           "type": "mcq",
@@ -436,8 +436,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet abre en una ciudad nueva y aún no instala el Pixel: Awareness le sirve igual. Si publica un blog sobre el recibo de CFE y solo quiere lecturas, usa Traffic. Si quiere que vean completo un video de una instalación real sin salir del feed, usa Engagement con type Video views."
+          "h": "Ejemplo aplicado · DentalCare",
+          "body": "DentalCare (clínica dental) abre en una ciudad nueva y aún no instala el Pixel: Awareness le sirve igual. Si publica un blog con tips de cuidado dental y solo quiere lecturas, usa Traffic. Si quiere que vean completo un video con el recorrido de la clínica sin salir del feed, usa Engagement con type Video views."
         },
         {
           "type": "warn",
@@ -551,8 +551,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Kenet entra a Querétaro sin Pixel",
-          "body": "<strong>Kenet Solar</strong> abre operaciones en Querétaro y quiere que los directores de planta industrial recuerden su marca cuando aparezca la decisión de solarizar. <strong>No tiene Pixel todavía en el sitio nuevo</strong>. Presupuesto: 4 semanas, $80,000 MXN, con un video institucional 9:16."
+          "h": "DentalCare abre sucursal en Querétaro",
+          "body": "<strong>DentalCare</strong> abre operaciones en Querétaro y quiere que las familias locales recuerden su marca cuando necesiten servicios dentales. <strong>No tiene Pixel todavía en el sitio nuevo</strong>. Presupuesto: 4 semanas, $80,000 MXN, con un video institucional 9:16."
         },
         {
           "type": "mcq",
@@ -692,8 +692,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet ofrece una auditoría energética gratis y quiere los datos del prospecto: Leads con Instant form captura todo dentro del feed. Si la meta es que el cliente firme un contrato digital de financiamiento, es Sales — aunque la firma sea por Messenger, los eventos del sitio (Pixel + CAPI) alimentan el modelo."
+          "h": "Ejemplo aplicado · Casa Plus",
+          "body": "Casa Plus (inmobiliaria) ofrece una visita guiada gratis y quiere los datos del prospecto: Leads con Instant form captura todo dentro del feed. Si la meta es que el cliente firme un contrato digital de apartado, es Sales — aunque la firma sea por Messenger, los eventos del sitio (Pixel + CAPI) alimentan el modelo."
         },
         {
           "type": "mcq",
@@ -806,7 +806,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Auditoría energética gratis para naves industriales",
-          "body": "<strong>Kenet</strong> ofrece auditoría energética gratuita a naves industriales con consumo &gt;50,000 kWh/mes. Quiere capturar: nombre, empresa, m² de techo, consumo CFE y contacto. No quiere sacar al usuario del feed para no perder a los CFOs apurados."
+          "body": "<strong>Casa Plus</strong> ofrece una visita guiada gratis a su nueva torre de departamentos en CDMX. Quiere capturar: nombre, presupuesto, zonas de interés, plazo de mudanza y contacto. No quiere sacar al usuario del feed para no perder a los compradores apurados."
         },
         {
           "type": "mcq",
@@ -836,7 +836,7 @@
         },
         {
           "type": "mcq",
-          "q": "Kenet ahora quiere que el cliente firme un contrato digital de financiamiento dentro de Messenger. Para que Sales optimice bien, ¿qué requisitos son obligatorios?",
+          "q": "Casa Plus ahora quiere que el cliente firme un contrato digital de apartado dentro de Messenger. Para que Sales optimice bien, ¿qué requisitos son obligatorios?",
           "options": [
             "Solo el Pixel instalado en el sitio web",
             "Solo la CAPI configurada en el server",
@@ -916,8 +916,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet vende sistemas de $50K y de $300K MXN. El conversion event es Purchase en ambos. Pero si pone performance goal = Maximize value, el sistema busca a quien compra el sistema grande, no solo más unidades baratas."
+          "h": "Ejemplo aplicado · AutoMax",
+          "body": "AutoMax vende sedanes de $300K y SUVs de $900K MXN. El conversion event es Purchase en ambos. Pero si pone performance goal = Maximize value, el sistema busca a quien compra la SUV, no solo más unidades baratas."
         },
         {
           "type": "concept",
@@ -956,8 +956,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Campaña de marca nueva en una ciudad → Awareness con <em>Maximize ad recall lift</em>. Campaña para cerrar cotizaciones → Sales con <em>Maximize number of conversions</em>. Mismo cliente, goal alineado a cada outcome."
+          "h": "Ejemplo aplicado · Tech Móvil",
+          "body": "Campaña de lanzamiento de marca en una ciudad → Awareness con <em>Maximize ad recall lift</em>. Campaña para cerrar ventas de smartphones → Sales con <em>Maximize number of conversions</em>. Mismo cliente, goal alineado a cada outcome."
         },
         {
           "type": "tip",
@@ -1024,7 +1024,7 @@
         },
         {
           "type": "mcq",
-          "q": "Una tienda online de paneles solares quiere maximizar ventas con valor &gt;$50K MXN. ¿Cuál performance goal?",
+          "q": "AutoMax quiere maximizar ventas con ticket promedio &gt;$500K MXN. ¿Cuál performance goal?",
           "options": [
             "Maximize number of conversions",
             "Maximize value of conversions",
@@ -1267,7 +1267,7 @@
     },
     {
       "id": "2.20",
-      "title": "Caso integrador · Programa \"Pago como CFE\"",
+      "title": "Caso integrador · Programa \"Renta a tu medida\"",
       "section": "bz",
       "type": "scenario",
       "cards": [
@@ -1275,7 +1275,7 @@
           "type": "scenario",
           "label": "CASO INTEGRADOR",
           "h": "Conversión final con financiamiento",
-          "body": "<strong>Kenet</strong> lanza financiamiento solar a tasa igual al recibo de CFE. La conversión final es que el cliente <strong>firme un contrato digital</strong> dentro de Messenger después de hablar con un consultor. Tiene kenetsolar.com con navegación previa medible."
+          "body": "<strong>Casa Plus</strong> lanza un programa de apartado con anticipo del 5%. La conversión final es que el cliente <strong>firme un contrato digital</strong> dentro de Messenger después de hablar con un asesor. Tiene casaplus.com con navegación previa medible."
         },
         {
           "type": "mcq",
@@ -1305,7 +1305,7 @@
         },
         {
           "type": "mcq",
-          "q": "Si en cambio Kenet solo quisiera iniciar conversaciones en WhatsApp Business (sin cerrar venta todavía), ¿qué objective sería?",
+          "q": "Si en cambio Casa Plus solo quisiera iniciar conversaciones en WhatsApp Business (sin cerrar venta todavía), ¿qué objective sería?",
           "options": [
             "Sales con conversion location WhatsApp",
             "Engagement con type = Messaging",
@@ -1445,7 +1445,7 @@
         },
         {
           "type": "mcq",
-          "q": "Una tienda online de paneles solares quiere maximizar ventas con valor &gt;$50K MXN. ¿Cuál performance goal?",
+          "q": "Una tienda online de muebles quiere maximizar ventas con valor &gt;$50K MXN. ¿Cuál performance goal?",
           "options": [
             "Maximize number of conversions",
             "Maximize value of conversions",

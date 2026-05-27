@@ -172,8 +172,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Un industrial entra a kenetsolar.com/servicios y llena el form de cotización. El <em>signal</em> es \"esta empresa tiene interés real en paneles\". El <em>event</em> es el registro <em>Lead</em> que el sitio le envía a Meta para que aprenda a buscar más empresas parecidas."
+          "h": "Ejemplo aplicado · Casa Plus",
+          "body": "Un prospecto entra a casaplus.com/inmuebles y llena el form de visita guiada. El <em>signal</em> es \"esta persona tiene interés real en comprar\". El <em>event</em> es el registro <em>Lead</em> que el sitio le envía a Meta para que aprenda a buscar más compradores parecidos."
         },
         {
           "type": "concept",
@@ -209,8 +209,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet vende vía web y cierra muchos contratos presencialmente. Usa <strong>Pixel + CAPI</strong> en kenetsolar.com para las cotizaciones online, y <strong>Offline conversions</strong> (CSV vía CAPI Offline) para los contratos firmados en la oficina. No tiene app, así que el SDK no aplica."
+          "h": "Ejemplo aplicado · AutoMax",
+          "body": "AutoMax (concesionaria) recibe cotizaciones web y cierra ventas presencialmente en la agencia. Usa <strong>Pixel + CAPI</strong> en automax.com para las cotizaciones online, y <strong>Offline conversions</strong> (CSV vía CAPI Offline) para los autos vendidos en piso. No tiene app, así que el SDK no aplica."
         },
         {
           "type": "mcq",
@@ -315,12 +315,12 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Kenet firma en la oficina",
-          "body": "<strong>Kenet Solar</strong> corre ads para industriales. El cliente ve el anuncio, entra a kenetsolar.com pero no compra ahí: agenda una visita y firma el contrato <strong>presencialmente en la oficina</strong> dos semanas después. El dueño dice: \"como no compró en la web, esa venta no se puede atribuir al anuncio, ¿verdad?\""
+          "h": "AutoMax cierra ventas en la agencia",
+          "body": "<strong>AutoMax</strong> corre ads para autos premium. El cliente ve el anuncio, entra a automax.com pero no compra ahí: agenda una prueba de manejo y firma el contrato <strong>presencialmente en la agencia</strong> dos semanas después. El dueño dice: \"como no compró en la web, esa venta no se puede atribuir al anuncio, ¿verdad?\""
         },
         {
           "type": "mcq",
-          "q": "¿Qué data source usa Kenet para que Meta atribuya ese cierre presencial al ad que el cliente vio antes?",
+          "q": "¿Qué data source usa AutoMax para que Meta atribuya ese cierre presencial al ad que el cliente vio antes?",
           "options": [
             "El Meta Pixel del sitio web",
             "El Facebook SDK de la app",
@@ -431,8 +431,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet tiene Pixel y CAPI mandando eventos por separado. Si no los une en un Dataset, Meta podría contar dos veces el mismo Purchase. El Dataset deduplica y consolida: un solo lugar donde el Pixel y el CAPI del mismo contrato cuentan como una sola conversión."
+          "h": "Ejemplo aplicado · AutoMax",
+          "body": "AutoMax tiene Pixel y CAPI mandando eventos por separado. Si no los une en un Dataset, Meta podría contar dos veces el mismo Purchase. El Dataset deduplica y consolida: un solo lugar donde el Pixel y el CAPI del mismo contrato cuentan como una sola conversión."
         },
         {
           "type": "mcq",
@@ -630,8 +630,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet manda solo la IP en sus events: EMQ bajo, Meta empareja pocos cierres con el ad que los originó. Cuando agrega email y phone hasheados del CRM vía CAPI, el EMQ sube, Meta atribuye más cierres y la optimización mejora sin gastar un peso más."
+          "h": "Ejemplo aplicado · DentalCare",
+          "body": "DentalCare manda solo la IP en sus events: EMQ bajo, Meta empareja pocas citas con el ad que las originó. Cuando agrega email y phone hasheados del CRM vía CAPI, el EMQ sube, Meta atribuye más citas y la optimización mejora sin gastar un peso más."
         },
         {
           "type": "concept",
@@ -645,8 +645,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet manda Purchase sin value: Meta optimiza todas las ventas por igual, sea un proyecto de $30,000 o de $900,000 MXN. Cuando agrega <em>value</em> y <em>currency: MXN</em>, puede usar ROAS Goal y enfocar el budget en los contratos grandes."
+          "h": "Ejemplo aplicado · Tech Móvil",
+          "body": "Tech Móvil manda Purchase sin value: Meta optimiza todas las ventas por igual, sea un celular de $3,000 o un iPhone Pro de $30,000. Cuando agrega <em>value</em> y <em>currency: MXN</em>, puede usar ROAS Goal y enfocar el budget en los celulares de alto ticket."
         },
         {
           "type": "mcq",
@@ -752,8 +752,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Tienda Solar MX optimiza a ciegas",
-          "body": "<strong>Tienda Solar MX</strong> (e-commerce PyME de paneles y baterías) corre campañas Sales. Manda el evento Purchase pero <strong>sin value y sin currency</strong>, y en CAPI envía únicamente la IP del comprador. El cliente se queja: \"Meta me trae muchas ventas chiquitas y el ROAS está raro; quiero que priorice los pedidos grandes.\""
+          "h": "Tech Móvil optimiza a ciegas",
+          "body": "<strong>Tech Móvil</strong> (e-commerce de smartphones) corre campañas Sales. Manda el evento Purchase pero <strong>sin value y sin currency</strong>, y en CAPI envía únicamente la IP del comprador. El cliente se queja: \"Meta me trae muchas ventas chiquitas y el ROAS está raro; quiero que priorice los pedidos grandes.\""
         },
         {
           "type": "mcq",
@@ -867,12 +867,12 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para \"firmó contrato\", Kenet usa el standard event <em>Purchase</em> (con value en MXN) — no inventa uno. El Pixel ya manda <em>Lead</em> con un parameter de consumo declarado; para optimizar solo por prospectos grandes, Kenet crea una Custom Conversion 'Lead premium' = Lead AND consumo &gt; 50,000 kWh. No tocó código: solo una regla sobre el Lead existente."
+          "h": "Ejemplo aplicado · Casa Plus",
+          "body": "Para \"firmó contrato de apartado\", Casa Plus usa el standard event <em>Purchase</em> (con value en MXN) — no inventa uno. El Pixel ya manda <em>Lead</em> con un parameter de presupuesto declarado; para optimizar solo por prospectos grandes, Casa Plus crea una Custom Conversion 'Lead premium' = Lead AND presupuesto &gt; 5,000,000 MXN. No tocó código: solo una regla sobre el Lead existente."
         },
         {
           "type": "mcq",
-          "q": "Kenet quiere registrar \"descargó el estudio de viabilidad solar\", una acción muy específica sin equivalente en los standard events. ¿Qué configura?",
+          "q": "Casa Plus quiere registrar \"descargó el plano de un departamento\", una acción muy específica sin equivalente en los standard events. ¿Qué configura?",
           "options": [
             "Una Custom Conversion sobre Purchase",
             "Un Custom Event nuevo (requiere agregar código)",
@@ -1104,8 +1104,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet tenía sus 8 slots llenos de ViewContent de blog. Los reordena para priorizar <em>Purchase</em>, <em>Lead</em>, <em>InitiateCheckout</em> y <em>AddToCart</em>, instala CAPI y manda email/phone hasheados. Resultado: los cierres de iOS vuelven a optimizar bien pese a ATT."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "Tienda Urbana tenía sus 8 slots llenos de ViewContent del blog. Los reordena para priorizar <em>Purchase</em>, <em>Lead</em>, <em>InitiateCheckout</em> y <em>AddToCart</em>, instala CAPI y manda email/phone hasheados. Resultado: las ventas en iOS vuelven a optimizar bien pese a ATT."
         },
         {
           "type": "mcq",
@@ -1212,8 +1212,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Kenet pierde a los directores con iPhone",
-          "body": "<strong>Kenet Solar</strong> nota que sus campañas Sales rinden bien en Android pero \"mueren\" en iPhone. Mucho de su tráfico industrial son directores de planta con iPhone que rechazan el popup de ATT. Además, los 8 slots de eventos del dominio están llenos de <em>ViewContent</em> de cada entrada del blog. Solo usan Pixel."
+          "h": "Tienda Urbana pierde a los compradores con iPhone",
+          "body": "<strong>Tienda Urbana</strong> nota que sus campañas Sales rinden bien en Android pero \"mueren\" en iPhone. Mucho de su tráfico son compradoras con iPhone que rechazan el popup de ATT. Además, los 8 slots de eventos del dominio están llenos de <em>ViewContent</em> de cada entrada del blog. Solo usan Pixel."
         },
         {
           "type": "mcq",
@@ -1241,7 +1241,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Cuál es el plan de acción correcto para Kenet?",
+          "q": "¿Cuál es el plan de acción correcto para Tienda Urbana?",
           "options": [
             "Apagar todas las campañas que corren en iOS",
             "Instalar CAPI, reordenar los 8 slots y subir EMQ",

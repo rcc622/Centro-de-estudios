@@ -209,8 +209,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para Kenet: si solo tienes un video de instalación → <em>Single video</em>. Si quieres mostrar 5 modelos de panel deslizables → <em>Carousel</em>. Si quieres contar una historia con video grande y debajo el catálogo de SKUs → <em>Collection</em>. Y si el sitio carga lento en celular, usas <em>Instant Experience</em> para mantener todo dentro de Meta."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "Para Tienda Urbana: si solo tienes un video editorial → <em>Single video</em>. Si quieres mostrar 5 outfits deslizables → <em>Carousel</em>. Si quieres contar una historia con video grande y debajo el catálogo de SKUs → <em>Collection</em>. Y si el sitio carga lento en celular, usas <em>Instant Experience</em> para mantener todo dentro de Meta."
         },
         {
           "type": "mcq",
@@ -247,7 +247,7 @@
         },
         {
           "type": "mcq",
-          "q": "Quieres mostrar 5 SKUs de paneles solares al mismo tiempo en formato swipe. ¿Cuál usas?",
+          "q": "Quieres mostrar 5 outfits de la colección al mismo tiempo en formato swipe. ¿Cuál usas?",
           "options": [
             "Collection",
             "Carousel",
@@ -318,8 +318,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Industria alimentaria · paneles para frigoríficos",
-          "body": "<strong>Kenet</strong> lanza una colección visual para industria alimentaria. Tiene un video de instalación en bodega frigorífica y quiere contar esa historia <em>y además</em> mostrar el grid de SKUs (paneles 550W, inversor central, batería) del catálogo, todo dentro de Meta y sin enviar al usuario a un sitio externo lento."
+          "h": "Tienda Urbana · colección de invierno",
+          "body": "<strong>Tienda Urbana</strong> lanza su nueva colección de invierno. Tiene un video editorial con la modelo recorriendo un loft y quiere contar esa historia <em>y además</em> mostrar el grid de SKUs (abrigo, suéter, botas) del catálogo, todo dentro de Meta y sin enviar al usuario a un sitio externo lento."
         },
         {
           "type": "mcq",
@@ -336,7 +336,7 @@
         },
         {
           "type": "mcq",
-          "q": "El sitio de Kenet carga lento en celular. ¿Qué herramienta evita esa fricción manteniendo al usuario dentro de Meta?",
+          "q": "El sitio de Tienda Urbana carga lento en celular. ¿Qué herramienta evita esa fricción manteniendo al usuario dentro de Meta?",
           "options": [
             "Mandar tráfico al sitio web de todos modos",
             "Instant Experience (landing full-screen mobile)",
@@ -348,7 +348,7 @@
         },
         {
           "type": "mcq",
-          "q": "Kenet no sabe si Collection o Carousel rendirá mejor con esta audiencia. ¿Qué opción deja que Meta decida?",
+          "q": "Tienda Urbana no sabe si Collection o Carousel rendirá mejor con esta audiencia. ¿Qué opción deja que Meta decida?",
           "options": [
             "Usar siempre Single video",
             "Flexible: Meta entrega el formato ganador",
@@ -465,8 +465,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Para Kenet, lo normal es <em>Advantage+ Placements</em>: dejas que Meta encuentre dónde rinde mejor el anuncio. El video para Reels tiene el teléfono pegado abajo — mala idea: el botón de mensaje de IG lo tapa. Solución: subir ese dato al centro del 9:16, dentro de la safe zone."
+          "h": "Ejemplo aplicado · DentalCare",
+          "body": "Para DentalCare, lo normal es <em>Advantage+ Placements</em>: dejas que Meta encuentre dónde rinde mejor el anuncio. El video para Reels tiene el teléfono de la clínica pegado abajo — mala idea: el botón de mensaje de IG lo tapa. Solución: subir ese dato al centro del 9:16, dentro de la safe zone."
         },
         {
           "type": "mcq",
@@ -691,8 +691,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet sube un video y deja Advantage+ Creative ON: la AI prueba crops y subtítulos por persona. Pero para Reels tiene un corte vertical específico que ya sabe que funciona — lo fija con Asset Customization. En Reels gana el manual; en el resto, la AI. Además rota testimonial, animación de ahorro y caso de planta para evitar creative fatigue."
+          "h": "Ejemplo aplicado · Tienda Urbana",
+          "body": "Tienda Urbana sube un video y deja Advantage+ Creative ON: la AI prueba crops y subtítulos por persona. Pero para Reels tiene un corte vertical específico que ya sabe que funciona — lo fija con Asset Customization. En Reels gana el manual; en el resto, la AI. Además rota testimonial, animación de ahorro y outfit de invierno para evitar creative fatigue."
         },
         {
           "type": "mcq",
@@ -801,8 +801,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "El CPA de Kenet sube cada mes",
-          "body": "<strong>Kenet</strong> corre el mismo video todo el trimestre a la misma audiencia. El primer mes el costo por cotización es bajo; al tercer mes se dispara y el director culpa al algoritmo. Tú detectas la causa real."
+          "h": "El CPA de Edu Premium sube cada mes",
+          "body": "<strong>Edu Premium</strong> corre el mismo video todo el trimestre a la misma audiencia. El primer mes el costo por inscripción es bajo; al tercer mes se dispara y el director culpa al algoritmo. Tú detectas la causa real."
         },
         {
           "type": "mcq",
@@ -819,7 +819,7 @@
         },
         {
           "type": "mcq",
-          "q": "Kenet quiere que la AI adapte el creative por persona y placement, pero en Reels ya tiene un corte que funciona. ¿Cómo lo configura?",
+          "q": "Tienda Urbana quiere que la AI adapte el creative por persona y placement, pero en Reels ya tiene un corte que funciona. ¿Cómo lo configura?",
           "options": [
             "Solo Advantage+ Creative, ignorando el corte",
             "Advantage+ Creative ON + Asset Customization en Reels",
@@ -832,7 +832,7 @@
         },
         {
           "type": "mcq",
-          "q": "El nuevo video de Kenet para Reels dura 30s con el logo al final. ¿Qué corriges?",
+          "q": "El nuevo video de Tienda Urbana para Reels dura 30s con el logo al final. ¿Qué corriges?",
           "options": [
             "Nada: el video está bien como está",
             "Acortar a ≤15s y poner branding en los primeros 3s",
@@ -923,8 +923,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Un prospecto vio el ad de Kenet el lunes, no hizo clic, y cotizó el martes. Con la ventana default (1-day view) esa cotización SÍ se atribuye al ad. Si hubiera cotizado 5 días después sin clic, ya no entraría en la ventana de view. Y si es campaña de marca, miras Reach y recall; si es de cotizaciones, miras Leads y cost per purchase."
+          "h": "Ejemplo aplicado · Casa Plus",
+          "body": "Un prospecto vio el ad de Casa Plus el lunes, no hizo clic, y cotizó el martes. Con la ventana default (1-day view) esa cotización SÍ se atribuye al ad. Si hubiera cotizado 5 días después sin clic, ya no entraría en la ventana de view. Y si es campaña de marca, miras Reach y recall; si es de cotizaciones, miras Leads y cost per purchase."
         },
         {
           "type": "mcq",
@@ -1153,8 +1153,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet patrocina una feria y quiere saber si los industriales <em>recuerdan</em> la marca → Brand Lift (encuestas). Otro trimestre quiere saber cuántas cotizaciones <em>extra</em> generó la campaña vs no haberla corrido → Conversion Lift (ventas causales). Y para comparar 2 videos cambiando solo el creative → A/B Test."
+          "h": "Ejemplo aplicado · Hotel Lumière",
+          "body": "Hotel Lumière patrocina un evento gastronómico y quiere saber si los viajeros <em>recuerdan</em> la marca → Brand Lift (encuestas). Otro trimestre quiere saber cuántas reservas <em>extra</em> generó la campaña vs no haberla corrido → Conversion Lift (ventas causales). Y para comparar 2 videos cambiando solo el creative → A/B Test."
         },
         {
           "type": "mcq",
@@ -1383,8 +1383,8 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Kenet Solar",
-          "body": "Kenet no quiere que sus anuncios salgan junto a noticias polémicas. Lo más simple: subir el <em>inventory filter</em> a Moderate o Limited. Y cuida el copy: \"para gerentes con experiencia\" en vez de algo que implique edad — eso evita rechazo por personal attributes."
+          "h": "Ejemplo aplicado · PetCare",
+          "body": "PetCare no quiere que sus anuncios salgan junto a noticias polémicas. Lo más simple: subir el <em>inventory filter</em> a Moderate o Limited. Y cuida el copy: \"para dueños responsables\" en vez de algo que implique edad — eso evita rechazo por personal attributes."
         },
         {
           "type": "mcq",
@@ -1458,7 +1458,7 @@
         },
         {
           "type": "mcq",
-          "q": "Kenet no quiere aparecer junto a noticias polémicas. ¿Cuál es el control más simple?",
+          "q": "PetCare no quiere aparecer junto a noticias polémicas. ¿Cuál es el control más simple?",
           "options": [
             "Armar una publisher block list manual de cada sitio",
             "Subir el inventory filter a Moderate o Limited",
@@ -1493,8 +1493,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Kenet · marca cuidada en industria",
-          "body": "<strong>Kenet</strong> vende a corporativos y le importa la imagen. Su anuncio dice \"ideal para los señores mayores que quieren ahorrar\" y fue rechazado. Además, el director no quiere que la marca aparezca junto a noticias polémicas y pregunta por la forma más simple de evitarlo."
+          "h": "PetCare · marca cuidada con responsabilidad",
+          "body": "<strong>PetCare</strong> vende a familias y le importa la imagen. Su anuncio dice \"ideal para los señores mayores que quieren un perro\" y fue rechazado. Además, el director no quiere que la marca aparezca junto a noticias polémicas y pregunta por la forma más simple de evitarlo."
         },
         {
           "type": "mcq",
