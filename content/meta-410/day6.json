@@ -1123,38 +1123,53 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Qué es un A/B Test",
-          "body": "Experimento controlado que compara 2 versiones de un ad cambiando <strong>UNA</strong> variable (creative, audience, placement o delivery). La audiencia se divide aleatoriamente sin overlap. Ganador = el de menor cost per result. NO tiene minimum spend."
+          "h": "¿Qué es un A/B Test?",
+          "body": "Un <strong>A/B Test</strong> (también llamado split test, o \"prueba A contra B\") es un experimento controlado: corres dos versiones de un anuncio al mismo tiempo y dejas que compitan para ver cuál funciona mejor. La regla de oro es cambiar <strong>una sola variable</strong> entre las dos versiones —puede ser el creative (la imagen o el video del anuncio), la audiencia, el placement (el lugar donde se muestra, ej. feed vs Stories) o la entrega— y dejar todo lo demás idéntico. ¿Por qué solo una? Porque si cambias dos cosas a la vez y una versión gana, nunca sabrías cuál de los dos cambios fue el responsable."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo reparte la gente el A/B Test",
+          "body": "Para que la comparación sea justa, Meta divide a tu audiencia de forma <strong>aleatoria</strong> y sin <em>overlap</em> (es decir, una misma persona nunca ve las dos versiones; así su decisión no queda \"contaminada\"). Al final, el ganador es la versión con el menor <strong>cost per result</strong> (costo por resultado: lo que te costó cada compra, lead o clic, según tu objetivo). A diferencia de los otros dos experimentos de esta lección, el A/B Test <strong>no exige un gasto mínimo</strong>, y se recomienda dejarlo correr al menos 7 días (idealmente de 14 a 30) para que junte suficientes datos."
         },
         {
           "type": "tip",
           "label": "REGLA DEL A/B TEST",
-          "body": "Una sola variable a la vez. Si cambias creative Y audience al mismo tiempo, no puedes decir cuál causó la diferencia. Audiencia suficiente sin overlap (Meta divide automáticamente). Mínimo 7 días, idealmente 14-30."
+          "body": "Una sola variable a la vez. Si cambias el creative <strong>y</strong> la audiencia juntos, ya no puedes decir cuál causó la diferencia. Deja que Meta divida la audiencia automáticamente (sin overlap) y dale tiempo: mínimo 7 días, idealmente 14-30."
         },
         {
           "type": "concept",
-          "h": "Brand Lift",
-          "body": "Encuestas a un <strong>test group</strong> (expuesto) vs un <strong>control group</strong> (no expuesto). Mide impacto en <em>brand awareness, ad recall y message association</em>. SÍ tiene mínimos de budget por región. Es percepción, no ventas."
+          "h": "Brand Lift: mide percepción, no ventas",
+          "body": "El <strong>Brand Lift</strong> (literalmente \"elevación de marca\") mide qué tanto tu campaña cambió lo que la gente <em>piensa y recuerda</em> de tu marca —no cuánto vendiste—. Funciona con <strong>encuestas</strong>: Meta le pregunta a un grupo que SÍ vio tus anuncios (el <strong>test group</strong> o grupo expuesto) y a un grupo parecido que NO los vio (el <strong>control group</strong>), y luego compara las respuestas de ambos. La diferencia entre los dos grupos es el \"lift\", o sea el empujón que dieron tus anuncios."
         },
         {
           "type": "concept",
-          "h": "Conversion Lift",
-          "body": "Compara test vs control con randomized control trials para medir conversions <strong>INCREMENTALES</strong> (sales/leads/app events causales). Responde \"¿cuántas ventas EXTRA generó la campaña?\". Fuente recomendada: Conversions API."
+          "h": "Las 3 cosas que mide el Brand Lift",
+          "body": "<strong>1. Brand awareness</strong> (reconocimiento de marca): si la gente sabe que tu marca existe. <strong>2. Ad recall</strong> (recuerdo del anuncio): si las personas recuerdan haber visto tu anuncio en los días recientes. <strong>3. Message association</strong> (asociación de mensaje): si conectan tu marca con la idea que querías transmitir (ej. relacionar \"Volaris\" con \"vuelos baratos\"). Como todo depende de juntar suficientes respuestas de encuesta para ser confiable, el Brand Lift <strong>sí exige un presupuesto mínimo</strong>, que cambia según la región."
         },
         {
           "type": "concept",
-          "h": "Dónde corren",
-          "body": "Los 3 tests viven en <strong>Experiments</strong> (Ads Manager o Meta Business Suite). NO en Ads Reporting normal. Estructura: nueva campaña dedicada, no modificar campañas existentes."
+          "h": "Conversion Lift: mide ventas EXTRA causadas",
+          "body": "El <strong>Conversion Lift</strong> mide algo distinto: cuántas conversiones <strong>extra</strong> (ventas, leads o eventos de app) generó tu campaña que <em>no</em> habrían ocurrido sin ella. A eso se le llama <strong>incrementalidad</strong>: separa las ventas que de verdad <em>causó</em> el anuncio de las que igual iban a pasar. Para lograrlo usa un <strong>RCT (Randomized Control Trial</strong>, o prueba controlada aleatorizada): reparte a la gente al azar entre un grupo que ve los anuncios y uno de control que no, y mide la diferencia real de ventas entre ambos. Responde la pregunta del jefe: \"¿cuántas ventas de más me trajo esta campaña?\". Meta recomienda alimentarlo con datos de <strong>Conversions API (CAPI)</strong> para que la medición sea más completa."
+        },
+        {
+          "type": "concept",
+          "h": "Dónde se configuran en la plataforma",
+          "body": "Los tres experimentos —A/B Test, Brand Lift y Conversion Lift— viven en la misma sección: <strong>Experiments</strong> (Experimentos), que encuentras dentro de <strong>Ads Manager</strong> o de <strong>Meta Business Suite</strong>. Ojo: <strong>no</strong> se arman ni se leen en el Ads Reporting normal (el reporte de métricas de siempre). Y otra regla práctica: cada test corre en una <strong>campaña dedicada</strong> creada para el experimento; no toques campañas que ya están corriendo, porque eso ensuciaría los resultados."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Confundir Brand Lift con Conversion Lift. <strong>Brand Lift</strong> = encuestas, mide percepción/marca. <strong>Conversion Lift</strong> = observación, mide ventas/leads reales. Si la pregunta menciona \"¿cuántas ventas extras?\" → Conversion Lift. Si menciona \"impacto en marca/recall\" → Brand Lift."
+          "body": "Confundir Brand Lift con Conversion Lift. <strong>Brand Lift</strong> = encuestas, mide percepción/marca. <strong>Conversion Lift</strong> = observación de ventas/leads reales. Truco para el examen: si la pregunta menciona <em>\"¿cuántas ventas extra?\"</em> → Conversion Lift. Si menciona <em>\"impacto en marca / recall / recuerdo\"</em> → Brand Lift."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Hotel Lumière",
-          "body": "Hotel Lumière patrocina un evento gastronómico y quiere saber si los viajeros <em>recuerdan</em> la marca → Brand Lift (encuestas). Otro trimestre quiere saber cuántas reservas <em>extra</em> generó la campaña vs no haberla corrido → Conversion Lift (ventas causales). Y para comparar 2 videos cambiando solo el creative → A/B Test."
+          "body": "El <strong>Hotel Lumière</strong> patrocina un evento gastronómico. Pregunta 1: ¿los viajeros <em>recuerdan</em> la marca después de ver los anuncios? → como es percepción, usas <strong>Brand Lift</strong> (encuestas test vs control). Pregunta 2, un trimestre después: ¿cuántas reservas <em>extra</em> generó la campaña frente a no haberla corrido? → como es incrementalidad de ventas, usas <strong>Conversion Lift</strong>. Pregunta 3: entre dos videos que solo cambian la primera escena, ¿cuál convierte más barato? → como comparas una sola variable, usas un <strong>A/B Test</strong>."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Imagina que vas a armar la prueba de los dos videos del Hotel Lumière: entras a <strong>Ads Manager → Experiments → A/B Test</strong>, eliges la variable a probar (\"Creative\"), subes el Video A y el Video B, defines presupuesto y los días (digamos 14), y le das correr. Meta reparte la audiencia sin overlap y, al terminar, te marca el ganador por menor <strong>cost per result</strong>. Ese mismo menú de Experiments es donde armarías el Brand Lift (te pedirá el presupuesto mínimo y configurará las encuestas) o el Conversion Lift (te dejará conectar tu Pixel/CAPI como fuente de las ventas)."
         },
         {
           "type": "mcq",
