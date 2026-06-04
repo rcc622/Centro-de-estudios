@@ -44,7 +44,7 @@
         {
           "type": "concept",
           "h": "Recupéralo antes de avanzar",
-          "body": "Antes de entrar a <strong>Campaign Objectives</strong>, recupera de memoria lo de Ads Manager y permisos del Día 1. Retrievar bajo esfuerzo (antes de releer) fija el conocimiento. Si fallas alguna, el error también enseña."
+          "body": "Antes de entrar a los <strong>campaign objectives</strong> (objetivos de campaña, la meta de negocio que persigue cada campaña), conviene que recuerdes de memoria lo que viste del Día 1: Ads Manager y los permisos. Recuperar un dato con esfuerzo, antes de releerlo, es lo que de verdad lo fija en tu cabeza; es una técnica de estudio llamada <em>recuperación activa</em>. Si fallas alguna pregunta, no te preocupes: el error mismo deja una huella que refuerza el recuerdo. Por ejemplo, si manejas la cuenta de <strong>Cafetería La Esquina</strong> y no recuerdas en qué nivel se elige el objetivo, equivocarte aquí hará que se te grabe mejor. Tómate las siguientes tarjetas como un calentamiento, no como un examen."
         },
         {
           "type": "kvtable",
@@ -140,7 +140,7 @@
         {
           "type": "concept",
           "h": "Listo. ¡Adelante!",
-          "body": "Listo. Con esto fresco, ahora Día 2 entra a los <strong>6 ODAX</strong>: cuáles son, cuándo elegir cada uno, y qué configura el conversion location y el performance goal."
+          "body": "Con eso fresco, el Día 2 entra de lleno a los <strong>6 ODAX</strong> (los seis objetivos de campaña que ofrece Meta). Vas a aprender cuáles son, cuándo elegir cada uno, y qué configuras después: el <strong>conversion location</strong> (lugar de conversión, dónde quieres que ocurra la acción, por ejemplo tu sitio web o un formulario dentro de Meta) y el <strong>performance goal</strong> (meta de rendimiento, la instrucción que le das al sistema sobre cómo licitar). No te preocupes si ahora suenan abstractos: cada uno se explica con ejemplos en las siguientes lecciones. Lo importante es que sepas que todo nace de una sola decisión: el objetivo."
         }
       ]
     },
@@ -160,22 +160,27 @@
         {
           "type": "concept",
           "h": "Qué es ODAX",
-          "body": "<strong>ODAX = Outcome-Driven Ad Experiences.</strong> Es la forma en que Meta agrupa todos los objectives según el <em>resultado de negocio</em> que buscas, no según la táctica. En total son <strong>6 outcomes</strong>."
+          "body": "<strong>ODAX</strong> son las siglas de <strong>Outcome-Driven Ad Experiences</strong> (experiencias publicitarias guiadas por resultados). Es la manera en que Meta organiza todos sus objetivos de campaña: en lugar de pedirte que elijas una táctica (\"haz un video\", \"manda gente al sitio\"), te pregunta primero qué <em>resultado de negocio</em> quieres lograr. La idea es que tú definas el destino y el sistema decida el mejor camino para llegar. En total existen <strong>6 outcomes</strong> (resultados) entre los que puedes elegir. Por ejemplo, <strong>Joyería Aurora</strong> no piensa \"quiero un anuncio en Instagram\", sino \"quiero vender más anillos\": ese resultado es el que define el objetivo ODAX."
         },
         {
           "type": "concept",
-          "h": "Dónde se elige",
-          "body": "El objective se elige a nivel <strong>Campaign</strong> — nunca en Ad set ni en Ad. Es la primera decisión estratégica y condiciona todo lo que viene abajo (conversion location, event, creative)."
+          "h": "Dónde se elige el objetivo",
+          "body": "El objetivo se elige a nivel <strong>Campaign</strong> (campaña), que es el nivel más alto de los tres que tiene una estructura de Meta: <strong>Campaign</strong> (campaña, donde decides el objetivo) → <strong>Ad set</strong> (conjunto de anuncios, donde decides a quién, dónde y con cuánto presupuesto) → <strong>Ad</strong> (anuncio, donde decides qué imagen o video se muestra). El objetivo nunca se elige en Ad set ni en Ad. Es la primera decisión estratégica y condiciona todo lo que aparece después: las opciones de conversion location, conversion event y demás cambian según el objetivo que escogiste. Piénsalo como elegir el tipo de viaje antes de decidir el medio de transporte."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Para elegir el objetivo recorres esta ruta en la plataforma: <strong>Ads Manager → botón verde \"Create\" (Crear) → pantalla de \"Choose a campaign objective\" (Elige un objetivo de campaña)</strong>. Ahí aparecen los 6 ODAX en tarjetas. Eliges uno, das clic en <em>Continue</em> (Continuar) y entonces baja al nivel Ad set. Por ejemplo, el media buyer de <strong>Joyería Aurora</strong> entra a Ads Manager, da clic en Create, selecciona <em>Sales</em> y solo después de eso aparecen las opciones de dónde y a quién mostrar el anuncio. Si eliges mal aquí, tendrás que crear la campaña otra vez: el objetivo no se puede cambiar una vez publicada."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "Cuando armas la campaña de la nueva colección para Tienda Urbana (e-commerce de moda), lo primero que tocas es el objective. Si te equivocas ahí, todo lo de abajo optimiza para la meta incorrecta — aunque la audiencia y el creative sean perfectos."
+          "body": "Imagina que armas la campaña de la nueva colección para <strong>Tienda Urbana</strong> (un e-commerce de moda). Lo primero que tocas es el objetivo. Si tu meta real es vender prendas pero eliges por error el objetivo equivocado, todo lo de abajo (la audiencia, el presupuesto, el anuncio) trabajará para una meta distinta a la que querías. El sistema optimiza con muchísima precisión, pero hacia donde tú le apuntaste: si apuntas mal, llega rápido al lugar incorrecto. Por eso esta primera decisión pesa más que cualquier otra: un anuncio precioso con la audiencia perfecta no sirve si el objetivo está mal puesto."
         },
         {
           "type": "concept",
           "h": "Los 6, uno por uno",
-          "body": "Memoriza estos 6 nombres en orden de funnel: <strong>Awareness, Traffic, Engagement, Leads, App Promotion, Sales</strong>. No los repitas como lista suelta: entiende qué resuelve cada uno."
+          "body": "Conviene que memorices estos 6 nombres en orden de <strong>funnel</strong> (embudo: la ruta que recorre un cliente desde que conoce la marca hasta que compra): <strong>Awareness</strong> (reconocimiento), <strong>Traffic</strong> (tráfico), <strong>Engagement</strong> (interacción), <strong>Leads</strong> (prospectos), <strong>App Promotion</strong> (promoción de app) y <strong>Sales</strong> (ventas). No los repitas como una lista suelta de palabras: lo que importa es que entiendas qué problema resuelve cada uno, porque en el examen te darán un caso de negocio y tendrás que elegir el objetivo correcto. La tabla de abajo te da la versión corta de cada uno."
         },
         {
           "type": "kvtable",
@@ -215,7 +220,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Cocina Sazón",
-          "body": "Si Cocina Sazón (restaurante de delivery) quiere que más familias conozcan la marca → Awareness (arriba). Si quiere que llenen un formulario para evento corporativo → Leads (medio). Si quiere cerrar pedidos en su app → Sales (abajo). La misma marca usa objectives distintos según la etapa."
+          "body": "Una misma marca puede usar objetivos distintos según en qué etapa del funnel esté su cliente. <strong>Cocina Sazón</strong> (un restaurante de comida a domicilio) lo vive así: si quiere que más familias del rumbo conozcan la marca por primera vez, usa <strong>Awareness</strong> (parte de arriba del funnel, donde la gente apenas te descubre). Si quiere que llenen un formulario para cotizar un evento corporativo, usa <strong>Leads</strong> (parte media, donde ya te consideran). Y si quiere cerrar pedidos directos en su app, usa <strong>Sales</strong> (parte de abajo, donde ya están listos para comprar). No es que un objetivo sea mejor que otro: cada uno sirve para una etapa distinta del recorrido del cliente."
         },
         {
           "type": "warn",
@@ -385,32 +390,37 @@
         {
           "type": "concept",
           "h": "Qué hace Awareness",
-          "body": "Llegar al máximo de personas que <strong>recordarán</strong> el ad. Optimiza para Reach, Brand Awareness, Video Views, Ad Recall, Impressions. Vive en lo más alto del funnel."
+          "body": "El objetivo <strong>Awareness</strong> (reconocimiento de marca) busca llegar al máximo de personas que <strong>recordarán</strong> tu anuncio después de verlo. No le importa que hagan clic ni que compren: su único trabajo es que la marca se quede en la cabeza de la gente. Vive en lo más alto del funnel, donde el cliente apenas te está conociendo. Puede optimizar para varias métricas como <strong>reach</strong> (alcance, cuántas personas distintas ven el anuncio), <strong>ad recall</strong> (recuerdo del anuncio) o <strong>impressions</strong> (impresiones, cuántas veces se muestra). Ejemplo: <strong>Aguas Frescas Doña Mary</strong> abre un nuevo local y quiere que el barrio entero sepa que existe; no busca ventas todavía, solo que la recuerden."
+        },
+        {
+          "type": "concept",
+          "h": "Sub-términos de Awareness, uno por uno",
+          "body": "Awareness puede optimizar para distintas métricas. Las principales son: <strong>1. Reach</strong> (alcance): cuántas <em>personas distintas</em> vieron el anuncio al menos una vez. <strong>2. Ad recall lift</strong> (incremento de recuerdo): la cantidad estimada de personas que recordarían el anuncio si les preguntaras dos días después. <strong>3. Impressions</strong> (impresiones): cuántas <em>veces</em> se mostró el anuncio en total, aunque una misma persona lo vea varias veces. <strong>4. Video views</strong> (reproducciones de video): cuánta gente vio el video. La diferencia clave entre reach e impressions: reach cuenta personas, impressions cuenta veces."
         },
         {
           "type": "concept",
           "h": "Las dos particularidades de Awareness",
-          "body": "Awareness está disponible en <strong>Auction Y Reservation</strong> (de los 6, solo Awareness y Engagement permiten Reservation). Y <strong>no requiere</strong> Pixel, CAPI ni dataset, porque no mide una conversión específica."
+          "body": "Awareness tiene dos rasgos que el examen pregunta seguido. Primero: está disponible tanto en <strong>Auction</strong> (subasta, donde compites por cada espacio y el costo varía) como en <strong>Reservation</strong> (reserva, donde apartas el espacio por adelantado a un costo fijo). De los 6 objetivos, solo Awareness y Engagement permiten Reservation; los demás solo funcionan en Auction. Segundo: <strong>no requiere</strong> Pixel, CAPI ni dataset (las herramientas que miden conversiones en tu sitio), porque Awareness no mide una compra ni una acción específica, solo el recuerdo. Por eso <strong>Aguas Frescas Doña Mary</strong> puede lanzar una campaña de Awareness aunque ni siquiera tenga página web."
         },
         {
           "type": "concept",
           "h": "Qué hace Traffic",
-          "body": "Enviar gente a un destino externo: sitio web, app, Messenger, WhatsApp, llamadas o perfil de Instagram. Optimiza para link clicks, landing page views, conversations o calls."
+          "body": "El objetivo <strong>Traffic</strong> (tráfico) tiene una sola misión: enviar gente a un destino, normalmente fuera de Meta. Ese destino puede ser tu sitio web, una app, un chat de Messenger o WhatsApp, una llamada o tu perfil de Instagram. Optimiza para acciones como <strong>link clicks</strong> (clics en el enlace) o <strong>landing page views</strong> (vistas de la página de destino, que cuentan cuando la página realmente cargó, no solo el clic). Vive en la parte media del funnel. Ejemplo: <strong>Librería El Pendiente</strong> publica un artículo de blog con recomendaciones de lectura y solo quiere que la gente lo lea; usa Traffic para llevarlos al artículo."
         },
         {
           "type": "concept",
           "h": "Las particularidades de Traffic",
-          "body": "Traffic es <strong>solo Auction</strong> (no admite Reservation) y <strong>no requiere</strong> Pixel/CAPI/dataset. Su trabajo termina cuando el usuario hace clic — no mide si compró ni si llenó algo."
+          "body": "Traffic es <strong>solo Auction</strong> (no admite Reservation, así que su costo siempre depende de la subasta) y <strong>no requiere</strong> Pixel, CAPI ni dataset para funcionar. El detalle importante: su trabajo termina en el momento en que el usuario hace clic. Traffic <em>no</em> mide si esa persona luego compró, se registró o llenó un formulario; le basta con que haya dado clic. Por eso es engañoso usarlo para vender: <strong>Librería El Pendiente</strong> pagaría por visitas a su artículo, pero el sistema no estaría buscando compradores, solo curiosos que hacen clic."
         },
         {
           "type": "concept",
           "h": "Qué hace Engagement",
-          "body": "Hacer que la gente interactúe con el negocio: video views, post engagement, conversions o mensajes (Messenger / Instagram / WhatsApp). Está disponible en <strong>Auction y Reservation</strong>."
+          "body": "El objetivo <strong>Engagement</strong> (interacción) busca que la gente <em>haga algo</em> con tu contenido o tu negocio: ver un video, reaccionar o comentar una publicación, o iniciar una conversación por mensaje (Messenger, Instagram o WhatsApp). A diferencia de Traffic, que solo busca el clic de salida, Engagement busca una interacción real. Está disponible en <strong>Auction y Reservation</strong> (es el segundo de los dos únicos que permiten reservar espacio). Ejemplo: <strong>Gimnasio Hierro Fit</strong> sube un video con la rutina del mes y quiere que sus seguidores lo vean completo dentro del feed, sin sacarlos a ningún sitio externo; ahí Engagement es el indicado."
         },
         {
           "type": "concept",
           "h": "Engagement obliga a elegir un Engagement type",
-          "body": "Engagement no tiene un 'conversion event' tradicional. Tienes que seleccionar un <strong>Engagement type</strong> específico (Video views, Post engagement, Messaging, etc.). Sin type, no se puede configurar."
+          "body": "Engagement no tiene un <strong>conversion event</strong> tradicional (esa acción medible como \"compra\" o \"registro\" que sí tienen Sales o Leads). En su lugar, te obliga a elegir un <strong>engagement type</strong> (tipo de interacción) específico: <em>Video views</em> (reproducciones de video), <em>Post engagement</em> (interacción con la publicación: reacciones, comentarios, compartidos) o <em>Messaging</em> (mensajes). Mientras no elijas el type, la plataforma no te deja terminar de configurar el ad set. Por eso <strong>Gimnasio Hierro Fit</strong>, que quiere reproducciones de su video de rutina, debe seleccionar el type <em>Video views</em>; si solo dejara \"Engagement\" sin más, el sistema no sabría qué interacción optimizar."
         },
         {
           "type": "kvtable",
@@ -623,22 +633,22 @@
         {
           "type": "concept",
           "h": "Qué hace Leads",
-          "body": "Recolectar leads vía instant forms, mensajes, calls o sign-ups. Es <strong>solo Auction</strong> y tiene su propia automation completa: <strong>Advantage+ Leads campaigns</strong>."
+          "body": "El objetivo <strong>Leads</strong> (prospectos) sirve para recolectar los datos de contacto de personas interesadas en tu negocio: su nombre, correo, teléfono o lo que tú necesites para darles seguimiento después. Vive en la parte media del funnel, en la etapa de <em>consideración</em>: la persona ya te tiene en el radar pero todavía no compra. Es <strong>solo Auction</strong> (subasta, su costo siempre depende de cuánto compitan otros anunciantes; no admite Reservation). Además trae su propia automatización completa de extremo a extremo, llamada <strong>Advantage+ Leads campaigns</strong> (campañas de prospectos donde la inteligencia artificial de Meta arma casi todo por ti). Ejemplo: <strong>Seguros Confianza</strong> regala una cotización gratis a quien deje sus datos; usa Leads para juntar esos contactos y que un agente los llame después."
         },
         {
           "type": "concept",
-          "h": "Conversion locations de Leads",
-          "body": "Leads puede recolectar en: Instant form, Website, App, Messenger o Calls. El Instant form es el más usado porque el usuario completa todo sin salir de Meta — fricción mínima."
+          "h": "Dónde puede recolectar Leads (conversion locations)",
+          "body": "El <strong>conversion location</strong> (lugar de conversión) es dónde quieres que la persona deje sus datos. En Leads puedes elegir entre cinco lugares: <strong>1. Instant form</strong> (formulario instantáneo): un formulario que se abre dentro de Meta, sin sacar al usuario a ningún sitio. <strong>2. Website</strong> (sitio web): un formulario en tu propia página. <strong>3. App</strong> (aplicación): dentro de tu app móvil. <strong>4. Messenger</strong>: la persona deja sus datos por chat. <strong>5. Calls</strong> (llamadas): la persona te marca por teléfono. El <em>Instant form</em> es el más usado porque la persona completa todo sin salir de Meta, así que la fricción es mínima y se pierden menos prospectos. Ejemplo: <strong>Seguros Confianza</strong> prefiere Instant form porque sus clientes llenan tres campos con el pulgar y listo, sin tener que cargar otra página."
         },
         {
           "type": "concept",
           "h": "Qué hace Sales",
-          "body": "Encontrar personas más propensas a <strong>comprar</strong>. Es solo Auction y tiene su automation completa: <strong>Advantage+ Sales campaigns</strong>. Vive al fondo del funnel (conversión)."
+          "body": "El objetivo <strong>Sales</strong> (ventas) busca encontrar a las personas con más probabilidad de <strong>comprar</strong>, es decir, de completar una transacción real con cobro de por medio. Vive al fondo del funnel, en la etapa de <em>conversión</em>, donde la persona ya está lista para sacar la tarjeta. Es <strong>solo Auction</strong> (no admite Reservation) y, igual que Leads, trae su automatización completa: <strong>Advantage+ Sales campaigns</strong> (campañas de ventas donde la inteligencia artificial de Meta optimiza casi toda la campaña). La diferencia con Leads es la intención: aquí no juntas contactos para llamar después, aquí buscas el cobro directo. Ejemplo: <strong>Boutique Lunaria</strong> (tienda de ropa en línea) usa Sales para vender vestidos directamente en su sitio, no para juntar correos."
         },
         {
           "type": "concept",
-          "h": "Conversion locations de Sales",
-          "body": "Sales puede convertir en: Website, App, Messenger / Instagram / WhatsApp o Calls. Cubre desde un e-commerce hasta un cierre por chat con un consultor."
+          "h": "Dónde puede convertir Sales (conversion locations)",
+          "body": "Sales también te deja elegir dónde ocurre la venta, según cómo cobre tu negocio. Las opciones son: <strong>1. Website</strong> (sitio web): el clásico carrito de un e-commerce. <strong>2. App</strong> (aplicación): compras dentro de tu app móvil. <strong>3. Messenger, Instagram o WhatsApp</strong>: el cierre ocurre por chat, cuando un asesor termina la venta en la conversación. <strong>4. Calls</strong> (llamadas): la venta se cierra por teléfono. Esto cubre desde una tienda en línea totalmente automatizada hasta un cierre personal por chat con un vendedor. Ejemplo: <strong>Boutique Lunaria</strong> vende por su sitio (Website), pero <strong>Muebles del Roble</strong> cierra piezas grandes por WhatsApp con un asesor, así que para ellos el conversion location sería WhatsApp."
         },
         {
           "type": "warn",
@@ -683,17 +693,22 @@
         {
           "type": "concept",
           "h": "Qué hace App Promotion",
-          "body": "Conseguir instalaciones de una app móvil o aumentar su uso (reengagement). Es solo Auction y tiene su automation completa: <strong>Advantage+ App campaigns</strong>."
+          "body": "El objetivo <strong>App Promotion</strong> (promoción de app) tiene dos usos: conseguir <em>instalaciones</em> nuevas de una aplicación móvil, o lograr que quien ya la tiene la vuelva a usar, lo que se llama <strong>reengagement</strong> (reenganche o reactivación de usuarios). Es <strong>solo Auction</strong> (no admite Reservation) y trae su propia automatización completa: <strong>Advantage+ App campaigns</strong> (campañas de app gestionadas por la inteligencia artificial de Meta). Es el único de los seis objetivos pensado específicamente para apps, no para sitios web ni formularios. Ejemplo: <strong>RetoFit</strong> (una app de rutinas de ejercicio) usa App Promotion para conseguir descargas nuevas cuando lanza su versión renovada, y más adelante para reactivar a quienes la instalaron pero dejaron de abrirla."
         },
         {
           "type": "concept",
           "h": "El requisito clave de App Promotion",
-          "body": "App Promotion <strong>requiere SDK de Facebook o un MMP</strong> (Mobile Measurement Partner) instalado en la app para medir instalaciones y eventos. Sin SDK/MMP, no hay forma de optimizar. El Pixel no aplica a apps."
+          "body": "Para que App Promotion funcione, la app <strong>debe tener instalado un SDK de Facebook o un MMP</strong>. El <strong>SDK</strong> (Software Development Kit, kit de herramientas que se incrusta en el código de la app) le permite a Meta saber cuándo alguien instaló la app o hizo algo dentro de ella. El <strong>MMP</strong> (Mobile Measurement Partner, socio de medición móvil) es un proveedor externo que hace ese mismo trabajo de medir instalaciones y eventos. Sin uno de los dos, Meta no recibe señales de lo que pasa dentro de la app y no tiene forma de optimizar. Ojo con una trampa frecuente: el <strong>Pixel</strong> sirve para medir sitios web, <em>no</em> aplica a apps. Ejemplo: <strong>RetoFit</strong> integró el SDK de Facebook en su código antes de lanzar la campaña; sin ese paso, Meta no sabría cuántas descargas trajo cada anuncio."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "El conversion location se elige después del objetivo, ya en el nivel Ad set. La ruta es: <strong>Ads Manager → Create (Crear) → eliges el objetivo (por ejemplo Leads o Sales) → Continue (Continuar) → en el nivel Ad set aparece la sección \"Conversion\" (Conversión)</strong>. Ahí seleccionas el conversion location de la lista (Instant form, Website, App, Messenger, Calls, etc.). Por ejemplo, el media buyer de <strong>Seguros Confianza</strong> elige Leads, da clic en Continue, y en el Ad set pica <em>Instant form</em>; recién entonces la plataforma le pide armar las preguntas del formulario. Si en cambio escoge Website, Meta le pedirá conectar el dataset (Pixel) para poder medir esa conversión."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Casa Plus",
-          "body": "Casa Plus (inmobiliaria) ofrece una visita guiada gratis y quiere los datos del prospecto: Leads con Instant form captura todo dentro del feed. Si la meta es que el cliente firme un contrato digital de apartado, es Sales — aunque la firma sea por Messenger, los eventos del sitio (Pixel + CAPI) alimentan el modelo."
+          "body": "Una misma inmobiliaria puede necesitar Leads o Sales según la etapa del cliente. <strong>Casa Plus</strong> (inmobiliaria) ofrece una visita guiada gratis y solo quiere los datos del prospecto para que un asesor le marque: ahí usa <strong>Leads</strong> con conversion location <em>Instant form</em>, que captura todo dentro del feed sin sacar a la persona. Pero si la meta sube a que el cliente firme un contrato digital de apartado (una transacción real), entonces es <strong>Sales</strong>. Aunque la firma final ocurra por Messenger, los eventos de navegación en el sitio web (medidos con Pixel y CAPI) alimentan el modelo de optimización para que Meta encuentre a quien de verdad va a firmar. La regla mental: si el resultado es un contacto para seguimiento, es Leads; si es un cobro o cierre, es Sales."
         },
         {
           "type": "mcq",
@@ -890,7 +905,7 @@
         {
           "type": "concept",
           "h": "Dos cosas distintas que se confunden",
-          "body": "El <strong>conversion event</strong> es QUÉ acción cuenta (Purchase, Lead, Subscribe). El <strong>performance goal</strong> es CÓMO se licita por esa acción. El examen los mezcla a propósito."
+          "body": "Aquí hay dos conceptos que el examen mezcla a propósito para confundirte, y conviene separarlos bien. El <strong>conversion event</strong> (evento de conversión) es <em>QUÉ</em> acción quieres contar como resultado válido: una compra (<strong>Purchase</strong>), un prospecto (<strong>Lead</strong>), una suscripción (<strong>Subscribe</strong>), y así. El <strong>performance goal</strong> (meta de rendimiento) es <em>CÓMO</em> le pides a Meta que licite, es decir, qué criterio usa el sistema al pujar por mostrar tu anuncio para conseguir esa acción. Dicho simple: el conversion event define la meta y el performance goal define la estrategia para llegar a ella. Ejemplo: <strong>Óptica Visión Clara</strong> vende lentes en línea; su conversion event es <em>Purchase</em> (cuenta cada compra), y su performance goal le dice a Meta si quiere muchas compras o las compras de mayor valor."
         },
         {
           "type": "kvtable",
@@ -916,13 +931,18 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · AutoMax",
-          "body": "AutoMax vende sedanes de $300K y SUVs de $900K MXN. El conversion event es Purchase en ambos. Pero si pone performance goal = Maximize value, el sistema busca a quien compra la SUV, no solo más unidades baratas."
+          "h": "Las dos opciones de performance goal en Sales",
+          "body": "Cuando tu objetivo es Sales, el performance goal te da dos caminos. <strong>1. Maximize number of conversions</strong> (maximizar el número de conversiones): le dices a Meta \"tráeme la mayor cantidad de compras posible\", sin importar cuánto valga cada una; una venta de $200 cuenta igual que una de $20,000. <strong>2. Maximize value of conversions</strong> (maximizar el valor de las conversiones): le dices \"prioriza a quien gaste más\", aunque eso signifique menos compras en total pero de mayor monto. La diferencia importa muchísimo según tu negocio: si tu margen está en el volumen, eliges número; si está en los tickets grandes, eliges valor. Esta opción de valor necesita que tu sitio le pase a Meta cuánto vale cada compra (el parámetro de valor en el evento)."
         },
         {
           "type": "concept",
-          "h": "Cada objective trae su goal default",
-          "body": "El examen pregunta seguido \"¿qué setting elegir?\". La clave: cada objective tiene un performance goal alineado con su outcome. Aquí van los 6 con su mini-ejemplo."
+          "h": "Ejemplo aplicado · AutoMax",
+          "body": "<strong>AutoMax</strong> (agencia de autos) vende sedanes de $300,000 y camionetas SUV de $900,000 MXN. El conversion event es <em>Purchase</em> (compra) en ambos casos, porque la acción que cuenta es la misma: que alguien compre un auto. Lo que cambia es el performance goal. Si AutoMax pone <strong>Maximize number of conversions</strong>, el sistema le traerá la mayor cantidad de compradores, y como los sedanes baratos se venden más fácil, terminará llenándose de ventas de $300,000. Pero si pone <strong>Maximize value of conversions</strong>, Meta se enfoca en quien tiene perfil de comprar la SUV de $900,000, aunque cierre menos unidades. Mismo evento, distinto resultado de negocio: por eso el performance goal es una decisión estratégica, no un detalle técnico."
+        },
+        {
+          "type": "concept",
+          "h": "Cada objective trae su goal por defecto",
+          "body": "El examen pregunta muy seguido \"¿qué setting (configuración) elegir?\" para un caso dado. La clave para acertar es entender que cada objetivo tiene un performance goal <em>por defecto</em> (el que Meta sugiere de entrada) alineado con su outcome, es decir, con el resultado que ese objetivo persigue. Tiene lógica: no le pides recuerdos de marca a una campaña de ventas ni compras a una campaña de reconocimiento. Si memorizas qué meta de rendimiento acompaña a cada objetivo, resuelves un montón de preguntas casi de inmediato. La tabla de abajo te da los 6 objetivos con su performance goal típico; por ejemplo, <strong>Cafetería La Esquina</strong> en una campaña de Awareness verá por defecto <em>Maximize ad recall lift</em>, mientras que en una de Sales verá <em>Maximize number of conversions</em>."
         },
         {
           "type": "kvtable",
@@ -956,8 +976,13 @@
         },
         {
           "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Tanto el conversion event como el performance goal viven en el nivel Ad set, no en Campaign. La ruta es: <strong>Ads Manager → Create (Crear) → eliges el objetivo → Continue (Continuar) → en el Ad set, sección \"Conversion\" eliges el conversion event; y en la sección \"Optimization &amp; delivery\" (Optimización y entrega) eliges el performance goal</strong>. Es decir, primero le dices a Meta qué acción cuenta y luego cómo quieres que puje por ella. Por ejemplo, <strong>Óptica Visión Clara</strong> elige Sales, da clic en Continue, en \"Conversion\" pica <em>Purchase</em> y en \"Optimization &amp; delivery\" cambia el goal a <em>Maximize value of conversions</em> para atraer las ventas de armazones de marca, las más caras. Si dejara el goal por defecto, Meta buscaría volumen en vez de monto."
+        },
+        {
+          "type": "concept",
           "h": "Ejemplo aplicado · Tech Móvil",
-          "body": "Campaña de lanzamiento de marca en una ciudad → Awareness con <em>Maximize ad recall lift</em>. Campaña para cerrar ventas de smartphones → Sales con <em>Maximize number of conversions</em>. Mismo cliente, goal alineado a cada outcome."
+          "body": "Un mismo cliente puede usar performance goals distintos según la campaña, siempre alineados al objetivo. <strong>Tech Móvil</strong> (cadena de tiendas de celulares) hace dos campañas a la vez. La primera es de lanzamiento de marca en una ciudad nueva, donde solo quiere que la gente la recuerde: usa <strong>Awareness</strong> con performance goal <em>Maximize ad recall lift</em> (maximizar el incremento de recuerdo del anuncio). La segunda busca cerrar ventas de smartphones en su tienda en línea: usa <strong>Sales</strong> con performance goal <em>Maximize number of conversions</em> (maximizar el número de conversiones). Mismo cliente, dos campañas, cada una con la meta de rendimiento que corresponde a su outcome. Confundirlas sería pedirle recuerdos a la campaña de ventas o ventas a la de reconocimiento."
         },
         {
           "type": "tip",
@@ -1140,7 +1165,7 @@
         {
           "type": "concept",
           "h": "Recordar antes de cerrar el Día 2",
-          "body": "Antes del repaso final, recupera de memoria lo del Día 1. Traer un dato a la mente <strong>bajo esfuerzo</strong> (sin verlo) es lo que lo fija a largo plazo. Si fallas, no pasa nada: el error mismo refuerza el recuerdo."
+          "body": "Antes del repaso final, vas a recuperar de memoria lo que viste en el Día 1. Esto se llama <strong>repaso espaciado</strong> (volver a un tema después de unos días, no el mismo rato): es una de las técnicas de estudio que mejor pega el conocimiento a largo plazo, porque obligas a tu cerebro a reconstruir el dato en vez de solo reconocerlo. Traer una respuesta a la mente <strong>bajo esfuerzo</strong> (sin verla primero) la fija mucho más que releerla diez veces. Si fallas alguna, no te apures: el error mismo deja una huella que refuerza el recuerdo cuando ves la respuesta correcta. Por ejemplo, si manejas la cuenta de <strong>Cafetería La Esquina</strong> y dudas en qué nivel se conecta el dataset, equivocarte aquí hará que se te grabe mejor para el examen. Tómalo como un calentamiento, no como una calificación."
         },
         {
           "type": "fill",

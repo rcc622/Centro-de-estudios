@@ -120,13 +120,18 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Detailed targeting",
-          "body": "Filtros para definir la audiencia: <strong>Demographics</strong> (edad, educación, empleo) + <strong>Interests</strong> (negocio, entretenimiento, familia) + <strong>Behaviors</strong> (uso de dispositivo, intent de compra). Sirve para decirle a Meta a qué perfil apuntar."
+          "h": "Qué es el detailed targeting",
+          "body": "El <strong>detailed targeting</strong> (segmentación detallada) es la sección de Meta donde describes a quién quieres alcanzar usando datos que la plataforma ya tiene de sus usuarios. En vez de elegir personas una por una, defines un <em>perfil</em> y Meta te entrega a quien encaje. Es la forma clásica de decirle al sistema \"este es mi cliente ideal\". No confundas esto con audiencias guardadas o listas tuyas: aquí trabajas con las categorías que Meta ofrece de su propio universo de usuarios."
         },
         {
           "type": "concept",
-          "h": "Cómo se combinan las selecciones",
-          "body": "Dentro de una misma categoría las opciones son <strong>OR</strong> (cualquiera cuenta). Entre categorías base son <strong>AND</strong> (deben cumplirse las dos). Por eso, cuantas más categorías agregas, <em>más angosta</em> queda la audiencia, no más grande."
+          "h": "Los tres tipos de filtro, uno por uno",
+          "body": "El detailed targeting se arma con tres tipos de filtro:<br/><br/><strong>1. Demographics</strong> (datos demográficos): rasgos fijos de la persona, como edad, nivel educativo o tipo de empleo.<br/><br/><strong>2. Interests</strong> (intereses): temas que le gustan según lo que sigue, comparte o consume (negocio, entretenimiento, familia, deportes).<br/><br/><strong>3. Behaviors</strong> (comportamientos): acciones o hábitos detectados, como el dispositivo que usa o señales de <em>intent</em> de compra (intención de comprar). Ejemplo: la <strong>Cafetería La Esquina</strong> combina Demographics \"25-40 años\" + Interests \"café de especialidad\" + Behaviors \"compradores frecuentes en apps de comida\"."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se combinan las selecciones (OR y AND)",
+          "body": "Aquí está la trampa que casi nadie entiende. Dentro de <em>una misma categoría</em>, las opciones se suman con lógica <strong>OR</strong> (o): basta con que la persona cumpla cualquiera. Pero <em>entre categorías distintas</em>, las opciones se cruzan con lógica <strong>AND</strong> (y): la persona tiene que cumplir todas a la vez. Como el AND exige cumplir más condiciones al mismo tiempo, cada categoría nueva <em>achica</em> la audiencia en vez de agrandarla. Mucha gente cree que agregar filtros \"suma gente\", y es justo al revés."
         },
         {
           "type": "concept",
@@ -141,7 +146,7 @@
         {
           "type": "concept",
           "h": "Dos formas de hablarle al sistema",
-          "body": "Al armar la audiencia, algunas decisiones le ponen un <strong>límite duro</strong> al sistema y otras solo le dan una <strong>pista</strong>. Distinguirlas es clave: una restringe, la otra orienta."
+          "body": "Cuando defines una audiencia, no todas tus decisiones pesan igual frente al algoritmo. Algunas le ponen un <strong>límite duro</strong> al sistema (una pared que no puede cruzar) y otras solo le dan una <strong>pista</strong> (una sugerencia que puede seguir o ampliar). Meta llama a las primeras <strong>audience controls</strong> (controles de audiencia) y a las segundas <strong>audience suggestions</strong> (sugerencias de audiencia). Distinguirlas es clave: una restringe de verdad, la otra solo orienta. Confundirlas hace que creas que estás limitando algo cuando en realidad el sistema lo puede ignorar, o al revés."
         },
         {
           "type": "kvtable",
@@ -164,8 +169,13 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Casa Plus",
-          "body": "Casa Plus pone como <em>control</em> \"solo Nuevo León\" (el sistema jamás entrega fuera de NL) y como <em>suggestion</em> el lookalike de compradores premium (la AI puede ampliarlo si halla perfiles parecidos). El control marca el cerco; la suggestion marca el rumbo."
+          "h": "Ejemplo aplicado · Hotel Lumière",
+          "body": "El <strong>Hotel Lumière</strong> en Mérida hace una campaña para llenar habitaciones en temporada baja. Pone como <em>control</em> \"solo Yucatán y Quintana Roo\": el sistema jamás entregará el anuncio fuera de esa zona, pase lo que pase. Y pone como <em>suggestion</em> un perfil de \"viajeros de fin de semana con interés en gastronomía\": eso solo orienta, y el algoritmo puede ampliarlo si encuentra gente parecida que también convierte. El control marca el cerco; la suggestion marca el rumbo. Si el hotel hubiera puesto la ubicación como simple interés, el sistema podría haberle mandado clientes de otro estado."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Para armar el detailed targeting recorres esta ruta en Ads Manager (Administrador de anuncios):<br/><br/><strong>1.</strong> Entras a un <em>ad set</em> (conjunto de anuncios) y bajas a la sección <strong>Audience</strong> (Audiencia).<br/><strong>2.</strong> En <strong>Detailed targeting</strong> escribes intereses, comportamientos o datos demográficos y los vas eligiendo de la lista que Meta sugiere.<br/><strong>3.</strong> El campo <strong>Locations</strong> (Ubicaciones) y la edad mínima quedan arriba: esos actúan como <em>controls</em> rígidos.<br/><strong>4.</strong> A la derecha verás el medidor <strong>Audience definition</strong> (definición de audiencia) moverse entre \"Specific\" (específica) y \"Broad\" (amplia) conforme agregas filtros: úsalo para no sobre-segmentar."
         },
         {
           "type": "mcq",
@@ -339,8 +349,13 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Custom Audience",
-          "body": "Gente que <strong>YA interactuó con tu negocio</strong>. Es retargeting: vuelves a alcanzar a quien ya te conoce. Source puede ser:<br/><br/><strong>Your sources</strong>: Website, App activity, Catalog, Customer list, Offline activity<br/><br/><strong>Meta sources</strong>: Video, Lead form, Instant Experience, Shopping, IG account, Events, FB Page, On-Facebook listings"
+          "h": "Qué es una Custom Audience",
+          "body": "Una <strong>Custom Audience</strong> (audiencia personalizada) es una lista de gente que <strong>ya interactuó con tu negocio</strong> de alguna forma: visitó tu sitio, te compró, vio un video tuyo o está en tu base de clientes. Sirve para <strong>retargeting</strong> (volver a alcanzar a quien ya te conoce), no para buscar gente nueva. La idea es simple: alguien que ya te conoce convierte más fácil y más barato que un extraño, así que vale la pena hablarle otra vez. Ejemplo: una <strong>Cafetería La Esquina</strong> con app de pedidos puede crear una Custom Audience de quien abrió la app pero no completó la compra, y recordarles con un anuncio."
+        },
+        {
+          "type": "concept",
+          "h": "De dónde sale una Custom Audience (las sources)",
+          "body": "La <strong>source</strong> (fuente) es el origen de los datos de la audiencia. Meta las divide en dos grupos:<br/><br/><strong>Your sources</strong> (tus propias fuentes): <em>Website</em> (visitas a tu sitio vía Pixel), <em>App activity</em> (acciones en tu app), <em>Catalog</em> (interacciones con tu catálogo), <em>Customer list</em> (tu lista de clientes en CSV) y <em>Offline activity</em> (ventas en tienda física).<br/><br/><strong>Meta sources</strong> (fuentes dentro de Meta): gente que vio tu <em>Video</em>, llenó un <em>Lead form</em> (formulario de prospectos), abrió un <em>Instant Experience</em>, interactuó con tu <em>Shopping</em>, sigue tu cuenta de <em>Instagram</em>, asistió a tus <em>Events</em> o interactuó con tu <em>Facebook Page</em>. Todo es gente que ya te tocó por algún lado."
         },
         {
           "type": "kvtable",
@@ -362,8 +377,18 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "Tienda Urbana crea una Custom Audience tipo <em>Website</em> con quien visitó /checkout en los últimos 30 días, y otra tipo <em>Customer list</em> con su CRM de clientes. Ambas son gente que ya tocó la marca: ideales para reactivar, no para prospectar en frío."
+          "h": "Qué es el retention window",
+          "body": "Para las sources basadas en interacción reciente (como Website o App), defines un <strong>retention window</strong> (ventana de retención): cuántos días hacia atrás cuenta una interacción para que la persona siga dentro de la audiencia. Si pones 30 días, solo entra quien te visitó en el último mes; pasado ese plazo, sale solo. Una ventana corta (7-30 días) da gente \"caliente\", recién interesada; una larga (180 días) da más volumen pero gente más fría. Lo eliges según qué tan fresca quieras la audiencia."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo aplicado · Boutique Aurora",
+          "body": "La <strong>Boutique Aurora</strong>, una tienda de ropa en línea, crea una Custom Audience tipo <em>Website</em> con quien visitó la página de pago (/checkout) en los últimos 30 días pero no compró: gente caliente a la que vale la pena recordarle el carrito. Y crea otra tipo <em>Customer list</em> subiendo su CRM de clientes anteriores. Ambas son gente que ya tocó la marca, así que son ideales para reactivar, no para prospectar en frío. A esa última, en cambio, jamás le mostrarás un anuncio de \"descubre nuestra marca\": ya la conocen."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Las Custom Audiences se crean fuera del ad set, en su propia sección:<br/><br/><strong>1.</strong> En Ads Manager abres el menú principal y entras a <strong>Audiences</strong> (Audiencias).<br/><strong>2.</strong> Click en <strong>Create Audience → Custom Audience</strong> (Crear audiencia → Audiencia personalizada).<br/><strong>3.</strong> Eliges la <em>source</em> (Website, Customer list, Video, etc.).<br/><strong>4.</strong> Si es Website, defines el evento (ej. visitantes de una URL) y el <em>retention window</em> en días.<br/><strong>5.</strong> Guardas la audiencia con un nombre claro; luego la usas dentro de un ad set como <em>inclusion</em> (incluir) o <em>exclusion</em> (excluir)."
         },
         {
           "type": "tip",
@@ -543,8 +568,13 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Lookalike Audience",
-          "body": "Gente <strong>similar</strong> a tu source audience. Buscas nuevos prospectos que se parecen a tus mejores clientes/leads/visitantes. Es prospección: gente nueva, no la que ya te conoce. Requiere un source de mínimo <strong>100 personas de un solo país</strong> (recomendado 1,000-50,000)."
+          "h": "Qué es una Lookalike Audience",
+          "body": "Una <strong>Lookalike Audience</strong> (audiencia similar: gente nueva parecida a tus mejores clientes) le pide a Meta que analice una audiencia tuya y salga a buscar <strong>gente nueva con un perfil parecido</strong>. Es justo lo opuesto a la Custom Audience: aquí haces <strong>prospección</strong> (alcanzar a quien todavía no te conoce), no retargeting. La lógica es poderosa: si Meta entiende qué tienen en común tus mejores clientes, puede encontrar miles de extraños que se les parecen y tienen alta probabilidad de comprarte también. Ejemplo: la <strong>Cafetería La Esquina</strong> toma su lista de clientes frecuentes y crea un Lookalike para encontrar gente nueva con hábitos similares a esos fieles."
+        },
+        {
+          "type": "concept",
+          "h": "La source manda: de dónde aprende el Lookalike",
+          "body": "El Lookalike es tan bueno como su <strong>source audience</strong> (audiencia fuente): la audiencia de la que aprende el patrón. Normalmente la source es una Custom Audience tuya (tus compradores, tus leads, tus visitantes). Por eso siempre conviene partir de tu <em>mejor</em> gente, no de cualquiera: si alimentas el Lookalike con clientes premium, busca premium; si lo alimentas con curiosos que nunca compraron, busca curiosos. Meta exige un mínimo de <strong>100 personas de un solo país</strong> en la source para detectar un patrón confiable, aunque lo recomendado es entre 1,000 y 50,000."
         },
         {
           "type": "warn",
@@ -580,8 +610,13 @@
         },
         {
           "type": "concept",
-          "h": "Ejemplo aplicado · Casa Plus",
-          "body": "Casa Plus toma su Custom Audience de clientes que apartaron departamento y la usa como <em>source</em> de un Lookalike. Meta busca afuera gente que se parece a esos compradores. Cada lead inmobiliario vale mucho, así que prioriza calidad: <strong>1%</strong> (el top 1% más parecido). El source se excluye solo: el lookalike es para gente <em>nueva</em>."
+          "h": "Ejemplo aplicado · Aceros del Bajío",
+          "body": "<strong>Aceros del Bajío</strong>, distribuidora industrial, toma su Custom Audience de clientes que ya hicieron pedidos grandes y la usa como <em>source</em> de un Lookalike. Meta sale a buscar afuera empresas y compradores parecidos a esos buenos clientes. Como cada cuenta industrial vale mucho dinero, priorizan calidad sobre cantidad: eligen un Lookalike de <strong>1%</strong> (el top 1% más parecido), no de 10%. Detalle clave: la source se excluye sola del resultado, porque el Lookalike es para gente <em>nueva</em>, no para volver a tocar a quien ya está en la lista."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Para crear un Lookalike recorres esta ruta:<br/><br/><strong>1.</strong> En Ads Manager abres <strong>Audiences</strong> (Audiencias).<br/><strong>2.</strong> Click en <strong>Create Audience → Lookalike Audience</strong> (Crear audiencia → Audiencia similar).<br/><strong>3.</strong> Eliges la <strong>source</strong>: normalmente una Custom Audience tuya (tus mejores clientes).<br/><strong>4.</strong> Seleccionas el <strong>país o región</strong> donde quieres buscar gente nueva.<br/><strong>5.</strong> Mueves el <strong>slider de tamaño</strong> entre 1% y 10%: 1% más parecido y exacto, 10% más amplio.<br/><strong>6.</strong> Guardas y la usas como <em>suggestion</em> dentro del ad set de prospección."
         },
         {
           "type": "mcq",
@@ -772,8 +807,18 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Advantage+ Audience",
-          "body": "Solución AI que <strong>expande más allá de tus parámetros sugeridos</strong> para encontrar gente probablemente interesada. Está <strong>automáticamente activada</strong> en nuevas campañas a menos que la desactives."
+          "h": "Qué es Advantage+ Audience",
+          "body": "<strong>Advantage+ Audience</strong> (audiencia Advantage+: segmentación con inteligencia artificial) es una función de Meta que deja que el sistema busque por su cuenta a la gente con más probabilidad de convertir, sin que tú tengas que adivinar cada interés. En vez de encerrar la campaña en una lista de filtros rígida, le das al sistema unas <strong>pistas</strong> (suggestions: tus intereses, lookalikes o datos demográficos) y la <strong>AI</strong> (Artificial Intelligence: inteligencia artificial) las usa como semilla para <em>expandir</em> hacia perfiles parecidos que también pueden comprarte. Nace de la idea moderna de Meta: el algoritmo encuentra compradores mejor que un targeting manual apretado. Lo más importante para el examen: viene <strong>encendido por default</strong> (activado de fábrica) en las campañas nuevas, así que si no quieres que expanda, tienes que apagarlo a propósito. Ejemplo: la <strong>Florería Bella Rosa</strong> deja Advantage+ Audience ON, le pasa como pista a sus compradoras de San Valentín, y el sistema sale a buscar gente nueva con patrones similares en lugar de quedarse solo con esa lista."
+        },
+        {
+          "type": "concept",
+          "h": "Suggestions vs controls dentro de Advantage+ Audience",
+          "body": "Con Advantage+ Audience encendido, tus selecciones se reparten en dos grupos:<br/><br/><strong>1. Suggestions</strong> (sugerencias): son pistas flexibles que la AI puede respetar o ampliar. Aquí caen el <em>detailed targeting</em> (intereses, behaviors), los <em>lookalikes</em> y los rangos de edad o género. No encierran al sistema, solo lo orientan.<br/><br/><strong>2. Controls</strong> (controles): son límites duros que la AI <em>nunca</em> cruza, aunque esté en modo expansión. Aquí caen la <em>ubicación</em>, el <em>idioma</em>, la <em>edad mínima legal</em> y las <em>exclusiones</em> de custom audiences. Ejemplo: la <strong>Florería Bella Rosa</strong> pone como control \"solo Guadalajara\" (el sistema jamás entrega fuera) y como suggestion su lookalike de compradoras (el sistema lo usa de semilla y expande). Si confundes los dos, crees que limitaste algo que el sistema en realidad puede ignorar."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Advantage+ Audience aparece dentro del ad set, en la sección de audiencia:<br/><br/><strong>1.</strong> En Ads Manager (Administrador de anuncios) entras a un <em>ad set</em> (conjunto de anuncios) y bajas a <strong>Audience</strong> (Audiencia).<br/><strong>2.</strong> Verás arriba el bloque <strong>Advantage+ Audience</strong> ya activado: ahí escribes tus <em>suggestions</em> (intereses, lookalike, edad de referencia).<br/><strong>3.</strong> Más abajo defines los <em>controls</em> rígidos: <strong>Locations</strong> (Ubicaciones), idioma y exclusiones de audiencias.<br/><strong>4.</strong> Si quieres apagarlo, das click en <strong>Switch to original audience options</strong> (Cambiar a las opciones originales de audiencia) o en <strong>Further limit the reach of your ads</strong> (Limitar aún más el alcance): cualquiera de los dos lo desactiva."
         },
         {
           "type": "kvtable",
@@ -968,13 +1013,18 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Product Catalog",
-          "body": "Data estructurada de productos en <strong>Commerce Manager</strong>. Atributos requeridos: ID, Title, Description, Price, Availability, Condition, Brand, Image, Link."
+          "h": "Qué es un Product Catalog",
+          "body": "Un <strong>Product Catalog</strong> (catálogo de productos) es un archivo con toda la información de lo que vendes —cada producto con su nombre, precio, foto y enlace— que vive dentro de <strong>Commerce Manager</strong> (Administrador de Comercio: la herramienta de Meta para inventario y ventas, distinta de Ads Manager). Es como subirle a Meta tu inventario completo en formato ordenado para que el sistema pueda mostrar el producto correcto a cada persona. Sin catálogo, los anuncios dinámicos de producto no existen, porque el sistema no sabría qué mostrar. Cada producto necesita ciertos <em>atributos</em> (campos obligatorios) o no se aprueba. Ejemplo: la tienda en línea <strong>Mueblería Norte</strong> sube su catálogo a Commerce Manager para que sus anuncios muestren la mesa exacta que el cliente miró en su sitio."
         },
         {
           "type": "concept",
-          "h": "Product Sets",
-          "body": "Agrupaciones dentro del catálogo. Ej: 'Fall sale 10% off', 'Best sellers'. <strong>Mínimo 20 productos</strong> recomendado por set para que Advantage+ Catalog Ads tenga material suficiente."
+          "h": "Los atributos obligatorios, uno por uno",
+          "body": "Cada producto del catálogo debe traer estos campos o Meta lo rechaza:<br/><br/><strong>1. ID</strong>: identificador único del producto (no se repite).<br/><strong>2. Title</strong> (título): el nombre que ve el cliente.<br/><strong>3. Description</strong> (descripción): detalle corto del producto.<br/><strong>4. Price</strong> (precio): con su moneda.<br/><strong>5. Availability</strong> (disponibilidad): si hay stock o está agotado.<br/><strong>6. Condition</strong> (condición): nuevo, usado o reacondicionado.<br/><strong>7. Brand</strong> (marca).<br/><strong>8. Image</strong> (imagen): la foto del producto.<br/><strong>9. Link</strong> (enlace): la URL a la página de ese producto.<br/><br/>Ejemplo: si <strong>Mueblería Norte</strong> sube una silla sin Price ni Image, ese producto queda fuera y no se puede anunciar."
+        },
+        {
+          "type": "concept",
+          "h": "Qué son los Product Sets",
+          "body": "Un <strong>Product Set</strong> (conjunto de productos) es un grupo de productos dentro del mismo catálogo, armado por algún criterio que tú eliges. Sirve para anunciar solo una parte del inventario sin tener que crear catálogos separados: agrupas y listo. Por ejemplo puedes hacer un set \"Rebaja de otoño 10% off\" o uno de \"Más vendidos\". Meta recomienda <strong>mínimo 20 productos por set</strong>, porque los anuncios dinámicos necesitan variedad para elegir qué mostrarle a cada persona; con muy pocos productos el sistema se queda sin material para optimizar. Ejemplo: <strong>Mueblería Norte</strong> arma un Product Set \"Sala\" y otro \"Recámara\", cada uno con más de 20 piezas, para que cada campaña empuje la línea correcta."
         },
         {
           "type": "tip",
@@ -983,13 +1033,18 @@
         },
         {
           "type": "concept",
-          "h": "Advantage+ Catalog Ads y match rate",
-          "body": "ML que muestra los productos del catálogo más relevantes a cada persona según navegación, búsqueda y eventos previos. Disponible a nivel <strong>campaña en Sales</strong>, o a nivel ad en App Promotion/Engagement/Leads/Traffic. El <strong>catalog match rate</strong> mide el % de productos con los que la gente interactúa que están en el catálogo: target <strong>&gt;75%</strong>; bajo eso = problema de Pixel/mapeo."
+          "h": "Qué son los Advantage+ Catalog Ads",
+          "body": "Los <strong>Advantage+ Catalog Ads</strong> (anuncios de catálogo Advantage+, antes llamados \"Dynamic Ads\") usan <strong>ML</strong> (Machine Learning: aprendizaje automático, una rama de la AI que aprende de los datos) para mostrarle a cada persona los productos de tu catálogo que más le pueden interesar, según lo que esa persona navegó, buscó o vio antes. En lugar de armar un anuncio por producto, le pasas el catálogo entero y el sistema arma el anuncio personalizado en automático: a quien miró una mesa le muestra esa mesa. Están disponibles a nivel <strong>campaña</strong> cuando el objetivo es <em>Sales</em> (ventas), y a nivel <em>ad</em> (anuncio) en App Promotion, Engagement, Leads y Traffic. Ejemplo: cuando un cliente de <strong>Mueblería Norte</strong> vio un sofá y se fue sin comprar, el sistema le vuelve a mostrar ese sofá (y otros parecidos) sin que nadie arme el anuncio a mano."
         },
         {
           "type": "concept",
-          "h": "Audience overlap",
-          "body": "Pasa cuando audiencias muy similares de distintos ad sets <strong>compiten entre sí</strong> en la subasta. Es como pujar contra ti mismo: encarece y confunde la optimización. El análisis solo es confiable con audiencias de <strong>mínimo 10,000 personas</strong> cada una."
+          "h": "Qué es el catalog match rate",
+          "body": "El <strong>catalog match rate</strong> (tasa de coincidencia del catálogo) mide qué tan bien empata lo que la gente ve en tu sitio con lo que tienes cargado en el catálogo. Técnicamente: de los productos con los que la gente interactúa (los <em>Content IDs</em> que manda el Pixel), qué porcentaje sí existe en tu catálogo. Si tu Pixel reporta que vieron el producto \"SKU-123\" pero ese ID no está en el catálogo, ese match se pierde. La meta es <strong>arriba de 75%</strong>; por debajo casi siempre es un problema de mapeo (los IDs del sitio no coinciden con los del catálogo). Ejemplo: si <strong>Mueblería Norte</strong> ve un match rate de 40%, no debe subir presupuesto todavía: primero arregla que los IDs de su sitio empaten con los del catálogo, o el sistema mostrará productos equivocados."
+        },
+        {
+          "type": "concept",
+          "h": "Qué es el audience overlap",
+          "body": "El <strong>audience overlap</strong> (solapamiento de audiencias) ocurre cuando dos o más <em>ad sets</em> (conjuntos de anuncios) le apuntan a gente tan parecida que terminan persiguiendo a las mismas personas. El problema es que tus propios anuncios <strong>compiten entre sí</strong> en la <em>auction</em> (subasta de Meta donde se decide qué anuncio se muestra): es como pujar contra ti mismo, lo que sube tus costos y confunde la optimización. Por eso conviene revisar el solapamiento, aunque el análisis solo es confiable cuando cada audiencia tiene <strong>mínimo 10,000 personas</strong> (con menos, los números no son estadísticamente sólidos). Ejemplo: <strong>Mueblería Norte</strong> tiene un ad set de retargeting y otro de lookalike que se pisan; al detectarlo, excluye la custom audience del ad set de lookalike para que dejen de competir."
         },
         {
           "type": "kvtable",

@@ -48,7 +48,7 @@
         {
           "type": "concept",
           "h": "Por qué empezamos recordando",
-          "body": "Antes de ver tema nuevo, recuperas de memoria lo del Día 2. Recordar bajo esfuerzo (sin volver atrás) es lo que <strong>fija</strong> el conocimiento mucho más que releer. Si fallas, no pasa nada: el repaso te dice qué reforzar."
+          "body": "Antes de ver tema nuevo, vas a recuperar de memoria lo del Día 2. La idea viene de una técnica de estudio llamada <strong>active recall</strong> (recuerdo activo): forzar a tu cerebro a sacar la respuesta sin tener el material enfrente. Recordar con esfuerzo, sin volver a leer, es lo que <strong>fija</strong> el conocimiento mucho más que releer pasivamente. Si fallas una pregunta, no pasa nada: justamente eso te muestra qué tema reforzar. Piensa en estos minutos como un calentamiento mental antes del contenido pesado de hoy."
         },
         {
           "type": "fill",
@@ -133,27 +133,32 @@
         {
           "type": "concept",
           "h": "Qué es el buying type",
-          "body": "El <strong>buying type</strong> es el método por el que compras anuncios across Meta technologies. Es la <em>primera</em> decisión a nivel Campaign y condiciona todo lo de abajo. Solo hay dos: <strong>Auction</strong> y <strong>Reservation</strong>."
+          "body": "El <strong>buying type</strong> (tipo de compra) es el método con el que le compras los anuncios a Meta, es decir, la forma en que pagas por aparecer frente a la gente en Facebook, Instagram y las demás plataformas de la empresa. Es la <em>primera</em> decisión que tomas al crear una campaña, y se elige a nivel Campaign (campaña). Esta decisión condiciona todo lo de abajo: qué objetivos puedes usar, en qué plataformas apareces y cómo controlas el costo. Solo existen dos opciones: <strong>Auction</strong> (subasta) y <strong>Reservation</strong> (reservación)."
         },
         {
           "type": "concept",
           "h": "Por qué importa elegirlo bien",
-          "body": "El buying type abre o cierra opciones. Si eliges Reservation, te quedas sin objectives como Sales y sin la mayoría de bid strategies. Por eso el examen pregunta combinaciones \"válidas\" — y este es el filtro de entrada."
+          "body": "El buying type funciona como un filtro de entrada: abre o cierra opciones para el resto de la campaña. Si eliges Reservation, te quedas sin objetivos como <strong>Sales</strong> (ventas) y sin la mayoría de las bid strategies (estrategias de puja). Por eso el examen suele preguntar qué combinaciones son \"válidas\": quiere ver si sabes qué se puede y qué no se puede mezclar. Equivocarte aquí arrastra errores en todas las preguntas siguientes."
         },
         {
           "type": "concept",
           "h": "Auction — subasta en tiempo real",
-          "body": "El sistema de compra default de Meta. <strong>Todos los objectives</strong>. <strong>Todos los placements</strong>. <strong>Todos los bid strategies</strong>. Pricing fluctúa con mercado y competencia. Es lo que vas a usar el 90% del tiempo."
+          "body": "<strong>Auction</strong> (subasta) es el método de compra por defecto de Meta. Cada vez que un usuario abre Facebook o Instagram, se corre una subasta instantánea entre los anunciantes que quieren ese espacio, y el sistema elige cuál mostrar. Te da acceso a <strong>todos los objetivos</strong>, <strong>todos los placements</strong> (ubicaciones donde aparece el anuncio, como Feed o Reels) y las <strong>5 bid strategies</strong>. El costo no es fijo: <em>fluctúa</em> según la demanda y la competencia de cada momento. Es lo que vas a usar el 90% del tiempo."
         },
         {
           "type": "concept",
           "h": "Reservation — compra anticipada",
-          "body": "Compra <strong>CPM fijo</strong> con resultados predecibles. Solo <strong>Awareness y Engagement</strong>. Solo <strong>Facebook + Instagram</strong>. Solo <strong>lifetime budget</strong>. Bid strategy automático. Para campañas grandes (&gt;200,000 personas)."
+          "body": "<strong>Reservation</strong> (reservación) es como comprar tu espacio publicitario por adelantado, parecido a apartar un anuncio espectacular para una fecha exacta. A cambio te da un <strong>CPM fijo</strong> (cost per mille, o sea el costo por cada 1,000 impresiones) y una entrega predecible: sabes cuánto vas a pagar y a cuánta gente vas a llegar. La contraparte es que está muy limitado: solo objetivos <strong>Awareness y Engagement</strong>, solo en <strong>Facebook + Instagram</strong>, solo con <strong>lifetime budget</strong> (presupuesto total del periodo) y con la puja en automático. Se usa para campañas grandes y planeadas."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Hotel Lumière",
-          "body": "Hotel Lumière lanza una temporada alta de 2 semanas y quiere que 50,000 viajeros frecuentes recuerden la marca con un CPM cerrado, sin sorpresas. Eso es Reservation: predictibilidad de costo y delivery para un periodo fijo. La paga: se limita a Awareness/Engagement y solo FB + IG."
+          "body": "El <strong>Hotel Lumière</strong> lanza su temporada alta de verano (2 semanas) y quiere que 50,000 viajeros frecuentes recuerden la marca antes del periodo, para que reserven con anticipación. Necesita saber con certeza cuánto va a pagar y a cuánta gente va a llegar, sin sorpresas. Eso es justo lo que da <strong>Reservation</strong>: CPM cerrado y entrega garantizada para un periodo fijo. ¿La paga? Se limita a Awareness o Engagement y solo aparece en Facebook e Instagram. Como el hotel solo quiere recordación (no vender directo en el anuncio), encaja perfecto."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "1. Entra a <strong>Ads Manager</strong> (Administrador de anuncios) y haz clic en el botón verde <em>+ Crear</em>.<br/>2. Lo primero que pide es el <strong>objetivo</strong> (objective) de la campaña.<br/>3. Despliega <em>Opciones de campaña</em> (Campaign settings) y ahí aparece el selector de <strong>Buying type</strong> con dos opciones: Auction (default) y Reservation.<br/>4. Si eliges Reservation, notarás que la lista de objetivos se reduce sola a Awareness y Engagement, y que ya solo te deja poner lifetime budget. Así la propia plataforma te enseña qué combinaciones son válidas."
         },
         {
           "type": "kvtable",
@@ -379,17 +384,17 @@
         {
           "type": "concept",
           "h": "La fórmula del total value",
-          "body": "Gana el ad con mayor <strong>total value</strong> en la subasta:<br/><br/><strong>Total value = Advertiser bid × Estimated action rates + Ad quality</strong><br/><br/>No gana el que más paga — gana el que ofrece mayor valor total considerando probabilidad de acción y calidad."
+          "body": "Cada vez que se corre una subasta, Meta no le da el espacio al anunciante que más dinero ofrece, sino al que tiene el mayor <strong>total value</strong> (valor total). Es un puntaje que combina tres cosas:<br/><br/><strong>Total value = Advertiser bid × Estimated action rates + Ad quality</strong><br/><br/>En español: lo que ofreces pagar, multiplicado por qué tan probable es que la persona reaccione, más qué tan bueno es tu anuncio. La idea de Meta es mostrar anuncios que de verdad le sirvan al usuario, no solo los del que tenga más dinero. Por eso el que más paga NO gana automáticamente."
         },
         {
           "type": "concept",
-          "h": "Las 3 piezas en palabras simples",
-          "body": "<strong>Advertiser bid</strong> = lo que pujas. <strong>Estimated action rates</strong> = qué tan probable es que la persona haga la acción. <strong>Ad quality</strong> = qué tan relevante y bueno es el anuncio para esa audiencia. El cost control NO entra en el total value."
+          "h": "Las 3 piezas, una por una",
+          "body": "<strong>1. Advertiser bid</strong> (puja del anunciante): cuánto estás dispuesto a pagar por el resultado. Ej.: pujas $20 por cada clic.<br/><strong>2. Estimated action rates</strong> (tasas de acción estimadas): la predicción de Meta sobre qué tan probable es que <em>esa</em> persona haga lo que tú quieres (dar clic, comprar, etc.). Ej.: el sistema calcula que tienes 8% de probabilidad de venta.<br/><strong>3. Ad quality</strong> (calidad del anuncio): qué tan relevante, claro y atractivo es tu anuncio para esa audiencia, medido con señales como reacciones positivas o si la gente lo oculta.<br/>Ojo: el <strong>cost control</strong> (control de costo, que verás en bid strategies) NO entra en esta fórmula."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "El anuncio de Tienda Urbana puja $20 pero su video real con outfits modelados tiene alta probabilidad de clic y buena calidad. Un competidor puja $35 con un banner genérico de baja relevancia. Tienda Urbana puede <em>ganar</em> la subasta aunque pujó menos: su total value es mayor."
+          "body": "<strong>Tienda Urbana</strong> (ropa) puja solo $20, pero su anuncio es un video real con outfits modelados que tiene alta probabilidad de clic y muy buena calidad. Un competidor más grande puja $35, pero con un banner genérico y aburrido de baja relevancia. Aunque el competidor ofrece más dinero, Tienda Urbana puede <em>ganar</em> la subasta: su total value es mayor porque su anuncio engancha más a la gente. Moraleja: un buen anuncio te deja competir contra rivales con más presupuesto."
         },
         {
           "type": "warn",
@@ -556,12 +561,12 @@
         {
           "type": "concept",
           "h": "Qué es un bid strategy",
-          "body": "El <strong>bid strategy</strong> determina cómo Meta gasta tu budget en alineación con la meta de la campaña. Solo está en Auction. Hay <strong>5</strong>, y se agrupan en 3 familias según si gastan todo o respetan una meta de costo."
+          "body": "El <strong>bid strategy</strong> (estrategia de puja) le dice a Meta <em>cómo</em> debe gastar tu presupuesto en las subastas para cumplir la meta de tu campaña. Es como darle una instrucción al piloto automático: \"gasta todo y tráeme lo más posible\" o \"no me cobres más de X por resultado\". Solo existe en el buying type <strong>Auction</strong> (en Reservation la puja es automática y no la eliges). Hay <strong>5</strong> estrategias en total, y se agrupan en 3 familias según cómo manejan el costo."
         },
         {
           "type": "concept",
-          "h": "Spend-based vs Goal-based vs Manual",
-          "body": "<strong>Spend-based</strong> (Highest Volume, Highest Value): gastan todo el budget. <strong>Goal-based</strong> (Cost per Result Goal, ROAS Goal): respetan una meta de costo/retorno, pueden no gastar todo. <strong>Manual</strong> (Bid Cap): tú controlas el bid de la subasta."
+          "h": "Las 3 familias de bid strategy",
+          "body": "<strong>1. Spend-based</strong> (basadas en gastar): gastan TODO el presupuesto sí o sí, buscando el mejor resultado posible con ese dinero. Aquí entran <strong>Highest Volume</strong> y <strong>Highest Value</strong>.<br/><strong>2. Goal-based</strong> (basadas en una meta): respetan un límite de costo o de retorno que tú pones; pueden <em>no</em> gastar todo el presupuesto si no encuentran resultados a ese precio. Aquí entran <strong>Cost per Result Goal</strong> y <strong>ROAS Goal</strong>.<br/><strong>3. Manual</strong>: tú controlas a mano cuánto puja el sistema en cada subasta. Aquí está <strong>Bid Cap</strong>, recomendada solo para expertos."
         },
         {
           "type": "kvtable",
@@ -592,12 +597,12 @@
         {
           "type": "concept",
           "h": "Highest Volume y Highest Value — gastar todo",
-          "body": "<strong>Highest Volume</strong>: default spend-based, gasta TODO el budget y maximiza la <em>cantidad</em> de resultados, sin meta de costo. <strong>Highest Value</strong>: también gasta todo, pero prioriza las compras de <em>mayor valor</em> (ingresos). Requiere <strong>Pixel con value tracking</strong>."
+          "body": "<strong>Highest Volume</strong> (mayor volumen) es la estrategia por defecto: gasta TODO el presupuesto y busca traerte la mayor <em>cantidad</em> de resultados posible, sin importar cuánto cueste cada uno. Si vendes camisetas, te trae el máximo de ventas aunque algunas salgan más caras.<br/><strong>Highest Value</strong> (mayor valor) también gasta todo, pero en lugar de cantidad prioriza los resultados de <em>mayor valor en dinero</em>: prefiere traerte la compra de $5,000 sobre la de $200. Para saber cuánto vale cada compra necesita <strong>Pixel con value tracking</strong> (el Pixel es el código de Meta en tu sitio que reporta las acciones, y \"value tracking\" significa que cada compra le manda también el monto)."
         },
         {
           "type": "concept",
           "h": "Cost per Result Goal — CPA controlado",
-          "body": "Goal-based: le das un costo benchmark por resultado y el sistema mantiene el <strong>CPA promedio</strong> cerca de ese target. Si los resultados salen caros, puede <em>dejar de gastar</em> para preservar la meta."
+          "body": "<strong>Cost per Result Goal</strong> (meta de costo por resultado) es goal-based: tú le pones un costo objetivo por resultado y el sistema trata de mantener el <strong>CPA promedio</strong> (Cost Per Acquisition, o sea cuánto te cuesta en promedio conseguir un cliente o lead) cerca de esa cifra. La gran diferencia con las spend-based: si los resultados empiezan a salir caros, esta estrategia puede <em>frenar el gasto</em> con tal de no romper tu meta de costo. Ej.: <strong>Cafetería La Esquina</strong> le pone meta de $50 por registro a su club de lealtad; si solo encuentra registros a $90, el sistema prefiere gastar menos antes que pagar de más."
         },
         {
           "type": "warn",
@@ -607,7 +612,7 @@
         {
           "type": "concept",
           "h": "ROAS Goal y Bid Cap — retorno y control manual",
-          "body": "<strong>ROAS Goal</strong>: goal-based por valor, apuntas a un retorno objetivo (ej. 4x). Requiere <strong>Pixel con value tracking</strong>. <strong>Bid Cap</strong>: manual, tú fijas el <strong>bid máximo</strong> que el sistema usa en cada subasta. Para advertisers expertos."
+          "body": "<strong>ROAS Goal</strong> (meta de ROAS) es goal-based por valor. ROAS significa <em>Return On Ad Spend</em> (retorno sobre la inversión publicitaria): por cada peso que gastas, cuántos pesos de ingreso regresan. Un ROAS de 4x quiere decir que por cada $1 invertido buscas $4 de venta. Le pones esa meta y el sistema optimiza para alcanzarla. Igual que Highest Value, necesita <strong>Pixel con value tracking</strong> porque debe conocer el monto de cada venta.<br/><strong>Bid Cap</strong> (tope de puja) es manual: tú fijas a mano el <strong>bid máximo</strong> que el sistema puede ofrecer en cada subasta. Te da control fino pero es fácil estrangular la entrega si lo pones muy bajo; por eso es solo para anunciantes con experiencia."
         },
         {
           "type": "warn",
@@ -618,6 +623,11 @@
           "type": "tip",
           "label": "REGLA DE ELECCIÓN",
           "body": "<strong>¿Quieres controlar costos?</strong><br/>→ NO: Highest Volume (default) o Highest Value (con value tracking).<br/>→ SÍ: Cost per Result Goal (target CPA) o ROAS Goal (target retorno). Bid Cap solo si tienes experiencia."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "El bid strategy se configura a nivel <strong>Campaign</strong> (campaña), no en el ad set.<br/>1. En <strong>Ads Manager</strong>, al crear o editar la campaña, busca la sección <em>Campaign bid strategy</em> (estrategia de puja de la campaña).<br/>2. Verás un menú desplegable con las opciones disponibles según tu objetivo. Por defecto aparece <strong>Highest Volume</strong>.<br/>3. Si eliges Cost per Result Goal o ROAS Goal, la plataforma te abre un campo extra para escribir tu cifra objetivo (el costo por resultado o el retorno deseado).<br/>4. Bid Cap suele estar escondido detrás de <em>Show more options</em> (Mostrar más opciones), porque Meta no lo recomienda para principiantes."
         },
         {
           "type": "mcq",
@@ -808,13 +818,18 @@
       "cards": [
         {
           "type": "concept",
+          "h": "Qué es el budget y por qué hay dos tipos",
+          "body": "El <strong>budget</strong> (presupuesto) es cuánto dinero le autorizas a Meta para gastar en tu campaña. Esa autorización la das de dos formas distintas, y elegir bien cambia cómo el sistema reparte el gasto en el tiempo. Las dos opciones son <strong>daily budget</strong> (presupuesto diario) y <strong>lifetime budget</strong> (presupuesto total del periodo). El examen pregunta seguido cuál va con cuál buying type y qué flexibilidad tiene cada uno, así que conviene entenderlos a fondo, no solo memorizar la definición."
+        },
+        {
+          "type": "concept",
           "h": "Daily budget — promedio diario",
-          "body": "Gasto promedio <strong>diario</strong>. Puede gastar hasta +25% un día y compensar otro. No hay tope estricto día a día: lo que importa es el promedio."
+          "body": "El <strong>daily budget</strong> (presupuesto diario) es un gasto <em>promedio</em> por día, no un tope rígido. Meta puede gastar hasta un <strong>25% más</strong> un día en el que detecta buenas oportunidades de conversión, y compensa gastando menos otro día para que el promedio cuadre. La idea es que el sistema aproveche los días buenos sin que tú tengas que ajustar nada a mano. Lo que importa es el promedio a lo largo del tiempo, no el monto exacto de un solo día. Ejemplo: la <strong>Cafetería La Esquina</strong> pone $500 diarios; un viernes con mucha demanda gasta $625 y el lunes siguiente gasta $375 para equilibrar."
         },
         {
           "type": "concept",
           "h": "Lifetime budget — tope absoluto",
-          "body": "Tope <strong>absoluto</strong> durante todo el periodo. La distribución día a día es variable (el sistema reparte como conviene). Es <strong>obligatorio en Reservation</strong>."
+          "body": "El <strong>lifetime budget</strong> (presupuesto total del periodo) es un <strong>tope absoluto</strong>: le dices a Meta \"gasta máximo esta cantidad entre tal y tal fecha\" y nunca lo rebasa. A diferencia del daily, aquí el sistema reparte el dinero día a día como mejor le convenga: puede gastar más en los días que rinden mejor y menos en los flojos, siempre dentro del total. Es <strong>obligatorio en Reservation</strong> (la compra anticipada), porque ese formato necesita saber el monto cerrado del periodo de antemano. Ejemplo: <strong>Edu Premium</strong> fija $30,000 para una promo de 10 días; el sistema decide cómo distribuir esos $30,000 sin pasarse jamás."
         },
         {
           "type": "kvtable",
@@ -832,18 +847,28 @@
         },
         {
           "type": "concept",
+          "h": "Quién decide el reparto entre ad sets",
+          "body": "Una campaña puede tener varios <strong>ad sets</strong> (conjuntos de anuncios), y cada uno suele apuntar a una audiencia distinta. La pregunta clave es: ¿pones tú el presupuesto a cada ad set a mano, o dejas que Meta lo reparta solo? De ahí salen dos opciones que conviene no confundir: <strong>Advantage+ Campaign Budget</strong> (presupuesto a nivel campaña que Meta administra) y <strong>Ad Set Budget Sharing</strong> (presupuesto por ad set que se puede compartir parcialmente). La primera da el control a Meta; la segunda te lo deja a ti con un poco de flexibilidad."
+        },
+        {
+          "type": "concept",
           "h": "Advantage+ Campaign Budget",
-          "body": "Distribuye dinámicamente el presupuesto entre <strong>ad sets</strong> según rendimiento. Requiere mínimo <strong>2 ad sets</strong>. Solo en Auction. Es la recomendación default cuando tienes varios ad sets — Meta asigna más a los que convierten mejor."
+          "body": "El <strong>Advantage+ Campaign Budget</strong> (presupuesto de campaña Advantage+, antes llamado CBO) pone un solo presupuesto a nivel de toda la campaña y deja que Meta lo distribuya <em>en automático</em> entre los ad sets según cuál esté rindiendo mejor en cada momento. En vez de adivinar tú cuánto darle a cada audiencia, el sistema manda más dinero al ad set que convierte más barato y menos al que va flojo. Requiere mínimo <strong>2 ad sets</strong> (necesita entre cuáles repartir) y solo existe en Auction. Es la recomendación por defecto de Meta. Ejemplo: <strong>Aceros del Bajío</strong> tiene 3 ad sets por región; tras unos días, el sistema le manda el 60% del gasto al ad set del norte porque ahí las cotizaciones salen más baratas."
         },
         {
           "type": "concept",
           "h": "Ad Set Budget Sharing",
-          "body": "Alternativa a Advantage+ Campaign Budget para advertisers que quieren control. Cada ad set tiene su budget pero pueden <strong>compartir hasta 20%</strong> del daily budget entre ad sets de la misma campaña."
+          "body": "El <strong>Ad Set Budget Sharing</strong> (compartir presupuesto entre ad sets) es la alternativa para quien quiere mantener el control manual. Aquí tú le asignas su propio budget a cada ad set, pero permites que entre ad sets de la misma campaña se presten dinero: cada uno puede ceder o tomar prestado hasta el <strong>20%</strong> de su daily budget según haga falta. Así conservas tu reparto base pero das un margen de flexibilidad para no desperdiciar gasto. Ejemplo: <strong>Aceros del Bajío</strong> quiere garantizar presencia mínima en cada región (control manual), pero deja que un ad set con buen día tome hasta 20% extra del presupuesto de otro que va lento."
         },
         {
           "type": "tip",
           "label": "PRO TIP",
           "body": "Advantage+ Campaign Budget gana en la mayoría de los casos: deja que Meta encuentre el ad set ganador automáticamente. Solo usa Ad Set Budget Sharing si tienes razones específicas (compliance, presupuesto manual por línea de negocio)."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "El tipo de presupuesto se elige al crear o editar la campaña.<br/>1. En <strong>Ads Manager</strong> (Administrador de anuncios), dentro de la campaña, busca la sección <em>Campaign budget</em> (presupuesto de campaña).<br/>2. Activa o desactiva el switch de <strong>Advantage+ Campaign Budget</strong>: si lo prendes, pones un solo monto para toda la campaña y Meta reparte; si lo apagas, cada ad set lleva su propio budget.<br/>3. Al definir el monto, eliges entre <strong>Daily budget</strong> y <strong>Lifetime budget</strong> en un selector. Con lifetime te aparece además la opción de fijar fechas de inicio y fin.<br/>4. El control de <strong>Ad Set Budget Sharing</strong> aparece a nivel ad set cuando el presupuesto vive en los ad sets (Advantage+ apagado)."
         },
         {
           "type": "mcq",
@@ -1004,13 +1029,18 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Qué es Learning Phase",
-          "body": "Período donde el sistema <strong>testea</strong> el ad set para encontrar la mejor audiencia. Durante esta fase hay <strong>fluctuaciones</strong> de costo y rendimiento — es normal."
+          "h": "Qué es el Learning Phase",
+          "body": "El <strong>Learning Phase</strong> (fase de aprendizaje) es el periodo inicial en el que Meta <em>experimenta</em> con tu ad set (conjunto de anuncios) para descubrir a quién, cuándo y dónde conviene mostrar el anuncio. Piénsalo como cuando contratas a alguien nuevo: los primeros días tantea hasta agarrar el ritmo. Durante esta fase el sistema todavía no tiene suficientes datos, así que el costo por resultado y el rendimiento <strong>fluctúan</strong> bastante — eso es completamente normal y no significa que algo esté mal. El error típico es asustarse y empezar a cambiar cosas justo en este periodo. Ejemplo: <strong>FitZone</strong> ve el primer día un costo por lead de $400 y se asusta, pero es solo el sistema calibrando."
         },
         {
           "type": "concept",
-          "h": "Cómo salir del Learning Phase",
-          "body": "El ad set sale cuando alcanza <strong>50 optimization events en 7 días</strong> tras activación (o edit significativo). Si no llega → status <strong>Learning Limited</strong>."
+          "h": "Qué es un optimization event",
+          "body": "Un <strong>optimization event</strong> (evento de optimización) es la acción concreta que le pediste a Meta que persiga: una compra, un lead, un registro, una instalación de app. Es la \"meta\" que el sistema usa para aprender qué funciona. Cada vez que ocurre uno, Meta junta una pista más sobre qué tipo de persona responde a tu anuncio. Por eso un evento que pasa muchas veces (ej. clics o registros baratos) deja aprender rápido, mientras que uno raro (ej. la compra de un producto caro) hace que el aprendizaje sea lento. Ejemplo: para la <strong>Cafetería La Esquina</strong> el optimization event es \"registro al club de lealtad\", que pasa varias veces al día y da señal abundante."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se sale del Learning Phase",
+          "body": "El ad set sale del Learning Phase cuando acumula <strong>50 optimization events en una ventana de 7 días</strong>, contados desde que lo activaste (o desde el último cambio importante). Es un requisito de <em>volumen</em>, no de tiempo: el sistema necesita esos 50 datos para tener suficiente señal y entregar de forma estable. Si pasan los 7 días y el ad set no junta los 50 events, no \"se gradúa\": cae a un estado llamado <strong>Learning Limited</strong> (aprendizaje limitado). Por eso al planear una campaña conviene asegurar que el evento elegido pueda ocurrir al menos esas 50 veces por semana."
         },
         {
           "type": "tip",
@@ -1020,7 +1050,7 @@
         {
           "type": "concept",
           "h": "Qué es Learning Limited",
-          "body": "Si el ad set no logra los 50 events en 7 días, queda en status <strong>Learning Limited</strong>: el sistema no junta suficiente señal para optimizar bien y el rendimiento queda inestable."
+          "body": "<strong>Learning Limited</strong> (aprendizaje limitado) es el estado en el que cae un ad set que no logró los 50 optimization events en 7 días. En español llano: el sistema se quedó sin suficiente señal para optimizar bien, así que el rendimiento queda inestable y casi siempre más caro de lo que podría ser. No es un error de configuración ni un bloqueo, es una <em>advertencia</em>: Meta te avisa que no le diste material suficiente para aprender. La salida casi nunca es \"esperar más\", sino destrabar la causa de raíz (más audiencia, más budget, un evento más frecuente). Ejemplo: el ad set de <strong>AutoMax</strong> para vender camionetas de $900,000 cae en Learning Limited porque ese tipo de compra ocurre muy pocas veces al mes."
         },
         {
           "type": "kvtable",
@@ -1060,7 +1090,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · AutoMax",
-          "body": "El ad set de Purchase de SUVs caros de AutoMax queda Learning Limited porque ese evento ocurre pocas veces al mes. Solución típica: ampliar audiencia o subir budget — NO cambiar el bid strategy, porque eso resetea todo a cero."
+          "body": "El ad set de <strong>AutoMax</strong> que optimiza por la compra de SUVs caros queda en Learning Limited porque ese evento ocurre apenas unas pocas veces al mes, lejos de los 50 en 7 días. La tentación del dueño es cambiar el bid strategy (estrategia de puja) \"para que aprenda más rápido\", pero eso es justo lo peor: cualquier cambio importante <strong>resetea</strong> el aprendizaje a cero y vuelve a empezar el conteo de 50 events. La solución correcta ataca la causa real (que el evento es muy raro): <strong>ampliar la audiencia</strong> para que haya más compradores potenciales, o <strong>subir el budget</strong> para alcanzar a más gente. Otra opción es optimizar por un evento más frecuente y de etapa anterior, como \"Agregar al carrito\" en vez de \"Compra\"."
         },
         {
           "type": "mcq",

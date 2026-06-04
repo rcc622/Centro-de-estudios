@@ -55,7 +55,12 @@
         {
           "type": "concept",
           "h": "Más que un creador de campañas",
-          "body": "<strong>Meta Ads Manager</strong> es el centro de control. Sí, sirve para crear campañas, pero también es el punto de acceso a herramientas para administrar el negocio, anunciar, probar y vender productos y servicios."
+          "body": "<strong>Meta Ads Manager</strong> (Administrador de Anuncios de Meta) es la herramienta principal donde gestionas toda tu publicidad en Facebook e Instagram. Mucha gente cree que solo sirve para diseñar el anuncio, pero en realidad es el <em>centro de control</em> completo. Desde aquí creas las campañas, sí, pero también configuras cómo vas a pagar, defines a quién le vas a mostrar los anuncios, conectas tus fuentes de datos y revisas los resultados. Piensa en él como el tablero de un avión: no solo enciende el motor, controla todo el vuelo. Por ejemplo, la <strong>Cafetería La Esquina</strong> usa Ads Manager para lanzar su promo de temporada y, en la misma pantalla, ver cuántas reservaciones generó."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Para entrar al centro de control recorres esta ruta: <strong>Meta Business Suite</strong> (Suite de Negocios) → menú lateral izquierdo → <strong>Ads Manager</strong>. Una vez dentro, la barra superior te da acceso a las distintas secciones: crear campañas con el botón verde <strong>+ Create</strong> (Crear), ver resultados en la pestaña de <strong>columnas y breakdowns</strong> (desgloses), y desde el menú de las nueve cuadritos (<em>All tools</em>, todas las herramientas) llegas a audiencias, billing y fuentes de datos. La idea es que no necesitas salir de Ads Manager para administrar casi nada."
         },
         {
           "type": "kvtable",
@@ -90,12 +95,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "Vas a lanzar anuncios de tu nueva colección para Tienda Urbana (e-commerce de moda). En Ads Manager no solo diseñas el anuncio: en el <em>mismo</em> lugar conectas el Pixel, configuras la tarjeta para pagar, creas la audiencia y revisas el reporte. Es una sala de máquinas, no un editor de imágenes."
+          "body": "<strong>Tienda Urbana</strong> es un comercio en línea de moda que va a lanzar anuncios para su nueva colección. En Ads Manager no solo diseñan el anuncio: en el <em>mismo</em> lugar conectan el <strong>Pixel</strong> (un código que rastrea lo que la gente hace en su sitio web), registran la tarjeta con la que van a pagar, arman la audiencia a la que le van a mostrar los ads y, después, revisan el reporte de ventas. Todo desde una sola herramienta. Es una sala de máquinas completa, no un editor de imágenes."
         },
         {
           "type": "concept",
-          "h": "Opportunity Score",
-          "body": "Es un score de <strong>0-100</strong> que muestra qué tan optimizadas están tus campañas, basado en recomendaciones experimentalmente probadas que aún <em>no has aplicado</em>. Cada punto que falta es una recomendación pendiente, no una predicción."
+          "h": "Qué es el Opportunity Score",
+          "body": "El <strong>Opportunity Score</strong> (Puntuación de Oportunidad) es una calificación de <strong>0 a 100</strong> que te dice qué tan optimizadas están tus campañas. Funciona así: Meta tiene una lista de recomendaciones que ya probó y comprobó que mejoran resultados; el score mide cuántas de esas recomendaciones ya aplicaste. Si te falta puntaje, no es porque tu campaña vaya a fallar, sino porque hay sugerencias pendientes que todavía no activaste. Cada punto que falta equivale a una recomendación sin aplicar. Es importante entenderlo bien: es un medidor de <em>qué tanto seguiste las buenas prácticas</em>, no una bola de cristal que adivina tus ventas."
         },
         {
           "type": "warn",
@@ -110,7 +115,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Cocina Sazón",
-          "body": "Tu campaña marca <strong>68/100</strong>. Eso <em>no</em> significa 68% de ROAS. Significa que hay recomendaciones probadas que no aplicaste — por ejemplo activar Advantage+ audience o sumar CAPI. Aplicarlas sube el score; los resultados reales dependen de la subasta."
+          "body": "<strong>Cocina Sazón</strong> (un restaurante de comida a domicilio) tiene una campaña que marca <strong>68/100</strong> en el Opportunity Score. Eso <em>no</em> quiere decir que vaya a recuperar el 68% de lo que invierta ni que su <strong>ROAS</strong> (return on ad spend, o retorno sobre la inversión publicitaria) sea de 68%. Significa que hay recomendaciones comprobadas que aún no aplicó: por ejemplo activar la <strong>Advantage+ audience</strong> (la audiencia automática con inteligencia artificial) o sumar la <strong>CAPI</strong> (Conversions API, una forma de enviarle datos a Meta directamente desde su servidor). Si Cocina Sazón aplica esas sugerencias, el score sube; pero los resultados de ventas reales dependen de la subasta, no del número."
         },
         {
           "type": "mcq",
@@ -269,7 +274,12 @@
         {
           "type": "concept",
           "h": "Tres niveles, tres decisiones",
-          "body": "Al crear una campaña haces selecciones en <strong>tres niveles</strong>: Campaign, Ad set y Ad. Cada nivel decide cosas distintas y no se mezclan. Es lo más preguntado del examen."
+          "body": "Cada campaña de Meta se arma en una estructura de <strong>tres niveles</strong> que van anidados, como muñecas rusas. El nivel de arriba es la <strong>Campaign</strong> (campaña), que contiene uno o varios <strong>Ad sets</strong> (conjuntos de anuncios), y cada Ad set contiene uno o varios <strong>Ads</strong> (anuncios). Lo clave es que en cada nivel decides cosas distintas y esas decisiones no se mezclan: lo que va en Campaign no va en Ad, y viceversa. Saber qué decisión vive en cada nivel es de lo más preguntado en el examen, así que vale la pena dominarlo. Por ejemplo, para la florería <strong>Pétalos</strong>: una sola campaña de ventas puede tener un Ad set para mujeres jóvenes y otro para parejas, y dentro de cada uno, varios anuncios distintos."
+        },
+        {
+          "type": "concept",
+          "h": "Qué decide cada nivel, desglosado",
+          "body": "Para no confundirte, así se reparte la responsabilidad: <strong>1. Campaign</strong> (la base): decides el <strong>buying type</strong> (forma de compra: subasta o reservación), el <strong>objective</strong> (objetivo, qué quieres lograr) y muchas veces el presupuesto. <strong>2. Ad set</strong> (el intermedio): decides la <strong>audience</strong> (audiencia, a quién le hablas), los <strong>placements</strong> (ubicaciones, en qué apps y secciones aparece) y el calendario. <strong>3. Ad</strong> (el anuncio en sí): decides el <strong>creative</strong> (el material visual: imagen, video, texto), el <strong>destination</strong> (destino, a dónde llega el clic) y el <strong>tracking</strong> (rastreo de qué hace la gente)."
         },
         {
           "type": "tip",
@@ -302,7 +312,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · FlowApp",
-          "body": "Para FlowApp (SaaS B2B de gestión) decides en <em>Campaign</em>: Auction + objetivo Sales + budget mensual. En <em>Ad set</em>: audiencia de equipos de operaciones + placements + evento de conversión. En <em>Ad</em>: el video demo del producto, destino al formulario de prueba gratis, tracking con Pixel."
+          "body": "<strong>FlowApp</strong> es un software de gestión empresarial que se vende a otras empresas (un <strong>SaaS B2B</strong>: software as a service, o software por suscripción, business to business, o sea de negocio a negocio). Al armar su campaña deciden, en <em>Campaign</em>: <strong>Auction</strong> (subasta) como forma de compra, objetivo <strong>Sales</strong> (ventas) y el presupuesto del mes. En <em>Ad set</em>: la audiencia de equipos de operaciones, las ubicaciones donde saldrá y el evento de conversión que les importa. En <em>Ad</em>: el video que muestra cómo funciona el producto, el destino al formulario de prueba gratis y el rastreo con el Pixel. Una decisión por nivel, sin mezclar."
         },
         {
           "type": "mcq",
@@ -483,12 +493,12 @@
         {
           "type": "concept",
           "h": "Qué es Advantage+",
-          "body": "<strong>Advantage+</strong> es la suite de soluciones de Meta que usa AI y automation en tiempo real para hacer match entre anuncios y las personas con mayor probabilidad de tomar acción. Optimiza con data en tiempo real, entregando los ads más efectivos y experiencias más relevantes."
+          "body": "<strong>Advantage+</strong> es el conjunto de herramientas de Meta que usan <strong>AI</strong> (artificial intelligence, o inteligencia artificial) y <strong>automation</strong> (automatización: la máquina toma decisiones sola, sin que tú las hagas a mano) para conectar tus anuncios con las personas que tienen más probabilidad de comprar o actuar. La idea de fondo es simple: en vez de que tú adivines a quién mostrarle el anuncio o cuánto pagar, la inteligencia artificial analiza señales <em>en tiempo real</em> (mientras la campaña corre) y ajusta sobre la marcha. Tú marcas la dirección general y el objetivo; Advantage+ se encarga de afinar la ejecución para entregar los anuncios más efectivos a las personas correctas."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · DentalCare",
-          "body": "En vez de adivinar quién quiere un blanqueamiento dental, Advantage+ deja que la IA explore señales en tiempo real y encuentre a esos prospectos mientras la campaña corre. Tú das la dirección; la IA optimiza la ejecución."
+          "body": "<strong>DentalCare</strong> es una clínica dental que quiere vender tratamientos de blanqueamiento. En lugar de que el dueño adivine quién está interesado (¿gente joven?, ¿novios por casarse?), Advantage+ deja que la inteligencia artificial explore señales reales de comportamiento (quién busca temas dentales, quién interactúa con anuncios similares) y encuentre a esos prospectos mientras la campaña está corriendo. DentalCare define la meta (más citas de blanqueamiento) y la IA optimiza a quién y cuándo mostrarle los anuncios."
         },
         {
           "type": "kvtable",
@@ -507,7 +517,7 @@
         {
           "type": "concept",
           "h": "Complete campaign solutions",
-          "body": "Las 3 campañas Advantage+ que existen: <strong>Advantage+ Sales</strong>, <strong>Advantage+ App</strong> y <strong>Advantage+ Leads</strong>. Aplican AI a toda la estructura, no a pasos sueltos."
+          "body": "Las <strong>complete campaign solutions</strong> (soluciones de campaña completa) son las que dejan que la inteligencia artificial maneje <em>toda</em> la campaña de principio a fin, no solo un pasito. Existen exactamente tres y conviene memorizarlas: <strong>1. Advantage+ Sales</strong> (para generar ventas, por ejemplo en una tienda en línea), <strong>2. Advantage+ App</strong> (para conseguir instalaciones y acciones dentro de una app móvil) y <strong>3. Advantage+ Leads</strong> (para capturar prospectos vía formularios). Por ejemplo, la tienda en línea <strong>Aceros del Bajío</strong> usaría Advantage+ Sales y dejaría que la IA arme audiencia, ubicaciones y presupuesto sola. Más adelante verás las single-step, que automatizan solo una parte."
         },
         {
           "type": "kvtable",
@@ -689,27 +699,27 @@
         {
           "type": "concept",
           "h": "El marco oficial de Meta",
-          "body": "Meta define <strong>7 Performance Best Practices</strong> para campañas que rindan. No las memorices como lista suelta: entiende qué resuelve cada una. Aquí las primeras 4."
+          "body": "Meta publica un marco de <strong>7 Performance Best Practices</strong> (7 mejores prácticas de rendimiento), que son las recomendaciones oficiales para que una campaña funcione bien. No las veas como una lista suelta que hay que memorizar de memoria: cada una resuelve un problema concreto del armado de campañas. Si entiendes qué resuelve cada una, las respondes en el examen aunque cambien el fraseo. Las primeras 6 son cosas que haces <em>antes o durante</em> la campaña; la séptima ocurre <em>después</em>. En esta lección verás las primeras 4 y en la siguiente las últimas 3."
         },
         {
           "type": "concept",
           "h": "BP 1 — Automate campaign setup",
-          "body": "Usa Advantage+ para automatizar el armado y dejar que la IA optimice. <em>Ejemplo:</em> en vez de armar 8 ad sets a mano para una clínica dental, dejas que Advantage+ Sales estructure la campaña."
+          "body": "La primera práctica, <strong>Automate campaign setup</strong> (automatiza el armado de la campaña), dice que aproveches las herramientas de inteligencia artificial de <strong>Advantage+</strong> en lugar de configurar todo a mano. La idea es que la máquina toma mejores decisiones de estructura, audiencia y presupuesto que las que tú armarías a pulso, porque procesa señales en tiempo real. Tú defines la meta y dejas que la automatización ejecute. Esto también reduce errores humanos y te ahorra horas de configuración. <em>Ejemplo:</em> la clínica dental <strong>DentalCare</strong>, en vez de armar 8 conjuntos de anuncios uno por uno, deja que <strong>Advantage+ Sales</strong> (la campaña de ventas automatizada) estructure todo de golpe."
         },
         {
           "type": "concept",
           "h": "BP 2 — Align objectives & goals",
-          "body": "El objetivo de campaña debe coincidir con el goal del negocio. <em>Ejemplo:</em> si una inmobiliaria quiere cotizaciones cerradas, el objective es Sales/Leads, no Awareness."
+          "body": "La segunda práctica, <strong>Align objectives & goals</strong> (alinea el objetivo de la campaña con la meta del negocio), es la más fácil de fallar. El <strong>objective</strong> (objetivo) es lo que le dices a Meta que optimice (ventas, tráfico, reconocimiento), y el <strong>goal</strong> (meta del negocio) es lo que realmente quieres lograr en la vida real. Si no coinciden, Meta optimiza la métrica equivocada y gastas dinero sin resultados de verdad. Por ejemplo, si pides tráfico, Meta te trae clics baratos aunque nadie compre. <em>Ejemplo:</em> la inmobiliaria <strong>Casa Plus</strong> quiere cerrar cotizaciones, así que su objective debe ser <strong>Sales</strong> (ventas) o <strong>Leads</strong> (captura de prospectos), nunca <strong>Awareness</strong> (reconocimiento de marca)."
         },
         {
           "type": "concept",
           "h": "BP 3 — Consider your audience",
-          "body": "Combina lo que ya sabes del cliente con lo que Advantage+ audience descubre. <em>Ejemplo:</em> das tu lista de clientes top y la IA expande a perfiles similares."
+          "body": "La tercera práctica, <strong>Consider your audience</strong> (toma en cuenta tu audiencia), pide combinar lo que tú ya sabes de tus clientes con lo que la inteligencia artificial puede descubrir por su cuenta. En lugar de encerrar la campaña en una audiencia fija y pequeña, le das a Meta tus datos como punto de partida y dejas que <strong>Advantage+ audience</strong> (la audiencia automática) explore perfiles parecidos que tú no habrías encontrado. Así no compites solo por la gente obvia y abres el alcance a prospectos nuevos pero relevantes. <em>Ejemplo:</em> la tienda en línea <strong>Aceros del Bajío</strong> sube su lista de mejores clientes y la inteligencia artificial expande hacia personas con comportamiento similar."
         },
         {
           "type": "concept",
           "h": "BP 4 — Optimize creative & placements",
-          "body": "Diversifica mensajes, visuales y formatos, y usa Advantage+ placements. <em>Ejemplo:</em> varios videos/imágenes de instalaciones en todos los placements, no un solo anuncio estático."
+          "body": "La cuarta práctica, <strong>Optimize creative & placements</strong> (optimiza el material y las ubicaciones), tiene dos partes. El <strong>creative</strong> (el material del anuncio: imagen, video, texto) debe ser variado: distintos mensajes, formatos y visuales para que Meta pruebe cuál funciona mejor con cada persona. Los <strong>placements</strong> (ubicaciones: dónde aparece el anuncio, como Feed, Stories o Reels) conviene dejarlos en <strong>Advantage+ placements</strong> (ubicaciones automáticas) para que la máquina reparta el anuncio donde mejor rinda. Un solo anuncio estático en un solo lugar limita los resultados. <em>Ejemplo:</em> la florería <strong>Pétalos</strong> sube varios videos e imágenes de sus arreglos y los deja correr en todas las ubicaciones, no un único banner fijo."
         },
         {
           "type": "mcq",
@@ -734,17 +744,17 @@
         {
           "type": "concept",
           "h": "BP 5 — Focus on signals",
-          "body": "Decisiones con data de alta calidad: Pixel, CAPI, datasets, eventos. <em>Ejemplo:</em> una tienda online con 3 meses de Pixel + CAPI le da a Meta señales sólidas para optimizar conversiones."
+          "body": "La quinta práctica, <strong>Focus on signals</strong> (enfócate en las señales), dice que tomes decisiones con datos de alta calidad en lugar de a corazonadas. Las <strong>signals</strong> (señales) son la información que tu negocio le manda a Meta sobre lo que hace la gente: el <strong>Pixel</strong> (un código en tu sitio web que registra visitas, compras y otras acciones), la <strong>CAPI</strong> (Conversions API, una conexión que envía esos mismos datos directo desde tu servidor, más confiable que el Pixel solo), los <strong>datasets</strong> (conjuntos de datos donde se guardan esas acciones) y los <strong>events</strong> (eventos, como \"agregó al carrito\" o \"compró\"). Entre más y mejores señales le des a Meta, mejor optimiza la inteligencia artificial. <em>Ejemplo:</em> la tienda en línea <strong>Aceros del Bajío</strong>, con 3 meses de Pixel más CAPI funcionando, le da a Meta datos sólidos para encontrar compradores reales."
         },
         {
           "type": "concept",
           "h": "BP 6 — Get the most out of budget & bidding",
-          "body": "Asigna el presupuesto dinámicamente con Advantage+ campaign budget en lugar de repartirlo a mano. <em>Ejemplo:</em> el budget fluye al ad set que cierra más cotizaciones."
+          "body": "La sexta práctica, <strong>Get the most out of budget & bidding</strong> (saca el máximo provecho al presupuesto y a las pujas), pide que dejes a la inteligencia artificial repartir el dinero en vez de hacerlo tú a mano. El <strong>budget</strong> (presupuesto) es cuánto inviertes, y el <strong>bidding</strong> (puja) es cuánto está dispuesta a pagar tu campaña por cada resultado en la subasta. Con <strong>Advantage+ campaign budget</strong> (el presupuesto automático a nivel campaña, antes llamado CBO) Meta mueve el dinero hacia el conjunto de anuncios que está dando mejores resultados, en tiempo real. Repartir el presupuesto a mano suele dejar dinero atorado en anuncios que no funcionan. <em>Ejemplo:</em> en la inmobiliaria <strong>Casa Plus</strong>, el presupuesto fluye solo hacia el conjunto de anuncios que está cerrando más cotizaciones."
         },
         {
           "type": "concept",
           "h": "BP 7 — Validate results",
-          "body": "Mide el impacto real para informar estrategias futuras (A/B, lift studies). Ocurre <strong>post-campaña</strong>: por eso no entra en las recomendaciones del Opportunity Score."
+          "body": "La séptima práctica, <strong>Validate results</strong> (valida los resultados), consiste en medir el impacto <em>real</em> de la campaña para aprender y mejorar las siguientes. Aquí entran herramientas como las pruebas <strong>A/B</strong> (mostrar dos versiones a públicos parecidos y comparar cuál gana) y los <strong>lift studies</strong> (estudios de incrementalidad: comparan a quien vio el anuncio contra quien no, para saber cuánto vendiste de más gracias a la publicidad). Lo clave para el examen: esta práctica ocurre <strong>post-campaña</strong> (después de que la campaña corrió), por eso <em>no</em> aparece en las recomendaciones del Opportunity Score, que solo cubre lo que puedes aplicar antes o durante. <em>Ejemplo:</em> la inmobiliaria <strong>Casa Plus</strong>, al terminar el mes, corre un A/B test para decidir qué video usar el siguiente trimestre."
         },
         {
           "type": "tip",
@@ -909,17 +919,22 @@
         {
           "type": "concept",
           "h": "Meta Business Suite",
-          "body": "<strong>Meta Business Suite</strong> es un centro unificado para administrar marketing, ads y cuentas de clientes en <strong>Facebook, Instagram, Messenger y WhatsApp</strong>. Desde ahí gestionas portfolios, contenido, billing, brand safety y todas las herramientas."
+          "body": "<strong>Meta Business Suite</strong> (Suite de Negocios de Meta) es el centro unificado desde donde administras todo tu negocio en las apps de Meta: <strong>Facebook, Instagram, Messenger y WhatsApp</strong>, todo en un mismo lugar. Mientras que Ads Manager es específico para campañas, Business Suite es el nivel de arriba: aquí gestionas portfolios, contenido orgánico, mensajes, <strong>billing</strong> (facturación y pagos), <strong>brand safety</strong> (seguridad de marca) y los permisos de tu equipo. Piénsalo como las oficinas centrales del negocio, no solo el taller de anuncios. Por ejemplo, la concesionaria <strong>AutoMax</strong> responde mensajes de Instagram, revisa facturas y da accesos a su agencia sin salir de Business Suite."
         },
         {
           "type": "concept",
           "h": "Business portfolio",
-          "body": "Un <strong>business portfolio</strong> agrupa activos (Página de FB, Instagram, ad account, catálogo, etc.) en un solo lugar. Beneficios: gestión unificada, control de acceso, colaboración con partners y notificaciones centralizadas."
+          "body": "Un <strong>business portfolio</strong> (portafolio de negocio, antes llamado Business Manager) es un contenedor que agrupa todos los <strong>assets</strong> (activos) de una marca en un solo lugar: la Página de Facebook, la cuenta de Instagram, la <strong>ad account</strong> (cuenta publicitaria donde corren los anuncios), el catálogo de productos, etc. La ventaja de tenerlos juntos es enorme: gestionas todo de forma unificada, controlas quién puede tocar qué, colaboras con agencias externas sin compartir contraseñas y recibes las notificaciones en un solo tablero. Sin un portfolio, cada activo viviría suelto y darías acceso prestando tu usuario personal. <em>Ejemplo:</em> la concesionaria <strong>AutoMax</strong> mete su Página, su Instagram, su cuenta publicitaria y su catálogo de autos en un mismo portfolio."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · AutoMax",
-          "body": "AutoMax (concesionaria) tiene Página de FB, Instagram, ad account y catálogo de autos. En un solo portfolio controlas quién accede a qué y das/quitas permiso a la agencia sin compartir contraseñas."
+          "body": "Sigamos con <strong>AutoMax</strong> (la concesionaria). Antes de tener un portfolio, le daban a su agencia la contraseña del Facebook del dueño: un riesgo enorme. Con un business portfolio, en cambio, agregan a la agencia como un acceso controlado y le dan permiso <em>solo</em> sobre la cuenta publicitaria, no sobre toda la operación. Si mañana dejan de trabajar con esa agencia, le quitan el acceso con un clic y nadie tiene que cambiar contraseñas. Eso es lo que resuelve el portfolio: control fino de quién entra a qué, sin exponer tus cuentas personales."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Business Suite (paso a paso)",
+          "body": "Para administrar accesos y activos recorres esta ruta: <strong>Meta Business Suite</strong> → engrane de <strong>Settings</strong> (Configuración) abajo a la izquierda → <strong>Business settings</strong> (configuración del negocio). Ahí, en el menú lateral, encuentras <strong>Users</strong> (usuarios) dividido en <strong>People</strong> (personas), <strong>Partners</strong> (socios) y <strong>System users</strong> (usuarios de sistema); más abajo está <strong>Accounts</strong> (cuentas) para tus Páginas, cuentas publicitarias y catálogos. Para invitar a alguien eliges <strong>People → Add</strong> (agregar), pones su correo y le asignas el nivel de permiso. Todo el control de quién hace qué vive aquí, no dentro de Ads Manager."
         },
         {
           "type": "kvtable",
@@ -1143,7 +1158,7 @@
         {
           "type": "concept",
           "h": "Billing and payments",
-          "body": "En Business Suite, <strong>Billing and payments</strong> es donde manejas todos los detalles de pago. Puedes agregar un método propio o compartir uno de otro portfolio. Requieres acceso <strong>admin</strong> o rol <strong>finance (view and manage)</strong> para cambiar payment methods."
+          "body": "<strong>Billing and payments</strong> (facturación y pagos) es la sección de Business Suite donde manejas todo lo relacionado con el dinero de tus anuncios: con qué pagas, cuánto has gastado y dónde descargas tus facturas. Puedes agregar un <strong>payment method</strong> (método de pago, como una tarjeta) propio o compartir uno que viva en otro portfolio. Lo importante para el examen es el control de acceso: cambiar el método de pago no lo puede hacer cualquiera, necesitas acceso de <strong>admin</strong> (administrador) o el rol <strong>finance (view and manage)</strong> (finanzas con permiso de ver y gestionar). El acceso básico o temporal no alcanza. <em>Ejemplo:</em> en el restaurante <strong>Cocina Sazón</strong>, el mesero con acceso básico puede ver reportes, pero solo el dueño con rol admin cambia la tarjeta."
         },
         {
           "type": "kvtable",
@@ -1178,12 +1193,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Hotel Lumière",
-          "body": "El contador del Hotel Lumière entra a <em>Invoices</em> para descargar facturas y a <em>Payment activity</em> para ver el gasto. Para cambiar la tarjeta necesita rol admin o finance (view and manage) — no le basta acceso básico."
+          "body": "El contador del <strong>Hotel Lumière</strong> tiene una tarea acotada: cerrar la contabilidad del mes. Entra a <strong>Invoices</strong> (facturas) para descargar los comprobantes y a <strong>Payment activity</strong> (actividad de pago) para revisar cuánto se gastó. Lo que <em>no</em> puede hacer con su acceso es cambiar la tarjeta con la que paga el hotel: para eso necesitaría rol admin o finance (view and manage). Este ejemplo muestra la lógica de los permisos: se da exactamente lo necesario para la tarea, ni más ni menos. Así el contador hace su trabajo sin poder mover la operación publicitaria."
         },
         {
           "type": "concept",
           "h": "Brand Safety & Suitability Center",
-          "body": "Ofrece <strong>controles</strong> para incluir/excluir contenido o publishers donde corren tus ads, y <strong>tools de transparencia</strong> que muestran publisher info y delivery. También accesibles a nivel <strong>ad set → placements</strong> en Ads Manager."
+          "body": "El <strong>Brand Safety & Suitability Center</strong> (Centro de Seguridad e Idoneidad de Marca) es la sección donde decides <em>junto a qué tipo de contenido</em> aparecen tus anuncios, para que tu marca no salga al lado de algo que no le conviene. Ofrece dos cosas: <strong>controls</strong> (controles) para incluir o excluir cierto contenido o ciertos <strong>publishers</strong> (los sitios, páginas o creadores donde se muestra tu anuncio), y <strong>transparency tools</strong> (herramientas de transparencia) que te muestran información del publisher y dónde se entregaron tus anuncios. Estos controles no viven solo aquí: también puedes aplicarlos a nivel <strong>ad set → placements</strong> (conjunto de anuncios → ubicaciones) en Ads Manager. <em>Ejemplo:</em> la tienda de mascotas <strong>PetCare</strong> usa estos controles para que sus anuncios no salgan junto a contenido polémico."
         },
         {
           "type": "kvtable",

@@ -49,7 +49,7 @@
         {
           "type": "concept",
           "h": "Recupéralo antes de avanzar",
-          "body": "Antes de entrar a <strong>Signals & Data</strong> (Pixel, CAPI, eventos), retrieva los conceptos de objectives y bid strategies que ya viste."
+          "body": "Antes de entrar a <strong>Signals & Data</strong> (señales y datos: el Pixel, la CAPI y los eventos), conviene que recuperes de memoria lo que ya viste en los días anteriores. El <strong>recuerdo activo</strong> (traer un concepto a la mente sin verlo) fija mucho mejor el aprendizaje que releer. En las siguientes tarjetas vas a repasar los objectives (los objetivos de campaña) y las bid strategies (las estrategias de puja) que el algoritmo de Meta usa para competir en cada subasta. Domina eso primero, porque hoy aprendes la materia prima que alimenta a ese algoritmo. Por ejemplo, una tienda como <strong>Boutique Aurora</strong> no puede optimizar ventas si no entiende antes cómo elige Meta a quién mostrarle el anuncio."
         },
         {
           "type": "kvtable",
@@ -145,7 +145,7 @@
         {
           "type": "concept",
           "h": "Listo. ¡Adelante!",
-          "body": "Ya con bid strategies en la cabeza, Día 4 te muestra <strong>la materia prima</strong> que el algoritmo usa para optimizar: las señales (Pixel, CAPI, events) que tu sitio le manda."
+          "body": "Ya con las bid strategies (estrategias de puja) frescas, el Día 4 te muestra la <strong>materia prima</strong> que el algoritmo necesita para optimizar: las señales que tu sitio o app le manda a Meta. Esas señales viajan a través del <strong>Pixel</strong> (el código que registra acciones en tu web), la <strong>CAPI</strong> (Conversions API, el envío de datos desde tu servidor) y los <strong>events</strong> (eventos: el registro de cada acción importante). Sin estos datos, el algoritmo de la subasta optimiza a ciegas y desperdicia tu presupuesto. Piénsalo así: en los días previos aprendiste a manejar el coche; hoy aprendes a darle gasolina de calidad. Por ejemplo, la cafetería <strong>La Esquina</strong> necesita mandarle a Meta el dato de cada inscripción para que aprenda a traer más alumnos parecidos."
         }
       ]
     },
@@ -157,18 +157,18 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Signals",
-          "body": "Acciones que revelan <strong>intención o interés</strong>: visitar una página, agregar al carrito, comprar, usar una app, entrar a una tienda física. Son la materia prima del sistema de optimización de Meta."
+          "h": "Qué es un signal",
+          "body": "Un <strong>signal</strong> (señal) es cualquier acción de una persona que revela su intención o interés: visitar una página, agregar un producto al carrito, comprar, abrir una app o entrar a una tienda física. Para Meta, estas señales son la materia prima con la que aprende a quién conviene mostrarle tus anuncios. Mientras más señales reales reciba, mejor entiende quién es un buen prospecto. Piénsalo como las pistas que una persona va dejando sobre qué quiere comprar. Por ejemplo, la cafetería <strong>La Esquina</strong> ve que muchos visitantes entran a su página de \"cursos de barista\": ese interés repetido es una señal de que esas personas podrían inscribirse."
         },
         {
           "type": "concept",
-          "h": "Events",
-          "body": "Las acciones concretas que se registran. Pueden ser <strong>online</strong> (web, app, messaging) u <strong>offline</strong> (compra en tienda, llamada telefónica, reserva)."
+          "h": "Qué es un event",
+          "body": "Un <strong>event</strong> (evento) es el registro técnico de una acción concreta que tu sitio o app le envía a Meta. Si el signal es la intención, el event es el reporte que dice \"esto pasó aquí\". Los eventos pueden ser <strong>online</strong> (en la web, en una app o en un chat) u <strong>offline</strong> (una compra en mostrador, una llamada telefónica o una reserva por teléfono). En la cafetería <strong>La Esquina</strong>, cuando alguien completa la inscripción al curso de barista, el sitio dispara un event llamado <em>Lead</em> que viaja hasta Meta. Sin ese envío, Meta nunca se entera de que la inscripción ocurrió."
         },
         {
           "type": "concept",
           "h": "Diferencia clave · signal vs event",
-          "body": "El <strong>signal</strong> es la intención que la persona muestra; el <strong>event</strong> es el registro técnico de esa acción que tu sitio o app le manda a Meta. Sin events bien configurados, los signals no llegan y la optimización trabaja a ciegas."
+          "body": "El <strong>signal</strong> es la intención que muestra la persona; el <strong>event</strong> es el registro técnico de esa acción que tu sitio o app le manda a Meta. Son dos caras de lo mismo: la persona genera la señal al actuar, y tu plataforma la convierte en un evento medible. Si los eventos no están bien configurados, las señales nunca llegan a Meta y la optimización trabaja a ciegas, gastando tu presupuesto sin saber qué funciona. En resumen: la señal es lo que la persona hace; el evento es cómo Meta se entera."
         },
         {
           "type": "concept",
@@ -178,7 +178,7 @@
         {
           "type": "concept",
           "h": "Qué es una data source",
-          "body": "Es la herramienta o código que <strong>recolecta</strong> los events y se los entrega a Meta para medición y optimización. Sin una data source conectada, Meta no sabe qué pasó después del clic."
+          "body": "Una <strong>data source</strong> (fuente de datos) es la herramienta o pieza de código que recolecta los eventos de tu negocio y se los entrega a Meta para medir resultados y optimizar campañas. Es el \"mensajero\" que conecta lo que pasa en tu sitio, app o tienda con la plataforma de anuncios. Sin una data source conectada, Meta ve el clic en el anuncio pero queda ciega de ahí en adelante: no sabe si la persona compró, se registró o se fue. Por ejemplo, si la cafetería <strong>La Esquina</strong> no conecta ninguna fuente, podrá pagar por clics pero nunca sabrá cuántas inscripciones generaron esos clics."
         },
         {
           "type": "kvtable",
@@ -204,13 +204,18 @@
         },
         {
           "type": "concept",
+          "h": "Las 4 data sources, una por una",
+          "body": "Cada fuente cubre un canal distinto:<br/><strong>1. Meta Pixel</strong> (código de JavaScript que pones en tu página web): rastrea lo que hacen los visitantes en tu sitio, como ver un producto o comprar. Es la base para Custom Audiences web y campañas Sales o Leads de sitio.<br/><strong>2. Conversions API o CAPI</strong> (envío de datos desde tu propio servidor, no desde el navegador): le manda los eventos a Meta de forma más confiable y complementa al Pixel.<br/><strong>3. Facebook SDK</strong> (el equivalente del Pixel pero para apps móviles): es necesario para campañas de App Promotion y se puede sustituir por un MMP (Mobile Measurement Partner, un medidor externo autorizado como AppsFlyer o Adjust).<br/><strong>4. Offline conversions</strong> (conversiones fuera de línea): un archivo CSV con ventas físicas, como una compra en mostrador o un contrato firmado en oficina, que se sube vía CAPI Offline."
+        },
+        {
+          "type": "concept",
           "h": "Regla mental · qué data source por canal",
-          "body": "Si el evento pasa en un <strong>website</strong> → Pixel (+ CAPI). Si pasa en una <strong>app móvil</strong> → Facebook SDK (o un MMP autorizado). Si pasa <strong>fuera de internet</strong> (oficina, tienda, teléfono) → Offline conversions vía CAPI Offline."
+          "body": "La forma fácil de elegir es preguntarte dónde ocurre la acción. Si pasa en un <strong>website</strong> (sitio web), usas el Pixel más la CAPI. Si pasa en una <strong>app móvil</strong>, usas el Facebook SDK (o un MMP autorizado). Si pasa <strong>fuera de internet</strong> (en una oficina, una tienda o por teléfono), usas Offline conversions vía CAPI Offline. El canal donde sucede la conversión es lo que manda en la decisión. Por ejemplo, el <strong>Hotel Lumière</strong> recibe reservas en su web (Pixel + CAPI), pero las reservas que entran por teléfono a recepción las sube como Offline conversions."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · AutoMax",
-          "body": "AutoMax (concesionaria) recibe cotizaciones web y cierra ventas presencialmente en la agencia. Usa <strong>Pixel + CAPI</strong> en automax.com para las cotizaciones online, y <strong>Offline conversions</strong> (CSV vía CAPI Offline) para los autos vendidos en piso. No tiene app, así que el SDK no aplica."
+          "body": "<strong>AutoMax</strong>, una concesionaria de autos, recibe cotizaciones en su web pero cierra las ventas presencialmente en la agencia, semanas después. Para las cotizaciones online usa <strong>Pixel + CAPI</strong> en automax.com. Para los autos que se venden en piso usa <strong>Offline conversions</strong> (un CSV que sube vía CAPI Offline) y así Meta puede ligar esa venta con el anuncio que la persona vio antes. Como AutoMax no tiene app móvil, el Facebook SDK no aplica en su caso: cada negocio usa solo las fuentes que corresponden a sus canales."
         },
         {
           "type": "mcq",
@@ -385,22 +390,22 @@
         {
           "type": "concept",
           "h": "Qué es un Dataset",
-          "body": "Une múltiples data sources (Pixel + CAPI + SDK + offline) en un solo lugar a nivel <strong>ad set</strong>. Es el punto de conexión entre tus eventos y la optimización de las campañas."
+          "body": "Un <strong>Dataset</strong> (conjunto de datos) es un contenedor que une todas tus fuentes de datos (Pixel, CAPI, SDK y offline) en un solo lugar. En vez de tener cada fuente reportando por su cuenta, el Dataset las consolida para que Meta vea una sola corriente ordenada de eventos. Es el punto de conexión entre lo que pasa en tu negocio y la optimización de tus campañas. Por ejemplo, el <strong>Hotel Lumière</strong> recibe reservas por web (Pixel y CAPI) y por teléfono (offline): el Dataset junta esas tres fuentes para que Meta cuente cada reserva una sola vez."
         },
         {
           "type": "concept",
-          "h": "Por qué importa dónde se conecta",
-          "body": "El Dataset se elige a <strong>nivel Ad set</strong>, junto con la conversion location y el conversion event. Recuerda la jerarquía del Día 1: el Ad set decide <em>a quién y bajo qué configuración de conversión</em>. El Dataset vive ahí, no en Campaign ni en Ad."
+          "h": "Por qué importa dónde se conecta el Dataset",
+          "body": "El Dataset se elige a <strong>nivel Ad set</strong> (conjunto de anuncios), junto con la conversion location (dónde ocurre la conversión, por ejemplo tu sitio web) y el conversion event (qué acción cuenta como conversión, por ejemplo una compra). Recuerda la jerarquía del Día 1: el Ad set es el nivel que decide a quién le muestras los anuncios y bajo qué configuración de conversión. Por eso el Dataset vive ahí y no en la Campaign (nivel superior, donde solo se define el objetivo) ni en el Ad (el anuncio individual). Si lo buscaras en otro nivel, simplemente no estaría."
         },
         {
           "type": "concept",
           "h": "Qué es el Meta Pixel",
-          "body": "Código JavaScript en el website. Captura eventos del browser del visitante (ViewContent, AddToCart, Purchase, etc.). <strong>Limitaciones</strong>: ad blockers, navegación privada, iOS 14+ App Tracking Transparency. La cobertura es parcial porque corre <strong>client-side</strong>, en el browser."
+          "body": "El <strong>Meta Pixel</strong> es un fragmento de código de JavaScript que instalas en tu página web. Su trabajo es capturar los eventos que ocurren en el navegador del visitante: cuando ve un producto (<em>ViewContent</em>), lo agrega al carrito (<em>AddToCart</em>) o compra (<em>Purchase</em>). El problema es que corre <strong>client-side</strong> (del lado del cliente, es decir, dentro del navegador de la persona), y eso lo hace vulnerable: los ad blockers (bloqueadores de anuncios), la navegación privada y la privacidad de iOS 14 en adelante pueden impedir que dispare. Por eso su cobertura siempre es parcial. La tienda en línea <strong>Boutique Aurora</strong> ve que pierde ventas reportadas justamente por estos bloqueos del navegador."
         },
         {
           "type": "concept",
           "h": "Qué es la Conversions API (CAPI)",
-          "body": "Envío de eventos <strong>server-to-server</strong> desde el servidor del anunciante directo a Meta. NO depende del browser. Captura compras y conversiones incluso si el Pixel falla. Aumenta el Event Match Quality (EMQ)."
+          "body": "La <strong>Conversions API</strong> o <strong>CAPI</strong> es un método para enviar eventos <strong>server-to-server</strong> (de servidor a servidor): tu propio servidor le manda los datos directo a Meta, sin pasar por el navegador del visitante. Como no depende del navegador, los ad blockers y la privacidad de iOS no la afectan, así que captura compras y conversiones aunque el Pixel falle. Además mejora el Event Match Quality (EMQ, la calidad con que Meta empareja un evento con una persona real). En <strong>Boutique Aurora</strong>, las ventas que el Pixel perdía por bloqueos del navegador ahora sí llegan gracias a la CAPI."
         },
         {
           "type": "warn",
@@ -432,7 +437,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · AutoMax",
-          "body": "AutoMax tiene Pixel y CAPI mandando eventos por separado. Si no los une en un Dataset, Meta podría contar dos veces el mismo Purchase. El Dataset deduplica y consolida: un solo lugar donde el Pixel y el CAPI del mismo contrato cuentan como una sola conversión."
+          "body": "<strong>AutoMax</strong> tiene el Pixel y la CAPI mandando eventos por separado. Como ambos pueden reportar la misma cotización, si no los une en un Dataset, Meta podría contar dos veces el mismo <em>Purchase</em> e inflar los resultados. El Dataset hace la <strong>deduplicación</strong> (detectar y eliminar el evento repetido): consolida todo en un solo lugar donde el Pixel y la CAPI del mismo contrato cuentan como una sola conversión. Así AutoMax ve cifras reales y Meta optimiza con datos limpios, no duplicados."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Events Manager (paso a paso)",
+          "body": "Todo esto se configura en <strong>Events Manager</strong> (el Administrador de eventos de Meta). La ruta típica es:<br/><strong>1.</strong> Entras a business.facebook.com y abres <em>Events Manager</em> desde el menú de herramientas.<br/><strong>2.</strong> Eliges <em>Connect data sources</em> (conectar fuentes de datos) y seleccionas <em>Web</em> para crear el Pixel/Dataset.<br/><strong>3.</strong> Instalas el código del Pixel en tu sitio (manual, con un partner como Shopify, o vía Google Tag Manager).<br/><strong>4.</strong> En la pestaña <em>Settings</em> del Dataset activas la <em>Conversions API</em> para sumar el envío server-side.<br/><strong>5.</strong> Ya en Ads Manager, al armar el Ad Set, eliges ese Dataset como fuente y defines el conversion event (por ejemplo Purchase). Así <strong>AutoMax</strong> deja todo conectado antes de lanzar la campaña."
         },
         {
           "type": "mcq",
@@ -621,7 +631,7 @@
         {
           "type": "concept",
           "h": "Qué es Event Match Quality (EMQ)",
-          "body": "Métrica que mide qué tan bien Meta puede asociar un evento con un usuario. Mejora cuando se envía <strong>customer information rica</strong>: email hasheado, phone hasheado, IP, user agent. CAPI permite enviar más de esto que el Pixel solo."
+          "body": "El <strong>Event Match Quality</strong> o <strong>EMQ</strong> (calidad de emparejamiento de eventos) es una métrica que mide qué tan bien Meta logra asociar un evento que recibe con una persona real de su base de usuarios. Mientras mejor el emparejamiento, más útil es ese evento para optimizar. El EMQ mejora cuando le mandas <strong>customer information rica</strong> (información del cliente), como el email y el teléfono <em>hasheados</em> (convertidos en un código irreversible que protege la privacidad), además de la IP y el user agent (el identificador del navegador). La CAPI permite enviar más de esta información que el Pixel por su cuenta. Por ejemplo, la clínica <strong>DentalCare</strong> que solo manda la IP tiene un EMQ pobre."
         },
         {
           "type": "tip",
@@ -635,13 +645,18 @@
         },
         {
           "type": "concept",
-          "h": "Parameters · data adicional dentro de un event",
-          "body": "Datos extra que enriquecen el event. Los más importantes (recomendados):<br/>• <strong>Content IDs</strong>: SKU del producto<br/>• <strong>Content type</strong>: 'product', 'service'<br/>• <strong>Value</strong>: monto en moneda local<br/>• <strong>Currency</strong>: USD, MXN, etc.<br/>• <strong>Product catalog IDs</strong>: linkea al catalog"
+          "h": "Qué son los parameters de un event",
+          "body": "Un <strong>parameter</strong> (parámetro) es un dato extra que viaja dentro del event para darle contexto a Meta. Si el event dice \"hubo una compra\", los parameters dicen <em>qué</em> se compró, por <em>cuánto</em> y en qué <em>moneda</em>. Sin ellos, Meta sabe que algo pasó pero no tiene los detalles para optimizar bien ni para alimentar las bid strategies por valor. Es la diferencia entre \"alguien compró\" y \"alguien compró un sofá de $18,000 MXN\". Por ejemplo, la tienda <strong>Boutique Aurora</strong> manda con cada Purchase el parameter del monto, para que Meta priorice a los compradores de ticket alto."
+        },
+        {
+          "type": "concept",
+          "h": "Los parameters recomendados, uno por uno",
+          "body": "Estos son los más importantes que Meta recomienda enviar:<br/><strong>1. Content IDs</strong> (identificadores de contenido): el SKU o código del producto, para saber exactamente qué artículo se vio o compró.<br/><strong>2. Content type</strong> (tipo de contenido): si fue un 'product' (producto) o un 'service' (servicio).<br/><strong>3. Value</strong> (valor): el monto de la transacción en moneda local, por ejemplo 18000.<br/><strong>4. Currency</strong> (moneda): la divisa de ese monto, como MXN o USD, para que Meta sepa interpretar el número.<br/><strong>5. Product catalog IDs</strong> (identificadores del catálogo de productos): enlazan el event con tu catalog para campañas de Advantage+ Catalog. En <strong>Boutique Aurora</strong>, mandar el Content ID del sofá más su value y currency permite que Meta recomiende ese mismo modelo a quien ya lo había visto."
         },
         {
           "type": "concept",
           "h": "Por qué value y currency son críticos",
-          "body": "Sin <strong>value</strong> y <strong>currency</strong>, Meta sabe que hubo una compra pero no <em>cuánto</em> valió. Eso bloquea las bid strategies por valor (Highest Value, ROAS Goal del Día 3): no puedes optimizar por retorno si no mandas el monto."
+          "body": "De todos los parameters, <strong>value</strong> (el monto) y <strong>currency</strong> (la moneda) son los más importantes para campañas de ventas. Sin ellos, Meta sabe que hubo una compra, pero no tiene idea de <em>cuánto</em> valió esa compra. Y si no conoce el monto, no puede distinguir una venta de $200 de una de $20,000, así que las trata igual. Eso bloquea por completo las bid strategies por valor que viste en el Día 3, como <strong>Highest Value</strong> (mayor valor) y <strong>ROAS Goal</strong> (meta de retorno sobre la inversión publicitaria): es imposible optimizar por retorno si no le dices a Meta cuánto vale cada conversión. Por ejemplo, una mueblería como <strong>Casa Mística</strong> que no manda el value hace que Meta persiga muchas ventas chiquitas en vez de los comedores caros que dejan más utilidad."
         },
         {
           "type": "concept",
@@ -847,18 +862,18 @@
         },
         {
           "type": "concept",
-          "h": "Cuándo standard y cuándo custom",
-          "body": "Si la acción ya tiene un nombre oficial de Meta (Purchase, Lead, AddToCart...), usa el <strong>standard event</strong>: el algoritmo ya sabe optimizarlo. Solo crea un <strong>custom event</strong> si la acción es tan específica de tu negocio que ningún standard la describe."
+          "h": "Cuándo usar standard y cuándo custom event",
+          "body": "Un <strong>standard event</strong> (evento estándar) es uno de los nombres oficiales que Meta ya tiene predefinidos, como Purchase (compra), Lead (prospecto) o AddToCart (agregar al carrito). La regla práctica es: si la acción ya tiene un standard event que la describe, úsalo, porque el algoritmo de Meta ya sabe reconocerlo y optimizarlo desde el primer día. Un <strong>custom event</strong> (evento personalizado) solo lo creas cuando la acción es tan particular de tu negocio que ningún standard la cubre, y eso obliga a agregar código nuevo. La trampa típica es inventar custom events para cosas que un standard ya describe, lo que le quita eficiencia al algoritmo. Por ejemplo, la cafetería <strong>La Esquina</strong> usa el standard <em>Schedule</em> para \"reservó mesa\", pero crea un custom event 'CataDeCafe' para su evento de cata mensual, que no tiene equivalente estándar."
         },
         {
           "type": "concept",
           "h": "Qué es una Custom Conversion",
-          "body": "<strong>Reglas</strong> construidas sobre standard o custom events para medir acciones más específicas. Ejemplo: 'Compra premium' = Purchase + URL contiene '/premium' + Value > $1,000."
+          "body": "Una <strong>Custom Conversion</strong> (conversión personalizada) es una <strong>regla</strong> que construyes encima de un event que ya existe (sea standard o custom) para medir una acción más específica, sin tocar nada de código. En vez de crear un evento nuevo, filtras el que ya tienes según condiciones como la URL de la página, el valor de la compra o un parameter. Sirve cuando no quieres medir <em>todas</em> las compras por igual, sino solo un subconjunto que te importa más. Lo configuras directo en Events Manager con unos cuantos clics. Por ejemplo, la tienda <strong>Boutique Aurora</strong> crea la Custom Conversion 'Compra premium' = Purchase + la URL contiene '/premium' + Value mayor a $1,000, y así optimiza solo por sus ventas grandes."
         },
         {
           "type": "concept",
           "h": "Custom Event vs Custom Conversion",
-          "body": "<strong>Custom Event</strong> = evento nuevo que requiere tocar el código del Pixel/CAPI. <strong>Custom Conversion</strong> = una regla sobre un event que <em>ya existe</em>, sin código adicional. Si el event ya llega, prefiere la Custom Conversion: es más rápida y no rompe nada."
+          "body": "Estos dos se confunden mucho en el examen, así que fíjalos bien. Un <strong>Custom Event</strong> (evento personalizado) es un evento <em>nuevo</em> que no existía y que obliga a tocar el código del Pixel o de la CAPI para empezar a enviarlo. Una <strong>Custom Conversion</strong> (conversión personalizada) es solo una <em>regla</em> que aplicas sobre un evento que <em>ya está llegando</em>, sin escribir una sola línea de código. La regla de oro: si el dato ya te llega, prefiere la Custom Conversion, porque es más rápida y no arriesga romper el sitio; solo crea un Custom Event cuando el dato realmente no existe todavía. Por ejemplo, <strong>AutoMax</strong> ya recibe el event Lead, así que para medir 'cotización de auto premium' usa una Custom Conversion sobre ese Lead, en vez de pedirle al programador un evento nuevo."
         },
         {
           "type": "warn",
@@ -1058,7 +1073,7 @@
         {
           "type": "concept",
           "h": "Qué es App Tracking Transparency (ATT)",
-          "body": "Desde iOS 14, Apple obliga a las apps a pedir <strong>consentimiento explícito</strong> antes de trackear al usuario entre apps y sitios. La mayoría de usuarios rechaza. Esto limita los signals que Meta puede recolectar."
+          "body": "<strong>App Tracking Transparency</strong> o <strong>ATT</strong> (Transparencia de Rastreo entre Apps) es una política que Apple introdujo en iOS 14: obliga a cada app a mostrar un popup pidiendo <strong>consentimiento explícito</strong> antes de rastrear al usuario entre distintas apps y sitios web. Es ese aviso de \"¿Permites que esta app te rastree?\" que sale al abrir una app por primera vez. El problema para los anunciantes es que la mayoría de los usuarios toca \"Pedir a la app que no rastree\", lo que corta muchas de las señales que el Pixel recolectaba antes. Sin esas señales, Meta ve menos de lo que pasa después del clic en iPhone. Por ejemplo, la tienda <strong>Tienda Urbana</strong> nota que sus ventas en iPhone se reportan peor justamente porque sus compradoras rechazan ese popup."
         },
         {
           "type": "warn",
@@ -1068,7 +1083,7 @@
         {
           "type": "concept",
           "h": "Qué es Aggregated Event Measurement (AEM)",
-          "body": "Protocolo de Meta para medir web/app events en iOS 14+ respetando privacidad. Hace 3 cosas:<br/>• Quita identificadores personales<br/>• Agrega <strong>differential privacy</strong> (ruido estadístico)<br/>• Reporta data a nivel <strong>agregado</strong>, no individual"
+          "body": "<strong>Aggregated Event Measurement</strong> o <strong>AEM</strong> (Medición de Eventos Agregada) es la respuesta de Meta al ATT de Apple: un protocolo para seguir midiendo eventos de web y app en iOS 14+ sin violar la privacidad que Apple exige. La idea es medir resultados \"en bloque\" en vez de persona por persona. Para lograrlo hace tres cosas:<br/><strong>1.</strong> Quita los identificadores personales, para que un evento no se pueda ligar a un usuario concreto.<br/><strong>2.</strong> Agrega <strong>differential privacy</strong> (privacidad diferencial: ruido estadístico que mete pequeñas imprecisiones a propósito para que nadie sea identificable).<br/><strong>3.</strong> Reporta los datos a nivel <strong>agregado</strong> (sumados en grupos), no individual. Por ejemplo, <strong>Tienda Urbana</strong> ya no ve \"María compró\", sino \"hubo 40 compras de usuarios iPhone esta semana\"."
         },
         {
           "type": "kvtable",
@@ -1094,8 +1109,8 @@
         },
         {
           "type": "concept",
-          "h": "Por qué solo 8 eventos importa",
-          "body": "Bajo AEM solo se priorizan <strong>8 eventos por dominio</strong>. Si llenas esos 8 slots con eventos triviales (ViewContent de cada página, scroll, etc.), los eventos que mueven el negocio (Purchase, Lead) quedan limitados o fuera."
+          "h": "Por qué importa el límite de 8 eventos",
+          "body": "Bajo AEM, Meta solo puede priorizar <strong>8 eventos por dominio</strong> (por cada sitio web) para los usuarios de iOS. Piénsalo como tener apenas 8 \"casilleros\" disponibles: lo que no entre en esos 8 se mide mal o no se mide para iPhone. El error común es llenar los casilleros con eventos triviales, como un <em>ViewContent</em> (ver contenido) de cada página del blog o un scroll, y que entonces los eventos que de verdad mueven el negocio, como <em>Purchase</em> (compra) o <em>Lead</em> (prospecto), queden fuera del top 8. Por eso hay que elegir y ordenar los 8 con cabeza, poniendo primero los del fondo del funnel. Por ejemplo, <strong>Tienda Urbana</strong> tenía sus 8 casilleros ocupados por ViewContent del blog y por eso sus compras en iPhone casi no se medían."
         },
         {
           "type": "tip",

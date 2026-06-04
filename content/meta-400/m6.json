@@ -33,7 +33,7 @@
         {
           "type": "concept",
           "h": "Medir cierra el ciclo del plan",
-          "body": "Después de objective, buying, budget, audiencia, placements y creativo, toca medir si funcionó. Repaso rápido del Módulo 5 antes de entrar a medición."
+          "body": "Un plan de medios sigue un orden: primero eliges el <strong>objective</strong> (objetivo), el <strong>buying type</strong> (tipo de compra), el <strong>budget</strong> (presupuesto), la audiencia, los <strong>placements</strong> (ubicaciones) y el creativo. Todo eso decide cómo se entrega tu anuncio, pero no te dice si funcionó. Medir es el último paso: ahí compruebas si la campaña realmente movió la aguja del negocio. Sin medición, solo gastaste dinero a ciegas. Por eso este módulo cierra el ciclo: aprendes a leer si lo que armaste valió la pena. Antes de entrar, hagamos un repaso rápido de lo que viste en el Módulo 5."
         },
         {
           "type": "fill",
@@ -79,12 +79,22 @@
         {
           "type": "concept",
           "h": "La métrica sigue al objetivo",
-          "body": "No hay 'mejor métrica' universal. La métrica relevante depende del business goal: recall para Awareness, costo por resultado para conversión, ROAS para ingreso."
+          "body": "No existe una 'mejor métrica' universal que sirva para juzgar cualquier campaña. La métrica que importa depende del <strong>business goal</strong> (objetivo de negocio), es decir, qué querías lograr en realidad. Si buscabas que más gente conozca tu marca, te importa el recall (cuánta gente recuerda haber visto el anuncio). Si buscabas ventas, te importa el costo por resultado. Si buscabas ingreso, te importa el ROAS. La regla mental es simple: primero define qué querías lograr y luego elige la métrica que pruebe ese logro, nunca al revés."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: cafetería que abre sucursal",
+          "body": "Imagina \"Café Aurora\", una cafetería que abre una segunda sucursal y lanza una campaña para que el barrio sepa que existe. Su business goal es darse a conocer, no vender en línea. Si el dueño juzga la campaña por cuántas ventas online generó, está midiendo lo que no buscaba y va a creer que fracasó. La métrica correcta para él es cuánta gente alcanzó y cuántos recuerdan el anuncio. Mismo dinero, lectura completamente distinta según la métrica que elijas."
         },
         {
           "type": "concept",
           "h": "Vanity metrics vs métricas de negocio",
-          "body": "Likes, impresiones o clics aislados pueden verse bien sin mover el negocio. El planner reporta la métrica que responde al business goal, no la que se ve más bonita."
+          "body": "Las <strong>vanity metrics</strong> (métricas de vanidad) son números que se ven bien pero no prueban que el negocio avanzó: muchos likes, muchas impresiones o muchos clics sueltos. El problema es que puedes tener miles de likes y cero ventas, o un montón de clics que nunca se vuelven clientes. El planner serio reporta la métrica que responde al business goal y deja las vanity metrics como contexto, no como veredicto. Suben el ego, no el negocio."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: post viral sin negocio",
+          "body": "\"Tienda Lumo\", una tienda de ropa en línea, tuvo un video con 200 mil likes y se emocionó. Pero al revisar, ese video no generó ni una venta porque atrajo gente que solo quería el chiste, no comprar. Los 200 mil likes son una vanity metric: impresionan en la junta pero no pagan la nómina. La métrica que de verdad importaba era cuántas compras y a qué costo. Por eso el planner nunca confunde popularidad con resultado de negocio."
         },
         {
           "type": "kvtable",
@@ -262,12 +272,17 @@
         {
           "type": "concept",
           "h": "¿Causaste el resultado o ya iba a pasar?",
-          "body": "La <strong>incrementalidad</strong> mide el efecto <em>causal</em> de la publicidad: cuántas conversiones NO habrían ocurrido sin los anuncios. Se mide con experimentos de grupo de prueba vs. control (holdout)."
+          "body": "La <strong>incrementalidad</strong> (incrementality) responde la pregunta más honesta de la publicidad: ¿esas ventas pasaron <em>por</em> tu anuncio, o iban a pasar de todos modos? Mide el efecto <em>causal</em> de la pauta, es decir, cuántas conversiones NO habrían ocurrido si nunca hubieras pautado. Es distinto a contar todas las ventas y atribuírselas al anuncio, porque mucha gente ya iba a comprar. Para medirla de verdad necesitas un experimento: comparas un grupo que sí vio anuncios contra un grupo que no vio nada. Esa comparación es la única forma de aislar el aporte real de la campaña."
         },
         {
           "type": "concept",
           "h": "El holdout es la clave",
-          "body": "Un grupo <strong>holdout</strong> NO ve anuncios. Comparar lo que convierte el grupo expuesto contra el holdout aísla el efecto real de la pauta, no el que igual habría ocurrido."
+          "body": "Un grupo <strong>holdout</strong> (grupo de retención o control) es un conjunto de personas que, a propósito, NO ven tus anuncios durante el experimento. Funciona como un \"universo paralelo\" sin publicidad. Si el grupo que sí vio anuncios convierte más que el holdout, esa diferencia es el efecto real de tu pauta. Si convierten casi igual, significa que tus anuncios aportaron poco y esas ventas iban a pasar de todos modos. Sin holdout no hay punto de comparación, y sin comparación no puedes probar causalidad."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: marca de tenis que mide su aporte real",
+          "body": "\"RunFlex\", una marca de tenis deportivos, vendió 1,000 pares el mes que pautó y celebró. Pero corrió un experimento: a un grupo holdout no le mostró anuncios y ese grupo, por su cuenta, igual generó el equivalente a 600 ventas (clientes recurrentes y búsquedas de marca). El efecto real de la pauta fueron las 400 ventas extra, no las 1,000. Sin el holdout, RunFlex habría sobreestimado su publicidad 2.5 veces. Eso es exactamente lo que mide la incrementalidad."
         },
         {
           "type": "kvtable",
@@ -445,12 +460,17 @@
         {
           "type": "concept",
           "h": "Tres lentes complementarios",
-          "body": "Meta describe tres enfoques que se complementan: <strong>experiments</strong> (causalidad), <strong>attribution</strong> (crédito por touchpoint) y <strong>marketing mix modeling (MMM)</strong> (impacto agregado de todos los canales)."
+          "body": "Para medir bien, Meta recomienda no casarte con un solo método sino usar tres lentes que se complementan. El primero son los <strong>experiments</strong> (experimentos), que prueban causalidad real con grupos de prueba y control. El segundo es la <strong>attribution</strong> (atribución), que reparte el crédito de cada venta entre los <strong>touchpoints</strong> (puntos de contacto, cada vez que la persona vio o tocó tu marca). El tercero es el <strong>marketing mix modeling (MMM)</strong> (modelado de mezcla de marketing), que mira el aporte agregado de TODOS los canales, incluso los offline. Cada lente tiene puntos ciegos, así que se usan juntos."
         },
         {
           "type": "concept",
-          "h": "Cada lente responde una pregunta",
-          "body": "Experiments responden \"¿esto causó el resultado?\". Attribution responde \"¿qué touchpoints intervinieron?\". MMM responde \"¿cómo aportan todos los canales on/offline?\". Ninguno solo da la foto completa."
+          "h": "Cada lente responde una pregunta distinta",
+          "body": "La clave es entender qué pregunta contesta cada uno. Los experiments responden \"¿mi pauta <em>causó</em> este resultado?\". La attribution responde \"¿qué touchpoints intervinieron en el camino a la conversión?\". El MMM responde \"¿cómo aportan a las ventas todos mis canales, online y offline, a nivel macro?\". Ninguno por sí solo da la foto completa: el experimento prueba causa pero es caro y puntual, la attribution es diaria pero no prueba causa, y el MMM ve el bosque pero no el árbol. Por eso combinarlos da la lectura más confiable."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: cadena de gimnasios y sus tres preguntas",
+          "body": "\"VitalFit\", una cadena de gimnasios, usa los tres lentes a la vez. Corre un experiment para probar que sus anuncios de Meta de verdad generan inscripciones nuevas (causalidad). Usa la attribution diaria para ver qué anuncios y formatos tocaron a la gente que se inscribió (optimización del día a día). Y una vez al año encarga un MMM para entender cómo Meta se compara con sus volantes impresos, su radio local y su equipo de ventas en sucursal. Tres preguntas distintas, tres herramientas distintas, una sola estrategia."
         },
         {
           "type": "kvtable",

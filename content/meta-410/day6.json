@@ -168,7 +168,7 @@
         {
           "type": "concept",
           "h": "Qué es un ad format",
-          "body": "El <strong>ad format</strong> es el layout del anuncio: cómo se ve y cuántas imágenes o videos contiene. No es el mensaje ni la audiencia — es el <em>contenedor</em>. Elegir bien el formato según el objetivo es lo que el examen pregunta."
+          "body": "El <strong>ad format</strong> (formato de anuncio) es el <em>molde visual</em> con el que se arma tu publicidad: define cómo se ve y cuántas piezas de <strong>media</strong> (contenido visual, o sea imágenes o videos) lleva dentro. No confundas el formato con el mensaje ni con la audiencia: el formato es solo el <em>contenedor</em>, la cajita donde meterás tu creatividad. La razón de que importe tanto es que cada objetivo de campaña pide un contenedor distinto —no es lo mismo presentar un solo producto que contar una historia con cinco—. Por eso el examen 410 te pregunta seguido cuál formato eliges según lo que quieres lograr. Aquí lo dominas y ya no fallas esas."
         },
         {
           "type": "kvtable",
@@ -194,13 +194,18 @@
         },
         {
           "type": "concept",
+          "h": "Las 4 piezas: desglose uno por uno",
+          "body": "Memoriza cada contenedor con su uso típico:<br/><strong>1. Flexible</strong> (flexible): subes varias piezas y Meta decide en automático cuál entregar (una imagen, un carrusel, etc.) según cuál esté rindiendo mejor.<br/><strong>2. Single image o video</strong> (imagen o video único): una sola pieza, el formato más simple y común.<br/><strong>3. Carousel</strong> (carrusel): de 2 a 10 tarjetas que el usuario desliza con el dedo de lado; ideal para varios productos o para contar una historia por pasos.<br/><strong>4. Collection</strong> (colección): un <strong>hero</strong> (la pieza principal grande de arriba, video o imagen) seguido de un <em>grid</em> (cuadrícula) de productos del catálogo abajo; solo en celular."
+        },
+        {
+          "type": "concept",
           "h": "Qué es Instant Experience",
-          "body": "Es una landing page interna full-screen que carga al instante al tocar el anuncio (antes se llamaba Canvas). <strong>Solo en placements y dispositivos mobile</strong>. Es experiencia <em>post-click</em>: el usuario nunca sale de Meta."
+          "body": "El <strong>Instant Experience</strong> (experiencia instantánea, antes llamada <em>Canvas</em>) es una mini-página que se abre a pantalla completa <em>dentro</em> de Meta en cuanto el usuario toca tu anuncio. La palabra \"instant\" viene de que carga al instante, sin la espera de un sitio web externo. Solo existe en celular (<strong>mobile</strong>): no aparece en computadora de escritorio. Es una experiencia <strong>post-click</strong> (lo que pasa <em>después</em> de que la persona da clic): puedes meter videos, fotos, botones y un catálogo, y el usuario nunca sale de la app de Facebook o Instagram. Eso reduce la fricción y evita que pierdas gente en un sitio lento."
         },
         {
           "type": "concept",
           "h": "Cuándo usar Instant Experience",
-          "body": "Tres casos clásicos: 1) tu website no es mobile-friendly, 2) quieres contar toda la historia dentro de Meta sin sacar al usuario, 3) tienes catálogo y quieres mostrar el grid completo sin enviar a un sitio externo."
+          "body": "Hay tres situaciones clásicas donde conviene. <strong>1.</strong> Tu sitio web carga lento o se ve mal en celular (no es <strong>mobile-friendly</strong>, o sea no está adaptado a pantallas chicas): el Instant Experience te salva porque vive dentro de Meta. <strong>2.</strong> Quieres contar toda tu historia —fotos, video, texto— sin sacar al usuario de la app, donde es más fácil que se distraiga y se vaya. <strong>3.</strong> Tienes un <strong>catálogo</strong> (la lista de productos que subes a Meta) y quieres mostrar el surtido completo sin mandar a nadie a un sitio externo. Ejemplo: la <strong>Juguetería Pinwheel</strong> tiene un sitio que tarda en cargar; arma un Instant Experience con su video navideño y debajo el catálogo de juguetes, y así nadie abandona por lentitud."
         },
         {
           "type": "tip",
@@ -210,7 +215,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "Para Tienda Urbana: si solo tienes un video editorial → <em>Single video</em>. Si quieres mostrar 5 outfits deslizables → <em>Carousel</em>. Si quieres contar una historia con video grande y debajo el catálogo de SKUs → <em>Collection</em>. Y si el sitio carga lento en celular, usas <em>Instant Experience</em> para mantener todo dentro de Meta."
+          "body": "La <strong>Tienda Urbana</strong> (ropa juvenil) tiene que elegir contenedor según lo que quiere mostrar. Si solo tiene un video editorial bonito de la temporada, usa <strong>Single video</strong> (un video único). Si quiere lucir 5 outfits que el cliente deslice con el dedo, usa <strong>Carousel</strong> (carrusel). Si quiere abrir con un video grande contando la historia de la colección y debajo enseñar el surtido de <strong>SKUs</strong> (cada producto individual del catálogo, por sus siglas en inglés <em>Stock Keeping Unit</em>), usa <strong>Collection</strong> (colección). Y si su sitio carga lento en celular, mete todo en un <strong>Instant Experience</strong> para que el comprador nunca salga de Meta."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "El formato se elige al final, en el <strong>nivel de anuncio</strong> (el tercer escalón, después de campaña y conjunto de anuncios). La ruta es: <strong>Ads Manager → abres tu anuncio → sección Ad setup (Configuración del anuncio) → Format</strong>. Ahí Meta te muestra los botones <em>Single image or video</em>, <em>Carousel</em> y <em>Collection</em>. Si activas <strong>Flexible</strong>, en lugar de elegir uno subes varias piezas y dejas que el sistema rote y entregue la mejor. El <strong>Instant Experience</strong> aparece más abajo como una casilla \"Add an Instant Experience\" que enriquece la experiencia post-clic. Ejemplo: la Tienda Urbana entra a Format, pica Collection, conecta su catálogo y elige el video que irá de hero."
         },
         {
           "type": "mcq",
@@ -398,7 +408,7 @@
         {
           "type": "concept",
           "h": "Qué es un placement",
-          "body": "El <strong>placement</strong> es la ubicación física donde se muestra el anuncio dentro de las Meta technologies. No todos los placements aceptan los mismos formatos ni aspect ratios — por eso el creative debe diseñarse pensando en dónde va a salir."
+          "body": "El <strong>placement</strong> (ubicación) es el lugar exacto donde se muestra tu anuncio dentro del universo de Meta: por ejemplo el <strong>Feed</strong> (el muro o sección de inicio donde uno baja con el dedo), las <strong>Stories</strong> (historias que duran 24 horas), los <strong>Reels</strong> (videos verticales cortos) o el <strong>Marketplace</strong> (la sección de compraventa de Facebook). Todas estas superficies juntas se llaman <strong>Meta technologies</strong> (las tecnologías de Meta: Facebook, Instagram, Messenger y la red de socios). El punto clave que el examen exige es este: no todos los placements aceptan los mismos formatos ni las mismas proporciones de imagen, así que tu pieza debe diseñarse pensando en <em>dónde</em> va a aparecer, no a la inversa."
         },
         {
           "type": "kvtable",
@@ -429,12 +439,12 @@
         {
           "type": "concept",
           "h": "Advantage+ Placements vs Manual",
-          "body": "<strong>Advantage+ Placements</strong> (default): Meta automatiza placement, maximiza visibility y eficiencia. <strong>Manual placements</strong>: control granular cuando hay creative específica que rinde mejor en un placement, o por brand safety."
+          "body": "Tienes dos maneras de decidir en qué placements sale tu anuncio. <strong>Advantage+ Placements</strong> (ubicaciones automáticas, opción por <strong>default</strong> o predeterminada) deja que la inteligencia artificial de Meta reparta tu anuncio donde más conviene, buscando <strong>máxima visibility</strong> (visibilidad: que lo vea más gente) al menor costo. <strong>Manual placements</strong> (ubicaciones manuales) es lo contrario: tú eliges a mano dónde aparecer, lo cual da control <strong>granular</strong> (fino, al detalle). El manual se justifica solo en dos casos: cuando tienes una pieza específica que rinde mejor en cierto lugar, o por <strong>brand safety</strong> (seguridad de marca: cuidar junto a qué contenido sale tu anuncio). Ejemplo: el <strong>Restaurante La Parrilla</strong> deja Advantage+ Placements porque no sabe dónde rinde mejor su video y quiere que Meta lo averigüe solo."
         },
         {
           "type": "concept",
           "h": "Por qué el aspect ratio importa",
-          "body": "Cada placement tiene su forma. Un creative diseñado horizontal se ve diminuto en Stories; uno vertical desperdicia espacio en Feed. El aspect ratio correcto es la diferencia entre un ad que llena pantalla y uno que se pierde."
+          "body": "El <strong>aspect ratio</strong> (la proporción de la imagen: qué tan ancha es contra qué tan alta, por ejemplo 9:16 vertical o 16:9 horizontal) decide si tu anuncio llena la pantalla o se pierde. Cada placement tiene su forma propia: una pieza horizontal se ve diminuta y con franjas negras en Stories, mientras que una vertical desperdicia los lados en el Feed. Acertar la proporción es la diferencia entre un anuncio que se apodera de la pantalla del celular y uno que el usuario ignora de inmediato. Por eso muchos anunciantes producen el mismo mensaje en varias proporciones. Ejemplo: la <strong>Cafetería La Esquina</strong> graba su promo en 9:16 para Reels y reencuadra una versión 1:1 para el Feed."
         },
         {
           "type": "kvtable",
@@ -466,7 +476,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · DentalCare",
-          "body": "Para DentalCare, lo normal es <em>Advantage+ Placements</em>: dejas que Meta encuentre dónde rinde mejor el anuncio. El video para Reels tiene el teléfono de la clínica pegado abajo — mala idea: el botón de mensaje de IG lo tapa. Solución: subir ese dato al centro del 9:16, dentro de la safe zone."
+          "body": "La clínica <strong>DentalCare</strong> arranca con <strong>Advantage+ Placements</strong> para que Meta descubra dónde rinde mejor su anuncio. Su video para Reels trae el teléfono de la clínica pegadito al borde de abajo, y eso es un error: el botón de mensaje de Instagram justo cae ahí y tapa el número, así que nadie puede llamar. La solución no es cambiar la audiencia ni el presupuesto, sino subir ese dato al centro del cuadro 9:16, dentro de la <strong>safe zone</strong> (zona segura: la franja central que el UI nunca cubre). Con ese simple reacomodo, el teléfono vuelve a verse y las llamadas regresan."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Los placements se definen en el <strong>conjunto de anuncios</strong> (el segundo nivel). La ruta es: <strong>Ads Manager → tu Ad set → sección Placements</strong>. Ahí ves dos botones: <em>Advantage+ placements</em> (recomendado y marcado por default) y <em>Manual placements</em>. Si eliges Manual, se despliega una lista con casillas por plataforma (Facebook, Instagram, Messenger, Audience Network) y por superficie (Feeds, Stories, Reels, etc.) que puedes prender o apagar una por una. El <strong>aspect ratio</strong>, en cambio, no se elige aquí: depende del archivo que subas en el nivel de anuncio. Ejemplo: DentalCare deja Advantage+ placements activado y sube un video 9:16 con su teléfono ya centrado."
         },
         {
           "type": "mcq",
@@ -653,18 +668,23 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Advantage+ Creative",
-          "body": "AI que <strong>optimiza creative para cada viewer y placement</strong>. Hace 3 cosas:<br/>• Genera <strong>variations</strong> automáticas (crops, brillo, música, etc.)<br/>• Enhancements de texto y audio (traducción, mejoras visuales)<br/>• Eficiencia (entrega el mejor variant a cada persona)"
+          "h": "Qué es Advantage+ Creative",
+          "body": "El <strong>Advantage+ Creative</strong> (creativo potenciado por la inteligencia artificial de Meta) es una función que toma tus piezas y las ajusta automáticamente para cada persona que las ve y para cada lugar donde aparecen. La idea de fondo es que no existe \"un\" anuncio perfecto para todos: lo que engancha a un usuario en Reels puede no funcionar para otro en el Feed. En vez de que tú hagas veinte versiones a mano, la AI las genera y reparte sola. Es el mismo espíritu de Advantage+ que ya viste en audiencias y ubicaciones, pero ahora aplicado al <em>contenido visual</em> del anuncio. Por eso es la apuesta moderna de Meta: tú subes buen material crudo y dejas que el sistema lo afine."
         },
         {
           "type": "concept",
-          "h": "Asset Customization for Placements",
-          "body": "Permite customizar la creative <strong>manualmente por placement</strong>. Para cada placement puedes especificar: template, media crop, text per placement, control, priority. <strong>Cuando se combina con Advantage+ Creative, lo manual gana.</strong>"
+          "h": "Las 3 cosas que hace Advantage+ Creative",
+          "body": "Desglosa qué hace por dentro:<br/><strong>1. Variations</strong> (variaciones automáticas): genera versiones distintas de tu pieza cambiando el <em>crop</em> (recorte de la imagen), el brillo, la música de fondo, etc., para no quemar una sola versión.<br/><strong>2. Enhancements</strong> (mejoras de texto y audio): puede traducir el texto, agregar subtítulos o pulir el sonido para que la pieza comunique mejor.<br/><strong>3. Eficiencia</strong> (entrega inteligente): de todas las versiones que generó, le muestra a cada persona la que tiene más probabilidad de funcionarle a ella. Ejemplo: la <strong>Cafetería La Esquina</strong> sube un solo video de su latte; la AI prueba un recorte cuadrado para el Feed y uno vertical para Reels, y le pone subtítulos al que va sin sonido."
         },
         {
           "type": "concept",
-          "h": "Por qué diversificar el creative",
-          "body": "Un solo anuncio repetido produce <strong>creative fatigue</strong>: el performance cae por sobreexposición. La solución es variar el creative en 3 dimensiones para que el sistema tenga material fresco que entregar."
+          "h": "Qué es Asset Customization for Placements",
+          "body": "El <strong>Asset Customization for Placements</strong> (personalización de piezas por ubicación) es lo opuesto a dejar todo en automático: aquí tú decides <em>a mano</em> qué pieza específica se ve en cada placement. Para cada ubicación puedes fijar cosas como el <strong>template</strong> (la plantilla de armado), el <strong>media crop</strong> (cómo se recorta la imagen o el video), el <strong>text per placement</strong> (un texto distinto según el lugar) y la <strong>priority</strong> (la prioridad de esa versión). Sirve cuando ya sabes que cierta pieza rinde mejor en cierto lugar y no quieres dejarlo al azar. La regla clave que pregunta el examen: si usas Asset Customization <em>junto con</em> Advantage+ Creative, gana lo que tú configuraste a mano en ese placement; la AI solo manda donde tú no metiste mano. Ejemplo: la Cafetería La Esquina deja Advantage+ Creative en casi todo, pero en Reels fija a mano su corte vertical favorito y ese es el que sale."
+        },
+        {
+          "type": "concept",
+          "h": "Qué es la creative fatigue y por qué diversificar",
+          "body": "La <strong>creative fatigue</strong> (fatiga del creativo, o \"desgaste del anuncio\") es la caída de rendimiento que ocurre cuando la misma gente ve el mismo anuncio demasiadas veces: deja de llamarle la atención, lo ignora y hasta lo bloquea. Es como una canción pegajosa que de tanto oírla acabas odiando. La cura es <em>diversificar</em>: darle al sistema varias piezas distintas para que tenga material fresco que rotar y siempre haya algo nuevo que mostrar. No basta con cambiar un detalle mínimo; conviene variar en tres frentes distintos (que verás enseguida). Ejemplo: <strong>Edu Premium</strong> corre el mismo video tres meses seguidos a la misma audiencia y su costo por inscripción se dispara; el problema no es el algoritmo, es que el anuncio ya cansó a todos."
         },
         {
           "type": "kvtable",
@@ -692,7 +712,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "Tienda Urbana sube un video y deja Advantage+ Creative ON: la AI prueba crops y subtítulos por persona. Pero para Reels tiene un corte vertical específico que ya sabe que funciona — lo fija con Asset Customization. En Reels gana el manual; en el resto, la AI. Además rota testimonial, animación de ahorro y outfit de invierno para evitar creative fatigue."
+          "body": "La <strong>Tienda Urbana</strong> (ropa juvenil) sube un video y deja <strong>Advantage+ Creative</strong> activado: la AI prueba recortes y subtítulos por persona. Pero para Reels ya tiene un corte vertical específico que sabe que funciona, así que lo fija con <strong>Asset Customization</strong>. El resultado: en Reels gana su versión manual; en el resto de los placements manda la AI. Para no caer en <strong>creative fatigue</strong>, además rota tres mensajes distintos: un testimonial de cliente, una animación con la promo de la temporada y un outfit de invierno. Así el sistema siempre tiene material fresco que entregar."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Esto se configura en el <strong>nivel de anuncio</strong> (el tercer escalón, después de campaña y conjunto de anuncios). La ruta es: <strong>Ads Manager → abres tu anuncio → sección Ad creative (Creativo del anuncio)</strong>. Ahí, debajo de las piezas que subes, aparecen los interruptores de <em>Advantage+ creative</em>, que vienen prendidos por default; puedes apagar mejoras puntuales si no las quieres. Para fijar una pieza distinta por ubicación, abres la opción <em>Customize by placement</em> (personalizar por ubicación) o <em>Edit per placement</em>, y ahí eliges a mano qué imagen o recorte va en Reels, en Stories, en el Feed, etc. Ejemplo: la Tienda Urbana entra a Ad creative, deja Advantage+ creative prendido y luego pica \"Customize by placement\" solo para sustituir el video de Reels por su corte vertical favorito."
         },
         {
           "type": "mcq",
@@ -880,8 +905,13 @@
       "cards": [
         {
           "type": "concept",
+          "h": "Qué es un KPI y por qué importa",
+          "body": "Un <strong>KPI</strong> (Key Performance Indicator, o sea \"indicador clave de desempeño\") es el número que de verdad te dice si tu campaña está funcionando, separándolo del montón de datos secundarios. No todas las cifras valen lo mismo: muchas son ruido. El KPI es la que mira el jefe para decidir si seguir invirtiendo o apagar. La razón de que el examen insista en esto es que cada objetivo de campaña tiene su propio KPI, y mirar el equivocado te lleva a conclusiones falsas. Aquí aprendes cuáles son los dos KPIs universales y luego cómo cambian según la etapa del embudo."
+        },
+        {
+          "type": "concept",
           "h": "Las 2 métricas KPI principales",
-          "body": "<strong>Results</strong> = veces que se logró el outcome del performance goal (ej. compras, leads, video views).<br/><strong>Cost per Result</strong> = Amount spent / Results. Sale en cualquier reporte de Ads Manager."
+          "body": "Hay dos números que aparecen en cualquier reporte y que aplican sin importar el objetivo:<br/><strong>1. Results</strong> (resultados): las veces que se logró exactamente lo que pediste como meta. Si tu objetivo era compras, Results son las compras; si era leads (prospectos que dejan sus datos), son los leads; si era video views (reproducciones de video), son las reproducciones.<br/><strong>2. Cost per Result</strong> (costo por resultado): cuánto te costó cada uno de esos logros. La fórmula es <strong>Amount spent ÷ Results</strong> (lo que gastaste entre los resultados). Ejemplo: si la <strong>Cafetería La Esquina</strong> gastó 2,000 pesos y consiguió 100 pedidos a domicilio, su Cost per Result es 20 pesos por pedido. Esa cifra te dice si el negocio es rentable de un vistazo."
         },
         {
           "type": "kvtable",
@@ -903,18 +933,18 @@
         },
         {
           "type": "concept",
-          "h": "Qué es attribution",
-          "body": "<strong>Attribution</strong> es el proceso de asignar crédito a los touchpoints del customer journey por una conversión. Sin attribution no sabes qué anuncio merece el crédito de una venta."
+          "h": "Qué es la attribution",
+          "body": "La <strong>attribution</strong> (atribución) es el proceso de decidir <em>a qué anuncio le toca el crédito</em> cuando alguien compra. Suena obvio, pero no lo es: antes de comprar, una persona suele tener varios <strong>touchpoints</strong> (puntos de contacto: cada vez que ve o toca tu marca, ej. ve un anuncio en Instagram el lunes, otro en Facebook el martes y compra el miércoles). A todo ese recorrido se le llama <strong>customer journey</strong> (el viaje del cliente desde que te descubre hasta que compra). La atribución reparte el mérito entre esos contactos. Sin ella, no sabrías qué anuncio apagar y cuál escalar, porque no sabes cuál de verdad trajo la venta. Ejemplo: alguien vio el anuncio de la <strong>Cafetería La Esquina</strong> tres veces antes de pedir; la atribución decide si la venta cuenta para esa campaña."
         },
         {
           "type": "concept",
-          "h": "Attribution models en Ads Manager",
-          "body": "Solo 2 modelos disponibles:<br/>• <strong>Standard attribution</strong>: atribuye con reglas (ventana + touchpoint). Cuenta impressions, clicks, video plays.<br/>• <strong>Incremental attribution</strong>: modelo predictivo que identifica conversions <em>causales</em> (\"¿realmente el ad causó la venta?\").<br/><br/><strong>NO existe Custom attribution</strong> en Ads Manager."
+          "h": "Los 2 attribution models de Ads Manager",
+          "body": "En Ads Manager existen <em>solo dos</em> modelos de atribución; el examen lo pregunta seguido para tenderte trampas con nombres que no existen.<br/><strong>1. Standard attribution</strong> (atribución estándar): reparte el crédito siguiendo <em>reglas fijas</em> (una ventana de tiempo y un tipo de contacto). Cuenta <strong>impressions</strong> (las veces que se mostró el anuncio), <strong>clicks</strong> (los clics) y <strong>video plays</strong> (reproducciones). Es correlacional: dice \"esta venta ocurrió después de ver el anuncio\".<br/><strong>2. Incremental attribution</strong> (atribución incremental): es un modelo <em>predictivo</em> que intenta responder la pregunta dura: \"¿el anuncio <strong>causó</strong> la venta, o esa persona iba a comprar de todos modos?\". Es más exigente y mide causalidad real.<br/><strong>OJO: NO existe \"Custom attribution\"</strong> en Ads Manager. Si te la mencionan, es trampa."
         },
         {
           "type": "concept",
-          "h": "Attribution setting (ventana)",
-          "body": "Ventana de tiempo donde se puede atribuir una conversion. Default: <strong>1-day view, 7-day click</strong>. Significa: si el usuario VIO el ad y compró en 1 día, o CLICKEÓ y compró en 7 días, se atribuye al ad."
+          "h": "Qué es el attribution setting (la ventana)",
+          "body": "El <strong>attribution setting</strong> (configuración de atribución) es la <em>ventana de tiempo</em> dentro de la cual una venta todavía \"cuenta\" para el anuncio. Por default Meta usa <strong>1-day view, 7-day click</strong> (1 día por visualización, 7 días por clic). Tradúcelo así: si la persona solo <em>vio</em> el anuncio (sin tocarlo) y compra dentro de 1 día, se le atribuye; si <em>hizo clic</em> en el anuncio, tiene hasta 7 días para comprar y aún cuenta. Pasado ese plazo, la venta ya no se le acredita a ese anuncio. Memoriza ese par de números literal porque el examen lo pregunta tal cual. Ejemplo: un cliente hizo clic en el anuncio de la Cafetería La Esquina el lunes y pidió el sábado (6 días después): entra en la ventana de 7-day click, así que sí se atribuye."
         },
         {
           "type": "warn",
@@ -924,7 +954,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Casa Plus",
-          "body": "Un prospecto vio el ad de Casa Plus el lunes, no hizo clic, y cotizó el martes. Con la ventana default (1-day view) esa cotización SÍ se atribuye al ad. Si hubiera cotizado 5 días después sin clic, ya no entraría en la ventana de view. Y si es campaña de marca, miras Reach y recall; si es de cotizaciones, miras Leads y cost per purchase."
+          "body": "Un prospecto vio el anuncio de la inmobiliaria <strong>Casa Plus</strong> el lunes, no hizo clic, y cotizó el martes. Con la ventana default (1-day view) esa cotización SÍ se atribuye al anuncio, porque compró dentro del día siguiente a verlo. Si hubiera cotizado 5 días después <em>sin</em> clic, ya no entraría: la ventana de view es de un solo día. Y para juzgar la campaña, Casa Plus mira el KPI correcto según el objetivo: si es de marca, mira <strong>Reach</strong> (alcance) y recall; si es de cotizaciones, mira <strong>Leads</strong> y <strong>cost per purchase</strong> (costo por cotización). Mirar el número equivocado la llevaría a cancelar una campaña que sí funcionó."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Tanto el modelo como la ventana se ajustan en el <strong>conjunto de anuncios</strong> (segundo nivel) y al reportar. La ruta para la ventana es: <strong>Ads Manager → tu Ad set → sección Attribution setting</strong>, donde eliges el par (por ejemplo el default <em>1-day view, 7-day click</em>). Para leer resultados con uno u otro modelo, entras a <strong>Ads Manager → Columns (Columnas) → Comparing attribution settings</strong> o al menú <em>Compare attribution settings</em>, y ahí alternas entre <em>Standard</em> e <em>Incremental</em>. Lo que <strong>no</strong> vas a encontrar nunca es una opción \"Custom\": no existe. Ejemplo: Casa Plus deja la ventana default en su Ad set y, al cierre del mes, compara con Incremental para ver cuántas cotizaciones de verdad causó la campaña."
         },
         {
           "type": "mcq",
@@ -1361,8 +1396,8 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Qué resuelve Brand Safety",
-          "body": "Brand Safety te da control sobre <strong>junto a qué contenido</strong> aparecen tus ads. Evita que tu marca salga al lado de contenido que la dañe. Son 4 controles, de más simple a más manual."
+          "h": "Qué es Brand Safety y qué resuelve",
+          "body": "El <strong>Brand Safety</strong> (seguridad de marca) es el conjunto de controles que deciden <em>junto a qué contenido</em> puede aparecer tu anuncio. El problema que resuelve es real: tu anuncio se reparte por muchas superficies y videos de otros, y no quieres que tu marca salga pegada a algo violento, polémico o de mala reputación, porque la gente asocia las dos cosas. Imagina pagar por un anuncio bonito de pañales que termina junto a un video agresivo: el daño a la imagen es inmediato. Meta ofrece <strong>cuatro controles</strong>, que van del más simple y automático al más manual y específico. Conforme bajas en la lista ganas precisión pero también más trabajo de configuración."
         },
         {
           "type": "kvtable",
@@ -1388,8 +1423,18 @@
         },
         {
           "type": "concept",
-          "h": "Advertising Standards (lo prohibido)",
-          "body": "Contenido NO permitido o restringido:<br/>• Tobacco · Privacy violations · Violent/graphic<br/>• Deceptive practices · Alcohol (restricción geográfica)<br/>• Financial services >90 días con disclosure<br/>• Drugs · Online gambling con authorization<br/>• Personal attributes (ej. \"baja de peso fácil\")"
+          "h": "Los 4 controles de Brand Safety desglosados",
+          "body": "De más simple a más manual:<br/><strong>1. Inventory filters</strong> (filtros de inventario): un interruptor de tres niveles —<em>Expanded</em> (amplio, el default y de mayor alcance), <em>Moderate</em> (moderado) y <em>Limited</em> (limitado, el más restrictivo)— que regula qué tan sensible puede ser el contenido vecino. Es el control más fácil porque es una sola elección.<br/><strong>2. Publisher block lists</strong> (listas de bloqueo de publishers): tú armas a mano una lista de sitios o cuentas concretas donde NO quieres aparecer.<br/><strong>3. Topic exclusions</strong> (exclusiones de temas): apagas temas enteros, como noticias polémicas o ciertos géneros.<br/><strong>4. Content type exclusions</strong> (exclusiones por tipo de contenido): excluyes formatos completos, ej. el <em>in-stream pre-roll</em> (los anuncios que salen antes de un video). Ejemplo: la veterinaria <strong>PetCare</strong> sube su inventory filter a Moderate y, además, mete un sitio específico que detesta en su block list."
+        },
+        {
+          "type": "concept",
+          "h": "Qué son los Advertising Standards",
+          "body": "Los <strong>Advertising Standards</strong> (normas de publicidad de Meta) son las reglas de qué <em>puedes</em> y qué <em>no puedes</em> anunciar; son distintas del Brand Safety. El Brand Safety cuida <em>al lado de qué</em> sale tu anuncio; los Advertising Standards cuidan el <em>contenido de tu propio anuncio</em>. Hay dos categorías: contenido prohibido del todo y contenido restringido (permitido solo bajo ciertas condiciones). El examen las usa para preguntas con trampa, así que conviene reconocerlas. Ejemplo: una financiera puede anunciarse, pero solo si cumple requisitos; en cambio, contenido violento está prohibido sin excepción."
+        },
+        {
+          "type": "concept",
+          "h": "Lo prohibido y lo restringido (lista)",
+          "body": "Repasa los casos típicos:<br/><strong>1. Prohibido del todo:</strong> <em>tobacco</em> (tabaco y cigarros), <em>privacy violations</em> (violar la privacidad de la gente), <em>violent/graphic</em> (contenido violento o explícito), <em>deceptive practices</em> (prácticas engañosas, ej. prometer algo falso), <em>drugs</em> (drogas recreativas).<br/><strong>2. Restringido (permitido con condiciones):</strong> <em>alcohol</em> (con restricción geográfica, según el país), <em>financial services</em> (servicios financieros: permitidos con un <strong>disclosure</strong> —aviso legal claro— y antigüedad mayor a 90 días), <em>online gambling</em> (apuestas en línea, solo con <strong>authorization</strong> previa de Meta).<br/><strong>3. Personal attributes</strong> (atributos personales): no puedes <em>implicar</em> una característica de la persona como edad, peso, raza o religión, ej. \"baja de peso fácil\" o \"para señores mayores\". Esto tumba anuncios aunque el producto sea totalmente legal. Ejemplo: una clínica usa \"para profesionales experimentados\" en vez de \"para los señores mayores\" y así no la rechazan."
         },
         {
           "type": "warn",
@@ -1399,7 +1444,12 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · PetCare",
-          "body": "PetCare no quiere que sus anuncios salgan junto a noticias polémicas. Lo más simple: subir el <em>inventory filter</em> a Moderate o Limited. Y cuida el copy: \"para dueños responsables\" en vez de algo que implique edad — eso evita rechazo por personal attributes."
+          "body": "La veterinaria <strong>PetCare</strong> no quiere que sus anuncios salgan junto a noticias polémicas. Lo más simple es subir el <strong>inventory filter</strong> a Moderate o Limited, porque con una sola elección reduce el riesgo en todas partes. Si además detesta un sitio en particular, lo mete en una <strong>publisher block list</strong> para excluirlo a mano. Y cuida el <strong>copy</strong> (el texto del anuncio): escribe \"para dueños responsables\" en vez de algo que implique la edad de la persona, y así evita que se lo rechacen por <strong>personal attributes</strong>. Ninguno de estos arreglos tiene que ver con la audiencia ni con el presupuesto: son ajustes de seguridad de marca y de cumplimiento de normas."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se ve esto en Ads Manager (paso a paso)",
+          "body": "Los controles de Brand Safety viven en el <strong>conjunto de anuncios</strong> (segundo nivel) y a nivel cuenta. La ruta es: <strong>Ads Manager → tu Ad set → sección Brand safety and suitability</strong> (Seguridad e idoneidad de marca). Ahí eliges el <em>inventory filter</em> (Expanded / Moderate / Limited) y, más abajo, aplicas <em>block lists</em>, <em>topic exclusions</em> y <em>content type exclusions</em>. Las block lists también se administran de forma central en <strong>Business Settings → Brand safety</strong> para reutilizarlas en varias campañas. Los <strong>Advertising Standards</strong>, en cambio, no se \"activan\": son reglas que Meta revisa al aprobar tu anuncio, así que el trabajo ahí es escribir bien el copy. Ejemplo: PetCare entra a Brand safety and suitability, pone el filtro en Moderate y agrega el sitio que no quiere a su block list."
         },
         {
           "type": "mcq",

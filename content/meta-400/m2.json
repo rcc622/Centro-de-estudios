@@ -38,7 +38,12 @@
         {
           "type": "concept",
           "h": "Antes de buying types, fija el Módulo 1",
-          "body": "Buying types y bid strategies son decisiones que vienen <strong>después</strong> de tener claro el objective. Repasa rápido el flujo de planeación del Módulo 1 antes de seguir."
+          "body": "Un <strong>buying type</strong> (tipo de compra) es la forma en que adquieres inventario de anuncios, y una <strong>bid strategy</strong> (estrategia de puja) es cómo Meta gasta tu presupuesto en la subasta. Ambas son decisiones que vienen <strong>después</strong> de tener claro el <strong>objective</strong> (objetivo de la campaña). Si eliges la estrategia de puja antes de saber qué resultado buscas, terminas optimizando hacia la meta equivocada. Por eso este módulo se apoya en el flujo de planeación que aprendiste en el Módulo 1. Imagina la agencia <em>Brújula Digital</em>: primero define que su cliente quiere ventas en línea, y solo entonces decide cómo comprar y pujar."
+        },
+        {
+          "type": "concept",
+          "h": "El flujo de planeación, paso a paso",
+          "body": "El orden correcto encadena seis decisiones, cada una limita la siguiente:<br/><strong>1. Business goal</strong> (meta de negocio): qué quiere lograr la empresa, ej. más ventas.<br/><strong>2. Etapa del funnel</strong> (embudo): si la gente apenas te conoce o ya está lista para comprar.<br/><strong>3. Campaign objective</strong> (objetivo de campaña): la categoría que eliges en Meta, ej. Sales.<br/><strong>4. Conversion location</strong> (lugar de conversión): dónde ocurre la acción, ej. tu sitio web.<br/><strong>5. Conversion event</strong> (evento de conversión): qué acción cuenta como éxito, ej. Purchase.<br/><strong>6. Performance goal</strong> (meta de rendimiento): hacia qué optimiza Meta la entrega. La cadena de <em>Brújula Digital</em> sería: vender más → fondo del funnel → Sales → sitio web → Purchase → maximizar compras."
         },
         {
           "type": "fill",
@@ -84,17 +89,17 @@
         {
           "type": "concept",
           "h": "Dos formas de comprar inventario",
-          "body": "El <strong>buying type</strong> es el método con el que compras anuncios across Meta technologies. Hay dos: <strong>Auction</strong> (subasta, flexible) y <strong>Reservation</strong> (reservas anticipadas, predecible)."
+          "body": "Un <strong>buying type</strong> (tipo de compra) es el método con el que adquieres espacios publicitarios a lo largo de las plataformas de Meta (Facebook, Instagram, Messenger). Piensa en él como la modalidad de compra: igual que puedes comprar un boleto de avión en subasta de último minuto o reservándolo con meses de anticipación. Meta ofrece exactamente dos: <strong>Auction</strong> (subasta) y <strong>Reservation</strong> (reserva). Esta es la primera gran decisión de este módulo, porque define qué opciones tendrás después. La agencia <em>Brújula Digital</em> elige el buying type según si el cliente prioriza eficiencia o predecibilidad."
         },
         {
           "type": "concept",
           "h": "Auction: flexibilidad y escala",
-          "body": "Auction soporta <strong>todos</strong> los objectives, las 5 bid strategies y todos los placements. El precio es variable: fluctúa con la subasta. Es la opción por defecto para eficiencia y escala."
+          "body": "<strong>Auction</strong> (subasta) significa que tus anuncios compiten en tiempo real por cada espacio disponible, y el precio sube o baja según la demanda del momento. Es la modalidad más flexible: soporta <strong>todos</strong> los objectives, las 5 bid strategies (estrategias de puja) y todos los <strong>placements</strong> (ubicaciones donde aparece el anuncio, como el feed o las stories). Su precio es variable porque depende de cuántos anunciantes pelean por la misma persona en ese instante. Es la opción por defecto cuando buscas la mayor eficiencia y volumen posible. Por ejemplo, una tienda de ropa en línea como <em>Telar Urbano</em> usa Auction para conseguir el mayor número de ventas posible con su presupuesto."
         },
         {
           "type": "concept",
           "h": "Reservation: predecibilidad",
-          "body": "Reservation reserva entrega y precio por adelantado. Solo soporta Awareness y Engagement, pero garantiza reach y frequency a un CPM fijo. Es planeación tipo medios tradicionales dentro de Meta."
+          "body": "<strong>Reservation</strong> (reserva) funciona como la compra de medios tradicionales (TV, radio, espectaculares): apartas la entrega y el precio por adelantado, antes de que la campaña corra. A cambio de esa certeza, solo soporta los objectives Awareness y Engagement, pero te garantiza el <strong>reach</strong> (alcance: cuántas personas distintas verán el anuncio) y la <strong>frequency</strong> (frecuencia: cuántas veces lo verá cada una) a un <strong>CPM</strong> (costo por mil impresiones) fijo. No compites en subasta: el espacio ya es tuyo. Una marca de bebidas como <em>Agua Clara</em> que lanza una campaña masiva y necesita prometerle a su dirección un alcance exacto, usa Reservation."
         },
         {
           "type": "kvtable",
@@ -291,12 +296,12 @@
         {
           "type": "concept",
           "h": "Cómo gana un anuncio la subasta",
-          "body": "El ganador no es quien más puja. Meta calcula el <strong>total value</strong> de cada anuncio y gana el de mayor total value para esa persona en ese momento."
+          "body": "En la subasta de Meta el ganador <strong>no</strong> es quien ofrece más dinero. Cada vez que una persona abre Facebook o Instagram, Meta corre una subasta instantánea entre todos los anuncios que podrían mostrársele. Para decidir, calcula un <strong>total value</strong> (valor total) de cada anuncio para esa persona específica en ese momento, y muestra el de mayor total value. Esto protege la experiencia del usuario: un anuncio relevante y bien hecho puede ganarle a uno que paga más pero aburre. La pizzería <em>Forno Rosso</em> con un anuncio atractivo puede vencer a una cadena enorme que solo subió su oferta."
         },
         {
           "type": "concept",
           "h": "Los 3 componentes del total value",
-          "body": "Total value = <strong>advertiser bid</strong> + <strong>estimated action rates</strong> + <strong>ad quality</strong>. El cost control (la bid strategy) NO es parte del total value: controla cómo gastas, no cómo se gana la subasta."
+          "body": "El total value se calcula sumando tres ingredientes:<br/><strong>1. Advertiser bid</strong> (puja del anunciante): cuánto estás dispuesto a pagar por el resultado que buscas.<br/><strong>2. Estimated action rates</strong> (tasas de acción estimadas): la probabilidad que Meta calcula de que esa persona haga la acción deseada, ej. comprar o dar clic.<br/><strong>3. Ad quality</strong> (calidad del anuncio): qué tan relevante y bien hecho es el creativo según señales de los usuarios.<br/>Cuidado con un detalle clave: el <strong>cost control</strong> (control de costo, es decir la bid strategy) NO entra en esta fórmula. La estrategia de puja controla cómo gastas tu presupuesto, no cómo ganas la subasta. La pizzería <em>Forno Rosso</em> sube su total value mejorando el creativo, no solo subiendo la puja."
         },
         {
           "type": "kvtable",
@@ -476,17 +481,22 @@
         {
           "type": "concept",
           "h": "Tres familias, cinco estrategias",
-          "body": "Las bid strategies se agrupan en tres familias: <strong>spend-based</strong> (gasta todo el budget), <strong>goal-based</strong> (apunta a un costo/retorno) y <strong>manual</strong> (control directo del bid)."
+          "body": "Una <strong>bid strategy</strong> (estrategia de puja) le dice a Meta cómo gastar tu presupuesto en la subasta para conseguir tu meta. Existen cinco, y se agrupan en tres familias según qué priorizan:<br/><strong>1. Spend-based</strong> (basadas en gasto): gastan todo el presupuesto buscando el mejor resultado, sin un techo de costo.<br/><strong>2. Goal-based</strong> (basadas en meta): apuntan a un costo o retorno objetivo que tú defines.<br/><strong>3. Manual</strong>: tú controlas directamente cuánto puja Meta en cada subasta.<br/>Entender a qué familia pertenece cada estrategia te ayuda a elegir rápido. La tienda <em>Telar Urbano</em> elige la familia según si tiene metas estrictas de costo o no."
         },
         {
           "type": "concept",
-          "h": "Spend-based",
-          "body": "<strong>Highest Volume</strong> busca el máximo de resultados con el budget. <strong>Highest Value</strong> busca el máximo valor de compra con el budget (requiere value tracking). No respetan un techo de costo."
+          "h": "Familia spend-based: Highest Volume y Highest Value",
+          "body": "Las dos estrategias basadas en gasto exprimen todo tu presupuesto sin respetar un límite de costo:<br/><strong>1. Highest Volume</strong> (mayor volumen): busca el máximo número de resultados posible con tu budget, ej. la mayor cantidad de compras o leads.<br/><strong>2. Highest Value</strong> (mayor valor): busca el máximo valor total de compra, priorizando clientes que gastan más; requiere <strong>value tracking</strong> (seguimiento del valor de cada compra). Por ejemplo, <em>Telar Urbano</em> usa Highest Volume si quiere muchas ventas sin importar el monto, pero cambia a Highest Value si prefiere pocas ventas grandes de clientes premium."
         },
         {
           "type": "concept",
-          "h": "Goal-based y manual",
-          "body": "<strong>Cost per Result Goal</strong> mantiene un costo por resultado objetivo. <strong>ROAS Goal</strong> mantiene un retorno objetivo. <strong>Bid Cap</strong> (manual) fija un tope de bid en cada subasta."
+          "h": "Familias goal-based y manual",
+          "body": "Las tres estrategias restantes te dan más control sobre el costo:<br/><strong>1. Cost per Result Goal</strong> (meta de costo por resultado): mantiene un costo promedio por resultado que tú fijas, ej. no más de 350 pesos por lead.<br/><strong>2. ROAS Goal</strong> (meta de retorno sobre la inversión publicitaria): mantiene un <strong>ROAS</strong> (return on ad spend: pesos generados por cada peso gastado) objetivo, ej. 4x; requiere value tracking.<br/><strong>3. Bid Cap</strong> (tope de puja, la única manual): fija el máximo que Meta puede pujar en cada subasta individual. Una agencia como <em>Brújula Digital</em> usa Cost per Result Goal cuando el cliente tiene un presupuesto por lead cerrado por su contador."
+        },
+        {
+          "type": "concept",
+          "h": "Dónde se configura en Ads Manager",
+          "body": "La bid strategy no se elige a nivel anuncio, sino a nivel <strong>campaign</strong> (campaña) o <strong>ad set</strong> (conjunto de anuncios), según cómo manejes el presupuesto. La ruta es: <strong>Ads Manager</strong> (Administrador de anuncios) → creas o abres una campaña → en la sección de presupuesto buscas <strong>Campaign bid strategy</strong> → eliges entre Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal o Bid Cap. Las opciones disponibles cambian según el objective y el performance goal que ya definiste antes. Por eso <em>Brújula Digital</em> primero fija el objective y solo al final entra a este menú a confirmar la estrategia de puja."
         },
         {
           "type": "kvtable",
@@ -729,12 +739,12 @@
         {
           "type": "concept",
           "h": "Comprar como medios tradicionales",
-          "body": "Reservation reserva un <strong>número fijo de personas a una frequency específica por un precio fijo (CPM)</strong>, planeado por adelantado. Da predecibilidad tipo TV/OOH dentro de Meta."
+          "body": "<strong>Reservation</strong> (reserva) te permite apartar por adelantado un número fijo de personas, a una <strong>frequency</strong> (frecuencia: veces que cada persona ve el anuncio) específica, por un precio fijo medido en <strong>CPM</strong> (costo por mil impresiones). Es la misma lógica de comprar un espectacular o un spot de TV: sabes desde antes a cuánta gente llegarás y cuánto te costará. Esa certeza es justo lo que no te da la subasta. El término <strong>OOH</strong> (out of home: publicidad exterior como vallas y anuncios en vía pública) es el referente clásico de esta forma de planear. Una desarrolladora inmobiliaria como <em>Altavista Residencial</em> usa Reservation para prometerle a su dirección un alcance garantizado."
         },
         {
           "type": "concept",
           "h": "Qué no hace Reservation",
-          "body": "No licita: no usa bid strategies de Auction. No soporta objectives de conversión (Sales, Leads, Traffic, App Promotion). No es necesariamente más barato que Auction: vendes predecibilidad, no precio mínimo."
+          "body": "Es clave saber qué NO puedes hacer con Reservation, porque ahí caen muchas trampas de examen:<br/><strong>1. No licita</strong>: no usa las bid strategies de Auction; el precio ya está fijado, no hay subasta.<br/><strong>2. No soporta objectives de conversión</strong> como Sales, Leads, Traffic o App Promotion; solo Awareness y Engagement.<br/><strong>3. No es necesariamente más barato</strong> que Auction: lo que compras es predecibilidad de entrega y precio, no un costo mínimo.<br/>Si <em>Altavista Residencial</em> después quiere vender departamentos en línea (objective Sales), tendrá que cambiar a Auction, porque Reservation no lo permite."
         },
         {
           "type": "kvtable",

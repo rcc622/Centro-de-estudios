@@ -33,7 +33,7 @@
         {
           "type": "concept",
           "h": "Audiencia → placements → creativo",
-          "body": "Placements y creativo trabajan sobre la audiencia que planeaste en el Módulo 4. Repaso rápido antes de seguir."
+          "body": "Los <strong>placements</strong> (ubicaciones) y el creativo no se planean en el aire: trabajan sobre la audiencia que ya definiste en el Módulo 4. La idea es que primero decides a quién le hablas, luego en qué superficies aparece el anuncio y con qué piezas. Si la audiencia está mal armada, ni los mejores placements ni el mejor creativo la salvan. Por eso este módulo asume que ya tienes la audiencia lista y construye encima de ella. Antes de avanzar, repasa rápido los conceptos clave del Módulo 4."
         },
         {
           "type": "fill",
@@ -84,12 +84,17 @@
         {
           "type": "concept",
           "h": "Dónde se ve el anuncio",
-          "body": "Los <strong>placements</strong> son las superficies donde aparece el anuncio across Meta technologies: Feeds, Stories, Reels, In-stream, Marketplace, Search, Audience Network, etc."
+          "body": "Los <strong>placements</strong> (ubicaciones) son los espacios donde tu anuncio puede aparecer dentro del universo de Meta. No es solo Facebook: el mismo anuncio puede salir en Instagram, en Messenger y en apps de terceros conectadas a la red de Meta. Cuando configuras una campaña, defines en cuáles de estos espacios quieres entregar. Pensar bien los placements importa porque cada superficie tiene un formato, un costo y un tipo de atención distintos. En la práctica, casi siempre conviene dejar que Meta use el mayor número posible de ubicaciones."
+        },
+        {
+          "type": "concept",
+          "h": "Las superficies disponibles",
+          "body": "Las ubicaciones más comunes son: <strong>1. Feeds</strong> (el muro principal de Facebook e Instagram). <strong>2. Stories</strong> (historias verticales que duran 24 h). <strong>3. Reels</strong> (videos cortos verticales). <strong>4. In-stream</strong> (anuncios dentro de videos más largos). <strong>5. Marketplace</strong> (la sección de compraventa de Facebook). <strong>6. Search</strong> (resultados de búsqueda). <strong>7. Audience Network</strong> (red de apps y sitios de terceros donde Meta también coloca anuncios). Por ejemplo, una cafetería como <em>Café Aurora</em> puede aparecer en el Feed de un usuario, en una Story y dentro de un video de Reels el mismo día, todo con la misma campaña."
         },
         {
           "type": "concept",
           "h": "El default: Advantage+ placements",
-          "body": "Meta recomienda <strong>Advantage+ placements</strong> (antes Automatic Placements): entrega donde haya mejor resultado por costo. Más superficies = más subastas y combinaciones para optimizar."
+          "body": "<strong>Advantage+ placements</strong> (ubicaciones automáticas, antes llamado Automatic Placements) es la opción que Meta recomienda por default. En lugar de que tú escojas a mano las superficies, dejas que el sistema entregue el anuncio donde encuentre el mejor resultado al menor costo. La lógica es simple: mientras más ubicaciones le permitas usar, más subastas y combinaciones tiene para probar. Eso normalmente baja el costo por resultado y amplía el alcance. Por ejemplo, una tienda de ropa como <em>Mode Lila</em> deja activadas todas las ubicaciones y descubre que sus mejores ventas llegan por Reels, algo que no habría adivinado si hubiera elegido solo Feed."
         },
         {
           "type": "kvtable",
@@ -302,12 +307,17 @@
         {
           "type": "concept",
           "h": "El creativo es palanca de performance",
-          "body": "El creativo influye en estimated action rates y ad quality, así que <strong>impacta el costo en subasta</strong>. Planear creativo no es decoración: es parte de la estrategia de medios."
+          "body": "El <strong>creativo</strong> (la pieza visual: imagen, video, texto) no es decoración: es una de las palancas más fuertes para mejorar resultados. La razón es que un anuncio relevante y bien hecho hace que más personas reaccionen y que Meta lo califique como anuncio de buena calidad. Esos dos factores entran en la fórmula de la subasta, así que un buen creativo puede ganar espacios a menor costo que uno mediocre. Por eso planear el creativo es parte de la estrategia de medios, no un paso aparte que dejas al diseñador. Una marca como <em>Frutto</em> (jugos naturales) que invierte en buen creativo puede pagar menos por cada venta que un competidor con el mismo presupuesto pero anuncios flojos."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo el creativo entra en la subasta",
+          "body": "Meta decide qué anuncio mostrar con una fórmula de <strong>total value</strong> (valor total) que suma tres cosas: <strong>1. Advertiser bid</strong> (cuánto estás dispuesto a pagar). <strong>2. Estimated action rates</strong> (la probabilidad estimada de que la persona haga la acción que buscas, como comprar o registrarse). <strong>3. Ad quality</strong> (qué tan bueno y relevante considera Meta tu anuncio según señales de calidad y feedback). El creativo no cambia tu puja, pero sí mueve los otros dos componentes: un anuncio atractivo sube la probabilidad de acción y la calidad percibida. Así, una academia como <em>Lingua Viva</em> puede ganar más subastas con la misma puja solo porque su video genera más clics y se siente más relevante."
         },
         {
           "type": "concept",
           "h": "Advantage+ creative",
-          "body": "<strong>Advantage+ creative</strong> aplica optimizaciones automáticas del creativo <strong>por persona</strong>: recortes, brillo, música, texto. Es distinto de Advantage+ placements (eso es dónde se muestra)."
+          "body": "<strong>Advantage+ creative</strong> (creativo automático) es una función que deja que Meta ajuste tu pieza de forma automática y distinta para cada persona que la ve. Puede recortar la imagen, cambiar el brillo, agregar música o modificar el texto para que le caiga mejor a cada usuario. La idea es que el mismo anuncio se adapte solo, sin que tú hagas una versión por cada público. Ojo: esto es diferente de Advantage+ placements; este optimiza <strong>cómo se ve</strong> el creativo, no <strong>dónde</strong> se muestra. Por ejemplo, una mueblería como <em>Roble &amp; Nogal</em> sube un video y deja que Advantage+ creative lo ajuste por persona, en vez de editar diez versiones a mano."
         },
         {
           "type": "kvtable",
@@ -511,13 +521,13 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Escenario",
-          "body": "Marca de consumo quiere un lanzamiento con alcance amplio y eficiente. Tiene video vertical, imágenes y un carousel de producto."
+          "h": "El escenario",
+          "body": "Imagina una marca de consumo, una heladería artesanal como <em>Nieve Real</em>, que quiere lanzar su nueva línea con alcance amplio y eficiente. Ya produjo tres tipos de pieza: un video vertical, varias imágenes y un <strong>carousel</strong> (anuncio de varias tarjetas que el usuario desliza). No tiene ningún requisito de marca que la obligue a evitar ciertas superficies. La pregunta es cómo combinar ubicaciones y creativo para sacarle el máximo provecho a ese material. Este escenario sirve para ver por qué placements y creativo se piensan como un solo plan."
         },
         {
           "type": "concept",
           "h": "Se planean juntos",
-          "body": "Placements y creativo no se deciden por separado: <strong>maximiza superficies</strong> con Advantage+ placements y aporta <strong>variedad creativa mobile-first</strong> para que el sistema encuentre la mejor combinación persona-superficie-creativo."
+          "body": "Placements y creativo no se deciden por separado: son dos piezas del mismo plan. La receta es <strong>maximizar superficies</strong> con Advantage+ placements y, al mismo tiempo, dar <strong>variedad creativa mobile-first</strong> (varias piezas pensadas para celular y formato vertical). Cuando el sistema tiene muchas ubicaciones y varios creativos, puede probar combinaciones y encontrar la mejor mezcla de persona, superficie y creativo. Si maximizas ubicaciones pero subes un solo creativo, le das muchos espacios pero poco material para optimizar. Por eso <em>Nieve Real</em> debe activar todas las superficies y cargar su video, sus imágenes y su carousel juntos, no elegir solo uno."
         },
         {
           "type": "tip",

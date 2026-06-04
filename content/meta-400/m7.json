@@ -33,7 +33,12 @@
         {
           "type": "concept",
           "h": "Cerrando el examen: medición + privacidad",
-          "body": "Privacidad y brand safety cierran el temario. Antes, un repaso rápido de la medición del Módulo 6, que también se rige por consentimiento."
+          "body": "Este es el último módulo del temario: privacidad de datos y <strong>brand safety</strong> (seguridad de marca). Antes de entrar, conviene repasar la medición del Módulo 6, porque las dos áreas están conectadas. Toda la medición moderna en Meta depende de señales de los usuarios, y esas señales solo pueden recolectarse y usarse con el consentimiento adecuado. Por eso medir bien y respetar la privacidad son parte del mismo plan, no temas separados. En este repaso vas a refrescar los tres conceptos de medición que más se confunden en el examen."
+        },
+        {
+          "type": "concept",
+          "h": "Los tres conceptos de medición que se confunden",
+          "body": "El examen mezcla a propósito estos tres términos para confundirte. <strong>1. Attribution</strong> (atribución): reparte el crédito de una conversión entre los puntos de contacto que tocó el usuario; describe el recorrido, pero no prueba que el anuncio causó la venta. <strong>2. Incrementalidad</strong>: mide el efecto causal real, es decir, las conversiones que NO hubieran ocurrido sin la pauta. <strong>3. Lift studies</strong> (estudios de incremento): experimentos con grupo de control que aíslan ese efecto, como <strong>Brand Lift</strong> (incremento de marca) y <strong>Conversion Lift</strong> (incremento de conversiones). Por ejemplo, una cadena de gimnasios llamada VivaFit ve 500 inscripciones atribuidas a sus anuncios, pero un Conversion Lift revela que solo 180 fueron realmente incrementales: las otras 320 se habrían inscrito de todas formas."
         },
         {
           "type": "fill",
@@ -84,12 +89,17 @@
         {
           "type": "concept",
           "h": "La privacidad es parte del plan",
-          "body": "El media planner debe integrar privacidad y business integrity desde el diseño: cómo se recolectan datos, con qué consentimiento y bajo qué políticas de Meta para publicidad."
+          "body": "El <strong>media planner</strong> (planificador de medios) tiene que pensar la privacidad desde el diseño de la campaña, no como un trámite del final. Esto significa decidir desde el inicio cómo se recolectan los datos de las personas, con qué consentimiento y bajo qué políticas de Meta. A esto se le llama <strong>business integrity</strong> (integridad del negocio): operar de forma responsable y dentro de las reglas. La idea es que la privacidad sea un cimiento del plan, igual que el presupuesto o las audiencias. Una agencia que planea así evita rechazos, multas y daños a la reputación de su cliente antes de que ocurran."
         },
         {
           "type": "concept",
-          "h": "Privacidad ≠ menos performance",
-          "body": "Una señal de servidor bien gobernada (CAPI con consentimiento) mejora medición <strong>y</strong> cumplimiento. Diseñadas juntas, privacidad y performance se refuerzan, no se pelean."
+          "h": "Las cuatro políticas de privacidad clave",
+          "body": "Hay cuatro reglas que debes dominar. <strong>1. Consentimiento</strong>: los datos solo se recolectan y usan si existe una base legal o el permiso adecuado de la persona. <strong>2. Hashing de listas</strong>: cuando se sube una lista de clientes, los datos se convierten en un código irreversible (hash) antes de salir; Meta nunca recibe los correos o teléfonos en texto legible. <strong>3. Datos sensibles</strong>: está prohibido segmentar usando categorías sensibles inferidas, como salud, religión u orientación. <strong>4. Cumplimiento</strong>: hay que respetar tanto las políticas de Meta como la ley de privacidad de cada país. Por ejemplo, una tienda de mascotas llamada PatitasMX que sube su base de clientes debe tener permiso para usar esos correos y la lista viaja hasheada."
+        },
+        {
+          "type": "concept",
+          "h": "Privacidad y performance no están peleadas",
+          "body": "Existe el mito de que cuidar la privacidad obliga a perder resultados, y es falso. Una señal enviada desde el servidor del anunciante mediante <strong>CAPI</strong> (Conversions API, la interfaz de conversiones de Meta), cuando está bien configurada y con consentimiento, mejora la medición <strong>y</strong> el cumplimiento al mismo tiempo. La razón es que el servidor envía datos más completos y estables que el navegador, que cada vez bloquea más cosas. Diseñadas juntas desde el plan, privacidad y rendimiento se refuerzan en lugar de pelearse. Por ejemplo, una marca de café de especialidad llamada Altura logró recuperar conversiones que antes perdía, simplemente moviendo sus eventos a CAPI con el consentimiento de sus usuarios."
         },
         {
           "type": "kvtable",
@@ -279,12 +289,12 @@
         {
           "type": "concept",
           "h": "Proteger dónde aparece la marca",
-          "body": "Los <strong>brand safety controls</strong> evitan que el anuncio se muestre junto a contenido no apto para la marca, sobre todo en placements con contenido de terceros (in-stream, Audience Network, Reels)."
+          "body": "Los <strong>brand safety controls</strong> (controles de seguridad de marca) son herramientas que evitan que tu anuncio aparezca junto a contenido que dañaría la imagen del cliente. El riesgo nace en los <strong>placements</strong> (ubicaciones) donde el anuncio convive con contenido de otros creadores, no de la marca. Los tres lugares de mayor riesgo son <strong>in-stream</strong> (anuncios dentro de videos de terceros), <strong>Audience Network</strong> (la red de apps y sitios externos de Meta) y <strong>Reels</strong>. En el feed propio de la marca el riesgo es bajo, porque ahí ella controla lo que se publica. Por ejemplo, una aerolínea llamada AeroCielo no quiere que su anuncio salga justo después de un video sobre un accidente aéreo: para eso existen estos controles."
         },
         {
           "type": "concept",
-          "h": "Inventory filter, block y allow lists",
-          "body": "El <strong>inventory filter</strong> fija el nivel de idoneidad (expanded / moderate / limited). Las <strong>block lists</strong> excluyen publishers concretos; las <strong>allow lists</strong> permiten solo publishers aprobados."
+          "h": "Los cuatro controles disponibles",
+          "body": "Hay cuatro herramientas que el planner combina según el cliente. <strong>1. Inventory filter</strong> (filtro de inventario): fija qué tan estricto es el contenido adyacente permitido, con tres niveles, de más amplio a más restringido: <em>expanded</em> (ampliado), <em>moderate</em> (moderado) y <em>limited</em> (limitado). <strong>2. Block lists</strong> (listas de bloqueo): excluyen sitios, apps o cuentas específicas donde no quieres aparecer. <strong>3. Publisher allow lists</strong> (listas de permitidos): hacen lo contrario, solo dejan aparecer en una lista corta de medios aprobados. <strong>4. Content type exclusions</strong> (exclusiones por tipo de contenido): bloquean categorías sensibles completas. Por ejemplo, una marca de juguetes infantiles llamada Juguetón usa el filtro en <em>limited</em>, una block list de canales polémicos y exclusiones de contenido violento."
         },
         {
           "type": "kvtable",
@@ -461,12 +471,17 @@
         {
           "type": "concept",
           "h": "Cómo se aprueba un anuncio",
-          "body": "Todo anuncio pasa por el <strong>ad review</strong> contra las Advertising Standards (combinación de sistemas automatizados y revisión humana) antes de entregarse. Suele resolverse en ~24 horas."
+          "body": "Antes de que un anuncio se muestre a alguien, pasa por el <strong>ad review</strong> (revisión de anuncios), el proceso con el que Meta verifica que cumpla sus <strong>Advertising Standards</strong> (normas de publicidad). Esta revisión combina sistemas automatizados, que filtran la mayoría de los casos al instante, con revisión humana para los casos dudosos. El proceso suele resolverse en alrededor de 24 horas, aunque puede variar. Ningún anuncio se entrega sin pasar este filtro, sin importar el presupuesto. Por ejemplo, una marca de suplementos llamada NutriVida sube su anuncio un lunes y planea según las ~24 horas de revisión para no atrasar el lanzamiento."
         },
         {
           "type": "concept",
-          "h": "Qué revisa y qué pasa al rechazarse",
-          "body": "Revisa texto, imagen, video, targeting y la <strong>landing page</strong> de destino. Si se rechaza, puedes editar o pedir una revisión (appeal). Las ediciones se re-revisan antes de volver a entregar."
+          "h": "Qué revisa y qué pasa si lo rechazan",
+          "body": "El ad review no solo mira la imagen: revisa el texto, la imagen, el video, el <strong>targeting</strong> (segmentación) y la <strong>landing page</strong> (página de destino a la que lleva el anuncio). Si la página de destino infringe las normas, el anuncio se rechaza aunque el creativo esté perfecto. Cuando un anuncio es rechazado, tienes dos caminos: editarlo para corregir el problema, o pedir una revisión manual, llamada <strong>appeal</strong> (apelación), si crees que fue un error. Cualquier edición significativa vuelve a pasar por revisión antes de entregarse. Por ejemplo, una escuela de idiomas llamada Lingua corrige el texto de su anuncio rechazado y este vuelve automáticamente a la cola del ad review."
+        },
+        {
+          "type": "concept",
+          "h": "La trampa del atributo personal",
+          "body": "La causa de rechazo más preguntada en el examen es implicar un <strong>atributo personal</strong> del usuario. Las Advertising Standards prohíben que un anuncio dé a entender que conoce algo privado de quien lo ve, como su salud, religión, edad, orientación o situación económica. La clave es la redacción, no el producto: el mismo servicio se puede anunciar si el texto se mantiene general. Por ejemplo, decir \"Sabemos que sufres de migraña\" se rechaza porque afirma una condición de salud del espectador; en cambio \"Alivio natural para el dolor de cabeza\" es válido porque habla del producto, no de la persona."
         },
         {
           "type": "kvtable",
