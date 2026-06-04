@@ -33,7 +33,7 @@
         {
           "type": "concept",
           "h": "El budget depende del buying type",
-          "body": "Antes de presupuestar, recuerda lo del Módulo 2: el buying type (Auction o Reservation) cambia cómo derivas el presupuesto. Repaso rápido."
+          "body": "Antes de calcular cuánto dinero vas a meterle a una campaña, tienes que saber cómo la vas a comprar. El <strong>buying type</strong> (tipo de compra) es la modalidad con la que Meta te cobra los anuncios, y nace de la diferencia entre comprar en un mercado abierto o apartar el espacio por adelantado. Tienes dos opciones: <strong>Auction</strong> (subasta), donde compites en tiempo real contra otros anunciantes por la misma audiencia, y <strong>Reservation</strong> (reserva), donde apartas el espacio a un precio cotizado desde antes. Esto viene del Módulo 2 y es la base de todo este módulo, porque cada modalidad usa una matemática distinta para llegar al presupuesto. En Auction el costo se mueve solo y tú lo estimas; en Reservation el costo está pactado y tú lo calculas exacto. Por eso, lo primero que define un planner antes de hablar de dinero es por cuál de las dos va a ir."
         },
         {
           "type": "fill",
@@ -78,13 +78,38 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Daily vs Lifetime",
-          "body": "<strong>Daily budget</strong>: gasto promedio por día, ideal para campañas continuas. <strong>Lifetime budget</strong>: monto total para todo el periodo, necesario para scheduling (dayparting) y para Reservation."
+          "h": "Daily budget: el gasto promedio diario",
+          "body": "El <strong>daily budget</strong> (presupuesto diario) es la cantidad promedio que le dices a Meta que gaste por día. El nombre viene de que tú piensas el gasto en términos de ritmo diario, no de un monto total cerrado. Lo eliges cuando la campaña corre de forma continua y no tiene fecha de fin clara, lo que en marketing se llama <em>always-on</em> (siempre encendida). Tú defines, por ejemplo, $300 al día, y Meta administra ese ritmo de gasto día con día sin que tú tengas que estar pausando o reactivando nada. Es la opción más común para campañas que simplemente quieres dejar prendidas y mantener vivas. Ojo: es un promedio, no una cifra clavada (eso lo veremos en la siguiente card)."
         },
         {
           "type": "concept",
-          "h": "CBO vs ABO: dónde vive el budget",
-          "body": "<strong>Advantage+ campaign budget (CBO)</strong>: el budget va a nivel campaña y Meta lo reparte al ad set de mejor desempeño. <strong>Ad set budget (ABO)</strong>: budget fijo por ad set, reparto manual y control granular."
+          "h": "Lifetime budget: el monto total del periodo",
+          "body": "El <strong>lifetime budget</strong> (presupuesto total) es un monto único para todo el periodo de la campaña, en lugar de un ritmo diario. El nombre alude a la \"vida\" completa de la campaña: defines el total que existe del principio al fin. Le dices a Meta \"tengo $9,000 para estas tres semanas\" y el sistema reparte ese dinero a lo largo de las fechas, gastando más los días de mejor oportunidad. Sirve cuando tienes un presupuesto cerrado que no puede crecer y una fecha de inicio y fin definidas. Además, es obligatorio para dos cosas: el <strong>ad scheduling</strong> o <strong>dayparting</strong> (programar la entrega solo en ciertos días y horarios) y para las campañas de Reservation. Si necesitas controlar cuándo se muestran los anuncios, este es el budget que va."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: Daily vs Lifetime",
+          "body": "Imagina dos clientes. <strong>Cafetería La Esquina</strong> quiere estar siempre presente en redes sin fecha de fin: le pone un daily budget de $200 al día y deja la campaña corriendo mes con mes. En cambio, <strong>Gimnasio FitZona</strong> hace una promoción de \"inscripción de enero\" que solo corre del 1 al 31 con $15,000 ya aprobados por el dueño y que además solo quiere anunciar de lunes a viernes de 6am a 9am: ahí necesita lifetime budget, porque hay monto cerrado, fechas y dayparting."
+        },
+        {
+          "type": "concept",
+          "h": "CBO: el presupuesto vive en la campaña",
+          "body": "Una campaña en Meta tiene tres niveles: campaña, conjunto de anuncios (<strong>ad set</strong>, donde defines audiencia, ubicaciones y presupuesto) y anuncio (el creativo en sí). La pregunta de fondo es: ¿en qué nivel pongo el dinero? Con <strong>Advantage+ campaign budget</strong> —conocido históricamente como <strong>CBO</strong> (Campaign Budget Optimization, optimización del presupuesto a nivel campaña)— el presupuesto se pone arriba, a nivel campaña, y Meta lo reparte solo entre los ad sets, mandando más dinero al que va dando mejores resultados. La idea detrás es que el algoritmo ve en tiempo real cuál audiencia responde mejor y mueve el gasto hacia allá más rápido de lo que tú podrías a mano. Ganas eficiencia porque el sistema persigue la oportunidad en tiempo real, pero pierdes control fino sobre cuánto gasta cada ad set."
+        },
+        {
+          "type": "concept",
+          "h": "ABO: el presupuesto vive en cada ad set",
+          "body": "Con <strong>Ad set budget</strong> —conocido históricamente como <strong>ABO</strong> (Ad Set Budget Optimization, presupuesto fijado a nivel conjunto de anuncios)— tú pones un presupuesto independiente en cada ad set, un nivel más abajo que en CBO. El reparto es manual: si quieres que un ad set gaste más que otro, tú lo defines y lo ajustas a mano. La ventaja es que aseguras que cada audiencia reciba exactamente el dinero que decidiste, sin que el sistema se lo quite para dárselo a otra. Ganas control granular —ideal cuando quieres garantizar gasto a una audiencia específica, como una prueba que no quieres que muera— pero pierdes la flexibilidad de que Meta mueva el dinero hacia donde mejor rinde. En resumen: CBO = Meta decide el reparto; ABO = tú decides el reparto."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: CBO vs ABO",
+          "body": "Una <strong>tienda de ropa en línea, ModaViva</strong>, prueba 6 ad sets con audiencias distintas (mujeres 18-24, hombres 25-34, intereses en moda, etc.) y no quiere estar moviendo dinero a mano: usa Advantage+ campaign budget (CBO) y deja que Meta concentre el gasto en las audiencias que más compran. En cambio, una <strong>clínica dental, Sonríe+</strong>, tiene un ad set para una promoción de blanqueamiento que quiere garantizar con $100 diarios pase lo que pase: ahí usa Ad set budget (ABO) para fijar ese gasto a mano y que Meta no se lo robe."
+        },
+        {
+          "type": "concept",
+          "h": "Dónde se configura en Ads Manager",
+          "body": "El tipo de budget se elige al armar la campaña en <strong>Ads Manager</strong> (Administrador de anuncios de Meta), la herramienta web donde se crean y administran todas las campañas. La ruta es: <strong>Ads Manager → botón Crear → nivel Campaña</strong>, donde aparece el interruptor <em>Advantage+ campaign budget</em>; si lo activas usas CBO, si lo dejas apagado pones el presupuesto más abajo, en cada ad set (ABO). Una vez que decides CBO o ABO, en ese mismo punto eliges entre <strong>Daily budget</strong> y <strong>Lifetime budget</strong> desde un menú desplegable. La opción de programar días y horarios (dayparting) solo se habilita si elegiste Lifetime, así que si no aparece, revisa que no estés en Daily."
         },
         {
           "type": "kvtable",
@@ -276,13 +301,38 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Estimar, no garantizar",
-          "body": "En Auction el costo es variable. El planner estima el presupuesto a partir de resultados deseados y un costo por resultado esperado: <strong>budget ≈ resultados objetivo × costo por resultado esperado</strong>."
+          "h": "En Auction estimas, no garantizas",
+          "body": "En el buying type <strong>Auction</strong> (subasta) no hay un precio pactado: el costo se mueve según cuánta competencia haya por la misma audiencia en cada momento, igual que el precio de un boleto de avión sube cuando mucha gente quiere el mismo vuelo. Por eso aquí no calculas un presupuesto exacto, lo <em>estimas</em>. La lógica del planner es al revés que en Reservation: partes de cuántos resultados quieres y de cuánto te ha costado cada resultado en el pasado, y multiplicas. La fórmula base es <strong>budget ≈ resultados objetivo × costo por resultado esperado</strong>. El \"costo por resultado esperado\" sale del histórico de tu propia cuenta o, si no tienes histórico, de un <strong>benchmark</strong> (referencia promedio) de tu industria. El número que sale es un punto de partida, nunca una promesa."
         },
         {
           "type": "concept",
-          "h": "El budget debe alimentar la señal",
-          "body": "El presupuesto no solo cubre los resultados deseados: debe permitir que el ad set junte suficiente señal para optimizar. Si es muy bajo, el sistema nunca aprende y los resultados son volátiles."
+          "h": "Qué es el costo por resultado",
+          "body": "El \"resultado\" es la acción que quieres que pase y por la que optimizas la campaña: puede ser un <strong>lead</strong> (prospecto que deja sus datos), una compra, una instalación de app, etc. El costo por resultado es cuánto te cuesta en promedio cada una de esas acciones, y se calcula dividiendo el gasto total entre el número de resultados obtenidos. Según el tipo de resultado, el costo recibe un nombre distinto, pero el concepto es el mismo."
+        },
+        {
+          "type": "concept",
+          "h": "CPL y CPA: dos nombres del mismo costo",
+          "body": "<strong>1. CPL</strong> (Cost Per Lead, costo por prospecto): se usa cuando el resultado es un prospecto que dejó sus datos, típico en campañas de generación de leads. <strong>2. CPA</strong> (Cost Per Acquisition, costo por adquisición): se usa cuando el resultado es una venta o conversión cerrada, típico en e-commerce. Ambos son simplemente \"costo por resultado\" aplicado a un tipo específico de acción, así que la fórmula de estimación de budget no cambia: solo cambia qué evento estás contando."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: estimar budget con CPL histórico",
+          "body": "Una <strong>escuela de inglés en línea, FluentGo</strong>, lanza una campaña de leads y revisa su histórico: cada inscripción de prueba (lead) le ha costado en promedio $7 USD. Para este mes la dirección quiere 200 inscripciones nuevas. La estimación base de presupuesto sale de multiplicar el resultado objetivo por el costo esperado: 200 × $7 = ~$1,400 USD. Ese número es el punto de partida que FluentGo le presenta al cliente, dejando claro que en Auction el costo real puede subir o bajar según la competencia del mes."
+        },
+        {
+          "type": "concept",
+          "h": "El budget también alimenta el aprendizaje",
+          "body": "El presupuesto no solo tiene que cubrir los resultados que quieres: tiene que ser suficiente para que el sistema de Meta aprenda a entregar bien tus anuncios. Cuando lanzas un ad set, este entra en la <strong>learning phase</strong> (fase de aprendizaje), un periodo en el que el algoritmo todavía está descubriendo a quién mostrarle el anuncio para lograr tu resultado. Piénsalo como un repartidor nuevo que aún no se sabe las rutas: al principio tarda y se equivoca, hasta que junta experiencia. Mientras está en esa fase, el desempeño es inestable y los costos brincan. Para salir de ella, el ad set necesita juntar señal suficiente; si el budget es muy bajo, nunca la junta y se queda atorado dando resultados volátiles."
+        },
+        {
+          "type": "concept",
+          "h": "El umbral de la learning phase",
+          "body": "Meta marca un número concreto: un ad set necesita acumular aproximadamente <strong>50 eventos de optimización en unos 7 días</strong> para salir de la learning phase. Un \"evento de optimización\" es cada vez que ocurre el resultado por el que optimizas (cada lead, cada compra); ese mínimo existe porque el algoritmo necesita suficientes casos para detectar patrones confiables de a quién conviene mostrarle el anuncio. Si no llega a esos ~50, el ad set entra en <strong>learning limited</strong> (aprendizaje limitado), un estado donde Meta avisa que no tiene suficiente señal para optimizar bien. Por eso, al estimar el budget, no basta con cubrir los resultados deseados: también debes asegurarte de que el gasto genere al menos ese volumen de eventos por semana."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: budget que no alcanza el aprendizaje",
+          "body": "Una <strong>agencia inmobiliaria, CasaNueva</strong>, lanza una campaña de leads optimizando por formularios completados. El director, por miedo a gastar, pone un budget tan bajo que solo genera unos 20 formularios por semana. Resultado: el ad set nunca llega a los ~50 eventos en 7 días, se queda en learning limited y el costo por lead brinca sin estabilizarse. La recomendación correcta es subir el budget hasta que el ad set junte al menos ~50 eventos semanales, aunque eso signifique correr menos ad sets al mismo tiempo."
         },
         {
           "type": "kvtable",
@@ -475,13 +525,28 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Precio conocido por adelantado",
-          "body": "En Reservation el CPM es <strong>fijo</strong> y el reach/frequency se planean antes de lanzar. El presupuesto se calcula, no se estima: <strong>budget = impresiones planeadas × CPM ÷ 1000</strong>."
+          "h": "En Reservation el precio está pactado",
+          "body": "El buying type <strong>Reservation</strong> (reserva) es lo opuesto a Auction: aquí el precio se conoce y se aparta por adelantado, igual que cuando reservas un salón de eventos a precio cerrado meses antes de la fiesta. El costo se expresa en <strong>CPM</strong> (Cost Per Mille, costo por cada mil impresiones; \"mille\" es mil en latín) y en Reservation ese CPM es <strong>fijo</strong>: ya está cotizado antes de lanzar. Por eso aquí no estimas, <em>calculas</em> el presupuesto con precisión. Como el precio no se mueve, el plan completo es predecible desde el día cero, lo cual es justo lo que necesitas cuando un cliente firma un monto cerrado y exige garantías de entrega."
         },
         {
           "type": "concept",
-          "h": "De reach a impresiones a budget",
-          "body": "Primero defines reach (personas únicas) y frequency (impresiones por persona). <strong>Impresiones = reach × frequency</strong>. Luego el budget sale directo del CPM fijo cotizado."
+          "h": "Reach y frequency: los dos insumos del plan",
+          "body": "Para calcular el budget en Reservation primero defines dos cosas. <strong>1. El reach</strong> (alcance) es el número de personas únicas que quieres que vean el anuncio; cada persona cuenta una sola vez, sin importar cuántas veces lo vea. <strong>2. La frequency</strong> (frecuencia) es cuántas veces, en promedio, quieres que cada persona lo vea durante el periodo. Con esos dos datos sacas las <strong>impresiones</strong> (cada vez que el anuncio aparece en pantalla), que es lo que realmente se compra: <strong>impresiones = reach × frequency</strong>. Por ejemplo, una persona alcanzada con frequency 3 genera 3 impresiones, así que 100,000 personas con frequency 3 son 300,000 impresiones."
+        },
+        {
+          "type": "concept",
+          "h": "Cómo se llega al budget",
+          "body": "Una vez que tienes las impresiones planeadas, el presupuesto sale directo del CPM fijo cotizado. Como el CPM es el precio por cada <em>mil</em> impresiones, divides entre 1000: <strong>budget = impresiones planeadas × CPM ÷ 1000</strong>. La trampa típica de examen es querer usar la fórmula de Auction (resultados × costo por resultado) en Reservation: aquí no estimas conversiones, todo parte de impresiones. La cadena completa es: reach × frequency = impresiones, y luego impresiones × CPM ÷ 1000 = budget."
+        },
+        {
+          "type": "concept",
+          "h": "Ejemplo: planear un lanzamiento con Reservation",
+          "body": "Una <strong>marca de tenis deportivos, RunPro</strong>, lanza un modelo nuevo y la dirección aprobó un presupuesto cerrado pidiendo alcance garantizado: quiere llegar a 400,000 personas con una frequency de 3, y la agencia le cotizó un CPM fijo de $5 USD. El cálculo: impresiones = 400,000 × 3 = 1,200,000; budget = 1,200,000 × $5 ÷ 1000 = $6,000 USD. Como el CPM es fijo, ese número es exacto y garantizado, no una estimación que pueda brincar como pasaría en Auction."
+        },
+        {
+          "type": "concept",
+          "h": "Dónde se planea en Meta",
+          "body": "Reservation se arma con la herramienta de <strong>reach and frequency</strong> (alcance y frecuencia) dentro de <strong>Ads Manager</strong>. Al crear la campaña eliges Reservation como buying type, defines la audiencia y el periodo, y la herramienta te muestra una predicción de cuántas personas puedes alcanzar y a qué CPM. Ahí mismo ajustas reach y frequency hasta que el plan cuadre con el presupuesto, y reservas. Recuerda que Reservation solo soporta los objectives de <strong>Awareness</strong> (reconocimiento) y <strong>Engagement</strong> (interacción); no sirve para campañas de ventas, que solo van por Auction."
         },
         {
           "type": "kvtable",
