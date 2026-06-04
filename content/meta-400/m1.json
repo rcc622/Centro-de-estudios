@@ -38,12 +38,17 @@
         {
           "type": "concept",
           "h": "El media planner empieza por el negocio",
-          "body": "Como media planner tu primer paso <strong>nunca</strong> es elegir un objective en Ads Manager. Es entender el <strong>business goal</strong> del cliente: qué quiere lograr el negocio (vender, generar leads, construir marca)."
+          "body": "Un <strong>media planner</strong> (la persona que diseña la estrategia de anuncios pagados) tiene un reflejo equivocado: abrir Ads Manager y elegir un objetivo de inmediato. Eso está mal. Tu primer paso <strong>nunca</strong> es técnico, es de negocio: entender el <strong>business goal</strong> (la meta comercial real del cliente, lo que quiere lograr la empresa). Ese business goal casi siempre es una de tres cosas: vender productos, generar <em>leads</em> (contactos de personas interesadas) o construir marca para que la gente lo conozca. Por ejemplo, la <strong>Cafetería La Esquina</strong> no llega diciendo \"quiero una campaña Sales\"; llega diciendo \"quiero llenar las mesas entre semana\". Esa frase es el business goal, y a partir de ahí tú decides el resto."
         },
         {
           "type": "concept",
           "h": "Del goal al objective",
-          "body": "Una vez claro el business goal, lo traduces a la <strong>etapa del funnel</strong> que le corresponde y de ahí al <strong>campaign objective</strong> que la soporta. El objective es una consecuencia del negocio, no el punto de partida."
+          "body": "Una vez que tienes claro el business goal, lo traduces en dos pasos. Primero a la <strong>etapa del funnel</strong> (la fase del embudo de compra: el camino que recorre una persona desde que no te conoce hasta que te compra). Y de ahí al <strong>campaign objective</strong> (el objetivo de campaña: la instrucción que le das a Meta sobre qué resultado optimizar). El objective es una <em>consecuencia</em> del negocio, nunca el punto de partida. Por ejemplo, <strong>Aceros del Bajío</strong> quiere más ventas en su tienda en línea: business goal \"ingresos\" → etapa del funnel \"conversión\" → campaign objective \"Sales\". Si invertieras el orden y eligieras el objective primero, estarías adivinando."
+        },
+        {
+          "type": "concept",
+          "h": "Qué son los 6 ODAX",
+          "body": "<strong>ODAX</strong> son las siglas en inglés de <em>Outcome-Driven Ad Experiences</em> (experiencias de anuncios orientadas a resultados), que es como Meta llama a su lista oficial de objetivos de campaña. Antes había muchos objetivos confusos y repetidos; Meta los simplificó a solo <strong>seis</strong>, cada uno enfocado en un resultado de negocio claro. Esos seis son Awareness, Traffic, Engagement, Leads, App Promotion y Sales, y cuando creas una campaña tienes que elegir exactamente uno de ellos. La idea es que pienses en el resultado que quieres (que te conozcan, que compren, que dejen contacto) y no en tácticas sueltas. Por ejemplo, la <strong>Cafetería La Esquina</strong> no elige \"poner anuncios\"; elige uno de los 6 ODAX según si quiere que la conozcan o que reserven mesa."
         },
         {
           "type": "kvtable",
@@ -60,7 +65,12 @@
         {
           "type": "concept",
           "h": "El funnel manda",
-          "body": "Awareness y Traffic son <strong>top funnel</strong>. Engagement y Leads son <strong>mid funnel</strong>. Sales y App Promotion son <strong>bottom funnel</strong>. Un negocio sin reconocimiento previo no arranca en Sales: construye base arriba y baja a conversión."
+          "body": "El <strong>funnel</strong> (embudo) es la metáfora del camino del cliente: arriba (ancho) está mucha gente que apenas te conoce, y abajo (angosto) están los pocos que ya te compran. Cada uno de los 6 objectives vive en una zona del embudo. <strong>Top funnel</strong> (parte alta, dar a conocer): Awareness y Traffic. <strong>Mid funnel</strong> (parte media, generar interés): Engagement y Leads. <strong>Bottom funnel</strong> (parte baja, cerrar la venta): Sales y App Promotion. La regla práctica: un negocio que nadie conoce no arranca en Sales, porque le pediría comprar a gente que ni sabe que existe. Por ejemplo, el <strong>Hotel Lumière</strong> recién inaugurado primero construye reconocimiento arriba (Awareness) y solo después baja a empujar reservaciones (Sales)."
+        },
+        {
+          "type": "concept",
+          "h": "Dónde eliges el objective en la plataforma",
+          "body": "Una vez decidido el objective sobre el papel, lo configuras en <strong>Ads Manager</strong> (el Administrador de anuncios de Meta). La ruta es: entras a <em>Ads Manager → botón verde + Crear → nivel Campaña</em>, y ahí Meta te muestra las 6 tarjetas de objective (Awareness, Traffic, Engagement, Leads, App Promotion, Sales) para que elijas una. Esta elección se hace a nivel <strong>campaña</strong> y queda fija para toda esa campaña. Por ejemplo, si el <strong>Hotel Lumière</strong> ya decidió Awareness, al crear la campaña elige la tarjeta \"Reconocimiento\" y de ahí baja a configurar el resto. Ojo: lo que decides en negocio primero es lo que aquí solo confirmas con un clic; la plataforma no piensa por ti."
         },
         {
           "type": "tip",
@@ -253,12 +263,12 @@
         {
           "type": "concept",
           "h": "Sin señal no hay optimización",
-          "body": "Cada objective de conversión necesita una <strong>fuente de datos</strong> que le diga a Meta qué pasó. El planner valida que esa fuente exista y esté bien configurada <strong>antes</strong> de proponer el plan, no después."
+          "body": "Meta optimiza buscando a las personas que hacen la acción que tú quieres, pero para eso necesita que alguien le avise cuándo esa acción ocurre. Ese aviso se llama <strong>señal</strong> (signal), y viaja desde una <strong>data source</strong> (fuente de datos: la herramienta de medición que registra lo que pasa en tu sitio o app). Si no hay fuente de datos, Meta optimiza a ciegas y desperdicia presupuesto. Por eso el planner valida que esa fuente exista y esté bien configurada <strong>antes</strong> de proponer el plan, no después. Por ejemplo, antes de prometerle campañas de venta a <strong>Boutique Aurora</strong>, revisas que su tienda en línea ya reporte las compras a Meta; si no, primero se arregla eso."
         },
         {
           "type": "concept",
           "h": "La señal habilita el objective",
-          "body": "No puedes optimizar Sales website si no hay un Pixel/CAPI que reporte la compra. Por eso la fuente de datos no es un detalle técnico al final: es un requisito que define si el objective propuesto es viable."
+          "body": "La fuente de datos no es un detalle técnico que dejas para el final: es el requisito que decide si el objective que propusiste es viable o no. No puedes optimizar Sales en website si no hay un <strong>Pixel</strong> (pixel: un fragmento de código que se instala en el sitio y registra lo que hace el visitante) ni una <strong>CAPI</strong> (Conversions API: un canal que manda esos mismos eventos desde el servidor del negocio, no desde el navegador) que reporten la compra. Si <strong>Boutique Aurora</strong> quiere campañas Sales pero no tiene nada instalado, el objective propuesto simplemente no se puede ejecutar todavía. La lógica es: primero la señal, luego el objective; nunca al revés."
         },
         {
           "type": "kvtable",
@@ -273,6 +283,11 @@
           ]
         },
         {
+          "type": "concept",
+          "h": "Las fuentes de datos, una por una",
+          "body": "Conviene tener claras las cinco fuentes que aparecen en la tabla, porque el examen las mezcla. <strong>1. Pixel</strong> = código en tu sitio web que registra lo que hace el visitante desde el navegador. <strong>2. CAPI (Conversions API)</strong> = el mismo registro pero enviado desde tu servidor, para no perder datos cuando el navegador falla. <strong>3. Catalog (catálogo)</strong> = archivo con todos tus productos (precio, foto, stock) que permite anuncios dinámicos de venta. <strong>4. Facebook SDK</strong> = pieza de código que se mete <em>dentro</em> de una app móvil para medir instalaciones y acciones in-app. <strong>5. MMP (Mobile Measurement Partner)</strong> = empresa externa certificada por Meta (como AppsFlyer o Adjust) que mide eventos de apps de forma neutral. Por ejemplo, la tienda en línea de <strong>Boutique Aurora</strong> usa Pixel + CAPI; si lanzara una app, necesitaría además SDK o un MMP."
+        },
+        {
           "type": "quote",
           "body": "Mientras más completa y de calidad sea la señal (Pixel + CAPI juntos), mejor optimiza el sistema de Meta y más estables son los resultados del plan."
         },
@@ -280,6 +295,11 @@
           "type": "tip",
           "label": "PRO TIP",
           "body": "Pixel + CAPI <strong>juntos</strong> (no uno u otro) es el estándar. CAPI recupera señal que el navegador pierde por bloqueadores e iOS, y mejora el match quality de eventos."
+        },
+        {
+          "type": "concept",
+          "h": "Dónde revisas y conectas la señal en la plataforma",
+          "body": "Las fuentes de datos viven en <strong>Events Manager</strong> (el Administrador de eventos de Meta), no en Ads Manager. La ruta es: <em>Business Manager → menú → Administrador de eventos (Events Manager)</em>, y ahí ves tus <strong>datasets</strong> (conjuntos de datos: donde se agrupan los eventos de tu Pixel y tu CAPI). Para validar que un negocio está listo para Sales, entras a su dataset y revisas que el evento <em>Purchase</em> (compra) esté llegando y que la <strong>CAPI</strong> aparezca conectada junto al Pixel. Por ejemplo, antes de lanzar a <strong>Boutique Aurora</strong> abres su dataset en Events Manager y confirmas que las compras de prueba se están registrando. Si solo aparece el Pixel y la CAPI no, ahí mismo detectas que falta completar la señal."
         },
         {
           "type": "warn",
@@ -454,12 +474,17 @@
         {
           "type": "concept",
           "h": "Tres decisiones distintas, mismo objective",
-          "body": "Dentro de un objective configuras 3 cosas en el ad set: <strong>conversion location</strong> (dónde sucede), <strong>conversion event</strong> (qué acción cuenta) y <strong>performance goal</strong> (cómo se licita)."
+          "body": "Elegir el objective no termina el trabajo: dentro de él tomas tres decisiones que mucha gente confunde porque suenan parecido. Primero el <strong>conversion location</strong> (dónde sucede la conversión: en tu sitio web, en tu app, en mensajes, etc.). Segundo el <strong>conversion event</strong> (qué acción exacta cuenta como resultado: una compra, un registro, un agregar al carrito). Tercero el <strong>performance goal</strong> (objetivo de rendimiento: la regla de subasta con la que Meta decide a quién mostrarle el anuncio y por cuánto pujar). Por ejemplo, para <strong>Florería Bella Rosa</strong>: location = Website, event = Purchase, performance goal = maximizar valor de compra. Son tres perillas separadas, aunque vivan bajo el mismo objective Sales."
+        },
+        {
+          "type": "concept",
+          "h": "Las tres perillas, una por una",
+          "body": "Para no mezclarlas, piénsalas como tres preguntas distintas. <strong>1. Conversion location → ¿DÓNDE?</strong> el lugar físico-digital donde ocurre la acción (Website, App, Messaging, Calls, Instant form). <strong>2. Conversion event → ¿QUÉ?</strong> la acción concreta que va a contar como éxito (Purchase = compra, Lead = contacto, Add to cart = agregar al carrito, View content = ver producto). <strong>3. Performance goal → ¿CÓMO?</strong> la forma en que Meta optimiza la entrega (maximizar cantidad de conversiones, maximizar valor, maximizar clics). En <strong>Florería Bella Rosa</strong>: ¿dónde? en el Website; ¿qué? la compra (Purchase); ¿cómo? optimizando por valor del ticket. Confundir el QUÉ con el CÓMO es el error más típico del examen."
         },
         {
           "type": "concept",
           "h": "El nivel importa",
-          "body": "El <strong>campaign objective</strong> se elige a nivel campaña. Las tres capas (location, event, performance goal) se configuran a nivel <strong>ad set</strong>. El nivel ad es solo para creativos. El examen confunde estos niveles a propósito."
+          "body": "Una campaña en Meta tiene tres niveles anidados, como muñecas rusas: <strong>campaña</strong> (lo más grande), dentro de ella el <strong>ad set</strong> (conjunto de anuncios: donde defines a quién, dónde y con qué presupuesto le hablas) y dentro de este el <strong>ad</strong> (el anuncio: la imagen o video que ve la gente). Cada decisión vive en un nivel fijo. El <strong>campaign objective</strong> se elige a nivel campaña. Las tres perillas anteriores (location, event y performance goal) se configuran a nivel <strong>ad set</strong>. El nivel ad es solo para el creativo. Por ejemplo, en <strong>Florería Bella Rosa</strong> el objective Sales se fija una vez arriba, pero podrías tener dos ad sets distintos debajo (uno por ciudad) cada uno con su propio location y performance goal. El examen confunde estos niveles a propósito en los distractores."
         },
         {
           "type": "kvtable",
@@ -479,6 +504,11 @@
           "type": "tip",
           "label": "VALOR VS CANTIDAD",
           "body": "<strong>Maximize number of conversions</strong> busca más unidades. <strong>Maximize value of conversions</strong> busca tickets de mayor monto (requiere value tracking en el Pixel). Si el negocio quiere ROI, casi siempre es valor."
+        },
+        {
+          "type": "concept",
+          "h": "Dónde configuras las tres perillas en la plataforma",
+          "body": "Las tres decisiones se ven una tras otra al crear el <strong>ad set</strong> en Ads Manager. La ruta es: <em>Ads Manager → tu campaña → nivel Conjunto de anuncios (Ad set)</em>, y en la parte superior aparece primero el <strong>conversion location</strong> (\"Ubicación de la conversión\"), luego el <strong>performance goal</strong> (\"Objetivo de rendimiento\") y dentro de la sección de seguimiento el <strong>conversion event</strong> (\"Evento de conversión\"). Por ejemplo, para <strong>Florería Bella Rosa</strong> entras al ad set, eliges Website como ubicación, Purchase como evento y \"Maximizar el valor de las conversiones\" como objetivo de rendimiento. Si no encuentras estas opciones, casi siempre es porque estás parado en el nivel campaña o ad por error, no en el ad set."
         },
         {
           "type": "mcq",
@@ -661,12 +691,17 @@
         {
           "type": "concept",
           "h": "Un plan no es una sola campaña",
-          "body": "Un media plan serio separa el recorrido del cliente en <strong>fases</strong>. Cada fase tiene su propio objective porque la acción que quieres optimizar cambia: captar arriba, convertir abajo."
+          "body": "Un <strong>media plan</strong> (plan de medios: el documento donde decides en qué objetivos vas a invertir y en qué orden) serio no se resuelve con una sola campaña. La razón es que el cliente no pasa de extraño a comprador en un solo salto, sino que avanza por <strong>fases</strong> (etapas del recorrido de compra). Cada fase tiene su propio objective porque la acción que quieres optimizar cambia: arriba quieres que te conozcan, en medio que dejen su contacto, y abajo que compren. Si usas un solo objective para todo, optimizas la métrica equivocada en al menos una fase. Por ejemplo, la <strong>Escuela de Idiomas Políglota</strong> primero da a conocer sus cursos, luego capta a quien pide informes y al final empuja la inscripción pagada: tres acciones distintas, tres objectives distintos."
+        },
+        {
+          "type": "concept",
+          "h": "Las tres fases del recorrido, una por una",
+          "body": "Para armar el plan, piensa el recorrido en tres tramos y asigna a cada uno su acción. <strong>1. Captación (arriba del funnel)</strong> = que el prospecto te conozca o deje su contacto; aquí viven Awareness y Leads. <strong>2. Consideración (en medio)</strong> = mantener el interés y nutrir al prospecto mientras decide; aquí entran Engagement o Traffic según el activo que tengas. <strong>3. Conversión (abajo del funnel)</strong> = cerrar la acción de valor, normalmente la compra o la firma; aquí va Sales. En la <strong>Escuela de Idiomas Políglota</strong>: captación con Leads para juntar a interesados, consideración con Engagement para que vean testimonios, y conversión con Sales cuando pagan la inscripción. Cada tramo se monta como una campaña propia con su objective."
         },
         {
           "type": "concept",
           "h": "Escenario",
-          "body": "Cliente: financiera que ofrece créditos solares. Quiere <strong>contratos firmados</strong>. El proceso: el prospecto deja datos, un asesor lo contacta por chat y cierra. Tiene Pixel + CAPI y un dataset con eventos web."
+          "body": "Tomemos un caso concreto para aterrizar el plan por fases. El cliente es una <strong>financiera</strong> que ofrece créditos para instalar equipo, y su <strong>business goal</strong> (meta comercial real) son <strong>contratos firmados</strong>, no clics ni seguidores. El proceso de venta tiene varios pasos: el prospecto deja sus datos en un formulario, un asesor lo contacta por chat y ahí cierra la firma. Del lado técnico ya tiene la señal lista: cuenta con <strong>Pixel</strong> (código que registra lo que pasa en el sitio) más <strong>CAPI</strong> (Conversions API: el mismo registro pero enviado desde el servidor) y un <strong>dataset</strong> (conjunto de datos con sus eventos web) funcionando. Con esto puedes diseñar las fases sin trabarte por falta de medición."
         },
         {
           "type": "kvtable",
