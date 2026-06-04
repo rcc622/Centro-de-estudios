@@ -532,7 +532,11 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
 
 ### Reglas para escribir contenido educativo
 
-1. **Las lecciones tipo "concept"** deben ser breves (máx 3-4 oraciones por card). Si es muy largo, divide en múltiples cards.
+1. **Las lecciones tipo "concept" deben DESARROLLAR el concepto, no telegrafiar.** Cuando introduces un término nuevo (sobre todo si está en inglés), explícalo con tus palabras: qué es, para qué sirve y de dónde viene. Apunta a 4-6 oraciones por card. Si un concepto trae varios sub-términos (ej. "Brand Lift" trae *brand awareness*, *ad recall*, *message association*), dedica una card aparte a desglosarlos uno por uno. Mejor varias cards digeribles que una sola densa.
+   - **Nunca dejes un término en inglés sin traducir/explicar la primera vez.** Formato: `<strong>término en inglés</strong> (traducción o explicación corta)`. Ej: "el <strong>cost per result</strong> (costo por resultado)".
+   - **Cada concepto nuevo lleva un ejemplo concreto.** Usa un negocio ficticio con nombre (ej. "Hotel Lumière", "Aceros del Bajío") y aterriza el concepto en un caso real.
+   - **Incluye una card de aplicación en la plataforma** cuando el concepto se configure en algún lado: "Cómo se ve esto en Ads Manager (paso a paso)", con la ruta de menús (ej. `Ads Manager → Experiments → A/B Test`).
+   - Esto aplica a **contenido nuevo y a reescrituras**. El estándar de referencia es la lección 6.17 de meta-410 (A/B Test, Brand Lift, Conversion Lift).
 2. **Cada lección debe tener al menos 1 MCQ** al final para validar comprensión.
 3. **Los MCQ deben tener distractores plausibles**, no obvios. El examen real es así.
 4. **La explanation de un MCQ debe enseñar**, no solo decir "es la B porque sí". Explica por qué las otras opciones son trampas.
