@@ -46,13 +46,6 @@
       "type": "reading",
       "cards": [
         {
-          "type": "image",
-          "h": "🗺️ El mapa del curso completo",
-          "src": "content/meta-410/assets/meta-410-overview.png",
-          "alt": "Mind map de la certificación Meta 410-101 con los 6 temas principales del examen",
-          "caption": "Vista panorámica de las 6 áreas del examen 410-101 · Generado en NotebookLM · Tap para zoom"
-        },
-        {
           "type": "concept",
           "h": "Más que un creador de campañas",
           "body": "<strong>Meta Ads Manager</strong> (Administrador de Anuncios de Meta) es la herramienta principal donde gestionas toda tu publicidad en Facebook e Instagram. Mucha gente cree que solo sirve para diseñar el anuncio, pero en realidad es el <em>centro de control</em> completo. Desde aquí creas las campañas, sí, pero también configuras cómo vas a pagar, defines a quién le vas a mostrar los anuncios, conectas tus fuentes de datos y revisas los resultados. Piensa en él como el tablero de un avión: no solo enciende el motor, controla todo el vuelo. Por ejemplo, la <strong>Cafetería La Esquina</strong> usa Ads Manager para lanzar su promo de temporada y, en la misma pantalla, ver cuántas reservaciones generó."
@@ -1861,30 +1854,6 @@
           ],
           "correct": 0,
           "explanation": "El diagnostic es el atajo: si dominas el contenido, ≥80% te permite saltar al Quiz de Unidad directamente."
-        }
-      ]
-    },
-    {
-      "id": "1.audio",
-      "title": "Repaso en audio · Día 1",
-      "section": "bz",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "🎙️ Repaso conversacional",
-          "body": "Escucha este resumen rápido del Día 1 antes de las flashcards finales. Útil para fijar los conceptos en otro formato — puedes escucharlo manejando o caminando."
-        },
-        {
-          "type": "audio-embed",
-          "title": "Resumen rápido · Examen Meta 410-101",
-          "src": "content/meta-410/assets/meta-410-day1-resumen.m4a",
-          "source": "NotebookLM Audio Overview"
-        },
-        {
-          "type": "tip",
-          "label": "PRO TIP",
-          "body": "Escúchalo 2 veces: la primera en velocidad normal para entender, la segunda a 1.5x o 2x como repaso rápido antes del examen."
         }
       ]
     },
