@@ -1578,7 +1578,8 @@ let DB = {
   battlesEnabled: true, // toggle desde Ajustes
   starter: 'pikachu', // pokemon starter elegido (ver STARTERS)
   soundEnabled: true, // efectos de sonido WebAudio (toggle en Ajustes)
-  soundTheme: 'classic' // tema de SFX: classic | arcade | marimba
+  soundTheme: 'classic', // tema de SFX: classic | arcade | marimba
+  hapticLevel: 'strong' // vibración: off | soft | strong
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1683,6 +1684,7 @@ function load(){
   if(!DB.starter || !STARTERS[DB.starter]) DB.starter = 'pikachu';
   if(typeof DB.soundEnabled !== 'boolean') DB.soundEnabled = true;
   if(!DB.soundTheme || !['classic','arcade','marimba'].includes(DB.soundTheme)) DB.soundTheme = 'classic';
+  if(!['off','soft','strong'].includes(DB.hapticLevel)) DB.hapticLevel = 'strong';
   if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
@@ -1725,23 +1727,40 @@ function dateStrLocal(d){
 }
 function now(){return Date.now()}
 
-// Haptic feedback — vibración corta en cada interacción.
-// pattern: número (ms) o array (vibrar/pausar/vibrar...). Silenciable.
+// Haptic feedback — vibración en cada interacción.
+// pattern: número (ms) o array (vibrar/pausar/vibrar...).
+// Niveles (DB.hapticLevel): off | soft (x1) | strong (x1.8, default).
+// Los pulsos base son >=15ms: debajo de eso muchos motores Android no
+// alcanzan a arrancar y la vibración "no se siente".
+// Nota: iOS Safari NO soporta navigator.vibrate (limitación de Apple).
 let HAPTIC_ENABLED = true;
 function haptic(pattern){
-  if(!HAPTIC_ENABLED) return;
-  try { if(navigator.vibrate) navigator.vibrate(pattern); } catch(e){}
+  if(!HAPTIC_ENABLED || DB.hapticLevel === 'off') return;
+  const mult = DB.hapticLevel === 'soft' ? 1 : 1.8;
+  let p = pattern;
+  if(typeof p === 'number') p = Math.round(p * mult);
+  else if(Array.isArray(p)) p = p.map((v, i) => i % 2 === 0 ? Math.round(v * mult) : v);
+  try { if(navigator.vibrate) navigator.vibrate(p); } catch(e){}
 }
 const HAPTIC = {
-  tap: 8,
-  select: 12,
-  correct: 22,
-  wrong: [25, 60, 25],
-  submit: 18,
-  complete: [40, 30, 60],
-  levelUp: [60, 40, 60, 40, 100],
-  achievement: [30, 30, 30, 30, 60]
+  tap: 15,
+  select: 20,
+  correct: 35,
+  wrong: [45, 60, 45],
+  submit: 30,
+  complete: [55, 40, 90],
+  levelUp: [70, 50, 70, 50, 130],
+  achievement: [45, 40, 45, 40, 90]
 };
+
+function setHapticLevel(level){
+  if(!['off','soft','strong'].includes(level)) return;
+  DB.hapticLevel = level;
+  save();
+  haptic(HAPTIC.complete); // preview inmediato de la intensidad
+  showToast(level === 'off' ? '📴 Vibración apagada' : level === 'soft' ? '📳 Vibración suave' : '📳 Vibración fuerte', 1500);
+  render();
+}
 
 // ============================================================
 // SFX — efectos de sonido sintetizados con WebAudio.
@@ -5004,6 +5023,16 @@ function renderConfig(){
         </div>
       </div>
 
+      <div class="goal-card">
+        <div class="gc-title"><span>📳</span>Vibración</div>
+        <div class="gc-desc">Intensidad del feedback háptico en cada avance, acierto y error. Al tocar una opción la sientes de preview. (En iPhone el navegador no permite vibrar — limitación de Apple.)</div>
+        <div class="gc-options" style="grid-template-columns:repeat(3,1fr)">
+          <button class="gc-opt ${DB.hapticLevel==='off'?'active':''}" onclick="setHapticLevel('off')">📴<span class="gc-opt-sub">apagada</span></button>
+          <button class="gc-opt ${DB.hapticLevel==='soft'?'active':''}" onclick="setHapticLevel('soft')">📳<span class="gc-opt-sub">suave</span></button>
+          <button class="gc-opt ${DB.hapticLevel!=='off'&&DB.hapticLevel!=='soft'?'active':''}" onclick="setHapticLevel('strong')">💥<span class="gc-opt-sub">fuerte</span></button>
+        </div>
+      </div>
+
       <div class="backup-card">
         <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
         <div class="bc-desc">Exporta tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpias cache o cambias de celular, impórtalo para recuperar XP, racha y logros.</div>
@@ -5592,7 +5621,7 @@ function resetAll(){
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
     goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
     badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
-    starter: 'pikachu', soundEnabled: true, soundTheme: 'classic'
+    starter: 'pikachu', soundEnabled: true, soundTheme: 'classic', hapticLevel: 'strong'
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
