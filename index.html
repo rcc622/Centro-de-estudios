@@ -1577,7 +1577,8 @@ let DB = {
   battlesWon: 0, // ganados (perfectos o defensa exitosa)
   battlesEnabled: true, // toggle desde Ajustes
   starter: 'pikachu', // pokemon starter elegido (ver STARTERS)
-  soundEnabled: true // efectos de sonido WebAudio (toggle en Ajustes)
+  soundEnabled: true, // efectos de sonido WebAudio (toggle en Ajustes)
+  soundTheme: 'classic' // tema de SFX: classic | arcade | marimba
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1681,6 +1682,7 @@ function load(){
   if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
   if(!DB.starter || !STARTERS[DB.starter]) DB.starter = 'pikachu';
   if(typeof DB.soundEnabled !== 'boolean') DB.soundEnabled = true;
+  if(!DB.soundTheme || !['classic','arcade','marimba'].includes(DB.soundTheme)) DB.soundTheme = 'classic';
   if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
@@ -1771,45 +1773,86 @@ function sfxTone(ctx, t0, freq, dur, opts){
   o.start(t0);
   o.stop(t0 + dur + 0.03);
 }
+// Temas de sonido: cada evento es una lista de notas [delay, freq, dur, opts].
+// 'classic' = chimes suaves (sine) · 'arcade' = 8-bit retro (square) ·
+// 'marimba' = percusivo cálido (triangle). Selector en Ajustes (DB.soundTheme).
+const SFX_THEMES = {
+  classic: { name:'Clásico', icon:'🎵', defaults:{type:'sine',gain:.12}, events:{
+    tick:      [[0,480,.04,{gain:.05}]],
+    advance:   [[0,587.33,.05,{gain:.07}],[.05,783.99,.07,{gain:.06}]],
+    correct:   [[0,659.25,.09],[.085,880,.16]],
+    wrong:     [[0,220,.2,{type:'square',gain:.055,slideTo:155}]],
+    flip:      [[0,520,.05,{type:'triangle',gain:.06}]],
+    complete:  [[0,523.25,.17],[.09,659.25,.17],[.18,783.99,.17]],
+    perfect:   [[0,523.25,.18],[.09,659.25,.18],[.18,783.99,.18],[.27,1046.5,.18],[.42,1318.5,.32,{gain:.09}]],
+    levelup:   [[0,392,.2],[.1,523.25,.2],[.2,659.25,.2],[.3,783.99,.2],[.4,1046.5,.2]],
+    chest:     [[0,987.77,.07,{type:'square',gain:.07}],[.08,1318.5,.2,{type:'square',gain:.07}]],
+    streak:    [[0,587.33,.1,{gain:.11}],[.1,880,.24,{gain:.11}]],
+    battleHit: [[0,180,.13,{type:'sawtooth',gain:.08,slideTo:75}]],
+    battleWin: [[0,659.25,.13,{type:'square',gain:.06}],[.11,659.25,.13,{type:'square',gain:.06}],[.22,659.25,.13,{type:'square',gain:.06}],[.33,523.25,.13,{type:'square',gain:.06}],[.44,659.25,.13,{type:'square',gain:.06}],[.55,783.99,.2,{type:'square',gain:.06}]]
+  }},
+  arcade: { name:'Arcade', icon:'🎮', defaults:{type:'square',gain:.08}, events:{
+    tick:      [[0,880,.03,{gain:.05}]],
+    advance:   [[0,659.25,.05],[.05,987.77,.07]],
+    correct:   [[0,987.77,.08,{gain:.09}],[.08,1318.5,.18,{gain:.09}]],
+    wrong:     [[0,196,.12],[.12,130.81,.22]],
+    flip:      [[0,440,.04,{gain:.05}]],
+    complete:  [[0,523.25,.08],[.08,659.25,.08],[.16,783.99,.08],[.24,1046.5,.14]],
+    perfect:   [[0,523.25,.08],[.08,659.25,.08],[.16,783.99,.08],[.24,1046.5,.1],[.34,1318.5,.1],[.44,1567.98,.22]],
+    levelup:   [[0,220,.55,{slideTo:880,gain:.09}],[.55,1046.5,.16,{gain:.09}]],
+    chest:     [[0,987.77,.07],[.08,1318.5,.1],[.16,1567.98,.18]],
+    streak:    [[0,659.25,.08],[.08,880,.08],[.16,1174.66,.18]],
+    battleHit: [[0,160,.1,{gain:.09,slideTo:60}]],
+    battleWin: [[0,659.25,.12],[.1,659.25,.12],[.2,659.25,.12],[.3,523.25,.12],[.4,659.25,.12],[.5,783.99,.22]]
+  }},
+  marimba: { name:'Marimba', icon:'🎹', defaults:{type:'triangle',gain:.14}, events:{
+    tick:      [[0,523.25,.05,{gain:.06}]],
+    advance:   [[0,659.25,.07],[.06,783.99,.09]],
+    correct:   [[0,783.99,.1],[0,1567.98,.08,{gain:.05}],[.09,1046.5,.16]],
+    wrong:     [[0,233.08,.18,{gain:.09}],[.1,207.65,.2,{gain:.08}]],
+    flip:      [[0,587.33,.06,{gain:.06}]],
+    complete:  [[0,523.25,.12],[.08,587.33,.12],[.16,659.25,.12],[.24,783.99,.2]],
+    perfect:   [[0,523.25,.12],[.08,587.33,.12],[.16,659.25,.12],[.24,783.99,.14],[.32,880,.14],[.42,1046.5,.26]],
+    levelup:   [[0,392,.14],[.09,523.25,.14],[.18,659.25,.14],[.27,783.99,.14],[.36,1046.5,.24]],
+    chest:     [[0,880,.08],[.07,1174.66,.18]],
+    streak:    [[0,659.25,.1],[.09,987.77,.22]],
+    battleHit: [[0,196,.12,{gain:.1,slideTo:90}]],
+    battleWin: [[0,659.25,.12],[.1,659.25,.12],[.2,659.25,.12],[.3,523.25,.12],[.4,659.25,.12],[.5,783.99,.22]]
+  }}
+};
+
 function playSfx(name){
   if(DB.soundEnabled === false) return;
   const ctx = getAudioCtx();
   if(!ctx) return;
   try {
     if(ctx.state === 'suspended') ctx.resume().catch(()=>{});
+    const theme = SFX_THEMES[DB.soundTheme] || SFX_THEMES.classic;
+    const notes = (theme.events[name]) || (SFX_THEMES.classic.events[name]);
+    if(!notes) return;
     const t = ctx.currentTime + 0.01;
-    const SFX = {
-      // acierto: ding ascendente de dos notas
-      correct(){ sfxTone(ctx,t,659.25,.09,{gain:.13}); sfxTone(ctx,t+.085,880,.16,{gain:.13}); },
-      // error: buzz corto descendente (suave, no castiga de más)
-      wrong(){ sfxTone(ctx,t,220,.2,{type:'square',gain:.055,slideTo:155}); },
-      // flip de flashcard: tick discreto
-      flip(){ sfxTone(ctx,t,520,.05,{type:'triangle',gain:.06}); },
-      // lección completada: arpegio mayor C-E-G
-      complete(){ [523.25,659.25,783.99].forEach((f,i)=>sfxTone(ctx,t+i*.09,f,.17,{gain:.12})); },
-      // lección perfecta: arpegio + sparkle final
-      perfect(){ [523.25,659.25,783.99,1046.5].forEach((f,i)=>sfxTone(ctx,t+i*.09,f,.18,{gain:.13})); sfxTone(ctx,t+.42,1318.5,.32,{gain:.09}); },
-      // subir de nivel / logro: fanfarria corta
-      levelup(){ [392,523.25,659.25,783.99,1046.5].forEach((f,i)=>sfxTone(ctx,t+i*.1,f,.2,{gain:.12})); },
-      // cofre / bonus: moneditas 8-bit
-      chest(){ sfxTone(ctx,t,987.77,.07,{type:'square',gain:.07}); sfxTone(ctx,t+.08,1318.5,.2,{type:'square',gain:.07}); },
-      // racha que crece: swoosh ascendente
-      streak(){ sfxTone(ctx,t,587.33,.1,{gain:.11}); sfxTone(ctx,t+.1,880,.24,{gain:.11}); },
-      // golpe en battle: thud 8-bit
-      battleHit(){ sfxTone(ctx,t,180,.13,{type:'sawtooth',gain:.08,slideTo:75}); },
-      // victoria en battle: jingle retro
-      battleWin(){ [659.25,659.25,659.25,523.25,659.25,783.99].forEach((f,i)=>sfxTone(ctx,t+i*.11,f,.13,{type:'square',gain:.06})); }
-    };
-    (SFX[name] || (()=>{}))();
+    for(const [dt, f, dur, opts] of notes){
+      sfxTone(ctx, t + dt, f, dur, Object.assign({}, theme.defaults, opts || {}));
+    }
   } catch(e){}
 }
 
-function setSoundEnabled(on){
+// Selector de tema: 'off' silencia; cualquier tema activa y hace preview
+function setSoundTheme(id){
   haptic(HAPTIC.select);
-  DB.soundEnabled = !!on;
+  if(id === 'off'){
+    DB.soundEnabled = false;
+    save();
+    showToast('🔇 Sonidos desactivados', 1500);
+    render();
+    return;
+  }
+  if(!SFX_THEMES[id]) return;
+  DB.soundEnabled = true;
+  DB.soundTheme = id;
   save();
-  if(on) playSfx('correct');
-  showToast(on ? '🔊 Sonidos activados' : '🔇 Sonidos desactivados', 1500);
+  playSfx('perfect'); // preview inmediato del tema elegido
+  showToast(SFX_THEMES[id].icon + ' Tema ' + SFX_THEMES[id].name + ' activado', 1600);
   render();
 }
 
@@ -2885,6 +2928,7 @@ function renderLessonComplete(){
 // Encadena directo a la siguiente actividad sin pasar por el sendero.
 function continueToNext(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   const next = getNextLesson(CURRENT.courseId);
   if(!next){ finishLessonReturn(); return; }
   CURRENT.dayId = next.dayId;
@@ -2940,6 +2984,7 @@ function initMatchState(lesson){
 
 function matchStartPractice(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   MATCH_STATE.studying = false;
   render();
 }
@@ -3037,6 +3082,7 @@ function renderLessonMatch(course, day, lesson){
 function matchTapL(i){
   if(MATCH_STATE.matched.has(MATCH_STATE.leftSlots[i].id)) return;
   haptic(HAPTIC.select);
+  playSfx('tick');
   MATCH_STATE.selL = i;
   MATCH_STATE.wrongL = null;
   MATCH_STATE.wrongR = null;
@@ -3046,6 +3092,7 @@ function matchTapL(i){
 function matchTapR(i){
   if(MATCH_STATE.matched.has(MATCH_STATE.rightSlots[i].id)) return;
   haptic(HAPTIC.select);
+  playSfx('tick');
   MATCH_STATE.selR = i;
   MATCH_STATE.wrongL = null;
   MATCH_STATE.wrongR = null;
@@ -3106,6 +3153,7 @@ function initOrderState(lesson){
 
 function orderStartPractice(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   ORDER_STATE.studying = false;
   // Re-revolver al salir del estudio (que no quede el orden recién visto)
   ORDER_STATE.current = shuffleArr(ORDER_STATE.correctOrder);
@@ -3222,6 +3270,7 @@ function renderLessonOrder(course, day, lesson){
 function orderUp(i){
   if(ORDER_STATE.submitted || i===0) return;
   haptic(HAPTIC.tap);
+  playSfx('tick');
   const c = ORDER_STATE.current;
   [c[i-1], c[i]] = [c[i], c[i-1]];
   render();
@@ -3231,6 +3280,7 @@ function orderDown(i){
   const c = ORDER_STATE.current;
   if(i === c.length-1) return;
   haptic(HAPTIC.tap);
+  playSfx('tick');
   [c[i], c[i+1]] = [c[i+1], c[i]];
   render();
 }
@@ -3403,6 +3453,7 @@ function renderLessonDecisionTree(course, day, lesson){
 function dtreeChoose(label){
   if(DTREE_STATE.leaf !== null || DTREE_STATE.done) return;
   haptic(HAPTIC.tap);
+  playSfx('advance');
   DTREE_STATE.path.push(label);
   render();
 }
@@ -3417,6 +3468,7 @@ function dtreeRetryScenario(){
 
 function dtreeNextScenario(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   const course = COURSES[CURRENT.courseId];
   const day = course && (course.days || []).find(d => d.id === CURRENT.dayId);
   const lesson = day && (day.lessons || []).find(l => l.id === CURRENT.lessonId);
@@ -3895,6 +3947,7 @@ function openMockExam(dayId){
 
 function quizSelect(i, isMulti){
   haptic(HAPTIC.select);
+  playSfx('tick');
   const idx = QUIZ_STATE.qIdx;
   if(!QUIZ_STATE.answers[idx]) QUIZ_STATE.answers[idx] = [];
   const arr = QUIZ_STATE.answers[idx];
@@ -3910,6 +3963,7 @@ function quizSelect(i, isMulti){
 
 function quizNext(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   if(QUIZ_STATE.qIdx + 1 < QUIZ_STATE.deck.length){
     QUIZ_STATE.qIdx += 1;
     render();
@@ -3919,6 +3973,7 @@ function quizNext(){
 
 function quizPrev(){
   haptic(HAPTIC.tap);
+  playSfx('tick');
   if(QUIZ_STATE.qIdx > 0){
     QUIZ_STATE.qIdx -= 1;
     render();
@@ -3927,6 +3982,7 @@ function quizPrev(){
 
 function quizJump(i){
   haptic(HAPTIC.tap);
+  playSfx('tick');
   if(i < 0 || i >= QUIZ_STATE.deck.length) return;
   QUIZ_STATE.qIdx = i;
   QUIZ_STATE.showMap = false;
@@ -4939,10 +4995,12 @@ function renderConfig(){
 
       <div class="goal-card">
         <div class="gc-title"><span>🔊</span>Sonidos</div>
-        <div class="gc-desc">Chimes al acertar, fallar, completar lecciones y ganar recompensas. Se generan en tu dispositivo: no gastan datos ni almacenamiento.</div>
-        <div class="gc-options" style="grid-template-columns:1fr 1fr">
-          <button class="gc-opt ${DB.soundEnabled!==false?'active':''}" onclick="setSoundEnabled(true)">🔊<span class="gc-opt-sub">activar</span></button>
-          <button class="gc-opt ${DB.soundEnabled===false?'active':''}" onclick="setSoundEnabled(false)">🔇<span class="gc-opt-sub">silencio</span></button>
+        <div class="gc-desc">Efectos en cada avance, acierto, error y recompensa. Elige un tema (al tocarlo lo escuchas de preview). Se generan en tu dispositivo: no gastan datos.</div>
+        <div class="gc-options" style="grid-template-columns:repeat(4,1fr)">
+          <button class="gc-opt ${DB.soundEnabled===false?'active':''}" onclick="setSoundTheme('off')">🔇<span class="gc-opt-sub">silencio</span></button>
+          ${Object.entries(SFX_THEMES).map(([id, th]) => `
+            <button class="gc-opt ${DB.soundEnabled!==false && DB.soundTheme===id?'active':''}" onclick="setSoundTheme('${id}')">${th.icon}<span class="gc-opt-sub">${th.name.toLowerCase()}</span></button>
+          `).join('')}
         </div>
       </div>
 
@@ -5176,6 +5234,7 @@ function openLesson(id){
     return;
   }
   haptic(HAPTIC.tap);
+  playSfx('advance');
   rememberDayScroll();
   CURRENT.lessonId = id;
   LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[], started: now()};
@@ -5220,6 +5279,7 @@ function exitLesson(){
 
 function selectOption(i, isMulti){
   haptic(HAPTIC.select);
+  playSfx('tick');
   if(!LESSON_STATE.tempSelected) LESSON_STATE.tempSelected = [];
   if(isMulti){
     const idx = LESSON_STATE.tempSelected.indexOf(i);
@@ -5259,6 +5319,7 @@ function submitAnswer(){
 
 function nextCard(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   const course = COURSES[CURRENT.courseId];
   const day = course?.days.find(d => d.id === CURRENT.dayId);
   const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
@@ -5420,6 +5481,7 @@ function flashAnswer(result){
 function flashPrev(){
   if(FLASH_STATE.idx === 0) return;
   haptic(HAPTIC.tap);
+  playSfx('tick');
   FLASH_STATE.idx -= 1;
   FLASH_STATE.flipped = false;
   render();
@@ -5439,6 +5501,7 @@ function exitFlashSession(){
 // Skip (sin contar)
 function flashSkip(){
   haptic(HAPTIC.tap);
+  playSfx('tick');
   FLASH_STATE.idx += 1;
   FLASH_STATE.flipped = false;
   FLASH_STATE.showExpl = false;
@@ -5529,7 +5592,7 @@ function resetAll(){
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
     goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
     badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
-    starter: 'pikachu', soundEnabled: true
+    starter: 'pikachu', soundEnabled: true, soundTheme: 'classic'
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
