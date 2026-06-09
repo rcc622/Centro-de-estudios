@@ -604,9 +604,11 @@ Al terminar una lección hay ~20% de probabilidad (cooldown 2h, mínimo 2 leccio
 - **Sonidos (SFX)**: chimes sintetizados con WebAudio en `playSfx()` — cero archivos de audio, 100% offline. Eventos: correct/wrong/flip/complete/perfect/levelup/chest/streak/battleHit/battleWin. Toggle en Ajustes (`DB.soundEnabled`). NO sustituir por archivos de audio ni CDNs.
 
 ### Práctica (pestaña ⚔️)
-- **Repaso inteligente (mix)**: 10 flashcards priorizadas con repaso espaciado lite — primero las que fallas, luego las nunca vistas, luego las dominadas más viejas (usa `flashcardStats`)
+- **Repaso inteligente (mix)**: 10 flashcards priorizadas con **SM-2 real** (`sm2Update`: acierto=q4, fallo=q1; intervalos 1d→6d→ivl·ef; fallo resetea). Orden: vencidas → nunca vistas → próximas a vencer
 - **Quick Quiz**: 10 MCQs al azar de lecciones completadas de TODOS los cursos activos; no toca `quizProgress`
+- **Emparejar / Ordenar**: abre una actividad match/order AL AZAR en modo práctica (`PRACTICE_MODE='activity'`): sin costo de ❤️, sin marcar progreso del sendero, XP fijo (10 perfecta / 5 normal), regresa al hub
 - **Repasar errores**: flashcards generadas de `wrongAnswers`
+- **Estadísticas** (Ajustes → 📊): precisión por unidad, flashcards vencidas SM-2, errores activos, minutos
 - El hub agrega contenido de todos los cursos activos (no hardcodear curso)
 
 ### Dificultad — vidas, escudos y nivel de contenido
@@ -725,11 +727,11 @@ Validaciones mentales:
 - [x] Modo simulacro de examen (60 preguntas, 105 min, mapa de preguntas con salto y marcado 🚩)
 - [x] Cards tipo "match" (emparejar conceptos)
 - [x] Cards tipo "order" (ordenar pasos)
-- [x] Repaso espaciado lite (prioriza falladas > no vistas > dominadas viejas; SM-2 completo pendiente)
+- [x] Repaso espaciado SM-2 completo (ease factor, intervalos 1d/6d/ivl·ef, reset en fallo)
 - [x] Quick Quiz en práctica (10 MCQs al azar multi-curso)
-- [ ] Vista de estadísticas detalladas (precisión por tema, etc.)
+- [x] Vista de estadísticas (precisión por unidad, vencidas SM-2, errores activos)
+- [x] Práctica de match/order desde el hub (al azar, sin costo de corazones)
 - [ ] Recordatorios diarios (limitado: GitHub Pages no tiene push server; requeriría Notification API con la app abierta)
-- [ ] Práctica de match/order desde el hub (hoy solo desde lecciones)
 
 ### Política de archivos pesados (decidida 2026-06-09)
 - **NO subir audio/video/imágenes pesadas al repo.** Los m4a/mp4/mindmaps de meta-410 se eliminaron.

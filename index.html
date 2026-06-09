@@ -2283,6 +2283,7 @@ function render(){
   else if(VIEW === 'config') html = renderConfig();
   else if(VIEW === 'glossary') html = renderGlossary();
   else if(VIEW === 'streak') html = renderStreak();
+  else if(VIEW === 'stats') html = renderStats();
   else if(VIEW === 'battle') html = renderBattle();
   else if(VIEW === 'trainer_card') html = renderTrainerCard();
   else html = renderHome();
@@ -3136,7 +3137,7 @@ function tryMatch(){
     MATCH_STATE.wrongR = MATCH_STATE.selR;
     MATCH_STATE.selL = null;
     MATCH_STATE.selR = null;
-    if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+    if(PRACTICE_MODE !== 'activity' && loseHeart() && DB.hearts === 0) earnAch('no_hearts');
     setTimeout(() => {
       MATCH_STATE.wrongL = null;
       MATCH_STATE.wrongR = null;
@@ -3145,6 +3146,7 @@ function tryMatch(){
   }
 }
 function finishMatch(){
+  if(PRACTICE_MODE === 'activity'){ finishPracticeActivity(MATCH_STATE.errors); return; }
   LESSON_STATE.errors = MATCH_STATE.errors;
   finishLesson();
 }
@@ -3311,7 +3313,7 @@ function submitOrder(){
     haptic(HAPTIC.wrong);
     playSfx('wrong');
     ORDER_STATE.errors += 1;
-    if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+    if(PRACTICE_MODE !== 'activity' && loseHeart() && DB.hearts === 0) earnAch('no_hearts');
   } else {
     haptic(HAPTIC.correct);
     playSfx('correct');
@@ -3329,8 +3331,24 @@ function retryOrder(){
   render();
 }
 function finishOrder(){
+  if(PRACTICE_MODE === 'activity'){ finishPracticeActivity(ORDER_STATE.errors); return; }
   LESSON_STATE.errors = ORDER_STATE.errors;
   finishLesson();
+}
+
+// Cierre de práctica libre: XP fijo chico, sin tocar progreso del sendero
+function finishPracticeActivity(errors){
+  haptic(HAPTIC.complete);
+  playSfx(errors === 0 ? 'perfect' : 'complete');
+  const gained = errors === 0 ? 10 : 5;
+  addXP(gained);
+  recordActivity({xp: gained});
+  setTimeout(() => showToast(errors === 0 ? '💯 Práctica perfecta · +'+Math.round(gained*getXpMult())+' XP' : '✅ Práctica completada · +'+Math.round(gained*getXpMult())+' XP', 2400, 'success'), 300);
+  PRACTICE_MODE = null;
+  PRACTICE_SCOPE = null;
+  CURRENT.lessonId = null;
+  VIEW = 'flashcards';
+  render();
 }
 
 // ============================================================
@@ -4294,6 +4312,30 @@ function renderPracticeHub(){
         </div>
         <div class="pr-arrow">→</div>
       </div>
+      ${(() => {
+        const matchN = practiceActivities('match').length;
+        const orderN = practiceActivities('order').length;
+        let html = '';
+        if(matchN) html += `
+          <div class="practice-row" onclick="haptic(8);startPractice('match')">
+            <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔀</div>
+            <div class="pr-info">
+              <div class="pr-title">Emparejar</div>
+              <div class="pr-meta">${matchN} ${matchN===1?'ejercicio':'ejercicios'} · al azar · sin costo de ❤️</div>
+            </div>
+            <div class="pr-arrow">→</div>
+          </div>`;
+        if(orderN) html += `
+          <div class="practice-row" onclick="haptic(8);startPractice('order')">
+            <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🔢</div>
+            <div class="pr-info">
+              <div class="pr-title">Ordenar</div>
+              <div class="pr-meta">${orderN} ${orderN===1?'ejercicio':'ejercicios'} de secuencia · al azar · sin costo de ❤️</div>
+            </div>
+            <div class="pr-arrow">→</div>
+          </div>`;
+        return html;
+      })()}
 
       ${dayRowsHtml}
     </div>
@@ -4856,6 +4898,108 @@ function renderStreak(){
   `;
 }
 
+async function openStats(){
+  haptic(HAPTIC.tap);
+  await ensureAllCoursesLoaded();
+  VIEW = 'stats';
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+
+// ESTADÍSTICAS — precisión por día/unidad y globales.
+// Métricas honestas con los datos que el motor sí registra:
+//   lecciones perfectas vs completadas (DB.progress), errores activos por
+//   unidad (DB.wrongAnswers), mejor score de quiz (DB.quizProgress),
+//   precisión de flashcards y vencidas SM-2 (DB.flashcardStats).
+function renderStats(){
+  const nowTs = now();
+  // Globales
+  let fRight = 0, fWrong = 0, dueCount = 0;
+  Object.values(DB.flashcardStats || {}).forEach(st => {
+    fRight += st.right || 0;
+    fWrong += st.wrong || 0;
+    if(st.lastSeen && (st.due || 0) <= nowTs) dueCount++;
+  });
+  const fPrec = (fRight + fWrong) ? Math.round(fRight / (fRight + fWrong) * 100) : null;
+  const perfPct = DB.totalLessons ? Math.round(DB.perfectLessons / DB.totalLessons * 100) : null;
+  const errCount = Object.keys(DB.wrongAnswers || {}).length;
+  const totalMins = Object.values(DB.activityLog || {}).reduce((a, d) => a + (d.mins || 0), 0);
+
+  // Errores activos por curso|día
+  const errByDay = {};
+  Object.values(DB.wrongAnswers || {}).forEach(e => {
+    const k = e.courseId + '|' + e.dayId;
+    errByDay[k] = (errByDay[k] || 0) + 1;
+  });
+
+  const courses = Object.values(COURSES).filter(c => c.active !== false);
+  const courseHtml = courses.map(course => {
+    const days = (course.days || []).filter(d => !d.locked && d.kind !== 'mock-exam' && d.id !== 'glosario' && (d.lessons || []).length);
+    if(!days.length) return '';
+    return `
+      <div class="section-title">${course.icon} ${course.title}</div>
+      ${days.map(d => {
+        const prog = getDayProgress(course.id, d.id);
+        const dayLessons = DB.progress[course.id]?.[d.id] || {};
+        const perfects = Object.values(dayLessons).filter(l => l.completed && l.perfect).length;
+        const errs = errByDay[course.id + '|' + d.id] || 0;
+        const qp = getQuizProgress(course.id, d.id);
+        const pct = prog.total ? Math.round(perfects / prog.total * 100) : 0;
+        const meta = [
+          prog.done + '/' + prog.total + ' lecciones',
+          '💯 ' + perfects + ' perfectas',
+          errs ? '❌ ' + errs + ' errores activos' : '✅ sin errores activos'
+        ];
+        if(qp.bestScore) meta.push('📝 mejor quiz ' + qp.bestScore + '%');
+        return `
+          <div class="practice-row" style="cursor:default">
+            <div class="pr-info">
+              <div class="pr-title">${d.title}</div>
+              <div class="pr-meta">${meta.join(' · ')}</div>
+              <div class="pr-progress"><div class="pr-progress-bar" style="width:${pct}%"></div></div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    `;
+  }).join('');
+
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="back-row">
+        <button class="back-btn" onclick="haptic(8);navTo('config')" aria-label="Volver a Ajustes">←</button>
+        <div class="crumb">Estadísticas</div>
+      </div>
+      <div class="welcome"><h1>📊 Estadísticas</h1><p>Tu precisión por unidad y métricas globales</p></div>
+      <div class="stat-grid">
+        <div class="stat-tile">
+          <div class="stat-tile-label">Precisión flashcards</div>
+          <div class="stat-tile-value">${fPrec == null ? '—' : fPrec + '%'}</div>
+          <div class="stat-tile-sub">${fRight} ✓ · ${fWrong} ✗</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Lecciones perfectas</div>
+          <div class="stat-tile-value">${perfPct == null ? '—' : perfPct + '%'}</div>
+          <div class="stat-tile-sub">${DB.perfectLessons} de ${DB.totalLessons}</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Por repasar (SM-2)</div>
+          <div class="stat-tile-value">${dueCount}</div>
+          <div class="stat-tile-sub">tarjetas vencidas hoy</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Errores activos</div>
+          <div class="stat-tile-value">${errCount}</div>
+          <div class="stat-tile-sub">${totalMins ? '~' + totalMins + ' min estudiados' : 'preguntas falladas sin redimir'}</div>
+        </div>
+      </div>
+      ${courseHtml || '<div class="empty"><div class="empty-ico">📊</div><div>Completa lecciones para ver tus números</div></div>'}
+    </div>
+    ${renderNav('config')}
+  `;
+}
+
 function renderConfig(){
   const lvl = calcLevel(DB.xp);
   const lvlInfo = LEVELS[lvl-1];
@@ -4930,6 +5074,15 @@ function renderConfig(){
           <div class="pr-meta">Términos y conceptos clave por curso →</div>
         </div>
         <div style="font-size:22px;flex-shrink:0">📚</div>
+      </div>
+
+      <div class="practice-row" onclick="haptic(8);openStats()">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#F39C12,#CA7E0B)">📊</div>
+        <div class="pr-info">
+          <div class="pr-title">Estadísticas</div>
+          <div class="pr-meta">Precisión por unidad · flashcards vencidas · errores →</div>
+        </div>
+        <div style="font-size:22px;flex-shrink:0">📈</div>
       </div>
 
       ${(() => {
@@ -5077,12 +5230,16 @@ async function navTo(view){
 
 function startPractice(mode, scope){
   haptic(HAPTIC.tap);
-  if(mode === 'match' || mode === 'order' || mode === 'lightning'){
-    showToast('Práctica de '+mode+' próximamente. Por ahora practícalo desde las lecciones.', 2800);
+  if(mode === 'lightning'){
+    showToast('Práctica de lightning próximamente. Por ahora desde las lecciones.', 2800);
     return;
   }
   if(mode === 'quick-quiz'){
     openPracticeQuiz();
+    return;
+  }
+  if(mode === 'match' || mode === 'order'){
+    openPracticeActivity(mode);
     return;
   }
   PRACTICE_MODE = mode;
@@ -5116,24 +5273,41 @@ function allFlashcards(){
   return out;
 }
 
-// REPASO ESPACIADO LITE — ordena el deck por prioridad pedagógica usando
-// DB.flashcardStats (right/wrong/lastSeen que ya registra flashAnswer):
-//   1º las que fallas más de lo que aciertas (refuerzo inmediato)
-//   2º las que nunca has visto (cobertura)
-//   3º las dominadas, empezando por la que no ves hace más tiempo (decaimiento)
+// REPASO ESPACIADO SM-2 — algoritmo SuperMemo-2 real por flashcard.
+// flashAnswer registra cada calificación con sm2Update: acierto = calidad 4,
+// fallo = calidad 1. Cada card guarda en flashcardStats[q]:
+//   ef (ease factor, min 1.3) · reps · ivl (días) · due (timestamp).
+// Intervalos: 1ª vez 1 día → 2ª 6 días → después ivl*ef. Fallo resetea.
+function sm2Update(st, correct){
+  if(correct){
+    st.reps = (st.reps || 0) + 1;
+    // calidad q=4: delta de EF = 0.1 - (5-q)*(0.08+(5-q)*0.02) = 0
+    st.ef = Math.max(1.3, st.ef || 2.5);
+    st.ivl = st.reps === 1 ? 1 : st.reps === 2 ? 6 : Math.round((st.ivl || 6) * (st.ef || 2.5));
+  } else {
+    // calidad q=1: se reinicia la repetición y baja el ease
+    st.reps = 0;
+    st.ivl = 0;
+    st.ef = Math.max(1.3, (st.ef || 2.5) - 0.2);
+  }
+  st.due = now() + st.ivl * 86400000;
+}
+
+// Deck del repaso inteligente, por prioridad SM-2:
+//   1º vencidas (due <= ahora), la más atrasada primero — incluye falladas
+//   2º nunca vistas (cobertura de material nuevo)
+//   3º futuras, la más próxima a vencer primero
 function smartMixDeck(n){
   const nowTs = now();
   const scored = allFlashcards().map(c => {
     const st = DB.flashcardStats[c.q];
-    let bucket, age = 0;
-    if(!st || !st.lastSeen){ bucket = 1; }
-    else {
-      age = nowTs - st.lastSeen;
-      bucket = (st.wrong||0) >= (st.right||0) ? 0 : 2;
-    }
-    return {c, bucket, age, r: Math.random()};
+    let bucket, key = 0;
+    if(!st || !st.lastSeen){ bucket = 1; key = Math.random(); }
+    else if((st.due || 0) <= nowTs){ bucket = 0; key = (st.due || 0); }
+    else { bucket = 2; key = st.due; }
+    return {c, bucket, key};
   });
-  scored.sort((a,b) => a.bucket - b.bucket || b.age - a.age || a.r - b.r);
+  scored.sort((a,b) => a.bucket - b.bucket || a.key - b.key);
   return scored.slice(0, n).map(x => x.c);
 }
 
@@ -5185,6 +5359,43 @@ function buildQuickQuizDeck(n){
   }
   const pool = completed.length >= n ? completed : completed.concat(rest);
   return shuffleArr(pool).slice(0, n);
+}
+
+// Lista de actividades match/order disponibles en cursos activos cargados
+function practiceActivities(type){
+  const out = [];
+  for(const course of practiceCourses()){
+    for(const day of (course.days||[])){
+      if(day.locked || day.kind === 'mock-exam' || day.id === 'glosario') continue;
+      for(const lesson of day.lessons || []){
+        if(lesson.type === type) out.push({courseId: course.id, dayId: day.id, lesson});
+      }
+    }
+  }
+  return out;
+}
+
+// Práctica libre de match/order desde el hub: abre una actividad AL AZAR.
+// PRACTICE_MODE='activity' hace que NO cueste corazones, NO marque progreso
+// del sendero y regrese al hub al terminar (XP chico fijo).
+function openPracticeActivity(type){
+  const pool = practiceActivities(type);
+  if(!pool.length){
+    showToast('No hay ejercicios de este tipo todavía.', 2200);
+    return;
+  }
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  PRACTICE_MODE = 'activity';
+  PRACTICE_SCOPE = {type};
+  CURRENT.courseId = pick.courseId;
+  CURRENT.dayId = pick.dayId;
+  CURRENT.lessonId = pick.lesson.id;
+  playSfx('advance');
+  LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[], started: now()};
+  MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:new Set(), errors:0, wrongL:null, wrongR:null};
+  ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
+  VIEW = 'lesson';
+  render();
 }
 
 function openPracticeQuiz(){
@@ -5298,7 +5509,12 @@ function exitLesson(){
     if(!confirm('¿Salir? Perderás el progreso de esta lección.')) return;
   }
   stopLightningTimer();
-  if(CURRENT.dayId) {
+  if(PRACTICE_MODE === 'activity'){
+    PRACTICE_MODE = null;
+    PRACTICE_SCOPE = null;
+    CURRENT.lessonId = null;
+    VIEW = 'flashcards';
+  } else if(CURRENT.dayId) {
     VIEW = 'day';
   } else {
     VIEW = 'home';
@@ -5490,6 +5706,7 @@ function flashAnswer(result){
   if(s.fail !== undefined){ s.wrong = (s.wrong||0) + (s.fail||0); delete s.fail; }
   s[result] = (s[result]||0) + 1;
   s.lastSeen = now();
+  sm2Update(s, result === 'right');
   // XP: acertar da 3, fallar da 1 (sigue siendo aprendizaje)
   addXP(result === 'right' ? 3 : 1);
   // Counters de la sesión actual
