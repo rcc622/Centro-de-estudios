@@ -196,6 +196,12 @@ Ejemplo: *"Procesa este PDF y créame un curso completo."*
 8. **SIEMPRE haz commits descriptivos** con prefijos tipo conventional commits: `feat:`, `fix:`, `docs:`, `chore:`.
 9. **NUNCA ejecutes `git push --force`** ni operaciones destructivas sin confirmación.
 10. **SI tienes dudas, pregunta.** No inventes soluciones.
+11. **TRIPLE VERIFICACIÓN antes de diagnosticar.** Antes de presentar a Randall un diagnóstico, análisis o conclusión, evalúalo 3 veces:
+    1. **Análisis inicial** — forma la hipótesis leyendo el código/contenido real (no de memoria).
+    2. **Contraste contra la evidencia** — relee los archivos involucrados buscando específicamente lo que contradiga la hipótesis (no lo que la confirme).
+    3. **Verificación ejecutable** — siempre que se pueda, pruébalo corriendo algo: validar JSON, `node --check`, smoke test del motor, grep de referencias. Un diagnóstico que no sobrevive una prueba ejecutable no se entrega.
+
+    Si algo no se pudo verificar, se dice explícitamente ("no pude confirmar X") en vez de afirmarlo. Mejor tardar más que entregar un diagnóstico con errores.
 
 ---
 
