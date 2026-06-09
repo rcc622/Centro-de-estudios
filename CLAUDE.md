@@ -202,6 +202,10 @@ Ejemplo: *"Procesa este PDF y créame un curso completo."*
     3. **Verificación ejecutable** — siempre que se pueda, pruébalo corriendo algo: validar JSON, `node --check`, smoke test del motor, grep de referencias. Un diagnóstico que no sobrevive una prueba ejecutable no se entrega.
 
     Si algo no se pudo verificar, se dice explícitamente ("no pude confirmar X") en vez de afirmarlo. Mejor tardar más que entregar un diagnóstico con errores.
+12. **PROTOCOLO CAVEMAN + GOAL, siempre.**
+    - **Caveman** (skill instalada en `.claude/skills/caveman/`, de [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman), MIT): las respuestas de chat van comprimidas — cero relleno, cero cortesías vacías ("¡Claro, con gusto!"), fragmentos OK, directo al grano. Nivel default: **lite-full adaptado al español mexicano** (el tuteo y los términos técnicos exactos se mantienen; los artículos pueden quedarse si quitar­los vuelve confuso el español).
+    - **Alcance del caveman: SOLO el chat.** NUNCA aplica a: contenido educativo de los JSON (las lecciones siguen la regla de desarrollar conceptos en 4-6 oraciones), mensajes de commit, documentación (CLAUDE.md/README), ni código.
+    - **Goal**: Randall usa el comando `/goal` de Claude Code para fijar condiciones de éxito medibles; mientras un goal esté activo no se para hasta cumplirlo. Al recibir una tarea grande, define explícitamente el criterio de éxito ANTES de ejecutar (qué se va a verificar y cómo) — y sugiérele a Randall una condición `/goal` medible cuando aplique. Esto complementa la regla 11: el goal define el "qué", la triple verificación define el "cómo se comprueba".
 
 ---
 
