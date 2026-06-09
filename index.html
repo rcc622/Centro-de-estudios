@@ -940,6 +940,18 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .complete-next-teaser{background:#F5F7FA;border-radius:14px;padding:12px 16px;font-size:13px;color:#65676B;font-weight:600;margin-top:6px}
 .complete-next-teaser strong{color:#1877F2}
 
+/* Flashcard con flip 3D real (giro sobre eje Y, estilo Duolingo/Anki) */
+.flash-wrap{perspective:1200px}
+.flash3d{display:grid;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,.2,.2,1);cursor:pointer;user-select:none;-webkit-user-select:none}
+.flash3d.flipped{transform:rotateY(180deg)}
+.flash3d .face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flash3d .face.back{transform:rotateY(180deg)}
+
+/* Brillo periódico en la barra de progreso del header (vida, no estática) */
+.progress-bar{position:relative;overflow:hidden}
+.progress-bar::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:translateX(-100%);animation:barShine 3s ease-in-out infinite}
+@keyframes barShine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
 /* Racha en riesgo (trigger interno al abrir sin estudiar hoy) */
 .streak-risk{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#FFF4D6,#FFE0B3);border:1.5px solid #FFA726;border-radius:14px;padding:12px 14px;margin-bottom:12px;cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform .15s}
 .streak-risk:active{transform:scale(.98)}
@@ -1564,7 +1576,8 @@ let DB = {
   battlesTotal: 0, // contador total de battles jugados
   battlesWon: 0, // ganados (perfectos o defensa exitosa)
   battlesEnabled: true, // toggle desde Ajustes
-  starter: 'pikachu' // pokemon starter elegido (ver STARTERS)
+  starter: 'pikachu', // pokemon starter elegido (ver STARTERS)
+  soundEnabled: true // efectos de sonido WebAudio (toggle en Ajustes)
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1667,6 +1680,7 @@ function load(){
   if(typeof DB.battlesWon !== 'number') DB.battlesWon = 0;
   if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
   if(!DB.starter || !STARTERS[DB.starter]) DB.starter = 'pikachu';
+  if(typeof DB.soundEnabled !== 'boolean') DB.soundEnabled = true;
   if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
@@ -1726,6 +1740,78 @@ const HAPTIC = {
   levelUp: [60, 40, 60, 40, 100],
   achievement: [30, 30, 30, 30, 60]
 };
+
+// ============================================================
+// SFX — efectos de sonido sintetizados con WebAudio.
+// Cero archivos de audio (chimes estilo Duolingo generados al vuelo):
+// funciona 100% offline, pesa 0 KB y no depende de licencias.
+// Toggle en Ajustes (DB.soundEnabled). En iOS el AudioContext se
+// desbloquea con el primer tap (todos los plays vienen de gestos).
+// ============================================================
+let _audioCtx = null;
+function getAudioCtx(){
+  if(_audioCtx) return _audioCtx;
+  try { _audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+  catch(e){ return null; }
+  return _audioCtx;
+}
+// Un tono con envolvente suave (attack corto + decay exponencial)
+function sfxTone(ctx, t0, freq, dur, opts){
+  opts = opts || {};
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.type = opts.type || 'sine';
+  o.frequency.setValueAtTime(freq, t0);
+  if(opts.slideTo) o.frequency.exponentialRampToValueAtTime(opts.slideTo, t0 + dur);
+  const gain = opts.gain != null ? opts.gain : 0.12;
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.linearRampToValueAtTime(gain, t0 + 0.012);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  o.connect(g).connect(ctx.destination);
+  o.start(t0);
+  o.stop(t0 + dur + 0.03);
+}
+function playSfx(name){
+  if(DB.soundEnabled === false) return;
+  const ctx = getAudioCtx();
+  if(!ctx) return;
+  try {
+    if(ctx.state === 'suspended') ctx.resume().catch(()=>{});
+    const t = ctx.currentTime + 0.01;
+    const SFX = {
+      // acierto: ding ascendente de dos notas
+      correct(){ sfxTone(ctx,t,659.25,.09,{gain:.13}); sfxTone(ctx,t+.085,880,.16,{gain:.13}); },
+      // error: buzz corto descendente (suave, no castiga de más)
+      wrong(){ sfxTone(ctx,t,220,.2,{type:'square',gain:.055,slideTo:155}); },
+      // flip de flashcard: tick discreto
+      flip(){ sfxTone(ctx,t,520,.05,{type:'triangle',gain:.06}); },
+      // lección completada: arpegio mayor C-E-G
+      complete(){ [523.25,659.25,783.99].forEach((f,i)=>sfxTone(ctx,t+i*.09,f,.17,{gain:.12})); },
+      // lección perfecta: arpegio + sparkle final
+      perfect(){ [523.25,659.25,783.99,1046.5].forEach((f,i)=>sfxTone(ctx,t+i*.09,f,.18,{gain:.13})); sfxTone(ctx,t+.42,1318.5,.32,{gain:.09}); },
+      // subir de nivel / logro: fanfarria corta
+      levelup(){ [392,523.25,659.25,783.99,1046.5].forEach((f,i)=>sfxTone(ctx,t+i*.1,f,.2,{gain:.12})); },
+      // cofre / bonus: moneditas 8-bit
+      chest(){ sfxTone(ctx,t,987.77,.07,{type:'square',gain:.07}); sfxTone(ctx,t+.08,1318.5,.2,{type:'square',gain:.07}); },
+      // racha que crece: swoosh ascendente
+      streak(){ sfxTone(ctx,t,587.33,.1,{gain:.11}); sfxTone(ctx,t+.1,880,.24,{gain:.11}); },
+      // golpe en battle: thud 8-bit
+      battleHit(){ sfxTone(ctx,t,180,.13,{type:'sawtooth',gain:.08,slideTo:75}); },
+      // victoria en battle: jingle retro
+      battleWin(){ [659.25,659.25,659.25,523.25,659.25,783.99].forEach((f,i)=>sfxTone(ctx,t+i*.11,f,.13,{type:'square',gain:.06})); }
+    };
+    (SFX[name] || (()=>{}))();
+  } catch(e){}
+}
+
+function setSoundEnabled(on){
+  haptic(HAPTIC.select);
+  DB.soundEnabled = !!on;
+  save();
+  if(on) playSfx('correct');
+  showToast(on ? '🔊 Sonidos activados' : '🔇 Sonidos desactivados', 1500);
+  render();
+}
 
 function regenerateHearts(){
   const maxH = getMaxHearts();
@@ -1898,6 +1984,7 @@ function updateStreak(){
     setTimeout(() => {
       showToast(`🔥 ¡Racha de ${DB.streak} ${DB.streak===1?'día':'días'}! Vuelve mañana para mantenerla`, 3200, 'success');
       haptic(HAPTIC.achievement);
+      playSfx('streak');
     }, 1200);
   }
 
@@ -2521,6 +2608,7 @@ function openChest(courseId, dayId, section){
   document.getElementById('ch-xp').textContent = `+${gain} XP`;
   document.getElementById('chest-overlay').classList.add('show');
   haptic(HAPTIC.levelUp);
+  playSfx('chest');
   launchConfetti();
 }
 function closeChestOverlay(){
@@ -2903,11 +2991,13 @@ function tryMatch(){
   const rId = MATCH_STATE.rightSlots[MATCH_STATE.selR].id;
   if(lId === rId){
     haptic(HAPTIC.correct);
+    playSfx('correct');
     MATCH_STATE.matched.add(lId);
     MATCH_STATE.selL = null;
     MATCH_STATE.selR = null;
   } else {
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     MATCH_STATE.errors += 1;
     MATCH_STATE.wrongL = MATCH_STATE.selL;
     MATCH_STATE.wrongR = MATCH_STATE.selR;
@@ -3030,10 +3120,12 @@ function submitOrder(){
   ORDER_STATE.correct = isCorrect;
   if(!isCorrect){
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     ORDER_STATE.errors += 1;
     if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
   } else {
     haptic(HAPTIC.correct);
+    playSfx('correct');
   }
   render();
 }
@@ -3087,9 +3179,11 @@ function renderLessonDecisionTree(course, day, lesson){
     if(!DTREE_STATE.leafCorrect){
       DTREE_STATE.errors += 1;
       haptic(HAPTIC.wrong);
+      playSfx('wrong');
       if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
     } else {
       haptic(HAPTIC.correct);
+      playSfx('correct');
     }
   }
 
@@ -3367,9 +3461,11 @@ function lightningSelect(i){
   if(!correct){
     LIGHTNING_STATE.errors += 1;
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     // En Lightning NO se pierden hearts (es modo rápido)
   } else {
     haptic(HAPTIC.correct);
+    playSfx('correct');
   }
   // Avanzar inmediato
   setTimeout(() => {
@@ -3756,6 +3852,7 @@ function finishQuiz(){
     if(passed){
       addXP(kind === 'mock-exam' ? 100 : kind === 'diagnostic' ? 40 : 60);
       updateStreak();
+      playSfx('perfect');
       setTimeout(launchConfetti, 200);
     }
   }
@@ -3873,11 +3970,18 @@ function renderFlashcards(){
         ${flipped && hasExpl ? `<button class="flash-info-btn" onclick="flashToggleExpl()" aria-label="Explicación">ⓘ</button>` : ''}
       </div>
       <div class="flash-wrap">
-        <div class="flash" onclick="flipFlash()">
-          <div class="flash-tag">${flipped?'RESPUESTA':'PREGUNTA'}</div>
-          ${flipped ? `<div class="flash-a">${card.a}</div>` : `<div class="flash-q">${card.q}</div>`}
-          ${showExpl ? `<div class="flash-explanation">💡 ${card.explanation}</div>` : ''}
-          <div class="flash-hint">${!flipped ? 'Toca para revelar' : (answeredThis ? ('Ya la calificaste ' + (prevResult==='right'?'✓':'✗') + ' · usa →') : '¿La acertaste?')}</div>
+        <div class="flash3d ${flipped?'flipped':''}" id="flash3d" onclick="flipFlash()">
+          <div class="flash face front">
+            <div class="flash-tag">PREGUNTA</div>
+            <div class="flash-q">${card.q}</div>
+            <div class="flash-hint">Toca para revelar</div>
+          </div>
+          <div class="flash face back">
+            <div class="flash-tag">RESPUESTA</div>
+            <div class="flash-a">${card.a}</div>
+            ${showExpl ? `<div class="flash-explanation">💡 ${card.explanation}</div>` : ''}
+            <div class="flash-hint">${answeredThis ? ('Ya la calificaste ' + (prevResult==='right'?'✓':'✗') + ' · usa →') : '¿La acertaste?'}</div>
+          </div>
         </div>
       </div>
       <div class="flash-nav">
@@ -4713,6 +4817,15 @@ function renderConfig(){
         <button class="gc-opt" style="width:100%;margin-top:10px" onclick="navTo('trainer_card')">🎖️ Ver Trainer Card y medallas</button>
       </div>
 
+      <div class="goal-card">
+        <div class="gc-title"><span>🔊</span>Sonidos</div>
+        <div class="gc-desc">Chimes al acertar, fallar, completar lecciones y ganar recompensas. Se generan en tu dispositivo: no gastan datos ni almacenamiento.</div>
+        <div class="gc-options" style="grid-template-columns:1fr 1fr">
+          <button class="gc-opt ${DB.soundEnabled!==false?'active':''}" onclick="setSoundEnabled(true)">🔊<span class="gc-opt-sub">activar</span></button>
+          <button class="gc-opt ${DB.soundEnabled===false?'active':''}" onclick="setSoundEnabled(false)">🔇<span class="gc-opt-sub">silencio</span></button>
+        </div>
+      </div>
+
       <div class="backup-card">
         <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
         <div class="bc-desc">Exporta tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpias cache o cambias de celular, impórtalo para recuperar XP, racha y logros.</div>
@@ -5013,10 +5126,12 @@ function submitAnswer(){
   if(!correct){
     LESSON_STATE.errors += 1;
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     recordWrong(card, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
     if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
   } else {
     haptic(HAPTIC.correct);
+    playSfx('correct');
     clearWrong(card, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
   }
   render();
@@ -5113,6 +5228,7 @@ function finishLesson(){
   }
 
   haptic(HAPTIC.complete);
+  playSfx(perfect ? 'perfect' : 'complete');
   if(perfect) launchConfetti();
   LESSON_STATE.completed = true;
   // Intentar disparar un battle estilo Pokémon antes de mostrar lesson_complete.
@@ -5132,8 +5248,18 @@ function finishLessonReturn(){
 
 function flipFlash(){
   haptic(HAPTIC.tap);
+  playSfx('flip');
   FLASH_STATE.flipped = !FLASH_STATE.flipped;
-  render();
+  // Animación de flip 3D: toggle de clase sobre el nodo vivo (un render
+  // inmediato lo recrearía y mataría la transición). El re-render para
+  // habilitar los botones ✓/✗ va después de que termine el giro.
+  const el = document.getElementById('flash3d');
+  if(el){
+    el.classList.toggle('flipped', FLASH_STATE.flipped);
+    setTimeout(() => { if(VIEW === 'flashcards') render(); }, 480);
+  } else {
+    render();
+  }
 }
 
 // Binario: 'right' = acerté, 'wrong' = no acerté. Marca y avanza al siguiente.
@@ -5144,6 +5270,7 @@ function flashAnswer(result){
   if(!FLASH_STATE.answered) FLASH_STATE.answered = {};
   if(FLASH_STATE.answered[FLASH_STATE.idx] !== undefined) return;
   haptic(result === 'right' ? HAPTIC.correct : HAPTIC.wrong);
+  playSfx(result === 'right' ? 'correct' : 'wrong');
   const card = FLASH_STATE.deck[FLASH_STATE.idx];
   if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {right:0, wrong:0};
   // Migración suave de stats viejos (good/hard/fail → right/wrong)
@@ -5282,7 +5409,7 @@ function resetAll(){
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
     goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
     badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
-    starter: 'pikachu'
+    starter: 'pikachu', soundEnabled: true
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
@@ -5303,6 +5430,7 @@ function showNextLvlUp(){
   document.getElementById('lu-name').textContent = info.n;
   document.getElementById('lvlup-overlay').classList.add('show');
   haptic(HAPTIC.levelUp);
+  playSfx('levelup');
   launchConfetti();
 }
 function closeLvlUp(){
@@ -5319,6 +5447,7 @@ function showNextAch(){
   document.getElementById('ach-desc').textContent = ach.desc;
   document.getElementById('ach-overlay').classList.add('show');
   haptic(HAPTIC.achievement);
+  playSfx('levelup');
 }
 function closeAchOverlay(){
   document.getElementById('ach-overlay').classList.remove('show');
@@ -5827,10 +5956,12 @@ function battleAnswer(i, timedOut){
     BATTLE_STATE.correctCount += 1;
     BATTLE_STATE.foeLives = Math.max(0, BATTLE_STATE.foeLives - 1);
     haptic(HAPTIC.correct);
+    playSfx('battleHit');
   } else {
     BATTLE_STATE.wrongCount += 1;
     BATTLE_STATE.meLives = Math.max(0, BATTLE_STATE.meLives - 1);
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
   }
   BATTLE_STATE.lastFeedback = {
     correctIdx: q.correct,
@@ -5940,6 +6071,7 @@ function battleFinish(){
   BATTLE_STATE.phase = 'result';
   BATTLE_STATE.lastOutcome = {outcome, xp, msg, cc, total: totalAnswered, won};
   if(outcome === 'badge_won' || outcome === 'badge_defended' || outcome === 'badge_restored'){
+    playSfx('battleWin');
     launchConfetti();
   }
   render();

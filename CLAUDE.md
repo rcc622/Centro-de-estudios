@@ -574,7 +574,8 @@ Al terminar una lección hay ~20% de probabilidad (cooldown 2h, mínimo 2 leccio
 - **Banner de racha en riesgo** en home si no has estudiado hoy y hay racha viva
 - **Encadenado de lecciones**: la pantalla de lección completa ofrece "Siguiente lección →" directo + cuánto falta para la meta diaria
 - **Celebración de racha**: toast + haptic cuando la racha crece (1 vez/día)
-- **Animaciones de refuerzo**: entrada de cards, pop/shake en MCQ, XP flotante, pulso del cofre
+- **Animaciones de refuerzo**: entrada de cards, pop/shake en MCQ, XP flotante, pulso del cofre, flip 3D real en flashcards, brillo periódico en la barra de progreso
+- **Sonidos (SFX)**: chimes sintetizados con WebAudio en `playSfx()` — cero archivos de audio, 100% offline. Eventos: correct/wrong/flip/complete/perfect/levelup/chest/streak/battleHit/battleWin. Toggle en Ajustes (`DB.soundEnabled`). NO sustituir por archivos de audio ni CDNs.
 
 ### Práctica (pestaña ⚔️)
 - **Repaso inteligente (mix)**: 10 flashcards priorizadas con repaso espaciado lite — primero las que fallas, luego las nunca vistas, luego las dominadas más viejas (usa `flashcardStats`)
