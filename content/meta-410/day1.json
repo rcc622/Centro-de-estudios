@@ -46,11 +46,39 @@
       "type": "reading",
       "cards": [
         {
-          "type": "image",
+          "type": "kvtable",
           "h": "🗺️ El mapa del curso completo",
-          "src": "content/meta-410/assets/meta-410-overview.png",
-          "alt": "Mind map de la certificación Meta 410-101 con los 6 temas principales del examen",
-          "caption": "Vista panorámica de las 6 áreas del examen 410-101 · Generado en NotebookLM · Tap para zoom"
+          "rows": [
+            [
+              "Día 1 · Ads Manager + Business Suite",
+              "~16% del examen. Estructura de campañas, las 6 acciones clave, Opportunity Score."
+            ],
+            [
+              "Día 2 · Campaign Objectives",
+              "~9%. Los 6 ODAX y qué objective elegir según la meta de negocio."
+            ],
+            [
+              "Día 3 · Buying Types & Bid Strategies",
+              "~13%. Auction vs Reservation, estrategias de puja, Learning Phase."
+            ],
+            [
+              "Día 4 · Signals & Data",
+              "~17%. Pixel, CAPI (Conversions API), eventos y parámetros."
+            ],
+            [
+              "Día 5 · Audiences & Catalogs",
+              "~20%. Custom, Lookalike, Advantage+ Audience y catálogos."
+            ],
+            [
+              "Día 6 · Creative & Measurement",
+              "~25%. El área MÁS pesada: creativos, A/B Test, Brand Lift, Conversion Lift."
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "CÓMO USAR ESTE MAPA",
+          "body": "Fíjate en los pesos: <strong>Día 5 y Día 6 suman ~45% del examen</strong>. Si vas corto de tiempo, prioriza dominar audiencias y medición sobre memorizar detalles de los primeros días."
         },
         {
           "type": "concept",
@@ -1861,30 +1889,6 @@
           ],
           "correct": 0,
           "explanation": "El diagnostic es el atajo: si dominas el contenido, ≥80% te permite saltar al Quiz de Unidad directamente."
-        }
-      ]
-    },
-    {
-      "id": "1.audio",
-      "title": "Repaso en audio · Día 1",
-      "section": "bz",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "🎙️ Repaso conversacional",
-          "body": "Escucha este resumen rápido del Día 1 antes de las flashcards finales. Útil para fijar los conceptos en otro formato — puedes escucharlo manejando o caminando."
-        },
-        {
-          "type": "audio-embed",
-          "title": "Resumen rápido · Examen Meta 410-101",
-          "src": "content/meta-410/assets/meta-410-day1-resumen.m4a",
-          "source": "NotebookLM Audio Overview"
-        },
-        {
-          "type": "tip",
-          "label": "PRO TIP",
-          "body": "Escúchalo 2 veces: la primera en velocidad normal para entender, la segunda a 1.5x o 2x como repaso rápido antes del examen."
         }
       ]
     },

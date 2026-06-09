@@ -151,11 +151,34 @@
       "type": "reading",
       "cards": [
         {
-          "type": "image",
+          "type": "kvtable",
           "h": "🗺️ Mapa del Día 2 · los 6 ODAX",
-          "src": "content/meta-410/assets/meta-410-day2-mindmap.png",
-          "alt": "Mind map de los 6 Campaign Objectives de Meta (ODAX)",
-          "caption": "Visión panorámica de los objectives · Generado en NotebookLM · Tap para zoom"
+          "rows": [
+            [
+              "1. Awareness",
+              "Que te conozcan: alcance y recordación de marca (top funnel)."
+            ],
+            [
+              "2. Traffic",
+              "Llevar gente a un destino: sitio web, app o llamada (top-mid funnel)."
+            ],
+            [
+              "3. Engagement",
+              "Interacción: video views, post engagement o mensajes (mid funnel)."
+            ],
+            [
+              "4. Leads",
+              "Capturar datos de prospectos: formularios, Messenger, llamadas (mid-bottom)."
+            ],
+            [
+              "5. App Promotion",
+              "Instalaciones y eventos dentro de una app (requiere SDK o MMP)."
+            ],
+            [
+              "6. Sales",
+              "Conversiones y ventas: el objective de bottom funnel por excelencia."
+            ]
+          ]
         },
         {
           "type": "concept",
@@ -1664,49 +1687,6 @@
           "correct": 1,
           "explanation": "Maximize value of conversions optimiza por monto, no por cantidad.",
           "difficulty": "medium"
-        }
-      ]
-    },
-    {
-      "id": "2.video",
-      "title": "Prep Exprés en video · Día 2",
-      "section": "bz",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "🎬 Visual rápido para fijar los ODAX",
-          "body": "Video corto de repaso visual para reforzar los 6 ODAX antes del examen. Mejor para entender las distinciones de funnel y cuándo elegir cada objective."
-        },
-        {
-          "type": "video-local",
-          "h": "Prep Exprés · Examen Meta ODAX",
-          "src": "content/meta-410/assets/meta-410-day2-prep-express.mp4",
-          "caption": "Generado en NotebookLM · Repaso visual de los 6 objectives"
-        }
-      ]
-    },
-    {
-      "id": "2.audio",
-      "title": "Repaso en audio · Día 2",
-      "section": "bz",
-      "type": "reading",
-      "cards": [
-        {
-          "type": "concept",
-          "h": "🎙️ Preguntas tipo examen en formato podcast",
-          "body": "Escucha este audio antes de las flashcards. Es formato preguntas tipo examen con discusión de trampas — ideal para repasar mientras manejas o caminas."
-        },
-        {
-          "type": "audio-embed",
-          "title": "Audio Overview · ODAX · Día 2",
-          "src": "content/meta-410/assets/meta-410-day2-resumen.m4a",
-          "source": "NotebookLM Audio Overview"
-        },
-        {
-          "type": "tip",
-          "label": "PRO TIP",
-          "body": "Reproduce a 1.5x si ya tienes el contenido fresco. A 2x para repaso final 15 min antes del examen."
         }
       ]
     },

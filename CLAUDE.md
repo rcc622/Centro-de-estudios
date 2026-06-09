@@ -175,12 +175,24 @@ Esto es **raro** y requiere cuidado. Casos legítimos:
 
 Ejemplo: *"Procesa este PDF y créame un curso completo."*
 
+**Regla de tokens: NUNCA leer un PDF grande directo.** Los PDFs queman tokens (cada página va como imagen + texto). El protocolo es convertirlos primero a Markdown con **MarkItDown de Microsoft** ([github.com/microsoft/markitdown](https://github.com/microsoft/markitdown), MIT) y trabajar SOLO sobre el `.md`.
+
 **Tu workflow:**
-1. **Si el PDF está en el repo** (Randall lo subió), léelo.
-2. **Si no está disponible**, pregunta a Randall que te pegue el contenido relevante o que copie las secciones clave en el chat.
-3. Procesa el contenido y genera estructura: cuántos módulos, qué temas por módulo, cuántas lecciones por módulo.
-4. **Pregúntale a Randall si aprueba la estructura ANTES de generar todo el contenido.** No gastes tokens generando 7 días si la estructura está mal.
-5. Una vez aprobada, genera todo siguiendo Tareas B + A.
+1. **Instalar markitdown** (el contenedor de las sesiones web es efímero, se instala cada vez):
+   ```bash
+   pip install -q 'markitdown[pdf]' && pip install -q --upgrade cffi
+   ```
+   (el `cffi` upgrade arregla el `ModuleNotFoundError: _cffi_backend` de este contenedor — verificado 2026-06-09)
+2. **Convertir el PDF** (esté en el repo, en uploads o donde Randall lo haya adjuntado):
+   ```bash
+   markitdown documento.pdf > source/<id-curso>/documento.md
+   ```
+3. **Commitear el `.md` en `source/<id-curso>/`** para que las sesiones futuras ya no re-conviertan. El PDF original NO se commitea si pesa >5MB (política de assets); el `.md` sí.
+4. **Leer el `.md` por secciones** (Grep por temas, Read con offset/limit) — no completo de un jalón si es largo.
+5. **Si markitdown devuelve texto vacío o basura** (PDF escaneado sin capa de texto), decírselo a Randall y pedirle las secciones clave pegadas en el chat. No inventar contenido.
+6. Procesa el contenido y genera estructura: cuántos módulos, qué temas por módulo, cuántas lecciones por módulo.
+7. **Pregúntale a Randall si aprueba la estructura ANTES de generar todo el contenido.** No gastes tokens generando 7 días si la estructura está mal.
+8. Una vez aprobada, genera todo siguiendo Tareas B + A.
 
 ---
 
@@ -196,6 +208,16 @@ Ejemplo: *"Procesa este PDF y créame un curso completo."*
 8. **SIEMPRE haz commits descriptivos** con prefijos tipo conventional commits: `feat:`, `fix:`, `docs:`, `chore:`.
 9. **NUNCA ejecutes `git push --force`** ni operaciones destructivas sin confirmación.
 10. **SI tienes dudas, pregunta.** No inventes soluciones.
+11. **TRIPLE VERIFICACIÓN antes de diagnosticar.** Antes de presentar a Randall un diagnóstico, análisis o conclusión, evalúalo 3 veces:
+    1. **Análisis inicial** — forma la hipótesis leyendo el código/contenido real (no de memoria).
+    2. **Contraste contra la evidencia** — relee los archivos involucrados buscando específicamente lo que contradiga la hipótesis (no lo que la confirme).
+    3. **Verificación ejecutable** — siempre que se pueda, pruébalo corriendo algo: validar JSON, `node --check`, smoke test del motor, grep de referencias. Un diagnóstico que no sobrevive una prueba ejecutable no se entrega.
+
+    Si algo no se pudo verificar, se dice explícitamente ("no pude confirmar X") en vez de afirmarlo. Mejor tardar más que entregar un diagnóstico con errores.
+12. **PROTOCOLO CAVEMAN + GOAL, siempre.**
+    - **Caveman** (skill instalada en `.claude/skills/caveman/`, de [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman), MIT): las respuestas de chat van comprimidas — cero relleno, cero cortesías vacías ("¡Claro, con gusto!"), fragmentos OK, directo al grano. Nivel default: **lite-full adaptado al español mexicano** (el tuteo y los términos técnicos exactos se mantienen; los artículos pueden quedarse si quitar­los vuelve confuso el español).
+    - **Alcance del caveman: SOLO el chat.** NUNCA aplica a: contenido educativo de los JSON (las lecciones siguen la regla de desarrollar conceptos en 4-6 oraciones), mensajes de commit, documentación (CLAUDE.md/README), ni código.
+    - **Goal**: Randall usa el comando `/goal` de Claude Code para fijar condiciones de éxito medibles; mientras un goal esté activo no se para hasta cumplirlo. Al recibir una tarea grande, define explícitamente el criterio de éxito ANTES de ejecutar (qué se va a verificar y cómo) — y sugiérele a Randall una condición `/goal` medible cuando aplique. Esto complementa la regla 11: el goal define el "qué", la triple verificación define el "cómo se comprueba".
 
 ---
 
@@ -479,14 +501,14 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
   "id": "3.6",
   "title": "Árbol oficial de elección de bid strategy",
   "type": "decision-tree",
-  "instruction": "Para cada escenario, recorré el árbol respondiendo Sí/No.",
+  "instruction": "Para cada escenario, recorre el árbol respondiendo Sí/No.",
   "tree": {
-    "q": "¿Querés controlar costos?",
+    "q": "¿Quieres controlar costos?",
     "branches": [
       {
         "label": "Sí",
         "next": {
-          "q": "¿Optimizás valor?",
+          "q": "¿Optimizas valor?",
           "branches": [
             { "label": "Sí", "leaf": "ROAS Goal" },
             { "label": "No", "leaf": "Cost per Result Goal / Bid Cap" }
@@ -496,7 +518,7 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
       {
         "label": "No",
         "next": {
-          "q": "¿Optimizás valor?",
+          "q": "¿Optimizas valor?",
           "branches": [
             { "label": "Sí", "leaf": "Highest Value" },
             { "label": "No", "leaf": "Highest Volume" }
@@ -543,6 +565,10 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
 5. **El último item de un día siempre es flashcards** (lección con `type: "flashcards"`) para repaso espaciado.
 6. **Apunta a 5-7 lecciones por día** + 1 de flashcards. No menos de 4, no más de 8.
 7. **Cada lección debe tomar 8-15 minutos** completarla. Calibra cantidad de cards.
+8. **ENSEÑA ANTES DE EVALUAR (regla anti-frustración).** Ninguna actividad (`order`, `match`, `decision-tree`, `lightning`, MCQ) debe evaluar contenido que el usuario no haya visto antes en una card o lección previa del mismo día. Una actividad sobre material no enseñado está destinada a fracasar y obliga a aprender a prueba y error, quemando vidas injustamente.
+   - El motor mitiga esto con la **fase de estudio**: la primera vez que se abre un `order`/`match`, muestra el material RESUELTO (pasos en orden / pares correctos) y el usuario practica después. En repasos arranca directo en práctica con botón 📖 para re-estudiar.
+   - Las lecciones `order` y `match` aceptan un array opcional `cards` (tipos `concept`/`tip`/`warn`/`quote`/`kvtable`) que se muestra en la fase de estudio para dar contexto. Úsalo cuando la secuencia/pares vengan de una fuente que el día no desarrolló a fondo (ej. "el PDF oficial define 6 pasos…").
+   - En `order`, la `explanation` también se muestra durante el estudio como "POR QUÉ ESTE ORDEN".
 
 ---
 
@@ -551,23 +577,39 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
 El motor implementa estas mecánicas. Si Randall pide cambios, modifica `index.html` con cuidado.
 
 ### XP
-- Lección perfecta (0 errores): **+30 XP**
+- Lección perfecta (0 errores): **+30 XP** (x multiplicador de dificultad)
 - Lección con errores: `Math.max(10, 25 - errores*3)`
-- Flashcard "Fácil": +3 XP
-- Flashcard "Difícil": +2 XP
-- Flashcard "No supe": +1 XP
+- Flashcard acertada (✓): +3 XP · fallada (✗): +1 XP
+- Quiz de unidad aprobado: +60 XP · diagnóstico: +40 · simulacro: +100
+- Quick Quiz (práctica): +2 XP por acierto
+- Cofre de bloque: +20 XP · Meta diaria cumplida: +50 XP (1 vez/día)
+- Battle ganado: +25 XP + 2 por acierto
+- **Perfect Combo:** 3 lecciones perfectas seguidas → la siguiente da x2 XP
+- Al ganar XP aparece un **"+N XP" flotante** junto al contador del header (refuerzo visual, no quitar)
 
-### Niveles (10)
-1. Novato — 0 XP
-2. Aprendiz — 100 XP
-3. Estudiante — 250 XP
-4. Practicante — 500 XP
-5. Competente — 850 XP
-6. Avanzado — 1300 XP
-7. Experto — 1850 XP
-8. Maestro — 2500 XP
-9. Sabio — 3300 XP
-10. Leyenda Meta — 4200 XP
+### Niveles (100) y rangos (10)
+El motor genera 100 niveles con curva exponencial (constante `LEVELS`):
+`XP(n) = round(20·(n-1)^1.3 + max(0, n-15)^2.3 · 8)` — N10≈344, N20≈1,228, N50≈30,120, N100≈192,340.
+Cada 10 niveles = 1 rango (constante `LEVEL_RANKS`): Novato (1-9), Aprendiz (10-19), Estudiante (20-29), Practicante (30-39), Competente (40-49), Avanzado (50-59), Experto (60-69), Maestro (70-79), Sabio (80-89), Leyenda Meta (90-100).
+
+### Battles estilo Pokémon Red/Blue
+Al terminar una lección hay ~20% de probabilidad (cooldown 2h, mínimo 2 lecciones ese día y 2 ❤️) de que aparezca un líder de gimnasio de Kanto que reta con MCQs de repaso de lecciones YA completadas. Sistema HP: cada acierto baja 20% al rival, cada error te baja 20% a ti. Se conquistan/defienden 8 medallas (constantes `LEADERS`, `BADGES`, `BATTLE_CONFIG`). Perder contra Giovanni = game over (roba TODAS las medallas). La Trainer Card (vitrina de medallas) vive en Logros. Se puede desactivar en Ajustes. Sprites de PokéAPI (MIT) en `content/battles/`.
+
+### Mecánicas Hook (no quitar sin preguntar)
+- **Anillo de meta diaria** en home (conic-gradient: lecciones de hoy vs meta)
+- **Banner de racha en riesgo** en home si no has estudiado hoy y hay racha viva
+- **Encadenado de lecciones**: la pantalla de lección completa ofrece "Siguiente lección →" directo + cuánto falta para la meta diaria
+- **Celebración de racha**: toast + haptic cuando la racha crece (1 vez/día)
+- **Animaciones de refuerzo**: entrada de cards, pop/shake en MCQ, XP flotante, pulso del cofre, flip 3D real en flashcards, brillo periódico en la barra de progreso
+- **Sonidos (SFX)**: chimes sintetizados con WebAudio en `playSfx()` — cero archivos de audio, 100% offline. Eventos: correct/wrong/flip/complete/perfect/levelup/chest/streak/battleHit/battleWin. Toggle en Ajustes (`DB.soundEnabled`). NO sustituir por archivos de audio ni CDNs.
+
+### Práctica (pestaña ⚔️)
+- **Repaso inteligente (mix)**: 10 flashcards priorizadas con **SM-2 real** (`sm2Update`: acierto=q4, fallo=q1; intervalos 1d→6d→ivl·ef; fallo resetea). Orden: vencidas → nunca vistas → próximas a vencer
+- **Quick Quiz**: 10 MCQs al azar de lecciones completadas de TODOS los cursos activos; no toca `quizProgress`
+- **Emparejar / Ordenar**: abre una actividad match/order AL AZAR en modo práctica (`PRACTICE_MODE='activity'`): sin costo de ❤️, sin marcar progreso del sendero, XP fijo (10 perfecta / 5 normal), regresa al hub
+- **Repasar errores**: flashcards generadas de `wrongAnswers`
+- **Estadísticas** (Ajustes → 📊): precisión por unidad, flashcards vencidas SM-2, errores activos, minutos
+- El hub agrega contenido de todos los cursos activos (no hardcodear curso)
 
 ### Dificultad — vidas, escudos y nivel de contenido
 
@@ -682,12 +724,20 @@ Validaciones mentales:
 - [ ] Curso CVS
 
 ### Features pendientes del motor
-- [ ] Modo simulacro de examen (60 preguntas, 105 min, condiciones reales)
-- [ ] Cards tipo "match" (emparejar conceptos)
-- [ ] Cards tipo "order" (ordenar pasos)
-- [ ] Vista de estadísticas detalladas (precisión por tema, etc.)
-- [ ] Recordatorios diarios (notificaciones)
-- [ ] Repaso espaciado (algoritmo SM-2 para flashcards)
+- [x] Modo simulacro de examen (60 preguntas, 105 min, mapa de preguntas con salto y marcado 🚩)
+- [x] Cards tipo "match" (emparejar conceptos)
+- [x] Cards tipo "order" (ordenar pasos)
+- [x] Repaso espaciado SM-2 completo (ease factor, intervalos 1d/6d/ivl·ef, reset en fallo)
+- [x] Quick Quiz en práctica (10 MCQs al azar multi-curso)
+- [x] Vista de estadísticas (precisión por unidad, vencidas SM-2, errores activos)
+- [x] Práctica de match/order desde el hub (al azar, sin costo de corazones)
+- [ ] Recordatorios diarios (limitado: GitHub Pages no tiene push server; requeriría Notification API con la app abierta)
+
+### Política de archivos pesados (decidida 2026-06-09)
+- **NO subir audio/video/imágenes pesadas al repo.** Los m4a/mp4/mindmaps de meta-410 se eliminaron.
+- Video → YouTube unlisted con card `video-embed`. Audio → Drive público con `audio-link`.
+- Imágenes: solo si pesan <300KB (comprimir/WebP antes de subir).
+- El service worker sirve `content/*/assets/` cache-first SIN revalidación: si cambias un asset, cámbiale el nombre de archivo.
 
 ---
 
@@ -738,6 +788,6 @@ Cuando termines una tarea, **siempre confirma a Randall**:
 
 ---
 
-**Versión de este CLAUDE.md:** 1.0
-**Última actualización:** Domingo 10 de mayo de 2026
+**Versión de este CLAUDE.md:** 1.1
+**Última actualización:** Martes 9 de junio de 2026 (sync con motor: 100 niveles, battles, mecánicas Hook, práctica multi-curso, política de assets)
 **Autor original:** Claude (en sesión Claude.ai con Randall)

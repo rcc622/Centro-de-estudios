@@ -1745,7 +1745,14 @@
         "Comparar ad sets entre sí (identificar ganadores y perdedores)",
         "Identificar optimization opportunities (qué cambiar para el próximo período)"
       ],
-      "explanation": "Flujo correcto: KPI primero (¿logró el objetivo?) → métricas secundarias → setup (cómo se logró) → evaluación holística → comparación interna → próximos pasos. Saltar pasos lleva a conclusiones equivocadas."
+      "explanation": "Flujo correcto: KPI primero (¿logró el objetivo?) → métricas secundarias → setup (cómo se logró) → evaluación holística → comparación interna → próximos pasos. Saltar pasos lleva a conclusiones equivocadas.",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "El flujo oficial de análisis según Meta",
+          "body": "El PDF oficial define 6 pasos en este orden: <strong>1) Revisar Results</strong> (¿se logró el KPI principal del performance goal?) → <strong>2) Revisar other metrics</strong> (cost per result, ROAS, CTR, frequency) → <strong>3) Revisar setup strategies</strong> (creative, budget, audiencia, placement) → <strong>4) Evaluar todo en conjunto</strong> → <strong>5) Comparar ad sets entre sí</strong> (ganadores vs perdedores) → <strong>6) Identificar optimization opportunities</strong>. La lógica es de embudo: primero QUÉ se logró, luego CÓMO se logró, y al final QUÉ cambiar para el siguiente período."
+        }
+      ]
     },
     {
       "id": "6.28",

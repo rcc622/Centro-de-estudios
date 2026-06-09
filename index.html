@@ -7,6 +7,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Centro Estudios">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <title>Centro de Estudios Randall</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
@@ -887,6 +890,87 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .giovanni-go-btn{background:#E74C3C;color:#fff;border:3px solid #fff;font-family:'Courier New',monospace;font-weight:900;font-size:14px;padding:13px 28px;letter-spacing:1.5px;cursor:pointer;text-transform:uppercase;box-shadow:4px 4px 0 #fff,8px 8px 0 #E74C3C;transition:transform .1s}
 .giovanni-go-btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #fff,4px 4px 0 #E74C3C}
 
+/* ============================================================
+   HOOK v1 — Duolingo-style: nav SVG, anillo de meta diaria,
+   animaciones de refuerzo (variable reward visible) y mapa de quiz
+   ============================================================ */
+
+/* Bottom nav con íconos SVG (Lucide) tintables */
+.nbtn .nico{width:23px;height:23px;display:block;transition:transform .15s}
+.nbtn .nico svg{width:100%;height:100%;display:block}
+.nbtn.active .nico{transform:scale(1.1)}
+.nbtn:active .nico{transform:scale(.9)}
+
+/* Saludo + anillo de meta diaria (trigger interno) */
+.welcome-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.goal-ring{--p:0;width:56px;height:56px;border-radius:50%;background:conic-gradient(#1877F2 calc(var(--p)*1%),#EEF0F3 0);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:transform .15s;user-select:none;-webkit-user-select:none}
+.goal-ring:active{transform:scale(.92)}
+.goal-ring-inner{width:43px;height:43px;border-radius:50%;background:#fff;display:flex;align-items:baseline;justify-content:center;font-weight:800;line-height:43px}
+.goal-ring .gr-num{font-size:17px;color:#1C1E21}
+.goal-ring .gr-den{font-size:11px;color:#8A8D91;font-weight:700}
+.goal-ring.done{background:conic-gradient(#FFD700,#FF9F0A);animation:goalDonePop .6s cubic-bezier(.34,1.56,.64,1)}
+.goal-ring.done .goal-ring-inner{font-size:20px;align-items:center;display:flex}
+@keyframes goalDonePop{0%{transform:scale(1)}45%{transform:scale(1.18) rotate(8deg)}100%{transform:scale(1)}}
+
+/* Skeleton shimmer (hero mientras cargan los días en background) */
+.skeleton-line{display:inline-block;height:12px;border-radius:6px;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(255,255,255,.5),rgba(255,255,255,.25));background-size:200% 100%;animation:skel 1.1s linear infinite}
+@keyframes skel{to{background-position:-200% 0}}
+
+/* XP flotante: refuerzo visible de cada recompensa */
+.xp-float{position:fixed;z-index:250;font-weight:900;font-size:15px;color:#1877F2;text-shadow:0 1px 0 #fff,0 0 8px rgba(255,255,255,.8);pointer-events:none;animation:xpFloatUp 1.3s ease-out forwards}
+@keyframes xpFloatUp{0%{opacity:0;transform:translateY(8px) scale(.8)}15%{opacity:1;transform:translateY(0) scale(1.08)}100%{opacity:0;transform:translateY(-36px) scale(1)}}
+
+/* Entrada de cards en lecciones (solo al cambiar de card, no en cada render) */
+.card-stage.anim-in{animation:cardIn .32s cubic-bezier(.21,1.02,.55,1)}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* Feedback MCQ: pop al acertar, shake al fallar */
+.opt.correct{animation:optPop .4s ease}
+@keyframes optPop{0%{transform:scale(1)}45%{transform:scale(1.04)}100%{transform:scale(1)}}
+.opt.wrong{animation:optShake .42s cubic-bezier(.36,.07,.19,.97)}
+@keyframes optShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+
+/* Flecha del hero CTA con nudge sutil (invitación a continuar) */
+.hero-cta .arrow{display:inline-block;animation:arrowNudge 1.6s ease-in-out infinite}
+@keyframes arrowNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+
+/* Pantalla de lección completa: pop del ícono */
+.complete-ico{animation:completePop .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes completePop{0%{transform:scale(.3) rotate(-10deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+.complete-next-teaser{background:#F5F7FA;border-radius:14px;padding:12px 16px;font-size:13px;color:#65676B;font-weight:600;margin-top:6px}
+.complete-next-teaser strong{color:#1877F2}
+
+/* Flashcard con flip 3D real (giro sobre eje Y, estilo Duolingo/Anki) */
+.flash-wrap{perspective:1200px}
+.flash3d{display:grid;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,.2,.2,1);cursor:pointer;user-select:none;-webkit-user-select:none}
+.flash3d.flipped{transform:rotateY(180deg)}
+.flash3d .face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flash3d .face.back{transform:rotateY(180deg)}
+
+/* Brillo periódico en la barra de progreso del header (vida, no estática) */
+.progress-bar{position:relative;overflow:hidden}
+.progress-bar::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:translateX(-100%);animation:barShine 3s ease-in-out infinite}
+@keyframes barShine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* Racha en riesgo (trigger interno al abrir sin estudiar hoy) */
+.streak-risk{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#FFF4D6,#FFE0B3);border:1.5px solid #FFA726;border-radius:14px;padding:12px 14px;margin-bottom:12px;cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform .15s}
+.streak-risk:active{transform:scale(.98)}
+.streak-risk .sr-ico{font-size:26px;animation:srFlicker 1.4s ease-in-out infinite}
+@keyframes srFlicker{0%,100%{transform:scale(1)}50%{transform:scale(1.16) rotate(-4deg)}}
+.streak-risk .sr-title{font-size:13.5px;font-weight:800;color:#7A3F00}
+.streak-risk .sr-sub{font-size:12px;color:#8B4F0E;font-weight:600;margin-top:1px}
+
+/* Mapa de preguntas (simulacro) */
+.qmap-bar{display:flex;gap:8px;margin-bottom:12px}
+.qmap-btn{flex:1;padding:10px 12px;border-radius:12px;border:1.5px solid #E4E6EB;background:#fff;font-weight:800;font-size:12.5px;color:#1C1E21;cursor:pointer;font-family:inherit;transition:transform .12s}
+.qmap-btn:active{transform:scale(.97)}
+.qmap-btn.flagged{border-color:#FF6B35;color:#FF6B35;background:#FFF4EC}
+.qmap-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;background:#F5F7FA;border-radius:14px;padding:10px;margin-bottom:12px}
+.qmap-cell{aspect-ratio:1;border-radius:9px;border:1.5px solid #E4E6EB;background:#fff;font-weight:800;font-size:12px;color:#8A8D91;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;padding:0}
+.qmap-cell.answered{background:#1877F2;border-color:#1877F2;color:#fff}
+.qmap-cell.flagged{border-color:#FF6B35}
+.qmap-cell.current{outline:2px solid #1877F2;outline-offset:1px}
+
 /* Loading overlay para lazy load de cursos */
 .loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
 .loading-overlay-spinner{width:42px;height:42px;border:4px solid #E4E6EB;border-top-color:#1877F2;border-radius:50%;animation:loSpin .8s linear infinite}
@@ -900,7 +984,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 <div class="img-zoom" id="img-zoom" onclick="closeImgZoom()">
   <button class="img-zoom-close" onclick="event.stopPropagation();closeImgZoom()" aria-label="Cerrar">×</button>
   <img id="img-zoom-src" src="" alt="" onclick="event.stopPropagation()"/>
-  <div class="img-zoom-hint">Pinch para zoom · Doble tap para acercar · Arrastrá para mover</div>
+  <div class="img-zoom-hint">Pinch para zoom · Doble tap para acercar · Arrastra para mover</div>
 </div>
 <div class="modal-bd" id="no-hearts-modal" onclick="if(event.target===this)closeNoHeartsModal()">
   <div class="modal-sheet" role="dialog" aria-labelledby="nh-title">
@@ -1244,6 +1328,17 @@ const SECTION_META = {
   D: {ico:'🏆', title:'Sección D', sub:'Validación y repaso'}
 };
 
+// Íconos SVG inline para la navegación (Lucide · licencia ISC ·
+// github.com/lucide-icons/lucide). Inline = cero dependencias externas,
+// funcionan offline y se tiñen con currentColor (estilo Duolingo).
+const NAV_SVG = {
+  home: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>`,
+  swords: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/></svg>`,
+  trophy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>`,
+  settings: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>`,
+  flame: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>`
+};
+
 // Ícono por tipo de lección (para el path)
 const LESSON_KIND_ICON = {
   reading:    '📖',
@@ -1276,15 +1371,17 @@ let COURSES = {}; // se llena al cargar
 let COMING_SOON = []; // cursos placeholder visibles como locked
 let COURSES_LOADED = false;
 let COURSES_CATALOG = null; // raw catalog (courses.json)
+let PRIMARY_COURSE_ID = null; // primer curso activo (el del hero)
 
 // Lazy-load por curso. Al iniciar la app SOLO se cargan:
 //   1. content/courses.json (catálogo)
 //   2. content/<curso>/meta.json de cada curso activo (chico, ~2KB c/u)
-//   3. Días del CURSO PRIMARIO (el primer activo) — necesario para el hero
 //
-// Los días de OTROS cursos activos se cargan cuando el usuario abre ese
-// curso (loadCourseDays). Esto escala bien al agregar más cursos: nuevo
-// curso = 0 KB extra al cargar la app, solo cuando el usuario tap su card.
+// El primer render ocurre con eso (2 + N fetches chicos). Los días del
+// curso primario se cargan EN BACKGROUND inmediatamente después (el hero
+// muestra un placeholder ~1s y se actualiza solo). Los días de OTROS
+// cursos se cargan cuando el usuario abre ese curso (loadCourseDays).
+// Esto escala bien: curso nuevo = 0 KB extra al arrancar la app.
 async function loadCourses(){
   try {
     // 1. Catálogo
@@ -1295,7 +1392,7 @@ async function loadCourses(){
     COURSES_CATALOG = catalog;
 
     const activeCourses = (catalog.courses || []).filter(c => c.active);
-    const primaryId = activeCourses[0]?.id;
+    PRIMARY_COURSE_ID = activeCourses[0]?.id || null;
 
     // 2. Metas en paralelo (fetch todas las meta.json a la vez)
     const metaPromises = activeCourses.map(async entry => {
@@ -1324,12 +1421,8 @@ async function loadCourses(){
       }
     }
 
-    // 5. Eager-load: días del curso PRIMARIO (necesario para que el hero
-    //    de home muestre "siguiente lección"). Otros cursos quedan en shell.
-    if(primaryId && COURSES[primaryId]){
-      await loadCourseDays(primaryId);
-    }
-
+    // 5. Los días NO se cargan aquí: el init renderea de inmediato y
+    //    dispara loadCourseDays(PRIMARY_COURSE_ID) en background.
     COURSES_LOADED = true;
     return true;
   } catch(err){
@@ -1408,6 +1501,18 @@ async function loadCourseDays(courseId){
   course._daysLoaded = true;
 }
 
+// Garantiza que los días de TODOS los cursos activos estén cargados.
+// Usado por vistas que agregan contenido cross-curso (Práctica, Glosario).
+async function ensureAllCoursesLoaded(){
+  const ids = Object.values(COURSES).filter(c => c.active !== false && !c._daysLoaded).map(c => c.id);
+  if(!ids.length) return true;
+  const spinnerTimer = setTimeout(() => showLoadingOverlay('Cargando cursos…'), 150);
+  await Promise.all(ids.map(id => loadCourseDays(id)));
+  clearTimeout(spinnerTimer);
+  hideLoadingOverlay();
+  return true;
+}
+
 // Garantiza que los días de un curso estén cargados antes de navegar a
 // vistas que los necesitan. Muestra spinner si la carga toma >150ms.
 async function ensureCourseDaysLoaded(courseId){
@@ -1471,7 +1576,10 @@ let DB = {
   battlesTotal: 0, // contador total de battles jugados
   battlesWon: 0, // ganados (perfectos o defensa exitosa)
   battlesEnabled: true, // toggle desde Ajustes
-  starter: 'pikachu' // pokemon starter elegido (ver STARTERS)
+  starter: 'pikachu', // pokemon starter elegido (ver STARTERS)
+  soundEnabled: true, // efectos de sonido WebAudio (toggle en Ajustes)
+  soundTheme: 'classic', // tema de SFX: classic | arcade | marimba
+  hapticLevel: 'strong' // vibración: off | soft | strong
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1574,6 +1682,9 @@ function load(){
   if(typeof DB.battlesWon !== 'number') DB.battlesWon = 0;
   if(typeof DB.battlesEnabled !== 'boolean') DB.battlesEnabled = true;
   if(!DB.starter || !STARTERS[DB.starter]) DB.starter = 'pikachu';
+  if(typeof DB.soundEnabled !== 'boolean') DB.soundEnabled = true;
+  if(!DB.soundTheme || !['classic','arcade','marimba'].includes(DB.soundTheme)) DB.soundTheme = 'classic';
+  if(!['off','soft','strong'].includes(DB.hapticLevel)) DB.hapticLevel = 'strong';
   if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
@@ -1616,23 +1727,153 @@ function dateStrLocal(d){
 }
 function now(){return Date.now()}
 
-// Haptic feedback — vibración corta en cada interacción.
-// pattern: número (ms) o array (vibrar/pausar/vibrar...). Silenciable.
+// Haptic feedback — vibración en cada interacción.
+// pattern: número (ms) o array (vibrar/pausar/vibrar...).
+// Niveles (DB.hapticLevel): off | soft (x1) | strong (x1.8, default).
+// Los pulsos base son >=15ms: debajo de eso muchos motores Android no
+// alcanzan a arrancar y la vibración "no se siente".
+// Nota: iOS Safari NO soporta navigator.vibrate (limitación de Apple).
 let HAPTIC_ENABLED = true;
 function haptic(pattern){
-  if(!HAPTIC_ENABLED) return;
-  try { if(navigator.vibrate) navigator.vibrate(pattern); } catch(e){}
+  if(!HAPTIC_ENABLED || DB.hapticLevel === 'off') return;
+  const mult = DB.hapticLevel === 'soft' ? 1 : 1.8;
+  let p = pattern;
+  if(typeof p === 'number') p = Math.round(p * mult);
+  else if(Array.isArray(p)) p = p.map((v, i) => i % 2 === 0 ? Math.round(v * mult) : v);
+  try { if(navigator.vibrate) navigator.vibrate(p); } catch(e){}
 }
 const HAPTIC = {
-  tap: 8,
-  select: 12,
-  correct: 22,
-  wrong: [25, 60, 25],
-  submit: 18,
-  complete: [40, 30, 60],
-  levelUp: [60, 40, 60, 40, 100],
-  achievement: [30, 30, 30, 30, 60]
+  tap: 15,
+  select: 20,
+  correct: 35,
+  wrong: [45, 60, 45],
+  submit: 30,
+  complete: [55, 40, 90],
+  levelUp: [70, 50, 70, 50, 130],
+  achievement: [45, 40, 45, 40, 90]
 };
+
+function setHapticLevel(level){
+  if(!['off','soft','strong'].includes(level)) return;
+  DB.hapticLevel = level;
+  save();
+  haptic(HAPTIC.complete); // preview inmediato de la intensidad
+  showToast(level === 'off' ? '📴 Vibración apagada' : level === 'soft' ? '📳 Vibración suave' : '📳 Vibración fuerte', 1500);
+  render();
+}
+
+// ============================================================
+// SFX — efectos de sonido sintetizados con WebAudio.
+// Cero archivos de audio (chimes estilo Duolingo generados al vuelo):
+// funciona 100% offline, pesa 0 KB y no depende de licencias.
+// Toggle en Ajustes (DB.soundEnabled). En iOS el AudioContext se
+// desbloquea con el primer tap (todos los plays vienen de gestos).
+// ============================================================
+let _audioCtx = null;
+function getAudioCtx(){
+  if(_audioCtx) return _audioCtx;
+  try { _audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+  catch(e){ return null; }
+  return _audioCtx;
+}
+// Un tono con envolvente suave (attack corto + decay exponencial)
+function sfxTone(ctx, t0, freq, dur, opts){
+  opts = opts || {};
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.type = opts.type || 'sine';
+  o.frequency.setValueAtTime(freq, t0);
+  if(opts.slideTo) o.frequency.exponentialRampToValueAtTime(opts.slideTo, t0 + dur);
+  const gain = opts.gain != null ? opts.gain : 0.12;
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.linearRampToValueAtTime(gain, t0 + 0.012);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  o.connect(g).connect(ctx.destination);
+  o.start(t0);
+  o.stop(t0 + dur + 0.03);
+}
+// Temas de sonido: cada evento es una lista de notas [delay, freq, dur, opts].
+// 'classic' = chimes suaves (sine) · 'arcade' = 8-bit retro (square) ·
+// 'marimba' = percusivo cálido (triangle). Selector en Ajustes (DB.soundTheme).
+const SFX_THEMES = {
+  classic: { name:'Clásico', icon:'🎵', defaults:{type:'sine',gain:.12}, events:{
+    tick:      [[0,480,.04,{gain:.05}]],
+    advance:   [[0,587.33,.05,{gain:.07}],[.05,783.99,.07,{gain:.06}]],
+    correct:   [[0,659.25,.09],[.085,880,.16]],
+    wrong:     [[0,220,.2,{type:'square',gain:.055,slideTo:155}]],
+    flip:      [[0,520,.05,{type:'triangle',gain:.06}]],
+    complete:  [[0,523.25,.17],[.09,659.25,.17],[.18,783.99,.17]],
+    perfect:   [[0,523.25,.18],[.09,659.25,.18],[.18,783.99,.18],[.27,1046.5,.18],[.42,1318.5,.32,{gain:.09}]],
+    levelup:   [[0,392,.2],[.1,523.25,.2],[.2,659.25,.2],[.3,783.99,.2],[.4,1046.5,.2]],
+    chest:     [[0,987.77,.07,{type:'square',gain:.07}],[.08,1318.5,.2,{type:'square',gain:.07}]],
+    streak:    [[0,587.33,.1,{gain:.11}],[.1,880,.24,{gain:.11}]],
+    battleHit: [[0,180,.13,{type:'sawtooth',gain:.08,slideTo:75}]],
+    battleWin: [[0,659.25,.13,{type:'square',gain:.06}],[.11,659.25,.13,{type:'square',gain:.06}],[.22,659.25,.13,{type:'square',gain:.06}],[.33,523.25,.13,{type:'square',gain:.06}],[.44,659.25,.13,{type:'square',gain:.06}],[.55,783.99,.2,{type:'square',gain:.06}]]
+  }},
+  arcade: { name:'Arcade', icon:'🎮', defaults:{type:'square',gain:.08}, events:{
+    tick:      [[0,880,.03,{gain:.05}]],
+    advance:   [[0,659.25,.05],[.05,987.77,.07]],
+    correct:   [[0,987.77,.08,{gain:.09}],[.08,1318.5,.18,{gain:.09}]],
+    wrong:     [[0,196,.12],[.12,130.81,.22]],
+    flip:      [[0,440,.04,{gain:.05}]],
+    complete:  [[0,523.25,.08],[.08,659.25,.08],[.16,783.99,.08],[.24,1046.5,.14]],
+    perfect:   [[0,523.25,.08],[.08,659.25,.08],[.16,783.99,.08],[.24,1046.5,.1],[.34,1318.5,.1],[.44,1567.98,.22]],
+    levelup:   [[0,220,.55,{slideTo:880,gain:.09}],[.55,1046.5,.16,{gain:.09}]],
+    chest:     [[0,987.77,.07],[.08,1318.5,.1],[.16,1567.98,.18]],
+    streak:    [[0,659.25,.08],[.08,880,.08],[.16,1174.66,.18]],
+    battleHit: [[0,160,.1,{gain:.09,slideTo:60}]],
+    battleWin: [[0,659.25,.12],[.1,659.25,.12],[.2,659.25,.12],[.3,523.25,.12],[.4,659.25,.12],[.5,783.99,.22]]
+  }},
+  marimba: { name:'Marimba', icon:'🎹', defaults:{type:'triangle',gain:.14}, events:{
+    tick:      [[0,523.25,.05,{gain:.06}]],
+    advance:   [[0,659.25,.07],[.06,783.99,.09]],
+    correct:   [[0,783.99,.1],[0,1567.98,.08,{gain:.05}],[.09,1046.5,.16]],
+    wrong:     [[0,233.08,.18,{gain:.09}],[.1,207.65,.2,{gain:.08}]],
+    flip:      [[0,587.33,.06,{gain:.06}]],
+    complete:  [[0,523.25,.12],[.08,587.33,.12],[.16,659.25,.12],[.24,783.99,.2]],
+    perfect:   [[0,523.25,.12],[.08,587.33,.12],[.16,659.25,.12],[.24,783.99,.14],[.32,880,.14],[.42,1046.5,.26]],
+    levelup:   [[0,392,.14],[.09,523.25,.14],[.18,659.25,.14],[.27,783.99,.14],[.36,1046.5,.24]],
+    chest:     [[0,880,.08],[.07,1174.66,.18]],
+    streak:    [[0,659.25,.1],[.09,987.77,.22]],
+    battleHit: [[0,196,.12,{gain:.1,slideTo:90}]],
+    battleWin: [[0,659.25,.12],[.1,659.25,.12],[.2,659.25,.12],[.3,523.25,.12],[.4,659.25,.12],[.5,783.99,.22]]
+  }}
+};
+
+function playSfx(name){
+  if(DB.soundEnabled === false) return;
+  const ctx = getAudioCtx();
+  if(!ctx) return;
+  try {
+    if(ctx.state === 'suspended') ctx.resume().catch(()=>{});
+    const theme = SFX_THEMES[DB.soundTheme] || SFX_THEMES.classic;
+    const notes = (theme.events[name]) || (SFX_THEMES.classic.events[name]);
+    if(!notes) return;
+    const t = ctx.currentTime + 0.01;
+    for(const [dt, f, dur, opts] of notes){
+      sfxTone(ctx, t + dt, f, dur, Object.assign({}, theme.defaults, opts || {}));
+    }
+  } catch(e){}
+}
+
+// Selector de tema: 'off' silencia; cualquier tema activa y hace preview
+function setSoundTheme(id){
+  haptic(HAPTIC.select);
+  if(id === 'off'){
+    DB.soundEnabled = false;
+    save();
+    showToast('🔇 Sonidos desactivados', 1500);
+    render();
+    return;
+  }
+  if(!SFX_THEMES[id]) return;
+  DB.soundEnabled = true;
+  DB.soundTheme = id;
+  save();
+  playSfx('perfect'); // preview inmediato del tema elegido
+  showToast(SFX_THEMES[id].icon + ' Tema ' + SFX_THEMES[id].name + ' activado', 1600);
+  render();
+}
 
 function regenerateHearts(){
   const maxH = getMaxHearts();
@@ -1709,8 +1950,26 @@ function nextLevelXP(lvl){
   return lvl < LEVELS.length ? LEVELS[lvl].xp : LEVELS[LEVELS.length-1].xp;
 }
 
+// Refuerzo visual: "+N XP" flota desde el contador del header (Hook:
+// la recompensa debe VERSE en el momento, no solo acumularse en silencio).
+function xpFloat(amount){
+  try {
+    const anchor = document.querySelector('.stat-xp');
+    if(!anchor) return;
+    const r = anchor.getBoundingClientRect();
+    const el = document.createElement('div');
+    el.className = 'xp-float';
+    el.textContent = `+${amount} XP`;
+    el.style.left = Math.max(8, Math.min(window.innerWidth - 90, r.left)) + 'px';
+    el.style.top = (r.bottom + 4) + 'px';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 1350);
+  } catch(e){}
+}
+
 function addXP(amount){
   amount = Math.round(amount * getXpMult());
+  xpFloat(amount);
   const lvlBefore = calcLevel(DB.xp);
   DB.xp += amount;
   const lvlAfter = calcLevel(DB.xp);
@@ -1734,6 +1993,7 @@ function updateStreak(){
   if(DB.lastStudyDate === today) return; // already counted today
   const yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
   const yStr = dateStrLocal(yesterday);
+  const streakBefore = DB.streak;
   let usedShield = false;
   if(DB.lastStudyDate === yStr){
     DB.streak += 1;
@@ -1778,6 +2038,17 @@ function updateStreak(){
   if(!DB.studiedWeekdays[wkKey]) DB.studiedWeekdays[wkKey] = {};
   DB.studiedWeekdays[wkKey][dow] = true;
   if(DB.studiedWeekdays[wkKey][0] && DB.studiedWeekdays[wkKey][6]) earnAch('weekend_warrior');
+
+  // Celebración: la racha creció (1 vez al día por definición). Hook:
+  // el momento exacto en que sube la racha es la recompensa más fuerte
+  // de Duolingo — hay que marcarlo, no dejarlo pasar en silencio.
+  if(DB.streak > streakBefore && !usedShield){
+    setTimeout(() => {
+      showToast(`🔥 ¡Racha de ${DB.streak} ${DB.streak===1?'día':'días'}! Vuelve mañana para mantenerla`, 3200, 'success');
+      haptic(HAPTIC.achievement);
+      playSfx('streak');
+    }, 1200);
+  }
 
   save();
 }
@@ -1879,11 +2150,16 @@ function getNextLesson(courseId){
   return null;
 }
 
-function openHeroNext(){
+async function openHeroNext(courseId){
   // Lleva al sendero del día (vista 'day') donde el usuario ve el path con
   // todas las burbujas y cuál sigue. No abre la lección directa para que
   // tenga visibilidad de su progreso en el día.
-  const next = getNextLesson('meta-410');
+  // courseId viene del hero (antes estaba hardcodeado a meta-410 y rompía
+  // con más de un curso activo).
+  const cid = courseId || PRIMARY_COURSE_ID;
+  if(!cid) return;
+  await ensureCourseDaysLoaded(cid);
+  const next = getNextLesson(cid);
   if(!next) return;
   CURRENT.courseId = next.courseId;
   CURRENT.dayId = next.dayId;
@@ -2007,6 +2283,7 @@ function render(){
   else if(VIEW === 'config') html = renderConfig();
   else if(VIEW === 'glossary') html = renderGlossary();
   else if(VIEW === 'streak') html = renderStreak();
+  else if(VIEW === 'stats') html = renderStats();
   else if(VIEW === 'battle') html = renderBattle();
   else if(VIEW === 'trainer_card') html = renderTrainerCard();
   else html = renderHome();
@@ -2044,13 +2321,13 @@ function renderHeader(){
 
 function renderNav(active){
   const tabs = [
-    ['home',     '🏠', 'Inicio'],
-    ['flashcards','⚔️','Práctica'],
-    ['achievements','🏅','Logros'],
-    ['config',   '⚙️', 'Ajustes']
+    ['home',        NAV_SVG.home,     'Inicio'],
+    ['flashcards',  NAV_SVG.swords,   'Práctica'],
+    ['achievements',NAV_SVG.trophy,   'Logros'],
+    ['config',      NAV_SVG.settings, 'Ajustes']
   ];
-  return `<div class="bnav">${tabs.map(([id,i,n]) =>
-    `<button class="nbtn ${active===id?'active':''}" onclick="haptic(6);navTo('${id}')"><span class="ico">${i}</span>${n}</button>`
+  return `<div class="bnav">${tabs.map(([id,svg,n]) =>
+    `<button class="nbtn ${active===id?'active':''}" onclick="haptic(6);navTo('${id}')"><span class="nico">${svg}</span>${n}</button>`
   ).join('')}</div>`;
 }
 
@@ -2067,13 +2344,24 @@ function renderHome(){
 
   // HERO CTA — recognition over recall: el usuario VE qué sigue, no tiene que decidir.
   let heroHtml = '';
-  if(next){
+  if(mainCourse && !mainCourse._daysLoaded){
+    // Días aún cargando en background (init lazy): skeleton ~1s.
+    // Tap igual funciona: openHeroNext espera la carga.
+    heroHtml = `
+      <div class="hero" onclick="haptic(12);openHeroNext('${mainCourse.id}')">
+        <div class="hero-eyebrow">${mainCourse.title}</div>
+        <div class="hero-title">📖 Tu siguiente lección</div>
+        <div class="hero-sub"><span class="skeleton-line" style="width:70%"></span></div>
+        <div class="hero-cta">Continuar <span class="arrow">→</span></div>
+      </div>
+    `;
+  } else if(next){
     const dayPct = next.dayTotal ? Math.round(next.dayDone/next.dayTotal*100) : 0;
     const eyebrow = `${mainCourse.title} · ${dayPct}% del día`;
     const cta = next.isQuiz ? 'Tomar quiz' : (next.isFlash ? 'Repasar flashcards' : 'Continuar lección');
     const heroIco = next.isQuiz ? '📝' : (next.isFlash ? '🃏' : (LESSON_KIND_ICON[next.lessonType] || '📖'));
     heroHtml = `
-      <div class="hero" onclick="haptic(12);openHeroNext()">
+      <div class="hero" onclick="haptic(12);openHeroNext('${mainCourse.id}')">
         <div class="hero-eyebrow">${eyebrow}</div>
         <div class="hero-title">${heroIco} ${next.dayTitle}</div>
         <div class="hero-sub">Sigue con: <strong>${next.lessonTitle}</strong></div>
@@ -2087,7 +2375,7 @@ function renderHome(){
       <div class="hero review" onclick="haptic(12);openCourse('${mainCourse.id}')">
         <div class="hero-eyebrow">¡Todo el contenido al día!</div>
         <div class="hero-title">🏆 Listo para repasar</div>
-        <div class="hero-sub">Reforzá con flashcards o revisá lecciones completadas</div>
+        <div class="hero-sub">Refuerza con flashcards o revisa lecciones completadas</div>
         <div class="hero-cta">Abrir curso <span class="arrow">→</span></div>
       </div>
     `;
@@ -2127,13 +2415,34 @@ function renderHome(){
     </div>
   ` : '';
 
+  // Anillo de meta diaria (Hook: trigger interno — ver el progreso del día
+  // incompleto genera la comezón de cerrarlo; al completarse, recompensa visual)
+  const goal = DB.dailyGoal || 3;
+  const doneToday = DB.activityLog?.[todayStr()]?.lessons || 0;
+  const goalPct = Math.min(100, Math.round(doneToday/goal*100));
+  const goalDone = doneToday >= goal;
+
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
-      <div class="welcome">
-        <h1>Hola, Randall</h1>
-        <p>${DB.streak > 0 ? `🔥 ${DB.streak} ${DB.streak===1?'día':'días'} de racha` : 'Sin racha — empieza hoy'} · ${lvlName}</p>
+      <div class="welcome-row">
+        <div class="welcome" style="margin-bottom:0">
+          <h1>Hola, Randall</h1>
+          <p>${DB.streak > 0 ? `🔥 ${DB.streak} ${DB.streak===1?'día':'días'} de racha` : 'Sin racha — empieza hoy'} · ${lvlName}</p>
+        </div>
+        <div class="goal-ring ${goalDone?'done':''}" onclick="haptic(8);navTo('config')" style="--p:${goalPct}" title="Meta diaria">
+          <div class="goal-ring-inner">${goalDone ? '🏆' : `<span class="gr-num">${doneToday}</span><span class="gr-den">/${goal}</span>`}</div>
+        </div>
       </div>
+      ${DB.streak > 0 && DB.lastStudyDate !== todayStr() && mainCourse ? `
+        <div class="streak-risk" onclick="haptic(12);openHeroNext('${mainCourse.id}')">
+          <span class="sr-ico">🔥</span>
+          <div class="sr-info">
+            <div class="sr-title">Tu racha de ${DB.streak} ${DB.streak===1?'día':'días'} está en juego</div>
+            <div class="sr-sub">Una lección hoy y sigue viva · toca para continuar</div>
+          </div>
+        </div>
+      ` : ''}
       ${DB.comboReady ? `
         <div class="power-banner">
           <div class="pb-ico">⚡</div>
@@ -2235,7 +2544,7 @@ function renderDay(){
           <div class="card-h2">Condiciones del simulacro</div>
           <div class="card-body">
             <p><strong>${qCount} preguntas</strong> en <strong>${mins} minutos</strong>. Sin retroalimentación hasta el final. Aprobar: ≥80%.</p>
-            <p>No pierdes hearts en el simulacro. Podés reintentar las veces que quieras.</p>
+            <p>No pierdes hearts en el simulacro. Puedes reintentar las veces que quieras.</p>
             ${qp.bestScore ? `<p><em>Tu mejor intento: ${qp.bestScore}% · ${qp.attempts} intento${qp.attempts===1?'':'s'}</em></p>` : ''}
           </div>
         </div>
@@ -2362,6 +2671,7 @@ function openChest(courseId, dayId, section){
   document.getElementById('ch-xp').textContent = `+${gain} XP`;
   document.getElementById('chest-overlay').classList.add('show');
   haptic(HAPTIC.levelUp);
+  playSfx('chest');
   launchConfetti();
 }
 function closeChestOverlay(){
@@ -2403,6 +2713,12 @@ function renderLesson(){
   const total = lesson.cards.length;
   const idx = LESSON_STATE.cardIdx;
   const pct = Math.round((idx+1)/total*100);
+
+  // Animar la entrada SOLO cuando cambia de card (no en cada re-render,
+  // p. ej. al seleccionar una opción de MCQ — sería mareador).
+  const animKey = `${CURRENT.lessonId}|${idx}`;
+  const cardAnim = window._lastCardAnim !== animKey;
+  window._lastCardAnim = animKey;
 
   let cardHtml = '';
   if(card.type === 'concept'){
@@ -2574,7 +2890,7 @@ function renderLesson(){
       <div class="lesson-header">
         <div class="lesson-num">${lesson.title} · ${idx+1}/${total}</div>
       </div>
-      ${cardHtml}
+      <div class="card-stage ${cardAnim ? 'anim-in' : ''}">${cardHtml}</div>
     </div>
     <div class="action-bar">${actionBtn}</div>
   `;
@@ -2587,6 +2903,22 @@ function renderLessonComplete(){
   const errors = LESSON_STATE.errors;
   const perfect = errors === 0;
   const xpEarned = perfect ? 30 : Math.max(10, 25 - errors*3);
+
+  // Hook (acción sin fricción): teaser de lo que sigue + botón directo.
+  // Encadenar lecciones sin volver al sendero alarga la sesión de estudio.
+  const next = getNextLesson(CURRENT.courseId);
+  const goal = DB.dailyGoal || 3;
+  const doneToday = DB.activityLog?.[todayStr()]?.lessons || 0;
+  const goalLeft = Math.max(0, goal - doneToday);
+  let teaser = '';
+  if(next){
+    const what = next.isQuiz ? 'Quiz de la unidad' : next.lessonTitle;
+    const goalNote = goalLeft > 0
+      ? ` · ${goalLeft === 1 ? '¡1 más y cierras tu meta de hoy! 🎯' : `faltan ${goalLeft} para tu meta diaria`}`
+      : '';
+    teaser = `<div class="complete-next-teaser">Sigue: <strong>${what}</strong>${goalNote}</div>`;
+  }
+
   return `
     <div class="hdr">
       <div class="hdr-top"><div style="font-size:14px;font-weight:700">Lección completada</div></div>
@@ -2601,12 +2933,31 @@ function renderLessonComplete(){
           <div class="sum-cell"><div class="sum-num">${errors}</div><div class="sum-lbl">errores</div></div>
           <div class="sum-cell"><div class="sum-num">${perfect?'💯':Math.max(20,Math.round(100*Math.pow(0.75,errors)))+'%'}</div><div class="sum-lbl">precisión</div></div>
         </div>
+        ${teaser}
       </div>
     </div>
     <div class="action-bar">
-      <button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>
+      <button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="finishLessonReturn()">Sendero</button>
+      ${next
+        ? `<button class="btn btn-primary" onclick="continueToNext()">${next.isQuiz ? 'Tomar quiz 📝' : 'Siguiente lección →'}</button>`
+        : `<button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>`}
     </div>
   `;
+}
+
+// Encadena directo a la siguiente actividad sin pasar por el sendero.
+function continueToNext(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
+  const next = getNextLesson(CURRENT.courseId);
+  if(!next){ finishLessonReturn(); return; }
+  CURRENT.dayId = next.dayId;
+  if(next.isQuiz){
+    openQuiz(next.dayId, 'unit-quiz');
+    return;
+  }
+  if(next.isFlash){ openFlashcards(next.lessonId); return; }
+  openLesson(next.lessonId);
 }
 
 // ============================================================
@@ -2618,6 +2969,24 @@ function shuffleArr(arr){
   return a;
 }
 
+// Render mínimo de cards estáticas (concept/tip/warn/quote/kvtable) para
+// la fase de estudio de actividades order/match.
+function renderStaticCard(card){
+  if(!card) return '';
+  if(card.type === 'concept') return `<div class="card card-concept">${card.h?`<div class="card-h2">${card.h}</div>`:''}<div class="card-body">${card.body}</div></div>`;
+  if(card.type === 'tip') return `<div class="tip-box"><div class="label">💡 ${card.label||'PRO TIP'}</div>${card.body}</div>`;
+  if(card.type === 'warn') return `<div class="warn-box"><div class="label">⚠️ ${card.label||'CUIDADO'}</div>${card.body}</div>`;
+  if(card.type === 'quote') return `<div class="quote-box">"${card.body}"</div>`;
+  if(card.type === 'kvtable') return `<div class="card">${card.h?`<div class="card-h2">${card.h}</div>`:''}<table class="kv-table">${(card.rows||[]).map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table></div>`;
+  return '';
+}
+
+// FASE DE ESTUDIO (pedagogía: "worked example" — enseñar antes de evaluar).
+// La primera vez que el usuario abre un order/match, ve el material RESUELTO
+// para estudiarlo; después se revuelve y practica. Evita el anti-patrón de
+// evaluar contenido nunca enseñado (actividad destinada a fracasar).
+// En repasos (lección ya completada) arranca directo en práctica, con botón
+// 📖 para volver a estudiar mientras no haya progreso.
 function initMatchState(lesson){
   const pairs = lesson.pairs || [];
   const leftIdxs = shuffleArr(pairs.map((_,i)=>i));
@@ -2628,12 +2997,61 @@ function initMatchState(lesson){
     selL: null, selR: null,
     matched: new Set(),
     errors: 0,
-    wrongL: null, wrongR: null
+    wrongL: null, wrongR: null,
+    studying: !isLessonCompleted(CURRENT.courseId, CURRENT.dayId, lesson.id)
   };
+}
+
+function matchStartPractice(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
+  MATCH_STATE.studying = false;
+  render();
+}
+
+function matchStudyAgain(){
+  haptic(HAPTIC.tap);
+  MATCH_STATE.studying = true;
+  render();
 }
 
 function renderLessonMatch(course, day, lesson){
   if(!MATCH_STATE.leftSlots || !MATCH_STATE.leftSlots.length) initMatchState(lesson);
+
+  // Fase de estudio: pares resueltos + cards de contexto (si la lección trae)
+  if(MATCH_STATE.studying){
+    const pairs = lesson.pairs || [];
+    return `
+      <div class="hdr">
+        <div class="hdr-top">
+          <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
+          <div style="flex:1;margin:0 12px">
+            <div class="progress-wrap"><div class="progress-bar" style="width:10%"></div></div>
+          </div>
+          <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
+        </div>
+      </div>
+      <div class="scroll">
+        <div class="lesson-header">
+          <div class="lesson-num">📖 PASO 1 · ESTUDIA</div>
+          <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
+          <div style="font-size:13px;color:#65676B;margin-top:6px">Lee los pares correctos con calma. Cuando los tengas, se revuelven y los armas tú — sin sorpresas ni vidas perdidas por adivinar.</div>
+        </div>
+        ${(lesson.cards||[]).map(renderStaticCard).join('')}
+        <div class="order-list">
+          ${pairs.map(p => `
+            <div class="order-row correct">
+              <div class="order-text" style="flex:1"><strong>${p[0]}</strong></div>
+              <div style="color:#8A8D91;font-weight:800;flex-shrink:0">→</div>
+              <div class="order-text" style="flex:1.4">${p[1]}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+      <div class="action-bar">
+        <button class="btn btn-primary" onclick="matchStartPractice()">¡Listo, a emparejar! →</button>
+      </div>
+    `;
+  }
   const total = lesson.pairs?.length || 0;
   const done = MATCH_STATE.matched ? MATCH_STATE.matched.size : 0;
   const pct = total ? Math.round(done/total*100) : 0;
@@ -2675,6 +3093,7 @@ function renderLessonMatch(course, day, lesson){
       ${isDone ? `<div class="quiz-feedback correct show"><strong>✅ ¡Todos emparejados!</strong>${MATCH_STATE.errors?` ${MATCH_STATE.errors} ${MATCH_STATE.errors===1?'error':'errores'} en el camino.`:' Sin errores 💯'}</div>` : ''}
     </div>
     <div class="action-bar">
+      ${(done === 0 && MATCH_STATE.errors === 0) ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 16px" onclick="matchStudyAgain()" aria-label="Volver a estudiar">📖</button>` : ''}
       <button class="btn ${isDone?'btn-primary':'btn-disabled'}" onclick="${isDone?'finishMatch()':''}">${isDone?'Terminar lección':'Empareja todos para continuar'}</button>
     </div>
   `;
@@ -2683,6 +3102,7 @@ function renderLessonMatch(course, day, lesson){
 function matchTapL(i){
   if(MATCH_STATE.matched.has(MATCH_STATE.leftSlots[i].id)) return;
   haptic(HAPTIC.select);
+  playSfx('tick');
   MATCH_STATE.selL = i;
   MATCH_STATE.wrongL = null;
   MATCH_STATE.wrongR = null;
@@ -2692,6 +3112,7 @@ function matchTapL(i){
 function matchTapR(i){
   if(MATCH_STATE.matched.has(MATCH_STATE.rightSlots[i].id)) return;
   haptic(HAPTIC.select);
+  playSfx('tick');
   MATCH_STATE.selR = i;
   MATCH_STATE.wrongL = null;
   MATCH_STATE.wrongR = null;
@@ -2704,17 +3125,19 @@ function tryMatch(){
   const rId = MATCH_STATE.rightSlots[MATCH_STATE.selR].id;
   if(lId === rId){
     haptic(HAPTIC.correct);
+    playSfx('correct');
     MATCH_STATE.matched.add(lId);
     MATCH_STATE.selL = null;
     MATCH_STATE.selR = null;
   } else {
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     MATCH_STATE.errors += 1;
     MATCH_STATE.wrongL = MATCH_STATE.selL;
     MATCH_STATE.wrongR = MATCH_STATE.selR;
     MATCH_STATE.selL = null;
     MATCH_STATE.selR = null;
-    if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+    if(PRACTICE_MODE !== 'activity' && loseHeart() && DB.hearts === 0) earnAch('no_hearts');
     setTimeout(() => {
       MATCH_STATE.wrongL = null;
       MATCH_STATE.wrongR = null;
@@ -2723,6 +3146,7 @@ function tryMatch(){
   }
 }
 function finishMatch(){
+  if(PRACTICE_MODE === 'activity'){ finishPracticeActivity(MATCH_STATE.errors); return; }
   LESSON_STATE.errors = MATCH_STATE.errors;
   finishLesson();
 }
@@ -2737,7 +3161,8 @@ function initOrderState(lesson){
     current: shuffleArr(items),
     correct: false,
     submitted: false,
-    errors: 0
+    errors: 0,
+    studying: !isLessonCompleted(CURRENT.courseId, CURRENT.dayId, lesson.id)
   };
   // Asegurar que el shuffle no quede idéntico al orden correcto si hay 2+ items
   if(items.length >= 2){
@@ -2747,8 +3172,60 @@ function initOrderState(lesson){
   }
 }
 
+function orderStartPractice(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
+  ORDER_STATE.studying = false;
+  // Re-revolver al salir del estudio (que no quede el orden recién visto)
+  ORDER_STATE.current = shuffleArr(ORDER_STATE.correctOrder);
+  let same = ORDER_STATE.current.every((x,i) => x === ORDER_STATE.correctOrder[i]);
+  if(same && ORDER_STATE.correctOrder.length >= 2) ORDER_STATE.current = shuffleArr(ORDER_STATE.correctOrder);
+  render();
+}
+
+function orderStudyAgain(){
+  haptic(HAPTIC.tap);
+  ORDER_STATE.studying = true;
+  render();
+}
+
 function renderLessonOrder(course, day, lesson){
   if(!ORDER_STATE.correctOrder || !ORDER_STATE.correctOrder.length) initOrderState(lesson);
+
+  // Fase de estudio: pasos en orden correcto + cards de contexto
+  if(ORDER_STATE.studying){
+    return `
+      <div class="hdr">
+        <div class="hdr-top">
+          <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
+          <div style="flex:1;margin:0 12px">
+            <div class="progress-wrap"><div class="progress-bar" style="width:10%"></div></div>
+          </div>
+          <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
+        </div>
+      </div>
+      <div class="scroll">
+        <div class="lesson-header">
+          <div class="lesson-num">📖 PASO 1 · ESTUDIA</div>
+          <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
+          <div style="font-size:13px;color:#65676B;margin-top:6px">Memoriza la secuencia correcta. Cuando la tengas, se revuelve y la ordenas tú — sin sorpresas ni vidas perdidas por adivinar.</div>
+        </div>
+        ${(lesson.cards||[]).map(renderStaticCard).join('')}
+        <div class="order-list">
+          ${ORDER_STATE.correctOrder.map((it, i) => `
+            <div class="order-row correct">
+              <div class="order-num">${i+1}</div>
+              <div class="order-text">${it}</div>
+            </div>`).join('')}
+        </div>
+        ${lesson.explanation ? `<div class="tip-box"><div class="label">💡 POR QUÉ ESTE ORDEN</div>${lesson.explanation}</div>` : ''}
+      </div>
+      <div class="action-bar">
+        <button class="btn btn-primary" onclick="orderStartPractice()">¡Listo, a ordenar! →</button>
+      </div>
+    `;
+  }
+
   const submitted = ORDER_STATE.submitted;
   const correct = ORDER_STATE.correct;
   const items = ORDER_STATE.current;
@@ -2804,6 +3281,7 @@ function renderLessonOrder(course, day, lesson){
       ` : ''}
     </div>
     <div class="action-bar">
+      ${!submitted ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 16px" onclick="orderStudyAgain()" aria-label="Volver a estudiar">📖</button>` : ''}
       ${submitted && !correct ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="retryOrder()">Reintentar</button>` : ''}
       <button class="btn ${(submitted && correct) ? 'btn-primary' : (submitted ? 'btn-disabled' : 'btn-primary')}" onclick="${submitted && correct ? 'finishOrder()' : (submitted ? '' : 'submitOrder()')}">${submitted && correct ? 'Terminar lección' : 'Verificar orden'}</button>
     </div>
@@ -2813,6 +3291,7 @@ function renderLessonOrder(course, day, lesson){
 function orderUp(i){
   if(ORDER_STATE.submitted || i===0) return;
   haptic(HAPTIC.tap);
+  playSfx('tick');
   const c = ORDER_STATE.current;
   [c[i-1], c[i]] = [c[i], c[i-1]];
   render();
@@ -2822,6 +3301,7 @@ function orderDown(i){
   const c = ORDER_STATE.current;
   if(i === c.length-1) return;
   haptic(HAPTIC.tap);
+  playSfx('tick');
   [c[i], c[i+1]] = [c[i+1], c[i]];
   render();
 }
@@ -2831,10 +3311,12 @@ function submitOrder(){
   ORDER_STATE.correct = isCorrect;
   if(!isCorrect){
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     ORDER_STATE.errors += 1;
-    if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
+    if(PRACTICE_MODE !== 'activity' && loseHeart() && DB.hearts === 0) earnAch('no_hearts');
   } else {
     haptic(HAPTIC.correct);
+    playSfx('correct');
   }
   render();
 }
@@ -2849,8 +3331,24 @@ function retryOrder(){
   render();
 }
 function finishOrder(){
+  if(PRACTICE_MODE === 'activity'){ finishPracticeActivity(ORDER_STATE.errors); return; }
   LESSON_STATE.errors = ORDER_STATE.errors;
   finishLesson();
+}
+
+// Cierre de práctica libre: XP fijo chico, sin tocar progreso del sendero
+function finishPracticeActivity(errors){
+  haptic(HAPTIC.complete);
+  playSfx(errors === 0 ? 'perfect' : 'complete');
+  const gained = errors === 0 ? 10 : 5;
+  addXP(gained);
+  recordActivity({xp: gained});
+  setTimeout(() => showToast(errors === 0 ? '💯 Práctica perfecta · +'+Math.round(gained*getXpMult())+' XP' : '✅ Práctica completada · +'+Math.round(gained*getXpMult())+' XP', 2400, 'success'), 300);
+  PRACTICE_MODE = null;
+  PRACTICE_SCOPE = null;
+  CURRENT.lessonId = null;
+  VIEW = 'flashcards';
+  render();
 }
 
 // ============================================================
@@ -2888,9 +3386,11 @@ function renderLessonDecisionTree(course, day, lesson){
     if(!DTREE_STATE.leafCorrect){
       DTREE_STATE.errors += 1;
       haptic(HAPTIC.wrong);
+      playSfx('wrong');
       if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
     } else {
       haptic(HAPTIC.correct);
+      playSfx('correct');
     }
   }
 
@@ -2909,7 +3409,7 @@ function renderLessonDecisionTree(course, day, lesson){
     const leafCls = 'dtree-node leaf' + (DTREE_STATE.leafCorrect ? '' : ' wrong');
     const feedback = DTREE_STATE.leafCorrect
       ? `Correcto. Esa es la bid strategy que pide el escenario.`
-      : `No. La respuesta esperada era <strong>${scen.expected}</strong>. Revisá las ramas y reintenta.`;
+      : `No. La respuesta esperada era <strong>${scen.expected}</strong>. Revisa las ramas y reintenta.`;
     activeBlock = `
       <div class="${leafCls}">
         <div class="dtree-leaf-label">${DTREE_STATE.leafCorrect ? '🎯 Resultado correcto' : '❌ Resultado incorrecto'}</div>
@@ -2947,7 +3447,7 @@ function renderLessonDecisionTree(course, day, lesson){
       cta = `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="dtreeRetryScenario()">Reintentar</button>`;
     }
   } else {
-    cta = `<button class="btn btn-disabled">Elegí una rama</button>`;
+    cta = `<button class="btn btn-disabled">Elige una rama</button>`;
   }
 
   return `
@@ -2990,6 +3490,7 @@ function renderLessonDecisionTree(course, day, lesson){
 function dtreeChoose(label){
   if(DTREE_STATE.leaf !== null || DTREE_STATE.done) return;
   haptic(HAPTIC.tap);
+  playSfx('advance');
   DTREE_STATE.path.push(label);
   render();
 }
@@ -3004,6 +3505,7 @@ function dtreeRetryScenario(){
 
 function dtreeNextScenario(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   const course = COURSES[CURRENT.courseId];
   const day = course && (course.days || []).find(d => d.id === CURRENT.dayId);
   const lesson = day && (day.lessons || []).find(l => l.id === CURRENT.lessonId);
@@ -3168,9 +3670,11 @@ function lightningSelect(i){
   if(!correct){
     LIGHTNING_STATE.errors += 1;
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     // En Lightning NO se pierden hearts (es modo rápido)
   } else {
     haptic(HAPTIC.correct);
+    playSfx('correct');
   }
   // Avanzar inmediato
   setTimeout(() => {
@@ -3218,6 +3722,31 @@ function renderQuiz(){
     timerHtml = `<div class="stat" id="quiz-timer" style="color:#1877F2;font-weight:800;font-size:14px">⏱ --:--</div>`;
   }
 
+  // Mapa de preguntas: para quizzes largos (simulacro). Permite saltar a
+  // cualquier pregunta, ver respondidas y marcar 🚩 las dudosas para revisar.
+  const isLong = total > 15;
+  const answeredCount = deck.filter((_, i) => (QUIZ_STATE.answers[i] || []).length).length;
+  const flagged = QUIZ_STATE.flagged || {};
+  const isFlagged = !!flagged[idx];
+  let mapHtml = '';
+  if(isLong){
+    const mapToggle = `
+      <div class="qmap-bar">
+        <button class="qmap-btn ${isFlagged?'flagged':''}" onclick="quizToggleFlag()">${isFlagged?'🚩 Marcada':'⚐ Marcar para revisar'}</button>
+        <button class="qmap-btn" onclick="quizToggleMap()">🗺️ Mapa · ${answeredCount}/${total}</button>
+      </div>`;
+    const grid = QUIZ_STATE.showMap ? `
+      <div class="qmap-grid">
+        ${deck.map((_, i) => {
+          const a = (QUIZ_STATE.answers[i] || []).length > 0;
+          const f = !!flagged[i];
+          const cur = i === idx;
+          return `<button class="qmap-cell ${a?'answered':''} ${f?'flagged':''} ${cur?'current':''}" onclick="quizJump(${i})">${f?'🚩':i+1}</button>`;
+        }).join('')}
+      </div>` : '';
+    mapHtml = mapToggle + grid;
+  }
+
   return `
     <div class="hdr">
       <div class="hdr-top">
@@ -3232,6 +3761,7 @@ function renderQuiz(){
       <div class="lesson-header">
         <div class="lesson-num">${QUIZ_STATE.title} · ${idx+1}/${total}</div>
       </div>
+      ${mapHtml}
       <div class="quiz-card">
         <div class="quiz-tag">${isMulti ? 'ELIGE '+q.correct.length : 'PREGUNTA'}</div>
         <div class="quiz-q">${q.q}</div>
@@ -3250,7 +3780,8 @@ function renderQuiz(){
   `;
 }
 
-function renderQuizComplete(){
+// Calcula el resultado del quiz actual (puro, sin efectos secundarios).
+function computeQuizResult(){
   const deck = QUIZ_STATE.deck;
   let correct = 0;
   const wrongIdxs = [];
@@ -3264,21 +3795,25 @@ function renderQuizComplete(){
     if(ok) correct++;
     else wrongIdxs.push(i);
   });
-  const score = Math.round(correct/deck.length*100);
+  const score = deck.length ? Math.round(correct/deck.length*100) : 0;
+  return {correct, wrongIdxs, score};
+}
+
+function renderQuizComplete(){
+  const deck = QUIZ_STATE.deck;
+  // Resultado precalculado en finishQuiz (este render es puro: sin XP,
+  // sin markQuizResult — antes cada re-render inflaba los intentos).
+  const r = QUIZ_STATE.result || computeQuizResult();
+  const {correct, wrongIdxs, score} = r;
   const passingScore = QUIZ_STATE.passingScore || 80;
-  const passed = score >= passingScore;
+  const passed = r.passed != null ? r.passed : score >= passingScore;
   const kind = QUIZ_STATE.kind;
-  const kindLabel = kind === 'diagnostic' ? 'Test diagnóstico' : kind === 'mock-exam' ? 'Simulacro' : 'Quiz de Unidad';
+  const kindLabel = kind === 'diagnostic' ? 'Test diagnóstico' : kind === 'mock-exam' ? 'Simulacro' : kind === 'practice' ? 'Quick Quiz' : 'Quiz de Unidad';
 
-  const result = markQuizResult(CURRENT.courseId, CURRENT.dayId, kind, score, passingScore);
-  if(passed && QUIZ_STATE._already !== true){
-    QUIZ_STATE._already = true;
-    addXP(kind === 'mock-exam' ? 100 : kind === 'diagnostic' ? 40 : 60);
-    updateStreak();
-    setTimeout(launchConfetti, 200);
-  }
-
-  const wrongHtml = wrongIdxs.slice(0, 10).map(i => {
+  // En el simulacro mostrar TODOS los errores (es el repaso pre-examen);
+  // en quizzes cortos basta con 10.
+  const wrongCap = kind === 'mock-exam' ? wrongIdxs.length : 10;
+  const wrongHtml = wrongIdxs.slice(0, wrongCap).map(i => {
     const q = deck[i];
     const sel = QUIZ_STATE.answers[i] || [];
     const isMulti = !!q.multi;
@@ -3309,11 +3844,11 @@ function renderQuizComplete(){
         <div class="score-label">${passed ? `Necesitabas ${passingScore}%` : `Necesitas ${passingScore}% para avanzar`}</div>
       </div>
       ${wrongIdxs.length ? `<div class="section-title">Lo que fallaste</div>${wrongHtml}` : ''}
-      ${wrongIdxs.length > 10 ? `<div style="text-align:center;color:#65676B;font-size:12px;padding:10px">+ ${wrongIdxs.length-10} más</div>` : ''}
+      ${wrongIdxs.length > wrongCap ? `<div style="text-align:center;color:#65676B;font-size:12px;padding:10px">+ ${wrongIdxs.length-wrongCap} más</div>` : ''}
     </div>
     <div class="action-bar">
-      <button class="btn btn-secondary" onclick="exitQuiz()">Volver</button>
-      <button class="btn btn-primary" onclick="retryQuiz()">${passed ? 'Reintentar' : 'Intentar de nuevo'}</button>
+      <button class="btn btn-secondary" onclick="exitQuiz()">${kind === 'practice' ? '← Práctica' : 'Volver'}</button>
+      <button class="btn btn-primary" onclick="retryQuiz()">${kind === 'practice' ? 'Otro Quick Quiz ⚡' : (passed ? 'Reintentar' : 'Intentar de nuevo')}</button>
     </div>
   `;
 }
@@ -3336,6 +3871,7 @@ function startQuizTimer(){
     el.style.color = remaining < 300 ? '#E74C3C' : '#1877F2';
     if(remaining === 0){
       stopQuizTimer();
+      QUIZ_STATE._timeUp = true; // envío forzado: sin confirm de "sin responder"
       showToast('Tiempo agotado · enviando resultado',2500);
       setTimeout(finishQuiz, 500);
     }
@@ -3415,7 +3951,7 @@ function openQuiz(dayId, kind){
     kind,
     passingScore: source.passingScore || 80,
     title: source.title || (kind === 'diagnostic' ? 'Test diagnóstico' : 'Quiz de Unidad'),
-    _already: false
+    flagged: {}, showMap: false, result: null
   };
   VIEW = 'quiz';
   render();
@@ -3439,7 +3975,7 @@ function openMockExam(dayId){
     kind: 'mock-exam',
     passingScore: mock.passingScore || 80,
     title: mock.title || 'Simulacro',
-    _already: false
+    flagged: {}, showMap: false, result: null
   };
   VIEW = 'quiz';
   render();
@@ -3448,6 +3984,7 @@ function openMockExam(dayId){
 
 function quizSelect(i, isMulti){
   haptic(HAPTIC.select);
+  playSfx('tick');
   const idx = QUIZ_STATE.qIdx;
   if(!QUIZ_STATE.answers[idx]) QUIZ_STATE.answers[idx] = [];
   const arr = QUIZ_STATE.answers[idx];
@@ -3463,6 +4000,7 @@ function quizSelect(i, isMulti){
 
 function quizNext(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   if(QUIZ_STATE.qIdx + 1 < QUIZ_STATE.deck.length){
     QUIZ_STATE.qIdx += 1;
     render();
@@ -3472,15 +4010,66 @@ function quizNext(){
 
 function quizPrev(){
   haptic(HAPTIC.tap);
+  playSfx('tick');
   if(QUIZ_STATE.qIdx > 0){
     QUIZ_STATE.qIdx -= 1;
     render();
   }
 }
 
+function quizJump(i){
+  haptic(HAPTIC.tap);
+  playSfx('tick');
+  if(i < 0 || i >= QUIZ_STATE.deck.length) return;
+  QUIZ_STATE.qIdx = i;
+  QUIZ_STATE.showMap = false;
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+
+function quizToggleFlag(){
+  haptic(HAPTIC.select);
+  if(!QUIZ_STATE.flagged) QUIZ_STATE.flagged = {};
+  const idx = QUIZ_STATE.qIdx;
+  if(QUIZ_STATE.flagged[idx]) delete QUIZ_STATE.flagged[idx];
+  else QUIZ_STATE.flagged[idx] = true;
+  render();
+}
+
+function quizToggleMap(){
+  haptic(HAPTIC.tap);
+  QUIZ_STATE.showMap = !QUIZ_STATE.showMap;
+  render();
+}
+
 function finishQuiz(){
   haptic(HAPTIC.submit);
+  // Guard: con el mapa de preguntas puedes terminar con preguntas en blanco.
+  // Confirmar antes de enviar (las no respondidas cuentan como incorrectas).
+  const unanswered = QUIZ_STATE.deck.filter((_, i) => !(QUIZ_STATE.answers[i] || []).length).length;
+  if(unanswered > 0 && !QUIZ_STATE._timeUp && !confirm(`Te quedan ${unanswered} ${unanswered===1?'pregunta':'preguntas'} sin responder (cuentan como incorrectas). ¿Enviar de todos modos?`)) return;
   stopQuizTimer();
+
+  // Todos los efectos secundarios viven AQUÍ (una sola vez), no en el render.
+  const {correct, wrongIdxs, score} = computeQuizResult();
+  const passingScore = QUIZ_STATE.passingScore || 80;
+  const kind = QUIZ_STATE.kind;
+  let passed = score >= passingScore;
+  if(kind === 'practice'){
+    // Quick Quiz: práctica libre. No toca quizProgress ni desbloqueos.
+    const gained = correct * 2;
+    if(gained > 0){ addXP(gained); recordActivity({xp: gained}); }
+  } else {
+    const result = markQuizResult(CURRENT.courseId, CURRENT.dayId, kind, score, passingScore);
+    passed = result.passed;
+    if(passed){
+      addXP(kind === 'mock-exam' ? 100 : kind === 'diagnostic' ? 40 : 60);
+      updateStreak();
+      playSfx('perfect');
+      setTimeout(launchConfetti, 200);
+    }
+  }
+  QUIZ_STATE.result = {correct, wrongIdxs, score, passed};
   VIEW = 'quiz_complete';
   render();
 }
@@ -3488,7 +4077,13 @@ function finishQuiz(){
 function exitQuiz(){
   if(VIEW === 'quiz' && Object.keys(QUIZ_STATE.answers).length > 0 && !confirm('¿Salir? Perderás las respuestas de este intento.')) return;
   stopQuizTimer();
-  VIEW = 'day';
+  if(QUIZ_STATE.kind === 'practice'){
+    // Quick Quiz vive en la pestaña Práctica, no en un día del curso
+    PRACTICE_MODE = null;
+    VIEW = 'flashcards';
+  } else {
+    VIEW = 'day';
+  }
   CURRENT.quizKind = null;
   render();
 }
@@ -3496,7 +4091,9 @@ function exitQuiz(){
 function retryQuiz(){
   const kind = QUIZ_STATE.kind;
   const dayId = CURRENT.dayId;
-  if(kind === 'mock-exam'){
+  if(kind === 'practice'){
+    startPractice('quick-quiz');
+  } else if(kind === 'mock-exam'){
     openMockExam(dayId);
   } else {
     openQuiz(dayId, kind);
@@ -3586,11 +4183,18 @@ function renderFlashcards(){
         ${flipped && hasExpl ? `<button class="flash-info-btn" onclick="flashToggleExpl()" aria-label="Explicación">ⓘ</button>` : ''}
       </div>
       <div class="flash-wrap">
-        <div class="flash" onclick="flipFlash()">
-          <div class="flash-tag">${flipped?'RESPUESTA':'PREGUNTA'}</div>
-          ${flipped ? `<div class="flash-a">${card.a}</div>` : `<div class="flash-q">${card.q}</div>`}
-          ${showExpl ? `<div class="flash-explanation">💡 ${card.explanation}</div>` : ''}
-          <div class="flash-hint">${!flipped ? 'Toca para revelar' : (answeredThis ? ('Ya la calificaste ' + (prevResult==='right'?'✓':'✗') + ' · usa →') : '¿La acertaste?')}</div>
+        <div class="flash3d ${flipped?'flipped':''}" id="flash3d" onclick="flipFlash()">
+          <div class="flash face front">
+            <div class="flash-tag">PREGUNTA</div>
+            <div class="flash-q">${card.q}</div>
+            <div class="flash-hint">Toca para revelar</div>
+          </div>
+          <div class="flash face back">
+            <div class="flash-tag">RESPUESTA</div>
+            <div class="flash-a">${card.a}</div>
+            ${showExpl ? `<div class="flash-explanation">💡 ${card.explanation}</div>` : ''}
+            <div class="flash-hint">${answeredThis ? ('Ya la calificaste ' + (prevResult==='right'?'✓':'✗') + ' · usa →') : '¿La acertaste?'}</div>
+          </div>
         </div>
       </div>
       <div class="flash-nav">
@@ -3612,9 +4216,10 @@ function renderFlashcards(){
 // PRACTICE HUB (Flash tab cuando no hay práctica activa)
 // ============================================================
 function renderPracticeHub(){
-  const courseId = 'meta-410';
-  const course = COURSES[courseId];
-  if(!course){
+  // Multi-curso: agrega contenido de TODOS los cursos activos (antes estaba
+  // hardcodeado a meta-410 y el contenido de otros cursos no aparecía).
+  const courses = Object.values(COURSES).filter(c => c.active !== false);
+  if(!courses.length){
     return `
       ${renderHeader()}
       <div class="scroll">
@@ -3623,30 +4228,56 @@ function renderPracticeHub(){
       ${renderNav('flashcards')}
     `;
   }
-  const days = course.days.filter(d => !d.locked && d.kind !== 'mock-exam');
-  const allLessons = days.flatMap(d => d.lessons.map(l => ({...l, _dayId: d.id})));
-
-  const flashLessons = allLessons.filter(l => l.type === 'flashcards');
-  const flashCount = flashLessons.reduce((acc, l) => acc + (l.cards?.length || 0), 0);
-  const mcqCount = allLessons.flatMap(l => (l.cards||[]).filter(c => c.type === 'mcq')).length;
-  const matchCount = allLessons.filter(l => l.type === 'match').length;
-  const orderCount = allLessons.filter(l => l.type === 'order').length;
-  const lightningCount = allLessons.filter(l => l.type === 'lightning').length;
+  let flashCount = 0, mcqCount = 0;
+  for(const course of courses){
+    const days = (course.days||[]).filter(d => !d.locked && d.kind !== 'mock-exam');
+    for(const d of days){
+      for(const l of d.lessons || []){
+        if(l.type === 'flashcards') flashCount += (l.cards?.length || 0);
+        mcqCount += (l.cards||[]).filter(c => c.type === 'mcq').length;
+      }
+    }
+  }
   const errorCount = Object.keys(DB.wrongAnswers || {}).length;
+
+  // Días con flashcards, agrupados por curso
+  const dayRowsHtml = courses.map(course => {
+    const days = (course.days||[]).filter(d => !d.locked && d.kind !== 'mock-exam' && d.id !== 'glosario');
+    if(!days.length) return '';
+    return `
+      <div class="section-title">${course.icon} ${course.title}</div>
+      ${days.map((d, idx) => {
+        const prog = getDayProgress(course.id, d.id);
+        const flashInDay = (d.lessons||[]).filter(l => l.type === 'flashcards').reduce((a,l) => a + (l.cards?.length||0), 0);
+        const pct = prog.total ? Math.round(prog.done/prog.total*100) : 0;
+        return `
+          <div class="practice-row ${flashInDay===0?'locked':''}" onclick="${flashInDay===0?'':`haptic(8);startPractice('day-flash',{courseId:'${course.id}',dayId:'${d.id}'})`}">
+            <div class="pr-ico" style="background:linear-gradient(135deg,${course.color||'#1877F2'},#0E5BC4);font-weight:900;font-size:18px;font-family:inherit">${idx+1}</div>
+            <div class="pr-info">
+              <div class="pr-title">${d.title}</div>
+              <div class="pr-meta">${flashInDay > 0 ? flashInDay+' tarjetas · '+prog.done+'/'+prog.total+' lecciones' : 'Sin flashcards aún'}</div>
+              ${flashInDay > 0 ? `<div class="pr-progress"><div class="pr-progress-bar" style="width:${pct}%"></div></div>` : ''}
+            </div>
+            <div class="pr-arrow">→</div>
+          </div>
+        `;
+      }).join('')}
+    `;
+  }).join('');
 
   return `
     ${renderHeader()}
     <div class="scroll">
       <div class="welcome">
         <h1>Centro de práctica ⚔️</h1>
-        <p>Repasá lo que ya viste · Reforzá tus puntos débiles</p>
+        <p>Repasa lo que ya viste · Refuerza tus puntos débiles</p>
       </div>
 
       ${flashCount > 0 ? `
         <div class="hero" onclick="haptic(12);startPractice('mix')">
-          <div class="hero-eyebrow">Repaso del día</div>
-          <div class="hero-title">🎯 10 tarjetas mezcladas</div>
-          <div class="hero-sub">Aleatorias de todo lo que ya estudiaste</div>
+          <div class="hero-eyebrow">Repaso inteligente</div>
+          <div class="hero-title">🧠 10 tarjetas a tu medida</div>
+          <div class="hero-sub">Prioriza lo que fallas y lo que no has visto en días (repaso espaciado)</div>
           <div class="hero-cta">Empezar repaso <span class="arrow">→</span></div>
         </div>
       ` : ''}
@@ -3676,49 +4307,37 @@ function renderPracticeHub(){
       <div class="practice-row ${mcqCount===0?'locked':''}" onclick="${mcqCount===0?'':`haptic(8);startPractice('quick-quiz')`}">
         <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">⚡</div>
         <div class="pr-info">
-          <div class="pr-title">Quick Quiz <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
-          <div class="pr-meta">${mcqCount} preguntas tipo examen</div>
+          <div class="pr-title">Quick Quiz</div>
+          <div class="pr-meta">10 preguntas tipo examen al azar · de ${mcqCount} disponibles</div>
         </div>
         <div class="pr-arrow">→</div>
       </div>
-      ${matchCount > 0 ? `
-        <div class="practice-row locked" onclick="haptic(8);startPractice('match')">
-          <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔀</div>
-          <div class="pr-info">
-            <div class="pr-title">Emparejar <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
-            <div class="pr-meta">${matchCount} ${matchCount===1?'ejercicio':'ejercicios'} de match</div>
-          </div>
-          <div class="pr-arrow">→</div>
-        </div>
-      ` : ''}
-      ${orderCount > 0 ? `
-        <div class="practice-row locked" onclick="haptic(8);startPractice('order')">
-          <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🔢</div>
-          <div class="pr-info">
-            <div class="pr-title">Ordenar <span style="font-size:9px;background:#FFC700;color:#7A5A00;padding:2px 6px;border-radius:99px;font-weight:800;letter-spacing:.4px;margin-left:4px">PRONTO</span></div>
-            <div class="pr-meta">${orderCount} ${orderCount===1?'ejercicio':'ejercicios'} de secuencia</div>
-          </div>
-          <div class="pr-arrow">→</div>
-        </div>
-      ` : ''}
-
-      <div class="section-title">Por día</div>
-      ${days.map(d => {
-        const prog = getDayProgress(courseId, d.id);
-        const flashInDay = (d.lessons||[]).filter(l => l.type === 'flashcards').reduce((a,l) => a + (l.cards?.length||0), 0);
-        const pct = prog.total ? Math.round(prog.done/prog.total*100) : 0;
-        return `
-          <div class="practice-row ${flashInDay===0?'locked':''}" onclick="${flashInDay===0?'':`haptic(8);startPractice('day-flash',{dayId:'${d.id}'})`}">
-            <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">${d.id === 'day1' ? '1️⃣' : d.id === 'day2' ? '2️⃣' : d.id === 'day3' ? '3️⃣' : d.id === 'day4' ? '4️⃣' : d.id === 'day5' ? '5️⃣' : d.id === 'day6' ? '6️⃣' : '📅'}</div>
+      ${(() => {
+        const matchN = practiceActivities('match').length;
+        const orderN = practiceActivities('order').length;
+        let html = '';
+        if(matchN) html += `
+          <div class="practice-row" onclick="haptic(8);startPractice('match')">
+            <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔀</div>
             <div class="pr-info">
-              <div class="pr-title">${d.title}</div>
-              <div class="pr-meta">${flashInDay > 0 ? flashInDay+' tarjetas · '+prog.done+'/'+prog.total+' lecciones' : 'Sin flashcards aún'}</div>
-              ${flashInDay > 0 ? `<div class="pr-progress"><div class="pr-progress-bar" style="width:${pct}%"></div></div>` : ''}
+              <div class="pr-title">Emparejar</div>
+              <div class="pr-meta">${matchN} ${matchN===1?'ejercicio':'ejercicios'} · al azar · sin costo de ❤️</div>
             </div>
             <div class="pr-arrow">→</div>
-          </div>
-        `;
-      }).join('')}
+          </div>`;
+        if(orderN) html += `
+          <div class="practice-row" onclick="haptic(8);startPractice('order')">
+            <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🔢</div>
+            <div class="pr-info">
+              <div class="pr-title">Ordenar</div>
+              <div class="pr-meta">${orderN} ${orderN===1?'ejercicio':'ejercicios'} de secuencia · al azar · sin costo de ❤️</div>
+            </div>
+            <div class="pr-arrow">→</div>
+          </div>`;
+        return html;
+      })()}
+
+      ${dayRowsHtml}
     </div>
     ${renderNav('flashcards')}
   `;
@@ -3963,8 +4582,9 @@ function gloScrollTop(){
   setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
 }
 
-function openGlossary(){
+async function openGlossary(){
   haptic(HAPTIC.tap);
+  await ensureAllCoursesLoaded(); // los glosarios viven en los días de cada curso
   const list = glossaryCourses();
   GLOSSARY = { courseId: list.length === 1 ? list[0].id : null };
   VIEW = 'glossary';
@@ -4278,6 +4898,108 @@ function renderStreak(){
   `;
 }
 
+async function openStats(){
+  haptic(HAPTIC.tap);
+  await ensureAllCoursesLoaded();
+  VIEW = 'stats';
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+
+// ESTADÍSTICAS — precisión por día/unidad y globales.
+// Métricas honestas con los datos que el motor sí registra:
+//   lecciones perfectas vs completadas (DB.progress), errores activos por
+//   unidad (DB.wrongAnswers), mejor score de quiz (DB.quizProgress),
+//   precisión de flashcards y vencidas SM-2 (DB.flashcardStats).
+function renderStats(){
+  const nowTs = now();
+  // Globales
+  let fRight = 0, fWrong = 0, dueCount = 0;
+  Object.values(DB.flashcardStats || {}).forEach(st => {
+    fRight += st.right || 0;
+    fWrong += st.wrong || 0;
+    if(st.lastSeen && (st.due || 0) <= nowTs) dueCount++;
+  });
+  const fPrec = (fRight + fWrong) ? Math.round(fRight / (fRight + fWrong) * 100) : null;
+  const perfPct = DB.totalLessons ? Math.round(DB.perfectLessons / DB.totalLessons * 100) : null;
+  const errCount = Object.keys(DB.wrongAnswers || {}).length;
+  const totalMins = Object.values(DB.activityLog || {}).reduce((a, d) => a + (d.mins || 0), 0);
+
+  // Errores activos por curso|día
+  const errByDay = {};
+  Object.values(DB.wrongAnswers || {}).forEach(e => {
+    const k = e.courseId + '|' + e.dayId;
+    errByDay[k] = (errByDay[k] || 0) + 1;
+  });
+
+  const courses = Object.values(COURSES).filter(c => c.active !== false);
+  const courseHtml = courses.map(course => {
+    const days = (course.days || []).filter(d => !d.locked && d.kind !== 'mock-exam' && d.id !== 'glosario' && (d.lessons || []).length);
+    if(!days.length) return '';
+    return `
+      <div class="section-title">${course.icon} ${course.title}</div>
+      ${days.map(d => {
+        const prog = getDayProgress(course.id, d.id);
+        const dayLessons = DB.progress[course.id]?.[d.id] || {};
+        const perfects = Object.values(dayLessons).filter(l => l.completed && l.perfect).length;
+        const errs = errByDay[course.id + '|' + d.id] || 0;
+        const qp = getQuizProgress(course.id, d.id);
+        const pct = prog.total ? Math.round(perfects / prog.total * 100) : 0;
+        const meta = [
+          prog.done + '/' + prog.total + ' lecciones',
+          '💯 ' + perfects + ' perfectas',
+          errs ? '❌ ' + errs + ' errores activos' : '✅ sin errores activos'
+        ];
+        if(qp.bestScore) meta.push('📝 mejor quiz ' + qp.bestScore + '%');
+        return `
+          <div class="practice-row" style="cursor:default">
+            <div class="pr-info">
+              <div class="pr-title">${d.title}</div>
+              <div class="pr-meta">${meta.join(' · ')}</div>
+              <div class="pr-progress"><div class="pr-progress-bar" style="width:${pct}%"></div></div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    `;
+  }).join('');
+
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="back-row">
+        <button class="back-btn" onclick="haptic(8);navTo('config')" aria-label="Volver a Ajustes">←</button>
+        <div class="crumb">Estadísticas</div>
+      </div>
+      <div class="welcome"><h1>📊 Estadísticas</h1><p>Tu precisión por unidad y métricas globales</p></div>
+      <div class="stat-grid">
+        <div class="stat-tile">
+          <div class="stat-tile-label">Precisión flashcards</div>
+          <div class="stat-tile-value">${fPrec == null ? '—' : fPrec + '%'}</div>
+          <div class="stat-tile-sub">${fRight} ✓ · ${fWrong} ✗</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Lecciones perfectas</div>
+          <div class="stat-tile-value">${perfPct == null ? '—' : perfPct + '%'}</div>
+          <div class="stat-tile-sub">${DB.perfectLessons} de ${DB.totalLessons}</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Por repasar (SM-2)</div>
+          <div class="stat-tile-value">${dueCount}</div>
+          <div class="stat-tile-sub">tarjetas vencidas hoy</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-label">Errores activos</div>
+          <div class="stat-tile-value">${errCount}</div>
+          <div class="stat-tile-sub">${totalMins ? '~' + totalMins + ' min estudiados' : 'preguntas falladas sin redimir'}</div>
+        </div>
+      </div>
+      ${courseHtml || '<div class="empty"><div class="empty-ico">📊</div><div>Completa lecciones para ver tus números</div></div>'}
+    </div>
+    ${renderNav('config')}
+  `;
+}
+
 function renderConfig(){
   const lvl = calcLevel(DB.xp);
   const lvlInfo = LEVELS[lvl-1];
@@ -4352,6 +5074,15 @@ function renderConfig(){
           <div class="pr-meta">Términos y conceptos clave por curso →</div>
         </div>
         <div style="font-size:22px;flex-shrink:0">📚</div>
+      </div>
+
+      <div class="practice-row" onclick="haptic(8);openStats()">
+        <div class="pr-ico" style="background:linear-gradient(135deg,#F39C12,#CA7E0B)">📊</div>
+        <div class="pr-info">
+          <div class="pr-title">Estadísticas</div>
+          <div class="pr-meta">Precisión por unidad · flashcards vencidas · errores →</div>
+        </div>
+        <div style="font-size:22px;flex-shrink:0">📈</div>
       </div>
 
       ${(() => {
@@ -4434,6 +5165,27 @@ function renderConfig(){
         <button class="gc-opt" style="width:100%;margin-top:10px" onclick="navTo('trainer_card')">🎖️ Ver Trainer Card y medallas</button>
       </div>
 
+      <div class="goal-card">
+        <div class="gc-title"><span>🔊</span>Sonidos</div>
+        <div class="gc-desc">Efectos en cada avance, acierto, error y recompensa. Elige un tema (al tocarlo lo escuchas de preview). Se generan en tu dispositivo: no gastan datos.</div>
+        <div class="gc-options" style="grid-template-columns:repeat(4,1fr)">
+          <button class="gc-opt ${DB.soundEnabled===false?'active':''}" onclick="setSoundTheme('off')">🔇<span class="gc-opt-sub">silencio</span></button>
+          ${Object.entries(SFX_THEMES).map(([id, th]) => `
+            <button class="gc-opt ${DB.soundEnabled!==false && DB.soundTheme===id?'active':''}" onclick="setSoundTheme('${id}')">${th.icon}<span class="gc-opt-sub">${th.name.toLowerCase()}</span></button>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="gc-title"><span>📳</span>Vibración</div>
+        <div class="gc-desc">Intensidad del feedback háptico en cada avance, acierto y error. Al tocar una opción la sientes de preview. (En iPhone el navegador no permite vibrar — limitación de Apple.)</div>
+        <div class="gc-options" style="grid-template-columns:repeat(3,1fr)">
+          <button class="gc-opt ${DB.hapticLevel==='off'?'active':''}" onclick="setHapticLevel('off')">📴<span class="gc-opt-sub">apagada</span></button>
+          <button class="gc-opt ${DB.hapticLevel==='soft'?'active':''}" onclick="setHapticLevel('soft')">📳<span class="gc-opt-sub">suave</span></button>
+          <button class="gc-opt ${DB.hapticLevel!=='off'&&DB.hapticLevel!=='soft'?'active':''}" onclick="setHapticLevel('strong')">💥<span class="gc-opt-sub">fuerte</span></button>
+        </div>
+      </div>
+
       <div class="backup-card">
         <div class="bc-title"><span class="bc-ico">💾</span>Respaldo de datos</div>
         <div class="bc-desc">Exporta tu progreso como archivo JSON para guardarlo en Drive, WhatsApp o donde quieras. Si limpias cache o cambias de celular, impórtalo para recuperar XP, racha y logros.</div>
@@ -4459,14 +5211,16 @@ function renderConfig(){
 // ============================================================
 // ACTIONS
 // ============================================================
-function navTo(view){
-  VIEW = view;
+async function navTo(view){
   if(view === 'flashcards'){
     PRACTICE_MODE = null;
     PRACTICE_SCOPE = null;
     CURRENT.lessonId = null;
     FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
+    // El hub de práctica agrega contenido de todos los cursos activos
+    await ensureAllCoursesLoaded();
   }
+  VIEW = view;
   render();
   setTimeout(() => {
     const sc = document.querySelector('.scroll');
@@ -4476,8 +5230,16 @@ function navTo(view){
 
 function startPractice(mode, scope){
   haptic(HAPTIC.tap);
-  if(mode === 'quick-quiz' || mode === 'match' || mode === 'order' || mode === 'lightning'){
-    showToast('Práctica de '+mode+' próximamente. Por ahora practícalo desde las lecciones del Día 1.', 2800);
+  if(mode === 'lightning'){
+    showToast('Práctica de lightning próximamente. Por ahora desde las lecciones.', 2800);
+    return;
+  }
+  if(mode === 'quick-quiz'){
+    openPracticeQuiz();
+    return;
+  }
+  if(mode === 'match' || mode === 'order'){
+    openPracticeActivity(mode);
     return;
   }
   PRACTICE_MODE = mode;
@@ -4492,22 +5254,76 @@ function startPractice(mode, scope){
   }, 10);
 }
 
-function buildPracticeDeck(mode, scope){
-  const courseId = scope?.courseId || 'meta-410';
-  const course = COURSES[courseId];
-  if(!course) return [];
-  const days = course.days.filter(d => !d.locked && d.kind !== 'mock-exam');
+// Cursos activos con días ya cargados (para agregación de práctica)
+function practiceCourses(){
+  return Object.values(COURSES).filter(c => c.active !== false && c._daysLoaded);
+}
 
+// Todas las flashcards de todos los cursos activos
+function allFlashcards(){
+  const out = [];
+  for(const course of practiceCourses()){
+    for(const d of (course.days||[])){
+      if(d.locked || d.kind === 'mock-exam') continue;
+      for(const l of d.lessons || []){
+        if(l.type === 'flashcards') out.push(...(l.cards||[]));
+      }
+    }
+  }
+  return out;
+}
+
+// REPASO ESPACIADO SM-2 — algoritmo SuperMemo-2 real por flashcard.
+// flashAnswer registra cada calificación con sm2Update: acierto = calidad 4,
+// fallo = calidad 1. Cada card guarda en flashcardStats[q]:
+//   ef (ease factor, min 1.3) · reps · ivl (días) · due (timestamp).
+// Intervalos: 1ª vez 1 día → 2ª 6 días → después ivl*ef. Fallo resetea.
+function sm2Update(st, correct){
+  if(correct){
+    st.reps = (st.reps || 0) + 1;
+    // calidad q=4: delta de EF = 0.1 - (5-q)*(0.08+(5-q)*0.02) = 0
+    st.ef = Math.max(1.3, st.ef || 2.5);
+    st.ivl = st.reps === 1 ? 1 : st.reps === 2 ? 6 : Math.round((st.ivl || 6) * (st.ef || 2.5));
+  } else {
+    // calidad q=1: se reinicia la repetición y baja el ease
+    st.reps = 0;
+    st.ivl = 0;
+    st.ef = Math.max(1.3, (st.ef || 2.5) - 0.2);
+  }
+  st.due = now() + st.ivl * 86400000;
+}
+
+// Deck del repaso inteligente, por prioridad SM-2:
+//   1º vencidas (due <= ahora), la más atrasada primero — incluye falladas
+//   2º nunca vistas (cobertura de material nuevo)
+//   3º futuras, la más próxima a vencer primero
+function smartMixDeck(n){
+  const nowTs = now();
+  const scored = allFlashcards().map(c => {
+    const st = DB.flashcardStats[c.q];
+    let bucket, key = 0;
+    if(!st || !st.lastSeen){ bucket = 1; key = Math.random(); }
+    else if((st.due || 0) <= nowTs){ bucket = 0; key = (st.due || 0); }
+    else { bucket = 2; key = st.due; }
+    return {c, bucket, key};
+  });
+  scored.sort((a,b) => a.bucket - b.bucket || a.key - b.key);
+  return scored.slice(0, n).map(x => x.c);
+}
+
+function buildPracticeDeck(mode, scope){
   if(mode === 'lesson'){
-    const day = course.days.find(d => d.id === CURRENT.dayId);
+    const course = COURSES[CURRENT.courseId];
+    const day = course?.days.find(d => d.id === CURRENT.dayId);
     const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
     return lesson?.cards ? [...lesson.cards] : [];
   }
   if(mode === 'all-flash'){
-    return days.flatMap(d => d.lessons.filter(l => l.type === 'flashcards').flatMap(l => l.cards||[]));
+    return allFlashcards();
   }
   if(mode === 'day-flash'){
-    const day = days.find(d => d.id === scope?.dayId);
+    const course = COURSES[scope?.courseId || PRIMARY_COURSE_ID];
+    const day = course?.days.find(d => d.id === scope?.dayId);
     if(!day) return [];
     return day.lessons.filter(l => l.type === 'flashcards').flatMap(l => l.cards||[]);
   }
@@ -4518,10 +5334,85 @@ function buildPracticeDeck(mode, scope){
     }));
   }
   if(mode === 'mix'){
-    const all = days.flatMap(d => d.lessons.filter(l => l.type === 'flashcards').flatMap(l => l.cards||[]));
-    return all.sort(() => Math.random()-.5).slice(0, 10);
+    return smartMixDeck(10);
   }
   return [];
+}
+
+// QUICK QUIZ — 10 MCQs al azar de todos los cursos activos, priorizando
+// lecciones ya completadas. Usa el flujo de quiz (sin feedback por pregunta,
+// resumen al final) pero NO toca quizProgress ni desbloqueos.
+function buildQuickQuizDeck(n){
+  const completed = [], rest = [];
+  for(const course of practiceCourses()){
+    const prog = DB.progress?.[course.id] || {};
+    for(const day of (course.days||[])){
+      if(day.locked || day.kind === 'mock-exam' || day.id === 'glosario') continue;
+      for(const lesson of day.lessons || []){
+        const isCompleted = !!prog[day.id]?.[lesson.id]?.completed;
+        for(const card of lesson.cards || []){
+          if(card.type !== 'mcq') continue;
+          (isCompleted ? completed : rest).push(card);
+        }
+      }
+    }
+  }
+  const pool = completed.length >= n ? completed : completed.concat(rest);
+  return shuffleArr(pool).slice(0, n);
+}
+
+// Lista de actividades match/order disponibles en cursos activos cargados
+function practiceActivities(type){
+  const out = [];
+  for(const course of practiceCourses()){
+    for(const day of (course.days||[])){
+      if(day.locked || day.kind === 'mock-exam' || day.id === 'glosario') continue;
+      for(const lesson of day.lessons || []){
+        if(lesson.type === type) out.push({courseId: course.id, dayId: day.id, lesson});
+      }
+    }
+  }
+  return out;
+}
+
+// Práctica libre de match/order desde el hub: abre una actividad AL AZAR.
+// PRACTICE_MODE='activity' hace que NO cueste corazones, NO marque progreso
+// del sendero y regrese al hub al terminar (XP chico fijo).
+function openPracticeActivity(type){
+  const pool = practiceActivities(type);
+  if(!pool.length){
+    showToast('No hay ejercicios de este tipo todavía.', 2200);
+    return;
+  }
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  PRACTICE_MODE = 'activity';
+  PRACTICE_SCOPE = {type};
+  CURRENT.courseId = pick.courseId;
+  CURRENT.dayId = pick.dayId;
+  CURRENT.lessonId = pick.lesson.id;
+  playSfx('advance');
+  LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[], started: now()};
+  MATCH_STATE = {leftSlots:[], rightSlots:[], selL:null, selR:null, matched:new Set(), errors:0, wrongL:null, wrongR:null};
+  ORDER_STATE = {correctOrder:[], current:[], correct:false, submitted:false, errors:0};
+  VIEW = 'lesson';
+  render();
+}
+
+function openPracticeQuiz(){
+  const deck = buildQuickQuizDeck(10);
+  if(deck.length < 3){
+    showToast('Aún no hay suficientes preguntas. Completa más lecciones primero.', 2600);
+    return;
+  }
+  QUIZ_STATE = {
+    qIdx: 0, answers: {}, deck,
+    started: now(), timeLimit: 0,
+    kind: 'practice', passingScore: 80,
+    title: 'Quick Quiz ⚡',
+    flagged: {}, showMap: false, result: null
+  };
+  VIEW = 'quiz';
+  render();
 }
 
 function recordWrong(card, courseId, dayId, lessonId){
@@ -4583,6 +5474,7 @@ function openLesson(id){
     return;
   }
   haptic(HAPTIC.tap);
+  playSfx('advance');
   rememberDayScroll();
   CURRENT.lessonId = id;
   LESSON_STATE = {cardIdx:0, errors:0, answers:{}, completed:false, tempSelected:[], started: now()};
@@ -4617,7 +5509,12 @@ function exitLesson(){
     if(!confirm('¿Salir? Perderás el progreso de esta lección.')) return;
   }
   stopLightningTimer();
-  if(CURRENT.dayId) {
+  if(PRACTICE_MODE === 'activity'){
+    PRACTICE_MODE = null;
+    PRACTICE_SCOPE = null;
+    CURRENT.lessonId = null;
+    VIEW = 'flashcards';
+  } else if(CURRENT.dayId) {
     VIEW = 'day';
   } else {
     VIEW = 'home';
@@ -4627,6 +5524,7 @@ function exitLesson(){
 
 function selectOption(i, isMulti){
   haptic(HAPTIC.select);
+  playSfx('tick');
   if(!LESSON_STATE.tempSelected) LESSON_STATE.tempSelected = [];
   if(isMulti){
     const idx = LESSON_STATE.tempSelected.indexOf(i);
@@ -4653,10 +5551,12 @@ function submitAnswer(){
   if(!correct){
     LESSON_STATE.errors += 1;
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
     recordWrong(card, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
     if(loseHeart() && DB.hearts === 0) earnAch('no_hearts');
   } else {
     haptic(HAPTIC.correct);
+    playSfx('correct');
     clearWrong(card, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
   }
   render();
@@ -4664,6 +5564,7 @@ function submitAnswer(){
 
 function nextCard(){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   const course = COURSES[CURRENT.courseId];
   const day = course?.days.find(d => d.id === CURRENT.dayId);
   const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
@@ -4753,6 +5654,7 @@ function finishLesson(){
   }
 
   haptic(HAPTIC.complete);
+  playSfx(perfect ? 'perfect' : 'complete');
   if(perfect) launchConfetti();
   LESSON_STATE.completed = true;
   // Intentar disparar un battle estilo Pokémon antes de mostrar lesson_complete.
@@ -4772,8 +5674,18 @@ function finishLessonReturn(){
 
 function flipFlash(){
   haptic(HAPTIC.tap);
+  playSfx('flip');
   FLASH_STATE.flipped = !FLASH_STATE.flipped;
-  render();
+  // Animación de flip 3D: toggle de clase sobre el nodo vivo (un render
+  // inmediato lo recrearía y mataría la transición). El re-render para
+  // habilitar los botones ✓/✗ va después de que termine el giro.
+  const el = document.getElementById('flash3d');
+  if(el){
+    el.classList.toggle('flipped', FLASH_STATE.flipped);
+    setTimeout(() => { if(VIEW === 'flashcards') render(); }, 480);
+  } else {
+    render();
+  }
 }
 
 // Binario: 'right' = acerté, 'wrong' = no acerté. Marca y avanza al siguiente.
@@ -4784,6 +5696,7 @@ function flashAnswer(result){
   if(!FLASH_STATE.answered) FLASH_STATE.answered = {};
   if(FLASH_STATE.answered[FLASH_STATE.idx] !== undefined) return;
   haptic(result === 'right' ? HAPTIC.correct : HAPTIC.wrong);
+  playSfx(result === 'right' ? 'correct' : 'wrong');
   const card = FLASH_STATE.deck[FLASH_STATE.idx];
   if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {right:0, wrong:0};
   // Migración suave de stats viejos (good/hard/fail → right/wrong)
@@ -4793,6 +5706,7 @@ function flashAnswer(result){
   if(s.fail !== undefined){ s.wrong = (s.wrong||0) + (s.fail||0); delete s.fail; }
   s[result] = (s[result]||0) + 1;
   s.lastSeen = now();
+  sm2Update(s, result === 'right');
   // XP: acertar da 3, fallar da 1 (sigue siendo aprendizaje)
   addXP(result === 'right' ? 3 : 1);
   // Counters de la sesión actual
@@ -4813,6 +5727,7 @@ function flashAnswer(result){
 function flashPrev(){
   if(FLASH_STATE.idx === 0) return;
   haptic(HAPTIC.tap);
+  playSfx('tick');
   FLASH_STATE.idx -= 1;
   FLASH_STATE.flipped = false;
   render();
@@ -4832,6 +5747,7 @@ function exitFlashSession(){
 // Skip (sin contar)
 function flashSkip(){
   haptic(HAPTIC.tap);
+  playSfx('tick');
   FLASH_STATE.idx += 1;
   FLASH_STATE.flipped = false;
   FLASH_STATE.showExpl = false;
@@ -4922,7 +5838,7 @@ function resetAll(){
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
     goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
     badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
-    starter: 'pikachu'
+    starter: 'pikachu', soundEnabled: true, soundTheme: 'classic', hapticLevel: 'strong'
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
@@ -4943,6 +5859,7 @@ function showNextLvlUp(){
   document.getElementById('lu-name').textContent = info.n;
   document.getElementById('lvlup-overlay').classList.add('show');
   haptic(HAPTIC.levelUp);
+  playSfx('levelup');
   launchConfetti();
 }
 function closeLvlUp(){
@@ -4959,6 +5876,7 @@ function showNextAch(){
   document.getElementById('ach-desc').textContent = ach.desc;
   document.getElementById('ach-overlay').classList.add('show');
   haptic(HAPTIC.achievement);
+  playSfx('levelup');
 }
 function closeAchOverlay(){
   document.getElementById('ach-overlay').classList.remove('show');
@@ -5219,7 +6137,7 @@ if('serviceWorker' in navigator){
       newSW.addEventListener('statechange', () => {
         if(newSW.state === 'installed' && navigator.serviceWorker.controller){
           // Hay versión nueva. Mostrar toast y recargar al toque del usuario.
-          try{ showToast('🔄 Nueva versión disponible · tocá para recargar', 6000, 'success'); }catch(e){}
+          try{ showToast('🔄 Nueva versión disponible · toca para recargar', 6000, 'success'); }catch(e){}
           const t = document.getElementById('toast');
           if(t){
             t.style.cursor = 'pointer';
@@ -5467,10 +6385,12 @@ function battleAnswer(i, timedOut){
     BATTLE_STATE.correctCount += 1;
     BATTLE_STATE.foeLives = Math.max(0, BATTLE_STATE.foeLives - 1);
     haptic(HAPTIC.correct);
+    playSfx('battleHit');
   } else {
     BATTLE_STATE.wrongCount += 1;
     BATTLE_STATE.meLives = Math.max(0, BATTLE_STATE.meLives - 1);
     haptic(HAPTIC.wrong);
+    playSfx('wrong');
   }
   BATTLE_STATE.lastFeedback = {
     correctIdx: q.correct,
@@ -5580,6 +6500,7 @@ function battleFinish(){
   BATTLE_STATE.phase = 'result';
   BATTLE_STATE.lastOutcome = {outcome, xp, msg, cc, total: totalAnswered, won};
   if(outcome === 'badge_won' || outcome === 'badge_defended' || outcome === 'badge_restored'){
+    playSfx('battleWin');
     launchConfetti();
   }
   render();
@@ -5931,7 +6852,7 @@ function renderTrainerCard(){
   `;
 }
 
-function testBattle(forceLeaderId){
+async function testBattle(forceLeaderId){
   haptic(HAPTIC.tap);
   if(!CURRENT.courseId){
     // Toma el primer curso activo
@@ -5942,6 +6863,7 @@ function testBattle(forceLeaderId){
     showToast('Abre un curso primero para probar el battle', 2400);
     return;
   }
+  await ensureCourseDaysLoaded(CURRENT.courseId); // el pool de MCQs vive en los días
   const opts = {force:true};
   if(forceLeaderId && LEADERS.find(l => l.id === forceLeaderId)){
     opts.forceLeader = forceLeaderId;
@@ -5950,23 +6872,8 @@ function testBattle(forceLeaderId){
   if(!ok) showToast('No hay suficientes preguntas en este curso para un battle', 2800);
 }
 
-const manifest = {
-  name: 'Centro de Estudios Randall',
-  short_name: 'Estudios',
-  start_url: '.',
-  display: 'standalone',
-  background_color: '#F0F2F5',
-  theme_color: '#1877F2',
-  icons: [{
-    src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231877F2'/><text y='.9em' font-size='62' x='18' fill='white'>📘</text></svg>",
-    sizes: 'any',
-    type: 'image/svg+xml'
-  }]
-};
-const link = document.createElement('link');
-link.rel = 'manifest';
-link.href = URL.createObjectURL(new Blob([JSON.stringify(manifest)], {type:'application/json'}));
-document.head.appendChild(link);
+// Manifest: ahora es un archivo real (manifest.json) linkeado en el <head>.
+// El manifest via blob URL no funcionaba bien en iOS y el ícono se perdía.
 
 // ============================================================
 // INIT
@@ -5994,7 +6901,15 @@ async function init(){
     `;
     return;
   }
+  // Primer render inmediato (solo con catálogo + metas). El hero muestra
+  // placeholder mientras los días del curso primario cargan en background.
   render();
+  if(PRIMARY_COURSE_ID && COURSES[PRIMARY_COURSE_ID] && !COURSES[PRIMARY_COURSE_ID]._daysLoaded){
+    loadCourseDays(PRIMARY_COURSE_ID).then(() => {
+      // Refrescar el hero solo si el usuario sigue en home
+      if(VIEW === 'home') render();
+    }).catch(()=>{});
+  }
   // Atajo de preview: si la URL trae #battle o ?battle=1 dispara un battle
   // de prueba a los ~700ms. Útil para mostrar la dinámica sin esperar las
   // gates random/cooldown. Quitar `#battle` y recargar para uso normal.
