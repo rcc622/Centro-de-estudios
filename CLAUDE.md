@@ -543,6 +543,10 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
 5. **El último item de un día siempre es flashcards** (lección con `type: "flashcards"`) para repaso espaciado.
 6. **Apunta a 5-7 lecciones por día** + 1 de flashcards. No menos de 4, no más de 8.
 7. **Cada lección debe tomar 8-15 minutos** completarla. Calibra cantidad de cards.
+8. **ENSEÑA ANTES DE EVALUAR (regla anti-frustración).** Ninguna actividad (`order`, `match`, `decision-tree`, `lightning`, MCQ) debe evaluar contenido que el usuario no haya visto antes en una card o lección previa del mismo día. Una actividad sobre material no enseñado está destinada a fracasar y obliga a aprender a prueba y error, quemando vidas injustamente.
+   - El motor mitiga esto con la **fase de estudio**: la primera vez que se abre un `order`/`match`, muestra el material RESUELTO (pasos en orden / pares correctos) y el usuario practica después. En repasos arranca directo en práctica con botón 📖 para re-estudiar.
+   - Las lecciones `order` y `match` aceptan un array opcional `cards` (tipos `concept`/`tip`/`warn`/`quote`/`kvtable`) que se muestra en la fase de estudio para dar contexto. Úsalo cuando la secuencia/pares vengan de una fuente que el día no desarrolló a fondo (ej. "el PDF oficial define 6 pasos…").
+   - En `order`, la `explanation` también se muestra durante el estudio como "POR QUÉ ESTE ORDEN".
 
 ---
 
