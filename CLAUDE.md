@@ -175,12 +175,24 @@ Esto es **raro** y requiere cuidado. Casos legítimos:
 
 Ejemplo: *"Procesa este PDF y créame un curso completo."*
 
+**Regla de tokens: NUNCA leer un PDF grande directo.** Los PDFs queman tokens (cada página va como imagen + texto). El protocolo es convertirlos primero a Markdown con **MarkItDown de Microsoft** ([github.com/microsoft/markitdown](https://github.com/microsoft/markitdown), MIT) y trabajar SOLO sobre el `.md`.
+
 **Tu workflow:**
-1. **Si el PDF está en el repo** (Randall lo subió), léelo.
-2. **Si no está disponible**, pregunta a Randall que te pegue el contenido relevante o que copie las secciones clave en el chat.
-3. Procesa el contenido y genera estructura: cuántos módulos, qué temas por módulo, cuántas lecciones por módulo.
-4. **Pregúntale a Randall si aprueba la estructura ANTES de generar todo el contenido.** No gastes tokens generando 7 días si la estructura está mal.
-5. Una vez aprobada, genera todo siguiendo Tareas B + A.
+1. **Instalar markitdown** (el contenedor de las sesiones web es efímero, se instala cada vez):
+   ```bash
+   pip install -q 'markitdown[pdf]' && pip install -q --upgrade cffi
+   ```
+   (el `cffi` upgrade arregla el `ModuleNotFoundError: _cffi_backend` de este contenedor — verificado 2026-06-09)
+2. **Convertir el PDF** (esté en el repo, en uploads o donde Randall lo haya adjuntado):
+   ```bash
+   markitdown documento.pdf > source/<id-curso>/documento.md
+   ```
+3. **Commitear el `.md` en `source/<id-curso>/`** para que las sesiones futuras ya no re-conviertan. El PDF original NO se commitea si pesa >5MB (política de assets); el `.md` sí.
+4. **Leer el `.md` por secciones** (Grep por temas, Read con offset/limit) — no completo de un jalón si es largo.
+5. **Si markitdown devuelve texto vacío o basura** (PDF escaneado sin capa de texto), decírselo a Randall y pedirle las secciones clave pegadas en el chat. No inventar contenido.
+6. Procesa el contenido y genera estructura: cuántos módulos, qué temas por módulo, cuántas lecciones por módulo.
+7. **Pregúntale a Randall si aprueba la estructura ANTES de generar todo el contenido.** No gastes tokens generando 7 días si la estructura está mal.
+8. Una vez aprobada, genera todo siguiendo Tareas B + A.
 
 ---
 
