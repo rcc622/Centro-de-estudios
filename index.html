@@ -940,6 +940,14 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .complete-next-teaser{background:#F5F7FA;border-radius:14px;padding:12px 16px;font-size:13px;color:#65676B;font-weight:600;margin-top:6px}
 .complete-next-teaser strong{color:#1877F2}
 
+/* Racha en riesgo (trigger interno al abrir sin estudiar hoy) */
+.streak-risk{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#FFF4D6,#FFE0B3);border:1.5px solid #FFA726;border-radius:14px;padding:12px 14px;margin-bottom:12px;cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform .15s}
+.streak-risk:active{transform:scale(.98)}
+.streak-risk .sr-ico{font-size:26px;animation:srFlicker 1.4s ease-in-out infinite}
+@keyframes srFlicker{0%,100%{transform:scale(1)}50%{transform:scale(1.16) rotate(-4deg)}}
+.streak-risk .sr-title{font-size:13.5px;font-weight:800;color:#7A3F00}
+.streak-risk .sr-sub{font-size:12px;color:#8B4F0E;font-weight:600;margin-top:1px}
+
 /* Mapa de preguntas (simulacro) */
 .qmap-bar{display:flex;gap:8px;margin-bottom:12px}
 .qmap-btn{flex:1;padding:10px 12px;border-radius:12px;border:1.5px solid #E4E6EB;background:#fff;font-weight:800;font-size:12.5px;color:#1C1E21;cursor:pointer;font-family:inherit;transition:transform .12s}
@@ -2276,6 +2284,15 @@ function renderHome(){
           <div class="goal-ring-inner">${goalDone ? '🏆' : `<span class="gr-num">${doneToday}</span><span class="gr-den">/${goal}</span>`}</div>
         </div>
       </div>
+      ${DB.streak > 0 && DB.lastStudyDate !== todayStr() && mainCourse ? `
+        <div class="streak-risk" onclick="haptic(12);openHeroNext('${mainCourse.id}')">
+          <span class="sr-ico">🔥</span>
+          <div class="sr-info">
+            <div class="sr-title">Tu racha de ${DB.streak} ${DB.streak===1?'día':'días'} está en juego</div>
+            <div class="sr-sub">Una lección hoy y sigue viva · toca para continuar</div>
+          </div>
+        </div>
+      ` : ''}
       ${DB.comboReady ? `
         <div class="power-banner">
           <div class="pb-ico">⚡</div>
@@ -3549,6 +3566,7 @@ function startQuizTimer(){
     el.style.color = remaining < 300 ? '#E74C3C' : '#1877F2';
     if(remaining === 0){
       stopQuizTimer();
+      QUIZ_STATE._timeUp = true; // envío forzado: sin confirm de "sin responder"
       showToast('Tiempo agotado · enviando resultado',2500);
       setTimeout(finishQuiz, 500);
     }
@@ -3720,7 +3738,7 @@ function finishQuiz(){
   // Guard: con el mapa de preguntas puedes terminar con preguntas en blanco.
   // Confirmar antes de enviar (las no respondidas cuentan como incorrectas).
   const unanswered = QUIZ_STATE.deck.filter((_, i) => !(QUIZ_STATE.answers[i] || []).length).length;
-  if(unanswered > 0 && !confirm(`Te quedan ${unanswered} ${unanswered===1?'pregunta':'preguntas'} sin responder (cuentan como incorrectas). ¿Enviar de todos modos?`)) return;
+  if(unanswered > 0 && !QUIZ_STATE._timeUp && !confirm(`Te quedan ${unanswered} ${unanswered===1?'pregunta':'preguntas'} sin responder (cuentan como incorrectas). ¿Enviar de todos modos?`)) return;
   stopQuizTimer();
 
   // Todos los efectos secundarios viven AQUÍ (una sola vez), no en el render.

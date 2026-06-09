@@ -479,14 +479,14 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
   "id": "3.6",
   "title": "Árbol oficial de elección de bid strategy",
   "type": "decision-tree",
-  "instruction": "Para cada escenario, recorré el árbol respondiendo Sí/No.",
+  "instruction": "Para cada escenario, recorre el árbol respondiendo Sí/No.",
   "tree": {
-    "q": "¿Querés controlar costos?",
+    "q": "¿Quieres controlar costos?",
     "branches": [
       {
         "label": "Sí",
         "next": {
-          "q": "¿Optimizás valor?",
+          "q": "¿Optimizas valor?",
           "branches": [
             { "label": "Sí", "leaf": "ROAS Goal" },
             { "label": "No", "leaf": "Cost per Result Goal / Bid Cap" }
@@ -496,7 +496,7 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
       {
         "label": "No",
         "next": {
-          "q": "¿Optimizás valor?",
+          "q": "¿Optimizas valor?",
           "branches": [
             { "label": "Sí", "leaf": "Highest Value" },
             { "label": "No", "leaf": "Highest Volume" }
@@ -551,23 +551,36 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
 El motor implementa estas mecánicas. Si Randall pide cambios, modifica `index.html` con cuidado.
 
 ### XP
-- Lección perfecta (0 errores): **+30 XP**
+- Lección perfecta (0 errores): **+30 XP** (x multiplicador de dificultad)
 - Lección con errores: `Math.max(10, 25 - errores*3)`
-- Flashcard "Fácil": +3 XP
-- Flashcard "Difícil": +2 XP
-- Flashcard "No supe": +1 XP
+- Flashcard acertada (✓): +3 XP · fallada (✗): +1 XP
+- Quiz de unidad aprobado: +60 XP · diagnóstico: +40 · simulacro: +100
+- Quick Quiz (práctica): +2 XP por acierto
+- Cofre de bloque: +20 XP · Meta diaria cumplida: +50 XP (1 vez/día)
+- Battle ganado: +25 XP + 2 por acierto
+- **Perfect Combo:** 3 lecciones perfectas seguidas → la siguiente da x2 XP
+- Al ganar XP aparece un **"+N XP" flotante** junto al contador del header (refuerzo visual, no quitar)
 
-### Niveles (10)
-1. Novato — 0 XP
-2. Aprendiz — 100 XP
-3. Estudiante — 250 XP
-4. Practicante — 500 XP
-5. Competente — 850 XP
-6. Avanzado — 1300 XP
-7. Experto — 1850 XP
-8. Maestro — 2500 XP
-9. Sabio — 3300 XP
-10. Leyenda Meta — 4200 XP
+### Niveles (100) y rangos (10)
+El motor genera 100 niveles con curva exponencial (constante `LEVELS`):
+`XP(n) = round(20·(n-1)^1.3 + max(0, n-15)^2.3 · 8)` — N10≈344, N20≈1,228, N50≈30,120, N100≈192,340.
+Cada 10 niveles = 1 rango (constante `LEVEL_RANKS`): Novato (1-9), Aprendiz (10-19), Estudiante (20-29), Practicante (30-39), Competente (40-49), Avanzado (50-59), Experto (60-69), Maestro (70-79), Sabio (80-89), Leyenda Meta (90-100).
+
+### Battles estilo Pokémon Red/Blue
+Al terminar una lección hay ~20% de probabilidad (cooldown 2h, mínimo 2 lecciones ese día y 2 ❤️) de que aparezca un líder de gimnasio de Kanto que reta con MCQs de repaso de lecciones YA completadas. Sistema HP: cada acierto baja 20% al rival, cada error te baja 20% a ti. Se conquistan/defienden 8 medallas (constantes `LEADERS`, `BADGES`, `BATTLE_CONFIG`). Perder contra Giovanni = game over (roba TODAS las medallas). La Trainer Card (vitrina de medallas) vive en Logros. Se puede desactivar en Ajustes. Sprites de PokéAPI (MIT) en `content/battles/`.
+
+### Mecánicas Hook (no quitar sin preguntar)
+- **Anillo de meta diaria** en home (conic-gradient: lecciones de hoy vs meta)
+- **Banner de racha en riesgo** en home si no has estudiado hoy y hay racha viva
+- **Encadenado de lecciones**: la pantalla de lección completa ofrece "Siguiente lección →" directo + cuánto falta para la meta diaria
+- **Celebración de racha**: toast + haptic cuando la racha crece (1 vez/día)
+- **Animaciones de refuerzo**: entrada de cards, pop/shake en MCQ, XP flotante, pulso del cofre
+
+### Práctica (pestaña ⚔️)
+- **Repaso inteligente (mix)**: 10 flashcards priorizadas con repaso espaciado lite — primero las que fallas, luego las nunca vistas, luego las dominadas más viejas (usa `flashcardStats`)
+- **Quick Quiz**: 10 MCQs al azar de lecciones completadas de TODOS los cursos activos; no toca `quizProgress`
+- **Repasar errores**: flashcards generadas de `wrongAnswers`
+- El hub agrega contenido de todos los cursos activos (no hardcodear curso)
 
 ### Dificultad — vidas, escudos y nivel de contenido
 
@@ -682,12 +695,20 @@ Validaciones mentales:
 - [ ] Curso CVS
 
 ### Features pendientes del motor
-- [ ] Modo simulacro de examen (60 preguntas, 105 min, condiciones reales)
-- [ ] Cards tipo "match" (emparejar conceptos)
-- [ ] Cards tipo "order" (ordenar pasos)
+- [x] Modo simulacro de examen (60 preguntas, 105 min, mapa de preguntas con salto y marcado 🚩)
+- [x] Cards tipo "match" (emparejar conceptos)
+- [x] Cards tipo "order" (ordenar pasos)
+- [x] Repaso espaciado lite (prioriza falladas > no vistas > dominadas viejas; SM-2 completo pendiente)
+- [x] Quick Quiz en práctica (10 MCQs al azar multi-curso)
 - [ ] Vista de estadísticas detalladas (precisión por tema, etc.)
-- [ ] Recordatorios diarios (notificaciones)
-- [ ] Repaso espaciado (algoritmo SM-2 para flashcards)
+- [ ] Recordatorios diarios (limitado: GitHub Pages no tiene push server; requeriría Notification API con la app abierta)
+- [ ] Práctica de match/order desde el hub (hoy solo desde lecciones)
+
+### Política de archivos pesados (decidida 2026-06-09)
+- **NO subir audio/video/imágenes pesadas al repo.** Los m4a/mp4/mindmaps de meta-410 se eliminaron.
+- Video → YouTube unlisted con card `video-embed`. Audio → Drive público con `audio-link`.
+- Imágenes: solo si pesan <300KB (comprimir/WebP antes de subir).
+- El service worker sirve `content/*/assets/` cache-first SIN revalidación: si cambias un asset, cámbiale el nombre de archivo.
 
 ---
 
@@ -738,6 +759,6 @@ Cuando termines una tarea, **siempre confirma a Randall**:
 
 ---
 
-**Versión de este CLAUDE.md:** 1.0
-**Última actualización:** Domingo 10 de mayo de 2026
+**Versión de este CLAUDE.md:** 1.1
+**Última actualización:** Martes 9 de junio de 2026 (sync con motor: 100 niveles, battles, mecánicas Hook, práctica multi-curso, política de assets)
 **Autor original:** Claude (en sesión Claude.ai con Randall)
