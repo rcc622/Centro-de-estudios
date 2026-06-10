@@ -5007,7 +5007,8 @@ function renderStats(){
         const perfects = Object.values(dayLessons).filter(l => l.completed && l.perfect).length;
         const errs = errByDay[course.id + '|' + d.id] || 0;
         const qp = getQuizProgress(course.id, d.id);
-        const pct = prog.total ? Math.round(perfects / prog.total * 100) : 0;
+        const pct = prog.total ? Math.round(prog.done / prog.total * 100) : 0;
+        const precPct = prog.total ? Math.round(perfects / prog.total * 100) : 0;
         const meta = [
           prog.done + '/' + prog.total + ' lecciones',
           errs ? '❌ ' + errs + ' errores activos' : '✅ sin errores activos'
@@ -5019,7 +5020,7 @@ function renderStats(){
               <div class="pr-title">${d.title}</div>
               <div class="pr-meta">${meta.join(' · ')}</div>
               <div class="pr-progress"><div class="pr-progress-bar" style="width:${pct}%"></div></div>
-              <div class="pr-meta" style="margin-top:3px">💯 Precisión: ${perfects}/${prog.total} perfectas (${pct}%)</div>
+              <div class="pr-meta" style="margin-top:3px">📈 Avance: ${pct}% · 💯 Precisión: ${perfects}/${prog.total} perfectas (${precPct}%)</div>
             </div>
           </div>
         `;
@@ -5034,7 +5035,7 @@ function renderStats(){
         <button class="back-btn" onclick="haptic(8);navTo('config')" aria-label="Volver a Ajustes">←</button>
         <div class="crumb">Estadísticas</div>
       </div>
-      <div class="welcome"><h1>📊 Estadísticas</h1><p>Las barras miden <strong>precisión</strong> (% de lecciones perfectas), no avance</p></div>
+      <div class="welcome"><h1>📊 Estadísticas</h1><p>Barra = <strong>avance</strong> (lecciones completadas) · la precisión va en texto</p></div>
       <div class="stat-grid">
         <div class="stat-tile">
           <div class="stat-tile-label">Precisión flashcards</div>
