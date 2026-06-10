@@ -1175,12 +1175,34 @@ function playCry(pokeId, volume){
 }
 
 let _musicTimer = null, _musicStep = 0, _musicNext = 0;
+let _battleAudio = null;
+
+// Música principal: "Battle Theme A" de cynicmusic (CC0 dominio público,
+// opengameart.org/content/battle-theme-a), re-encodeada a mono 64kbps
+// (752KB) en content/battles/music/. Si el archivo falla (aún no cacheado
+// y sin red), cae al loop sintetizado de respaldo.
 function startBattleMusic(){
+  if(DB.soundEnabled === false) return;
+  stopBattleMusic();
+  try {
+    _battleAudio = new Audio('content/battles/music/battle-theme-a.mp3');
+    _battleAudio.loop = true;
+    _battleAudio.volume = 0.38;
+    _battleAudio.onerror = () => { _battleAudio = null; startBattleSynthLoop(); };
+    const pr = _battleAudio.play();
+    if(pr && pr.catch) pr.catch(() => { _battleAudio = null; startBattleSynthLoop(); });
+  } catch(e){
+    _battleAudio = null;
+    startBattleSynthLoop();
+  }
+}
+
+// Fallback: loop chiptune sintetizado (WebAudio, sin archivos)
+function startBattleSynthLoop(){
   if(DB.soundEnabled === false) return;
   const ctx = getAudioCtx();
   if(!ctx) return;
   try { if(ctx.state === 'suspended') ctx.resume().catch(()=>{}); } catch(e){}
-  stopBattleMusic();
   _musicStep = 0;
   _musicNext = ctx.currentTime + 0.06;
   // Scheduler con lookahead: agenda las notas ~180ms antes para que el
@@ -1198,7 +1220,12 @@ function startBattleMusic(){
     } catch(e){ stopBattleMusic(); }
   }, 60);
 }
+
 function stopBattleMusic(){
+  if(_battleAudio){
+    try { _battleAudio.pause(); _battleAudio.src = ''; } catch(e){}
+    _battleAudio = null;
+  }
   if(_musicTimer){ clearInterval(_musicTimer); _musicTimer = null; }
 }
 
@@ -6920,7 +6947,7 @@ function renderTrainerCard(){
 
       <button class="battle-test-btn" onclick="testBattle()">⚔️ Probar battle ahora</button>
       <div style="font-size:11px;color:#65676B;text-align:center;margin-top:6px">Botón para preview · ignora cooldown y random</div>
-      <div style="font-size:10px;color:#8A8D91;text-align:center;margin-top:18px;padding:0 12px;line-height:1.5">Sprites: PokéAPI (PokeAPI/sprites · MIT). Pokémon™ © Nintendo/Creatures Inc./GAME FREAK Inc. Uso educativo fan, sin fines comerciales.</div>
+      <div style="font-size:10px;color:#8A8D91;text-align:center;margin-top:18px;padding:0 12px;line-height:1.5">Sprites y cries: PokéAPI (MIT). Pokémon™ © Nintendo/Creatures Inc./GAME FREAK Inc. Uso educativo fan, sin fines comerciales. Música de batalla: "Battle Theme A" de cynicmusic (CC0 · opengameart.org).</div>
     </div>
     ${renderNav('achievements')}
   `;
