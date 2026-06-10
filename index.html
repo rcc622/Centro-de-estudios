@@ -1140,6 +1140,57 @@ function getPassingBonus(){ return getDifficulty().passingBonus; }
 function getLightningTime(){ return getDifficulty().lightningTime; }
 
 // ============================================================
+// MÚSICA DE BATALLA — loop chiptune ORIGINAL estilo Gen 1 (WebAudio).
+// No es el theme oficial de Pokémon (composición con copyright de
+// Nintendo: no se puede distribuir ni recreado nota por nota en un
+// repo público). Este loop original imita el estilo: bajo galopante
+// en mi menor + arpegios square wave a 160 BPM. Suena durante el
+// combate y se corta al terminar (el jingle de victoria lo releva).
+// ============================================================
+const BATTLE_BPM = 160;
+const BATTLE_STEP_S = 60 / BATTLE_BPM / 2; // corchea
+// 32 corcheas = 4 compases. null = silencio.
+const BATTLE_BASS = [
+  82.41, 82.41, 164.81, 82.41,  82.41, 164.81, 73.42, 73.42,   // Em con octava
+  65.41, 65.41, 130.81, 65.41,  65.41, 130.81, 61.74, 61.74,   // C → B
+  55.00, 55.00, 110.00, 55.00,  55.00, 110.00, 61.74, 61.74,   // Am → B
+  65.41, 65.41, 130.81, 65.41,  61.74, 61.74,  73.42, 73.42    // C → B → D
+];
+const BATTLE_LEAD = [
+  null,   659.25, null,   783.99, null,   987.77, null,   880.00,
+  783.99, null,   659.25, null,   783.99, null,   880.00, 987.77,
+  1046.5, null,   987.77, 880.00, null,   783.99, 659.25, null,
+  739.99, 783.99, 880.00, null,   987.77, null,   null,   null
+];
+let _musicTimer = null, _musicStep = 0, _musicNext = 0;
+function startBattleMusic(){
+  if(DB.soundEnabled === false) return;
+  const ctx = getAudioCtx();
+  if(!ctx) return;
+  try { if(ctx.state === 'suspended') ctx.resume().catch(()=>{}); } catch(e){}
+  stopBattleMusic();
+  _musicStep = 0;
+  _musicNext = ctx.currentTime + 0.06;
+  // Scheduler con lookahead: agenda las notas ~180ms antes para que el
+  // loop no tartamudee aunque el main thread esté ocupado renderizando.
+  _musicTimer = setInterval(() => {
+    if(DB.soundEnabled === false || VIEW !== 'battle'){ stopBattleMusic(); return; }
+    try {
+      while(_musicNext < ctx.currentTime + 0.18){
+        const i = _musicStep % BATTLE_BASS.length;
+        if(BATTLE_BASS[i]) sfxTone(ctx, _musicNext, BATTLE_BASS[i], 0.16, {type:'square', gain:.04});
+        if(BATTLE_LEAD[i]) sfxTone(ctx, _musicNext, BATTLE_LEAD[i], 0.13, {type:'square', gain:.027});
+        _musicNext += BATTLE_STEP_S;
+        _musicStep++;
+      }
+    } catch(e){ stopBattleMusic(); }
+  }, 60);
+}
+function stopBattleMusic(){
+  if(_musicTimer){ clearInterval(_musicTimer); _musicTimer = null; }
+}
+
+// ============================================================
 // BATTLES — medallas estilo Pokémon Red/Blue
 // ============================================================
 // Las 8 medallas oficiales de Kanto. El número corresponde al archivo PNG
@@ -6329,6 +6380,7 @@ function startBattle({mode, leader, deck, defendingBadgeId, resumeAction}){
   save();
   VIEW = 'battle';
   haptic(HAPTIC.complete);
+  startBattleMusic();
   render();
   // Avanza de intro a 1ra pregunta a los ~2.4s
   setTimeout(() => {
@@ -6419,6 +6471,7 @@ function battleAnswer(i, timedOut){
 
 function battleFinish(){
   stopBattleTimer();
+  stopBattleMusic();
   const cc = BATTLE_STATE.correctCount;
   const wc = BATTLE_STATE.wrongCount;
   const totalAnswered = cc + wc;
@@ -6510,6 +6563,7 @@ function battleContinue(){
   haptic(HAPTIC.tap);
   const resume = BATTLE_STATE.resumeAction;
   stopBattleTimer();
+  stopBattleMusic();
   BATTLE_STATE = {
     active:false, phase:'intro', leader:null, mode:'conquest',
     defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
@@ -6529,6 +6583,7 @@ function battleFlee(){
   showToast('🏃 ¡Escapaste con éxito!', 2000);
   const resume = BATTLE_STATE.resumeAction;
   stopBattleTimer();
+  stopBattleMusic();
   BATTLE_STATE = {
     active:false, phase:'intro', leader:null, mode:'conquest',
     defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
@@ -6544,6 +6599,7 @@ function battleOpenTrainerCard(){
   // racha desde finishLesson). Vamos directo a la Trainer Card. El usuario
   // navega luego con el bottom nav.
   stopBattleTimer();
+  stopBattleMusic();
   BATTLE_STATE = {
     active:false, phase:'intro', leader:null, mode:'conquest',
     defendingBadgeId:null, deck:[], qIdx:0, answers:[], deadline:0,
