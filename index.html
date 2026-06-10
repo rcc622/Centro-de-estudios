@@ -1169,7 +1169,7 @@ function playCry(pokeId, volume){
   if(DB.soundEnabled === false) return;
   try {
     const a = new Audio('content/battles/cries/' + pokeId + '.ogg');
-    a.volume = volume != null ? volume : 0.55;
+    a.volume = volume != null ? volume : 0.95;
     a.play().catch(()=>{});
   } catch(e){}
 }
@@ -1187,7 +1187,7 @@ function startBattleMusic(){
   try {
     _battleAudio = new Audio('content/battles/music/battle-theme-a.mp3');
     _battleAudio.loop = true;
-    _battleAudio.volume = 0.38;
+    _battleAudio.volume = 0.85;
     _battleAudio.onerror = () => { _battleAudio = null; startBattleSynthLoop(); };
     const pr = _battleAudio.play();
     if(pr && pr.catch) pr.catch(() => { _battleAudio = null; startBattleSynthLoop(); });
@@ -1866,7 +1866,11 @@ function getAudioCtx(){
   catch(e){ return null; }
   return _audioCtx;
 }
-// Un tono con envolvente suave (attack corto + decay exponencial)
+// Un tono con envolvente suave (attack corto + decay exponencial).
+// SFX_MASTER amplifica todos los gains (los valores base eran demasiado
+// conservadores: a volumen máximo del cel apenas se oían). Cap en 0.5
+// por tono para no saturar cuando suenan 2-3 notas a la vez.
+const SFX_MASTER = 2.4;
 function sfxTone(ctx, t0, freq, dur, opts){
   opts = opts || {};
   const o = ctx.createOscillator();
@@ -1874,7 +1878,7 @@ function sfxTone(ctx, t0, freq, dur, opts){
   o.type = opts.type || 'sine';
   o.frequency.setValueAtTime(freq, t0);
   if(opts.slideTo) o.frequency.exponentialRampToValueAtTime(opts.slideTo, t0 + dur);
-  const gain = opts.gain != null ? opts.gain : 0.12;
+  const gain = Math.min(0.5, (opts.gain != null ? opts.gain : 0.12) * SFX_MASTER);
   g.gain.setValueAtTime(0.0001, t0);
   g.gain.linearRampToValueAtTime(gain, t0 + 0.012);
   g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
@@ -6600,7 +6604,7 @@ function battleFinish(){
   stopBattleMusic();
   // Cry del Pokémon que cae (rival si ganaste, el tuyo si perdiste)
   const loserPokeId = BATTLE_STATE.foeLives <= 0 ? BATTLE_STATE.leader.pokeId : getStarter().pokeId;
-  playCry(loserPokeId, 0.45);
+  playCry(loserPokeId, 0.8);
   const cc = BATTLE_STATE.correctCount;
   const wc = BATTLE_STATE.wrongCount;
   const totalAnswered = cc + wc;
