@@ -3088,7 +3088,8 @@ function initMatchState(lesson){
     matched: new Set(),
     errors: 0,
     wrongL: null, wrongR: null,
-    studying: !isLessonCompleted(CURRENT.courseId, CURRENT.dayId, lesson.id)
+    studying: !isLessonCompleted(CURRENT.courseId, CURRENT.dayId, lesson.id),
+    studyIdx: 0
   };
 }
 
@@ -3102,32 +3103,70 @@ function matchStartPractice(){
 function matchStudyAgain(){
   haptic(HAPTIC.tap);
   MATCH_STATE.studying = true;
+  MATCH_STATE.studyIdx = 0;
+  render();
+}
+
+function matchStudyNext(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
+  MATCH_STATE.studyIdx += 1;
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+
+function matchStudyPrev(){
+  if(MATCH_STATE.studyIdx === 0) return;
+  haptic(HAPTIC.tap);
+  playSfx('tick');
+  MATCH_STATE.studyIdx -= 1;
   render();
 }
 
 function renderLessonMatch(course, day, lesson){
   if(!MATCH_STATE.leftSlots || !MATCH_STATE.leftSlots.length) initMatchState(lesson);
 
-  // Fase de estudio: pares resueltos + cards de contexto (si la lección trae)
+  // Fase de estudio PAGINADA (igual que order): cards una por pantalla,
+  // luego los pares resueltos, y la lección cierra con el ejercicio.
   if(MATCH_STATE.studying){
     const pairs = lesson.pairs || [];
-    return `
+    const cards = lesson.cards || [];
+    const sIdx = MATCH_STATE.studyIdx;
+    const pct = Math.round(((sIdx + 1) / (cards.length + 2)) * 60);
+    const hdr = `
       <div class="hdr">
         <div class="hdr-top">
           <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
           <div style="flex:1;margin:0 12px">
-            <div class="progress-wrap"><div class="progress-bar" style="width:10%"></div></div>
+            <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
           </div>
           <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
         </div>
-      </div>
+      </div>`;
+    if(cards.length && sIdx < cards.length){
+      return `
+        ${hdr}
+        <div class="scroll">
+          <div class="lesson-header">
+            <div class="lesson-num">📖 ESTUDIA · ${sIdx+1}/${cards.length}</div>
+            <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
+          </div>
+          <div class="card-stage anim-in">${renderStaticCard(cards[sIdx])}</div>
+        </div>
+        <div class="action-bar">
+          ${sIdx > 0 ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="matchStudyPrev()">←</button>` : ''}
+          <button class="btn btn-primary" onclick="matchStudyNext()">Siguiente</button>
+        </div>
+      `;
+    }
+    return `
+      ${hdr}
       <div class="scroll">
         <div class="lesson-header">
-          <div class="lesson-num">📖 PASO 1 · ESTUDIA</div>
+          <div class="lesson-num">📖 MEMORIZA LOS PARES</div>
           <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
           <div style="font-size:13px;color:#65676B;margin-top:6px">Lee los pares correctos con calma. Cuando los tengas, se revuelven y los armas tú — sin sorpresas ni vidas perdidas por adivinar.</div>
         </div>
-        ${(lesson.cards||[]).map(renderStaticCard).join('')}
         <div class="order-list">
           ${pairs.map(p => `
             <div class="order-row correct">
@@ -3138,6 +3177,7 @@ function renderLessonMatch(course, day, lesson){
         </div>
       </div>
       <div class="action-bar">
+        ${cards.length ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="matchStudyPrev()">←</button>` : ''}
         <button class="btn btn-primary" onclick="matchStartPractice()">¡Listo, a emparejar! →</button>
       </div>
     `;
@@ -3252,7 +3292,8 @@ function initOrderState(lesson){
     correct: false,
     submitted: false,
     errors: 0,
-    studying: !isLessonCompleted(CURRENT.courseId, CURRENT.dayId, lesson.id)
+    studying: !isLessonCompleted(CURRENT.courseId, CURRENT.dayId, lesson.id),
+    studyIdx: 0
   };
   // Asegurar que el shuffle no quede idéntico al orden correcto si hay 2+ items
   if(items.length >= 2){
@@ -3276,31 +3317,73 @@ function orderStartPractice(){
 function orderStudyAgain(){
   haptic(HAPTIC.tap);
   ORDER_STATE.studying = true;
+  ORDER_STATE.studyIdx = 0;
+  render();
+}
+
+function orderStudyNext(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
+  ORDER_STATE.studyIdx += 1;
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+
+function orderStudyPrev(){
+  if(ORDER_STATE.studyIdx === 0) return;
+  haptic(HAPTIC.tap);
+  playSfx('tick');
+  ORDER_STATE.studyIdx -= 1;
   render();
 }
 
 function renderLessonOrder(course, day, lesson){
   if(!ORDER_STATE.correctOrder || !ORDER_STATE.correctOrder.length) initOrderState(lesson);
 
-  // Fase de estudio: pasos en orden correcto + cards de contexto
+  // Fase de estudio PAGINADA: si la lección trae cards, se enseñan UNA POR
+  // PANTALLA (digestible, sin avalancha de info); al final la secuencia
+  // resuelta para memorizar, y la lección CIERRA con el ejercicio de ordenar.
   if(ORDER_STATE.studying){
-    return `
+    const cards = lesson.cards || [];
+    const totalSteps = cards.length + 1; // cards + pantalla de secuencia
+    const sIdx = ORDER_STATE.studyIdx;
+    const pct = Math.round(((sIdx + 1) / (totalSteps + 1)) * 60); // estudio ocupa ~60% de la barra
+    const hdr = `
       <div class="hdr">
         <div class="hdr-top">
           <button class="back-btn" onclick="exitLesson()" aria-label="Salir">✕</button>
           <div style="flex:1;margin:0 12px">
-            <div class="progress-wrap"><div class="progress-bar" style="width:10%"></div></div>
+            <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
           </div>
           <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
         </div>
-      </div>
+      </div>`;
+    // Sub-fase A: una card de enseñanza por pantalla
+    if(cards.length && sIdx < cards.length){
+      return `
+        ${hdr}
+        <div class="scroll">
+          <div class="lesson-header">
+            <div class="lesson-num">📖 ESTUDIA · ${sIdx+1}/${cards.length}</div>
+            <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
+          </div>
+          <div class="card-stage anim-in">${renderStaticCard(cards[sIdx])}</div>
+        </div>
+        <div class="action-bar">
+          ${sIdx > 0 ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="orderStudyPrev()">←</button>` : ''}
+          <button class="btn btn-primary" onclick="orderStudyNext()">Siguiente</button>
+        </div>
+      `;
+    }
+    // Sub-fase B: secuencia resuelta para memorizar antes de practicar
+    return `
+      ${hdr}
       <div class="scroll">
         <div class="lesson-header">
-          <div class="lesson-num">📖 PASO 1 · ESTUDIA</div>
+          <div class="lesson-num">📖 MEMORIZA LA SECUENCIA</div>
           <div class="lesson-title" style="font-size:17px">${lesson.title}</div>
-          <div style="font-size:13px;color:#65676B;margin-top:6px">Memoriza la secuencia correcta. Cuando la tengas, se revuelve y la ordenas tú — sin sorpresas ni vidas perdidas por adivinar.</div>
+          <div style="font-size:13px;color:#65676B;margin-top:6px">Este es el orden correcto. Cuando lo tengas, se revuelve y lo armas tú — sin sorpresas ni vidas perdidas por adivinar.</div>
         </div>
-        ${(lesson.cards||[]).map(renderStaticCard).join('')}
         <div class="order-list">
           ${ORDER_STATE.correctOrder.map((it, i) => `
             <div class="order-row correct">
@@ -3311,6 +3394,7 @@ function renderLessonOrder(course, day, lesson){
         ${lesson.explanation ? `<div class="tip-box"><div class="label">💡 POR QUÉ ESTE ORDEN</div>${lesson.explanation}</div>` : ''}
       </div>
       <div class="action-bar">
+        ${cards.length ? `<button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="orderStudyPrev()">←</button>` : ''}
         <button class="btn btn-primary" onclick="orderStartPractice()">¡Listo, a ordenar! →</button>
       </div>
     `;
