@@ -1162,6 +1162,18 @@ const BATTLE_LEAD = [
   1046.5, null,   987.77, 880.00, null,   783.99, 659.25, null,
   739.99, 783.99, 880.00, null,   987.77, null,   null,   null
 ];
+// Cries 8-bit originales de Game Boy (PokeAPI/cries, carpeta legacy).
+// Archivos locales en content/battles/cries/<pokeId>.ogg (~8KB c/u),
+// cacheados cache-first por el SW. Mismo estatus fan-use que los sprites.
+function playCry(pokeId, volume){
+  if(DB.soundEnabled === false) return;
+  try {
+    const a = new Audio('content/battles/cries/' + pokeId + '.ogg');
+    a.volume = volume != null ? volume : 0.55;
+    a.play().catch(()=>{});
+  } catch(e){}
+}
+
 let _musicTimer = null, _musicStep = 0, _musicNext = 0;
 function startBattleMusic(){
   if(DB.soundEnabled === false) return;
@@ -6381,6 +6393,8 @@ function startBattle({mode, leader, deck, defendingBadgeId, resumeAction}){
   VIEW = 'battle';
   haptic(HAPTIC.complete);
   startBattleMusic();
+  // Cry del Pokémon rival al aparecer (como en el juego)
+  setTimeout(() => { if(BATTLE_STATE.active) playCry(leader.pokeId); }, 600);
   render();
   // Avanza de intro a 1ra pregunta a los ~2.4s
   setTimeout(() => {
@@ -6472,6 +6486,9 @@ function battleAnswer(i, timedOut){
 function battleFinish(){
   stopBattleTimer();
   stopBattleMusic();
+  // Cry del Pokémon que cae (rival si ganaste, el tuyo si perdiste)
+  const loserPokeId = BATTLE_STATE.foeLives <= 0 ? BATTLE_STATE.leader.pokeId : getStarter().pokeId;
+  playCry(loserPokeId, 0.45);
   const cc = BATTLE_STATE.correctCount;
   const wc = BATTLE_STATE.wrongCount;
   const totalAnswered = cc + wc;
