@@ -1750,7 +1750,42 @@
         {
           "type": "concept",
           "h": "El flujo oficial de análisis según Meta",
-          "body": "El PDF oficial define 6 pasos en este orden: <strong>1) Revisar Results</strong> (¿se logró el KPI principal del performance goal?) → <strong>2) Revisar other metrics</strong> (cost per result, ROAS, CTR, frequency) → <strong>3) Revisar setup strategies</strong> (creative, budget, audiencia, placement) → <strong>4) Evaluar todo en conjunto</strong> → <strong>5) Comparar ad sets entre sí</strong> (ganadores vs perdedores) → <strong>6) Identificar optimization opportunities</strong>. La lógica es de embudo: primero QUÉ se logró, luego CÓMO se logró, y al final QUÉ cambiar para el siguiente período."
+          "body": "Cuando una campaña termina (o cierra su período), Meta define en el PDF oficial un proceso de <strong>6 pasos en orden fijo</strong> para analizar resultados. La lógica es de embudo: primero entiendes <em>qué se logró</em>, luego <em>cómo se logró</em>, y al final decides <em>qué cambiar</em>. El examen pregunta este orden directamente, así que vamos a ver cada paso con calma — uno por pantalla — y al final tú armas la secuencia."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 1 — Revisar Results",
+          "body": "Todo empieza por el <strong>KPI principal del performance goal</strong> (la métrica que prometiste optimizar: compras, leads, instalaciones…). La pregunta es una sola: ¿la campaña logró su objetivo, sí o no? Nada de distraerse con clics o impresiones todavía. <em>Ejemplo:</em> el <strong>Hotel Lumière</strong> corrió una campaña con goal de reservas; el paso 1 es ver cuántas reservas trajo: 42."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 2 — Revisar other metrics",
+          "body": "Ya con el resultado principal en mano, le das contexto con las <strong>métricas secundarias</strong>: <strong>cost per result</strong> (costo por resultado), <strong>ROAS</strong> (retorno sobre el gasto publicitario), <strong>CTR</strong> (tasa de clics) y <strong>frequency</strong> (veces que cada persona vio el anuncio). Estas te dicen si el resultado fue <em>barato o caro</em>, y si el anuncio conectó o cansó a la audiencia. <em>Hotel Lumière:</em> las 42 reservas costaron $180 c/u con frequency de 2.1 — sano."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 3 — Revisar setup strategies",
+          "body": "Ahora revisas el <strong>cómo estaba configurada</strong> la campaña: el <strong>creative</strong> (imagen/video), el <strong>budget</strong> (presupuesto y su distribución), la <strong>audiencia</strong> y los <strong>placements</strong> (ubicaciones). Este paso conecta los números con las decisiones que los produjeron. <em>Hotel Lumière:</em> descubre que el 80% de las reservas vinieron del video de la alberca en Reels, con Advantage+ Audience."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 4 — Evaluar todo en conjunto",
+          "body": "Aquí juntas las tres piezas: <strong>results + metrics + setup</strong>. Una métrica aislada engaña — un ROAS alto con frequency de 9 es una campaña a punto de quemarse; un costo alto con un creative ganador es problema de audiencia, no de anuncio. La evaluación holística es lo que separa al media buyer del que solo lee dashboards. <em>Hotel Lumière:</em> buen costo + buen creative + audiencia amplia = la receta funcionó completa."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 5 — Comparar ad sets entre sí",
+          "body": "Dentro de la misma campaña, comparas los <strong>ad sets</strong> unos contra otros para identificar <strong>ganadores y perdedores</strong>: ¿qué audiencia, creative o placement rindió más? Esta comparación interna es la mina de oro del aprendizaje, porque controla todas las variables externas (misma marca, mismas fechas, mismo objetivo). <em>Hotel Lumière:</em> el ad set de parejas dio reservas a $150; el de familias, a $260."
+        },
+        {
+          "type": "concept",
+          "h": "Paso 6 — Identificar optimization opportunities",
+          "body": "El cierre del flujo: con todo lo anterior, defines <strong>qué cambiar para el próximo período</strong> — escalar el ad set ganador, pausar el perdedor, refrescar el creative cansado, ajustar el budget. El análisis que no termina en decisiones es solo contemplación. <em>Hotel Lumière:</em> duplica presupuesto al ad set de parejas y prueba un video nuevo para familias."
+        },
+        {
+          "type": "tip",
+          "label": "TRUCO PARA EL EXAMEN",
+          "body": "Memoriza el orden como <strong>QUÉ → CÓMO → QUÉ SIGUE</strong>: pasos 1-2 miden <em>qué</em> se logró (resultado y costo), pasos 3-4 explican <em>cómo</em> (setup y evaluación conjunta), pasos 5-6 deciden <em>qué sigue</em> (comparar y optimizar). El distractor típico del examen pone 'comparar ad sets' antes de 'revisar results' — cae quien no recuerda que primero SIEMPRE va el KPI principal."
         }
       ]
     },
