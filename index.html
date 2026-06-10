@@ -1895,7 +1895,7 @@ const SFX_THEMES = {
     advance:   [[0,587.33,.05,{gain:.07}],[.05,783.99,.07,{gain:.06}]],
     correct:   [[0,659.25,.09],[.085,880,.16]],
     wrong:     [[0,220,.2,{type:'square',gain:.055,slideTo:155}]],
-    flip:      [[0,520,.05,{type:'triangle',gain:.06}]],
+    flip:      [[0,520,.06,{type:'triangle',gain:.09}]],
     complete:  [[0,523.25,.17],[.09,659.25,.17],[.18,783.99,.17]],
     perfect:   [[0,523.25,.18],[.09,659.25,.18],[.18,783.99,.18],[.27,1046.5,.18],[.42,1318.5,.32,{gain:.09}]],
     levelup:   [[0,392,.2],[.1,523.25,.2],[.2,659.25,.2],[.3,783.99,.2],[.4,1046.5,.2]],
@@ -4245,6 +4245,8 @@ function finishQuiz(){
       updateStreak();
       playSfx('perfect');
       setTimeout(launchConfetti, 200);
+    } else {
+      playSfx('wrong');
     }
   }
   QUIZ_STATE.result = {correct, wrongIdxs, score, passed};
@@ -5421,6 +5423,7 @@ function startPractice(mode, scope){
     openPracticeActivity(mode);
     return;
   }
+  playSfx('advance');
   PRACTICE_MODE = mode;
   PRACTICE_SCOPE = scope || null;
   CURRENT.lessonId = null;
@@ -5668,6 +5671,7 @@ function openLesson(id){
 
 function openFlashcards(lessonId){
   haptic(HAPTIC.tap);
+  playSfx('advance');
   rememberDayScroll();
   CURRENT.lessonId = lessonId;
   PRACTICE_MODE = 'lesson';
@@ -5895,6 +5899,11 @@ function flashAnswer(result){
   FLASH_STATE.rated += 1;
   FLASH_STATE.idx += 1;
   FLASH_STATE.flipped = false;
+  // Cierre del mazo: fanfarria (las lecciones la tenían, el repaso no)
+  if(FLASH_STATE.idx >= FLASH_STATE.deck.length){
+    haptic(HAPTIC.complete);
+    setTimeout(() => playSfx((FLASH_STATE.wrongCount||0) === 0 ? 'perfect' : 'complete'), 350);
+  }
   // Achievement: 50 flashcards dominadas (right >= 1)
   const masteredCount = Object.values(DB.flashcardStats).filter(st => (st.right||0) >= 1).length;
   if(masteredCount >= 50) earnAch('all_flashcards');
@@ -5916,6 +5925,7 @@ function flashPrev(){
 // sendero (PRACTICE_MODE === 'lesson'), vuelves al sendero; sino al hub.
 function exitFlashSession(){
   haptic(HAPTIC.tap);
+  playSfx('tick');
   const fromPath = PRACTICE_MODE === 'lesson';
   PRACTICE_MODE = null;
   FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
@@ -5946,6 +5956,8 @@ function flashToggleExpl(){
 }
 
 function resetFlashDeck(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
   FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
   render();
 }
