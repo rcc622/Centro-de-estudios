@@ -3120,7 +3120,7 @@ function renderLessonComplete(){
       </div>
     </div>
     <div class="action-bar">
-      <button class="btn btn-primary" onclick="postNext()">Continuar</button>
+      ${isLastPostStage() ? postNavButtonsHtml() : `<button class="btn btn-primary" onclick="postNext()">Continuar</button>`}
     </div>
   `;
 }
@@ -5854,6 +5854,8 @@ function finishLesson(){
   // Idempotente: si ya se completó (porque el delay del battle aún corre),
   // no volver a contar XP/streak/etc.
   if(LESSON_STATE.completed) return;
+  // ¿Es la primera lección de hoy? (la racha solo sube/celebra 1 vez al día)
+  _postFirstOfDay = DB.lastStudyDate !== todayStr();
   const perfect = LESSON_STATE.errors === 0;
   let xp = perfect ? 30 : Math.max(10, 25 - LESSON_STATE.errors*3);
   const duration = LESSON_STATE.started ? Math.round((now() - LESSON_STATE.started) / 60000) : 0;
@@ -5974,6 +5976,9 @@ function ensureChalMonth(){
   const m = todayStr().slice(0,7);
   if(DB.chalMonth !== m){ DB.chalMonth = m; DB.chalPoints = 0; save(); }
 }
+// CHAL_ANIM guarda el delta {from,to} por tarea que cambió en la lección actual,
+// para animar las barras de n→n en la pantalla de recompensa post-lección.
+let CHAL_ANIM = {};
 // Suma progreso a las tareas de un tipo dado (clamp al target).
 function bumpChal(type, amount){
   if(!amount) return;
@@ -5981,8 +5986,14 @@ function bumpChal(type, amount){
   let changed = false;
   tasks.forEach(t => {
     if(t.type === type && t.prog < t.target){
+      const from = t.prog;
       t.prog = Math.min(t.target, t.prog + amount);
-      changed = true;
+      if(t.prog !== from){
+        // Conserva el 'from' original si ya había delta este turno.
+        if(!CHAL_ANIM[t.id]) CHAL_ANIM[t.id] = {from, to: t.prog};
+        else CHAL_ANIM[t.id].to = t.prog;
+        changed = true;
+      }
     }
   });
   if(changed) save();
@@ -5990,10 +6001,12 @@ function bumpChal(type, amount){
 function bumpChallengesForLesson({xp, mins, accuracy}){
   ensureChalMonth();
   getChals();
+  CHAL_ANIM = {}; // reset: solo el progreso de esta lección
   bumpChal('xp', xp || 0);
   bumpChal('min', mins || 0);
   if((accuracy || 0) >= 80) bumpChal('acc', 1);
 }
+function chalHadProgress(){ return Object.keys(CHAL_ANIM).length > 0; }
 function hasClaimableChallenge(){
   return getChals().some(t => t.prog >= t.target && !t.claimed);
 }
@@ -6025,7 +6038,9 @@ function closeChalOverlay(){
 
 // HTML del cuerpo de desafíos (tareas + barra mensual). Reusado por la vista
 // 'challenges' (desde Inicio) y por la pantalla de recompensa post-lección.
-function challengeBodyHtml(){
+// animate=true: renderiza las barras en su valor PREVIO (from) con data-attrs,
+// para que animateChallengeBars() las suba a su valor nuevo (to) tras montar.
+function challengeBodyHtml(animate){
   ensureChalMonth();
   const tasks = getChals();
   const monthName = new Date().toLocaleDateString('es', {month:'long'});
@@ -6033,7 +6048,12 @@ function challengeBodyHtml(){
   const monthPct = Math.min(100, Math.round(pts / CHAL_MONTH_TARGET * 100));
   const taskRows = tasks.map(t => {
     const done = t.prog >= t.target;
-    const pct = Math.min(100, Math.round(t.prog / t.target * 100));
+    const a = animate ? CHAL_ANIM[t.id] : null;
+    const shownProg = a ? a.from : t.prog;
+    const startPct = Math.min(100, Math.round(shownProg / t.target * 100));
+    const toPct = Math.min(100, Math.round(t.prog / t.target * 100));
+    const animAttrs = a ? `data-to-pct="${toPct}"` : '';
+    const numAttrs = a ? `data-from="${a.from}" data-to="${a.to}" data-target="${t.target}"` : '';
     let chest;
     if(!done){
       chest = `<div class="chal-chest locked">🎁</div>`;
@@ -6046,7 +6066,7 @@ function challengeBodyHtml(){
       <div class="chal-row ${done && !t.claimed ? 'hot' : ''}">
         <div class="chal-row-main">
           <div class="chal-label">${t.label}</div>
-          <div class="chal-bar"><div class="chal-bar-fill" style="width:${pct}%"></div><span class="chal-bar-num">${t.prog} / ${t.target}</span></div>
+          <div class="chal-bar"><div class="chal-bar-fill" id="chalbar-${t.id}" style="width:${startPct}%" ${animAttrs}></div><span class="chal-bar-num" id="chalnum-${t.id}" ${numAttrs}>${shownProg} / ${t.target}</span></div>
         </div>
         ${chest}
       </div>`;
@@ -6278,11 +6298,14 @@ function renderLessonExtra(){
 // CADENA POST-LECCIÓN: resumen → (desafíos) → racha animada
 // ============================================================
 let POST_LESSON = {stages:[], idx:0};
+let _postFirstOfDay = false; // ¿esta lección fue la primera del día? (racha 1×/día)
 
 function startPostLesson(){
   POST_LESSON = {stages:['complete'], idx:0};
-  if(hasClaimableChallenge()) POST_LESSON.stages.push('challenge');
-  POST_LESSON.stages.push('streak');
+  // Desafíos: mostrar si hubo progreso o hay un cofre listo.
+  if(chalHadProgress() || hasClaimableChallenge()) POST_LESSON.stages.push('challenge');
+  // Racha: SOLO en la primera lección del día (cuando la racha sube/celebra).
+  if(_postFirstOfDay) POST_LESSON.stages.push('streak');
   applyPostStage();
 }
 function applyPostStage(){
@@ -6293,7 +6316,10 @@ function applyPostStage(){
   else { finishLessonReturn(); return; }
   render();
   setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+  // Dispara la animación de barras n→n al montar la pantalla de desafíos.
+  if(s === 'challenge') setTimeout(animateChallengeBars, 220);
 }
+function isLastPostStage(){ return POST_LESSON.idx >= POST_LESSON.stages.length - 1; }
 // Avanza a la siguiente etapa de la cadena (resumen → desafíos → racha).
 function postNext(){
   haptic(HAPTIC.tap);
@@ -6303,8 +6329,47 @@ function postNext(){
   applyPostStage();
 }
 
+// Botones de navegación de la pantalla TERMINAL de la cadena (siguiente / sendero).
+function postNavButtonsHtml(){
+  const next = getNextLesson(CURRENT.courseId);
+  return `
+    <button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="finishLessonReturn()">Sendero</button>
+    ${next
+      ? `<button class="btn btn-primary" onclick="continueToNext()">${next.isQuiz ? 'Tomar quiz 📝' : 'Siguiente lección →'}</button>`
+      : `<button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>`}`;
+}
+
+// Anima las barras de desafíos de su valor previo (from) al nuevo (to) + cuenta
+// el número n→n. Las anchuras usan la transición CSS de .chal-bar-fill.
+function animateChallengeBars(){
+  Object.keys(CHAL_ANIM).forEach(id => {
+    const a = CHAL_ANIM[id];
+    const bar = document.getElementById('chalbar-' + id);
+    if(bar && bar.dataset.toPct != null) bar.style.width = bar.dataset.toPct + '%';
+    const num = document.getElementById('chalnum-' + id);
+    if(num && num.dataset.to != null){
+      const from = parseInt(num.dataset.from, 10);
+      const to = parseInt(num.dataset.to, 10);
+      const target = num.dataset.target;
+      const dur = 700, t0 = performance.now();
+      const step = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        const val = Math.round(from + (to - from) * p);
+        num.textContent = `${val} / ${target}`;
+        if(p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+  });
+  haptic(HAPTIC.correct);
+  playSfx('correct');
+}
+
 // Pantalla de recompensa de desafíos (post-lección). Reusa el cuerpo de tareas.
 function renderChallengeReward(){
+  const navBar = isLastPostStage()
+    ? postNavButtonsHtml()
+    : `<button class="btn btn-primary" onclick="postNext()">Continuar</button>`;
   return `
     <div class="hdr">
       <div class="hdr-top"><div style="font-size:14px;font-weight:700;width:100%;text-align:center;color:#9B59B6">Desafíos diarios</div></div>
@@ -6313,12 +6378,10 @@ function renderChallengeReward(){
       <div class="complete-screen" style="padding-top:10px">
         <div class="chal-reward-h">¡Avanzaste tus desafíos!</div>
         <div class="chal-reward-sub">Abre los cofres listos para ganar puntos</div>
-        <div style="width:100%;max-width:420px">${challengeBodyHtml()}</div>
+        <div style="width:100%;max-width:420px">${challengeBodyHtml(true)}</div>
       </div>
     </div>
-    <div class="action-bar">
-      <button class="btn btn-primary" onclick="postNext()">Continuar</button>
-    </div>
+    <div class="action-bar">${navBar}</div>
   `;
 }
 
