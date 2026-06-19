@@ -977,6 +977,64 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 @keyframes loSpin{to{transform:rotate(360deg)}}
 .loading-overlay-text{font-size:14px;color:#65676B;font-weight:700}
 
+/* ===== Desafíos diarios ===== */
+.chal-card{background:#fff;border:1.5px solid #E4E6EB;border-radius:16px;padding:6px 4px;margin:14px 0}
+.chal-row{display:flex;align-items:center;gap:12px;padding:14px 14px;border-bottom:1px solid #F0F2F5}
+.chal-row:last-child{border-bottom:none}
+.chal-row.hot{background:linear-gradient(90deg,#FFF8E1,#FFFDF5);border-radius:12px}
+.chal-row-main{flex:1;min-width:0}
+.chal-label{font-size:14px;font-weight:700;color:#1C1E21;margin-bottom:8px}
+.chal-bar{position:relative;height:22px;border-radius:12px;background:#EEF0F3;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.chal-bar.big{height:16px}
+.chal-bar-fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#A86BFF,#9B59B6);border-radius:12px;transition:width .5s cubic-bezier(.34,1.56,.64,1)}
+.chal-bar-fill.purple{background:linear-gradient(90deg,#C06BFF,#9B59B6)}
+.chal-bar-num{position:relative;z-index:1;font-size:12px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.chal-chest{width:46px;height:46px;flex:0 0 auto;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;background:#F0F2F5}
+.chal-chest.locked{filter:grayscale(1);opacity:.55}
+.chal-chest.ready{background:linear-gradient(135deg,#FFE08A,#FFB627);cursor:pointer;animation:chalPulse 1.1s ease-in-out infinite;box-shadow:0 4px 14px rgba(255,160,0,.4)}
+.chal-chest.ready:active{transform:scale(.9)}
+.chal-chest.opened{background:#E6F7EC}
+@keyframes chalPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.chal-month{background:#F4ECFF;border:1.5px solid #E4D4FF;border-radius:16px;padding:14px;margin:10px 0 4px}
+.chal-month-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.chal-month-title{font-size:14px;font-weight:800;color:#6B2FB3}
+.chal-month-pts{font-size:14px;font-weight:800;color:#9B59B6}
+.chal-month-sub{font-size:12px;color:#8A6FB0;margin-top:8px}
+.chal-reward-h{font-size:22px;font-weight:800;color:#9B59B6;text-align:center;margin-top:8px}
+.chal-reward-sub{font-size:13px;color:#65676B;text-align:center;margin:4px 0 6px}
+.home-chal{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F4ECFF,#FBF6FF);border:1.5px solid #E4D4FF;border-radius:16px;padding:13px 15px;margin:12px 0;cursor:pointer;transition:transform .12s}
+.home-chal:active{transform:scale(.98)}
+.home-chal-ico{font-size:26px;flex:0 0 auto}
+.home-chal-info{flex:1;min-width:0}
+.home-chal-title{font-size:14px;font-weight:800;color:#6B2FB3}
+.home-chal-sub{font-size:12px;color:#8A6FB0;margin-top:2px}
+.home-chal-badge{font-size:12px;font-weight:800;color:#fff;background:#9B59B6;border-radius:20px;padding:4px 10px;flex:0 0 auto}
+.home-chal-badge.ready{background:#FF9F0A;animation:chalPulse 1.1s ease-in-out infinite}
+
+/* ===== Fase extra (repaso de errores / bonus) ===== */
+.extra-badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;padding:5px 12px;border-radius:20px;margin-bottom:8px}
+.extra-badge.errors{background:#FFF1E0;color:#E8830C}
+.extra-badge.bonus{background:#EDE6FF;color:#7B3FF2}
+.extra-intro{font-size:13px;color:#65676B;font-weight:600}
+.progress-bar.err{background:linear-gradient(90deg,#FF9F0A,#FF6B35)}
+.progress-bar.bon{background:linear-gradient(90deg,#A86BFF,#7B3FF2)}
+
+/* ===== Pantalla de racha animada (post-lección) ===== */
+.streak-celebrate{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 16px 8px}
+.sc-flame{font-size:96px;line-height:1;filter:drop-shadow(0 8px 16px rgba(255,140,0,.35));animation:scFlame 1.6s ease-in-out infinite}
+@keyframes scFlame{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.06)}}
+.sc-num{font-size:72px;font-weight:900;color:#FF9600;line-height:1.05;margin-top:6px;animation:scPop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes scPop{0%{transform:scale(.4);opacity:0}100%{transform:scale(1);opacity:1}}
+.sc-label{font-size:20px;font-weight:800;color:#FF9600;margin-bottom:18px}
+.sc-week{display:flex;gap:8px;justify-content:center;margin:6px 0 16px}
+.sc-day{display:flex;flex-direction:column;align-items:center;gap:6px}
+.sc-day-lbl{font-size:12px;font-weight:700;color:#8A8D91}
+.sc-day.today .sc-day-lbl{color:#FF9600}
+.sc-day-dot{width:34px;height:34px;border-radius:50%;background:#EEF0F3;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff}
+.sc-day-dot.on{background:#FF9600;box-shadow:0 2px 8px rgba(255,150,0,.35)}
+.sc-day.today .sc-day-dot{outline:2.5px solid #FFD08A;outline-offset:2px}
+.sc-msg{font-size:14px;color:#65676B;font-weight:600;max-width:300px;margin-bottom:8px}
+
 </style>
 </head>
 <body>
@@ -1038,6 +1096,15 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
     <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#C68B3C">¡COFRE ABIERTO!</div>
     <div class="lvl-num" id="ch-xp" style="color:#C68B3C">+20 XP</div>
     <div style="font-size:13px;color:#65676B">Bono por completar el bloque</div>
+    <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
+  </div>
+</div>
+<div class="overlay" id="chal-overlay" onclick="closeChalOverlay()">
+  <div class="overlay-inner">
+    <div class="overlay-ico" id="chal-ico">🎁</div>
+    <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#9B59B6">¡DESAFÍO COMPLETADO!</div>
+    <div class="lvl-num" id="chal-xp" style="color:#9B59B6">+15 XP</div>
+    <div style="font-size:13px;font-weight:700;color:#9B59B6" id="chal-pts">+1 punto de desafío</div>
     <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
   </div>
 </div>
@@ -1657,6 +1724,9 @@ let DB = {
   perfectStreak: 0, // lecciones perfectas consecutivas — para Perfect Combo x2 XP
   comboReady: false, // true si la próxima lección tendrá x2 XP por combo
   goalBonusClaimed: {}, // {'YYYY-MM-DD': true} para no dar el bonus de meta diaria 2 veces
+  dailyChal: null, // {date:'YYYY-MM-DD', tasks:[{id,type,target,prog,claimed}]} desafíos diarios
+  chalPoints: 0, // puntos de desafío acumulados en el mes actual
+  chalMonth: null, // 'YYYY-MM' mes del contador de puntos de desafío
   chests: {}, // {'courseId|dayId|section': true} cofres de bloque ya reclamados
   shields: 0, // escudos disponibles (banco por nivel, recarga semanal)
   shieldsEarned: 0, // legacy — ya no se usa para milestones
@@ -1776,6 +1846,10 @@ function load(){
   if(!DB.soundTheme || !['classic','arcade','marimba'].includes(DB.soundTheme)) DB.soundTheme = 'classic';
   if(!['off','soft','strong'].includes(DB.hapticLevel)) DB.hapticLevel = 'strong';
   if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
+  // Migración desafíos diarios v1
+  if(typeof DB.chalPoints !== 'number') DB.chalPoints = 0;
+  if(DB.dailyChal === undefined) DB.dailyChal = null;
+  if(DB.chalMonth === undefined) DB.chalMonth = null;
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
   const oldIds = Object.keys(BADGE_ID_MIGRATION_V1);
@@ -2369,7 +2443,11 @@ function render(){
   else if(VIEW === 'course') html = renderCourse();
   else if(VIEW === 'day') html = renderDay();
   else if(VIEW === 'lesson') html = renderLesson();
+  else if(VIEW === 'lesson_extra') html = renderLessonExtra();
   else if(VIEW === 'lesson_complete') html = renderLessonComplete();
+  else if(VIEW === 'challenge_reward') html = renderChallengeReward();
+  else if(VIEW === 'streak_celebrate') html = renderStreakCelebrate();
+  else if(VIEW === 'challenges') html = renderChallenges();
   else if(VIEW === 'quiz') html = renderQuiz();
   else if(VIEW === 'quiz_complete') html = renderQuizComplete();
   else if(VIEW === 'flashcards') html = renderFlashcards();
@@ -2516,6 +2594,23 @@ function renderHome(){
   const goalPct = Math.min(100, Math.round(doneToday/goal*100));
   const goalDone = doneToday >= goal;
 
+  // Tira de desafíos diarios
+  const chalTasks = getChals();
+  const chalDone = chalTasks.filter(t => t.claimed).length;
+  const chalReady = chalTasks.some(t => t.prog >= t.target && !t.claimed);
+  const chalBadge = chalReady
+    ? `<div class="home-chal-badge ready">¡Ábrelo! 🎁</div>`
+    : `<div class="home-chal-badge">${chalDone}/${chalTasks.length}</div>`;
+  const homeChalHtml = `
+    <div class="home-chal" onclick="haptic(8);navTo('challenges')">
+      <div class="home-chal-ico">🎯</div>
+      <div class="home-chal-info">
+        <div class="home-chal-title">Desafíos diarios</div>
+        <div class="home-chal-sub">${chalReady ? 'Tienes un cofre listo para abrir' : `${chalDone} de ${chalTasks.length} completados hoy · ${DB.chalPoints||0} pts del mes`}</div>
+      </div>
+      ${chalBadge}
+    </div>`;
+
   return `
     ${renderHeader()}
     <div class="scroll" id="sc">
@@ -2558,6 +2653,7 @@ function renderHome(){
         </div>
       ` : '')}
       ${heroHtml}
+      ${homeChalHtml}
       ${otherCoursesHtml}
       ${upcomingHtml}
     </div>
@@ -2791,6 +2887,55 @@ function pathBubble(course, day, lesson, globalIdx){
   `;
 }
 
+// Render del bloque .quiz-card (mcq/fill). Factorizado para reusarlo en la
+// fase de repaso de errores y en las preguntas bonus post-lección.
+// selectFn: nombre de la función de selección (selectOption | extraSelect).
+function mcqCardHtml(card, answered, tempSel, selectFn){
+  selectFn = selectFn || 'selectOption';
+  tempSel = tempSel || [];
+  const isMulti = !!card.multi;
+  const isFill = card.type === 'fill';
+  const correctSet = isMulti ? new Set(card.correct) : new Set([card.correct]);
+  let qHtml = card.q;
+  if(isFill){
+    if(answered){
+      const userChoice = answered.selected[0];
+      const userText = card.options[userChoice] || '____';
+      const cls = answered.correct ? 'correct' : 'wrong';
+      qHtml = card.q.replace(/___+/g, `<span class="fill-blank ${cls} filled">${userText}</span>`);
+    } else if(tempSel.length){
+      const userText = card.options[tempSel[0]] || '____';
+      qHtml = card.q.replace(/___+/g, `<span class="fill-blank filled">${userText}</span>`);
+    } else {
+      qHtml = card.q.replace(/___+/g, `<span class="fill-blank">______</span>`);
+    }
+  }
+  const tag = isFill ? 'COMPLETAR LA FRASE' : (isMulti ? 'OPCIÓN MÚLTIPLE · ELIGE ' + card.correct.length : 'PREGUNTA');
+  return `
+      <div class="quiz-card">
+        <div class="quiz-tag">${tag}</div>
+        <div class="quiz-q">${qHtml}</div>
+        ${card.options.map((opt, i) => {
+          let cls = 'opt';
+          if(answered){
+            cls += ' disabled';
+            if(correctSet.has(i)) cls += ' correct';
+            else if(answered.selected.includes(i)) cls += ' wrong';
+          } else if(tempSel.includes(i)){
+            cls += ' selected';
+          }
+          const letter = String.fromCharCode(97+i);
+          return `<div class="${cls}" onclick="${answered?'':`${selectFn}(${i}, ${isMulti})`}"><div class="opt-letter">${letter}</div><div class="opt-text">${opt}</div></div>`;
+        }).join('')}
+        ${answered ? `
+          <div class="quiz-feedback ${answered.correct?'correct':'wrong'} show">
+            <strong>${answered.correct ? '✅ ¡Correcto!' : '❌ Incorrecto'}</strong>
+            ${card.explanation}
+          </div>
+        ` : ''}
+      </div>`;
+}
+
 function renderLesson(){
   const course = COURSES[CURRENT.courseId];
   const day = course?.days.find(d => d.id === CURRENT.dayId);
@@ -2911,49 +3056,7 @@ function renderLesson(){
         ${card.caption ? `<div class="img-caption">${card.caption}</div>` : ''}
       </div>`;
   } else if(card.type === 'mcq' || card.type === 'fill'){
-    const answered = LESSON_STATE.answers[idx];
-    const isMulti = !!card.multi;
-    const isFill = card.type === 'fill';
-    const correctSet = isMulti ? new Set(card.correct) : new Set([card.correct]);
-    // Pregunta: para 'fill' renderiza el blank
-    let qHtml = card.q;
-    if(isFill){
-      if(answered){
-        const userChoice = answered.selected[0];
-        const userText = card.options[userChoice] || '____';
-        const cls = answered.correct ? 'correct' : 'wrong';
-        qHtml = card.q.replace(/___+/g, `<span class="fill-blank ${cls} filled">${userText}</span>`);
-      } else if(LESSON_STATE.tempSelected?.length){
-        const userText = card.options[LESSON_STATE.tempSelected[0]] || '____';
-        qHtml = card.q.replace(/___+/g, `<span class="fill-blank filled">${userText}</span>`);
-      } else {
-        qHtml = card.q.replace(/___+/g, `<span class="fill-blank">______</span>`);
-      }
-    }
-    const tag = isFill ? 'COMPLETAR LA FRASE' : (isMulti ? 'OPCIÓN MÚLTIPLE · ELIGE ' + card.correct.length : 'PREGUNTA');
-    cardHtml = `
-      <div class="quiz-card">
-        <div class="quiz-tag">${tag}</div>
-        <div class="quiz-q">${qHtml}</div>
-        ${card.options.map((opt, i) => {
-          let cls = 'opt';
-          if(answered){
-            cls += ' disabled';
-            if(correctSet.has(i)) cls += ' correct';
-            else if(answered.selected.includes(i)) cls += ' wrong';
-          } else if(LESSON_STATE.tempSelected?.includes(i)){
-            cls += ' selected';
-          }
-          const letter = String.fromCharCode(97+i);
-          return `<div class="${cls}" onclick="${answered?'':`selectOption(${i}, ${isMulti})`}"><div class="opt-letter">${letter}</div><div class="opt-text">${opt}</div></div>`;
-        }).join('')}
-        ${answered ? `
-          <div class="quiz-feedback ${answered.correct?'correct':'wrong'} show">
-            <strong>${answered.correct ? '✅ ¡Correcto!' : '❌ Incorrecto'}</strong>
-            ${card.explanation}
-          </div>
-        ` : ''}
-      </div>`;
+    cardHtml = mcqCardHtml(card, LESSON_STATE.answers[idx], LESSON_STATE.tempSelected, 'selectOption');
   }
 
   // Action button
@@ -2998,21 +3101,8 @@ function renderLessonComplete(){
   const perfect = errors === 0;
   const xpEarned = perfect ? 30 : Math.max(10, 25 - errors*3);
 
-  // Hook (acción sin fricción): teaser de lo que sigue + botón directo.
-  // Encadenar lecciones sin volver al sendero alarga la sesión de estudio.
-  const next = getNextLesson(CURRENT.courseId);
-  const goal = DB.dailyGoal || 3;
-  const doneToday = DB.activityLog?.[todayStr()]?.lessons || 0;
-  const goalLeft = Math.max(0, goal - doneToday);
-  let teaser = '';
-  if(next){
-    const what = next.isQuiz ? 'Quiz de la unidad' : next.lessonTitle;
-    const goalNote = goalLeft > 0
-      ? ` · ${goalLeft === 1 ? '¡1 más y cierras tu meta de hoy! 🎯' : `faltan ${goalLeft} para tu meta diaria`}`
-      : '';
-    teaser = `<div class="complete-next-teaser">Sigue: <strong>${what}</strong>${goalNote}</div>`;
-  }
-
+  // El teaser de "lo que sigue" y los botones de navegación viven ahora en la
+  // pantalla terminal de racha (renderStreakCelebrate). Aquí solo el resumen.
   return `
     <div class="hdr">
       <div class="hdr-top"><div style="font-size:14px;font-weight:700">Lección completada</div></div>
@@ -3027,14 +3117,10 @@ function renderLessonComplete(){
           <div class="sum-cell"><div class="sum-num">${errors}</div><div class="sum-lbl">errores</div></div>
           <div class="sum-cell"><div class="sum-num">${perfect?'💯':Math.max(20,Math.round(100*Math.pow(0.75,errors)))+'%'}</div><div class="sum-lbl">precisión</div></div>
         </div>
-        ${teaser}
       </div>
     </div>
     <div class="action-bar">
-      <button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="finishLessonReturn()">Sendero</button>
-      ${next
-        ? `<button class="btn btn-primary" onclick="continueToNext()">${next.isQuiz ? 'Tomar quiz 📝' : 'Siguiente lección →'}</button>`
-        : `<button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>`}
+      <button class="btn btn-primary" onclick="postNext()">Continuar</button>
     </div>
   `;
 }
@@ -5760,7 +5846,7 @@ function nextCard(){
       if(sc) sc.scrollTop = 0;
     }, 10);
   } else {
-    finishLesson();
+    endStandardLesson();
   }
 }
 
@@ -5836,13 +5922,17 @@ function finishLesson(){
     if(allPerfect) earnAch('perfect_day');
   }
 
+  // Desafíos diarios: registrar el progreso de esta lección.
+  const accuracy = perfect ? 100 : Math.max(20, Math.round(100*Math.pow(0.75, LESSON_STATE.errors)));
+  bumpChallengesForLesson({xp, mins: duration, accuracy});
+
   haptic(HAPTIC.complete);
   playSfx(perfect ? 'perfect' : 'complete');
   if(perfect) launchConfetti();
   LESSON_STATE.completed = true;
-  // Intentar disparar un battle estilo Pokémon antes de mostrar lesson_complete.
-  // Si las gates fallan, va directo al complete normal.
-  const resume = () => { VIEW = 'lesson_complete'; render(); };
+  // Intentar disparar un battle estilo Pokémon antes de la cadena post-lección.
+  // Si las gates fallan, va directo a la cadena (resumen → desafíos → racha).
+  const resume = () => { startPostLesson(); };
   const battleDelay = perfect ? 900 : 400; // dejar respirar el confetti
   setTimeout(() => {
     if(!maybeStartBattle(resume)){ resume(); }
@@ -5853,6 +5943,435 @@ function finishLessonReturn(){
   VIEW = 'day';
   CURRENT.lessonId = null;
   render();
+}
+
+// ============================================================
+// DESAFÍOS DIARIOS (daily challenges)
+// ============================================================
+// 3 tareas diarias que se regeneran cada día. Al completarse, cada una da un
+// cofre con XP + 1 punto de desafío. Los puntos se acumulan en un contador
+// mensual ("Desafío de <mes>"). Inspirado en los desafíos diarios de Duolingo.
+const CHAL_TEMPLATES = [
+  {id:'xp',  type:'xp',  target:20, label:'Gana 20 EXP'},
+  {id:'acc', type:'acc', target:2,  label:'Alcanza 80 % o más en 2 lecciones'},
+  {id:'min', type:'min', target:5,  label:'Aprende durante 5 minutos'}
+];
+const CHAL_REWARD_XP = 15;       // XP por tarea completada
+const CHAL_REWARD_POINTS = 1;    // puntos de desafío por tarea
+const CHAL_MONTH_TARGET = 30;    // meta mensual de puntos de desafío
+
+// Devuelve (creando si hace falta) las tareas de hoy.
+function getChals(){
+  const today = todayStr();
+  if(!DB.dailyChal || DB.dailyChal.date !== today){
+    DB.dailyChal = { date: today, tasks: CHAL_TEMPLATES.map(t => ({...t, prog:0, claimed:false})) };
+    save();
+  }
+  return DB.dailyChal.tasks;
+}
+// Resetea el contador mensual de puntos al cambiar de mes.
+function ensureChalMonth(){
+  const m = todayStr().slice(0,7);
+  if(DB.chalMonth !== m){ DB.chalMonth = m; DB.chalPoints = 0; save(); }
+}
+// Suma progreso a las tareas de un tipo dado (clamp al target).
+function bumpChal(type, amount){
+  if(!amount) return;
+  const tasks = getChals();
+  let changed = false;
+  tasks.forEach(t => {
+    if(t.type === type && t.prog < t.target){
+      t.prog = Math.min(t.target, t.prog + amount);
+      changed = true;
+    }
+  });
+  if(changed) save();
+}
+function bumpChallengesForLesson({xp, mins, accuracy}){
+  ensureChalMonth();
+  getChals();
+  bumpChal('xp', xp || 0);
+  bumpChal('min', mins || 0);
+  if((accuracy || 0) >= 80) bumpChal('acc', 1);
+}
+function hasClaimableChallenge(){
+  return getChals().some(t => t.prog >= t.target && !t.claimed);
+}
+// Reclama una tarea completada: cofre con XP + punto de desafío.
+function claimChal(id){
+  ensureChalMonth();
+  const t = getChals().find(x => x.id === id);
+  if(!t || t.prog < t.target || t.claimed) return;
+  t.claimed = true;
+  DB.chalPoints = (DB.chalPoints || 0) + CHAL_REWARD_POINTS;
+  save();
+  const gain = Math.round(CHAL_REWARD_XP * getXpMult());
+  addXP(CHAL_REWARD_XP); // addXP aplica xpMult y persiste
+  const xpEl = document.getElementById('chal-xp');
+  const ptsEl = document.getElementById('chal-pts');
+  if(xpEl) xpEl.textContent = `+${gain} XP`;
+  if(ptsEl) ptsEl.textContent = `+${CHAL_REWARD_POINTS} punto de desafío`;
+  const ov = document.getElementById('chal-overlay');
+  if(ov) ov.classList.add('show');
+  haptic(HAPTIC.levelUp);
+  playSfx('chest');
+  launchConfetti();
+}
+function closeChalOverlay(){
+  const ov = document.getElementById('chal-overlay');
+  if(ov) ov.classList.remove('show');
+  render();
+}
+
+// HTML del cuerpo de desafíos (tareas + barra mensual). Reusado por la vista
+// 'challenges' (desde Inicio) y por la pantalla de recompensa post-lección.
+function challengeBodyHtml(){
+  ensureChalMonth();
+  const tasks = getChals();
+  const monthName = new Date().toLocaleDateString('es', {month:'long'});
+  const pts = DB.chalPoints || 0;
+  const monthPct = Math.min(100, Math.round(pts / CHAL_MONTH_TARGET * 100));
+  const taskRows = tasks.map(t => {
+    const done = t.prog >= t.target;
+    const pct = Math.min(100, Math.round(t.prog / t.target * 100));
+    let chest;
+    if(!done){
+      chest = `<div class="chal-chest locked">🎁</div>`;
+    } else if(!t.claimed){
+      chest = `<div class="chal-chest ready" onclick="haptic(HAPTIC.tap);claimChal('${t.id}')">🎁</div>`;
+    } else {
+      chest = `<div class="chal-chest opened">✅</div>`;
+    }
+    return `
+      <div class="chal-row ${done && !t.claimed ? 'hot' : ''}">
+        <div class="chal-row-main">
+          <div class="chal-label">${t.label}</div>
+          <div class="chal-bar"><div class="chal-bar-fill" style="width:${pct}%"></div><span class="chal-bar-num">${t.prog} / ${t.target}</span></div>
+        </div>
+        ${chest}
+      </div>`;
+  }).join('');
+  return `
+    <div class="chal-card">${taskRows}</div>
+    <div class="chal-month">
+      <div class="chal-month-head">
+        <div class="chal-month-title">Desafío de ${monthName}</div>
+        <div class="chal-month-pts">${pts} / ${CHAL_MONTH_TARGET}</div>
+      </div>
+      <div class="chal-bar big"><div class="chal-bar-fill purple" style="width:${monthPct}%"></div></div>
+      <div class="chal-month-sub">😴 Suma puntos completando tus desafíos diarios</div>
+    </div>`;
+}
+
+// Vista independiente (desde Inicio / acceso directo).
+function renderChallenges(){
+  return `
+    ${renderHeader()}
+    <div class="scroll" id="sc">
+      <div class="back-row">
+        <button class="back-btn" onclick="haptic(8);navTo('home')" aria-label="Volver">←</button>
+        <div class="crumb">Inicio</div>
+      </div>
+      <div class="welcome"><h1>Desafíos diarios</h1><p>Completa las 3 tareas de hoy y suma puntos de desafío</p></div>
+      ${challengeBodyHtml()}
+    </div>
+    ${renderNav('home')}
+  `;
+}
+
+// ============================================================
+// FASE EXTRA POST-LECCIÓN: repaso de errores / preguntas bonus
+// ============================================================
+// EXTRA_STATE.phase: 'errors' (re-responde lo que falló) | 'bonus' (3 preguntas
+// más difíciles de lecciones ya completadas del mismo curso).
+let EXTRA_STATE = {phase:null, queue:[], idx:0, answered:null, tempSel:[], bonusXp:0, bonusHits:0};
+
+// Arma la cola de preguntas bonus: MCQs de lecciones YA completadas del mismo
+// curso (excluye la lección actual), priorizando mayor dificultad.
+function buildBonusQueue(n){
+  const courseId = CURRENT.courseId;
+  const course = COURSES[courseId];
+  if(!course) return [];
+  const buckets = {hard:[], medium:[], rest:[]};
+  for(const day of (course.days || [])){
+    if(day.locked) continue;
+    for(const lesson of (day.lessons || [])){
+      if(day.id === CURRENT.dayId && lesson.id === CURRENT.lessonId) continue;
+      if(!isLessonCompleted(courseId, day.id, lesson.id)) continue;
+      for(const c of (lesson.cards || [])){
+        if(c.type !== 'mcq' || !Array.isArray(c.options)) continue;
+        const b = c.difficulty === 'hard' ? 'hard' : c.difficulty === 'medium' ? 'medium' : 'rest';
+        buckets[b].push(c);
+      }
+    }
+  }
+  const shuffle = a => { for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+  const ordered = [...shuffle(buckets.hard), ...shuffle(buckets.medium), ...shuffle(buckets.rest)];
+  const seen = new Set(), out = [];
+  for(const c of ordered){
+    if(seen.has(c.q)) continue;
+    seen.add(c.q);
+    out.push(c);
+    if(out.length >= n) break;
+  }
+  return out;
+}
+
+// Punto de salida del flujo de cards estándar (antes llamaba finishLesson directo).
+// Decide si hay fase extra (repaso de errores o bonus) antes de cerrar la lección.
+function endStandardLesson(){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  if(!lesson){ finishLesson(); return; }
+  // Recolecta las preguntas falladas (mcq/fill) en orden.
+  const wrong = [];
+  (lesson.cards || []).forEach((c, i) => {
+    if((c.type === 'mcq' || c.type === 'fill') && LESSON_STATE.answers[i] && !LESSON_STATE.answers[i].correct){
+      wrong.push(c);
+    }
+  });
+  if(wrong.length){ startExtraPhase('errors', wrong); return; }
+  // Lección perfecta → preguntas bonus de refuerzo.
+  if(LESSON_STATE.errors === 0){
+    const bonus = buildBonusQueue(3);
+    if(bonus.length){ startExtraPhase('bonus', bonus); return; }
+  }
+  finishLesson();
+}
+
+function startExtraPhase(phase, queue){
+  EXTRA_STATE = {phase, queue:[...queue], idx:0, answered:null, tempSel:[], bonusXp:0, bonusHits:0, total:queue.length};
+  VIEW = 'lesson_extra';
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+
+function extraSelect(i, isMulti){
+  haptic(HAPTIC.select);
+  playSfx('tick');
+  if(EXTRA_STATE.answered) return;
+  if(isMulti){
+    const idx = EXTRA_STATE.tempSel.indexOf(i);
+    if(idx >= 0) EXTRA_STATE.tempSel.splice(idx,1);
+    else EXTRA_STATE.tempSel.push(i);
+  } else {
+    EXTRA_STATE.tempSel = [i];
+  }
+  render();
+}
+
+function extraSubmit(){
+  const card = EXTRA_STATE.queue[EXTRA_STATE.idx];
+  if(!card || EXTRA_STATE.answered) return;
+  const isMulti = !!card.multi;
+  const correctSet = isMulti ? new Set(card.correct) : new Set([card.correct]);
+  const selSet = new Set(EXTRA_STATE.tempSel);
+  const correct = isMulti
+    ? (selSet.size === correctSet.size && [...selSet].every(x => correctSet.has(x)))
+    : (selSet.size === 1 && correctSet.has([...selSet][0]));
+  EXTRA_STATE.answered = {selected:[...EXTRA_STATE.tempSel], correct};
+  if(correct){
+    haptic(HAPTIC.correct);
+    playSfx('correct');
+    if(EXTRA_STATE.phase === 'errors'){
+      // Corrigió el error → limpia el registro SM-2 de ese fallo.
+      clearWrong(card, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
+    } else {
+      EXTRA_STATE.bonusHits += 1;
+      EXTRA_STATE.bonusXp += 5;
+    }
+  } else {
+    haptic(HAPTIC.wrong);
+    playSfx('wrong');
+    // Sin costo de corazones en la fase extra: es repaso/refuerzo, no penaliza.
+  }
+  render();
+}
+
+function extraNext(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
+  const wasCorrect = EXTRA_STATE.answered?.correct;
+  const card = EXTRA_STATE.queue[EXTRA_STATE.idx];
+  // En repaso de errores, si volvió a fallar, re-encola la pregunta al final.
+  if(EXTRA_STATE.phase === 'errors' && !wasCorrect){
+    EXTRA_STATE.queue.push(card);
+  }
+  EXTRA_STATE.idx += 1;
+  EXTRA_STATE.answered = null;
+  EXTRA_STATE.tempSel = [];
+  if(EXTRA_STATE.idx >= EXTRA_STATE.queue.length){
+    afterExtraPhase();
+  } else {
+    render();
+    setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+  }
+}
+
+function afterExtraPhase(){
+  const wasBonus = EXTRA_STATE.phase === 'bonus';
+  const bonusXp = EXTRA_STATE.bonusXp;
+  const bonusHits = EXTRA_STATE.bonusHits;
+  const bonusTotal = EXTRA_STATE.total;
+  EXTRA_STATE.phase = null;
+  if(wasBonus && bonusXp > 0){
+    addXP(bonusXp);
+    setTimeout(() => showToast(`⭐ Bonus: ${bonusHits}/${bonusTotal} correctas · +${Math.round(bonusXp*getXpMult())} XP`, 2800, 'success'), 400);
+  }
+  finishLesson();
+}
+
+// Permite abandonar la fase extra (✕): cierra la lección igual.
+function skipExtra(){
+  if(EXTRA_STATE.phase === 'bonus' && EXTRA_STATE.bonusXp > 0) addXP(EXTRA_STATE.bonusXp);
+  EXTRA_STATE.phase = null;
+  finishLesson();
+}
+
+function renderLessonExtra(){
+  const card = EXTRA_STATE.queue[EXTRA_STATE.idx];
+  if(!card){ finishLesson(); return ''; }
+  const isErrors = EXTRA_STATE.phase === 'errors';
+  const answered = EXTRA_STATE.answered;
+  const total = EXTRA_STATE.queue.length;
+  const pct = Math.round((EXTRA_STATE.idx + (answered?1:0)) / total * 100);
+  const badge = isErrors
+    ? `<div class="extra-badge errors">🔁 REPASO DE ERRORES</div>`
+    : `<div class="extra-badge bonus">⭐ PREGUNTA BONUS</div>`;
+  const intro = isErrors
+    ? 'Corrige lo que fallaste para aprenderlo bien'
+    : `Refuerzo de lecciones que ya viste · ${EXTRA_STATE.idx+1} de ${EXTRA_STATE.total}`;
+  let actionBtn;
+  if(!answered){
+    const hasSel = EXTRA_STATE.tempSel.length > 0;
+    actionBtn = `<button class="btn ${hasSel?'btn-primary':'btn-disabled'}" onclick="${hasSel?'extraSubmit()':''}">Verificar</button>`;
+  } else {
+    const last = EXTRA_STATE.idx + 1 >= EXTRA_STATE.queue.length;
+    // En errores, si falló otra vez, lo va a re-encolar → no es la última.
+    const willRequeue = isErrors && !answered.correct;
+    const label = (last && !willRequeue) ? 'Terminar' : 'Continuar';
+    actionBtn = `<button class="btn btn-primary" onclick="extraNext()">${label}</button>`;
+  }
+  return `
+    <div class="hdr">
+      <div class="hdr-top">
+        <button class="back-btn" onclick="skipExtra()" aria-label="Saltar">✕</button>
+        <div style="flex:1;margin:0 12px">
+          <div class="progress-wrap"><div class="progress-bar ${isErrors?'err':'bon'}" style="width:${pct}%"></div></div>
+        </div>
+        <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="lesson-header" style="text-align:center">
+        ${badge}
+        <div class="extra-intro">${intro}</div>
+      </div>
+      <div class="card-stage anim-in">${mcqCardHtml(card, answered, EXTRA_STATE.tempSel, 'extraSelect')}</div>
+    </div>
+    <div class="action-bar">${actionBtn}</div>
+  `;
+}
+
+// ============================================================
+// CADENA POST-LECCIÓN: resumen → (desafíos) → racha animada
+// ============================================================
+let POST_LESSON = {stages:[], idx:0};
+
+function startPostLesson(){
+  POST_LESSON = {stages:['complete'], idx:0};
+  if(hasClaimableChallenge()) POST_LESSON.stages.push('challenge');
+  POST_LESSON.stages.push('streak');
+  applyPostStage();
+}
+function applyPostStage(){
+  const s = POST_LESSON.stages[POST_LESSON.idx];
+  if(s === 'complete')        VIEW = 'lesson_complete';
+  else if(s === 'challenge')  VIEW = 'challenge_reward';
+  else if(s === 'streak')     VIEW = 'streak_celebrate';
+  else { finishLessonReturn(); return; }
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+// Avanza a la siguiente etapa de la cadena (resumen → desafíos → racha).
+function postNext(){
+  haptic(HAPTIC.tap);
+  playSfx('advance');
+  POST_LESSON.idx += 1;
+  if(POST_LESSON.idx >= POST_LESSON.stages.length){ finishLessonReturn(); return; }
+  applyPostStage();
+}
+
+// Pantalla de recompensa de desafíos (post-lección). Reusa el cuerpo de tareas.
+function renderChallengeReward(){
+  return `
+    <div class="hdr">
+      <div class="hdr-top"><div style="font-size:14px;font-weight:700;width:100%;text-align:center;color:#9B59B6">Desafíos diarios</div></div>
+    </div>
+    <div class="scroll">
+      <div class="complete-screen" style="padding-top:10px">
+        <div class="chal-reward-h">¡Avanzaste tus desafíos!</div>
+        <div class="chal-reward-sub">Abre los cofres listos para ganar puntos</div>
+        <div style="width:100%;max-width:420px">${challengeBodyHtml()}</div>
+      </div>
+    </div>
+    <div class="action-bar">
+      <button class="btn btn-primary" onclick="postNext()">Continuar</button>
+    </div>
+  `;
+}
+
+// Pantalla de racha animada estilo Duolingo (post-lección).
+function renderStreakCelebrate(){
+  // Ventana rodante de 7 días terminando hoy (como la fila V S D L Ma Mi J).
+  const labels = ['D','L','Ma','Mi','J','V','S'];
+  const today = new Date();
+  const cells = [];
+  for(let i = 6; i >= 0; i--){
+    const d = new Date(); d.setDate(today.getDate() - i);
+    const ds = dateStrLocal(d);
+    const studied = (DB.activityLog?.[ds]?.lessons || 0) > 0;
+    cells.push({lbl: labels[d.getDay()], studied, isToday: i === 0});
+  }
+  const next = getNextLesson(CURRENT.courseId);
+  const goal = DB.dailyGoal || 3;
+  const doneToday = DB.activityLog?.[todayStr()]?.lessons || 0;
+  const goalLeft = Math.max(0, goal - doneToday);
+  let teaser = '';
+  if(next){
+    const what = next.isQuiz ? 'Quiz de la unidad' : next.lessonTitle;
+    const goalNote = goalLeft > 0
+      ? ` · ${goalLeft === 1 ? '¡1 más y cierras tu meta de hoy! 🎯' : `faltan ${goalLeft} para tu meta diaria`}`
+      : ' · ¡meta diaria cumplida! 🏆';
+    teaser = `<div class="complete-next-teaser">Sigue: <strong>${what}</strong>${goalNote}</div>`;
+  }
+  const weekRow = cells.map(c => `
+    <div class="sc-day ${c.isToday?'today':''}">
+      <div class="sc-day-lbl">${c.lbl}</div>
+      <div class="sc-day-dot ${c.studied?'on':''}">${c.studied?'✓':''}</div>
+    </div>`).join('');
+  return `
+    <div class="hdr">
+      <div class="hdr-top"><div style="font-size:14px;font-weight:700;width:100%;text-align:center">Tu racha</div></div>
+    </div>
+    <div class="scroll">
+      <div class="streak-celebrate">
+        <div class="sc-flame">🔥</div>
+        <div class="sc-num">${DB.streak}</div>
+        <div class="sc-label">${DB.streak === 1 ? 'día de racha' : 'días de racha'}</div>
+        <div class="sc-week">${weekRow}</div>
+        <div class="sc-msg">${DB.streak > 0 ? '¡Sigue así! Vuelve mañana para no romperla.' : 'Completa una lección para empezar tu racha.'}</div>
+        ${teaser}
+      </div>
+    </div>
+    <div class="action-bar">
+      <button class="btn btn-secondary" style="flex:0 0 auto;padding:14px 18px" onclick="finishLessonReturn()">Sendero</button>
+      ${next
+        ? `<button class="btn btn-primary" onclick="continueToNext()">${next.isQuiz ? 'Tomar quiz 📝' : 'Siguiente lección →'}</button>`
+        : `<button class="btn btn-primary" onclick="finishLessonReturn()">Continuar</button>`}
+    </div>
+  `;
 }
 
 function flipFlash(){
@@ -6027,7 +6546,8 @@ function resetAll(){
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
-    goalBonusClaimed: {}, chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
+    goalBonusClaimed: {}, dailyChal: null, chalPoints: 0, chalMonth: null,
+    chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
     badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
     starter: 'pikachu', soundEnabled: true, soundTheme: 'classic', hapticLevel: 'strong'
   };
