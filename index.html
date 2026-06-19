@@ -1035,6 +1035,22 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .sc-day.today .sc-day-dot{outline:2.5px solid #FFD08A;outline-offset:2px}
 .sc-msg{font-size:14px;color:#65676B;font-weight:600;max-width:300px;margin-bottom:8px}
 
+/* ===== Medallas mensuales (Logros) ===== */
+.medal-wrap{background:#fff;border:1.5px solid #E4E6EB;border-radius:16px;padding:12px 10px;margin-bottom:14px}
+.medal-year{font-size:13px;font-weight:800;color:#6B2FB3;margin:6px 4px 10px}
+.medal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px 6px;margin-bottom:6px}
+.medal-cell{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center}
+.medal-emoji{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;background:#F4ECFF}
+.medal-cell.earned .medal-emoji{background:linear-gradient(135deg,#E4D4FF,#C9A8FF);box-shadow:0 3px 10px rgba(155,89,182,.3)}
+.medal-cell.current .medal-emoji{background:#F4ECFF;outline:2.5px dashed #C9A8FF;outline-offset:-2px;filter:grayscale(.3)}
+.medal-cell.missed .medal-emoji{filter:grayscale(1);opacity:.4}
+.medal-cell.locked .medal-emoji{background:#EEF0F3;font-size:22px}
+.medal-mlbl{font-size:11px;font-weight:700;color:#65676B}
+.medal-cell.earned .medal-mlbl{color:#6B2FB3}
+.medal-msub{font-size:10px;font-weight:800;color:#9B59B6}
+.medal-ico-pop{animation:medalPop .6s cubic-bezier(.34,1.8,.64,1)}
+@keyframes medalPop{0%{transform:scale(.3) rotate(-20deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+
 </style>
 </head>
 <body>
@@ -1105,6 +1121,15 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
     <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#9B59B6">¡DESAFÍO COMPLETADO!</div>
     <div class="lvl-num" id="chal-xp" style="color:#9B59B6">+15 XP</div>
     <div style="font-size:13px;font-weight:700;color:#9B59B6" id="chal-pts">+1 punto de desafío</div>
+    <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
+  </div>
+</div>
+<div class="overlay" id="medal-overlay" onclick="closeMedalOverlay()">
+  <div class="overlay-inner">
+    <div class="overlay-ico medal-ico-pop" id="medal-ico">🏅</div>
+    <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#9B59B6">¡MEDALLA DEL MES!</div>
+    <div style="font-size:20px;font-weight:900;margin:8px 0 4px;color:#6B2FB3" id="medal-name">Junio 2026</div>
+    <div style="font-size:13px;color:#65676B">Completaste el desafío mensual</div>
     <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
   </div>
 </div>
@@ -1727,6 +1752,7 @@ let DB = {
   dailyChal: null, // {date:'YYYY-MM-DD', tasks:[{id,type,target,prog,claimed}]} desafíos diarios
   chalPoints: 0, // puntos de desafío acumulados en el mes actual
   chalMonth: null, // 'YYYY-MM' mes del contador de puntos de desafío
+  monthlyMedals: {}, // {'YYYY-MM': timestamp} medallas mensuales ganadas
   chests: {}, // {'courseId|dayId|section': true} cofres de bloque ya reclamados
   shields: 0, // escudos disponibles (banco por nivel, recarga semanal)
   shieldsEarned: 0, // legacy — ya no se usa para milestones
@@ -1850,6 +1876,7 @@ function load(){
   if(typeof DB.chalPoints !== 'number') DB.chalPoints = 0;
   if(DB.dailyChal === undefined) DB.dailyChal = null;
   if(DB.chalMonth === undefined) DB.chalMonth = null;
+  if(!DB.monthlyMedals || typeof DB.monthlyMedals !== 'object') DB.monthlyMedals = {};
   // Migración battles v1 → v2: IDs inventados (roca, cascada…) a Kanto reales
   // (brock, misty…). Si encuentra alguna key vieja, la convierte y guarda.
   const oldIds = Object.keys(BADGE_ID_MIGRATION_V1);
@@ -4609,6 +4636,50 @@ function renderPracticeHub(){
   `;
 }
 
+// Sección "Medallas mensuales" — cuadrícula por año. Una medalla por mes que
+// completaste el desafío mensual de puntos.
+function monthlyMedalsHtml(){
+  const MABBR = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const medals = DB.monthlyMedals || {};
+  const now = new Date();
+  const curYear = now.getFullYear();
+  const curMonth = now.getMonth();
+  // Años a mostrar: los que tengan medalla + el actual, desc.
+  const years = new Set([curYear]);
+  Object.keys(medals).forEach(k => years.add(parseInt(k.slice(0,4), 10)));
+  const yearList = [...years].sort((a,b) => b - a);
+  const earnedTotal = Object.keys(medals).length;
+  const blocks = yearList.map(yr => {
+    const cells = [];
+    for(let m = 0; m < 12; m++){
+      const key = `${yr}-${String(m+1).padStart(2,'0')}`;
+      const earned = !!medals[key];
+      const isFuture = (yr > curYear) || (yr === curYear && m > curMonth);
+      const isCurrent = (yr === curYear && m === curMonth);
+      let cls, ico, sub;
+      if(earned){ cls = 'earned'; ico = MONTH_MEDALS[m]; sub = ''; }
+      else if(isCurrent){
+        cls = 'current'; ico = MONTH_MEDALS[m];
+        sub = `${Math.min(DB.chalPoints||0, monthlyTarget(m))}/${monthlyTarget(m)}`;
+      }
+      else if(isFuture){ cls = 'locked'; ico = '🔒'; sub = ''; }
+      else { cls = 'missed'; ico = MONTH_MEDALS[m]; sub = ''; }
+      cells.push(`
+        <div class="medal-cell ${cls}">
+          <div class="medal-emoji">${ico}</div>
+          <div class="medal-mlbl">${MABBR[m]}</div>
+          ${sub ? `<div class="medal-msub">${sub}</div>` : ''}
+        </div>`);
+    }
+    return `
+      <div class="medal-year">${yr}</div>
+      <div class="medal-grid">${cells.join('')}</div>`;
+  }).join('');
+  return `
+    <div class="section-title">Medallas mensuales ${earnedTotal ? `· ${earnedTotal}` : ''}</div>
+    <div class="medal-wrap">${blocks}</div>`;
+}
+
 function renderAchievements(){
   const earnedCount = Object.keys(DB.achievements).length;
   const lvl = calcLevel(DB.xp);
@@ -4687,6 +4758,8 @@ function renderAchievements(){
       </div>
 
       ${badgesChip}
+
+      ${monthlyMedalsHtml()}
 
       <div class="level-current">
         <div class="lc-eyebrow">Tu nivel actual · ${lvlInfo.n}</div>
@@ -5960,7 +6033,11 @@ const CHAL_TEMPLATES = [
 ];
 const CHAL_REWARD_XP = 15;       // XP por tarea completada
 const CHAL_REWARD_POINTS = 1;    // puntos de desafío por tarea
-const CHAL_MONTH_TARGET = 30;    // meta mensual de puntos de desafío
+const CHAL_MONTH_TARGET = 30;    // meta mensual base de puntos de desafío
+// Emoji de la medalla de cada mes (ene–dic). Estilo emoji de la app.
+const MONTH_MEDALS = ['🌅','💝','🌸','🌧️','🌻','☀️','🏖️','🌽','🍂','🎃','🦃','🎄'];
+// Meta mensual de puntos. Febrero (mes corto) se ajusta hacia abajo.
+function monthlyTarget(monthIdx){ return monthIdx === 1 ? 28 : CHAL_MONTH_TARGET; }
 
 // Devuelve (creando si hace falta) las tareas de hoy.
 function getChals(){
@@ -6020,6 +6097,8 @@ function claimChal(id){
   save();
   const gain = Math.round(CHAL_REWARD_XP * getXpMult());
   addXP(CHAL_REWARD_XP); // addXP aplica xpMult y persiste
+  // ¿Cruzó la meta mensual? → gana la medalla del mes (una sola vez por mes).
+  checkMonthlyMedal();
   const xpEl = document.getElementById('chal-xp');
   const ptsEl = document.getElementById('chal-pts');
   if(xpEl) xpEl.textContent = `+${gain} XP`;
@@ -6030,8 +6109,46 @@ function claimChal(id){
   playSfx('chest');
   launchConfetti();
 }
+// Otorga la medalla del mes si los puntos llegaron a la meta y no se tenía.
+let _pendingMedal = null;
+function checkMonthlyMedal(){
+  ensureChalMonth();
+  const m = DB.chalMonth || todayStr().slice(0,7);
+  const monthIdx = parseInt(m.slice(5,7), 10) - 1;
+  if((DB.chalPoints || 0) >= monthlyTarget(monthIdx) && !DB.monthlyMedals[m]){
+    DB.monthlyMedals[m] = now();
+    _pendingMedal = m;
+    save();
+  }
+}
 function closeChalOverlay(){
   const ov = document.getElementById('chal-overlay');
+  if(ov) ov.classList.remove('show');
+  // Si en este reclamo se ganó la medalla del mes, muéstrala ahora.
+  if(_pendingMedal){
+    showMedalOverlay(_pendingMedal);
+    _pendingMedal = null;
+    return;
+  }
+  render();
+}
+// Muestra el overlay de medalla mensual ganada.
+function showMedalOverlay(monthKey){
+  const monthIdx = parseInt(monthKey.slice(5,7), 10) - 1;
+  const year = monthKey.slice(0,4);
+  const monthName = new Date(year, monthIdx, 1).toLocaleDateString('es', {month:'long'});
+  const icoEl = document.getElementById('medal-ico');
+  const nameEl = document.getElementById('medal-name');
+  if(icoEl) icoEl.textContent = MONTH_MEDALS[monthIdx] || '🏅';
+  if(nameEl) nameEl.textContent = `${monthName.charAt(0).toUpperCase()+monthName.slice(1)} ${year}`;
+  const ov = document.getElementById('medal-overlay');
+  if(ov) ov.classList.add('show');
+  haptic(HAPTIC.achievement);
+  playSfx('levelup');
+  launchConfetti();
+}
+function closeMedalOverlay(){
+  const ov = document.getElementById('medal-overlay');
   if(ov) ov.classList.remove('show');
   render();
 }
@@ -6043,9 +6160,14 @@ function closeChalOverlay(){
 function challengeBodyHtml(animate){
   ensureChalMonth();
   const tasks = getChals();
-  const monthName = new Date().toLocaleDateString('es', {month:'long'});
+  const nowD = new Date();
+  const monthName = nowD.toLocaleDateString('es', {month:'long'});
+  const monthIdx = nowD.getMonth();
+  const monthTgt = monthlyTarget(monthIdx);
+  const monthKey = todayStr().slice(0,7);
+  const medalEarned = !!(DB.monthlyMedals && DB.monthlyMedals[monthKey]);
   const pts = DB.chalPoints || 0;
-  const monthPct = Math.min(100, Math.round(pts / CHAL_MONTH_TARGET * 100));
+  const monthPct = Math.min(100, Math.round(pts / monthTgt * 100));
   const taskRows = tasks.map(t => {
     const done = t.prog >= t.target;
     const a = animate ? CHAL_ANIM[t.id] : null;
@@ -6075,11 +6197,11 @@ function challengeBodyHtml(animate){
     <div class="chal-card">${taskRows}</div>
     <div class="chal-month">
       <div class="chal-month-head">
-        <div class="chal-month-title">Desafío de ${monthName}</div>
-        <div class="chal-month-pts">${pts} / ${CHAL_MONTH_TARGET}</div>
+        <div class="chal-month-title">Desafío de ${monthName} ${medalEarned ? MONTH_MEDALS[monthIdx] : ''}</div>
+        <div class="chal-month-pts">${Math.min(pts, monthTgt)} / ${monthTgt}</div>
       </div>
       <div class="chal-bar big"><div class="chal-bar-fill purple" style="width:${monthPct}%"></div></div>
-      <div class="chal-month-sub">😴 Suma puntos completando tus desafíos diarios</div>
+      <div class="chal-month-sub">${medalEarned ? '🏅 ¡Medalla del mes ganada! La ves en Logros' : '😴 Suma puntos y gana la medalla del mes'}</div>
     </div>`;
 }
 
@@ -6585,7 +6707,8 @@ function triggerImportBackup(){
         DB = Object.assign({
           xp:0, hearts:MAX_HEARTS, lastHeartLost:null, streak:0, lastStudyDate:null,
           achievements:{}, progress:{}, flashcardStats:{}, totalLessons:0,
-          perfectLessons:0, quizProgress:{}, wrongAnswers:{}, activityLog:{}, studiedWeekdays:{}, chests:{}
+          perfectLessons:0, quizProgress:{}, wrongAnswers:{}, activityLog:{}, studiedWeekdays:{}, chests:{},
+          monthlyMedals:{}
         }, data);
         save();
         showToast('Backup restaurado · XP, racha y logros recuperados', 2800, 'success');
@@ -6609,7 +6732,7 @@ function resetAll(){
     progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
-    goalBonusClaimed: {}, dailyChal: null, chalPoints: 0, chalMonth: null,
+    goalBonusClaimed: {}, dailyChal: null, chalPoints: 0, chalMonth: null, monthlyMedals: {},
     chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
     badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
     starter: 'pikachu', soundEnabled: true, soundTheme: 'classic', hapticLevel: 'strong'
