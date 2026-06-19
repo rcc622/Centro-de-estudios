@@ -994,7 +994,9 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .chal-chest.ready{background:linear-gradient(135deg,#FFE08A,#FFB627);cursor:pointer;animation:chalPulse 1.1s ease-in-out infinite;box-shadow:0 4px 14px rgba(255,160,0,.4)}
 .chal-chest.ready:active{transform:scale(.9)}
 .chal-chest.opened{background:#E6F7EC}
+.chal-chest.opening{background:linear-gradient(135deg,#FFE08A,#FFB627);animation:chestOpenPop .6s ease;box-shadow:0 4px 18px rgba(255,160,0,.55)}
 @keyframes chalPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes chestOpenPop{0%{transform:scale(1) rotate(0)}15%{transform:scale(1.04) rotate(-9deg)}30%{transform:scale(1.04) rotate(9deg)}45%{transform:scale(1.08) rotate(-7deg)}62%{transform:scale(1.2) rotate(0)}80%{transform:scale(.9)}100%{transform:scale(1)}}
 .chal-month{background:#F4ECFF;border:1.5px solid #E4D4FF;border-radius:16px;padding:14px;margin:10px 0 4px}
 .chal-month-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .chal-month-title{font-size:14px;font-weight:800;color:#6B2FB3}
@@ -1016,6 +1018,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .extra-badge.errors{background:#FFF1E0;color:#E8830C}
 .extra-badge.bonus{background:#EDE6FF;color:#7B3FF2}
 .extra-intro{font-size:13px;color:#65676B;font-weight:600}
+.extra-src{font-size:12px;color:#7B3FF2;background:#F3EEFF;border:1px solid #E4D4FF;border-radius:10px;padding:6px 11px;margin:9px auto 0;max-width:94%;display:inline-block;font-weight:700;line-height:1.35}
 .progress-bar.err{background:linear-gradient(90deg,#FF9F0A,#FF6B35)}
 .progress-bar.bon{background:linear-gradient(90deg,#A86BFF,#7B3FF2)}
 
@@ -6178,11 +6181,11 @@ function challengeBodyHtml(animate){
     const numAttrs = a ? `data-from="${a.from}" data-to="${a.to}" data-target="${t.target}"` : '';
     let chest;
     if(!done){
-      chest = `<div class="chal-chest locked">🎁</div>`;
+      chest = `<div class="chal-chest locked" data-chal="${t.id}">🎁</div>`;
     } else if(!t.claimed){
-      chest = `<div class="chal-chest ready" onclick="haptic(HAPTIC.tap);claimChal('${t.id}')">🎁</div>`;
+      chest = `<div class="chal-chest ready" data-chal="${t.id}" onclick="haptic(HAPTIC.tap);claimChal('${t.id}')">🎁</div>`;
     } else {
-      chest = `<div class="chal-chest opened">✅</div>`;
+      chest = `<div class="chal-chest opened" data-chal="${t.id}">✅</div>`;
     }
     return `
       <div class="chal-row ${done && !t.claimed ? 'hot' : ''}">
@@ -6240,10 +6243,13 @@ function buildBonusQueue(n){
     for(const lesson of (day.lessons || [])){
       if(day.id === CURRENT.dayId && lesson.id === CURRENT.lessonId) continue;
       if(!isLessonCompleted(courseId, day.id, lesson.id)) continue;
+      // Etiqueta de origen para mostrar de qué día/lección salió la pregunta.
+      const srcLabel = lesson.title ? `${day.title || day.id} · ${lesson.title}` : (day.title || day.id);
       for(const c of (lesson.cards || [])){
         if(c.type !== 'mcq' || !Array.isArray(c.options)) continue;
         const b = c.difficulty === 'hard' ? 'hard' : c.difficulty === 'medium' ? 'medium' : 'rest';
-        buckets[b].push(c);
+        // Clon para no mutar el contenido original; lleva la referencia de origen.
+        buckets[b].push({...c, _srcLabel: srcLabel});
       }
     }
   }
@@ -6384,6 +6390,9 @@ function renderLessonExtra(){
   const intro = isErrors
     ? 'Corrige lo que fallaste para aprenderlo bien'
     : `Refuerzo de lecciones que ya viste · ${EXTRA_STATE.idx+1} de ${EXTRA_STATE.total}`;
+  // En bonus: muestra de qué día/lección salió la pregunta (evita el "¿de qué me hablan?").
+  const srcLine = (!isErrors && card._srcLabel)
+    ? `<div class="extra-src">📍 De: ${card._srcLabel}</div>` : '';
   let actionBtn;
   if(!answered){
     const hasSel = EXTRA_STATE.tempSel.length > 0;
@@ -6409,6 +6418,7 @@ function renderLessonExtra(){
       <div class="lesson-header" style="text-align:center">
         ${badge}
         <div class="extra-intro">${intro}</div>
+        ${srcLine}
       </div>
       <div class="card-stage anim-in">${mcqCardHtml(card, answered, EXTRA_STATE.tempSel, 'extraSelect')}</div>
     </div>
@@ -6438,8 +6448,50 @@ function applyPostStage(){
   else { finishLessonReturn(); return; }
   render();
   setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
-  // Dispara la animación de barras n→n al montar la pantalla de desafíos.
-  if(s === 'challenge') setTimeout(animateChallengeBars, 220);
+  // Dispara la animación de barras n→n al montar la pantalla de desafíos, y luego
+  // abre solo los cofres que quedaron listos (sin que Randall tenga que tocarlos).
+  if(s === 'challenge'){
+    setTimeout(animateChallengeBars, 220);
+    setTimeout(autoOpenReadyChests, 1080);
+  }
+}
+
+// Abre automáticamente, uno por uno y con animación inline, los cofres que ya
+// están listos en la pantalla de recompensa post-lección. Otorga XP + puntos sin
+// modal (el tap manual con modal sigue disponible como respaldo en otras vistas).
+function autoOpenReadyChests(){
+  const ready = getChals().filter(t => t.prog >= t.target && !t.claimed);
+  if(!ready.length) return;
+  let i = 0;
+  const openNext = () => {
+    if(i >= ready.length){
+      CHAL_ANIM = {}; // las barras ya están en su valor final: evita re-animar en renders
+      if(_pendingMedal){ const m = _pendingMedal; _pendingMedal = null; showMedalOverlay(m); }
+      return;
+    }
+    const t = ready[i]; i++;
+    if(t.claimed){ openNext(); return; } // por si el tap manual ya lo reclamó
+    t.claimed = true;
+    DB.chalPoints = (DB.chalPoints || 0) + CHAL_REWARD_POINTS;
+    addXP(CHAL_REWARD_XP); // aplica xpMult, persiste y suelta el +XP flotante
+    checkMonthlyMedal();
+    save();
+    haptic(HAPTIC.levelUp);
+    playSfx('chest');
+    launchConfetti();
+    const el = document.querySelector(`.chal-chest[data-chal="${t.id}"]`);
+    if(el){
+      el.classList.remove('ready', 'locked');
+      el.classList.add('opening');
+      setTimeout(() => {
+        el.classList.remove('opening');
+        el.classList.add('opened');
+        el.textContent = '✅';
+      }, 560);
+    }
+    setTimeout(openNext, 920);
+  };
+  openNext();
 }
 function isLastPostStage(){ return POST_LESSON.idx >= POST_LESSON.stages.length - 1; }
 // Avanza a la siguiente etapa de la cadena (resumen → desafíos → racha).
@@ -6485,6 +6537,9 @@ function animateChallengeBars(){
   });
   haptic(HAPTIC.correct);
   playSfx('correct');
+  // Las barras ya tienen su ancho/numero final por estilo inline: limpiar el delta
+  // evita que un re-render posterior (ej. tap manual del cofre) las regrese al inicio.
+  CHAL_ANIM = {};
 }
 
 // Pantalla de recompensa de desafíos (post-lección). Reusa el cuerpo de tareas.
