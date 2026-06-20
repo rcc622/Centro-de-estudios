@@ -1562,6 +1562,26 @@ let COURSES_LOADED = false;
 let COURSES_CATALOG = null; // raw catalog (courses.json)
 let PRIMARY_COURSE_ID = null; // primer curso activo (el del hero)
 
+// Idioma del contenido (no de la UI). 'es' usa los archivos base actuales;
+// 'en' busca primero la variante en content/<curso>/en/<archivo>.
+function langOf(){ return DB.lang === 'en' ? 'en' : 'es'; }
+
+// Carga un JSON de contenido respetando el idioma seleccionado, con fallback
+// al archivo base si la variante de idioma no existe (así un curso sin traducir
+// sigue funcionando: cae al español actual). Devuelve null si tampoco existe base.
+async function fetchContentJson(courseId, file){
+  const lang = langOf();
+  try {
+    const r = await fetch(`content/${courseId}/${lang}/${file}`);
+    if(r.ok) return await r.json();
+  } catch(e){ /* variante de idioma ausente → fallback */ }
+  try {
+    const r2 = await fetch(`content/${courseId}/${file}`);
+    if(r2.ok) return await r2.json();
+  } catch(e){ /* base ausente */ }
+  return null;
+}
+
 // Lazy-load por curso. Al iniciar la app SOLO se cargan:
 //   1. content/courses.json (catálogo)
 //   2. content/<curso>/meta.json de cada curso activo (chico, ~2KB c/u)
@@ -1573,6 +1593,9 @@ let PRIMARY_COURSE_ID = null; // primer curso activo (el del hero)
 // Esto escala bien: curso nuevo = 0 KB extra al arrancar la app.
 async function loadCourses(){
   try {
+    // Reset: permite re-ejecutar al cambiar de idioma sin duplicar COMING_SOON.
+    COURSES = {};
+    COMING_SOON = [];
     // 1. Catálogo
     const catalog = await fetch('content/courses.json').then(r => {
       if(!r.ok) throw new Error('No se encontró content/courses.json');
@@ -1586,9 +1609,9 @@ async function loadCourses(){
     // 2. Metas en paralelo (fetch todas las meta.json a la vez)
     const metaPromises = activeCourses.map(async entry => {
       try {
-        const r = await fetch(`content/${entry.id}/meta.json`);
-        if(!r.ok) return null;
-        return {entry, meta: await r.json()};
+        const meta = await fetchContentJson(entry.id, 'meta.json');
+        if(!meta) return null;
+        return {entry, meta};
       } catch(err){ return null; }
     });
     const metaResults = (await Promise.all(metaPromises)).filter(Boolean);
@@ -1663,13 +1686,9 @@ async function loadCourseDays(courseId){
     if(day.locked) return;
     try {
       const [unitData, diagData, quizData] = await Promise.all([
-        fetch(`content/${courseId}/${day.id}.json`).then(r => r.ok ? r.json() : null).catch(()=>null),
-        day._diagnosticFile
-          ? fetch(`content/${courseId}/${day._diagnosticFile}`).then(r => r.ok ? r.json() : null).catch(()=>null)
-          : Promise.resolve(null),
-        day._unitQuizFile
-          ? fetch(`content/${courseId}/${day._unitQuizFile}`).then(r => r.ok ? r.json() : null).catch(()=>null)
-          : Promise.resolve(null)
+        fetchContentJson(courseId, `${day.id}.json`),
+        day._diagnosticFile ? fetchContentJson(courseId, day._diagnosticFile) : Promise.resolve(null),
+        day._unitQuizFile ? fetchContentJson(courseId, day._unitQuizFile) : Promise.resolve(null)
       ]);
       if(!unitData){
         day.locked = true;
@@ -1772,7 +1791,8 @@ let DB = {
   starter: 'pikachu', // pokemon starter elegido (ver STARTERS)
   soundEnabled: true, // efectos de sonido WebAudio (toggle en Ajustes)
   soundTheme: 'classic', // tema de SFX: classic | arcade | marimba
-  hapticLevel: 'strong' // vibración: off | soft | strong
+  hapticLevel: 'strong', // vibración: off | soft | strong
+  lang: 'es' // idioma del contenido de cursos: 'es' | 'en' (la UI siempre es español)
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -1878,6 +1898,7 @@ function load(){
   if(typeof DB.soundEnabled !== 'boolean') DB.soundEnabled = true;
   if(!DB.soundTheme || !['classic','arcade','marimba'].includes(DB.soundTheme)) DB.soundTheme = 'classic';
   if(!['off','soft','strong'].includes(DB.hapticLevel)) DB.hapticLevel = 'strong';
+  if(!['es','en'].includes(DB.lang)) DB.lang = 'es';
   if(!Array.isArray(DB.recentBattleQuestions)) DB.recentBattleQuestions = [];
   // Migración desafíos diarios v1
   if(typeof DB.chalPoints !== 'number') DB.chalPoints = 0;
@@ -1957,6 +1978,25 @@ function setHapticLevel(level){
   save();
   haptic(HAPTIC.complete); // preview inmediato de la intensidad
   showToast(level === 'off' ? '📴 Vibración apagada' : level === 'soft' ? '📳 Vibración suave' : '📳 Vibración fuerte', 1500);
+  render();
+}
+
+// Cambia el idioma del CONTENIDO de los cursos (no de la interfaz). Recarga
+// catálogo + metas + días del curso primario/actual en el nuevo idioma. Los
+// cursos sin variante traducida caen al español base (fallback de fetchContentJson).
+async function setLanguage(lang){
+  if(!['es','en'].includes(lang)) return;
+  if(DB.lang === lang){ render(); return; }
+  DB.lang = lang;
+  save();
+  haptic(HAPTIC.complete);
+  showLoadingOverlay(lang === 'en' ? 'Cargando contenido en inglés…' : 'Cargando contenido en español…');
+  COURSES_LOADED = false;
+  await loadCourses();
+  if(PRIMARY_COURSE_ID) await loadCourseDays(PRIMARY_COURSE_ID);
+  if(CURRENT.courseId && CURRENT.courseId !== PRIMARY_COURSE_ID) await loadCourseDays(CURRENT.courseId);
+  hideLoadingOverlay();
+  showToast(lang === 'en' ? '🌐 Idioma del contenido: inglés' : '🌐 Idioma del contenido: español', 1900);
   render();
 }
 
@@ -5532,6 +5572,15 @@ function renderConfig(){
       </div>
 
       <div class="goal-card">
+        <div class="gc-title"><span>🌐</span>Idioma del contenido</div>
+        <div class="gc-desc">Elige el idioma de las lecciones, conceptos y preguntas de los cursos. Los nombres de conceptos clave salen de la guía oficial de cada idioma (no son traducciones automáticas). La interfaz de la app se queda en español. Si un curso aún no tiene versión en el idioma elegido, se muestra en español.</div>
+        <div class="gc-options" style="grid-template-columns:1fr 1fr">
+          <button class="gc-opt ${DB.lang!=='en'?'active':''}" onclick="setLanguage('es')">🇲🇽<span class="gc-opt-sub">español</span></button>
+          <button class="gc-opt ${DB.lang==='en'?'active':''}" onclick="setLanguage('en')">🇺🇸<span class="gc-opt-sub">english</span></button>
+        </div>
+      </div>
+
+      <div class="goal-card">
         <div class="gc-title"><span>🔊</span>Sonidos</div>
         <div class="gc-desc">Efectos en cada avance, acierto, error y recompensa. Elige un tema (al tocarlo lo escuchas de preview). Se generan en tu dispositivo: no gastan datos.</div>
         <div class="gc-options" style="grid-template-columns:repeat(4,1fr)">
@@ -6813,7 +6862,7 @@ function resetAll(){
     goalBonusClaimed: {}, dailyChal: null, chalPoints: 0, chalMonth: null, monthlyMedals: {},
     chests: {}, shields: 0, shieldsEarned: 0, lastShieldRefill: null,
     badges: {}, lastBattleTs: 0, battlesTotal: 0, battlesWon: 0, battlesEnabled: true,
-    starter: 'pikachu', soundEnabled: true, soundTheme: 'classic', hapticLevel: 'strong'
+    starter: 'pikachu', soundEnabled: true, soundTheme: 'classic', hapticLevel: 'strong', lang: 'es'
   };
   DB.shields = getMaxShields();
   DB.lastShieldRefill = todayStr();
