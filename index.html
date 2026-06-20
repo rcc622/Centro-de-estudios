@@ -460,6 +460,10 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .hero-progress-text{font-size:11.5px;opacity:.85;font-weight:700;margin-top:6px;position:relative;z-index:1}
 .hero.review{background:linear-gradient(135deg,#42B883 0%,#2D8F66 100%);box-shadow:0 8px 22px rgba(66,184,131,.28)}
 .hero.review .hero-cta{color:#2D8F66}
+.hero.done{background:linear-gradient(135deg,#F7B500 0%,#EA8A00 100%);box-shadow:0 8px 22px rgba(234,138,0,.32);cursor:default}
+.hero.done .hero-cta{color:#B45309}
+.hero.review.compact{padding:15px 18px}
+.hero.review.compact .hero-title{font-size:17px;margin-bottom:2px}
 
 /* ----- Course card (Home) — solo si hay >1 curso activo ----- */
 .course{background:#fff;border:1px solid #E4E6EB;border-radius:16px;padding:14px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
@@ -2573,12 +2577,31 @@ function renderHome(){
       </div>
     `;
   } else if(mainCourse){
+    // Curso terminado (sin siguiente lección): felicitar + empujar al siguiente
+    // curso / learning path. Antes solo decía "Listo para repasar" sin reconocer
+    // que el curso estaba completado ni sugerir qué sigue.
+    const prog = getCourseProgress(mainCourse.id);
+    const nextCourse = activeCourses.find(c => c.id !== mainCourse.id && getCourseProgress(c.id).pct < 100);
+    const comingNext = !nextCourse && COMING_SOON.length ? COMING_SOON[0] : null;
+    let suggestionHtml;
+    if(nextCourse){
+      suggestionHtml = `<div class="hero-cta" onclick="event.stopPropagation();haptic(12);openCourse('${nextCourse.id}')">Empieza ${nextCourse.title} <span class="arrow">→</span></div>`;
+    } else if(comingNext){
+      suggestionHtml = `<div class="hero-sub" style="margin-bottom:0"><strong>Siguiente sugerido:</strong> ${comingNext.icon||'📚'} ${comingNext.title} · pídeme que lo arme</div>`;
+    } else {
+      suggestionHtml = `<div class="hero-sub" style="margin-bottom:0">Pídeme un curso nuevo cuando quieras 🚀</div>`;
+    }
     heroHtml = `
-      <div class="hero review" onclick="haptic(12);openCourse('${mainCourse.id}')">
-        <div class="hero-eyebrow">¡Todo el contenido al día!</div>
-        <div class="hero-title">🏆 Listo para repasar</div>
-        <div class="hero-sub">Refuerza con flashcards o revisa lecciones completadas</div>
-        <div class="hero-cta">Abrir curso <span class="arrow">→</span></div>
+      <div class="hero done">
+        <div class="hero-eyebrow">🎉 Curso completado</div>
+        <div class="hero-title">🏆 Terminaste ${mainCourse.title}</div>
+        <div class="hero-sub">${prog.done} lecciones · 100% · ¡felicidades, Randall!</div>
+        ${suggestionHtml}
+      </div>
+      <div class="hero review compact" onclick="haptic(12);openCourse('${mainCourse.id}')">
+        <div class="hero-eyebrow">¿Quieres reforzar?</div>
+        <div class="hero-title">🔁 Repasar ${mainCourse.title}</div>
+        <div class="hero-sub" style="margin-bottom:0">Flashcards y lecciones completadas siguen disponibles</div>
       </div>
     `;
   }
@@ -2596,7 +2619,7 @@ function renderHome(){
               <div class="course-title">${c.title}</div>
               <div class="course-meta">${c.subtitle}</div>
             </div>
-            <div style="font-size:13px;font-weight:800;color:${c.color||'#1877F2'}">${p.pct}%</div>
+            <div style="font-size:13px;font-weight:800;color:${p.pct>=100?'#2D8F66':(c.color||'#1877F2')}">${p.pct>=100?'✅ 100%':p.pct+'%'}</div>
           </div>
           <div class="course-progress"><div class="course-progress-bar" style="width:${p.pct}%"></div></div>
         </div>
