@@ -11,7 +11,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuáles son las 3 categorías de bid strategies en Meta?",
+      "q": "¿Cuáles son las 3 categorías de estrategias de puja (bid strategies) en Meta?",
       "options": [
         "Auto / Manual / Hybrid",
         "Spend-based / Goal-based / Manual",
@@ -19,11 +19,11 @@
         "Standard / Advanced / Custom"
       ],
       "correct": 1,
-      "explanation": "Spend-based (Highest Volume, Highest Value) gastan todo. Goal-based (Cost per Result Goal, ROAS Goal) respetan meta. Manual (Bid Cap).",
+      "explanation": "Spend-based (Volumen más alto (highest volume), Valor más alto (highest value)) gastan todo. Goal-based (Objetivo de costo por resultado (cost per result goal), Objetivo de ROAS (ROAS goal)) respetan meta. Manual (Límite de puja (bid cap)).",
       "difficulty": "medium"
     },
     {
-      "q": "Un anunciante de e-commerce tiene Pixel con value tracking y quiere asegurar un ROAS mínimo de 4x. ¿Cuál bid strategy es óptimo?",
+      "q": "Un anunciante de e-commerce tiene Pixel con value tracking y quiere asegurar un ROAS mínimo de 4x. ¿Cuál estrategia de puja (bid strategy) es óptimo?",
       "options": [
         "Highest Volume",
         "Highest Value",
@@ -31,11 +31,11 @@
         "Bid Cap"
       ],
       "correct": 2,
-      "explanation": "ROAS Goal define el retorno objetivo. Highest Value maximiza valor pero sin meta específica de retorno. Bid Cap no garantiza ROAS.",
+      "explanation": "Objetivo de ROAS (ROAS goal) define el retorno objetivo. Valor más alto (highest value) maximiza valor pero sin meta específica de retorno. Límite de puja (bid cap) no garantiza ROAS.",
       "difficulty": "hard"
     },
     {
-      "q": "Una campaña tiene 4 ad sets con audiencias distintas. Quieres que Meta asigne más presupuesto al ad set que mejor convierta. ¿Qué setting usas?",
+      "q": "Una campaña tiene 4 conjuntos de anuncios (ad sets) con audiencias distintas. Quieres que Meta asigne más presupuesto al conjunto de anuncios (ad set) que mejor convierta. ¿Qué setting usas?",
       "options": [
         "Daily budget igual por ad set",
         "Lifetime budget manual por ad set",
@@ -43,7 +43,7 @@
         "Bid Cap idéntico en los 4"
       ],
       "correct": 2,
-      "explanation": "Advantage+ Campaign Budget reasigna dinámicamente al ad set ganador. Requiere ≥2 ad sets en la campaña.",
+      "explanation": "Advantage+ Campaign Budget reasigna dinámicamente al conjunto de anuncios ganador. Requiere ≥2 conjuntos de anuncios en la campaña.",
       "difficulty": "medium"
     },
     {
@@ -61,7 +61,7 @@
       "difficulty": "hard"
     },
     {
-      "q": "Cambiar el bid strategy de un ad set en medio del learning phase:",
+      "q": "Cambiar la estrategia de puja (bid strategy) de un conjunto de anuncios (ad set) en medio de la fase de aprendizaje (learning phase):",
       "options": [
         "Acelera la salida del learning",
         "Resetea el learning phase y vuelve a empezar a contar events",
@@ -69,11 +69,11 @@
         "Lo pone en pausa hasta que termine"
       ],
       "correct": 1,
-      "explanation": "Cambio de bid strategy es edit significativo. Resetea learning. El ad set vuelve a empezar a acumular 50 events desde 0.",
+      "explanation": "Cambio de estrategia de puja es edit significativo. Resetea la fase de aprendizaje. El conjunto de anuncios vuelve a empezar a acumular 50 events desde 0.",
       "difficulty": "medium"
     },
     {
-      "q": "¿Qué afirmación sobre Bid Cap es VERDADERA?",
+      "q": "¿Qué afirmación sobre Límite de puja (bid cap) es VERDADERA?",
       "options": [
         "Bid Cap garantiza un CPA máximo",
         "Bid Cap controla el bid máximo en la subasta, NO el CPA final",
@@ -81,14 +81,14 @@
         "Bid Cap solo funciona con Pixel value tracking"
       ],
       "correct": 1,
-      "explanation": "Bid Cap = techo al bid de la subasta. El CPA final depende de action rates y quality. Para meta de CPA usar Cost per Result Goal. Recomendado solo para advanced users.",
+      "explanation": "Límite de puja = techo al bid de la subasta. El CPA final depende de action rates y quality. Para meta de CPA usar Objetivo de costo por resultado (cost per result goal). Recomendado solo para advanced users.",
       "difficulty": "hard"
     },
     {
-      "q": "¿Hasta qué % puede compartirse entre ad sets con Ad Set Budget Sharing?",
+      "q": "¿Hasta qué % puede compartirse entre conjuntos de anuncios (ad sets) con Ad Set Budget Sharing?",
       "options": ["5%","10%","20%","50%"],
       "correct": 2,
-      "explanation": "20% del daily budget puede compartirse entre ad sets de la misma campaña.",
+      "explanation": "20% del daily budget puede compartirse entre conjuntos de anuncios de la misma campaña.",
       "difficulty": "hard"
     },
     {
@@ -136,7 +136,7 @@
         "Usar varios ad sets"
       ],
       "correct": 0,
-      "explanation": "Un Daily budget marca un gasto promedio por día, lo que mantiene el pacing parejo semana a semana. Un Lifetime budget puede concentrar el gasto en los periodos de mayor oportunidad y producir semanas disparejas como las del escenario. Cambiar creativos, eventos o ad sets no controla el pacing.",
+      "explanation": "Un Daily budget marca un gasto promedio por día, lo que mantiene el pacing parejo semana a semana. Un Lifetime budget puede concentrar el gasto en los periodos de mayor oportunidad y producir semanas disparejas como las del escenario. Cambiar creativos, eventos o conjuntos de anuncios (ad sets) no controla el pacing.",
       "difficulty": "medium"
     }
   ]

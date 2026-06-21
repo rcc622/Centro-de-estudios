@@ -3,7 +3,7 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "¿Cuál es el default bid strategy de Meta?",
+      "q": "¿Cuál es el default estrategia de puja (bid strategy) de Meta?",
       "options": [
         "Bid Cap",
         "Cost per Result Goal",
@@ -11,7 +11,7 @@
         "ROAS Goal"
       ],
       "correct": 2,
-      "explanation": "Highest Volume es default: gasta todo y maximiza cantidad sin meta de costo.",
+      "explanation": "Volumen más alto (highest volume) es default: gasta todo y maximiza cantidad sin meta de costo.",
       "difficulty": "easy"
     },
     {
@@ -27,7 +27,7 @@
       "difficulty": "hard"
     },
     {
-      "q": "¿Cuántos optimization events necesita un ad set para salir del Learning Phase?",
+      "q": "¿Cuántos optimization events necesita un conjunto de anuncios (ad set) para salir de la fase de aprendizaje (learning phase)?",
       "options": [
         "10",
         "25",
@@ -39,7 +39,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Si tu meta es mantener un CPA promedio en $300 MXN y no rebasar, ¿qué bid strategy es óptimo?",
+      "q": "Si tu meta es mantener un CPA promedio en $300 MXN y no rebasar, ¿qué estrategia de puja (bid strategy) es óptimo?",
       "options": [
         "Highest Volume",
         "Bid Cap a $300",
@@ -47,7 +47,7 @@
         "Highest Value"
       ],
       "correct": 2,
-      "explanation": "Cost per Result Goal respeta el target de CPA. Bid Cap controla el bid en subasta (no el CPA final). Highest Volume no respeta target.",
+      "explanation": "Objetivo de costo por resultado (cost per result goal) respeta el target de CPA. Límite de puja (bid cap) controla el bid en subasta (no el CPA final). Volumen más alto (highest volume) no respeta target.",
       "difficulty": "hard"
     },
     {
