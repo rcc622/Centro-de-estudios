@@ -52,7 +52,7 @@
         },
         {
           "type": "fill",
-          "q": "Pixel y CAPI no se sustituyen: son ___.",
+          "q": "Píxel de Meta (Meta Pixel) y API de conversiones (Conversions API / CAPI) no se sustituyen: son ___.",
           "options": [
             "complementarios",
             "intercambiables",
@@ -60,11 +60,11 @@
             "opcionales"
           ],
           "correct": 0,
-          "explanation": "Pixel cubre el browser, CAPI cubre server-side. Juntos = cobertura máxima (~95%)."
+          "explanation": "Píxel cubre el browser, API de conversiones cubre server-side. Juntos = cobertura máxima (~95%)."
         },
         {
           "type": "fill",
-          "q": "El dataset (Pixel + CAPI + SDK + offline) se conecta a nivel ___.",
+          "q": "El dataset (Píxel + CAPI + SDK + offline) se conecta a nivel ___.",
           "options": [
             "Campaign",
             "Ad set",
@@ -79,12 +79,12 @@
           "q": "¿Por qué CAPI cobra más importancia después de iOS 14+ App Tracking Transparency?",
           "options": [
             "Porque ATT bloquea CAPI en Android",
-            "ATT limita el Pixel en iOS; CAPI va server-side",
+            "ATT limita el Píxel en iOS; CAPI va server-side",
             "Porque ATT obliga por ley a usar CAPI",
-            "Porque CAPI es más barato que el Pixel"
+            "Porque CAPI es más barato que el Píxel"
           ],
           "correct": 1,
-          "explanation": "ATT pide consentimiento explícito en iOS. Sin él, el Pixel queda limitado. CAPI es server-to-server (independiente del browser) y mantiene cobertura."
+          "explanation": "ATT pide consentimiento explícito en iOS. Sin él, el Píxel queda limitado. CAPI es server-to-server (independiente del browser) y mantiene cobertura."
         },
         {
           "type": "fill",
@@ -96,13 +96,13 @@
             "audiencia"
           ],
           "correct": 0,
-          "explanation": "Custom Conversion no toca código (regla sobre URL/value). Custom Event sí requiere modificar el Pixel/CAPI/SDK."
+          "explanation": "Custom Conversion no toca código (regla sobre URL/value). Custom Event sí requiere modificar el Píxel/CAPI/SDK."
         },
         {
           "type": "mcq",
           "q": "AutoMax cierra ventas presencialmente en la agencia. ¿Qué event registra y por qué canal?",
           "options": [
-            "ViewContent enviado vía el Pixel web",
+            "ViewContent enviado vía el Píxel web",
             "Purchase con value, vía CAPI Offline",
             "Un Custom Event configurado sin value",
             "Un AEM event priorizado en el dominio"
@@ -154,18 +154,18 @@
           "rows": [
             [
               "Controls",
-              "RESTRINGEN delivery. Rígidos. Ej: ubicación, idioma, edad mínima 18-25, custom audience exclusions."
+              "RESTRINGEN delivery. Rígidos. Ej: ubicación, idioma, edad mínima 18-25, exclusiones de público personalizado (Custom Audience)."
             ],
             [
               "Suggestions",
-              "GUÍAN la optimización. Flexibles — AI puede expandir. Ej: edad 18-65+, gender, detailed targeting, custom audience inclusions, lookalike."
+              "GUÍAN la optimización. Flexibles — AI puede expandir. Ej: edad 18-65+, gender, detailed targeting, inclusiones de público personalizado, público similar (Lookalike)."
             ]
           ]
         },
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "<strong>Controls</strong> son rígidos: el sistema NO se sale de ahí. <strong>Suggestions</strong> son punto de partida que <strong>Advantage+ Audience</strong> puede expandir si encuentra gente similar afuera de tus parámetros."
+          "body": "<strong>Controls</strong> son rígidos: el sistema NO se sale de ahí. <strong>Suggestions</strong> son punto de partida que <strong>Advantage+ público</strong> (Advantage+ audience) puede expandir si encuentra gente similar afuera de tus parámetros."
         },
         {
           "type": "concept",
@@ -175,19 +175,19 @@
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Para armar el detailed targeting recorres esta ruta en Ads Manager (Administrador de anuncios):<br/><br/><strong>1.</strong> Entras a un <em>ad set</em> (conjunto de anuncios) y bajas a la sección <strong>Audience</strong> (Audiencia).<br/><strong>2.</strong> En <strong>Detailed targeting</strong> escribes intereses, comportamientos o datos demográficos y los vas eligiendo de la lista que Meta sugiere.<br/><strong>3.</strong> El campo <strong>Locations</strong> (Ubicaciones) y la edad mínima quedan arriba: esos actúan como <em>controls</em> rígidos.<br/><strong>4.</strong> A la derecha verás el medidor <strong>Audience definition</strong> (definición de audiencia) moverse entre \"Specific\" (específica) y \"Broad\" (amplia) conforme agregas filtros: úsalo para no sobre-segmentar."
+          "body": "Para armar el detailed targeting recorres esta ruta en Ads Manager (Administrador de anuncios):<br/><br/><strong>1.</strong> Entras a un <em>conjunto de anuncios</em> (ad set) y bajas a la sección <strong>Audience</strong> (Audiencia).<br/><strong>2.</strong> En <strong>Detailed targeting</strong> escribes intereses, comportamientos o datos demográficos y los vas eligiendo de la lista que Meta sugiere.<br/><strong>3.</strong> El campo <strong>Locations</strong> (Ubicaciones) y la edad mínima quedan arriba: esos actúan como <em>controls</em> rígidos.<br/><strong>4.</strong> A la derecha verás el medidor <strong>Audience definition</strong> (definición de audiencia) moverse entre \"Specific\" (específica) y \"Broad\" (amplia) conforme agregas filtros: úsalo para no sobre-segmentar."
         },
         {
           "type": "mcq",
           "q": "¿Cuál de estos es un Audience CONTROL (rígido)?",
           "options": [
             "Detailed targeting (intereses)",
-            "Custom audience inclusion",
+            "Inclusión de público personalizado",
             "Location restriction (solo CDMX)",
-            "Lookalike audience"
+            "Público similar"
           ],
           "correct": 2,
-          "explanation": "Location es control rígido: el sistema NO entrega afuera. Detailed targeting, custom audience inclusion y lookalike son SUGGESTIONS (flexibles, AI puede expandir).",
+          "explanation": "Location es control rígido: el sistema NO entrega afuera. Detailed targeting, inclusión de público personalizado y público similar son SUGGESTIONS (flexibles, AI puede expandir).",
           "difficulty": "hard"
         }
       ]
@@ -227,8 +227,8 @@
           "q": "Detailed targeting incluye tres tipos de filtro. ¿Cuáles?",
           "options": [
             "Demographics, Interests, Behaviors",
-            "Pixel, CAPI, SDK",
-            "Awareness, Traffic, Sales",
+            "Píxel de Meta (Meta Pixel), CAPI, SDK",
+            "Reconocimiento (Awareness), Tráfico (Traffic), Ventas (Sales)",
             "Campaign, Ad set, Ad"
           ],
           "correct": 0,
@@ -270,7 +270,7 @@
             "Solo aplican en el modo Reservation"
           ],
           "correct": 1,
-          "explanation": "Suggestions son flexibles (detailed targeting, edad max, gender, lookalike, inclusions). Advantage+ Audience puede expandir sobre ellas.",
+          "explanation": "Suggestions son flexibles (detailed targeting, edad max, gender, público similar (Lookalike), inclusions). Advantage+ público (Advantage+ audience) puede expandir sobre ellas.",
           "difficulty": "medium"
         }
       ]
@@ -309,7 +309,7 @@
             "Control, pero la AI lo ignora si está ON"
           ],
           "correct": 1,
-          "explanation": "Location es un CONTROL rígido. El sistema nunca entrega fuera del área definida, esté o no Advantage+ Audience activado."
+          "explanation": "Location es un CONTROL rígido. El sistema nunca entrega fuera del área definida, esté o no Advantage+ público (Advantage+ audience) activado."
         }
       ]
     },
@@ -333,11 +333,11 @@
         },
         {
           "q": "¿Diferencia entre Audience Controls y Suggestions?",
-          "a": "Controls RESTRINGEN delivery (rígidos: location, language, edad mínima, exclusions). Suggestions GUÍAN (flexibles, AI puede expandir: edad max, gender, detailed targeting, lookalike, inclusions)."
+          "a": "Controls RESTRINGEN delivery (rígidos: location, language, edad mínima, exclusions). Suggestions GUÍAN (flexibles, AI puede expandir: edad max, gender, detailed targeting, público similar (Lookalike), inclusions)."
         },
         {
           "q": "Ejemplos de Audience Control rígido",
-          "a": "Ubicación, idioma, edad mínima (18-25) y custom audience exclusions. El sistema NO se sale de ahí."
+          "a": "Ubicación, idioma, edad mínima (18-25) y exclusiones de público personalizado (Custom Audience). El sistema NO se sale de ahí."
         }
       ]
     },
@@ -350,12 +350,12 @@
         {
           "type": "concept",
           "h": "Qué es una Custom Audience",
-          "body": "Una <strong>Custom Audience</strong> (audiencia personalizada) es una lista de gente que <strong>ya interactuó con tu negocio</strong> de alguna forma: visitó tu sitio, te compró, vio un video tuyo o está en tu base de clientes. Sirve para <strong>retargeting</strong> (volver a alcanzar a quien ya te conoce), no para buscar gente nueva. La idea es simple: alguien que ya te conoce convierte más fácil y más barato que un extraño, así que vale la pena hablarle otra vez. Ejemplo: una <strong>Cafetería La Esquina</strong> con app de pedidos puede crear una Custom Audience de quien abrió la app pero no completó la compra, y recordarles con un anuncio."
+          "body": "Una <strong>Público personalizado</strong> (Custom Audience) es una lista de gente que <strong>ya interactuó con tu negocio</strong> de alguna forma: visitó tu sitio, te compró, vio un video tuyo o está en tu base de clientes. Sirve para <strong>retargeting</strong> (volver a alcanzar a quien ya te conoce), no para buscar gente nueva. La idea es simple: alguien que ya te conoce convierte más fácil y más barato que un extraño, así que vale la pena hablarle otra vez. Ejemplo: una <strong>Cafetería La Esquina</strong> con app de pedidos puede crear un público personalizado de quien abrió la app pero no completó la compra, y recordarles con un anuncio."
         },
         {
           "type": "concept",
-          "h": "De dónde sale una Custom Audience (las sources)",
-          "body": "La <strong>source</strong> (fuente) es el origen de los datos de la audiencia. Meta las divide en dos grupos:<br/><br/><strong>Your sources</strong> (tus propias fuentes): <em>Website</em> (visitas a tu sitio vía Pixel), <em>App activity</em> (acciones en tu app), <em>Catalog</em> (interacciones con tu catálogo), <em>Customer list</em> (tu lista de clientes en CSV) y <em>Offline activity</em> (ventas en tienda física).<br/><br/><strong>Meta sources</strong> (fuentes dentro de Meta): gente que vio tu <em>Video</em>, llenó un <em>Lead form</em> (formulario de prospectos), abrió un <em>Instant Experience</em>, interactuó con tu <em>Shopping</em>, sigue tu cuenta de <em>Instagram</em>, asistió a tus <em>Events</em> o interactuó con tu <em>Facebook Page</em>. Todo es gente que ya te tocó por algún lado."
+          "h": "De dónde sale un público personalizado (las sources)",
+          "body": "La <strong>source</strong> (fuente) es el origen de los datos de la audiencia. Meta las divide en dos grupos:<br/><br/><strong>Your sources</strong> (tus propias fuentes): <em>Website</em> (visitas a tu sitio vía Píxel de Meta (Meta Pixel)), <em>App activity</em> (acciones en tu app), <em>Catalog</em> (interacciones con tu catálogo (catalog)), <em>Customer list</em> (tu lista de clientes en CSV) y <em>Offline activity</em> (ventas en tienda física).<br/><br/><strong>Meta sources</strong> (fuentes dentro de Meta): gente que vio tu <em>Video</em>, llenó un <em>Lead form</em> (formulario de prospectos), abrió un <em>Instant Experience</em>, interactuó con tu <em>Shopping</em>, sigue tu cuenta de <em>Instagram</em>, asistió a tus <em>Events</em> o interactuó con tu <em>Facebook Page</em>. Todo es gente que ya te tocó por algún lado."
         },
         {
           "type": "kvtable",
