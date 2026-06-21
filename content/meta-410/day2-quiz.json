@@ -5,41 +5,41 @@
     {
       "q": "¿Cuáles son los 6 ODAX en Meta?",
       "options": [
-        "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
-        "Awareness, Traffic, Conversions, Catalog, Leads, Sales",
-        "Reach, Traffic, Engagement, Conversions, App Installs, Sales",
+        "Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales)",
+        "Reconocimiento, Tráfico, Conversions, Catalog, Clientes potenciales, Ventas",
+        "Reach, Tráfico, Interacción, Conversions, App Installs, Ventas",
         "Brand, Consideration, Conversion, Retention, Loyalty, Advocacy"
       ],
       "correct": 0,
-      "explanation": "Los 6 ODAX oficiales (Outcome-Driven Ad Experiences) son: Awareness, Traffic, Engagement, Leads, App Promotion, Sales. Las otras combinaciones mezclan objectives viejos con conceptos no oficiales.",
+      "explanation": "Los 6 ODAX oficiales (Outcome-Driven Ad Experiences) son: Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales). Las otras combinaciones mezclan objectives viejos con conceptos no oficiales.",
       "difficulty": "easy"
     },
     {
       "q": "Reservation buying type está disponible para qué objectives?",
       "options": [
-        "Awareness y Engagement",
-        "Sales y Leads",
-        "Traffic y Awareness",
+        "Reconocimiento (awareness) e Interacción (engagement)",
+        "Ventas (sales) y Clientes potenciales (leads)",
+        "Tráfico (traffic) y Reconocimiento",
         "Todos los ODAX"
       ],
       "correct": 0,
-      "explanation": "Reservation = CPM fijo y delivery predecible. Solo Awareness y Engagement. Sales, Leads, Traffic y App Promotion siempre van por Auction.",
+      "explanation": "Reservation = CPM fijo y delivery predecible. Solo Reconocimiento e Interacción. Ventas, Clientes potenciales, Tráfico y Promoción de la app (app promotion) siempre van por Auction.",
       "difficulty": "medium"
     },
     {
       "q": "Una marca quiere lanzar un programa de financiamiento solar industrial. El usuario final debe firmar contrato digital tras chat con consultor. ¿Cuál es el objective + conversion location ideal?",
       "options": [
-        "Sales + Website",
-        "Leads + Instant form",
-        "Sales + Messenger",
-        "Engagement + Messaging"
+        "Ventas (sales) + Website",
+        "Clientes potenciales (leads) + Instant form",
+        "Ventas + Messenger",
+        "Interacción (engagement) + Messaging"
       ],
       "correct": 2,
-      "explanation": "Sales con conversion location Messenger captura la conversión final (firma) dentro de la plataforma de chat. Leads sería para captar contactos previos, no la firma misma. Engagement no optimiza para conversión.",
+      "explanation": "Ventas con conversion location Messenger captura la conversión final (firma) dentro de la plataforma de chat. Clientes potenciales sería para captar contactos previos, no la firma misma. Interacción no optimiza para conversión.",
       "difficulty": "hard"
     },
     {
-      "q": "¿Qué requisitos son obligatorios para optimizar Sales website con conversion event Purchase? Selecciona 2.",
+      "q": "¿Qué requisitos son obligatorios para optimizar Ventas (sales) website con conversion event Purchase? Selecciona 2.",
       "options": [
         "Pixel instalado en el sitio",
         "Conversions API (CAPI) configurada",
@@ -48,11 +48,11 @@
       ],
       "correct": [0, 1],
       "multi": true,
-      "explanation": "Pixel + CAPI son requeridos para Sales website con Purchase. SDK aplica a App Promotion. Catalog aplica a Advantage+ Catalog Ads, no a Sales general.",
+      "explanation": "Pixel + CAPI son requeridos para Ventas website con Purchase. SDK aplica a Promoción de la app (app promotion). Catalog aplica a Advantage+ Catalog Ads, no a Ventas general.",
       "difficulty": "hard"
     },
     {
-      "q": "El performance goal default de Engagement con engagement type = Video views es:",
+      "q": "El performance goal default de Interacción (engagement) con engagement type = Video views es:",
       "options": [
         "Maximize link clicks",
         "Maximize impressions",
@@ -60,7 +60,7 @@
         "Maximize ad recall lift"
       ],
       "correct": 2,
-      "explanation": "ThruPlay views (video visto completo o ≥15 segundos) es el performance goal canónico de Engagement Video views. Ad recall lift es de Awareness, link clicks de Traffic.",
+      "explanation": "ThruPlay views (video visto completo o ≥15 segundos) es el performance goal canónico de Interacción Video views. Ad recall lift es de Reconocimiento (awareness), link clicks de Tráfico (traffic).",
       "difficulty": "medium"
     },
     {
@@ -90,19 +90,19 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuál es la diferencia clave entre Awareness y Engagement con video views?",
+      "q": "¿Cuál es la diferencia clave entre Reconocimiento (awareness) e Interacción (engagement) con video views?",
       "options": [
-        "Awareness es más barato",
-        "Awareness optimiza recall amplio; Engagement optimiza la acción concreta de ver/interactuar",
-        "Engagement requiere Pixel y Awareness no",
+        "Reconocimiento es más barato",
+        "Reconocimiento optimiza recall amplio; Interacción optimiza la acción concreta de ver/interactuar",
+        "Interacción requiere Pixel y Reconocimiento no",
         "Son lo mismo con nombres distintos"
       ],
       "correct": 1,
-      "explanation": "Awareness mide impacto en memoria (recall lift) con alcance amplio. Engagement con Video Views optimiza la VIDEO COMPLETION concreta. La diferencia es qué outcome del funnel optimizas.",
+      "explanation": "Reconocimiento mide impacto en memoria (recall lift) con alcance amplio. Interacción con Video Views optimiza la VIDEO COMPLETION concreta. La diferencia es qué outcome del funnel optimizas.",
       "difficulty": "hard"
     },
     {
-      "q": "App Promotion requiere obligatoriamente:",
+      "q": "Promoción de la app (app promotion) requiere obligatoriamente:",
       "options": [
         "Pixel en website",
         "Conversions API",
@@ -110,31 +110,31 @@
         "Customer list"
       ],
       "correct": 2,
-      "explanation": "App Promotion necesita una vía de trackeo de eventos en la app: SDK de Facebook directo, o un MMP autorizado (AppsFlyer, Adjust, Branch, etc.). Pixel y CAPI son para web.",
+      "explanation": "Promoción de la app necesita una vía de trackeo de eventos en la app: SDK de Facebook directo, o un MMP autorizado (AppsFlyer, Adjust, Branch, etc.). Pixel y CAPI son para web.",
       "difficulty": "medium"
     },
     {
       "q": "Un anunciante quiere que la gente recuerde su rebrand (cambio de logo). NO le interesa enviar tráfico ni conseguir compras. ¿Mejor objective + performance goal?",
       "options": [
-        "Traffic + Maximize link clicks",
-        "Engagement + Maximize post engagement",
-        "Awareness + Maximize ad recall lift",
-        "Sales + Maximize value"
+        "Tráfico (traffic) + Maximize link clicks",
+        "Interacción (engagement) + Maximize post engagement",
+        "Reconocimiento (awareness) + Maximize ad recall lift",
+        "Ventas (sales) + Maximize value"
       ],
       "correct": 2,
-      "explanation": "Awareness con Maximize ad recall lift es el match exacto para impacto en memoria. Traffic optimiza clicks (no recall). Engagement optimiza interacción (no recall). Sales no aplica.",
+      "explanation": "Reconocimiento con Maximize ad recall lift es el match exacto para impacto en memoria. Tráfico optimiza clicks (no recall). Interacción optimiza interacción (no recall). Ventas no aplica.",
       "difficulty": "easy"
     },
     {
       "q": "Un retailer lanzará una campaña con video para promover una línea de ropa que aún no está a la venta: primero quiere mandar gente a una landing page del producto en su sitio y después retargetear a quienes la vieron. ¿Qué acción debe tomar?",
       "options": [
-        "Elegir el objetivo Awareness con audiencia amplia y crear un Custom Audience de quienes vieron el video",
-        "Elegir el objetivo Traffic con audiencia amplia y crear un Website Custom Audience de quienes visitaron el sitio",
-        "Elegir el objetivo Awareness segmentando a un Custom Audience que vio el video",
-        "Elegir el objetivo Traffic segmentando a un Custom Audience que ya visitó su sitio"
+        "Elegir el objetivo Reconocimiento (awareness) con audiencia amplia y crear un Custom Audience de quienes vieron el video",
+        "Elegir el objetivo Tráfico (traffic) con audiencia amplia y crear un Website Custom Audience de quienes visitaron el sitio",
+        "Elegir el objetivo Reconocimiento segmentando a un Custom Audience que vio el video",
+        "Elegir el objetivo Tráfico segmentando a un Custom Audience que ya visitó su sitio"
       ],
       "correct": 1,
-      "explanation": "Traffic optimiza para llevar gente a la landing page; con audiencia amplia maximizas el volumen de visitas y luego creas un Website Custom Audience de esos visitantes para retargetear. Awareness optimiza recall (no visitas) y segmentar de entrada a un Custom Audience que ya visitó el sitio no aplica porque esa audiencia todavía no existe.",
+      "explanation": "Tráfico optimiza para llevar gente a la landing page; con audiencia amplia maximizas el volumen de visitas y luego creas un Website Custom Audience de esos visitantes para retargetear. Reconocimiento optimiza recall (no visitas) y segmentar de entrada a un Custom Audience que ya visitó el sitio no aplica porque esa audiencia todavía no existe.",
       "difficulty": "hard"
     }
   ]

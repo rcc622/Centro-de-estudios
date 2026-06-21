@@ -3,51 +3,51 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "¿En qué nivel de la jerarquía de Meta se selecciona el campaign objective?",
+      "q": "¿En qué nivel de la jerarquía de Meta se selecciona el Objetivo de la campaña (campaign objective)?",
       "options": [
         "Account level",
         "Campaign level",
-        "Ad set level",
+        "nivel Conjunto de anuncios (ad set)",
         "Ad level"
       ],
       "correct": 1,
-      "explanation": "El objective siempre se elige a nivel Campaign. Conversion location y event van en Ad set.",
+      "explanation": "El objetivo de la campaña siempre se elige a nivel Campaign. Conversion location y event van en Conjunto de anuncios.",
       "difficulty": "easy"
     },
     {
-      "q": "¿Cuáles objectives admiten buying type Reservation?",
+      "q": "¿Cuáles Objetivos de la campaña (campaign objectives) admiten buying type Reservation?",
       "options": [
-        "Todos los objectives",
-        "Sales y Leads",
-        "Awareness y Engagement",
-        "Awareness, Traffic y Engagement"
+        "Todos los objetivos de la campaña",
+        "Ventas (sales) y Clientes potenciales (leads)",
+        "Reconocimiento (awareness) e Interacción (engagement)",
+        "Reconocimiento, Tráfico (traffic) e Interacción"
       ],
       "correct": 2,
-      "explanation": "Reservation solo está disponible para Awareness y Engagement. Para los demás solo Auction.",
+      "explanation": "Reservation solo está disponible para Reconocimiento e Interacción. Para los demás solo Auction.",
       "difficulty": "medium"
     },
     {
       "q": "Una empresa B2B quiere demos agendadas con prospectos sin sacarlos del feed. ¿Cuál es la mejor combinación?",
       "options": [
-        "Sales + conversion location Website",
-        "Leads + conversion location Instant form",
-        "Traffic + landing page externa",
-        "Engagement con Messaging"
+        "Ventas (sales) + conversion location Website",
+        "Clientes potenciales (leads) + conversion location Instant form",
+        "Tráfico (traffic) + landing page externa",
+        "Interacción (engagement) con Messaging"
       ],
       "correct": 1,
-      "explanation": "Leads + Instant form mantiene la fricción mínima dentro de Meta. Sales se reserva para transacciones reales.",
+      "explanation": "Clientes potenciales + Instant form mantiene la fricción mínima dentro de Meta. Ventas se reserva para transacciones reales.",
       "difficulty": "hard"
     },
     {
-      "q": "¿Cuál objective NO requiere Pixel, CAPI ni dataset?",
+      "q": "¿Cuál Objetivo de la campaña (campaign objective) NO requiere Pixel, CAPI ni dataset?",
       "options": [
-        "Sales",
-        "Leads (website)",
-        "Awareness",
-        "App Promotion"
+        "Ventas (sales)",
+        "Clientes potenciales (leads) (website)",
+        "Reconocimiento (awareness)",
+        "Promoción de la app (app promotion)"
       ],
       "correct": 2,
-      "explanation": "Awareness optimiza por recall y reach amplio, no necesita tracking de conversions.",
+      "explanation": "Reconocimiento optimiza por recall y reach amplio, no necesita tracking de conversions.",
       "difficulty": "hard"
     },
     {
@@ -56,7 +56,7 @@
         "Son sinónimos",
         "Conversion event = qué acción cuenta; Performance goal = cómo se licita",
         "Conversion event va en Campaign; Performance goal va en Ad",
-        "Performance goal solo aplica a Sales"
+        "Performance goal solo aplica a Ventas (sales)"
       ],
       "correct": 1,
       "explanation": "Conversion event define la acción (Purchase, Lead). Performance goal define la regla de optimización (Maximize number vs Maximize value).",

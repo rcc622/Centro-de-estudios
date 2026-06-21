@@ -15,12 +15,12 @@
     "b2": {
       "ico": "📣",
       "title": "Bloque 2",
-      "sub": "Top y mid funnel: Awareness, Traffic, Engagement"
+      "sub": "Top y mid funnel: Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement)"
     },
     "b3": {
       "ico": "💰",
       "title": "Bloque 3",
-      "sub": "Leads, Sales y App Promotion"
+      "sub": "Clientes potenciales (leads), Ventas (sales) y Promoción de la app (app promotion)"
     },
     "b4": {
       "ico": "🎯",
@@ -44,7 +44,7 @@
         {
           "type": "concept",
           "h": "Recupéralo antes de avanzar",
-          "body": "Antes de entrar a los <strong>campaign objectives</strong> (objetivos de campaña, la meta de negocio que persigue cada campaña), conviene que recuerdes de memoria lo que viste del Día 1: Ads Manager y los permisos. Recuperar un dato con esfuerzo, antes de releerlo, es lo que de verdad lo fija en tu cabeza; es una técnica de estudio llamada <em>recuperación activa</em>. Si fallas alguna pregunta, no te preocupes: el error mismo deja una huella que refuerza el recuerdo. Por ejemplo, si manejas la cuenta de <strong>Cafetería La Esquina</strong> y no recuerdas en qué nivel se elige el objetivo, equivocarte aquí hará que se te grabe mejor. Tómate las siguientes tarjetas como un calentamiento, no como un examen."
+          "body": "Antes de entrar a los <strong>Objetivos de la campaña (campaign objective)</strong> (la meta de negocio que persigue cada campaña), conviene que recuerdes de memoria lo que viste del Día 1: Ads Manager y los permisos. Recuperar un dato con esfuerzo, antes de releerlo, es lo que de verdad lo fija en tu cabeza; es una técnica de estudio llamada <em>recuperación activa</em>. Si fallas alguna pregunta, no te preocupes: el error mismo deja una huella que refuerza el recuerdo. Por ejemplo, si manejas la cuenta de <strong>Cafetería La Esquina</strong> y no recuerdas en qué nivel se elige el objetivo, equivocarte aquí hará que se te grabe mejor. Tómate las siguientes tarjetas como un calentamiento, no como un examen."
         },
         {
           "type": "kvtable",
@@ -52,7 +52,7 @@
           "rows": [
             [
               "3 niveles",
-              "Campaign (objective) → Ad set (audience, budget, dataset) → Ad (creative)"
+              "Campaign (objetivo) → Conjunto de anuncios (ad set) (audience, budget, dataset) → Ad (creative)"
             ],
             [
               "Opportunity Score",
@@ -87,15 +87,15 @@
         },
         {
           "type": "mcq",
-          "q": "¿En qué nivel se elige el objective de una campaña?",
+          "q": "¿En qué nivel se elige el objetivo de una campaña?",
           "options": [
             "Nivel Ad, junto con el creative",
-            "Nivel Ad set, con la audiencia",
+            "Nivel Conjunto de anuncios, con la audiencia",
             "Nivel Campaign, la primera decisión",
             "Nivel Account, una sola vez"
           ],
           "correct": 2,
-          "explanation": "El objective se elige en Campaign y condiciona todo lo de abajo (qué configuraciones aparecen en Ad set y Ad).",
+          "explanation": "El objetivo se elige en Campaign y condiciona todo lo de abajo (qué configuraciones aparecen en Conjunto de anuncios y Ad).",
           "difficulty": "medium"
         },
         {
@@ -117,11 +117,11 @@
           "options": [
             "Nivel Campaign",
             "Nivel Ad",
-            "Nivel Ad set",
+            "Nivel Conjunto de anuncios",
             "Nivel Account"
           ],
           "correct": 2,
-          "explanation": "El dataset se conecta a nivel Ad set, junto con conversion location y conversion event. Es donde Meta sabe qué señales optimizar.",
+          "explanation": "El dataset se conecta a nivel Conjunto de anuncios, junto con conversion location y conversion event. Es donde Meta sabe qué señales optimizar.",
           "difficulty": "easy"
         },
         {
@@ -155,28 +155,28 @@
           "h": "🗺️ Mapa del Día 2 · los 6 ODAX",
           "rows": [
             [
-              "1. Awareness",
+              "1. Reconocimiento (awareness)",
               "Que te conozcan: alcance y recordación de marca (top funnel)."
             ],
             [
-              "2. Traffic",
+              "2. Tráfico (traffic)",
               "Llevar gente a un destino: sitio web, app o llamada (top-mid funnel)."
             ],
             [
-              "3. Engagement",
+              "3. Interacción (engagement)",
               "Interacción: video views, post engagement o mensajes (mid funnel)."
             ],
             [
-              "4. Leads",
+              "4. Clientes potenciales (leads)",
               "Capturar datos de prospectos: formularios, Messenger, llamadas (mid-bottom)."
             ],
             [
-              "5. App Promotion",
+              "5. Promoción de la app (app promotion)",
               "Instalaciones y eventos dentro de una app (requiere SDK o MMP)."
             ],
             [
-              "6. Sales",
-              "Conversiones y ventas: el objective de bottom funnel por excelencia."
+              "6. Ventas (sales)",
+              "Conversiones y ventas: el objetivo de bottom funnel por excelencia."
             ]
           ]
         },
@@ -188,12 +188,12 @@
         {
           "type": "concept",
           "h": "Dónde se elige el objetivo",
-          "body": "El objetivo se elige a nivel <strong>Campaign</strong> (campaña), que es el nivel más alto de los tres que tiene una estructura de Meta: <strong>Campaign</strong> (campaña, donde decides el objetivo) → <strong>Ad set</strong> (conjunto de anuncios, donde decides a quién, dónde y con cuánto presupuesto) → <strong>Ad</strong> (anuncio, donde decides qué imagen o video se muestra). El objetivo nunca se elige en Ad set ni en Ad. Es la primera decisión estratégica y condiciona todo lo que aparece después: las opciones de conversion location, conversion event y demás cambian según el objetivo que escogiste. Piénsalo como elegir el tipo de viaje antes de decidir el medio de transporte."
+          "body": "El objetivo se elige a nivel <strong>Campaign</strong> (campaña), que es el nivel más alto de los tres que tiene una estructura de Meta: <strong>Campaign</strong> (campaña, donde decides el objetivo) → <strong>Conjunto de anuncios (ad set)</strong> (donde decides a quién, dónde y con cuánto presupuesto) → <strong>Ad</strong> (anuncio, donde decides qué imagen o video se muestra). El objetivo nunca se elige en el conjunto de anuncios ni en Ad. Es la primera decisión estratégica y condiciona todo lo que aparece después: las opciones de conversion location, conversion event y demás cambian según el objetivo que escogiste. Piénsalo como elegir el tipo de viaje antes de decidir el medio de transporte."
         },
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Para elegir el objetivo recorres esta ruta en la plataforma: <strong>Ads Manager → botón verde \"Create\" (Crear) → pantalla de \"Choose a campaign objective\" (Elige un objetivo de campaña)</strong>. Ahí aparecen los 6 ODAX en tarjetas. Eliges uno, das clic en <em>Continue</em> (Continuar) y entonces baja al nivel Ad set. Por ejemplo, el media buyer de <strong>Joyería Aurora</strong> entra a Ads Manager, da clic en Create, selecciona <em>Sales</em> y solo después de eso aparecen las opciones de dónde y a quién mostrar el anuncio. Si eliges mal aquí, tendrás que crear la campaña otra vez: el objetivo no se puede cambiar una vez publicada."
+          "body": "Para elegir el objetivo recorres esta ruta en la plataforma: <strong>Ads Manager → botón verde \"Create\" (Crear) → pantalla de \"Choose a campaign objective\" (Elige un objetivo de campaña)</strong>. Ahí aparecen los 6 ODAX en tarjetas. Eliges uno, das clic en <em>Continue</em> (Continuar) y entonces baja al nivel Ad set. Por ejemplo, el media buyer de <strong>Joyería Aurora</strong> entra a Ads Manager, da clic en Create, selecciona <em>Ventas</em> y solo después de eso aparecen las opciones de dónde y a quién mostrar el anuncio. Si eliges mal aquí, tendrás que crear la campaña otra vez: el objetivo no se puede cambiar una vez publicada."
         },
         {
           "type": "concept",
@@ -203,34 +203,34 @@
         {
           "type": "concept",
           "h": "Los 6, uno por uno",
-          "body": "Conviene que memorices estos 6 nombres en orden de <strong>funnel</strong> (embudo: la ruta que recorre un cliente desde que conoce la marca hasta que compra): <strong>Awareness</strong> (reconocimiento), <strong>Traffic</strong> (tráfico), <strong>Engagement</strong> (interacción), <strong>Leads</strong> (prospectos), <strong>App Promotion</strong> (promoción de app) y <strong>Sales</strong> (ventas). No los repitas como una lista suelta de palabras: lo que importa es que entiendas qué problema resuelve cada uno, porque en el examen te darán un caso de negocio y tendrás que elegir el objetivo correcto. La tabla de abajo te da la versión corta de cada uno."
+          "body": "Conviene que memorices estos 6 nombres en orden de <strong>funnel</strong> (embudo: la ruta que recorre un cliente desde que conoce la marca hasta que compra): <strong>Reconocimiento</strong>, <strong>Tráfico</strong>, <strong>Interacción</strong>, <strong>Clientes potenciales</strong>, <strong>Promoción de la app</strong> y <strong>Ventas</strong>. No los repitas como una lista suelta de palabras: lo que importa es que entiendas qué problema resuelve cada uno, porque en el examen te darán un caso de negocio y tendrás que elegir el objetivo correcto. La tabla de abajo te da la versión corta de cada uno."
         },
         {
           "type": "kvtable",
           "h": "Los 6 ODAX y qué buscan",
           "rows": [
             [
-              "Awareness",
+              "Reconocimiento",
               "Llegar al máximo de personas que recordarán el ad"
             ],
             [
-              "Traffic",
+              "Tráfico",
               "Enviar gente a un destino (web, app, llamada, mensajes)"
             ],
             [
-              "Engagement",
+              "Interacción",
               "Hacer que la gente interactúe con el negocio"
             ],
             [
-              "Leads",
+              "Clientes potenciales",
               "Recolectar contactos (forms, calls, sign-ups)"
             ],
             [
-              "App Promotion",
+              "Promoción de la app",
               "Instalar app o aumentar uso de app"
             ],
             [
-              "Sales",
+              "Ventas",
               "Encontrar personas más propensas a comprar"
             ]
           ]
@@ -238,29 +238,29 @@
         {
           "type": "tip",
           "label": "REGLA DEL FUNNEL",
-          "body": "<strong>Awareness</strong> arriba (recordar) → <strong>Traffic/Engagement/Leads/App Promotion</strong> en el medio (considerar) → <strong>Sales</strong> abajo (convertir). Siempre empiezas por la meta de negocio y bajas al objective alineado."
+          "body": "<strong>Reconocimiento</strong> arriba (recordar) → <strong>Tráfico/Interacción/Clientes potenciales/Promoción de la app</strong> en el medio (considerar) → <strong>Ventas</strong> abajo (convertir). Siempre empiezas por la meta de negocio y bajas al objetivo alineado."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Cocina Sazón",
-          "body": "Una misma marca puede usar objetivos distintos según en qué etapa del funnel esté su cliente. <strong>Cocina Sazón</strong> (un restaurante de comida a domicilio) lo vive así: si quiere que más familias del rumbo conozcan la marca por primera vez, usa <strong>Awareness</strong> (parte de arriba del funnel, donde la gente apenas te descubre). Si quiere que llenen un formulario para cotizar un evento corporativo, usa <strong>Leads</strong> (parte media, donde ya te consideran). Y si quiere cerrar pedidos directos en su app, usa <strong>Sales</strong> (parte de abajo, donde ya están listos para comprar). No es que un objetivo sea mejor que otro: cada uno sirve para una etapa distinta del recorrido del cliente."
+          "body": "Una misma marca puede usar objetivos distintos según en qué etapa del funnel esté su cliente. <strong>Cocina Sazón</strong> (un restaurante de comida a domicilio) lo vive así: si quiere que más familias del rumbo conozcan la marca por primera vez, usa <strong>Reconocimiento</strong> (parte de arriba del funnel, donde la gente apenas te descubre). Si quiere que llenen un formulario para cotizar un evento corporativo, usa <strong>Clientes potenciales</strong> (parte media, donde ya te consideran). Y si quiere cerrar pedidos directos en su app, usa <strong>Ventas</strong> (parte de abajo, donde ya están listos para comprar). No es que un objetivo sea mejor que otro: cada uno sirve para una etapa distinta del recorrido del cliente."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Elegir <strong>Traffic</strong> cuando lo que quieres son compras. Traffic optimiza por <em>link clicks</em>, NO por compras. Si tu meta es venta real, usa <strong>Sales</strong>."
+          "body": "Elegir <strong>Tráfico</strong> cuando lo que quieres son compras. El tráfico optimiza por <em>link clicks</em>, NO por compras. Si tu meta es venta real, usa <strong>Ventas</strong>."
         },
         {
           "type": "mcq",
-          "q": "¿En qué nivel de creación de campaña se elige el objective?",
+          "q": "¿En qué nivel de creación de campaña se elige el objetivo?",
           "options": [
             "Account level",
             "Campaign level",
-            "Ad set level",
+            "Conjunto de anuncios level",
             "Ad level"
           ],
           "correct": 1,
-          "explanation": "El objective se elige a nivel <strong>Campaign</strong>. Conversion location y conversion event van en Ad set. Creative y links van en Ad.",
+          "explanation": "El objetivo se elige a nivel <strong>Campaign</strong>. Conversion location y conversion event van en Conjunto de anuncios. Creative y links van en Ad.",
           "difficulty": "easy"
         }
       ]
@@ -273,7 +273,7 @@
       "cards": [
         {
           "type": "fill",
-          "q": "ODAX significa Outcome-Driven Ad ___ y agrupa los objectives por resultado de negocio.",
+          "q": "ODAX significa Outcome-Driven Ad ___ y agrupa los Objetivos de la campaña (campaign objective) por resultado de negocio.",
           "options": [
             "Experiences",
             "Engagement",
@@ -281,19 +281,19 @@
             "Events"
           ],
           "correct": 0,
-          "explanation": "<strong>Outcome-Driven Ad Experiences</strong>. Son 6 outcomes: Awareness, Traffic, Engagement, Leads, App Promotion, Sales."
+          "explanation": "<strong>Outcome-Driven Ad Experiences</strong>. Son 6 outcomes: Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales)."
         },
         {
           "type": "fill",
           "q": "El ODAX que está en lo más bajo del funnel (convertir) y busca a quien tiene más probabilidad de comprar es ___.",
           "options": [
-            "Sales",
-            "Traffic",
-            "Awareness",
-            "Engagement"
+            "Ventas",
+            "Tráfico",
+            "Reconocimiento",
+            "Interacción"
           ],
           "correct": 0,
-          "explanation": "<strong>Sales</strong> vive al fondo del funnel (conversión). Awareness está arriba (recordar); Traffic y Engagement, en el medio."
+          "explanation": "<strong>Ventas</strong> vive al fondo del funnel (conversión). Reconocimiento está arriba (recordar); Tráfico e Interacción, en el medio."
         },
         {
           "type": "mcq",
@@ -305,33 +305,33 @@
             "7"
           ],
           "correct": 2,
-          "explanation": "Son <strong>6</strong>: Awareness, Traffic, Engagement, Leads, App Promotion, Sales.",
+          "explanation": "Son <strong>6</strong>: Reconocimiento, Tráfico, Interacción, Clientes potenciales, Promoción de la app, Ventas.",
           "difficulty": "easy"
         },
         {
           "type": "mcq",
-          "q": "El objective se elige a nivel ___; conversion location y conversion event van a nivel ___; creative y links a nivel ___. Selecciona el orden correcto.",
+          "q": "El objetivo se elige a nivel ___; conversion location y conversion event van a nivel ___; creative y links a nivel ___. Selecciona el orden correcto.",
           "options": [
-            "Ad / Ad set / Campaign",
-            "Campaign / Ad set / Ad",
-            "Ad set / Campaign / Ad",
-            "Campaign / Ad / Ad set"
+            "Ad / Conjunto de anuncios / Campaign",
+            "Campaign / Conjunto de anuncios / Ad",
+            "Conjunto de anuncios / Campaign / Ad",
+            "Campaign / Ad / Conjunto de anuncios"
           ],
           "correct": 1,
-          "explanation": "Jerarquía Meta: Campaign (qué outcome) → Ad set (a quién, dónde, con qué presupuesto y qué evento) → Ad (qué se muestra). Pregunta clásica de examen.",
+          "explanation": "Jerarquía Meta: Campaign (qué outcome) → Conjunto de anuncios (ad set) (a quién, dónde, con qué presupuesto y qué evento) → Ad (qué se muestra). Pregunta clásica de examen.",
           "difficulty": "easy"
         },
         {
           "type": "mcq",
-          "q": "¿Por qué Traffic es mala elección cuando tu meta real es vender?",
+          "q": "¿Por qué Tráfico es mala elección cuando tu meta real es vender?",
           "options": [
-            "Porque Traffic no tiene placements en Instagram",
+            "Porque Tráfico no tiene placements en Instagram",
             "Porque optimiza por clicks, no por compras",
-            "Porque Traffic no admite el modo Auction",
-            "Porque Traffic exige un catálogo obligatorio"
+            "Porque Tráfico no admite el modo Auction",
+            "Porque Tráfico exige un catálogo obligatorio"
           ],
           "correct": 1,
-          "explanation": "<strong>Traffic</strong> optimiza por link clicks. Si tu meta es venta real, usa <strong>Sales</strong>, que busca compradores.",
+          "explanation": "<strong>Tráfico</strong> optimiza por link clicks. Si tu meta es venta real, usa <strong>Ventas</strong>, que busca compradores.",
           "difficulty": "medium"
         }
       ]
@@ -345,33 +345,33 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "El gerente quiere ventas pero pide Traffic",
-          "body": "El gerente de <strong>Cocina Sazón</strong> te dice: \"Quiero más visitas a la página del menú para vender más pedidos. Pon el objective en Traffic, total, ahí está el botón de ordenar.\" Tienes que corregir la elección antes de armar la campaña."
+          "h": "El gerente quiere ventas pero pide Tráfico (traffic)",
+          "body": "El gerente de <strong>Cocina Sazón</strong> te dice: \"Quiero más visitas a la página del menú para vender más pedidos. Pon el Objetivo de la campaña (campaign objective) en Tráfico, total, ahí está el botón de ordenar.\" Tienes que corregir la elección antes de armar la campaña."
         },
         {
           "type": "mcq",
           "q": "¿Qué le explicas al gerente?",
           "options": [
-            "Tiene razón: Traffic y Sales son lo mismo",
-            "No: Traffic optimiza por clicks, no ventas",
-            "Hay que usar Awareness para que conozcan la marca",
-            "Traffic solo funciona si la cuenta tiene catálogo"
+            "Tiene razón: Tráfico y Ventas (sales) son lo mismo",
+            "No: Tráfico optimiza por clicks, no ventas",
+            "Hay que usar Reconocimiento (awareness) para que conozcan la marca",
+            "Tráfico solo funciona si la cuenta tiene catálogo"
           ],
           "correct": 1,
-          "explanation": "El objective se elige por el <strong>outcome de negocio</strong>. La meta es vender → Sales. Traffic solo optimiza clics: el sistema buscaría visitantes, no compradores.",
+          "explanation": "El objetivo se elige por el <strong>outcome de negocio</strong>. La meta es vender → Ventas. El tráfico solo optimiza clics: el sistema buscaría visitantes, no compradores.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
           "q": "El gerente insiste: \"¿Y en qué nivel cambio eso, en el ad?\" ¿Qué le respondes?",
           "options": [
-            "El objective se elige a nivel Ad, con el creative",
-            "El objective se elige a nivel Campaign, primero",
-            "El objective se elige a nivel Ad set, con audiencia",
-            "El objective se elige a nivel Account, una vez"
+            "El objetivo se elige a nivel Ad, con el creative",
+            "El objetivo se elige a nivel Campaign, primero",
+            "El objetivo se elige a nivel Conjunto de anuncios (ad set), con audiencia",
+            "El objetivo se elige a nivel Account, una vez"
           ],
           "correct": 1,
-          "explanation": "El objective vive a nivel <strong>Campaign</strong>. Conversion location/event van en Ad set; creative y links en Ad.",
+          "explanation": "El objetivo vive a nivel <strong>Campaign</strong>. Conversion location/event van en Conjunto de anuncios; creative y links en Ad.",
           "difficulty": "easy"
         }
       ]
@@ -384,23 +384,23 @@
       "cards": [
         {
           "q": "¿Qué es ODAX?",
-          "a": "Outcome-Driven Ad Experiences: el agrupamiento de Meta de los 6 objectives según el outcome de negocio."
+          "a": "Outcome-Driven Ad Experiences: el agrupamiento de Meta de los 6 Objetivos de la campaña (campaign objective) según el outcome de negocio."
         },
         {
           "q": "¿Cuántos ODAX hay en Meta y cuáles son?",
-          "a": "6: Awareness, Traffic, Engagement, Leads, App Promotion, Sales."
+          "a": "6: Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales)."
         },
         {
-          "q": "¿En qué nivel se elige el objective?",
-          "a": "Campaign level. Conversion location y event van a ad set level."
+          "q": "¿En qué nivel se elige el objetivo?",
+          "a": "Campaign level. Conversion location y event van a Conjunto de anuncios (ad set) level."
         },
         {
           "q": "¿Cuál es el orden de funnel de los 6 ODAX?",
-          "a": "Awareness arriba (recordar) → Traffic/Engagement/Leads/App Promotion en el medio (considerar) → Sales abajo (convertir)."
+          "a": "Reconocimiento arriba (recordar) → Tráfico/Interacción/Clientes potenciales/Promoción de la app en el medio (considerar) → Ventas abajo (convertir)."
         },
         {
-          "q": "Si tu meta es venta real pero usas Traffic, ¿qué problema tienes?",
-          "a": "Traffic optimiza por link clicks, no por compras. Pagas por visitas pero el sistema no busca compradores. Hay que usar Sales."
+          "q": "Si tu meta es venta real pero usas Tráfico, ¿qué problema tienes?",
+          "a": "El tráfico optimiza por link clicks, no por compras. Pagas por visitas pero el sistema no busca compradores. Hay que usar Ventas."
         }
       ]
     },
@@ -413,7 +413,7 @@
         {
           "type": "concept",
           "h": "Qué hace Awareness",
-          "body": "El objetivo <strong>Awareness</strong> (reconocimiento de marca) busca llegar al máximo de personas que <strong>recordarán</strong> tu anuncio después de verlo. No le importa que hagan clic ni que compren: su único trabajo es que la marca se quede en la cabeza de la gente. Vive en lo más alto del funnel, donde el cliente apenas te está conociendo. Puede optimizar para varias métricas como <strong>reach</strong> (alcance, cuántas personas distintas ven el anuncio), <strong>ad recall</strong> (recuerdo del anuncio) o <strong>impressions</strong> (impresiones, cuántas veces se muestra). Ejemplo: <strong>Aguas Frescas Doña Mary</strong> abre un nuevo local y quiere que el barrio entero sepa que existe; no busca ventas todavía, solo que la recuerden."
+          "body": "El objetivo <strong>Reconocimiento (awareness)</strong> busca llegar al máximo de personas que <strong>recordarán</strong> tu anuncio después de verlo. No le importa que hagan clic ni que compren: su único trabajo es que la marca se quede en la cabeza de la gente. Vive en lo más alto del funnel, donde el cliente apenas te está conociendo. Puede optimizar para varias métricas como <strong>reach</strong> (alcance, cuántas personas distintas ven el anuncio), <strong>ad recall</strong> (recuerdo del anuncio) o <strong>impressions</strong> (impresiones, cuántas veces se muestra). Ejemplo: <strong>Aguas Frescas Doña Mary</strong> abre un nuevo local y quiere que el barrio entero sepa que existe; no busca ventas todavía, solo que la recuerden."
         },
         {
           "type": "concept",
