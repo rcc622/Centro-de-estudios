@@ -27,7 +27,7 @@
       "difficulty": "hard"
     },
     {
-      "q": "¿Cuántas variables se deben cambiar en un A/B Test correcto?",
+      "q": "¿Cuántas variables se deben cambiar en una Prueba A/B (A/B test) correcta?",
       "options": [
         "1",
         "2",
@@ -39,7 +39,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Qué modelos de attribution existen en Ads Manager?",
+      "q": "¿Qué modelos de atribución (attribution model) existen en Ads Manager?",
       "options": [
         "Standard, Custom y Incremental",
         "Standard e Incremental",

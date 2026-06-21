@@ -10,7 +10,7 @@
     "b1": {
       "ico": "🎨",
       "title": "Bloque 1",
-      "sub": "Formatos de ad & Instant Experience"
+      "sub": "Formatos de anuncio & Instant Experience"
     },
     "b2": {
       "ico": "📐",
@@ -156,7 +156,7 @@
     },
     {
       "id": "6.1",
-      "title": "Explica · Formatos de ad e Instant Experience",
+      "title": "Explica · Formatos de anuncio e Instant Experience",
       "section": "b1",
       "type": "reading",
       "cards": [
@@ -167,8 +167,8 @@
         },
         {
           "type": "concept",
-          "h": "Qué es un ad format",
-          "body": "El <strong>ad format</strong> (formato de anuncio) es el <em>molde visual</em> con el que se arma tu publicidad: define cómo se ve y cuántas piezas de <strong>media</strong> (contenido visual, o sea imágenes o videos) lleva dentro. No confundas el formato con el mensaje ni con la audiencia: el formato es solo el <em>contenedor</em>, la cajita donde meterás tu creatividad. La razón de que importe tanto es que cada objetivo de campaña pide un contenedor distinto —no es lo mismo presentar un solo producto que contar una historia con cinco—. Por eso el examen 410 te pregunta seguido cuál formato eliges según lo que quieres lograr. Aquí lo dominas y ya no fallas esas."
+          "h": "Qué es un formato de anuncio",
+          "body": "El <strong>formato de anuncio</strong> (ad format) es el <em>molde visual</em> con el que se arma tu publicidad: define cómo se ve y cuántas piezas de <strong>media</strong> (contenido visual, o sea imágenes o videos) lleva dentro. No confundas el formato con el mensaje ni con la audiencia: el formato es solo el <em>contenedor</em>, la cajita donde meterás tu creatividad. La razón de que importe tanto es que cada objetivo de campaña pide un contenedor distinto —no es lo mismo presentar un solo producto que contar una historia con cinco—. Por eso el examen 410 te pregunta seguido cuál formato eliges según lo que quieres lograr. Aquí lo dominas y ya no fallas esas."
         },
         {
           "type": "kvtable",
@@ -933,12 +933,12 @@
         },
         {
           "type": "concept",
-          "h": "Qué es la attribution",
-          "body": "La <strong>attribution</strong> (atribución) es el proceso de decidir <em>a qué anuncio le toca el crédito</em> cuando alguien compra. Suena obvio, pero no lo es: antes de comprar, una persona suele tener varios <strong>touchpoints</strong> (puntos de contacto: cada vez que ve o toca tu marca, ej. ve un anuncio en Instagram el lunes, otro en Facebook el martes y compra el miércoles). A todo ese recorrido se le llama <strong>customer journey</strong> (el viaje del cliente desde que te descubre hasta que compra). La atribución reparte el mérito entre esos contactos. Sin ella, no sabrías qué anuncio apagar y cuál escalar, porque no sabes cuál de verdad trajo la venta. Ejemplo: alguien vio el anuncio de la <strong>Cafetería La Esquina</strong> tres veces antes de pedir; la atribución decide si la venta cuenta para esa campaña."
+          "h": "Qué es la atribución",
+          "body": "La <strong>atribución</strong> (attribution) es el proceso de decidir <em>a qué anuncio le toca el crédito</em> cuando alguien compra. Suena obvio, pero no lo es: antes de comprar, una persona suele tener varios <strong>touchpoints</strong> (puntos de contacto: cada vez que ve o toca tu marca, ej. ve un anuncio en Instagram el lunes, otro en Facebook el martes y compra el miércoles). A todo ese recorrido se le llama <strong>customer journey</strong> (el viaje del cliente desde que te descubre hasta que compra). La atribución reparte el mérito entre esos contactos. Sin ella, no sabrías qué anuncio apagar y cuál escalar, porque no sabes cuál de verdad trajo la venta. Ejemplo: alguien vio el anuncio de la <strong>Cafetería La Esquina</strong> tres veces antes de pedir; la atribución decide si la venta cuenta para esa campaña."
         },
         {
           "type": "concept",
-          "h": "Los 2 attribution models de Ads Manager",
+          "h": "Los 2 modelos de atribución (attribution model) de Ads Manager",
           "body": "En Ads Manager existen <em>solo dos</em> modelos de atribución; el examen lo pregunta seguido para tenderte trampas con nombres que no existen.<br/><strong>1. Standard attribution</strong> (atribución estándar): reparte el crédito siguiendo <em>reglas fijas</em> (una ventana de tiempo y un tipo de contacto). Cuenta <strong>impressions</strong> (las veces que se mostró el anuncio), <strong>clicks</strong> (los clics) y <strong>video plays</strong> (reproducciones). Es correlacional: dice \"esta venta ocurrió después de ver el anuncio\".<br/><strong>2. Incremental attribution</strong> (atribución incremental): es un modelo <em>predictivo</em> que intenta responder la pregunta dura: \"¿el anuncio <strong>causó</strong> la venta, o esa persona iba a comprar de todos modos?\". Es más exigente y mide causalidad real.<br/><strong>OJO: NO existe \"Custom attribution\"</strong> en Ads Manager. Si te la mencionan, es trampa."
         },
         {
@@ -963,7 +963,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Cuáles son los 2 modelos de attribution disponibles en Ads Manager?",
+          "q": "¿Cuáles son los 2 modelos de atribución disponibles en Ads Manager?",
           "options": [
             "Standard y Custom",
             "Standard e Incremental",
@@ -1158,8 +1158,8 @@
       "cards": [
         {
           "type": "concept",
-          "h": "¿Qué es un A/B Test?",
-          "body": "Un <strong>A/B Test</strong> (también llamado split test, o \"prueba A contra B\") es un experimento controlado: corres dos versiones de un anuncio al mismo tiempo y dejas que compitan para ver cuál funciona mejor. La regla de oro es cambiar <strong>una sola variable</strong> entre las dos versiones —puede ser el creative (la imagen o el video del anuncio), la audiencia, el placement (el lugar donde se muestra, ej. feed vs Stories) o la entrega— y dejar todo lo demás idéntico. ¿Por qué solo una? Porque si cambias dos cosas a la vez y una versión gana, nunca sabrías cuál de los dos cambios fue el responsable."
+          "h": "¿Qué es una Prueba A/B?",
+          "body": "Una <strong>Prueba A/B</strong> (A/B test, también llamada split test, o \"prueba A contra B\") es un experimento controlado: corres dos versiones de un anuncio al mismo tiempo y dejas que compitan para ver cuál funciona mejor. La regla de oro es cambiar <strong>una sola variable</strong> entre las dos versiones —puede ser el creative (la imagen o el video del anuncio), la audiencia, el placement (el lugar donde se muestra, ej. feed vs Stories) o la entrega— y dejar todo lo demás idéntico. ¿Por qué solo una? Porque si cambias dos cosas a la vez y una versión gana, nunca sabrías cuál de los dos cambios fue el responsable."
         },
         {
           "type": "concept",
@@ -1173,38 +1173,38 @@
         },
         {
           "type": "concept",
-          "h": "Brand Lift: mide percepción, no ventas",
-          "body": "El <strong>Brand Lift</strong> (literalmente \"elevación de marca\") mide qué tanto tu campaña cambió lo que la gente <em>piensa y recuerda</em> de tu marca —no cuánto vendiste—. Funciona con <strong>encuestas</strong>: Meta le pregunta a un grupo que SÍ vio tus anuncios (el <strong>test group</strong> o grupo expuesto) y a un grupo parecido que NO los vio (el <strong>control group</strong>), y luego compara las respuestas de ambos. La diferencia entre los dos grupos es el \"lift\", o sea el empujón que dieron tus anuncios."
+          "h": "Mejora de la marca: mide percepción, no ventas",
+          "body": "La <strong>Mejora de la marca</strong> (brand lift) mide qué tanto tu campaña cambió lo que la gente <em>piensa y recuerda</em> de tu marca —no cuánto vendiste—. Funciona con <strong>encuestas</strong>: Meta le pregunta a un grupo que SÍ vio tus anuncios (el <strong>test group</strong> o grupo expuesto) y a un grupo parecido que NO los vio (el <strong>control group</strong>), y luego compara las respuestas de ambos. La diferencia entre los dos grupos es el \"lift\", o sea el empujón que dieron tus anuncios."
         },
         {
           "type": "concept",
-          "h": "Las 3 cosas que mide el Brand Lift",
-          "body": "<strong>1. Brand awareness</strong> (reconocimiento de marca): si la gente sabe que tu marca existe. <strong>2. Ad recall</strong> (recuerdo del anuncio): si las personas recuerdan haber visto tu anuncio en los días recientes. <strong>3. Message association</strong> (asociación de mensaje): si conectan tu marca con la idea que querías transmitir (ej. relacionar \"Volaris\" con \"vuelos baratos\"). Como todo depende de juntar suficientes respuestas de encuesta para ser confiable, el Brand Lift <strong>sí exige un presupuesto mínimo</strong>, que cambia según la región."
+          "h": "Las 3 cosas que mide la Mejora de la marca",
+          "body": "<strong>1. Brand awareness</strong> (reconocimiento de marca): si la gente sabe que tu marca existe. <strong>2. Ad recall</strong> (recuerdo del anuncio): si las personas recuerdan haber visto tu anuncio en los días recientes. <strong>3. Message association</strong> (asociación de mensaje): si conectan tu marca con la idea que querías transmitir (ej. relacionar \"Volaris\" con \"vuelos baratos\"). Como todo depende de juntar suficientes respuestas de encuesta para ser confiable, la Mejora de la marca <strong>sí exige un presupuesto mínimo</strong>, que cambia según la región."
         },
         {
           "type": "concept",
-          "h": "Conversion Lift: mide ventas EXTRA causadas",
-          "body": "El <strong>Conversion Lift</strong> mide algo distinto: cuántas conversiones <strong>extra</strong> (ventas, leads o eventos de app) generó tu campaña que <em>no</em> habrían ocurrido sin ella. A eso se le llama <strong>incrementalidad</strong>: separa las ventas que de verdad <em>causó</em> el anuncio de las que igual iban a pasar. Para lograrlo usa un <strong>RCT (Randomized Control Trial</strong>, o prueba controlada aleatorizada): reparte a la gente al azar entre un grupo que ve los anuncios y uno de control que no, y mide la diferencia real de ventas entre ambos. Responde la pregunta del jefe: \"¿cuántas ventas de más me trajo esta campaña?\". Meta recomienda alimentarlo con datos de <strong>Conversions API (CAPI)</strong> para que la medición sea más completa."
+          "h": "Aumento de conversiones: mide ventas EXTRA causadas",
+          "body": "El <strong>Aumento de conversiones</strong> (Conversion Lift) mide algo distinto: cuántas conversiones <strong>extra</strong> (ventas, leads o eventos de app) generó tu campaña que <em>no</em> habrían ocurrido sin ella. A eso se le llama <strong>incrementalidad</strong>: separa las ventas que de verdad <em>causó</em> el anuncio de las que igual iban a pasar. Para lograrlo usa un <strong>RCT (Randomized Control Trial</strong>, o prueba controlada aleatorizada): reparte a la gente al azar entre un grupo que ve los anuncios y uno de control que no, y mide la diferencia real de ventas entre ambos. Responde la pregunta del jefe: \"¿cuántas ventas de más me trajo esta campaña?\". Meta recomienda alimentarlo con datos de <strong>Conversions API (CAPI)</strong> para que la medición sea más completa."
         },
         {
           "type": "concept",
           "h": "Dónde se configuran en la plataforma",
-          "body": "Los tres experimentos —A/B Test, Brand Lift y Conversion Lift— viven en la misma sección: <strong>Experiments</strong> (Experimentos), que encuentras dentro de <strong>Ads Manager</strong> o de <strong>Meta Business Suite</strong>. Ojo: <strong>no</strong> se arman ni se leen en el Ads Reporting normal (el reporte de métricas de siempre). Y otra regla práctica: cada test corre en una <strong>campaña dedicada</strong> creada para el experimento; no toques campañas que ya están corriendo, porque eso ensuciaría los resultados."
+          "body": "Los tres experimentos —Prueba A/B, Mejora de la marca y Aumento de conversiones— viven en la misma sección: <strong>Experiments</strong> (Experimentos), que encuentras dentro de <strong>Ads Manager</strong> o de <strong>Meta Business Suite</strong>. Ojo: <strong>no</strong> se arman ni se leen en el Ads Reporting normal (el reporte de métricas de siempre). Y otra regla práctica: cada test corre en una <strong>campaña dedicada</strong> creada para el experimento; no toques campañas que ya están corriendo, porque eso ensuciaría los resultados."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Confundir Brand Lift con Conversion Lift. <strong>Brand Lift</strong> = encuestas, mide percepción/marca. <strong>Conversion Lift</strong> = observación de ventas/leads reales. Truco para el examen: si la pregunta menciona <em>\"¿cuántas ventas extra?\"</em> → Conversion Lift. Si menciona <em>\"impacto en marca / recall / recuerdo\"</em> → Brand Lift."
+          "body": "Confundir Mejora de la marca con Aumento de conversiones. <strong>Mejora de la marca</strong> = encuestas, mide percepción/marca. <strong>Aumento de conversiones</strong> = observación de ventas/leads reales. Truco para el examen: si la pregunta menciona <em>\"¿cuántas ventas extra?\"</em> → Aumento de conversiones. Si menciona <em>\"impacto en marca / recall / recuerdo\"</em> → Mejora de la marca."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Hotel Lumière",
-          "body": "El <strong>Hotel Lumière</strong> patrocina un evento gastronómico. Pregunta 1: ¿los viajeros <em>recuerdan</em> la marca después de ver los anuncios? → como es percepción, usas <strong>Brand Lift</strong> (encuestas test vs control). Pregunta 2, un trimestre después: ¿cuántas reservas <em>extra</em> generó la campaña frente a no haberla corrido? → como es incrementalidad de ventas, usas <strong>Conversion Lift</strong>. Pregunta 3: entre dos videos que solo cambian la primera escena, ¿cuál convierte más barato? → como comparas una sola variable, usas un <strong>A/B Test</strong>."
+          "body": "El <strong>Hotel Lumière</strong> patrocina un evento gastronómico. Pregunta 1: ¿los viajeros <em>recuerdan</em> la marca después de ver los anuncios? → como es percepción, usas <strong>Mejora de la marca</strong> (encuestas test vs control). Pregunta 2, un trimestre después: ¿cuántas reservas <em>extra</em> generó la campaña frente a no haberla corrido? → como es incrementalidad de ventas, usas <strong>Aumento de conversiones</strong>. Pregunta 3: entre dos videos que solo cambian la primera escena, ¿cuál convierte más barato? → como comparas una sola variable, usas una <strong>Prueba A/B</strong>."
         },
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Imagina que vas a armar la prueba de los dos videos del Hotel Lumière: entras a <strong>Ads Manager → Experiments → A/B Test</strong>, eliges la variable a probar (\"Creative\"), subes el Video A y el Video B, defines presupuesto y los días (digamos 14), y le das correr. Meta reparte la audiencia sin overlap y, al terminar, te marca el ganador por menor <strong>cost per result</strong>. Ese mismo menú de Experiments es donde armarías el Brand Lift (te pedirá el presupuesto mínimo y configurará las encuestas) o el Conversion Lift (te dejará conectar tu Pixel/CAPI como fuente de las ventas)."
+          "body": "Imagina que vas a armar la prueba de los dos videos del Hotel Lumière: entras a <strong>Ads Manager → Experiments → A/B Test</strong>, eliges la variable a probar (\"Creative\"), subes el Video A y el Video B, defines presupuesto y los días (digamos 14), y le das correr. Meta reparte la audiencia sin overlap y, al terminar, te marca el ganador por menor <strong>cost per result</strong>. Ese mismo menú de Experiments es donde armarías la Mejora de la marca (te pedirá el presupuesto mínimo y configurará las encuestas) o el Aumento de conversiones (te dejará conectar tu Pixel/CAPI como fuente de las ventas)."
         },
         {
           "type": "mcq",

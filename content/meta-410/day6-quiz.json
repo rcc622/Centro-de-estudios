@@ -3,7 +3,7 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "¿Cuáles son los 4 formatos de ad disponibles? Selecciona 4.",
+      "q": "¿Cuáles son los 4 formatos de anuncio (ad format) disponibles? Selecciona 4.",
       "options": [
         "Flexible (AI elige)",
         "Single image o video",
@@ -17,7 +17,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuál es la diferencia entre Brand Lift y Conversion Lift?",
+      "q": "¿Cuál es la diferencia entre Mejora de la marca (brand lift) y Aumento de conversiones (Conversion Lift)?",
       "options": [
         "Brand Lift es más caro",
         "Brand Lift mide impacto en marca con encuestas; Conversion Lift mide conversions causales (ventas/leads incrementales)",
@@ -29,7 +29,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Quieres correr A/B Test entre 2 creatives. ¿Qué haces bien?",
+      "q": "Quieres correr una Prueba A/B (A/B test) entre 2 creatives. ¿Qué haces bien?",
       "options": [
         "Cambias creative + audience al mismo tiempo",
         "Una sola variable cambiada (creative), misma audience dividida automáticamente sin overlap, ≥7 días",
@@ -53,7 +53,7 @@
       "difficulty": "hard"
     },
     {
-      "q": "¿Cuáles son los 2 modelos de attribution disponibles en Ads Manager?",
+      "q": "¿Cuáles son los 2 modelos de atribución (attribution model) disponibles en Ads Manager?",
       "options": [
         "Standard y Custom",
         "Standard e Incremental",
