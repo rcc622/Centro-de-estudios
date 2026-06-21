@@ -1,12 +1,12 @@
 {
   "courses": [
     {
-      "id": "meta-410",
+      "id": "meta-400",
       "active": true,
       "order": 1
     },
     {
-      "id": "meta-400",
+      "id": "meta-410",
       "active": true,
       "order": 2
     },
