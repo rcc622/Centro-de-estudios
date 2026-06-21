@@ -1,0 +1,73 @@
+{
+  "id": "meta-410",
+  "title": "Meta Media Buying Professional",
+  "subtitle": "410-101 Exam · 60 questions · 105 min",
+  "description": "Meta's official certification for media buyers. Covers Ads Manager, Business Suite, objectives, buying types, signals, audiences, creative and measurement.",
+  "icon": "📘",
+  "color": "#1877F2",
+  "exam_url": "https://www.facebook.com/business/learn/certification/exams/410-101-exam",
+  "structure": "days",
+  "units": [
+    {
+      "id": "day1",
+      "title": "Day 1 — Ads Manager + Business Suite",
+      "subtitle": "Hierarchy, Advantage+, BP, portfolios, billing, brand safety",
+      "coverage": "~16% of the exam",
+      "diagnostic": { "file": "day1-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day1-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "day2",
+      "title": "Day 2 — Campaign Objectives",
+      "subtitle": "The 6 ODAX objectives, optimization events, signal optimization",
+      "coverage": "~9% of the exam",
+      "diagnostic": { "file": "day2-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day2-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "day3",
+      "title": "Day 3 — Buying Types & Bid Strategies",
+      "subtitle": "Auction vs Reservation, bid strategies, Learning Phase",
+      "coverage": "~13% of the exam",
+      "diagnostic": { "file": "day3-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day3-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "day4",
+      "title": "Day 4 — Signals & Data",
+      "subtitle": "Pixel + CAPI, events, AEM and iOS 14+",
+      "coverage": "~17% of the exam",
+      "diagnostic": { "file": "day4-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day4-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "day5",
+      "title": "Day 5 — Audiences & Catalogs",
+      "subtitle": "Custom audiences, Lookalike, Advantage+ Audience, Catalog Ads",
+      "coverage": "~20% of the exam",
+      "diagnostic": { "file": "day5-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day5-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "day6",
+      "title": "Day 6 — Creative & Measurement",
+      "subtitle": "Formats, A/B Test, Brand Lift, Conversion Lift, attribution",
+      "coverage": "~25% of the exam",
+      "diagnostic": { "file": "day6-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "day6-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "day7",
+      "title": "Day 7 — Mock Exam",
+      "subtitle": "60 questions · 105 minutes",
+      "coverage": "Full exam",
+      "kind": "mock-exam"
+    },
+    {
+      "id": "glosario",
+      "title": "Official Meta 410-101 Glossary",
+      "subtitle": "74 flashcards · 3 review blocks",
+      "coverage": "Review of exam terms"
+    }
+  ]
+}

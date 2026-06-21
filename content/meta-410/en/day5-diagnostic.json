@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Day 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What is the minimum number of people required in the source audience to create a Lookalike?",
+      "options": [
+        "50",
+        "100 in a single country",
+        "500",
+        "1,000"
+      ],
+      "correct": 1,
+      "explanation": "100 people from a SINGLE country is the minimum. Recommended 1,000-50,000 for quality.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A 1% Lookalike is:",
+      "options": [
+        "A lower-quality Lookalike",
+        "The top 1% most SIMILAR to the source (maximum similarity, smaller reach)",
+        "1% of your Custom Audience",
+        "Equivalent to the 10%"
+      ],
+      "correct": 1,
+      "explanation": "1% = maximum similarity to the source. 10% = more reach but less similar.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the maximum number of Custom Audiences per ad account?",
+      "options": [
+        "100",
+        "250",
+        "500",
+        "Unlimited"
+      ],
+      "correct": 2,
+      "explanation": "500 Custom Audiences maximum per ad account.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Advantage+ Audience in new campaigns:",
+      "options": [
+        "Off by default",
+        "On automatically by default",
+        "Only available for Sales",
+        "Requires a catalog"
+      ],
+      "correct": 1,
+      "explanation": "On by default. It is turned off with 'Switch to original audience options' or 'Further limit the reach of your ads'.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "You want Advantage+ Catalog Ads for a store with 30 SKUs. What is the recommended minimum number of products per Product Set?",
+      "options": [
+        "5",
+        "10",
+        "20",
+        "50"
+      ],
+      "correct": 2,
+      "explanation": "20 products minimum recommended so the ML has enough material.",
+      "difficulty": "hard"
+    }
+  ]
+}

@@ -1,0 +1,752 @@
+{
+  "id": "day7",
+  "title": "Mock Exam — Meta Media Buying 410-101",
+  "kind": "mock-exam",
+  "passingScore": 80,
+  "timeLimit": 6300,
+  "questions": [
+    {
+      "q": "The marketing team for a dating app aimed at people over 50 has its ad rejected. The ad included the message: 'Meet other older adults. Sign up today!'. What could have caused the rejection?",
+      "options": [
+        "The ad assumed a personal attribute of the viewer by saying 'other older adults'",
+        "Ads can't be targeted to older adults on Facebook, Messenger and Instagram",
+        "Dating apps can't be advertised on Meta",
+        "The content is controversial because older adults don't use apps"
+      ],
+      "correct": 0,
+      "explanation": "The Advertising Standards don't allow ads that imply the advertiser knows a personal attribute of the user or their family. Saying 'other older adults' asserts the viewer's age. Dating apps and age targeting ARE allowed; the issue is the wording that assumes the personal attribute.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A business hired a new media agency and wants to add it to its business portfolio. What does it need to do? Select 2.",
+      "options": [
+        "Add the agency as a partner",
+        "Assign the agency as a system user",
+        "Assign the agency temporary access",
+        "Use the agency's business ID"
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "multi": true,
+      "explanation": "To add an agency to an existing business portfolio, the business adds it as a partner and needs the agency's business ID (the agency must already have its own portfolio). A system user is for servers/software with API; temporary access is limited, time-bound basic access, not the mechanism for an agency.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "If you want to choose a bid strategy, use Advantage+ campaign budget and deliver ads across Meta technologies, which buying type should you select?",
+      "options": [
+        "Auction",
+        "Reservation",
+        "Daily",
+        "Lifetime"
+      ],
+      "correct": 0,
+      "explanation": "Auction lets you choose among 5 bid strategies, use daily/lifetime/Advantage+ campaign budget and deliver across Meta technologies. Reservation does NOT offer Advantage+ campaign budget and only delivers on Facebook and Instagram. Daily and Lifetime are budget types, not buying types.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of the following is NOT used in the ad auction to determine the total value of an ad?",
+      "options": [
+        "Advertiser bid",
+        "Estimated action rates",
+        "Cost control",
+        "Ad quality"
+      ],
+      "correct": 2,
+      "explanation": "Total value = advertiser bid + estimated action rates + ad quality. The cost control (e.g. cost per result goal or bid cap) influences how you bid, but it is NOT one of the three components of total value that decides the auction winner.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "At which level of campaign creation do you make the audience, placements and performance goal selections?",
+      "options": [
+        "Campaign level",
+        "Ad set level",
+        "Ad level"
+      ],
+      "correct": 1,
+      "explanation": "Audience, placements and performance goal (Conversion/Awareness/App promotion section depending on the objective) are defined at the Ad set level. The Campaign level defines buying type, objective, budget and bid; the Ad level defines creative, destination and tracking.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "You run a campaign with the highest volume bid strategy and the same budget in each ad set. You notice lower conversions and a higher cost per result than expected. Which adjustment can help raise conversions and lower the cost per result?",
+      "options": [
+        "Raise the frequency cap on your ads",
+        "Change the bid strategy to bid cap",
+        "Refine your audience with controls",
+        "Use Advantage+ campaign budget"
+      ],
+      "correct": 3,
+      "explanation": "Advantage+ campaign budget sets the budget at the campaign level and distributes it in real time to the best-performing ad sets, which helps raise conversions and lower the cost per result. Splitting a fixed budget per ad set wastes spend on low-performing ones.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "You run a Sales campaign and want to create a Custom Audience of people who showed interest in products on your website but didn't buy. You also want to improve attribution to accounts across Meta technologies. Which data sources help you? Select 2.",
+      "options": [
+        "Custom conversions",
+        "Meta Pixel",
+        "Facebook SDK",
+        "Conversions API"
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "multi": true,
+      "explanation": "The Meta Pixel tracks actions on the website (view product, add to cart) to create the Custom Audience of interested non-buyers. The Conversions API sends web events from your server directly to Meta, improving accuracy and attribution when browser tracking is limited. The Facebook SDK is for apps, not web.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the simplest way to exclude groups of sensitive content in the Brand Safety and Suitability Center?",
+      "options": [
+        "Publisher block lists",
+        "Topic exclusions",
+        "Content type exclusions",
+        "Inventory filters"
+      ],
+      "correct": 3,
+      "explanation": "Inventory filters (expanded, moderate or limited) are the simplest, broadest-coverage control to adjust the sensitivity of the content your ads appear next to. Block lists require manual work; topic/content type exclusions are more granular and limited in scope.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "You build an audience with Advantage+ audience and you're clear on the interests, behaviors, age and gender of your typical audience. What action do you take to incorporate those insights?",
+      "options": [
+        "Suggest an audience",
+        "Use audience controls",
+        "Exclude custom audiences",
+        "Turn off Advantage+ audience"
+      ],
+      "correct": 0,
+      "explanation": "With Advantage+ audience you use audience suggestions (detailed targeting, age, gender) to guide the AI without strictly limiting who sees the ad. Audience controls are hard, limited restrictions (minimum age, location, language, excluding custom audiences) and don't include detailed targeting for these parameters.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "You want to acquire new customers in Chile by creating a Lookalike Audience based on your app's loyalty program members. Your source audience is 150 high-value frequent customers. What should you do to maximize performance and relevance?",
+      "options": [
+        "The seed list is too large. Use a smaller source before the lookalike",
+        "The seed list is too small. Grow the audience before the lookalike",
+        "The seed list is at the maximum size. Create the lookalike and avoid increasing the source",
+        "The seed list meets the required minimum. Create the lookalike and monitor/refresh the source to increase its size"
+      ],
+      "correct": 3,
+      "explanation": "A Lookalike Audience requires a minimum of 100 people from a single source country in the source audience; at least 1,000 is recommended. 150 meets the minimum, so you create the lookalike and maintain/refresh the source to improve quality over time.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which best describes the learning phase?",
+      "options": [
+        "The period when the delivery system gathers data to optimize performance before results stabilize",
+        "The time after the campaign ends, when results are analyzed",
+        "The stage when the advertiser defines objective, budget and optimization",
+        "The point at which an ad set is paused due to poor performance"
+      ],
+      "correct": 0,
+      "explanation": "The learning phase is the period when the delivery system tests ways to deliver the ad set and learns what works best before performance becomes consistent (typically after ~50 optimization events). It's the machine's learning, not yours.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client sets up a campaign across Meta technologies. They want purchases on their website, have the Pixel installed and all results are worth the same. The goal is the highest number of results possible for less than $30 each. What bid, budget and optimization do you recommend?",
+      "options": [
+        "Cost per result goal, daily budget, optimize for conversion",
+        "Bid cap, lifetime budget, optimize for landing page view",
+        "Daily budget, optimize for conversion",
+        "Lifetime budget, link clicks"
+      ],
+      "correct": 0,
+      "explanation": "There's a specific target cost ($30): cost per result goal caps the cost per result. Since it doesn't matter how much is spent as long as it stays under that amount, a high daily budget works. Since all conversions are worth the same, you optimize for the conversion itself (not for value).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "When analyzing campaign results in Ads Reporting, which key areas should you consider? Select 2.",
+      "options": [
+        "Ad creative, budget, audience and placement strategies",
+        "The number of times your ads were edited during the campaign",
+        "The buying type selected for the campaign",
+        "Results, cost per result and other relevant metrics"
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "multi": true,
+      "explanation": "First you review results and cost per result to see if you achieved your performance goal; then metrics relevant to your business goal/objective. Next you analyze how the setup strategies (budget, audience, placements, creative) impact performance. The edit count or the buying type aren't focuses of the results analysis.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client wants to advertise the launch of 3 new shampoos. Each one has a natural ingredient with its own benefits. Their website is outdated, so they'd prefer people get all the info from the ads. Which ad format should they use?",
+      "options": [
+        "Collection ad",
+        "Instant experience",
+        "Single image ad",
+        "Offer ad"
+      ],
+      "correct": 1,
+      "explanation": "Instant experience is a fullscreen internal landing page that loads instantly on mobile and lets you tell all the product information within the ad, without depending on the outdated website.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which best describes the purpose of the opportunity score in Ads Manager?",
+      "options": [
+        "Estimate how much your budget will rise if you add more creative",
+        "Show the total number of people who saw your ads across Meta technologies",
+        "Rank your ads against competitors in your industry",
+        "Show how optimized your campaigns are and give experimentally proven recommendations to improve"
+      ],
+      "correct": 3,
+      "explanation": "The opportunity score shows how optimized your campaigns, ad sets and ads are based on the number and impact of experimentally proven recommendations you apply. It's useful before, during and after creating the campaign. It does NOT predict or guarantee performance.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which attribution models are available in Ads Manager? Select 2.",
+      "options": [
+        "Custom attribution",
+        "Standard attribution",
+        "Incremental attribution",
+        "Engaged-view attribution"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "multi": true,
+      "explanation": "Ads Manager offers standard attribution (optimizes delivery based on time windows and behavior to credit conversions) and incremental attribution (uses predictive models to optimize for incremental conversions, identifying whether the ad caused the conversion).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Where can you run an A/B test or a lift test for your campaigns?",
+      "options": [
+        "During campaign creation at the ad set level",
+        "From your business portfolio in Meta Business Suite",
+        "From Ads Reporting in Ads Manager",
+        "From Experiments in Ads Manager or Meta Business Suite"
+      ],
+      "correct": 3,
+      "explanation": "Experiments is the dedicated tool in Ads Manager and Meta Business Suite for setting up and analyzing A/B Testing, Brand Lift and Conversion Lift. A/B tests can also be created during campaign creation at the campaign level, but the answer that covers A/B and lift tests is Experiments.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which one can you use to create and maintain a catalog of items?",
+      "options": [
+        "Ads Manager",
+        "Commerce Manager",
+        "Meta Pixel",
+        "Meta Business Suite"
+      ],
+      "correct": 1,
+      "explanation": "Although you can perform basic catalog actions from Ads Manager, the main tool to create and manage the catalog is Commerce Manager.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which solutions can you use to automate an entire campaign using AI?",
+      "options": [
+        "Advantage+ destination and campaign budget",
+        "Advantage+ audience and placements",
+        "Advantage+ creative and catalog ads",
+        "Advantage+ sales, app and leads campaigns"
+      ],
+      "correct": 3,
+      "explanation": "Advantage+ sales, app and leads campaigns are complete campaign solutions: the AI determines the optimal settings for the whole campaign. The others (audience, placements, budget, creative, destination, catalog ads) are single-step solutions that apply AI to a single aspect.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which are key areas that help improve ad creative performance? Select 2.",
+      "options": [
+        "Increasing the campaign's budget and bids",
+        "Diversification of visuals, messaging and placements",
+        "Optimizations that support the mobile experience",
+        "Consistency of ad formats and aspect ratios across ad sets"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "multi": true,
+      "explanation": "Creative improves with diversification of visuals/messaging/placements (reduces creative fatigue) and with mobile-first optimizations. Raising budget/bids doesn't improve the creative directly; keeping formats and aspect ratios identical is NOT a best practice (you want to diversify).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A pharmaceutical company ran a campaign to raise awareness about its psoriasis medication. One ad was rejected; it included: 'Get your plaque psoriasis under control today'. Why was it rejected?",
+      "options": [
+        "The ad promotes an illegal product or service",
+        "The ad states or implies that the audience has a medical condition",
+        "The ad contains explicit offensive language",
+        "The ad tries to generate a negative self-perception to promote a product"
+      ],
+      "correct": 1,
+      "explanation": "The Personal Attributes policy prohibits stating or implying that the viewer has a medical condition. Saying 'your psoriasis' implies the person has it. It's not illegal or explicit; the issue is implying the health attribute.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which content is prohibited when advertising on Instagram?",
+      "options": [
+        "Online gambling",
+        "Ads about elections",
+        "Electronic cigarettes",
+        "Weight-loss products"
+      ],
+      "correct": 2,
+      "explanation": "Tobacco and related products, including electronic cigarettes/vapes, are prohibited. Gambling and political/election ads are restricted (require authorization), and weight-loss products are age-restricted, not prohibited.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An e-commerce company runs ads on TV and on Meta and questions the value of Meta. It wants to measure the incremental impact of its advertising on Meta. Which test do you recommend?",
+      "options": [
+        "Brand lift test",
+        "Multi-cell conversion lift test",
+        "AB-test",
+        "Single-cell conversion lift test"
+      ],
+      "correct": 3,
+      "explanation": "To measure Meta's pure incrementality you use a single-cell Conversion Lift (an exposed test group vs. an unexposed holdout). The multi-cell compares strategies against each other; the A/B test compares variables, not incrementality; brand lift measures recall/attitude, not incremental conversions.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand runs a Brand Survey for an awareness campaign (15s video, branding at the end). Results: Ad Recall Lift +8.2, Purchase Intent Lift +1.3. What should the media buyer implement?",
+      "options": [
+        "Highlight product benefits in the creative and place the branding at the start",
+        "Keep frequency low to ensure high ad recall lift",
+        "Change the campaign to the Leads objective",
+        "Reduce the audience size to raise purchase intent"
+      ],
+      "correct": 0,
+      "explanation": "High Ad Recall but low Purchase Intent indicates that people remember the ad but aren't moved to buy. The solution is to reinforce product benefit messaging and show the branding from the start, not at the end.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Ad A enters an auction with a bid cap of $1.00. Ad B enters the same auction with a bid cap of $0.50. Both have equal estimated conversion rate and creative score. Ad A wins. How much is the advertiser charged?",
+      "options": [
+        "$0.51",
+        "$0.75",
+        "$0.50",
+        "$1.00"
+      ],
+      "correct": 0,
+      "explanation": "Meta's auction is second-price: the winner pays the minimum needed to win, that is, just above the next competitor ($0.50) → $0.51. It doesn't pay its full bid cap.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Two fashion brands advertise at the same time. Mid-level: price $50, bid cap $25, estimated action rate 0.9%. Luxury: price $500, bid cap $250, estimated action rate 0.5%. Same ad quality. Who should see greater delivery?",
+      "options": [
+        "The luxury brand will get 10x more delivery than the mid-level one",
+        "The mid-level one will get more delivery due to lower item price",
+        "The mid-level one will get more delivery due to lower bid cap",
+        "The luxury brand will get more delivery due to its higher total value in the auction"
+      ],
+      "correct": 3,
+      "explanation": "Total value ≈ bid x estimated action rate (+ ad quality). Luxury: 250 x 0.5% = 1.25. Mid-level: 25 x 0.9% = 0.225. Luxury has higher total value, so it wins more auctions and gets more delivery (not exactly 10x).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client just set up their new catalog in Commerce Manager. The inventory is large, changes often and requires scheduled uploads every hour. Which method should they use to add items?",
+      "options": [
+        "Data Feed",
+        "Pixel",
+        "Manual Update",
+        "Conversions API"
+      ],
+      "correct": 0,
+      "explanation": "A scheduled Data Feed supports automatic updates (even hourly) for large, changing inventories. Manual upload doesn't scale; Pixel and Conversions API are event data sources, not item upload methods.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A retailer with 75 items wants to organize products by different attributes to run an Advantage+ catalog ads campaign. Which tool should they use?",
+      "options": [
+        "Categories",
+        "Labels",
+        "Product sets",
+        "Item tags"
+      ],
+      "correct": 2,
+      "explanation": "Product sets group catalog items by relevant attributes (sales, best sellers, events) to use them in campaigns like Advantage+ catalog ads.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client with brand safety concerns on the Instagram profile/feed never wants their ads to appear on certain creator accounts. How should the media buyer find out where the ads could appear in that placement?",
+      "options": [
+        "Download the publisher list",
+        "Create a publisher allow list",
+        "Use an inventory filter",
+        "Apply block lists"
+      ],
+      "correct": 0,
+      "explanation": "The question is about discovery ('where they could appear'): you download/review the publisher list for that placement to see where it can deliver. Allow/block lists and inventory filters serve to control, not to discover the publisher list.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A media buyer runs a campaign with videos with text overlays and it performs poorly. What should they recommend about the use of text overlays?",
+      "options": [
+        "Use overlays that obstruct the visuals",
+        "Use stylized, small and monochromatic fonts",
+        "Use a clean, modern font, large enough in size and with a contrasting tone",
+        "Use text overlays to communicate several messages at once"
+      ],
+      "correct": 2,
+      "explanation": "The creative best practice is legible text: a clean, modern font, sufficient size and a well-contrasting color/tone. Small fonts, overlays that cover the visual or overloading with messages worsen performance.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client with a complex sales message (a successful TV campaign) wants to run the same ad only on Meta video placements, with sound and high attention. Which placements should the media buyer choose?",
+      "options": [
+        "Facebook Business Explore, Facebook Stories, Instagram Stories, Facebook Reels",
+        "Facebook Stories, Messenger Sponsored Messages, Instagram Stories, Messenger Stories",
+        "Facebook video feeds, Instagram Reels, Facebook Reels, Facebook in-stream videos",
+        "Facebook video feeds, Instagram Reels, Facebook Reels, Facebook Instant Articles"
+      ],
+      "correct": 2,
+      "explanation": "For a complex message with sound and attention you choose video placements: Facebook video feeds, Instagram Reels, Facebook Reels and Facebook in-stream videos (the latter being attentive viewing with sound). Instant Articles and Stories/Messenger aren't the ideal video placements for long messages with sound.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client historically has trouble reaching users at high frequency levels and wants more control over the frequency distribution using the reservation buying type. What should they do?",
+      "options": [
+        "Target a local area",
+        "Reach fewer than 100,000 people",
+        "Reach a minimum of 200,000 people",
+        "Use the Sales objective optimized for conversions"
+      ],
+      "correct": 2,
+      "explanation": "Reservation (Reach & Frequency) requires a minimum audience size (around 200,000 people) to enable predictable reach and frequency control. Very small local areas or Sales by conversion don't apply to reservation.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A media buyer prioritizes ROAS when setting up their monthly campaign, but needs to spend the entire campaign budget. Which bid strategy should they use?",
+      "options": [
+        "ROAS goal",
+        "Highest Value",
+        "Highest Volume",
+        "Cost per result goal"
+      ],
+      "correct": 1,
+      "explanation": "Highest Value is a spend-based bid strategy: it spends the entire budget while maximizing purchase value (favors ROAS). ROAS goal is goal-based and may underspend the budget; Highest Volume maximizes quantity without prioritizing value; cost per result goal controls cost, not value.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand runs an A/B test to determine which creative is most effective at driving web conversions. Which metric determines the winning ad set?",
+      "options": [
+        "Lowest cost per result",
+        "Link clicks per ad set",
+        "Amount spent per ad set",
+        "Highest reservation"
+      ],
+      "correct": 0,
+      "explanation": "The winner of an A/B test is decided by the lowest cost per result (cost per conversion). Link clicks or spend don't determine conversion efficiency; 'highest reservation' is not an A/B metric.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Sales campaign with the same assets for all audiences. Cost Per Result: Ad Set 1 (Feed and Stories, men 18-45) $5.65; Ad Set 2 (Instagram Feed, women 18-45) $4.35; Ad Set 3 (Advantage+ placements, women 18-45) $3.67; Ad Set 4 (Reels, mixed 18-45) $6.52. Which ad set should you use in the next campaign?",
+      "options": [
+        "Ad Set 2",
+        "Ad Set 4",
+        "Ad Set 1",
+        "Ad Set 3"
+      ],
+      "correct": 3,
+      "explanation": "Ad Set 3 has the lowest cost per result ($3.67) and uses Advantage+ placements, the most efficient configuration to scale in the next campaign.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client believes full-screen placements (covering the entire mobile screen) are the most immersive and asks to use all full-screen placements. Which ones should the media buyer choose?",
+      "options": [
+        "Facebook Feed, Facebook Stories, Facebook Instant Articles, Instagram Stories",
+        "Stories, Reels, Audience Network Rewarded Videos, In-stream Video",
+        "Reels, Stories, Instagram Feed, Instagram Explore",
+        "Stories, Reels, Audience Network In-Stream Videos, Facebook Feed"
+      ],
+      "correct": 1,
+      "explanation": "Stories, Reels, Audience Network Rewarded Videos and In-stream Video are immersive full-screen placements. The options with Feed/Explore/Instant Articles include placements that are NOT full-screen.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A cupcake company launched its site and in a few weeks will take online orders. In the meantime it wants potential customers to subscribe to its newsletter. Based on its goal, which objective should the campaign have?",
+      "options": [
+        "Leads",
+        "Engagement",
+        "Sales",
+        "Awareness"
+      ],
+      "correct": 0,
+      "explanation": "Capturing newsletter subscriptions is lead generation (collecting a contact identifier). Sales would apply to purchases; Engagement/Awareness don't collect the lead.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A cosmetics client has thousands of engaged followers on their Instagram professional account, often high-spending customers. They ask to create a Custom Audience of that Instagram audience for a retargeting ad. Which type of Custom Audience should the media buyer create?",
+      "options": [
+        "Lookalike Audience of the video viewers Custom Audience",
+        "Custom Audience of video viewers and/or those who interacted with the account",
+        "Lookalike Audience of video viewers and/or those who interacted with the account",
+        "Custom Audience of followers and/or those who interacted with the account"
+      ],
+      "correct": 3,
+      "explanation": "Retargeting Instagram followers/engagers = an engagement Custom Audience that includes followers and those who interacted with the account. A Lookalike looks for new similar people, it's not retargeting the existing audience.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client wants to target people who watched their videos and visited their product site in the last 2 months. They don't have the Meta Pixel installed yet. Which type of audience should they include?",
+      "options": [
+        "Lookalike Audience",
+        "Website Visitors Custom Audience",
+        "Engagement Custom Audience",
+        "Value-Based Lookalike Audience"
+      ],
+      "correct": 2,
+      "explanation": "Without the Pixel you can't create a Website Custom Audience. The reachable audience is an Engagement Custom Audience (video viewers), which doesn't require the Pixel. Lookalikes require a source and aren't direct retargeting.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A media buyer ran an Augmented Reality cookie campaign in Germany. The client wants to launch in France and target the same type of people who interacted with the successful AR campaign in Germany. What should they do?",
+      "options": [
+        "Create an AR Experience Custom Audience and then a Lookalike Audience",
+        "Create a Website Lookalike Audience and use automatic language translation",
+        "Create an AR Experience Custom Audience and use automatic language translation",
+        "Create a Website Custom Audience and then a Lookalike Audience"
+      ],
+      "correct": 0,
+      "explanation": "You create a Custom Audience of those who interacted with the AR experience (engagement) and then a Lookalike of that source to find similar people in France. Language translation doesn't solve similarity targeting.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Sales campaign (moisturizer), must spend the entire budget, primary KPI ROAS, already out of the learning phase. Setup: 1 ad set with a 1% Lookalike of top purchasers (30 days), a 6s video, Highest volume bid, $10,000/day. ROAS by week: $2.00, $1.00, $0.75, $0.50. Which optimization should you consider to improve ROAS?",
+      "options": [
+        "Broaden the targeting to include a 2% Lookalike",
+        "Switch to the Traffic objective",
+        "Change the creative format to static images",
+        "Switch to a $2.00 cost per result goal"
+      ],
+      "correct": 0,
+      "explanation": "A single ad set with a 1% Lookalike and a sustained ROAS decline indicates audience saturation/fatigue. Broadening to a 2% Lookalike refreshes the audience and helps sustain ROAS while spending the entire budget. Switching to Traffic or to statics doesn't address the cause (audience saturation).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A car brand wants to generate leads from people interested in its new convertible and show images of the interior and exterior features. Which creative format should the media buyer use?",
+      "options": [
+        "Video",
+        "Audience Network",
+        "Image",
+        "Carousel"
+      ],
+      "correct": 3,
+      "explanation": "Carousel lets you show multiple images (interior and exterior) on swipeable cards, ideal for highlighting several features. Audience Network is a placement/network, not a format; a single Image doesn't show multiple features.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A beauty brand is preparing the launch of a skincare line not yet available. In phase one it wants people to connect with the brand on Messenger for a personalized 1:1 consultation. Which solution should be implemented?",
+      "options": [
+        "A Leads campaign with an Instant form that collects name and email",
+        "An Engagement campaign with the Messaging Apps conversion location",
+        "An App promotion campaign with Messenger as the placement",
+        "A Sales campaign with a 'Contact Us' CTA"
+      ],
+      "correct": 1,
+      "explanation": "To open 1:1 conversations on Messenger you use the Engagement objective with the Messaging Apps conversion location. An Instant form collects data, it doesn't open a chat; App promotion is for apps; Sales doesn't initiate the conversation.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand sets up an awareness campaign; its agency delivers 30s videos that reveal the brand at second 10 and use a 1:1 aspect ratio. The ads will only run on the Facebook app and Instagram mobile feed. What does the brand need?",
+      "options": [
+        "A shorter video (<15s) and change to 16:9",
+        "A shorter video (<15s) and change to 4:5",
+        "A longer video (1 min) and change to 16:9",
+        "A longer video (1 min) and change to 9:16"
+      ],
+      "correct": 1,
+      "explanation": "Mobile feed best practice: a short video (<15s), early branding and a vertical 4:5 aspect ratio that takes advantage of the mobile feed screen. 16:9 is horizontal (wastes screen) and 1 min is too long for awareness in feed.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which call to action violates Meta's policies?",
+      "options": [
+        "Lose weight",
+        "Buy now",
+        "Learn more",
+        "Click here"
+      ],
+      "correct": 0,
+      "explanation": "'Lose weight' implies a personal/health attribute and negative self-perception, which violates the Personal Attributes policy; it's also not a standard CTA. 'Buy now', 'Learn more' and 'Click here' are valid CTAs.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "In December a brand wants to spend all the remaining marketing budget before year-end. In January its goal is to keep the cost per action at an average of $40. Which bidding do you recommend?",
+      "options": [
+        "Cost per result goal in December; Bid cap in January",
+        "Highest volume or value goal in December; Cost per view in January",
+        "Highest volume or value goal in December; Cost per result goal in January",
+        "ROAS goal in December; Bid cap in January"
+      ],
+      "correct": 2,
+      "explanation": "Spending the entire budget = a spend-based bid strategy (Highest volume/value). Keeping a $40 average CPA = cost per result goal (provides a cost benchmark). Bid cap/cost per view don't control the average CPA as well.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client wants to understand the average number of times a person saw an ad during a campaign. Which report column should they check?",
+      "options": [
+        "Frequency",
+        "Impressions",
+        "Reach",
+        "Clicks"
+      ],
+      "correct": 0,
+      "explanation": "Frequency = impressions / reach = the average number of times each person saw the ad. Impressions is the total number of times it was shown; Reach is unique people; Clicks are clicks.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand is preparing its first campaigns on Meta. It mainly runs conversion-based campaigns and sells globally through its website. Which tools should the media buyer implement? Select 2.",
+      "options": [
+        "SDK",
+        "Pixel",
+        "Offline Conversions",
+        "Conversions API"
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "multi": true,
+      "explanation": "Global website conversions = Meta Pixel + Conversions API (a redundant setup recommended for accuracy and attribution). The SDK is for apps; Offline Conversions is for offline events (physical store).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An e-commerce store runs a campaign for 6 months with no changes. Initially it delivered efficient results but the cost per result rose over time (Highest volume, Sales objective, Purchase optimization event, $150/day). How should it be optimized?",
+      "options": [
+        "Add new creative",
+        "Change the optimization event to link clicks",
+        "Increase the daily budget",
+        "Decrease the audience size"
+      ],
+      "correct": 0,
+      "explanation": "After 6 months with no changes the deterioration is due to creative fatigue. Refreshing with new creative recovers efficiency. Changing the optimization event to link clicks degrades conversion quality; raising the budget or reducing the audience doesn't fix the fatigue.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand runs an awareness campaign across multiple platforms and wants to quickly determine the most effective message, audience men and women 18-35, budget $50,000. What should the media buyer implement?",
+      "options": [
+        "Audience Split Test",
+        "Creative Split Test",
+        "Brand Lift single cell",
+        "Marketing Mix Modeling"
+      ],
+      "correct": 1,
+      "explanation": "Determining which message/creative is most effective = Creative Split Test (A/B of creatives). Audience split tests audiences; Brand Lift measures recall; MMM is marketing mix modeling, not a quick comparison of messages.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand with an always-on campaign (lifetime budgets, optimizing for Purchase) gets ~20 sales per week per ad set; several ad sets remain in the learning phase or learning limited. Which change does the media buyer recommend?",
+      "options": [
+        "Change the optimization event to Engagement",
+        "Switch to the traffic objective",
+        "Introduce influencer marketing",
+        "Combine ad sets"
+      ],
+      "correct": 3,
+      "explanation": "To exit the learning phase an ad set needs ~50 optimization events per week. With only ~20 sales per ad set, combining ad sets concentrates conversions and lets the learning stabilize. Changing the event or the objective degrades the purchase result.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A retail client wants to acquire 200 new customers in February and reach people as similar as possible to their highest-value customers. Which targeting strategy should they adopt?",
+      "options": [
+        "High Lifetime Value Customer List",
+        "Value-Based Lookalike Audience",
+        "Engagement Lookalike Audience",
+        "Core Interest-Based Audiences"
+      ],
+      "correct": 1,
+      "explanation": "To find people similar to the HIGHEST-VALUE customers you use a Value-Based Lookalike Audience (it uses the customers' value as the seed). A customer list is retargeting, not similar prospecting; engagement/interest don't prioritize value.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A media buyer launches a Sales campaign and notices the cost per result is very high after 2 days. What should they do?",
+      "options": [
+        "Change the creative to avoid fatigue",
+        "Add multiple ad sets to understand the impact",
+        "Decrease the budget to lower the cost per result",
+        "Wait for the campaign to exit the learning phase"
+      ],
+      "correct": 3,
+      "explanation": "At 2 days the campaign is still in the learning phase and results haven't stabilized yet. The best practice is to wait for it to exit the learning phase (without significant edits that reset it) before judging the cost per result.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client wants to launch a Sales campaign with 4 ad sets for 1 month with $100,000, prioritizing getting the highest number of sales with the entire budget. How should the budget be set up?",
+      "options": [
+        "Daily budget at the ad set level",
+        "Lifetime budget at the campaign level",
+        "Lifetime budget at the ad set level",
+        "Daily budget at the campaign level"
+      ],
+      "correct": 1,
+      "explanation": "A lifetime budget at the campaign level (Advantage+ campaign budget) automatically distributes the spend across the 4 ad sets toward the best-performing ones to maximize sales with the entire budget over the period.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A media buyer needs to add items to a catalog for a client. The inventory is small and doesn't change often. How should they add the items?",
+      "options": [
+        "Data feed with a spreadsheet",
+        "Import automatically with a Meta Pixel",
+        "Catalog Batch API with an HTTP request",
+        "Manually in Commerce Manager"
+      ],
+      "correct": 3,
+      "explanation": "A small, static inventory = manual upload in Commerce Manager (the simplest). Data feed, Pixel or Batch API are justified with large or changing inventories.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client concerned about brand safety wants the same block list applied to all campaigns running in their account. Where should the media buyer apply the block list?",
+      "options": [
+        "Creative Hub",
+        "Commerce Manager",
+        "Ads Manager",
+        "Brand Safety Hub"
+      ],
+      "correct": 3,
+      "explanation": "To apply a block list at the account level (all campaigns) you use the Brand Safety Hub / Brand Safety and Suitability Center. Creative Hub is for creating/mockups; Commerce Manager for catalogs.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A nonprofit organization runs an awareness campaign with Advantage+ placements. A member notices the ad appears as an in-stream video during a long video of a political rally. Per its guidelines, it shouldn't appear in political videos. What does the media buyer recommend?",
+      "options": [
+        "Apply a topic exclusion for Politics in Brand Safety settings",
+        "Use manual placements and exclude in-stream video",
+        "Block the political party in the Facebook Page settings",
+        "Review the delivery reports to see where the ads appeared"
+      ],
+      "correct": 0,
+      "explanation": "A content topic exclusion for Politics (in Brand Safety settings/inventory) prevents the ad from appearing next to political content while keeping Advantage+ placements. Removing in-stream or reviewing reports doesn't specifically block the political content.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The registered admin of a Business Manager gives employee access to a new member. When building the campaign, the member can't add the Facebook Page at the ad level. What step should the admin take to give them access?",
+      "options": [
+        "Give task access via Page settings to create content",
+        "Assign the Facebook Page as an asset to the member",
+        "Make the member an analyst of the Business Manager",
+        "Ask the member to set up two-factor authentication"
+      ],
+      "correct": 1,
+      "explanation": "The employee needs the Facebook Page assigned to them as an asset (with task access) to be able to use it at the ad level. 2FA or the analyst role don't grant access to the Page asset.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client wants to own their ad account but have their media agency run the campaigns. Which permission levels should the client grant the agency?",
+      "options": [
+        "Add the client to the agency's Business Manager with admin access and select the ad account as an asset",
+        "Add the client to the agency's Business Manager with partner access and select the ad account as an asset",
+        "Add the media agency to the client's Business Manager with partner access and select the ad account as an asset",
+        "Add the media agency to the client's Business Manager with admin access and select the ad account as an asset"
+      ],
+      "correct": 2,
+      "explanation": "The client should own the asset, so they add the agency to THEIR Business Manager via partner access and share the ad account with them as an asset. Granting admin access or moving the asset to the agency's BM cedes control/ownership.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client runs a campaign with an awareness objective and wants to understand how many people remembered seeing their ads. What should the media buyer implement?",
+      "options": [
+        "A/B test",
+        "Brand Lift",
+        "Conversion Lift study",
+        "MMM"
+      ],
+      "correct": 1,
+      "explanation": "Measuring ad recall and brand attitudes = Brand Lift. An A/B test compares variants; Conversion Lift measures incremental conversions; MMM is marketing mix modeling.",
+      "difficulty": "medium"
+    }
+  ]
+}

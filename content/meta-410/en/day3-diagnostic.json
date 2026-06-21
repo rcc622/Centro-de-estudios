@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Day 3",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What is Meta's default bid strategy?",
+      "options": [
+        "Bid Cap",
+        "Cost per Result Goal",
+        "Highest Volume",
+        "ROAS Goal"
+      ],
+      "correct": 2,
+      "explanation": "Highest Volume is the default: it spends the full budget and maximizes the number of results with no cost goal.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The Reservation buying type ONLY allows:",
+      "options": [
+        "Daily budget",
+        "Lifetime budget",
+        "Either one",
+        "Bid Cap only"
+      ],
+      "correct": 1,
+      "explanation": "Reservation requires a lifetime budget. With Auction you can choose daily or lifetime.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many optimization events does an ad set need to exit the learning phase?",
+      "options": [
+        "10",
+        "25",
+        "50",
+        "100"
+      ],
+      "correct": 2,
+      "explanation": "50 events in 7 days from activation or the last significant edit.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "If your goal is to keep an average CPA at $300 MXN and not exceed it, which bid strategy is optimal?",
+      "options": [
+        "Highest Volume",
+        "Bid Cap at $300",
+        "Cost per Result Goal with a $300 target",
+        "Highest Value"
+      ],
+      "correct": 2,
+      "explanation": "Cost per Result Goal respects the CPA target. Bid Cap controls the bid in the auction (not the final CPA). Highest Volume does not respect a target.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Who wins Meta's ad auction?",
+      "options": [
+        "Whoever bids the most",
+        "Whoever has the highest total value = bid × estimated action rates + ad quality",
+        "Whoever publishes first",
+        "Whoever has the largest monthly budget"
+      ],
+      "correct": 1,
+      "explanation": "Total value combines bid, action probability, and ad quality. A lower-bid ad can win if it has a better action rate and quality.",
+      "difficulty": "hard"
+    }
+  ]
+}

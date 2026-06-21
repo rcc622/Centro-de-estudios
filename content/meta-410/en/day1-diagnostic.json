@@ -1,0 +1,69 @@
+{
+  "id": "day1-diagnostic",
+  "title": "Diagnostic · Day 1",
+  "kind": "diagnostic",
+  "passingScore": 80,
+  "timeLimit": 0,
+  "questions": [
+    {
+      "q": "Match correctly: which decisions are made at the Campaign level?",
+      "options": [
+        "Audience, placements, conversion location",
+        "Creative, destination, tracking",
+        "Buying type, objective, budget, bid",
+        "Pixel installation and CAPI setup"
+      ],
+      "correct": 2,
+      "explanation": "At the Campaign level: buying type, objective, budget, bid, special ad category. Audience/placements go in the ad set. Creative/destination go in the ad.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "What is the key difference between Advantage+ campaigns and Advantage+ tools (single-step)?",
+      "options": [
+        "Advantage+ campaigns are free, Advantage+ tools are paid",
+        "Advantage+ campaigns automate the ENTIRE campaign (Sales/App/Leads); Advantage+ tools automate ONE aspect (audience, placements, budget, creative, destination)",
+        "Advantage+ tools are only available for sales; Advantage+ campaigns for every objective",
+        "There is no difference, they are synonyms"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ campaigns = complete campaign solutions (they automate everything). Single-step = one specific aspect. The exam sets traps by mixing them.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A user has full control of ONE ad account but only partial access to the portfolio. Is this possible?",
+      "options": [
+        "No, permissions are always uniform across the entire portfolio",
+        "Yes, fine-grained per-account permissions are possible without having full control of the entire portfolio",
+        "Only if the user is a Partner, not if they are People",
+        "Only system users can have this type of setup"
+      ],
+      "correct": 1,
+      "explanation": "A user can have full control of one account WITHOUT having full control of the portfolio. This allows fine-grained permissions while keeping oversight at the portfolio level.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Select the 4 types of controls in the Brand Safety & Suitability Center.",
+      "options": [
+        "Inventory filters, Publisher block lists, Topic exclusions, Content type exclusions",
+        "Age controls, Geography controls, Device controls, Time controls",
+        "Bid caps, Budget caps, Frequency caps, Reach caps",
+        "Conversion controls, Engagement controls, Impression controls, Click controls"
+      ],
+      "correct": 0,
+      "explanation": "The 4 controls of the Brand Safety Center: Inventory filters (Expanded/Moderate/Limited), Publisher block lists, Topic exclusions (Gaming/News/Politics/Religion), Content type exclusions (live video, non-partner).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The Opportunity Score:",
+      "options": [
+        "Predicts how much the next campaign will sell",
+        "Shows how many experimentally proven recommendations you haven't applied, and updates as you apply them or change the account",
+        "Rates the quality of the creative compared to other advertisers",
+        "Is a score that GUARANTEES your performance if you reach 100"
+      ],
+      "correct": 1,
+      "explanation": "A 0-100 score based on recommendations not yet applied. It does NOT predict or guarantee real performance. It updates as you apply recommendations or modify the account.",
+      "difficulty": "hard"
+    }
+  ]
+}

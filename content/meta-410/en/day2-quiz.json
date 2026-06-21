@@ -1,0 +1,141 @@
+{
+  "title": "Unit Quiz · Day 2",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What are the 6 ODAX objectives in Meta?",
+      "options": [
+        "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+        "Awareness, Traffic, Conversions, Catalog, Leads, Sales",
+        "Reach, Traffic, Engagement, Conversions, App Installs, Sales",
+        "Brand, Consideration, Conversion, Retention, Loyalty, Advocacy"
+      ],
+      "correct": 0,
+      "explanation": "The 6 official ODAX objectives (Outcome-Driven Ad Experiences) are: Awareness, Traffic, Engagement, Leads, App Promotion, Sales. The other combinations mix old objectives with unofficial concepts.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The Reservation buying type is available for which objectives?",
+      "options": [
+        "Awareness and Engagement",
+        "Sales and Leads",
+        "Traffic and Awareness",
+        "All ODAX objectives"
+      ],
+      "correct": 0,
+      "explanation": "Reservation = fixed CPM and predictable delivery. Only Awareness and Engagement. Sales, Leads, Traffic and App Promotion always run through Auction.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand wants to launch an industrial solar financing program. The end user must sign a digital contract after chatting with a consultant. Which is the ideal objective + conversion location?",
+      "options": [
+        "Sales + Website",
+        "Leads + Instant form",
+        "Sales + Messenger",
+        "Engagement + Messaging"
+      ],
+      "correct": 2,
+      "explanation": "Sales with the Messenger conversion location captures the final conversion (signature) inside the chat platform. Leads would be for collecting prior contacts, not the signature itself. Engagement does not optimize for conversion.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which requirements are mandatory to optimize Sales on website with the conversion event Purchase? Select 2.",
+      "options": [
+        "Pixel installed on the site",
+        "Conversions API (CAPI) configured",
+        "Facebook SDK in a mobile app",
+        "Product catalog"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Pixel + CAPI are required for Sales on website with Purchase. SDK applies to App Promotion. Catalog applies to Advantage+ Catalog Ads, not general Sales.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The default performance goal for Engagement with engagement type = Video views is:",
+      "options": [
+        "Maximize link clicks",
+        "Maximize impressions",
+        "Maximize ThruPlay views",
+        "Maximize ad recall lift"
+      ],
+      "correct": 2,
+      "explanation": "ThruPlay views (video watched in full or for ≥15 seconds) is the canonical performance goal for Engagement Video views. Ad recall lift belongs to Awareness, link clicks to Traffic.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of the following ARE Advantage+ complete solutions (not single-step)? Select 3.",
+      "options": [
+        "Advantage+ Sales campaigns",
+        "Advantage+ Leads campaigns",
+        "Advantage+ Awareness campaigns",
+        "Advantage+ App campaigns",
+        "Advantage+ Traffic campaigns"
+      ],
+      "correct": [0, 1, 3],
+      "multi": true,
+      "explanation": "The 3 official complete solutions are Sales, Leads and App campaigns. There is NO Advantage+ Awareness or Advantage+ Traffic as complete solutions (those are single-step automations, not end-to-end).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "If you want to optimize for higher-value purchases (not just quantity), which performance goal do you use?",
+      "options": [
+        "Maximize number of conversions",
+        "Maximize value of conversions",
+        "Maximize link clicks",
+        "Cost per Result Goal"
+      ],
+      "correct": 1,
+      "explanation": "Maximize value of conversions optimizes for amount, not units. It requires a Pixel with value tracking. Cost per Result Goal is a bid strategy (from Day 3), not a performance goal.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the key difference between Awareness and Engagement with video views?",
+      "options": [
+        "Awareness is cheaper",
+        "Awareness optimizes broad recall; Engagement optimizes the concrete action of watching/interacting",
+        "Engagement requires Pixel and Awareness does not",
+        "They are the same thing with different names"
+      ],
+      "correct": 1,
+      "explanation": "Awareness measures impact on memory (recall lift) with broad reach. Engagement with Video Views optimizes the concrete VIDEO COMPLETION. The difference is which funnel outcome you optimize.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "App Promotion mandatorily requires:",
+      "options": [
+        "Pixel on a website",
+        "Conversions API",
+        "Facebook SDK or an MMP (Mobile Measurement Partner)",
+        "Customer list"
+      ],
+      "correct": 2,
+      "explanation": "App Promotion needs a way to track events in the app: the Facebook SDK directly, or an authorized MMP (AppsFlyer, Adjust, Branch, etc.). Pixel and CAPI are for web.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An advertiser wants people to remember its rebrand (logo change). It is NOT interested in driving traffic or getting purchases. Best objective + performance goal?",
+      "options": [
+        "Traffic + Maximize link clicks",
+        "Engagement + Maximize post engagement",
+        "Awareness + Maximize ad recall lift",
+        "Sales + Maximize value"
+      ],
+      "correct": 2,
+      "explanation": "Awareness with Maximize ad recall lift is the exact match for memory impact. Traffic optimizes clicks (not recall). Engagement optimizes interaction (not recall). Sales does not apply.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A retailer will launch a video campaign to promote a clothing line that is not yet on sale: first it wants to send people to a product landing page on its site and then retarget those who viewed it. What action should it take?",
+      "options": [
+        "Choose the Awareness objective with a broad audience and create a Custom Audience of those who watched the video",
+        "Choose the Traffic objective with a broad audience and create a Website Custom Audience of those who visited the site",
+        "Choose the Awareness objective targeting a Custom Audience that watched the video",
+        "Choose the Traffic objective targeting a Custom Audience that already visited its site"
+      ],
+      "correct": 1,
+      "explanation": "Traffic optimizes for sending people to the landing page; with a broad audience you maximize the volume of visits and then create a Website Custom Audience of those visitors to retarget. Awareness optimizes recall (not visits), and targeting a Custom Audience that already visited the site from the start does not work because that audience does not exist yet.",
+      "difficulty": "hard"
+    }
+  ]
+}

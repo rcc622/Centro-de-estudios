@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Day 4",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Which statement about the Pixel and CAPI is CORRECT?",
+      "options": [
+        "CAPI replaces the Pixel",
+        "The Pixel replaces CAPI",
+        "They are complementary: using both gives maximum coverage",
+        "The Pixel is only used on mobile"
+      ],
+      "correct": 2,
+      "explanation": "Pixel (browser) + CAPI (server-side) = ~95% coverage vs ~70% with Pixel only.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which type of events does NOT support Custom Conversions?",
+      "options": [
+        "Web",
+        "Offline",
+        "App",
+        "Messaging"
+      ],
+      "correct": 2,
+      "explanation": "Custom Conversions only apply to web and offline events. For app you have to create direct Custom Events.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "AEM (Aggregated Event Measurement) applies to:",
+      "options": [
+        "All devices",
+        "Android only",
+        "iOS 14+ only",
+        "Desktop only"
+      ],
+      "correct": 2,
+      "explanation": "AEM responds to Apple's ATT (App Tracking Transparency) framework on iOS 14+.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "App Promotion mandatorily requires:",
+      "options": [
+        "Pixel on the website",
+        "Conversions API server-side",
+        "Facebook SDK or an authorized MMP",
+        "Imported customer list"
+      ],
+      "correct": 2,
+      "explanation": "Apps need the FB SDK installed or an MMP (AppsFlyer, Adjust, etc.).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "You want to measure purchases of a specific product (Purchase where URL contains '/premium' AND value greater than 1000). What do you use?",
+      "options": [
+        "A new Custom Event called PremiumPurchase",
+        "A Custom Conversion with rules on the existing Purchase",
+        "A new Pixel just for premium",
+        "Offline events only"
+      ],
+      "correct": 1,
+      "explanation": "Custom Conversion = a rule on an existing event with no code required. A Custom Event would force you to touch the Pixel code.",
+      "difficulty": "hard"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "title": "Unit Quiz · Day 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What is the difference between a Custom Audience and a Lookalike Audience?",
+      "options": [
+        "Custom is new prospects, Lookalike is existing customers",
+        "Custom is people who have ALREADY interacted with the business; Lookalike is NEW people similar to the source",
+        "They are the same thing with a different name",
+        "Custom is only for offline"
+      ],
+      "correct": 1,
+      "explanation": "Custom = retargeting. Lookalike = prospecting for new, similar people.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Absolute minimum number of people in the source to create a Lookalike:",
+      "options": ["50","100 in a single country","500","1,000"],
+      "correct": 1,
+      "explanation": "100 people from a SINGLE country. Recommended 1,000-50,000 for quality.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of these are audience CONTROLS (rigid, cannot be expanded)? Select 2.",
+      "options": [
+        "Location (e.g. Mexico City only)",
+        "Detailed targeting (interests)",
+        "Custom Audience exclusion",
+        "Lookalike Audience inclusion",
+        "Age 18-65+ suggestion"
+      ],
+      "correct": [0, 2],
+      "multi": true,
+      "explanation": "Location and exclusions are rigid controls. Detailed targeting, Lookalike inclusion and age suggestion are suggestions (flexible, AI can expand).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A 10% Lookalike compared to a 1%:",
+      "options": [
+        "Is more similar to the source",
+        "Has greater reach but less similarity to the source",
+        "Has smaller reach",
+        "The 10% does not exist"
+      ],
+      "correct": 1,
+      "explanation": "10% = more reach, less similar. 1% = maximum similarity, smaller reach.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The source audience used to create a Lookalike, is it included or excluded?",
+      "options": [
+        "It is included (expanded reach)",
+        "It is excluded automatically",
+        "Depends on the manual setting",
+        "Only at 1%"
+      ],
+      "correct": 1,
+      "explanation": "The source is ALWAYS excluded. The Lookalike looks for new, similar people; it does not re-reach the source.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the maximum number of Custom Audiences per ad account and of Lookalikes per source?",
+      "options": [
+        "100 / 50",
+        "250 / 100",
+        "500 / 500",
+        "1,000 / 1,000"
+      ],
+      "correct": 2,
+      "explanation": "500 Custom Audiences per ad account and up to 500 Lookalikes per source audience.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is Advantage+ Audience and how is it turned off (intentionally or not)?",
+      "options": [
+        "It can only be turned off in Reservation",
+        "It is the AI that expands on your suggestions. It is turned off by choosing 'Switch to original audience options' or 'Further limit the reach of your ads'",
+        "It is always ON with no option to turn it off",
+        "Only for Sales"
+      ],
+      "correct": 1,
+      "explanation": "On by default. It is turned off intentionally (with those clicks) or accidentally when you manually limit the audience.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "For Advantage+ Catalog Ads, what is the recommended minimum number of products per Product Set?",
+      "options": ["5","10","20","50"],
+      "correct": 2,
+      "explanation": "20 products minimum recommended for enough variety for the ML.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Ideal catalog match rate and what problem it indicates if it is low:",
+      "options": [
+        ">50%, a budget problem",
+        ">75%, a Pixel setup problem (incorrect IDs, missing products)",
+        ">90%, a small audience",
+        "Any %, no problem"
+      ],
+      "correct": 1,
+      "explanation": ">75% target. Low = a mapping problem between Pixel/CAPI and the catalog (Content IDs do not match).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An advertiser with several product lines. Best practice?",
+      "options": [
+        "Create one catalog per line for separation",
+        "Create a single catalog with Product Sets per line",
+        "Do not use a catalog",
+        "Create multiple Pixels"
+      ],
+      "correct": 1,
+      "explanation": "A SINGLE catalog with internal Product Sets. Multiple catalogs confuse the matching with the Pixel and complicate the Advantage+ Catalog Ads setup.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A business uploads items to its catalog via a data feed and does not know how to write the price. What price format does the product feed support?",
+      "options": [
+        "5.99 US Dollars",
+        "$5.99",
+        "5,99",
+        "5.99 USD"
+      ],
+      "correct": 3,
+      "explanation": "The valid format is the number with a decimal point followed by the ISO currency code: '5.99 USD'. Writing out the currency name ('US Dollars'), using the symbol ('$5.99') or a decimal comma ('5,99') is not the format accepted by the catalog data feed.",
+      "difficulty": "medium"
+    }
+  ]
+}

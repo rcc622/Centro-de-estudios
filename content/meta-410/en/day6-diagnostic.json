@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Day 6",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What is the aspect ratio for Stories and Reels?",
+      "options": [
+        "16:9",
+        "1:1",
+        "4:5",
+        "9:16"
+      ],
+      "correct": 3,
+      "explanation": "9:16 full portrait vertical for Stories and Reels.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "You want to know how many EXTRA sales your campaign generated vs the scenario of not having run it. Which tool?",
+      "options": [
+        "A/B test",
+        "Brand lift",
+        "Conversion Lift",
+        "Standard reporting"
+      ],
+      "correct": 2,
+      "explanation": "Conversion Lift measures incrementality: causal sales attributable to the campaign.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many variables should you change in a correct A/B test?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "The more the better"
+      ],
+      "correct": 0,
+      "explanation": "ONE single variable. Changing 2+ means you can't isolate the cause of the result.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which attribution models exist in Ads Manager?",
+      "options": [
+        "Standard, Custom and Incremental",
+        "Standard and Incremental",
+        "Last-click, First-click, Linear, Time-decay",
+        "Only Custom"
+      ],
+      "correct": 1,
+      "explanation": "Only Standard and Incremental. Custom does NOT exist in Ads Manager.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "If you combine Advantage+ Creative with Asset Customization, which one prevails?",
+      "options": [
+        "Advantage+ Creative always wins",
+        "Asset Customization (manual) has priority in the customized placements",
+        "They cancel each other out",
+        "It depends on the objective"
+      ],
+      "correct": 1,
+      "explanation": "The manual setting wins in the placements where you explicitly customized.",
+      "difficulty": "hard"
+    }
+  ]
+}

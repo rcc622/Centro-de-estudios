@@ -1,0 +1,143 @@
+{
+  "title": "Unit quiz · Day 3",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Which objectives is Reservation available for? Select 2.",
+      "options": ["Awareness","Traffic","Engagement","Leads","Sales"],
+      "correct": [0, 2],
+      "multi": true,
+      "explanation": "Only Awareness and Engagement support Reservation. Traffic, Leads, Sales, and App Promotion are Auction only.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What are the 3 categories of bid strategies in Meta?",
+      "options": [
+        "Auto / Manual / Hybrid",
+        "Spend-based / Goal-based / Manual",
+        "Daily / Lifetime / Reservation",
+        "Standard / Advanced / Custom"
+      ],
+      "correct": 1,
+      "explanation": "Spend-based (Highest Volume, Highest Value) spend everything. Goal-based (Cost per Result Goal, ROAS Goal) respect a goal. Manual (Bid Cap).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An e-commerce advertiser has a Pixel with value tracking and wants to ensure a minimum ROAS of 4x. Which bid strategy is optimal?",
+      "options": [
+        "Highest Volume",
+        "Highest Value",
+        "ROAS Goal of 4x",
+        "Bid Cap"
+      ],
+      "correct": 2,
+      "explanation": "ROAS Goal defines the target return. Highest Value maximizes value but with no specific return goal. Bid Cap does not guarantee ROAS.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A campaign has 4 ad sets with different audiences. You want Meta to allocate more budget to the ad set that converts best. Which setting do you use?",
+      "options": [
+        "Equal daily budget per ad set",
+        "Manual lifetime budget per ad set",
+        "Advantage+ Campaign Budget",
+        "Identical Bid Cap across all 4"
+      ],
+      "correct": 2,
+      "explanation": "Advantage+ Campaign Budget dynamically reallocates to the winning ad set. It requires ≥2 ad sets in the campaign.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of these DO cause Learning Limited? Select 3.",
+      "options": [
+        "Audience too small",
+        "Budget too low",
+        "Pixel + CAPI both installed",
+        "Using Advantage+ campaign budget",
+        "Bid Cap too restrictive"
+      ],
+      "correct": [0, 1, 4],
+      "multi": true,
+      "explanation": "A small audience, a low budget, and a restrictive Bid Cap cause Learning Limited (too few optimization events for the system to learn). Pixel + CAPI IMPROVES optimization and Advantage+ campaign budget consolidates spend: neither of those two is a cause.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Changing the bid strategy of an ad set in the middle of the learning phase:",
+      "options": [
+        "Speeds up exit from learning",
+        "Resets the learning phase and starts counting events again",
+        "Has no effect",
+        "Pauses it until learning ends"
+      ],
+      "correct": 1,
+      "explanation": "Changing the bid strategy is a significant edit. It resets learning. The ad set starts accumulating 50 events again from 0.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which statement about Bid Cap is TRUE?",
+      "options": [
+        "Bid Cap guarantees a maximum CPA",
+        "Bid Cap controls the maximum bid in the auction, NOT the final CPA",
+        "Bid Cap is recommended for beginners",
+        "Bid Cap only works with Pixel value tracking"
+      ],
+      "correct": 1,
+      "explanation": "Bid Cap = a ceiling on the auction bid. The final CPA depends on action rates and quality. For a CPA goal, use Cost per Result Goal. Recommended only for advanced users.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Up to what % can be shared between ad sets with Ad Set Budget Sharing?",
+      "options": ["5%","10%","20%","50%"],
+      "correct": 2,
+      "explanation": "20% of the daily budget can be shared between ad sets in the same campaign.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Reservation is available on which placements?",
+      "options": [
+        "All placements",
+        "Facebook + Instagram only",
+        "Facebook only",
+        "Audience Network only"
+      ],
+      "correct": 1,
+      "explanation": "Reservation is limited to FB + IG. Auction allows all placements (including Audience Network, Messenger, Threads).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Daily budget vs Lifetime budget: which statement is correct?",
+      "options": [
+        "Daily can never exceed the daily amount",
+        "Lifetime is distributed exactly the same every day",
+        "Daily is an average (it can exceed ~25% on one day and compensate); Lifetime is an absolute cap over the period",
+        "They are interchangeable"
+      ],
+      "correct": 2,
+      "explanation": "Daily = a flexible average (exceeds +25% on some days and compensates on others). Lifetime = a cap over the period, with day-to-day variable distribution.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A media buyer is deciding between Auction and Reservation for their next campaign. Which of the following is compatible with Auction buying?",
+      "options": [
+        "Scheduling delivery on different days of the week (scheduling)",
+        "Sequenced ad delivery",
+        "Predictable, stable CPM over time",
+        "Guaranteed fixed reach and frequency"
+      ],
+      "correct": 0,
+      "explanation": "Auction allows ad scheduling/dayparting (scheduling by days or hours, using a lifetime budget). Sequenced delivery, predictable CPM, and fixed reach/frequency control are characteristics of Reservation (Reach & Frequency), not Auction.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A client gave $100,000 for a 4-week Sales campaign. It spent $40,000 the first week and $20,000 the second. How do you make sure the budget is distributed evenly each week?",
+      "options": [
+        "Select a Daily budget",
+        "Use multiple creatives",
+        "Select optimization events",
+        "Use multiple ad sets"
+      ],
+      "correct": 0,
+      "explanation": "A Daily budget sets an average spend per day, which keeps pacing even week to week. A Lifetime budget can concentrate spend in the highest-opportunity periods and produce uneven weeks like the ones in the scenario. Changing creatives, events, or ad sets does not control pacing.",
+      "difficulty": "medium"
+    }
+  ]
+}

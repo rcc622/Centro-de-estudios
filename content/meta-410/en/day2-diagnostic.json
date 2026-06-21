@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Day 2",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "At which level of Meta's hierarchy is the campaign objective selected?",
+      "options": [
+        "Account level",
+        "Campaign level",
+        "Ad set level",
+        "Ad level"
+      ],
+      "correct": 1,
+      "explanation": "The objective is always chosen at the Campaign level. Conversion location and event go in the Ad set.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which objectives support the Reservation buying type?",
+      "options": [
+        "All objectives",
+        "Sales and Leads",
+        "Awareness and Engagement",
+        "Awareness, Traffic and Engagement"
+      ],
+      "correct": 2,
+      "explanation": "Reservation is only available for Awareness and Engagement. The rest only support Auction.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A B2B company wants scheduled demos with prospects without taking them out of the feed. Which is the best combination?",
+      "options": [
+        "Sales + Website conversion location",
+        "Leads + Instant form conversion location",
+        "Traffic + external landing page",
+        "Engagement with Messaging"
+      ],
+      "correct": 1,
+      "explanation": "Leads + Instant form keeps friction to a minimum inside Meta. Sales is reserved for real transactions.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which objective does NOT require Pixel, CAPI or a dataset?",
+      "options": [
+        "Sales",
+        "Leads (website)",
+        "Awareness",
+        "App Promotion"
+      ],
+      "correct": 2,
+      "explanation": "Awareness optimizes for recall and broad reach; it does not need conversion tracking.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Select the correct difference between conversion event and performance goal.",
+      "options": [
+        "They are synonyms",
+        "Conversion event = which action counts; Performance goal = how Meta bids",
+        "Conversion event goes in Campaign; Performance goal goes in Ad",
+        "Performance goal only applies to Sales"
+      ],
+      "correct": 1,
+      "explanation": "The conversion event defines the action (Purchase, Lead). The performance goal defines the optimization rule (Maximize number vs Maximize value).",
+      "difficulty": "hard"
+    }
+  ]
+}

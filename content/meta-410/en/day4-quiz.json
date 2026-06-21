@@ -1,0 +1,115 @@
+{
+  "title": "Unit Quiz · Day 4",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What are the 3 ways to send signals to Meta? Select 3.",
+      "options": [
+        "Meta Pixel (browser-side)",
+        "Conversions API (server-side)",
+        "Facebook SDK (app)",
+        "Customer List CSV",
+        "Manual Bid"
+      ],
+      "correct": [0, 1, 2],
+      "multi": true,
+      "explanation": "Pixel, CAPI and SDK are the 3 main data sources. Offline events are sent via the CAPI Offline channel. Customer List is for audiences, not signals.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the difference between a Custom Event and a Custom Conversion?",
+      "options": [
+        "They are synonyms",
+        "A Custom Event is a NEW event defined by the business (requires code). A Custom Conversion is a RULE on an existing event (no code)",
+        "A Custom Event is web only; a Custom Conversion is offline only",
+        "A Custom Conversion replaces the Pixel"
+      ],
+      "correct": 1,
+      "explanation": "Custom Event = new code. Custom Conversion = a rule on an existing event (URL contains, value, etc.).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "After iOS 14+, why does CAPI become more important?",
+      "options": [
+        "ATT requires using CAPI by law",
+        "ATT limits Pixel tracking in iOS browsers without consent. CAPI sends server-side and is not affected",
+        "CAPI is cheaper",
+        "The Pixel stops working entirely on iOS"
+      ],
+      "correct": 1,
+      "explanation": "ATT asks for explicit consent on iOS. Most users decline, limiting the Pixel. CAPI server-side maintains coverage.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "How many events can be prioritized per web domain under AEM?",
+      "options": ["3","5","8","Unlimited"],
+      "correct": 2,
+      "explanation": "Maximum 8 prioritized events per web domain under Aggregated Event Measurement.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "At which level of the hierarchy is the dataset connected to a campaign?",
+      "options": ["Account","Campaign","Ad set","Ad"],
+      "correct": 2,
+      "explanation": "Ad set level, along with the conversion location and conversion event.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "An advertiser closes many contracts in person at the office. How do they record that conversion?",
+      "options": [
+        "Offline can't be measured",
+        "Only with a Customer List",
+        "Standard Purchase event with value, sent via the CAPI Offline channel",
+        "Only with an additional Pixel"
+      ],
+      "correct": 2,
+      "explanation": "Purchase with value via the CAPI Offline channel. A monthly CSV with hashed offline events is uploaded.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Event Match Quality (EMQ) improves when:",
+      "options": [
+        "You raise the budget",
+        "You change the bid strategy",
+        "You send rich hashed customer info (email, phone, IP, user agent) via CAPI",
+        "You reduce the audience"
+      ],
+      "correct": 2,
+      "explanation": "EMQ improves with the quality of the data sent — CAPI lets you send more hashed info than the Pixel alone.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Standard event for a SaaS subscription with recurring billing:",
+      "options": ["Purchase","Subscribe","Lead","Schedule"],
+      "correct": 1,
+      "explanation": "Subscribe is canonical for a recurring subscription. Purchase is a one-time purchase.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Select the parameters Meta RECOMMENDS sending with a Purchase event. Select 4.",
+      "options": [
+        "Value (amount)",
+        "Currency",
+        "Content IDs (SKUs)",
+        "User's full name",
+        "Content type"
+      ],
+      "correct": [0, 1, 2, 4],
+      "multi": true,
+      "explanation": "Value, Currency, Content IDs and Content type are the recommended parameters. Full name is NOT sent in plain text — only hashed (and via CAPI).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which statement about AEM is TRUE?",
+      "options": [
+        "AEM applies to Android",
+        "AEM removes attribution windows",
+        "AEM removes personal identifiers, adds differential privacy and reports aggregated data",
+        "AEM replaces the Pixel"
+      ],
+      "correct": 2,
+      "explanation": "AEM's 3 actions: 1) removes personal IDs, 2) adds statistical noise (differential privacy), 3) reports in aggregate. Only applies to iOS 14+.",
+      "difficulty": "hard"
+    }
+  ]
+}

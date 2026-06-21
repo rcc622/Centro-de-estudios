@@ -1,0 +1,204 @@
+{
+  "title": "Unit quiz · Day 6",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What are the 4 available ad formats? Select 4.",
+      "options": [
+        "Flexible (AI chooses)",
+        "Single image or video",
+        "Carousel (2+ swipe)",
+        "Collection (hero + grid)",
+        "Banner (popup)"
+      ],
+      "correct": [0, 1, 2, 3],
+      "multi": true,
+      "explanation": "Flexible, Single, Carousel and Collection are the 4 formats. Banner popup doesn't exist in Meta Ads.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the difference between Brand lift and Conversion Lift?",
+      "options": [
+        "Brand lift is more expensive",
+        "Brand lift measures brand impact with surveys; Conversion Lift measures causal conversions (incremental sales/leads)",
+        "They are the same",
+        "Conversion Lift only works with a catalog"
+      ],
+      "correct": 1,
+      "explanation": "Brand lift = surveys about the brand. Conversion Lift = causal sales. Different purposes.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "You want to run an A/B test between 2 creatives. What do you do right?",
+      "options": [
+        "Change creative + audience at the same time",
+        "A single variable changed (creative), same audience split automatically without overlap, ≥7 days",
+        "Overlapping audience to get more volume",
+        "No minimum spend matters"
+      ],
+      "correct": 1,
+      "explanation": "Correct A/B test: 1 single variable, audience split without overlap, minimum 7 days.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the default attribution setting in Ads Manager?",
+      "options": [
+        "1-day view, 1-day click",
+        "1-day view, 7-day click",
+        "7-day view, 7-day click",
+        "28-day click"
+      ],
+      "correct": 1,
+      "explanation": "Default: 1-day view + 7-day click.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "What are the 2 attribution models available in Ads Manager?",
+      "options": [
+        "Standard and Custom",
+        "Standard and Incremental",
+        "Last-click and First-click",
+        "Linear and Time-decay"
+      ],
+      "correct": 1,
+      "explanation": "Only Standard and Incremental. Custom does NOT exist in Ads Manager.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Select the 4 Brand Safety controls. Select 4.",
+      "options": [
+        "Inventory filters",
+        "Publisher block lists",
+        "Topic exclusions",
+        "Content type exclusions",
+        "Bid Cap restrictions"
+      ],
+      "correct": [0, 1, 2, 3],
+      "multi": true,
+      "explanation": "Inventory filters + Publisher block lists + Topic exclusions + Content type exclusions = 4 brand safety controls. Bid Cap is a bid strategy.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which statement about Advantage+ Creative + Asset Customization is correct?",
+      "options": [
+        "You can only use one at a time",
+        "If both are active, Asset Customization (manual) has priority in the placements where you set it; Advantage+ Creative acts on the rest",
+        "Asset Customization is not compatible with Advantage+",
+        "Advantage+ always prevails"
+      ],
+      "correct": 1,
+      "explanation": "The manual setting wins where you configured it. Advantage+ Creative applies in non-customized placements.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Mobile-first creative rules (Stories/Reels):",
+      "options": [
+        "16:9 aspect, branding at the end",
+        "9:16 aspect, ≤15s, branding in the first 3s, audio + captions, key elements in the safe zone",
+        "Any aspect, audio off by default",
+        "Static image only"
+      ],
+      "correct": 1,
+      "explanation": "9:16, short, branding early, audio + captions (audio off default in feed), central safe zone.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which are typical Awareness metrics? Select 3.",
+      "options": [
+        "Reach",
+        "Frequency",
+        "Purchase ROAS",
+        "Estimated ad recall lift",
+        "Cost per purchase"
+      ],
+      "correct": [0, 1, 3],
+      "multi": true,
+      "explanation": "Reach, Frequency and Estimated ad recall lift are Awareness metrics. ROAS and cost per purchase are Conversion metrics.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A financial services ad was rejected for 'personal attributes' even though the product is legal. Why?",
+      "options": [
+        "Meta hates financial services",
+        "The copy probably implies a personal attribute of the user (age, race, health, weight). You have to reword it to talk about the offer without implying attributes",
+        "It only affects the USA",
+        "It's a bug"
+      ],
+      "correct": 1,
+      "explanation": "Advertising Standards prohibit ads that imply personal attributes of the user. E.g. 'for older gentlemen' violates the rule. Reword: 'for experienced professionals'.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A client wants to see how their ad will look in different placements, but they aren't part of the target audience, so they won't see it published. What should the media buyer do to view it as the audience would?",
+      "options": [
+        "Use Ad preview at the ad level in Ads Manager to view the ad in the different placements",
+        "Go to Placements at the ad set level and choose Manual placements to view it",
+        "Use Advantage+ creative at the ad level and turn on all optimizations",
+        "Edit the ad creative and choose the media crop per placement"
+      ],
+      "correct": 0,
+      "explanation": "Ad preview (at the ad level in Ads Manager) renders the ad exactly as it would appear in each placement without needing to publish it or belong to the audience. The other options change settings or creative, they don't show the per-placement preview.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A kids' clothing brand runs a Sales campaign with 15-second videos. Its secondary goal is to understand whether the videos are engaging to the audience. What should the media buyer recommend to evaluate that second goal?",
+      "options": [
+        "Create an Engagement campaign with Video View optimization",
+        "Customize the columns to see video ad metrics",
+        "Analyze only the comments, reactions and shares of the ad",
+        "Change the creative videos every month"
+      ],
+      "correct": 1,
+      "explanation": "Without launching another campaign, you can customize the Ads Manager columns to see video metrics (ThruPlay, % played, retention) and measure whether the video engages, without affecting the primary Sales goal. Creating another campaign or looking only at reactions doesn't answer whether the video is engaging.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand wants to create a metrics report to see how many men viewed its ad over the weekend. Where should the media buyer pull the report from?",
+      "options": [
+        "Meta Business Suite",
+        "Ads Manager",
+        "The Facebook Page",
+        "Events Manager"
+      ],
+      "correct": 1,
+      "explanation": "Ads Manager (Ads Reporting) is the only place where you can create custom reports with breakdowns by demographics, time and placement. Business Suite and the Page only show basic views; Events Manager is for datasets/events, not campaign reports.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of the following ads complies with Meta's policies (Advertising Standards)?",
+      "options": [
+        "Ads that lead to a landing page that doesn't work",
+        "Ads that promote a job opportunity",
+        "Ads that promote penny auctions",
+        "Ads with sensational content"
+      ],
+      "correct": 1,
+      "explanation": "Promoting a job opportunity is allowed (it's a legitimate category, though employment falls under special ad category). Broken landing pages, penny auctions and sensational (shocking/sensational) content are prohibited by the Advertising Standards.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client wants to understand where their ads were shown during a campaign. Which Ads Manager detail should the media buyer check?",
+      "options": [
+        "Placement",
+        "Impressions",
+        "Reach",
+        "Frequency"
+      ],
+      "correct": 0,
+      "explanation": "The Placement breakdown shows WHERE the ads were delivered (Feed, Reels, Stories, etc.). Impressions is how many times it was shown, Reach is unique people and Frequency is the average times per person: none indicate the delivery location.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A campaign with images of natural landscapes performs poorly. The media buyer recommends using images with people. What is the reasoning behind that recommendation?",
+      "options": [
+        "To help people picture themselves using the product or service",
+        "To show a diverse group of people",
+        "Because artistic images of people are the most effective on Meta",
+        "Because photos of people always perform better than stock photos"
+      ],
+      "correct": 0,
+      "explanation": "The best practice of creative with people works because the user projects themselves using the product/service, which raises relevance and intent. The other reasons (diversity, 'art', stock vs non-stock) are not the basis for the recommendation.",
+      "difficulty": "medium"
+    }
+  ]
+}

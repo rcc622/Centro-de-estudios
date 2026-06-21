@@ -1,0 +1,149 @@
+{
+  "id": "day1-quiz",
+  "title": "Quiz · Day 1",
+  "kind": "unit-quiz",
+  "passingScore": 80,
+  "timeLimit": 0,
+  "questions": [
+    {
+      "q": "Which of the following best describes the purpose of the Opportunity Score in Ads Manager?",
+      "options": [
+        "Predict the expected ROAS of the next campaign",
+        "Show how optimized your campaigns are based on experimentally proven recommendations not yet applied",
+        "Measure the quality of the creative against industry benchmarks",
+        "Estimate the cost per result for next quarter"
+      ],
+      "correct": 1,
+      "explanation": "The Opportunity Score is a 0-100 score plus real recommendations. It does NOT predict or guarantee performance — it reflects the adoption of proven best practices.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "At which campaign creation level do you make the selections for audience, conversion location, and placements?",
+      "options": ["Campaign level", "Ad set level", "Ad level", "Account level"],
+      "correct": 1,
+      "explanation": "Audience, conversion settings, and placements are ad set level decisions. Campaign decides buying type/objective/budget. Ad decides creative/destination/tracking.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A client wants to automate their ENTIRE campaign using AI to sell products on their website. What do you recommend?",
+      "options": [
+        "Advantage+ audience",
+        "Advantage+ campaign budget",
+        "Advantage+ Sales campaigns",
+        "Advantage+ catalog ads"
+      ],
+      "correct": 2,
+      "explanation": "Advantage+ Sales campaigns is a 'complete campaign' solution that automates the entire campaign. The rest are single-step (they automate a single aspect).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of these are single-step Advantage+ solutions? Select 2.",
+      "options": [
+        "Advantage+ Sales campaigns",
+        "Advantage+ placements",
+        "Advantage+ Leads campaigns",
+        "Advantage+ audience"
+      ],
+      "correct": [1, 3],
+      "multi": true,
+      "explanation": "Placements and audience are single-step. Sales and Leads campaigns are complete campaign solutions.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which of the following is NOT one of Meta's 7 official Performance Best Practices?",
+      "options": [
+        "Automate campaign setup",
+        "Focus on signals",
+        "Maximize daily frequency caps",
+        "Validate results"
+      ],
+      "correct": 2,
+      "explanation": "The 7 BPs are: Automate setup, Align objectives, Consider audience, Optimize creative & placements, Focus on signals, Get the most out of budget & bidding, Validate results. Frequency caps is NOT on the list.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which Best Practice corresponds to making decisions with high-quality data (Pixel, CAPI, datasets)?",
+      "options": [
+        "BP 2 — Align objectives & goals",
+        "BP 4 — Optimize creative & placements",
+        "BP 5 — Focus on signals",
+        "BP 7 — Validate results"
+      ],
+      "correct": 2,
+      "explanation": "BP 5 Focus on signals: 'Inform decision making and optimize your strategy with high-quality data.' Signals = data sources.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "In a Business Portfolio, which option correctly describes the 3 types of users?",
+      "options": [
+        "Admin, Editor, Viewer",
+        "People (individuals), Partners (other businesses with their own portfolio), System users (servers/software with API access)",
+        "Owner, Member, Guest",
+        "Internal, External, Temporary"
+      ],
+      "correct": 1,
+      "explanation": "People = individual people. Partners = other businesses (they need their own portfolio + business ID). System users = servers/software with API access. Not all portfolios have system users available.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Temporary access in a Business Portfolio lasts:",
+      "options": [
+        "Minimum 1 day, maximum 30 days",
+        "Minimum 3 days, maximum 75 days",
+        "Minimum 7 days, maximum 90 days",
+        "Minimum 24 hours, maximum 365 days"
+      ],
+      "correct": 1,
+      "explanation": "Temporary access: minimum 3 days, maximum 75 days. It is an advanced option to grant time-limited basic access.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is the simplest way to exclude groups of sensitive content in the Brand Safety Center?",
+      "options": [
+        "Create manual publisher block lists",
+        "Use inventory filters (Moderate or Limited)",
+        "Exclude topics such as Gaming, News, and Politics",
+        "Set up content type exclusions for live video"
+      ],
+      "correct": 1,
+      "explanation": "Inventory filters (Expanded/Moderate/Limited) are the simplest control with the broadest coverage. Block lists require manual work; topic exclusions only apply to FB in-stream/reels.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "What access level or role is required to change the payment methods connected to Meta Business Suite?",
+      "options": [
+        "Any user with partial access",
+        "Only system users",
+        "Admin OR finance role (view and manage)",
+        "Only the original creator of the portfolio"
+      ],
+      "correct": 2,
+      "explanation": "Changing payment methods requires admin access OR the finance role (view and manage). The finance role is one of the portfolio's Advanced options.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An account manager is given employee access within Business Manager. What task can that user perform?",
+      "options": [
+        "Delete the business from Business Manager",
+        "Access only the accounts and tools assigned to them",
+        "Add or remove other employees",
+        "Create new accounts and Pages"
+      ],
+      "correct": 1,
+      "explanation": "Employee access = limited access: the user can only work with the accounts and assets an admin assigns to them. Deleting the business, managing other employees, or creating accounts/Pages are tasks exclusive to admin access.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A company used Advantage+ placements and got slightly better results on Instagram. What should the media buyer do in the next campaign?",
+      "options": [
+        "Place the ads only on Instagram from now on",
+        "Split the audiences by placement",
+        "Keep using the same strategy with Advantage+ placements",
+        "A/B test Instagram feed vs Instagram stories"
+      ],
+      "correct": 2,
+      "explanation": "A slight difference does not justify breaking Advantage+ placements: the system already distributes delivery to the most efficient placement in real time. Limiting to a single placement or fragmenting by placement reduces the optimization pool and usually worsens the cost per result.",
+      "difficulty": "medium"
+    }
+  ]
+}
