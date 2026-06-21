@@ -451,43 +451,43 @@
           "rows": [
             [
               "Auction o Reservation",
-              "Awareness y Engagement (sí). Traffic (solo Auction)."
+              "Reconocimiento e Interacción (sí). Tráfico (solo Auction)."
             ],
             [
               "Pixel/dataset",
-              "Awareness y Traffic (no requieren). Engagement (depende del type)."
+              "Reconocimiento y Tráfico (no requieren). Interacción (depende del type)."
             ],
             [
               "KPI principal",
-              "Awareness=Recall · Traffic=Clicks · Engagement=Interacciones"
+              "Reconocimiento=Recall · Tráfico=Clicks · Interacción=Interacciones"
             ],
             [
               "Cuándo usar",
-              "Awareness=top funnel · Traffic=enviar al sitio · Engagement=conversación o reproducción"
+              "Reconocimiento=top funnel · Tráfico=enviar al sitio · Interacción=conversación o reproducción"
             ]
           ]
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · DentalCare",
-          "body": "DentalCare (clínica dental) abre en una ciudad nueva y aún no instala el Pixel: Awareness le sirve igual. Si publica un blog con tips de cuidado dental y solo quiere lecturas, usa Traffic. Si quiere que vean completo un video con el recorrido de la clínica sin salir del feed, usa Engagement con type Video views."
+          "body": "DentalCare (clínica dental) abre en una ciudad nueva y aún no instala el Pixel: el Reconocimiento le sirve igual. Si publica un blog con tips de cuidado dental y solo quiere lecturas, usa Tráfico. Si quiere que vean completo un video con el recorrido de la clínica sin salir del feed, usa Interacción con type Video views."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Confundir <strong>Awareness con video views</strong> y <strong>Engagement con Video Views</strong>. Awareness optimiza <em>recall</em> con alcance amplio. Engagement optimiza la <em>acción concreta</em> de ver/interactuar."
+          "body": "Confundir <strong>Reconocimiento con video views</strong> e <strong>Interacción con Video Views</strong>. El Reconocimiento optimiza <em>recall</em> con alcance amplio. La Interacción optimiza la <em>acción concreta</em> de ver/interactuar."
         },
         {
           "type": "mcq",
-          "q": "Un anunciante quiere maximizar reproducciones de un video tutorial sin sacar al usuario a ningún sitio externo. ¿Cuál es el objective más adecuado?",
+          "q": "Un anunciante quiere maximizar reproducciones de un video tutorial sin sacar al usuario a ningún sitio externo. ¿Cuál es el objetivo más adecuado?",
           "options": [
-            "Traffic con video views como performance goal",
-            "Engagement con el type Video views",
-            "Awareness optimizando por Reach",
-            "Sales con conversion event ViewContent"
+            "Tráfico con video views como performance goal",
+            "Interacción con el type Video views",
+            "Reconocimiento optimizando por Reach",
+            "Ventas con conversion event ViewContent"
           ],
           "correct": 1,
-          "explanation": "Engagement con type Video views optimiza específicamente para reproducciones del video DENTRO de Meta (no link clicks). Traffic envía afuera del feed. Awareness con Reach optimiza alcance, no consumo del video.",
+          "explanation": "Interacción con type Video views optimiza específicamente para reproducciones del video DENTRO de Meta (no link clicks). El tráfico envía afuera del feed. El Reconocimiento con Reach optimiza alcance, no consumo del video.",
           "difficulty": "hard"
         }
       ]
@@ -500,19 +500,19 @@
       "cards": [
         {
           "type": "fill",
-          "q": "Awareness es uno de los dos únicos objectives que admiten Reservation. El otro es ___.",
+          "q": "Reconocimiento (awareness) es uno de los dos únicos Objetivos de la campaña (campaign objective) que admiten Reservation. El otro es ___.",
           "options": [
-            "Engagement",
-            "Traffic",
-            "Sales",
-            "Leads"
+            "Interacción (engagement)",
+            "Tráfico (traffic)",
+            "Ventas (sales)",
+            "Clientes potenciales (leads)"
           ],
           "correct": 0,
-          "explanation": "Solo <strong>Awareness y Engagement</strong> admiten Reservation. Los demás (Traffic, Leads, App Promotion, Sales) son solo Auction."
+          "explanation": "Solo <strong>Reconocimiento e Interacción</strong> admiten Reservation. Los demás (Tráfico, Clientes potenciales, Promoción de la app (app promotion), Ventas) son solo Auction."
         },
         {
           "type": "fill",
-          "q": "Traffic optimiza principalmente por ___ — por eso es mala elección si tu meta real es vender.",
+          "q": "Tráfico optimiza principalmente por ___ — por eso es mala elección si tu meta real es vender.",
           "options": [
             "link clicks",
             "purchases",
@@ -520,57 +520,57 @@
             "ad recall"
           ],
           "correct": 0,
-          "explanation": "Traffic optimiza por <strong>link clicks</strong>. Pagas por visitas, no por compradores: para venta real usa Sales."
+          "explanation": "El tráfico optimiza por <strong>link clicks</strong>. Pagas por visitas, no por compradores: para venta real usa Ventas."
         },
         {
           "type": "fill",
-          "q": "Los dos únicos objectives que admiten Reservation son Awareness y ___.",
+          "q": "Los dos únicos objetivos que admiten Reservation son Reconocimiento y ___.",
           "options": [
-            "Engagement",
-            "Sales",
-            "Traffic",
-            "Leads"
+            "Interacción",
+            "Ventas",
+            "Tráfico",
+            "Clientes potenciales"
           ],
           "correct": 0,
-          "explanation": "Solo <strong>Awareness y Engagement</strong> admiten Reservation. El resto es solo Auction."
+          "explanation": "Solo <strong>Reconocimiento e Interacción</strong> admiten Reservation. El resto es solo Auction."
         },
         {
           "type": "mcq",
-          "q": "¿Qué pasa si eliges Engagement sin Engagement type?",
+          "q": "¿Qué pasa si eliges Interacción sin engagement type?",
           "options": [
             "El sistema usa Video views por default",
             "No se puede: el type es obligatorio elegirlo",
-            "Se convierte automáticamente en Traffic",
+            "Se convierte automáticamente en Tráfico",
             "Funciona pero solo en modo Reservation"
           ],
           "correct": 1,
-          "explanation": "Engagement no tiene 'conversion event' tradicional: hay que elegir el <strong>Engagement type</strong>. Sin type, no se puede configurar.",
+          "explanation": "La Interacción no tiene 'conversion event' tradicional: hay que elegir el <strong>engagement type</strong>. Sin type, no se puede configurar.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
           "q": "Quieres reservar alcance con CPM fijo para promocionar una feria industrial durante 2 semanas. ¿Qué combinación es válida?",
           "options": [
-            "Reservation + Traffic",
-            "Reservation + Sales",
-            "Reservation + Awareness",
-            "Reservation + Leads"
+            "Reservation + Tráfico",
+            "Reservation + Ventas",
+            "Reservation + Reconocimiento",
+            "Reservation + Clientes potenciales"
           ],
           "correct": 2,
-          "explanation": "Reservation solo está disponible para <strong>Awareness y Engagement</strong>. Para Traffic, Sales, Leads y App Promotion solo existe Auction.",
+          "explanation": "Reservation solo está disponible para <strong>Reconocimiento e Interacción</strong>. Para Tráfico, Ventas, Clientes potenciales y Promoción de la app solo existe Auction.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
-          "q": "¿Cuál es la diferencia entre Traffic y Engagement?",
+          "q": "¿Cuál es la diferencia entre Tráfico e Interacción?",
           "options": [
-            "Traffic es siempre más caro que Engagement",
-            "Traffic saca a un destino; Engagement interactúa",
-            "Engagement solo funciona en Reservation",
-            "Traffic no admite el placement Messenger"
+            "Tráfico es siempre más caro que Interacción",
+            "Tráfico saca a un destino; Interacción interactúa",
+            "Interacción solo funciona en Reservation",
+            "Tráfico no admite el placement Messenger"
           ],
           "correct": 1,
-          "explanation": "<strong>Traffic</strong> = enviar a un destino externo (clic). <strong>Engagement</strong> = interactuar dentro o fuera de Meta (video, mensaje, post).",
+          "explanation": "<strong>Tráfico</strong> = enviar a un destino externo (clic). <strong>Interacción</strong> = interactuar dentro o fuera de Meta (video, mensaje, post).",
           "difficulty": "medium"
         }
       ]
@@ -589,15 +589,15 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué objective resuelve este caso?",
+          "q": "¿Qué objetivo resuelve este caso?",
           "options": [
-            "Sales con conversion event Purchase",
-            "Awareness: busca recall, sin Pixel ni dataset",
-            "Traffic para llevarlos al sitio nuevo",
-            "Leads con un Instant form nativo"
+            "Ventas (sales) con conversion event Purchase",
+            "Reconocimiento (awareness): busca recall, sin Pixel ni dataset",
+            "Tráfico (traffic) para llevarlos al sitio nuevo",
+            "Clientes potenciales (leads) con un Instant form nativo"
           ],
           "correct": 1,
-          "explanation": "La meta es <strong>recordar la marca</strong> sin medir conversiones, y no hay Pixel. Awareness es el único que no requiere dataset y optimiza recall.",
+          "explanation": "La meta es <strong>recordar la marca</strong> sin medir conversiones, y no hay Pixel. El Reconocimiento es el único que no requiere dataset y optimiza recall.",
           "difficulty": "medium"
         },
         {
@@ -606,7 +606,7 @@
           "options": [
             "Porque Reservation siempre resulta más barato",
             "Porque garantiza CPM fijo y delivery predecible",
-            "Porque Auction no permite el objetivo Awareness",
+            "Porque Auction no permite el objetivo Reconocimiento",
             "Porque Reservation tiene muchos más placements"
           ],
           "correct": 1,
@@ -622,28 +622,28 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "¿Cuáles objectives admiten Reservation?",
-          "a": "Solo Awareness y Engagement."
+          "q": "¿Cuáles objetivos admiten Reservation?",
+          "a": "Solo Reconocimiento (awareness) e Interacción (engagement)."
         },
         {
-          "q": "¿Qué objectives NO requieren Pixel/CAPI/dataset?",
-          "a": "Awareness y Traffic. Engagement depende del type."
+          "q": "¿Qué objetivos NO requieren Pixel/CAPI/dataset?",
+          "a": "Reconocimiento y Tráfico (traffic). La Interacción depende del type."
         },
         {
-          "q": "¿Cuál es la diferencia entre Traffic y Engagement?",
-          "a": "Traffic = sacar al usuario a un destino externo (link click). Engagement = interactuar dentro o fuera de Meta (video, mensaje, post)."
+          "q": "¿Cuál es la diferencia entre Tráfico e Interacción?",
+          "a": "Tráfico = sacar al usuario a un destino externo (link click). Interacción = interactuar dentro o fuera de Meta (video, mensaje, post)."
         },
         {
-          "q": "¿Qué pasa si eliges Engagement sin Engagement type?",
-          "a": "No se puede; en Engagement es obligatorio seleccionar el type (Video views, Post engagement, Messaging, etc.). No hay 'conversion event' tradicional."
+          "q": "¿Qué pasa si eliges Interacción sin engagement type?",
+          "a": "No se puede; en la Interacción es obligatorio seleccionar el type (Video views, Post engagement, Messaging, etc.). No hay 'conversion event' tradicional."
         },
         {
-          "q": "¿Para qué sirve Awareness y dónde vive en el funnel?",
+          "q": "¿Para qué sirve Reconocimiento y dónde vive en el funnel?",
           "a": "Maximizar personas que recordarán el ad (recall/reach). Vive en lo más alto del funnel."
         },
         {
-          "q": "Si una marca abre operaciones nuevas en otra ciudad y quiere recall sin tener Pixel todavía, ¿qué objective?",
-          "a": "Awareness. No requiere Pixel/CAPI/dataset."
+          "q": "Si una marca abre operaciones nuevas en otra ciudad y quiere recall sin tener Pixel todavía, ¿qué objetivo?",
+          "a": "Reconocimiento. No requiere Pixel/CAPI/dataset."
         }
       ]
     },
@@ -656,86 +656,86 @@
         {
           "type": "concept",
           "h": "Qué hace Leads",
-          "body": "El objetivo <strong>Leads</strong> (prospectos) sirve para recolectar los datos de contacto de personas interesadas en tu negocio: su nombre, correo, teléfono o lo que tú necesites para darles seguimiento después. Vive en la parte media del funnel, en la etapa de <em>consideración</em>: la persona ya te tiene en el radar pero todavía no compra. Es <strong>solo Auction</strong> (subasta, su costo siempre depende de cuánto compitan otros anunciantes; no admite Reservation). Además trae su propia automatización completa de extremo a extremo, llamada <strong>Advantage+ Leads campaigns</strong> (campañas de prospectos donde la inteligencia artificial de Meta arma casi todo por ti). Ejemplo: <strong>Seguros Confianza</strong> regala una cotización gratis a quien deje sus datos; usa Leads para juntar esos contactos y que un agente los llame después."
+          "body": "El objetivo <strong>Clientes potenciales (leads)</strong> sirve para recolectar los datos de contacto de personas interesadas en tu negocio: su nombre, correo, teléfono o lo que tú necesites para darles seguimiento después. Vive en la parte media del funnel, en la etapa de <em>consideración</em>: la persona ya te tiene en el radar pero todavía no compra. Es <strong>solo Auction</strong> (subasta, su costo siempre depende de cuánto compitan otros anunciantes; no admite Reservation). Además trae su propia automatización completa de extremo a extremo, llamada <strong>Advantage+ Leads campaigns</strong> (campañas de prospectos donde la inteligencia artificial de Meta arma casi todo por ti). Ejemplo: <strong>Seguros Confianza</strong> regala una cotización gratis a quien deje sus datos; usa Leads para juntar esos contactos y que un agente los llame después."
         },
         {
           "type": "concept",
-          "h": "Dónde puede recolectar Leads (conversion locations)",
-          "body": "El <strong>conversion location</strong> (lugar de conversión) es dónde quieres que la persona deje sus datos. En Leads puedes elegir entre cinco lugares: <strong>1. Instant form</strong> (formulario instantáneo): un formulario que se abre dentro de Meta, sin sacar al usuario a ningún sitio. <strong>2. Website</strong> (sitio web): un formulario en tu propia página. <strong>3. App</strong> (aplicación): dentro de tu app móvil. <strong>4. Messenger</strong>: la persona deja sus datos por chat. <strong>5. Calls</strong> (llamadas): la persona te marca por teléfono. El <em>Instant form</em> es el más usado porque la persona completa todo sin salir de Meta, así que la fricción es mínima y se pierden menos prospectos. Ejemplo: <strong>Seguros Confianza</strong> prefiere Instant form porque sus clientes llenan tres campos con el pulgar y listo, sin tener que cargar otra página."
+          "h": "Dónde puede recolectar Clientes potenciales (conversion locations)",
+          "body": "El <strong>conversion location</strong> (lugar de conversión) es dónde quieres que la persona deje sus datos. En Clientes potenciales puedes elegir entre cinco lugares: <strong>1. Instant form</strong> (formulario instantáneo): un formulario que se abre dentro de Meta, sin sacar al usuario a ningún sitio. <strong>2. Website</strong> (sitio web): un formulario en tu propia página. <strong>3. App</strong> (aplicación): dentro de tu app móvil. <strong>4. Messenger</strong>: la persona deja sus datos por chat. <strong>5. Calls</strong> (llamadas): la persona te marca por teléfono. El <em>Instant form</em> es el más usado porque la persona completa todo sin salir de Meta, así que la fricción es mínima y se pierden menos prospectos. Ejemplo: <strong>Seguros Confianza</strong> prefiere Instant form porque sus clientes llenan tres campos con el pulgar y listo, sin tener que cargar otra página."
         },
         {
           "type": "concept",
           "h": "Qué hace Sales",
-          "body": "El objetivo <strong>Sales</strong> (ventas) busca encontrar a las personas con más probabilidad de <strong>comprar</strong>, es decir, de completar una transacción real con cobro de por medio. Vive al fondo del funnel, en la etapa de <em>conversión</em>, donde la persona ya está lista para sacar la tarjeta. Es <strong>solo Auction</strong> (no admite Reservation) y, igual que Leads, trae su automatización completa: <strong>Advantage+ Sales campaigns</strong> (campañas de ventas donde la inteligencia artificial de Meta optimiza casi toda la campaña). La diferencia con Leads es la intención: aquí no juntas contactos para llamar después, aquí buscas el cobro directo. Ejemplo: <strong>Boutique Lunaria</strong> (tienda de ropa en línea) usa Sales para vender vestidos directamente en su sitio, no para juntar correos."
+          "body": "El objetivo <strong>Ventas (sales)</strong> busca encontrar a las personas con más probabilidad de <strong>comprar</strong>, es decir, de completar una transacción real con cobro de por medio. Vive al fondo del funnel, en la etapa de <em>conversión</em>, donde la persona ya está lista para sacar la tarjeta. Es <strong>solo Auction</strong> (no admite Reservation) y, igual que Clientes potenciales, trae su automatización completa: <strong>Advantage+ Sales campaigns</strong> (campañas de ventas donde la inteligencia artificial de Meta optimiza casi toda la campaña). La diferencia con Clientes potenciales es la intención: aquí no juntas contactos para llamar después, aquí buscas el cobro directo. Ejemplo: <strong>Boutique Lunaria</strong> (tienda de ropa en línea) usa Sales para vender vestidos directamente en su sitio, no para juntar correos."
         },
         {
           "type": "concept",
-          "h": "Dónde puede convertir Sales (conversion locations)",
-          "body": "Sales también te deja elegir dónde ocurre la venta, según cómo cobre tu negocio. Las opciones son: <strong>1. Website</strong> (sitio web): el clásico carrito de un e-commerce. <strong>2. App</strong> (aplicación): compras dentro de tu app móvil. <strong>3. Messenger, Instagram o WhatsApp</strong>: el cierre ocurre por chat, cuando un asesor termina la venta en la conversación. <strong>4. Calls</strong> (llamadas): la venta se cierra por teléfono. Esto cubre desde una tienda en línea totalmente automatizada hasta un cierre personal por chat con un vendedor. Ejemplo: <strong>Boutique Lunaria</strong> vende por su sitio (Website), pero <strong>Muebles del Roble</strong> cierra piezas grandes por WhatsApp con un asesor, así que para ellos el conversion location sería WhatsApp."
+          "h": "Dónde puede convertir Ventas (conversion locations)",
+          "body": "Ventas también te deja elegir dónde ocurre la venta, según cómo cobre tu negocio. Las opciones son: <strong>1. Website</strong> (sitio web): el clásico carrito de un e-commerce. <strong>2. App</strong> (aplicación): compras dentro de tu app móvil. <strong>3. Messenger, Instagram o WhatsApp</strong>: el cierre ocurre por chat, cuando un asesor termina la venta en la conversación. <strong>4. Calls</strong> (llamadas): la venta se cierra por teléfono. Esto cubre desde una tienda en línea totalmente automatizada hasta un cierre personal por chat con un vendedor. Ejemplo: <strong>Boutique Lunaria</strong> vende por su sitio (Website), pero <strong>Muebles del Roble</strong> cierra piezas grandes por WhatsApp con un asesor, así que para ellos el conversion location sería WhatsApp."
         },
         {
           "type": "warn",
           "label": "CUIDADO",
-          "body": "Sales con conversion location Website + conversion event Purchase <strong>requiere Pixel + CAPI</strong> configurados. Sin esto, el sistema no puede optimizar correctamente."
+          "body": "Ventas con conversion location Website + conversion event Purchase <strong>requiere Pixel + CAPI</strong> configurados. Sin esto, el sistema no puede optimizar correctamente."
         },
         {
           "type": "kvtable",
-          "h": "Leads vs Sales · la regla de decisión",
+          "h": "Clientes potenciales vs Ventas · la regla de decisión",
           "rows": [
             [
               "Meta del negocio",
-              "Objective correcto"
+              "Objetivo correcto"
             ],
             [
               "Lista de emails / contactos",
-              "Leads"
+              "Clientes potenciales"
             ],
             [
               "Cita / reunión agendada",
-              "Leads"
+              "Clientes potenciales"
             ],
             [
               "Transacción / cobro",
-              "Sales"
+              "Ventas"
             ],
             [
               "Carrito en e-commerce",
-              "Sales"
+              "Ventas"
             ],
             [
               "Instalar app",
-              "App Promotion (no Sales)"
+              "Promoción de la app (app promotion) (no Ventas)"
             ]
           ]
         },
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "<strong>Leads</strong> = etapa de <em>consideración</em> (todavía no compra). <strong>Sales</strong> = etapa de <em>conversión</em> (transacción real). Si dudas, pregúntate: ¿el resultado es una conversación o un cobro?"
+          "body": "<strong>Clientes potenciales</strong> = etapa de <em>consideración</em> (todavía no compra). <strong>Ventas</strong> = etapa de <em>conversión</em> (transacción real). Si dudas, pregúntate: ¿el resultado es una conversación o un cobro?"
         },
         {
           "type": "concept",
           "h": "Qué hace App Promotion",
-          "body": "El objetivo <strong>App Promotion</strong> (promoción de app) tiene dos usos: conseguir <em>instalaciones</em> nuevas de una aplicación móvil, o lograr que quien ya la tiene la vuelva a usar, lo que se llama <strong>reengagement</strong> (reenganche o reactivación de usuarios). Es <strong>solo Auction</strong> (no admite Reservation) y trae su propia automatización completa: <strong>Advantage+ App campaigns</strong> (campañas de app gestionadas por la inteligencia artificial de Meta). Es el único de los seis objetivos pensado específicamente para apps, no para sitios web ni formularios. Ejemplo: <strong>RetoFit</strong> (una app de rutinas de ejercicio) usa App Promotion para conseguir descargas nuevas cuando lanza su versión renovada, y más adelante para reactivar a quienes la instalaron pero dejaron de abrirla."
+          "body": "El objetivo <strong>Promoción de la app</strong> tiene dos usos: conseguir <em>instalaciones</em> nuevas de una aplicación móvil, o lograr que quien ya la tiene la vuelva a usar, lo que se llama <strong>reengagement</strong> (reenganche o reactivación de usuarios). Es <strong>solo Auction</strong> (no admite Reservation) y trae su propia automatización completa: <strong>Advantage+ App campaigns</strong> (campañas de app gestionadas por la inteligencia artificial de Meta). Es el único de los seis objetivos pensado específicamente para apps, no para sitios web ni formularios. Ejemplo: <strong>RetoFit</strong> (una app de rutinas de ejercicio) usa App Promotion para conseguir descargas nuevas cuando lanza su versión renovada, y más adelante para reactivar a quienes la instalaron pero dejaron de abrirla."
         },
         {
           "type": "concept",
-          "h": "El requisito clave de App Promotion",
-          "body": "Para que App Promotion funcione, la app <strong>debe tener instalado un SDK de Facebook o un MMP</strong>. El <strong>SDK</strong> (Software Development Kit, kit de herramientas que se incrusta en el código de la app) le permite a Meta saber cuándo alguien instaló la app o hizo algo dentro de ella. El <strong>MMP</strong> (Mobile Measurement Partner, socio de medición móvil) es un proveedor externo que hace ese mismo trabajo de medir instalaciones y eventos. Sin uno de los dos, Meta no recibe señales de lo que pasa dentro de la app y no tiene forma de optimizar. Ojo con una trampa frecuente: el <strong>Pixel</strong> sirve para medir sitios web, <em>no</em> aplica a apps. Ejemplo: <strong>RetoFit</strong> integró el SDK de Facebook en su código antes de lanzar la campaña; sin ese paso, Meta no sabría cuántas descargas trajo cada anuncio."
+          "h": "El requisito clave de Promoción de la app",
+          "body": "Para que la Promoción de la app funcione, la app <strong>debe tener instalado un SDK de Facebook o un MMP</strong>. El <strong>SDK</strong> (Software Development Kit, kit de herramientas que se incrusta en el código de la app) le permite a Meta saber cuándo alguien instaló la app o hizo algo dentro de ella. El <strong>MMP</strong> (Mobile Measurement Partner, socio de medición móvil) es un proveedor externo que hace ese mismo trabajo de medir instalaciones y eventos. Sin uno de los dos, Meta no recibe señales de lo que pasa dentro de la app y no tiene forma de optimizar. Ojo con una trampa frecuente: el <strong>Pixel</strong> sirve para medir sitios web, <em>no</em> aplica a apps. Ejemplo: <strong>RetoFit</strong> integró el SDK de Facebook en su código antes de lanzar la campaña; sin ese paso, Meta no sabría cuántas descargas trajo cada anuncio."
         },
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "El conversion location se elige después del objetivo, ya en el nivel Ad set. La ruta es: <strong>Ads Manager → Create (Crear) → eliges el objetivo (por ejemplo Leads o Sales) → Continue (Continuar) → en el nivel Ad set aparece la sección \"Conversion\" (Conversión)</strong>. Ahí seleccionas el conversion location de la lista (Instant form, Website, App, Messenger, Calls, etc.). Por ejemplo, el media buyer de <strong>Seguros Confianza</strong> elige Leads, da clic en Continue, y en el Ad set pica <em>Instant form</em>; recién entonces la plataforma le pide armar las preguntas del formulario. Si en cambio escoge Website, Meta le pedirá conectar el dataset (Pixel) para poder medir esa conversión."
+          "body": "El conversion location se elige después del objetivo, ya en el nivel Conjunto de anuncios (ad set). La ruta es: <strong>Ads Manager → Create (Crear) → eliges el objetivo (por ejemplo Clientes potenciales o Ventas) → Continue (Continuar) → en el nivel Conjunto de anuncios aparece la sección \"Conversion\" (Conversión)</strong>. Ahí seleccionas el conversion location de la lista (Instant form, Website, App, Messenger, Calls, etc.). Por ejemplo, el media buyer de <strong>Seguros Confianza</strong> elige Clientes potenciales, da clic en Continue, y en el conjunto de anuncios pica <em>Instant form</em>; recién entonces la plataforma le pide armar las preguntas del formulario. Si en cambio escoge Website, Meta le pedirá conectar el dataset (Pixel) para poder medir esa conversión."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Casa Plus",
-          "body": "Una misma inmobiliaria puede necesitar Leads o Sales según la etapa del cliente. <strong>Casa Plus</strong> (inmobiliaria) ofrece una visita guiada gratis y solo quiere los datos del prospecto para que un asesor le marque: ahí usa <strong>Leads</strong> con conversion location <em>Instant form</em>, que captura todo dentro del feed sin sacar a la persona. Pero si la meta sube a que el cliente firme un contrato digital de apartado (una transacción real), entonces es <strong>Sales</strong>. Aunque la firma final ocurra por Messenger, los eventos de navegación en el sitio web (medidos con Pixel y CAPI) alimentan el modelo de optimización para que Meta encuentre a quien de verdad va a firmar. La regla mental: si el resultado es un contacto para seguimiento, es Leads; si es un cobro o cierre, es Sales."
+          "body": "Una misma inmobiliaria puede necesitar Leads o Sales según la etapa del cliente. <strong>Casa Plus</strong> (inmobiliaria) ofrece una visita guiada gratis y solo quiere los datos del prospecto para que un asesor le marque: ahí usa <strong>Clientes potenciales</strong> con conversion location <em>Instant form</em>, que captura todo dentro del feed sin sacar a la persona. Pero si la meta sube a que el cliente firme un contrato digital de apartado (una transacción real), entonces es <strong>Ventas</strong>. Aunque la firma final ocurra por Messenger, los eventos de navegación en el sitio web (medidos con Pixel y CAPI) alimentan el modelo de optimización para que Meta encuentre a quien de verdad va a firmar. La regla mental: si el resultado es un contacto para seguimiento, es Clientes potenciales; si es un cobro o cierre, es Ventas."
         },
         {
           "type": "mcq",
-          "q": "Cuáles son requisitos para optimizar Sales con conversion event Purchase en website? Selecciona 2.",
+          "q": "Cuáles son requisitos para optimizar Ventas con conversion event Purchase en website? Selecciona 2.",
           "options": [
             "Pixel instalado",
             "CAPI configurado",
@@ -747,7 +747,7 @@
             1
           ],
           "multi": true,
-          "explanation": "Pixel + CAPI son requeridos para que Meta optimice eventos de compra en website. SDK es para App Promotion. Customer list es para Custom Audiences, no para optimización de purchase.",
+          "explanation": "Pixel + CAPI son requeridos para que Meta optimice eventos de compra en website. SDK es para Promoción de la app. Customer list es para Custom Audiences, no para optimización de purchase.",
           "difficulty": "hard"
         }
       ]
@@ -760,7 +760,7 @@
       "cards": [
         {
           "type": "fill",
-          "q": "Leads es etapa de ___ del funnel: el prospecto deja su contacto pero todavía no compra.",
+          "q": "Clientes potenciales (leads) es etapa de ___ del funnel: el prospecto deja su contacto pero todavía no compra.",
           "options": [
             "consideración",
             "conversión",
@@ -768,11 +768,11 @@
             "retención"
           ],
           "correct": 0,
-          "explanation": "<strong>Leads = consideración</strong>. Sales = conversión (transacción real). Si el resultado es una conversación o un formulario, es Leads."
+          "explanation": "<strong>Clientes potenciales = consideración</strong>. Ventas (sales) = conversión (transacción real). Si el resultado es una conversación o un formulario, es Clientes potenciales."
         },
         {
           "type": "fill",
-          "q": "Sales con conversion location Website y event Purchase requiere Pixel + ___ configurados.",
+          "q": "Ventas con conversion location Website y event Purchase requiere Pixel + ___ configurados.",
           "options": [
             "CAPI",
             "SDK",
@@ -780,11 +780,11 @@
             "Customer list"
           ],
           "correct": 0,
-          "explanation": "<strong>Pixel + CAPI</strong>. El SDK/MMP es para App Promotion, no para website."
+          "explanation": "<strong>Pixel + CAPI</strong>. El SDK/MMP es para Promoción de la app (app promotion), no para website."
         },
         {
           "type": "fill",
-          "q": "App Promotion requiere ___ instalado en la app para medir instalaciones y eventos.",
+          "q": "Promoción de la app requiere ___ instalado en la app para medir instalaciones y eventos.",
           "options": [
             "SDK de Facebook o MMP",
             "Pixel",
@@ -792,11 +792,11 @@
             "Customer list"
           ],
           "correct": 0,
-          "explanation": "<strong>SDK de Facebook o un MMP</strong>. El Pixel es para website (Sales/Leads), no para app."
+          "explanation": "<strong>SDK de Facebook o un MMP</strong>. El Pixel es para website (Ventas/Clientes potenciales), no para app."
         },
         {
           "type": "fill",
-          "q": "Leads es etapa de consideración; Sales es etapa de ___.",
+          "q": "Clientes potenciales es etapa de consideración; Ventas es etapa de ___.",
           "options": [
             "conversión",
             "awareness",
@@ -804,32 +804,32 @@
             "instalación"
           ],
           "correct": 0,
-          "explanation": "<strong>Sales = conversión</strong> (transacción real). Leads = consideración (recolectar contacto)."
+          "explanation": "<strong>Ventas = conversión</strong> (transacción real). Clientes potenciales = consideración (recolectar contacto)."
         },
         {
           "type": "mcq",
-          "q": "Una empresa industrial quiere agendar reuniones con prospectos calificados para presentar una propuesta. ¿Cuál es el objective adecuado?",
+          "q": "Una empresa industrial quiere agendar reuniones con prospectos calificados para presentar una propuesta. ¿Cuál es el objetivo adecuado?",
           "options": [
-            "Sales con conversion event = Lead",
-            "Leads con conversion location = Instant form",
-            "Sales con conversion event = Schedule",
-            "Traffic con landing page de calendario"
+            "Ventas con conversion event = Lead",
+            "Clientes potenciales con conversion location = Instant form",
+            "Ventas con conversion event = Schedule",
+            "Tráfico (traffic) con landing page de calendario"
           ],
           "correct": 1,
-          "explanation": "Leads con Instant form es óptimo: agendar reunión es etapa de <em>consideración</em>, no transacción. Sales se usa para cobro/compra. Traffic no optimiza la recolección.",
+          "explanation": "Clientes potenciales con Instant form es óptimo: agendar reunión es etapa de <em>consideración</em>, no transacción. Ventas se usa para cobro/compra. El tráfico no optimiza la recolección.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
-          "q": "Una app de delivery quiere descargas e instalaciones nuevas. ¿Objective?",
+          "q": "Una app de delivery quiere descargas e instalaciones nuevas. ¿Objetivo?",
           "options": [
-            "Sales",
-            "Engagement",
-            "App Promotion",
-            "Traffic"
+            "Ventas",
+            "Interacción (engagement)",
+            "Promoción de la app",
+            "Tráfico"
           ],
           "correct": 2,
-          "explanation": "App Promotion es específico para instalación o uso de apps móviles. Requiere SDK o MMP.",
+          "explanation": "La Promoción de la app es específica para instalación o uso de apps móviles. Requiere SDK o MMP.",
           "difficulty": "easy"
         }
       ]
@@ -848,33 +848,33 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué objective y conversion location resuelve este caso?",
+          "q": "¿Qué objetivo y conversion location resuelve este caso?",
           "options": [
-            "Awareness con optimización por Reach",
-            "Sales con conversion location Messenger",
-            "Engagement con el type Messaging",
-            "Traffic con landing de financiamiento"
+            "Reconocimiento (awareness) con optimización por Reach",
+            "Ventas (sales) con conversion location Messenger",
+            "Interacción (engagement) con el type Messaging",
+            "Tráfico (traffic) con landing de financiamiento"
           ],
           "correct": 1,
-          "explanation": "Recolectar contacto sin salir del feed = <strong>Leads + Instant form</strong>. El usuario completa los campos dentro de Meta, con fricción mínima.",
+          "explanation": "Recolectar contacto sin salir del feed = <strong>Clientes potenciales (leads) + Instant form</strong>. El usuario completa los campos dentro de Meta, con fricción mínima.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
-          "q": "¿Qué pasaría si usas Traffic con landing page externa en vez de Leads con Instant form?",
+          "q": "¿Qué pasaría si usas Tráfico con landing page externa en vez de Clientes potenciales con Instant form?",
           "options": [
             "Lo mismo: son objetivos intercambiables",
             "Optimizarías por clicks, no por leads completados",
-            "Traffic te daría más leads por su mayor alcance",
-            "Solo Traffic puede tener formularios nativos"
+            "Tráfico te daría más leads por su mayor alcance",
+            "Solo Tráfico puede tener formularios nativos"
           ],
           "correct": 1,
-          "explanation": "Traffic optimiza la métrica equivocada (clicks) y agrega fricción (cargar landing + rellenar form externo). Leads con Instant form mantiene al usuario dentro de Meta y optimiza por leads <em>completados</em>, no por clicks.",
+          "explanation": "El tráfico optimiza la métrica equivocada (clicks) y agrega fricción (cargar landing + rellenar form externo). Clientes potenciales con Instant form mantiene al usuario dentro de Meta y optimiza por leads <em>completados</em>, no por clicks.",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
-          "q": "Casa Plus ahora quiere que el cliente firme un contrato digital de apartado dentro de Messenger. Para que Sales optimice bien, ¿qué requisitos son obligatorios?",
+          "q": "Casa Plus ahora quiere que el cliente firme un contrato digital de apartado dentro de Messenger. Para que Ventas optimice bien, ¿qué requisitos son obligatorios?",
           "options": [
             "Solo el Pixel instalado en el sitio web",
             "Solo la CAPI configurada en el server",
@@ -882,7 +882,7 @@
             "Una customer list de clientes anteriores"
           ],
           "correct": 2,
-          "explanation": "Sales con eventos importantes requiere Pixel + CAPI para máxima cobertura. Aunque la conversión final esté en Messenger, los eventos de navegación previa en el sitio alimentan el modelo. Customer list sirve para audiencias, no optimización.",
+          "explanation": "Ventas con eventos importantes requiere Pixel + CAPI para máxima cobertura. Aunque la conversión final esté en Messenger, los eventos de navegación previa en el sitio alimentan el modelo. Customer list sirve para audiencias, no optimización.",
           "difficulty": "hard"
         }
       ]
@@ -894,28 +894,28 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "¿Cuál es la diferencia entre Leads y Sales?",
-          "a": "Leads = consideración (recolectar contacto). Sales = conversión (transacción/compra)."
+          "q": "¿Cuál es la diferencia entre Clientes potenciales (leads) y Ventas (sales)?",
+          "a": "Clientes potenciales = consideración (recolectar contacto). Ventas = conversión (transacción/compra)."
         },
         {
-          "q": "¿Requisitos para Sales website con Purchase?",
+          "q": "¿Requisitos para Ventas website con Purchase?",
           "a": "Pixel + CAPI configurados en el sitio."
         },
         {
-          "q": "¿Requisitos para App Promotion?",
+          "q": "¿Requisitos para Promoción de la app (app promotion)?",
           "a": "SDK de Facebook o MMP (Mobile Measurement Partner) instalado en la app."
         },
         {
-          "q": "Para agendar demos B2B sin sacar al usuario del feed, ¿qué objective y conversion location?",
-          "a": "Leads + Instant form."
+          "q": "Para agendar demos B2B sin sacar al usuario del feed, ¿qué objetivo y conversion location?",
+          "a": "Clientes potenciales + Instant form."
         },
         {
           "q": "¿Cuáles son las 3 Advantage+ complete solutions?",
           "a": "Advantage+ Sales campaigns, Advantage+ Leads campaigns, Advantage+ App campaigns. No existe Advantage+ Awareness ni Advantage+ Traffic."
         },
         {
-          "q": "¿Para conversaciones en WhatsApp Business, qué objective?",
-          "a": "Engagement con type = Messaging (si la meta es iniciar charla). Sales si la meta es cierre de venta dentro de WhatsApp."
+          "q": "¿Para conversaciones en WhatsApp Business, qué objetivo?",
+          "a": "Interacción (engagement) con type = Messaging (si la meta es iniciar charla). Ventas si la meta es cierre de venta dentro de WhatsApp."
         }
       ]
     },
@@ -954,8 +954,8 @@
         },
         {
           "type": "concept",
-          "h": "Las dos opciones de performance goal en Sales",
-          "body": "Cuando tu objetivo es Sales, el performance goal te da dos caminos. <strong>1. Maximize number of conversions</strong> (maximizar el número de conversiones): le dices a Meta \"tráeme la mayor cantidad de compras posible\", sin importar cuánto valga cada una; una venta de $200 cuenta igual que una de $20,000. <strong>2. Maximize value of conversions</strong> (maximizar el valor de las conversiones): le dices \"prioriza a quien gaste más\", aunque eso signifique menos compras en total pero de mayor monto. La diferencia importa muchísimo según tu negocio: si tu margen está en el volumen, eliges número; si está en los tickets grandes, eliges valor. Esta opción de valor necesita que tu sitio le pase a Meta cuánto vale cada compra (el parámetro de valor en el evento)."
+          "h": "Las dos opciones de performance goal en Ventas (sales)",
+          "body": "Cuando tu objetivo es Ventas, el performance goal te da dos caminos. <strong>1. Maximize number of conversions</strong> (maximizar el número de conversiones): le dices a Meta \"tráeme la mayor cantidad de compras posible\", sin importar cuánto valga cada una; una venta de $200 cuenta igual que una de $20,000. <strong>2. Maximize value of conversions</strong> (maximizar el valor de las conversiones): le dices \"prioriza a quien gaste más\", aunque eso signifique menos compras en total pero de mayor monto. La diferencia importa muchísimo según tu negocio: si tu margen está en el volumen, eliges número; si está en los tickets grandes, eliges valor. Esta opción de valor necesita que tu sitio le pase a Meta cuánto vale cada compra (el parámetro de valor en el evento)."
         },
         {
           "type": "concept",
@@ -964,35 +964,35 @@
         },
         {
           "type": "concept",
-          "h": "Cada objective trae su goal por defecto",
-          "body": "El examen pregunta muy seguido \"¿qué setting (configuración) elegir?\" para un caso dado. La clave para acertar es entender que cada objetivo tiene un performance goal <em>por defecto</em> (el que Meta sugiere de entrada) alineado con su outcome, es decir, con el resultado que ese objetivo persigue. Tiene lógica: no le pides recuerdos de marca a una campaña de ventas ni compras a una campaña de reconocimiento. Si memorizas qué meta de rendimiento acompaña a cada objetivo, resuelves un montón de preguntas casi de inmediato. La tabla de abajo te da los 6 objetivos con su performance goal típico; por ejemplo, <strong>Cafetería La Esquina</strong> en una campaña de Awareness verá por defecto <em>Maximize ad recall lift</em>, mientras que en una de Sales verá <em>Maximize number of conversions</em>."
+          "h": "Cada objetivo trae su goal por defecto",
+          "body": "El examen pregunta muy seguido \"¿qué setting (configuración) elegir?\" para un caso dado. La clave para acertar es entender que cada objetivo tiene un performance goal <em>por defecto</em> (el que Meta sugiere de entrada) alineado con su outcome, es decir, con el resultado que ese objetivo persigue. Tiene lógica: no le pides recuerdos de marca a una campaña de ventas ni compras a una campaña de reconocimiento. Si memorizas qué meta de rendimiento acompaña a cada objetivo, resuelves un montón de preguntas casi de inmediato. La tabla de abajo te da los 6 objetivos con su performance goal típico; por ejemplo, <strong>Cafetería La Esquina</strong> en una campaña de Reconocimiento (awareness) verá por defecto <em>Maximize ad recall lift</em>, mientras que en una de Ventas verá <em>Maximize number of conversions</em>."
         },
         {
           "type": "kvtable",
-          "h": "Objective → performance goal típico",
+          "h": "Objetivo → performance goal típico",
           "rows": [
             [
-              "Awareness",
+              "Reconocimiento",
               "Maximize ad recall lift"
             ],
             [
-              "Traffic",
+              "Tráfico (traffic)",
               "Maximize link clicks"
             ],
             [
-              "Engagement (video)",
+              "Interacción (engagement) · video",
               "Maximize ThruPlay views (video completo o ≥15s)"
             ],
             [
-              "Leads",
+              "Clientes potenciales (leads)",
               "Maximize number of leads"
             ],
             [
-              "App Promotion",
+              "Promoción de la app (app promotion)",
               "Maximize number of app events"
             ],
             [
-              "Sales",
+              "Ventas",
               "Maximize number of conversions"
             ]
           ]
@@ -1000,17 +1000,17 @@
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Tanto el conversion event como el performance goal viven en el nivel Ad set, no en Campaign. La ruta es: <strong>Ads Manager → Create (Crear) → eliges el objetivo → Continue (Continuar) → en el Ad set, sección \"Conversion\" eliges el conversion event; y en la sección \"Optimization &amp; delivery\" (Optimización y entrega) eliges el performance goal</strong>. Es decir, primero le dices a Meta qué acción cuenta y luego cómo quieres que puje por ella. Por ejemplo, <strong>Óptica Visión Clara</strong> elige Sales, da clic en Continue, en \"Conversion\" pica <em>Purchase</em> y en \"Optimization &amp; delivery\" cambia el goal a <em>Maximize value of conversions</em> para atraer las ventas de armazones de marca, las más caras. Si dejara el goal por defecto, Meta buscaría volumen en vez de monto."
+          "body": "Tanto el conversion event como el performance goal viven en el nivel Conjunto de anuncios (ad set), no en Campaign. La ruta es: <strong>Ads Manager → Create (Crear) → eliges el objetivo → Continue (Continuar) → en el conjunto de anuncios, sección \"Conversion\" eliges el conversion event; y en la sección \"Optimization &amp; delivery\" (Optimización y entrega) eliges el performance goal</strong>. Es decir, primero le dices a Meta qué acción cuenta y luego cómo quieres que puje por ella. Por ejemplo, <strong>Óptica Visión Clara</strong> elige Ventas, da clic en Continue, en \"Conversion\" pica <em>Purchase</em> y en \"Optimization &amp; delivery\" cambia el goal a <em>Maximize value of conversions</em> para atraer las ventas de armazones de marca, las más caras. Si dejara el goal por defecto, Meta buscaría volumen en vez de monto."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tech Móvil",
-          "body": "Un mismo cliente puede usar performance goals distintos según la campaña, siempre alineados al objetivo. <strong>Tech Móvil</strong> (cadena de tiendas de celulares) hace dos campañas a la vez. La primera es de lanzamiento de marca en una ciudad nueva, donde solo quiere que la gente la recuerde: usa <strong>Awareness</strong> con performance goal <em>Maximize ad recall lift</em> (maximizar el incremento de recuerdo del anuncio). La segunda busca cerrar ventas de smartphones en su tienda en línea: usa <strong>Sales</strong> con performance goal <em>Maximize number of conversions</em> (maximizar el número de conversiones). Mismo cliente, dos campañas, cada una con la meta de rendimiento que corresponde a su outcome. Confundirlas sería pedirle recuerdos a la campaña de ventas o ventas a la de reconocimiento."
+          "body": "Un mismo cliente puede usar performance goals distintos según la campaña, siempre alineados al objetivo. <strong>Tech Móvil</strong> (cadena de tiendas de celulares) hace dos campañas a la vez. La primera es de lanzamiento de marca en una ciudad nueva, donde solo quiere que la gente la recuerde: usa <strong>Reconocimiento</strong> con performance goal <em>Maximize ad recall lift</em> (maximizar el incremento de recuerdo del anuncio). La segunda busca cerrar ventas de smartphones en su tienda en línea: usa <strong>Ventas</strong> con performance goal <em>Maximize number of conversions</em> (maximizar el número de conversiones). Mismo cliente, dos campañas, cada una con la meta de rendimiento que corresponde a su outcome. Confundirlas sería pedirle recuerdos a la campaña de ventas o ventas a la de reconocimiento."
         },
         {
           "type": "tip",
           "label": "EL RAZONAMIENTO",
-          "body": "Fíjate en el patrón de casi todas las preguntas del Día 2: <em>¿cuál es la meta real? → objective → conversion location/event → requisito de datos → performance goal (número vs valor)</em>. Ese orden resuelve casi cualquier caso del examen."
+          "body": "Fíjate en el patrón de casi todas las preguntas del Día 2: <em>¿cuál es la meta real? → objetivo → conversion location/event → requisito de datos → performance goal (número vs valor)</em>. Ese orden resuelve casi cualquier caso del examen."
         },
         {
           "type": "mcq",
@@ -1019,10 +1019,10 @@
             "Son sinónimos: se eligen en el mismo paso",
             "Event = qué acción cuenta; goal = cómo licitar",
             "El event va a nivel Campaign; el goal a nivel Ad",
-            "El performance goal solo existe en Awareness"
+            "El performance goal solo existe en Reconocimiento"
           ],
           "correct": 1,
-          "explanation": "<strong>Conversion event</strong> = QUÉ acción cuenta (Purchase, Lead). <strong>Performance goal</strong> = CÓMO se licita (Maximize number vs Maximize value). Ambos viven en Ad set, no se mezclan.",
+          "explanation": "<strong>Conversion event</strong> = QUÉ acción cuenta (Purchase, Lead). <strong>Performance goal</strong> = CÓMO se licita (Maximize number vs Maximize value). Ambos viven en Conjunto de anuncios, no se mezclan.",
           "difficulty": "medium"
         }
       ]
@@ -1047,7 +1047,7 @@
         },
         {
           "type": "fill",
-          "q": "El performance goal típico de Engagement con video es Maximize ___ views.",
+          "q": "El performance goal típico de Interacción (engagement) con video es Maximize ___ views.",
           "options": [
             "ThruPlay",
             "link",
@@ -1055,7 +1055,7 @@
             "recall"
           ],
           "correct": 0,
-          "explanation": "<strong>Maximize ThruPlay views</strong> = video completo o ≥15s. Es la métrica de consumo de video en Engagement."
+          "explanation": "<strong>Maximize ThruPlay views</strong> = video completo o ≥15s. Es la métrica de consumo de video en la Interacción."
         },
         {
           "type": "mcq",
@@ -1067,7 +1067,7 @@
             "Maximize ThruPlay views"
           ],
           "correct": 1,
-          "explanation": "Recordar la marca = Awareness con <strong>Maximize ad recall lift</strong>. Clicks es Traffic; conversions es Sales; ThruPlay es Engagement video.",
+          "explanation": "Recordar la marca = Reconocimiento (awareness) con <strong>Maximize ad recall lift</strong>. Clicks es Tráfico (traffic); conversions es Ventas (sales); ThruPlay es Interacción video.",
           "difficulty": "medium"
         },
         {
@@ -1085,7 +1085,7 @@
         },
         {
           "type": "mcq",
-          "q": "Performance goal default de Engagement con type Video views:",
+          "q": "Performance goal default de Interacción con type Video views:",
           "options": [
             "Maximize link clicks",
             "Maximize impressions",
@@ -1093,7 +1093,7 @@
             "Maximize ad recall lift"
           ],
           "correct": 2,
-          "explanation": "ThruPlay views es la métrica de Engagement (video completo o ≥15s).",
+          "explanation": "ThruPlay views es la métrica de la Interacción (video completo o ≥15s).",
           "difficulty": "hard"
         }
       ]
@@ -1112,33 +1112,33 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué objective y performance goal resuelve el caso?",
+          "q": "¿Qué objetivo y performance goal resuelve el caso?",
           "options": [
-            "Traffic + Maximize link clicks",
-            "Sales + Maximize value of conversions",
-            "Sales + Maximize number of conversions",
-            "Leads + Maximize number of leads"
+            "Tráfico (traffic) + Maximize link clicks",
+            "Ventas (sales) + Maximize value of conversions",
+            "Ventas + Maximize number of conversions",
+            "Clientes potenciales (leads) + Maximize number of leads"
           ],
           "correct": 1,
-          "explanation": "La meta es vender en el sitio (transacción) → <strong>Sales</strong>. Quiere los pedidos grandes, no muchos chicos → <strong>Maximize value of conversions</strong>.",
+          "explanation": "La meta es vender en el sitio (transacción) → <strong>Ventas</strong>. Quiere los pedidos grandes, no muchos chicos → <strong>Maximize value of conversions</strong>.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
           "q": "El cliente cambia de opinión: \"prefiero muchos pedidos aunque sean chicos, para mover inventario\". ¿Qué cambias?",
           "options": [
-            "Cambias el objective a Traffic",
+            "Cambias el objetivo a Tráfico",
             "Cambias el performance goal a Maximize number of conversions",
             "Cambias el conversion event a Lead",
             "Quitas el Pixel y usas solo CAPI"
           ],
           "correct": 1,
-          "explanation": "Sigues en Sales + Website + Purchase. Solo cambia la <strong>instrucción de puja</strong>: Maximize number of conversions busca más unidades sin importar el valor. El objective y el event no cambian.",
+          "explanation": "Sigues en Ventas + Website + Purchase. Solo cambia la <strong>instrucción de puja</strong>: Maximize number of conversions busca más unidades sin importar el valor. El objetivo y el event no cambian.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
-          "q": "Ya tiene Pixel hace 5 meses. ¿Qué falta para reforzar la señal de Sales + Website + Purchase?",
+          "q": "Ya tiene Pixel hace 5 meses. ¿Qué falta para reforzar la señal de Ventas + Website + Purchase?",
           "options": [
             "Instalar el SDK de Facebook en el sitio",
             "Sumar la Conversions API (señal de servidor)",
@@ -1146,7 +1146,7 @@
             "Cambiar la compra a modo Reservation"
           ],
           "correct": 1,
-          "explanation": "Sales + Website + Purchase exige <strong>Pixel + CAPI</strong>. Ya tiene Pixel; falta sumar CAPI para reforzar la señal del servidor y mejorar la atribución. SDK es para apps.",
+          "explanation": "Ventas + Website + Purchase exige <strong>Pixel + CAPI</strong>. Ya tiene Pixel; falta sumar CAPI para reforzar la señal del servidor y mejorar la atribución. SDK es para apps.",
           "difficulty": "hard"
         }
       ]
@@ -1166,16 +1166,16 @@
           "a": "Maximize value of conversions (no Maximize number)."
         },
         {
-          "q": "¿Performance goal default de Awareness?",
+          "q": "¿Performance goal default de Reconocimiento (awareness)?",
           "a": "Maximize ad recall lift."
         },
         {
-          "q": "¿Performance goal default de Engagement con video?",
+          "q": "¿Performance goal default de Interacción (engagement) con video?",
           "a": "Maximize ThruPlay views (video completo o ≥15s)."
         },
         {
           "q": "¿En qué nivel viven conversion event y performance goal?",
-          "a": "Ambos a nivel Ad set (no se mezclan entre sí ni con el objective, que va en Campaign)."
+          "a": "Ambos a nivel Conjunto de anuncios (ad set) (no se mezclan entre sí ni con el objetivo, que va en Campaign)."
         }
       ]
     },
@@ -1206,13 +1206,13 @@
           "type": "fill",
           "q": "Los 3 niveles de creación de una campaña, en orden, son: Campaign → ___ → Ad.",
           "options": [
-            "Ad set",
+            "Conjunto de anuncios (ad set)",
             "Account",
             "Portfolio",
             "Dataset"
           ],
           "correct": 0,
-          "explanation": "Campaign (qué y cuánto) → <strong>Ad set</strong> (a quién, dónde, cuándo) → Ad (cómo se ve y a dónde manda)."
+          "explanation": "Campaign (qué y cuánto) → <strong>Conjunto de anuncios</strong> (a quién, dónde, cuándo) → Ad (cómo se ve y a dónde manda)."
         },
         {
           "type": "mcq",
@@ -1269,49 +1269,49 @@
       "title": "Emparejar objective ↔ optimization event",
       "section": "bz",
       "type": "match",
-      "instruction": "Cada objective tiene un performance goal típico. Asocia el objective con su métrica de optimización principal.",
+      "instruction": "Cada objetivo (campaign objective) tiene un performance goal típico. Asocia el objetivo con su métrica de optimización principal.",
       "pairs": [
         [
-          "Awareness",
+          "Reconocimiento (awareness)",
           "Maximize ad recall lift"
         ],
         [
-          "Traffic",
+          "Tráfico (traffic)",
           "Maximize link clicks"
         ],
         [
-          "Engagement (video)",
+          "Interacción (engagement) · video",
           "Maximize ThruPlay views"
         ],
         [
-          "Leads",
+          "Clientes potenciales (leads)",
           "Maximize number of leads"
         ],
         [
-          "App Promotion",
+          "Promoción de la app (app promotion)",
           "Maximize number of app events"
         ],
         [
-          "Sales",
+          "Ventas (sales)",
           "Maximize number of conversions"
         ]
       ],
-      "explanation": "Cada objective tiene un performance goal default alineado con su outcome. Recordar estas asociaciones es clave para responder preguntas de \"¿qué setting elegir?\" en el examen."
+      "explanation": "Cada objetivo tiene un performance goal default alineado con su outcome. Recordar estas asociaciones es clave para responder preguntas de \"¿qué setting elegir?\" en el examen."
     },
     {
       "id": "2.19",
       "title": "Ordenar el setup de una campaña",
       "section": "bz",
       "type": "order",
-      "instruction": "Cuando armas una campaña Sales en website, ¿en qué orden configuras estos cinco settings? Reordena con ▲▼.",
+      "instruction": "Cuando armas una campaña Ventas (sales) en website, ¿en qué orden configuras estos cinco settings? Reordena con ▲▼.",
       "items": [
-        "Elegir objective (Sales) — campaign level",
-        "Seleccionar conversion location (Website) — ad set level",
-        "Seleccionar conversion event (Purchase) — ad set level",
-        "Elegir performance goal (Maximize number of conversions) — ad set level",
-        "Conectar dataset (Pixel + CAPI) — ad set level"
+        "Elegir objetivo (Ventas) — campaign level",
+        "Seleccionar conversion location (Website) — Conjunto de anuncios (ad set) level",
+        "Seleccionar conversion event (Purchase) — Conjunto de anuncios level",
+        "Elegir performance goal (Maximize number of conversions) — Conjunto de anuncios level",
+        "Conectar dataset (Pixel + CAPI) — Conjunto de anuncios level"
       ],
-      "explanation": "El flujo correcto va de mayor a menor abstracción: primero el outcome (objective), después dónde ocurre (location), después qué cuenta (event), después cómo licita (performance goal), y finalmente conectar la fuente de datos (dataset). En el examen este orden aparece en preguntas tipo \"¿qué se configura primero?\"."
+      "explanation": "El flujo correcto va de mayor a menor abstracción: primero el outcome (objetivo), después dónde ocurre (location), después qué cuenta (event), después cómo licita (performance goal), y finalmente conectar la fuente de datos (dataset). En el examen este orden aparece en preguntas tipo \"¿qué se configura primero?\"."
     },
     {
       "id": "2.20",
@@ -1327,20 +1327,20 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué objective y conversion location resuelve este caso?",
+          "q": "¿Qué objetivo y conversion location resuelve este caso?",
           "options": [
-            "Awareness con optimización por Reach",
-            "Sales con conversion location Messenger",
-            "Engagement con el type Messaging",
-            "Traffic con landing de financiamiento"
+            "Reconocimiento (awareness) con optimización por Reach",
+            "Ventas (sales) con conversion location Messenger",
+            "Interacción (engagement) con el type Messaging",
+            "Tráfico (traffic) con landing de financiamiento"
           ],
           "correct": 1,
-          "explanation": "La conversión final es una transacción (firma de contrato/cierre) → <strong>Sales</strong>. Como ocurre en chat, conversion location = Messenger. Engagement solo iniciaría la charla, no el cierre.",
+          "explanation": "La conversión final es una transacción (firma de contrato/cierre) → <strong>Ventas</strong>. Como ocurre en chat, conversion location = Messenger. La Interacción solo iniciaría la charla, no el cierre.",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
-          "q": "Para que Sales optimice correctamente en este caso, ¿qué requisitos son obligatorios?",
+          "q": "Para que Ventas optimice correctamente en este caso, ¿qué requisitos son obligatorios?",
           "options": [
             "Solo el Pixel instalado en el sitio web",
             "Solo la CAPI configurada en el server",
@@ -1348,20 +1348,20 @@
             "Una customer list de clientes anteriores"
           ],
           "correct": 2,
-          "explanation": "Sales con eventos importantes requiere Pixel + CAPI para máxima cobertura. Aunque la conversión final esté en Messenger, los eventos de navegación previa en el sitio alimentan el modelo de optimización. Customer list sirve para audiencias, no optimización.",
+          "explanation": "Ventas con eventos importantes requiere Pixel + CAPI para máxima cobertura. Aunque la conversión final esté en Messenger, los eventos de navegación previa en el sitio alimentan el modelo de optimización. Customer list sirve para audiencias, no optimización.",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
-          "q": "Si en cambio Casa Plus solo quisiera iniciar conversaciones en WhatsApp Business (sin cerrar venta todavía), ¿qué objective sería?",
+          "q": "Si en cambio Casa Plus solo quisiera iniciar conversaciones en WhatsApp Business (sin cerrar venta todavía), ¿qué objetivo sería?",
           "options": [
-            "Sales con conversion location WhatsApp",
-            "Engagement con type = Messaging",
-            "Awareness con conversion location Messenger",
-            "Leads con Instant form"
+            "Ventas con conversion location WhatsApp",
+            "Interacción con type = Messaging",
+            "Reconocimiento con conversion location Messenger",
+            "Clientes potenciales (leads) con Instant form"
           ],
           "correct": 1,
-          "explanation": "Iniciar la charla = <strong>Engagement con type Messaging</strong>. Sales en WhatsApp se orienta a cierre de venta, no a abrir la conversación.",
+          "explanation": "Iniciar la charla = <strong>Interacción con type Messaging</strong>. Ventas en WhatsApp se orienta a cierre de venta, no a abrir la conversación.",
           "difficulty": "hard"
         }
       ]
@@ -1374,7 +1374,7 @@
       "cards": [
         {
           "type": "fill",
-          "q": "ODAX significa Outcome-Driven Ad ___ y agrupa los objectives por resultado de negocio.",
+          "q": "ODAX significa Outcome-Driven Ad ___ y agrupa los Objetivos de la campaña (campaign objective) por resultado de negocio.",
           "options": [
             "Experiences",
             "Engagement",
@@ -1382,23 +1382,23 @@
             "Events"
           ],
           "correct": 0,
-          "explanation": "<strong>Outcome-Driven Ad Experiences</strong>. Son 6 outcomes: Awareness, Traffic, Engagement, Leads, App Promotion, Sales."
+          "explanation": "<strong>Outcome-Driven Ad Experiences</strong>. Son 6 outcomes: Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales)."
         },
         {
           "type": "fill",
-          "q": "Los dos únicos objectives que admiten Reservation son Awareness y ___.",
+          "q": "Los dos únicos objetivos que admiten Reservation son Reconocimiento y ___.",
           "options": [
-            "Engagement",
-            "Sales",
-            "Traffic",
-            "Leads"
+            "Interacción",
+            "Ventas",
+            "Tráfico",
+            "Clientes potenciales"
           ],
           "correct": 0,
-          "explanation": "Solo <strong>Awareness y Engagement</strong> admiten Reservation. El resto es solo Auction."
+          "explanation": "Solo <strong>Reconocimiento e Interacción</strong> admiten Reservation. El resto es solo Auction."
         },
         {
           "type": "fill",
-          "q": "Sales con conversion location Website y event Purchase requiere Pixel + ___ configurados.",
+          "q": "Ventas con conversion location Website y event Purchase requiere Pixel + ___ configurados.",
           "options": [
             "CAPI",
             "SDK",
@@ -1406,11 +1406,11 @@
             "Customer list"
           ],
           "correct": 0,
-          "explanation": "<strong>Pixel + CAPI</strong>. El SDK/MMP es para App Promotion, no para website."
+          "explanation": "<strong>Pixel + CAPI</strong>. El SDK/MMP es para Promoción de la app, no para website."
         },
         {
           "type": "fill",
-          "q": "App Promotion necesita ___ de Facebook o un MMP instalado en la app.",
+          "q": "Promoción de la app necesita ___ de Facebook o un MMP instalado en la app.",
           "options": [
             "SDK",
             "Pixel",
@@ -1422,7 +1422,7 @@
         },
         {
           "type": "fill",
-          "q": "Leads es etapa de consideración; Sales es etapa de ___.",
+          "q": "Clientes potenciales es etapa de consideración; Ventas es etapa de ___.",
           "options": [
             "conversión",
             "awareness",
@@ -1430,7 +1430,7 @@
             "instalación"
           ],
           "correct": 0,
-          "explanation": "<strong>Sales = conversión</strong> (transacción real). Leads = consideración (recolectar contacto)."
+          "explanation": "<strong>Ventas = conversión</strong> (transacción real). Clientes potenciales = consideración (recolectar contacto)."
         },
         {
           "type": "fill",

@@ -15,17 +15,17 @@
     "b2": {
       "ico": "🔁",
       "title": "Bloque 2",
-      "sub": "Custom Audiences"
+      "sub": "Públicos personalizados"
     },
     "b3": {
       "ico": "👯",
       "title": "Bloque 3",
-      "sub": "Lookalike Audiences"
+      "sub": "Públicos similares"
     },
     "b4": {
       "ico": "🤖",
       "title": "Bloque 4",
-      "sub": "Advantage+ Audience"
+      "sub": "Advantage+ público"
     },
     "b5": {
       "ico": "🛒",
@@ -343,13 +343,13 @@
     },
     {
       "id": "5.5",
-      "title": "Explica · Custom Audiences",
+      "title": "Explica · Públicos personalizados",
       "section": "b2",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
-          "h": "Qué es una Custom Audience",
+          "h": "Qué es un público personalizado",
           "body": "Una <strong>Público personalizado</strong> (Custom Audience) es una lista de gente que <strong>ya interactuó con tu negocio</strong> de alguna forma: visitó tu sitio, te compró, vio un video tuyo o está en tu base de clientes. Sirve para <strong>retargeting</strong> (volver a alcanzar a quien ya te conoce), no para buscar gente nueva. La idea es simple: alguien que ya te conoce convierte más fácil y más barato que un extraño, así que vale la pena hablarle otra vez. Ejemplo: una <strong>Cafetería La Esquina</strong> con app de pedidos puede crear un público personalizado de quien abrió la app pero no completó la compra, y recordarles con un anuncio."
         },
         {
@@ -455,7 +455,7 @@
         },
         {
           "type": "mcq",
-          "q": "Para Customer List subido como Custom Audience:",
+          "q": "Para Customer List subido como público personalizado:",
           "options": [
             "Email y phone en texto plano",
             "Email y phone hasheados (SHA256)",
@@ -562,13 +562,13 @@
     },
     {
       "id": "5.9",
-      "title": "Explica · Lookalike Audiences",
+      "title": "Explica · Públicos similares",
       "section": "b3",
       "type": "reading",
       "cards": [
         {
           "type": "concept",
-          "h": "Qué es una Lookalike Audience",
+          "h": "Qué es un público similar",
           "body": "Una <strong>Público similar</strong> (Lookalike: gente nueva parecida a tus mejores clientes) le pide a Meta que analice una audiencia tuya y salga a buscar <strong>gente nueva con un perfil parecido</strong>. Es justo lo opuesto al <strong>público personalizado</strong> (Custom Audience): aquí haces <strong>prospección</strong> (alcanzar a quien todavía no te conoce), no retargeting. La lógica es poderosa: si Meta entiende qué tienen en común tus mejores clientes, puede encontrar miles de extraños que se les parecen y tienen alta probabilidad de comprarte también. Ejemplo: la <strong>Cafetería La Esquina</strong> toma su lista de clientes frecuentes y crea un público similar para encontrar gente nueva con hábitos similares a esos fieles."
         },
         {
@@ -712,7 +712,7 @@
             "1,000"
           ],
           "correct": 2,
-          "explanation": "Hasta 500 lookalikes por source audience."
+          "explanation": "Hasta 500 públicos similares por source audience."
         }
       ]
     },
@@ -801,7 +801,7 @@
     },
     {
       "id": "5.13",
-      "title": "Explica · Advantage+ Audience",
+      "title": "Explica · Advantage+ público",
       "section": "b4",
       "type": "reading",
       "cards": [
@@ -818,7 +818,7 @@
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Advantage+ Audience aparece dentro del ad set, en la sección de audiencia:<br/><br/><strong>1.</strong> En Ads Manager (Administrador de anuncios) entras a un <em>ad set</em> (conjunto de anuncios) y bajas a <strong>Audience</strong> (Audiencia).<br/><strong>2.</strong> Verás arriba el bloque <strong>Advantage+ Audience</strong> ya activado: ahí escribes tus <em>suggestions</em> (intereses, lookalike, edad de referencia).<br/><strong>3.</strong> Más abajo defines los <em>controls</em> rígidos: <strong>Locations</strong> (Ubicaciones), idioma y exclusiones de audiencias.<br/><strong>4.</strong> Si quieres apagarlo, das click en <strong>Switch to original audience options</strong> (Cambiar a las opciones originales de audiencia) o en <strong>Further limit the reach of your ads</strong> (Limitar aún más el alcance): cualquiera de los dos lo desactiva."
+          "body": "Advantage+ público aparece dentro del conjunto de anuncios (ad set), en la sección de audiencia:<br/><br/><strong>1.</strong> En Ads Manager (Administrador de anuncios) entras a un <em>conjunto de anuncios</em> y bajas a <strong>Audience</strong> (Audiencia).<br/><strong>2.</strong> Verás arriba el bloque <strong>Advantage+ público</strong> ya activado: ahí escribes tus <em>suggestions</em> (intereses, público similar, edad de referencia).<br/><strong>3.</strong> Más abajo defines los <em>controls</em> rígidos: <strong>Locations</strong> (Ubicaciones), idioma y exclusiones de audiencias.<br/><strong>4.</strong> Si quieres apagarlo, das click en <strong>Switch to original audience options</strong> (Cambiar a las opciones originales de audiencia) o en <strong>Further limit the reach of your ads</strong> (Limitar aún más el alcance): cualquiera de los dos lo desactiva."
         },
         {
           "type": "kvtable",
@@ -826,11 +826,11 @@
           "rows": [
             [
               "Click 'Switch to original audience options'",
-              "Apaga Advantage+ Audience"
+              "Apaga Advantage+ público"
             ],
             [
               "Click 'Further limit the reach of your ads'",
-              "Apaga Advantage+ Audience"
+              "Apaga Advantage+ público"
             ],
             [
               "Por default",
@@ -841,29 +841,29 @@
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "<strong>Broad audience</strong> (solo edad + ubicación) + <strong>Advantage+ Audience</strong> ON suele ser la combinación ganadora en campañas modernas. El sistema tiene la libertad de optimizar dónde encuentra mejor performance."
+          "body": "<strong>Broad audience</strong> (solo edad + ubicación) + <strong>Advantage+ público</strong> ON suele ser la combinación ganadora en campañas modernas. El sistema tiene la libertad de optimizar dónde encuentra mejor performance."
         },
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Si seleccionas \"Switch to original audience options\" o \"Further limit the reach of your ads\", <strong>desactivas Advantage+ Audience</strong> (que está ON por default en campañas nuevas)."
+          "body": "Si seleccionas \"Switch to original audience options\" o \"Further limit the reach of your ads\", <strong>desactivas Advantage+ público</strong> (que está ON por default en campañas nuevas)."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "Tienda Urbana deja Advantage+ Audience ON, le da como suggestion su lookalike de compradoras frecuentes y solo pone como control \"México, 18-45, género femenino\". La AI parte de esas pistas y expande hacia perfiles que convierten, sin que Tienda Urbana adivine cada interés."
+          "body": "Tienda Urbana deja Advantage+ público ON, le da como suggestion su público similar de compradoras frecuentes y solo pone como control \"México, 18-45, género femenino\". La AI parte de esas pistas y expande hacia perfiles que convierten, sin que Tienda Urbana adivine cada interés."
         },
         {
           "type": "mcq",
-          "q": "¿Cuál es el default de Advantage+ Audience en campañas nuevas?",
+          "q": "¿Cuál es el default de Advantage+ público en campañas nuevas?",
           "options": [
             "Desactivado, hay que activarlo manualmente",
             "Activado automáticamente",
-            "Solo disponible para Sales",
+            "Solo disponible para Ventas (Sales)",
             "Solo disponible con catalog"
           ],
           "correct": 1,
-          "explanation": "Advantage+ Audience está ON por default en campañas nuevas. Se desactiva solo si eliges 'Switch to original' o 'Further limit reach'.",
+          "explanation": "Advantage+ público está ON por default en campañas nuevas. Se desactiva solo si eliges 'Switch to original' o 'Further limit reach'.",
           "difficulty": "medium"
         }
       ]
@@ -876,11 +876,11 @@
       "cards": [
         {
           "type": "fill",
-          "q": "Advantage+ Audience está ___ por default en campañas nuevas.",
+          "q": "Advantage+ público (Advantage+ audience) está ___ por default en campañas nuevas.",
           "options": [
             "OFF",
             "ON",
-            "solo en Sales",
+            "solo en Ventas (Sales)",
             "solo con catalog"
           ],
           "correct": 1,
@@ -888,11 +888,11 @@
         },
         {
           "type": "mcq",
-          "q": "Advantage+ Audience por default en nuevas campañas:",
+          "q": "Advantage+ público por default en nuevas campañas:",
           "options": [
             "OFF (hay que activarlo)",
             "ON automáticamente",
-            "Solo para Sales",
+            "Solo para Ventas",
             "Solo con catalog"
           ],
           "correct": 1,
@@ -901,7 +901,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué hace exactamente Advantage+ Audience?",
+          "q": "¿Qué hace exactamente Advantage+ público?",
           "options": [
             "Bloquea las ubicaciones que no quieres",
             "Expande tus parámetros con AI para hallar gente",
@@ -909,12 +909,12 @@
             "Reemplaza al catálogo de productos"
           ],
           "correct": 1,
-          "explanation": "Advantage+ Audience es AI que expande sobre tus suggestions buscando gente con probabilidad de interés. No bloquea ni reemplaza nada.",
+          "explanation": "Advantage+ público es AI que expande sobre tus suggestions buscando gente con probabilidad de interés. No bloquea ni reemplaza nada.",
           "difficulty": "easy"
         },
         {
           "type": "fill",
-          "q": "Hacer click en 'Switch to original audience options' ___ Advantage+ Audience.",
+          "q": "Hacer click en 'Switch to original audience options' ___ Advantage+ público.",
           "options": [
             "desactiva",
             "activa",
@@ -922,7 +922,7 @@
             "duplica"
           ],
           "correct": 0,
-          "explanation": "'Switch to original audience options' y 'Further limit the reach of your ads' desactivan Advantage+ Audience."
+          "explanation": "'Switch to original audience options' y 'Further limit the reach of your ads' desactivan Advantage+ público."
         },
         {
           "type": "mcq",
@@ -930,11 +930,11 @@
           "options": [
             "Audiencia ultra-segmentada, Advantage+ OFF",
             "Broad audience (edad + ubicación), Advantage+ ON",
-            "Solo intereses, sin lookalike ni broad",
+            "Solo intereses, sin público similar (Lookalike) ni broad",
             "Reservation con detailed targeting denso"
           ],
           "correct": 1,
-          "explanation": "Broad audience + Advantage+ Audience ON deja al sistema optimizar dónde encuentra mejor performance. Los <strong>lookalike</strong> y los intereses no desaparecen: con Advantage+ Audience ON dejan de ser targeting rígido y se pasan como <strong>suggestions</strong> (sugerencias/semilla), que el sistema puede respetar o expandir si encuentra mejor rendimiento fuera de ellas.",
+          "explanation": "Broad audience + Advantage+ público ON deja al sistema optimizar dónde encuentra mejor performance. Los <strong>públicos similares</strong> y los intereses no desaparecen: con Advantage+ público ON dejan de ser targeting rígido y se pasan como <strong>suggestions</strong> (sugerencias/semilla), que el sistema puede respetar o expandir si encuentra mejor rendimiento fuera de ellas.",
           "difficulty": "medium"
         }
       ]
@@ -956,24 +956,24 @@
           "q": "¿Qué ocurrió al hacer click en 'Further limit the reach of your ads'?",
           "options": [
             "Agregó un filtro extra sin ningún otro efecto",
-            "Desactivó Advantage+ Audience: la AI ya no expande",
+            "Desactivó Advantage+ público (Advantage+ audience): la AI ya no expande",
             "Subió el budget de la campaña automáticamente",
             "Cambió el objective de ventas a tráfico"
           ],
           "correct": 1,
-          "explanation": "'Further limit the reach of your ads' (igual que 'Switch to original audience options') apaga Advantage+ Audience. Sin la expansión de la AI, el delivery se restringe a los parámetros originales."
+          "explanation": "'Further limit the reach of your ads' (igual que 'Switch to original audience options') apaga Advantage+ público. Sin la expansión de la AI, el delivery se restringe a los parámetros originales."
         },
         {
           "type": "mcq",
           "q": "¿Qué recomiendas para campañas modernas de prospección?",
           "options": [
             "Mantener todo ultra-segmentado y la AI apagada",
-            "Broad audience + Advantage+ Audience ON",
+            "Broad audience + Advantage+ público ON",
             "Quitar la ubicación como control rígido",
             "Usar únicamente el modo Reservation"
           ],
           "correct": 1,
-          "explanation": "La combinación ganadora moderna es Broad (edad + ubicación) + Advantage+ Audience ON, con el lookalike como suggestion para orientar a la AI."
+          "explanation": "La combinación ganadora moderna es Broad (edad + ubicación) + Advantage+ público ON, con el público similar (Lookalike) como suggestion para orientar a la AI."
         }
       ]
     },
@@ -984,23 +984,23 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "¿Default de Advantage+ Audience en campañas nuevas?",
+          "q": "¿Default de Advantage+ público (Advantage+ audience) en campañas nuevas?",
           "a": "ON. Se desactiva con 'Switch to original audience options' o 'Further limit the reach of your ads'."
         },
         {
-          "q": "¿Qué hace Advantage+ Audience?",
+          "q": "¿Qué hace Advantage+ público?",
           "a": "Solución AI que expande más allá de tus parámetros sugeridos para encontrar gente probablemente interesada."
         },
         {
-          "q": "Advantage+ audience: controls vs suggestions",
-          "a": "Controls = restricciones DURAS (edad mínima, ubicación, idioma, excluir custom audiences). Suggestions = guían a la IA (detailed targeting, edad, género) sin limitar estrictamente."
+          "q": "Advantage+ público: controls vs suggestions",
+          "a": "Controls = restricciones DURAS (edad mínima, ubicación, idioma, excluir públicos personalizados (Custom Audience)). Suggestions = guían a la IA (detailed targeting, edad, género) sin limitar estrictamente."
         },
         {
           "q": "¿Broad audience suele ser mejor que narrow?",
           "a": "Generalmente SÍ. Broad (solo edad + ubicación) deja al sistema encontrar gente. Narrow limita el delivery y suele ser más caro en CPA."
         },
         {
-          "q": "¿Cómo se apaga Advantage+ Audience sin querer?",
+          "q": "¿Cómo se apaga Advantage+ público sin querer?",
           "a": "Haciendo click en 'Switch to original audience options' o 'Further limit the reach of your ads'."
         }
       ]
@@ -1013,8 +1013,8 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Qué es un Product Catalog",
-          "body": "Un <strong>Product Catalog</strong> (catálogo de productos) es un archivo con toda la información de lo que vendes —cada producto con su nombre, precio, foto y enlace— que vive dentro de <strong>Commerce Manager</strong> (Administrador de Comercio: la herramienta de Meta para inventario y ventas, distinta de Ads Manager). Es como subirle a Meta tu inventario completo en formato ordenado para que el sistema pueda mostrar el producto correcto a cada persona. Sin catálogo, los anuncios dinámicos de producto no existen, porque el sistema no sabría qué mostrar. Cada producto necesita ciertos <em>atributos</em> (campos obligatorios) o no se aprueba. Ejemplo: la tienda en línea <strong>Mueblería Norte</strong> sube su catálogo a Commerce Manager para que sus anuncios muestren la mesa exacta que el cliente miró en su sitio."
+          "h": "Qué es un Catálogo",
+          "body": "Un <strong>Catálogo</strong> (catalog) es un archivo con toda la información de lo que vendes —cada producto con su nombre, precio, foto y enlace— que vive dentro de <strong>Commerce Manager</strong> (Administrador de Comercio: la herramienta de Meta para inventario y ventas, distinta de Ads Manager). Es como subirle a Meta tu inventario completo en formato ordenado para que el sistema pueda mostrar el producto correcto a cada persona. Sin catálogo, los anuncios dinámicos de producto no existen, porque el sistema no sabría qué mostrar. Cada producto necesita ciertos <em>atributos</em> (campos obligatorios) o no se aprueba. Ejemplo: la tienda en línea <strong>Mueblería Norte</strong> sube su catálogo a Commerce Manager para que sus anuncios muestren la mesa exacta que el cliente miró en su sitio."
         },
         {
           "type": "concept",
@@ -1034,17 +1034,17 @@
         {
           "type": "concept",
           "h": "Qué son los Advantage+ Catalog Ads",
-          "body": "Los <strong>Advantage+ Catalog Ads</strong> (anuncios de catálogo Advantage+, antes llamados \"Dynamic Ads\") usan <strong>ML</strong> (Machine Learning: aprendizaje automático, una rama de la AI que aprende de los datos) para mostrarle a cada persona los productos de tu catálogo que más le pueden interesar, según lo que esa persona navegó, buscó o vio antes. En lugar de armar un anuncio por producto, le pasas el catálogo entero y el sistema arma el anuncio personalizado en automático: a quien miró una mesa le muestra esa mesa. Están disponibles a nivel <strong>campaña</strong> cuando el objetivo es <em>Sales</em> (ventas), y a nivel <em>ad</em> (anuncio) en App Promotion, Engagement, Leads y Traffic. Ejemplo: cuando un cliente de <strong>Mueblería Norte</strong> vio un sofá y se fue sin comprar, el sistema le vuelve a mostrar ese sofá (y otros parecidos) sin que nadie arme el anuncio a mano."
+          "body": "Los <strong>Advantage+ Catalog Ads</strong> (anuncios de catálogo Advantage+, antes llamados \"Dynamic Ads\") usan <strong>ML</strong> (Machine Learning: aprendizaje automático, una rama de la AI que aprende de los datos) para mostrarle a cada persona los productos de tu catálogo que más le pueden interesar, según lo que esa persona navegó, buscó o vio antes. En lugar de armar un anuncio por producto, le pasas el catálogo entero y el sistema arma el anuncio personalizado en automático: a quien miró una mesa le muestra esa mesa. Están disponibles a nivel <strong>campaña</strong> cuando el objetivo es <em>Ventas</em> (Sales), y a nivel <em>ad</em> (anuncio) en Promoción de la app (App promotion), Interacción (Engagement), Clientes potenciales (Leads) y Tráfico (Traffic). Ejemplo: cuando un cliente de <strong>Mueblería Norte</strong> vio un sofá y se fue sin comprar, el sistema le vuelve a mostrar ese sofá (y otros parecidos) sin que nadie arme el anuncio a mano."
         },
         {
           "type": "concept",
           "h": "Qué es el catalog match rate",
-          "body": "El <strong>catalog match rate</strong> (tasa de coincidencia del catálogo) mide qué tan bien empata lo que la gente ve en tu sitio con lo que tienes cargado en el catálogo. Técnicamente: de los productos con los que la gente interactúa (los <em>Content IDs</em> que manda el Pixel), qué porcentaje sí existe en tu catálogo. Si tu Pixel reporta que vieron el producto \"SKU-123\" pero ese ID no está en el catálogo, ese match se pierde. La meta es <strong>arriba de 75%</strong>; por debajo casi siempre es un problema de mapeo (los IDs del sitio no coinciden con los del catálogo). Ejemplo: si <strong>Mueblería Norte</strong> ve un match rate de 40%, no debe subir presupuesto todavía: primero arregla que los IDs de su sitio empaten con los del catálogo, o el sistema mostrará productos equivocados."
+          "body": "El <strong>catalog match rate</strong> (tasa de coincidencia del catálogo) mide qué tan bien empata lo que la gente ve en tu sitio con lo que tienes cargado en el catálogo. Técnicamente: de los productos con los que la gente interactúa (los <em>Content IDs</em> que manda el Píxel de Meta (Meta Pixel)), qué porcentaje sí existe en tu catálogo. Si tu Píxel reporta que vieron el producto \"SKU-123\" pero ese ID no está en el catálogo, ese match se pierde. La meta es <strong>arriba de 75%</strong>; por debajo casi siempre es un problema de mapeo (los IDs del sitio no coinciden con los del catálogo). Ejemplo: si <strong>Mueblería Norte</strong> ve un match rate de 40%, no debe subir presupuesto todavía: primero arregla que los IDs de su sitio empaten con los del catálogo, o el sistema mostrará productos equivocados."
         },
         {
           "type": "concept",
           "h": "Qué es el audience overlap",
-          "body": "El <strong>audience overlap</strong> (solapamiento de audiencias) ocurre cuando dos o más <em>ad sets</em> (conjuntos de anuncios) le apuntan a gente tan parecida que terminan persiguiendo a las mismas personas. El problema es que tus propios anuncios <strong>compiten entre sí</strong> en la <em>auction</em> (subasta de Meta donde se decide qué anuncio se muestra): es como pujar contra ti mismo, lo que sube tus costos y confunde la optimización. Por eso conviene revisar el solapamiento, aunque el análisis solo es confiable cuando cada audiencia tiene <strong>mínimo 10,000 personas</strong> (con menos, los números no son estadísticamente sólidos). Ejemplo: <strong>Mueblería Norte</strong> tiene un ad set de retargeting y otro de lookalike que se pisan; al detectarlo, excluye la custom audience del ad set de lookalike para que dejen de competir."
+          "body": "El <strong>audience overlap</strong> (solapamiento de audiencias) ocurre cuando dos o más <em>conjuntos de anuncios</em> (ad sets) le apuntan a gente tan parecida que terminan persiguiendo a las mismas personas. El problema es que tus propios anuncios <strong>compiten entre sí</strong> en la <em>auction</em> (subasta de Meta donde se decide qué anuncio se muestra): es como pujar contra ti mismo, lo que sube tus costos y confunde la optimización. Por eso conviene revisar el solapamiento, aunque el análisis solo es confiable cuando cada audiencia tiene <strong>mínimo 10,000 personas</strong> (con menos, los números no son estadísticamente sólidos). Ejemplo: <strong>Mueblería Norte</strong> tiene un conjunto de anuncios de retargeting y otro de público similar (Lookalike) que se pisan; al detectarlo, excluye el público personalizado (Custom Audience) del conjunto de anuncios de público similar para que dejen de competir."
         },
         {
           "type": "kvtable",
@@ -1052,11 +1052,11 @@
           "rows": [
             [
               "Exclusion",
-              "Excluir la custom audience del ad set de prospecting"
+              "Excluir el público personalizado del conjunto de anuncios de prospecting"
             ],
             [
               "Consolidation",
-              "Combinar los ad sets que se pisan en uno solo"
+              "Combinar los conjuntos de anuncios que se pisan en uno solo"
             ],
             [
               "Refinement",
@@ -1067,7 +1067,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · PetCare",
-          "body": "PetCare sube un solo catálogo con alimento, juguetes y accesorios; arma Product Sets \"Perros\" y \"Gatos\" (20+ productos cada uno). El Pixel manda Content IDs; si empatan con el catálogo el match rate sube de 75%. Tiene un ad set de retargeting y otro de lookalike: como se pisan, <em>excluye</em> la custom audience del de lookalike para que dejen de competir."
+          "body": "PetCare sube un solo catálogo con alimento, juguetes y accesorios; arma Product Sets \"Perros\" y \"Gatos\" (20+ productos cada uno). El Píxel manda Content IDs; si empatan con el catálogo el match rate sube de 75%. Tiene un conjunto de anuncios de retargeting y otro de público similar: como se pisan, <em>excluye</em> el público personalizado del de público similar para que dejen de competir."
         },
         {
           "type": "mcq",
@@ -1124,20 +1124,20 @@
             "100%"
           ],
           "correct": 1,
-          "explanation": ">75% es el target. Bajo eso indica problema de mapeo entre Pixel y catalog.",
+          "explanation": ">75% es el target. Bajo eso indica problema de mapeo entre Píxel de Meta (Meta Pixel) y catálogo (catalog).",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
           "q": "Mejor práctica para anunciante con varias líneas de productos:",
           "options": [
-            "Un catalog separado por cada línea",
-            "Un solo catalog con Product Sets por línea",
-            "No usar catalog en ningún caso",
-            "Crear varios Pixels, uno por línea"
+            "Un catálogo separado por cada línea",
+            "Un solo catálogo con Product Sets por línea",
+            "No usar catálogo en ningún caso",
+            "Crear varios Píxeles, uno por línea"
           ],
           "correct": 1,
-          "explanation": "UN solo catalog. Product Sets para sub-líneas. Múltiples catalogs confunden el matching con Pixel.",
+          "explanation": "UN solo catálogo. Product Sets para sub-líneas. Múltiples catálogos confunden el matching con Píxel.",
           "difficulty": "hard"
         },
         {
@@ -1154,7 +1154,7 @@
         },
         {
           "type": "mcq",
-          "q": "Soluciones para Audience Overlap alto entre ad sets:",
+          "q": "Soluciones para Audience Overlap alto entre conjuntos de anuncios (ad sets):",
           "options": [
             "Subir el budget de ambos",
             "Exclusion, Consolidation o Refinement",
@@ -1162,20 +1162,20 @@
             "Cambiar de objective"
           ],
           "correct": 1,
-          "explanation": "Exclusion (excluir CA de prospecting), Consolidation (combinar ad sets que se pisan), Refinement (separar más con detailed targeting).",
+          "explanation": "Exclusion (excluir público personalizado (Custom Audience) de prospecting), Consolidation (combinar conjuntos de anuncios que se pisan), Refinement (separar más con detailed targeting).",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
           "q": "¿Para qué objectives está disponible Advantage+ Catalog Ads?",
           "options": [
-            "Únicamente para el objetivo Awareness",
-            "Sales (campaña) y Engagement/Leads/Traffic (ad)",
+            "Únicamente para el objetivo Reconocimiento (Awareness)",
+            "Ventas (Sales) (campaña) y Interacción (Engagement)/Clientes potenciales (Leads)/Tráfico (Traffic) (ad)",
             "Únicamente disponible en modo Reservation",
             "Ninguno: es independiente del objective"
           ],
           "correct": 1,
-          "explanation": "Sales lo activa a nivel campaña (complete solution); App Promotion/Engagement/Leads/Traffic lo permiten a nivel ad.",
+          "explanation": "Ventas lo activa a nivel campaña (complete solution); Promoción de la app (App promotion)/Interacción/Clientes potenciales/Tráfico lo permiten a nivel ad.",
           "difficulty": "hard"
         }
       ]
@@ -1190,7 +1190,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Catálogo de 40 SKUs · PetCare",
-          "body": "<strong>PetCare</strong> tiene un catálogo de 40 SKUs (alimento, juguetes, accesorios) en Commerce Manager con Pixel conectado. Quiere que cada cliente (segmento existente) vea los productos más relevantes según su navegación previa, y revisar que todo esté bien antes de escalar."
+          "body": "<strong>PetCare</strong> tiene un catálogo de 40 SKUs (alimento, juguetes, accesorios) en Commerce Manager con Píxel de Meta (Meta Pixel) conectado. Quiere que cada cliente (segmento existente) vea los productos más relevantes según su navegación previa, y revisar que todo esté bien antes de escalar."
         },
         {
           "type": "mcq",
@@ -1215,19 +1215,19 @@
             "Crear un segundo catálogo desde cero"
           ],
           "correct": 1,
-          "explanation": "40% está muy debajo del target >75%. No es problema de presupuesto: es mapeo entre Pixel y catálogo. Se corrige antes de escalar."
+          "explanation": "40% está muy debajo del target >75%. No es problema de presupuesto: es mapeo entre Píxel y catálogo. Se corrige antes de escalar."
         },
         {
           "type": "mcq",
           "q": "¿Qué campaña y setup usas para que cada distribuidor vea el producto relevante?",
           "options": [
-            "Awareness con detailed targeting muy denso",
-            "Sales + Catalog Ads + Product Set + Custom Audience",
+            "Reconocimiento (Awareness) con detailed targeting muy denso",
+            "Ventas (Sales) + Catalog Ads + Product Set + público personalizado (Custom Audience)",
             "Reservation mostrando un solo producto",
-            "Un Lookalike 10% sin catálogo conectado"
+            "Un público similar (Lookalike) 10% sin catálogo conectado"
           ],
           "correct": 1,
-          "explanation": "Sales + Advantage+ Catalog Ads deja que el ML elija qué productos mostrar a cada persona; el Product Set (40 SKUs supera el mínimo de 20) y la Custom Audience como inclusion completan el setup."
+          "explanation": "Ventas + Advantage+ Catalog Ads deja que el ML elija qué productos mostrar a cada persona; el Product Set (40 SKUs supera el mínimo de 20) y el público personalizado como inclusion completan el setup."
         }
       ]
     },
@@ -1243,19 +1243,19 @@
         },
         {
           "q": "¿Catalog match rate target y qué significa si está bajo?",
-          "a": ">75%. Si está bajo: problema en mapeo Pixel ↔ catalog (IDs incorrectos, productos faltantes, parameters mal enviados)."
+          "a": ">75%. Si está bajo: problema en mapeo Píxel de Meta (Meta Pixel) ↔ catálogo (catalog) (IDs incorrectos, productos faltantes, parameters mal enviados)."
         },
         {
           "q": "¿Cuántos catálogos recomienda Meta tener?",
-          "a": "UN SOLO catálogo por negocio. Para sub-líneas usa Product Sets dentro del mismo catalog."
+          "a": "UN SOLO catálogo por negocio. Para sub-líneas usa Product Sets dentro del mismo catálogo."
         },
         {
-          "q": "Atributos requeridos en Product Catalog:",
+          "q": "Atributos requeridos en el catálogo:",
           "a": "ID, Title, Description, Price, Availability, Condition, Brand, Image, Link. Sin esos, productos no se aprueban."
         },
         {
           "q": "¿Para qué objectives está disponible Advantage+ Catalog Ads?",
-          "a": "Sales (a nivel campaña, complete solution) · App Promotion, Engagement, Leads, Traffic (a nivel ad, single-step automation)."
+          "a": "Ventas (Sales) (a nivel campaña, complete solution) · Promoción de la app (App promotion), Interacción (Engagement), Clientes potenciales (Leads), Tráfico (Traffic) (a nivel ad, single-step automation)."
         },
         {
           "q": "¿Cuándo Audience Overlap analysis tiene sentido y cómo se arregla?",
@@ -1273,44 +1273,44 @@
           "type": "scenario",
           "label": "CASO GUIADO",
           "h": "Distribuidora Eléctrica del Bajío",
-          "body": "Es una distribuidora B2B de material eléctrico en Querétaro. Tiene un CRM con <strong>6,000 talleres compradores</strong> (email y phone), un catálogo de <strong>60 SKUs</strong> en Commerce Manager con Pixel conectado, y quiere <strong>prospectar nuevos talleres parecidos a sus mejores clientes</strong> y mostrarles los productos relevantes. Vamos a resolverlo juntos, paso a paso."
+          "body": "Es una distribuidora B2B de material eléctrico en Querétaro. Tiene un CRM con <strong>6,000 talleres compradores</strong> (email y phone), un catálogo de <strong>60 SKUs</strong> en Commerce Manager con Píxel de Meta (Meta Pixel) conectado, y quiere <strong>prospectar nuevos talleres parecidos a sus mejores clientes</strong> y mostrarles los productos relevantes. Vamos a resolverlo juntos, paso a paso."
         },
         {
           "type": "concept",
-          "h": "Paso 1 · Convertir el CRM en una Custom Audience",
-          "body": "El CRM es gente que ya compró → <strong>Custom Audience tipo Customer List</strong>. Hashea email y phone (SHA256) antes de subir el CSV: Meta matchea hashes sin ver los datos en plano. Filtra solo los compradores de mayor valor."
+          "h": "Paso 1 · Convertir el CRM en un público personalizado",
+          "body": "El CRM es gente que ya compró → <strong>público personalizado (Custom Audience) tipo Customer List</strong>. Hashea email y phone (SHA256) antes de subir el CSV: Meta matchea hashes sin ver los datos en plano. Filtra solo los compradores de mayor valor."
         },
         {
           "type": "concept",
-          "h": "Paso 2 · Crear el Lookalike",
-          "body": "Como quiere talleres <em>nuevos</em> similares a los buenos, usa esa Custom Audience como <strong>source de un Lookalike</strong>. Tiene de sobra el mínimo (6,000 &gt; 100 de un país). Para B2B donde cada cuenta vale mucho, elige <strong>1%</strong> (máxima similitud) sobre 10%."
+          "h": "Paso 2 · Crear el público similar",
+          "body": "Como quiere talleres <em>nuevos</em> similares a los buenos, usa ese público personalizado como <strong>source de un público similar (Lookalike)</strong>. Tiene de sobra el mínimo (6,000 &gt; 100 de un país). Para B2B donde cada cuenta vale mucho, elige <strong>1%</strong> (máxima similitud) sobre 10%."
         },
         {
           "type": "concept",
           "h": "Paso 3 · Conectar el catálogo",
-          "body": "Para mostrar producto relevante por persona → campaña <strong>Sales + Advantage+ Catalog Ads</strong>, un solo catálogo, un Product Set con los 60 SKUs (supera el mínimo de 20). El Lookalike 1% va como suggestion del ad set."
+          "body": "Para mostrar producto relevante por persona → campaña <strong>Ventas (Sales) + Advantage+ Catalog Ads</strong>, un solo catálogo, un Product Set con los 60 SKUs (supera el mínimo de 20). El público similar 1% va como suggestion del <em>conjunto de anuncios</em> (ad set)."
         },
         {
           "type": "concept",
           "h": "Paso 4 · Revisar el match rate",
-          "body": "Antes de escalar, verifica el <strong>catalog match rate &gt;75%</strong>. Si está bajo, no subas budget: revisa que los Content IDs que manda el Pixel empaten con los IDs del catálogo."
+          "body": "Antes de escalar, verifica el <strong>catalog match rate &gt;75%</strong>. Si está bajo, no subas budget: revisa que los Content IDs que manda el Píxel empaten con los IDs del catálogo."
         },
         {
           "type": "tip",
           "label": "EL RAZONAMIENTO",
-          "body": "Fíjate en el patrón: <em>fuente propia → custom audience → lookalike para prospectar → catálogo para mostrar producto → validar match rate antes de escalar</em>. Ese orden resuelve casi cualquier caso de audiencias del examen."
+          "body": "Fíjate en el patrón: <em>fuente propia → público personalizado → público similar para prospectar → catálogo para mostrar producto → validar match rate antes de escalar</em>. Ese orden resuelve casi cualquier caso de audiencias del examen."
         },
         {
           "type": "mcq",
-          "q": "En el mismo caso, ¿por qué el CRM se vuelve Custom Audience y NO directamente un Lookalike?",
+          "q": "En el mismo caso, ¿por qué el CRM se vuelve público personalizado y NO directamente un público similar?",
           "options": [
-            "Porque el Lookalike no acepta listas de clientes",
-            "Porque el Lookalike necesita una source audience",
-            "Porque la Custom Audience resulta más barata",
+            "Porque el público similar no acepta listas de clientes",
+            "Porque el público similar necesita una source audience",
+            "Porque el público personalizado resulta más barato",
             "Porque en realidad ambas son lo mismo"
           ],
           "correct": 1,
-          "explanation": "El CRM es gente que YA compró → Custom Audience (retargeting). Para encontrar gente NUEVA similar se crea un Lookalike usando esa Custom Audience como source. El Lookalike siempre parte de una source existente."
+          "explanation": "El CRM es gente que YA compró → público personalizado (retargeting). Para encontrar gente NUEVA similar se crea un público similar usando ese público personalizado como source. El público similar siempre parte de una source existente."
         }
       ]
     },
@@ -1322,7 +1322,7 @@
       "instruction": "Asocia cada tipo de audience con su caso típico. Cada error cuesta 1 ❤️.",
       "pairs": [
         [
-          "Custom Audience (Website)",
+          "Público personalizado (Custom Audience) (Website)",
           "Re-engagement de visitantes del sitio"
         ],
         [
@@ -1330,15 +1330,15 @@
           "Subir CSV de clientes hasheados para retargeting"
         ],
         [
-          "Lookalike 1%",
+          "Público similar 1% (Lookalike)",
           "Prospección de máxima similitud (calidad sobre volumen)"
         ],
         [
-          "Lookalike 10%",
+          "Público similar 10%",
           "Prospección de máximo alcance (volumen sobre similitud)"
         ],
         [
-          "Advantage+ Audience",
+          "Advantage+ público (Advantage+ audience)",
           "AI expande sobre tus suggestions automáticamente"
         ],
         [
@@ -1346,23 +1346,23 @@
           "Filtrar por intereses, behaviors y demographics"
         ]
       ],
-      "explanation": "Conocer qué audience usar según el caso es crítico para el examen. Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos a los que te conocen)."
+      "explanation": "Conocer qué audience usar según el caso es crítico para el examen. Público personalizado = retargeting (ya te conocen). Público similar = prospección (parecidos a los que te conocen)."
     },
     {
       "id": "5.12b",
       "title": "Ordenar el setup de Advantage+ Catalog Ads",
       "section": "bz",
       "type": "order",
-      "instruction": "¿En qué orden configuras Advantage+ Catalog Ads para campaña Sales? Reordena con ▲▼.",
+      "instruction": "¿En qué orden configuras Advantage+ Catalog Ads para campaña Ventas (Sales)? Reordena con ▲▼.",
       "items": [
-        "Crear catalog en Commerce Manager",
-        "Conectar Pixel/CAPI al catalog (Share events)",
+        "Crear catálogo (catalog) en Commerce Manager",
+        "Conectar Píxel de Meta (Meta Pixel)/CAPI al catálogo (Share events)",
         "Crear Product Set con mínimo 20 productos",
-        "Crear campaña con objective Sales",
-        "Activar Advantage+ Catalog Ads y seleccionar el catalog",
-        "Crear ad set y elegir Product Set como promoted products"
+        "Crear campaña con objective Ventas",
+        "Activar Advantage+ Catalog Ads y seleccionar el catálogo",
+        "Crear conjunto de anuncios (ad set) y elegir Product Set como promoted products"
       ],
-      "explanation": "Setup correcto: infraestructura (catalog + events) → segmentación (product set) → campaña → ad set. Saltarse pasos lleva a ads que no entregan o muestran productos equivocados."
+      "explanation": "Setup correcto: infraestructura (catálogo + events) → segmentación (product set) → campaña → conjunto de anuncios. Saltarse pasos lleva a ads que no entregan o muestran productos equivocados."
     },
     {
       "id": "5.14b",
@@ -1380,11 +1380,11 @@
             "Broad"
           ],
           "correct": 0,
-          "explanation": "Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos)."
+          "explanation": "Público personalizado (Custom Audience) = retargeting (ya te conocen). Público similar (Lookalike) = prospección (parecidos)."
         },
         {
           "type": "fill",
-          "q": "El mínimo absoluto de source para crear un Lookalike es ___ personas de un solo país.",
+          "q": "El mínimo absoluto de source para crear un público similar es ___ personas de un solo país.",
           "options": [
             "50",
             "100",
@@ -1396,7 +1396,7 @@
         },
         {
           "type": "fill",
-          "q": "El Lookalike de ___% es el más similar al source (calidad sobre volumen).",
+          "q": "El público similar de ___% es el más similar al source (calidad sobre volumen).",
           "options": [
             "1",
             "5",
@@ -1408,7 +1408,7 @@
         },
         {
           "type": "fill",
-          "q": "El máximo de Custom Audiences por ad account es ___.",
+          "q": "El máximo de públicos personalizados por ad account es ___.",
           "options": [
             "100",
             "250",
@@ -1416,11 +1416,11 @@
             "1,000"
           ],
           "correct": 2,
-          "explanation": "500 custom audiences máximo por ad account."
+          "explanation": "500 públicos personalizados máximo por ad account."
         },
         {
           "type": "fill",
-          "q": "Advantage+ Audience está ___ por default en campañas nuevas.",
+          "q": "Advantage+ público (Advantage+ audience) está ___ por default en campañas nuevas.",
           "options": [
             "OFF",
             "ON",
@@ -1464,20 +1464,20 @@
       "cards": [
         {
           "type": "mcq",
-          "q": "Custom Audience vs Lookalike:",
+          "q": "Público personalizado (Custom Audience) vs público similar (Lookalike):",
           "options": [
-            "Custom = prospectos nuevos; Lookalike = clientes",
-            "Custom = clientes que ya interactuaron; LAL = nuevos",
+            "Público personalizado = prospectos nuevos; público similar = clientes",
+            "Público personalizado = clientes que ya interactuaron; público similar = nuevos",
             "Son exactamente lo mismo, distinto nombre",
-            "La Custom Audience funciona solo offline"
+            "El público personalizado funciona solo offline"
           ],
           "correct": 1,
-          "explanation": "Custom = retargeting (ya te conocen). Lookalike = prospección (parecidos).",
+          "explanation": "Público personalizado = retargeting (ya te conocen). Público similar = prospección (parecidos).",
           "difficulty": "easy"
         },
         {
           "type": "mcq",
-          "q": "Mínimo de source para Lookalike:",
+          "q": "Mínimo de source para público similar:",
           "options": [
             "50",
             "100 en 1 solo país",
@@ -1490,7 +1490,7 @@
         },
         {
           "type": "mcq",
-          "q": "Lookalike 1% es:",
+          "q": "Público similar 1% es:",
           "options": [
             "El segmento menos similar al source",
             "El top 1% más parecido (max similitud)",
@@ -1503,20 +1503,20 @@
         },
         {
           "type": "mcq",
-          "q": "El source de un Lookalike se:",
+          "q": "El source de un público similar se:",
           "options": [
-            "Incluye en el lookalike",
+            "Incluye en el público similar",
             "Excluye automáticamente",
             "Solo se incluye si es 10%",
             "Depende del país"
           ],
           "correct": 1,
-          "explanation": "El source siempre se excluye. El lookalike busca gente nueva similar.",
+          "explanation": "El source siempre se excluye. El público similar busca gente nueva similar.",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
-          "q": "Custom Audiences máximas por ad account:",
+          "q": "Públicos personalizados máximos por ad account:",
           "options": [
             "100",
             "250",
@@ -1524,16 +1524,16 @@
             "1,000"
           ],
           "correct": 2,
-          "explanation": "500 custom audiences máximo por ad account.",
+          "explanation": "500 públicos personalizados máximo por ad account.",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
-          "q": "Advantage+ Audience por default en nuevas campañas:",
+          "q": "Advantage+ público (Advantage+ audience) por default en nuevas campañas:",
           "options": [
             "OFF (hay que activarlo)",
             "ON automáticamente",
-            "Solo para Sales",
+            "Solo para Ventas (Sales)",
             "Solo con catalog"
           ],
           "correct": 1,
@@ -1576,12 +1576,12 @@
             "100%"
           ],
           "correct": 1,
-          "explanation": ">75% target. Bajo: problema en setup de Pixel.",
+          "explanation": ">75% target. Bajo: problema en setup de Píxel de Meta (Meta Pixel).",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
-          "q": "Para Customer List subido como Custom Audience:",
+          "q": "Para Customer List subido como público personalizado:",
           "options": [
             "Email y phone en texto plano",
             "Email y phone hasheados (SHA256)",
@@ -1596,13 +1596,13 @@
           "type": "mcq",
           "q": "Mejor práctica para anunciante con varias líneas de productos:",
           "options": [
-            "Un catalog separado por cada línea",
-            "Un solo catalog con Product Sets por línea",
-            "No usar catalog en ningún caso",
-            "Crear varios Pixels, uno por línea"
+            "Un catálogo (catalog) separado por cada línea",
+            "Un solo catálogo con Product Sets por línea",
+            "No usar catálogo en ningún caso",
+            "Crear varios Píxeles, uno por línea"
           ],
           "correct": 1,
-          "explanation": "UN solo catalog. Product Sets para sub-líneas. Múltiples catalogs confunden el matching con Pixel.",
+          "explanation": "UN solo catálogo. Product Sets para sub-líneas. Múltiples catálogos confunden el matching con Píxel.",
           "difficulty": "hard"
         },
         {
@@ -1625,11 +1625,11 @@
       "title": "Lightning · 8 preguntas en 3 min",
       "section": "bz",
       "type": "lightning",
-      "instruction": "8 preguntas rápidas sobre audiences y catalogs.",
+      "instruction": "8 preguntas rápidas sobre audiences y catálogos (catalogs).",
       "timeLimit": 180,
       "questions": [
         {
-          "q": "Lookalike mínimo en source:",
+          "q": "Público similar (Lookalike) mínimo en source:",
           "options": [
             "50",
             "100 en 1 país",
@@ -1641,19 +1641,19 @@
           "difficulty": "easy"
         },
         {
-          "q": "1% Lookalike = ?",
+          "q": "Público similar 1% = ?",
           "options": [
             "Máximo alcance",
             "Máxima similitud (menor alcance)",
-            "1% de tu CA",
-            "Lookalike más caro"
+            "1% de tu público personalizado (Custom Audience)",
+            "Público similar más caro"
           ],
           "correct": 1,
           "explanation": "Top 1% más parecido al source.",
           "difficulty": "medium"
         },
         {
-          "q": "Custom Audiences máximas por ad account:",
+          "q": "Públicos personalizados máximos por ad account:",
           "options": [
             "100",
             "250",
@@ -1665,12 +1665,12 @@
           "difficulty": "medium"
         },
         {
-          "q": "Advantage+ Audience default:",
+          "q": "Advantage+ público (Advantage+ audience) default:",
           "options": [
             "OFF",
             "ON",
-            "Solo Sales",
-            "Solo Catalog"
+            "Solo Ventas (Sales)",
+            "Solo catálogo"
           ],
           "correct": 1,
           "explanation": "ON por default.",
@@ -1701,7 +1701,7 @@
           "difficulty": "hard"
         },
         {
-          "q": "El source de un Lookalike:",
+          "q": "El source de un público similar:",
           "options": [
             "Se incluye",
             "Se excluye automáticamente",
@@ -1733,36 +1733,36 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "¿Diferencia entre Custom Audience y Lookalike?",
-          "a": "Custom Audience = gente que ya interactuó con tu negocio (retargeting). Lookalike = gente NUEVA similar a tu source (prospección)."
+          "q": "¿Diferencia entre público personalizado (Custom Audience) y público similar (Lookalike)?",
+          "a": "Público personalizado = gente que ya interactuó con tu negocio (retargeting). Público similar = gente NUEVA similar a tu source (prospección)."
         },
         {
-          "q": "¿Mínimo de personas en source audience para Lookalike?",
+          "q": "¿Mínimo de personas en source audience para público similar?",
           "a": "100 personas de UN SOLO país. Recomendado 1,000-50,000 para calidad."
         },
         {
-          "q": "¿1% vs 10% Lookalike?",
+          "q": "¿1% vs 10% público similar?",
           "a": "1% = top 1% más similar al source (max calidad, menor alcance). 10% = más alcance, menos similar."
         },
         {
-          "q": "¿El source de un Lookalike se incluye o se excluye?",
-          "a": "Se EXCLUYE automáticamente. El lookalike busca gente nueva similar, no re-alcanza al source."
+          "q": "¿El source de un público similar se incluye o se excluye?",
+          "a": "Se EXCLUYE automáticamente. El público similar busca gente nueva similar, no re-alcanza al source."
         },
         {
-          "q": "¿Cuántos Lookalikes puedes generar desde una misma source?",
-          "a": "Hasta 500 lookalikes por source audience."
+          "q": "¿Cuántos públicos similares puedes generar desde una misma source?",
+          "a": "Hasta 500 públicos similares por source audience."
         },
         {
-          "q": "¿Máximo de Custom Audiences por ad account?",
-          "a": "500 custom audiences máximo."
+          "q": "¿Máximo de públicos personalizados por ad account?",
+          "a": "500 públicos personalizados máximo."
         },
         {
-          "q": "¿Default de Advantage+ Audience en campañas nuevas?",
+          "q": "¿Default de Advantage+ público (Advantage+ audience) en campañas nuevas?",
           "a": "ON. Se desactiva con 'Switch to original audience options' o 'Further limit the reach of your ads'."
         },
         {
           "q": "¿Diferencia entre Audience Controls y Suggestions?",
-          "a": "Controls RESTRINGEN delivery (rígidos: location, language, edad mínima, exclusions). Suggestions GUÍAN (flexibles, AI puede expandir: edad max, gender, detailed targeting, lookalike, inclusions)."
+          "a": "Controls RESTRINGEN delivery (rígidos: location, language, edad mínima, exclusions). Suggestions GUÍAN (flexibles, AI puede expandir: edad max, gender, detailed targeting, público similar, inclusions)."
         },
         {
           "q": "¿Detailed targeting combina las categorías con OR o con AND?",
@@ -1774,27 +1774,27 @@
         },
         {
           "q": "¿Catalog match rate target y qué significa si está bajo?",
-          "a": ">75%. Si está bajo: problema en mapeo Pixel ↔ catalog (IDs incorrectos, productos faltantes, parameters mal enviados)."
+          "a": ">75%. Si está bajo: problema en mapeo Píxel de Meta (Meta Pixel) ↔ catálogo (catalog) (IDs incorrectos, productos faltantes, parameters mal enviados)."
         },
         {
           "q": "¿Cuántos catálogos recomienda Meta tener?",
-          "a": "UN SOLO catálogo por negocio. Para sub-líneas usa Product Sets dentro del mismo catalog."
+          "a": "UN SOLO catálogo por negocio. Para sub-líneas usa Product Sets dentro del mismo catálogo."
         },
         {
-          "q": "Atributos requeridos en Product Catalog:",
+          "q": "Atributos requeridos en el catálogo:",
           "a": "ID, Title, Description, Price, Availability, Condition, Brand, Image, Link. Sin esos, productos no se aprueban."
         },
         {
           "q": "¿Para qué objectives está disponible Advantage+ Catalog Ads?",
-          "a": "Sales (a nivel campaña, complete solution) · App Promotion, Engagement, Leads, Traffic (a nivel ad, single-step automation)."
+          "a": "Ventas (Sales) (a nivel campaña, complete solution) · Promoción de la app (App promotion), Interacción (Engagement), Clientes potenciales (Leads), Tráfico (Traffic) (a nivel ad, single-step automation)."
         },
         {
           "q": "¿Cuándo Audience Overlap analysis tiene sentido?",
           "a": "Audiencias de mínimo 10,000 personas cada una. Bajo eso el análisis no es estadísticamente confiable."
         },
         {
-          "q": "Soluciones para Audience Overlap alto entre ad sets:",
-          "a": "Exclusion (excluir custom audience de prospecting), Consolidation (combinar ad sets que se pisan), Refinement (separar más con detailed targeting)."
+          "q": "Soluciones para Audience Overlap alto entre conjuntos de anuncios (ad sets):",
+          "a": "Exclusion (excluir público personalizado de prospecting), Consolidation (combinar conjuntos de anuncios que se pisan), Refinement (separar más con detailed targeting)."
         },
         {
           "q": "¿Customer List requiere hash de qué campos?",
@@ -1813,16 +1813,16 @@
           "a": "Generalmente SÍ. Broad (solo edad + ubicación) deja al sistema encontrar gente. Narrow limita el delivery y suele ser más caro en CPA."
         },
         {
-          "q": "Lookalike audience: tamaño mínimo de source",
+          "q": "Público similar: tamaño mínimo de source",
           "a": "Mínimo 100 personas de un solo país de origen; recomendado al menos 1,000. Monitorea y refresca la fuente para mejorar calidad y relevancia."
         },
         {
-          "q": "Advantage+ audience: controls vs suggestions",
-          "a": "Controls = restricciones DURAS (edad mínima, ubicación, idioma, excluir custom audiences). Suggestions = guían a la IA (detailed targeting, edad, género) sin limitar estrictamente."
+          "q": "Advantage+ público: controls vs suggestions",
+          "a": "Controls = restricciones DURAS (edad mínima, ubicación, idioma, excluir públicos personalizados). Suggestions = guían a la IA (detailed targeting, edad, género) sin limitar estrictamente."
         },
         {
-          "q": "Custom audience vs Lookalike audience",
-          "a": "Custom = tus audiencias existentes (retargeting: web, engagement, lista, video viewers). Lookalike = gente NUEVA similar a una fuente; Value-Based Lookalike usa el valor del cliente."
+          "q": "Público personalizado vs público similar",
+          "a": "Público personalizado = tus audiencias existentes (retargeting: web, engagement, lista, video viewers). Público similar = gente NUEVA similar a una fuente; Value-Based Lookalike usa el valor del cliente."
         },
         {
           "q": "Catálogo: dónde se gestiona y product sets",
