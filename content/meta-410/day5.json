@@ -355,14 +355,14 @@
         {
           "type": "concept",
           "h": "De dónde sale un público personalizado (las sources)",
-          "body": "La <strong>source</strong> (fuente) es el origen de los datos de la audiencia. Meta las divide en dos grupos:<br/><br/><strong>Your sources</strong> (tus propias fuentes): <em>Website</em> (visitas a tu sitio vía Píxel de Meta (Meta Pixel)), <em>App activity</em> (acciones en tu app), <em>Catalog</em> (interacciones con tu catálogo (catalog)), <em>Customer list</em> (tu lista de clientes en CSV) y <em>Offline activity</em> (ventas en tienda física).<br/><br/><strong>Meta sources</strong> (fuentes dentro de Meta): gente que vio tu <em>Video</em>, llenó un <em>Lead form</em> (formulario de prospectos), abrió un <em>Instant Experience</em>, interactuó con tu <em>Shopping</em>, sigue tu cuenta de <em>Instagram</em>, asistió a tus <em>Events</em> o interactuó con tu <em>Facebook Page</em>. Todo es gente que ya te tocó por algún lado."
+          "body": "La <strong>source</strong> (fuente) es el origen de los datos de la audiencia. Meta las divide en dos grupos:<br/><br/><strong>Your sources</strong> (tus propias fuentes): <em>Website</em> (visitas a tu sitio vía Píxel de Meta (Meta Pixel)), <em>App activity</em> (acciones en tu app), <em>Catalog</em> (interacciones con tu catálogo), <em>Customer list</em> (tu lista de clientes en CSV) y <em>Offline activity</em> (ventas en tienda física).<br/><br/><strong>Meta sources</strong> (fuentes dentro de Meta): gente que vio tu <em>Video</em>, llenó un <em>Lead form</em> (formulario de prospectos), abrió un <em>Instant Experience</em>, interactuó con tu <em>Shopping</em>, sigue tu cuenta de <em>Instagram</em>, asistió a tus <em>Events</em> o interactuó con tu <em>Facebook Page</em>. Todo es gente que ya te tocó por algún lado."
         },
         {
           "type": "kvtable",
           "h": "Límites",
           "rows": [
             [
-              "Custom audiences por ad account",
+              "Públicos personalizados por ad account",
               "Máximo 500"
             ],
             [
@@ -383,21 +383,21 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Boutique Aurora",
-          "body": "La <strong>Boutique Aurora</strong>, una tienda de ropa en línea, crea una Custom Audience tipo <em>Website</em> con quien visitó la página de pago (/checkout) en los últimos 30 días pero no compró: gente caliente a la que vale la pena recordarle el carrito. Y crea otra tipo <em>Customer list</em> subiendo su CRM de clientes anteriores. Ambas son gente que ya tocó la marca, así que son ideales para reactivar, no para prospectar en frío. A esa última, en cambio, jamás le mostrarás un anuncio de \"descubre nuestra marca\": ya la conocen."
+          "body": "La <strong>Boutique Aurora</strong>, una tienda de ropa en línea, crea un público personalizado tipo <em>Website</em> con quien visitó la página de pago (/checkout) en los últimos 30 días pero no compró: gente caliente a la que vale la pena recordarle el carrito. Y crea otra tipo <em>Customer list</em> subiendo su CRM de clientes anteriores. Ambas son gente que ya tocó la marca, así que son ideales para reactivar, no para prospectar en frío. A esa última, en cambio, jamás le mostrarás un anuncio de \"descubre nuestra marca\": ya la conocen."
         },
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Las Custom Audiences se crean fuera del ad set, en su propia sección:<br/><br/><strong>1.</strong> En Ads Manager abres el menú principal y entras a <strong>Audiences</strong> (Audiencias).<br/><strong>2.</strong> Click en <strong>Create Audience → Custom Audience</strong> (Crear audiencia → Audiencia personalizada).<br/><strong>3.</strong> Eliges la <em>source</em> (Website, Customer list, Video, etc.).<br/><strong>4.</strong> Si es Website, defines el evento (ej. visitantes de una URL) y el <em>retention window</em> en días.<br/><strong>5.</strong> Guardas la audiencia con un nombre claro; luego la usas dentro de un ad set como <em>inclusion</em> (incluir) o <em>exclusion</em> (excluir)."
+          "body": "Los públicos personalizados se crean fuera del <em>conjunto de anuncios</em> (ad set), en su propia sección:<br/><br/><strong>1.</strong> En Ads Manager abres el menú principal y entras a <strong>Audiences</strong> (Audiencias).<br/><strong>2.</strong> Click en <strong>Create Audience → Custom Audience</strong> (Crear audiencia → Audiencia personalizada).<br/><strong>3.</strong> Eliges la <em>source</em> (Website, Customer list, Video, etc.).<br/><strong>4.</strong> Si es Website, defines el evento (ej. visitantes de una URL) y el <em>retention window</em> en días.<br/><strong>5.</strong> Guardas la audiencia con un nombre claro; luego la usas dentro de un conjunto de anuncios como <em>inclusion</em> (incluir) o <em>exclusion</em> (excluir)."
         },
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "Para construir custom audiences potentes desde Customer List, <strong>hashea email y phone</strong> antes de subir. Meta los matchea con sus usuarios pero nunca ve los datos en plano."
+          "body": "Para construir públicos personalizados potentes desde Customer List, <strong>hashea email y phone</strong> antes de subir. Meta los matchea con sus usuarios pero nunca ve los datos en plano."
         },
         {
           "type": "mcq",
-          "q": "¿Cuál de estas NO es una source válida para Custom Audience?",
+          "q": "¿Cuál de estas NO es una source válida para un público personalizado?",
           "options": [
             "Website activity",
             "Customer list (CSV)",
@@ -405,7 +405,7 @@
             "Random audience"
           ],
           "correct": 3,
-          "explanation": "Custom Audiences siempre se construyen desde una source específica de interacción previa. 'Random' no existe.",
+          "explanation": "Los públicos personalizados siempre se construyen desde una source específica de interacción previa. 'Random' no existe.",
           "difficulty": "easy"
         }
       ]
@@ -426,11 +426,11 @@
             "Broad"
           ],
           "correct": 0,
-          "explanation": "Custom Audience = retargeting (ya te conocen). Lookalike = prospección (parecidos)."
+          "explanation": "Público personalizado (Custom Audience) = retargeting (ya te conocen). Público similar (Lookalike) = prospección (parecidos)."
         },
         {
           "type": "fill",
-          "q": "El máximo de Custom Audiences por ad account es ___.",
+          "q": "El máximo de públicos personalizados por ad account es ___.",
           "options": [
             "100",
             "250",
@@ -438,11 +438,11 @@
             "1,000"
           ],
           "correct": 2,
-          "explanation": "500 custom audiences máximo por ad account."
+          "explanation": "500 públicos personalizados máximo por ad account."
         },
         {
           "type": "mcq",
-          "q": "¿Cuántas Custom Audiences máximo por ad account?",
+          "q": "¿Cuántos públicos personalizados máximo por ad account?",
           "options": [
             "100",
             "250",
@@ -450,7 +450,7 @@
             "Ilimitadas"
           ],
           "correct": 2,
-          "explanation": "Límite oficial: 500 custom audiences por ad account.",
+          "explanation": "Límite oficial: 500 públicos personalizados por ad account.",
           "difficulty": "hard"
         },
         {
@@ -468,20 +468,20 @@
         },
         {
           "type": "mcq",
-          "q": "¿Para qué sirve una Custom Audience principalmente?",
+          "q": "¿Para qué sirve un público personalizado principalmente?",
           "options": [
             "Para prospectar gente nueva en frío",
             "Retargeting: re-alcanzar a quien ya te conoce",
-            "Para reemplazar al Pixel del sitio web",
+            "Para reemplazar al Píxel del sitio web",
             "Para bajar el costo de billing de la cuenta"
           ],
           "correct": 1,
-          "explanation": "Custom Audience = gente que YA te conoce. Es retargeting, no prospección en frío (eso lo hace el Lookalike).",
+          "explanation": "Público personalizado = gente que YA te conoce. Es retargeting, no prospección en frío (eso lo hace el público similar).",
           "difficulty": "easy"
         },
         {
           "type": "fill",
-          "q": "El retention window de una Custom Audience tipo Website es ___.",
+          "q": "El retention window de un público personalizado tipo Website es ___.",
           "options": [
             "configurable (ej. 30/60/90/180 días)",
             "fijo en 7 días",
@@ -503,19 +503,19 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Edu Premium quiere reactivar su CRM de alumnos",
-          "body": "<strong>Edu Premium</strong> exporta del CRM 8,000 contactos de alumnos antiguos con email, phone y carrera. Quiere reactivarlos con campaña Sales que les muestre el nuevo catálogo de cursos. Te pregunta cómo subirlos y por qué."
+          "body": "<strong>Edu Premium</strong> exporta del CRM 8,000 contactos de alumnos antiguos con email, phone y carrera. Quiere reactivarlos con campaña Ventas (Sales) que les muestre el nuevo catálogo de cursos. Te pregunta cómo subirlos y por qué."
         },
         {
           "type": "mcq",
-          "q": "¿Qué tipo de Custom Audience usas para el CRM y cómo subes los datos?",
+          "q": "¿Qué tipo de público personalizado (Custom Audience) usas para el CRM y cómo subes los datos?",
           "options": [
-            "Custom Audience Website, sin subir ningún dato",
+            "Público personalizado Website, sin subir ningún dato",
             "Customer List con email/phone hasheados (SHA256)",
-            "Un Lookalike creado directo desde el CSV",
+            "Un público similar (Lookalike) creado directo desde el CSV",
             "Una Saved Audience armada con intereses"
           ],
           "correct": 1,
-          "explanation": "Un CRM de gente que ya interactuó = Custom Audience tipo Customer List. Email/phone se hashean antes de subir y se usa como inclusion de la campaña Sales."
+          "explanation": "Un CRM de gente que ya interactuó = público personalizado tipo Customer List. Email/phone se hashean antes de subir y se usa como inclusion de la campaña Ventas."
         },
         {
           "type": "mcq",
@@ -539,12 +539,12 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "¿Qué es una Custom Audience?",
+          "q": "¿Qué es un público personalizado (Custom Audience)?",
           "a": "Gente que ya interactuó con tu negocio (retargeting). Sources: Website, App, Catalog, Customer list, Offline, Video, Lead form, IG, FB Page, etc."
         },
         {
-          "q": "¿Máximo de Custom Audiences por ad account?",
-          "a": "500 custom audiences máximo."
+          "q": "¿Máximo de públicos personalizados por ad account?",
+          "a": "500 públicos personalizados máximo."
         },
         {
           "q": "¿Customer List requiere hash de qué campos?",
@@ -555,8 +555,8 @@
           "a": "Para que Meta nunca vea los datos en plano. Meta matchea los hashes con sus propios hashes de usuarios y nunca conoce el email real."
         },
         {
-          "q": "¿Custom audience vs Lookalike audience?",
-          "a": "Custom = tus audiencias existentes (retargeting: web, engagement, lista, video viewers). Lookalike = gente NUEVA similar a una fuente; Value-Based Lookalike usa el valor del cliente."
+          "q": "¿Público personalizado vs público similar (Lookalike)?",
+          "a": "Público personalizado = tus audiencias existentes (retargeting: web, engagement, lista, video viewers). Público similar = gente NUEVA similar a una fuente; Value-Based Lookalike usa el valor del cliente."
         }
       ]
     },
@@ -569,58 +569,58 @@
         {
           "type": "concept",
           "h": "Qué es una Lookalike Audience",
-          "body": "Una <strong>Lookalike Audience</strong> (audiencia similar: gente nueva parecida a tus mejores clientes) le pide a Meta que analice una audiencia tuya y salga a buscar <strong>gente nueva con un perfil parecido</strong>. Es justo lo opuesto a la Custom Audience: aquí haces <strong>prospección</strong> (alcanzar a quien todavía no te conoce), no retargeting. La lógica es poderosa: si Meta entiende qué tienen en común tus mejores clientes, puede encontrar miles de extraños que se les parecen y tienen alta probabilidad de comprarte también. Ejemplo: la <strong>Cafetería La Esquina</strong> toma su lista de clientes frecuentes y crea un Lookalike para encontrar gente nueva con hábitos similares a esos fieles."
+          "body": "Una <strong>Público similar</strong> (Lookalike: gente nueva parecida a tus mejores clientes) le pide a Meta que analice una audiencia tuya y salga a buscar <strong>gente nueva con un perfil parecido</strong>. Es justo lo opuesto al <strong>público personalizado</strong> (Custom Audience): aquí haces <strong>prospección</strong> (alcanzar a quien todavía no te conoce), no retargeting. La lógica es poderosa: si Meta entiende qué tienen en común tus mejores clientes, puede encontrar miles de extraños que se les parecen y tienen alta probabilidad de comprarte también. Ejemplo: la <strong>Cafetería La Esquina</strong> toma su lista de clientes frecuentes y crea un público similar para encontrar gente nueva con hábitos similares a esos fieles."
         },
         {
           "type": "concept",
-          "h": "La source manda: de dónde aprende el Lookalike",
-          "body": "El Lookalike es tan bueno como su <strong>source audience</strong> (audiencia fuente): la audiencia de la que aprende el patrón. Normalmente la source es una Custom Audience tuya (tus compradores, tus leads, tus visitantes). Por eso siempre conviene partir de tu <em>mejor</em> gente, no de cualquiera: si alimentas el Lookalike con clientes premium, busca premium; si lo alimentas con curiosos que nunca compraron, busca curiosos. Meta exige un mínimo de <strong>100 personas de un solo país</strong> en la source para detectar un patrón confiable, aunque lo recomendado es entre 1,000 y 50,000."
+          "h": "La source manda: de dónde aprende el público similar",
+          "body": "El público similar es tan bueno como su <strong>source audience</strong> (audiencia fuente): la audiencia de la que aprende el patrón. Normalmente la source es un público personalizado tuyo (tus compradores, tus leads, tus visitantes). Por eso siempre conviene partir de tu <em>mejor</em> gente, no de cualquiera: si alimentas el público similar con clientes premium, busca premium; si lo alimentas con curiosos que nunca compraron, busca curiosos. Meta exige un mínimo de <strong>100 personas de un solo país</strong> en la source para detectar un patrón confiable, aunque lo recomendado es entre 1,000 y 50,000."
         },
         {
           "type": "warn",
           "label": "TRAMPA CRÍTICA",
-          "body": "Un lookalike con source de 50 personas <strong>NO funciona</strong>. Mínimo absoluto: 100 personas de UN SOLO PAÍS. Recomendado: 1,000-50,000 para máxima calidad."
+          "body": "Un público similar con source de 50 personas <strong>NO funciona</strong>. Mínimo absoluto: 100 personas de UN SOLO PAÍS. Recomendado: 1,000-50,000 para máxima calidad."
         },
         {
           "type": "kvtable",
           "h": "Tamaño 1% vs 10%",
           "rows": [
             [
-              "1% lookalike",
+              "Público similar 1%",
               "MÁS SIMILAR al source. Alcance menor (pero más calificado)."
             ],
             [
-              "10% lookalike",
+              "Público similar 10%",
               "MENOS SIMILAR. Alcance mayor (más volumen pero menos preciso)."
             ],
             [
               "Source",
-              "Se EXCLUYE automáticamente del lookalike (no se vuelve a alcanzar)"
+              "Se EXCLUYE automáticamente del público similar (no se vuelve a alcanzar)"
             ],
             [
               "Por source",
-              "Hasta 500 lookalikes generables desde un mismo source"
+              "Hasta 500 públicos similares generables desde un mismo source"
             ]
           ]
         },
         {
           "type": "tip",
           "label": "PRO TIP",
-          "body": "Tu mejor source para Lookalike son los <strong>compradores top</strong>: filtra Purchase events con value alto, agrupa en custom audience, y usa esa como source. El lookalike va a parecerse a esos compradores premium."
+          "body": "Tu mejor source para el público similar son los <strong>compradores top</strong>: filtra Purchase events con value alto, agrupa en público personalizado, y usa esa como source. El público similar va a parecerse a esos compradores premium."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Aceros del Bajío",
-          "body": "<strong>Aceros del Bajío</strong>, distribuidora industrial, toma su Custom Audience de clientes que ya hicieron pedidos grandes y la usa como <em>source</em> de un Lookalike. Meta sale a buscar afuera empresas y compradores parecidos a esos buenos clientes. Como cada cuenta industrial vale mucho dinero, priorizan calidad sobre cantidad: eligen un Lookalike de <strong>1%</strong> (el top 1% más parecido), no de 10%. Detalle clave: la source se excluye sola del resultado, porque el Lookalike es para gente <em>nueva</em>, no para volver a tocar a quien ya está en la lista."
+          "body": "<strong>Aceros del Bajío</strong>, distribuidora industrial, toma su público personalizado de clientes que ya hicieron pedidos grandes y la usa como <em>source</em> de un público similar. Meta sale a buscar afuera empresas y compradores parecidos a esos buenos clientes. Como cada cuenta industrial vale mucho dinero, priorizan calidad sobre cantidad: eligen un público similar de <strong>1%</strong> (el top 1% más parecido), no de 10%. Detalle clave: la source se excluye sola del resultado, porque el público similar es para gente <em>nueva</em>, no para volver a tocar a quien ya está en la lista."
         },
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Para crear un Lookalike recorres esta ruta:<br/><br/><strong>1.</strong> En Ads Manager abres <strong>Audiences</strong> (Audiencias).<br/><strong>2.</strong> Click en <strong>Create Audience → Lookalike Audience</strong> (Crear audiencia → Audiencia similar).<br/><strong>3.</strong> Eliges la <strong>source</strong>: normalmente una Custom Audience tuya (tus mejores clientes).<br/><strong>4.</strong> Seleccionas el <strong>país o región</strong> donde quieres buscar gente nueva.<br/><strong>5.</strong> Mueves el <strong>slider de tamaño</strong> entre 1% y 10%: 1% más parecido y exacto, 10% más amplio.<br/><strong>6.</strong> Guardas y la usas como <em>suggestion</em> dentro del ad set de prospección."
+          "body": "Para crear un público similar recorres esta ruta:<br/><br/><strong>1.</strong> En Ads Manager abres <strong>Audiences</strong> (Audiencias).<br/><strong>2.</strong> Click en <strong>Create Audience → Lookalike Audience</strong> (Crear audiencia → Audiencia similar).<br/><strong>3.</strong> Eliges la <strong>source</strong>: normalmente un público personalizado tuyo (tus mejores clientes).<br/><strong>4.</strong> Seleccionas el <strong>país o región</strong> donde quieres buscar gente nueva.<br/><strong>5.</strong> Mueves el <strong>slider de tamaño</strong> entre 1% y 10%: 1% más parecido y exacto, 10% más amplio.<br/><strong>6.</strong> Guardas y la usas como <em>suggestion</em> dentro del <em>conjunto de anuncios</em> (ad set) de prospección."
         },
         {
           "type": "mcq",
-          "q": "Mínimo de personas requerido en source audience para crear un Lookalike:",
+          "q": "Mínimo de personas requerido en source audience para crear un público similar:",
           "options": [
             "50",
             "100",
@@ -641,7 +641,7 @@
       "cards": [
         {
           "type": "fill",
-          "q": "El mínimo absoluto de source para crear un Lookalike es ___ personas de un solo país.",
+          "q": "El mínimo absoluto de source para crear un público similar (Lookalike) es ___ personas de un solo país.",
           "options": [
             "50",
             "100",
@@ -653,7 +653,7 @@
         },
         {
           "type": "fill",
-          "q": "El Lookalike de ___% es el más similar al source (calidad sobre volumen).",
+          "q": "El público similar de ___% es el más similar al source (calidad sobre volumen).",
           "options": [
             "1",
             "5",
@@ -665,7 +665,7 @@
         },
         {
           "type": "mcq",
-          "q": "Lookalike 1% es:",
+          "q": "Público similar 1% es:",
           "options": [
             "El segmento menos similar al source",
             "El top 1% más parecido (max similitud)",
@@ -678,20 +678,20 @@
         },
         {
           "type": "mcq",
-          "q": "El source de un Lookalike se:",
+          "q": "El source de un público similar se:",
           "options": [
-            "Incluye en el lookalike",
+            "Incluye en el público similar",
             "Excluye automáticamente",
             "Solo se incluye si es 10%",
             "Depende del país"
           ],
           "correct": 1,
-          "explanation": "El source siempre se excluye. El lookalike busca gente nueva similar.",
+          "explanation": "El source siempre se excluye. El público similar busca gente nueva similar.",
           "difficulty": "hard"
         },
         {
           "type": "mcq",
-          "q": "¿Para qué sirve un Lookalike?",
+          "q": "¿Para qué sirve un público similar?",
           "options": [
             "Para retargeting de quien ya te conoce",
             "Prospección: gente NUEVA similar al source",
@@ -699,12 +699,12 @@
             "Para bloquear ubicaciones no deseadas"
           ],
           "correct": 1,
-          "explanation": "Lookalike = prospección (gente nueva similar al source). El retargeting lo hace una Custom Audience.",
+          "explanation": "Público similar = prospección (gente nueva similar al source). El retargeting lo hace un público personalizado (Custom Audience).",
           "difficulty": "easy"
         },
         {
           "type": "fill",
-          "q": "Desde un mismo source puedes generar hasta ___ lookalikes.",
+          "q": "Desde un mismo source puedes generar hasta ___ públicos similares.",
           "options": [
             "10",
             "100",
@@ -732,19 +732,19 @@
           "type": "mcq",
           "q": "¿Cómo construyes el source y qué tipo de audiencia creas?",
           "options": [
-            "Lookalike directo del CSV, sin Custom Audience",
-            "Customer List filtrada como source del Lookalike",
+            "Público similar (Lookalike) directo del CSV, sin público personalizado (Custom Audience)",
+            "Customer List filtrada como source del público similar",
             "Una Saved Audience con intereses de energía",
             "Detailed targeting de dueños de negocio"
           ],
           "correct": 1,
-          "explanation": "El Lookalike siempre parte de una source existente. Filtras a los clientes top en una Custom Audience (value >$2M) y la usas como source del Lookalike para prospectar similares."
+          "explanation": "El público similar siempre parte de una source existente. Filtras a los clientes top en un público personalizado (value >$2M) y la usas como source del público similar para prospectar similares."
         },
         {
           "type": "mcq",
-          "q": "¿Por qué Lookalike 1% (no 10%) en este caso?",
+          "q": "¿Por qué público similar 1% (no 10%) en este caso?",
           "options": [
-            "Porque el Lookalike 1% es más barato",
+            "Porque el público similar 1% es más barato",
             "Quiere máxima similitud con sus clientes top",
             "Porque el 10% no funciona en México",
             "Porque el 1% y el 10% son lo mismo"
@@ -755,7 +755,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿1,500 clientes alcanzan para crear el Lookalike?",
+          "q": "¿1,500 clientes alcanzan para crear el público similar?",
           "options": [
             "No: se necesitan 5,000 clientes mínimo",
             "Sí: supera el mínimo de 100 de un país",
@@ -774,28 +774,28 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "¿Diferencia entre Custom Audience y Lookalike?",
-          "a": "Custom Audience = gente que ya interactuó con tu negocio (retargeting). Lookalike = gente NUEVA similar a tu source (prospección)."
+          "q": "¿Diferencia entre público personalizado (Custom Audience) y público similar (Lookalike)?",
+          "a": "Público personalizado = gente que ya interactuó con tu negocio (retargeting). Público similar = gente NUEVA similar a tu source (prospección)."
         },
         {
-          "q": "¿Mínimo de personas en source audience para Lookalike?",
+          "q": "¿Mínimo de personas en source audience para público similar?",
           "a": "100 personas de UN SOLO país. Recomendado 1,000-50,000 para calidad."
         },
         {
-          "q": "¿1% vs 10% Lookalike?",
+          "q": "¿1% vs 10% público similar?",
           "a": "1% = top 1% más similar al source (max calidad, menor alcance). 10% = más alcance, menos similar."
         },
         {
-          "q": "¿El source de un Lookalike se incluye o se excluye?",
-          "a": "Se EXCLUYE automáticamente. El lookalike busca gente nueva similar, no re-alcanza al source."
+          "q": "¿El source de un público similar se incluye o se excluye?",
+          "a": "Se EXCLUYE automáticamente. El público similar busca gente nueva similar, no re-alcanza al source."
         },
         {
-          "q": "¿Cuántos Lookalikes puedes generar desde una misma source?",
-          "a": "Hasta 500 lookalikes por source audience."
+          "q": "¿Cuántos públicos similares puedes generar desde una misma source?",
+          "a": "Hasta 500 públicos similares por source audience."
         },
         {
-          "q": "¿Cuál es el mejor source para un Lookalike de calidad?",
-          "a": "Tus compradores top: filtra Purchase events con value alto, agrúpalos en una custom audience y úsala como source."
+          "q": "¿Cuál es el mejor source para un público similar de calidad?",
+          "a": "Tus compradores top: filtra Purchase events con value alto, agrúpalos en un público personalizado y úsala como source."
         }
       ]
     },
@@ -807,13 +807,13 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Qué es Advantage+ Audience",
-          "body": "<strong>Advantage+ Audience</strong> (audiencia Advantage+: segmentación con inteligencia artificial) es una función de Meta que deja que el sistema busque por su cuenta a la gente con más probabilidad de convertir, sin que tú tengas que adivinar cada interés. En vez de encerrar la campaña en una lista de filtros rígida, le das al sistema unas <strong>pistas</strong> (suggestions: tus intereses, lookalikes o datos demográficos) y la <strong>AI</strong> (Artificial Intelligence: inteligencia artificial) las usa como semilla para <em>expandir</em> hacia perfiles parecidos que también pueden comprarte. Nace de la idea moderna de Meta: el algoritmo encuentra compradores mejor que un targeting manual apretado. Lo más importante para el examen: viene <strong>encendido por default</strong> (activado de fábrica) en las campañas nuevas, así que si no quieres que expanda, tienes que apagarlo a propósito. Ejemplo: la <strong>Florería Bella Rosa</strong> deja Advantage+ Audience ON, le pasa como pista a sus compradoras de San Valentín, y el sistema sale a buscar gente nueva con patrones similares en lugar de quedarse solo con esa lista."
+          "h": "Qué es Advantage+ público",
+          "body": "<strong>Advantage+ público</strong> (Advantage+ audience: segmentación con inteligencia artificial) es una función de Meta que deja que el sistema busque por su cuenta a la gente con más probabilidad de convertir, sin que tú tengas que adivinar cada interés. En vez de encerrar la campaña en una lista de filtros rígida, le das al sistema unas <strong>pistas</strong> (suggestions: tus intereses, públicos similares (Lookalike) o datos demográficos) y la <strong>AI</strong> (Artificial Intelligence: inteligencia artificial) las usa como semilla para <em>expandir</em> hacia perfiles parecidos que también pueden comprarte. Nace de la idea moderna de Meta: el algoritmo encuentra compradores mejor que un targeting manual apretado. Lo más importante para el examen: viene <strong>encendido por default</strong> (activado de fábrica) en las campañas nuevas, así que si no quieres que expanda, tienes que apagarlo a propósito. Ejemplo: la <strong>Florería Bella Rosa</strong> deja Advantage+ público ON, le pasa como pista a sus compradoras de San Valentín, y el sistema sale a buscar gente nueva con patrones similares en lugar de quedarse solo con esa lista."
         },
         {
           "type": "concept",
-          "h": "Suggestions vs controls dentro de Advantage+ Audience",
-          "body": "Con Advantage+ Audience encendido, tus selecciones se reparten en dos grupos:<br/><br/><strong>1. Suggestions</strong> (sugerencias): son pistas flexibles que la AI puede respetar o ampliar. Aquí caen el <em>detailed targeting</em> (intereses, behaviors), los <em>lookalikes</em> y los rangos de edad o género. No encierran al sistema, solo lo orientan.<br/><br/><strong>2. Controls</strong> (controles): son límites duros que la AI <em>nunca</em> cruza, aunque esté en modo expansión. Aquí caen la <em>ubicación</em>, el <em>idioma</em>, la <em>edad mínima legal</em> y las <em>exclusiones</em> de custom audiences. Ejemplo: la <strong>Florería Bella Rosa</strong> pone como control \"solo Guadalajara\" (el sistema jamás entrega fuera) y como suggestion su lookalike de compradoras (el sistema lo usa de semilla y expande). Si confundes los dos, crees que limitaste algo que el sistema en realidad puede ignorar."
+          "h": "Suggestions vs controls dentro de Advantage+ público",
+          "body": "Con Advantage+ público encendido, tus selecciones se reparten en dos grupos:<br/><br/><strong>1. Suggestions</strong> (sugerencias): son pistas flexibles que la AI puede respetar o ampliar. Aquí caen el <em>detailed targeting</em> (intereses, behaviors), los <em>públicos similares</em> y los rangos de edad o género. No encierran al sistema, solo lo orientan.<br/><br/><strong>2. Controls</strong> (controles): son límites duros que la AI <em>nunca</em> cruza, aunque esté en modo expansión. Aquí caen la <em>ubicación</em>, el <em>idioma</em>, la <em>edad mínima legal</em> y las <em>exclusiones</em> de públicos personalizados. Ejemplo: la <strong>Florería Bella Rosa</strong> pone como control \"solo Guadalajara\" (el sistema jamás entrega fuera) y como suggestion su público similar de compradoras (el sistema lo usa de semilla y expande). Si confundes los dos, crees que limitaste algo que el sistema en realidad puede ignorar."
         },
         {
           "type": "concept",
