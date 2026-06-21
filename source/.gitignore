@@ -1,0 +1,6 @@
+# Material crudo pesado: NO commitear PDFs/medios grandes (política CLAUDE.md §9).
+# Claude los convierte a .md y commitea solo el markdown.
+*.pdf
+*.mp4
+*.mov
+*.zip
