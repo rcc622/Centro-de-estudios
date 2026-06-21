@@ -3,7 +3,7 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "¿Cuál es el mínimo de personas requerido en source audience para crear un Lookalike?",
+      "q": "¿Cuál es el mínimo de personas requerido en source audience para crear un público similar (Lookalike)?",
       "options": [
         "50",
         "100 en un solo país",
@@ -15,11 +15,11 @@
       "difficulty": "easy"
     },
     {
-      "q": "Un Lookalike 1% es:",
+      "q": "Un público similar 1% es:",
       "options": [
-        "Lookalike de menor calidad",
+        "Público similar de menor calidad",
         "Top 1% más SIMILAR al source (máxima similitud, menor alcance)",
-        "1% de tu custom audience",
+        "1% de tu público personalizado (Custom Audience)",
         "Equivalente al 10%"
       ],
       "correct": 1,
@@ -27,7 +27,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuál es el máximo de Custom Audiences por ad account?",
+      "q": "¿Cuál es el máximo de públicos personalizados por ad account?",
       "options": [
         "100",
         "250",
@@ -35,16 +35,16 @@
         "Ilimitadas"
       ],
       "correct": 2,
-      "explanation": "500 custom audiences máximo por ad account.",
+      "explanation": "500 públicos personalizados máximo por ad account.",
       "difficulty": "hard"
     },
     {
-      "q": "Advantage+ Audience en campañas nuevas:",
+      "q": "Advantage+ público (Advantage+ audience) en campañas nuevas:",
       "options": [
         "Desactivado por default",
         "Activado automáticamente por default",
-        "Solo disponible para Sales",
-        "Requiere catalog"
+        "Solo disponible para Ventas (Sales)",
+        "Requiere catálogo (catalog)"
       ],
       "correct": 1,
       "explanation": "ON por default. Se desactiva con 'Switch to original' o 'Further limit reach'.",

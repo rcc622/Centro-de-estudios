@@ -193,7 +193,7 @@
         {
           "type": "concept",
           "h": "Cómo se ve esto en Ads Manager (paso a paso)",
-          "body": "Para elegir el objetivo recorres esta ruta en la plataforma: <strong>Ads Manager → botón verde \"Create\" (Crear) → pantalla de \"Choose a campaign objective\" (Elige un objetivo de campaña)</strong>. Ahí aparecen los 6 ODAX en tarjetas. Eliges uno, das clic en <em>Continue</em> (Continuar) y entonces baja al nivel Ad set. Por ejemplo, el media buyer de <strong>Joyería Aurora</strong> entra a Ads Manager, da clic en Create, selecciona <em>Ventas</em> y solo después de eso aparecen las opciones de dónde y a quién mostrar el anuncio. Si eliges mal aquí, tendrás que crear la campaña otra vez: el objetivo no se puede cambiar una vez publicada."
+          "body": "Para elegir el objetivo recorres esta ruta en la plataforma: <strong>Ads Manager → botón verde \"Create\" (Crear) → pantalla de \"Choose a campaign objective\" (Elige un objetivo de campaña)</strong>. Ahí aparecen los 6 ODAX en tarjetas. Eliges uno, das clic en <em>Continue</em> (Continuar) y entonces baja al nivel Conjunto de anuncios. Por ejemplo, el media buyer de <strong>Joyería Aurora</strong> entra a Ads Manager, da clic en Create, selecciona <em>Ventas</em> y solo después de eso aparecen las opciones de dónde y a quién mostrar el anuncio. Si eliges mal aquí, tendrás que crear la campaña otra vez: el objetivo no se puede cambiar una vez publicada."
         },
         {
           "type": "concept",
@@ -412,33 +412,33 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Qué hace Awareness",
-          "body": "El objetivo <strong>Reconocimiento (awareness)</strong> busca llegar al máximo de personas que <strong>recordarán</strong> tu anuncio después de verlo. No le importa que hagan clic ni que compren: su único trabajo es que la marca se quede en la cabeza de la gente. Vive en lo más alto del funnel, donde el cliente apenas te está conociendo. Puede optimizar para varias métricas como <strong>reach</strong> (alcance, cuántas personas distintas ven el anuncio), <strong>ad recall</strong> (recuerdo del anuncio) o <strong>impressions</strong> (impresiones, cuántas veces se muestra). Ejemplo: <strong>Aguas Frescas Doña Mary</strong> abre un nuevo local y quiere que el barrio entero sepa que existe; no busca ventas todavía, solo que la recuerden."
+          "h": "Qué hace Reconocimiento (awareness)",
+          "body": "El objetivo <strong>Reconocimiento</strong> busca llegar al máximo de personas que <strong>recordarán</strong> tu anuncio después de verlo. No le importa que hagan clic ni que compren: su único trabajo es que la marca se quede en la cabeza de la gente. Vive en lo más alto del funnel, donde el cliente apenas te está conociendo. Puede optimizar para varias métricas como <strong>reach</strong> (alcance, cuántas personas distintas ven el anuncio), <strong>ad recall</strong> (recuerdo del anuncio) o <strong>impressions</strong> (impresiones, cuántas veces se muestra). Ejemplo: <strong>Aguas Frescas Doña Mary</strong> abre un nuevo local y quiere que el barrio entero sepa que existe; no busca ventas todavía, solo que la recuerden."
         },
         {
           "type": "concept",
-          "h": "Sub-términos de Awareness, uno por uno",
+          "h": "Sub-términos de Reconocimiento, uno por uno",
           "body": "El reconocimiento puede optimizar para distintas métricas. Las principales son: <strong>1. Reach</strong> (alcance): cuántas <em>personas distintas</em> vieron el anuncio al menos una vez. <strong>2. Ad recall lift</strong> (incremento de recuerdo): la cantidad estimada de personas que recordarían el anuncio si les preguntaras dos días después. <strong>3. Impressions</strong> (impresiones): cuántas <em>veces</em> se mostró el anuncio en total, aunque una misma persona lo vea varias veces. <strong>4. Video views</strong> (reproducciones de video): cuánta gente vio el video. La diferencia clave entre reach e impressions: reach cuenta personas, impressions cuenta veces."
         },
         {
           "type": "concept",
-          "h": "Las dos particularidades de Awareness",
-          "body": "El reconocimiento tiene dos rasgos que el examen pregunta seguido. Primero: está disponible tanto en <strong>Auction</strong> (subasta, donde compites por cada espacio y el costo varía) como en <strong>Reservation</strong> (reserva, donde apartas el espacio por adelantado a un costo fijo). De los 6 objetivos, solo Reconocimiento e <strong>Interacción (engagement)</strong> permiten Reservation; los demás solo funcionan en Auction. Segundo: <strong>no requiere</strong> Pixel, CAPI ni dataset (las herramientas que miden conversiones en tu sitio), porque el Reconocimiento no mide una compra ni una acción específica, solo el recuerdo. Por eso <strong>Aguas Frescas Doña Mary</strong> puede lanzar una campaña de Awareness aunque ni siquiera tenga página web."
+          "h": "Las dos particularidades de Reconocimiento",
+          "body": "El reconocimiento tiene dos rasgos que el examen pregunta seguido. Primero: está disponible tanto en <strong>Auction</strong> (subasta, donde compites por cada espacio y el costo varía) como en <strong>Reservation</strong> (reserva, donde apartas el espacio por adelantado a un costo fijo). De los 6 objetivos, solo Reconocimiento e <strong>Interacción (engagement)</strong> permiten Reservation; los demás solo funcionan en Auction. Segundo: <strong>no requiere</strong> Pixel, CAPI ni dataset (las herramientas que miden conversiones en tu sitio), porque el Reconocimiento no mide una compra ni una acción específica, solo el recuerdo. Por eso <strong>Aguas Frescas Doña Mary</strong> puede lanzar una campaña de Reconocimiento aunque ni siquiera tenga página web."
         },
         {
           "type": "concept",
-          "h": "Qué hace Traffic",
-          "body": "El objetivo <strong>Tráfico (traffic)</strong> tiene una sola misión: enviar gente a un destino, normalmente fuera de Meta. Ese destino puede ser tu sitio web, una app, un chat de Messenger o WhatsApp, una llamada o tu perfil de Instagram. Optimiza para acciones como <strong>link clicks</strong> (clics en el enlace) o <strong>landing page views</strong> (vistas de la página de destino, que cuentan cuando la página realmente cargó, no solo el clic). Vive en la parte media del funnel. Ejemplo: <strong>Librería El Pendiente</strong> publica un artículo de blog con recomendaciones de lectura y solo quiere que la gente lo lea; usa Traffic para llevarlos al artículo."
+          "h": "Qué hace Tráfico (traffic)",
+          "body": "El objetivo <strong>Tráfico</strong> tiene una sola misión: enviar gente a un destino, normalmente fuera de Meta. Ese destino puede ser tu sitio web, una app, un chat de Messenger o WhatsApp, una llamada o tu perfil de Instagram. Optimiza para acciones como <strong>link clicks</strong> (clics en el enlace) o <strong>landing page views</strong> (vistas de la página de destino, que cuentan cuando la página realmente cargó, no solo el clic). Vive en la parte media del funnel. Ejemplo: <strong>Librería El Pendiente</strong> publica un artículo de blog con recomendaciones de lectura y solo quiere que la gente lo lea; usa Tráfico para llevarlos al artículo."
         },
         {
           "type": "concept",
-          "h": "Las particularidades de Traffic",
+          "h": "Las particularidades de Tráfico",
           "body": "El tráfico es <strong>solo Auction</strong> (no admite Reservation, así que su costo siempre depende de la subasta) y <strong>no requiere</strong> Pixel, CAPI ni dataset para funcionar. El detalle importante: su trabajo termina en el momento en que el usuario hace clic. El tráfico <em>no</em> mide si esa persona luego compró, se registró o llenó un formulario; le basta con que haya dado clic. Por eso es engañoso usarlo para vender: <strong>Librería El Pendiente</strong> pagaría por visitas a su artículo, pero el sistema no estaría buscando compradores, solo curiosos que hacen clic."
         },
         {
           "type": "concept",
-          "h": "Qué hace Engagement",
-          "body": "El objetivo <strong>Interacción</strong> busca que la gente <em>haga algo</em> con tu contenido o tu negocio: ver un video, reaccionar o comentar una publicación, o iniciar una conversación por mensaje (Messenger, Instagram o WhatsApp). A diferencia del tráfico, que solo busca el clic de salida, la Interacción busca una interacción real. Está disponible en <strong>Auction y Reservation</strong> (es el segundo de los dos únicos que permiten reservar espacio). Ejemplo: <strong>Gimnasio Hierro Fit</strong> sube un video con la rutina del mes y quiere que sus seguidores lo vean completo dentro del feed, sin sacarlos a ningún sitio externo; ahí Engagement es el indicado."
+          "h": "Qué hace Interacción",
+          "body": "El objetivo <strong>Interacción</strong> busca que la gente <em>haga algo</em> con tu contenido o tu negocio: ver un video, reaccionar o comentar una publicación, o iniciar una conversación por mensaje (Messenger, Instagram o WhatsApp). A diferencia del tráfico, que solo busca el clic de salida, la Interacción busca una interacción real. Está disponible en <strong>Auction y Reservation</strong> (es el segundo de los dos únicos que permiten reservar espacio). Ejemplo: <strong>Gimnasio Hierro Fit</strong> sube un video con la rutina del mes y quiere que sus seguidores lo vean completo dentro del feed, sin sacarlos a ningún sitio externo; ahí la Interacción es la indicada."
         },
         {
           "type": "concept",
@@ -447,7 +447,7 @@
         },
         {
           "type": "kvtable",
-          "h": "Awareness vs Traffic vs Engagement (resumen)",
+          "h": "Reconocimiento vs Tráfico vs Interacción (resumen)",
           "rows": [
             [
               "Auction o Reservation",
@@ -610,7 +610,7 @@
             "Porque Reservation tiene muchos más placements"
           ],
           "correct": 1,
-          "explanation": "Reservation se elige cuando necesitas <strong>predictibilidad</strong> de costo y delivery (típico en eventos, ferias, lanzamientos). Auction es flexible pero el costo fluctúa con el mercado. Auction sí soporta Awareness — la diferencia es predictibilidad.",
+          "explanation": "Reservation se elige cuando necesitas <strong>predictibilidad</strong> de costo y delivery (típico en eventos, ferias, lanzamientos). Auction es flexible pero el costo fluctúa con el mercado. Auction sí soporta Reconocimiento — la diferencia es predictibilidad.",
           "difficulty": "medium"
         }
       ]
@@ -655,8 +655,8 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Qué hace Leads",
-          "body": "El objetivo <strong>Clientes potenciales (leads)</strong> sirve para recolectar los datos de contacto de personas interesadas en tu negocio: su nombre, correo, teléfono o lo que tú necesites para darles seguimiento después. Vive en la parte media del funnel, en la etapa de <em>consideración</em>: la persona ya te tiene en el radar pero todavía no compra. Es <strong>solo Auction</strong> (subasta, su costo siempre depende de cuánto compitan otros anunciantes; no admite Reservation). Además trae su propia automatización completa de extremo a extremo, llamada <strong>Advantage+ Leads campaigns</strong> (campañas de prospectos donde la inteligencia artificial de Meta arma casi todo por ti). Ejemplo: <strong>Seguros Confianza</strong> regala una cotización gratis a quien deje sus datos; usa Leads para juntar esos contactos y que un agente los llame después."
+          "h": "Qué hace Clientes potenciales (leads)",
+          "body": "El objetivo <strong>Clientes potenciales</strong> sirve para recolectar los datos de contacto de personas interesadas en tu negocio: su nombre, correo, teléfono o lo que tú necesites para darles seguimiento después. Vive en la parte media del funnel, en la etapa de <em>consideración</em>: la persona ya te tiene en el radar pero todavía no compra. Es <strong>solo Auction</strong> (subasta, su costo siempre depende de cuánto compitan otros anunciantes; no admite Reservation). Además trae su propia automatización completa de extremo a extremo, llamada <strong>Advantage+ Leads campaigns</strong> (campañas de prospectos donde la inteligencia artificial de Meta arma casi todo por ti). Ejemplo: <strong>Seguros Confianza</strong> regala una cotización gratis a quien deje sus datos; usa Clientes potenciales para juntar esos contactos y que un agente los llame después."
         },
         {
           "type": "concept",
@@ -665,8 +665,8 @@
         },
         {
           "type": "concept",
-          "h": "Qué hace Sales",
-          "body": "El objetivo <strong>Ventas (sales)</strong> busca encontrar a las personas con más probabilidad de <strong>comprar</strong>, es decir, de completar una transacción real con cobro de por medio. Vive al fondo del funnel, en la etapa de <em>conversión</em>, donde la persona ya está lista para sacar la tarjeta. Es <strong>solo Auction</strong> (no admite Reservation) y, igual que Clientes potenciales, trae su automatización completa: <strong>Advantage+ Sales campaigns</strong> (campañas de ventas donde la inteligencia artificial de Meta optimiza casi toda la campaña). La diferencia con Clientes potenciales es la intención: aquí no juntas contactos para llamar después, aquí buscas el cobro directo. Ejemplo: <strong>Boutique Lunaria</strong> (tienda de ropa en línea) usa Sales para vender vestidos directamente en su sitio, no para juntar correos."
+          "h": "Qué hace Ventas (sales)",
+          "body": "El objetivo <strong>Ventas</strong> busca encontrar a las personas con más probabilidad de <strong>comprar</strong>, es decir, de completar una transacción real con cobro de por medio. Vive al fondo del funnel, en la etapa de <em>conversión</em>, donde la persona ya está lista para sacar la tarjeta. Es <strong>solo Auction</strong> (no admite Reservation) y, igual que Clientes potenciales, trae su automatización completa: <strong>Advantage+ Sales campaigns</strong> (campañas de ventas donde la inteligencia artificial de Meta optimiza casi toda la campaña). La diferencia con Clientes potenciales es la intención: aquí no juntas contactos para llamar después, aquí buscas el cobro directo. Ejemplo: <strong>Boutique Lunaria</strong> (tienda de ropa en línea) usa Ventas para vender vestidos directamente en su sitio, no para juntar correos."
         },
         {
           "type": "concept",
@@ -715,8 +715,8 @@
         },
         {
           "type": "concept",
-          "h": "Qué hace App Promotion",
-          "body": "El objetivo <strong>Promoción de la app</strong> tiene dos usos: conseguir <em>instalaciones</em> nuevas de una aplicación móvil, o lograr que quien ya la tiene la vuelva a usar, lo que se llama <strong>reengagement</strong> (reenganche o reactivación de usuarios). Es <strong>solo Auction</strong> (no admite Reservation) y trae su propia automatización completa: <strong>Advantage+ App campaigns</strong> (campañas de app gestionadas por la inteligencia artificial de Meta). Es el único de los seis objetivos pensado específicamente para apps, no para sitios web ni formularios. Ejemplo: <strong>RetoFit</strong> (una app de rutinas de ejercicio) usa App Promotion para conseguir descargas nuevas cuando lanza su versión renovada, y más adelante para reactivar a quienes la instalaron pero dejaron de abrirla."
+          "h": "Qué hace Promoción de la app",
+          "body": "El objetivo <strong>Promoción de la app</strong> tiene dos usos: conseguir <em>instalaciones</em> nuevas de una aplicación móvil, o lograr que quien ya la tiene la vuelva a usar, lo que se llama <strong>reengagement</strong> (reenganche o reactivación de usuarios). Es <strong>solo Auction</strong> (no admite Reservation) y trae su propia automatización completa: <strong>Advantage+ App campaigns</strong> (campañas de app gestionadas por la inteligencia artificial de Meta). Es el único de los seis objetivos pensado específicamente para apps, no para sitios web ni formularios. Ejemplo: <strong>RetoFit</strong> (una app de rutinas de ejercicio) usa Promoción de la app para conseguir descargas nuevas cuando lanza su versión renovada, y más adelante para reactivar a quienes la instalaron pero dejaron de abrirla."
         },
         {
           "type": "concept",
@@ -731,7 +731,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Casa Plus",
-          "body": "Una misma inmobiliaria puede necesitar Leads o Sales según la etapa del cliente. <strong>Casa Plus</strong> (inmobiliaria) ofrece una visita guiada gratis y solo quiere los datos del prospecto para que un asesor le marque: ahí usa <strong>Clientes potenciales</strong> con conversion location <em>Instant form</em>, que captura todo dentro del feed sin sacar a la persona. Pero si la meta sube a que el cliente firme un contrato digital de apartado (una transacción real), entonces es <strong>Ventas</strong>. Aunque la firma final ocurra por Messenger, los eventos de navegación en el sitio web (medidos con Pixel y CAPI) alimentan el modelo de optimización para que Meta encuentre a quien de verdad va a firmar. La regla mental: si el resultado es un contacto para seguimiento, es Clientes potenciales; si es un cobro o cierre, es Ventas."
+          "body": "Una misma inmobiliaria puede necesitar Clientes potenciales o Ventas según la etapa del cliente. <strong>Casa Plus</strong> (inmobiliaria) ofrece una visita guiada gratis y solo quiere los datos del prospecto para que un asesor le marque: ahí usa <strong>Clientes potenciales</strong> con conversion location <em>Instant form</em>, que captura todo dentro del feed sin sacar a la persona. Pero si la meta sube a que el cliente firme un contrato digital de apartado (una transacción real), entonces es <strong>Ventas</strong>. Aunque la firma final ocurra por Messenger, los eventos de navegación en el sitio web (medidos con Pixel y CAPI) alimentan el modelo de optimización para que Meta encuentre a quien de verdad va a firmar. La regla mental: si el resultado es un contacto para seguimiento, es Clientes potenciales; si es un cobro o cierre, es Ventas."
         },
         {
           "type": "mcq",
