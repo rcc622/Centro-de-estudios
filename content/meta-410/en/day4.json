@@ -1,0 +1,1854 @@
+{
+  "id": "day4",
+  "title": "Day 4 — Signals & Data",
+  "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Review",
+      "sub": "Prior concepts before starting"
+    },
+    "b1": {
+      "ico": "📡",
+      "title": "Block 1",
+      "sub": "Signals, events and the 4 data sources"
+    },
+    "b2": {
+      "ico": "🔗",
+      "title": "Block 2",
+      "sub": "Dataset, Pixel and Conversions API"
+    },
+    "b3": {
+      "ico": "🎯",
+      "title": "Block 3",
+      "sub": "Event Match Quality and parameters"
+    },
+    "b4": {
+      "ico": "🧩",
+      "title": "Block 4",
+      "sub": "Event types and Custom Conversions"
+    },
+    "b5": {
+      "ico": "🍎",
+      "title": "Block 5",
+      "sub": "iOS 14+ · ATT and AEM"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Final review",
+      "sub": "Consolidation before the exam"
+    }
+  },
+  "lessons": [
+    {
+      "id": "4.0",
+      "title": "Review · Days 1-3",
+      "section": "b0",
+      "icon": "🧠",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Recall it before moving on",
+          "body": "Before getting into <strong>Signals & Data</strong> (the Pixel, the CAPI and events), it helps to recall from memory what you already saw on the previous days. <strong>Active recall</strong> (bringing a concept to mind without looking at it) cements learning far better than rereading. In the following cards you'll review the objectives and the bid strategies that Meta's algorithm uses to compete in each auction. Master that first, because today you'll learn the raw material that feeds that algorithm. For example, a store like <strong>Aurora Boutique</strong> can't optimize sales without first understanding how Meta chooses who to show the ad to."
+        },
+        {
+          "type": "kvtable",
+          "h": "Mental anchors",
+          "rows": [
+            [
+              "6 ODAX",
+              "Awareness · Traffic · Engagement · Leads · App · Sales"
+            ],
+            [
+              "Total value",
+              "bid × action rates + ad quality. The highest total wins the auction."
+            ],
+            [
+              "5 bid strategies",
+              "Highest Volume · Highest Value · Cost per Result Goal · ROAS Goal · Bid Cap"
+            ],
+            [
+              "Learning phase",
+              "~50 events / 7 days. Changing the bid strategy RESETS the learning."
+            ],
+            [
+              "Advantage+ Budget",
+              "Meta distributes budget across ad sets vs. manual per set."
+            ]
+          ]
+        },
+        {
+          "type": "mcq",
+          "q": "Who wins Meta's auction?",
+          "options": [
+            "Whoever pays the highest bid",
+            "The one with the highest bid × action rate + quality",
+            "The ad published first",
+            "The one with the largest daily budget"
+          ],
+          "correct": 1,
+          "explanation": "Total value = bid × probability of action + ad quality. An ad with a low bid but high relevance can beat one with a high bid and a generic banner.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Client wants to MAXIMIZE the VOLUME of leads regardless of unit cost. Bid strategy:",
+          "options": [
+            "Cost per Result Goal with a target",
+            "Highest Volume with no cost goals",
+            "Bid Cap set at $400",
+            "ROAS Goal of 3x on spend"
+          ],
+          "correct": 1,
+          "explanation": "Highest Volume = maximize quantity with no cost restriction. Cost per Result Goal would work if there were a CPA goal. ROAS Goal is for optimizing value.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Changing the bid strategy mid-learning phase:",
+          "options": [
+            "Speeds up exiting the learning phase",
+            "Resets the learning and you start from zero",
+            "Has no effect on the campaign",
+            "Only affects the set's budget"
+          ],
+          "correct": 1,
+          "explanation": "Strong changes (bid strategy, large budget, large audience) reset the learning. You have to wait 50 events/7 days again.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Bid Cap controls:",
+          "options": [
+            "The final CPA of each conversion",
+            "The maximum bid in the auction",
+            "The daily budget of the ad set",
+            "The lifetime budget of the campaign"
+          ],
+          "correct": 1,
+          "explanation": "Bid Cap = a ceiling on the bid Meta places in each auction. It does NOT control the final CPA (it can come out expensive despite the cap). Cost per Result Goal does target the CPA.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Client wants SALES. What does it require for Sales to optimize well?",
+          "options": [
+            "Only the Pixel installed on the site",
+            "Only the CAPI configured on the server",
+            "Pixel + CAPI configured on the site",
+            "A customer list of clients"
+          ],
+          "correct": 2,
+          "explanation": "Sales requires Pixel + CAPI + dataset. Pixel alone loses 10-30% of events. CAPI alone loses the match with the user in the browser. Both together cover ~95%.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "concept",
+          "h": "Ready. Let's go!",
+          "body": "Now that the bid strategies are fresh, Day 4 shows you the <strong>raw material</strong> the algorithm needs to optimize: the signals your site or app sends to Meta. Those signals travel through the <strong>Pixel</strong> (the code that records actions on your site), the <strong>CAPI</strong> (Conversions API, sending data from your server) and the <strong>events</strong> (the record of each important action). Without this data, the auction algorithm optimizes blindly and wastes your budget. Think of it this way: on the previous days you learned to drive the car; today you learn to give it quality fuel. For example, the coffee shop <strong>La Esquina</strong> needs to send Meta the data of each sign-up so it learns to bring in more similar students."
+        }
+      ]
+    },
+    {
+      "id": "4.1",
+      "title": "Explanation · Signals, events and the 4 data sources",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What a signal is",
+          "body": "A <strong>signal</strong> is any action by a person that reveals their intent or interest: visiting a page, adding a product to the cart, buying, opening an app or entering a physical store. For Meta, these signals are the raw material it uses to learn who to show your ads to. The more real signals it receives, the better it understands who a good prospect is. Think of them as the clues a person leaves about what they want to buy. For example, the coffee shop <strong>La Esquina</strong> sees that many visitors land on its \"barista courses\" page: that repeated interest is a signal that those people might sign up."
+        },
+        {
+          "type": "concept",
+          "h": "What an event is",
+          "body": "An <strong>event</strong> is the technical record of a specific action that your site or app sends to Meta. If the signal is the intent, the event is the report that says \"this happened here.\" Events can be <strong>online</strong> (on the web, in an app or in a chat) or <strong>offline</strong> (a purchase at the counter, a phone call or a reservation by phone). At the coffee shop <strong>La Esquina</strong>, when someone completes the barista course sign-up, the site fires an event called <em>Lead</em> that travels to Meta. Without that send, Meta never finds out the sign-up happened."
+        },
+        {
+          "type": "concept",
+          "h": "Key difference · signal vs event",
+          "body": "The <strong>signal</strong> is the intent the person shows; the <strong>event</strong> is the technical record of that action that your site or app sends to Meta. They are two sides of the same thing: the person generates the signal by acting, and your platform turns it into a measurable event. If events aren't configured correctly, the signals never reach Meta and optimization works blindly, spending your budget without knowing what works. In short: the signal is what the person does; the event is how Meta finds out."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Casa Plus",
+          "body": "A prospect visits casaplus.com/properties and fills out the guided-tour form. The <em>signal</em> is \"this person has real interest in buying.\" The <em>event</em> is the <em>Lead</em> record the site sends to Meta so it learns to find more similar buyers."
+        },
+        {
+          "type": "concept",
+          "h": "What a data source is",
+          "body": "A <strong>data source</strong> is the tool or piece of code that collects your business's events and delivers them to Meta to measure results and optimize campaigns. It's the \"messenger\" that connects what happens on your site, app or store with the ads platform. Without a connected data source, Meta sees the click on the ad but goes blind from there on: it doesn't know whether the person bought, registered or left. For example, if the coffee shop <strong>La Esquina</strong> doesn't connect any source, it can pay for clicks but will never know how many sign-ups those clicks generated."
+        },
+        {
+          "type": "kvtable",
+          "h": "The 4 data sources · how you send signals to Meta",
+          "rows": [
+            [
+              "Meta Pixel",
+              "JS code on the website. Tracks visitor actions. Required for web Custom Audiences and website Sales/Leads."
+            ],
+            [
+              "Conversions API (CAPI)",
+              "Server-side sending from the advertiser's server. Complements the Pixel to reduce browser dependence."
+            ],
+            [
+              "Facebook SDK",
+              "The Pixel equivalent for mobile apps. Required for App Promotion. Replaceable by an MMP."
+            ],
+            [
+              "Offline conversions",
+              "CSV with physical events (in-store purchase, contract signed in the office). Uploaded via CAPI Offline."
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "The 4 data sources, one by one",
+          "body": "Each source covers a different channel:<br/><strong>1. Meta Pixel</strong> (JavaScript code you place on your website): tracks what visitors do on your site, such as viewing a product or buying. It's the basis for web Custom Audiences and website Sales or Leads campaigns.<br/><strong>2. Conversions API or CAPI</strong> (sending data from your own server, not from the browser): sends events to Meta more reliably and complements the Pixel.<br/><strong>3. Facebook SDK</strong> (the Pixel equivalent but for mobile apps): required for App Promotion campaigns and can be replaced by an MMP (Mobile Measurement Partner, an authorized external measurement tool such as AppsFlyer or Adjust).<br/><strong>4. Offline conversions</strong>: a CSV file with physical sales, such as a counter purchase or a contract signed in the office, uploaded via CAPI Offline."
+        },
+        {
+          "type": "concept",
+          "h": "Mental rule · which data source by channel",
+          "body": "The easy way to choose is to ask yourself where the action happens. If it happens on a <strong>website</strong>, you use the Pixel plus CAPI. If it happens in a <strong>mobile app</strong>, you use the Facebook SDK (or an authorized MMP). If it happens <strong>offline</strong> (in an office, a store or by phone), you use Offline conversions via CAPI Offline. The channel where the conversion happens is what drives the decision. For example, the <strong>Hotel Lumière</strong> takes reservations on its website (Pixel + CAPI), but reservations that come in by phone to the front desk are uploaded as Offline conversions."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · AutoMax",
+          "body": "<strong>AutoMax</strong>, a car dealership, receives quotes on its website but closes sales in person at the dealership, weeks later. For online quotes it uses <strong>Pixel + CAPI</strong> on automax.com. For cars sold on the floor it uses <strong>Offline conversions</strong> (a CSV uploaded via CAPI Offline) so Meta can link that sale to the ad the person saw earlier. Since AutoMax has no mobile app, the Facebook SDK doesn't apply in its case: each business uses only the sources that match its channels."
+        },
+        {
+          "type": "mcq",
+          "q": "A colleague says: \"a signal and an event are exactly the same thing.\" What do you tell them?",
+          "options": [
+            "They're right: they're exact synonyms",
+            "The signal is the intent; the event records it",
+            "The event always happens before the signal",
+            "Only events exist; signals aren't stored"
+          ],
+          "correct": 1,
+          "explanation": "The <strong>signal</strong> = intent (visiting, adding to cart, buying). The <strong>event</strong> = the technical record of that action sent to Meta. Related, but not the same thing."
+        }
+      ]
+    },
+    {
+      "id": "4.2",
+      "title": "Memory workout · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The 4 main data sources are Pixel (web), ___ (server-side), Facebook SDK (app) and Offline conversions.",
+          "options": [
+            "CAPI",
+            "Dataset",
+            "AEM",
+            "EMQ"
+          ],
+          "correct": 0,
+          "explanation": "<strong>CAPI (Conversions API)</strong> is the server-side data source. Together with the Pixel it gives maximum coverage."
+        },
+        {
+          "type": "mcq",
+          "q": "A signal is:",
+          "options": [
+            "The technical record the site sends to Meta",
+            "An action that reveals intent or interest",
+            "A rule on an already existing event",
+            "A privacy protocol specific to iOS"
+          ],
+          "correct": 1,
+          "explanation": "The <strong>signal</strong> is the intent/interest a person shows. The technical record of that action is the <strong>event</strong>."
+        },
+        {
+          "type": "fill",
+          "q": "To record conversions from a mobile app, the required data source is the ___ (or an authorized MMP).",
+          "options": [
+            "Facebook SDK",
+            "Meta Pixel",
+            "Offline CSV",
+            "Catalog"
+          ],
+          "correct": 0,
+          "explanation": "The <strong>Facebook SDK</strong> is the Pixel equivalent for apps. It's mandatory for App Promotion, unless you use an authorized MMP (AppsFlyer, Adjust, etc.)."
+        },
+        {
+          "type": "mcq",
+          "q": "The event happens offline (contract signed in the office). Which data source covers it?",
+          "options": [
+            "The Meta Pixel on the website",
+            "The Facebook SDK in the app",
+            "Offline conversions via CAPI Offline",
+            "None: the event is unmeasurable"
+          ],
+          "correct": 2,
+          "explanation": "Physical events (office, store, phone) are covered with <strong>Offline conversions via CAPI Offline</strong>: a CSV with hashed customer info and the value."
+        },
+        {
+          "type": "fill",
+          "q": "Without a connected ___, Meta doesn't know what happened after the click.",
+          "options": [
+            "data source",
+            "campaign",
+            "audience",
+            "creative"
+          ],
+          "correct": 0,
+          "explanation": "The <strong>data source</strong> (Pixel, CAPI, SDK, Offline) collects the events and delivers them to Meta. Without it, there's no measurement or optimization."
+        },
+        {
+          "type": "mcq",
+          "q": "Events can be:",
+          "options": [
+            "Online only (web and sites)",
+            "Offline only (in a physical store)",
+            "Online (web, app) or offline (store, call)",
+            "Only inside mobile apps"
+          ],
+          "correct": 2,
+          "explanation": "Events can be <strong>online</strong> (web, app, messaging) or <strong>offline</strong> (in-store purchase, call, reservation)."
+        }
+      ]
+    },
+    {
+      "id": "4.3",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "AutoMax closes sales at the dealership",
+          "body": "<strong>AutoMax</strong> runs ads for premium cars. The customer sees the ad, visits automax.com but doesn't buy there: they book a test drive and sign the contract <strong>in person at the dealership</strong> two weeks later. The owner says: \"since they didn't buy on the website, that sale can't be attributed to the ad, right?\""
+        },
+        {
+          "type": "mcq",
+          "q": "Which data source does AutoMax use so Meta attributes that in-person close to the ad the customer saw earlier?",
+          "options": [
+            "The Meta Pixel on the website",
+            "The Facebook SDK in the app",
+            "Offline conversions via CAPI Offline (CSV)",
+            "It can't be measured: it was an offline sale"
+          ],
+          "correct": 2,
+          "explanation": "Physical closes are uploaded as <strong>Offline conversions via CAPI Offline</strong>: a CSV with hashed customer info and the value. That way Meta attributes the close to the online ad the customer saw."
+        },
+        {
+          "type": "mcq",
+          "q": "Why is the owner wrong to think the sale is unmeasurable?",
+          "options": [
+            "Because the Pixel records in-office closes",
+            "Because offline sales are attributed via CAPI",
+            "Because Meta never attributes sales, only clicks",
+            "Because the SDK captures in-person sales"
+          ],
+          "correct": 1,
+          "explanation": "An offline close is not unmeasurable: by uploading the CSV via <strong>CAPI Offline</strong> with hashed email/phone and value, Meta matches the customer to the ad they saw and attributes the sale."
+        }
+      ]
+    },
+    {
+      "id": "4.4",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What are signals in Meta?",
+          "a": "Actions that reveal intent or interest: visiting a site, adding to cart, buying, using an app, entering a store."
+        },
+        {
+          "q": "Difference between a signal and an event?",
+          "a": "The signal is the intent a person shows; the event is the technical record of that action that the site/app sends to Meta."
+        },
+        {
+          "q": "Meta's 4 main data sources?",
+          "a": "Pixel (web), CAPI (server-side), Facebook SDK (app), Offline events (via CAPI Offline)."
+        },
+        {
+          "q": "Which data source by channel?",
+          "a": "Website → Pixel (+ CAPI). Mobile app → Facebook SDK (or MMP). Offline → Offline conversions via CAPI Offline."
+        },
+        {
+          "q": "What does App Promotion require?",
+          "a": "Facebook SDK installed in the app, or an authorized MMP (AppsFlyer, Adjust, Branch, etc.)."
+        },
+        {
+          "q": "Are events online only?",
+          "a": "No. They can be online (web, app, messaging) or offline (in-store purchase, call, reservation)."
+        }
+      ]
+    },
+    {
+      "id": "4.5",
+      "title": "Explanation · Dataset, Pixel and Conversions API",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What a Dataset is",
+          "body": "A <strong>Dataset</strong> is a container that unites all your data sources (Pixel, CAPI, SDK and offline) in one place. Instead of each source reporting on its own, the Dataset consolidates them so Meta sees a single, ordered stream of events. It's the connection point between what happens in your business and the optimization of your campaigns. For example, the <strong>Hotel Lumière</strong> takes reservations on the web (Pixel and CAPI) and by phone (offline): the Dataset brings those three sources together so Meta counts each reservation only once."
+        },
+        {
+          "type": "concept",
+          "h": "Why where the Dataset is connected matters",
+          "body": "The Dataset is chosen at the <strong>Ad set level</strong>, along with the conversion location (where the conversion happens, for example your website) and the conversion event (what action counts as a conversion, for example a purchase). Remember the hierarchy from Day 1: the Ad set is the level that decides who you show the ads to and under what conversion configuration. That's why the Dataset lives there and not in the Campaign (the top level, where only the objective is defined) or in the Ad (the individual ad). If you looked for it at another level, it simply wouldn't be there."
+        },
+        {
+          "type": "concept",
+          "h": "What the Meta Pixel is",
+          "body": "The <strong>Meta Pixel</strong> is a snippet of JavaScript code you install on your website. Its job is to capture the events that happen in the visitor's browser: when they view a product (<em>ViewContent</em>), add it to the cart (<em>AddToCart</em>) or buy (<em>Purchase</em>). The problem is that it runs <strong>client-side</strong> (inside the person's browser), and that makes it vulnerable: ad blockers, private browsing and iOS 14+ privacy can prevent it from firing. That's why its coverage is always partial. The online store <strong>Aurora Boutique</strong> sees that it loses reported sales precisely because of these browser blocks."
+        },
+        {
+          "type": "concept",
+          "h": "What the Conversions API (CAPI) is",
+          "body": "The <strong>Conversions API</strong> or <strong>CAPI</strong> is a method to send events <strong>server-to-server</strong>: your own server sends the data directly to Meta, without going through the visitor's browser. Since it doesn't depend on the browser, ad blockers and iOS privacy don't affect it, so it captures purchases and conversions even when the Pixel fails. It also improves Event Match Quality (EMQ, how well Meta matches an event to a real person). At <strong>Aurora Boutique</strong>, the sales the Pixel used to lose to browser blocks now do arrive thanks to CAPI."
+        },
+        {
+          "type": "warn",
+          "label": "CRITICAL TRAP",
+          "body": "<strong>CAPI does NOT replace the Pixel</strong>. They are <em>complementary</em>. Meta's recommendation is to use BOTH for maximum coverage. Pixel for browser detail, CAPI for server reliability."
+        },
+        {
+          "type": "kvtable",
+          "h": "Why Pixel + CAPI",
+          "rows": [
+            [
+              "Pixel only",
+              "You lose ~10-30% of events to ad blockers/iOS 14"
+            ],
+            [
+              "CAPI only",
+              "You lose browser detail (specific clicks, time on site)"
+            ],
+            [
+              "Pixel + CAPI",
+              "Maximum coverage (~95%+), better EMQ, better optimization"
+            ],
+            [
+              "iOS 14+ with ATT",
+              "The Pixel is heavily limited by ATT — CAPI becomes more important"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · AutoMax",
+          "body": "<strong>AutoMax</strong> has the Pixel and CAPI sending events separately. Since both can report the same quote, if it doesn't unite them in a Dataset, Meta could count the same <em>Purchase</em> twice and inflate the results. The Dataset handles <strong>deduplication</strong> (detecting and removing the repeated event): it consolidates everything in one place where the Pixel and CAPI for the same contract count as a single conversion. That way AutoMax sees real figures and Meta optimizes with clean, non-duplicated data."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Events Manager (step by step)",
+          "body": "All of this is configured in <strong>Events Manager</strong>. The typical path is:<br/><strong>1.</strong> Go to business.facebook.com and open <em>Events Manager</em> from the tools menu.<br/><strong>2.</strong> Choose <em>Connect data sources</em> and select <em>Web</em> to create the Pixel/Dataset.<br/><strong>3.</strong> Install the Pixel code on your site (manually, with a partner like Shopify, or via Google Tag Manager).<br/><strong>4.</strong> In the Dataset's <em>Settings</em> tab, enable the <em>Conversions API</em> to add server-side sending.<br/><strong>5.</strong> Then in Ads Manager, when building the Ad Set, choose that Dataset as the source and define the conversion event (for example Purchase). That way <strong>AutoMax</strong> gets everything connected before launching the campaign."
+        },
+        {
+          "type": "mcq",
+          "q": "At which level is the dataset connected to a campaign?",
+          "options": [
+            "Account level",
+            "Campaign level",
+            "Ad set level",
+            "Ad level"
+          ],
+          "correct": 2,
+          "explanation": "The dataset is connected at the <strong>Ad set</strong> level, along with the conversion location and conversion event.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "4.6",
+      "title": "Memory workout · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The Meta Pixel is code that runs in the visitor's ___, which is why ad blockers and iOS ATT limit it.",
+          "options": [
+            "browser",
+            "server",
+            "catalog",
+            "Events Manager"
+          ],
+          "correct": 0,
+          "explanation": "The Pixel is <strong>client-side</strong>: it runs in the browser. That's why ad blockers, private browsing and iOS 14+ ATT affect it. The complementary solution is CAPI (server-side)."
+        },
+        {
+          "type": "mcq",
+          "q": "Which statement about the Pixel and CAPI is CORRECT?",
+          "options": [
+            "CAPI completely replaces the Pixel",
+            "The Pixel on its own is always enough",
+            "They are complementary: using both is recommended",
+            "You pick one based on the type of website"
+          ],
+          "correct": 2,
+          "explanation": "Pixel + CAPI together give maximum coverage. CAPI doesn't replace the Pixel, it complements it.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "The dataset that combines Pixel + CAPI is connected at the ___ level.",
+          "options": [
+            "Ad set",
+            "Campaign",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "The <strong>dataset</strong> is connected at the <strong>Ad set</strong> level, along with the conversion location and conversion event."
+        },
+        {
+          "type": "mcq",
+          "q": "The Conversions API (CAPI) sends events:",
+          "options": [
+            "From the site visitor's browser",
+            "Server-to-server, from the server directly to Meta",
+            "Only from mobile apps through the SDK",
+            "Only packaged in CSV files"
+          ],
+          "correct": 1,
+          "explanation": "CAPI is <strong>server-side</strong>: it sends server-to-server from the advertiser's server. It doesn't depend on the browser, so ad blockers and ATT don't affect it."
+        },
+        {
+          "type": "fill",
+          "q": "If you have the Pixel and CAPI separate without uniting them in a Dataset, Meta could ___ the same Purchase.",
+          "options": [
+            "count twice",
+            "ignore",
+            "attribute better",
+            "hash"
+          ],
+          "correct": 0,
+          "explanation": "The Dataset <strong>deduplicates</strong>: it unites Pixel + CAPI so the same close counts as a single conversion and not twice."
+        },
+        {
+          "type": "mcq",
+          "q": "Pixel only (without CAPI) typically:",
+          "options": [
+            "Covers 100% of the site's events",
+            "Loses ~10-30% of events (ad blockers, iOS)",
+            "Doesn't work on websites, only on apps",
+            "Completely replaces the Dataset"
+          ],
+          "correct": 1,
+          "explanation": "Pixel only loses ~10-30% of events to ad blockers and iOS 14. Pixel + CAPI reaches maximum coverage (~95%+)."
+        }
+      ]
+    },
+    {
+      "id": "4.7",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Distribuidora del Norte wants to save",
+          "body": "<strong>Distribuidora del Norte</strong> (an industrial equipment SMB in Monterrey) already has the Meta Pixel on its site. Its agency proposes also configuring CAPI. The owner says: \"if I already have the Pixel, CAPI is the same thing and an extra expense. I'll just keep the Pixel and connect the dataset at the Campaign level to keep it simple.\""
+        },
+        {
+          "type": "mcq",
+          "q": "What do you correct about CAPI vs the Pixel?",
+          "options": [
+            "He's right: CAPI is the same as the Pixel",
+            "It doesn't replace the Pixel: they're complementary",
+            "You should remove the Pixel and use CAPI only",
+            "CAPI only works to measure mobile apps"
+          ],
+          "correct": 1,
+          "explanation": "Pixel + CAPI is the recommended practice: maximum coverage (~95% vs ~70% with Pixel only) and better Event Match Quality. CAPI complements, it doesn't replace."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you correct about connecting the dataset at the Campaign level?",
+          "options": [
+            "It's fine: the dataset is connected at the Campaign",
+            "The dataset is connected at the Ad set level, not Campaign",
+            "The dataset is connected at the general Account level",
+            "The dataset is connected at each Ad's level"
+          ],
+          "correct": 1,
+          "explanation": "The dataset is connected at the <strong>Ad set level</strong>, not at the Campaign. That's also where you choose the conversion location and the conversion event."
+        },
+        {
+          "type": "mcq",
+          "q": "If Distribuidora insists on \"Pixel only,\" what concrete risk does it run?",
+          "options": [
+            "None: the Pixel always covers 100%",
+            "It loses ~10-30% of events and optimizes worse",
+            "That the Pixel duplicates all events",
+            "That Meta charges more for the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Pixel only loses ~10-30% of events to ad blockers, iOS 14 and private browsing. That lost data makes Meta learn worse and optimize worse."
+        }
+      ]
+    },
+    {
+      "id": "4.8",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "How is the dataset connected to a campaign and at which level?",
+          "a": "It's connected at the Ad set level, along with the conversion location and conversion event."
+        },
+        {
+          "q": "What is the Dataset for?",
+          "a": "It unites Pixel + CAPI + SDK + offline in one place at the Ad set level and deduplicates events so the same close counts only once."
+        },
+        {
+          "q": "What is the Meta Pixel and its limitation?",
+          "a": "Client-side JS code on the website that captures browser events. It's limited by ad blockers, private browsing and iOS 14+ ATT."
+        },
+        {
+          "q": "What is CAPI?",
+          "a": "Conversions API: server-to-server sending from the advertiser's server directly to Meta. It doesn't depend on the browser."
+        },
+        {
+          "q": "Does the Pixel replace CAPI or are they complementary?",
+          "a": "Complementary. Meta's recommendation is to use BOTH for maximum coverage (~95%)."
+        },
+        {
+          "q": "The Pixel only covers the browser; what does CAPI cover?",
+          "a": "CAPI covers server-side: events from the advertiser's server directly to Meta, without going through the browser. Ad blockers and ATT don't affect it."
+        }
+      ]
+    },
+    {
+      "id": "4.9",
+      "title": "Explanation · Event Match Quality and parameters",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What Event Match Quality (EMQ) is",
+          "body": "<strong>Event Match Quality</strong> or <strong>EMQ</strong> is a metric that measures how well Meta manages to associate an event it receives with a real person in its user base. The better the match, the more useful that event is for optimization. EMQ improves when you send <strong>rich customer information</strong>, such as <em>hashed</em> email and phone (turned into an irreversible code that protects privacy), plus the IP and the user agent (the browser identifier). CAPI lets you send more of this information than the Pixel on its own. For example, the <strong>DentalCare</strong> clinic that sends only the IP has poor EMQ."
+        },
+        {
+          "type": "tip",
+          "label": "WHY IT MATTERS",
+          "body": "If Meta can't match the event to a person, that event is \"lost\" for optimization. Better EMQ = more useful events = better learning = better performance. That's why sending hashed email/phone via CAPI is one of the best levers."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · DentalCare",
+          "body": "DentalCare sends only the IP in its events: low EMQ, Meta matches few appointments to the ad that originated them. When it adds hashed email and phone from the CRM via CAPI, the EMQ rises, Meta attributes more appointments and optimization improves without spending a single peso more."
+        },
+        {
+          "type": "concept",
+          "h": "What an event's parameters are",
+          "body": "A <strong>parameter</strong> is an extra piece of data that travels inside the event to give Meta context. If the event says \"there was a purchase,\" the parameters say <em>what</em> was bought, for <em>how much</em> and in which <em>currency</em>. Without them, Meta knows something happened but doesn't have the details to optimize well or to feed value-based bid strategies. It's the difference between \"someone bought\" and \"someone bought an $18,000 MXN sofa.\" For example, the store <strong>Aurora Boutique</strong> sends the amount parameter with each Purchase, so Meta prioritizes high-ticket buyers."
+        },
+        {
+          "type": "concept",
+          "h": "The recommended parameters, one by one",
+          "body": "These are the most important ones Meta recommends sending:<br/><strong>1. Content IDs</strong>: the SKU or product code, to know exactly which item was viewed or bought.<br/><strong>2. Content type</strong>: whether it was a 'product' or a 'service'.<br/><strong>3. Value</strong>: the transaction amount in local currency, for example 18000.<br/><strong>4. Currency</strong>: the currency of that amount, such as MXN or USD, so Meta knows how to interpret the number.<br/><strong>5. Product catalog IDs</strong>: they link the event to your catalog for Advantage+ Catalog campaigns. At <strong>Aurora Boutique</strong>, sending the sofa's Content ID plus its value and currency lets Meta recommend that same model to whoever had already viewed it."
+        },
+        {
+          "type": "concept",
+          "h": "Why value and currency are critical",
+          "body": "Of all the parameters, <strong>value</strong> (the amount) and <strong>currency</strong> are the most important for sales campaigns. Without them, Meta knows a purchase happened, but has no idea <em>how much</em> that purchase was worth. And if it doesn't know the amount, it can't distinguish a $200 sale from a $20,000 one, so it treats them the same. That completely blocks the value-based bid strategies you saw on Day 3, like <strong>Highest Value</strong> and <strong>ROAS Goal</strong> (return on ad spend): it's impossible to optimize for return if you don't tell Meta how much each conversion is worth. For example, a furniture store like <strong>Casa Mística</strong> that doesn't send the value makes Meta chase many tiny sales instead of the expensive dining sets that bring more profit."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Tech Móvil",
+          "body": "Tech Móvil sends Purchase with no value: Meta optimizes all sales equally, whether a $3,000 phone or a $30,000 iPhone Pro. When it adds <em>value</em> and <em>currency: MXN</em>, it can use ROAS Goal and focus the budget on high-ticket phones."
+        },
+        {
+          "type": "mcq",
+          "q": "Why does improving Event Match Quality help optimization?",
+          "options": [
+            "Because it lowers the cost of running the Pixel",
+            "Because Meta associates events better and learns",
+            "Because it removes the need to use CAPI",
+            "Because it increases the budget automatically"
+          ],
+          "correct": 1,
+          "explanation": "Better EMQ = more events matched to real users = a better signal for the algorithm = better optimization. An event Meta can't match is essentially lost."
+        }
+      ]
+    },
+    {
+      "id": "4.10",
+      "title": "Memory workout · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Event Match Quality (EMQ) improves when you send ___ customer info such as email and phone.",
+          "options": [
+            "hashed",
+            "public",
+            "estimated",
+            "duplicated"
+          ],
+          "correct": 0,
+          "explanation": "EMQ rises with <strong>rich, hashed customer info</strong> (email, phone, IP, user agent). CAPI lets you send more of this than the Pixel alone."
+        },
+        {
+          "type": "fill",
+          "q": "To use value-based bid strategies (ROAS Goal), the Purchase must send the ___ parameter (plus currency).",
+          "options": [
+            "value",
+            "content_type",
+            "user_agent",
+            "frequency"
+          ],
+          "correct": 0,
+          "explanation": "The <strong>value</strong> parameter (along with currency) measures the transaction amount. Without it, value-based strategies like ROAS Goal or Highest Value can't work."
+        },
+        {
+          "type": "mcq",
+          "q": "Event Match Quality (EMQ) improves with:",
+          "options": [
+            "Serving more ad impressions",
+            "Rich customer info sent via CAPI",
+            "Assigning more budget to the campaign",
+            "Setting a higher Bid Cap"
+          ],
+          "correct": 1,
+          "explanation": "EMQ improves with the quality of the data sent — CAPI lets you send more hashed info than the Pixel alone.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "fill",
+          "q": "If Meta can't match an event to a person, that event is essentially ___ for optimization.",
+          "options": [
+            "lost",
+            "duplicated",
+            "stored",
+            "hashed"
+          ],
+          "correct": 0,
+          "explanation": "An event Meta can't match to a user is <strong>lost</strong> for optimization. That's why good EMQ is key."
+        },
+        {
+          "type": "mcq",
+          "q": "Without the value parameter on Purchase, what CAN'T you do?",
+          "options": [
+            "Record that the purchase happened",
+            "Optimize by value: Meta doesn't know the amount",
+            "Connect the Pixel to the website",
+            "Create a Dataset in the Business"
+          ],
+          "correct": 1,
+          "explanation": "Without <strong>value</strong> and currency, Meta knows a purchase happened but not how much it was worth. That blocks value-based bid strategies (Highest Value, ROAS Goal)."
+        },
+        {
+          "type": "fill",
+          "q": "Among the recommended parameters are Content IDs (SKU), Content type, ___, Currency and Product catalog IDs.",
+          "options": [
+            "Value",
+            "Pixel",
+            "EMQ",
+            "Dataset"
+          ],
+          "correct": 0,
+          "explanation": "The <strong>Value</strong> parameter (amount) is one of the most important, along with Currency, Content IDs, Content type and Product catalog IDs."
+        }
+      ]
+    },
+    {
+      "id": "4.11",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Tech Móvil optimizes blindly",
+          "body": "<strong>Tech Móvil</strong> (a smartphone e-commerce) runs Sales campaigns. It sends the Purchase event but <strong>without value and without currency</strong>, and in CAPI it sends only the buyer's IP. The client complains: \"Meta brings me a lot of tiny sales and the ROAS looks off; I want it to prioritize the big orders.\""
+        },
+        {
+          "type": "mcq",
+          "q": "Why can't Meta prioritize the big orders today?",
+          "options": [
+            "Because the campaign uses the wrong objective",
+            "Because Purchase goes without value: it doesn't know the amount",
+            "Because the Pixel still needs to be installed",
+            "Because the catalog isn't connected yet"
+          ],
+          "correct": 1,
+          "explanation": "Without <strong>value</strong> and currency, Meta optimizes all sales equally. To focus on big orders you need to send the amount and use Highest Value or ROAS Goal."
+        },
+        {
+          "type": "mcq",
+          "q": "Beyond value, what do you recommend so Meta attributes sales better?",
+          "options": [
+            "Double the campaign budget",
+            "Send hashed customer info via CAPI (EMQ)",
+            "Change the campaign objective to Awareness",
+            "Remove the Pixel and keep CAPI only running"
+          ],
+          "correct": 1,
+          "explanation": "Sending only the IP keeps EMQ low. Sending hashed email/phone via CAPI raises EMQ, Meta matches more sales and optimizes better without spending more."
+        },
+        {
+          "type": "mcq",
+          "q": "Now with value + currency + high EMQ, which Day 3 bid strategy lets it focus on big orders?",
+          "options": [
+            "Highest Volume with no value goals",
+            "Highest Value or ROAS Goal (by amount)",
+            "Cost per Result Goal with a fixed target",
+            "The Reservation buying mode"
+          ],
+          "correct": 1,
+          "explanation": "With value sent, <strong>Highest Value</strong> or <strong>ROAS Goal</strong> optimize by amount/return and focus the budget on big orders, not on the number of sales."
+        }
+      ]
+    },
+    {
+      "id": "4.12",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is Event Match Quality (EMQ)?",
+          "a": "A metric that measures how well Meta can associate an event with a user. It improves with rich hashed customer info (email, phone, IP, user agent)."
+        },
+        {
+          "q": "Why does good EMQ matter?",
+          "a": "If Meta can't match the event to a person, that event is lost for optimization. Better EMQ = better learning and performance."
+        },
+        {
+          "q": "What parameters does Meta recommend sending with Purchase?",
+          "a": "Value (amount), Currency, Content IDs (SKU), Content type, Product catalog IDs if there's a catalog."
+        },
+        {
+          "q": "Why are value and currency critical?",
+          "a": "Without them Meta knows a purchase happened but not how much it was worth; that blocks value-based bid strategies (Highest Value, ROAS Goal)."
+        },
+        {
+          "q": "What's the best lever to raise EMQ?",
+          "a": "Sending hashed email and phone (plus IP/user agent) via CAPI, which lets you send more customer info than the Pixel alone."
+        }
+      ]
+    },
+    {
+      "id": "4.13",
+      "title": "Explanation · Event types and Custom Conversions",
+      "section": "b4",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "3 event types",
+          "rows": [
+            [
+              "Automatically logged",
+              "Apps only (SDK). No extra code. Common events auto-detected."
+            ],
+            [
+              "Standard events",
+              "Predefined by Meta: Purchase, Lead, AddToCart, ViewContent, Subscribe, etc. Web/app/offline/messaging."
+            ],
+            [
+              "Custom events",
+              "Created by the business (e.g. 'Trial started', 'Quote requested'). Require code."
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "When to use a standard event and when a custom event",
+          "body": "A <strong>standard event</strong> is one of the official names Meta already has predefined, such as Purchase, Lead or AddToCart. The practical rule is: if the action already has a standard event that describes it, use it, because Meta's algorithm already knows how to recognize and optimize it from day one. You only create a <strong>custom event</strong> when the action is so specific to your business that no standard one covers it, and that forces you to add new code. The typical trap is inventing custom events for things a standard one already describes, which takes efficiency away from the algorithm. For example, the coffee shop <strong>La Esquina</strong> uses the standard <em>Schedule</em> for \"booked a table,\" but creates a custom event 'CoffeeTasting' for its monthly tasting, which has no standard equivalent."
+        },
+        {
+          "type": "concept",
+          "h": "What a Custom Conversion is",
+          "body": "A <strong>Custom Conversion</strong> is a <strong>rule</strong> you build on top of an event that already exists (standard or custom) to measure a more specific action, without touching any code. Instead of creating a new event, you filter the one you already have by conditions such as the page URL, the purchase value or a parameter. It's useful when you don't want to measure <em>all</em> purchases equally, but only a subset that matters more to you. You set it up directly in Events Manager with a few clicks. For example, the store <strong>Aurora Boutique</strong> creates the Custom Conversion 'Premium purchase' = Purchase + the URL contains '/premium' + Value greater than $1,000, and that way it optimizes only for its big sales."
+        },
+        {
+          "type": "concept",
+          "h": "Custom Event vs Custom Conversion",
+          "body": "These two get confused a lot on the exam, so pin them down well. A <strong>Custom Event</strong> is a <em>new</em> event that didn't exist and that forces you to touch the Pixel or CAPI code to start sending it. A <strong>Custom Conversion</strong> is just a <em>rule</em> you apply on an event that is <em>already arriving</em>, without writing a single line of code. The golden rule: if the data already reaches you, prefer the Custom Conversion, because it's faster and doesn't risk breaking the site; only create a Custom Event when the data truly doesn't exist yet. For example, <strong>AutoMax</strong> already receives the Lead event, so to measure 'premium car quote' it uses a Custom Conversion on that Lead, instead of asking the developer for a new event."
+        },
+        {
+          "type": "warn",
+          "label": "CRITICAL TRAP",
+          "body": "<strong>Custom Conversions are NOT available for app events</strong>. They only apply to web and offline events. For app, you have to create direct Custom Events via SDK."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Casa Plus",
+          "body": "For \"signed a deposit contract,\" Casa Plus uses the standard event <em>Purchase</em> (with value in MXN) — it doesn't invent one. The Pixel already sends <em>Lead</em> with a declared-budget parameter; to optimize only for large prospects, Casa Plus creates a Custom Conversion 'Premium lead' = Lead AND budget &gt; 5,000,000 MXN. It didn't touch code: just a rule on the existing Lead."
+        },
+        {
+          "type": "mcq",
+          "q": "Casa Plus wants to record \"downloaded an apartment floor plan,\" a very specific action with no equivalent in the standard events. What does it configure?",
+          "options": [
+            "A Custom Conversion on Purchase",
+            "A new Custom Event (requires adding code)",
+            "An Automatically logged event",
+            "That action can't be measured"
+          ],
+          "correct": 1,
+          "explanation": "When no standard event describes the action, you create a <strong>Custom Event</strong>, which requires adding code to the Pixel/CAPI. Standard ones are already predefined; automatically logged is app-only."
+        }
+      ]
+    },
+    {
+      "id": "4.14",
+      "title": "Memory workout · Block 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The events Meta predefines (Purchase, Lead, AddToCart, ViewContent) are called ___ events.",
+          "options": [
+            "standard",
+            "custom",
+            "automatically logged",
+            "offline"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Standard events</strong> are the ones predefined by Meta. Custom events are created by the business (they require code). Automatically logged are app-only via SDK."
+        },
+        {
+          "type": "fill",
+          "q": "A Custom ___ is a rule on an existing event and does NOT require extra code.",
+          "options": [
+            "Conversion",
+            "Event",
+            "Parameter",
+            "Audience"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Custom Conversion</strong> = a rule on an event that already exists (no code). Custom Event = a new event (does require code)."
+        },
+        {
+          "type": "mcq",
+          "q": "What is the difference between a Custom Event and a Custom Conversion?",
+          "options": [
+            "They're exactly the same, different name",
+            "Custom Event = new event; Conversion = rule",
+            "Custom Event is web only; Conversion is app only",
+            "The Custom Conversion replaces the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Custom Event = a new event (needs code). Custom Conversion = a rule on an existing event (no extra code, just rules).",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Custom Conversions are available for:",
+          "options": [
+            "App events only",
+            "Web and offline events",
+            "All events",
+            "Standard events only"
+          ],
+          "correct": 1,
+          "explanation": "Custom Conversions do NOT apply to app events. Only web and offline. For app you have to create Custom Events via SDK.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "The auto-detected events with no extra code, app-only via SDK, are called ___ logged events.",
+          "options": [
+            "automatically",
+            "standard",
+            "custom",
+            "offline"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Automatically logged events</strong>: apps only (SDK), no extra code, common events auto-detected."
+        },
+        {
+          "type": "mcq",
+          "q": "You want to measure smartphone purchases &gt; $800 USD. Your Pixel already records Purchase with Value. What do you configure?",
+          "options": [
+            "A new Custom Event 'PurchasePremium'",
+            "A Custom Conversion: Purchase + URL + Value",
+            "A Standard Event modified by hand",
+            "Another Pixel dedicated only to premium"
+          ],
+          "correct": 1,
+          "explanation": "A Custom Conversion is ideal: it uses the existing Purchase and adds rules (URL + Value) with no extra code. A Custom Event would force you to touch the site's code.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.15",
+      "title": "Case to solve · Block 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Constructora Bravo · large prospects",
+          "body": "<strong>Constructora Bravo</strong> (a B2B civil works SMB) already has the Pixel sending <em>Lead</em> when someone fills out the form, with a <em>project_budget</em> parameter. It wants to optimize its Leads campaigns <strong>only for large projects</strong> (budget &gt; $2,000,000 MXN). Its agency proposes touching the code and creating a new Custom Event 'LargeLead'."
+        },
+        {
+          "type": "mcq",
+          "q": "Why is a Custom Conversion better than the Custom Event the agency proposes?",
+          "options": [
+            "Because the Custom Conversion is more expensive",
+            "It's a rule with no code; the Event does need it",
+            "Because the Custom Event doesn't accept parameters",
+            "They're the same, it doesn't matter which you use"
+          ],
+          "correct": 1,
+          "explanation": "Custom Conversion = a rule on an existing event, no code. Since the Pixel already sends Lead with the parameter, a rule is enough. The Custom Event would force you to touch the Pixel/CAPI code."
+        },
+        {
+          "type": "mcq",
+          "q": "Constructora Bravo launches a mobile app and wants to measure 'requested a technical visit' inside the app. Does a Custom Conversion apply?",
+          "options": [
+            "Yes: Custom Conversions apply to everything",
+            "No: in app you have to create a Custom Event (SDK)",
+            "Yes, but only if the account has a catalog",
+            "No, that's only measured with the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Custom Conversions only apply to <strong>web and offline</strong> events. For an action inside an app you have to create a <strong>Custom Event</strong> via SDK."
+        },
+        {
+          "type": "mcq",
+          "q": "For \"signed a contract,\" which event should Constructora Bravo use?",
+          "options": [
+            "An invented Custom Event 'ContractSigned'",
+            "The standard event Purchase with value in MXN",
+            "The automatically logged event by default",
+            "No event: that can't be measured"
+          ],
+          "correct": 1,
+          "explanation": "If the action already has an official standard event (Purchase for a completed transaction), you use that one: the algorithm already knows how to optimize it. You only invent a Custom Event if no standard one describes it."
+        }
+      ]
+    },
+    {
+      "id": "4.16",
+      "title": "Mini-flashcards · Block 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "The 3 event types?",
+          "a": "Automatically logged (app only, no code), Standard events (predefined by Meta) and Custom events (created by the business, require code)."
+        },
+        {
+          "q": "When standard and when a custom event?",
+          "a": "Standard if the action already has an official Meta name (Purchase, Lead...). Custom only if no standard one describes it (requires code)."
+        },
+        {
+          "q": "Difference between a Custom Event and a Custom Conversion?",
+          "a": "Custom Event = a NEW event (requires code). Custom Conversion = a RULE on an existing event (no code, just defining conditions)."
+        },
+        {
+          "q": "Are Custom Conversions available for app events?",
+          "a": "NO. They only apply to web and offline events. For app you have to create Custom Events via SDK."
+        },
+        {
+          "q": "List 5 common standard events.",
+          "a": "Purchase, Lead, ViewContent, AddToCart, InitiateCheckout, Subscribe, Schedule, Contact."
+        },
+        {
+          "q": "What are automatically logged events?",
+          "a": "Common events auto-detected app-only via SDK, with no extra code."
+        }
+      ]
+    },
+    {
+      "id": "4.17",
+      "title": "Explanation · iOS 14+ · ATT and AEM",
+      "section": "b5",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What App Tracking Transparency (ATT) is",
+          "body": "<strong>App Tracking Transparency</strong> or <strong>ATT</strong> is a policy Apple introduced in iOS 14: it forces every app to show a popup asking for <strong>explicit consent</strong> before tracking the user across different apps and websites. It's that \"Allow this app to track you?\" prompt that appears when you open an app for the first time. The problem for advertisers is that most users tap \"Ask App Not to Track,\" which cuts off many of the signals the Pixel used to collect. Without those signals, Meta sees less of what happens after the click on iPhone. For example, the store <strong>Urban Store</strong> notices its iPhone sales are reported worse precisely because its shoppers decline that popup."
+        },
+        {
+          "type": "warn",
+          "label": "TRAP",
+          "body": "<strong>AEM applies only to iOS 14+</strong>. Android isn't affected by ATT. But since iOS represents a significant share of mobile traffic, the impact is large."
+        },
+        {
+          "type": "concept",
+          "h": "What Aggregated Event Measurement (AEM) is",
+          "body": "<strong>Aggregated Event Measurement</strong> or <strong>AEM</strong> is Meta's answer to Apple's ATT: a protocol to keep measuring web and app events on iOS 14+ without violating the privacy Apple requires. The idea is to measure results \"in bulk\" instead of person by person. To do that it does three things:<br/><strong>1.</strong> It removes personal identifiers, so an event can't be tied to a specific user.<br/><strong>2.</strong> It adds <strong>differential privacy</strong> (statistical noise that introduces small inaccuracies on purpose so no one is identifiable).<br/><strong>3.</strong> It reports data at the <strong>aggregate</strong> level (summed in groups), not individually. For example, <strong>Urban Store</strong> no longer sees \"María bought,\" but \"there were 40 purchases from iPhone users this week.\""
+        },
+        {
+          "type": "kvtable",
+          "h": "AEM limitations",
+          "rows": [
+            [
+              "Events per domain",
+              "Maximum 8 prioritized events per domain (web)"
+            ],
+            [
+              "Latency",
+              "Reporting with a 24-72h delay (not real-time)"
+            ],
+            [
+              "Attribution windows",
+              "Reduced: 1-day view, 7-day click"
+            ],
+            [
+              "Web Custom Audiences",
+              "Reduced for iOS users without consent"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Why the 8-event limit matters",
+          "body": "Under AEM, Meta can only prioritize <strong>8 events per domain</strong> (per website) for iOS users. Think of it as having just 8 available \"slots\": whatever doesn't fit in those 8 is measured poorly or not at all for iPhone. The common mistake is filling the slots with trivial events, like a <em>ViewContent</em> for every blog page or a scroll, so the events that truly move the business, like <em>Purchase</em> or <em>Lead</em>, end up outside the top 8. That's why you have to choose and order the 8 wisely, putting the bottom-of-funnel ones first. For example, <strong>Urban Store</strong> had its 8 slots taken up by blog ViewContent, which is why its iPhone purchases were barely measured."
+        },
+        {
+          "type": "tip",
+          "label": "MITIGATION",
+          "body": "To minimize ATT's impact: 1) Install <strong>CAPI</strong> (server-side, not affected by ATT), 2) Prioritize the <strong>correct 8 events per domain</strong>, 3) Send hashed customer info (email, phone) to improve Event Match Quality."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Urban Store",
+          "body": "Urban Store had its 8 slots full of blog ViewContent. It reorders them to prioritize <em>Purchase</em>, <em>Lead</em>, <em>InitiateCheckout</em> and <em>AddToCart</em>, installs CAPI and sends hashed email/phone. Result: iOS sales optimize well again despite ATT."
+        },
+        {
+          "type": "mcq",
+          "q": "Why is CAPI especially important after iOS 14+ App Tracking Transparency?",
+          "options": [
+            "Because ATT blocks the Pixel only on Android",
+            "ATT limits the Pixel on iOS; CAPI goes server-side",
+            "Because ATT requires using CAPI by law",
+            "Because CAPI is always cheaper"
+          ],
+          "correct": 1,
+          "explanation": "ATT asks the user for explicit tracking consent on iOS. Without consent, the Pixel is limited. CAPI sends server-to-server (independent of the browser) and maintains coverage.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.18",
+      "title": "Memory workout · Block 5",
+      "section": "b5",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "AEM applies to:",
+          "options": [
+            "All mobile users",
+            "Android only",
+            "iOS 14+ only",
+            "Desktop only"
+          ],
+          "correct": 2,
+          "explanation": "AEM is Meta's answer to Apple's ATT privacy framework on iOS 14+. Android doesn't use ATT.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "Under AEM, a maximum of ___ events per web domain are prioritized.",
+          "options": [
+            "8",
+            "5",
+            "16",
+            "unlimited"
+          ],
+          "correct": 0,
+          "explanation": "A maximum of <strong>8 events</strong> per web domain under AEM. You have to reserve them for the most strategic ones in the funnel."
+        },
+        {
+          "type": "fill",
+          "q": "AEM applies only to ___; Android doesn't use ATT.",
+          "options": [
+            "iOS 14+",
+            "Android",
+            "desktop",
+            "all mobile"
+          ],
+          "correct": 0,
+          "explanation": "AEM responds to Apple's ATT framework on <strong>iOS 14+</strong>. Android isn't affected by ATT."
+        },
+        {
+          "type": "fill",
+          "q": "AEM preserves privacy by removing identifiers, adding noise (differential privacy) and reporting data at the ___ level.",
+          "options": [
+            "aggregate",
+            "individual",
+            "personal",
+            "global"
+          ],
+          "correct": 0,
+          "explanation": "AEM reports at the <strong>aggregate</strong> level, not individually. Those are the 3 things: it removes identifiers, adds differential privacy and reports in aggregate."
+        },
+        {
+          "type": "mcq",
+          "q": "What is App Tracking Transparency (ATT)?",
+          "options": [
+            "An Android protocol to block ads",
+            "Apple asks for consent before tracking (iOS 14)",
+            "A new Meta Ads bid strategy",
+            "A specific type of custom event"
+          ],
+          "correct": 1,
+          "explanation": "ATT (iOS 14+) forces apps to ask for <strong>explicit consent</strong> before tracking cross-app/site. Most decline, which limits the Pixel's signals."
+        },
+        {
+          "type": "mcq",
+          "q": "Which is a correct mitigation of ATT's impact?",
+          "options": [
+            "Double the campaign budget",
+            "Install CAPI, prioritize 8 events and send EMQ",
+            "Remove the Pixel from the site entirely",
+            "Use only the Awareness objective"
+          ],
+          "correct": 1,
+          "explanation": "Mitigation: 1) CAPI (server-side, not affected by ATT), 2) prioritize the correct 8 events, 3) send hashed email/phone to raise Event Match Quality."
+        }
+      ]
+    },
+    {
+      "id": "4.19",
+      "title": "Case to solve · Block 5",
+      "section": "b5",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Urban Store loses its iPhone shoppers",
+          "body": "<strong>Urban Store</strong> notices its Sales campaigns perform well on Android but \"die\" on iPhone. A lot of its traffic is iPhone shoppers who decline the ATT popup. On top of that, the domain's 8 event slots are full of <em>ViewContent</em> from every blog post. They only use the Pixel."
+        },
+        {
+          "type": "mcq",
+          "q": "Why do the campaigns \"die\" on iPhone and not on Android?",
+          "options": [
+            "Because Android doesn't allow paid ads",
+            "Because ATT limits Pixel tracking on iOS",
+            "Because the iPhone blocks Meta entirely",
+            "Because the Pixel doesn't work on phones"
+          ],
+          "correct": 1,
+          "explanation": "ATT only applies to <strong>iOS 14+</strong>: the user who declines the popup limits the Pixel. Android doesn't use ATT, which is why the Pixel keeps capturing well there."
+        },
+        {
+          "type": "mcq",
+          "q": "What's the problem with the 8 slots being full of blog ViewContent?",
+          "options": [
+            "None: the more events, the better",
+            "Under AEM, Purchase and Lead fall outside the top 8",
+            "The whole blog stops working",
+            "Android is also affected by this"
+          ],
+          "correct": 1,
+          "explanation": "AEM prioritizes only <strong>8 events per domain</strong>. If you fill them with trivial ViewContent, the events that move the business (Purchase, Lead) get limited or fall outside."
+        },
+        {
+          "type": "mcq",
+          "q": "What's the correct action plan for Urban Store?",
+          "options": [
+            "Turn off all campaigns running on iOS",
+            "Install CAPI, reorder the 8 slots and raise EMQ",
+            "Stop measuring and rely only on estimates",
+            "Change all campaigns to the Awareness objective"
+          ],
+          "correct": 1,
+          "explanation": "The ATT mitigation: CAPI (not affected by ATT) + prioritize the correct 8 events + hashed customer info to raise Event Match Quality. That way iOS closes optimize again."
+        }
+      ]
+    },
+    {
+      "id": "4.20",
+      "title": "Mini-flashcards · Block 5",
+      "section": "b5",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is App Tracking Transparency (ATT)?",
+          "a": "Since iOS 14, Apple forces apps to ask for explicit consent before tracking the user across apps and sites. Most decline."
+        },
+        {
+          "q": "What is AEM and which platform does it apply to?",
+          "a": "Aggregated Event Measurement: Meta's protocol to measure events on iOS 14+ while respecting privacy (ATT). It only applies to iOS, not Android."
+        },
+        {
+          "q": "How many prioritized events per web domain under AEM?",
+          "a": "Maximum 8 events per domain. You have to choose the most strategic ones in the funnel."
+        },
+        {
+          "q": "The 3 things AEM does to preserve privacy?",
+          "a": "Removes personal identifiers · Adds differential privacy (statistical noise) · Reports data at the aggregate level, not individually."
+        },
+        {
+          "q": "Why is CAPI key after iOS 14?",
+          "a": "ATT limits the Pixel in iOS browsers without consent. CAPI is server-side and isn't affected by ATT."
+        },
+        {
+          "q": "How do you mitigate ATT's impact?",
+          "a": "1) Install CAPI · 2) Prioritize the correct 8 events per domain · 3) Send hashed customer info to raise Event Match Quality."
+        }
+      ]
+    },
+    {
+      "id": "4.27",
+      "title": "Capstone case · Aceros del Bajío (B2B)",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "REAL SCENARIO",
+          "h": "Aceros del Bajío (B2B industrial distributor)",
+          "body": "<strong>Aceros del Bajío</strong> sells structural steel to construction firms. It has a website with a catalog, receives online quotes and closes <strong>70% of sales in person</strong> at its branches. Much of its traffic comes from the iPhones of site engineers. The goal: optimize Sales campaigns for real sales, not just online ones."
+        },
+        {
+          "type": "mcq",
+          "q": "Step 1 · It's a website with a lot of iPhone traffic. What's the data source floor?",
+          "options": [
+            "The Meta Pixel only",
+            "Pixel + CAPI (the Pixel alone falls short)",
+            "The Facebook SDK only",
+            "Offline conversions only"
+          ],
+          "correct": 1,
+          "explanation": "It's a website → Pixel. Since much traffic is iPhone (ATT hits hard), the Pixel alone falls short: you add <strong>CAPI</strong> server-side. Pixel + CAPI = maximum coverage."
+        },
+        {
+          "type": "mcq",
+          "q": "Step 2 · 70% closes at the branch. Why is web Pixel + CAPI NOT enough?",
+          "options": [
+            "Because the Pixel doesn't work for B2B businesses",
+            "Because 70% closes offline and no one sees it",
+            "Because CAPI is mandatory by law in Mexico",
+            "Because Offline conversions replace the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Web Pixel + CAPI cover the online part. 70% closes at the branch: those sales only come in via <strong>Offline conversions (CAPI Offline)</strong>. Without that, Meta would optimize for a minority of the revenue."
+        },
+        {
+          "type": "mcq",
+          "q": "Step 3 · To optimize for real revenue, the Purchase must send:",
+          "options": [
+            "The buyer's IP only",
+            "Value and currency, plus hashed email/phone",
+            "The content_type parameter only",
+            "No parameter: the event alone is enough"
+          ],
+          "correct": 1,
+          "explanation": "The <strong>value</strong> + currency enables optimizing for real revenue (Highest Value/ROAS Goal). Hashed email/phone raise Event Match Quality and improve attribution."
+        },
+        {
+          "type": "mcq",
+          "q": "Step 4 · Lots of iPhone traffic → AEM rules. What shields against ATT?",
+          "options": [
+            "Turning off ad delivery on iOS",
+            "Prioritize the correct 8 events and rely on CAPI",
+            "Use only the Awareness objective",
+            "Remove the Pixel from the site entirely"
+          ],
+          "correct": 1,
+          "explanation": "Under AEM only 8 events per domain are prioritized. You reserve the most strategic ones, lean on <strong>CAPI</strong> (not affected by ATT) and raise EMQ with hashed email/phone."
+        }
+      ]
+    },
+    {
+      "id": "4.28",
+      "title": "Match event ↔ typical use",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Each standard event has a canonical use. Match the event with the case where it's typically reported. Each mistake costs 1 ❤️.",
+      "pairs": [
+        [
+          "Purchase",
+          "Completed purchase (with value)"
+        ],
+        [
+          "Lead",
+          "Form completed with contact info"
+        ],
+        [
+          "ViewContent",
+          "Visit to a specific product/service page"
+        ],
+        [
+          "AddToCart",
+          "Product added to the cart"
+        ],
+        [
+          "InitiateCheckout",
+          "Start of the payment process"
+        ],
+        [
+          "Subscribe",
+          "Sign-up for a recurring service (SaaS, newsletter)"
+        ],
+        [
+          "Schedule",
+          "Appointment or meeting booked"
+        ],
+        [
+          "Contact",
+          "Contact initiated (chat, call, email)"
+        ]
+      ],
+      "explanation": "Each standard event has a canonical case. On the exam there are questions like \"which event would you record when the user does X?\"."
+    },
+    {
+      "id": "4.29",
+      "title": "Order the full Pixel + CAPI setup",
+      "section": "bz",
+      "type": "order",
+      "instruction": "When you build a website Sales campaign with Purchase, in what order do you run these 6 steps? Reorder with ▲▼.",
+      "items": [
+        "Create the Pixel in Events Manager",
+        "Install the Pixel code on the website (header or GTM)",
+        "Configure CAPI server-side (map server events to Meta's standard)",
+        "Map the standard events (ViewContent, AddToCart, Purchase) with their parameters (value, currency)",
+        "Create the Dataset that combines Pixel + CAPI in Events Manager",
+        "Select the Dataset in the Ad Set and choose Purchase as the conversion event"
+      ],
+      "explanation": "The correct order goes from infrastructure (create the Pixel) → implementation (code on the site) → server-side (CAPI) → event mapping → uniting in the dataset → use in the campaign. Skipping steps leads to broken optimization."
+    },
+    {
+      "id": "4.30",
+      "title": "Complete the Day 4 phrases",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The 4 main data sources are Pixel (web), ___ (server-side), Facebook SDK (app) and Offline conversions.",
+          "options": [
+            "CAPI",
+            "Dataset",
+            "AEM",
+            "EMQ"
+          ],
+          "correct": 0,
+          "explanation": "<strong>CAPI (Conversions API)</strong> is the server-side data source. Together with the Pixel it gives maximum coverage."
+        },
+        {
+          "type": "fill",
+          "q": "The dataset that combines Pixel + CAPI is connected at the ___ level.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "The <strong>dataset</strong> is connected at the <strong>Ad set</strong> level, along with the conversion location and conversion event."
+        },
+        {
+          "type": "fill",
+          "q": "A Custom ___ is a rule on an existing event and does NOT require extra code.",
+          "options": [
+            "Conversion",
+            "Event",
+            "Parameter",
+            "Audience"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Custom Conversion</strong> = a rule on an event that already exists (no code). Custom Event = a new event (does require code)."
+        },
+        {
+          "type": "fill",
+          "q": "Under AEM, a maximum of ___ events per web domain are prioritized.",
+          "options": [
+            "8",
+            "5",
+            "16",
+            "unlimited"
+          ],
+          "correct": 0,
+          "explanation": "A maximum of <strong>8 events</strong> per web domain under AEM. You have to reserve them for the most strategic ones in the funnel."
+        },
+        {
+          "type": "fill",
+          "q": "AEM applies only to ___; Android doesn't use ATT.",
+          "options": [
+            "iOS 14+",
+            "Android",
+            "desktop",
+            "all mobile"
+          ],
+          "correct": 0,
+          "explanation": "AEM responds to Apple's ATT framework on <strong>iOS 14+</strong>. Android isn't affected by ATT."
+        },
+        {
+          "type": "fill",
+          "q": "For App Promotion you need the Facebook SDK or an authorized ___.",
+          "options": [
+            "MMP",
+            "Pixel",
+            "CSV",
+            "catalog"
+          ],
+          "correct": 0,
+          "explanation": "App Promotion requires the <strong>Facebook SDK</strong> or an authorized <strong>MMP</strong> (AppsFlyer, Adjust, Branch, etc.)."
+        }
+      ]
+    },
+    {
+      "id": "4.31",
+      "title": "Drill — 10 Day 4 MCQs",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Pixel and CAPI:",
+          "options": [
+            "They're interchangeable",
+            "They're complementary — use both",
+            "CAPI replaces the Pixel",
+            "You only need one"
+          ],
+          "correct": 1,
+          "explanation": "Complementary. The Pixel covers the browser, CAPI covers server-side.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Custom Conversions are available for:",
+          "options": [
+            "App events only",
+            "Web and offline events",
+            "All events",
+            "Standard events only"
+          ],
+          "correct": 1,
+          "explanation": "Custom Conversions do NOT apply to app events. Only web and offline.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "For App Promotion you need:",
+          "options": [
+            "Pixel",
+            "CAPI",
+            "Facebook SDK or MMP",
+            "Customer list"
+          ],
+          "correct": 2,
+          "explanation": "The SDK (or an authorized MMP like AppsFlyer/Adjust) is mandatory for App Promotion.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "AEM applies to:",
+          "options": [
+            "Android",
+            "iOS 14+",
+            "Desktop",
+            "All"
+          ],
+          "correct": 1,
+          "explanation": "Aggregated Event Measurement responds to the iOS 14+ ATT framework.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Maximum events prioritized per web domain under AEM:",
+          "options": [
+            "3",
+            "5",
+            "8",
+            "16"
+          ],
+          "correct": 2,
+          "explanation": "8 events per web domain.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "The dataset is connected at the level:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "The dataset is connected at the Ad set.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "A Custom Event requires:",
+          "options": [
+            "Only rules in Events Manager",
+            "New code in the Pixel, CAPI or SDK",
+            "An already loaded customer list",
+            "A connected product catalog"
+          ],
+          "correct": 1,
+          "explanation": "Custom Event = new code. Custom Conversion = a rule with no code.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Event Match Quality (EMQ) improves with:",
+          "options": [
+            "Serving more ad impressions",
+            "Rich customer info sent via CAPI",
+            "Assigning more budget to the campaign",
+            "Setting a higher Bid Cap"
+          ],
+          "correct": 1,
+          "explanation": "EMQ improves with the quality of the data sent — CAPI lets you send more hashed info than the Pixel alone.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Standard event for a monthly SaaS subscription:",
+          "options": [
+            "Purchase",
+            "Subscribe",
+            "Lead",
+            "Schedule"
+          ],
+          "correct": 1,
+          "explanation": "Subscribe is canonical for recurring billing.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Standard event for a contract signed in person at the office (offline):",
+          "options": [
+            "The site's ViewContent event",
+            "Purchase with value, sent via CAPI Offline",
+            "A custom event recorded manually",
+            "An AEM event configured on the domain"
+          ],
+          "correct": 1,
+          "explanation": "Purchase with value via CAPI Offline is the canonical path for offline closes.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.32",
+      "title": "Lightning — 8 quick questions",
+      "section": "bz",
+      "type": "lightning",
+      "instruction": "8 quick questions about signals and data. You have 3 minutes.",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Pixel vs CAPI:",
+          "options": [
+            "CAPI replaces the Pixel",
+            "Complementary",
+            "The Pixel replaces CAPI",
+            "Pixel only"
+          ],
+          "correct": 1,
+          "explanation": "Complementary. Pixel + CAPI = maximum coverage.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "App Promotion needs:",
+          "options": [
+            "Pixel",
+            "CAPI",
+            "SDK or MMP",
+            "Catalog"
+          ],
+          "correct": 2,
+          "explanation": "FB SDK or an authorized MMP.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "AEM applies to:",
+          "options": [
+            "Android",
+            "iOS 14+",
+            "Desktop",
+            "All"
+          ],
+          "correct": 1,
+          "explanation": "iOS 14+ due to ATT.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Custom Conversions do NOT apply to:",
+          "options": [
+            "Web",
+            "Offline",
+            "App",
+            "Messaging"
+          ],
+          "correct": 2,
+          "explanation": "Only web and offline. App needs Custom Events.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "The dataset is configured at:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "Ad set level.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "EMQ improves when:",
+          "options": [
+            "You raise the budget",
+            "You send rich hashed customer info",
+            "You change the bid strategy",
+            "You reduce the audience"
+          ],
+          "correct": 1,
+          "explanation": "Data quality in CAPI improves EMQ.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Custom Event vs Custom Conversion:",
+          "options": [
+            "Same",
+            "Custom Event = new code · Custom Conversion = rule on an existing event",
+            "Custom Conversion requires the SDK",
+            "Custom Event is offline only"
+          ],
+          "correct": 1,
+          "explanation": "Event = code. Conversion = rule.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "For offline events (closes in a physical store):",
+          "options": [
+            "Pixel only",
+            "SDK only",
+            "CAPI Offline channel",
+            "Customer list"
+          ],
+          "correct": 2,
+          "explanation": "CAPI Offline events.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.audio",
+      "title": "Audio review · Day 4",
+      "section": "bz",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "🎙️ Conversational review",
+          "body": "Before the flashcards, recall from memory the key points of the day: signals vs events, the 4 data sources, why Pixel + CAPI are complementary, Custom Event vs Custom Conversion, and AEM/iOS 14+. Reviewing it in another format helps cement it."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Ask yourself out loud, without looking: <em>at which level is the dataset connected? what happens to the Pixel on iOS 14+? how many events does AEM prioritize per domain?</em> If you hesitate on any, go back to that lesson before the exam."
+        }
+      ]
+    },
+    {
+      "id": "4.flash",
+      "title": "Day 4 flashcards (all)",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What are signals in Meta?",
+          "a": "Actions that reveal intent or interest: visiting a site, adding to cart, buying, using an app, entering a store."
+        },
+        {
+          "q": "Meta's 4 main data sources?",
+          "a": "Pixel (web), CAPI (server-side), Facebook SDK (app), Offline events (via CAPI Offline)."
+        },
+        {
+          "q": "How is the dataset connected to a campaign and at which level?",
+          "a": "It's connected at the Ad set level, along with the conversion location and conversion event."
+        },
+        {
+          "q": "Does the Pixel replace CAPI or are they complementary?",
+          "a": "Complementary. Meta's recommendation is to use BOTH for maximum coverage (~95%)."
+        },
+        {
+          "q": "Why is CAPI especially important after iOS 14?",
+          "a": "ATT limits the Pixel in iOS browsers without consent. CAPI is server-side and isn't affected by ATT."
+        },
+        {
+          "q": "Difference between a Custom Event and a Custom Conversion?",
+          "a": "Custom Event = a NEW event (requires code). Custom Conversion = a RULE on an existing event (no code, just defining conditions)."
+        },
+        {
+          "q": "Are Custom Conversions available for app events?",
+          "a": "NO. They only apply to web and offline events. For app you have to create Custom Events via SDK."
+        },
+        {
+          "q": "What is AEM and which platform does it apply to?",
+          "a": "Aggregated Event Measurement: Meta's protocol to measure events on iOS 14+ while respecting privacy (ATT). It only applies to iOS, not Android."
+        },
+        {
+          "q": "How many prioritized events per web domain under AEM?",
+          "a": "Maximum 8 events per domain. You have to choose the most strategic ones in the funnel."
+        },
+        {
+          "q": "The 3 things AEM does to preserve privacy?",
+          "a": "Removes personal identifiers · Adds differential privacy (statistical noise) · Reports data at the aggregate level, not individually."
+        },
+        {
+          "q": "What is Event Match Quality (EMQ)?",
+          "a": "A metric that measures how well Meta can associate an event with a user. It improves with rich hashed customer info (email, phone, IP, user agent)."
+        },
+        {
+          "q": "List 5 common standard events.",
+          "a": "Purchase, Lead, ViewContent, AddToCart, InitiateCheckout, Subscribe, Schedule, Contact."
+        },
+        {
+          "q": "Which standard event for a SaaS with recurring billing?",
+          "a": "Subscribe (not Purchase). Purchase is for a one-time purchase."
+        },
+        {
+          "q": "Which standard event for a contract signed in person?",
+          "a": "Purchase with value, sent via the CAPI Offline channel."
+        },
+        {
+          "q": "What does App Promotion require?",
+          "a": "Facebook SDK installed in the app, or an authorized MMP (AppsFlyer, Adjust, Branch, etc.)."
+        },
+        {
+          "q": "What parameters does Meta recommend sending with Purchase?",
+          "a": "Value (amount), Currency, Content IDs (SKU), Content type, Product catalog IDs if there's a catalog."
+        },
+        {
+          "q": "In what order do you set up Pixel + CAPI?",
+          "a": "Create the Pixel → install the code on the site → configure CAPI server-side → map standard events with parameters → create the Dataset → connect the Dataset at the Ad set."
+        },
+        {
+          "q": "The Pixel only covers the browser; what does CAPI cover?",
+          "a": "CAPI covers server-side: events from the advertiser's server directly to Meta, without going through the browser. Ad blockers and ATT don't affect it."
+        },
+        {
+          "q": "Why is having several trivial events in the Pixel counterproductive?",
+          "a": "On iOS under AEM, only 8 events per domain are prioritized. If the 8 slots are taken up by trivial events, the important ones (Purchase, Lead) get limited."
+        },
+        {
+          "q": "Is a Customer List useful for Sales optimization?",
+          "a": "NOT directly. A Customer List is for building Custom Audiences (audiences for targeting). Sales optimization is done on Pixel/CAPI conversion events."
+        }
+      ]
+    }
+  ]
+}
