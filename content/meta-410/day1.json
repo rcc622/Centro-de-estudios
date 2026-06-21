@@ -54,20 +54,20 @@
               "~16% del examen. Estructura de campañas, las 6 acciones clave, Opportunity Score."
             ],
             [
-              "Día 2 · Campaign Objectives",
-              "~9%. Los 6 ODAX y qué objective elegir según la meta de negocio."
+              "Día 2 · Objetivo de la campaña (campaign objective)",
+              "~9%. Los 6 ODAX y qué objetivo elegir según la meta de negocio."
             ],
             [
-              "Día 3 · Buying Types & Bid Strategies",
-              "~13%. Auction vs Reservation, estrategias de puja, Learning Phase."
+              "Día 3 · Buying Types & Estrategia de puja (bid strategy)",
+              "~13%. Auction vs Reservation, estrategia de puja, Fase de aprendizaje (learning phase)."
             ],
             [
               "Día 4 · Signals & Data",
-              "~17%. Pixel, CAPI (Conversions API), eventos y parámetros."
+              "~17%. Píxel de Meta (Meta Pixel), API de conversiones (CAPI), eventos y parámetros."
             ],
             [
               "Día 5 · Audiences & Catalogs",
-              "~20%. Custom, Lookalike, Advantage+ Audience y catálogos."
+              "~20%. Público personalizado (Custom Audience), Público similar (Lookalike), Advantage+ público y catálogos."
             ],
             [
               "Día 6 · Creative & Measurement",
@@ -112,7 +112,7 @@
             ],
             [
               "Connect data sources",
-              "Conectar Pixel, CAPI, datasets"
+              "Conectar Píxel de Meta, API de conversiones, datasets"
             ],
             [
               "Advertiser settings",
@@ -123,7 +123,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Tienda Urbana",
-          "body": "<strong>Tienda Urbana</strong> es un comercio en línea de moda que va a lanzar anuncios para su nueva colección. En Ads Manager no solo diseñan el anuncio: en el <em>mismo</em> lugar conectan el <strong>Pixel</strong> (un código que rastrea lo que la gente hace en su sitio web), registran la tarjeta con la que van a pagar, arman la audiencia a la que le van a mostrar los ads y, después, revisan el reporte de ventas. Todo desde una sola herramienta. Es una sala de máquinas completa, no un editor de imágenes."
+          "body": "<strong>Tienda Urbana</strong> es un comercio en línea de moda que va a lanzar anuncios para su nueva colección. En Ads Manager no solo diseñan el anuncio: en el <em>mismo</em> lugar conectan el <strong>Píxel de Meta</strong> (un código que rastrea lo que la gente hace en su sitio web), registran la tarjeta con la que van a pagar, arman la audiencia a la que le van a mostrar los ads y, después, revisan el reporte de ventas. Todo desde una sola herramienta. Es una sala de máquinas completa, no un editor de imágenes."
         },
         {
           "type": "concept",
@@ -143,7 +143,7 @@
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Cocina Sazón",
-          "body": "<strong>Cocina Sazón</strong> (un restaurante de comida a domicilio) tiene una campaña que marca <strong>68/100</strong> en el Opportunity Score. Eso <em>no</em> quiere decir que vaya a recuperar el 68% de lo que invierta ni que su <strong>ROAS</strong> (return on ad spend, o retorno sobre la inversión publicitaria) sea de 68%. Significa que hay recomendaciones comprobadas que aún no aplicó: por ejemplo activar la <strong>Advantage+ audience</strong> (la audiencia automática con inteligencia artificial) o sumar la <strong>CAPI</strong> (Conversions API, una forma de enviarle datos a Meta directamente desde su servidor). Si Cocina Sazón aplica esas sugerencias, el score sube; pero los resultados de ventas reales dependen de la subasta, no del número."
+          "body": "<strong>Cocina Sazón</strong> (un restaurante de comida a domicilio) tiene una campaña que marca <strong>68/100</strong> en el Opportunity Score. Eso <em>no</em> quiere decir que vaya a recuperar el 68% de lo que invierta ni que su <strong>ROAS</strong> (return on ad spend, o retorno sobre la inversión publicitaria) sea de 68%. Significa que hay recomendaciones comprobadas que aún no aplicó: por ejemplo activar el <strong>Advantage+ público</strong> (Advantage+ audience, la audiencia automática con inteligencia artificial) o sumar la <strong>API de conversiones</strong> (Conversions API o CAPI, una forma de enviarle datos a Meta directamente desde su servidor). Si Cocina Sazón aplica esas sugerencias, el score sube; pero los resultados de ventas reales dependen de la subasta, no del número."
         },
         {
           "type": "mcq",
@@ -289,7 +289,7 @@
         },
         {
           "q": "Las 6 acciones clave en Ads Manager",
-          "a": "Opportunity score · Monitor reporting · Create audiences · Set up billing · Connect data sources · Advertiser settings."
+          "a": "Opportunity score · Monitor reporting · Create audiences · Set up billing · Connect data sources (Píxel de Meta, API de conversiones, datasets) · Advertiser settings."
         }
       ]
     },
@@ -302,12 +302,12 @@
         {
           "type": "concept",
           "h": "Tres niveles, tres decisiones",
-          "body": "Cada campaña de Meta se arma en una estructura de <strong>tres niveles</strong> que van anidados, como muñecas rusas. El nivel de arriba es la <strong>Campaign</strong> (campaña), que contiene uno o varios <strong>Ad sets</strong> (conjuntos de anuncios), y cada Ad set contiene uno o varios <strong>Ads</strong> (anuncios). Lo clave es que en cada nivel decides cosas distintas y esas decisiones no se mezclan: lo que va en Campaign no va en Ad, y viceversa. Saber qué decisión vive en cada nivel es de lo más preguntado en el examen, así que vale la pena dominarlo. Por ejemplo, para la florería <strong>Pétalos</strong>: una sola campaña de ventas puede tener un Ad set para mujeres jóvenes y otro para parejas, y dentro de cada uno, varios anuncios distintos."
+          "body": "Cada campaña de Meta se arma en una estructura de <strong>tres niveles</strong> que van anidados, como muñecas rusas. El nivel de arriba es la <strong>Campaign</strong> (campaña), que contiene uno o varios <strong>Conjuntos de anuncios</strong> (ad sets), y cada conjunto de anuncios contiene uno o varios <strong>Ads</strong> (anuncios). Lo clave es que en cada nivel decides cosas distintas y esas decisiones no se mezclan: lo que va en Campaign no va en Ad, y viceversa. Saber qué decisión vive en cada nivel es de lo más preguntado en el examen, así que vale la pena dominarlo. Por ejemplo, para la florería <strong>Pétalos</strong>: una sola campaña de ventas puede tener un conjunto de anuncios para mujeres jóvenes y otro para parejas, y dentro de cada uno, varios anuncios distintos."
         },
         {
           "type": "concept",
           "h": "Qué decide cada nivel, desglosado",
-          "body": "Para no confundirte, así se reparte la responsabilidad: <strong>1. Campaign</strong> (la base): decides el <strong>buying type</strong> (forma de compra: subasta o reservación), el <strong>objective</strong> (objetivo, qué quieres lograr) y muchas veces el presupuesto. <strong>2. Ad set</strong> (el intermedio): decides la <strong>audience</strong> (audiencia, a quién le hablas), los <strong>placements</strong> (ubicaciones, en qué apps y secciones aparece) y el calendario. <strong>3. Ad</strong> (el anuncio en sí): decides el <strong>creative</strong> (el material visual: imagen, video, texto), el <strong>destination</strong> (destino, a dónde llega el clic) y el <strong>tracking</strong> (rastreo de qué hace la gente)."
+          "body": "Para no confundirte, así se reparte la responsabilidad: <strong>1. Campaign</strong> (la base): decides el <strong>buying type</strong> (forma de compra: subasta o reservación), el <strong>objective</strong> (objetivo, qué quieres lograr) y muchas veces el presupuesto. <strong>2. Conjunto de anuncios</strong> (el intermedio): decides la <strong>audience</strong> (audiencia, a quién le hablas), los <strong>placements</strong> (ubicaciones, en qué apps y secciones aparece) y el calendario. <strong>3. Ad</strong> (el anuncio en sí): decides el <strong>creative</strong> (el material visual: imagen, video, texto), el <strong>destination</strong> (destino, a dónde llega el clic) y el <strong>tracking</strong> (rastreo de qué hace la gente)."
         },
         {
           "type": "tip",
@@ -335,12 +335,12 @@
         {
           "type": "warn",
           "label": "TRAMPA DEL BUDGET",
-          "body": "El <strong>Budget</strong> se define en <strong>Campaign O Ad set</strong>, nunca en ambos a la vez. A nivel Campaign se llama <strong>Advantage+ campaign budget</strong> (antes CBO) y es la opción default."
+          "body": "El <strong>Budget</strong> se define en <strong>Campaign O Conjunto de anuncios (ad set)</strong>, nunca en ambos a la vez. A nivel Campaign se llama <strong>Advantage+ presupuesto de campaña</strong> (Advantage+ campaign budget, antes CBO) y es la opción default."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · FlowApp",
-          "body": "<strong>FlowApp</strong> es un software de gestión empresarial que se vende a otras empresas (un <strong>SaaS B2B</strong>: software as a service, o software por suscripción, business to business, o sea de negocio a negocio). Al armar su campaña deciden, en <em>Campaign</em>: <strong>Auction</strong> (subasta) como forma de compra, objetivo <strong>Sales</strong> (ventas) y el presupuesto del mes. En <em>Ad set</em>: la audiencia de equipos de operaciones, las ubicaciones donde saldrá y el evento de conversión que les importa. En <em>Ad</em>: el video que muestra cómo funciona el producto, el destino al formulario de prueba gratis y el rastreo con el Pixel. Una decisión por nivel, sin mezclar."
+          "body": "<strong>FlowApp</strong> es un software de gestión empresarial que se vende a otras empresas (un <strong>SaaS B2B</strong>: software as a service, o software por suscripción, business to business, o sea de negocio a negocio). Al armar su campaña deciden, en <em>Campaign</em>: <strong>Auction</strong> (subasta) como forma de compra, objetivo <strong>Ventas</strong> (Sales) y el presupuesto del mes. En <em>Conjunto de anuncios</em>: la audiencia de equipos de operaciones, las ubicaciones donde saldrá y el evento de conversión que les importa. En <em>Ad</em>: el video que muestra cómo funciona el producto, el destino al formulario de prueba gratis y el rastreo con el Píxel de Meta. Una decisión por nivel, sin mezclar."
         },
         {
           "type": "mcq",
@@ -508,7 +508,7 @@
         },
         {
           "q": "Trampa del budget",
-          "a": "Se define en Campaign O Ad set, nunca en ambos. Default: Campaign = Advantage+ campaign budget (antes CBO)."
+          "a": "Se define en Campaign O Conjunto de anuncios (ad set), nunca en ambos. Default: Campaign = Advantage+ presupuesto de campaña (Advantage+ campaign budget, antes CBO)."
         }
       ]
     },
@@ -553,7 +553,7 @@
           "rows": [
             [
               "Audience",
-              "Advantage+ audience, custom, lookalike, detailed targeting"
+              "Advantage+ público (Advantage+ audience), Público personalizado (Custom Audience), Público similar (Lookalike), detailed targeting"
             ],
             [
               "Placement",
@@ -561,7 +561,7 @@
             ],
             [
               "Budget",
-              "Advantage+ campaign budget (antes CBO)"
+              "Advantage+ presupuesto de campaña (Advantage+ campaign budget, antes CBO)"
             ],
             [
               "Creative",
@@ -604,19 +604,19 @@
         },
         {
           "q": "Las 2 categorías de Advantage+",
-          "a": "Complete campaign solutions (toda la campaña: Sales, App, Leads) · Single-step (un aspecto: Audience, Placement, Budget, Creative, Destination)."
+          "a": "Complete campaign solutions (toda la campaña: Ventas, App, Clientes potenciales) · Single-step (un aspecto: Audience, Placement, Budget, Creative, Destination)."
         },
         {
           "q": "Las 3 Advantage+ complete campaign solutions",
           "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
         },
         {
-          "q": "¿Qué hace Advantage+ campaign budget?",
-          "a": "Asigna dinámicamente el budget al ad set/ad con mejor performance. Default single-step de budget. (Antes CBO.)"
+          "q": "¿Qué hace Advantage+ presupuesto de campaña (Advantage+ campaign budget)?",
+          "a": "Asigna dinámicamente el budget al conjunto de anuncios (ad set)/ad con mejor performance. Default single-step de budget. (Antes CBO.)"
         },
         {
           "q": "¿Qué hace Advantage+ catalog ads?",
-          "a": "Muestra productos de un catálogo a quien más probablemente los encuentre relevantes. Disponible al elegir Sales."
+          "a": "Muestra productos de un catálogo (catalog) a quien más probablemente los encuentre relevantes. Disponible al elegir Ventas (Sales)."
         }
       ]
     },
@@ -737,12 +737,12 @@
         {
           "type": "concept",
           "h": "BP 2 — Align objectives & goals",
-          "body": "La segunda práctica, <strong>Align objectives & goals</strong> (alinea el objetivo de la campaña con la meta del negocio), es la más fácil de fallar. El <strong>objective</strong> (objetivo) es lo que le dices a Meta que optimice (ventas, tráfico, reconocimiento), y el <strong>goal</strong> (meta del negocio) es lo que realmente quieres lograr en la vida real. Si no coinciden, Meta optimiza la métrica equivocada y gastas dinero sin resultados de verdad. Por ejemplo, si pides tráfico, Meta te trae clics baratos aunque nadie compre. <em>Ejemplo:</em> la inmobiliaria <strong>Casa Plus</strong> quiere cerrar cotizaciones, así que su objective debe ser <strong>Sales</strong> (ventas) o <strong>Leads</strong> (captura de prospectos), nunca <strong>Awareness</strong> (reconocimiento de marca)."
+          "body": "La segunda práctica, <strong>Align objectives & goals</strong> (alinea el objetivo de la campaña con la meta del negocio), es la más fácil de fallar. El <strong>objective</strong> (objetivo) es lo que le dices a Meta que optimice (ventas, tráfico, reconocimiento), y el <strong>goal</strong> (meta del negocio) es lo que realmente quieres lograr en la vida real. Si no coinciden, Meta optimiza la métrica equivocada y gastas dinero sin resultados de verdad. Por ejemplo, si pides tráfico, Meta te trae clics baratos aunque nadie compre. <em>Ejemplo:</em> la inmobiliaria <strong>Casa Plus</strong> quiere cerrar cotizaciones, así que su objective debe ser <strong>Ventas</strong> (Sales) o <strong>Clientes potenciales</strong> (Leads, captura de prospectos), nunca <strong>Reconocimiento</strong> (Awareness, de marca)."
         },
         {
           "type": "concept",
           "h": "BP 3 — Consider your audience",
-          "body": "La tercera práctica, <strong>Consider your audience</strong> (toma en cuenta tu audiencia), pide combinar lo que tú ya sabes de tus clientes con lo que la inteligencia artificial puede descubrir por su cuenta. En lugar de encerrar la campaña en una audiencia fija y pequeña, le das a Meta tus datos como punto de partida y dejas que <strong>Advantage+ audience</strong> (la audiencia automática) explore perfiles parecidos que tú no habrías encontrado. Así no compites solo por la gente obvia y abres el alcance a prospectos nuevos pero relevantes. <em>Ejemplo:</em> la tienda en línea <strong>Aceros del Bajío</strong> sube su lista de mejores clientes y la inteligencia artificial expande hacia personas con comportamiento similar."
+          "body": "La tercera práctica, <strong>Consider your audience</strong> (toma en cuenta tu audiencia), pide combinar lo que tú ya sabes de tus clientes con lo que la inteligencia artificial puede descubrir por su cuenta. En lugar de encerrar la campaña en una audiencia fija y pequeña, le das a Meta tus datos como punto de partida y dejas que <strong>Advantage+ público</strong> (Advantage+ audience, la audiencia automática) explore perfiles parecidos que tú no habrías encontrado. Así no compites solo por la gente obvia y abres el alcance a prospectos nuevos pero relevantes. <em>Ejemplo:</em> la tienda en línea <strong>Aceros del Bajío</strong> sube su lista de mejores clientes y la inteligencia artificial expande hacia personas con comportamiento similar."
         },
         {
           "type": "concept",
@@ -772,17 +772,17 @@
         {
           "type": "concept",
           "h": "BP 5 — Focus on signals",
-          "body": "La quinta práctica, <strong>Focus on signals</strong> (enfócate en las señales), dice que tomes decisiones con datos de alta calidad en lugar de a corazonadas. Las <strong>signals</strong> (señales) son la información que tu negocio le manda a Meta sobre lo que hace la gente: el <strong>Pixel</strong> (un código en tu sitio web que registra visitas, compras y otras acciones), la <strong>CAPI</strong> (Conversions API, una conexión que envía esos mismos datos directo desde tu servidor, más confiable que el Pixel solo), los <strong>datasets</strong> (conjuntos de datos donde se guardan esas acciones) y los <strong>events</strong> (eventos, como \"agregó al carrito\" o \"compró\"). Entre más y mejores señales le des a Meta, mejor optimiza la inteligencia artificial. <em>Ejemplo:</em> la tienda en línea <strong>Aceros del Bajío</strong>, con 3 meses de Pixel más CAPI funcionando, le da a Meta datos sólidos para encontrar compradores reales."
+          "body": "La quinta práctica, <strong>Focus on signals</strong> (enfócate en las señales), dice que tomes decisiones con datos de alta calidad en lugar de a corazonadas. Las <strong>signals</strong> (señales) son la información que tu negocio le manda a Meta sobre lo que hace la gente: el <strong>Píxel de Meta</strong> (Meta Pixel, un código en tu sitio web que registra visitas, compras y otras acciones), la <strong>API de conversiones</strong> (Conversions API o CAPI, una conexión que envía esos mismos datos directo desde tu servidor, más confiable que el píxel solo), los <strong>datasets</strong> (conjuntos de datos donde se guardan esas acciones) y los <strong>events</strong> (eventos, como \"agregó al carrito\" o \"compró\"). Entre más y mejores señales le des a Meta, mejor optimiza la inteligencia artificial. <em>Ejemplo:</em> la tienda en línea <strong>Aceros del Bajío</strong>, con 3 meses de Píxel de Meta más API de conversiones funcionando, le da a Meta datos sólidos para encontrar compradores reales."
         },
         {
           "type": "concept",
           "h": "BP 6 — Get the most out of budget & bidding",
-          "body": "La sexta práctica, <strong>Get the most out of budget & bidding</strong> (saca el máximo provecho al presupuesto y a las pujas), pide que dejes a la inteligencia artificial repartir el dinero en vez de hacerlo tú a mano. El <strong>budget</strong> (presupuesto) es cuánto inviertes, y el <strong>bidding</strong> (puja) es cuánto está dispuesta a pagar tu campaña por cada resultado en la subasta. Con <strong>Advantage+ campaign budget</strong> (el presupuesto automático a nivel campaña, antes llamado CBO) Meta mueve el dinero hacia el conjunto de anuncios que está dando mejores resultados, en tiempo real. Repartir el presupuesto a mano suele dejar dinero atorado en anuncios que no funcionan. <em>Ejemplo:</em> en la inmobiliaria <strong>Casa Plus</strong>, el presupuesto fluye solo hacia el conjunto de anuncios que está cerrando más cotizaciones."
+          "body": "La sexta práctica, <strong>Get the most out of budget & bidding</strong> (saca el máximo provecho al presupuesto y a las pujas), pide que dejes a la inteligencia artificial repartir el dinero en vez de hacerlo tú a mano. El <strong>budget</strong> (presupuesto) es cuánto inviertes, y el <strong>bidding</strong> (puja) es cuánto está dispuesta a pagar tu campaña por cada resultado en la subasta. Con <strong>Advantage+ presupuesto de campaña</strong> (Advantage+ campaign budget, el presupuesto automático a nivel campaña, antes llamado CBO) Meta mueve el dinero hacia el conjunto de anuncios que está dando mejores resultados, en tiempo real. Repartir el presupuesto a mano suele dejar dinero atorado en anuncios que no funcionan. <em>Ejemplo:</em> en la inmobiliaria <strong>Casa Plus</strong>, el presupuesto fluye solo hacia el conjunto de anuncios que está cerrando más cotizaciones."
         },
         {
           "type": "concept",
           "h": "BP 7 — Validate results",
-          "body": "La séptima práctica, <strong>Validate results</strong> (valida los resultados), consiste en medir el impacto <em>real</em> de la campaña para aprender y mejorar las siguientes. Aquí entran herramientas como las pruebas <strong>A/B</strong> (mostrar dos versiones a públicos parecidos y comparar cuál gana) y los <strong>lift studies</strong> (estudios de incrementalidad: comparan a quien vio el anuncio contra quien no, para saber cuánto vendiste de más gracias a la publicidad). Lo clave para el examen: esta práctica ocurre <strong>post-campaña</strong> (después de que la campaña corrió), por eso <em>no</em> aparece en las recomendaciones del Opportunity Score, que solo cubre lo que puedes aplicar antes o durante. <em>Ejemplo:</em> la inmobiliaria <strong>Casa Plus</strong>, al terminar el mes, corre un A/B test para decidir qué video usar el siguiente trimestre."
+          "body": "La séptima práctica, <strong>Validate results</strong> (valida los resultados), consiste en medir el impacto <em>real</em> de la campaña para aprender y mejorar las siguientes. Aquí entran herramientas como la <strong>Prueba A/B</strong> (A/B test, mostrar dos versiones a públicos parecidos y comparar cuál gana) y los <strong>lift studies</strong> (estudios de incrementalidad: comparan a quien vio el anuncio contra quien no, para saber cuánto vendiste de más gracias a la publicidad). Lo clave para el examen: esta práctica ocurre <strong>post-campaña</strong> (después de que la campaña corrió), por eso <em>no</em> aparece en las recomendaciones del Opportunity Score, que solo cubre lo que puedes aplicar antes o durante. <em>Ejemplo:</em> la inmobiliaria <strong>Casa Plus</strong>, al terminar el mes, corre una prueba A/B para decidir qué video usar el siguiente trimestre."
         },
         {
           "type": "tip",
@@ -799,7 +799,7 @@
             "BP 7 — Validate results"
           ],
           "correct": 1,
-          "explanation": "BP 5 — Focus on signals: \"Inform decision making and optimize your strategy with high-quality data.\" Signals = Pixel, CAPI, datasets, eventos."
+          "explanation": "BP 5 — Focus on signals: \"Inform decision making and optimize your strategy with high-quality data.\" Signals = Píxel de Meta, API de conversiones, datasets, eventos."
         }
       ]
     },
@@ -898,7 +898,7 @@
             "6"
           ],
           "correct": 2,
-          "explanation": "BP 5 — Focus on signals. Signals = Pixel, CAPI, datasets, eventos."
+          "explanation": "BP 5 — Focus on signals. Signals = Píxel de Meta (Meta Pixel), API de conversiones (CAPI), datasets, eventos."
         },
         {
           "type": "fill",
@@ -934,7 +934,7 @@
         },
         {
           "q": "¿Qué resuelve la BP 5 — Focus on signals?",
-          "a": "Informar/optimizar decisiones con data de alta calidad: Pixel, CAPI, datasets, eventos."
+          "a": "Informar/optimizar decisiones con data de alta calidad: Píxel de Meta (Meta Pixel), API de conversiones (CAPI), datasets, eventos."
         }
       ]
     },
@@ -992,7 +992,7 @@
             ],
             [
               "Partial access (apps)",
-              "Configurar CAPI · monitor events · editar applications · crear access tokens"
+              "Configurar API de conversiones (CAPI) · monitor events · editar applications · crear access tokens"
             ],
             [
               "Full control",
@@ -1095,7 +1095,7 @@
         },
         {
           "type": "fill",
-          "q": "Para configurar la CAPI necesitas Partial access (___).",
+          "q": "Para configurar la API de conversiones (CAPI) necesitas Partial access (___).",
           "options": [
             "basic",
             "apps",
@@ -1103,7 +1103,7 @@
             "temporary"
           ],
           "correct": 1,
-          "explanation": "Partial access (apps): configurar CAPI, monitor events, editar applications, crear access tokens."
+          "explanation": "Partial access (apps): configurar API de conversiones (CAPI), monitor events, editar applications, crear access tokens."
         }
       ]
     },
@@ -1126,8 +1126,8 @@
           "a": "People (individuos) · Partners (otros negocios con su portfolio + business ID) · System users (servidores/software con API access)."
         },
         {
-          "q": "¿Qué acceso permite configurar la CAPI?",
-          "a": "Partial access (apps): configurar CAPI, monitor events, editar applications, crear access tokens."
+          "q": "¿Qué acceso permite configurar la API de conversiones (CAPI)?",
+          "a": "Partial access (apps): configurar API de conversiones, monitor events, editar applications, crear access tokens."
         },
         {
           "q": "Acceso temporal en un portfolio: ¿cuánto dura?",
@@ -1149,7 +1149,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Repartir accesos en AutoMax",
-          "body": "Necesitas dar accesos: (1) una <strong>agencia</strong> que tiene su propio portfolio y configurará la CAPI, (2) el <strong>contador</strong> que solo ve facturas, (3) un <strong>freelance</strong> que ayuda 2 semanas. Asigna lo correcto a cada uno."
+          "body": "Necesitas dar accesos: (1) una <strong>agencia</strong> que tiene su propio portfolio y configurará la API de conversiones (CAPI), (2) el <strong>contador</strong> que solo ve facturas, (3) un <strong>freelance</strong> que ayuda 2 semanas. Asigna lo correcto a cada uno."
         },
         {
           "type": "mcq",
@@ -1161,7 +1161,7 @@
             "Rol Advanced — Finance"
           ],
           "correct": 1,
-          "explanation": "Agencia con su portfolio = Partner. Para configurar CAPI necesita Partial access (apps)."
+          "explanation": "Agencia con su portfolio = Partner. Para configurar la API de conversiones necesita Partial access (apps)."
         },
         {
           "type": "mcq",
@@ -1411,19 +1411,19 @@
           "type": "scenario",
           "label": "ESCENARIO REAL",
           "h": "Cliente B2B con presupuesto serio",
-          "body": "<strong>Industrial Suite</strong> es una tienda Shopify B2B que vende equipo de oficina a empresas grandes (>500 empleados). Su presupuesto es <strong>$30,000 USD/mes</strong>. Tienen el <strong>Meta Pixel instalado hace 3 meses</strong> y reciben ~800 eventos de Purchase al mes. La meta principal: <strong>generar ventas en su sitio web</strong>. El cliente te pregunta: ¿qué objective, qué tipo de Advantage+ y qué Best Practice debo priorizar?"
+          "body": "<strong>Industrial Suite</strong> es una tienda Shopify B2B que vende equipo de oficina a empresas grandes (>500 empleados). Su presupuesto es <strong>$30,000 USD/mes</strong>. Tienen el <strong>Píxel de Meta (Meta Pixel) instalado hace 3 meses</strong> y reciben ~800 eventos de Purchase al mes. La meta principal: <strong>generar ventas en su sitio web</strong>. El cliente te pregunta: ¿qué objective, qué tipo de Advantage+ y qué Best Practice debo priorizar?"
         },
         {
           "type": "mcq",
-          "q": "¿Qué Campaign Objective recomiendas para Industrial Suite?",
+          "q": "¿Qué Objetivo de la campaña (campaign objective) recomiendas para Industrial Suite?",
           "options": [
-            "Awareness — para que conozcan la marca",
-            "Sales — porque la meta directa es generar ventas en el sitio",
-            "Engagement — para que interactúen con los posts",
-            "Leads — para capturar formularios"
+            "Reconocimiento (Awareness) — para que conozcan la marca",
+            "Ventas (Sales) — porque la meta directa es generar ventas en el sitio",
+            "Interacción (Engagement) — para que interactúen con los posts",
+            "Clientes potenciales (Leads) — para capturar formularios"
           ],
           "correct": 1,
-          "explanation": "El cliente dijo explícitamente que quiere <strong>ventas en su sitio web</strong>. El objective correcto es <strong>Sales</strong>. Awareness/Engagement no optimizan por conversión, y Leads sería válido si fuera de captura de formularios (no es el caso)."
+          "explanation": "El cliente dijo explícitamente que quiere <strong>ventas en su sitio web</strong>. El objetivo correcto es <strong>Ventas</strong>. Reconocimiento/Interacción no optimizan por conversión, y Clientes potenciales sería válido si fuera de captura de formularios (no es el caso)."
         },
         {
           "type": "mcq",
@@ -1447,7 +1447,7 @@
             "BP 7 — Validate results"
           ],
           "correct": 2,
-          "explanation": "<strong>BP 5 — Focus on signals</strong>: \"Inform decision making with high-quality data.\" Tener 3 meses de Pixel con eventos de Purchase es exactamente la señal de calidad que esta BP busca aprovechar. Idealmente además sumar <strong>Conversions API (CAPI)</strong> para complementar el Pixel."
+          "explanation": "<strong>BP 5 — Focus on signals</strong>: \"Inform decision making with high-quality data.\" Tener 3 meses de Píxel de Meta con eventos de Purchase es exactamente la señal de calidad que esta BP busca aprovechar. Idealmente además sumar <strong>API de conversiones (Conversions API, CAPI)</strong> para complementar el píxel."
         }
       ]
     },
@@ -1484,11 +1484,11 @@
         ],
         [
           "Advantage+ campaign budget",
-          "Asigna budget dinámicamente al ad set con mejor performance (antes CBO)"
+          "Asigna budget dinámicamente al conjunto de anuncios (ad set) con mejor performance (antes CBO)"
         ],
         [
           "BP 5 — Focus on signals",
-          "Tomar decisiones con data de alta calidad: Pixel, CAPI, datasets"
+          "Tomar decisiones con data de alta calidad: Píxel de Meta, API de conversiones, datasets"
         ],
         [
           "Business Portfolio",
@@ -1548,7 +1548,7 @@
             "placement"
           ],
           "correct": 1,
-          "explanation": "<strong>Advantage+ campaign budget</strong> (antes CBO) reparte el presupuesto dinámicamente entre ad sets."
+          "explanation": "<strong>Advantage+ presupuesto de campaña</strong> (Advantage+ campaign budget, antes CBO) reparte el presupuesto dinámicamente entre conjuntos de anuncios (ad sets)."
         },
         {
           "type": "fill",
@@ -1572,7 +1572,7 @@
             "6"
           ],
           "correct": 2,
-          "explanation": "<strong>BP 5 — Focus on signals</strong>. Las signals = Pixel, CAPI, datasets, eventos."
+          "explanation": "<strong>BP 5 — Focus on signals</strong>. Las signals = Píxel de Meta (Meta Pixel), API de conversiones (CAPI), datasets, eventos."
         },
         {
           "type": "fill",
@@ -1700,7 +1700,7 @@
             "Centralized Business Operations"
           ],
           "correct": 1,
-          "explanation": "<strong>CBO = Campaign Budget Optimization</strong>, hoy renombrada a <strong>Advantage+ campaign budget</strong>. Asigna budget dinámicamente al ad set que mejor performa."
+          "explanation": "<strong>CBO = Campaign Budget Optimization</strong>, hoy renombrada a <strong>Advantage+ presupuesto de campaña</strong> (Advantage+ campaign budget). Asigna budget dinámicamente al conjunto de anuncios (ad set) que mejor performa."
         },
         {
           "type": "mcq",
@@ -1721,7 +1721,7 @@
             "Crear y editar campañas de anuncios",
             "Ver y manejar transactions e invoices",
             "Acceder a system users y APIs externas",
-            "Crear lookalike audiences avanzadas"
+            "Crear públicos similares (Lookalike) avanzados"
           ],
           "correct": 1,
           "explanation": "<strong>Advanced — Finance</strong> es un permiso específico para temas financieros (facturas, transactions, payment methods). Es separado del Full control."
@@ -1760,7 +1760,7 @@
             "Advantage+ placements"
           ],
           "correct": 2,
-          "explanation": "<strong>CBO (Campaign Budget Optimization) → Advantage+ campaign budget</strong>. Es la rebranding más mencionada en el examen."
+          "explanation": "<strong>CBO (Campaign Budget Optimization) → Advantage+ presupuesto de campaña (Advantage+ campaign budget)</strong>. Es la rebranding más mencionada en el examen."
         },
         {
           "type": "mcq",
@@ -1816,7 +1816,7 @@
             "No, solo en uno de los dos"
           ],
           "correct": 1,
-          "explanation": "El budget va EN UNO de los dos niveles, nunca en ambos. Default: nivel Campaign (Advantage+ campaign budget)."
+          "explanation": "El budget va EN UNO de los dos niveles, nunca en ambos. Default: nivel Campaign (Advantage+ presupuesto de campaña / Advantage+ campaign budget)."
         },
         {
           "q": "¿Advantage+ Sales es una single-step solution?",
@@ -1939,12 +1939,12 @@
           "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
         },
         {
-          "q": "¿Qué hace Advantage+ campaign budget?",
-          "a": "Asigna dinámicamente el budget al ad set/ad con mejor performance. Es la default single-step solution para budget automation. (Antes se llamaba CBO.)"
+          "q": "¿Qué hace Advantage+ presupuesto de campaña (Advantage+ campaign budget)?",
+          "a": "Asigna dinámicamente el budget al conjunto de anuncios (ad set)/ad con mejor performance. Es la default single-step solution para budget automation. (Antes se llamaba CBO.)"
         },
         {
           "q": "¿Qué hace Advantage+ catalog ads?",
-          "a": "Muestra productos de un catálogo a las personas más propensas a encontrarlos relevantes. Disponible al elegir Sales como objetivo."
+          "a": "Muestra productos de un catálogo (catalog) a las personas más propensas a encontrarlos relevantes. Disponible al elegir Ventas (Sales) como objetivo."
         },
         {
           "q": "¿Cuáles son las 7 Performance Best Practices?",
@@ -1979,8 +1979,8 @@
           "a": "Mínimo 3 días, máximo 75 días."
         },
         {
-          "q": "¿Qué acceso permite configurar la Conversions API (CAPI)?",
-          "a": "Partial access (apps): configurar CAPI, monitorear events, editar applications y crear access tokens."
+          "q": "¿Qué acceso permite configurar la API de conversiones (Conversions API, CAPI)?",
+          "a": "Partial access (apps): configurar la API de conversiones, monitorear events, editar applications y crear access tokens."
         },
         {
           "q": "¿Qué acceso se necesita para cambiar el payment method?",

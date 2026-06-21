@@ -11,10 +11,10 @@
         "Audience, placements, conversion location",
         "Creative, destination, tracking",
         "Buying type, objective, budget, bid",
-        "Pixel installation y CAPI setup"
+        "Instalación del Píxel de Meta (Meta Pixel) y setup de la API de conversiones (CAPI)"
       ],
       "correct": 2,
-      "explanation": "A nivel Campaign: buying type, objective, budget, bid, special ad category. Audience/placements van en Ad set. Creative/destination van en Ad.",
+      "explanation": "A nivel Campaign: buying type, objective, budget, bid, special ad category. Audience/placements van en Conjunto de anuncios (ad set). Creative/destination van en Ad.",
       "difficulty": "easy"
     },
     {
