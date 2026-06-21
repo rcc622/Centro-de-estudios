@@ -8,7 +8,7 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "Ad auction",
+          "q": "Subasta de anuncios (ad auction)",
           "a": "Componente del ad delivery donde declaras el precio máximo que pagarías por un clic, impresión o conversión; decide qué anuncio se muestra."
         },
         {
@@ -40,24 +40,24 @@
           "a": "Buying type que alcanza un número fijo de personas a una frequency específica por un precio fijo. Solo objetivos Awareness y Engagement; solo Facebook e Instagram."
         },
         {
-          "q": "Bid strategy",
+          "q": "Estrategia de puja (bid strategy)",
           "a": "Configuración que determina cómo gastar tu budget en alineación con la meta de la campaña."
         },
         {
-          "q": "Bid cap",
-          "a": "Bid strategy que fija un bid máximo a usar en cada subasta."
+          "q": "Límite de puja (bid cap)",
+          "a": "Estrategia de puja (bid strategy) que fija un bid máximo a usar en cada subasta."
         },
         {
-          "q": "Cost per result goal",
-          "a": "Bid strategy que da un costo benchmark por resultado; el promedio se entrega sobre la vida de la campaña y PUEDE exceder el monto fijado al pujar dinámicamente."
+          "q": "Objetivo de costo por resultado (cost per result goal)",
+          "a": "Estrategia de puja que da un costo benchmark por resultado; el promedio se entrega sobre la vida de la campaña y PUEDE exceder el monto fijado al pujar dinámicamente."
         },
         {
-          "q": "Highest value",
-          "a": "Bid strategy spend-based que prioriza gastar el budget enfocándose en las compras de mayor valor."
+          "q": "Valor más alto (highest value)",
+          "a": "Estrategia de puja spend-based que prioriza gastar el budget enfocándose en las compras de mayor valor."
         },
         {
-          "q": "Highest volume",
-          "a": "Bid strategy spend-based que maximiza la cantidad de resultados gastando el budget, sin priorizar valor."
+          "q": "Volumen más alto (highest volume)",
+          "a": "Estrategia de puja spend-based que maximiza la cantidad de resultados gastando el budget, sin priorizar valor."
         },
         {
           "q": "Bid pacing",
@@ -84,15 +84,15 @@
           "a": "Etapa donde construyes el anuncio individual: ad creative, destination y tracking."
         },
         {
-          "q": "Ad set",
+          "q": "Conjunto de anuncios (ad set)",
           "a": "Grupo de anuncios que comparten budget, schedule, bid e información de audiencia."
         },
         {
-          "q": "Campaign objective",
-          "a": "La meta que el anunciante selecciona y refleja lo que quiere lograr: awareness, traffic, engagement, leads, app promotion o sales."
+          "q": "Objetivo de la campaña (campaign objective)",
+          "a": "La meta que el anunciante selecciona y refleja lo que quiere lograr: reconocimiento (awareness), tráfico (traffic), interacción (engagement), clientes potenciales (leads), promoción de la app (app promotion) o ventas (sales)."
         },
         {
-          "q": "Learning phase",
+          "q": "Fase de aprendizaje (learning phase)",
           "a": "Periodo en que el delivery system recopila información para optimizar la entrega; termina al estabilizarse (~50 optimization events). Es aprendizaje de la máquina."
         },
         {
@@ -115,7 +115,7 @@
           "a": "Herramienta/código que recolecta información (Conversions API, Meta Pixel, Facebook SDK, offline conversions) usada para medición y optimización."
         },
         {
-          "q": "Meta Pixel",
+          "q": "Píxel de Meta (Meta Pixel)",
           "a": "Pieza de código instalada en tu sitio web que captura website events."
         },
         {
@@ -123,15 +123,15 @@
           "a": "Pieza de código instalada en tu app que captura app events."
         },
         {
-          "q": "Conversions API",
+          "q": "API de conversiones (Conversions API)",
           "a": "API que envía eventos web (u offline/app/messaging) directo desde tu servidor a Meta; se conecta a un Pixel ID y mejora precisión y attribution."
         },
         {
-          "q": "Standard event",
+          "q": "Evento estándar (standard event)",
           "a": "Acción registrada predefinida por Meta."
         },
         {
-          "q": "Custom event",
+          "q": "Evento personalizado (custom event)",
           "a": "Acción registrada que tú defines según una acción específica en web, app u offline."
         },
         {
@@ -147,7 +147,7 @@
           "a": "Parámetro junto a eventos que mide el valor de precio del inventario con que la gente interactúa."
         },
         {
-          "q": "Offline event",
+          "q": "Evento offline (offline event)",
           "a": "Acción que ocurre fuera de Meta y fuera del sitio/app: visitas a tienda, ventas por teléfono, compras en tienda."
         },
         {
@@ -159,7 +159,7 @@
           "a": "Protocolo que preserva la privacidad de las personas al medir eventos web."
         },
         {
-          "q": "Catalog",
+          "q": "Catálogo (catalog)",
           "a": "Asset de negocio para almacenar y administrar el inventario que se quiere anunciar across Meta technologies. Se gestiona en Commerce Manager."
         },
         {
@@ -171,12 +171,12 @@
           "a": "Tipo de anuncio que muestra productos del catálogo y elige el más relevante para cada persona. Disponible para sales, app, engagement, leads y traffic."
         },
         {
-          "q": "Custom audience",
+          "q": "Público personalizado (Custom Audience)",
           "a": "Audiencia creada para encontrar tus audiencias existentes entre personas que usan Meta technologies (retargeting)."
         },
         {
-          "q": "Lookalike audience",
-          "a": "Grupo de personas similares a una audiencia existente (custom audience). Mínimo 100 personas de un país; recomendado ≥1,000."
+          "q": "Público similar (Lookalike)",
+          "a": "Grupo de personas similares a una audiencia existente (público personalizado). Mínimo 100 personas de un país; recomendado ≥1,000."
         },
         {
           "q": "Value-Based Lookalike",
@@ -258,15 +258,15 @@
           "a": "Categorías con reglas especiales: productos y servicios financieros, empleo, vivienda, y temas sociales/elecciones/política."
         },
         {
-          "q": "A/B test",
+          "q": "Prueba A/B (A/B test)",
           "a": "Experimento controlado que compara múltiples ad sets para determinar cuál rinde mejor; ganador = menor cost per result."
         },
         {
-          "q": "Brand lift",
+          "q": "Mejora de la marca (brand lift)",
           "a": "Métrica (brand affinity) que da insight sobre actitudes hacia la marca y awareness; mide ad recall."
         },
         {
-          "q": "Conversion Lift",
+          "q": "Aumento de conversiones (Conversion Lift)",
           "a": "Experimento con randomized control trials que mide las conversiones incrementales causadas por los anuncios. Fuente recomendada: Conversions API."
         },
         {
@@ -282,11 +282,11 @@
           "a": "Herramienta en Ads Manager y Meta Business Suite para configurar A/B Testing, Brand Lift y Conversion Lift."
         },
         {
-          "q": "Attribution",
+          "q": "Atribución (Attribution)",
           "a": "Proceso de asignar crédito a los touchpoints del customer journey por una conversión."
         },
         {
-          "q": "Attribution model",
+          "q": "Modelo de atribución (attribution model)",
           "a": "Lógica que determina cómo se da crédito. Ads Manager: standard e incremental (incremental usa modelos predictivos para conversiones incrementales)."
         },
         {

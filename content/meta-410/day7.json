@@ -34,7 +34,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Si quieres elegir una bid strategy, usar Advantage+ campaign budget y entregar anuncios across Meta technologies, ¿qué buying type debes seleccionar?",
+      "q": "Si quieres elegir una estrategia de puja (bid strategy), usar Advantage+ campaign budget y entregar anuncios across Meta technologies, ¿qué buying type debes seleccionar?",
       "options": [
         "Auction",
         "Reservation",
@@ -42,11 +42,11 @@
         "Lifetime"
       ],
       "correct": 0,
-      "explanation": "Auction permite elegir entre 5 bid strategies, usar daily/lifetime/Advantage+ campaign budget y entregar across Meta technologies. Reservation NO ofrece Advantage+ campaign budget y solo entrega en Facebook e Instagram. Daily y Lifetime son tipos de budget, no buying types.",
+      "explanation": "Auction permite elegir entre 5 estrategias de puja (bid strategies), usar daily/lifetime/Advantage+ campaign budget y entregar across Meta technologies. Reservation NO ofrece Advantage+ campaign budget y solo entrega en Facebook e Instagram. Daily y Lifetime son tipos de budget, no buying types.",
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuál de los siguientes NO se usa en la ad auction para determinar el total value de un anuncio?",
+      "q": "¿Cuál de los siguientes NO se usa en la subasta de anuncios (ad auction) para determinar el total value de un anuncio?",
       "options": [
         "Advertiser bid",
         "Estimated action rates",
@@ -69,7 +69,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Corres una campaña con bid strategy highest volume y el mismo budget en cada ad set. Notas conversiones más bajas y cost per result más alto de lo esperado. ¿Qué ajuste puede ayudar a subir conversiones y bajar el cost per result?",
+      "q": "Corres una campaña con estrategia de puja (bid strategy) volumen más alto (highest volume) y el mismo budget en cada conjunto de anuncios (ad set). Notas conversiones más bajas y cost per result más alto de lo esperado. ¿Qué ajuste puede ayudar a subir conversiones y bajar el cost per result?",
       "options": [
         "Subir el frequency cap de tus anuncios",
         "Cambiar la bid strategy a bid cap",
@@ -81,7 +81,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Corres una campaña de Sales y quieres crear un Custom Audience de personas que mostraron interés en productos de tu sitio web pero no compraron. También quieres mejorar la attribution a cuentas across Meta technologies. ¿Qué data sources te ayudan? Selecciona 2.",
+      "q": "Corres una campaña de Sales y quieres crear un público personalizado (Custom Audience) de personas que mostraron interés en productos de tu sitio web pero no compraron. También quieres mejorar la atribución (Attribution) a cuentas across Meta technologies. ¿Qué data sources te ayudan? Selecciona 2.",
       "options": [
         "Custom conversions",
         "Meta Pixel",
@@ -93,7 +93,7 @@
         3
       ],
       "multi": true,
-      "explanation": "El Meta Pixel rastrea acciones en el sitio web (ver producto, add to cart) para crear el Custom Audience de interesados que no compraron. La Conversions API envía eventos web desde tu servidor directo a Meta, mejorando precisión y attribution cuando el tracking del navegador es limitado. El Facebook SDK es para apps, no web.",
+      "explanation": "El Píxel de Meta (Meta Pixel) rastrea acciones en el sitio web (ver producto, add to cart) para crear el público personalizado de interesados que no compraron. La API de conversiones (Conversions API) envía eventos web desde tu servidor directo a Meta, mejorando precisión y atribución cuando el tracking del navegador es limitado. El Facebook SDK es para apps, no web.",
       "difficulty": "medium"
     },
     {
@@ -121,7 +121,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Quieres adquirir clientes nuevos en Chile creando un Lookalike Audience basado en los miembros del programa de lealtad de tu app. Tu source audience son 150 clientes frecuentes de alto valor. ¿Qué debes hacer para maximizar performance y relevancia?",
+      "q": "Quieres adquirir clientes nuevos en Chile creando un público similar (Lookalike Audience) basado en los miembros del programa de lealtad de tu app. Tu source audience son 150 clientes frecuentes de alto valor. ¿Qué debes hacer para maximizar performance y relevancia?",
       "options": [
         "El seed list es muy grande. Usa una fuente más pequeña antes del lookalike",
         "El seed list es muy pequeño. Crece la audiencia antes del lookalike",
@@ -129,11 +129,11 @@
         "El seed list cumple el mínimo requerido. Crea el lookalike y monitorea/refresca la fuente para aumentar su tamaño"
       ],
       "correct": 3,
-      "explanation": "Un Lookalike Audience requiere mínimo 100 personas de un solo país de origen en la source audience; se recomienda al menos 1,000. 150 cumple el mínimo, así que se crea el lookalike y se mantiene/refresca la fuente para mejorar calidad con el tiempo.",
+      "explanation": "Un público similar requiere mínimo 100 personas de un solo país de origen en la source audience; se recomienda al menos 1,000. 150 cumple el mínimo, así que se crea el público similar y se mantiene/refresca la fuente para mejorar calidad con el tiempo.",
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuál describe mejor el learning phase?",
+      "q": "¿Cuál describe mejor la fase de aprendizaje (learning phase)?",
       "options": [
         "El periodo en que el sistema de delivery recopila datos para optimizar el desempeño antes de que los resultados se estabilicen",
         "El tiempo después de que termina la campaña, cuando se analizan resultados",
@@ -141,11 +141,11 @@
         "El punto en que un ad set se pausa por bajo desempeño"
       ],
       "correct": 0,
-      "explanation": "El learning phase es el periodo en que el delivery system prueba formas de entregar el ad set y aprende qué funciona mejor antes de que el desempeño se vuelva consistente (típicamente tras ~50 optimization events). Es aprendizaje de la máquina, no tuyo.",
+      "explanation": "La fase de aprendizaje es el periodo en que el delivery system prueba formas de entregar el conjunto de anuncios (ad set) y aprende qué funciona mejor antes de que el desempeño se vuelva consistente (típicamente tras ~50 optimization events). Es aprendizaje de la máquina, no tuyo.",
       "difficulty": "medium"
     },
     {
-      "q": "Un cliente configura una campaña across Meta technologies. Quiere compras en su sitio web, tiene el Pixel instalado y todos los resultados valen igual. La meta es el mayor número de resultados posible por menos de $30 cada uno. ¿Qué bid, budget y optimización recomiendas?",
+      "q": "Un cliente configura una campaña across Meta technologies. Quiere compras en su sitio web, tiene el Píxel de Meta (Meta Pixel) instalado y todos los resultados valen igual. La meta es el mayor número de resultados posible por menos de $30 cada uno. ¿Qué bid, budget y optimización recomiendas?",
       "options": [
         "Cost per result goal, daily budget, optimización por conversión",
         "Bid cap, lifetime budget, optimización por landing page view",
@@ -153,7 +153,7 @@
         "Lifetime budget, link clicks"
       ],
       "correct": 0,
-      "explanation": "Hay un costo objetivo específico ($30): cost per result goal limita el costo por resultado. Como no importa cuánto se gaste mientras esté bajo ese monto, un daily budget alto sirve. Como todas las conversiones valen igual, se optimiza por la conversión misma (no por valor).",
+      "explanation": "Hay un costo objetivo específico ($30): el objetivo de costo por resultado (cost per result goal) limita el costo por resultado. Como no importa cuánto se gaste mientras esté bajo ese monto, un daily budget alto sirve. Como todas las conversiones valen igual, se optimiza por la conversión misma (no por valor).",
       "difficulty": "medium"
     },
     {
@@ -197,7 +197,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Qué attribution models están disponibles en Ads Manager? Selecciona 2.",
+      "q": "¿Qué modelos de atribución (attribution models) están disponibles en Ads Manager? Selecciona 2.",
       "options": [
         "Custom attribution",
         "Standard attribution",
@@ -213,7 +213,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Dónde puedes correr un A/B test o un lift test para tus campañas?",
+      "q": "¿Dónde puedes correr una prueba A/B (A/B test) o un lift test para tus campañas?",
       "options": [
         "Durante la creación de campaña a nivel ad set",
         "Desde tu business portfolio en Meta Business Suite",
@@ -221,11 +221,11 @@
         "Desde Experiments en Ads Manager o Meta Business Suite"
       ],
       "correct": 3,
-      "explanation": "Experiments es la herramienta dedicada en Ads Manager y Meta Business Suite para configurar y analizar A/B Testing, Brand Lift y Conversion Lift. Los A/B tests además se pueden crear durante la creación de campaña a nivel campaña, pero la respuesta que cubre A/B y lift tests es Experiments.",
+      "explanation": "Experiments es la herramienta dedicada en Ads Manager y Meta Business Suite para configurar y analizar pruebas A/B, mejora de la marca (Brand Lift) y aumento de conversiones (Conversion Lift). Las pruebas A/B además se pueden crear durante la creación de campaña a nivel campaña, pero la respuesta que cubre pruebas A/B y lift tests es Experiments.",
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuál puedes usar para crear y mantener un catálogo de items?",
+      "q": "¿Cuál puedes usar para crear y mantener un catálogo (catalog) de items?",
       "options": [
         "Ads Manager",
         "Commerce Manager",
@@ -297,11 +297,11 @@
         "Single-cell conversion lift test"
       ],
       "correct": 3,
-      "explanation": "Para medir la incrementalidad pura de Meta se usa un single-cell Conversion Lift (un grupo de test expuesto vs. un holdout no expuesto). El multi-cell compara estrategias entre sí; el A/B test compara variables, no incrementalidad; brand lift mide recordación/actitud, no conversiones incrementales.",
+      "explanation": "Para medir la incrementalidad pura de Meta se usa un single-cell de aumento de conversiones (Conversion Lift) (un grupo de test expuesto vs. un holdout no expuesto). El multi-cell compara estrategias entre sí; la prueba A/B (A/B test) compara variables, no incrementalidad; la mejora de la marca (brand lift) mide recordación/actitud, no conversiones incrementales.",
       "difficulty": "medium"
     },
     {
-      "q": "Una marca corre un Brand Survey de una campaña de awareness (video de 15s, branding al final). Resultados: Ad Recall Lift +8.2, Purchase Intent Lift +1.3. ¿Qué debe implementar el media buyer?",
+      "q": "Una marca corre un Brand Survey de una campaña de reconocimiento (awareness) (video de 15s, branding al final). Resultados: Ad Recall Lift +8.2, Purchase Intent Lift +1.3. ¿Qué debe implementar el media buyer?",
       "options": [
         "Resaltar beneficios del producto en el creative y poner el branding al inicio",
         "Mantener la frequency baja para asegurar alto ad recall lift",
@@ -313,7 +313,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Ad A entra a una subasta con bid cap de $1.00. Ad B entra a la misma subasta con bid cap de $0.50. Ambos tienen igual estimated conversion rate y creative score. Ad A gana. ¿Cuánto se le cobra al anunciante?",
+      "q": "Ad A entra a una subasta de anuncios (ad auction) con límite de puja (bid cap) de $1.00. Ad B entra a la misma subasta con límite de puja de $0.50. Ambos tienen igual estimated conversion rate y creative score. Ad A gana. ¿Cuánto se le cobra al anunciante?",
       "options": [
         "$0.51",
         "$0.75",
@@ -321,11 +321,11 @@
         "$1.00"
       ],
       "correct": 0,
-      "explanation": "La subasta de Meta es de segundo precio: el ganador paga lo mínimo necesario para ganar, es decir apenas por encima del competidor siguiente ($0.50) → $0.51. No paga su bid cap completo.",
+      "explanation": "La subasta de anuncios de Meta es de segundo precio: el ganador paga lo mínimo necesario para ganar, es decir apenas por encima del competidor siguiente ($0.50) → $0.51. No paga su límite de puja completo.",
       "difficulty": "medium"
     },
     {
-      "q": "Dos marcas de moda anuncian al mismo tiempo. Mid-level: precio $50, bid cap $25, estimated action rate 0.9%. Luxury: precio $500, bid cap $250, estimated action rate 0.5%. Misma ad quality. ¿Quién debería ver mayor delivery?",
+      "q": "Dos marcas de moda anuncian al mismo tiempo. Mid-level: precio $50, límite de puja (bid cap) $25, estimated action rate 0.9%. Luxury: precio $500, límite de puja $250, estimated action rate 0.5%. Misma ad quality. ¿Quién debería ver mayor delivery?",
       "options": [
         "La marca luxury tendrá 10x más delivery que la mid-level",
         "La mid-level tendrá más delivery por menor precio de item",
@@ -409,7 +409,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Un media buyer prioriza el ROAS al configurar su campaña mensual, pero necesita gastar todo el budget de la campaña. ¿Qué bid strategy debe usar?",
+      "q": "Un media buyer prioriza el ROAS al configurar su campaña mensual, pero necesita gastar todo el budget de la campaña. ¿Qué estrategia de puja (bid strategy) debe usar?",
       "options": [
         "ROAS goal",
         "Highest Value",
@@ -417,11 +417,11 @@
         "Cost per result goal"
       ],
       "correct": 1,
-      "explanation": "Highest Value es una bid strategy spend-based: gasta todo el budget mientras maximiza el valor de compra (favorece ROAS). ROAS goal es goal-based y puede subgastar el budget; Highest Volume maximiza cantidad sin priorizar valor; cost per result goal controla costo, no valor.",
+      "explanation": "Valor más alto (Highest Value) es una estrategia de puja spend-based: gasta todo el budget mientras maximiza el valor de compra (favorece ROAS). El objetivo de ROAS (ROAS goal) es goal-based y puede subgastar el budget; volumen más alto (Highest Volume) maximiza cantidad sin priorizar valor; el objetivo de costo por resultado (cost per result goal) controla costo, no valor.",
       "difficulty": "medium"
     },
     {
-      "q": "Una marca corre un A/B test para determinar qué creative es más efectivo logrando conversiones en web. ¿Qué métrica determina el ad set ganador?",
+      "q": "Una marca corre una prueba A/B (A/B test) para determinar qué creative es más efectivo logrando conversiones en web. ¿Qué métrica determina el conjunto de anuncios (ad set) ganador?",
       "options": [
         "Lowest cost per result (menor costo por resultado)",
         "Link clicks por ad set",
@@ -429,7 +429,7 @@
         "Highest reservation"
       ],
       "correct": 0,
-      "explanation": "El ganador de un A/B test se decide por el menor cost per result (costo por conversión). Link clicks o gasto no determinan eficiencia de conversión; 'highest reservation' no es una métrica de A/B.",
+      "explanation": "El ganador de una prueba A/B se decide por el menor cost per result (costo por conversión). Link clicks o gasto no determinan eficiencia de conversión; 'highest reservation' no es una métrica de prueba A/B.",
       "difficulty": "medium"
     },
     {
@@ -469,7 +469,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Un cliente de cosméticos tiene miles de seguidores comprometidos en su cuenta profesional de Instagram, a menudo clientes de alto gasto. Pide crear un Custom Audience de esa audiencia de Instagram para un anuncio de retargeting. ¿Qué tipo de Custom Audience debe crear el media buyer?",
+      "q": "Un cliente de cosméticos tiene miles de seguidores comprometidos en su cuenta profesional de Instagram, a menudo clientes de alto gasto. Pide crear un público personalizado (Custom Audience) de esa audiencia de Instagram para un anuncio de retargeting. ¿Qué tipo de público personalizado debe crear el media buyer?",
       "options": [
         "Lookalike Audience del Custom Audience de video viewers",
         "Custom Audience de video viewers y/o quienes interactuaron con la cuenta",
@@ -477,11 +477,11 @@
         "Custom Audience de seguidores y/o quienes interactuaron con la cuenta"
       ],
       "correct": 3,
-      "explanation": "Retargeting de seguidores/engagers de Instagram = un Custom Audience de engagement que incluye seguidores y quienes interactuaron con la cuenta. Un Lookalike busca gente nueva similar, no es retargeting de la audiencia existente.",
+      "explanation": "Retargeting de seguidores/engagers de Instagram = un público personalizado de engagement que incluye seguidores y quienes interactuaron con la cuenta. Un público similar (Lookalike) busca gente nueva similar, no es retargeting de la audiencia existente.",
       "difficulty": "medium"
     },
     {
-      "q": "Un cliente quiere segmentar a personas que vieron sus videos y que visitaron su sitio de producto en los últimos 2 meses. Aún no tiene el Meta Pixel instalado. ¿Qué tipo de audiencia debe incluir?",
+      "q": "Un cliente quiere segmentar a personas que vieron sus videos y que visitaron su sitio de producto en los últimos 2 meses. Aún no tiene el Píxel de Meta (Meta Pixel) instalado. ¿Qué tipo de audiencia debe incluir?",
       "options": [
         "Lookalike Audience",
         "Website Visitors Custom Audience",
@@ -489,7 +489,7 @@
         "Value-Based Lookalike Audience"
       ],
       "correct": 2,
-      "explanation": "Sin Pixel no se puede crear un Website Custom Audience. La audiencia alcanzable es un Engagement Custom Audience (video viewers), que no requiere Pixel. Los Lookalike requieren una fuente y no son retargeting directo.",
+      "explanation": "Sin Píxel de Meta no se puede crear un público personalizado (Custom Audience) de sitio web. La audiencia alcanzable es un público personalizado de engagement (video viewers), que no requiere Píxel. Los públicos similares (Lookalike) requieren una fuente y no son retargeting directo.",
       "difficulty": "medium"
     },
     {
@@ -501,11 +501,11 @@
         "Crear un Website Custom Audience y luego un Lookalike Audience"
       ],
       "correct": 0,
-      "explanation": "Se crea un Custom Audience de quienes interactuaron con la experiencia AR (engagement) y luego un Lookalike de esa fuente para encontrar gente similar en Francia. La traducción de idioma no resuelve la segmentación por similitud.",
+      "explanation": "Se crea un público personalizado (Custom Audience) de quienes interactuaron con la experiencia AR (engagement) y luego un público similar (Lookalike) de esa fuente para encontrar gente similar en Francia. La traducción de idioma no resuelve la segmentación por similitud.",
       "difficulty": "medium"
     },
     {
-      "q": "Campaña de Sales (moisturizer), debe gastar todo el budget, KPI primario ROAS, ya salió del learning phase. Setup: 1 ad set con 1% Lookalike de top purchasers (30 días), video de 6s, bid Highest volume, $10,000/día. ROAS por semana: $2.00, $1.00, $0.75, $0.50. ¿Qué optimización considerar para mejorar ROAS?",
+      "q": "Campaña de Sales (moisturizer), debe gastar todo el budget, KPI primario ROAS, ya salió de la fase de aprendizaje (learning phase). Setup: 1 conjunto de anuncios (ad set) con 1% público similar (Lookalike) de top purchasers (30 días), video de 6s, puja volumen más alto (Highest volume), $10,000/día. ROAS por semana: $2.00, $1.00, $0.75, $0.50. ¿Qué optimización considerar para mejorar ROAS?",
       "options": [
         "Ampliar la segmentación para incluir un 2% Lookalike",
         "Cambiar al objetivo Traffic",
@@ -513,7 +513,7 @@
         "Cambiar a un cost per result goal de $2.00"
       ],
       "correct": 0,
-      "explanation": "Un único ad set con 1% Lookalike y ROAS en caída sostenida indica saturación/fatiga de audiencia. Ampliar a un 2% Lookalike refresca la audiencia y ayuda a sostener ROAS gastando todo el budget. Cambiar a Traffic o a estáticas no atiende la causa (saturación de audiencia).",
+      "explanation": "Un único conjunto de anuncios con 1% público similar y ROAS en caída sostenida indica saturación/fatiga de audiencia. Ampliar a un 2% público similar refresca la audiencia y ayuda a sostener ROAS gastando todo el budget. Cambiar a Traffic o a estáticas no atiende la causa (saturación de audiencia).",
       "difficulty": "medium"
     },
     {
@@ -541,7 +541,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Una marca configura una campaña de awareness; su agencia entrega videos de 30s que revelan la marca en el segundo 10 y usan aspect ratio 1:1. Los anuncios solo correrán en Facebook app e Instagram mobile feed. ¿Qué necesita la marca?",
+      "q": "Una marca configura una campaña de reconocimiento (awareness); su agencia entrega videos de 30s que revelan la marca en el segundo 10 y usan aspect ratio 1:1. Los anuncios solo correrán en Facebook app e Instagram mobile feed. ¿Qué necesita la marca?",
       "options": [
         "Video más corto (<15s) y cambiar a 16:9",
         "Video más corto (<15s) y cambiar a 4:5",
@@ -573,7 +573,7 @@
         "ROAS goal en diciembre; Bid cap en enero"
       ],
       "correct": 2,
-      "explanation": "Gastar todo el budget = bid strategy spend-based (Highest volume/value). Mantener un CPA promedio de $40 = cost per result goal (provee un benchmark de costo). Bid cap/cost per view no controlan el CPA promedio igual de bien.",
+      "explanation": "Gastar todo el budget = estrategia de puja (bid strategy) spend-based (volumen más alto/valor más alto, highest volume/value). Mantener un CPA promedio de $40 = objetivo de costo por resultado (cost per result goal) (provee un benchmark de costo). El límite de puja (bid cap)/cost per view no controlan el CPA promedio igual de bien.",
       "difficulty": "medium"
     },
     {
@@ -601,11 +601,11 @@
         3
       ],
       "multi": true,
-      "explanation": "Conversiones en sitio web global = Meta Pixel + Conversions API (configuración redundante recomendada para precisión y attribution). El SDK es para apps; Offline Conversions es para eventos fuera de línea (tienda física).",
+      "explanation": "Conversiones en sitio web global = Píxel de Meta (Meta Pixel) + API de conversiones (Conversions API) (configuración redundante recomendada para precisión y atribución). El SDK es para apps; Offline Conversions es para eventos fuera de línea (tienda física).",
       "difficulty": "medium"
     },
     {
-      "q": "Una tienda de e-commerce corre una campaña 6 meses sin cambios. Inicialmente daba resultados eficientes pero el cost per result subió con el tiempo (Highest volume, objetivo Sales, optimization event Purchase, $150/día). ¿Cómo optimizar?",
+      "q": "Una tienda de e-commerce corre una campaña 6 meses sin cambios. Inicialmente daba resultados eficientes pero el cost per result subió con el tiempo (volumen más alto, Highest volume; objetivo Sales, optimization event Purchase, $150/día). ¿Cómo optimizar?",
       "options": [
         "Agregar creative nuevo",
         "Cambiar el optimization event a link clicks",
@@ -617,7 +617,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Una marca corre una campaña de awareness en varias plataformas y quiere determinar rápido el mensaje más efectivo, audiencia hombres y mujeres 18-35, budget $50,000. ¿Qué debe implementar el media buyer?",
+      "q": "Una marca corre una campaña de reconocimiento (awareness) en varias plataformas y quiere determinar rápido el mensaje más efectivo, audiencia hombres y mujeres 18-35, budget $50,000. ¿Qué debe implementar el media buyer?",
       "options": [
         "Audience Split Test",
         "Creative Split Test",
@@ -629,7 +629,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Una marca con campaña always-on (lifetime budgets, optimizando Purchase) recibe ~20 ventas por semana por ad set; varios ad sets siguen en learning phase o learning limited. ¿Qué cambio recomienda el media buyer?",
+      "q": "Una marca con campaña always-on (lifetime budgets, optimizando Purchase) recibe ~20 ventas por semana por conjunto de anuncios (ad set); varios conjuntos de anuncios siguen en fase de aprendizaje (learning phase) o learning limited. ¿Qué cambio recomienda el media buyer?",
       "options": [
         "Cambiar el optimization event a Engagement",
         "Cambiar al objetivo de traffic",
@@ -637,7 +637,7 @@
         "Combinar ad sets"
       ],
       "correct": 3,
-      "explanation": "Para salir del learning phase un ad set necesita ~50 optimization events por semana. Con solo ~20 ventas por ad set, combinar ad sets concentra conversiones y permite estabilizar el aprendizaje. Cambiar el evento o el objetivo degrada el resultado de compra.",
+      "explanation": "Para salir de la fase de aprendizaje un conjunto de anuncios necesita ~50 optimization events por semana. Con solo ~20 ventas por conjunto de anuncios, combinar conjuntos de anuncios concentra conversiones y permite estabilizar el aprendizaje. Cambiar el evento o el objetivo degrada el resultado de compra.",
       "difficulty": "medium"
     },
     {
@@ -661,11 +661,11 @@
         "Esperar a que la campaña salga del learning phase"
       ],
       "correct": 3,
-      "explanation": "A 2 días la campaña sigue en learning phase y los resultados aún no se estabilizan. La best practice es esperar a que salga del learning (sin ediciones significativas que lo reinicien) antes de juzgar el cost per result.",
+      "explanation": "A 2 días la campaña sigue en fase de aprendizaje (learning phase) y los resultados aún no se estabilizan. La best practice es esperar a que salga del learning (sin ediciones significativas que lo reinicien) antes de juzgar el cost per result.",
       "difficulty": "medium"
     },
     {
-      "q": "Un cliente quiere lanzar una campaña de Sales con 4 ad sets por 1 mes con $100,000, priorizando obtener la mayor cantidad de ventas con todo el budget. ¿Cómo configurar el budget?",
+      "q": "Un cliente quiere lanzar una campaña de Sales con 4 conjuntos de anuncios (ad sets) por 1 mes con $100,000, priorizando obtener la mayor cantidad de ventas con todo el budget. ¿Cómo configurar el budget?",
       "options": [
         "Daily budget a nivel ad set",
         "Lifetime budget a nivel campaña",
@@ -673,11 +673,11 @@
         "Daily budget a nivel campaña"
       ],
       "correct": 1,
-      "explanation": "Lifetime budget a nivel campaña (Advantage+ campaign budget) distribuye automáticamente el gasto entre los 4 ad sets hacia los de mejor desempeño para maximizar ventas con todo el budget en el periodo.",
+      "explanation": "Lifetime budget a nivel campaña (Advantage+ campaign budget) distribuye automáticamente el gasto entre los 4 conjuntos de anuncios hacia los de mejor desempeño para maximizar ventas con todo el budget en el periodo.",
       "difficulty": "medium"
     },
     {
-      "q": "Un media buyer necesita agregar items a un catálogo para un cliente. El inventario es pequeño y no cambia seguido. ¿Cómo debe agregar los items?",
+      "q": "Un media buyer necesita agregar items a un catálogo (catalog) para un cliente. El inventario es pequeño y no cambia seguido. ¿Cómo debe agregar los items?",
       "options": [
         "Data feed con un spreadsheet",
         "Importar automáticamente con un Meta Pixel",
@@ -737,7 +737,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Un cliente corre una campaña con objetivo awareness y quiere entender a cuántas personas les quedó el recuerdo de haber visto sus anuncios. ¿Qué debe implementar el media buyer?",
+      "q": "Un cliente corre una campaña con objetivo reconocimiento (awareness) y quiere entender a cuántas personas les quedó el recuerdo de haber visto sus anuncios. ¿Qué debe implementar el media buyer?",
       "options": [
         "A/B test",
         "Brand Lift",
@@ -745,7 +745,7 @@
         "MMM"
       ],
       "correct": 1,
-      "explanation": "Medir recordación de anuncio (ad recall) y actitudes de marca = Brand Lift. A/B test compara variantes; Conversion Lift mide conversiones incrementales; MMM es modelado de mezcla de marketing.",
+      "explanation": "Medir recordación de anuncio (ad recall) y actitudes de marca = mejora de la marca (Brand Lift). La prueba A/B (A/B test) compara variantes; el aumento de conversiones (Conversion Lift) mide conversiones incrementales; MMM es modelado de mezcla de marketing.",
       "difficulty": "medium"
     }
   ]
