@@ -185,12 +185,12 @@
           "h": "Las 4 data sources · cómo le mandas los signals a Meta",
           "rows": [
             [
-              "Meta Pixel",
+              "Píxel de Meta (Meta Pixel)",
               "Código JS en website. Trackea acciones del visitante. Necesario para Custom Audiences web y Sales/Leads website."
             ],
             [
-              "Conversions API (CAPI)",
-              "Envío server-side desde el servidor del anunciante. Complementa al Pixel para reducir dependencia del browser."
+              "API de conversiones (Conversions API · CAPI)",
+              "Envío server-side desde el servidor del anunciante. Complementa al Píxel para reducir dependencia del browser."
             ],
             [
               "Facebook SDK",
@@ -399,13 +399,13 @@
         },
         {
           "type": "concept",
-          "h": "Qué es el Meta Pixel",
-          "body": "El <strong>Meta Pixel</strong> es un fragmento de código de JavaScript que instalas en tu página web. Su trabajo es capturar los eventos que ocurren en el navegador del visitante: cuando ve un producto (<em>ViewContent</em>), lo agrega al carrito (<em>AddToCart</em>) o compra (<em>Purchase</em>). El problema es que corre <strong>client-side</strong> (del lado del cliente, es decir, dentro del navegador de la persona), y eso lo hace vulnerable: los ad blockers (bloqueadores de anuncios), la navegación privada y la privacidad de iOS 14 en adelante pueden impedir que dispare. Por eso su cobertura siempre es parcial. La tienda en línea <strong>Boutique Aurora</strong> ve que pierde ventas reportadas justamente por estos bloqueos del navegador."
+          "h": "Qué es el Píxel de Meta (Meta Pixel)",
+          "body": "El <strong>Píxel de Meta (Meta Pixel)</strong> es un fragmento de código de JavaScript que instalas en tu página web. Su trabajo es capturar los eventos que ocurren en el navegador del visitante: cuando ve un producto (<em>ViewContent</em>), lo agrega al carrito (<em>AddToCart</em>) o compra (<em>Purchase</em>). El problema es que corre <strong>client-side</strong> (del lado del cliente, es decir, dentro del navegador de la persona), y eso lo hace vulnerable: los ad blockers (bloqueadores de anuncios), la navegación privada y la privacidad de iOS 14 en adelante pueden impedir que dispare. Por eso su cobertura siempre es parcial. La tienda en línea <strong>Boutique Aurora</strong> ve que pierde ventas reportadas justamente por estos bloqueos del navegador."
         },
         {
           "type": "concept",
-          "h": "Qué es la Conversions API (CAPI)",
-          "body": "La <strong>Conversions API</strong> o <strong>CAPI</strong> es un método para enviar eventos <strong>server-to-server</strong> (de servidor a servidor): tu propio servidor le manda los datos directo a Meta, sin pasar por el navegador del visitante. Como no depende del navegador, los ad blockers y la privacidad de iOS no la afectan, así que captura compras y conversiones aunque el Pixel falle. Además mejora el Event Match Quality (EMQ, la calidad con que Meta empareja un evento con una persona real). En <strong>Boutique Aurora</strong>, las ventas que el Pixel perdía por bloqueos del navegador ahora sí llegan gracias a la CAPI."
+          "h": "Qué es la API de conversiones (Conversions API · CAPI)",
+          "body": "La <strong>API de conversiones (Conversions API)</strong> o <strong>CAPI</strong> es un método para enviar eventos <strong>server-to-server</strong> (de servidor a servidor): tu propio servidor le manda los datos directo a Meta, sin pasar por el navegador del visitante. Como no depende del navegador, los ad blockers y la privacidad de iOS no la afectan, así que captura compras y conversiones aunque el Pixel falle. Además mejora el Event Match Quality (EMQ, la calidad con que Meta empareja un evento con una persona real). En <strong>Boutique Aurora</strong>, las ventas que el Pixel perdía por bloqueos del navegador ahora sí llegan gracias a la CAPI."
         },
         {
           "type": "warn",
@@ -504,7 +504,7 @@
         },
         {
           "type": "mcq",
-          "q": "La Conversions API (CAPI) envía eventos:",
+          "q": "La API de conversiones (Conversions API · CAPI) envía eventos:",
           "options": [
             "Desde el browser del visitante del sitio",
             "Server-to-server, del servidor directo a Meta",
@@ -851,19 +851,19 @@
               "Solo en apps (SDK). Sin código adicional. Eventos comunes auto-detectados."
             ],
             [
-              "Standard events",
+              "Eventos estándar (standard events)",
               "Predefinidos por Meta: Purchase, Lead, AddToCart, ViewContent, Subscribe, etc. Web/app/offline/messaging."
             ],
             [
-              "Custom events",
+              "Eventos personalizados (custom events)",
               "Creados por el negocio (ej. 'Trial started', 'Quote requested'). Requieren código."
             ]
           ]
         },
         {
           "type": "concept",
-          "h": "Cuándo usar standard y cuándo custom event",
-          "body": "Un <strong>standard event</strong> (evento estándar) es uno de los nombres oficiales que Meta ya tiene predefinidos, como Purchase (compra), Lead (prospecto) o AddToCart (agregar al carrito). La regla práctica es: si la acción ya tiene un standard event que la describe, úsalo, porque el algoritmo de Meta ya sabe reconocerlo y optimizarlo desde el primer día. Un <strong>custom event</strong> (evento personalizado) solo lo creas cuando la acción es tan particular de tu negocio que ningún standard la cubre, y eso obliga a agregar código nuevo. La trampa típica es inventar custom events para cosas que un standard ya describe, lo que le quita eficiencia al algoritmo. Por ejemplo, la cafetería <strong>La Esquina</strong> usa el standard <em>Schedule</em> para \"reservó mesa\", pero crea un custom event 'CataDeCafe' para su evento de cata mensual, que no tiene equivalente estándar."
+          "h": "Cuándo usar evento estándar y cuándo evento personalizado",
+          "body": "Un <strong>evento estándar (standard event)</strong> es uno de los nombres oficiales que Meta ya tiene predefinidos, como Purchase (compra), Lead (prospecto) o AddToCart (agregar al carrito). La regla práctica es: si la acción ya tiene un evento estándar que la describe, úsalo, porque el algoritmo de Meta ya sabe reconocerlo y optimizarlo desde el primer día. Un <strong>evento personalizado (custom event)</strong> solo lo creas cuando la acción es tan particular de tu negocio que ningún estándar la cubre, y eso obliga a agregar código nuevo. La trampa típica es inventar eventos personalizados para cosas que un estándar ya describe, lo que le quita eficiencia al algoritmo. Por ejemplo, la cafetería <strong>La Esquina</strong> usa el estándar <em>Schedule</em> para \"reservó mesa\", pero crea un evento personalizado 'CataDeCafe' para su evento de cata mensual, que no tiene equivalente estándar."
         },
         {
           "type": "concept",
@@ -878,16 +878,16 @@
         {
           "type": "warn",
           "label": "TRAMPA CRÍTICA",
-          "body": "<strong>Custom Conversions NO están disponibles para app events</strong>. Solo aplican a eventos web y offline. Para app, hay que crear Custom Events directos vía SDK."
+          "body": "<strong>Custom Conversions NO están disponibles para eventos de la app (app events)</strong>. Solo aplican a eventos web y offline. Para app, hay que crear Custom Events directos vía SDK."
         },
         {
           "type": "concept",
           "h": "Ejemplo aplicado · Casa Plus",
-          "body": "Para \"firmó contrato de apartado\", Casa Plus usa el standard event <em>Purchase</em> (con value en MXN) — no inventa uno. El Pixel ya manda <em>Lead</em> con un parameter de presupuesto declarado; para optimizar solo por prospectos grandes, Casa Plus crea una Custom Conversion 'Lead premium' = Lead AND presupuesto &gt; 5,000,000 MXN. No tocó código: solo una regla sobre el Lead existente."
+          "body": "Para \"firmó contrato de apartado\", Casa Plus usa el evento estándar <em>Purchase</em> (con value en MXN) — no inventa uno. El Pixel ya manda <em>Lead</em> con un parameter de presupuesto declarado; para optimizar solo por prospectos grandes, Casa Plus crea una Custom Conversion 'Lead premium' = Lead AND presupuesto &gt; 5,000,000 MXN. No tocó código: solo una regla sobre el Lead existente."
         },
         {
           "type": "mcq",
-          "q": "Casa Plus quiere registrar \"descargó el plano de un departamento\", una acción muy específica sin equivalente en los standard events. ¿Qué configura?",
+          "q": "Casa Plus quiere registrar \"descargó el plano de un departamento\", una acción muy específica sin equivalente en los eventos estándar. ¿Qué configura?",
           "options": [
             "Una Custom Conversion sobre Purchase",
             "Un Custom Event nuevo (requiere agregar código)",
@@ -895,7 +895,7 @@
             "No se puede medir esa acción"
           ],
           "correct": 1,
-          "explanation": "Cuando ningún standard event describe la acción, se crea un <strong>Custom Event</strong>, que requiere agregar código al Pixel/CAPI. Los standard ya están predefinidos; automatically logged es solo de app."
+          "explanation": "Cuando ningún evento estándar describe la acción, se crea un <strong>Custom Event</strong>, que requiere agregar código al Pixel/CAPI. Los estándar ya están predefinidos; automatically logged es solo de app."
         }
       ]
     },
