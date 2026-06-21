@@ -1,0 +1,2012 @@
+{
+  "id": "day1",
+  "title": "Day 1 — Ads Manager + Business Suite",
+  "sections": {
+    "b1": {
+      "ico": "🎛️",
+      "title": "Block 1",
+      "sub": "Ads Manager & Opportunity Score"
+    },
+    "b2": {
+      "ico": "🧱",
+      "title": "Block 2",
+      "sub": "Hierarchy: Campaign → Ad set → Ad"
+    },
+    "b3": {
+      "ico": "🤖",
+      "title": "Block 3",
+      "sub": "Meta Advantage+"
+    },
+    "b4": {
+      "ico": "✅",
+      "title": "Block 4",
+      "sub": "The 7 Performance Best Practices"
+    },
+    "b5": {
+      "ico": "🏢",
+      "title": "Block 5",
+      "sub": "Business Suite, Portfolio & Permissions"
+    },
+    "b6": {
+      "ico": "🛡️",
+      "title": "Block 6",
+      "sub": "Billing & Brand Safety"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Final review",
+      "sub": "Consolidation before the exam"
+    }
+  },
+  "lessons": [
+    {
+      "id": "1.1",
+      "title": "Explain · Ads Manager and Opportunity Score",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "kvtable",
+          "h": "🗺️ The map of the full course",
+          "rows": [
+            [
+              "Day 1 · Ads Manager + Business Suite",
+              "~16% of the exam. Campaign structure, the 6 key actions, Opportunity Score."
+            ],
+            [
+              "Day 2 · Campaign Objectives",
+              "~9%. The 6 ODAX objectives and which objective to choose based on the business goal."
+            ],
+            [
+              "Day 3 · Buying Types & Bid Strategies",
+              "~13%. Auction vs Reservation, bid strategies, Learning Phase."
+            ],
+            [
+              "Day 4 · Signals & Data",
+              "~17%. Pixel, CAPI (Conversions API), events and parameters."
+            ],
+            [
+              "Day 5 · Audiences & Catalogs",
+              "~20%. Custom, Lookalike, Advantage+ Audience and catalogs."
+            ],
+            [
+              "Day 6 · Creative & Measurement",
+              "~25%. The HEAVIEST area: creative, A/B Test, Brand Lift, Conversion Lift."
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "HOW TO USE THIS MAP",
+          "body": "Notice the weights: <strong>Day 5 and Day 6 together make up ~45% of the exam</strong>. If you are short on time, prioritize mastering audiences and measurement over memorizing details from the first days."
+        },
+        {
+          "type": "concept",
+          "h": "More than a campaign builder",
+          "body": "<strong>Meta Ads Manager</strong> is the main tool where you manage all of your advertising on Facebook and Instagram. Many people think it only serves to design the ad, but it is actually the complete <em>control center</em>. From here you create the campaigns, yes, but you also configure how you are going to pay, define who you will show the ads to, connect your data sources, and review the results. Think of it like an airplane's cockpit: it doesn't just start the engine, it controls the entire flight. For example, <strong>La Esquina Café</strong> uses Ads Manager to launch its seasonal promo and, on the same screen, see how many reservations it generated."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "To get into the control center you follow this path: <strong>Meta Business Suite</strong> → left side menu → <strong>Ads Manager</strong>. Once inside, the top bar gives you access to the different sections: create campaigns with the green <strong>+ Create</strong> button, see results in the <strong>columns and breakdowns</strong> tab, and from the nine-square menu (<em>All tools</em>) you reach audiences, billing, and data sources. The idea is that you don't need to leave Ads Manager to manage almost anything."
+        },
+        {
+          "type": "kvtable",
+          "h": "The 6 key actions in Ads Manager",
+          "rows": [
+            [
+              "Opportunity score",
+              "Review how optimized your campaigns are"
+            ],
+            [
+              "Monitor reporting",
+              "See ad performance"
+            ],
+            [
+              "Create audiences",
+              "Create audiences for your campaigns"
+            ],
+            [
+              "Set up billing",
+              "Configure the payment method"
+            ],
+            [
+              "Connect data sources",
+              "Connect Pixel, CAPI, datasets"
+            ],
+            [
+              "Advertiser settings",
+              "Configure advertiser settings"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Urban Store",
+          "body": "<strong>Urban Store</strong> is an online fashion retailer that is going to run ads for its new collection. In Ads Manager they don't just design the ad: in the <em>same</em> place they connect the <strong>Pixel</strong> (a piece of code that tracks what people do on their website), register the card they will pay with, build the audience they will show the ads to, and afterward review the sales report. All from a single tool. It is a complete engine room, not an image editor."
+        },
+        {
+          "type": "concept",
+          "h": "What the Opportunity Score is",
+          "body": "The <strong>Opportunity Score</strong> is a rating from <strong>0 to 100</strong> that tells you how optimized your campaigns are. It works like this: Meta has a list of recommendations it has already tested and proven to improve results; the score measures how many of those recommendations you have already applied. If you are missing points, it isn't because your campaign is going to fail, but because there are pending suggestions you haven't turned on yet. Each missing point equals an unapplied recommendation. It is important to understand this clearly: it is a gauge of <em>how much you followed best practices</em>, not a crystal ball that predicts your sales."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "The Opportunity Score <strong>does NOT predict or guarantee real performance</strong> (it doesn't tell you your future ROAS). It only reflects the degree of adoption of proven recommendations."
+        },
+        {
+          "type": "tip",
+          "label": "THREE MOMENTS",
+          "body": "It helps you <strong>before</strong> (from Account overview, before creating campaigns), <strong>during</strong> (as a campaign score when you create it — it doesn't affect the global one), and <strong>after</strong> (ongoing recommendations while it runs)."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Sazón Kitchen",
+          "body": "<strong>Sazón Kitchen</strong> (a food delivery restaurant) has a campaign that shows <strong>68/100</strong> on the Opportunity Score. That does <em>not</em> mean it will recover 68% of what it invests, or that its <strong>ROAS</strong> (return on ad spend) is 68%. It means there are proven recommendations it hasn't applied yet: for example, turning on <strong>Advantage+ audience</strong> (the automatic AI-powered audience) or adding the <strong>CAPI</strong> (Conversions API, a way to send data to Meta directly from your server). If Sazón Kitchen applies those suggestions, the score goes up; but the real sales results depend on the auction, not on the number."
+        },
+        {
+          "type": "mcq",
+          "q": "A coworker says: \"Ads Manager is only for designing the creative.\" How do you respond?",
+          "options": [
+            "They're right: it's only for the creative",
+            "It's incomplete: also billing, audiences, data",
+            "They're right: the creative is uploaded already made there",
+            "It's only true for Advantage+ campaigns"
+          ],
+          "correct": 1,
+          "explanation": "Ads Manager is the control center: in addition to creating ads, it is used for opportunity score, reporting, audiences, billing, connecting data sources, and advertiser settings."
+        }
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "The client misinterprets the score",
+          "body": "The owner of Sazón Kitchen (delivery restaurant) sees that their campaign has an <strong>Opportunity Score of 64/100</strong> and tells you: \"So I'll only recover 64% of what I invest, right? Lower the budget.\" You have to correct the misunderstanding."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you explain to the owner of Sazón Kitchen?",
+          "options": [
+            "They're right: 64/100 projects the expected return",
+            "The score measures best practice adoption, not ROAS",
+            "You have to wait for 100/100 before investing",
+            "The score only applies to Advantage+ campaigns"
+          ],
+          "correct": 1,
+          "explanation": "64/100 = there are recommendations pending to apply. It is not a projection of return. The correct action is to review and apply those recommendations, not cut the budget over a misunderstanding."
+        },
+        {
+          "type": "mcq",
+          "q": "Where do I review those recommendations BEFORE creating more campaigns?",
+          "options": [
+            "In the monthly billing report",
+            "In Account overview, before the campaign",
+            "Only after the campaign ends",
+            "In the account's Brand Safety Center"
+          ],
+          "correct": 1,
+          "explanation": "The 'before' moment of the opportunity score lives in Account overview: it helps you before creating campaigns. 'During' is when you create it, 'after' is while it runs."
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "Exercise your memory · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Which best describes the purpose of the Opportunity Score?",
+          "options": [
+            "It predicts the ROAS the campaign will have",
+            "It shows which best practices are still to be applied",
+            "It measures creative quality vs the industry",
+            "It estimates next month's cost per result"
+          ],
+          "correct": 1,
+          "explanation": "It is a 0-100 score + personalized recommendations. It does NOT predict performance — it reflects the adoption of proven best practices."
+        },
+        {
+          "type": "fill",
+          "q": "The Opportunity Score helps you at three moments: before, ___ and after.",
+          "options": [
+            "during",
+            "instead",
+            "between",
+            "around"
+          ],
+          "correct": 0,
+          "explanation": "Before (before creating), during (when you create it, without affecting the global one), and after (while it runs)."
+        },
+        {
+          "type": "mcq",
+          "q": "When you create a campaign, the opportunity score that appears at the CAMPAIGN LEVEL:",
+          "options": [
+            "Replaces your global account score",
+            "Adds points to the global one when you apply recommendations",
+            "Does NOT affect the global one and only reflects that campaign",
+            "Is calculated 24 hours after publishing"
+          ],
+          "correct": 2,
+          "explanation": "The campaign-level score does not affect the account's global score. It reflects only that campaign. The global one only counts actions taken from Account overview."
+        },
+        {
+          "type": "fill",
+          "q": "Connecting Pixel, CAPI, and datasets is done from Ads Manager in the ___ data sources action.",
+          "options": [
+            "connect",
+            "monitor",
+            "create",
+            "set up"
+          ],
+          "correct": 0,
+          "explanation": "Connect data sources: Pixel, CAPI, datasets. One of the 6 key actions of Ads Manager."
+        },
+        {
+          "type": "mcq",
+          "q": "The Opportunity Score goes from 60 to 78 after applying 3 recommendations. What can you affirm?",
+          "options": [
+            "That the campaign's ROAS will rise about 30%",
+            "That you adopted more already-proven best practices",
+            "That the campaign's success is now guaranteed",
+            "That the ads' creative improved on its own"
+          ],
+          "correct": 1,
+          "explanation": "The score measures the adoption of recommendations, not results. Raising it is good, but it doesn't guarantee performance."
+        }
+      ]
+    },
+    {
+      "id": "1.4",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is Ads Manager?",
+          "a": "Meta's control center: create campaigns, billing, audiences, reporting, connect data sources, advertiser settings. It's NOT only for creating ads."
+        },
+        {
+          "q": "What does the Opportunity Score measure?",
+          "a": "A 0-100 score that shows how optimized your campaigns are based on proven recommendations you haven't applied yet. It does NOT predict real performance."
+        },
+        {
+          "q": "Three moments when the Opportunity Score helps you",
+          "a": "Before (Account overview, before creating) · During (campaign score when you create it, doesn't affect the global one) · After (recommendations while it runs)."
+        },
+        {
+          "q": "Does the campaign-level score affect the global one?",
+          "a": "No. It reflects only that campaign. The global one only counts actions taken from Account overview."
+        },
+        {
+          "q": "The 6 key actions in Ads Manager",
+          "a": "Opportunity score · Monitor reporting · Create audiences · Set up billing · Connect data sources · Advertiser settings."
+        }
+      ]
+    },
+    {
+      "id": "1.5",
+      "title": "Explain · Hierarchy Campaign → Ad set → Ad",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Three levels, three decisions",
+          "body": "Every Meta campaign is built in a <strong>three-level</strong> structure nested together, like Russian dolls. The top level is the <strong>Campaign</strong>, which contains one or more <strong>ad sets</strong>, and each ad set contains one or more <strong>ads</strong>. The key thing is that at each level you decide different things and those decisions don't mix: what goes in the Campaign doesn't go in the Ad, and vice versa. Knowing which decision lives at each level is one of the most asked topics on the exam, so it's worth mastering. For example, for the flower shop <strong>Pétalos</strong>: a single sales campaign can have one ad set for young women and another for couples, and within each one, several different ads."
+        },
+        {
+          "type": "concept",
+          "h": "What each level decides, broken down",
+          "body": "So you don't get confused, this is how the responsibility is split: <strong>1. Campaign</strong> (the base): you decide the <strong>buying type</strong> (auction or reservation), the <strong>objective</strong> (what you want to achieve), and often the budget. <strong>2. Ad set</strong> (the middle): you decide the <strong>audience</strong> (who you're talking to), the <strong>placements</strong> (which apps and sections it appears in), and the schedule. <strong>3. Ad</strong> (the ad itself): you decide the <strong>creative</strong> (the visual material: image, video, text), the <strong>destination</strong> (where the click leads), and the <strong>tracking</strong> (tracking what people do)."
+        },
+        {
+          "type": "tip",
+          "label": "MENTAL RULE",
+          "body": "If the question is <em>which objective, which buying type, how much to pay</em> → <strong>Campaign</strong>. If it's <em>who, where, when</em> → <strong>Ad set</strong>. If it's <em>how it looks, where it sends, what to measure</em> → <strong>Ad</strong>."
+        },
+        {
+          "type": "kvtable",
+          "h": "What you decide at each level",
+          "rows": [
+            [
+              "Campaign",
+              "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"
+            ],
+            [
+              "Ad set",
+              "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"
+            ],
+            [
+              "Ad",
+              "Partnership ad · Identity · Ad creative · Destination · Tracking · Languages"
+            ]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "THE BUDGET TRAP",
+          "body": "The <strong>Budget</strong> is set at the <strong>Campaign OR Ad set</strong> level, never both at the same time. At the Campaign level it is called <strong>Advantage+ campaign budget</strong> (formerly CBO) and is the default option."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · FlowApp",
+          "body": "<strong>FlowApp</strong> is a business management software sold to other companies (a <strong>B2B SaaS</strong>: software as a service, business to business). When building their campaign they decide, at the <em>Campaign</em> level: <strong>Auction</strong> as the buying type, a <strong>Sales</strong> objective, and the month's budget. At the <em>Ad set</em> level: the audience of operations teams, the placements where it will appear, and the conversion event that matters to them. At the <em>Ad</em> level: the video showing how the product works, the destination to the free-trial form, and tracking with the Pixel. One decision per level, without mixing."
+        },
+        {
+          "type": "mcq",
+          "q": "At which level do you make the selections for audience, conversion location, and placements?",
+          "options": [
+            "Campaign level",
+            "Ad set level",
+            "Ad level",
+            "Account level"
+          ],
+          "correct": 1,
+          "explanation": "Audience, conversion settings, and placements are ad set level decisions. Campaign decides buying type/objective/budget; Ad decides creative/destination/tracking."
+        }
+      ]
+    },
+    {
+      "id": "1.6",
+      "title": "Exercise your memory · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Choosing the campaign Objective → ___ level.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "Objective = what you want to achieve = Campaign."
+        },
+        {
+          "type": "fill",
+          "q": "Defining the placements → ___ level.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "Placements (where it appears) = Ad set."
+        },
+        {
+          "type": "fill",
+          "q": "Choosing the image/video and the copy → ___ level.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 2,
+          "explanation": "Creative = how it looks = Ad."
+        },
+        {
+          "type": "fill",
+          "q": "Choosing Auction vs Reservation → ___ level.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "Buying type = Campaign, and it's the first decision."
+        },
+        {
+          "type": "mcq",
+          "q": "Buying type is a selection that can ONLY be made at the level:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "Buying type is the first decision and goes at the Campaign level (Auction or Reservation)."
+        },
+        {
+          "type": "mcq",
+          "q": "The ad's destination (website, WhatsApp, form) and the tracking are configured at the level:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Portfolio"
+          ],
+          "correct": 2,
+          "explanation": "Destination, creative, identity, and tracking are ad level decisions."
+        },
+        {
+          "type": "mcq",
+          "q": "The budget can be set at the Campaign AND Ad set level at the same time:",
+          "options": [
+            "True",
+            "False: it goes in one of the two, never both"
+          ],
+          "correct": 1,
+          "explanation": "The budget goes at ONE of the two levels. Default: Campaign (Advantage+ campaign budget)."
+        }
+      ]
+    },
+    {
+      "id": "1.7",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Building FlowApp's campaign",
+          "body": "You're setting up a Sales campaign for FlowApp (B2B SaaS). You have these pending decisions: (1) the audience of operations teams, (2) the product demo video, (3) Auction as the buying type. Place each one at its level."
+        },
+        {
+          "type": "mcq",
+          "q": "The audience of industrial companies is defined at the level:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "Audience = who = Ad set. Along with placements, schedule, and conversion settings."
+        },
+        {
+          "type": "mcq",
+          "q": "The installation video and Auction are decided, respectively, at:",
+          "options": [
+            "Ad and Campaign",
+            "Campaign and Ad set",
+            "Ad set and Ad",
+            "Both at Ad set"
+          ],
+          "correct": 0,
+          "explanation": "The creative (video) = Ad. The buying type (Auction) = Campaign, and it's the first decision."
+        }
+      ]
+    },
+    {
+      "id": "1.8",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "The 3 levels of a campaign in order",
+          "a": "Campaign → Ad set → Ad"
+        },
+        {
+          "q": "What is decided at the Campaign level?",
+          "a": "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"
+        },
+        {
+          "q": "What is decided at the Ad set level?",
+          "a": "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"
+        },
+        {
+          "q": "What is decided at the Ad level?",
+          "a": "Partnership ad · Identity · Ad creative · Destination · Tracking · Languages"
+        },
+        {
+          "q": "The budget trap",
+          "a": "It's set at the Campaign OR Ad set level, never both. Default: Campaign = Advantage+ campaign budget (formerly CBO)."
+        }
+      ]
+    },
+    {
+      "id": "1.9",
+      "title": "Explain · Meta Advantage+",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What Advantage+ is",
+          "body": "<strong>Advantage+</strong> is Meta's set of tools that use <strong>AI</strong> (artificial intelligence) and <strong>automation</strong> (the machine makes decisions on its own, without you doing them by hand) to connect your ads with the people most likely to buy or act. The underlying idea is simple: instead of you guessing who to show the ad to or how much to pay, the AI analyzes signals <em>in real time</em> (while the campaign runs) and adjusts on the fly. You set the general direction and the objective; Advantage+ takes care of fine-tuning the execution to deliver the most effective ads to the right people."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · DentalCare",
+          "body": "<strong>DentalCare</strong> is a dental clinic that wants to sell whitening treatments. Instead of the owner guessing who is interested (young people? couples getting married?), Advantage+ lets the AI explore real behavioral signals (who searches for dental topics, who engages with similar ads) and find those prospects while the campaign is running. DentalCare defines the goal (more whitening appointments) and the AI optimizes who to show the ads to and when."
+        },
+        {
+          "type": "kvtable",
+          "h": "Two categories of Advantage+",
+          "rows": [
+            [
+              "Complete campaign solutions",
+              "Automate the ENTIRE campaign: Advantage+ Sales, App, Leads"
+            ],
+            [
+              "Single-step solutions",
+              "Automate ONE aspect: Audience, Placement, Budget, Creative, Destination"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Complete campaign solutions",
+          "body": "<strong>Complete campaign solutions</strong> are the ones that let the AI handle the <em>entire</em> campaign from start to finish, not just one small step. There are exactly three and it's worth memorizing them: <strong>1. Advantage+ Sales</strong> (to generate sales, for example in an online store), <strong>2. Advantage+ App</strong> (to get installs and actions inside a mobile app), and <strong>3. Advantage+ Leads</strong> (to capture prospects via forms). For example, the online store <strong>Aceros del Bajío</strong> would use Advantage+ Sales and let the AI build the audience, placements, and budget on its own. Later you'll see the single-step ones, which automate just one part."
+        },
+        {
+          "type": "kvtable",
+          "h": "Single-step solutions (for all objectives)",
+          "rows": [
+            [
+              "Audience",
+              "Advantage+ audience, custom, lookalike, detailed targeting"
+            ],
+            [
+              "Placement",
+              "Advantage+ placements"
+            ],
+            [
+              "Budget",
+              "Advantage+ campaign budget (formerly CBO)"
+            ],
+            [
+              "Creative",
+              "Advantage+ creative, Advantage+ catalog ads"
+            ],
+            [
+              "Destination",
+              "Advantage+ destination"
+            ]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "Don't confuse <strong>Advantage+ campaigns</strong> (complete: Sales/App/Leads) with <strong>Advantage+ tools</strong> (single-step: Audience, Placement, Budget, Creative, Destination). The exam mixes both in the distractors."
+        },
+        {
+          "type": "mcq",
+          "q": "Which best describes Meta Advantage+?",
+          "options": [
+            "A graphic design tool for ads",
+            "An AI suite that matches ads and audiences",
+            "A monthly ad performance report",
+            "A payment method for large campaigns"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ = AI + automation in real time to match ads with whoever is most likely to act. It is not design, reporting, or billing."
+        }
+      ]
+    },
+    {
+      "id": "1.12",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is Meta Advantage+?",
+          "a": "A suite of AI + automation in real time to match ads with the people most likely to act. It optimizes by real-time data, effectiveness, and relevance."
+        },
+        {
+          "q": "The 2 categories of Advantage+",
+          "a": "Complete campaign solutions (the entire campaign: Sales, App, Leads) · Single-step (one aspect: Audience, Placement, Budget, Creative, Destination)."
+        },
+        {
+          "q": "The 3 Advantage+ complete campaign solutions",
+          "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
+        },
+        {
+          "q": "What does Advantage+ campaign budget do?",
+          "a": "It dynamically allocates the budget to the best-performing ad set/ad. The default single-step budget solution. (Formerly CBO.)"
+        },
+        {
+          "q": "What do Advantage+ catalog ads do?",
+          "a": "They show products from a catalog to whoever is most likely to find them relevant. Available when you choose Sales."
+        }
+      ]
+    },
+    {
+      "id": "1.10",
+      "title": "Exercise your memory · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "A client wants to automate their ENTIRE campaign using AI for website sales. What do you recommend?",
+          "options": [
+            "Advantage+ audience",
+            "Advantage+ Sales campaigns",
+            "Advantage+ campaign budget",
+            "Advantage+ catalog ads"
+          ],
+          "correct": 1,
+          "explanation": "Automating the ENTIRE campaign = complete campaign solution = Advantage+ Sales. The others are single-step."
+        },
+        {
+          "type": "mcq",
+          "q": "Which of these are single-step Advantage+ solutions? Select 2.",
+          "options": [
+            "Advantage+ Sales campaigns",
+            "Advantage+ placements",
+            "Advantage+ Leads campaigns",
+            "Advantage+ audience"
+          ],
+          "correct": [
+            1,
+            3
+          ],
+          "multi": true,
+          "explanation": "Placements and audience are single-step. Sales and Leads campaigns are complete campaign solutions."
+        },
+        {
+          "type": "mcq",
+          "q": "Which of these is NOT an Advantage+ complete campaign solution?",
+          "options": [
+            "Advantage+ Sales",
+            "Advantage+ Leads",
+            "Advantage+ App",
+            "Advantage+ Catalog Ads"
+          ],
+          "correct": 3,
+          "explanation": "The 3 complete ones are Sales, App, and Leads. Advantage+ Catalog Ads is single-step (showing products from a catalog)."
+        },
+        {
+          "type": "mcq",
+          "q": "If a question says 'CBO', what does it refer to?",
+          "options": [
+            "Cost Bidding Optimization",
+            "Campaign Budget Optimization",
+            "Cross-Border Operations",
+            "Centralized Business Operations"
+          ],
+          "correct": 1,
+          "explanation": "CBO = Campaign Budget Optimization, today renamed to Advantage+ campaign budget."
+        }
+      ]
+    },
+    {
+      "id": "1.11",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Two clients, two levels of delegation",
+          "body": "Client A wants the AI to manage <strong>their entire</strong> sales campaign. Client B wants to control the campaign himself but have the AI only <strong>choose the audience</strong> for him. What do you give each one?"
+        },
+        {
+          "type": "mcq",
+          "q": "Client A (automate the entire sales campaign):",
+          "options": [
+            "Advantage+ audience",
+            "Advantage+ Sales campaign",
+            "Advantage+ placements",
+            "Advantage+ creative"
+          ],
+          "correct": 1,
+          "explanation": "The entire sales campaign = complete campaign = Advantage+ Sales."
+        },
+        {
+          "type": "mcq",
+          "q": "Client B (automate only the audience):",
+          "options": [
+            "Advantage+ Sales campaign",
+            "Advantage+ Leads campaign",
+            "Advantage+ audience (single-step)",
+            "Advantage+ App campaign"
+          ],
+          "correct": 2,
+          "explanation": "Automating only one aspect = single-step. Audience = Advantage+ audience."
+        }
+      ]
+    },
+    {
+      "id": "1.13",
+      "title": "Explain · Best Practices 1-4",
+      "section": "b4",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Meta's official framework",
+          "body": "Meta publishes a framework of <strong>7 Performance Best Practices</strong>, which are the official recommendations for a campaign to work well. Don't see them as a loose list to memorize by heart: each one solves a specific problem in campaign building. If you understand what each one solves, you'll answer them on the exam even if they change the wording. The first 6 are things you do <em>before or during</em> the campaign; the seventh happens <em>after</em>. In this lesson you'll see the first 4, and in the next one the last 3."
+        },
+        {
+          "type": "concept",
+          "h": "BP 1 — Automate campaign setup",
+          "body": "The first practice, <strong>Automate campaign setup</strong>, says to leverage the AI tools of <strong>Advantage+</strong> instead of configuring everything by hand. The idea is that the machine makes better decisions about structure, audience, and budget than what you'd build manually, because it processes signals in real time. You define the goal and let automation execute. This also reduces human error and saves you hours of setup. <em>Example:</em> the dental clinic <strong>DentalCare</strong>, instead of building 8 ad sets one by one, lets <strong>Advantage+ Sales</strong> (the automated sales campaign) structure everything at once."
+        },
+        {
+          "type": "concept",
+          "h": "BP 2 — Align objectives & goals",
+          "body": "The second practice, <strong>Align objectives & goals</strong>, is the easiest to fail. The <strong>objective</strong> is what you tell Meta to optimize for (sales, traffic, awareness), and the <strong>goal</strong> is what you actually want to achieve in real life. If they don't match, Meta optimizes the wrong metric and you spend money without real results. For example, if you ask for traffic, Meta brings you cheap clicks even if no one buys. <em>Example:</em> the real estate agency <strong>Casa Plus</strong> wants to close quotes, so its objective should be <strong>Sales</strong> or <strong>Leads</strong>, never <strong>Awareness</strong>."
+        },
+        {
+          "type": "concept",
+          "h": "BP 3 — Consider your audience",
+          "body": "The third practice, <strong>Consider your audience</strong>, asks you to combine what you already know about your customers with what the AI can discover on its own. Instead of locking the campaign into a fixed, small audience, you give Meta your data as a starting point and let <strong>Advantage+ audience</strong> (the automatic audience) explore similar profiles you wouldn't have found. That way you don't just compete for the obvious people and you open up reach to new but relevant prospects. <em>Example:</em> the online store <strong>Aceros del Bajío</strong> uploads its list of best customers and the AI expands toward people with similar behavior."
+        },
+        {
+          "type": "concept",
+          "h": "BP 4 — Optimize creative & placements",
+          "body": "The fourth practice, <strong>Optimize creative & placements</strong>, has two parts. The <strong>creative</strong> (the ad's material: image, video, text) should be varied: different messages, formats, and visuals so Meta tests which works best with each person. The <strong>placements</strong> (where the ad appears, like Feed, Stories, or Reels) are best left on <strong>Advantage+ placements</strong> (automatic placements) so the machine distributes the ad where it performs best. A single static ad in a single place limits results. <em>Example:</em> the flower shop <strong>Pétalos</strong> uploads several videos and images of its arrangements and lets them run across all placements, not one fixed banner."
+        },
+        {
+          "type": "mcq",
+          "q": "FitZone (gym) optimizes for 'page visits' but the real goal is to close memberships. Which Best Practice is failing?",
+          "options": [
+            "BP 1 — Automate campaign setup",
+            "BP 2 — Align objectives & goals",
+            "BP 3 — Consider your audience",
+            "BP 4 — Optimize creative & placements"
+          ],
+          "correct": 1,
+          "explanation": "BP 2 — Align objectives & goals: the campaign objective must align with the business goal. Optimizing for visits when you want sales is the classic failure."
+        }
+      ]
+    },
+    {
+      "id": "1.14",
+      "title": "Explain · Best Practices 5-7",
+      "section": "b4",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "BP 5 — Focus on signals",
+          "body": "The fifth practice, <strong>Focus on signals</strong>, says to make decisions with high-quality data instead of hunches. <strong>Signals</strong> are the information your business sends Meta about what people do: the <strong>Pixel</strong> (code on your website that records visits, purchases, and other actions), the <strong>CAPI</strong> (Conversions API, a connection that sends those same data directly from your server, more reliable than the Pixel alone), the <strong>datasets</strong> (where those actions are stored), and the <strong>events</strong> (like \"added to cart\" or \"purchased\"). The more and better signals you give Meta, the better the AI optimizes. <em>Example:</em> the online store <strong>Aceros del Bajío</strong>, with 3 months of Pixel plus CAPI running, gives Meta solid data to find real buyers."
+        },
+        {
+          "type": "concept",
+          "h": "BP 6 — Get the most out of budget & bidding",
+          "body": "The sixth practice, <strong>Get the most out of budget & bidding</strong>, asks you to let the AI allocate the money instead of doing it by hand. The <strong>budget</strong> is how much you invest, and the <strong>bidding</strong> is how much your campaign is willing to pay for each result in the auction. With <strong>Advantage+ campaign budget</strong> (the automatic campaign-level budget, formerly called CBO) Meta moves the money toward the ad set delivering the best results, in real time. Splitting the budget by hand usually leaves money stuck in ads that don't work. <em>Example:</em> at the real estate agency <strong>Casa Plus</strong>, the budget flows on its own toward the ad set closing the most quotes."
+        },
+        {
+          "type": "concept",
+          "h": "BP 7 — Validate results",
+          "body": "The seventh practice, <strong>Validate results</strong>, consists of measuring the <em>real</em> impact of the campaign to learn and improve the next ones. This is where tools like <strong>A/B</strong> tests (showing two versions to similar audiences and comparing which wins) and <strong>lift studies</strong> (incrementality studies: they compare those who saw the ad against those who didn't, to know how much extra you sold thanks to advertising) come in. The key thing for the exam: this practice happens <strong>post-campaign</strong> (after the campaign ran), which is why it does <em>not</em> appear in the Opportunity Score recommendations, which only cover what you can apply before or during. <em>Example:</em> the real estate agency <strong>Casa Plus</strong>, at the end of the month, runs an A/B test to decide which video to use the next quarter."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "If a question mentions \"opportunity score recommendations,\" it's about <strong>BP 1-6</strong>. BP 7 (Validate results) isn't measured there because it happens <em>post-campaign</em>."
+        },
+        {
+          "type": "mcq",
+          "q": "Which Best Practice focuses on informing decisions with high-quality data?",
+          "options": [
+            "BP 2 — Align objectives & goals",
+            "BP 5 — Focus on signals",
+            "BP 6 — Get the most out of budget & bidding",
+            "BP 7 — Validate results"
+          ],
+          "correct": 1,
+          "explanation": "BP 5 — Focus on signals: \"Inform decision making and optimize your strategy with high-quality data.\" Signals = Pixel, CAPI, datasets, events."
+        }
+      ]
+    },
+    {
+      "id": "1.15",
+      "title": "Exercise your memory · order the 7 BPs",
+      "section": "b4",
+      "type": "order",
+      "instruction": "Meta's 7 BPs go in a specific order. Reorder with ▲▼ and verify.",
+      "items": [
+        "Automate campaign setup",
+        "Align objectives & goals",
+        "Consider your audience",
+        "Optimize creative & placements",
+        "Focus on signals",
+        "Get the most out of budget & bidding",
+        "Validate results"
+      ],
+      "explanation": "The Opportunity Score recommendations correspond to BP 1-6. BP 7 (Validate results) happens <strong>post-campaign</strong> and isn't measured in the opportunity score."
+    },
+    {
+      "id": "1.17",
+      "title": "Case to solve · Block 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "The campaign spends but doesn't sell",
+          "body": "Casa Plus (real estate agency) has spent 2 weeks with a campaign that gathers many clicks but zero quotes. You check and the configured objective is <strong>Traffic</strong>, even though the client wants sales. Plus there's only 1 static ad and the Pixel isn't connected."
+        },
+        {
+          "type": "mcq",
+          "q": "The main failure of a misaligned objective corresponds to:",
+          "options": [
+            "BP 4 — Optimize creative & placements",
+            "BP 2 — Align objectives & goals",
+            "BP 6 — Budget & bidding",
+            "BP 7 — Validate results"
+          ],
+          "correct": 1,
+          "explanation": "Objective (Traffic) ≠ business goal (sales) → BP 2 — Align objectives & goals."
+        },
+        {
+          "type": "mcq",
+          "q": "The Pixel not being connected breaches above all:",
+          "options": [
+            "BP 5 — Focus on signals",
+            "BP 1 — Automate campaign setup",
+            "BP 3 — Consider your audience",
+            "BP 7 — Validate results"
+          ],
+          "correct": 0,
+          "explanation": "Without the Pixel there are no quality signals to optimize conversions → BP 5 — Focus on signals."
+        }
+      ]
+    },
+    {
+      "id": "1.16",
+      "title": "Exercise your memory · Block 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Which is NOT one of the 7 official Performance Best Practices?",
+          "options": [
+            "Automate campaign setup",
+            "Maximize daily frequency caps",
+            "Focus on signals",
+            "Validate results"
+          ],
+          "correct": 1,
+          "explanation": "Frequency caps is NOT on the list. The 7 are: Automate · Align · Audience · Creative & placements · Signals · Budget & bidding · Validate."
+        },
+        {
+          "type": "mcq",
+          "q": "Why is BP 7 (Validate results) NOT in the Opportunity Score recommendations?",
+          "options": [
+            "Because Meta deprecated it several years ago",
+            "Because it only applies to Advantage+ campaigns",
+            "Because it happens post-campaign, not before",
+            "Because it requires external tools"
+          ],
+          "correct": 2,
+          "explanation": "The Opportunity Score evaluates recommendations applicable before or during (BP 1-6). Validate results happens after the campaign ended."
+        },
+        {
+          "type": "fill",
+          "q": "BP ___ is called Focus on signals and uses high-quality data to inform decisions.",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correct": 2,
+          "explanation": "BP 5 — Focus on signals. Signals = Pixel, CAPI, datasets, events."
+        },
+        {
+          "type": "fill",
+          "q": "The Opportunity Score recommendations correspond to BP 1 through ___.",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correct": 2,
+          "explanation": "BP 1-6. BP 7 (Validate results) happens post-campaign."
+        }
+      ]
+    },
+    {
+      "id": "1.18",
+      "title": "Mini-flashcards · Block 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What are the 7 Performance Best Practices?",
+          "a": "1. Automate setup · 2. Align objectives & goals · 3. Consider audience · 4. Optimize creative & placements · 5. Focus on signals · 6. Get the most out of budget & bidding · 7. Validate results"
+        },
+        {
+          "q": "Which BPs correspond to the Opportunity Score?",
+          "a": "BP 1-6. BP 7 (Validate results) happens post-campaign."
+        },
+        {
+          "q": "In one sentence, what does BP 2 solve?",
+          "a": "That the campaign objective matches the business goal (not optimizing the wrong metric, e.g. traffic when you want sales)."
+        },
+        {
+          "q": "What does BP 5 — Focus on signals solve?",
+          "a": "Informing/optimizing decisions with high-quality data: Pixel, CAPI, datasets, events."
+        }
+      ]
+    },
+    {
+      "id": "1.19",
+      "title": "Explain · Business Suite, Portfolio & Permissions",
+      "section": "b5",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Meta Business Suite",
+          "body": "<strong>Meta Business Suite</strong> is the unified hub from which you manage your entire business across Meta's apps: <strong>Facebook, Instagram, Messenger, and WhatsApp</strong>, all in one place. While Ads Manager is specific to campaigns, Business Suite is the level above: here you manage portfolios, organic content, messages, <strong>billing</strong>, <strong>brand safety</strong>, and your team's permissions. Think of it as the business's headquarters, not just the ad workshop. For example, the dealership <strong>AutoMax</strong> answers Instagram messages, reviews invoices, and grants access to its agency without leaving Business Suite."
+        },
+        {
+          "type": "concept",
+          "h": "Business portfolio",
+          "body": "A <strong>business portfolio</strong> (formerly called Business Manager) is a container that groups all of a brand's <strong>assets</strong> in one place: the Facebook Page, the Instagram account, the <strong>ad account</strong> (where the ads run), the product catalog, etc. The advantage of having them together is huge: you manage everything in a unified way, control who can touch what, collaborate with external agencies without sharing passwords, and receive notifications on a single dashboard. Without a portfolio, each asset would live on its own and you'd grant access by lending your personal login. <em>Example:</em> the dealership <strong>AutoMax</strong> puts its Page, its Instagram, its ad account, and its car catalog into a single portfolio."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · AutoMax",
+          "body": "Let's continue with <strong>AutoMax</strong> (the dealership). Before having a portfolio, they gave their agency the password to the owner's Facebook: a huge risk. With a business portfolio, instead, they add the agency as a controlled access and give it permission <em>only</em> over the ad account, not over the whole operation. If tomorrow they stop working with that agency, they remove the access with one click and no one has to change passwords. That's what the portfolio solves: fine-grained control over who enters what, without exposing your personal accounts."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Business Suite (step by step)",
+          "body": "To manage access and assets you follow this path: <strong>Meta Business Suite</strong> → <strong>Settings</strong> gear at the bottom left → <strong>Business settings</strong>. There, in the side menu, you find <strong>Users</strong> divided into <strong>People</strong>, <strong>Partners</strong>, and <strong>System users</strong>; further down is <strong>Accounts</strong> for your Pages, ad accounts, and catalogs. To invite someone you choose <strong>People → Add</strong>, enter their email, and assign the permission level. All the control over who does what lives here, not inside Ads Manager."
+        },
+        {
+          "type": "kvtable",
+          "h": "Types of users in a portfolio",
+          "rows": [
+            [
+              "People",
+              "Individuals with partial access or full control"
+            ],
+            [
+              "Partners",
+              "Other businesses (they require their own portfolio + business ID)"
+            ],
+            [
+              "System users",
+              "Servers or software with API access (not all accounts have it)"
+            ]
+          ]
+        },
+        {
+          "type": "kvtable",
+          "h": "Permission levels",
+          "rows": [
+            [
+              "Partial access (basic)",
+              "See who has full control · work only on assigned assets"
+            ],
+            [
+              "Partial access (apps)",
+              "Set up CAPI · monitor events · edit applications · create access tokens"
+            ],
+            [
+              "Full control",
+              "Manage everything: settings, people, tools, assets · delete the portfolio"
+            ],
+            [
+              "Advanced — Finance",
+              "View or manage financial info (transactions, invoices)"
+            ],
+            [
+              "Advanced — Temporary",
+              "Basic access for min 3 days, max 75 days"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "SUBTLE DIFFERENCE",
+          "body": "A user can have <strong>full control of ONE account</strong> without having full control of the <strong>entire portfolio</strong>. This allows fine-grained permissions without losing oversight."
+        },
+        {
+          "type": "mcq",
+          "q": "Main difference between People, Partners, and System users?",
+          "options": [
+            "They only differ in the billing discount",
+            "People, other businesses, and servers with API",
+            "Partners always have full control",
+            "System users are always administrators"
+          ],
+          "correct": 1,
+          "explanation": "People = individual people. Partners = other businesses (their portfolio + business ID). System users = servers/software with API access."
+        }
+      ]
+    },
+    {
+      "id": "1.20",
+      "title": "Exercise your memory · Block 5",
+      "section": "b5",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "An advertiser wants a surface to manage billing, brand safety, and permissions across several accounts. Which one?",
+          "options": [
+            "Ads Manager",
+            "Meta Business Suite",
+            "Events Manager",
+            "Account Quality"
+          ],
+          "correct": 1,
+          "explanation": "Meta Business Suite is the unified hub. Ads Manager is for creating/managing campaigns."
+        },
+        {
+          "type": "mcq",
+          "q": "To collaborate with an agency that has its own portfolio, you add it as:",
+          "options": [
+            "Person",
+            "Partner",
+            "System user",
+            "Vendor"
+          ],
+          "correct": 1,
+          "explanation": "Agencies are added as Partners (they have their own portfolio + business ID)."
+        },
+        {
+          "type": "mcq",
+          "q": "'Advanced — Finance' allows:",
+          "options": [
+            "Creating and editing ad campaigns",
+            "Viewing and managing transactions and invoices",
+            "Accessing system users and external APIs",
+            "Creating and managing lookalike audiences"
+          ],
+          "correct": 1,
+          "explanation": "Advanced — Finance is a specific permission for financial matters. Separate from Full control."
+        },
+        {
+          "type": "fill",
+          "q": "___ users are servers or software with API access.",
+          "options": [
+            "Partner",
+            "People",
+            "System",
+            "Agency"
+          ],
+          "correct": 2,
+          "explanation": "System users = servers/software/APIs."
+        },
+        {
+          "type": "fill",
+          "q": "Temporary access lasts a minimum of 3 days and a maximum of ___ days.",
+          "options": [
+            "30",
+            "60",
+            "75",
+            "90"
+          ],
+          "correct": 2,
+          "explanation": "Maximum 75 days. A literal exam question."
+        },
+        {
+          "type": "fill",
+          "q": "To set up the CAPI you need Partial access (___).",
+          "options": [
+            "basic",
+            "apps",
+            "finance",
+            "temporary"
+          ],
+          "correct": 1,
+          "explanation": "Partial access (apps): set up CAPI, monitor events, edit applications, create access tokens."
+        }
+      ]
+    },
+    {
+      "id": "1.22",
+      "title": "Mini-flashcards · Block 5",
+      "section": "b5",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is Meta Business Suite?",
+          "a": "A centralized surface to manage marketing, ads, and client accounts on Facebook, Instagram, Messenger, and WhatsApp."
+        },
+        {
+          "q": "What is a Business Portfolio?",
+          "a": "A grouper of assets (FB Page, IG, ad account, catalog) in one place, with unified management of assets and access."
+        },
+        {
+          "q": "The 3 types of users in a portfolio",
+          "a": "People (individuals) · Partners (other businesses with their portfolio + business ID) · System users (servers/software with API access)."
+        },
+        {
+          "q": "Which access allows setting up the CAPI?",
+          "a": "Partial access (apps): set up CAPI, monitor events, edit applications, create access tokens."
+        },
+        {
+          "q": "Temporary access in a portfolio: how long does it last?",
+          "a": "Minimum 3 days, maximum 75 days."
+        },
+        {
+          "q": "Partial access vs Full control",
+          "a": "Partial: only assigned assets, see who has full control. Full: manage everything (settings, people, tools, assets) + delete the portfolio."
+        }
+      ]
+    },
+    {
+      "id": "1.21",
+      "title": "Case to solve · Block 5",
+      "section": "b5",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Distributing access at AutoMax",
+          "body": "You need to grant access: (1) an <strong>agency</strong> that has its own portfolio and will set up the CAPI, (2) the <strong>accountant</strong> who only views invoices, (3) a <strong>freelancer</strong> who helps for 2 weeks. Assign the right one to each."
+        },
+        {
+          "type": "mcq",
+          "q": "The agency (its own portfolio + set up CAPI):",
+          "options": [
+            "People with Partial access (basic)",
+            "Partner with Partial access (apps)",
+            "System user of the portfolio",
+            "Advanced — Finance role"
+          ],
+          "correct": 1,
+          "explanation": "Agency with its own portfolio = Partner. To set up CAPI it needs Partial access (apps)."
+        },
+        {
+          "type": "mcq",
+          "q": "The accountant (invoices only) and the freelancer (2 weeks):",
+          "options": [
+            "Full control of the portfolio for both",
+            "Finance for the accountant, Temporary for the freelancer",
+            "System user for the accountant, Partner for the freelancer",
+            "Partial access (apps) for both cases"
+          ],
+          "correct": 1,
+          "explanation": "Accountant → Advanced — Finance (invoices/transactions). Temporary freelancer → Advanced — Temporary (3-75 days)."
+        }
+      ]
+    },
+    {
+      "id": "1.23",
+      "title": "Explain · Billing & Brand Safety",
+      "section": "b6",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Billing and payments",
+          "body": "<strong>Billing and payments</strong> is the Business Suite section where you handle everything related to your ad money: what you pay with, how much you've spent, and where you download your invoices. You can add your own <strong>payment method</strong> (such as a card) or share one that lives in another portfolio. What matters for the exam is access control: changing the payment method can't be done by just anyone, you need <strong>admin</strong> access or the <strong>finance (view and manage)</strong> role. Basic or temporary access isn't enough. <em>Example:</em> at the restaurant <strong>Sazón Kitchen</strong>, the waiter with basic access can view reports, but only the owner with the admin role changes the card."
+        },
+        {
+          "type": "kvtable",
+          "h": "Options within Billing & payments",
+          "rows": [
+            [
+              "Accounts",
+              "View and manage all accounts"
+            ],
+            [
+              "Payment activity",
+              "Spending limits and transactions"
+            ],
+            [
+              "Invoices",
+              "View, filter, and download invoices"
+            ],
+            [
+              "Payment methods",
+              "Add methods and connect credit lines"
+            ],
+            [
+              "Credit lines",
+              "View available credit · apply for monthly invoicing"
+            ],
+            [
+              "Legal entities",
+              "Billing details and payment responsibilities with partners"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Hotel Lumière",
+          "body": "The accountant at <strong>Hotel Lumière</strong> has a narrow task: close the month's bookkeeping. They go into <strong>Invoices</strong> to download the receipts and into <strong>Payment activity</strong> to review how much was spent. What they <em>can't</em> do with their access is change the card the hotel pays with: for that they'd need the admin or finance (view and manage) role. This example shows the logic of permissions: you grant exactly what's needed for the task, no more, no less. That way the accountant does their job without being able to touch the advertising operation."
+        },
+        {
+          "type": "concept",
+          "h": "Brand Safety & Suitability Center",
+          "body": "The <strong>Brand Safety & Suitability Center</strong> is the section where you decide <em>next to what type of content</em> your ads appear, so your brand doesn't show up alongside something that doesn't suit it. It offers two things: <strong>controls</strong> to include or exclude certain content or certain <strong>publishers</strong> (the sites, pages, or creators where your ad is shown), and <strong>transparency tools</strong> that show you publisher information and where your ads were delivered. These controls don't live only here: you can also apply them at the <strong>ad set → placements</strong> level in Ads Manager. <em>Example:</em> the pet store <strong>PetCare</strong> uses these controls so its ads don't appear next to controversial content."
+        },
+        {
+          "type": "kvtable",
+          "h": "The 4 types of controls",
+          "rows": [
+            [
+              "Inventory filters",
+              "Type of content: Expanded (default), Moderate, Limited — affects reach"
+            ],
+            [
+              "Publisher block lists",
+              "Lists YOU create to avoid certain publishers"
+            ],
+            [
+              "Topic exclusions",
+              "Gaming, News, Politics, Religion (only FB in-stream/reels)"
+            ],
+            [
+              "Content type exclusions",
+              "Live video · non-partner publisher exclusions"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "To exclude sensitive content in the simplest way, use the <strong>inventory filters</strong> (Moderate or Limited). Block lists require building the list; topic exclusions only work on very specific placements."
+        },
+        {
+          "type": "mcq",
+          "q": "Simplest way to exclude groups of sensitive content in the Brand Safety Center?",
+          "options": [
+            "Create manual publisher block lists",
+            "Use inventory filters (Moderate or Limited)",
+            "Exclude topics such as Gaming, News, Politics",
+            "Turn on content type exclusions for live video"
+          ],
+          "correct": 1,
+          "explanation": "Inventory filters (Expanded/Moderate/Limited) are the simplest control with the broadest reach. Block lists = manual work; topic exclusions only FB in-stream/reels."
+        }
+      ]
+    },
+    {
+      "id": "1.25",
+      "title": "Case to solve · Block 6",
+      "section": "b6",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "PetCare protects its brand",
+          "body": "The owner of PetCare (pet products) doesn't want their ads to appear next to controversial content, and doesn't have time to build publisher-by-publisher lists. Plus the accountant needs to be able to download the month's invoices."
+        },
+        {
+          "type": "mcq",
+          "q": "To avoid sensitive content without building lists by hand, the simplest route is:",
+          "options": [
+            "Manual publisher block lists",
+            "Raise the inventory filter to Moderate or Limited",
+            "Topic exclusions (they cover all placements)",
+            "Turn off Advantage+ placements"
+          ],
+          "correct": 1,
+          "explanation": "Inventory filters (Moderate/Limited) = simplest control with the broadest reach, without building lists manually. Topic exclusions do NOT cover all placements (only FB in-stream/reels)."
+        },
+        {
+          "type": "mcq",
+          "q": "For the accountant to download invoices, what do they need?",
+          "options": [
+            "Full control of the entire portfolio",
+            "A finance role with access to Invoices",
+            "To be a System user of the portfolio",
+            "To have Partial access (apps)"
+          ],
+          "correct": 1,
+          "explanation": "Invoices lives in Billing & payments. For financial matters you use the finance role / Advanced — Finance, not Full control or a system user."
+        }
+      ]
+    },
+    {
+      "id": "1.24",
+      "title": "Exercise your memory · Block 6",
+      "section": "b6",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Inventory filters has 3 levels. Which gives the MOST reach?",
+          "options": [
+            "Limited",
+            "Moderate",
+            "Expanded",
+            "Strict"
+          ],
+          "correct": 2,
+          "explanation": "Expanded (default) = most reach. Moderate = balance. Limited = less reach, more exclusion. Strict doesn't exist."
+        },
+        {
+          "type": "mcq",
+          "q": "Topic exclusions (Gaming, News, Politics, Religion) are ONLY in:",
+          "options": [
+            "All placements",
+            "Facebook in-stream and reels",
+            "Instagram reels",
+            "Audience Network"
+          ],
+          "correct": 1,
+          "explanation": "Topic exclusions apply exclusively to Facebook in-stream and reels."
+        },
+        {
+          "type": "mcq",
+          "q": "What access is needed to change the payment method?",
+          "options": [
+            "Any level of partial access",
+            "Admin access or finance role (manage)",
+            "Being a System user is enough",
+            "Temporary access is enough"
+          ],
+          "correct": 1,
+          "explanation": "Changing payment methods requires admin access or the finance role (view and manage)."
+        },
+        {
+          "type": "fill",
+          "q": "To exclude sensitive content in the simplest way, use the ___.",
+          "options": [
+            "block lists",
+            "topic exclusions",
+            "inventory filters",
+            "allow lists"
+          ],
+          "correct": 2,
+          "explanation": "Inventory filters (Expanded/Moderate/Limited): the simplest control with the broadest reach."
+        },
+        {
+          "type": "mcq",
+          "q": "The Brand Safety Center is accessible ONLY from Business Suite:",
+          "options": [
+            "True",
+            "False: also at the ad set → placements level in Ads Manager"
+          ],
+          "correct": 1,
+          "explanation": "The Brand Safety controls are also at the ad set → placements level in Ads Manager."
+        }
+      ]
+    },
+    {
+      "id": "1.26",
+      "title": "Mini-flashcards · Block 6",
+      "section": "b6",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What access is needed to change the payment method?",
+          "a": "Admin access or finance role (view and manage). Basic/temporary access isn't enough."
+        },
+        {
+          "q": "Options within Billing & payments",
+          "a": "Accounts · Payment activity · Invoices · Payment methods · Credit lines · Legal entities."
+        },
+        {
+          "q": "The 4 types of controls in the Brand Safety Center",
+          "a": "Inventory filters (Expanded/Moderate/Limited) · Publisher block lists · Topic exclusions (Gaming/News/Politics/Religion) · Content type exclusions."
+        },
+        {
+          "q": "Inventory filters: levels and which gives the most reach",
+          "a": "Expanded (default, most reach) · Moderate · Limited (less reach, more exclusion). It's the simplest control."
+        },
+        {
+          "q": "Where do topic exclusions work?",
+          "a": "Only on Facebook in-stream and reels. That's why inventory filters are more useful for general exclusion."
+        }
+      ]
+    },
+    {
+      "id": "1.27",
+      "title": "Integrating case · Industrial Suite (B2B Shopify)",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "REAL SCENARIO",
+          "h": "B2B client with a serious budget",
+          "body": "<strong>Industrial Suite</strong> is a B2B Shopify store that sells office equipment to large companies (>500 employees). Its budget is <strong>$30,000 USD/month</strong>. They have had the <strong>Meta Pixel installed for 3 months</strong> and receive ~800 Purchase events per month. The main goal: <strong>generate sales on their website</strong>. The client asks you: which objective, which type of Advantage+, and which Best Practice should I prioritize?"
+        },
+        {
+          "type": "mcq",
+          "q": "Which Campaign Objective do you recommend for Industrial Suite?",
+          "options": [
+            "Awareness — so they get to know the brand",
+            "Sales — because the direct goal is to generate sales on the site",
+            "Engagement — so they interact with the posts",
+            "Leads — to capture forms"
+          ],
+          "correct": 1,
+          "explanation": "The client explicitly said they want <strong>sales on their website</strong>. The correct objective is <strong>Sales</strong>. Awareness/Engagement don't optimize for conversion, and Leads would be valid if it were about capturing forms (which it isn't)."
+        },
+        {
+          "type": "mcq",
+          "q": "Given that the client wants to automate the ENTIRE campaign, which Advantage+ solution do you apply?",
+          "options": [
+            "Advantage+ App campaigns",
+            "Advantage+ Leads campaigns",
+            "Advantage+ Sales campaigns",
+            "Advantage+ creative (single-step)"
+          ],
+          "correct": 2,
+          "explanation": "To automate the <strong>entire</strong> campaign with a Sales objective → <strong>Advantage+ Sales campaigns</strong>. App is for mobile apps, Leads is for forms, and Advantage+ creative is only single-step (it automates just the creative, not the whole campaign)."
+        },
+        {
+          "type": "mcq",
+          "q": "The client already has a Pixel with 3 months of data. Which Best Practice do you prioritize to get more out of that information?",
+          "options": [
+            "BP 1 — Automate campaign setup",
+            "BP 3 — Consider your audience",
+            "BP 5 — Focus on signals",
+            "BP 7 — Validate results"
+          ],
+          "correct": 2,
+          "explanation": "<strong>BP 5 — Focus on signals</strong>: \"Inform decision making with high-quality data.\" Having 3 months of Pixel with Purchase events is exactly the quality signal this BP aims to leverage. Ideally also add <strong>Conversions API (CAPI)</strong> to complement the Pixel."
+        }
+      ]
+    },
+    {
+      "id": "1.28",
+      "title": "Match key concepts from Day 1",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Tap the term and then its definition. Each mistake costs 1 ❤️.",
+      "pairs": [
+        [
+          "Opportunity Score",
+          "0-100 optimization score based on experimentally proven recommendations"
+        ],
+        [
+          "Campaign-level decisions",
+          "Buying type, objective, budget, bid, A/B test"
+        ],
+        [
+          "Ad set-level decisions",
+          "Audience, placements, schedule, conversion settings"
+        ],
+        [
+          "Ad-level decisions",
+          "Creative, destination, tracking, identity, languages"
+        ],
+        [
+          "Advantage+ Sales",
+          "Complete campaign solution that automates an entire sales campaign"
+        ],
+        [
+          "Advantage+ audience",
+          "Single-step solution that automates audience selection"
+        ],
+        [
+          "Advantage+ campaign budget",
+          "Dynamically allocates budget to the best-performing ad set (formerly CBO)"
+        ],
+        [
+          "BP 5 — Focus on signals",
+          "Making decisions with high-quality data: Pixel, CAPI, datasets"
+        ],
+        [
+          "Business Portfolio",
+          "Grouper of assets (Pages, IG, ad accounts, catalogs) with centralized permissions"
+        ],
+        [
+          "Partners in a portfolio",
+          "Other businesses with their own portfolio + business ID"
+        ],
+        [
+          "Inventory filters",
+          "Simple Brand Safety Center control: Expanded, Moderate, Limited"
+        ],
+        [
+          "Temporary access",
+          "Min 3 days, max 75 days in a business portfolio"
+        ]
+      ]
+    },
+    {
+      "id": "1.29",
+      "title": "Complete the sentences from Day 1",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The ___ is a 0-100 score that shows how optimized your campaigns are based on experimentally proven recommendations.",
+          "options": [
+            "Opportunity Score",
+            "ROAS Score",
+            "Pixel Score",
+            "Auction Score"
+          ],
+          "correct": 0,
+          "explanation": "The <strong>Opportunity Score</strong> measures the adoption of recommendations, NOT real performance."
+        },
+        {
+          "type": "fill",
+          "q": "Audience, placements, and schedule decisions are made at the ___ level.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Ad set</strong> = who, where, when. Campaign = which objective and how much. Ad = how it looks."
+        },
+        {
+          "type": "fill",
+          "q": "The default budget optimization at the campaign level is called Advantage+ ___ budget.",
+          "options": [
+            "audience",
+            "campaign",
+            "creative",
+            "placement"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Advantage+ campaign budget</strong> (formerly CBO) dynamically distributes the budget across ad sets."
+        },
+        {
+          "type": "fill",
+          "q": "The 3 Advantage+ complete campaign solutions are Sales, App, and ___.",
+          "options": [
+            "Reach",
+            "Engagement",
+            "Leads",
+            "Conversion"
+          ],
+          "correct": 2,
+          "explanation": "The 3 complete campaigns are <strong>Advantage+ Sales · App · Leads</strong>. The others are objectives, not complete Advantage+ campaigns."
+        },
+        {
+          "type": "fill",
+          "q": "BP ___ is called Focus on signals and refers to using high-quality data to inform decisions.",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correct": 2,
+          "explanation": "<strong>BP 5 — Focus on signals</strong>. The signals = Pixel, CAPI, datasets, events."
+        },
+        {
+          "type": "fill",
+          "q": "To exclude groups of sensitive content in the simplest way, use the ___.",
+          "options": [
+            "block lists",
+            "topic exclusions",
+            "inventory filters",
+            "publisher allow lists"
+          ],
+          "correct": 2,
+          "explanation": "<strong>Inventory filters</strong> (Expanded/Moderate/Limited) are the simplest control with the broadest reach. Block lists require building the list manually."
+        },
+        {
+          "type": "fill",
+          "q": "___ users are servers or software with API access in a business portfolio.",
+          "options": [
+            "Partner",
+            "People",
+            "System",
+            "Agency"
+          ],
+          "correct": 2,
+          "explanation": "<strong>System users</strong> = servers/software/APIs. Partner = another business. People = individual people."
+        },
+        {
+          "type": "fill",
+          "q": "Temporary access in a portfolio lasts a minimum of 3 days and a maximum of ___ days.",
+          "options": [
+            "30",
+            "60",
+            "75",
+            "90"
+          ],
+          "correct": 2,
+          "explanation": "Maximum <strong>75 days</strong>. It's a literal exam question — memorize it."
+        },
+        {
+          "type": "fill",
+          "q": "To change the payment method you need admin access or the ___ role.",
+          "options": [
+            "finance (view and manage)",
+            "system user",
+            "partner",
+            "temporary"
+          ],
+          "correct": 0,
+          "explanation": "Changing payment methods requires admin access or the <strong>finance (view and manage)</strong> role."
+        },
+        {
+          "type": "fill",
+          "q": "The Best Practice that happens post-campaign and does NOT enter the Opportunity Score is BP ___.",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "1"
+          ],
+          "correct": 2,
+          "explanation": "<strong>BP 7 — Validate results</strong> happens after the campaign; the Opportunity Score only covers BP 1-6."
+        }
+      ]
+    },
+    {
+      "id": "1.30",
+      "title": "Drill — 12 MCQs from Day 1",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "An advertiser wants a surface to manage billing, brand safety, and permissions across multiple accounts. Which do you recommend?",
+          "options": [
+            "Ads Manager",
+            "Meta Business Suite",
+            "Events Manager",
+            "Account Quality"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Meta Business Suite</strong> is the unified hub for managing portfolios, billing, brand safety, and permissions. Ads Manager is for creating/managing campaigns, not for managing the business."
+        },
+        {
+          "type": "mcq",
+          "q": "Buying type is a selection that can ONLY be made at the level:",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Buying type</strong> is the first decision and goes at the Campaign level (Auction or Reservation). Ad set and Ad don't allow changing it."
+        },
+        {
+          "type": "mcq",
+          "q": "Which of these is NOT an Advantage+ complete campaign solution?",
+          "options": [
+            "Advantage+ Sales",
+            "Advantage+ Leads",
+            "Advantage+ App",
+            "Advantage+ Catalog Ads"
+          ],
+          "correct": 3,
+          "explanation": "The 3 <strong>complete campaign solutions</strong> are Sales, App, and Leads. <strong>Advantage+ Catalog Ads</strong> is a feature within Sales (single-step for showing products from a catalog)."
+        },
+        {
+          "type": "mcq",
+          "q": "To collaborate with an agency that has its own portfolio, how do you add it to your portfolio?",
+          "options": [
+            "As a Person",
+            "As a Partner",
+            "As a System user",
+            "As a Vendor"
+          ],
+          "correct": 1,
+          "explanation": "Agencies are added as <strong>Partners</strong> because they have their own business portfolio + business ID. People are individuals; System users are servers/APIs."
+        },
+        {
+          "type": "mcq",
+          "q": "If an exam question says 'CBO', what does it refer to?",
+          "options": [
+            "Cost Bidding Optimization",
+            "Campaign Budget Optimization",
+            "Cross-Border Operations",
+            "Centralized Business Operations"
+          ],
+          "correct": 1,
+          "explanation": "<strong>CBO = Campaign Budget Optimization</strong>, today renamed to <strong>Advantage+ campaign budget</strong>. It dynamically allocates budget to the best-performing ad set."
+        },
+        {
+          "type": "mcq",
+          "q": "Why is BP 7 (Validate results) NOT in the Opportunity Score recommendations?",
+          "options": [
+            "Because Meta deprecated it several years ago",
+            "Because it only applies to Advantage+ campaigns",
+            "Because it happens post-campaign, not before",
+            "Because it requires external tools"
+          ],
+          "correct": 2,
+          "explanation": "The <strong>Opportunity Score</strong> evaluates recommendations applicable <em>before or during</em> the campaign (BP 1-6). <strong>BP 7 — Validate results</strong> happens after the campaign ended."
+        },
+        {
+          "type": "mcq",
+          "q": "The 'Advanced — Finance' permission level allows:",
+          "options": [
+            "Creating and editing ad campaigns",
+            "Viewing and managing transactions and invoices",
+            "Accessing system users and external APIs",
+            "Creating advanced lookalike audiences"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Advanced — Finance</strong> is a specific permission for financial matters (invoices, transactions, payment methods). It is separate from Full control."
+        },
+        {
+          "type": "mcq",
+          "q": "Inventory filters has 3 levels. Which gives the MOST reach?",
+          "options": [
+            "Limited",
+            "Moderate",
+            "Expanded",
+            "Strict"
+          ],
+          "correct": 2,
+          "explanation": "<strong>Expanded</strong> (default) = most reach, least filtering. <strong>Moderate</strong> = balance. <strong>Limited</strong> = less reach, more exclusion of sensitive content. <em>Strict</em> doesn't exist."
+        },
+        {
+          "type": "mcq",
+          "q": "Topic exclusions (Gaming, News, Politics, Religion) are available ONLY in:",
+          "options": [
+            "All Meta placements",
+            "Facebook in-stream and reels",
+            "Instagram reels only",
+            "Audience Network"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Topic exclusions</strong> apply exclusively to <strong>Facebook in-stream and reels</strong>. They don't work in other placements — that's why inventory filters are more useful for general exclusion."
+        },
+        {
+          "type": "mcq",
+          "q": "Which Advantage+ single-step solution was formerly called CBO?",
+          "options": [
+            "Advantage+ audience",
+            "Advantage+ creative",
+            "Advantage+ campaign budget",
+            "Advantage+ placements"
+          ],
+          "correct": 2,
+          "explanation": "<strong>CBO (Campaign Budget Optimization) → Advantage+ campaign budget</strong>. It's the most-mentioned rebranding on the exam."
+        },
+        {
+          "type": "mcq",
+          "q": "When you create a campaign, the opportunity score that appears at the CAMPAIGN LEVEL:",
+          "options": [
+            "Replaces your global account score",
+            "Adds points to the global one when you apply recommendations",
+            "Does NOT affect the global one and only reflects that campaign",
+            "Is calculated 24 hours after publishing"
+          ],
+          "correct": 2,
+          "explanation": "The <strong>campaign-level score does not affect the account's global score</strong>. It reflects only that specific campaign. The global score only counts actions taken from Account overview."
+        },
+        {
+          "type": "mcq",
+          "q": "Which of the following are within the Billing and payments section in Business Suite? Select 3.",
+          "options": [
+            "Payment activity (spending limits and transactions)",
+            "Invoices (view and download invoices)",
+            "Audience Insights (demographic data)",
+            "Credit lines (available credit and monthly invoicing)"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "multi": true,
+          "explanation": "<strong>Billing and payments</strong> includes: Accounts, Payment activity, Invoices, Payment methods, Credit lines, Legal entities. <strong>Audience Insights</strong> is a separate analytics tool, not part of billing."
+        }
+      ]
+    },
+    {
+      "id": "1.31",
+      "title": "Lightning — 10 quick questions",
+      "section": "bz",
+      "type": "lightning",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Does the Opportunity Score predict the campaign's ROAS?",
+          "options": [
+            "Yes, it predicts ROAS",
+            "No, it only measures the adoption of recommendations"
+          ],
+          "correct": 1,
+          "explanation": "The Opportunity Score does NOT predict performance — it measures the adoption of proven recommendations."
+        },
+        {
+          "q": "Can the budget be set at the Campaign AND Ad set level simultaneously?",
+          "options": [
+            "Yes, in both at the same time",
+            "No, only in one of the two"
+          ],
+          "correct": 1,
+          "explanation": "The budget goes at ONE of the two levels, never both. Default: Campaign level (Advantage+ campaign budget)."
+        },
+        {
+          "q": "Is Advantage+ Sales a single-step solution?",
+          "options": [
+            "Yes, it automates one step",
+            "No, it's a complete campaign (it automates everything)"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Sales is a complete campaign. The single-step ones are: audience, placements, budget, creative, destination."
+        },
+        {
+          "q": "Do the 7 Performance Best Practices include 'Maximize frequency caps'?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "correct": 1,
+          "explanation": "Frequency caps is NOT a BP. The 7 BPs are: Automate · Align · Audience · Creative & placements · Signals · Budget & bidding · Validate."
+        },
+        {
+          "q": "Does temporary access in a portfolio last a maximum of 90 days?",
+          "options": [
+            "Yes, 90 days",
+            "No, a maximum of 75 days"
+          ],
+          "correct": 1,
+          "explanation": "Minimum 3 days, maximum 75 days. Memorize it literally."
+        },
+        {
+          "q": "Do Partners in a portfolio need to have their own business ID?",
+          "options": [
+            "Yes, they require their own portfolio + ID",
+            "No, an email is enough"
+          ],
+          "correct": 0,
+          "explanation": "Partners are OTHER businesses. That's why they need their own separate portfolio + business ID."
+        },
+        {
+          "q": "Does the 'Limited' inventory filter give LESS reach than 'Expanded'?",
+          "options": [
+            "Yes (more filtering = less reach)",
+            "No, it gives more reach"
+          ],
+          "correct": 0,
+          "explanation": "Limited = more exclusion = less reach. Expanded (default) = less filtering = more reach."
+        },
+        {
+          "q": "Is the Brand Safety Center accessible ONLY from Business Suite?",
+          "options": [
+            "Yes, only Business Suite",
+            "No, also at the ad set level in Ads Manager (placements)"
+          ],
+          "correct": 1,
+          "explanation": "The Brand Safety controls are also available at the <strong>ad set → placements</strong> level in Ads Manager."
+        },
+        {
+          "q": "Do topic exclusions work in Audience Network?",
+          "options": [
+            "Yes, all placements",
+            "No, only FB in-stream and reels"
+          ],
+          "correct": 1,
+          "explanation": "Topic exclusions apply exclusively to Facebook in-stream and reels."
+        },
+        {
+          "q": "If you pass the diagnostic with ≥80%, can you skip the day's lessons?",
+          "options": [
+            "Yes, jump straight to the Unit Quiz",
+            "No, you must always do the lessons"
+          ],
+          "correct": 0,
+          "explanation": "The diagnostic is the shortcut: if you master the content, ≥80% lets you skip straight to the Unit Quiz."
+        }
+      ]
+    },
+    {
+      "id": "1.flash",
+      "title": "Day 1 flashcards (all)",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is Ads Manager?",
+          "a": "Meta's control center: create campaigns, configure billing, manage audiences, view reporting, connect data sources, adjust advertiser settings. It's NOT only for creating ads."
+        },
+        {
+          "q": "What does the Opportunity Score measure?",
+          "a": "A 0-100 score that shows how optimized your campaigns are based on experimentally proven recommendations you haven't applied yet. It does NOT predict real performance."
+        },
+        {
+          "q": "Three moments when the Opportunity Score helps you",
+          "a": "Before (Account overview, before creating campaigns) · During (campaign score when you create it, doesn't affect the global one) · After (ongoing recommendations while it runs)."
+        },
+        {
+          "q": "The 3 levels of a campaign in order",
+          "a": "Campaign → Ad set → Ad"
+        },
+        {
+          "q": "What is decided at the Campaign level?",
+          "a": "Buying type · Objective · Budget · Bid · Special Ad Category · A/B test"
+        },
+        {
+          "q": "What is decided at the Ad set level?",
+          "a": "Conversion (location, event, goal, dataset, attribution) · Budget & schedule · Audience · Placements · Dynamic creative"
+        },
+        {
+          "q": "What is decided at the Ad level?",
+          "a": "Partnership ad · Identity · Ad setup · Ad creative · Destination · Tracking · Languages"
+        },
+        {
+          "q": "What is Meta Advantage+?",
+          "a": "A suite of solutions that uses AI + automation in real time to match ads with the people most likely to act. It optimizes by real-time data, effectiveness, and relevance."
+        },
+        {
+          "q": "The 2 categories of Advantage+",
+          "a": "Complete campaign solutions (they automate the entire campaign: Sales, App, Leads) · Single-step solutions (they automate one aspect: Audience, Placement, Budget, Creative, Destination)."
+        },
+        {
+          "q": "The 3 Advantage+ complete campaign solutions",
+          "a": "Advantage+ Sales · Advantage+ App · Advantage+ Leads"
+        },
+        {
+          "q": "What does Advantage+ campaign budget do?",
+          "a": "It dynamically allocates the budget to the best-performing ad set/ad. It's the default single-step solution for budget automation. (It was formerly called CBO.)"
+        },
+        {
+          "q": "What do Advantage+ catalog ads do?",
+          "a": "They show products from a catalog to the people most likely to find them relevant. Available when you choose Sales as the objective."
+        },
+        {
+          "q": "What are the 7 Performance Best Practices?",
+          "a": "1. Automate setup · 2. Align objectives & goals · 3. Consider audience · 4. Optimize creative & placements · 5. Focus on signals · 6. Get the most out of budget & bidding · 7. Validate results"
+        },
+        {
+          "q": "Which BPs correspond to the Opportunity Score recommendations?",
+          "a": "BP 1-6. BP 7 (Validate results) happens post-campaign."
+        },
+        {
+          "q": "In one sentence, what does BP 2 — Align objectives & goals solve?",
+          "a": "That the campaign objective matches the real business goal (not optimizing the wrong metric, e.g. traffic when you want sales)."
+        },
+        {
+          "q": "What is Meta Business Suite?",
+          "a": "A centralized surface to manage marketing, ads, and client accounts on Facebook, Instagram, Messenger, and WhatsApp."
+        },
+        {
+          "q": "What is a Business Portfolio?",
+          "a": "A grouper of assets (Facebook Page, Instagram, ad account, catalog, etc.) in one place, with unified management of assets and access."
+        },
+        {
+          "q": "The 3 types of users in a portfolio",
+          "a": "People (individuals) · Partners (other businesses with their own portfolio + business ID) · System users (servers/software with API access)."
+        },
+        {
+          "q": "Difference: Partial access vs Full control in a portfolio",
+          "a": "Partial: work only on assigned assets, see who has full control. Full: manage everything (settings, people, tools, assets, claim/remove) + delete the portfolio."
+        },
+        {
+          "q": "Temporary access in a portfolio: how much time?",
+          "a": "Minimum 3 days, maximum 75 days."
+        },
+        {
+          "q": "Which access allows setting up the Conversions API (CAPI)?",
+          "a": "Partial access (apps): set up CAPI, monitor events, edit applications, and create access tokens."
+        },
+        {
+          "q": "What access is needed to change the payment method?",
+          "a": "Admin access or finance role (view and manage). Basic/temporary access isn't enough."
+        },
+        {
+          "q": "The 4 types of controls in the Brand Safety Center",
+          "a": "Inventory filters (Expanded/Moderate/Limited) · Publisher block lists · Topic exclusions (Gaming/News/Politics/Religion) · Content type exclusions (live video, non-partner)."
+        },
+        {
+          "q": "Inventory filters (levels)",
+          "a": "Expanded, Moderate, or Limited. It's the simplest control with the broadest coverage to exclude sensitive content in the Brand Safety and Suitability Center."
+        },
+        {
+          "q": "Advantage+ complete campaign solutions",
+          "a": "Advantage+ sales, app, and leads campaigns: the AI automates the ENTIRE campaign. Single-step (a single aspect): audience, placements, campaign budget, creative, destination, catalog ads."
+        },
+        {
+          "q": "Employee access vs admin access (Business Manager)",
+          "a": "Employee only accesses the assigned assets. Adding/removing people, creating accounts/Pages, or deleting the business require admin access."
+        },
+        {
+          "q": "Creation levels and what's decided at each one",
+          "a": "Campaign: buying type, objective, budget, bid. Ad set: conversion/performance goal, budget/schedule, audience, placements. Ad: creative, destination, tracking."
+        }
+      ]
+    }
+  ]
+}

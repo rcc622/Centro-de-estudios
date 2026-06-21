@@ -1,0 +1,1908 @@
+{
+  "id": "day3",
+  "title": "Day 3 — Buying Types & Bid Strategies",
+  "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Review",
+      "sub": "Prior concepts before we begin"
+    },
+    "b1": {
+      "ico": "🛒",
+      "title": "Block 1",
+      "sub": "Buying types: Auction vs Reservation"
+    },
+    "b2": {
+      "ico": "⚖️",
+      "title": "Block 2",
+      "sub": "How the auction is won"
+    },
+    "b3": {
+      "ico": "🎯",
+      "title": "Block 3",
+      "sub": "The 5 bid strategies"
+    },
+    "b4": {
+      "ico": "💰",
+      "title": "Block 4",
+      "sub": "Budgets and distribution"
+    },
+    "b5": {
+      "ico": "📈",
+      "title": "Block 5",
+      "sub": "Learning Phase and Learning Limited"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Final review",
+      "sub": "Consolidation before the exam"
+    }
+  },
+  "lessons": [
+    {
+      "id": "3.0",
+      "title": "Spaced review · Day 2",
+      "section": "b0",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Why we start by recalling",
+          "body": "Before seeing new material, you're going to retrieve Day 2 from memory. The idea comes from a study technique called <strong>active recall</strong>: forcing your brain to produce the answer without the material in front of you. Recalling with effort, without re-reading, is what <strong>cements</strong> knowledge far more than passive re-reading. If you miss a question, no problem: that's exactly what shows you which topic to reinforce. Think of these minutes as a mental warm-up before today's heavy content."
+        },
+        {
+          "type": "fill",
+          "q": "Meta groups all objectives into ___ outcomes (ODAX).",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ],
+          "correct": 2,
+          "explanation": "There are <strong>6 ODAX</strong>: Awareness, Traffic, Engagement, Leads, App Promotion, Sales."
+        },
+        {
+          "type": "mcq",
+          "q": "At which creation level do you choose the campaign objective?",
+          "options": [
+            "Account level",
+            "Campaign level",
+            "Ad set level",
+            "Ad level"
+          ],
+          "correct": 1,
+          "explanation": "The objective is chosen at the <strong>Campaign</strong> level. Conversion location and conversion event go at the Ad set; creative and links at the Ad."
+        },
+        {
+          "type": "fill",
+          "q": "The objective that reaches the most people who will <em>remember</em> the ad is ___.",
+          "options": [
+            "Awareness",
+            "Traffic",
+            "Engagement",
+            "Sales"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Awareness</strong> optimizes for recall and reach. It does not require Pixel, CAPI, or a dataset."
+        },
+        {
+          "type": "mcq",
+          "q": "What is the key difference between Leads and Sales?",
+          "options": [
+            "Leads is always cheaper than Sales",
+            "Leads collects contact info; Sales = transaction",
+            "Sales only works if there is a catalog",
+            "Leads does not support the native Instant form"
+          ],
+          "correct": 1,
+          "explanation": "Funnel stage: <strong>Leads</strong> in consideration (collect contact info), <strong>Sales</strong> in conversion (real charge/purchase)."
+        },
+        {
+          "type": "fill",
+          "q": "Sales with a Purchase conversion event on a website requires Pixel + ___ configured.",
+          "options": [
+            "CAPI",
+            "SDK",
+            "MMP",
+            "Catalog"
+          ],
+          "correct": 0,
+          "explanation": "Sales with Purchase on a website requires <strong>Pixel + CAPI</strong>. Without this, the system can't optimize the purchase well."
+        },
+        {
+          "type": "mcq",
+          "q": "If your goal is a real sale but you choose Traffic, what problem do you have?",
+          "options": [
+            "None, the objectives are interchangeable",
+            "Traffic optimizes for clicks, not purchases",
+            "Traffic is always more expensive than Sales",
+            "Traffic does not allow video ads"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Traffic</strong> optimizes for the wrong metric (link clicks). For a real sale the correct objective is <strong>Sales</strong>. This \"misaligned objective\" pattern returns today with bid strategies."
+        }
+      ]
+    },
+    {
+      "id": "3.1",
+      "title": "Explained · Buying types: Auction vs Reservation",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What the buying type is",
+          "body": "The <strong>buying type</strong> is the method by which you buy ads from Meta, that is, the way you pay to appear in front of people on Facebook, Instagram, and the company's other platforms. It's the <em>first</em> decision you make when creating a campaign, and it's chosen at the Campaign level. This decision shapes everything below it: which objectives you can use, which platforms you appear on, and how you control cost. There are only two options: <strong>Auction</strong> and <strong>Reservation</strong>."
+        },
+        {
+          "type": "concept",
+          "h": "Why choosing it well matters",
+          "body": "The buying type works like an entry filter: it opens or closes options for the rest of the campaign. If you choose Reservation, you lose objectives like <strong>Sales</strong> and most of the bid strategies. That's why the exam often asks which combinations are \"valid\": it wants to see whether you know what can and can't be mixed. Getting this wrong drags errors into every question that follows."
+        },
+        {
+          "type": "concept",
+          "h": "Auction — real-time auction",
+          "body": "<strong>Auction</strong> is Meta's default buying type. Every time a user opens Facebook or Instagram, an instant auction runs among the advertisers who want that space, and the system chooses which ad to show. It gives you access to <strong>all objectives</strong>, <strong>all placements</strong> (the spots where the ad appears, such as Feed or Reels), and the <strong>5 bid strategies</strong>. The cost is not fixed: it <em>fluctuates</em> based on the demand and competition at each moment. This is what you'll use 90% of the time."
+        },
+        {
+          "type": "concept",
+          "h": "Reservation — buying in advance",
+          "body": "<strong>Reservation</strong> is like buying your ad space ahead of time, similar to booking a billboard for an exact date. In exchange it gives you a <strong>fixed CPM</strong> (cost per mille, that is, the cost for every 1,000 impressions) and predictable delivery: you know how much you'll pay and how many people you'll reach. The trade-off is that it's very limited: only the <strong>Awareness and Engagement</strong> objectives, only on <strong>Facebook + Instagram</strong>, only with a <strong>lifetime budget</strong> (total budget for the period), and with bidding on automatic. It's used for large, planned campaigns."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Hotel Lumière",
+          "body": "<strong>Hotel Lumière</strong> is launching its peak summer season (2 weeks) and wants 50,000 frequent travelers to remember the brand before the period so they book in advance. It needs to know with certainty how much it will pay and how many people it will reach, with no surprises. That's exactly what <strong>Reservation</strong> delivers: a locked CPM and guaranteed delivery for a fixed period. The price? It's limited to Awareness or Engagement and only appears on Facebook and Instagram. Since the hotel only wants recall (not to sell directly in the ad), it fits perfectly."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "1. Go to <strong>Ads Manager</strong> and click the green <em>+ Create</em> button.<br/>2. The first thing it asks for is the campaign <strong>objective</strong>.<br/>3. Expand <em>Campaign settings</em> and there you'll find the <strong>Buying type</strong> selector with two options: Auction (default) and Reservation.<br/>4. If you choose Reservation, you'll notice the objective list shrinks on its own to Awareness and Engagement, and it only lets you set a lifetime budget. That's how the platform itself teaches you which combinations are valid."
+        },
+        {
+          "type": "kvtable",
+          "h": "Auction vs Reservation",
+          "rows": [
+            [
+              "Objectives",
+              "Auction: all · Reservation: Awareness + Engagement"
+            ],
+            [
+              "Placements",
+              "Auction: all · Reservation: FB + IG only"
+            ],
+            [
+              "Budget",
+              "Auction: daily or lifetime · Reservation: lifetime only"
+            ],
+            [
+              "Pricing",
+              "Auction: fluctuates · Reservation: fixed CPM"
+            ],
+            [
+              "Frequency control",
+              "Auction: Frequency cap · Reservation: Target frequency + Cap"
+            ],
+            [
+              "When to choose",
+              "Auction: flexibility · Reservation: predictability (trade show/event/launch)"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "MENTAL RULE",
+          "body": "If the question says <em>fixed CPM, predictable delivery, trade show/event/launch</em> and the objective is Awareness or Engagement → <strong>Reservation</strong>. If it asks for flexibility, Sales/Leads, or many placements → <strong>Auction</strong>."
+        },
+        {
+          "type": "mcq",
+          "q": "A company wants to reserve reach to 50,000 industrial buyers at a trade show lasting 2 weeks, with a fixed CPM. Which combination works?",
+          "options": [
+            "Auction + Awareness + daily budget",
+            "Reservation + Sales + lifetime budget",
+            "Reservation + Awareness + lifetime budget",
+            "Auction + Engagement + Frequency cap"
+          ],
+          "correct": 2,
+          "explanation": "Reservation only allows Awareness or Engagement, requires a lifetime budget, and is ideal for events with a fixed duration. Sales does not support Reservation. Auction gives a variable CPM, not a fixed one.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "3.2",
+      "title": "Train your memory · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The buying type is decided at the ___ level and is the first selection.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Campaign</strong>. Buying type is the first decision; Ad set and Ad don't allow changing it."
+        },
+        {
+          "type": "fill",
+          "q": "Meta's default buying type, which supports all objectives, is ___.",
+          "options": [
+            "Auction",
+            "Reservation",
+            "Highest Volume",
+            "Bid Cap"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Auction</strong> is the default: all objectives, all placements, the 5 bid strategies. Variable pricing."
+        },
+        {
+          "type": "fill",
+          "q": "Reservation only allows the Awareness and ___ objectives.",
+          "options": [
+            "Engagement",
+            "Sales",
+            "Leads",
+            "Traffic"
+          ],
+          "correct": 0,
+          "explanation": "Reservation: only <strong>Awareness and Engagement</strong>. For all the others, Auction is the only option."
+        },
+        {
+          "type": "fill",
+          "q": "Reservation only allows a ___ budget (not daily).",
+          "options": [
+            "lifetime",
+            "daily",
+            "Advantage+",
+            "shared"
+          ],
+          "correct": 0,
+          "explanation": "Reservation requires a <strong>lifetime budget</strong>. Auction allows daily or lifetime."
+        },
+        {
+          "type": "mcq",
+          "q": "How many placements does Reservation support?",
+          "options": [
+            "All Meta placements",
+            "Facebook + Instagram only",
+            "Audience Network only",
+            "Facebook Feeds only"
+          ],
+          "correct": 1,
+          "explanation": "Reservation delivers only on <strong>Facebook + Instagram</strong>. Auction supports all placements."
+        },
+        {
+          "type": "mcq",
+          "q": "A Sales campaign to close apartment quotes — which buying type does it live in?",
+          "options": [
+            "Reservation, for the predictability",
+            "Auction: Sales only exists there",
+            "Either of the two",
+            "Reservation with a lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "Sales only exists in <strong>Auction</strong>. There's no decision to make: Reservation is automatically ruled out."
+        }
+      ]
+    },
+    {
+      "id": "3.3",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Solar+Power Mexico Trade Show",
+          "body": "<strong>Hotel Lumière</strong> is launching its <em>peak summer season</em> (2 weeks in Mexico City). It wants 50,000 key travelers to REMEMBER the brand before the period so they book in advance. It needs a PREDICTABLE CPM and delivery — no surprises. You have to build the right campaign."
+        },
+        {
+          "type": "mcq",
+          "q": "Which buying type and objective solve the case?",
+          "options": [
+            "Auction + Sales + daily budget",
+            "Reservation + Awareness + lifetime budget",
+            "Auction + Awareness + Frequency cap",
+            "Reservation + Leads + lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "Fixed CPM + predictable delivery + pre-event recall → <strong>Reservation</strong>. Reservation only allows Awareness/Engagement and requires a lifetime budget. Auction gives a variable CPM; Leads/Sales don't exist in Reservation.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Which frequency control makes sense to ensure recall during the 2 weeks?",
+          "options": [
+            "Frequency cap: a ceiling on impressions per person",
+            "Target frequency: weekly average (Reservation)",
+            "Raise the daily budget as high as possible",
+            "Set a deliberately low Bid Cap"
+          ],
+          "correct": 1,
+          "explanation": "Target frequency = the weekly average of impressions per person; ideal for pre-event recall (so each buyer sees the ad ~3 times/week). Only available in Reservation.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "If management later asks to CLOSE on-site sales during the show, what changes?",
+          "options": [
+            "Nothing: Reservation also closes sales",
+            "You have to switch to Auction and lose the fixed CPM",
+            "You only raise the campaign's lifetime budget",
+            "You change the objective directly to Engagement"
+          ],
+          "correct": 1,
+          "explanation": "Sales only exists in <strong>Auction</strong>. Switching to selling forces you to abandon Reservation and accept variable pricing. That's why you choose the buying type based on the real goal.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.4",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Which objectives is Reservation available for?",
+          "a": "Only Awareness and Engagement. For all the others, Auction is the only option."
+        },
+        {
+          "q": "Reservation: objectives and platforms",
+          "a": "Only the Awareness and Engagement objectives; delivery only on Facebook and Instagram (not across all Meta technologies). Fixed CPM, predictable delivery, sequencing, and scheduling."
+        },
+        {
+          "q": "Auction: how many bid strategies and which budgets",
+          "a": "5 bid strategies; supports daily, lifetime, and Advantage+ campaign budget (this last one does NOT exist in Reservation). Delivers across Meta technologies."
+        },
+        {
+          "q": "Does Reservation allow a Daily budget?",
+          "a": "NO. Reservation only allows a Lifetime budget."
+        },
+        {
+          "q": "What is Target frequency and where is it available?",
+          "a": "The weekly average of impressions per person. Only available in Reservation. Useful for ensuring recall before events."
+        },
+        {
+          "q": "Frequency cap vs Target frequency?",
+          "a": "Frequency cap = MAXIMUM (don't exceed X impressions). Target frequency = target AVERAGE (aim for X impressions). Auction only has the cap; Reservation has both."
+        }
+      ]
+    },
+    {
+      "id": "3.5",
+      "title": "Explained · How the auction is won",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "The total value formula",
+          "body": "Every time an auction runs, Meta doesn't give the space to the advertiser who offers the most money, but to the one with the highest <strong>total value</strong>. It's a score that combines three things:<br/><br/><strong>Total value = Advertiser bid × Estimated action rates + Ad quality</strong><br/><br/>In plain terms: what you offer to pay, multiplied by how likely the person is to react, plus how good your ad is. Meta's goal is to show ads that genuinely serve the user, not just those from whoever has the most money. That's why the highest bidder does NOT automatically win."
+        },
+        {
+          "type": "concept",
+          "h": "The 3 pieces, one by one",
+          "body": "<strong>1. Advertiser bid</strong>: how much you're willing to pay for the result. E.g., you bid $20 per click.<br/><strong>2. Estimated action rates</strong>: Meta's prediction of how likely it is that <em>this</em> person does what you want (click, buy, etc.). E.g., the system calculates you have an 8% probability of a sale.<br/><strong>3. Ad quality</strong>: how relevant, clear, and appealing your ad is for that audience, measured with signals like positive reactions or whether people hide it.<br/>Note: <strong>cost control</strong> (which you'll see in bid strategies) does NOT enter this formula."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Tienda Urbana",
+          "body": "<strong>Tienda Urbana</strong> (clothing) only bids $20, but its ad is a real video with modeled outfits that has a high click probability and very good quality. A larger competitor bids $35, but with a generic, boring banner of low relevance. Even though the competitor offers more money, Tienda Urbana can <em>win</em> the auction: its total value is higher because its ad engages people more. The takeaway: a good ad lets you compete against rivals with bigger budgets."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "Thinking the highest bid wins the auction. <strong>FALSE</strong>: the highest total value wins (bid × action rates + ad quality). An ad with a low bid and a high action probability can beat an ad with a high bid and a low probability."
+        },
+        {
+          "type": "mcq",
+          "q": "Which statement about Meta's auction is TRUE?",
+          "options": [
+            "The ad with the highest advertiser bid wins",
+            "The one with the best bid × action rate + quality wins",
+            "The ad with the largest daily budget wins",
+            "The ad that was published first wins"
+          ],
+          "correct": 1,
+          "explanation": "Total value = bid × estimated action rates + ad quality. The system rewards action probability and quality, not just the money offered.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.6",
+      "title": "Train your memory · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Total value = advertiser bid × estimated action rates + ___.",
+          "options": [
+            "ad quality",
+            "daily budget",
+            "cost control",
+            "frequency"
+          ],
+          "correct": 0,
+          "explanation": "Total value = bid × estimated action rates + <strong>ad quality</strong>. Cost control does NOT enter the formula."
+        },
+        {
+          "type": "mcq",
+          "q": "Which piece is NOT in the total value auction formula?",
+          "options": [
+            "Advertiser bid",
+            "Estimated action rates",
+            "Cost control",
+            "Ad quality"
+          ],
+          "correct": 2,
+          "explanation": "<strong>Cost control</strong> does NOT enter total value. The formula is bid × estimated action rates + ad quality."
+        },
+        {
+          "type": "mcq",
+          "q": "One ad bids $20 with a high action probability and good quality; another bids $35 with a generic banner. Who can win?",
+          "options": [
+            "Always the higher bidder ($35)",
+            "The $20 one if its total value is higher",
+            "They tie and split the impressions",
+            "Whoever published first in time"
+          ],
+          "correct": 1,
+          "explanation": "The highest <strong>total value</strong> wins. A low bid with a high action probability and good quality can beat a high bid with low relevance."
+        },
+        {
+          "type": "fill",
+          "q": "Estimated action rates = how ___ it is that the person takes the action.",
+          "options": [
+            "likely",
+            "expensive",
+            "fast",
+            "visible"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Estimated action rates</strong> measure the probability that the person performs the optimized action."
+        },
+        {
+          "type": "mcq",
+          "q": "Which best describes Ad quality within total value?",
+          "options": [
+            "The campaign's total budget",
+            "How relevant and good the ad is",
+            "The maximum bid allowed in the auction",
+            "The number of placements selected"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Ad quality</strong> = how relevant and good the ad is for that audience. It's one of the 3 pieces of total value."
+        }
+      ]
+    },
+    {
+      "id": "3.7",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "The competitor who bids more",
+          "body": "The owner of <strong>Tienda Urbana</strong> sees that a larger competitor bids much higher for the same audience and tells you: \"So they're always going to beat us in the auction, right? Let's raise the bid no matter the cost.\" You have to correct the reasoning."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you explain to the owner of Tienda Urbana?",
+          "options": [
+            "He's right: the highest bidder always wins",
+            "The highest total value wins, not the highest bid",
+            "You have to match the rival's exact bid",
+            "The daily budget decides the winner"
+          ],
+          "correct": 1,
+          "explanation": "The bid isn't everything: <strong>total value = bid × estimated action rates + ad quality</strong>. Improving relevance and action probability can win without blindly inflating the bid.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Which lever makes the most sense to work on first at Tienda Urbana without blowing up the budget?",
+          "options": [
+            "Raise the bid until it beats the competitor",
+            "Improve the ad's quality and relevance",
+            "Double the daily budget",
+            "Switch the campaign to Reservation mode"
+          ],
+          "correct": 1,
+          "explanation": "Raising <strong>estimated action rates</strong> and <strong>ad quality</strong> increases total value without paying more per bid. It's the most efficient lever against a competitor with more money.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.8",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "How is the winner of Meta's auction decided?",
+          "a": "Total value = bid × estimated action rates + ad quality. The highest bid alone does NOT win."
+        },
+        {
+          "q": "What is the Advertiser bid?",
+          "a": "What you bid in the auction. It's just one of the 3 pieces of total value."
+        },
+        {
+          "q": "What are Estimated action rates?",
+          "a": "How likely it is that the person takes the optimized action. They raise total value without paying more."
+        },
+        {
+          "q": "What is Ad quality?",
+          "a": "How relevant and good the ad is for that audience. The third piece of total value."
+        },
+        {
+          "q": "Does cost control enter total value?",
+          "a": "NO. Cost control is NOT part of the total value formula (bid × action rates + ad quality)."
+        }
+      ]
+    },
+    {
+      "id": "3.9",
+      "title": "Explained · The 5 bid strategies",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What a bid strategy is",
+          "body": "The <strong>bid strategy</strong> tells Meta <em>how</em> it should spend your budget in the auctions to meet your campaign's goal. It's like giving an instruction to the autopilot: \"spend everything and bring me as much as possible\" or \"don't charge me more than X per result.\" It only exists in the <strong>Auction</strong> buying type (in Reservation, bidding is automatic and you don't choose it). There are <strong>5</strong> strategies in total, grouped into 3 families by how they handle cost."
+        },
+        {
+          "type": "concept",
+          "h": "The 3 families of bid strategy",
+          "body": "<strong>1. Spend-based</strong>: they spend ALL the budget no matter what, seeking the best possible result with that money. This is where <strong>Highest Volume</strong> and <strong>Highest Value</strong> belong.<br/><strong>2. Goal-based</strong>: they respect a cost or return limit that you set; they may <em>not</em> spend the whole budget if they don't find results at that price. This is where <strong>Cost per Result Goal</strong> and <strong>ROAS Goal</strong> belong.<br/><strong>3. Manual</strong>: you manually control how much the system bids in each auction. This is where <strong>Bid Cap</strong> lives, recommended for experts only."
+        },
+        {
+          "type": "kvtable",
+          "h": "5 bid strategies",
+          "rows": [
+            [
+              "Highest Volume",
+              "Default. Spends everything and maximizes the number of results. No cost goal."
+            ],
+            [
+              "Highest Value",
+              "Spends everything and maximizes VALUE (not just quantity). Requires a Pixel with value."
+            ],
+            [
+              "Cost per Result Goal",
+              "Keeps the average CPA at the target. May stop spending if results get expensive."
+            ],
+            [
+              "ROAS Goal",
+              "Aims at a target ROAS (e.g. 4x). Requires a Pixel with value tracking."
+            ],
+            [
+              "Bid Cap",
+              "Controls the maximum BID in the auction (not the final CPA). For advanced users."
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Highest Volume and Highest Value — spend everything",
+          "body": "<strong>Highest Volume</strong> is the default strategy: it spends ALL the budget and seeks to bring you the greatest <em>number</em> of results possible, regardless of how much each one costs. If you sell t-shirts, it brings you the most sales even if some come out more expensive.<br/><strong>Highest Value</strong> also spends everything, but instead of quantity it prioritizes the results of the <em>highest monetary value</em>: it prefers to bring you the $5,000 purchase over the $200 one. To know how much each purchase is worth, it needs a <strong>Pixel with value tracking</strong> (the Pixel is Meta's code on your site that reports actions, and \"value tracking\" means each purchase also sends it the amount)."
+        },
+        {
+          "type": "concept",
+          "h": "Cost per Result Goal — controlled CPA",
+          "body": "<strong>Cost per Result Goal</strong> is goal-based: you set a target cost per result and the system tries to keep the <strong>average CPA</strong> (Cost Per Acquisition, that is, how much it costs on average to get a customer or lead) close to that figure. The big difference from spend-based strategies: if results start getting expensive, this strategy can <em>slow down spending</em> rather than break your cost goal. E.g.: <strong>Cafetería La Esquina</strong> sets a $50 goal per signup to its loyalty club; if it only finds signups at $90, the system prefers to spend less rather than overpay."
+        },
+        {
+          "type": "warn",
+          "label": "IMPORTANT NUANCE",
+          "body": "The Cost per Result Goal target is an <strong>average</strong> over the life of the campaign, not a strict cap. The system bids dynamically as high as necessary, so the average cost per result <strong>CAN exceed</strong> the amount you set."
+        },
+        {
+          "type": "concept",
+          "h": "ROAS Goal and Bid Cap — return and manual control",
+          "body": "<strong>ROAS Goal</strong> is goal-based by value. ROAS means <em>Return On Ad Spend</em>: for every peso you spend, how many pesos of revenue come back. A 4x ROAS means that for every $1 invested you seek $4 in sales. You set that goal and the system optimizes to reach it. Just like Highest Value, it needs a <strong>Pixel with value tracking</strong> because it must know the amount of each sale.<br/><strong>Bid Cap</strong> is manual: you manually set the <strong>maximum bid</strong> the system can offer in each auction. It gives you fine control but it's easy to choke delivery if you set it too low; that's why it's only for experienced advertisers."
+        },
+        {
+          "type": "warn",
+          "label": "CRITICAL TRAP",
+          "body": "<strong>Bid Cap does NOT control the CPA</strong>. It controls the maximum bid the system places in the auction. If the cap is too low, the ad may not deliver. To control the final cost use <strong>Cost per Result Goal</strong>."
+        },
+        {
+          "type": "tip",
+          "label": "CHOICE RULE",
+          "body": "<strong>Do you want to control costs?</strong><br/>→ NO: Highest Volume (default) or Highest Value (with value tracking).<br/>→ YES: Cost per Result Goal (CPA target) or ROAS Goal (return target). Bid Cap only if you have experience."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "The bid strategy is configured at the <strong>Campaign</strong> level, not the ad set.<br/>1. In <strong>Ads Manager</strong>, when creating or editing the campaign, find the <em>Campaign bid strategy</em> section.<br/>2. You'll see a dropdown menu with the options available for your objective. By default <strong>Highest Volume</strong> appears.<br/>3. If you choose Cost per Result Goal or ROAS Goal, the platform opens an extra field for you to type your target figure (the cost per result or the desired return).<br/>4. Bid Cap is usually hidden behind <em>Show more options</em>, because Meta doesn't recommend it for beginners."
+        },
+        {
+          "type": "mcq",
+          "q": "An e-commerce company has a Pixel with value tracking and wants to maintain a minimum 4x return. Which bid strategy?",
+          "options": [
+            "Highest Volume",
+            "Highest Value",
+            "ROAS Goal of 4x",
+            "Bid Cap"
+          ],
+          "correct": 2,
+          "explanation": "ROAS Goal defines the target return (4x means that for every $1 spent it wants $4 in revenue). Highest Value maximizes value with no goal. ROAS Goal respects the target.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.10",
+      "title": "Train your memory · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Meta's default bid strategy, which spends everything and maximizes quantity, is ___.",
+          "options": [
+            "Highest Volume",
+            "Highest Value",
+            "ROAS Goal",
+            "Bid Cap"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Highest Volume</strong> is the default spend-based strategy: spends everything, maximizes quantity, no cost goal."
+        },
+        {
+          "type": "fill",
+          "q": "To use Highest Value or ROAS Goal you need a Pixel with ___ tracking.",
+          "options": [
+            "value",
+            "click",
+            "reach",
+            "offline"
+          ],
+          "correct": 0,
+          "explanation": "Both optimize by purchase value, so they need a <strong>Pixel with value tracking</strong> to know how much each conversion is worth."
+        },
+        {
+          "type": "fill",
+          "q": "Bid Cap controls the maximum ___ in the auction, not the final CPA.",
+          "options": [
+            "bid",
+            "budget",
+            "CPA",
+            "ROAS"
+          ],
+          "correct": 0,
+          "explanation": "Bid Cap = a ceiling on the auction <strong>bid</strong>. To control the final CPA use Cost per Result Goal."
+        },
+        {
+          "type": "mcq",
+          "q": "To control the average CPA at a specific target, which bid strategy do you use?",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "Bid Cap",
+            "Highest Value"
+          ],
+          "correct": 1,
+          "explanation": "<strong>Cost per Result Goal</strong> keeps the average CPA near the target and may stop spending if results get expensive. Highest Volume spends everything with no goal; Bid Cap controls the bid, not the CPA."
+        },
+        {
+          "type": "mcq",
+          "q": "An advertiser wants to maximize the VOLUME of leads regardless of unit cost, spending the whole budget. Bid strategy?",
+          "options": [
+            "Cost per Result Goal with a target",
+            "Highest Volume with no cost goals",
+            "Bid Cap set at $400 per auction",
+            "ROAS Goal of 3x on spend"
+          ],
+          "correct": 1,
+          "explanation": "Highest Volume is the default that spends everything and maximizes quantity. Cost per Result Goal and Bid Cap control costs (they may not spend). ROAS Goal optimizes return with value.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "The Cost per Result Goal target is:",
+          "options": [
+            "A strict cap that is never exceeded",
+            "A campaign average that can be exceeded",
+            "The maximum bid allowed in the auction",
+            "Exactly the same value as ROAS Goal"
+          ],
+          "correct": 1,
+          "explanation": "It's an <strong>average</strong> over the life of the campaign, not a strict cap. The system bids dynamically, so the average cost per result can exceed the amount you set."
+        }
+      ]
+    },
+    {
+      "id": "3.11",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Lead at a controlled cost",
+          "body": "<strong>FitZone</strong> wants free-trial leads, but the unit cost CANNOT exceed $300 MXN per lead, otherwise the membership stops being profitable. History: the average CPA is between $250-350 MXN. You have to choose the right bid strategy."
+        },
+        {
+          "type": "mcq",
+          "q": "Which bid strategy solves the case?",
+          "options": [
+            "Highest Volume with no target",
+            "Cost per Result Goal with a $300 target",
+            "Bid Cap set at $300 per auction",
+            "Highest Value optimizing for value"
+          ],
+          "correct": 1,
+          "explanation": "Cost per Result Goal with a $300 target: the system seeks leads at that cost and slows down if it only finds expensive leads. Highest Volume spends everything with no goal; Bid Cap controls the bid, not the CPA.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Why Cost per Result Goal and NOT Bid Cap in this case?",
+          "options": [
+            "Because Bid Cap turns out more expensive",
+            "Bid Cap controls the bid, not the final CPA",
+            "Because Bid Cap doesn't support leads",
+            "Because in practice they're the same"
+          ],
+          "correct": 1,
+          "explanation": "Bid Cap puts a ceiling on the BID in the auction, but the final CPA depends on many other variables (action rates, ad quality). Cost per Result Goal directly respects the CPA target. For a cost goal: Cost per Result Goal.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "If management drops the $300 goal and asks for the most leads possible while spending the whole budget, which bid strategy do you apply?",
+          "options": [
+            "ROAS Goal",
+            "Cost per Result Goal",
+            "Highest Volume",
+            "Bid Cap"
+          ],
+          "correct": 2,
+          "explanation": "With no cost goal and optimizing for quantity → <strong>Highest Volume</strong> (spend-based default). ROAS Goal and Cost per Result Goal are goal-based; Bid Cap is manual control of the bid.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "3.12",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is the default bid strategy?",
+          "a": "Highest Volume: spends everything and maximizes the number of results with no cost goal."
+        },
+        {
+          "q": "Which bid strategy requires a Pixel with value tracking?",
+          "a": "Highest Value and ROAS Goal — both optimize by purchase value."
+        },
+        {
+          "q": "When to use Cost per Result Goal vs Bid Cap?",
+          "a": "Cost per Result Goal: you control the final average CPA. Bid Cap: you control the maximum auction bid (not the final CPA). For a cost goal use Cost per Result Goal."
+        },
+        {
+          "q": "Cost per Result Goal: can it exceed the goal?",
+          "a": "Yes. The amount is an average over the life of the campaign; it bids dynamically as high as necessary, so the average cost per result CAN exceed the amount you set."
+        },
+        {
+          "q": "Which bid strategy does NOT accept a cost goal?",
+          "a": "Highest Volume and Highest Value: spend-based, they spend everything with no goal. The goal-based ones (Cost per Result Goal, ROAS Goal) do respect a target."
+        },
+        {
+          "q": "When is Bid Cap a good option?",
+          "a": "Only for experienced advertisers who understand how to control the bid without affecting delivery. Not recommended for beginners."
+        }
+      ]
+    },
+    {
+      "id": "3.13",
+      "title": "Explained · Budgets and distribution",
+      "section": "b4",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What the budget is and why there are two types",
+          "body": "The <strong>budget</strong> is how much money you authorize Meta to spend on your campaign. You give that authorization in two different ways, and choosing well changes how the system distributes spend over time. The two options are <strong>daily budget</strong> and <strong>lifetime budget</strong> (the total budget for the period). The exam often asks which goes with which buying type and what flexibility each has, so it's worth understanding them thoroughly, not just memorizing the definition."
+        },
+        {
+          "type": "concept",
+          "h": "Daily budget — daily average",
+          "body": "The <strong>daily budget</strong> is an <em>average</em> spend per day, not a rigid cap. Meta can spend up to <strong>25% more</strong> on a day when it detects good conversion opportunities, and makes up for it by spending less on another day so the average works out. The idea is that the system takes advantage of the good days without you having to adjust anything manually. What matters is the average over time, not the exact amount on a single day. Example: <strong>Cafetería La Esquina</strong> sets $500 a day; on a high-demand Friday it spends $625 and the following Monday it spends $375 to balance out."
+        },
+        {
+          "type": "concept",
+          "h": "Lifetime budget — absolute cap",
+          "body": "The <strong>lifetime budget</strong> (total budget for the period) is an <strong>absolute cap</strong>: you tell Meta \"spend at most this amount between such and such date\" and it never goes over. Unlike the daily budget, here the system distributes the money day by day as it sees fit: it can spend more on the days that perform better and less on the slow ones, always within the total. It's <strong>mandatory in Reservation</strong> (the advance buy), because that format needs to know the locked amount for the period in advance. Example: <strong>Edu Premium</strong> sets $30,000 for a 10-day promo; the system decides how to distribute those $30,000 without ever going over."
+        },
+        {
+          "type": "kvtable",
+          "h": "Daily budget vs Lifetime budget",
+          "rows": [
+            [
+              "Daily budget",
+              "DAILY average spend. Can spend +25% one day and compensate on another. No strict day-to-day cap."
+            ],
+            [
+              "Lifetime budget",
+              "ABSOLUTE cap over the whole period. Variable day-to-day distribution. Mandatory in Reservation."
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Who decides the split between ad sets",
+          "body": "A campaign can have several <strong>ad sets</strong>, and each usually targets a different audience. The key question is: do you set each ad set's budget by hand, or do you let Meta split it on its own? From there come two options worth not confusing: <strong>Advantage+ Campaign Budget</strong> (a campaign-level budget that Meta manages) and <strong>Ad Set Budget Sharing</strong> (a per-ad-set budget that can be partially shared). The first gives control to Meta; the second leaves it to you with a bit of flexibility."
+        },
+        {
+          "type": "concept",
+          "h": "Advantage+ Campaign Budget",
+          "body": "The <strong>Advantage+ Campaign Budget</strong> (formerly called CBO) sets a single budget at the whole-campaign level and lets Meta distribute it <em>automatically</em> among the ad sets based on which is performing best at each moment. Instead of you guessing how much to give each audience, the system sends more money to the ad set that converts more cheaply and less to the one lagging. It requires a minimum of <strong>2 ad sets</strong> (it needs something to split between) and only exists in Auction. It's Meta's default recommendation. Example: <strong>Aceros del Bajío</strong> has 3 ad sets by region; after a few days, the system sends 60% of the spend to the northern ad set because quotes there come out cheaper."
+        },
+        {
+          "type": "concept",
+          "h": "Ad Set Budget Sharing",
+          "body": "<strong>Ad Set Budget Sharing</strong> is the alternative for those who want to keep manual control. Here you assign each ad set its own budget, but you let ad sets in the same campaign lend each other money: each one can give up or borrow up to <strong>20%</strong> of its daily budget as needed. That way you keep your base split but allow a margin of flexibility so you don't waste spend. Example: <strong>Aceros del Bajío</strong> wants to guarantee a minimum presence in each region (manual control), but lets an ad set having a good day borrow up to 20% extra from another that's running slow."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Advantage+ Campaign Budget wins in most cases: let Meta find the winning ad set automatically. Only use Ad Set Budget Sharing if you have specific reasons (compliance, manual budget by business line)."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "The budget type is chosen when creating or editing the campaign.<br/>1. In <strong>Ads Manager</strong>, within the campaign, find the <em>Campaign budget</em> section.<br/>2. Turn the <strong>Advantage+ Campaign Budget</strong> switch on or off: if you turn it on, you set a single amount for the whole campaign and Meta distributes it; if you turn it off, each ad set carries its own budget.<br/>3. When defining the amount, you choose between <strong>Daily budget</strong> and <strong>Lifetime budget</strong> in a selector. With lifetime you also get the option to set start and end dates.<br/>4. The <strong>Ad Set Budget Sharing</strong> control appears at the ad set level when the budget lives in the ad sets (Advantage+ off)."
+        },
+        {
+          "type": "mcq",
+          "q": "A campaign has 4 ad sets with different audiences. You want Meta to send more budget to the one that converts best. Which setting?",
+          "options": [
+            "Daily budget per ad set",
+            "Lifetime budget per ad set without Advantage+",
+            "Advantage+ Campaign Budget",
+            "Equal Bid Cap on all 4"
+          ],
+          "correct": 2,
+          "explanation": "Advantage+ Campaign Budget automatically redistributes to the winning ad set. The other options split statically with no dynamic reallocation.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "3.14",
+      "title": "Train your memory · Block 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The budget that is an absolute cap for the period and mandatory in Reservation is ___.",
+          "options": [
+            "Lifetime",
+            "Daily",
+            "Advantage+",
+            "Shared"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Lifetime budget</strong> = absolute cap for the period, variable distribution, mandatory in Reservation."
+        },
+        {
+          "type": "fill",
+          "q": "Advantage+ Campaign Budget requires a minimum of ___ ad sets.",
+          "options": [
+            "2",
+            "1",
+            "3",
+            "4"
+          ],
+          "correct": 0,
+          "explanation": "It needs <strong>≥2 ad sets</strong> to have something to dynamically reallocate the budget between."
+        },
+        {
+          "type": "fill",
+          "q": "Ad Set Budget Sharing allows sharing up to ___% of the daily budget between ad sets in the same campaign.",
+          "options": [
+            "20",
+            "5",
+            "10",
+            "50"
+          ],
+          "correct": 0,
+          "explanation": "Up to <strong>20%</strong> of the daily budget can be shared between ad sets in the same campaign."
+        },
+        {
+          "type": "mcq",
+          "q": "The daily budget can spend up to how much extra on one day and compensate on another:",
+          "options": [
+            "+10%",
+            "+25%",
+            "+50%",
+            "No limit"
+          ],
+          "correct": 1,
+          "explanation": "The daily budget can spend up to <strong>+25%</strong> on one day and compensate on another. What matters is the average, not the day-to-day cap."
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ Campaign Budget is available in:",
+          "options": [
+            "Reservation only",
+            "Auction only",
+            "Both buying types",
+            "Only with a lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Campaign Budget only exists in <strong>Auction</strong>. It is not available in Reservation."
+        }
+      ]
+    },
+    {
+      "id": "3.15",
+      "title": "Case to solve · Block 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Edu Premium launches Sales with 3 programs",
+          "body": "<strong>Edu Premium</strong> (online courses) launches a Sales campaign with 3 ad sets (marketing program, design program, business program). Total budget: $200,000 MXN per month. It wants Meta to dynamically allocate to the winning ad set without touching anything manually."
+        },
+        {
+          "type": "mcq",
+          "q": "Which budget setting solves the case?",
+          "options": [
+            "Manual budget per ad set",
+            "Advantage+ Campaign Budget",
+            "Lifetime budget per ad set without Advantage+",
+            "Equal Bid Cap on all 3"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Campaign Budget dynamically reallocates to the winning ad set (requires ≥2 ad sets, Auction only). E.g.: after 2 weeks the automotive ad set absorbs 60% because it converts 3x better.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "If instead of Advantage+ Campaign Budget Edu Premium had set a MANUAL budget per ad set, what would happen?",
+          "options": [
+            "The same: both options are equivalent",
+            "Each ad set would spend everything even if it converts poorly",
+            "It would give the campaign more total leads",
+            "It would shorten the learning phase"
+          ],
+          "correct": 1,
+          "explanation": "Without Advantage+ Campaign Budget, each ad set spends its share with no reallocation. The losing ad sets keep spending even though they convert poorly. Advantage+ reallocates to the winner.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "3.16",
+      "title": "Mini-flashcards · Block 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Daily budget vs Lifetime budget?",
+          "a": "Daily = a flexible daily average (it can exceed +25% on one day). Lifetime = an absolute cap during the period, with variable distribution."
+        },
+        {
+          "q": "What does Advantage+ Campaign Budget require?",
+          "a": "A minimum of 2 ad sets in the campaign. Auction only. It dynamically reallocates budget to the best-performing ad set."
+        },
+        {
+          "q": "What is the max that can be shared with Ad Set Budget Sharing?",
+          "a": "Up to 20% of the daily budget between ad sets in the same campaign."
+        },
+        {
+          "q": "If your Sales campaign has 4 ad sets with different audiences, which setting does Meta recommend?",
+          "a": "Advantage+ Campaign Budget to dynamically reallocate to the winning ad set."
+        },
+        {
+          "q": "When to use Ad Set Budget Sharing instead of Advantage+ Campaign Budget?",
+          "a": "Only with specific reasons (compliance, manual budget by business line). In most cases Advantage+ Campaign Budget wins."
+        }
+      ]
+    },
+    {
+      "id": "3.17",
+      "title": "Explained · Learning Phase and Learning Limited",
+      "section": "b5",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What the Learning Phase is",
+          "body": "The <strong>Learning Phase</strong> is the initial period in which Meta <em>experiments</em> with your ad set to discover who, when, and where it should show the ad. Think of it like hiring someone new: the first days they feel things out until they hit their stride. During this phase the system still doesn't have enough data, so the cost per result and performance <strong>fluctuate</strong> quite a bit — that's completely normal and doesn't mean something is wrong. The typical mistake is to panic and start changing things right during this period. Example: <strong>FitZone</strong> sees a cost per lead of $400 on the first day and panics, but it's just the system calibrating."
+        },
+        {
+          "type": "concept",
+          "h": "What an optimization event is",
+          "body": "An <strong>optimization event</strong> is the concrete action you asked Meta to pursue: a purchase, a lead, a signup, an app install. It's the \"goal\" the system uses to learn what works. Each time one occurs, Meta collects one more clue about what kind of person responds to your ad. That's why an event that happens many times (e.g. clicks or cheap signups) lets it learn fast, while a rare one (e.g. the purchase of an expensive product) makes learning slow. Example: for <strong>Cafetería La Esquina</strong> the optimization event is \"signup to the loyalty club,\" which happens several times a day and gives plenty of signal."
+        },
+        {
+          "type": "concept",
+          "h": "How you exit the Learning Phase",
+          "body": "The ad set exits the Learning Phase when it accumulates <strong>50 optimization events in a 7-day window</strong>, counted from when you activated it (or from the last significant change). It's a <em>volume</em> requirement, not a time one: the system needs those 50 data points to have enough signal and deliver stably. If the 7 days pass and the ad set doesn't gather the 50 events, it doesn't \"graduate\": it falls into a state called <strong>Learning Limited</strong>. That's why, when planning a campaign, it's worth ensuring the chosen event can occur at least those 50 times a week."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "The learning phase ends by <strong>volume</strong> (50 events), not by time. Rushing edits \"so it learns faster\" usually makes everything worse. Better: let it run 7 days without touching it, evaluate the results, then decide."
+        },
+        {
+          "type": "concept",
+          "h": "What Learning Limited is",
+          "body": "<strong>Learning Limited</strong> is the state an ad set falls into when it fails to reach 50 optimization events in 7 days. In plain terms: the system was left without enough signal to optimize well, so performance stays unstable and almost always more expensive than it could be. It's not a configuration error or a block, it's a <em>warning</em>: Meta is telling you that you didn't give it enough material to learn. The fix is almost never \"wait longer,\" but to unblock the root cause (more audience, more budget, a more frequent event). Example: <strong>AutoMax</strong>'s ad set to sell $900,000 trucks falls into Learning Limited because that type of purchase happens very few times a month."
+        },
+        {
+          "type": "kvtable",
+          "h": "Causes of Learning Limited",
+          "rows": [
+            [
+              "Small audience",
+              "Not enough people to find 50 conversions/week"
+            ],
+            [
+              "Low budget",
+              "No money to deliver to 50 conversions"
+            ],
+            [
+              "Restrictive bid",
+              "A low Bid Cap limits delivery; a too-ambitious Cost per Result Goal"
+            ],
+            [
+              "Overlap",
+              "Several ad sets compete for the same people"
+            ],
+            [
+              "Rare optimization event",
+              "If the event occurs few times (e.g. a high-ticket Purchase)"
+            ],
+            [
+              "Too many active ad sets",
+              "They dilute learning across many small ones"
+            ]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "WATCH OUT for \"significant edits\"",
+          "body": "Changing the bid strategy, optimization event, a large audience, or creative <strong>RESETS the learning phase</strong>. If you change something important in the middle of learning, you go back to zero and lose everything learned."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · AutoMax",
+          "body": "<strong>AutoMax</strong>'s ad set that optimizes for the purchase of expensive SUVs ends up in Learning Limited because that event occurs only a few times a month, far from 50 in 7 days. The owner's temptation is to change the bid strategy \"so it learns faster,\" but that is exactly the worst thing: any significant change <strong>resets</strong> learning to zero and starts the count of 50 events over. The correct solution attacks the real cause (that the event is very rare): <strong>broaden the audience</strong> so there are more potential buyers, or <strong>raise the budget</strong> to reach more people. Another option is to optimize for a more frequent, earlier-stage event, such as \"Add to cart\" instead of \"Purchase.\""
+        },
+        {
+          "type": "mcq",
+          "q": "How many optimization events does an ad set need to exit the Learning Phase, and how much time does it have?",
+          "options": [
+            "10 events in 3 days",
+            "25 events in 5 days",
+            "50 events in 7 days",
+            "100 events in 14 days"
+          ],
+          "correct": 2,
+          "explanation": "50 events in 7 days is the official threshold. If it doesn't reach it, it stays in Learning Limited.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "3.18",
+      "title": "Train your memory · Block 5",
+      "section": "b5",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "To exit the Learning Phase, an ad set needs 50 optimization events in ___ days.",
+          "options": [
+            "7",
+            "3",
+            "14",
+            "30"
+          ],
+          "correct": 0,
+          "explanation": "<strong>50 events in 7 days</strong> after activation or a significant edit. If it doesn't reach it → Learning Limited."
+        },
+        {
+          "type": "fill",
+          "q": "Changing the bid strategy in the middle of the learning phase ___ the learning.",
+          "options": [
+            "resets",
+            "speeds up",
+            "doesn't affect",
+            "doubles"
+          ],
+          "correct": 0,
+          "explanation": "It's a significant edit: it <strong>resets</strong> learning and the ad set starts accumulating events from 0 again."
+        },
+        {
+          "type": "mcq",
+          "q": "An ad set has had a high CPA cost for 3 days. Which action would you NOT recommend?",
+          "options": [
+            "Wait for the learning phase to finish",
+            "Review the audience and the set's budget",
+            "Change the bid strategy now to rush it",
+            "Check that there's no audience overlap"
+          ],
+          "correct": 2,
+          "explanation": "Changing the bid strategy RESETS the learning phase and you lose all the learning accumulated. Better to wait the 7 days or review the setup without touching the bid strategy.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Which of these can cause a Learning Limited status? Select 3.",
+          "options": [
+            "Audience too small",
+            "Budget too low to reach 50 events/week",
+            "Changing creative every 2 days",
+            "Too many active ad sets in the same campaign",
+            "Pixel and CAPI both installed"
+          ],
+          "correct": [
+            0,
+            1,
+            3
+          ],
+          "multi": true,
+          "explanation": "A small audience, low budget, and too many ad sets are classic causes. Changing creative restarts learning but is not a cause of Learning Limited per se. Pixel + CAPI is good practice, not a problem.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "The learning phase ends by:",
+          "options": [
+            "Time (7 days no matter what)",
+            "Volume (50 optimization events)",
+            "Budget exhausted",
+            "Number of placements"
+          ],
+          "correct": 1,
+          "explanation": "It ends by <strong>volume</strong> (50 events), not by time. Rushing edits to 'learn faster' usually makes everything worse."
+        }
+      ]
+    },
+    {
+      "id": "3.19",
+      "title": "Case to solve · Block 5",
+      "section": "b5",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Expensive ad set for high-ticket kits",
+          "body": "<strong>AutoMax</strong>'s ad set for the Purchase of premium SUVs ($900,000 MXN purchase) has had a high CPA for 5 days with a <strong>Learning Limited</strong> status. That purchase event occurs only a few times a month. The owner wants you to change the bid strategy \"so it learns faster.\""
+        },
+        {
+          "type": "mcq",
+          "q": "Why is this ad set Learning Limited?",
+          "options": [
+            "Because it has Pixel and CAPI well installed",
+            "Because the optimization event occurs very few times",
+            "Because the ad's creative is video",
+            "Because the campaign is in Auction mode"
+          ],
+          "correct": 1,
+          "explanation": "A very infrequent optimization event prevents reaching 50 events in 7 days → Learning Limited. Pixel + CAPI helps, doesn't hurt.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "What do you recommend to the owner instead of changing the bid strategy?",
+          "options": [
+            "Change the bid strategy immediately",
+            "Broaden the audience or raise the budget",
+            "Pause the campaign for a week",
+            "Lower the campaign's lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "Changing the bid strategy is a significant edit that <strong>resets</strong> learning. For Learning Limited due to a rare event: broaden the audience or raise the budget, without touching the bid strategy.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.20",
+      "title": "Mini-flashcards · Block 5",
+      "section": "b5",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "How much does an ad set need to exit the Learning Phase?",
+          "a": "50 optimization events in 7 days from activation (or the last significant edit)."
+        },
+        {
+          "q": "What happens if you change the bid strategy in the middle of the learning phase?",
+          "a": "It's a significant edit: it resets learning and the ad set starts accumulating events from 0 again."
+        },
+        {
+          "q": "List 3 common causes of Learning Limited.",
+          "a": "Small audience, low budget, too many active ad sets competing with each other (overlap), a restrictive bid, a very infrequent optimization event."
+        },
+        {
+          "q": "Learning phase: trigger, duration, and the learning-limited fix",
+          "a": "It starts when you create or significantly edit an ad/ad set; it lasts ~50 optimization events. Learning-limited: combine ad sets, broaden the audience, raise budget/bid, use less restrictive bid strategies, more frequent events."
+        },
+        {
+          "q": "Does the learning phase end by time or by volume?",
+          "a": "By volume: 50 optimization events. Rushing edits 'to learn faster' usually makes everything worse."
+        }
+      ]
+    },
+    {
+      "id": "3.21",
+      "title": "Guided walkthrough · build a client's bidding",
+      "section": "bz",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "GUIDED CASE",
+          "h": "Refaccionaria del Norte (B2B e-commerce)",
+          "body": "You sell industrial parts in a B2B Shopify store. You have a <strong>Pixel with value tracking</strong> (each purchase reports its amount), kits ranging from $5,000 to $90,000 MXN, and management demands that every peso invested return at least <strong>$4 in revenue</strong>. Let's solve it together, step by step."
+        },
+        {
+          "type": "concept",
+          "h": "Step 1 · Buying type",
+          "body": "The goal is to sell on the site (Sales objective). Sales only exists in <strong>Auction</strong> — Reservation is automatically ruled out. There's no decision to make here."
+        },
+        {
+          "type": "concept",
+          "h": "Step 2 · Is there a cost/return goal?",
+          "body": "Yes: management demands a minimum 4x return. That rules out the spend-based strategies (Highest Volume / Highest Value), which spend everything without respecting a goal. You need a <strong>goal-based</strong> bid strategy."
+        },
+        {
+          "type": "concept",
+          "h": "Step 3 · Do you optimize by value or by quantity?",
+          "body": "By <strong>value</strong>: the goal is return on revenue, not the number of orders. Goal-based + value → <strong>ROAS Goal 4x</strong>. You have a Pixel with value tracking, which is exactly the requirement for ROAS Goal."
+        },
+        {
+          "type": "concept",
+          "h": "Step 4 · Protect the Learning Phase",
+          "body": "ROAS Goal can take a while to gather 50 events if the ticket is high and rare. Don't change the bid strategy mid-campaign: that RESETS learning. If it ends up Learning Limited, first broaden the audience or raise the budget."
+        },
+        {
+          "type": "tip",
+          "label": "THE REASONING",
+          "body": "Notice the pattern: <em>buying type (set by the objective) → is there a cost goal? → value or quantity? → protect learning</em>. That order of questions solves almost any bidding case on the exam."
+        },
+        {
+          "type": "mcq",
+          "q": "Same case, but now management drops the 4x goal and only asks for the most orders possible while spending the whole budget. Which bid strategy do you apply?",
+          "options": [
+            "ROAS Goal 4x",
+            "Cost per Result Goal",
+            "Highest Volume",
+            "Bid Cap"
+          ],
+          "correct": 2,
+          "explanation": "With no cost goal and optimizing for quantity → <strong>Highest Volume</strong> (spend-based default). ROAS Goal and Cost per Result Goal are goal-based (they need a goal); Bid Cap is manual control of the bid."
+        }
+      ]
+    },
+    {
+      "id": "3.15-match",
+      "title": "Match bid strategy ↔ use case",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Match each bid strategy with the case where it's typically used.",
+      "pairs": [
+        [
+          "Highest Volume",
+          "Maximize the number of results with no cost goal"
+        ],
+        [
+          "Highest Value",
+          "Maximize purchase value (not just units)"
+        ],
+        [
+          "Cost per Result Goal",
+          "Keep the average CPA at a specific target"
+        ],
+        [
+          "ROAS Goal",
+          "Aim at a target return (e.g. 4x)"
+        ],
+        [
+          "Bid Cap",
+          "Expert advertiser who controls the bid in the auction"
+        ]
+      ],
+      "explanation": "Identifying the right bid strategy based on the business outcome is a frequent exam question. Remember: Bid Cap does NOT control the final CPA, only the bid in the auction."
+    },
+    {
+      "id": "3.22",
+      "title": "Official bid strategy choice tree",
+      "section": "bz",
+      "type": "decision-tree",
+      "instruction": "For each scenario, walk the tree answering Yes/No until you reach the correct bid strategy.",
+      "tree": {
+        "q": "Do you need Meta to respect a cost goal (a target CPA or target ROAS)?",
+        "branches": [
+          {
+            "label": "Yes",
+            "next": {
+              "q": "Do you optimize by purchase value (revenue), not just by the number of results?",
+              "branches": [
+                {
+                  "label": "Yes",
+                  "leaf": "ROAS Goal"
+                },
+                {
+                  "label": "No",
+                  "leaf": "Cost per Result Goal / Bid Cap"
+                }
+              ]
+            }
+          },
+          {
+            "label": "No",
+            "next": {
+              "q": "Do you optimize by purchase value (revenue), not just by the number of results?",
+              "branches": [
+                {
+                  "label": "Yes",
+                  "leaf": "Highest Value"
+                },
+                {
+                  "label": "No",
+                  "leaf": "Highest Volume"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "scenarios": [
+        {
+          "context": "A client demands a strict 4x ROAS and the campaign optimizes by the value of the catalog purchases.",
+          "expected": "ROAS Goal"
+        },
+        {
+          "context": "A new online store, still without a defined cost goal. It wants the most conversions possible while spending the whole budget.",
+          "expected": "Highest Volume"
+        },
+        {
+          "context": "Prospecting campaign: the client seeks to attract buyers who spend more (high ticket), without setting a cap on the acquisition cost.",
+          "expected": "Highest Value"
+        },
+        {
+          "context": "B2B lead generation with a maximum tolerable cost per lead of $40 MXN. It does not optimize by value, but by the number of leads.",
+          "expected": "Cost per Result Goal / Bid Cap"
+        }
+      ],
+      "explanation": "The official tree has 2 questions: (1) is there a cost goal? (2) do you optimize by value? · With goal + value → ROAS Goal · With goal + quantity → Cost per Result Goal/Bid Cap · No goal + value → Highest Value · No goal + quantity → Highest Volume."
+    },
+    {
+      "id": "3.23",
+      "title": "Applied B2B cases",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE 1 · Advantage+ with 3 ad sets",
+          "h": "Edu Premium launches Sales with 3 programs",
+          "body": "<strong>Edu Premium</strong> (online courses) launches a Sales campaign with 3 ad sets (marketing, design, business programs). Total budget: $200,000 MXN per month. It wants Meta to dynamically allocate to the winning ad set without touching anything.<br/><br/><strong>Solution:</strong> Advantage+ Campaign Budget enabled. After 2 weeks: the marketing ad set absorbs 60% of the budget because its prospects convert 3x better than the business one."
+        },
+        {
+          "type": "mcq",
+          "q": "If instead of Advantage+ Campaign Budget Edu Premium had set a MANUAL budget per ad set, what would happen?",
+          "options": [
+            "The same: both options are equivalent",
+            "Each ad set would spend everything even if it converts poorly",
+            "It would give the campaign more total leads",
+            "It would shorten the learning phase"
+          ],
+          "correct": 1,
+          "explanation": "Without Advantage+ Campaign Budget, each ad set spends its share with no reallocation. The losing ad sets keep spending even though they convert poorly. Advantage+ reallocates to the winner.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "scenario",
+          "label": "CASE 2 · Cost per Result Goal",
+          "h": "Lead at a controlled cost",
+          "body": "<strong>FitZone</strong> wants free-trial leads, but the unit cost CANNOT exceed $300 MXN per lead, otherwise the membership stops being profitable. History: the average CPA is between $250-350 MXN.<br/><br/><strong>Solution:</strong> Cost per Result Goal bid strategy with a $300 target. If the system doesn't find leads at that cost, it does NOT spend. It accepts losing volume to preserve the CPA."
+        },
+        {
+          "type": "mcq",
+          "q": "Why Cost per Result Goal and NOT Bid Cap in this case?",
+          "options": [
+            "Because Bid Cap turns out more expensive",
+            "Bid Cap controls the bid, not the final CPA",
+            "Because Bid Cap doesn't support leads",
+            "Because in practice they're the same"
+          ],
+          "correct": 1,
+          "explanation": "Bid Cap puts a ceiling on the BID in the auction, but the final CPA depends on many other variables (action rates, ad quality). Cost per Result Goal directly respects the CPA target. For a cost goal: Cost per Result Goal.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "scenario",
+          "label": "CASE 3 · Reservation for the Solar+Power Trade Show",
+          "h": "Recall before a physical event",
+          "body": "<strong>Hotel Lumière</strong> is launching its <em>peak summer season</em> (2 weeks in Mexico City). It wants 50,000 key travelers to REMEMBER the brand before the period so they book in advance. It needs a PREDICTABLE CPM and delivery — no surprises.<br/><br/><strong>Solution:</strong> Reservation + Awareness + Target frequency 3/week + a $150,000 MXN Lifetime budget. CPM locked, delivery guaranteed during the 14 days."
+        },
+        {
+          "type": "mcq",
+          "q": "What is Target frequency and why does it make sense here?",
+          "options": [
+            "It's the frequency cap: a ceiling per person",
+            "It's the weekly average of impressions",
+            "It's the ad's total duration",
+            "It's the cost per each impression served"
+          ],
+          "correct": 1,
+          "explanation": "Target frequency = the weekly average of impressions. Ideal for pre-event recall: you want each buyer to see the ad ~3 times/week to lock in the brand. Only available in Reservation.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.24",
+      "title": "Complete the Day 3 sentences",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Meta's default buying type, with all objectives and placements, is ___.",
+          "options": [
+            "Auction",
+            "Reservation",
+            "Highest Volume",
+            "Bid Cap"
+          ],
+          "correct": 0,
+          "explanation": "<strong>Auction</strong>: all objectives, all placements, the 5 bid strategies, variable pricing."
+        },
+        {
+          "type": "fill",
+          "q": "Total value = advertiser bid × estimated action rates + ___.",
+          "options": [
+            "ad quality",
+            "daily budget",
+            "cost control",
+            "frequency"
+          ],
+          "correct": 0,
+          "explanation": "Total value = bid × estimated action rates + <strong>ad quality</strong>. Cost control does NOT enter the formula."
+        },
+        {
+          "type": "fill",
+          "q": "To exit the Learning Phase, an ad set needs 50 optimization events in ___ days.",
+          "options": [
+            "7",
+            "3",
+            "14",
+            "30"
+          ],
+          "correct": 0,
+          "explanation": "<strong>50 events in 7 days</strong> after activation or a significant edit. If it doesn't reach it → Learning Limited."
+        },
+        {
+          "type": "fill",
+          "q": "Bid Cap controls the maximum ___ in the auction, not the final CPA.",
+          "options": [
+            "bid",
+            "budget",
+            "CPA",
+            "ROAS"
+          ],
+          "correct": 0,
+          "explanation": "Bid Cap = a ceiling on the auction <strong>bid</strong>. To control the final CPA use Cost per Result Goal."
+        },
+        {
+          "type": "fill",
+          "q": "Ad Set Budget Sharing allows sharing up to ___% of the daily budget between ad sets in the same campaign.",
+          "options": [
+            "20",
+            "5",
+            "10",
+            "50"
+          ],
+          "correct": 0,
+          "explanation": "Up to <strong>20%</strong> of the daily budget can be shared between ad sets in the same campaign."
+        },
+        {
+          "type": "fill",
+          "q": "Changing the bid strategy in the middle of the learning phase ___ the learning.",
+          "options": [
+            "resets",
+            "speeds up",
+            "doesn't affect",
+            "doubles"
+          ],
+          "correct": 0,
+          "explanation": "It's a significant edit: it <strong>resets</strong> learning and the ad set starts accumulating events from 0 again."
+        },
+        {
+          "type": "fill",
+          "q": "ROAS Goal and Highest Value require a Pixel with ___ tracking.",
+          "options": [
+            "value",
+            "click",
+            "reach",
+            "frequency"
+          ],
+          "correct": 0,
+          "explanation": "Both optimize by purchase value → they need <strong>value tracking</strong> to know how much each conversion is worth."
+        }
+      ]
+    },
+    {
+      "id": "3.25",
+      "title": "Drill — 10 bidding MCQs",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Reservation requires which type of budget:",
+          "options": [
+            "Daily",
+            "Lifetime",
+            "Either",
+            "None"
+          ],
+          "correct": 1,
+          "explanation": "Reservation only allows a lifetime budget.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Meta's default bid strategy is:",
+          "options": [
+            "Bid Cap",
+            "Highest Volume",
+            "ROAS Goal",
+            "Cost per Result Goal"
+          ],
+          "correct": 1,
+          "explanation": "Highest Volume is the default: spends everything and maximizes quantity.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "To use Highest Value or ROAS Goal you need:",
+          "options": [
+            "Only a Pixel without parameters",
+            "A Pixel with value tracking",
+            "A customer list",
+            "A catalog"
+          ],
+          "correct": 1,
+          "explanation": "These strategies need to know the value of each conversion to optimize.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Changing the bid strategy in the middle of the learning phase:",
+          "options": [
+            "Speeds up exit from the learning phase",
+            "Resets learning and you start from zero",
+            "Has no effect on the campaign",
+            "Only affects the budget, not learning"
+          ],
+          "correct": 1,
+          "explanation": "It's a significant edit. It resets learning. You have to accumulate 50 events again.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ Campaign Budget requires:",
+          "options": [
+            "A single ad set",
+            "A minimum of 2 ad sets in the campaign",
+            "A mandatory lifetime budget",
+            "A Pixel with value"
+          ],
+          "correct": 1,
+          "explanation": "It needs ≥2 ad sets to have something to choose between when reallocating the budget.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Which is NOT a cause of Learning Limited:",
+          "options": [
+            "The audience is too small",
+            "The ad set's budget is too low",
+            "The Pixel and CAPI are installed",
+            "There are too many small ad sets"
+          ],
+          "correct": 2,
+          "explanation": "Having Pixel + CAPI IMPROVES optimization. The other 3 are real causes of Learning Limited.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Bid Cap controls:",
+          "options": [
+            "The final CPA of each conversion",
+            "The maximum bid in the auction, not the CPA",
+            "The ad set's daily budget",
+            "The campaign's lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "Bid Cap = a ceiling on the auction bid. It does NOT control the final CPA. For a CPA target use Cost per Result Goal.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Who wins Meta's auction:",
+          "options": [
+            "Whoever pays the highest bid",
+            "The one with the highest bid × action rate + ad quality",
+            "The ad that was published first",
+            "The one with the largest assigned daily budget"
+          ],
+          "correct": 1,
+          "explanation": "Total value = bid × estimated action rates + ad quality.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Reservation is available for which objectives:",
+          "options": [
+            "For all objectives",
+            "Awareness only",
+            "Awareness and Engagement",
+            "Sales and Leads only"
+          ],
+          "correct": 2,
+          "explanation": "Only Awareness and Engagement support Reservation.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Ad Set Budget Sharing allows sharing up to what % between ad sets:",
+          "options": [
+            "5%",
+            "10%",
+            "20%",
+            "50%"
+          ],
+          "correct": 2,
+          "explanation": "Up to 20% of the daily budget can be shared between ad sets in the same campaign.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "3.26",
+      "title": "Lightning — 8 quick questions",
+      "section": "bz",
+      "type": "lightning",
+      "instruction": "8 quick questions on buying types and bidding. You have 3 minutes.",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Default bid strategy:",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "Bid Cap",
+            "ROAS Goal"
+          ],
+          "correct": 0,
+          "explanation": "Highest Volume is the default.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Reservation does NOT allow:",
+          "options": [
+            "Awareness",
+            "Engagement",
+            "Sales",
+            "Lifetime budget"
+          ],
+          "correct": 2,
+          "explanation": "Sales does not support Reservation.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Exiting the Learning Phase requires:",
+          "options": [
+            "10 events in 3 days",
+            "25 events in 5 days",
+            "50 events in 7 days",
+            "100 events in 14 days"
+          ],
+          "correct": 2,
+          "explanation": "50 events in 7 days.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Winning the auction depends on:",
+          "options": [
+            "The bid only",
+            "Bid × action rates + ad quality",
+            "Monthly budget",
+            "Time active"
+          ],
+          "correct": 1,
+          "explanation": "The combined total value.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "To control CPA at a specific target:",
+          "options": [
+            "Highest Volume",
+            "Cost per Result Goal",
+            "Bid Cap",
+            "Highest Value"
+          ],
+          "correct": 1,
+          "explanation": "Cost per Result Goal respects the target.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Bid Cap controls:",
+          "options": [
+            "Final CPA",
+            "The bid in the auction",
+            "Daily budget",
+            "ROAS"
+          ],
+          "correct": 1,
+          "explanation": "Only the bid in the auction.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "Advantage+ Campaign Budget requires:",
+          "options": [
+            "1 ad set",
+            "≥2 ad sets",
+            "3+ ad sets",
+            "Lifetime budget"
+          ],
+          "correct": 1,
+          "explanation": "A minimum of 2 ad sets.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Changing the bid strategy mid-learning:",
+          "options": [
+            "Speeds up optimization",
+            "Resets the learning phase",
+            "Has no effect",
+            "Reduces CPA"
+          ],
+          "correct": 1,
+          "explanation": "A significant edit = a reset of learning.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "3.flash",
+      "title": "Day 3 Flashcards",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Which objectives is Reservation available for?",
+          "a": "Only Awareness and Engagement. For all the others, Auction is the only option."
+        },
+        {
+          "q": "How is the winner of Meta's auction decided?",
+          "a": "Total value = bid × estimated action rates + ad quality. The highest bid alone does NOT win."
+        },
+        {
+          "q": "What is the default bid strategy?",
+          "a": "Highest Volume: spends everything and maximizes the number of results with no cost goal."
+        },
+        {
+          "q": "When to use Cost per Result Goal vs Bid Cap?",
+          "a": "Cost per Result Goal: you control the final average CPA. Bid Cap: you control the maximum auction bid (not the final CPA). For a cost goal use Cost per Result Goal."
+        },
+        {
+          "q": "Which bid strategy requires a Pixel with value tracking?",
+          "a": "Highest Value and ROAS Goal — both optimize by purchase value."
+        },
+        {
+          "q": "How much does an ad set need to exit the Learning Phase?",
+          "a": "50 optimization events in 7 days from activation (or the last significant edit)."
+        },
+        {
+          "q": "What happens if you change the bid strategy in the middle of the learning phase?",
+          "a": "It's a significant edit: it resets learning and the ad set starts accumulating events from 0 again."
+        },
+        {
+          "q": "List 3 common causes of Learning Limited.",
+          "a": "Small audience, low budget, too many active ad sets competing with each other (overlap), a restrictive bid, a very infrequent optimization event."
+        },
+        {
+          "q": "What does Advantage+ Campaign Budget require?",
+          "a": "A minimum of 2 ad sets in the campaign. It dynamically reallocates budget to the best-performing ad set."
+        },
+        {
+          "q": "Daily budget vs Lifetime budget?",
+          "a": "Daily = a flexible daily average (it can exceed +25% on one day). Lifetime = an absolute cap during the period, with variable distribution."
+        },
+        {
+          "q": "What is the max that can be shared with Ad Set Budget Sharing?",
+          "a": "Up to 20% of the daily budget between ad sets in the same campaign."
+        },
+        {
+          "q": "Does Reservation allow a Daily budget?",
+          "a": "NO. Reservation only allows a Lifetime budget."
+        },
+        {
+          "q": "What is Target frequency and where is it available?",
+          "a": "The weekly average of impressions per person. Only available in Reservation. Useful for ensuring recall before events."
+        },
+        {
+          "q": "Frequency cap vs Target frequency?",
+          "a": "Frequency cap = MAXIMUM (don't exceed X impressions). Target frequency = target AVERAGE (aim for X impressions). Auction only has the cap; Reservation has both."
+        },
+        {
+          "q": "How many placements does Reservation support?",
+          "a": "Only Facebook + Instagram (not Audience Network, not Threads)."
+        },
+        {
+          "q": "How many placements does Auction support?",
+          "a": "All Meta placements: FB Feeds, IG Feed/Stories/Reels, Messenger Stories, Audience Network, Threads."
+        },
+        {
+          "q": "When is Bid Cap a good option?",
+          "a": "Only for experienced advertisers who understand how to control the bid without affecting delivery. Not recommended for beginners."
+        },
+        {
+          "q": "What is ad pacing?",
+          "a": "How Meta distributes spend and entries into the auction over time. Budget pacing (even spend) + bid pacing (which auctions to enter)."
+        },
+        {
+          "q": "Which bid strategy does NOT accept a cost goal?",
+          "a": "Highest Volume and Highest Value: spend-based, they spend everything with no goal. The goal-based ones (Cost per Result Goal, ROAS Goal) do respect a target."
+        },
+        {
+          "q": "If your Sales campaign has 4 ad sets with different audiences, which setting does Meta recommend?",
+          "a": "Advantage+ Campaign Budget to dynamically reallocate to the winning ad set."
+        },
+        {
+          "q": "Reservation: objectives and platforms",
+          "a": "Only the Awareness and Engagement objectives; delivery only on Facebook and Instagram (not across all Meta technologies). Fixed CPM, predictable delivery, sequencing, and scheduling."
+        },
+        {
+          "q": "Auction: how many bid strategies and which budgets",
+          "a": "5 bid strategies; supports daily, lifetime, and Advantage+ campaign budget (this last one does NOT exist in Reservation). Delivers across Meta technologies."
+        },
+        {
+          "q": "Cost per result goal: can it exceed the goal?",
+          "a": "Yes. The amount is an average over the life of the campaign; it bids dynamically as high as necessary, so the average cost per result CAN exceed the amount you set."
+        },
+        {
+          "q": "Learning phase: trigger, duration, and the learning-limited fix",
+          "a": "It starts when you create or significantly edit an ad/ad set; it lasts ~50 optimization events. Learning-limited: combine ad sets, broaden the audience, raise budget/bid, use less restrictive bid strategies, more frequent events."
+        },
+        {
+          "q": "Target frequency vs frequency cap (Reservation)",
+          "a": "Target frequency = achieve an average of weekly impressions. Frequency cap = limit the maximum number of times it's shown to the same audience."
+        }
+      ]
+    }
+  ]
+}

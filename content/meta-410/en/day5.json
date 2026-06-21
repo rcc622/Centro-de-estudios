@@ -1,0 +1,1833 @@
+{
+  "id": "day5",
+  "title": "Day 5 — Audiences & Catalogs",
+  "sections": {
+    "b0": {
+      "ico": "🧠",
+      "title": "Review",
+      "sub": "Prior concepts before we start"
+    },
+    "b1": {
+      "ico": "🎯",
+      "title": "Block 1",
+      "sub": "Detailed Targeting · Controls vs Suggestions"
+    },
+    "b2": {
+      "ico": "🔁",
+      "title": "Block 2",
+      "sub": "Custom Audiences"
+    },
+    "b3": {
+      "ico": "👯",
+      "title": "Block 3",
+      "sub": "Lookalike Audiences"
+    },
+    "b4": {
+      "ico": "🤖",
+      "title": "Block 4",
+      "sub": "Advantage+ Audience"
+    },
+    "b5": {
+      "ico": "🛒",
+      "title": "Block 5",
+      "sub": "Catalogs & Audience Overlap"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Final review",
+      "sub": "Consolidation before the exam"
+    }
+  },
+  "lessons": [
+    {
+      "id": "5.0",
+      "title": "Spaced review · Day 4",
+      "section": "b0",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Recall it before moving on",
+          "body": "Before we bring in new audience concepts, let's recall Day 4 (signals and data). Pulling something from memory with effort —without re-reading it— is what really cements it. If it's hard, perfect: that effort is what learns."
+        },
+        {
+          "type": "fill",
+          "q": "Pixel and CAPI do not replace each other: they are ___.",
+          "options": [
+            "complementary",
+            "interchangeable",
+            "identical",
+            "optional"
+          ],
+          "correct": 0,
+          "explanation": "Pixel covers the browser, CAPI covers server-side. Together = maximum coverage (~95%)."
+        },
+        {
+          "type": "fill",
+          "q": "The dataset (Pixel + CAPI + SDK + offline) is connected at the ___ level.",
+          "options": [
+            "Campaign",
+            "Ad set",
+            "Ad",
+            "Account"
+          ],
+          "correct": 1,
+          "explanation": "The dataset is connected at the ad set level, along with conversion location and conversion event."
+        },
+        {
+          "type": "mcq",
+          "q": "Why does CAPI become more important after iOS 14+ App Tracking Transparency?",
+          "options": [
+            "Because ATT blocks CAPI on Android",
+            "ATT limits the Pixel on iOS; CAPI is server-side",
+            "Because ATT legally requires using CAPI",
+            "Because CAPI is cheaper than the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "ATT asks for explicit consent on iOS. Without it, the Pixel is limited. CAPI is server-to-server (independent of the browser) and maintains coverage."
+        },
+        {
+          "type": "fill",
+          "q": "A Custom Conversion = a ___ over an existing event; a Custom Event = a new event that requires code.",
+          "options": [
+            "rule",
+            "label",
+            "campaign",
+            "audience"
+          ],
+          "correct": 0,
+          "explanation": "A Custom Conversion does not touch code (a rule over a URL/value). A Custom Event does require modifying the Pixel/CAPI/SDK."
+        },
+        {
+          "type": "mcq",
+          "q": "AutoMax closes sales in person at the dealership. Which event does it record and through which channel?",
+          "options": [
+            "ViewContent sent via the web Pixel",
+            "Purchase with value, via Offline CAPI",
+            "A Custom Event configured without value",
+            "An AEM event prioritized on the domain"
+          ],
+          "correct": 1,
+          "explanation": "Purchase is the canonical standard event for a completed transaction, including offline. It is uploaded via Offline CAPI to attribute the close to the ads the customer saw beforehand."
+        }
+      ]
+    },
+    {
+      "id": "5.1",
+      "title": "Learn · Detailed Targeting and Controls vs Suggestions",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What detailed targeting is",
+          "body": "<strong>Detailed targeting</strong> is the section in Meta where you describe who you want to reach using data the platform already has about its users. Instead of choosing people one by one, you define a <em>profile</em> and Meta delivers to whoever fits. It's the classic way to tell the system \"this is my ideal customer.\" Don't confuse this with saved audiences or lists of your own: here you work with the categories Meta offers from its own universe of users."
+        },
+        {
+          "type": "concept",
+          "h": "The three types of filter, one by one",
+          "body": "Detailed targeting is built from three types of filter:<br/><br/><strong>1. Demographics</strong>: fixed traits of the person, such as age, education level or job type.<br/><br/><strong>2. Interests</strong>: topics they like based on what they follow, share or consume (business, entertainment, family, sports).<br/><br/><strong>3. Behaviors</strong>: detected actions or habits, such as the device they use or purchase <em>intent</em> signals. Example: <strong>La Esquina Café</strong> combines Demographics \"25-40 years old\" + Interests \"specialty coffee\" + Behaviors \"frequent buyers on food apps.\""
+        },
+        {
+          "type": "concept",
+          "h": "How the selections combine (OR and AND)",
+          "body": "Here is the trap almost no one understands. Within <em>the same category</em>, the options add up with <strong>OR</strong> logic: it's enough for the person to meet any of them. But <em>across different categories</em>, the options cross with <strong>AND</strong> logic: the person has to meet all of them at once. Because AND demands meeting more conditions at the same time, each new category <em>shrinks</em> the audience instead of growing it. Many people believe that adding filters \"adds people,\" and it's exactly the opposite."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · DentalCare",
+          "body": "For DentalCare you pick Interests = \"cosmetic dentistry\" OR \"teeth whitening\" (OR, adds profiles), and separately Behaviors = \"premium buyers.\" The AND between the two leaves only those who meet both: a premium buyer <em>and</em> with an interest in aesthetics. Adding 5 more filters does not expand it: it narrows it."
+        },
+        {
+          "type": "warn",
+          "label": "TRAP",
+          "body": "Over-segmenting (stacking many AND categories) reduces delivery and usually <strong>raises CPA</strong>. The exam presents \"adding more interests\" as if it expanded the audience: it does the opposite."
+        },
+        {
+          "type": "concept",
+          "h": "Two ways to talk to the system",
+          "body": "When you define an audience, not all of your decisions carry the same weight with the algorithm. Some put a <strong>hard limit</strong> on the system (a wall it cannot cross) and others just give it a <strong>hint</strong> (a suggestion it can follow or expand). Meta calls the former <strong>audience controls</strong> and the latter <strong>audience suggestions</strong>. Telling them apart is key: one truly restricts, the other only guides. Confusing them makes you think you're limiting something when the system can actually ignore it, or vice versa."
+        },
+        {
+          "type": "kvtable",
+          "h": "Audience controls vs Audience suggestions",
+          "rows": [
+            [
+              "Controls",
+              "RESTRICT delivery. Rigid. E.g.: location, language, minimum age 18-25, Custom Audience exclusions."
+            ],
+            [
+              "Suggestions",
+              "GUIDE the optimization. Flexible — AI can expand. E.g.: age 18-65+, gender, detailed targeting, Custom Audience inclusions, Lookalike."
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Controls</strong> are rigid: the system does NOT step outside them. <strong>Suggestions</strong> are a starting point that <strong>Advantage+ Audience</strong> can expand if it finds similar people outside your parameters."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Hotel Lumière",
+          "body": "<strong>Hotel Lumière</strong> in Mérida runs a campaign to fill rooms in the low season. It sets as a <em>control</em> \"Yucatán and Quintana Roo only\": the system will never deliver the ad outside that zone, no matter what. And it sets as a <em>suggestion</em> a profile of \"weekend travelers interested in dining\": that only guides, and the algorithm can expand it if it finds similar people who also convert. The control marks the fence; the suggestion marks the direction. If the hotel had set the location as a simple interest, the system could have sent it customers from another state."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "To build detailed targeting you follow this path in Ads Manager:<br/><br/><strong>1.</strong> You go into an <em>ad set</em> and scroll down to the <strong>Audience</strong> section.<br/><strong>2.</strong> In <strong>Detailed targeting</strong> you type interests, behaviors or demographics and pick them from the list Meta suggests.<br/><strong>3.</strong> The <strong>Locations</strong> field and the minimum age stay at the top: those act as rigid <em>controls</em>.<br/><strong>4.</strong> On the right you'll see the <strong>Audience definition</strong> meter move between \"Specific\" and \"Broad\" as you add filters: use it to avoid over-segmenting."
+        },
+        {
+          "type": "mcq",
+          "q": "Which of these is an audience CONTROL (rigid)?",
+          "options": [
+            "Detailed targeting (interests)",
+            "Custom Audience inclusion",
+            "Location restriction (Mexico City only)",
+            "Lookalike Audience"
+          ],
+          "correct": 2,
+          "explanation": "Location is a rigid control: the system does NOT deliver outside it. Detailed targeting, Custom Audience inclusion and Lookalike are SUGGESTIONS (flexible, AI can expand).",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Exercise your memory · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Within the same detailed targeting category, the options combine with ___.",
+          "options": [
+            "OR",
+            "AND",
+            "NOT",
+            "XOR"
+          ],
+          "correct": 0,
+          "explanation": "OR within each category (adds profiles). AND between base categories (intersects and narrows)."
+        },
+        {
+          "type": "fill",
+          "q": "Across base detailed targeting categories, the selections combine with ___.",
+          "options": [
+            "AND",
+            "OR",
+            "NOT",
+            "XOR"
+          ],
+          "correct": 0,
+          "explanation": "AND between base categories: both must be met, which is why adding more categories narrows the audience."
+        },
+        {
+          "type": "mcq",
+          "q": "Detailed targeting includes three types of filter. Which?",
+          "options": [
+            "Demographics, Interests, Behaviors",
+            "Pixel, CAPI, SDK",
+            "Awareness, Traffic, Sales",
+            "Campaign, Ad set, Ad"
+          ],
+          "correct": 0,
+          "explanation": "Detailed targeting = Demographics (age, education, job) + Interests (business, entertainment, family) + Behaviors (device, purchase intent).",
+          "difficulty": "easy"
+        },
+        {
+          "type": "fill",
+          "q": "Adding more AND categories to detailed targeting makes the audience more ___.",
+          "options": [
+            "narrow",
+            "broad",
+            "cheap",
+            "stable"
+          ],
+          "correct": 0,
+          "explanation": "More AND categories = a narrower audience. Over-segmenting reduces delivery and raises CPA."
+        },
+        {
+          "type": "mcq",
+          "q": "Audience CONTROLS:",
+          "options": [
+            "Suggest to the system where to look for people",
+            "RESTRICT delivery (rigid): location, age",
+            "Are exactly the same as suggestions",
+            "Are only available in Reservation mode"
+          ],
+          "correct": 1,
+          "explanation": "Controls are rigid: the system does NOT step outside them. Suggestions are flexible.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Audience SUGGESTIONS:",
+          "options": [
+            "Restrict delivery rigidly",
+            "Guide the AI, which can expand beyond them",
+            "Are a synonym for the location restriction",
+            "Only apply in Reservation mode"
+          ],
+          "correct": 1,
+          "explanation": "Suggestions are flexible (detailed targeting, max age, gender, Lookalike, inclusions). Advantage+ Audience can expand on them.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.3",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "The SMB client wants \"more reach\"",
+          "body": "The owner of an auto parts store in Monterrey tells you: \"Add 6 more interests and a behavior, that way it reaches more people.\" You have to correct the misunderstanding and make clear how detailed targeting combines."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you explain about stacking 6 more interests and a behavior?",
+          "options": [
+            "He's right: that way the audience grows more",
+            "The opposite: stacking categories NARROWS the audience",
+            "It doesn't matter, detailed targeting doesn't affect size",
+            "It only grows if the campaign uses Reservation"
+          ],
+          "correct": 1,
+          "explanation": "OR within a category adds profiles; AND between categories intersects. Adding another category (behaviors) narrows, it does not expand. Over-segmenting lowers delivery and raises CPA."
+        },
+        {
+          "type": "mcq",
+          "q": "The client wants to set \"Nuevo León only.\" Is that a control or a suggestion, and what does it imply?",
+          "options": [
+            "Suggestion: the AI can deliver outside NL",
+            "Control: it's rigid, it doesn't deliver outside NL",
+            "Neither: location doesn't go in the audience",
+            "Control, but the AI ignores it if it's ON"
+          ],
+          "correct": 1,
+          "explanation": "Location is a rigid CONTROL. The system never delivers outside the defined area, whether or not Advantage+ Audience is on."
+        }
+      ]
+    },
+    {
+      "id": "5.4",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Does detailed targeting combine categories with OR or with AND?",
+          "a": "Both logics at once: <strong>OR</strong> within each category (interests, behaviors) adding profiles that meet at least one, and <strong>AND</strong> across different categories intersecting (all must be met). That's why the more categories you add, the narrower the audience becomes."
+        },
+        {
+          "q": "What three types of filter does detailed targeting have?",
+          "a": "Demographics (age, education, job) · Interests (business, entertainment, family) · Behaviors (device, purchase intent)."
+        },
+        {
+          "q": "What happens if you over-segment with many AND categories?",
+          "a": "It reduces delivery and usually raises CPA. Adding more categories narrows, it does NOT expand the audience."
+        },
+        {
+          "q": "Difference between Audience Controls and Suggestions?",
+          "a": "Controls RESTRICT delivery (rigid: location, language, minimum age, exclusions). Suggestions GUIDE (flexible, AI can expand: max age, gender, detailed targeting, Lookalike, inclusions)."
+        },
+        {
+          "q": "Examples of a rigid Audience Control",
+          "a": "Location, language, minimum age (18-25) and Custom Audience exclusions. The system does NOT step outside them."
+        }
+      ]
+    },
+    {
+      "id": "5.5",
+      "title": "Learn · Custom Audiences",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What a Custom Audience is",
+          "body": "A <strong>Custom Audience</strong> is a list of people who <strong>have already interacted with your business</strong> in some way: visited your site, bought from you, watched a video of yours or are in your customer base. It's used for <strong>retargeting</strong> (re-reaching people who already know you), not for finding new people. The idea is simple: someone who already knows you converts more easily and more cheaply than a stranger, so it's worth talking to them again. Example: a <strong>La Esquina Café</strong> with an ordering app can create a Custom Audience of people who opened the app but didn't complete the purchase, and remind them with an ad."
+        },
+        {
+          "type": "concept",
+          "h": "Where a Custom Audience comes from (the sources)",
+          "body": "The <strong>source</strong> is the origin of the audience's data. Meta divides them into two groups:<br/><br/><strong>Your sources</strong>: <em>Website</em> (visits to your site via the Pixel), <em>App activity</em> (actions in your app), <em>Catalog</em> (interactions with your catalog), <em>Customer list</em> (your customer list in CSV) and <em>Offline activity</em> (sales in a physical store).<br/><br/><strong>Meta sources</strong>: people who watched your <em>Video</em>, filled out a <em>Lead form</em>, opened an <em>Instant Experience</em>, interacted with your <em>Shopping</em>, follow your <em>Instagram</em> account, attended your <em>Events</em> or interacted with your <em>Facebook Page</em>. It's all people who have already touched you somewhere."
+        },
+        {
+          "type": "kvtable",
+          "h": "Limits",
+          "rows": [
+            [
+              "Custom Audiences per ad account",
+              "Maximum 500"
+            ],
+            [
+              "Customer list",
+              "CSV file with hashed data (email, phone)"
+            ],
+            [
+              "Retention window",
+              "Configurable: e.g. 30/60/90/180 days from the interaction"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "What the retention window is",
+          "body": "For sources based on recent interaction (such as Website or App), you define a <strong>retention window</strong>: how many days back an interaction counts so the person stays in the audience. If you set 30 days, only those who visited you in the last month are in; past that period, they drop out on their own. A short window (7-30 days) gives \"hot\" people, recently interested; a long one (180 days) gives more volume but colder people. You choose it based on how fresh you want the audience."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Boutique Aurora",
+          "body": "<strong>Boutique Aurora</strong>, an online clothing store, creates a <em>Website</em>-type Custom Audience of people who visited the checkout page (/checkout) in the last 30 days but didn't buy: hot people worth reminding about the cart. And it creates another <em>Customer list</em>-type one by uploading its CRM of past customers. Both are people who already touched the brand, so they're ideal for reactivating, not for cold prospecting. To that last one, however, you'll never show a \"discover our brand\" ad: they already know it."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "Custom Audiences are created outside the ad set, in their own section:<br/><br/><strong>1.</strong> In Ads Manager you open the main menu and go to <strong>Audiences</strong>.<br/><strong>2.</strong> Click on <strong>Create Audience → Custom Audience</strong>.<br/><strong>3.</strong> You choose the <em>source</em> (Website, Customer list, Video, etc.).<br/><strong>4.</strong> If it's Website, you define the event (e.g. visitors to a URL) and the <em>retention window</em> in days.<br/><strong>5.</strong> You save the audience with a clear name; then you use it inside an ad set as an <em>inclusion</em> or an <em>exclusion</em>."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "To build powerful Custom Audiences from a Customer List, <strong>hash the email and phone</strong> before uploading. Meta matches them with its users but never sees the data in plain text."
+        },
+        {
+          "type": "mcq",
+          "q": "Which of these is NOT a valid source for a Custom Audience?",
+          "options": [
+            "Website activity",
+            "Customer list (CSV)",
+            "Video views",
+            "Random audience"
+          ],
+          "correct": 3,
+          "explanation": "Custom Audiences are always built from a specific source of prior interaction. 'Random' does not exist.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "5.6",
+      "title": "Exercise your memory · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "A ___ Audience is people who have ALREADY interacted with your business (retargeting).",
+          "options": [
+            "Custom",
+            "Lookalike",
+            "Saved",
+            "Broad"
+          ],
+          "correct": 0,
+          "explanation": "Custom Audience = retargeting (they already know you). Lookalike = prospecting (similar people)."
+        },
+        {
+          "type": "fill",
+          "q": "The maximum number of Custom Audiences per ad account is ___.",
+          "options": [
+            "100",
+            "250",
+            "500",
+            "1,000"
+          ],
+          "correct": 2,
+          "explanation": "500 Custom Audiences maximum per ad account."
+        },
+        {
+          "type": "mcq",
+          "q": "How many Custom Audiences maximum per ad account?",
+          "options": [
+            "100",
+            "250",
+            "500",
+            "Unlimited"
+          ],
+          "correct": 2,
+          "explanation": "Official limit: 500 Custom Audiences per ad account.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "For a Customer List uploaded as a Custom Audience:",
+          "options": [
+            "Email and phone in plain text",
+            "Email and phone hashed (SHA256)",
+            "Only the customer's email",
+            "Only the customer's name"
+          ],
+          "correct": 1,
+          "explanation": "Hashing is required. Meta matches the hashes without seeing the original data.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "What is a Custom Audience mainly used for?",
+          "options": [
+            "To prospect new people cold",
+            "Retargeting: re-reach those who already know you",
+            "To replace the website Pixel",
+            "To lower the account's billing cost"
+          ],
+          "correct": 1,
+          "explanation": "Custom Audience = people who ALREADY know you. It's retargeting, not cold prospecting (the Lookalike does that).",
+          "difficulty": "easy"
+        },
+        {
+          "type": "fill",
+          "q": "The retention window of a Website-type Custom Audience is ___.",
+          "options": [
+            "configurable (e.g. 30/60/90/180 days)",
+            "fixed at 7 days",
+            "fixed at 1 year",
+            "nonexistent"
+          ],
+          "correct": 0,
+          "explanation": "The retention window is configurable: 30/60/90/180 days from the interaction, depending on how recent you want the audience."
+        }
+      ]
+    },
+    {
+      "id": "5.7",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Edu Premium wants to reactivate its student CRM",
+          "body": "<strong>Edu Premium</strong> exports 8,000 contacts of former students from its CRM with email, phone and major. It wants to reactivate them with a Sales campaign that shows them the new course catalog. They ask you how to upload them and why."
+        },
+        {
+          "type": "mcq",
+          "q": "What type of Custom Audience do you use for the CRM and how do you upload the data?",
+          "options": [
+            "Website Custom Audience, without uploading any data",
+            "Customer List with hashed email/phone (SHA256)",
+            "A Lookalike created directly from the CSV",
+            "A Saved Audience built with interests"
+          ],
+          "correct": 1,
+          "explanation": "A CRM of people who have already interacted = a Customer List-type Custom Audience. Email/phone are hashed before uploading and used as an inclusion in the Sales campaign."
+        },
+        {
+          "type": "mcq",
+          "q": "Why do you have to hash email and phone before uploading?",
+          "options": [
+            "It's optional, not a required step",
+            "So Meta can match without seeing the data in plain text",
+            "To make the CSV file lighter",
+            "To make the file process faster"
+          ],
+          "correct": 1,
+          "explanation": "Hashing protects privacy: Meta matches the hashes (not the emails) with its users. It's required for Customer Lists.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.8",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "What is a Custom Audience?",
+          "a": "People who have already interacted with your business (retargeting). Sources: Website, App, Catalog, Customer list, Offline, Video, Lead form, IG, FB Page, etc."
+        },
+        {
+          "q": "Maximum number of Custom Audiences per ad account?",
+          "a": "500 Custom Audiences maximum."
+        },
+        {
+          "q": "Which fields does a Customer List require to be hashed?",
+          "a": "Email and phone at a minimum. The more hashed fields you send (name, date of birth, address), the better the match rate."
+        },
+        {
+          "q": "Why is the customer list hashed?",
+          "a": "So Meta never sees the data in plain text. Meta matches the hashes with its own hashes of users and never knows the real email."
+        },
+        {
+          "q": "Custom Audience vs Lookalike Audience?",
+          "a": "Custom = your existing audiences (retargeting: web, engagement, list, video viewers). Lookalike = NEW people similar to a source; a Value-Based Lookalike uses the customer's value."
+        }
+      ]
+    },
+    {
+      "id": "5.9",
+      "title": "Learn · Lookalike Audiences",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What a Lookalike Audience is",
+          "body": "A <strong>Lookalike Audience</strong> (new people similar to your best customers) asks Meta to analyze an audience of yours and go out to find <strong>new people with a similar profile</strong>. It's exactly the opposite of a Custom Audience: here you do <strong>prospecting</strong> (reaching people who don't know you yet), not retargeting. The logic is powerful: if Meta understands what your best customers have in common, it can find thousands of strangers who resemble them and have a high probability of buying from you too. Example: <strong>La Esquina Café</strong> takes its list of frequent customers and creates a Lookalike to find new people with habits similar to those loyal ones."
+        },
+        {
+          "type": "concept",
+          "h": "The source rules: where the Lookalike learns from",
+          "body": "The Lookalike is only as good as its <strong>source audience</strong>: the audience it learns the pattern from. Normally the source is a Custom Audience of yours (your buyers, your leads, your visitors). That's why it always pays to start from your <em>best</em> people, not just anyone: if you feed the Lookalike premium customers, it looks for premium; if you feed it curious people who never bought, it looks for curious people. Meta requires a minimum of <strong>100 people from a single country</strong> in the source to detect a reliable pattern, although the recommendation is between 1,000 and 50,000."
+        },
+        {
+          "type": "warn",
+          "label": "CRITICAL TRAP",
+          "body": "A Lookalike with a source of 50 people <strong>does NOT work</strong>. Absolute minimum: 100 people from a SINGLE COUNTRY. Recommended: 1,000-50,000 for maximum quality."
+        },
+        {
+          "type": "kvtable",
+          "h": "1% vs 10% size",
+          "rows": [
+            [
+              "1% Lookalike",
+              "MORE SIMILAR to the source. Smaller reach (but more qualified)."
+            ],
+            [
+              "10% Lookalike",
+              "LESS SIMILAR. Greater reach (more volume but less precise)."
+            ],
+            [
+              "Source",
+              "It is EXCLUDED automatically from the Lookalike (not reached again)"
+            ],
+            [
+              "Per source",
+              "Up to 500 Lookalikes can be generated from a single source"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Your best source for a Lookalike is your <strong>top buyers</strong>: filter Purchase events with high value, group them in a Custom Audience, and use that as the source. The Lookalike will resemble those premium buyers."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Aceros del Bajío",
+          "body": "<strong>Aceros del Bajío</strong>, an industrial distributor, takes its Custom Audience of customers who have already placed large orders and uses it as the <em>source</em> of a Lookalike. Meta goes out to find companies and buyers similar to those good customers. Since each industrial account is worth a lot of money, they prioritize quality over quantity: they choose a <strong>1%</strong> Lookalike (the top 1% most similar), not 10%. Key detail: the source excludes itself from the result, because the Lookalike is for <em>new</em> people, not for re-touching those already on the list."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "To create a Lookalike you follow this path:<br/><br/><strong>1.</strong> In Ads Manager you open <strong>Audiences</strong>.<br/><strong>2.</strong> Click on <strong>Create Audience → Lookalike Audience</strong>.<br/><strong>3.</strong> You choose the <strong>source</strong>: normally a Custom Audience of yours (your best customers).<br/><strong>4.</strong> You select the <strong>country or region</strong> where you want to find new people.<br/><strong>5.</strong> You move the <strong>size slider</strong> between 1% and 10%: 1% more similar and exact, 10% broader.<br/><strong>6.</strong> You save it and use it as a <em>suggestion</em> inside the prospecting ad set."
+        },
+        {
+          "type": "mcq",
+          "q": "Minimum number of people required in the source audience to create a Lookalike:",
+          "options": [
+            "50",
+            "100",
+            "500",
+            "1000"
+          ],
+          "correct": 1,
+          "explanation": "Absolute minimum: 100 people from a SINGLE country. Recommended: 1,000-50,000 for quality.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.10",
+      "title": "Exercise your memory · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The absolute minimum source to create a Lookalike is ___ people from a single country.",
+          "options": [
+            "50",
+            "100",
+            "500",
+            "1,000"
+          ],
+          "correct": 1,
+          "explanation": "100 minimum from a single country. Recommended 1,000-50,000 for quality."
+        },
+        {
+          "type": "fill",
+          "q": "The ___% Lookalike is the most similar to the source (quality over volume).",
+          "options": [
+            "1",
+            "5",
+            "10",
+            "20"
+          ],
+          "correct": 0,
+          "explanation": "1% = top 1% most similar to the source. 10% = more reach, less similarity."
+        },
+        {
+          "type": "mcq",
+          "q": "A 1% Lookalike is:",
+          "options": [
+            "The segment least similar to the source",
+            "The top 1% most similar (max similarity)",
+            "1% of your current audience",
+            "An audience with 1% overlap"
+          ],
+          "correct": 1,
+          "explanation": "1% = top 1% most similar. 10% = more reach, less similar.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "The source of a Lookalike is:",
+          "options": [
+            "Included in the Lookalike",
+            "Excluded automatically",
+            "Included only if it's 10%",
+            "Dependent on the country"
+          ],
+          "correct": 1,
+          "explanation": "The source is always excluded. The Lookalike looks for new, similar people.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "What is a Lookalike used for?",
+          "options": [
+            "For retargeting people who already know you",
+            "Prospecting: NEW people similar to the source",
+            "To upload a CSV of existing customers",
+            "To block unwanted locations"
+          ],
+          "correct": 1,
+          "explanation": "Lookalike = prospecting (new people similar to the source). Retargeting is done by a Custom Audience.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "fill",
+          "q": "From a single source you can generate up to ___ Lookalikes.",
+          "options": [
+            "10",
+            "100",
+            "500",
+            "1,000"
+          ],
+          "correct": 2,
+          "explanation": "Up to 500 Lookalikes per source audience."
+        }
+      ]
+    },
+    {
+      "id": "5.11",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Prospecting premium buyers · Casa Plus",
+          "body": "<strong>Casa Plus</strong> has 1,500 customers who reserved apartments &gt;$2M MXN. It wants to find new prospects similar to those premium buyers. They ask you how to build it and what percentage to choose."
+        },
+        {
+          "type": "mcq",
+          "q": "How do you build the source and what type of audience do you create?",
+          "options": [
+            "Lookalike directly from the CSV, without a Custom Audience",
+            "A filtered Customer List as the source of the Lookalike",
+            "A Saved Audience with energy interests",
+            "Detailed targeting of business owners"
+          ],
+          "correct": 1,
+          "explanation": "The Lookalike always starts from an existing source. You filter the top customers into a Custom Audience (value >$2M) and use it as the source of the Lookalike to prospect similar people."
+        },
+        {
+          "type": "mcq",
+          "q": "Why a 1% Lookalike (not 10%) in this case?",
+          "options": [
+            "Because the 1% Lookalike is cheaper",
+            "It wants maximum similarity to its top customers",
+            "Because the 10% doesn't work in Mexico",
+            "Because the 1% and the 10% are the same"
+          ],
+          "correct": 1,
+          "explanation": "1% = maximum similarity (quality). 10% = maximum reach (volume). For premium industrial B2B where each lead is worth a lot: 1%.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Are 1,500 customers enough to create the Lookalike?",
+          "options": [
+            "No: a minimum of 5,000 customers is needed",
+            "Yes: it exceeds the minimum of 100 from one country",
+            "Only if the customers are from several countries",
+            "No: the required minimum is 50,000"
+          ],
+          "correct": 1,
+          "explanation": "The absolute minimum is 100 from a single country; 1,500 falls within the recommended range (1,000-50,000), so the quality will be good."
+        }
+      ]
+    },
+    {
+      "id": "5.12",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Difference between a Custom Audience and a Lookalike?",
+          "a": "Custom Audience = people who already interacted with your business (retargeting). Lookalike = NEW people similar to your source (prospecting)."
+        },
+        {
+          "q": "Minimum number of people in the source audience for a Lookalike?",
+          "a": "100 people from a SINGLE country. Recommended 1,000-50,000 for quality."
+        },
+        {
+          "q": "1% vs 10% Lookalike?",
+          "a": "1% = top 1% most similar to the source (max quality, smaller reach). 10% = more reach, less similar."
+        },
+        {
+          "q": "Is the source of a Lookalike included or excluded?",
+          "a": "It is EXCLUDED automatically. The Lookalike looks for new, similar people; it does not re-reach the source."
+        },
+        {
+          "q": "How many Lookalikes can you generate from a single source?",
+          "a": "Up to 500 Lookalikes per source audience."
+        },
+        {
+          "q": "What is the best source for a quality Lookalike?",
+          "a": "Your top buyers: filter Purchase events with high value, group them into a Custom Audience and use it as the source."
+        }
+      ]
+    },
+    {
+      "id": "5.13",
+      "title": "Learn · Advantage+ Audience",
+      "section": "b4",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What Advantage+ Audience is",
+          "body": "<strong>Advantage+ Audience</strong> (AI-powered targeting) is a Meta feature that lets the system look on its own for the people most likely to convert, without you having to guess every interest. Instead of locking the campaign into a rigid list of filters, you give the system some <strong>hints</strong> (suggestions: your interests, Lookalikes or demographics) and the <strong>AI</strong> uses them as a seed to <em>expand</em> toward similar profiles who can also buy from you. It comes from Meta's modern idea: the algorithm finds buyers better than a tight manual targeting. The most important thing for the exam: it comes <strong>on by default</strong> in new campaigns, so if you don't want it to expand, you have to turn it off on purpose. Example: <strong>Bella Rosa Flower Shop</strong> leaves Advantage+ Audience ON, passes its Valentine's Day buyers as a hint, and the system goes out to find new people with similar patterns instead of sticking only to that list."
+        },
+        {
+          "type": "concept",
+          "h": "Suggestions vs controls within Advantage+ Audience",
+          "body": "With Advantage+ Audience on, your selections split into two groups:<br/><br/><strong>1. Suggestions</strong>: flexible hints the AI can respect or expand. Here fall <em>detailed targeting</em> (interests, behaviors), <em>Lookalikes</em> and age or gender ranges. They don't lock the system in, they only guide it.<br/><br/><strong>2. Controls</strong>: hard limits the AI <em>never</em> crosses, even in expansion mode. Here fall <em>location</em>, <em>language</em>, the <em>legal minimum age</em> and Custom Audience <em>exclusions</em>. Example: <strong>Bella Rosa Flower Shop</strong> sets as a control \"Guadalajara only\" (the system never delivers outside) and as a suggestion its Lookalike of buyers (the system uses it as a seed and expands). If you confuse the two, you think you limited something the system can actually ignore."
+        },
+        {
+          "type": "concept",
+          "h": "How this looks in Ads Manager (step by step)",
+          "body": "Advantage+ Audience appears inside the ad set, in the audience section:<br/><br/><strong>1.</strong> In Ads Manager you go into an <em>ad set</em> and scroll down to <strong>Audience</strong>.<br/><strong>2.</strong> You'll see the <strong>Advantage+ Audience</strong> block at the top already on: there you type your <em>suggestions</em> (interests, Lookalike, reference age).<br/><strong>3.</strong> Further down you define the rigid <em>controls</em>: <strong>Locations</strong>, language and audience exclusions.<br/><strong>4.</strong> If you want to turn it off, you click on <strong>Switch to original audience options</strong> or on <strong>Further limit the reach of your ads</strong>: either of the two disables it."
+        },
+        {
+          "type": "kvtable",
+          "h": "How it is turned off (intentionally or not)",
+          "rows": [
+            [
+              "Click 'Switch to original audience options'",
+              "Turns off Advantage+ Audience"
+            ],
+            [
+              "Click 'Further limit the reach of your ads'",
+              "Turns off Advantage+ Audience"
+            ],
+            [
+              "By default",
+              "ON (AI expands on your suggestions)"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "<strong>Broad audience</strong> (age + location only) + <strong>Advantage+ Audience</strong> ON is usually the winning combination in modern campaigns. The system has the freedom to optimize where it finds the best performance."
+        },
+        {
+          "type": "warn",
+          "label": "TRAP",
+          "body": "If you select \"Switch to original audience options\" or \"Further limit the reach of your ads,\" you <strong>disable Advantage+ Audience</strong> (which is ON by default in new campaigns)."
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · Tienda Urbana",
+          "body": "Tienda Urbana leaves Advantage+ Audience ON, gives its Lookalike of frequent buyers as a suggestion and only sets as a control \"Mexico, 18-45, female.\" The AI starts from those hints and expands toward profiles that convert, without Tienda Urbana guessing every interest."
+        },
+        {
+          "type": "mcq",
+          "q": "What is the default for Advantage+ Audience in new campaigns?",
+          "options": [
+            "Off, you have to activate it manually",
+            "On automatically",
+            "Only available for Sales",
+            "Only available with a catalog"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Audience is ON by default in new campaigns. It is only turned off if you choose 'Switch to original' or 'Further limit reach'.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.14",
+      "title": "Exercise your memory · Block 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Advantage+ Audience is ___ by default in new campaigns.",
+          "options": [
+            "OFF",
+            "ON",
+            "only in Sales",
+            "only with a catalog"
+          ],
+          "correct": 1,
+          "explanation": "ON by default. It is turned off with 'Switch to original' or 'Further limit reach'."
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ Audience by default in new campaigns:",
+          "options": [
+            "OFF (you have to activate it)",
+            "ON automatically",
+            "Only for Sales",
+            "Only with a catalog"
+          ],
+          "correct": 1,
+          "explanation": "ON by default. It is turned off with 'Switch to original' or 'Further limit reach'.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "What exactly does Advantage+ Audience do?",
+          "options": [
+            "Blocks the locations you don't want",
+            "Expands your parameters with AI to find people",
+            "Uploads a CSV of customers to the account",
+            "Replaces the product catalog"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Audience is AI that expands on your suggestions to find people likely to be interested. It does not block or replace anything.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "fill",
+          "q": "Clicking 'Switch to original audience options' ___ Advantage+ Audience.",
+          "options": [
+            "disables",
+            "enables",
+            "does not affect",
+            "duplicates"
+          ],
+          "correct": 0,
+          "explanation": "'Switch to original audience options' and 'Further limit the reach of your ads' disable Advantage+ Audience."
+        },
+        {
+          "type": "mcq",
+          "q": "Modern winning combination according to best practice:",
+          "options": [
+            "Ultra-segmented audience, Advantage+ OFF",
+            "Broad audience (age + location), Advantage+ ON",
+            "Interests only, no Lookalike or broad",
+            "Reservation with dense detailed targeting"
+          ],
+          "correct": 1,
+          "explanation": "Broad audience + Advantage+ Audience ON lets the system optimize where it finds the best performance. The <strong>Lookalikes</strong> and interests don't disappear: with Advantage+ Audience ON they stop being rigid targeting and are passed as <strong>suggestions</strong> (seed), which the system can respect or expand if it finds better performance outside them.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.15",
+      "title": "Case to solve · Block 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "The client turned off the AI without realizing it",
+          "body": "An air conditioning distributor in Guadalajara built its campaign, clicked on \"Further limit the reach of your ads\" to \"make sure it only reaches its list,\" and now delivery dropped. They ask you what happened."
+        },
+        {
+          "type": "mcq",
+          "q": "What happened when they clicked on 'Further limit the reach of your ads'?",
+          "options": [
+            "It added an extra filter with no other effect",
+            "It disabled Advantage+ Audience: the AI no longer expands",
+            "It raised the campaign budget automatically",
+            "It changed the objective from sales to traffic"
+          ],
+          "correct": 1,
+          "explanation": "'Further limit the reach of your ads' (just like 'Switch to original audience options') turns off Advantage+ Audience. Without the AI's expansion, delivery is restricted to the original parameters."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you recommend for modern prospecting campaigns?",
+          "options": [
+            "Keep everything ultra-segmented and the AI off",
+            "Broad audience + Advantage+ Audience ON",
+            "Remove location as a rigid control",
+            "Use only Reservation mode"
+          ],
+          "correct": 1,
+          "explanation": "The modern winning combination is Broad (age + location) + Advantage+ Audience ON, with the Lookalike as a suggestion to guide the AI."
+        }
+      ]
+    },
+    {
+      "id": "5.16",
+      "title": "Mini-flashcards · Block 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Default of Advantage+ Audience in new campaigns?",
+          "a": "ON. It is turned off with 'Switch to original audience options' or 'Further limit the reach of your ads'."
+        },
+        {
+          "q": "What does Advantage+ Audience do?",
+          "a": "An AI solution that expands beyond your suggested parameters to find people likely to be interested."
+        },
+        {
+          "q": "Advantage+ Audience: controls vs suggestions",
+          "a": "Controls = HARD restrictions (minimum age, location, language, excluding Custom Audiences). Suggestions = guide the AI (detailed targeting, age, gender) without strictly limiting."
+        },
+        {
+          "q": "Is a broad audience usually better than a narrow one?",
+          "a": "Generally YES. Broad (age + location only) lets the system find people. Narrow limits delivery and is usually more expensive on CPA."
+        },
+        {
+          "q": "How is Advantage+ Audience turned off by accident?",
+          "a": "By clicking on 'Switch to original audience options' or 'Further limit the reach of your ads'."
+        }
+      ]
+    },
+    {
+      "id": "5.17",
+      "title": "Learn · Catalogs & Audience Overlap",
+      "section": "b5",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "What a Product Catalog is",
+          "body": "A <strong>Product Catalog</strong> is a file with all the information about what you sell —each product with its name, price, photo and link— that lives inside <strong>Commerce Manager</strong> (Meta's tool for inventory and sales, distinct from Ads Manager). It's like uploading your full inventory to Meta in an organized format so the system can show the right product to each person. Without a catalog, dynamic product ads don't exist, because the system wouldn't know what to show. Each product needs certain <em>attributes</em> (required fields) or it isn't approved. Example: the online store <strong>Mueblería Norte</strong> uploads its catalog to Commerce Manager so its ads show the exact table the customer looked at on its site."
+        },
+        {
+          "type": "concept",
+          "h": "The required attributes, one by one",
+          "body": "Each product in the catalog must bring these fields or Meta rejects it:<br/><br/><strong>1. ID</strong>: the product's unique identifier (not repeated).<br/><strong>2. Title</strong>: the name the customer sees.<br/><strong>3. Description</strong>: a short detail of the product.<br/><strong>4. Price</strong>: with its currency.<br/><strong>5. Availability</strong>: whether it's in stock or sold out.<br/><strong>6. Condition</strong>: new, used or refurbished.<br/><strong>7. Brand</strong>.<br/><strong>8. Image</strong>: the product's photo.<br/><strong>9. Link</strong>: the URL to that product's page.<br/><br/>Example: if <strong>Mueblería Norte</strong> uploads a chair without Price or Image, that product is left out and cannot be advertised."
+        },
+        {
+          "type": "concept",
+          "h": "What Product Sets are",
+          "body": "A <strong>Product Set</strong> is a group of products within the same catalog, built by some criterion you choose. It's used to advertise only a part of the inventory without having to create separate catalogs: you group them and that's it. For example, you can make a set \"Fall sale 10% off\" or a \"Best sellers\" one. Meta recommends a <strong>minimum of 20 products per set</strong>, because dynamic ads need variety to choose what to show each person; with too few products the system runs out of material to optimize. Example: <strong>Mueblería Norte</strong> builds a \"Living room\" Product Set and another \"Bedroom\" one, each with more than 20 pieces, so each campaign pushes the right line."
+        },
+        {
+          "type": "tip",
+          "label": "BEST PRACTICE",
+          "body": "<strong>A SINGLE catalog</strong> per business. Having several catalogs by brand/category confuses the system and makes it harder to match with Pixel events. If you have sub-lines, use Product Sets within the same catalog."
+        },
+        {
+          "type": "concept",
+          "h": "What Advantage+ Catalog Ads are",
+          "body": "<strong>Advantage+ Catalog Ads</strong> (formerly called \"Dynamic Ads\") use <strong>ML</strong> (Machine Learning, a branch of AI that learns from data) to show each person the products from your catalog they're most likely to be interested in, based on what that person browsed, searched or viewed before. Instead of building one ad per product, you pass it the whole catalog and the system builds the personalized ad automatically: whoever looked at a table is shown that table. They are available at the <strong>campaign</strong> level when the objective is <em>Sales</em>, and at the <em>ad</em> level in App Promotion, Engagement, Leads and Traffic. Example: when a customer of <strong>Mueblería Norte</strong> looked at a sofa and left without buying, the system shows them that sofa (and similar ones) again without anyone building the ad by hand."
+        },
+        {
+          "type": "concept",
+          "h": "What the catalog match rate is",
+          "body": "The <strong>catalog match rate</strong> measures how well what people see on your site matches what you have loaded in the catalog. Technically: of the products people interact with (the <em>Content IDs</em> the Pixel sends), what percentage actually exists in your catalog. If your Pixel reports that the product \"SKU-123\" was viewed but that ID isn't in the catalog, that match is lost. The goal is <strong>above 75%</strong>; below that it's almost always a mapping problem (the site's IDs don't match the catalog's). Example: if <strong>Mueblería Norte</strong> sees a 40% match rate, it shouldn't raise the budget yet: first it fixes that its site's IDs match the catalog's, or the system will show the wrong products."
+        },
+        {
+          "type": "concept",
+          "h": "What audience overlap is",
+          "body": "<strong>Audience overlap</strong> happens when two or more <em>ad sets</em> target people so similar that they end up chasing the same people. The problem is that your own ads <strong>compete against each other</strong> in the <em>auction</em> (Meta's auction where it's decided which ad is shown): it's like bidding against yourself, which raises your costs and confuses the optimization. That's why it's worth reviewing the overlap, although the analysis is only reliable when each audience has <strong>at least 10,000 people</strong> (with fewer, the numbers aren't statistically solid). Example: <strong>Mueblería Norte</strong> has a retargeting ad set and a Lookalike one that overlap; upon detecting it, it excludes the Custom Audience from the Lookalike ad set so they stop competing."
+        },
+        {
+          "type": "kvtable",
+          "h": "How to handle high overlap",
+          "rows": [
+            [
+              "Exclusion",
+              "Exclude the Custom Audience from the prospecting ad set"
+            ],
+            [
+              "Consolidation",
+              "Combine the overlapping ad sets into a single one"
+            ],
+            [
+              "Refinement",
+              "Separate them further with detailed targeting so they don't overlap"
+            ]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "Applied example · PetCare",
+          "body": "PetCare uploads a single catalog with food, toys and accessories; it builds \"Dogs\" and \"Cats\" Product Sets (20+ products each). The Pixel sends Content IDs; if they match the catalog, the match rate climbs above 75%. It has one retargeting ad set and one Lookalike: since they overlap, it <em>excludes</em> the Custom Audience from the Lookalike one so they stop competing."
+        },
+        {
+          "type": "mcq",
+          "q": "Recommended minimum number of products per Product Set for Advantage+ Catalog Ads:",
+          "options": [
+            "5",
+            "10",
+            "20",
+            "50"
+          ],
+          "correct": 2,
+          "explanation": "20 products minimum recommended so the system has enough material to optimize per person.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.18",
+      "title": "Exercise your memory · Block 5",
+      "section": "b5",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The product catalog is managed in ___.",
+          "options": [
+            "Ads Manager",
+            "Commerce Manager",
+            "Events Manager",
+            "Business Suite"
+          ],
+          "correct": 1,
+          "explanation": "The catalog (product inventory) is managed in Commerce Manager."
+        },
+        {
+          "type": "fill",
+          "q": "The catalog match rate target is &gt; ___ %.",
+          "options": [
+            "50",
+            "75",
+            "90",
+            "100"
+          ],
+          "correct": 1,
+          "explanation": ">75%. Below that: a mapping problem between Pixel and catalog."
+        },
+        {
+          "type": "mcq",
+          "q": "Ideal catalog match rate:",
+          "options": [
+            ">50%",
+            ">75%",
+            ">90%",
+            "100%"
+          ],
+          "correct": 1,
+          "explanation": ">75% is the target. Below that indicates a mapping problem between Pixel and catalog.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Best practice for an advertiser with several product lines:",
+          "options": [
+            "A separate catalog for each line",
+            "A single catalog with Product Sets per line",
+            "Don't use a catalog at all",
+            "Create several Pixels, one per line"
+          ],
+          "correct": 1,
+          "explanation": "A SINGLE catalog. Product Sets for sub-lines. Multiple catalogs confuse the matching with the Pixel.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "fill",
+          "q": "The audience overlap analysis is reliable only with audiences of at least ___ people each.",
+          "options": [
+            "100",
+            "1,000",
+            "10,000",
+            "100,000"
+          ],
+          "correct": 2,
+          "explanation": "At least 10,000 people in each audience for the overlap to make statistical sense."
+        },
+        {
+          "type": "mcq",
+          "q": "Solutions for high Audience Overlap between ad sets:",
+          "options": [
+            "Raise the budget of both",
+            "Exclusion, Consolidation or Refinement",
+            "Delete the catalog",
+            "Change the objective"
+          ],
+          "correct": 1,
+          "explanation": "Exclusion (exclude the CA from prospecting), Consolidation (combine overlapping ad sets), Refinement (separate further with detailed targeting)."
+        },
+        {
+          "type": "mcq",
+          "q": "For which objectives is Advantage+ Catalog Ads available?",
+          "options": [
+            "Only for the Awareness objective",
+            "Sales (campaign) and Engagement/Leads/Traffic (ad)",
+            "Only available in Reservation mode",
+            "None: it's independent of the objective"
+          ],
+          "correct": 1,
+          "explanation": "Sales enables it at the campaign level (complete solution); App Promotion/Engagement/Leads/Traffic allow it at the ad level.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.19",
+      "title": "Case to solve · Block 5",
+      "section": "b5",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "A 40-SKU catalog · PetCare",
+          "body": "<strong>PetCare</strong> has a catalog of 40 SKUs (food, toys, accessories) in Commerce Manager with the Pixel connected. It wants each customer (existing segment) to see the most relevant products based on their prior browsing, and to check that everything is right before scaling."
+        },
+        {
+          "type": "mcq",
+          "q": "If PetCare creates a 'Top sellers' Product Set with ONLY 12 products, is it optimal?",
+          "options": [
+            "Yes: fewer options give more clarity",
+            "No: Meta recommends a minimum of 20 products",
+            "It's only optimal if the SKUs are premium",
+            "The number of products is irrelevant"
+          ],
+          "correct": 1,
+          "explanation": "Minimum 20 products per Product Set so Advantage+ Catalog Ads has enough variety to optimize per person.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "The catalog match rate reads 40%. What do you do before raising the budget?",
+          "options": [
+            "Raise the budget anyway: the match rate doesn't matter",
+            "Check that the Content IDs match the catalog",
+            "Change the campaign objective to Awareness",
+            "Create a second catalog from scratch"
+          ],
+          "correct": 1,
+          "explanation": "40% is well below the >75% target. It's not a budget problem: it's mapping between Pixel and catalog. It's fixed before scaling."
+        },
+        {
+          "type": "mcq",
+          "q": "What campaign and setup do you use so each distributor sees the relevant product?",
+          "options": [
+            "Awareness with very dense detailed targeting",
+            "Sales + Catalog Ads + Product Set + Custom Audience",
+            "Reservation showing a single product",
+            "A 10% Lookalike with no catalog connected"
+          ],
+          "correct": 1,
+          "explanation": "Sales + Advantage+ Catalog Ads lets the ML choose which products to show each person; the Product Set (40 SKUs exceeds the minimum of 20) and the Custom Audience as an inclusion complete the setup."
+        }
+      ]
+    },
+    {
+      "id": "5.20",
+      "title": "Mini-flashcards · Block 5",
+      "section": "b5",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Recommended minimum number of products per Product Set?",
+          "a": "20 products so Advantage+ Catalog Ads has enough material to optimize."
+        },
+        {
+          "q": "Catalog match rate target and what it means if it's low?",
+          "a": ">75%. If it's low: a mapping problem between Pixel and catalog (incorrect IDs, missing products, parameters sent wrong)."
+        },
+        {
+          "q": "How many catalogs does Meta recommend having?",
+          "a": "A SINGLE catalog per business. For sub-lines use Product Sets within the same catalog."
+        },
+        {
+          "q": "Required attributes in a Product Catalog:",
+          "a": "ID, Title, Description, Price, Availability, Condition, Brand, Image, Link. Without those, products are not approved."
+        },
+        {
+          "q": "For which objectives is Advantage+ Catalog Ads available?",
+          "a": "Sales (at the campaign level, complete solution) · App Promotion, Engagement, Leads, Traffic (at the ad level, single-step automation)."
+        },
+        {
+          "q": "When does Audience Overlap analysis make sense and how is it fixed?",
+          "a": "With audiences of at least 10,000 people each. It's handled with Exclusion, Consolidation or Refinement."
+        }
+      ]
+    },
+    {
+      "id": "5.10b",
+      "title": "Integrative case · Distribuidora Eléctrica del Bajío (B2B)",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "GUIDED CASE",
+          "h": "Distribuidora Eléctrica del Bajío",
+          "body": "It's a B2B distributor of electrical material in Querétaro. It has a CRM with <strong>6,000 workshop buyers</strong> (email and phone), a catalog of <strong>60 SKUs</strong> in Commerce Manager with the Pixel connected, and it wants to <strong>prospect new workshops similar to its best customers</strong> and show them the relevant products. Let's solve it together, step by step."
+        },
+        {
+          "type": "concept",
+          "h": "Step 1 · Turn the CRM into a Custom Audience",
+          "body": "The CRM is people who already bought → <strong>a Customer List-type Custom Audience</strong>. Hash email and phone (SHA256) before uploading the CSV: Meta matches hashes without seeing the data in plain text. Filter only the highest-value buyers."
+        },
+        {
+          "type": "concept",
+          "h": "Step 2 · Create the Lookalike",
+          "body": "Since it wants <em>new</em> workshops similar to the good ones, it uses that Custom Audience as the <strong>source of a Lookalike</strong>. It easily has the minimum (6,000 &gt; 100 from a country). For B2B where each account is worth a lot, it chooses <strong>1%</strong> (maximum similarity) over 10%."
+        },
+        {
+          "type": "concept",
+          "h": "Step 3 · Connect the catalog",
+          "body": "To show a relevant product per person → a <strong>Sales + Advantage+ Catalog Ads</strong> campaign, a single catalog, a Product Set with the 60 SKUs (exceeds the minimum of 20). The 1% Lookalike goes as a suggestion in the ad set."
+        },
+        {
+          "type": "concept",
+          "h": "Step 4 · Check the match rate",
+          "body": "Before scaling, verify the <strong>catalog match rate &gt;75%</strong>. If it's low, don't raise the budget: check that the Content IDs the Pixel sends match the catalog's IDs."
+        },
+        {
+          "type": "tip",
+          "label": "THE REASONING",
+          "body": "Notice the pattern: <em>your own source → Custom Audience → Lookalike to prospect → catalog to show product → validate match rate before scaling</em>. That order solves almost any audience case on the exam."
+        },
+        {
+          "type": "mcq",
+          "q": "In the same case, why does the CRM become a Custom Audience and NOT directly a Lookalike?",
+          "options": [
+            "Because the Lookalike doesn't accept customer lists",
+            "Because the Lookalike needs a source audience",
+            "Because the Custom Audience turns out cheaper",
+            "Because they're actually both the same"
+          ],
+          "correct": 1,
+          "explanation": "The CRM is people who ALREADY bought → a Custom Audience (retargeting). To find NEW similar people, a Lookalike is created using that Custom Audience as the source. The Lookalike always starts from an existing source."
+        }
+      ]
+    },
+    {
+      "id": "5.11b",
+      "title": "Match audience type ↔ use case",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Match each audience type with its typical case. Each error costs 1 ❤️.",
+      "pairs": [
+        [
+          "Custom Audience (Website)",
+          "Re-engagement of site visitors"
+        ],
+        [
+          "Customer List",
+          "Upload a CSV of hashed customers for retargeting"
+        ],
+        [
+          "Lookalike 1%",
+          "Prospecting at maximum similarity (quality over volume)"
+        ],
+        [
+          "Lookalike 10%",
+          "Prospecting at maximum reach (volume over similarity)"
+        ],
+        [
+          "Advantage+ Audience",
+          "AI expands on your suggestions automatically"
+        ],
+        [
+          "Detailed targeting",
+          "Filter by interests, behaviors and demographics"
+        ]
+      ],
+      "explanation": "Knowing which audience to use per case is critical for the exam. Custom Audience = retargeting (they already know you). Lookalike = prospecting (similar to those who know you)."
+    },
+    {
+      "id": "5.12b",
+      "title": "Order the Advantage+ Catalog Ads setup",
+      "section": "bz",
+      "type": "order",
+      "instruction": "In what order do you set up Advantage+ Catalog Ads for a Sales campaign? Reorder with ▲▼.",
+      "items": [
+        "Create the catalog in Commerce Manager",
+        "Connect Pixel/CAPI to the catalog (Share events)",
+        "Create a Product Set with at least 20 products",
+        "Create a campaign with the Sales objective",
+        "Enable Advantage+ Catalog Ads and select the catalog",
+        "Create the ad set and choose the Product Set as promoted products"
+      ],
+      "explanation": "Correct setup: infrastructure (catalog + events) → segmentation (Product Set) → campaign → ad set. Skipping steps leads to ads that don't deliver or show the wrong products."
+    },
+    {
+      "id": "5.14b",
+      "title": "Complete the Day 5 phrases",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "A ___ Audience is people who have ALREADY interacted with your business (retargeting).",
+          "options": [
+            "Custom",
+            "Lookalike",
+            "Saved",
+            "Broad"
+          ],
+          "correct": 0,
+          "explanation": "Custom Audience = retargeting (they already know you). Lookalike = prospecting (similar people)."
+        },
+        {
+          "type": "fill",
+          "q": "The absolute minimum source to create a Lookalike is ___ people from a single country.",
+          "options": [
+            "50",
+            "100",
+            "500",
+            "1,000"
+          ],
+          "correct": 1,
+          "explanation": "100 minimum from a single country. Recommended 1,000-50,000 for quality."
+        },
+        {
+          "type": "fill",
+          "q": "The ___% Lookalike is the most similar to the source (quality over volume).",
+          "options": [
+            "1",
+            "5",
+            "10",
+            "20"
+          ],
+          "correct": 0,
+          "explanation": "1% = top 1% most similar to the source. 10% = more reach, less similarity."
+        },
+        {
+          "type": "fill",
+          "q": "The maximum number of Custom Audiences per ad account is ___.",
+          "options": [
+            "100",
+            "250",
+            "500",
+            "1,000"
+          ],
+          "correct": 2,
+          "explanation": "500 Custom Audiences maximum per ad account."
+        },
+        {
+          "type": "fill",
+          "q": "Advantage+ Audience is ___ by default in new campaigns.",
+          "options": [
+            "OFF",
+            "ON",
+            "only in Sales",
+            "only with a catalog"
+          ],
+          "correct": 1,
+          "explanation": "ON by default. It is turned off with 'Switch to original' or 'Further limit reach'."
+        },
+        {
+          "type": "fill",
+          "q": "The product catalog is managed in ___.",
+          "options": [
+            "Ads Manager",
+            "Commerce Manager",
+            "Events Manager",
+            "Business Suite"
+          ],
+          "correct": 1,
+          "explanation": "The catalog (product inventory) is managed in Commerce Manager."
+        },
+        {
+          "type": "fill",
+          "q": "The catalog match rate target is &gt; ___ %.",
+          "options": [
+            "50",
+            "75",
+            "90",
+            "100"
+          ],
+          "correct": 1,
+          "explanation": ">75%. Below that: a mapping problem between Pixel and catalog."
+        }
+      ]
+    },
+    {
+      "id": "5.15b",
+      "title": "Big drill · 12 audience MCQs",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Custom Audience vs Lookalike:",
+          "options": [
+            "Custom = new prospects; Lookalike = customers",
+            "Custom = customers who already interacted; LAL = new",
+            "They're exactly the same, different name",
+            "The Custom Audience works only offline"
+          ],
+          "correct": 1,
+          "explanation": "Custom = retargeting (they already know you). Lookalike = prospecting (similar people).",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "Minimum source for a Lookalike:",
+          "options": [
+            "50",
+            "100 in a single country",
+            "500",
+            "1,000"
+          ],
+          "correct": 1,
+          "explanation": "100 people from a SINGLE country. Recommended 1,000+ for quality.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "A 1% Lookalike is:",
+          "options": [
+            "The segment least similar to the source",
+            "The top 1% most similar (max similarity)",
+            "1% of your current audience",
+            "An audience with 1% overlap"
+          ],
+          "correct": 1,
+          "explanation": "1% = top 1% most similar. 10% = more reach, less similar.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "The source of a Lookalike is:",
+          "options": [
+            "Included in the Lookalike",
+            "Excluded automatically",
+            "Included only if it's 10%",
+            "Dependent on the country"
+          ],
+          "correct": 1,
+          "explanation": "The source is always excluded. The Lookalike looks for new, similar people.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Maximum Custom Audiences per ad account:",
+          "options": [
+            "100",
+            "250",
+            "500",
+            "1,000"
+          ],
+          "correct": 2,
+          "explanation": "500 Custom Audiences maximum per ad account.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ Audience by default in new campaigns:",
+          "options": [
+            "OFF (you have to activate it)",
+            "ON automatically",
+            "Only for Sales",
+            "Only with a catalog"
+          ],
+          "correct": 1,
+          "explanation": "ON by default. It is turned off with 'Switch to original' or 'Further limit reach'.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Audience CONTROLS:",
+          "options": [
+            "Suggest to the system where to look for people",
+            "RESTRICT delivery (rigid): location, age",
+            "Are exactly the same as suggestions",
+            "Are only available in Reservation mode"
+          ],
+          "correct": 1,
+          "explanation": "Controls are rigid: the system does NOT step outside them. Suggestions are flexible.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "For Advantage+ Catalog Ads, recommended minimum number of products per Product Set:",
+          "options": [
+            "5",
+            "10",
+            "20",
+            "50"
+          ],
+          "correct": 2,
+          "explanation": "20 products minimum so the ML has enough material.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Catalog match rate target:",
+          "options": [
+            ">50%",
+            ">75%",
+            ">90%",
+            "100%"
+          ],
+          "correct": 1,
+          "explanation": ">75% target. Low: a Pixel setup problem.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "For a Customer List uploaded as a Custom Audience:",
+          "options": [
+            "Email and phone in plain text",
+            "Email and phone hashed (SHA256)",
+            "Only the customer's email",
+            "Only the customer's name"
+          ],
+          "correct": 1,
+          "explanation": "Hashing is required. Meta matches the hashes without seeing the original data.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Best practice for an advertiser with several product lines:",
+          "options": [
+            "A separate catalog for each line",
+            "A single catalog with Product Sets per line",
+            "Don't use a catalog at all",
+            "Create several Pixels, one per line"
+          ],
+          "correct": 1,
+          "explanation": "A SINGLE catalog. Product Sets for sub-lines. Multiple catalogs confuse the matching with the Pixel.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Audience overlap analysis is done with audiences of a minimum size of:",
+          "options": [
+            "100",
+            "1,000",
+            "10,000",
+            "100,000"
+          ],
+          "correct": 2,
+          "explanation": "At least 10,000 people in each audience for the overlap analysis to make statistical sense.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.16b",
+      "title": "Lightning · 8 questions in 3 min",
+      "section": "bz",
+      "type": "lightning",
+      "instruction": "8 quick questions about audiences and catalogs.",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Lookalike minimum in the source:",
+          "options": [
+            "50",
+            "100 in 1 country",
+            "500",
+            "1000"
+          ],
+          "correct": 1,
+          "explanation": "100 people from a SINGLE country.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "1% Lookalike = ?",
+          "options": [
+            "Maximum reach",
+            "Maximum similarity (smaller reach)",
+            "1% of your CA",
+            "The most expensive Lookalike"
+          ],
+          "correct": 1,
+          "explanation": "Top 1% most similar to the source.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Maximum Custom Audiences per ad account:",
+          "options": [
+            "100",
+            "250",
+            "500",
+            "1000"
+          ],
+          "correct": 2,
+          "explanation": "500.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Advantage+ Audience default:",
+          "options": [
+            "OFF",
+            "ON",
+            "Sales only",
+            "Catalog only"
+          ],
+          "correct": 1,
+          "explanation": "ON by default.",
+          "difficulty": "easy"
+        },
+        {
+          "q": "Minimum products per Product Set:",
+          "options": [
+            "5",
+            "10",
+            "20",
+            "50"
+          ],
+          "correct": 2,
+          "explanation": "20 recommended.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "Catalog match rate target:",
+          "options": [
+            ">50%",
+            ">75%",
+            ">90%",
+            "100%"
+          ],
+          "correct": 1,
+          "explanation": ">75%.",
+          "difficulty": "hard"
+        },
+        {
+          "q": "The source of a Lookalike:",
+          "options": [
+            "Is included",
+            "Is excluded automatically",
+            "Only if 1%",
+            "Only in the US"
+          ],
+          "correct": 1,
+          "explanation": "Always excluded.",
+          "difficulty": "medium"
+        },
+        {
+          "q": "A Customer List requires:",
+          "options": [
+            "Email in plain text",
+            "Hashed email/phone",
+            "Name only",
+            "Phone only"
+          ],
+          "correct": 1,
+          "explanation": "SHA256 hash.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.flash",
+      "title": "Day 5 flashcards (everything)",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Difference between a Custom Audience and a Lookalike?",
+          "a": "Custom Audience = people who already interacted with your business (retargeting). Lookalike = NEW people similar to your source (prospecting)."
+        },
+        {
+          "q": "Minimum number of people in the source audience for a Lookalike?",
+          "a": "100 people from a SINGLE country. Recommended 1,000-50,000 for quality."
+        },
+        {
+          "q": "1% vs 10% Lookalike?",
+          "a": "1% = top 1% most similar to the source (max quality, smaller reach). 10% = more reach, less similar."
+        },
+        {
+          "q": "Is the source of a Lookalike included or excluded?",
+          "a": "It is EXCLUDED automatically. The Lookalike looks for new, similar people; it does not re-reach the source."
+        },
+        {
+          "q": "How many Lookalikes can you generate from a single source?",
+          "a": "Up to 500 Lookalikes per source audience."
+        },
+        {
+          "q": "Maximum number of Custom Audiences per ad account?",
+          "a": "500 Custom Audiences maximum."
+        },
+        {
+          "q": "Default of Advantage+ Audience in new campaigns?",
+          "a": "ON. It is turned off with 'Switch to original audience options' or 'Further limit the reach of your ads'."
+        },
+        {
+          "q": "Difference between Audience Controls and Suggestions?",
+          "a": "Controls RESTRICT delivery (rigid: location, language, minimum age, exclusions). Suggestions GUIDE (flexible, AI can expand: max age, gender, detailed targeting, Lookalike, inclusions)."
+        },
+        {
+          "q": "Does detailed targeting combine categories with OR or with AND?",
+          "a": "Both logics at once: <strong>OR</strong> within each category (interests, behaviors) adding profiles that meet at least one, and <strong>AND</strong> across different categories intersecting (all must be met). That's why the more categories you add, the narrower the audience becomes."
+        },
+        {
+          "q": "Recommended minimum number of products per Product Set?",
+          "a": "20 products so Advantage+ Catalog Ads has enough material to optimize."
+        },
+        {
+          "q": "Catalog match rate target and what it means if it's low?",
+          "a": ">75%. If it's low: a mapping problem between Pixel and catalog (incorrect IDs, missing products, parameters sent wrong)."
+        },
+        {
+          "q": "How many catalogs does Meta recommend having?",
+          "a": "A SINGLE catalog per business. For sub-lines use Product Sets within the same catalog."
+        },
+        {
+          "q": "Required attributes in a Product Catalog:",
+          "a": "ID, Title, Description, Price, Availability, Condition, Brand, Image, Link. Without those, products are not approved."
+        },
+        {
+          "q": "For which objectives is Advantage+ Catalog Ads available?",
+          "a": "Sales (at the campaign level, complete solution) · App Promotion, Engagement, Leads, Traffic (at the ad level, single-step automation)."
+        },
+        {
+          "q": "When does Audience Overlap analysis make sense?",
+          "a": "Audiences of at least 10,000 people each. Below that the analysis is not statistically reliable."
+        },
+        {
+          "q": "Solutions for high Audience Overlap between ad sets:",
+          "a": "Exclusion (exclude the Custom Audience from prospecting), Consolidation (combine overlapping ad sets), Refinement (separate further with detailed targeting)."
+        },
+        {
+          "q": "Which fields does a Customer List require to be hashed?",
+          "a": "Email and phone at a minimum. The more hashed fields you send (name, date of birth, address), the better the match rate."
+        },
+        {
+          "q": "Why is the customer list hashed?",
+          "a": "So Meta never sees the data in plain text. Meta matches the hashes with its own hashes of users and never knows the real email."
+        },
+        {
+          "q": "Audience definition vs Estimated daily results?",
+          "a": "Audience definition = how many TOTAL people meet the criteria. Estimated daily results = the expected daily reach. Neither is an actual result."
+        },
+        {
+          "q": "Is a broad audience usually better than a narrow one?",
+          "a": "Generally YES. Broad (age + location only) lets the system find people. Narrow limits delivery and is usually more expensive on CPA."
+        },
+        {
+          "q": "Lookalike Audience: minimum source size",
+          "a": "Minimum 100 people from a single country of origin; recommended at least 1,000. Monitor and refresh the source to improve quality and relevance."
+        },
+        {
+          "q": "Advantage+ Audience: controls vs suggestions",
+          "a": "Controls = HARD restrictions (minimum age, location, language, excluding Custom Audiences). Suggestions = guide the AI (detailed targeting, age, gender) without strictly limiting."
+        },
+        {
+          "q": "Custom Audience vs Lookalike Audience",
+          "a": "Custom = your existing audiences (retargeting: web, engagement, list, video viewers). Lookalike = NEW people similar to a source; a Value-Based Lookalike uses the customer's value."
+        },
+        {
+          "q": "Catalog: where it's managed and product sets",
+          "a": "The catalog is managed in Commerce Manager. Product Sets group items by attributes (sales, best sellers, events) for campaigns like Advantage+ Catalog Ads."
+        }
+      ]
+    }
+  ]
+}
