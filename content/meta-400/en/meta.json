@@ -1,0 +1,81 @@
+{
+  "id": "meta-400",
+  "title": "Meta Media Planning Professional",
+  "subtitle": "400-101 Exam · 60 questions · 105 min",
+  "description": "Official Meta certification for media planners. Covers business goal alignment, buying types, bid strategies, budgeting, audiences, placements, creative, measurement and incrementality, privacy and brand safety.",
+  "icon": "📊",
+  "color": "#0A66C2",
+  "exam_url": "https://www.facebook.com/business/learn/certification/exams/400-101-exam",
+  "structure": "modules",
+  "units": [
+    {
+      "id": "m1",
+      "title": "Module 1 — Business goals and campaign objectives",
+      "subtitle": "From business goal to objective, data sources, conversion location/event/performance goal",
+      "coverage": "~14% of the exam",
+      "diagnostic": { "file": "m1-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m1-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m2",
+      "title": "Module 2 — Buying types and bid strategies",
+      "subtitle": "Auction vs Reservation, the 5 bid strategies, decision tree",
+      "coverage": "~18% of the exam",
+      "diagnostic": { "file": "m2-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m2-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m3",
+      "title": "Module 3 — Campaign budget",
+      "subtitle": "Daily vs lifetime, Advantage+ campaign budget, budget in auction and reservation",
+      "coverage": "~14% of the exam",
+      "diagnostic": { "file": "m3-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m3-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m4",
+      "title": "Module 4 — Audience planning",
+      "subtitle": "Advantage+ Audience, detailed targeting, custom and lookalike",
+      "coverage": "~16% of the exam",
+      "diagnostic": { "file": "m4-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m4-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m5",
+      "title": "Module 5 — Placements and creative",
+      "subtitle": "Advantage+ placements, formats, Advantage+ creative, best practices",
+      "coverage": "~12% of the exam",
+      "diagnostic": { "file": "m5-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m5-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m6",
+      "title": "Module 6 — Reporting and measurement",
+      "subtitle": "Metrics vs business goals, incrementality, experiments, attribution",
+      "coverage": "~18% of the exam",
+      "diagnostic": { "file": "m6-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m6-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m7",
+      "title": "Module 7 — Privacy and brand safety",
+      "subtitle": "Data privacy, brand safety controls, ad review process",
+      "coverage": "~8% of the exam",
+      "diagnostic": { "file": "m7-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m7-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "mock",
+      "title": "Final exam — Media Planning 400-101",
+      "subtitle": "60 official questions · Practice Tests A+B · 105 min",
+      "coverage": "Full exam · real Blueprint questions",
+      "kind": "mock-exam"
+    },
+    {
+      "id": "glosario",
+      "title": "Official Meta 400-101 Glossary",
+      "subtitle": "Flashcards · 3 review blocks",
+      "coverage": "Exam term review"
+    }
+  ]
+}
