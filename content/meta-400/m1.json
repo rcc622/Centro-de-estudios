@@ -38,74 +38,74 @@
         {
           "type": "concept",
           "h": "El media planner empieza por el negocio",
-          "body": "Un <strong>media planner</strong> (la persona que diseña la estrategia de anuncios pagados) tiene un reflejo equivocado: abrir Ads Manager y elegir un objetivo de inmediato. Eso está mal. Tu primer paso <strong>nunca</strong> es técnico, es de negocio: entender el <strong>business goal</strong> (la meta comercial real del cliente, lo que quiere lograr la empresa). Ese business goal casi siempre es una de tres cosas: vender productos, generar <em>leads</em> (contactos de personas interesadas) o construir marca para que la gente lo conozca. Por ejemplo, la <strong>Cafetería La Esquina</strong> no llega diciendo \"quiero una campaña Sales\"; llega diciendo \"quiero llenar las mesas entre semana\". Esa frase es el business goal, y a partir de ahí tú decides el resto."
+          "body": "Un <strong>media planner</strong> (la persona que diseña la estrategia de anuncios pagados) tiene un reflejo equivocado: abrir Ads Manager y elegir un objetivo de inmediato. Eso está mal. Tu primer paso <strong>nunca</strong> es técnico, es de negocio: entender el <strong>business goal</strong> (la meta comercial real del cliente, lo que quiere lograr la empresa). Ese business goal casi siempre es una de tres cosas: vender productos, generar <em>leads</em> (contactos de personas interesadas) o construir marca para que la gente lo conozca. Por ejemplo, la <strong>Cafetería La Esquina</strong> no llega diciendo \"quiero una campaña Ventas (sales)\"; llega diciendo \"quiero llenar las mesas entre semana\". Esa frase es el business goal, y a partir de ahí tú decides el resto."
         },
         {
           "type": "concept",
           "h": "Del goal al objective",
-          "body": "Una vez que tienes claro el business goal, lo traduces en dos pasos. Primero a la <strong>etapa del funnel</strong> (la fase del embudo de compra: el camino que recorre una persona desde que no te conoce hasta que te compra). Y de ahí al <strong>campaign objective</strong> (el objetivo de campaña: la instrucción que le das a Meta sobre qué resultado optimizar). El objective es una <em>consecuencia</em> del negocio, nunca el punto de partida. Por ejemplo, <strong>Aceros del Bajío</strong> quiere más ventas en su tienda en línea: business goal \"ingresos\" → etapa del funnel \"conversión\" → campaign objective \"Sales\". Si invertieras el orden y eligieras el objective primero, estarías adivinando."
+          "body": "Una vez que tienes claro el business goal, lo traduces en dos pasos. Primero a la <strong>etapa del funnel</strong> (la fase del embudo de compra: el camino que recorre una persona desde que no te conoce hasta que te compra). Y de ahí al <strong>Objetivo de la campaña (campaign objective)</strong> (la instrucción que le das a Meta sobre qué resultado optimizar). El objetivo de la campaña es una <em>consecuencia</em> del negocio, nunca el punto de partida. Por ejemplo, <strong>Aceros del Bajío</strong> quiere más ventas en su tienda en línea: business goal \"ingresos\" → etapa del funnel \"conversión\" → objetivo de la campaña \"Ventas\". Si invertieras el orden y eligieras el objetivo de la campaña primero, estarías adivinando."
         },
         {
           "type": "concept",
           "h": "Qué son los 6 ODAX",
-          "body": "<strong>ODAX</strong> son las siglas en inglés de <em>Outcome-Driven Ad Experiences</em> (experiencias de anuncios orientadas a resultados), que es como Meta llama a su lista oficial de objetivos de campaña. Antes había muchos objetivos confusos y repetidos; Meta los simplificó a solo <strong>seis</strong>, cada uno enfocado en un resultado de negocio claro. Esos seis son Awareness, Traffic, Engagement, Leads, App Promotion y Sales, y cuando creas una campaña tienes que elegir exactamente uno de ellos. La idea es que pienses en el resultado que quieres (que te conozcan, que compren, que dejen contacto) y no en tácticas sueltas. Por ejemplo, la <strong>Cafetería La Esquina</strong> no elige \"poner anuncios\"; elige uno de los 6 ODAX según si quiere que la conozcan o que reserven mesa."
+          "body": "<strong>ODAX</strong> son las siglas en inglés de <em>Outcome-Driven Ad Experiences</em> (experiencias de anuncios orientadas a resultados), que es como Meta llama a su lista oficial de objetivos de campaña. Antes había muchos objetivos confusos y repetidos; Meta los simplificó a solo <strong>seis</strong>, cada uno enfocado en un resultado de negocio claro. Esos seis son Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion) y Ventas (sales), y cuando creas una campaña tienes que elegir exactamente uno de ellos. La idea es que pienses en el resultado que quieres (que te conozcan, que compren, que dejen contacto) y no en tácticas sueltas. Por ejemplo, la <strong>Cafetería La Esquina</strong> no elige \"poner anuncios\"; elige uno de los 6 ODAX según si quiere que la conozcan o que reserven mesa."
         },
         {
           "type": "kvtable",
           "h": "Los 6 ODAX por etapa del funnel",
           "rows": [
-            ["Awareness", "Maximizar personas que recordarán el anuncio (recall, reach)"],
-            ["Traffic", "Llevar gente a un destino: web, app, llamada o mensajes"],
-            ["Engagement", "Generar interacción: mensajes, video views, post engagement"],
-            ["Leads", "Recolectar contactos: Instant form, calls, sign-ups"],
-            ["App Promotion", "Instalar la app o aumentar su uso"],
-            ["Sales", "Encontrar a quienes más probablemente compren"]
+            ["Reconocimiento", "Maximizar personas que recordarán el anuncio (recall, reach)"],
+            ["Tráfico", "Llevar gente a un destino: web, app, llamada o mensajes"],
+            ["Interacción", "Generar interacción: mensajes, video views, post engagement"],
+            ["Clientes potenciales", "Recolectar contactos: Instant form, calls, sign-ups"],
+            ["Promoción de la app", "Instalar la app o aumentar su uso"],
+            ["Ventas", "Encontrar a quienes más probablemente compren"]
           ]
         },
         {
           "type": "concept",
           "h": "El funnel manda",
-          "body": "El <strong>funnel</strong> (embudo) es la metáfora del camino del cliente: arriba (ancho) está mucha gente que apenas te conoce, y abajo (angosto) están los pocos que ya te compran. Cada uno de los 6 objectives vive en una zona del embudo. <strong>Top funnel</strong> (parte alta, dar a conocer): Awareness y Traffic. <strong>Mid funnel</strong> (parte media, generar interés): Engagement y Leads. <strong>Bottom funnel</strong> (parte baja, cerrar la venta): Sales y App Promotion. La regla práctica: un negocio que nadie conoce no arranca en Sales, porque le pediría comprar a gente que ni sabe que existe. Por ejemplo, el <strong>Hotel Lumière</strong> recién inaugurado primero construye reconocimiento arriba (Awareness) y solo después baja a empujar reservaciones (Sales)."
+          "body": "El <strong>funnel</strong> (embudo) es la metáfora del camino del cliente: arriba (ancho) está mucha gente que apenas te conoce, y abajo (angosto) están los pocos que ya te compran. Cada uno de los 6 objectives vive en una zona del embudo. <strong>Top funnel</strong> (parte alta, dar a conocer): Reconocimiento y Tráfico. <strong>Mid funnel</strong> (parte media, generar interés): Interacción y Clientes potenciales. <strong>Bottom funnel</strong> (parte baja, cerrar la venta): Ventas y Promoción de la app. La regla práctica: un negocio que nadie conoce no arranca en Ventas, porque le pediría comprar a gente que ni sabe que existe. Por ejemplo, el <strong>Hotel Lumière</strong> recién inaugurado primero construye reconocimiento arriba (Reconocimiento) y solo después baja a empujar reservaciones (Ventas)."
         },
         {
           "type": "concept",
           "h": "Dónde eliges el objective en la plataforma",
-          "body": "Una vez decidido el objective sobre el papel, lo configuras en <strong>Ads Manager</strong> (el Administrador de anuncios de Meta). La ruta es: entras a <em>Ads Manager → botón verde + Crear → nivel Campaña</em>, y ahí Meta te muestra las 6 tarjetas de objective (Awareness, Traffic, Engagement, Leads, App Promotion, Sales) para que elijas una. Esta elección se hace a nivel <strong>campaña</strong> y queda fija para toda esa campaña. Por ejemplo, si el <strong>Hotel Lumière</strong> ya decidió Awareness, al crear la campaña elige la tarjeta \"Reconocimiento\" y de ahí baja a configurar el resto. Ojo: lo que decides en negocio primero es lo que aquí solo confirmas con un clic; la plataforma no piensa por ti."
+          "body": "Una vez decidido el objetivo de la campaña sobre el papel, lo configuras en <strong>Ads Manager</strong> (el Administrador de anuncios de Meta). La ruta es: entras a <em>Ads Manager → botón verde + Crear → nivel Campaña</em>, y ahí Meta te muestra las 6 tarjetas de objetivo (Reconocimiento, Tráfico, Interacción, Clientes potenciales, Promoción de la app, Ventas) para que elijas una. Esta elección se hace a nivel <strong>campaña</strong> y queda fija para toda esa campaña. Por ejemplo, si el <strong>Hotel Lumière</strong> ya decidió Reconocimiento, al crear la campaña elige la tarjeta \"Reconocimiento\" y de ahí baja a configurar el resto. Ojo: lo que decides en negocio primero es lo que aquí solo confirmas con un clic; la plataforma no piensa por ti."
         },
         {
           "type": "tip",
           "label": "REGLA DE PLANEACIÓN",
-          "body": "Siempre vas <strong>de arriba hacia abajo</strong>: business goal → etapa del funnel → campaign objective → conversion location → performance goal. Si inviertes el orden, terminas optimizando para la métrica equivocada."
+          "body": "Siempre vas <strong>de arriba hacia abajo</strong>: business goal → etapa del funnel → objetivo de la campaña → conversion location → performance goal. Si inviertes el orden, terminas optimizando para la métrica equivocada."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Elegir <strong>Traffic</strong> cuando el negocio quiere ventas. Traffic optimiza <em>link clicks</em>, no compras. Más clics no es más ingresos. Si la meta es venta real, el objective es <strong>Sales</strong>."
+          "body": "Elegir <strong>Tráfico</strong> cuando el negocio quiere ventas. Tráfico optimiza <em>link clicks</em>, no compras. Más clics no es más ingresos. Si la meta es venta real, el objetivo de la campaña es <strong>Ventas</strong>."
         },
         {
           "type": "mcq",
-          "q": "Un cliente DTC quiere maximizar ingresos en su tienda online esta temporada. ¿Qué campaign objective propones?",
+          "q": "Un cliente DTC quiere maximizar ingresos en su tienda online esta temporada. ¿Qué objetivo de la campaña propones?",
           "options": [
-            "Traffic, para llevar más gente al sitio",
-            "Engagement, para que interactúen con el catálogo",
-            "Sales, optimizando para el evento Purchase",
-            "Awareness, para que la marca esté top of mind"
+            "Tráfico, para llevar más gente al sitio",
+            "Interacción, para que interactúen con el catálogo",
+            "Ventas, optimizando para el evento Purchase",
+            "Reconocimiento, para que la marca esté top of mind"
           ],
           "correct": 2,
-          "explanation": "El business goal es ingresos → etapa de conversión → objective Sales con conversion event Purchase. Traffic optimiza clics (no compra), Engagement interacción, Awareness recall. Ninguno optimiza ventas reales.",
+          "explanation": "El business goal es ingresos → etapa de conversión → objetivo de la campaña Ventas con conversion event Purchase. Tráfico optimiza clics (no compra), Interacción interacción, Reconocimiento recall. Ninguno optimiza ventas reales.",
           "difficulty": "easy"
         },
         {
           "type": "mcq",
           "q": "Una marca nueva sin reconocimiento quiere que el mercado la conozca antes de pedir compras. El planner debe priorizar:",
           "options": [
-            "Sales desde el día uno para recuperar inversión rápido",
-            "Awareness para construir recall, y luego escalar a conversión",
-            "Leads para juntar correos cuanto antes",
-            "App Promotion aunque no tenga app"
+            "Ventas desde el día uno para recuperar inversión rápido",
+            "Reconocimiento para construir recall, y luego escalar a conversión",
+            "Clientes potenciales para juntar correos cuanto antes",
+            "Promoción de la app aunque no tenga app"
           ],
           "correct": 1,
-          "explanation": "Sin reconocimiento previo, empujar Sales directo desperdicia presupuesto en una audiencia que no te conoce. Awareness construye la base del funnel; luego se baja a consideración y conversión.",
+          "explanation": "Sin reconocimiento previo, empujar Ventas directo desperdicia presupuesto en una audiencia que no te conoce. Reconocimiento construye la base del funnel; luego se baja a consideración y conversión.",
           "difficulty": "medium"
         }
       ]
@@ -120,17 +120,17 @@
           "type": "mcq",
           "q": "¿Cuál es el primer paso del media planner?",
           "options": [
-            "Elegir el campaign objective en Ads Manager",
-            "Entender el business goal del cliente y traducirlo a un objective",
+            "Elegir el objetivo de la campaña (campaign objective) en Ads Manager",
+            "Entender el business goal del cliente y traducirlo a un objetivo de la campaña",
             "Configurar el performance goal",
             "Subir el creative"
           ],
           "correct": 1,
-          "explanation": "El primer paso nunca es elegir un objective: es entender el business goal (vender, generar leads, construir marca) y traducirlo al objective que lo soporta."
+          "explanation": "El primer paso nunca es elegir un objetivo de la campaña: es entender el business goal (vender, generar leads, construir marca) y traducirlo al objetivo de la campaña que lo soporta."
         },
         {
           "type": "fill",
-          "q": "El orden correcto de planeación es: business goal → etapa del funnel → campaign objective → conversion location → ___.",
+          "q": "El orden correcto de planeación es: business goal → etapa del funnel → objetivo de la campaña → conversion location → ___.",
           "options": [
             "performance goal",
             "creative",
@@ -138,23 +138,23 @@
             "audience"
           ],
           "correct": 0,
-          "explanation": "Siempre vas de arriba hacia abajo: business goal → funnel → objective → conversion location → performance goal."
+          "explanation": "Siempre vas de arriba hacia abajo: business goal → funnel → objetivo de la campaña → conversion location → performance goal."
         },
         {
           "type": "mcq",
           "q": "¿Cuáles son los 6 ODAX?",
           "options": [
-            "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+            "Reconocimiento, Tráfico, Interacción, Clientes potenciales, Promoción de la app, Ventas",
             "Reach, Clicks, Views, Leads, Installs, Purchase",
-            "Awareness, Consideration, Conversion, Retention, Loyalty, Sales",
+            "Reconocimiento, Consideración, Conversión, Retención, Lealtad, Ventas",
             "Pixel, CAPI, Catalog, SDK, Form, Calls"
           ],
           "correct": 0,
-          "explanation": "Los 6 ODAX son Awareness, Traffic, Engagement, Leads, App Promotion y Sales."
+          "explanation": "Los 6 ODAX son Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion) y Ventas (sales)."
         },
         {
           "type": "fill",
-          "q": "Si el negocio quiere ventas reales y eliges Traffic, el sistema optimiza ___, no compras.",
+          "q": "Si el negocio quiere ventas reales y eliges Tráfico, el sistema optimiza ___, no compras.",
           "options": [
             "link clicks",
             "purchases",
@@ -162,11 +162,11 @@
             "leads"
           ],
           "correct": 0,
-          "explanation": "Traffic optimiza link clicks. Más clics no es más ingresos. Para venta real el objective es Sales."
+          "explanation": "Tráfico optimiza link clicks. Más clics no es más ingresos. Para venta real el objetivo de la campaña es Ventas."
         },
         {
           "type": "fill",
-          "q": "Awareness y Traffic son top funnel; Sales y App Promotion son ___ funnel.",
+          "q": "Reconocimiento y Tráfico son top funnel; Ventas y Promoción de la app son ___ funnel.",
           "options": [
             "bottom",
             "mid",
@@ -174,19 +174,19 @@
             "full"
           ],
           "correct": 0,
-          "explanation": "Awareness/Traffic = top, Engagement/Leads = mid, Sales/App Promotion = bottom funnel."
+          "explanation": "Reconocimiento/Tráfico = top, Interacción/Clientes potenciales = mid, Ventas/Promoción de la app = bottom funnel."
         },
         {
           "type": "mcq",
-          "q": "Una marca sin reconocimiento previo. ¿Qué objective construye la base del funnel?",
+          "q": "Una marca sin reconocimiento previo. ¿Qué objetivo de la campaña construye la base del funnel?",
           "options": [
-            "Sales",
-            "Leads",
-            "Awareness",
-            "App Promotion"
+            "Ventas",
+            "Clientes potenciales",
+            "Reconocimiento",
+            "Promoción de la app"
           ],
           "correct": 2,
-          "explanation": "Sin reconocimiento, Awareness construye recall; luego se baja a consideración y conversión. Empujar Sales directo desperdicia presupuesto en una audiencia que no te conoce."
+          "explanation": "Sin reconocimiento, Reconocimiento construye recall; luego se baja a consideración y conversión. Empujar Ventas directo desperdicia presupuesto en una audiencia que no te conoce."
         }
       ]
     },
@@ -204,39 +204,39 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué campaign objective propones a la distribuidora?",
+          "q": "¿Qué objetivo de la campaña (campaign objective) propones a la distribuidora?",
           "options": [
-            "Traffic, para llevar más visitas a la tienda",
-            "Sales, porque el business goal es ingreso por compra",
-            "Engagement, para que interactúen con los posts",
-            "Awareness, para que más gente la conozca"
+            "Tráfico (traffic), para llevar más visitas a la tienda",
+            "Ventas (sales), porque el business goal es ingreso por compra",
+            "Interacción (engagement), para que interactúen con los posts",
+            "Reconocimiento (awareness), para que más gente la conozca"
           ],
           "correct": 1,
-          "explanation": "El business goal es ingreso por compra → etapa de conversión → objective Sales. La marca ya es conocida, así que no necesita empezar en Awareness; Traffic solo optimiza clics."
+          "explanation": "El business goal es ingreso por compra → etapa de conversión → objetivo de la campaña Ventas. La marca ya es conocida, así que no necesita empezar en Reconocimiento; Tráfico solo optimiza clics."
         },
         {
           "type": "mcq",
-          "q": "El dueño insiste: \"Mejor pongamos Traffic, así entra más gente y de ahí salen las ventas.\" ¿Qué le respondes?",
+          "q": "El dueño insiste: \"Mejor pongamos Tráfico, así entra más gente y de ahí salen las ventas.\" ¿Qué le respondes?",
           "options": [
             "Tiene razón, más tráfico siempre es más ventas",
-            "Traffic optimiza link clicks, no compras; para ingreso real el objective es Sales",
-            "Hay que usar Awareness primero aunque ya sea conocido",
-            "Da igual el objective, lo decide el creative"
+            "Tráfico optimiza link clicks, no compras; para ingreso real el objetivo de la campaña es Ventas",
+            "Hay que usar Reconocimiento primero aunque ya sea conocido",
+            "Da igual el objetivo de la campaña, lo decide el creative"
           ],
           "correct": 1,
-          "explanation": "Más clics no es más ingresos. Traffic optimiza link clicks; el sistema buscaría gente que da clic, no gente que compra. El objective que se alinea al business goal de ingreso es Sales."
+          "explanation": "Más clics no es más ingresos. Tráfico optimiza link clicks; el sistema buscaría gente que da clic, no gente que compra. El objetivo de la campaña que se alinea al business goal de ingreso es Ventas."
         },
         {
           "type": "mcq",
-          "q": "El dueño pregunta si conviene meter también una campaña Awareness al mismo tiempo. ¿Qué le explicas?",
+          "q": "El dueño pregunta si conviene meter también una campaña Reconocimiento al mismo tiempo. ¿Qué le explicas?",
           "options": [
-            "No tiene sentido nunca correr Awareness",
-            "Como la marca ya es conocida en su zona, el peso del plan va a conversión; Awareness sería secundario si quisiera abrir mercado nuevo",
-            "Awareness debe ser siempre el 80% del presupuesto",
-            "Awareness y Sales no pueden coexistir en una cuenta"
+            "No tiene sentido nunca correr Reconocimiento",
+            "Como la marca ya es conocida en su zona, el peso del plan va a conversión; Reconocimiento sería secundario si quisiera abrir mercado nuevo",
+            "Reconocimiento debe ser siempre el 80% del presupuesto",
+            "Reconocimiento y Ventas no pueden coexistir en una cuenta"
           ],
           "correct": 1,
-          "explanation": "El plan se ajusta al funnel real del negocio: marca conocida con meta de ingreso → el grueso va a Sales. Awareness solo si quisiera entrar a un mercado donde aún no lo conocen."
+          "explanation": "El plan se ajusta al funnel real del negocio: marca conocida con meta de ingreso → el grueso va a Ventas. Reconocimiento solo si quisiera entrar a un mercado donde aún no lo conocen."
         }
       ]
     },
@@ -246,12 +246,12 @@
       "section": "b1",
       "type": "flashcards",
       "cards": [
-        { "q": "¿Cuál es el primer paso del media planner?", "a": "Entender el business goal del cliente, no elegir un objective en Ads Manager." },
-        { "q": "Los 6 ODAX", "a": "Awareness, Traffic, Engagement, Leads, App Promotion, Sales." },
-        { "q": "Orden de planeación", "a": "Business goal → etapa del funnel → campaign objective → conversion location → performance goal." },
-        { "q": "Trampa clásica: querer ventas y elegir…", "a": "Traffic. Traffic optimiza link clicks, no compras." },
-        { "q": "Funnel de los 6 ODAX", "a": "Top: Awareness/Traffic · Mid: Engagement/Leads · Bottom: Sales/App Promotion." },
-        { "q": "Marca nueva sin reconocimiento, ¿por dónde empieza?", "a": "Awareness para construir recall, luego escala a consideración y conversión." }
+        { "q": "¿Cuál es el primer paso del media planner?", "a": "Entender el business goal del cliente, no elegir un objetivo de la campaña (campaign objective) en Ads Manager." },
+        { "q": "Los 6 ODAX", "a": "Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales)." },
+        { "q": "Orden de planeación", "a": "Business goal → etapa del funnel → objetivo de la campaña → conversion location → performance goal." },
+        { "q": "Trampa clásica: querer ventas y elegir…", "a": "Tráfico. Tráfico optimiza link clicks, no compras." },
+        { "q": "Funnel de los 6 ODAX", "a": "Top: Reconocimiento/Tráfico · Mid: Interacción/Clientes potenciales · Bottom: Ventas/Promoción de la app." },
+        { "q": "Marca nueva sin reconocimiento, ¿por dónde empieza?", "a": "Reconocimiento para construir recall, luego escala a consideración y conversión." }
       ]
     },
     {
@@ -267,19 +267,19 @@
         },
         {
           "type": "concept",
-          "h": "La señal habilita el objective",
-          "body": "La fuente de datos no es un detalle técnico que dejas para el final: es el requisito que decide si el objective que propusiste es viable o no. No puedes optimizar Sales en website si no hay un <strong>Pixel</strong> (pixel: un fragmento de código que se instala en el sitio y registra lo que hace el visitante) ni una <strong>CAPI</strong> (Conversions API: un canal que manda esos mismos eventos desde el servidor del negocio, no desde el navegador) que reporten la compra. Si <strong>Boutique Aurora</strong> quiere campañas Sales pero no tiene nada instalado, el objective propuesto simplemente no se puede ejecutar todavía. La lógica es: primero la señal, luego el objective; nunca al revés."
+          "h": "La señal habilita el objetivo de la campaña",
+          "body": "La fuente de datos no es un detalle técnico que dejas para el final: es el requisito que decide si el <strong>objetivo de la campaña (campaign objective)</strong> que propusiste es viable o no. No puedes optimizar Ventas (sales) en website si no hay un <strong>Pixel</strong> (pixel: un fragmento de código que se instala en el sitio y registra lo que hace el visitante) ni una <strong>CAPI</strong> (Conversions API: un canal que manda esos mismos eventos desde el servidor del negocio, no desde el navegador) que reporten la compra. Si <strong>Boutique Aurora</strong> quiere campañas Ventas pero no tiene nada instalado, el objetivo de la campaña propuesto simplemente no se puede ejecutar todavía. La lógica es: primero la señal, luego el objetivo de la campaña; nunca al revés."
         },
         {
           "type": "kvtable",
-          "h": "Objective → data source requerida",
+          "h": "Objetivo de la campaña → data source requerida",
           "rows": [
-            ["Sales (web)", "Pixel + Conversions API (CAPI)"],
-            ["Sales (catálogo)", "Pixel/CAPI + Catalog conectado"],
-            ["Leads (Instant form)", "No requiere Pixel; los datos quedan en Meta"],
-            ["Leads (website)", "Pixel + CAPI"],
-            ["App Promotion", "Facebook SDK o un MMP autorizado"],
-            ["Awareness / Engagement", "No requieren tracking de conversión"]
+            ["Ventas (web)", "Pixel + Conversions API (CAPI)"],
+            ["Ventas (catálogo)", "Pixel/CAPI + Catalog conectado"],
+            ["Clientes potenciales / Leads (Instant form)", "No requiere Pixel; los datos quedan en Meta"],
+            ["Clientes potenciales / Leads (website)", "Pixel + CAPI"],
+            ["Promoción de la app / App promotion", "Facebook SDK o un MMP autorizado"],
+            ["Reconocimiento / Interacción (awareness / engagement)", "No requieren tracking de conversión"]
           ]
         },
         {
@@ -299,29 +299,29 @@
         {
           "type": "concept",
           "h": "Dónde revisas y conectas la señal en la plataforma",
-          "body": "Las fuentes de datos viven en <strong>Events Manager</strong> (el Administrador de eventos de Meta), no en Ads Manager. La ruta es: <em>Business Manager → menú → Administrador de eventos (Events Manager)</em>, y ahí ves tus <strong>datasets</strong> (conjuntos de datos: donde se agrupan los eventos de tu Pixel y tu CAPI). Para validar que un negocio está listo para Sales, entras a su dataset y revisas que el evento <em>Purchase</em> (compra) esté llegando y que la <strong>CAPI</strong> aparezca conectada junto al Pixel. Por ejemplo, antes de lanzar a <strong>Boutique Aurora</strong> abres su dataset en Events Manager y confirmas que las compras de prueba se están registrando. Si solo aparece el Pixel y la CAPI no, ahí mismo detectas que falta completar la señal."
+          "body": "Las fuentes de datos viven en <strong>Events Manager</strong> (el Administrador de eventos de Meta), no en Ads Manager. La ruta es: <em>Business Manager → menú → Administrador de eventos (Events Manager)</em>, y ahí ves tus <strong>datasets</strong> (conjuntos de datos: donde se agrupan los eventos de tu Pixel y tu CAPI). Para validar que un negocio está listo para Ventas, entras a su dataset y revisas que el evento <em>Purchase</em> (compra) esté llegando y que la <strong>CAPI</strong> aparezca conectada junto al Pixel. Por ejemplo, antes de lanzar a <strong>Boutique Aurora</strong> abres su dataset en Events Manager y confirmas que las compras de prueba se están registrando. Si solo aparece el Pixel y la CAPI no, ahí mismo detectas que falta completar la señal."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Pensar que <strong>Awareness necesita Pixel</strong> o que <strong>el Pixel mide app installs</strong>. Awareness/Engagement no requieren tracking de conversión; los installs se miden con SDK o MMP, nunca con el Pixel web."
+          "body": "Pensar que <strong>Reconocimiento necesita Pixel</strong> o que <strong>el Pixel mide app installs</strong>. Reconocimiento/Interacción no requieren tracking de conversión; los installs se miden con SDK o MMP, nunca con el Pixel web."
         },
         {
           "type": "mcq",
-          "q": "El plan propone Sales website con evento Purchase, pero el cliente solo tiene Pixel y nada más. ¿Qué recomiendas antes de lanzar?",
+          "q": "El plan propone Ventas website con evento Purchase, pero el cliente solo tiene Pixel y nada más. ¿Qué recomiendas antes de lanzar?",
           "options": [
             "Lanzar igual; el Pixel solo es suficiente",
             "Sumar Conversions API para recuperar señal perdida y mejorar match quality",
-            "Cambiar el objective a Awareness",
-            "Quitar el evento Purchase y dejar el ad set sin optimización"
+            "Cambiar el objetivo de la campaña a Reconocimiento",
+            "Quitar el evento Purchase y dejar el conjunto de anuncios (ad set) sin optimización"
           ],
           "correct": 1,
-          "explanation": "Pixel solo deja escapar señal por bloqueo de cookies/iOS. CAPI (server-side) recupera esos eventos y mejora el matching. Cambiar a Awareness abandonaría el business goal de venta.",
+          "explanation": "Pixel solo deja escapar señal por bloqueo de cookies/iOS. CAPI (server-side) recupera esos eventos y mejora el matching. Cambiar a Reconocimiento abandonaría el business goal de venta.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
-          "q": "Un cliente quiere instalar su app móvil. ¿Qué fuente de datos es obligatoria para el objective App Promotion?",
+          "q": "Un cliente quiere instalar su app móvil. ¿Qué fuente de datos es obligatoria para el objetivo de la campaña Promoción de la app?",
           "options": [
             "Pixel de website",
             "Customer list subida manualmente",
@@ -342,7 +342,7 @@
       "cards": [
         {
           "type": "fill",
-          "q": "Sales website con evento Purchase requiere Pixel + ___.",
+          "q": "Ventas (sales) website con evento Purchase requiere Pixel + ___.",
           "options": [
             "Conversions API (CAPI)",
             "Facebook SDK",
@@ -350,23 +350,23 @@
             "MMP"
           ],
           "correct": 0,
-          "explanation": "Sales (web) requiere Pixel + Conversions API (CAPI). Juntos son el estándar."
+          "explanation": "Ventas (web) requiere Pixel + Conversions API (CAPI). Juntos son el estándar."
         },
         {
           "type": "mcq",
-          "q": "¿Qué objectives NO requieren tracking de conversión?",
+          "q": "¿Qué objetivos de la campaña NO requieren tracking de conversión?",
           "options": [
-            "Sales y Leads",
-            "Awareness y Engagement",
-            "App Promotion y Sales",
-            "Traffic y Sales"
+            "Ventas y Clientes potenciales",
+            "Reconocimiento e Interacción",
+            "Promoción de la app y Ventas",
+            "Tráfico y Ventas"
           ],
           "correct": 1,
-          "explanation": "Awareness y Engagement no requieren tracking de conversión. Los objectives de conversión sí necesitan una fuente de datos."
+          "explanation": "Reconocimiento (awareness) e Interacción (engagement) no requieren tracking de conversión. Los objetivos de la campaña de conversión sí necesitan una fuente de datos."
         },
         {
           "type": "fill",
-          "q": "Leads con Instant form ___ requiere Pixel; los datos quedan en Meta.",
+          "q": "Clientes potenciales (leads) con Instant form ___ requiere Pixel; los datos quedan en Meta.",
           "options": [
             "no",
             "sí",
@@ -374,7 +374,7 @@
             "a veces"
           ],
           "correct": 0,
-          "explanation": "Leads con Instant form no requiere Pixel: el contacto se captura dentro de Meta."
+          "explanation": "Clientes potenciales con Instant form no requiere Pixel: el contacto se captura dentro de Meta."
         },
         {
           "type": "mcq",
@@ -390,7 +390,7 @@
         },
         {
           "type": "fill",
-          "q": "El objective App Promotion exige Facebook SDK o un ___ autorizado.",
+          "q": "El objetivo de la campaña Promoción de la app (app promotion) exige Facebook SDK o un ___ autorizado.",
           "options": [
             "MMP",
             "Pixel",
@@ -412,7 +412,7 @@
           "type": "scenario",
           "label": "CASO A RESOLVER",
           "h": "Kenet Solar quiere optimizar ventas web",
-          "body": "Kenet Solar quiere campañas <strong>Sales website</strong> optimizando el evento Purchase de su tienda. Al revisar la configuración encuentras que solo tienen el <strong>Pixel instalado</strong> y nada más. El cliente quiere lanzar ya."
+          "body": "Kenet Solar quiere campañas <strong>Ventas (sales) website</strong> optimizando el evento Purchase de su tienda. Al revisar la configuración encuentras que solo tienen el <strong>Pixel instalado</strong> y nada más. El cliente quiere lanzar ya."
         },
         {
           "type": "mcq",
@@ -420,7 +420,7 @@
           "options": [
             "Lanzar igual; con el Pixel solo basta",
             "Sumar Conversions API para recuperar señal perdida y mejorar el match quality",
-            "Cambiar el objective a Awareness para no necesitar señal",
+            "Cambiar el objetivo de la campaña (campaign objective) a Reconocimiento (awareness) para no necesitar señal",
             "Quitar el evento Purchase"
           ],
           "correct": 1,
@@ -428,12 +428,12 @@
         },
         {
           "type": "mcq",
-          "q": "Kenet además evalúa lanzar una app móvil de monitoreo y quiere campañas App Promotion. ¿Qué fuente de datos es obligatoria ahí?",
+          "q": "Kenet además evalúa lanzar una app móvil de monitoreo y quiere campañas Promoción de la app (app promotion). ¿Qué fuente de datos es obligatoria ahí?",
           "options": [
             "El mismo Pixel del website",
             "Un catálogo de productos",
             "Facebook SDK o un MMP autorizado",
-            "Awareness no necesita nada"
+            "Reconocimiento no necesita nada"
           ],
           "correct": 2,
           "explanation": "Los eventos in-app se miden con el SDK de Facebook o un MMP autorizado. El Pixel es para web y no sirve para medir installs o eventos in-app."
@@ -445,7 +445,7 @@
             "Da igual, el resultado es el mismo",
             "Conviene lanzar con la señal completa: arrancar con Pixel solo entrena la optimización con datos incompletos y degrada resultados desde el inicio",
             "CAPI solo sirve para reporting, no afecta optimización",
-            "Mejor cambiar a Traffic mientras tanto"
+            "Mejor cambiar a Tráfico (traffic) mientras tanto"
           ],
           "correct": 1,
           "explanation": "La fase de aprendizaje se alimenta de la señal disponible. Arrancar con señal incompleta entrena peor el sistema; sumar CAPI después no recupera el aprendizaje perdido de esos primeros días."
@@ -458,11 +458,11 @@
       "section": "b2",
       "type": "flashcards",
       "cards": [
-        { "q": "Data source para Sales website", "a": "Pixel + Conversions API (CAPI)." },
-        { "q": "Data source para App Promotion", "a": "Facebook SDK o un MMP autorizado." },
-        { "q": "¿Leads con Instant form requiere Pixel?", "a": "No; los datos se capturan dentro de Meta." },
+        { "q": "Data source para Ventas (sales) website", "a": "Pixel + Conversions API (CAPI)." },
+        { "q": "Data source para Promoción de la app (app promotion)", "a": "Facebook SDK o un MMP autorizado." },
+        { "q": "¿Clientes potenciales (leads) con Instant form requiere Pixel?", "a": "No; los datos se capturan dentro de Meta." },
         { "q": "¿Por qué Pixel + CAPI juntos?", "a": "CAPI recupera señal que el navegador pierde (bloqueadores, iOS) y mejora match quality." },
-        { "q": "Objectives que NO requieren tracking de conversión", "a": "Awareness y Engagement." }
+        { "q": "Objetivos de la campaña que NO requieren tracking de conversión", "a": "Reconocimiento (awareness) e Interacción (engagement)." }
       ]
     },
     {
@@ -473,18 +473,18 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Tres decisiones distintas, mismo objective",
-          "body": "Elegir el objective no termina el trabajo: dentro de él tomas tres decisiones que mucha gente confunde porque suenan parecido. Primero el <strong>conversion location</strong> (dónde sucede la conversión: en tu sitio web, en tu app, en mensajes, etc.). Segundo el <strong>conversion event</strong> (qué acción exacta cuenta como resultado: una compra, un registro, un agregar al carrito). Tercero el <strong>performance goal</strong> (objetivo de rendimiento: la regla de subasta con la que Meta decide a quién mostrarle el anuncio y por cuánto pujar). Por ejemplo, para <strong>Florería Bella Rosa</strong>: location = Website, event = Purchase, performance goal = maximizar valor de compra. Son tres perillas separadas, aunque vivan bajo el mismo objective Sales."
+          "h": "Tres decisiones distintas, mismo objetivo de la campaña",
+          "body": "Elegir el <strong>objetivo de la campaña (campaign objective)</strong> no termina el trabajo: dentro de él tomas tres decisiones que mucha gente confunde porque suenan parecido. Primero el <strong>conversion location</strong> (dónde sucede la conversión: en tu sitio web, en tu app, en mensajes, etc.). Segundo el <strong>conversion event</strong> (qué acción exacta cuenta como resultado: una compra, un registro, un agregar al carrito). Tercero el <strong>objetivo de rendimiento (performance goal)</strong> (la regla de subasta con la que Meta decide a quién mostrarle el anuncio y por cuánto pujar). Por ejemplo, para <strong>Florería Bella Rosa</strong>: location = Website, event = Purchase, objetivo de rendimiento = maximizar valor de compra. Son tres perillas separadas, aunque vivan bajo el mismo objetivo de la campaña Ventas (sales)."
         },
         {
           "type": "concept",
           "h": "Las tres perillas, una por una",
-          "body": "Para no mezclarlas, piénsalas como tres preguntas distintas. <strong>1. Conversion location → ¿DÓNDE?</strong> el lugar físico-digital donde ocurre la acción (Website, App, Messaging, Calls, Instant form). <strong>2. Conversion event → ¿QUÉ?</strong> la acción concreta que va a contar como éxito (Purchase = compra, Lead = contacto, Add to cart = agregar al carrito, View content = ver producto). <strong>3. Performance goal → ¿CÓMO?</strong> la forma en que Meta optimiza la entrega (maximizar cantidad de conversiones, maximizar valor, maximizar clics). En <strong>Florería Bella Rosa</strong>: ¿dónde? en el Website; ¿qué? la compra (Purchase); ¿cómo? optimizando por valor del ticket. Confundir el QUÉ con el CÓMO es el error más típico del examen."
+          "body": "Para no mezclarlas, piénsalas como tres preguntas distintas. <strong>1. Conversion location → ¿DÓNDE?</strong> el lugar físico-digital donde ocurre la acción (Website, App, Messaging, Calls, Instant form). <strong>2. Conversion event → ¿QUÉ?</strong> la acción concreta que va a contar como éxito (Purchase = compra, Lead = contacto, Add to cart = agregar al carrito, View content = ver producto). <strong>3. Objetivo de rendimiento → ¿CÓMO?</strong> la forma en que Meta optimiza la entrega (maximizar cantidad de conversiones, maximizar valor, maximizar clics). En <strong>Florería Bella Rosa</strong>: ¿dónde? en el Website; ¿qué? la compra (Purchase); ¿cómo? optimizando por valor del ticket. Confundir el QUÉ con el CÓMO es el error más típico del examen."
         },
         {
           "type": "concept",
           "h": "El nivel importa",
-          "body": "Una campaña en Meta tiene tres niveles anidados, como muñecas rusas: <strong>campaña</strong> (lo más grande), dentro de ella el <strong>ad set</strong> (conjunto de anuncios: donde defines a quién, dónde y con qué presupuesto le hablas) y dentro de este el <strong>ad</strong> (el anuncio: la imagen o video que ve la gente). Cada decisión vive en un nivel fijo. El <strong>campaign objective</strong> se elige a nivel campaña. Las tres perillas anteriores (location, event y performance goal) se configuran a nivel <strong>ad set</strong>. El nivel ad es solo para el creativo. Por ejemplo, en <strong>Florería Bella Rosa</strong> el objective Sales se fija una vez arriba, pero podrías tener dos ad sets distintos debajo (uno por ciudad) cada uno con su propio location y performance goal. El examen confunde estos niveles a propósito en los distractores."
+          "body": "Una campaña en Meta tiene tres niveles anidados, como muñecas rusas: <strong>campaña</strong> (lo más grande), dentro de ella el <strong>Conjunto de anuncios (ad set)</strong> (donde defines a quién, dónde y con qué presupuesto le hablas) y dentro de este el <strong>ad</strong> (el anuncio: la imagen o video que ve la gente). Cada decisión vive en un nivel fijo. El <strong>objetivo de la campaña</strong> se elige a nivel campaña. Las tres perillas anteriores (location, event y objetivo de rendimiento) se configuran a nivel <strong>conjunto de anuncios</strong>. El nivel ad es solo para el creativo. Por ejemplo, en <strong>Florería Bella Rosa</strong> el objetivo de la campaña Ventas se fija una vez arriba, pero podrías tener dos conjuntos de anuncios distintos debajo (uno por ciudad) cada uno con su propio location y objetivo de rendimiento. El examen confunde estos niveles a propósito en los distractores."
         },
         {
           "type": "kvtable",
@@ -492,13 +492,13 @@
           "rows": [
             ["Conversion location", "Dónde ocurre: Website, App, Messaging, Calls, Instant form"],
             ["Conversion event", "La acción que cuenta: Purchase, Lead, Add to cart, View content"],
-            ["Performance goal", "La regla de licitación: maximizar cantidad, valor, clics, recall"]
+            ["Objetivo de rendimiento", "La regla de licitación: maximizar cantidad, valor, clics, recall"]
           ]
         },
         {
           "type": "warn",
           "label": "DISTINCIÓN DE EXAMEN",
-          "body": "<strong>Conversion event</strong> = QUÉ acción cuenta. <strong>Performance goal</strong> = CÓMO se optimiza. No son sinónimos y el examen los confunde a propósito en los distractores."
+          "body": "<strong>Conversion event</strong> = QUÉ acción cuenta. <strong>Objetivo de rendimiento</strong> = CÓMO se optimiza. No son sinónimos y el examen los confunde a propósito en los distractores."
         },
         {
           "type": "tip",
@@ -508,14 +508,14 @@
         {
           "type": "concept",
           "h": "Dónde configuras las tres perillas en la plataforma",
-          "body": "Las tres decisiones se ven una tras otra al crear el <strong>ad set</strong> en Ads Manager. La ruta es: <em>Ads Manager → tu campaña → nivel Conjunto de anuncios (Ad set)</em>, y en la parte superior aparece primero el <strong>conversion location</strong> (\"Ubicación de la conversión\"), luego el <strong>performance goal</strong> (\"Objetivo de rendimiento\") y dentro de la sección de seguimiento el <strong>conversion event</strong> (\"Evento de conversión\"). Por ejemplo, para <strong>Florería Bella Rosa</strong> entras al ad set, eliges Website como ubicación, Purchase como evento y \"Maximizar el valor de las conversiones\" como objetivo de rendimiento. Si no encuentras estas opciones, casi siempre es porque estás parado en el nivel campaña o ad por error, no en el ad set."
+          "body": "Las tres decisiones se ven una tras otra al crear el <strong>conjunto de anuncios</strong> en Ads Manager. La ruta es: <em>Ads Manager → tu campaña → nivel Conjunto de anuncios (Ad set)</em>, y en la parte superior aparece primero el <strong>conversion location</strong> (\"Ubicación de la conversión\"), luego el <strong>objetivo de rendimiento</strong> (\"Objetivo de rendimiento\") y dentro de la sección de seguimiento el <strong>conversion event</strong> (\"Evento de conversión\"). Por ejemplo, para <strong>Florería Bella Rosa</strong> entras al conjunto de anuncios, eliges Website como ubicación, Purchase como evento y \"Maximizar el valor de las conversiones\" como objetivo de rendimiento. Si no encuentras estas opciones, casi siempre es porque estás parado en el nivel campaña o ad por error, no en el conjunto de anuncios."
         },
         {
           "type": "mcq",
           "q": "Una empresa B2B quiere demos agendadas sin sacar al prospecto del feed. ¿Mejor conversion location?",
           "options": [
             "Website con landing externa",
-            "Instant form (Leads)",
+            "Instant form (Clientes potenciales / leads)",
             "App",
             "Calls"
           ],
@@ -525,7 +525,7 @@
         },
         {
           "type": "mcq",
-          "q": "El cliente vende productos de ticket muy variable y quiere maximizar ingreso, no número de pedidos. ¿Qué performance goal propones?",
+          "q": "El cliente vende productos de ticket muy variable y quiere maximizar ingreso, no número de pedidos. ¿Qué objetivo de rendimiento propones?",
           "options": [
             "Maximize number of conversions",
             "Maximize value of conversions",
@@ -540,13 +540,13 @@
           "type": "mcq",
           "q": "Selecciona la afirmación correcta sobre dónde se configura cada cosa.",
           "options": [
-            "El objective se elige a nivel ad set",
-            "El conversion location y el performance goal se configuran a nivel ad set",
-            "El performance goal se elige a nivel ad",
+            "El objetivo de la campaña se elige a nivel conjunto de anuncios",
+            "El conversion location y el objetivo de rendimiento se configuran a nivel conjunto de anuncios",
+            "El objetivo de rendimiento se elige a nivel ad",
             "El conversion event se elige a nivel campaña"
           ],
           "correct": 1,
-          "explanation": "El campaign objective va a nivel campaña. Conversion location, conversion event y performance goal se configuran a nivel ad set. El nivel ad es para creativos.",
+          "explanation": "El objetivo de la campaña va a nivel campaña. Conversion location, conversion event y objetivo de rendimiento se configuran a nivel conjunto de anuncios. El nivel ad es para creativos.",
           "difficulty": "medium"
         }
       ]
@@ -559,31 +559,31 @@
       "cards": [
         {
           "type": "mcq",
-          "q": "Conversion event vs performance goal:",
+          "q": "Conversion event vs objetivo de rendimiento (performance goal):",
           "options": [
             "Son sinónimos",
-            "Event = qué acción cuenta; performance goal = cómo se licita/optimiza",
-            "Event = cómo se licita; performance goal = qué acción cuenta",
+            "Event = qué acción cuenta; objetivo de rendimiento = cómo se licita/optimiza",
+            "Event = cómo se licita; objetivo de rendimiento = qué acción cuenta",
             "Ambos se configuran a nivel campaña"
           ],
           "correct": 1,
-          "explanation": "Conversion event = QUÉ acción cuenta. Performance goal = CÓMO se optimiza. No son sinónimos; el examen los confunde a propósito."
+          "explanation": "Conversion event = QUÉ acción cuenta. Objetivo de rendimiento = CÓMO se optimiza. No son sinónimos; el examen los confunde a propósito."
         },
         {
           "type": "fill",
-          "q": "Conversion location, conversion event y performance goal se configuran a nivel ___.",
+          "q": "Conversion location, conversion event y objetivo de rendimiento se configuran a nivel ___.",
           "options": [
-            "ad set",
+            "conjunto de anuncios (ad set)",
             "campaña",
             "ad",
             "account"
           ],
           "correct": 0,
-          "explanation": "El campaign objective va a nivel campaña; las tres capas (location, event, goal) se configuran a nivel ad set. El nivel ad es para creativos."
+          "explanation": "El objetivo de la campaña (campaign objective) va a nivel campaña; las tres capas (location, event, goal) se configuran a nivel conjunto de anuncios. El nivel ad es para creativos."
         },
         {
           "type": "mcq",
-          "q": "El negocio quiere ROI con tickets de monto muy variable. ¿Qué performance goal aplica?",
+          "q": "El negocio quiere ROI con tickets de monto muy variable. ¿Qué objetivo de rendimiento aplica?",
           "options": [
             "Maximize number of conversions",
             "Maximize value of conversions",
@@ -645,7 +645,7 @@
         },
         {
           "type": "mcq",
-          "q": "Para la fase de venta con tickets tan variables y meta de ingreso, ¿qué performance goal eliges?",
+          "q": "Para la fase de venta con tickets tan variables y meta de ingreso, ¿qué objetivo de rendimiento (performance goal) eliges?",
           "options": [
             "Maximize number of conversions",
             "Maximize value of conversions",
@@ -659,13 +659,13 @@
           "type": "mcq",
           "q": "El cliente pregunta en qué nivel se configura todo eso. ¿Qué le respondes?",
           "options": [
-            "Conversion location y performance goal se configuran a nivel campaña",
-            "Conversion location, event y performance goal se configuran a nivel ad set",
+            "Conversion location y objetivo de rendimiento se configuran a nivel campaña",
+            "Conversion location, event y objetivo de rendimiento se configuran a nivel conjunto de anuncios (ad set)",
             "Todo se configura a nivel ad",
-            "El performance goal va a nivel account"
+            "El objetivo de rendimiento va a nivel account"
           ],
           "correct": 1,
-          "explanation": "El campaign objective va a nivel campaña; conversion location, conversion event y performance goal se configuran a nivel ad set. El nivel ad es para creativos."
+          "explanation": "El objetivo de la campaña (campaign objective) va a nivel campaña; conversion location, conversion event y objetivo de rendimiento se configuran a nivel conjunto de anuncios. El nivel ad es para creativos."
         }
       ]
     },
@@ -675,9 +675,9 @@
       "section": "b3",
       "type": "flashcards",
       "cards": [
-        { "q": "¿En qué nivel se elige el campaign objective?", "a": "A nivel campaña." },
-        { "q": "¿Dónde se configuran conversion location, event y performance goal?", "a": "A nivel ad set." },
-        { "q": "Conversion event vs performance goal", "a": "Event = qué acción cuenta. Performance goal = cómo se licita/optimiza." },
+        { "q": "¿En qué nivel se elige el objetivo de la campaña (campaign objective)?", "a": "A nivel campaña." },
+        { "q": "¿Dónde se configuran conversion location, event y objetivo de rendimiento (performance goal)?", "a": "A nivel conjunto de anuncios (ad set)." },
+        { "q": "Conversion event vs objetivo de rendimiento", "a": "Event = qué acción cuenta. Objetivo de rendimiento = cómo se licita/optimiza." },
         { "q": "Maximize number vs value of conversions", "a": "Number = más unidades. Value = mayor monto por conversión (requiere value tracking)." },
         { "q": "Conversion location de menor fricción para captar leads", "a": "Instant form: el prospecto llena el formulario dentro de Meta sin salir del feed." }
       ]
@@ -691,12 +691,12 @@
         {
           "type": "concept",
           "h": "Un plan no es una sola campaña",
-          "body": "Un <strong>media plan</strong> (plan de medios: el documento donde decides en qué objetivos vas a invertir y en qué orden) serio no se resuelve con una sola campaña. La razón es que el cliente no pasa de extraño a comprador en un solo salto, sino que avanza por <strong>fases</strong> (etapas del recorrido de compra). Cada fase tiene su propio objective porque la acción que quieres optimizar cambia: arriba quieres que te conozcan, en medio que dejen su contacto, y abajo que compren. Si usas un solo objective para todo, optimizas la métrica equivocada en al menos una fase. Por ejemplo, la <strong>Escuela de Idiomas Políglota</strong> primero da a conocer sus cursos, luego capta a quien pide informes y al final empuja la inscripción pagada: tres acciones distintas, tres objectives distintos."
+          "body": "Un <strong>media plan</strong> (plan de medios: el documento donde decides en qué objetivos vas a invertir y en qué orden) serio no se resuelve con una sola campaña. La razón es que el cliente no pasa de extraño a comprador en un solo salto, sino que avanza por <strong>fases</strong> (etapas del recorrido de compra). Cada fase tiene su propio <strong>objetivo de la campaña (campaign objective)</strong> porque la acción que quieres optimizar cambia: arriba quieres que te conozcan, en medio que dejen su contacto, y abajo que compren. Si usas un solo objetivo de la campaña para todo, optimizas la métrica equivocada en al menos una fase. Por ejemplo, la <strong>Escuela de Idiomas Políglota</strong> primero da a conocer sus cursos, luego capta a quien pide informes y al final empuja la inscripción pagada: tres acciones distintas, tres objetivos de la campaña distintos."
         },
         {
           "type": "concept",
           "h": "Las tres fases del recorrido, una por una",
-          "body": "Para armar el plan, piensa el recorrido en tres tramos y asigna a cada uno su acción. <strong>1. Captación (arriba del funnel)</strong> = que el prospecto te conozca o deje su contacto; aquí viven Awareness y Leads. <strong>2. Consideración (en medio)</strong> = mantener el interés y nutrir al prospecto mientras decide; aquí entran Engagement o Traffic según el activo que tengas. <strong>3. Conversión (abajo del funnel)</strong> = cerrar la acción de valor, normalmente la compra o la firma; aquí va Sales. En la <strong>Escuela de Idiomas Políglota</strong>: captación con Leads para juntar a interesados, consideración con Engagement para que vean testimonios, y conversión con Sales cuando pagan la inscripción. Cada tramo se monta como una campaña propia con su objective."
+          "body": "Para armar el plan, piensa el recorrido en tres tramos y asigna a cada uno su acción. <strong>1. Captación (arriba del funnel)</strong> = que el prospecto te conozca o deje su contacto; aquí viven Reconocimiento (awareness) y Clientes potenciales (leads). <strong>2. Consideración (en medio)</strong> = mantener el interés y nutrir al prospecto mientras decide; aquí entran Interacción (engagement) o Tráfico (traffic) según el activo que tengas. <strong>3. Conversión (abajo del funnel)</strong> = cerrar la acción de valor, normalmente la compra o la firma; aquí va Ventas (sales). En la <strong>Escuela de Idiomas Políglota</strong>: captación con Clientes potenciales para juntar a interesados, consideración con Interacción para que vean testimonios, y conversión con Ventas cuando pagan la inscripción. Cada tramo se monta como una campaña propia con su objetivo de la campaña."
         },
         {
           "type": "concept",
@@ -705,47 +705,47 @@
         },
         {
           "type": "kvtable",
-          "h": "Fase → objective",
+          "h": "Fase → objetivo de la campaña",
           "rows": [
-            ["Captar contacto (arriba)", "Leads + Instant form"],
-            ["Nutrir / consideración", "Engagement o Traffic según el activo"],
-            ["Cerrar la firma (abajo)", "Sales, con el location donde ocurre el cierre"]
+            ["Captar contacto (arriba)", "Clientes potenciales + Instant form"],
+            ["Nutrir / consideración", "Interacción o Tráfico según el activo"],
+            ["Cerrar la firma (abajo)", "Ventas, con el location donde ocurre el cierre"]
           ]
         },
         {
           "type": "tip",
           "label": "CIERRE DEL MÓDULO",
-          "body": "Un buen media plan separa fases del funnel en objectives distintos: captar lead arriba, optimizar conversión abajo. No fuerces un solo objective para todo el recorrido."
+          "body": "Un buen media plan separa fases del funnel en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo. No fuerces un solo objetivo de la campaña para todo el recorrido."
         },
         {
           "type": "warn",
           "label": "TRAMPA TÍPICA",
-          "body": "Querer un <strong>solo objective</strong> para todo el funnel \"por simplicidad\". Eso optimiza la métrica equivocada en alguna fase: captarías leads donde debías cerrar ventas, o al revés."
+          "body": "Querer un <strong>solo objetivo de la campaña</strong> para todo el funnel \"por simplicidad\". Eso optimiza la métrica equivocada en alguna fase: captarías leads donde debías cerrar ventas, o al revés."
         },
         {
           "type": "mcq",
-          "q": "Para captar a los prospectos que dejan datos antes del contacto del asesor, ¿qué objective + conversion location propones en esa fase?",
+          "q": "Para captar a los prospectos que dejan datos antes del contacto del asesor, ¿qué objetivo de la campaña + conversion location propones en esa fase?",
           "options": [
-            "Sales + Website",
-            "Leads + Instant form",
-            "Awareness + ninguno",
-            "Traffic + landing externa"
+            "Ventas + Website",
+            "Clientes potenciales + Instant form",
+            "Reconocimiento + ninguno",
+            "Tráfico + landing externa"
           ],
           "correct": 1,
-          "explanation": "La acción de esa fase es dejar contacto (no firmar todavía). Leads con Instant form minimiza fricción y alimenta al equipo de ventas. Sales sería para la conversión final; Traffic solo manda clics.",
+          "explanation": "La acción de esa fase es dejar contacto (no firmar todavía). Clientes potenciales con Instant form minimiza fricción y alimenta al equipo de ventas. Ventas sería para la conversión final; Tráfico solo manda clics.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
           "q": "Si el cliente además quiere optimizar para la firma del contrato que ocurre tras chat con el asesor, ¿qué combinación se acerca más?",
           "options": [
-            "Sales con conversion location Messaging/Website según dónde se firme y evento de conversión = la firma",
-            "Awareness con recall lift",
-            "Engagement con post engagement",
-            "Traffic con link clicks"
+            "Ventas con conversion location Messaging/Website según dónde se firme y evento de conversión = la firma",
+            "Reconocimiento con recall lift",
+            "Interacción con post engagement",
+            "Tráfico con link clicks"
           ],
           "correct": 0,
-          "explanation": "La firma es la conversión de valor: objective Sales, con el conversion location donde realmente sucede el cierre y el evento que representa la firma. Awareness/Engagement/Traffic no optimizan la conversión final.",
+          "explanation": "La firma es la conversión de valor: objetivo de la campaña Ventas, con el conversion location donde realmente sucede el cierre y el evento que representa la firma. Reconocimiento/Interacción/Tráfico no optimizan la conversión final.",
           "difficulty": "hard"
         }
       ]
@@ -760,41 +760,41 @@
           "type": "mcq",
           "q": "¿Cómo separa las fases del funnel un buen media plan?",
           "options": [
-            "Usa un solo objective para todo el recorrido",
-            "Separa fases en objectives distintos: captar lead arriba, optimizar conversión abajo",
-            "Usa Awareness para todas las fases",
+            "Usa un solo objetivo de la campaña (campaign objective) para todo el recorrido",
+            "Separa fases en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo",
+            "Usa Reconocimiento (awareness) para todas las fases",
             "Deja que el creative decida la fase"
           ],
           "correct": 1,
-          "explanation": "Un buen media plan separa fases del funnel en objectives distintos: captar lead arriba, optimizar conversión abajo. No fuerces un solo objective para todo."
+          "explanation": "Un buen media plan separa fases del funnel en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo. No fuerces un solo objetivo de la campaña para todo."
         },
         {
           "type": "fill",
-          "q": "Para captar prospectos que solo dejan datos (sin firmar aún), el objective es ___ con Instant form.",
+          "q": "Para captar prospectos que solo dejan datos (sin firmar aún), el objetivo de la campaña es ___ con Instant form.",
           "options": [
-            "Leads",
-            "Sales",
-            "Awareness",
-            "Traffic"
+            "Clientes potenciales (leads)",
+            "Ventas (sales)",
+            "Reconocimiento (awareness)",
+            "Tráfico (traffic)"
           ],
           "correct": 0,
-          "explanation": "La acción de esa fase es dejar contacto, no firmar. Leads con Instant form minimiza fricción y alimenta al equipo de ventas."
+          "explanation": "La acción de esa fase es dejar contacto, no firmar. Clientes potenciales con Instant form minimiza fricción y alimenta al equipo de ventas."
         },
         {
           "type": "mcq",
           "q": "La firma del contrato (la conversión de valor) se optimiza con:",
           "options": [
-            "Awareness con recall lift",
-            "Sales, con el conversion location donde sucede el cierre y el evento que representa la firma",
-            "Engagement con post engagement",
-            "Traffic con link clicks"
+            "Reconocimiento con recall lift",
+            "Ventas, con el conversion location donde sucede el cierre y el evento que representa la firma",
+            "Interacción con post engagement",
+            "Tráfico con link clicks"
           ],
           "correct": 1,
-          "explanation": "La firma es la conversión de valor: objective Sales, con el conversion location donde realmente sucede el cierre y el evento de la firma."
+          "explanation": "La firma es la conversión de valor: objetivo de la campaña Ventas, con el conversion location donde realmente sucede el cierre y el evento de la firma."
         },
         {
           "type": "fill",
-          "q": "En la fase de captación, Traffic solo manda ___, no contactos calificados.",
+          "q": "En la fase de captación, Tráfico solo manda ___, no contactos calificados.",
           "options": [
             "clics",
             "ventas",
@@ -802,7 +802,7 @@
             "leads"
           ],
           "correct": 0,
-          "explanation": "Traffic solo manda clics. Para captar contacto la opción correcta es Leads con Instant form."
+          "explanation": "Tráfico solo manda clics. Para captar contacto la opción correcta es Clientes potenciales con Instant form."
         }
       ]
     },
@@ -820,39 +820,39 @@
         },
         {
           "type": "mcq",
-          "q": "Fase 1: captar a quienes solo dejan datos. ¿Objective + conversion location?",
+          "q": "Fase 1: captar a quienes solo dejan datos. ¿Objetivo de la campaña (campaign objective) + conversion location?",
           "options": [
-            "Sales + Website",
-            "Leads + Instant form",
-            "Awareness + ninguno",
-            "Traffic + landing externa"
+            "Ventas (sales) + Website",
+            "Clientes potenciales (leads) + Instant form",
+            "Reconocimiento (awareness) + ninguno",
+            "Tráfico (traffic) + landing externa"
           ],
           "correct": 1,
-          "explanation": "La acción de esa fase es dejar contacto, no firmar todavía. Leads + Instant form minimiza fricción y alimenta al equipo de ventas."
+          "explanation": "La acción de esa fase es dejar contacto, no firmar todavía. Clientes potenciales + Instant form minimiza fricción y alimenta al equipo de ventas."
         },
         {
           "type": "mcq",
           "q": "Fase 2: optimizar la firma que ocurre tras el chat con el asesor. ¿Qué combinación se acerca más?",
           "options": [
-            "Sales con conversion location según dónde se firme y evento = la firma",
-            "Awareness con recall lift",
-            "Engagement con post engagement",
-            "Traffic con link clicks"
+            "Ventas con conversion location según dónde se firme y evento = la firma",
+            "Reconocimiento con recall lift",
+            "Interacción con post engagement",
+            "Tráfico con link clicks"
           ],
           "correct": 0,
-          "explanation": "La firma es la conversión de valor: objective Sales, con el conversion location donde realmente sucede el cierre y el evento que representa la firma."
+          "explanation": "La firma es la conversión de valor: objetivo de la campaña Ventas, con el conversion location donde realmente sucede el cierre y el evento que representa la firma."
         },
         {
           "type": "mcq",
-          "q": "El cliente quiere un solo objective para todo el recorrido. ¿Qué le explicas?",
+          "q": "El cliente quiere un solo objetivo de la campaña para todo el recorrido. ¿Qué le explicas?",
           "options": [
-            "Tiene razón, un objective basta para todo el funnel",
-            "Conviene separar fases en objectives distintos: captar lead arriba, optimizar conversión abajo",
-            "Hay que usar solo Awareness",
-            "El objective lo decide el creative, no importa"
+            "Tiene razón, un objetivo de la campaña basta para todo el funnel",
+            "Conviene separar fases en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo",
+            "Hay que usar solo Reconocimiento",
+            "El objetivo de la campaña lo decide el creative, no importa"
           ],
           "correct": 1,
-          "explanation": "Un buen media plan separa fases del funnel en objectives distintos: captar lead arriba (Leads) y optimizar conversión abajo (Sales). Forzar un solo objective optimiza la métrica equivocada en alguna fase."
+          "explanation": "Un buen media plan separa fases del funnel en objetivos de la campaña distintos: captar lead arriba (Clientes potenciales) y optimizar conversión abajo (Ventas). Forzar un solo objetivo de la campaña optimiza la métrica equivocada en alguna fase."
         }
       ]
     },
@@ -862,10 +862,10 @@
       "section": "b4",
       "type": "flashcards",
       "cards": [
-        { "q": "¿Cómo separa las fases un buen media plan?", "a": "En objectives distintos: captar lead arriba (Leads), optimizar conversión abajo (Sales)." },
-        { "q": "Fase de captar contacto (sin firmar aún)", "a": "Leads + Instant form: mínima fricción, alimenta al equipo de ventas." },
-        { "q": "Fase de optimizar la firma (conversión de valor)", "a": "Sales, con el conversion location donde sucede el cierre y el evento que representa la firma." },
-        { "q": "¿Por qué no forzar un solo objective para todo el funnel?", "a": "Porque terminas optimizando la métrica equivocada en alguna fase." }
+        { "q": "¿Cómo separa las fases un buen media plan?", "a": "En objetivos de la campaña (campaign objectives) distintos: captar lead arriba (Clientes potenciales / leads), optimizar conversión abajo (Ventas / sales)." },
+        { "q": "Fase de captar contacto (sin firmar aún)", "a": "Clientes potenciales + Instant form: mínima fricción, alimenta al equipo de ventas." },
+        { "q": "Fase de optimizar la firma (conversión de valor)", "a": "Ventas, con el conversion location donde sucede el cierre y el evento que representa la firma." },
+        { "q": "¿Por qué no forzar un solo objetivo de la campaña para todo el funnel?", "a": "Porque terminas optimizando la métrica equivocada en alguna fase." }
       ]
     },
     {
@@ -882,51 +882,51 @@
         },
         {
           "type": "mcq",
-          "q": "Fase 1 — la marca es desconocida en esa ciudad. ¿Qué objective abre el plan?",
+          "q": "Fase 1 — la marca es desconocida en esa ciudad. ¿Qué objetivo de la campaña (campaign objective) abre el plan?",
           "options": [
-            "Sales, para recuperar inversión rápido",
-            "Awareness, para construir recall en un mercado que no la conoce",
-            "Leads desde el día uno",
-            "App Promotion"
+            "Ventas (sales), para recuperar inversión rápido",
+            "Reconocimiento (awareness), para construir recall en un mercado que no la conoce",
+            "Clientes potenciales (leads) desde el día uno",
+            "Promoción de la app (app promotion)"
           ],
           "correct": 1,
-          "explanation": "Sin reconocimiento previo, empujar conversión desperdicia presupuesto. Awareness construye la base del funnel antes de pedir acción."
+          "explanation": "Sin reconocimiento previo, empujar conversión desperdicia presupuesto. Reconocimiento construye la base del funnel antes de pedir acción."
         },
         {
           "type": "mcq",
           "q": "Fase 2 — captar prospectos que quieren cotización sin sacarlos del feed. ¿Objective + location?",
           "options": [
-            "Traffic + landing externa",
-            "Leads + Instant form",
-            "Sales + Website",
-            "Engagement + Messaging"
+            "Tráfico + landing externa",
+            "Clientes potenciales + Instant form",
+            "Ventas + Website",
+            "Interacción (engagement) + Messaging"
           ],
           "correct": 1,
-          "explanation": "La acción es dejar contacto para cotizar (no comprar todavía). Leads + Instant form minimiza fricción y alimenta a ventas."
+          "explanation": "La acción es dejar contacto para cotizar (no comprar todavía). Clientes potenciales + Instant form minimiza fricción y alimenta a ventas."
         },
         {
           "type": "mcq",
-          "q": "Fase 3 — cerrar contratos de instalación, con tickets que van de $40,000 a $400,000 MXN y meta de ingreso. ¿Objective + performance goal?",
+          "q": "Fase 3 — cerrar contratos de instalación, con tickets que van de $40,000 a $400,000 MXN y meta de ingreso. ¿Objetivo de la campaña + objetivo de rendimiento (performance goal)?",
           "options": [
-            "Sales + Maximize value of conversions",
-            "Sales + Maximize number of conversions",
-            "Traffic + Maximize link clicks",
-            "Leads + Maximize leads"
+            "Ventas + Maximize value of conversions",
+            "Ventas + Maximize number of conversions",
+            "Tráfico + Maximize link clicks",
+            "Clientes potenciales + Maximize leads"
           ],
           "correct": 0,
-          "explanation": "Tickets muy variables + meta de ingreso → Sales con Maximize value of conversions (requiere value tracking en el Pixel), no número de pedidos."
+          "explanation": "Tickets muy variables + meta de ingreso → Ventas con Maximize value of conversions (requiere value tracking en el Pixel), no número de pedidos."
         },
         {
           "type": "mcq",
-          "q": "El dueño quiere meter las 3 fases en una sola campaña con un solo objective \"para no complicarse\". ¿Qué le explicas?",
+          "q": "El dueño quiere meter las 3 fases en una sola campaña con un solo objetivo de la campaña \"para no complicarse\". ¿Qué le explicas?",
           "options": [
             "Tiene razón, simplifica todo en una campaña",
-            "Cada fase optimiza una acción distinta; un solo objective optimizaría la métrica equivocada en dos de las tres fases",
-            "Hay que usar solo Awareness para las tres",
-            "El objective no afecta el resultado, lo decide el creative"
+            "Cada fase optimiza una acción distinta; un solo objetivo de la campaña optimizaría la métrica equivocada en dos de las tres fases",
+            "Hay que usar solo Reconocimiento para las tres",
+            "El objetivo de la campaña no afecta el resultado, lo decide el creative"
           ],
           "correct": 1,
-          "explanation": "El plan se estructura por fase porque la acción a optimizar cambia: recall, contacto y venta de valor son objectives distintos. Forzar uno solo rompe la lógica del funnel."
+          "explanation": "El plan se estructura por fase porque la acción a optimizar cambia: recall, contacto y venta de valor son objetivos de la campaña distintos. Forzar uno solo rompe la lógica del funnel."
         }
       ]
     },
@@ -938,17 +938,17 @@
       "instruction": "Tap el término y luego su definición. Cada error cuesta 1 ❤️.",
       "pairs": [
         ["Business goal", "Lo que el negocio quiere lograr; el punto de partida del media planner"],
-        ["Campaign objective", "Consecuencia del business goal: se elige a nivel campaña"],
-        ["Awareness", "Top funnel: maximizar recall y reach"],
-        ["Leads", "Recolectar contactos: Instant form, calls, sign-ups"],
-        ["Sales", "Bottom funnel: encontrar a quienes más probablemente compran"],
+        ["Objetivo de la campaña (campaign objective)", "Consecuencia del business goal: se elige a nivel campaña"],
+        ["Reconocimiento (awareness)", "Top funnel: maximizar recall y reach"],
+        ["Clientes potenciales (leads)", "Recolectar contactos: Instant form, calls, sign-ups"],
+        ["Ventas (sales)", "Bottom funnel: encontrar a quienes más probablemente compran"],
         ["Conversion location", "Dónde ocurre: Website, App, Messaging, Calls, Instant form"],
         ["Conversion event", "La acción que cuenta: Purchase, Lead, Add to cart"],
-        ["Performance goal", "La regla de licitación: cómo se optimiza la entrega"],
+        ["Objetivo de rendimiento (performance goal)", "La regla de licitación: cómo se optimiza la entrega"],
         ["Maximize value of conversions", "Optimiza por monto del ticket; requiere value tracking"],
-        ["Data source para Sales web", "Pixel + Conversions API (CAPI)"],
-        ["Data source para App Promotion", "Facebook SDK o un MMP autorizado"],
-        ["Objectives sin tracking de conversión", "Awareness y Engagement"]
+        ["Data source para Ventas web", "Pixel + Conversions API (CAPI)"],
+        ["Data source para Promoción de la app (app promotion)", "Facebook SDK o un MMP autorizado"],
+        ["Objetivos de la campaña sin tracking de conversión", "Reconocimiento e Interacción (engagement)"]
       ]
     },
     {
@@ -960,12 +960,12 @@
       "items": [
         "Entender el business goal del cliente",
         "Identificar la etapa del funnel",
-        "Elegir el campaign objective",
+        "Elegir el objetivo de la campaña (campaign objective)",
         "Definir el conversion location",
         "Definir el conversion event",
-        "Definir el performance goal"
+        "Definir el objetivo de rendimiento (performance goal)"
       ],
-      "explanation": "Business goal → etapa del funnel → campaign objective → conversion location → conversion event → performance goal. Invertir el orden optimiza la métrica equivocada."
+      "explanation": "Business goal → etapa del funnel → objetivo de la campaña → conversion location → conversion event → objetivo de rendimiento. Invertir el orden optimiza la métrica equivocada."
     },
     {
       "id": "1.fill",
@@ -982,24 +982,24 @@
         },
         {
           "type": "fill",
-          "q": "El campaign objective se elige a nivel ___.",
-          "options": ["campaña", "ad set", "ad", "account"],
+          "q": "El objetivo de la campaña (campaign objective) se elige a nivel ___.",
+          "options": ["campaña", "conjunto de anuncios (ad set)", "ad", "account"],
           "correct": 0,
-          "explanation": "El objective va a nivel campaña; las tres capas (location, event, goal) a nivel ad set."
+          "explanation": "El objetivo de la campaña va a nivel campaña; las tres capas (location, event, goal) a nivel conjunto de anuncios."
         },
         {
           "type": "fill",
-          "q": "Sales website con evento Purchase requiere Pixel + ___.",
+          "q": "Ventas (sales) website con evento Purchase requiere Pixel + ___.",
           "options": ["CAPI", "SDK", "MMP", "catálogo"],
           "correct": 0,
-          "explanation": "Pixel + Conversions API (CAPI) juntos son el estándar para Sales web."
+          "explanation": "Pixel + Conversions API (CAPI) juntos son el estándar para Ventas web."
         },
         {
           "type": "fill",
-          "q": "Conversion event = qué acción cuenta; performance goal = ___ se optimiza.",
+          "q": "Conversion event = qué acción cuenta; objetivo de rendimiento (performance goal) = ___ se optimiza.",
           "options": ["cómo", "qué", "dónde", "cuándo"],
           "correct": 0,
-          "explanation": "Event = QUÉ acción cuenta. Performance goal = CÓMO se optimiza/licita."
+          "explanation": "Event = QUÉ acción cuenta. Objetivo de rendimiento = CÓMO se optimiza/licita."
         },
         {
           "type": "fill",
@@ -1010,14 +1010,14 @@
         },
         {
           "type": "fill",
-          "q": "Con tickets muy variables y meta de ingreso, el performance goal es Maximize ___ of conversions.",
+          "q": "Con tickets muy variables y meta de ingreso, el objetivo de rendimiento es Maximize ___ of conversions.",
           "options": ["value", "number", "clicks", "reach"],
           "correct": 0,
           "explanation": "Maximize value optimiza por monto del ticket; requiere value tracking en el Pixel."
         },
         {
           "type": "fill",
-          "q": "App Promotion exige Facebook SDK o un ___ autorizado.",
+          "q": "Promoción de la app (app promotion) exige Facebook SDK o un ___ autorizado.",
           "options": ["MMP", "Pixel", "CAPI", "catálogo"],
           "correct": 0,
           "explanation": "Los eventos in-app se miden con SDK o un Mobile Measurement Partner."
@@ -1034,64 +1034,64 @@
           "type": "mcq",
           "q": "¿Cuál es el primer paso del media planner?",
           "options": [
-            "Elegir un objective en Ads Manager",
-            "Entender el business goal del cliente y traducirlo a un objective",
+            "Elegir un objetivo de la campaña (campaign objective) en Ads Manager",
+            "Entender el business goal del cliente y traducirlo a un objetivo de la campaña",
             "Configurar el Pixel",
             "Subir el creative"
           ],
           "correct": 1,
-          "explanation": "El primer paso nunca es elegir un objective: es entender el business goal y traducirlo al objective que lo soporta."
+          "explanation": "El primer paso nunca es elegir un objetivo de la campaña: es entender el business goal y traducirlo al objetivo de la campaña que lo soporta."
         },
         {
           "type": "mcq",
           "q": "Los 6 ODAX son:",
           "options": [
-            "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+            "Reconocimiento, Tráfico, Interacción, Clientes potenciales, Promoción de la app, Ventas",
             "Reach, Clicks, Views, Leads, Installs, Purchase",
-            "Awareness, Consideration, Conversion, Retention, Loyalty, Sales",
+            "Reconocimiento, Consideración, Conversión, Retención, Lealtad, Ventas",
             "Pixel, CAPI, Catalog, SDK, Form, Calls"
           ],
           "correct": 0,
-          "explanation": "Awareness, Traffic, Engagement, Leads, App Promotion y Sales."
+          "explanation": "Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion) y Ventas (sales)."
         },
         {
           "type": "mcq",
-          "q": "Negocio quiere ventas y eliges Traffic. ¿Qué optimiza el sistema?",
-          "options": ["Compras", "Link clicks", "Recall", "Leads"],
+          "q": "Negocio quiere ventas y eliges Tráfico. ¿Qué optimiza el sistema?",
+          "options": ["Compras", "Link clicks", "Recall", "Clientes potenciales"],
           "correct": 1,
-          "explanation": "Traffic optimiza link clicks, no compras. Para venta real el objective es Sales."
+          "explanation": "Tráfico optimiza link clicks, no compras. Para venta real el objetivo de la campaña es Ventas."
         },
         {
           "type": "mcq",
-          "q": "Marca sin reconocimiento previo. ¿Qué objective construye base de funnel?",
-          "options": ["Sales", "Leads", "Awareness", "App Promotion"],
+          "q": "Marca sin reconocimiento previo. ¿Qué objetivo de la campaña construye base de funnel?",
+          "options": ["Ventas", "Clientes potenciales", "Reconocimiento", "Promoción de la app"],
           "correct": 2,
-          "explanation": "Awareness construye recall antes de pedir conversión."
+          "explanation": "Reconocimiento construye recall antes de pedir conversión."
         },
         {
           "type": "mcq",
-          "q": "Objectives que NO requieren tracking de conversión:",
-          "options": ["Sales y Leads", "Awareness y Engagement", "Traffic y Sales", "App Promotion y Sales"],
+          "q": "Objetivos de la campaña que NO requieren tracking de conversión:",
+          "options": ["Ventas y Clientes potenciales", "Reconocimiento e Interacción", "Tráfico y Ventas", "Promoción de la app y Ventas"],
           "correct": 1,
-          "explanation": "Awareness y Engagement no requieren tracking de conversión."
+          "explanation": "Reconocimiento e Interacción no requieren tracking de conversión."
         },
         {
           "type": "mcq",
-          "q": "Data source obligatoria para Sales website:",
+          "q": "Data source obligatoria para Ventas website:",
           "options": ["Solo el Pixel", "Pixel + CAPI", "Solo CAPI", "Catálogo"],
           "correct": 1,
           "explanation": "Pixel + Conversions API juntos son el estándar."
         },
         {
           "type": "mcq",
-          "q": "Data source obligatoria para App Promotion:",
+          "q": "Data source obligatoria para Promoción de la app:",
           "options": ["Pixel web", "Customer list", "Facebook SDK o un MMP", "Catálogo"],
           "correct": 2,
           "explanation": "Los eventos in-app se miden con SDK o un MMP autorizado."
         },
         {
           "type": "mcq",
-          "q": "¿Leads con Instant form requiere Pixel?",
+          "q": "¿Clientes potenciales con Instant form requiere Pixel?",
           "options": ["Sí, siempre", "No; los datos quedan en Meta", "Solo en iOS", "Solo si hay catálogo"],
           "correct": 1,
           "explanation": "Instant form captura el contacto dentro de Meta; no requiere Pixel."
@@ -1110,7 +1110,7 @@
         },
         {
           "type": "mcq",
-          "q": "Tickets muy variables, meta de ingreso. Performance goal:",
+          "q": "Tickets muy variables, meta de ingreso. Objetivo de rendimiento (performance goal):",
           "options": [
             "Maximize number of conversions",
             "Maximize value of conversions",
@@ -1122,22 +1122,22 @@
         },
         {
           "type": "mcq",
-          "q": "¿En qué nivel se configuran conversion location, event y performance goal?",
-          "options": ["Campaña", "Ad set", "Ad", "Account"],
+          "q": "¿En qué nivel se configuran conversion location, event y objetivo de rendimiento?",
+          "options": ["Campaña", "Conjunto de anuncios (ad set)", "Ad", "Account"],
           "correct": 1,
-          "explanation": "A nivel ad set. El objective va a nivel campaña; el ad es para creativos."
+          "explanation": "A nivel conjunto de anuncios. El objetivo de la campaña va a nivel campaña; el ad es para creativos."
         },
         {
           "type": "mcq",
           "q": "¿Cómo separa las fases del funnel un buen media plan?",
           "options": [
-            "Un solo objective para todo",
-            "Objectives distintos por fase: captar arriba, convertir abajo",
-            "Solo Awareness",
+            "Un solo objetivo de la campaña para todo",
+            "Objetivos de la campaña distintos por fase: captar arriba, convertir abajo",
+            "Solo Reconocimiento",
             "Lo decide el creative"
           ],
           "correct": 1,
-          "explanation": "Cada fase optimiza una acción distinta; se usan objectives distintos."
+          "explanation": "Cada fase optimiza una acción distinta; se usan objetivos de la campaña distintos."
         }
       ]
     },
@@ -1149,40 +1149,40 @@
       "timeLimit": 180,
       "questions": [
         {
-          "q": "¿El primer paso es elegir el objective en Ads Manager?",
+          "q": "¿El primer paso es elegir el objetivo de la campaña (campaign objective) en Ads Manager?",
           "options": ["Sí", "No, es entender el business goal"],
           "correct": 1,
-          "explanation": "Primero el business goal; el objective es consecuencia."
+          "explanation": "Primero el business goal; el objetivo de la campaña es consecuencia."
         },
         {
-          "q": "¿Traffic optimiza compras?",
+          "q": "¿Tráfico (traffic) optimiza compras?",
           "options": ["Sí", "No, optimiza link clicks"],
           "correct": 1,
-          "explanation": "Traffic = link clicks. Venta real = Sales."
+          "explanation": "Tráfico = link clicks. Venta real = Ventas (sales)."
         },
         {
-          "q": "¿Awareness requiere Pixel?",
+          "q": "¿Reconocimiento (awareness) requiere Pixel?",
           "options": ["Sí", "No"],
           "correct": 1,
-          "explanation": "Awareness/Engagement no requieren tracking de conversión."
+          "explanation": "Reconocimiento/Interacción (engagement) no requieren tracking de conversión."
         },
         {
-          "q": "¿Sales web necesita Pixel + CAPI?",
+          "q": "¿Ventas web necesita Pixel + CAPI?",
           "options": ["Sí", "No, basta el Pixel"],
           "correct": 0,
           "explanation": "Pixel + CAPI juntos es el estándar."
         },
         {
-          "q": "¿El objective se elige a nivel ad set?",
+          "q": "¿El objetivo de la campaña se elige a nivel conjunto de anuncios (ad set)?",
           "options": ["Sí", "No, a nivel campaña"],
           "correct": 1,
-          "explanation": "El objective va a nivel campaña; las 3 capas a nivel ad set."
+          "explanation": "El objetivo de la campaña va a nivel campaña; las 3 capas a nivel conjunto de anuncios."
         },
         {
-          "q": "¿Conversion event y performance goal son lo mismo?",
+          "q": "¿Conversion event y objetivo de rendimiento (performance goal) son lo mismo?",
           "options": ["Sí", "No"],
           "correct": 1,
-          "explanation": "Event = qué acción cuenta; performance goal = cómo se optimiza."
+          "explanation": "Event = qué acción cuenta; objetivo de rendimiento = cómo se optimiza."
         },
         {
           "q": "¿App installs se miden con el Pixel web?",
@@ -1191,10 +1191,10 @@
           "explanation": "In-app = SDK o un MMP autorizado."
         },
         {
-          "q": "¿Conviene un solo objective para todo el funnel?",
+          "q": "¿Conviene un solo objetivo de la campaña para todo el funnel?",
           "options": ["Sí, simplifica", "No, una métrica equivocada por fase"],
           "correct": 1,
-          "explanation": "Cada fase optimiza una acción distinta; objectives separados."
+          "explanation": "Cada fase optimiza una acción distinta; objetivos de la campaña separados."
         }
       ]
     },
@@ -1204,31 +1204,31 @@
       "section": "bz",
       "type": "flashcards",
       "cards": [
-        { "q": "¿Cuál es el primer paso del media planner?", "a": "Entender el business goal del cliente, no elegir un objective en Ads Manager." },
-        { "q": "Los 6 ODAX", "a": "Awareness, Traffic, Engagement, Leads, App Promotion, Sales." },
-        { "q": "Funnel de los 6 ODAX", "a": "Top: Awareness/Traffic · Mid: Engagement/Leads · Bottom: Sales/App Promotion." },
-        { "q": "¿En qué nivel se elige el campaign objective?", "a": "A nivel campaña." },
-        { "q": "¿Dónde se configuran conversion location, event y performance goal?", "a": "A nivel ad set." },
+        { "q": "¿Cuál es el primer paso del media planner?", "a": "Entender el business goal del cliente, no elegir un objetivo de la campaña (campaign objective) en Ads Manager." },
+        { "q": "Los 6 ODAX", "a": "Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales)." },
+        { "q": "Funnel de los 6 ODAX", "a": "Top: Reconocimiento/Tráfico · Mid: Interacción/Clientes potenciales · Bottom: Ventas/Promoción de la app." },
+        { "q": "¿En qué nivel se elige el objetivo de la campaña?", "a": "A nivel campaña." },
+        { "q": "¿Dónde se configuran conversion location, event y objetivo de rendimiento (performance goal)?", "a": "A nivel conjunto de anuncios (ad set)." },
         { "q": "Conversion location", "a": "Dónde ocurre: Website, App, Messaging, Calls, Instant form." },
         { "q": "Conversion event", "a": "La acción que cuenta: Purchase, Lead, Add to cart, View content." },
-        { "q": "Performance goal", "a": "La regla de licitación: cómo se optimiza la entrega." },
-        { "q": "Conversion event vs performance goal", "a": "Event = qué acción cuenta. Performance goal = cómo se licita/optimiza." },
+        { "q": "Objetivo de rendimiento", "a": "La regla de licitación: cómo se optimiza la entrega." },
+        { "q": "Conversion event vs objetivo de rendimiento", "a": "Event = qué acción cuenta. Objetivo de rendimiento = cómo se licita/optimiza." },
         { "q": "Maximize number vs value of conversions", "a": "Number = más unidades. Value = mayor monto por conversión (requiere value tracking)." },
-        { "q": "Data source para Sales website", "a": "Pixel + Conversions API (CAPI)." },
-        { "q": "Data source para Sales catálogo", "a": "Pixel/CAPI + Catalog conectado." },
-        { "q": "Data source para App Promotion", "a": "Facebook SDK o un MMP autorizado." },
-        { "q": "Data source para Leads website", "a": "Pixel + CAPI." },
-        { "q": "¿Leads con Instant form requiere Pixel?", "a": "No; los datos se capturan dentro de Meta." },
+        { "q": "Data source para Ventas website", "a": "Pixel + Conversions API (CAPI)." },
+        { "q": "Data source para Ventas catálogo", "a": "Pixel/CAPI + Catalog conectado." },
+        { "q": "Data source para Promoción de la app", "a": "Facebook SDK o un MMP autorizado." },
+        { "q": "Data source para Clientes potenciales website", "a": "Pixel + CAPI." },
+        { "q": "¿Clientes potenciales con Instant form requiere Pixel?", "a": "No; los datos se capturan dentro de Meta." },
         { "q": "¿Por qué Pixel + CAPI juntos?", "a": "CAPI recupera señal que el navegador pierde (bloqueadores, iOS) y mejora match quality." },
-        { "q": "Objectives que NO requieren tracking de conversión", "a": "Awareness y Engagement." },
-        { "q": "Trampa clásica: querer ventas y elegir…", "a": "Traffic. Traffic optimiza link clicks, no compras." },
-        { "q": "Orden de planeación", "a": "Business goal → etapa del funnel → campaign objective → conversion location → conversion event → performance goal." },
-        { "q": "Marca nueva sin reconocimiento, ¿por dónde empieza?", "a": "Awareness para construir recall, luego escala a consideración y conversión." },
+        { "q": "Objetivos de la campaña que NO requieren tracking de conversión", "a": "Reconocimiento e Interacción." },
+        { "q": "Trampa clásica: querer ventas y elegir…", "a": "Tráfico. Tráfico optimiza link clicks, no compras." },
+        { "q": "Orden de planeación", "a": "Business goal → etapa del funnel → objetivo de la campaña → conversion location → conversion event → objetivo de rendimiento." },
+        { "q": "Marca nueva sin reconocimiento, ¿por dónde empieza?", "a": "Reconocimiento para construir recall, luego escala a consideración y conversión." },
         { "q": "Conversion location de menor fricción para leads", "a": "Instant form: el formulario se llena dentro de Meta sin salir del feed." },
-        { "q": "¿Cómo separa las fases un buen media plan?", "a": "En objectives distintos: captar lead arriba (Leads), optimizar conversión abajo (Sales)." },
-        { "q": "Fase de captar contacto (sin firmar aún)", "a": "Leads + Instant form: mínima fricción, alimenta al equipo de ventas." },
-        { "q": "Fase de optimizar la firma (conversión de valor)", "a": "Sales, con el conversion location donde sucede el cierre y el evento que representa la firma." },
-        { "q": "¿Por qué no forzar un solo objective para todo el funnel?", "a": "Porque terminas optimizando la métrica equivocada en alguna fase." }
+        { "q": "¿Cómo separa las fases un buen media plan?", "a": "En objetivos de la campaña distintos: captar lead arriba (Clientes potenciales), optimizar conversión abajo (Ventas)." },
+        { "q": "Fase de captar contacto (sin firmar aún)", "a": "Clientes potenciales + Instant form: mínima fricción, alimenta al equipo de ventas." },
+        { "q": "Fase de optimizar la firma (conversión de valor)", "a": "Ventas, con el conversion location donde sucede el cierre y el evento que representa la firma." },
+        { "q": "¿Por qué no forzar un solo objetivo de la campaña para todo el funnel?", "a": "Porque terminas optimizando la métrica equivocada en alguna fase." }
       ]
     }
   ]

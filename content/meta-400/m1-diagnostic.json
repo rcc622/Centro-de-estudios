@@ -5,24 +5,24 @@
     {
       "q": "¿Cuál es el primer paso del media planner al diseñar una campaña?",
       "options": [
-        "Elegir la bid strategy",
+        "Elegir la estrategia de puja (bid strategy)",
         "Entender el business goal del cliente",
         "Subir el creativo",
-        "Definir el placement"
+        "Definir la ubicación (placement)"
       ],
       "correct": 1,
-      "explanation": "El plan empieza por el business goal; de ahí se deriva el objective, la conversion location y el performance goal.",
+      "explanation": "El plan empieza por el business goal; de ahí se deriva el objetivo de la campaña (campaign objective), la conversion location y el objetivo de rendimiento (performance goal).",
       "difficulty": "easy"
     },
     {
-      "q": "¿En qué nivel de la jerarquía se elige el campaign objective?",
-      "options": ["Account", "Campaña", "Ad set", "Ad"],
+      "q": "¿En qué nivel de la jerarquía se elige el objetivo de la campaña?",
+      "options": ["Account", "Campaña", "Conjunto de anuncios (ad set)", "Ad"],
       "correct": 1,
-      "explanation": "El objective se elige a nivel campaña. Conversion location, event y performance goal van a nivel ad set.",
+      "explanation": "El objetivo de la campaña se elige a nivel campaña. Conversion location, event y objetivo de rendimiento van a nivel conjunto de anuncios.",
       "difficulty": "easy"
     },
     {
-      "q": "Sales website con evento Purchase requiere como data source:",
+      "q": "Ventas (sales) website con evento Purchase requiere como data source:",
       "options": [
         "Solo Pixel",
         "Pixel + Conversions API (CAPI)",
@@ -34,27 +34,27 @@
       "difficulty": "medium"
     },
     {
-      "q": "Conversion event vs performance goal:",
+      "q": "Conversion event vs objetivo de rendimiento:",
       "options": [
         "Son sinónimos",
-        "Event = qué acción cuenta; performance goal = cómo se optimiza/licita",
-        "Event va en campaña; performance goal en ad",
-        "Performance goal solo aplica a Awareness"
+        "Event = qué acción cuenta; objetivo de rendimiento = cómo se optimiza/licita",
+        "Event va en campaña; objetivo de rendimiento en ad",
+        "Objetivo de rendimiento solo aplica a Reconocimiento (awareness)"
       ],
       "correct": 1,
-      "explanation": "El conversion event define la acción (Purchase, Lead); el performance goal define la regla de optimización (cantidad, valor, clics, recall).",
+      "explanation": "El conversion event define la acción (Purchase, Lead); el objetivo de rendimiento define la regla de optimización (cantidad, valor, clics, recall).",
       "difficulty": "hard"
     },
     {
       "q": "Una empresa B2B quiere demos agendadas sin sacar al prospecto del feed. ¿Mejor combinación?",
       "options": [
-        "Sales + Website externo",
-        "Leads + Instant form",
-        "Awareness + recall lift",
-        "Traffic + link clicks"
+        "Ventas + Website externo",
+        "Clientes potenciales (leads) + Instant form",
+        "Reconocimiento + recall lift",
+        "Tráfico (traffic) + link clicks"
       ],
       "correct": 1,
-      "explanation": "Leads con Instant form minimiza fricción: el formulario se completa dentro de Meta. Una landing externa agrega caída de conversión.",
+      "explanation": "Clientes potenciales con Instant form minimiza fricción: el formulario se completa dentro de Meta. Una landing externa agrega caída de conversión.",
       "difficulty": "medium"
     }
   ]

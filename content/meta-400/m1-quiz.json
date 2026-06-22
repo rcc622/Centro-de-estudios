@@ -5,24 +5,24 @@
     {
       "q": "¿Cuáles son los 6 ODAX?",
       "options": [
-        "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
-        "Reach, Traffic, Conversions, Catalog, Leads, Sales",
+        "Reconocimiento, Tráfico, Interacción, Clientes potenciales, Promoción de la app, Ventas",
+        "Reach, Tráfico, Conversions, Catalog, Clientes potenciales, Ventas",
         "Brand, Consideration, Conversion, Retention, Loyalty, Advocacy",
-        "Awareness, Clicks, Engagement, Forms, Installs, Revenue"
+        "Reconocimiento, Clicks, Interacción, Forms, Installs, Revenue"
       ],
       "correct": 0,
-      "explanation": "Los 6 ODAX oficiales: Awareness, Traffic, Engagement, Leads, App Promotion, Sales.",
+      "explanation": "Los 6 ODAX oficiales: Reconocimiento (awareness), Tráfico (traffic), Interacción (engagement), Clientes potenciales (leads), Promoción de la app (app promotion), Ventas (sales).",
       "difficulty": "easy"
     },
     {
-      "q": "¿Dónde se configuran conversion location, conversion event y performance goal?",
-      "options": ["Campaña", "Ad set", "Ad", "Account"],
+      "q": "¿Dónde se configuran conversion location, conversion event y objetivo de rendimiento (performance goal)?",
+      "options": ["Campaña", "Conjunto de anuncios (ad set)", "Ad", "Account"],
       "correct": 1,
-      "explanation": "A nivel ad set. El objective va a nivel campaña; los creativos a nivel ad.",
+      "explanation": "A nivel conjunto de anuncios. El objetivo de la campaña (campaign objective) va a nivel campaña; los creativos a nivel ad.",
       "difficulty": "easy"
     },
     {
-      "q": "El cliente quiere ingresos, con tickets muy variables. ¿Qué performance goal?",
+      "q": "El cliente quiere ingresos, con tickets muy variables. ¿Qué objetivo de rendimiento?",
       "options": [
         "Maximize number of conversions",
         "Maximize value of conversions",
@@ -34,7 +34,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Qué fuentes de datos requiere Sales website con evento Purchase? Selecciona 2.",
+      "q": "¿Qué fuentes de datos requiere Ventas (sales) website con evento Purchase? Selecciona 2.",
       "options": [
         "Pixel",
         "Conversions API (CAPI)",
@@ -43,30 +43,30 @@
       ],
       "correct": [0, 1],
       "multi": true,
-      "explanation": "Pixel + CAPI. El SDK es para apps; el catálogo es para Advantage+ catalog ads, no para Sales general.",
+      "explanation": "Pixel + CAPI. El SDK es para apps; el catálogo es para Advantage+ catalog ads, no para Ventas general.",
       "difficulty": "hard"
     },
     {
-      "q": "¿Qué objective NO requiere tracking de conversión?",
-      "options": ["Sales", "Leads website", "Awareness", "App Promotion"],
+      "q": "¿Qué objetivo de la campaña (campaign objective) NO requiere tracking de conversión?",
+      "options": ["Ventas", "Clientes potenciales (leads) website", "Reconocimiento (awareness)", "Promoción de la app (app promotion)"],
       "correct": 2,
-      "explanation": "Awareness optimiza recall/reach; no necesita Pixel/CAPI/SDK.",
+      "explanation": "Reconocimiento optimiza recall/reach; no necesita Pixel/CAPI/SDK.",
       "difficulty": "medium"
     },
     {
       "q": "Marca nueva sin reconocimiento que quiere vender a largo plazo. Mejor arranque:",
       "options": [
-        "Sales directo desde el día 1",
-        "Awareness para construir base y luego bajar a conversión",
-        "App Promotion",
+        "Ventas directo desde el día 1",
+        "Reconocimiento para construir base y luego bajar a conversión",
+        "Promoción de la app",
         "Solo remarketing"
       ],
       "correct": 1,
-      "explanation": "Empujar Sales a una audiencia que no te conoce desperdicia budget; Awareness construye la base del funnel.",
+      "explanation": "Empujar Ventas a una audiencia que no te conoce desperdicia budget; Reconocimiento construye la base del funnel.",
       "difficulty": "medium"
     },
     {
-      "q": "Leads con Instant form se prefiere sobre Traffic a landing externa porque:",
+      "q": "Clientes potenciales con Instant form se prefiere sobre Tráfico a landing externa porque:",
       "options": [
         "Es más caro pero más bonito",
         "Minimiza fricción al capturar el contacto dentro de Meta",
@@ -74,7 +74,7 @@
         "Garantiza compras"
       ],
       "correct": 1,
-      "explanation": "Instant form reduce la caída de conversión: el usuario no sale del feed. Traffic solo manda clics a una landing.",
+      "explanation": "Instant form reduce la caída de conversión: el usuario no sale del feed. Tráfico solo manda clics a una landing.",
       "difficulty": "easy"
     },
     {
@@ -92,13 +92,13 @@
     {
       "q": "Selecciona la afirmación correcta.",
       "options": [
-        "El objective se elige a nivel ad set",
-        "Conversion event = qué acción cuenta; performance goal = cómo se optimiza",
-        "Performance goal se elige a nivel ad",
-        "Awareness requiere Pixel"
+        "El objetivo de la campaña se elige a nivel conjunto de anuncios",
+        "Conversion event = qué acción cuenta; objetivo de rendimiento = cómo se optimiza",
+        "Objetivo de rendimiento se elige a nivel ad",
+        "Reconocimiento requiere Pixel"
       ],
       "correct": 1,
-      "explanation": "Event define la acción; performance goal define la regla de licitación. El objective va en campaña.",
+      "explanation": "Event define la acción; objetivo de rendimiento define la regla de licitación. El objetivo de la campaña va en campaña.",
       "difficulty": "hard"
     },
     {
