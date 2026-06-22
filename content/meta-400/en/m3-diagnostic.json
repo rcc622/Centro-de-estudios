@@ -1,0 +1,56 @@
+{
+  "title": "Diagnostic · Module 3",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Ad scheduling (showing ads only at certain times) requires:",
+      "options": ["Daily budget", "Lifetime budget", "Bid Cap", "Reservation"],
+      "correct": 1,
+      "explanation": "Dayparting is only possible with a lifetime budget.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Advantage+ campaign budget (CBO) is used to:",
+      "options": [
+        "Set the budget per ad set manually",
+        "Have Meta distribute the budget across ad sets based on opportunity",
+        "Guarantee a fixed CPM",
+        "Activate Reservation"
+      ],
+      "correct": 1,
+      "explanation": "CBO moves spend to the best-performing ad set; ABO sets the budget per ad set.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Budget estimate in Auction:",
+      "options": [
+        "Impressions × CPM ÷ 1000",
+        "Target results × expected cost per result",
+        "Reach × frequency",
+        "Fixed budget approved by management"
+      ],
+      "correct": 1,
+      "explanation": "In Auction the cost is variable; it's estimated with desired results and expected cost per result.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Reservation plan: 400,000 people, frequency 2, fixed CPM $5. Approximate budget:",
+      "options": ["$2,000", "$4,000", "$8,000", "$40,000"],
+      "correct": 1,
+      "explanation": "Impressions = 400,000 × 2 = 800,000. Budget = 800,000 × 5 ÷ 1000 = $4,000.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Main risk of a budget that's too low in Auction:",
+      "options": [
+        "The ad is rejected",
+        "The ad set doesn't exit the learning phase and performance is unstable",
+        "Reservation is activated",
+        "ROAS goes up"
+      ],
+      "correct": 1,
+      "explanation": "Without ~50 optimization events per week the ad set stays in learning; volatile results.",
+      "difficulty": "medium"
+    }
+  ]
+}

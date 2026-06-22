@@ -1,0 +1,112 @@
+{
+  "title": "Unit quiz · Module 3",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Daily budget vs lifetime budget:",
+      "options": [
+        "Daily = total for the period; lifetime = per day",
+        "Daily = average daily spend; lifetime = total for the period (enables scheduling)",
+        "They're the same",
+        "Lifetime only exists in Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Daily controls the daily average; lifetime sets the total and enables ad scheduling.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Ad scheduling (dayparting) requires:",
+      "options": ["Daily budget", "Lifetime budget", "Bid Cap", "CBO required"],
+      "correct": 1,
+      "explanation": "Only with a lifetime budget can delivery hours be defined.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Advantage+ campaign budget (CBO):",
+      "options": [
+        "Sets the budget per ad set manually",
+        "Distributes the budget across ad sets toward the best-performing one",
+        "Guarantees a fixed CPM",
+        "Is exclusive to Awareness"
+      ],
+      "correct": 1,
+      "explanation": "CBO moves spend dynamically; ABO sets the budget per ad set.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Client needs ~600 leads/month, historical CPL ~$4. Base estimate:",
+      "options": ["$600", "$1,200", "$2,400", "$6,000"],
+      "correct": 2,
+      "explanation": "600 × $4 = $2,400 (estimate, not a guarantee: the cost in Auction fluctuates).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Reservation: 1,000,000 people, frequency 3, fixed CPM $4. Budget:",
+      "options": ["$4,000", "$12,000", "$120,000", "$1,200"],
+      "correct": 1,
+      "explanation": "Impressions = 1,000,000 × 3 = 3,000,000. Budget = 3,000,000 × 4 ÷ 1000 = $12,000.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Approximate threshold to exit the learning phase:",
+      "options": [
+        "~10 events in 30 days",
+        "~50 optimization events in ~7 days per ad set",
+        "~500 clicks per day",
+        "There is no learning phase"
+      ],
+      "correct": 1,
+      "explanation": "~50 optimization events in ~7 days stabilize the ad set.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Does daily budget spend exactly the same each day?",
+      "options": [
+        "Yes, always identical",
+        "No; it can vary day to day while honoring the period's average",
+        "Only in Reservation",
+        "Only with Bid Cap"
+      ],
+      "correct": 1,
+      "explanation": "Meta can spend more on high-opportunity days and offset, keeping the average.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A budget too low to gather ~50 events/week causes:",
+      "options": [
+        "Better ROAS",
+        "Ad set stuck in learning; unstable performance",
+        "Ad rejection",
+        "Switch to Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Without enough signal the system doesn't optimize well; volatile results.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Launch with guaranteed reach and a fixed budget approved by management:",
+      "options": [
+        "Auction with Highest Volume",
+        "Reservation, budget = impressions × CPM ÷ 1000",
+        "Auction with a low Bid Cap",
+        "Reservation with the Sales objective"
+      ],
+      "correct": 1,
+      "explanation": "Guarantee + fixed budget = Reservation with impressions calculation; Reservation doesn't support Sales.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What requires a lifetime budget? Select 2.",
+      "options": [
+        "Ad scheduling (dayparting)",
+        "Reservation",
+        "Highest Volume",
+        "Having a Pixel"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Dayparting needs a lifetime budget; Reservation also operates with a period budget.",
+      "difficulty": "hard"
+    }
+  ]
+}
