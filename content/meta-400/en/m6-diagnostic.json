@@ -1,0 +1,61 @@
+{
+  "title": "Diagnostic · Module 6",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "How is an Awareness campaign measured?",
+      "options": [
+        "CPC and conversions",
+        "Reach, frequency and estimated ad recall lift",
+        "ROAS",
+        "Cost per lead"
+      ],
+      "correct": 1,
+      "explanation": "Awareness doesn't optimize for clicks or sales; its metric is recall and efficient reach.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Incrementality answers:",
+      "options": [
+        "Which touchpoint gets the credit",
+        "How many conversions would NOT have happened without the ads",
+        "What the CPM is",
+        "Which creative has the higher CTR"
+      ],
+      "correct": 1,
+      "explanation": "Incrementality = causal effect; it's measured with a holdout (control) group.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "To measure changes in recall and purchase intent for a brand campaign:",
+      "options": ["Conversion Lift", "Brand Lift", "A/B Test", "ROAS Goal"],
+      "correct": 1,
+      "explanation": "Brand Lift measures brand metrics (recall, awareness, intent) via survey between exposed and control groups.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Marketing Mix Modeling (MMM) is used to:",
+      "options": [
+        "Daily tactical optimization of an ad set",
+        "See the aggregate impact of all channels (online/offline) at a macro level",
+        "Approve ads",
+        "Create custom audiences"
+      ],
+      "correct": 1,
+      "explanation": "MMM models the macro contribution of all channels; attribution only sees digital touchpoints.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Changing the attribution window (attribution setting):",
+      "options": [
+        "Changes the business's real sales",
+        "Changes which conversions are credited to Meta, without changing the real sales",
+        "Disables the Pixel",
+        "Activates Reservation"
+      ],
+      "correct": 1,
+      "explanation": "The window defines the reported credit; the real sales don't change. You have to communicate this to the client.",
+      "difficulty": "medium"
+    }
+  ]
+}

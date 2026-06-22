@@ -1,0 +1,113 @@
+{
+  "title": "Unit quiz · Module 6",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "An Awareness campaign is evaluated by:",
+      "options": [
+        "CPC and purchases",
+        "Reach, frequency and estimated ad recall lift",
+        "ROAS",
+        "Cost per lead"
+      ],
+      "correct": 1,
+      "explanation": "Awareness doesn't optimize for clicks or sales; it's measured by recall and efficient reach.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Incrementality means:",
+      "options": [
+        "Which touchpoint gets the credit",
+        "Conversions that would NOT have happened without the ads",
+        "The lowest CPM",
+        "The creative with the highest CTR"
+      ],
+      "correct": 1,
+      "explanation": "It's the causal effect; it's measured with a holdout (control).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The client doubts whether the sales would have happened without ads. Methodology:",
+      "options": [
+        "Last-click attribution",
+        "Conversion Lift with holdout",
+        "More frequency",
+        "Switch to Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Conversion Lift isolates the incremental conversions with a control group.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Measure the change in recall and intent of a brand campaign:",
+      "options": ["Conversion Lift", "Brand Lift", "A/B Test", "MMM"],
+      "correct": 1,
+      "explanation": "Brand Lift measures brand metrics via survey between exposed and control groups.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Compare two creatives to see which performs better with separate audiences:",
+      "options": ["Brand Lift", "A/B Test", "MMM", "Attribution"],
+      "correct": 1,
+      "explanation": "A/B Test compares variants with separate audiences to avoid contamination.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The CMO wants to see how ALL channels (TV, search, social, offline) contribute to annual sales:",
+      "options": ["Meta attribution", "Brand Lift", "Marketing Mix Modeling (MMM)", "A/B Test"],
+      "correct": 2,
+      "explanation": "MMM models the aggregate impact of all channels at a macro level.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Changing the attribution setting:",
+      "options": [
+        "Changes the real sales",
+        "Changes which conversions are credited to Meta, not the real sales",
+        "Disables the Pixel",
+        "Activates Reservation"
+      ],
+      "correct": 1,
+      "explanation": "The window affects the reported credit, not the real sales.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Attribution vs incrementality:",
+      "options": [
+        "They're the same",
+        "Attribution = credit per touchpoint; incrementality = causal effect of the ads",
+        "Incrementality assigns credit per click",
+        "Attribution uses a holdout"
+      ],
+      "correct": 1,
+      "explanation": "Attribution distributes credit; incrementality asks what happened as a result of the ads.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of these are Meta experiments? Select 3.",
+      "options": [
+        "A/B Test",
+        "Conversion Lift",
+        "Brand Lift",
+        "Bid Cap",
+        "Advantage+ placements"
+      ],
+      "correct": [0, 1, 2],
+      "multi": true,
+      "explanation": "A/B Test, Conversion Lift and Brand Lift are experiments. Bid Cap and Advantage+ placements are not.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Measurement plan for a client who demands proof of causal value:",
+      "options": [
+        "Only Ads Manager attribution",
+        "Conversion Lift as the core + attribution for daily optimization",
+        "Only Brand Lift",
+        "Compare weeks without a control"
+      ],
+      "correct": 1,
+      "explanation": "Causality = lift as the core; attribution complements operations but doesn't prove causality on its own.",
+      "difficulty": "hard"
+    }
+  ]
+}
