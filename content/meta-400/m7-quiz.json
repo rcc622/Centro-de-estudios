@@ -3,7 +3,7 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "Customer list para custom audience:",
+      "q": "Customer list para Público personalizado (Custom Audience):",
       "options": [
         "Se sube en texto plano",
         "Se sube hasheada; el matching ocurre sin exponer datos en claro",
@@ -15,7 +15,7 @@
       "difficulty": "easy"
     },
     {
-      "q": "El inventory filter controla:",
+      "q": "El filtro de inventario (inventory filter) controla:",
       "options": [
         "El budget",
         "El nivel de idoneidad del contenido adyacente (expanded/moderate/limited)",
@@ -59,7 +59,7 @@
         "Usó Advantage+ creative"
       ],
       "correct": 1,
-      "explanation": "Las Advertising Standards prohíben implicar atributos personales del usuario; el problema es la redacción.",
+      "explanation": "Las Normas de publicidad (Advertising Standards) prohíben implicar atributos personales del usuario; el problema es la redacción.",
       "difficulty": "hard"
     },
     {
@@ -73,7 +73,7 @@
       ],
       "correct": [0, 1, 2],
       "multi": true,
-      "explanation": "Evalúa creativo, targeting y la landing de destino contra las Advertising Standards.",
+      "explanation": "Evalúa creativo, targeting y la landing de destino contra las Normas de publicidad.",
       "difficulty": "medium"
     },
     {
@@ -111,12 +111,12 @@
       "q": "Marca conservadora que no quiere aparecer junto a contenido maduro en placements de terceros:",
       "options": [
         "Subir el budget",
-        "Inventory filter más estricto + block lists según necesidad",
+        "Filtro de inventario más estricto + block lists según necesidad",
         "Cambiar el objective a Awareness",
         "Activar Advantage+ creative"
       ],
       "correct": 1,
-      "explanation": "Inventory filter ajusta la adyacencia; block lists excluyen publishers concretos.",
+      "explanation": "El filtro de inventario ajusta la adyacencia; block lists excluyen publishers concretos.",
       "difficulty": "hard"
     }
   ]

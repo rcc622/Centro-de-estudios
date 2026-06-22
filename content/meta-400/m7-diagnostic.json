@@ -3,7 +3,7 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "Al subir una customer list para crear una custom audience:",
+      "q": "Al subir una customer list para crear un Público personalizado (Custom Audience):",
       "options": [
         "Meta recibe los emails en texto plano",
         "La lista se sube hasheada y el matching ocurre sin exponer datos en claro",
@@ -15,7 +15,7 @@
       "difficulty": "easy"
     },
     {
-      "q": "El inventory filter controla:",
+      "q": "El filtro de inventario (inventory filter) controla:",
       "options": [
         "El presupuesto diario",
         "El nivel de idoneidad del contenido junto al que aparece el anuncio",
@@ -23,7 +23,7 @@
         "El conversion event"
       ],
       "correct": 1,
-      "explanation": "El inventory filter (expanded/moderate/limited) ajusta qué tan estricto es el contenido adyacente.",
+      "explanation": "El filtro de inventario (expanded/moderate/limited) ajusta qué tan estricto es el contenido adyacente.",
       "difficulty": "medium"
     },
     {
@@ -47,7 +47,7 @@
         "Usó Advantage+ placements"
       ],
       "correct": 1,
-      "explanation": "Las Advertising Standards prohíben implicar un atributo personal del usuario; el problema es la redacción.",
+      "explanation": "Las Normas de publicidad (Advertising Standards) prohíben implicar un atributo personal del usuario; el problema es la redacción.",
       "difficulty": "hard"
     },
     {
@@ -59,7 +59,7 @@
         "Solo el objective"
       ],
       "correct": 1,
-      "explanation": "El ad review evalúa todos los componentes del anuncio y su destino contra las Advertising Standards.",
+      "explanation": "El ad review evalúa todos los componentes del anuncio y su destino contra las Normas de publicidad.",
       "difficulty": "easy"
     }
   ]

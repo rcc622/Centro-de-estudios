@@ -123,7 +123,7 @@
         },
         {
           "type": "mcq",
-          "q": "Un cliente quiere subir su base de clientes para crear una custom audience. ¿Qué es correcto sobre la privacidad?",
+          "q": "Un cliente quiere subir su base de clientes para crear un Público personalizado (Custom Audience). ¿Qué es correcto sobre la privacidad?",
           "options": [
             "Meta recibe los emails en texto plano y los guarda",
             "La lista se sube hasheada; el matching ocurre sin exponer los datos en claro",
@@ -210,7 +210,7 @@
             "Solo el budget del cliente",
             "La regulación de privacidad de datos aplicable",
             "Únicamente el calendario de la campaña",
-            "Solo las Advertising Standards"
+            "Solo las Normas de publicidad (Advertising Standards)"
           ],
           "correct": 1,
           "explanation": "El cumplimiento implica respetar las políticas de Meta y la regulación de privacidad de datos aplicable."
@@ -243,7 +243,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Es válido usar su propia base de clientes para la custom audience?",
+          "q": "¿Es válido usar su propia base de clientes para el Público personalizado (Custom Audience)?",
           "options": [
             "No, las listas propias están prohibidas",
             "Sí, siempre que exista la base legal/consentimiento adecuado",
@@ -289,18 +289,18 @@
         {
           "type": "concept",
           "h": "Proteger dónde aparece la marca",
-          "body": "Los <strong>brand safety controls</strong> (controles de seguridad de marca) son herramientas que evitan que tu anuncio aparezca junto a contenido que dañaría la imagen del cliente. El riesgo nace en los <strong>placements</strong> (ubicaciones) donde el anuncio convive con contenido de otros creadores, no de la marca. Los tres lugares de mayor riesgo son <strong>in-stream</strong> (anuncios dentro de videos de terceros), <strong>Audience Network</strong> (la red de apps y sitios externos de Meta) y <strong>Reels</strong>. En el feed propio de la marca el riesgo es bajo, porque ahí ella controla lo que se publica. Por ejemplo, una aerolínea llamada AeroCielo no quiere que su anuncio salga justo después de un video sobre un accidente aéreo: para eso existen estos controles."
+          "body": "Los <strong>brand safety controls</strong> (controles de seguridad de marca) son herramientas que evitan que tu anuncio aparezca junto a contenido que dañaría la imagen del cliente. El riesgo nace en las <strong>ubicaciones</strong> (placements) donde el anuncio convive con contenido de otros creadores, no de la marca. Los tres lugares de mayor riesgo son <strong>in-stream</strong> (anuncios dentro de videos de terceros), <strong>Audience Network</strong> (la red de apps y sitios externos de Meta) y <strong>Reels</strong>. En el feed propio de la marca el riesgo es bajo, porque ahí ella controla lo que se publica. Por ejemplo, una aerolínea llamada AeroCielo no quiere que su anuncio salga justo después de un video sobre un accidente aéreo: para eso existen estos controles."
         },
         {
           "type": "concept",
           "h": "Los cuatro controles disponibles",
-          "body": "Hay cuatro herramientas que el planner combina según el cliente. <strong>1. Inventory filter</strong> (filtro de inventario): fija qué tan estricto es el contenido adyacente permitido, con tres niveles, de más amplio a más restringido: <em>expanded</em> (ampliado), <em>moderate</em> (moderado) y <em>limited</em> (limitado). <strong>2. Block lists</strong> (listas de bloqueo): excluyen sitios, apps o cuentas específicas donde no quieres aparecer. <strong>3. Publisher allow lists</strong> (listas de permitidos): hacen lo contrario, solo dejan aparecer en una lista corta de medios aprobados. <strong>4. Content type exclusions</strong> (exclusiones por tipo de contenido): bloquean categorías sensibles completas. Por ejemplo, una marca de juguetes infantiles llamada Juguetón usa el filtro en <em>limited</em>, una block list de canales polémicos y exclusiones de contenido violento."
+          "body": "Hay cuatro herramientas que el planner combina según el cliente. <strong>1. Filtro de inventario</strong> (inventory filter): fija qué tan estricto es el contenido adyacente permitido, con tres niveles, de más amplio a más restringido: <em>expanded</em> (ampliado), <em>moderate</em> (moderado) y <em>limited</em> (limitado). <strong>2. Block lists</strong> (listas de bloqueo): excluyen sitios, apps o cuentas específicas donde no quieres aparecer. <strong>3. Publisher allow lists</strong> (listas de permitidos): hacen lo contrario, solo dejan aparecer en una lista corta de medios aprobados. <strong>4. Content type exclusions</strong> (exclusiones por tipo de contenido): bloquean categorías sensibles completas. Por ejemplo, una marca de juguetes infantiles llamada Juguetón usa el filtro en <em>limited</em>, una block list de canales polémicos y exclusiones de contenido violento."
         },
         {
           "type": "kvtable",
           "h": "Controles disponibles",
           "rows": [
-            ["Inventory filter", "Nivel de idoneidad de contenido (expanded / moderate / limited)"],
+            ["Filtro de inventario", "Nivel de idoneidad de contenido (expanded / moderate / limited)"],
             ["Block lists", "Bloquear publishers/sitios/cuentas específicos"],
             ["Publisher allow lists", "Permitir solo publishers aprobados"],
             ["Content type exclusions", "Excluir categorías o tipos de contenido sensibles"]
@@ -321,12 +321,12 @@
           "q": "Una marca conservadora exige no aparecer junto a contenido maduro en placements de terceros. ¿Qué control aplicas primero?",
           "options": [
             "Subir el budget",
-            "Inventory filter más estricto (p. ej. limited) y block lists según necesidad",
+            "Filtro de inventario más estricto (p. ej. limited) y block lists según necesidad",
             "Cambiar el objective a Awareness",
             "Activar Advantage+ creative"
           ],
           "correct": 1,
-          "explanation": "El inventory filter ajusta el nivel de idoneidad del contenido adyacente; las block lists excluyen publishers concretos. Subir budget o cambiar objective no controla la adyacencia de contenido.",
+          "explanation": "El filtro de inventario ajusta el nivel de idoneidad del contenido adyacente; las block lists excluyen publishers concretos. Subir budget o cambiar objective no controla la adyacencia de contenido.",
           "difficulty": "medium"
         }
       ]
@@ -341,13 +341,13 @@
           "type": "fill",
           "q": "El ___ ajusta el nivel de idoneidad del contenido adyacente: expanded / moderate / limited.",
           "options": [
-            "inventory filter",
+            "filtro de inventario (inventory filter)",
             "ad review",
             "Pixel",
             "objective"
           ],
           "correct": 0,
-          "explanation": "El inventory filter define qué tan estricto es el contenido adyacente permitido."
+          "explanation": "El filtro de inventario define qué tan estricto es el contenido adyacente permitido."
         },
         {
           "type": "mcq",
@@ -392,7 +392,7 @@
             "Para excluir categorías o tipos de contenido sensibles",
             "Para subir el presupuesto automáticamente",
             "Para acelerar el ad review",
-            "Para crear custom audiences"
+            "Para crear Públicos personalizados (Custom Audiences)"
           ],
           "correct": 0,
           "explanation": "Content type exclusions excluye categorías o tipos de contenido sensibles donde la marca no quiere aparecer."
@@ -416,12 +416,12 @@
           "q": "¿Qué control aplicas primero para la adyacencia de contenido?",
           "options": [
             "Subir el budget para tener más alcance",
-            "Inventory filter más estricto (p. ej. limited) y block lists según necesidad",
+            "Filtro de inventario (inventory filter) más estricto (p. ej. limited) y block lists según necesidad",
             "Cambiar el objective a Awareness",
             "Activar Advantage+ creative"
           ],
           "correct": 1,
-          "explanation": "El inventory filter ajusta la idoneidad del contenido adyacente; las block lists excluyen los publishers concretos que le preocupan."
+          "explanation": "El filtro de inventario ajusta la idoneidad del contenido adyacente; las block lists excluyen los publishers concretos que le preocupan."
         },
         {
           "type": "mcq",
@@ -442,7 +442,7 @@
             "Block list de todos los demás manualmente",
             "Publisher allow list para permitir solo los publishers aprobados",
             "Content type exclusions de todo",
-            "Inventory filter expanded"
+            "Filtro de inventario expanded"
           ],
           "correct": 1,
           "explanation": "La publisher allow list permite mostrar el anuncio solo en los publishers aprobados, ideal para una lista corta de medios."
@@ -455,7 +455,7 @@
       "section": "b2",
       "type": "flashcards",
       "cards": [
-        { "q": "Inventory filter", "a": "Control de idoneidad del contenido adyacente (expanded / moderate / limited)." },
+        { "q": "Filtro de inventario (inventory filter)", "a": "Control de idoneidad del contenido adyacente (expanded / moderate / limited)." },
         { "q": "Block list vs allow list", "a": "Block = excluir publishers concretos. Allow = permitir solo publishers aprobados." },
         { "q": "Trade-off de brand safety", "a": "Más estricto = más seguro pero menos alcance y posible mayor costo." },
         { "q": "Content type exclusions", "a": "Excluir categorías o tipos de contenido sensibles." },
@@ -471,7 +471,7 @@
         {
           "type": "concept",
           "h": "Cómo se aprueba un anuncio",
-          "body": "Antes de que un anuncio se muestre a alguien, pasa por el <strong>ad review</strong> (revisión de anuncios), el proceso con el que Meta verifica que cumpla sus <strong>Advertising Standards</strong> (normas de publicidad). Esta revisión combina sistemas automatizados, que filtran la mayoría de los casos al instante, con revisión humana para los casos dudosos. El proceso suele resolverse en alrededor de 24 horas, aunque puede variar. Ningún anuncio se entrega sin pasar este filtro, sin importar el presupuesto. Por ejemplo, una marca de suplementos llamada NutriVida sube su anuncio un lunes y planea según las ~24 horas de revisión para no atrasar el lanzamiento."
+          "body": "Antes de que un anuncio se muestre a alguien, pasa por el <strong>ad review</strong> (revisión de anuncios), el proceso con el que Meta verifica que cumpla sus <strong>Normas de publicidad</strong> (Advertising Standards). Esta revisión combina sistemas automatizados, que filtran la mayoría de los casos al instante, con revisión humana para los casos dudosos. El proceso suele resolverse en alrededor de 24 horas, aunque puede variar. Ningún anuncio se entrega sin pasar este filtro, sin importar el presupuesto. Por ejemplo, una marca de suplementos llamada NutriVida sube su anuncio un lunes y planea según las ~24 horas de revisión para no atrasar el lanzamiento."
         },
         {
           "type": "concept",
@@ -481,7 +481,7 @@
         {
           "type": "concept",
           "h": "La trampa del atributo personal",
-          "body": "La causa de rechazo más preguntada en el examen es implicar un <strong>atributo personal</strong> del usuario. Las Advertising Standards prohíben que un anuncio dé a entender que conoce algo privado de quien lo ve, como su salud, religión, edad, orientación o situación económica. La clave es la redacción, no el producto: el mismo servicio se puede anunciar si el texto se mantiene general. Por ejemplo, decir \"Sabemos que sufres de migraña\" se rechaza porque afirma una condición de salud del espectador; en cambio \"Alivio natural para el dolor de cabeza\" es válido porque habla del producto, no de la persona."
+          "body": "La causa de rechazo más preguntada en el examen es implicar un <strong>atributo personal</strong> del usuario. Las Normas de publicidad prohíben que un anuncio dé a entender que conoce algo privado de quien lo ve, como su salud, religión, edad, orientación o situación económica. La clave es la redacción, no el producto: el mismo servicio se puede anunciar si el texto se mantiene general. Por ejemplo, decir \"Sabemos que sufres de migraña\" se rechaza porque afirma una condición de salud del espectador; en cambio \"Alivio natural para el dolor de cabeza\" es válido porque habla del producto, no de la persona."
         },
         {
           "type": "kvtable",
@@ -508,7 +508,7 @@
             "Porque usó Advantage+ placements"
           ],
           "correct": 1,
-          "explanation": "Las Advertising Standards prohíben anuncios que impliquen o afirmen un atributo personal del usuario (salud, condición, etc.). El problema es la redacción, no la categoría ni la configuración técnica.",
+          "explanation": "Las Normas de publicidad prohíben anuncios que impliquen o afirmen un atributo personal del usuario (salud, condición, etc.). El problema es la redacción, no la categoría ni la configuración técnica.",
           "difficulty": "hard"
         }
       ]
@@ -524,7 +524,7 @@
           "q": "El ad review revisa texto, imagen, video, targeting y la ___ de destino.",
           "options": [
             "landing page",
-            "custom audience",
+            "Público personalizado (Custom Audience)",
             "block list",
             "factura"
           ],
@@ -572,7 +572,7 @@
           "q": "Un copy dice 'Conoce a otras personas como tú con diabetes'. ¿Qué problema tiene?",
           "options": [
             "Falta el Pixel",
-            "Implica un atributo personal del espectador, prohibido por las Advertising Standards",
+            "Implica un atributo personal del espectador, prohibido por las Normas de publicidad (Advertising Standards)",
             "Usó Advantage+ placements",
             "El targeting es muy amplio"
           ],
@@ -603,7 +603,7 @@
             "Porque usó brand safety controls"
           ],
           "correct": 1,
-          "explanation": "Las Advertising Standards prohíben implicar o afirmar un atributo personal del usuario; el problema es la redacción, no la categoría ni la técnica."
+          "explanation": "Las Normas de publicidad (Advertising Standards) prohíben implicar o afirmar un atributo personal del usuario; el problema es la redacción, no la categoría ni la técnica."
         },
         {
           "type": "mcq",
@@ -654,7 +654,7 @@
           "type": "scenario",
           "label": "CASO INTEGRADOR",
           "h": "Kenet Solar: privacidad, marca y aprobación",
-          "body": "Kenet Solar quiere: (1) subir su base de clientes para una custom audience, (2) correr en Reels y Audience Network sin aparecer junto a contenido inapropiado, y (3) un copy que diga \"Sabemos que pagas demasiada luz, esto es para ti\". Te piden revisar el plan antes de lanzar."
+          "body": "Kenet Solar quiere: (1) subir su base de clientes para un Público personalizado (Custom Audience), (2) correr en Reels y Audience Network sin aparecer junto a contenido inapropiado, y (3) un copy que diga \"Sabemos que pagas demasiada luz, esto es para ti\". Te piden revisar el plan antes de lanzar."
         },
         {
           "type": "mcq",
@@ -673,12 +673,12 @@
           "q": "Para Reels y Audience Network sin contenido inapropiado, ¿qué control aplicas?",
           "options": [
             "Subir el budget",
-            "Inventory filter más estricto y block lists según necesidad",
+            "Filtro de inventario (inventory filter) más estricto y block lists según necesidad",
             "Cambiar a Awareness",
             "Advantage+ creative"
           ],
           "correct": 1,
-          "explanation": "El inventory filter ajusta la idoneidad del contenido adyacente; las block lists excluyen publishers concretos."
+          "explanation": "El filtro de inventario ajusta la idoneidad del contenido adyacente; las block lists excluyen publishers concretos."
         },
         {
           "type": "mcq",
@@ -690,7 +690,7 @@
             "El problema es el targeting"
           ],
           "correct": 1,
-          "explanation": "Implicar/afirmar un atributo personal del usuario está prohibido por las Advertising Standards. Reformular el copy a algo general (\"Reduce tu recibo de luz con energía solar\")."
+          "explanation": "Implicar/afirmar un atributo personal del usuario está prohibido por las Normas de publicidad (Advertising Standards). Reformular el copy a algo general (\"Reduce tu recibo de luz con energía solar\")."
         },
         {
           "type": "mcq",
@@ -717,11 +717,11 @@
         ["Base legal/consentimiento", "Requisito para recolectar y usar datos"],
         ["Categorías sensibles", "Prohibido segmentar usando inferencias sensibles"],
         ["CAPI con consentimiento", "Mejora medición y cumplimiento a la vez"],
-        ["Inventory filter", "Idoneidad del contenido adyacente: expanded/moderate/limited"],
+        ["Filtro de inventario (inventory filter)", "Idoneidad del contenido adyacente: expanded/moderate/limited"],
         ["Block list", "Excluir publishers/sitios/cuentas concretos"],
         ["Publisher allow list", "Permitir solo publishers aprobados"],
         ["Trade-off de brand safety", "Más estricto = más seguro, menos alcance, posible más costo"],
-        ["Ad review", "Revisión contra Advertising Standards antes de entregar"],
+        ["Ad review", "Revisión contra las Normas de publicidad (Advertising Standards) antes de entregar"],
         ["Tiempo de ad review", "~24 horas; automatización + revisión humana"],
         ["Atributo personal", "Prohibido implicar que conoces algo personal del usuario"],
         ["Appeal", "Pedir revisión cuando un anuncio se rechaza"]
@@ -772,9 +772,9 @@
         {
           "type": "fill",
           "q": "El ___ ajusta la idoneidad del contenido adyacente (expanded/moderate/limited).",
-          "options": ["inventory filter", "ad review", "Pixel", "objective"],
+          "options": ["filtro de inventario (inventory filter)", "ad review", "Pixel", "objective"],
           "correct": 0,
-          "explanation": "Inventory filter."
+          "explanation": "Filtro de inventario."
         },
         {
           "type": "fill",
@@ -795,7 +795,7 @@
           "q": "Implicar un ___ personal del usuario hace que el anuncio se rechace.",
           "options": ["atributo", "interés", "objetivo", "presupuesto"],
           "correct": 0,
-          "explanation": "Atributo personal: prohibido por las Advertising Standards."
+          "explanation": "Atributo personal: prohibido por las Normas de publicidad (Advertising Standards)."
         }
       ]
     },
@@ -850,12 +850,12 @@
         },
         {
           "type": "mcq",
-          "q": "Inventory filter:",
+          "q": "Filtro de inventario (inventory filter):",
           "options": [
             "Define el budget",
             "Ajusta la idoneidad del contenido adyacente (expanded/moderate/limited)",
             "Es el ad review",
-            "Crea custom audiences"
+            "Crea Públicos personalizados (Custom Audiences)"
           ],
           "correct": 1,
           "explanation": "Nivel de idoneidad del contenido adyacente."
@@ -967,7 +967,7 @@
           "explanation": "CAPI con consentimiento mejora ambas."
         },
         {
-          "q": "¿El inventory filter controla el contenido adyacente?",
+          "q": "¿El filtro de inventario (inventory filter) controla el contenido adyacente?",
           "options": ["Sí", "No"],
           "correct": 0,
           "explanation": "Expanded / moderate / limited."
@@ -1009,7 +1009,7 @@
         { "q": "Base para recolectar y usar datos", "a": "Solo con base legal o consentimiento adecuado." },
         { "q": "Datos sensibles", "a": "No se permite segmentar usando categorías sensibles inferidas." },
         { "q": "¿Qué implica el cumplimiento?", "a": "Respetar políticas de Meta y la regulación de privacidad de datos aplicable." },
-        { "q": "Inventory filter", "a": "Control de idoneidad del contenido adyacente (expanded / moderate / limited)." },
+        { "q": "Filtro de inventario (inventory filter)", "a": "Control de idoneidad del contenido adyacente (expanded / moderate / limited)." },
         { "q": "Block list vs allow list", "a": "Block = excluir publishers concretos. Allow = permitir solo publishers aprobados." },
         { "q": "Trade-off de brand safety", "a": "Más estricto = más seguro pero menos alcance y posible mayor costo." },
         { "q": "Content type exclusions", "a": "Excluir categorías o tipos de contenido sensibles." },
@@ -1021,7 +1021,7 @@
         { "q": "Si un anuncio se rechaza", "a": "Se puede editar o solicitar una revisión (appeal)." },
         { "q": "¿Listas propias permitidas?", "a": "Sí, con base legal/consentimiento adecuado." },
         { "q": "Publisher allow list", "a": "Mostrar solo en una lista corta de publishers aprobados." },
-        { "q": "Ad review: qué es", "a": "Revisión contra las Advertising Standards (automatización + humano) antes de entregar." },
+        { "q": "Ad review: qué es", "a": "Revisión contra las Normas de publicidad (Advertising Standards) (automatización + humano) antes de entregar." },
         { "q": "Copy con atributo personal: ejemplo", "a": "\"Sabemos que tienes diabetes…\" → se rechaza; reformular en general." },
         { "q": "Cierre del módulo", "a": "Privacidad y brand safety se diseñan desde el plan, no se parchan al final." }
       ]
