@@ -24,15 +24,15 @@
           "a": "La acción que cuenta como resultado: Purchase, Lead, AddToCart, etc."
         },
         {
-          "q": "Performance goal",
+          "q": "Objetivo de rendimiento (Performance goal)",
           "a": "La regla de optimización/licitación: maximizar cantidad, valor, clics o recall."
         },
         {
-          "q": "Pixel",
+          "q": "Píxel de Meta (Meta Pixel)",
           "a": "Señal web del navegador para medir y optimizar eventos del sitio."
         },
         {
-          "q": "Conversions API (CAPI)",
+          "q": "API de conversiones (Conversions API / CAPI)",
           "a": "Señal server-side que recupera eventos perdidos y mejora match quality. Se usa junto al Pixel."
         },
         {
@@ -40,15 +40,15 @@
           "a": "Socio autorizado para medir eventos in-app (alternativa al Facebook SDK)."
         },
         {
-          "q": "Buying type",
+          "q": "Tipo de compra (Buying type)",
           "a": "Método para comprar anuncios across Meta technologies: Auction o Reservation."
         },
         {
-          "q": "Auction",
+          "q": "Subasta (Auction)",
           "a": "Buying type por subasta: más objectives, 5 bid strategies, todos los placements; precio variable."
         },
         {
-          "q": "Reservation",
+          "q": "Reserva (Reservation)",
           "a": "Buying type predecible: reach/frequency garantizados a CPM fijo; solo Awareness y Engagement."
         },
         {
@@ -56,11 +56,11 @@
           "a": "Advertiser bid + estimated action rates + ad quality. El cost control NO entra."
         },
         {
-          "q": "Estimated action rates",
+          "q": "Proporciones de acciones estimadas (Estimated action rates)",
           "a": "Probabilidad estimada de que la persona realice la acción deseada."
         },
         {
-          "q": "Ad quality",
+          "q": "Calidad del anuncio (Ad quality)",
           "a": "Calidad y relevancia del anuncio para la audiencia."
         },
         {
@@ -115,11 +115,11 @@
           "a": "Bid strategy spend-based: máximo de resultados con el budget."
         },
         {
-          "q": "Highest Value",
+          "q": "Valor más alto (Highest Value)",
           "a": "Bid strategy spend-based: máximo valor de compra con el budget."
         },
         {
-          "q": "Cost per Result Goal",
+          "q": "Objetivo de costo por resultado (Cost per Result Goal)",
           "a": "Bid strategy goal-based: mantener un costo objetivo por resultado."
         },
         {
@@ -127,7 +127,7 @@
           "a": "Bid strategy goal-based: mantener un retorno sobre ad spend objetivo."
         },
         {
-          "q": "Bid Cap",
+          "q": "Límite de puja (Bid Cap)",
           "a": "Bid strategy manual: tope máximo de bid por subasta. Si es muy bajo, frena el delivery."
         },
         {
@@ -139,7 +139,7 @@
           "a": "Total del periodo; necesario para ad scheduling y Reservation."
         },
         {
-          "q": "Advantage+ campaign budget (CBO)",
+          "q": "Presupuesto de la campaña Advantage+ (Advantage+ campaign budget / CBO)",
           "a": "Budget a nivel campaña; Meta lo reparte entre ad sets según oportunidad."
         },
         {
@@ -147,7 +147,7 @@
           "a": "Budget fijo por ad set; reparto manual."
         },
         {
-          "q": "Learning phase",
+          "q": "Fase de aprendizaje (Learning phase)",
           "a": "Periodo de aprendizaje del ad set (~50 eventos en ~7 días); antes los resultados son inestables."
         },
         {
@@ -163,11 +163,11 @@
           "a": "Enfoque recomendado: tus audiencias son sugerencias, no límites; Meta busca conversiones."
         },
         {
-          "q": "Custom audience",
+          "q": "Público personalizado (Custom audience)",
           "a": "Personas con relación previa: web, app, customer list, engagement."
         },
         {
-          "q": "Lookalike audience",
+          "q": "Público similar (Lookalike audience)",
           "a": "Personas parecidas a una seed de calidad; para prospección. 1% = más preciso, 10% = más alcance."
         },
         {
@@ -207,7 +207,7 @@
           "a": "Remarketing, seed de lookalike y exclusión de quien ya convirtió."
         },
         {
-          "q": "Detailed targeting",
+          "q": "Segmentación detallada (Detailed targeting)",
           "a": "Acota por intereses, comportamientos y demográficos; para audiencias frías sin señal propia."
         },
         {
@@ -222,11 +222,11 @@
       "type": "flashcards",
       "cards": [
         {
-          "q": "Placements",
+          "q": "Ubicaciones (Placements)",
           "a": "Superficies donde aparece el anuncio across Meta technologies (Feeds, Stories, Reels, etc.)."
         },
         {
-          "q": "Advantage+ placements",
+          "q": "Ubicaciones Advantage+ (Advantage+ placements)",
           "a": "Default recomendado: Meta entrega donde mejor rinde; más alcance y eficiencia."
         },
         {
@@ -238,15 +238,15 @@
           "a": "Efecto causal de la pauta: conversiones que NO habrían ocurrido sin anuncios."
         },
         {
-          "q": "Conversion Lift",
+          "q": "Aumento de conversiones (Conversion Lift)",
           "a": "Experimento con holdout que mide conversiones incrementales."
         },
         {
-          "q": "Brand Lift",
+          "q": "Mejora de la marca (Brand Lift)",
           "a": "Mide recall/awareness/intención vía encuesta (expuestos vs. control)."
         },
         {
-          "q": "A/B Test",
+          "q": "Prueba A/B (A/B Test)",
           "a": "Compara variantes (creativo, audiencia, estrategia) con audiencias separadas."
         },
         {
@@ -254,11 +254,11 @@
           "a": "Grupo que NO ve anuncios; base de comparación para la incrementalidad."
         },
         {
-          "q": "Attribution",
+          "q": "Atribución (Attribution)",
           "a": "Asignación de crédito a touchpoints; no prueba causalidad por sí sola."
         },
         {
-          "q": "Attribution setting",
+          "q": "Configuración de atribución (Attribution setting)",
           "a": "Ventana (ej. 7-day click / 1-day view) que define qué conversiones se le acreditan a Meta."
         },
         {
