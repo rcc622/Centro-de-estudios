@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Module 4",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What is Advantage+ Audience?",
+      "options": [
+        "A hashed customer list",
+        "The recommended approach where you provide signals as a suggestion and Meta finds who converts",
+        "An automatic placement",
+        "A bid strategy"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ Audience uses your audiences as a suggestion, not a hard limit; it looks for conversions beyond them.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A custom audience is built with:",
+      "options": [
+        "Generic interests and behaviors",
+        "People with a prior relationship to the business (website, app, list, engagement)",
+        "Only lookalikes",
+        "Third-party placements"
+      ],
+      "correct": 1,
+      "explanation": "Custom audience = your people: visitors, app users, customer list, or those who engaged.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Lookalike 1% vs 10%:",
+      "options": [
+        "1% more reach; 10% more precise",
+        "1% more similar/precise and less reach; 10% more reach and less similar",
+        "They are the same",
+        "Only the country changes"
+      ],
+      "correct": 1,
+      "explanation": "1% is the closest match to the seed (precise, low reach); 10% expands but dilutes the similarity.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Typical symptom of over-targeting (audience too small):",
+      "options": [
+        "Low CPM and high delivery",
+        "Almost no delivery and high CPM",
+        "More conversions",
+        "Better recall"
+      ],
+      "correct": 1,
+      "explanation": "A tiny audience = the system can't optimize; cost goes up and delivery drops.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client in a regulated sector that may NOT show ads outside an audience defined by law:",
+      "options": [
+        "Advantage+ Audience",
+        "Original audience with defined targeting",
+        "Lookalike 10%",
+        "Detailed targeting expansion enabled"
+      ],
+      "correct": 1,
+      "explanation": "A hard legal restriction = strict control: original audience. Advantage+ treats signals as a suggestion and can expand.",
+      "difficulty": "hard"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Unit quiz · Module 4",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "In Advantage+ Audience, the custom audiences and detailed targeting you add work as:",
+      "options": [
+        "A hard limit that cannot be exceeded",
+        "Suggestions that prioritize, not rigid limits",
+        "Automatic exclusions",
+        "Lookalikes at 1%"
+      ],
+      "correct": 1,
+      "explanation": "They are signals/suggestions; the system can go beyond them if it finds conversions.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Valid sources for a custom audience. Select 3.",
+      "options": [
+        "Website (Pixel)",
+        "App activity (SDK/MMP)",
+        "Customer list",
+        "Campaign name",
+        "Button color"
+      ],
+      "correct": [0, 1, 2],
+      "multi": true,
+      "explanation": "Website, app, and customer list (plus engagement) are sources for a custom audience.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Maximum precision for people similar to your best customers:",
+      "options": [
+        "Lookalike 10% over all visitors",
+        "Lookalike 1% over a seed of high-value customers",
+        "Detailed targeting with 10 interests",
+        "Video engagement"
+      ],
+      "correct": 1,
+      "explanation": "1% = closest match; a high-value seed = better lookalike quality.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Re-engaging people who added to cart and didn't buy within 7 days:",
+      "options": [
+        "Customer list of buyers",
+        "Website custom audience by AddToCart, excluding Purchase",
+        "Lookalike 1%",
+        "Page engagement"
+      ],
+      "correct": 1,
+      "explanation": "Web-behavior remarketing with an exclusion of those who already purchased.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Symptom of over-targeting:",
+      "options": [
+        "High delivery and low CPM",
+        "Almost no delivery and high CPM",
+        "More recall",
+        "More conversions"
+      ],
+      "correct": 1,
+      "explanation": "An audience that's too small = the system can't optimize; cost goes up and delivery drops.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A regulated client that may NOT go outside an audience defined by law:",
+      "options": [
+        "Advantage+ Audience",
+        "Original audience with defined targeting",
+        "Lookalike 10%",
+        "Detailed targeting expansion"
+      ],
+      "correct": 1,
+      "explanation": "A hard legal restriction = strict control (original audience).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What is the purpose of excluding custom audiences in prospecting?",
+      "options": [
+        "To raise the CPM",
+        "To avoid paying twice for existing customers/converters",
+        "To reject the ad",
+        "To enable Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Excluding customers avoids cannibalizing and wasting budget re-engaging those who already converted.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "What makes a lookalike better?",
+      "options": [
+        "A large seed of random visitors",
+        "A quality seed (e.g., high-value customers)",
+        "A 10% size",
+        "More interests"
+      ],
+      "correct": 1,
+      "explanation": "Seed quality rules; better seed = better lookalike.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Scaling acquisition without cannibalizing existing customers:",
+      "options": [
+        "Only remarketing to buyers",
+        "Advantage+/high-value lookalike for prospecting, excluding customers; remarketing separately",
+        "One ad set with 12 interests",
+        "Reservation with a frequency cap"
+      ],
+      "correct": 1,
+      "explanation": "Prospecting with a customer exclusion + a separate remarketing effort scales without cannibalizing.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "When is Advantage+ Audience a good fit? Select 2.",
+      "options": [
+        "Maximizing results with conversion signal available",
+        "Broad prospecting where letting the system expand helps",
+        "When there is a hard legal limit on the audience",
+        "When a strictly brand-bounded audience is required"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Advantage+ shines at maximization/prospecting; cases with a hard limit call for the original audience.",
+      "difficulty": "medium"
+    }
+  ]
+}

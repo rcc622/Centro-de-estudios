@@ -1,0 +1,1236 @@
+{
+  "id": "m4",
+  "title": "Module 4 — Audience planning",
+  "sections": {
+    "b1": {
+      "ico": "🎯",
+      "title": "Block 1",
+      "sub": "M3 review + Advantage+ Audience vs original"
+    },
+    "b2": {
+      "ico": "🔎",
+      "title": "Block 2",
+      "sub": "Detailed targeting"
+    },
+    "b3": {
+      "ico": "👥",
+      "title": "Block 3",
+      "sub": "Custom audiences"
+    },
+    "b4": {
+      "ico": "🧬",
+      "title": "Block 4",
+      "sub": "Lookalike audiences"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Module wrap-up",
+      "sub": "Integrative case, review, and consolidation"
+    }
+  },
+  "lessons": [
+    {
+      "id": "4.0",
+      "title": "Spaced review · Module 3",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "The audience consumes the budget",
+          "body": "The audience you choose is not a detail separate from the budget: it's what eats it up. Every time your ad is shown to a person, you spend money, so the size and quality of your audience determine how fast and at what cost your investment is depleted. Meta's system needs to gather enough conversion events to exit the <strong>learning phase</strong> (the initial period in which the algorithm is still figuring out who is worth showing the ad to). That signal is only gathered if the audience is large enough for the budget to buy those events; if it's tiny, the money is spent without reaching the minimum and the cost per result never stabilizes. That's why it's worth reviewing the Module 3 budget before planning audiences: they go hand in hand."
+        },
+        {
+          "type": "concept",
+          "h": "Quick review: the Module 3 terms",
+          "body": "Before moving on, keep three budget concepts fresh that reappear here. <strong>1. Learning phase</strong>: the initial period in which Meta explores who to show the ad to; it needs around 50 optimization events in about 7 days to exit and stabilize. <strong>2. Auction</strong>: the buying type in which the budget is estimated from the results you expect to get, not set exactly. <strong>3. CBO / Advantage+ campaign budget</strong>: a setting where you place the money at the full-campaign level and the system distributes it on its own toward the best-performing ad set."
+        },
+        {
+          "type": "concept",
+          "h": "Example: how distribution depends on size",
+          "body": "Imagine an online English academy called Fluentia that sets up a campaign with an Advantage+ campaign budget and three ad sets, each with a different audience. The system starts pushing spend toward the ad set that's getting cheaper conversions, but this only works if each audience is large enough to gather the minimum signal. If Fluentia had put a tiny audience in one of the three ad sets, that ad set would get stuck in the learning phase and the automatic distribution would end up discarding it. The lesson is direct: the budget doesn't perform on its own, it performs based on the audience you place under it."
+        },
+        {
+          "type": "fill",
+          "q": "An ad set exits the learning phase with ~___ optimization events in ~7 days.",
+          "options": ["50", "10", "100", "500"],
+          "correct": 0,
+          "explanation": "~50 events in ~7 days. An audience that's too small prevents gathering that signal."
+        },
+        {
+          "type": "mcq",
+          "q": "Budget in Auction is derived as:",
+          "options": [
+            "Impressions × CPM ÷ 1000",
+            "Target results × expected cost per result",
+            "Reach × frequency",
+            "Daily × exact number of days"
+          ],
+          "correct": 1,
+          "explanation": "In Auction it's estimated. The audience affects the actual cost per result."
+        },
+        {
+          "type": "fill",
+          "q": "CBO distributes spend toward the ad set with the best ___.",
+          "options": ["performance", "CPM", "reach", "frequency"],
+          "correct": 0,
+          "explanation": "Advantage+ campaign budget sends spend to the best ad set/audience."
+        },
+        {
+          "type": "mcq",
+          "q": "Which budget does ad scheduling (dayparting) require?",
+          "options": ["Daily", "Lifetime", "Either one", "Reservation only"],
+          "correct": 1,
+          "explanation": "Lifetime budget. A Module 3 reminder before planning audiences."
+        }
+      ]
+    },
+    {
+      "id": "4.1",
+      "title": "Explain · Advantage+ Audience vs original audience",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "The default changed",
+          "body": "For years, planning a campaign meant telling Meta exactly who to show the ad to: you defined age, location, and interests, and the system stayed within that wall. That changed. Today Meta recommends the <strong>Advantage+ Audience</strong> as the starting point, where you provide hints and the system decides who to reach. The idea is that the algorithm, fed by the conversion signal from your Pixel, finds better prospects than you could define by hand. It emerged because very fine manual targeting tends to leave out people who would have converted. In practice, you provide <strong>signals</strong> (audiences you contribute as a reference or starting point) and the system looks for whoever is most likely to convert, without being tied to a closed audience."
+        },
+        {
+          "type": "concept",
+          "h": "What the signals you provide are",
+          "body": "The signals you give an Advantage+ Audience can be of two types. <strong>1. Custom audiences</strong>: lists of people who already know your business, such as your website visitors or your customer base. <strong>2. Detailed targeting</strong> (interests, behaviors, and demographics). The key difference from manual targeting is that here they don't work as a wall, but as a starting point that tells the system \"start looking here.\" For example, a specialty coffee brand called Tostadero Norte provides its subscriber list and the interest \"gourmet coffee\" as a signal; Meta starts by prioritizing similar profiles, but if it detects buyers in another profile that wasn't on the list, it can move beyond it and show them the ad too."
+        },
+        {
+          "type": "concept",
+          "h": "The original audience is still there",
+          "body": "The <strong>original audience</strong> (the classic manual targeting) did not disappear: it defines the audience with strict control and the system respects that limit to the letter. You use it when you can't afford to let the algorithm expand on its own: sectors with <strong>legal restrictions</strong> (for example, financial or health products that can only be advertised to certain profiles by law), brand restrictions, or very narrow audiences that must not grow. The key difference for the exam: in the original audience, what you define is a wall that isn't crossed; in Advantage+, it's a suggestion the system can go beyond. For example, an insurer called Norteña Seguros, which by regulation cannot show a certain product to minors, needs the original audience to guarantee that limit, not Advantage+."
+        },
+        {
+          "type": "concept",
+          "h": "Where this is chosen in Ads Manager",
+          "body": "This decision is configured when building the ad set. In <strong>Ads Manager</strong>, go into your campaign, open the <strong>ad set</strong> and scroll down to the <em>Audience</em> section. There Meta shows you the Advantage+ Audience first as the default option; you'll see an <em>Audience suggestions</em> field to add your signals. If you need strict control, you choose the option to switch to the original audience (it usually appears as <em>Switch to original audience options</em>) and there you define age, location, interests, and exclusions as hard limits."
+        },
+        {
+          "type": "kvtable",
+          "h": "Advantage+ Audience vs original audience",
+          "rows": [
+            ["Advantage+ Audience", "Signals as a suggestion; Meta expands to find conversions"],
+            ["Original audience", "Targeting defined by the planner; strict control"],
+            ["When Advantage+", "Maximize results, prospecting, conversion signal available"],
+            ["When original", "Legal/brand restrictions, very narrow audiences"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "AUDIENCE SUGGESTIONS",
+          "body": "In Advantage+ Audience, the custom audiences and detailed targeting you add work as <strong>suggestions</strong> that prioritize, not as rigid limits. The system can go further if it finds conversions."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "Believing that in Advantage+ Audience the signals are a <strong>hard limit</strong>. They are not: they prioritize, but the system can expand. If you need a real limit, use the original audience."
+        },
+        {
+          "type": "mcq",
+          "q": "An advertiser in a regulated sector must NOT show ads outside an audience strictly defined by law. What do you choose?",
+          "options": [
+            "Advantage+ Audience, which is the default",
+            "Original audience with defined targeting",
+            "Lookalike at 10%",
+            "Detailed targeting expansion enabled"
+          ],
+          "correct": 1,
+          "explanation": "When there's a hard legal limit, you need strict control: original audience with defined targeting. Advantage+ Audience treats signals as suggestions and can expand outside the audience.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "A business with no restrictions and a solid conversion signal. Recommended default?",
+          "options": [
+            "Closed original audience",
+            "Advantage+ Audience with signals as a suggestion",
+            "Remarketing only",
+            "Lookalike 10% with no seed"
+          ],
+          "correct": 1,
+          "explanation": "With signal and no legal limits, Advantage+ Audience is Meta's recommended starting point.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "4.2",
+      "title": "Memory workout · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The default Meta recommends as a starting point is ___.",
+          "options": [
+            "Advantage+ Audience",
+            "original audience",
+            "Lookalike 10%",
+            "detailed targeting"
+          ],
+          "correct": 0,
+          "explanation": "Advantage+ Audience: you provide signals and the system finds who converts, without hard limits."
+        },
+        {
+          "type": "fill",
+          "q": "When there are legal or brand restrictions and you need strict control, you use the ___ audience.",
+          "options": [
+            "original",
+            "Advantage+",
+            "lookalike",
+            "broad"
+          ],
+          "correct": 0,
+          "explanation": "The original (manual) audience gives defined targeting and strict control of the audience."
+        },
+        {
+          "type": "mcq",
+          "q": "In Advantage+ Audience, what role do the custom audiences and detailed targeting you add play?",
+          "options": [
+            "They are rigid limits the system cannot cross",
+            "They are suggestions that prioritize, not limits; the system can go further",
+            "They are completely ignored",
+            "They block prospecting"
+          ],
+          "correct": 1,
+          "explanation": "In Advantage+ Audience the signals are suggestions that prioritize; the system can expand if it finds conversions."
+        },
+        {
+          "type": "mcq",
+          "q": "When is Advantage+ Audience a good fit?",
+          "options": [
+            "When there's a hard legal limit on the audience",
+            "To maximize results and prospect with a conversion signal available",
+            "Only in Awareness campaigns",
+            "When the audience must be very narrow by brand"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Audience serves to maximize results and prospect when there's a conversion signal; legal/brand limits call for the original audience."
+        },
+        {
+          "type": "fill",
+          "q": "If you need a real audience limit (not a suggestion), you use the ___ audience.",
+          "options": ["original", "Advantage+", "lookalike", "broad"],
+          "correct": 0,
+          "explanation": "Only the original audience imposes a hard targeting limit."
+        }
+      ]
+    },
+    {
+      "id": "4.3",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "B2B accounting firm in Monterrey",
+          "body": "An accounting firm that sells services to SMBs wants to generate more leads. It has a Pixel with Lead events and no legal restrictions on who to show ads to. The partner asks you which type of audience to start with."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you recommend to start with?",
+          "options": [
+            "Original audience with very tight targeting",
+            "Advantage+ Audience, giving it the Lead signals as a suggestion",
+            "Remarketing only to existing customers",
+            "Lookalike 10% with no seed"
+          ],
+          "correct": 1,
+          "explanation": "With no legal restrictions and a conversion signal (Lead), Advantage+ Audience is the recommended default: the signals prioritize and the system finds who converts."
+        },
+        {
+          "type": "mcq",
+          "q": "The partner fears Advantage+ Audience will \"ignore\" their target company list. What do you explain?",
+          "options": [
+            "They're right, the signals are discarded",
+            "The custom audiences and detailed targeting act as suggestions that prioritize, they are not ignored",
+            "You must switch to the original audience no matter what",
+            "Advantage+ Audience doesn't accept signals"
+          ],
+          "correct": 1,
+          "explanation": "In Advantage+ Audience the signals are suggestions that prioritize; the system uses them to focus and can expand if it finds conversions."
+        },
+        {
+          "type": "mcq",
+          "q": "If later the firm serves a regulated sector that prohibits reaching anyone outside a certain audience, what would you do?",
+          "options": [
+            "Keep using Advantage+ Audience the same way",
+            "Switch to the original audience with defined targeting for strict control",
+            "Raise the budget",
+            "Remove the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "A hard legal limit requires strict control: original audience with defined targeting, because Advantage+ Audience can expand outside the audience."
+        }
+      ]
+    },
+    {
+      "id": "4.4",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Advantage+ Audience", "a": "Recommended default: you provide signals as a suggestion and Meta finds who converts, without hard limits." },
+        { "q": "When the original (manual) audience?", "a": "When there are legal/brand restrictions or strict control of the audience is needed." },
+        { "q": "In Advantage+ Audience, are custom audiences a limit?", "a": "No; they work as suggestions that prioritize, not as a rigid limit." },
+        { "q": "When is Advantage+ Audience a good fit?", "a": "To maximize results, prospect, and when a conversion signal is available." },
+        { "q": "What imposes a real audience limit?", "a": "Only the original (manual) audience." }
+      ]
+    },
+    {
+      "id": "4.5",
+      "title": "Explain · Detailed targeting",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Interests, behaviors, demographics",
+          "body": "<strong>Detailed targeting</strong> is the way to narrow down who the ad reaches based on three criteria Meta combines from the data it has on each person. <em>Interests</em> are topics people interact with on the platform (cooking, fitness, travel); <em>behaviors</em> are detected actions or habits (frequent online shoppers, recurring travelers); <em>demographics</em> are traits such as age, education, or marital status. It mostly serves to build cold audiences, that is, people who don't yet know your business, when you don't have enough of your own signal yet (little Pixel history or no customer list). For example, a newly opened dental clinic called Sonrisa Plena, with no patient base yet, can start by targeting by demographics in its area and the interest \"dental care\" to get its first events."
+        },
+        {
+          "type": "concept",
+          "h": "Refining the audience: narrow and exclude",
+          "body": "Once you define an interest, you can refine further with two tools that change the logic of the audience. <strong>1. Narrow</strong>: adds a required condition with \"AND\" logic, so the person has to meet both criteria at once to be included. <strong>2. Exclude</strong>: removes profiles with \"NOT\" logic, even if they meet the main interest. For example, a mountaineering gear store called Cumbre Gear can start with the interest \"hiking,\" narrow with \"AND also online shoppers,\" and exclude those who already follow its page so as not to spend on them. The goal is to refine, but carefully: every condition you add reduces the size of the audience, and an audience that's too small takes away the system's room to optimize."
+        },
+        {
+          "type": "concept",
+          "h": "Detailed targeting expansion",
+          "body": "<strong>Detailed targeting expansion</strong> is an option within the original audience that gives Meta permission to go beyond the interests you defined, but only if it improves results. It's a middle ground: you set the frame with your interests and the system can step outside it when it detects conversions beyond it. Don't confuse it with the Advantage+ Audience, where expansion is the default behavior and much broader; here it's an optional add-on built on top of a manual base that you decide to enable. For example, a supplements brand called VitaPro defines the interest \"sports nutrition\" but enables expansion so Meta can also reach similar people who convert, without VitaPro having to list every interest by hand."
+        },
+        {
+          "type": "concept",
+          "h": "Where it's configured in Ads Manager",
+          "body": "All of this lives within the ad set, not in a separate section. In <strong>Ads Manager</strong> open your campaign, go into the <strong>ad set</strong> and, if you chose the original audience, scroll down to <em>Detailed targeting</em>: there you type the interest, behavior, or demographic and Meta suggests matches. The <em>Narrow audience</em> button adds the \"AND\" condition, and the <em>Exclude people</em> field removes profiles. The <em>detailed targeting expansion</em> checkbox appears below as an option to enable. While you edit, the estimated audience size meter on the right warns you if the audience got too small."
+        },
+        {
+          "type": "kvtable",
+          "h": "Key concepts",
+          "rows": [
+            ["Narrow / exclude", "Refine with AND/NOT to fine-tune the audience"],
+            ["Detailed targeting expansion", "Lets Meta go beyond the interest if it improves results (in the original audience)"],
+            ["Risk", "Audience too small = high cost and little delivery"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "BROAD PERFORMS",
+          "body": "With a good conversion signal, a <strong>broad audience</strong> tends to perform better than an over-segmented one: it gives the system room to find who converts."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "Over-segmenting (many interests + aggressive narrowing) creates tiny audiences: the system has no room to optimize and the cost spikes."
+        },
+        {
+          "type": "mcq",
+          "q": "A planner builds an audience with 8 nested interests and triple narrowing. Delivery is almost nil and the CPM is very high. Most likely cause?",
+          "options": [
+            "The creative is bad",
+            "The audience became too small to optimize",
+            "The Pixel is missing",
+            "The objective is Awareness"
+          ],
+          "correct": 1,
+          "explanation": "Over-targeting shrinks the audience to a size where the system can't optimize; cost goes up and delivery drops. The solution is to broaden and let the signal work.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "When is detailed targeting most useful?",
+          "options": [
+            "When you already have plenty of your own signal",
+            "For cold audiences without enough of your own signal",
+            "Only in remarketing",
+            "Only in Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Detailed targeting helps define cold audiences when there isn't yet your own signal for the system to use.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "4.6",
+      "title": "Memory workout · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Narrowing down by interests, behaviors, and demographics is called ___ targeting.",
+          "options": [
+            "detailed",
+            "broad",
+            "lookalike",
+            "custom"
+          ],
+          "correct": 0,
+          "explanation": "Detailed targeting narrows by interests, behaviors, and demographics; useful for cold audiences without your own signal."
+        },
+        {
+          "type": "fill",
+          "q": "To refine the audience with AND/NOT you use narrow / ___.",
+          "options": [
+            "exclude",
+            "expand",
+            "duplicate",
+            "merge"
+          ],
+          "correct": 0,
+          "explanation": "Narrow / exclude refines with AND/NOT to fine-tune the audience."
+        },
+        {
+          "type": "mcq",
+          "q": "What is detailed targeting expansion for in the original audience?",
+          "options": [
+            "It blocks any expansion of the audience",
+            "It lets Meta go beyond the interest if it improves results",
+            "It turns the campaign into remarketing",
+            "It automatically reduces the audience"
+          ],
+          "correct": 1,
+          "explanation": "Detailed targeting expansion lets Meta go beyond the defined interest if that improves results, within the original audience."
+        },
+        {
+          "type": "mcq",
+          "q": "What is the main risk of over-segmenting with many interests + aggressive narrowing?",
+          "options": [
+            "The system optimizes better with fewer people",
+            "A tiny audience: the system has no room to optimize and the cost spikes",
+            "The CPM always drops",
+            "Delivery doubles"
+          ],
+          "correct": 1,
+          "explanation": "Over-segmenting creates tiny audiences; with no room to optimize, the cost spikes and delivery drops. Broad audiences perform better with a good signal."
+        }
+      ]
+    },
+    {
+      "id": "4.7",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Industrial distributor with no own signal",
+          "body": "A B2B industrial parts distributor in Apodaca is about to launch its first campaign. It has neither a Pixel with enough history nor a customer list. The team wants to build an audience with 9 nested interests and triple narrowing \"so as not to waste money.\""
+        },
+        {
+          "type": "mcq",
+          "q": "What do you warn them about that plan of 9 interests + triple narrowing?",
+          "options": [
+            "It's perfect, the more segmented the better",
+            "Over-segmenting creates a tiny audience: cost goes up and delivery drops",
+            "All that's missing is adding more interests",
+            "The problem is the creative, not the audience"
+          ],
+          "correct": 1,
+          "explanation": "Over-targeting shrinks the audience to a size where the system doesn't optimize; cost goes up and delivery drops. It's better to broaden."
+        },
+        {
+          "type": "mcq",
+          "q": "Without enough of their own signal, what detailed targeting approach do you recommend to start?",
+          "options": [
+            "A broader cold audience with a few relevant interests",
+            "Triple narrowing with all possible interests",
+            "Remarketing only",
+            "No targeting at all"
+          ],
+          "correct": 0,
+          "explanation": "Detailed targeting serves cold audiences without your own signal; a broad audience with a few relevant interests is best to give the system room."
+        },
+        {
+          "type": "mcq",
+          "q": "They want Meta to be able to go beyond the interest if it performs better, while keeping the original audience. What do they enable?",
+          "options": [
+            "Detailed targeting expansion",
+            "Triple narrowing",
+            "Total exclusion of interests",
+            "Lookalike 1%"
+          ],
+          "correct": 0,
+          "explanation": "Detailed targeting expansion lets Meta go beyond the defined interest if it improves results, within the original audience."
+        }
+      ]
+    },
+    {
+      "id": "4.8",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Detailed targeting", "a": "Narrows by interests, behaviors, and demographics; useful for cold audiences without your own signal." },
+        { "q": "Narrow / exclude", "a": "Refines the audience with AND/NOT to fine-tune it." },
+        { "q": "Detailed targeting expansion", "a": "Lets Meta go beyond the interest if it improves results (in the original audience)." },
+        { "q": "Risk of over-targeting", "a": "Audience too small: the system doesn't optimize, cost goes up and delivery drops." }
+      ]
+    },
+    {
+      "id": "4.9",
+      "title": "Explain · Custom audiences",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Your people (remarketing)",
+          "body": "A <strong>custom audience</strong> is built with people who already have some relationship with your business, not strangers. Unlike detailed targeting, which starts from general interests Meta knows about everyone, here you start from your own signal: who visited your site, who used your app, your customer list, or who engaged with your content on Meta. It's the foundation of <strong>remarketing</strong> (reaching people who already know you again), because you're speaking to someone who has already taken a step toward you and therefore tends to convert more cheaply. For example, an online bookstore called Página y Tinta can build a custom audience of everyone who viewed a book's page but didn't buy it, to remind them a few days later with an ad."
+        },
+        {
+          "type": "concept",
+          "h": "The four sources your people come from",
+          "body": "A custom audience draws from four possible sources, split between your own platforms and Meta's assets. <strong>1. Website</strong>: visitors and events the Pixel logged, such as those who fired \"AddToCart\" when adding to the cart. <strong>2. App activity</strong>: users and events inside your mobile application. <strong>3. Customer list</strong>: your own base of emails or phone numbers, which you upload. <strong>4. Engagement</strong>: people who watched your video, interacted with your Facebook or Instagram page, or opened an instant form. The first two and the list use your own data; engagement uses activity within Meta. For example, a restaurant with delivery service called Cocina del Barrio can create an Engagement custom audience of those who watched at least 15 seconds of its menu video."
+        },
+        {
+          "type": "concept",
+          "h": "Three uses in the plan",
+          "body": "A custom audience isn't only for remarketing; it serves three distinct functions in your audience plan, and it's worth being clear on them because the exam mixes them up. <strong>1. Remarketing</strong>: reaching those who already know you again, for example to recover abandoned carts. <strong>2. Seed</strong>: using it as a base to create a lookalike and prospect similar people who don't know you yet. <strong>3. Exclusion</strong>: leaving it out of a campaign so as not to pay again for those who already converted. For example, a sneaker brand called PasoFirme uses its buyer list as a seed to prospect new customers and, at the same time, excludes that same list from the prospecting campaign so as not to spend again on those who already bought."
+        },
+        {
+          "type": "concept",
+          "h": "Where they're created in Meta",
+          "body": "Custom audiences are built outside the ad set, in a dedicated section. In <strong>Ads Manager</strong>, open the main menu and go to <em>Audiences</em>; there click <em>Create audience</em> and choose <em>Custom Audience</em>. Meta will ask you to select the source (Website, App activity, Customer list, or Engagement) and define the rules, for example \"visited this page in the last 30 days.\" Once created, that audience becomes available to use as targeting, as a lookalike seed, or as an exclusion when building any ad set."
+        },
+        {
+          "type": "kvtable",
+          "h": "Custom audience sources",
+          "rows": [
+            ["Website", "Pixel visitors / events (e.g., added to cart)"],
+            ["App activity", "In-app users and events (SDK/MMP)"],
+            ["Customer list", "Your own list (emails/phones), hashed"],
+            ["Engagement", "Watched a video, engaged with page/IG, opened an Instant form"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "USE IN THE PLAN",
+          "body": "Custom audiences serve for <strong>remarketing</strong> (recovering carts) and as a <strong>seed</strong> for lookalikes. They're also excluded so as not to spend on those who already converted."
+        },
+        {
+          "type": "warn",
+          "label": "PRIVACY",
+          "body": "The <strong>customer list</strong> is uploaded <strong>hashed</strong> (emails/phones protected): Meta does the match without exposing data in the clear. Uploading it unencrypted is a privacy error."
+        },
+        {
+          "type": "mcq",
+          "q": "The client wants to recover those who added to cart and didn't buy within 7 days. Which custom audience source?",
+          "options": [
+            "Customer list of buyers",
+            "Website custom audience by AddToCart event, excluding Purchase",
+            "Video engagement",
+            "Lookalike 1%"
+          ],
+          "correct": 1,
+          "explanation": "This is web-behavior remarketing: a Website custom audience with the AddToCart event, excluding those who fired Purchase. The buyers' customer list is exactly who you do NOT want to re-engage.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "4.10",
+      "title": "Memory workout · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "An audience of people who already have a relationship with the business is called a ___ audience.",
+          "options": [
+            "custom",
+            "lookalike",
+            "broad",
+            "core"
+          ],
+          "correct": 0,
+          "explanation": "Custom audience: website visitors, app users, customer list, or engagement."
+        },
+        {
+          "type": "mcq",
+          "q": "What are the four custom audience sources?",
+          "options": [
+            "Website, App activity, Customer list, Engagement",
+            "Interests, behaviors, demographics, lookalike",
+            "Pixel, CAPI, dataset, catalog",
+            "Awareness, Traffic, Engagement, Sales"
+          ],
+          "correct": 0,
+          "explanation": "The custom audience sources are Website, App activity, Customer list, and Engagement."
+        },
+        {
+          "type": "fill",
+          "q": "A customer list is uploaded ___ (emails/phones protected) before the match.",
+          "options": [
+            "hashed",
+            "public",
+            "unencrypted",
+            "duplicated"
+          ],
+          "correct": 0,
+          "explanation": "The customer list is uploaded hashed (emails/phones protected) for the match."
+        },
+        {
+          "type": "mcq",
+          "q": "Besides remarketing, what other two uses do custom audiences have?",
+          "options": [
+            "Lookalike seed and exclusion of those who already converted",
+            "Defining the objective and the budget",
+            "Choosing placements and creative",
+            "Configuring billing and the Pixel"
+          ],
+          "correct": 0,
+          "explanation": "Custom audiences serve for remarketing, as a seed for lookalikes, and to exclude those who already converted."
+        },
+        {
+          "type": "mcq",
+          "q": "You want to stop spending on people who already bought. What do you do with a custom audience?",
+          "options": [
+            "Use it as the main targeting",
+            "Exclude it from the prospecting campaign",
+            "Convert it into a lookalike 10%",
+            "Delete it from the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "You exclude the buyers' custom audience so as not to spend again on those who already converted."
+        }
+      ]
+    },
+    {
+      "id": "4.11",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Online uniform store (SMB)",
+          "body": "An SMB that sells industrial uniforms online has a Pixel with AddToCart and Purchase events, plus a customer email base. Many users add to cart but don't buy within a week. The owner wants to recover them without paying again for those who already bought."
+        },
+        {
+          "type": "mcq",
+          "q": "What custom audience do you build to recover 7-day abandoned carts?",
+          "options": [
+            "Customer list of buyers",
+            "Website custom audience by AddToCart, excluding Purchase",
+            "15-second video engagement",
+            "Lookalike 5% of visitors"
+          ],
+          "correct": 1,
+          "explanation": "This is web-behavior remarketing: a Website custom audience with AddToCart, excluding those who fired Purchase."
+        },
+        {
+          "type": "mcq",
+          "q": "How do you use the customer email base in this plan?",
+          "options": [
+            "Upload it hashed as a customer list and exclude it from the campaign so as not to re-engage buyers",
+            "Publish it unencrypted for a better match",
+            "Ignore it because it's useless",
+            "Use it as the sole prospecting targeting"
+          ],
+          "correct": 0,
+          "explanation": "The customer list is uploaded hashed and excluded so as not to spend again on those who already bought."
+        },
+        {
+          "type": "mcq",
+          "q": "The owner also wants to prospect new customers similar to their best buyers. What role does their custom audience play there?",
+          "options": [
+            "None, custom audiences are only for remarketing",
+            "It serves as a seed to create a lookalike",
+            "It completely replaces detailed targeting",
+            "It blocks prospecting"
+          ],
+          "correct": 1,
+          "explanation": "A quality custom audience serves as a seed for a prospecting lookalike, in addition to its use in remarketing and exclusion."
+        }
+      ]
+    },
+    {
+      "id": "4.12",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Custom audience", "a": "People with a prior relationship to the business: web, app, customer list, engagement." },
+        { "q": "Custom audience sources", "a": "Website, App activity, Customer list, Engagement." },
+        { "q": "Triple use of custom audiences", "a": "Remarketing, lookalike seed, and exclusion of those who already converted." },
+        { "q": "How is a customer list uploaded?", "a": "Hashed (emails/phones protected) before the match." }
+      ]
+    },
+    {
+      "id": "4.13",
+      "title": "Explain · Lookalike audiences",
+      "section": "b4",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Finding more like your best",
+          "body": "A <strong>lookalike audience</strong> is the tool for prospecting at scale without shooting blindly. It starts from a <strong>seed</strong> (a quality custom audience you use as a base, such as your best customers) and asks Meta to find people with a similar profile who don't know you yet. The logic is simple: if Meta understands what traits your most valuable customers share, it can go out and look for more people with those same traits. That's why this concept unites the module's two worlds: it takes your own signal (a custom audience) and uses it to fuel prospecting toward a new audience. For example, an artisanal jewelry brand called Plata Viva takes its recurring-buyer list as a seed and creates a lookalike to reach people with similar tastes and behaviors who have never bought from it."
+        },
+        {
+          "type": "concept",
+          "h": "Size: precision versus reach",
+          "body": "When creating a lookalike you choose a percentage from 1% to 10% that defines the balance between precision and reach. <strong>1. Lookalike 1%</strong>: takes the 1% of the country's population most similar to your seed; it's the most precise, but with the lowest reach. <strong>2. Lookalike 5–10%</strong>: greatly expands reach, but by including more people the similarity to the seed gets diluted. There's no \"correct\" number: 1% is a good fit when you prioritize quality and 10% when you need volume to scale. Also, the lookalike is always generated over a <strong>target country</strong>: it's built from the population of the country where you want to prospect, so you need to create one per market. For example, a fintech called Pago Ágil that only operates in Mexico creates its lookalike 1% over Mexico to get as close as possible to its best users."
+        },
+        {
+          "type": "concept",
+          "h": "Seed quality is everything",
+          "body": "A lookalike is never better than the seed it starts from: if the seed is poor, the result will be too. This is known as <em>garbage in, garbage out</em>: the algorithm can only copy the pattern you give it. A seed of <strong>high-value customers</strong> produces a much stronger lookalike than one of mere visitors, because Meta learns to look for people similar to those who actually bring you money. The size of the seed also matters: the recommendation is between 1,000 and 50,000 people; with too few there isn't enough of a pattern and with too many what they have in common gets diluted. For example, a boutique gym called Fuerza Urbana will make a better lookalike with its seed of 3,000 active higher-spend members than with a list of 80,000 casual site visitors."
+        },
+        {
+          "type": "concept",
+          "h": "Where it's created in Meta",
+          "body": "Just like custom audiences, lookalikes are created in the audiences section, not inside the ad set. In <strong>Ads Manager</strong>, open the menu and go to <em>Audiences</em>; click <em>Create audience</em> and choose <em>Lookalike Audience</em>. Meta will ask you for three things: the <em>source</em> (or seed: the custom audience you'll use as a base), the target country or region, and the size as a percentage (1% to 10%). You can create several sizes at once. Once generated, the lookalike is available to use as targeting when building your prospecting ad set."
+        },
+        {
+          "type": "kvtable",
+          "h": "Lookalike levers",
+          "rows": [
+            ["Seed", "The better the seed (high-value customers), the better the lookalike"],
+            ["Size 1%", "More similar to the seed, more precise, less reach"],
+            ["Size 5–10%", "More reach, less similar, broader"],
+            ["Country", "The lookalike is generated by target country"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "SEED QUALITY",
+          "body": "A seed of <strong>high-value customers</strong> produces better lookalikes than one of mere visitors. Recommended seed size: ~1,000–50,000 people."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "A poor seed (all visitors, with no value filter) generates a weak lookalike. Garbage in, garbage out: the quality of the lookalike depends on the quality of the seed."
+        },
+        {
+          "type": "mcq",
+          "q": "You want maximum precision to prospect people similar to your best customers. Which configuration?",
+          "options": [
+            "Lookalike 10% over all website visitors",
+            "Lookalike 1% over a seed of high-value customers",
+            "Detailed targeting with 10 interests",
+            "Video engagement custom audience"
+          ],
+          "correct": 1,
+          "explanation": "Maximum precision = lookalike 1% (most similar to the seed) and a quality seed (high-value customers). 10% expands but dilutes the similarity; interests don't use your own signal.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "4.14",
+      "title": "Memory workout · Block 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "An audience of people similar to a quality seed is called a ___ audience.",
+          "options": [
+            "lookalike",
+            "custom",
+            "broad",
+            "core"
+          ],
+          "correct": 0,
+          "explanation": "Lookalike audience: it starts from a seed (a quality custom audience) and looks for similar profiles; it serves for prospecting."
+        },
+        {
+          "type": "mcq",
+          "q": "What is the difference between a lookalike 1% and a 10%?",
+          "options": [
+            "1% is more similar and precise with less reach; 10% more reach and less similar",
+            "1% is broader than 10%",
+            "They are identical, only the name changes",
+            "10% always converts more"
+          ],
+          "correct": 0,
+          "explanation": "1% = more similar to the seed, more precise, less reach. 5–10% = more reach, less similar."
+        },
+        {
+          "type": "fill",
+          "q": "What improves a lookalike most is the quality of the ___.",
+          "options": [
+            "seed",
+            "bid",
+            "placement",
+            "creative"
+          ],
+          "correct": 0,
+          "explanation": "A quality seed (e.g., high-value customers) produces better lookalikes than one of mere visitors."
+        },
+        {
+          "type": "mcq",
+          "q": "The lookalike is generated mainly based on:",
+          "options": [
+            "The target country",
+            "The ad creative",
+            "The payment method",
+            "The awareness objective"
+          ],
+          "correct": 0,
+          "explanation": "The lookalike is generated by target country from the seed."
+        },
+        {
+          "type": "mcq",
+          "q": "Recommended seed size for a good lookalike:",
+          "options": [
+            "~10–50 people",
+            "~1,000–50,000 people",
+            "Exactly 1,000,000",
+            "Size doesn't matter"
+          ],
+          "correct": 1,
+          "explanation": "The recommended seed size is ~1,000–50,000 people, ideally high-value."
+        }
+      ]
+    },
+    {
+      "id": "4.15",
+      "title": "Case to solve · Block 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Mexican B2B SaaS scaling prospecting",
+          "body": "A B2B SaaS for electronic invoicing with a good volume of paying customers wants to prospect new companies similar to its best accounts. It has a custom audience of high-value customers (~8,000 people) and operates mainly in Mexico."
+        },
+        {
+          "type": "mcq",
+          "q": "Which lookalike configuration gives maximum precision to resemble its best accounts?",
+          "options": [
+            "Lookalike 10% over all website visitors",
+            "Lookalike 1% over the seed of high-value customers",
+            "Detailed targeting with 12 interests",
+            "Video engagement custom audience"
+          ],
+          "correct": 1,
+          "explanation": "Maximum precision = lookalike 1% over a quality seed (high-value customers). 10% expands but dilutes the similarity."
+        },
+        {
+          "type": "mcq",
+          "q": "Is the seed of ~8,000 high-value customers adequate?",
+          "options": [
+            "No, it's too small for any lookalike",
+            "Yes, it's within the recommended range (~1,000–50,000) and is high-value",
+            "It only works for remarketing, never for a lookalike",
+            "It must be reduced to 50 people"
+          ],
+          "correct": 1,
+          "explanation": "~8,000 high-value people is within the recommended seed range (~1,000–50,000) and improves the lookalike's quality."
+        },
+        {
+          "type": "mcq",
+          "q": "They operate in Mexico. How does that affect the lookalike?",
+          "options": [
+            "The lookalike is generated by target country, so it's created for Mexico",
+            "The country doesn't affect the lookalike",
+            "The seed must be created in another country",
+            "The lookalike ignores geography"
+          ],
+          "correct": 0,
+          "explanation": "The lookalike is generated by target country: to prospect in Mexico, the lookalike is created over that country."
+        }
+      ]
+    },
+    {
+      "id": "4.16",
+      "title": "Mini-flashcards · Block 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Lookalike audience", "a": "People similar to a seed (a quality custom audience); for prospecting." },
+        { "q": "Lookalike 1% vs 10%", "a": "1% = more similar and precise, less reach. 10% = more reach, less similar." },
+        { "q": "What makes a lookalike better?", "a": "A quality seed (e.g., high-value customers)." },
+        { "q": "How is the lookalike generated by geography?", "a": "By target country; recommended seed size ~1,000–50,000 people." }
+      ]
+    },
+    {
+      "id": "4.integ",
+      "title": "Integrative case · Audience by funnel",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "INTEGRATIVE CASE",
+          "h": "Ecommerce with solid Pixel + CAPI",
+          "body": "An ecommerce with good sales volume and a solid Pixel + CAPI. It wants to scale acquisition without cannibalizing current customers, and at the same time recover abandoned carts."
+        },
+        {
+          "type": "mcq",
+          "q": "What audience architecture do you propose?",
+          "options": [
+            "Remarketing to buyers only",
+            "Advantage+ Audience / lookalike 1% of high-value buyers for prospecting, excluding current customers; remarketing separately",
+            "A single ad set with 12 interests",
+            "Reservation with a frequency cap"
+          ],
+          "correct": 1,
+          "explanation": "Scaling acquisition without cannibalizing = prospecting with Advantage+/high-value lookalike excluding customers, and a separate remarketing effort. Remarketing only doesn't scale; 12 interests over-segments.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "How do you avoid paying twice for the same user in this plan?",
+          "options": [
+            "By raising the budget",
+            "By excluding the current-customer custom audiences from the prospecting campaign",
+            "By removing the Pixel",
+            "By using detailed targeting only"
+          ],
+          "correct": 1,
+          "explanation": "You exclude the customer/buyer custom audiences in prospecting so as not to pay again for the same user."
+        },
+        {
+          "type": "mcq",
+          "q": "Why does 'remarketing to buyers only' NOT meet the objective?",
+          "options": [
+            "Because remarketing doesn't convert",
+            "Because it doesn't scale acquisition: it only re-engages those you already know, it doesn't bring new customers",
+            "Because the Pixel doesn't allow it",
+            "Because it's more expensive than Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Remarketing re-engages known people; to scale acquisition you need prospecting (Advantage+/lookalike) toward a new audience."
+        },
+        {
+          "type": "mcq",
+          "q": "For cart recovery, what custom audience do you define?",
+          "options": [
+            "Customer list of buyers",
+            "Website custom audience by AddToCart, excluding Purchase",
+            "Lookalike 10% of visitors",
+            "Video engagement"
+          ],
+          "correct": 1,
+          "explanation": "Abandoned cart = Website custom audience by AddToCart excluding those who already fired Purchase."
+        }
+      ]
+    },
+    {
+      "id": "4.match",
+      "title": "Match the key concepts of Module 4",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Tap the term and then its definition. Each mistake costs 1 ❤️.",
+      "pairs": [
+        ["Advantage+ Audience", "Default: signals as a suggestion, Meta finds conversions"],
+        ["Original audience", "Manual targeting with strict control of the audience"],
+        ["Detailed targeting", "Narrows by interests, behaviors, and demographics"],
+        ["Detailed targeting expansion", "Meta goes beyond the interest if it improves results"],
+        ["Narrow / exclude", "Refines the audience with AND/NOT"],
+        ["Over-targeting", "Tiny audience: high cost, little delivery"],
+        ["Custom audience", "People with a prior relationship to the business"],
+        ["Custom audience sources", "Website, App activity, Customer list, Engagement"],
+        ["Customer list", "Your own list uploaded hashed for the match"],
+        ["Lookalike audience", "Similar to a seed; for prospecting at scale"],
+        ["Lookalike 1%", "More similar and precise, less reach"],
+        ["Quality seed", "High-value buyers: better lookalike"]
+      ]
+    },
+    {
+      "id": "4.order",
+      "title": "Order the audience build by funnel",
+      "section": "bz",
+      "type": "order",
+      "instruction": "The planner builds the audiences in this order. Reorder with ▲▼ and verify.",
+      "items": [
+        "Build custom audiences from your sources (web, app, list, engagement)",
+        "Create a lookalike 1% using the best custom audience as a seed",
+        "Prospect with Advantage+ Audience / lookalike, excluding current customers",
+        "Remarket to custom audiences (e.g., abandoned carts)",
+        "Exclude buyers so as not to pay twice"
+      ],
+      "explanation": "First you build your own signal (custom), the lookalike seed comes from that, then prospecting excluding customers and remarketing separately."
+    },
+    {
+      "id": "4.fill",
+      "title": "Complete the Module 4 statements",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The audience default recommended by Meta is ___.",
+          "options": ["Advantage+ Audience", "original audience", "lookalike 10%", "detailed targeting"],
+          "correct": 0,
+          "explanation": "Advantage+ Audience: signals as a suggestion."
+        },
+        {
+          "type": "fill",
+          "q": "With hard legal restrictions you use the ___ audience.",
+          "options": ["original", "Advantage+", "lookalike", "broad"],
+          "correct": 0,
+          "explanation": "Only the original audience imposes a real limit."
+        },
+        {
+          "type": "fill",
+          "q": "Narrowing by interests, behaviors, and demographics is ___ targeting.",
+          "options": ["detailed", "broad", "lookalike", "custom"],
+          "correct": 0,
+          "explanation": "Detailed targeting."
+        },
+        {
+          "type": "fill",
+          "q": "Over-segmenting creates tiny audiences and the cost ___.",
+          "options": ["spikes", "drops", "disappears", "stabilizes"],
+          "correct": 0,
+          "explanation": "With no room to optimize, the cost spikes."
+        },
+        {
+          "type": "fill",
+          "q": "A customer list is uploaded ___ before the match.",
+          "options": ["hashed", "public", "unencrypted", "duplicated"],
+          "correct": 0,
+          "explanation": "Hashed: emails/phones protected."
+        },
+        {
+          "type": "fill",
+          "q": "A lookalike starts from a ___ (a quality custom audience).",
+          "options": ["seed", "bid", "placement", "public list"],
+          "correct": 0,
+          "explanation": "The seed determines the quality of the lookalike."
+        },
+        {
+          "type": "fill",
+          "q": "The lookalike ___% is the most similar to the seed.",
+          "options": ["1", "10", "5", "50"],
+          "correct": 0,
+          "explanation": "1% = maximum similarity, less reach."
+        }
+      ]
+    },
+    {
+      "id": "4.drill",
+      "title": "Drill — 12 MCQs from Module 4",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "With no legal restrictions and a conversion signal, which audience do you start with?",
+          "options": [
+            "A very closed original audience",
+            "Advantage+ Audience giving it signals as a suggestion",
+            "Lookalike 10% with no seed",
+            "Remarketing only"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ Audience is the recommended default when there's signal and no legal limits."
+        },
+        {
+          "type": "mcq",
+          "q": "When the original audience?",
+          "options": [
+            "Always",
+            "With legal/brand restrictions or strict control",
+            "Never",
+            "Only in Awareness"
+          ],
+          "correct": 1,
+          "explanation": "When a hard audience limit is needed."
+        },
+        {
+          "type": "mcq",
+          "q": "In Advantage+ Audience the signals you add are:",
+          "options": ["Rigid limits", "Suggestions that prioritize", "Ignored", "Only for reporting"],
+          "correct": 1,
+          "explanation": "They prioritize; the system can expand."
+        },
+        {
+          "type": "mcq",
+          "q": "Detailed targeting narrows by:",
+          "options": [
+            "Interests, behaviors, demographics",
+            "Pixel, CAPI, dataset",
+            "Reach and frequency",
+            "Objective and budget"
+          ],
+          "correct": 0,
+          "explanation": "Interests, behaviors, and demographics."
+        },
+        {
+          "type": "mcq",
+          "q": "Risk of over-targeting:",
+          "options": [
+            "Better optimization",
+            "Tiny audience: high cost, little delivery",
+            "The CPM always drops",
+            "Delivery doubles"
+          ],
+          "correct": 1,
+          "explanation": "With no room to optimize, the cost goes up."
+        },
+        {
+          "type": "mcq",
+          "q": "The four custom audience sources:",
+          "options": [
+            "Website, App activity, Customer list, Engagement",
+            "Pixel, CAPI, dataset, catalog",
+            "Interests, behaviors, demographics, country",
+            "Awareness, Traffic, Sales, Engagement"
+          ],
+          "correct": 0,
+          "explanation": "Website, App activity, Customer list, Engagement."
+        },
+        {
+          "type": "mcq",
+          "q": "A customer list is uploaded:",
+          "options": ["Public", "Hashed", "Unencrypted", "As a lookalike"],
+          "correct": 1,
+          "explanation": "Hashed, for the match without exposing data."
+        },
+        {
+          "type": "mcq",
+          "q": "Uses of a custom audience:",
+          "options": [
+            "Remarketing only",
+            "Remarketing, lookalike seed, and exclusion",
+            "Exclusion only",
+            "Defining the budget"
+          ],
+          "correct": 1,
+          "explanation": "Remarketing, seed, and exclusion of those who already converted."
+        },
+        {
+          "type": "mcq",
+          "q": "Lookalike 1% vs 10%:",
+          "options": [
+            "1% more similar/precise, less reach",
+            "1% broader",
+            "Identical",
+            "10% always converts more"
+          ],
+          "correct": 0,
+          "explanation": "1% = more similar, less reach."
+        },
+        {
+          "type": "mcq",
+          "q": "What improves a lookalike most?",
+          "options": ["The bid", "The quality of the seed", "The placement", "The budget"],
+          "correct": 1,
+          "explanation": "A quality seed (high-value) = a better lookalike."
+        },
+        {
+          "type": "mcq",
+          "q": "The lookalike is generated by:",
+          "options": ["Target country", "Creative", "Payment method", "Objective"],
+          "correct": 0,
+          "explanation": "By target country, from the seed."
+        },
+        {
+          "type": "mcq",
+          "q": "Scaling acquisition without cannibalizing customers:",
+          "options": [
+            "Remarketing only",
+            "Advantage+/lookalike prospecting excluding customers; remarketing separately",
+            "12 interests with narrowing",
+            "Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Prospecting excluding customers + separate remarketing."
+        }
+      ]
+    },
+    {
+      "id": "4.lightning",
+      "title": "Lightning — 8 rapid questions",
+      "section": "bz",
+      "type": "lightning",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Is Advantage+ Audience the recommended default?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "Yes, when there's signal and no legal limits."
+        },
+        {
+          "q": "Are the signals in Advantage+ Audience a hard limit?",
+          "options": ["Yes", "No, they're suggestions"],
+          "correct": 1,
+          "explanation": "They prioritize; the system can expand."
+        },
+        {
+          "q": "Does over-segmenting improve optimization?",
+          "options": ["Yes", "No, it worsens it"],
+          "correct": 1,
+          "explanation": "A tiny audience: the system doesn't optimize."
+        },
+        {
+          "q": "Is a customer list uploaded hashed?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "Hashed to protect the data."
+        },
+        {
+          "q": "Can a custom audience be a lookalike seed?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "It's one of its three uses."
+        },
+        {
+          "q": "Does a lookalike 1% have more reach than 10%?",
+          "options": ["Yes", "No, less"],
+          "correct": 1,
+          "explanation": "1% = more precise, less reach."
+        },
+        {
+          "q": "Does the quality of the lookalike depend on the seed?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "A poor seed = a weak lookalike."
+        },
+        {
+          "q": "Is remarketing enough to scale acquisition?",
+          "options": ["Yes", "No, prospecting is needed"],
+          "correct": 1,
+          "explanation": "Remarketing doesn't bring new customers."
+        }
+      ]
+    },
+    {
+      "id": "4.flash",
+      "title": "Module 4 flashcards (all)",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Advantage+ Audience", "a": "Recommended default: you provide signals as a suggestion and Meta finds who converts, without hard limits." },
+        { "q": "When the original (manual) audience?", "a": "When there are legal/brand restrictions or strict control of the audience is needed." },
+        { "q": "In Advantage+ Audience, are custom audiences a limit?", "a": "No; they work as suggestions that prioritize, not as a rigid limit." },
+        { "q": "When is Advantage+ Audience a good fit?", "a": "To maximize results, prospect, and when a conversion signal is available." },
+        { "q": "Detailed targeting", "a": "Narrows by interests, behaviors, and demographics; useful for cold audiences without your own signal." },
+        { "q": "Narrow / exclude", "a": "Refines the audience with AND/NOT to fine-tune it." },
+        { "q": "Detailed targeting expansion", "a": "Lets Meta go beyond the interest if it improves results (in the original audience)." },
+        { "q": "Risk of over-targeting", "a": "Audience too small: the system doesn't optimize, cost goes up and delivery drops." },
+        { "q": "Custom audience", "a": "People with a prior relationship to the business: web, app, customer list, engagement." },
+        { "q": "Custom audience sources", "a": "Website, App activity, Customer list, Engagement." },
+        { "q": "Triple use of custom audiences", "a": "Remarketing, lookalike seed, and exclusion of those who already converted." },
+        { "q": "How is a customer list uploaded?", "a": "Hashed (emails/phones protected) before the match." },
+        { "q": "Lookalike audience", "a": "People similar to a seed (a quality custom audience); for prospecting." },
+        { "q": "Lookalike 1% vs 10%", "a": "1% = more similar and precise, less reach. 10% = more reach, less similar." },
+        { "q": "What makes a lookalike better?", "a": "A quality seed (e.g., high-value customers)." },
+        { "q": "How is the lookalike generated by geography?", "a": "By target country; recommended seed size ~1,000–50,000 people." },
+        { "q": "Recover abandoned carts", "a": "Website custom audience by AddToCart, excluding Purchase." },
+        { "q": "Scale acquisition without cannibalizing", "a": "Advantage+/lookalike prospecting excluding customers; remarketing separately." },
+        { "q": "Does remarketing scale acquisition?", "a": "No; it only re-engages known people. New customers require prospecting." },
+        { "q": "Broad audience with a good signal", "a": "Tends to perform better than an over-segmented one." },
+        { "q": "Poor seed", "a": "Generates a weak lookalike: garbage in, garbage out." }
+      ]
+    }
+  ]
+}
