@@ -38,12 +38,12 @@
         {
           "type": "concept",
           "h": "La audiencia consume el presupuesto",
-          "body": "La audiencia que eliges no es un detalle separado del presupuesto: es lo que se lo come. Cada vez que tu anuncio se muestra a una persona, gastas dinero, así que el tamaño y la calidad de tu público determinan qué tan rápido y a qué costo se agota tu inversión. El sistema de Meta necesita juntar suficientes eventos de conversión para salir de la <strong>learning phase</strong> (fase de aprendizaje: el periodo inicial en que el algoritmo todavía está descubriendo a quién conviene mostrar el anuncio). Esa señal solo se junta si la audiencia es lo bastante grande para que el presupuesto compre esos eventos; si es minúscula, el dinero se gasta sin alcanzar el mínimo y el costo por resultado nunca se estabiliza. Por eso conviene repasar el presupuesto del Módulo 3 antes de planear audiencias: van de la mano."
+          "body": "La audiencia que eliges no es un detalle separado del presupuesto: es lo que se lo come. Cada vez que tu anuncio se muestra a una persona, gastas dinero, así que el tamaño y la calidad de tu público determinan qué tan rápido y a qué costo se agota tu inversión. El sistema de Meta necesita juntar suficientes eventos de conversión para salir de la <strong>Fase de aprendizaje</strong> (learning phase: el periodo inicial en que el algoritmo todavía está descubriendo a quién conviene mostrar el anuncio). Esa señal solo se junta si la audiencia es lo bastante grande para que el presupuesto compre esos eventos; si es minúscula, el dinero se gasta sin alcanzar el mínimo y el costo por resultado nunca se estabiliza. Por eso conviene repasar el presupuesto del Módulo 3 antes de planear audiencias: van de la mano."
         },
         {
           "type": "concept",
           "h": "Repaso exprés: los términos del Módulo 3",
-          "body": "Antes de avanzar, ten frescos tres conceptos del presupuesto que vuelven a aparecer aquí. <strong>1. Learning phase</strong> (fase de aprendizaje): el periodo inicial en que Meta explora a quién mostrar el anuncio; necesita alrededor de 50 eventos de optimización en unos 7 días para salir y estabilizarse. <strong>2. Auction</strong> (subasta): el modo de compra en el que el presupuesto se estima a partir de los resultados que esperas obtener, no se fija de forma exacta. <strong>3. CBO / Advantage+ campaign budget</strong> (presupuesto a nivel campaña): un esquema donde pones el dinero en la campaña completa y el sistema lo reparte solo hacia el conjunto de anuncios que mejor rinde."
+          "body": "Antes de avanzar, ten frescos tres conceptos del presupuesto que vuelven a aparecer aquí. <strong>1. Fase de aprendizaje</strong>: el periodo inicial en que Meta explora a quién mostrar el anuncio; necesita alrededor de 50 eventos de optimización en unos 7 días para salir y estabilizarse. <strong>2. Subasta</strong> (auction): el modo de compra en el que el presupuesto se estima a partir de los resultados que esperas obtener, no se fija de forma exacta. <strong>3. CBO / Presupuesto de la campaña Advantage+</strong> (Advantage+ campaign budget): un esquema donde pones el dinero en la campaña completa y el sistema lo reparte solo hacia el conjunto de anuncios que mejor rinde."
         },
         {
           "type": "concept",
@@ -52,14 +52,14 @@
         },
         {
           "type": "fill",
-          "q": "Un ad set sale de learning phase con ~___ eventos de optimización en ~7 días.",
+          "q": "Un Conjunto de anuncios (ad set) sale de Fase de aprendizaje con ~___ eventos de optimización en ~7 días.",
           "options": ["50", "10", "100", "500"],
           "correct": 0,
           "explanation": "~50 eventos en ~7 días. Una audiencia demasiado chica impide juntar esa señal."
         },
         {
           "type": "mcq",
-          "q": "Budget en Auction se deriva como:",
+          "q": "Presupuesto en Subasta (auction) se deriva como:",
           "options": [
             "Impresiones × CPM ÷ 1000",
             "Resultados objetivo × costo por resultado esperado",
@@ -67,14 +67,14 @@
             "Daily × días exacto"
           ],
           "correct": 1,
-          "explanation": "En Auction se estima. La audiencia influye en el costo por resultado real."
+          "explanation": "En Subasta se estima. La audiencia influye en el costo por resultado real."
         },
         {
           "type": "fill",
-          "q": "CBO reparte el gasto hacia el ad set de mejor ___.",
+          "q": "CBO reparte el gasto hacia el Conjunto de anuncios de mejor ___.",
           "options": ["desempeño", "CPM", "reach", "frequency"],
           "correct": 0,
-          "explanation": "Advantage+ campaign budget manda el gasto al mejor ad set/audiencia."
+          "explanation": "Presupuesto de la campaña Advantage+ manda el gasto al mejor Conjunto de anuncios/audiencia."
         },
         {
           "type": "mcq",
@@ -94,12 +94,12 @@
         {
           "type": "concept",
           "h": "El default cambió",
-          "body": "Durante años, planear una campaña significaba decirle a Meta exactamente a quién mostrar el anuncio: tú definías edad, ubicación e intereses, y el sistema se quedaba dentro de ese muro. Eso cambió. Hoy Meta recomienda como punto de partida la <strong>Advantage+ Audience</strong> (audiencia automatizada), donde tú aportas pistas y el sistema decide a quién impactar. La idea es que el algoritmo, alimentado con la señal de conversión de tu Pixel, encuentra mejores prospectos de los que tú podrías delimitar a mano. Surge porque la segmentación manual muy fina suele dejar fuera a personas que sí habrían convertido. En la práctica, tú das <strong>signals</strong> (señales: audiencias que aportas como referencia o punto de partida) y el sistema busca a quien tiene más probabilidad de convertir, sin amarrarse a un público cerrado."
+          "body": "Durante años, planear una campaña significaba decirle a Meta exactamente a quién mostrar el anuncio: tú definías edad, ubicación e intereses, y el sistema se quedaba dentro de ese muro. Eso cambió. Hoy Meta recomienda como punto de partida el <strong>Advantage+ público</strong> (Advantage+ Audience), donde tú aportas pistas y el sistema decide a quién impactar. La idea es que el algoritmo, alimentado con la señal de conversión de tu Pixel, encuentra mejores prospectos de los que tú podrías delimitar a mano. Surge porque la segmentación manual muy fina suele dejar fuera a personas que sí habrían convertido. En la práctica, tú das <strong>signals</strong> (señales: audiencias que aportas como referencia o punto de partida) y el sistema busca a quien tiene más probabilidad de convertir, sin amarrarse a un público cerrado."
         },
         {
           "type": "concept",
           "h": "Qué son las señales que aportas",
-          "body": "Las señales que le das a una Advantage+ Audience pueden ser de dos tipos. <strong>1. Custom audiences</strong> (audiencias personalizadas): listas de gente que ya conoce tu negocio, como visitantes de tu sitio o tu base de clientes. <strong>2. Detailed targeting</strong> (segmentación detallada: intereses, comportamientos y datos demográficos). La diferencia clave frente a la segmentación manual es que aquí no funcionan como muro, sino como punto de arranque que le dice al sistema \"empieza a buscar por aquí\". Por ejemplo, una marca de café de especialidad llamada Tostadero Norte aporta como señal su lista de suscriptores y el interés \"café gourmet\"; Meta arranca priorizando perfiles parecidos, pero si detecta compradores en otro perfil que no estaba en la lista, puede salir de ahí y mostrarles el anuncio también."
+          "body": "Las señales que le das a un Advantage+ público pueden ser de dos tipos. <strong>1. Públicos personalizados</strong> (Custom Audiences): listas de gente que ya conoce tu negocio, como visitantes de tu sitio o tu base de clientes. <strong>2. Segmentación detallada</strong> (detailed targeting: intereses, comportamientos y datos demográficos). La diferencia clave frente a la segmentación manual es que aquí no funcionan como muro, sino como punto de arranque que le dice al sistema \"empieza a buscar por aquí\". Por ejemplo, una marca de café de especialidad llamada Tostadero Norte aporta como señal su lista de suscriptores y el interés \"café gourmet\"; Meta arranca priorizando perfiles parecidos, pero si detecta compradores en otro perfil que no estaba en la lista, puede salir de ahí y mostrarles el anuncio también."
         },
         {
           "type": "concept",
@@ -109,7 +109,7 @@
         {
           "type": "concept",
           "h": "Dónde se elige esto en Ads Manager",
-          "body": "Esta decisión se configura al armar el ad set. En <strong>Ads Manager</strong> (Administrador de anuncios), entra a tu campaña, abre el <strong>ad set</strong> (conjunto de anuncios) y baja a la sección <em>Audience</em> (Audiencia). Ahí Meta te muestra primero la Advantage+ Audience como opción por defecto; verás un campo de <em>Audience suggestions</em> (sugerencias de audiencia) para agregar tus señales. Si necesitas el control estricto, eliges la opción de cambiar a audiencia original (suele aparecer como <em>Switch to original audience options</em>) y ahí defines edad, ubicación, intereses y exclusiones como límites duros."
+          "body": "Esta decisión se configura al armar el conjunto de anuncios. En <strong>Administrador de anuncios</strong> (Ads Manager), entra a tu campaña, abre el <strong>Conjunto de anuncios</strong> (ad set) y baja a la sección <em>Audience</em> (Audiencia). Ahí Meta te muestra primero el Advantage+ público como opción por defecto; verás un campo de <em>Audience suggestions</em> (sugerencias de audiencia) para agregar tus señales. Si necesitas el control estricto, eliges la opción de cambiar a audiencia original (suele aparecer como <em>Switch to original audience options</em>) y ahí defines edad, ubicación, intereses y exclusiones como límites duros."
         },
         {
           "type": "kvtable",
@@ -294,7 +294,7 @@
         {
           "type": "concept",
           "h": "Intereses, comportamientos, demográficos",
-          "body": "El <strong>detailed targeting</strong> (segmentación detallada) es la forma de acotar a quién le llega el anuncio según tres criterios que combina Meta a partir de los datos que tiene de cada persona. Los <em>intereses</em> son temas con los que la gente interactúa en la plataforma (cocina, fitness, viajes); los <em>comportamientos</em> son acciones o hábitos detectados (compradores frecuentes en línea, viajeros recurrentes); los <em>demográficos</em> son rasgos como edad, escolaridad o estado civil. Sirve sobre todo para armar audiencias frías, es decir, gente que todavía no conoce tu negocio, cuando aún no tienes señal propia suficiente (poco historial de Pixel o sin lista de clientes). Por ejemplo, una clínica dental recién abierta llamada Sonrisa Plena, sin base de pacientes todavía, puede arrancar segmentando por demográficos de su zona y el interés \"cuidado dental\" para conseguir sus primeros eventos."
+          "body": "La <strong>segmentación detallada</strong> (detailed targeting) es la forma de acotar a quién le llega el anuncio según tres criterios que combina Meta a partir de los datos que tiene de cada persona. Los <em>intereses</em> son temas con los que la gente interactúa en la plataforma (cocina, fitness, viajes); los <em>comportamientos</em> son acciones o hábitos detectados (compradores frecuentes en línea, viajeros recurrentes); los <em>demográficos</em> son rasgos como edad, escolaridad o estado civil. Sirve sobre todo para armar audiencias frías, es decir, gente que todavía no conoce tu negocio, cuando aún no tienes señal propia suficiente (poco historial de Pixel o sin lista de clientes). Por ejemplo, una clínica dental recién abierta llamada Sonrisa Plena, sin base de pacientes todavía, puede arrancar segmentando por demográficos de su zona y el interés \"cuidado dental\" para conseguir sus primeros eventos."
         },
         {
           "type": "concept",
@@ -304,12 +304,12 @@
         {
           "type": "concept",
           "h": "Detailed targeting expansion",
-          "body": "El <strong>detailed targeting expansion</strong> (expansión de la segmentación detallada) es una opción dentro de la audiencia original que le da permiso a Meta de ir más allá de los intereses que definiste, pero solo si eso mejora los resultados. Es un punto intermedio: tú pones el marco con tus intereses y el sistema puede salirse de él cuando detecta conversiones afuera. No lo confundas con la Advantage+ Audience, donde la expansión es el comportamiento por defecto y mucho más amplio; aquí es un complemento opcional que se monta sobre una base manual y que tú decides activar. Por ejemplo, una marca de suplementos llamada VitaPro define el interés \"nutrición deportiva\" pero activa la expansión para que Meta también alcance a gente parecida que convierta, sin que VitaPro tenga que listar cada interés a mano."
+          "body": "La <strong>expansión de la segmentación detallada</strong> (detailed targeting expansion) es una opción dentro de la audiencia original que le da permiso a Meta de ir más allá de los intereses que definiste, pero solo si eso mejora los resultados. Es un punto intermedio: tú pones el marco con tus intereses y el sistema puede salirse de él cuando detecta conversiones afuera. No lo confundas con el Advantage+ público (Advantage+ Audience), donde la expansión es el comportamiento por defecto y mucho más amplio; aquí es un complemento opcional que se monta sobre una base manual y que tú decides activar. Por ejemplo, una marca de suplementos llamada VitaPro define el interés \"nutrición deportiva\" pero activa la expansión para que Meta también alcance a gente parecida que convierta, sin que VitaPro tenga que listar cada interés a mano."
         },
         {
           "type": "concept",
           "h": "Dónde se configura en Ads Manager",
-          "body": "Todo esto vive dentro del ad set, no en una sección aparte. En <strong>Ads Manager</strong> (Administrador de anuncios) abre tu campaña, entra al <strong>ad set</strong> (conjunto de anuncios) y, si elegiste audiencia original, baja a <em>Detailed targeting</em> (Segmentación detallada): ahí escribes el interés, comportamiento o demográfico y Meta te sugiere coincidencias. El botón <em>Narrow audience</em> (Estrechar audiencia) agrega la condición \"Y\", y el campo <em>Exclude people</em> (Excluir personas) quita perfiles. La casilla de <em>detailed targeting expansion</em> aparece debajo como opción para activar. Mientras editas, el medidor de tamaño estimado a la derecha te avisa si el público quedó demasiado chico."
+          "body": "Todo esto vive dentro del conjunto de anuncios, no en una sección aparte. En <strong>Administrador de anuncios</strong> (Ads Manager) abre tu campaña, entra al <strong>Conjunto de anuncios</strong> (ad set) y, si elegiste audiencia original, baja a <em>Detailed targeting</em> (Segmentación detallada): ahí escribes el interés, comportamiento o demográfico y Meta te sugiere coincidencias. El botón <em>Narrow audience</em> (Estrechar audiencia) agrega la condición \"Y\", y el campo <em>Exclude people</em> (Excluir personas) quita perfiles. La casilla de <em>detailed targeting expansion</em> aparece debajo como opción para activar. Mientras editas, el medidor de tamaño estimado a la derecha te avisa si el público quedó demasiado chico."
         },
         {
           "type": "kvtable",
@@ -485,26 +485,26 @@
         {
           "type": "concept",
           "h": "Tu gente (remarketing)",
-          "body": "Una <strong>custom audience</strong> (audiencia personalizada) se construye con personas que ya tienen alguna relación con tu negocio, no con desconocidos. A diferencia del detailed targeting, que parte de intereses generales que Meta conoce de todos, aquí partes de tu propia señal: quién visitó tu sitio, quién usó tu app, tu lista de clientes o quién interactuó con tu contenido en Meta. Es la base del <strong>remarketing</strong> (volver a impactar a gente que ya te conoce), porque le hablas a alguien que ya dio un paso hacia ti y por eso suele convertir más barato. Por ejemplo, una librería en línea llamada Página y Tinta puede armar una custom audience con todos los que vieron la ficha de un libro pero no lo compraron, para recordárselo unos días después con un anuncio."
+          "body": "Un <strong>público personalizado</strong> (Custom Audience) se construye con personas que ya tienen alguna relación con tu negocio, no con desconocidos. A diferencia de la segmentación detallada (detailed targeting), que parte de intereses generales que Meta conoce de todos, aquí partes de tu propia señal: quién visitó tu sitio, quién usó tu app, tu lista de clientes o quién interactuó con tu contenido en Meta. Es la base del <strong>remarketing</strong> (volver a impactar a gente que ya te conoce), porque le hablas a alguien que ya dio un paso hacia ti y por eso suele convertir más barato. Por ejemplo, una librería en línea llamada Página y Tinta puede armar un público personalizado con todos los que vieron la ficha de un libro pero no lo compraron, para recordárselo unos días después con un anuncio."
         },
         {
           "type": "concept",
           "h": "Las cuatro fuentes de dónde sale tu gente",
-          "body": "Una custom audience se nutre de cuatro fuentes posibles, divididas entre tus propias plataformas y los activos de Meta. <strong>1. Website</strong> (sitio web): visitantes y eventos que registró el Pixel, como quien disparó \"AddToCart\" al agregar al carrito. <strong>2. App activity</strong> (actividad en app): usuarios y eventos dentro de tu aplicación móvil. <strong>3. Customer list</strong> (lista de clientes): tu base propia de correos o teléfonos, que tú subes. <strong>4. Engagement</strong> (interacción): gente que vio tu video, interactuó con tu página de Facebook o Instagram, o abrió un formulario instantáneo. Las dos primeras y la lista usan datos tuyos; la de engagement usa la actividad dentro de Meta. Por ejemplo, un restaurante con servicio a domicilio llamado Cocina del Barrio puede crear una custom audience de Engagement con quienes vieron al menos 15 segundos de su video de menú."
+          "body": "Un público personalizado se nutre de cuatro fuentes posibles, divididas entre tus propias plataformas y los activos de Meta. <strong>1. Website</strong> (sitio web): visitantes y eventos que registró el Pixel, como quien disparó \"AddToCart\" al agregar al carrito. <strong>2. App activity</strong> (actividad en app): usuarios y eventos dentro de tu aplicación móvil. <strong>3. Customer list</strong> (lista de clientes): tu base propia de correos o teléfonos, que tú subes. <strong>4. Engagement</strong> (interacción): gente que vio tu video, interactuó con tu página de Facebook o Instagram, o abrió un formulario instantáneo. Las dos primeras y la lista usan datos tuyos; la de engagement usa la actividad dentro de Meta. Por ejemplo, un restaurante con servicio a domicilio llamado Cocina del Barrio puede crear un público personalizado de Engagement con quienes vieron al menos 15 segundos de su video de menú."
         },
         {
           "type": "concept",
           "h": "Tres usos en el plan",
-          "body": "Una custom audience no sirve solo para remarketing; cumple tres funciones distintas en tu plan de audiencias, y conviene tenerlas claras porque el examen las mezcla. <strong>1. Remarketing</strong>: volver a impactar a quien ya te conoce, por ejemplo para recuperar carritos abandonados. <strong>2. Seed</strong> (semilla): usarla como base para crear un lookalike y prospectar gente parecida que aún no te conoce. <strong>3. Exclusión</strong>: dejarla fuera de una campaña para no volver a pagar por quien ya convirtió. Por ejemplo, una marca de tenis llamada PasoFirme usa su lista de compradores como seed para prospectar clientes nuevos y, al mismo tiempo, excluye esa misma lista de la campaña de prospección para no gastar de nuevo en quien ya compró."
+          "body": "Un público personalizado no sirve solo para remarketing; cumple tres funciones distintas en tu plan de audiencias, y conviene tenerlas claras porque el examen las mezcla. <strong>1. Remarketing</strong>: volver a impactar a quien ya te conoce, por ejemplo para recuperar carritos abandonados. <strong>2. Seed</strong> (semilla): usarla como base para crear un lookalike y prospectar gente parecida que aún no te conoce. <strong>3. Exclusión</strong>: dejarla fuera de una campaña para no volver a pagar por quien ya convirtió. Por ejemplo, una marca de tenis llamada PasoFirme usa su lista de compradores como seed para prospectar clientes nuevos y, al mismo tiempo, excluye esa misma lista de la campaña de prospección para no gastar de nuevo en quien ya compró."
         },
         {
           "type": "concept",
           "h": "Dónde se crean en Meta",
-          "body": "Las custom audiences se arman fuera del ad set, en una sección dedicada. En <strong>Ads Manager</strong> (Administrador de anuncios), abre el menú principal y entra a <em>Audiences</em> (Audiencias); ahí da clic en <em>Create audience</em> y elige <em>Custom Audience</em>. Meta te pedirá seleccionar la fuente (Website, App activity, Customer list o Engagement) y definir las reglas, por ejemplo \"visitó esta página en los últimos 30 días\". Una vez creada, esa audiencia aparece disponible para usarla como targeting, como seed de lookalike o como exclusión al armar cualquier ad set."
+          "body": "Los públicos personalizados se arman fuera del conjunto de anuncios, en una sección dedicada. En <strong>Administrador de anuncios</strong> (Ads Manager), abre el menú principal y entra a <em>Audiences</em> (Audiencias); ahí da clic en <em>Create audience</em> y elige <em>Custom Audience</em>. Meta te pedirá seleccionar la fuente (Website, App activity, Customer list o Engagement) y definir las reglas, por ejemplo \"visitó esta página en los últimos 30 días\". Una vez creada, esa audiencia aparece disponible para usarla como targeting, como seed de lookalike o como exclusión al armar cualquier Conjunto de anuncios (ad set)."
         },
         {
           "type": "kvtable",
-          "h": "Fuentes de custom audience",
+          "h": "Fuentes de público personalizado",
           "rows": [
             ["Website", "Visitantes / eventos del Pixel (ej. añadió al carrito)"],
             ["App activity", "Usuarios y eventos in-app (SDK/MMP)"],
@@ -515,7 +515,7 @@
         {
           "type": "tip",
           "label": "USO EN EL PLAN",
-          "body": "Las custom audiences sirven para <strong>remarketing</strong> (recuperar carritos) y como <strong>semilla</strong> de lookalikes. También se excluyen para no gastar en quien ya convirtió."
+          "body": "Los públicos personalizados sirven para <strong>remarketing</strong> (recuperar carritos) y como <strong>semilla</strong> de lookalikes. También se excluyen para no gastar en quien ya convirtió."
         },
         {
           "type": "warn",
@@ -676,42 +676,42 @@
         {
           "type": "concept",
           "h": "Encontrar más como tus mejores",
-          "body": "Una <strong>lookalike audience</strong> (audiencia similar) es la herramienta para prospectar a escala sin disparar a ciegas. Parte de una <strong>seed</strong> (semilla: una custom audience de calidad que usas como base, como tus mejores clientes) y le pide a Meta que encuentre gente con perfil parecido que todavía no te conoce. La lógica es simple: si Meta entiende qué rasgos comparten tus clientes que más valen, puede salir a buscar a más personas con esos mismos rasgos. Por eso este concepto une los dos mundos del módulo: toma tu señal propia (una custom audience) y la usa para alimentar la prospección hacia público nuevo. Por ejemplo, una marca de joyería artesanal llamada Plata Viva toma su lista de compradores recurrentes como seed y crea un lookalike para llegar a gente con gustos y comportamientos parecidos que nunca le ha comprado."
+          "body": "Un <strong>público similar</strong> (Lookalike) es la herramienta para prospectar a escala sin disparar a ciegas. Parte de una <strong>seed</strong> (semilla: un público personalizado (Custom Audience) de calidad que usas como base, como tus mejores clientes) y le pide a Meta que encuentre gente con perfil parecido que todavía no te conoce. La lógica es simple: si Meta entiende qué rasgos comparten tus clientes que más valen, puede salir a buscar a más personas con esos mismos rasgos. Por eso este concepto une los dos mundos del módulo: toma tu señal propia (un público personalizado) y la usa para alimentar la prospección hacia público nuevo. Por ejemplo, una marca de joyería artesanal llamada Plata Viva toma su lista de compradores recurrentes como seed y crea un lookalike para llegar a gente con gustos y comportamientos parecidos que nunca le ha comprado."
         },
         {
           "type": "concept",
           "h": "Tamaño: precisión contra alcance",
-          "body": "Al crear un lookalike eliges un porcentaje del 1% al 10% que define el equilibrio entre precisión y alcance. <strong>1. Lookalike 1%</strong>: toma al 1% de la población del país más parecido a tu seed; es lo más preciso, pero con el menor alcance. <strong>2. Lookalike 5–10%</strong>: amplía mucho el alcance, pero al incluir a más gente el parecido con la seed se va diluyendo. No hay un número \"correcto\": el 1% conviene cuando priorizas calidad y el 10% cuando necesitas volumen para escalar. Además, el lookalike siempre se genera sobre un <strong>país objetivo</strong> (target country): se construye con la población del país donde quieres prospectar, así que necesitas crear uno por cada mercado. Por ejemplo, una fintech llamada Pago Ágil que solo opera en México crea su lookalike 1% sobre México para acercarse lo más posible a sus mejores usuarios."
+          "body": "Al crear un lookalike eliges un porcentaje del 1% al 10% que define el equilibrio entre precisión y alcance. <strong>1. Público similar 1%</strong>: toma al 1% de la población del país más parecido a tu seed; es lo más preciso, pero con el menor alcance. <strong>2. Público similar 5–10%</strong>: amplía mucho el alcance, pero al incluir a más gente el parecido con la seed se va diluyendo. No hay un número \"correcto\": el 1% conviene cuando priorizas calidad y el 10% cuando necesitas volumen para escalar. Además, el público similar siempre se genera sobre un <strong>país objetivo</strong> (target country): se construye con la población del país donde quieres prospectar, así que necesitas crear uno por cada mercado. Por ejemplo, una fintech llamada Pago Ágil que solo opera en México crea su público similar 1% sobre México para acercarse lo más posible a sus mejores usuarios."
         },
         {
           "type": "concept",
           "h": "La calidad de la seed lo es todo",
-          "body": "Un lookalike nunca es mejor que la seed de la que parte: si la semilla es pobre, el resultado también lo será. A esto se le conoce como <em>garbage in, garbage out</em> (basura que entra, basura que sale): el algoritmo solo puede copiar el patrón que le das. Una seed de <strong>compradores de alto valor</strong> (high-value customers: tus clientes que más gastan) produce un lookalike mucho más fuerte que una de simples visitantes, porque Meta aprende a buscar gente parecida a quien de verdad te deja dinero. El tamaño de la seed también importa: lo recomendado es entre 1,000 y 50,000 personas; con muy pocas no hay patrón suficiente y con demasiadas se diluye lo que tienen en común. Por ejemplo, un gimnasio boutique llamado Fuerza Urbana hará un mejor lookalike con su seed de 3,000 socios activos de mayor gasto que con una lista de 80,000 visitantes casuales de su sitio."
+          "body": "Un público similar nunca es mejor que la seed de la que parte: si la semilla es pobre, el resultado también lo será. A esto se le conoce como <em>garbage in, garbage out</em> (basura que entra, basura que sale): el algoritmo solo puede copiar el patrón que le das. Una seed de <strong>compradores de alto valor</strong> (high-value customers: tus clientes que más gastan) produce un público similar mucho más fuerte que una de simples visitantes, porque Meta aprende a buscar gente parecida a quien de verdad te deja dinero. El tamaño de la seed también importa: lo recomendado es entre 1,000 y 50,000 personas; con muy pocas no hay patrón suficiente y con demasiadas se diluye lo que tienen en común. Por ejemplo, un gimnasio boutique llamado Fuerza Urbana hará un mejor público similar con su seed de 3,000 socios activos de mayor gasto que con una lista de 80,000 visitantes casuales de su sitio."
         },
         {
           "type": "concept",
           "h": "Dónde se crea en Meta",
-          "body": "Igual que las custom audiences, los lookalikes se crean en la sección de audiencias, no dentro del ad set. En <strong>Ads Manager</strong> (Administrador de anuncios), abre el menú y entra a <em>Audiences</em> (Audiencias); da clic en <em>Create audience</em> y elige <em>Lookalike Audience</em>. Meta te pedirá tres cosas: la <em>source</em> (fuente o seed: la custom audience que usarás de base), el país o región objetivo, y el tamaño en porcentaje (1% a 10%). Puedes crear varios tamaños a la vez. Una vez generado, el lookalike queda disponible para usarlo como targeting al armar tu ad set de prospección."
+          "body": "Igual que los públicos personalizados, los públicos similares se crean en la sección de audiencias, no dentro del Conjunto de anuncios (ad set). En <strong>Administrador de anuncios</strong> (Ads Manager), abre el menú y entra a <em>Audiences</em> (Audiencias); da clic en <em>Create audience</em> y elige <em>Lookalike Audience</em>. Meta te pedirá tres cosas: la <em>source</em> (fuente o seed: la custom audience que usarás de base), el país o región objetivo, y el tamaño en porcentaje (1% a 10%). Puedes crear varios tamaños a la vez. Una vez generado, el público similar queda disponible para usarlo como targeting al armar tu Conjunto de anuncios de prospección."
         },
         {
           "type": "kvtable",
-          "h": "Palancas del lookalike",
+          "h": "Palancas del público similar",
           "rows": [
-            ["Seed (semilla)", "Cuanto mejor la seed (clientes de alto valor), mejor el lookalike"],
+            ["Seed (semilla)", "Cuanto mejor la seed (clientes de alto valor), mejor el público similar"],
             ["Tamaño 1%", "Más parecido a la seed, más preciso, menos alcance"],
             ["Tamaño 5–10%", "Más alcance, menos parecido, más amplio"],
-            ["País", "El lookalike se genera por país objetivo"]
+            ["País", "El público similar se genera por país objetivo"]
           ]
         },
         {
           "type": "tip",
           "label": "CALIDAD DE LA SEED",
-          "body": "Una seed de <strong>compradores de alto valor</strong> produce mejores lookalikes que una de simples visitantes. Tamaño de seed recomendado: ~1,000–50,000 personas."
+          "body": "Una seed de <strong>compradores de alto valor</strong> produce mejores públicos similares que una de simples visitantes. Tamaño de seed recomendado: ~1,000–50,000 personas."
         },
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Una seed pobre (todos los visitantes, sin filtrar valor) genera un lookalike débil. Garbage in, garbage out: la calidad del lookalike depende de la calidad de la seed."
+          "body": "Una seed pobre (todos los visitantes, sin filtrar valor) genera un público similar débil. Garbage in, garbage out: la calidad del público similar depende de la calidad de la seed."
         },
         {
           "type": "mcq",
