@@ -843,7 +843,7 @@
         {
           "type": "scenario",
           "label": "CASE TO SOLVE",
-          "h": "Free energy audit for industrial warehouses",
+          "h": "Free guided tour of an apartment tower",
           "body": "<strong>Casa Plus</strong> offers a free guided tour of its new apartment tower in Mexico City. It wants to capture: name, budget, areas of interest, move-in timeframe and contact. It doesn't want to take the user out of the feed so as not to lose hurried buyers."
         },
         {
@@ -851,7 +851,7 @@
           "q": "Which objective and conversion location solves this case?",
           "options": [
             "Awareness optimizing for Reach",
-            "Sales with conversion location Messenger",
+            "Leads with conversion location Instant form",
             "Engagement with the Messaging type",
             "Traffic with a financing landing page"
           ],

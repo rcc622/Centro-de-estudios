@@ -843,7 +843,7 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Auditoría energética gratis para naves industriales",
+          "h": "Visita guiada gratis a torre de departamentos",
           "body": "<strong>Casa Plus</strong> ofrece una visita guiada gratis a su nueva torre de departamentos en CDMX. Quiere capturar: nombre, presupuesto, zonas de interés, plazo de mudanza y contacto. No quiere sacar al usuario del feed para no perder a los compradores apurados."
         },
         {
@@ -851,7 +851,7 @@
           "q": "¿Qué objetivo y conversion location resuelve este caso?",
           "options": [
             "Reconocimiento (awareness) con optimización por Reach",
-            "Ventas (sales) con conversion location Messenger",
+            "Clientes potenciales (leads) con conversion location Instant form",
             "Interacción (engagement) con el type Messaging",
             "Tráfico (traffic) con landing de financiamiento"
           ],
