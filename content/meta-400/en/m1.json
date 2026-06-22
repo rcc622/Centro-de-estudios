@@ -1,0 +1,1235 @@
+{
+  "id": "m1",
+  "title": "Module 1 — Business goals and campaign objectives",
+  "sections": {
+    "b1": {
+      "ico": "🎯",
+      "title": "Block 1",
+      "sub": "From the business goal to the campaign objective"
+    },
+    "b2": {
+      "ico": "📡",
+      "title": "Block 2",
+      "sub": "Data sources that support the objective"
+    },
+    "b3": {
+      "ico": "🧩",
+      "title": "Block 3",
+      "sub": "Conversion location, event and performance goal"
+    },
+    "b4": {
+      "ico": "🗺️",
+      "title": "Block 4",
+      "sub": "Building the media plan by phases"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Module wrap-up",
+      "sub": "Integrating case, review and consolidation"
+    }
+  },
+  "lessons": [
+    {
+      "id": "1.1",
+      "title": "Learn · From the business goal to the campaign objective",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "The media planner starts with the business",
+          "body": "A <strong>media planner</strong> (the person who designs the paid advertising strategy) has a mistaken reflex: opening Ads Manager and picking an objective right away. That's wrong. Your first step is <strong>never</strong> technical, it's about the business: understanding the <strong>business goal</strong> (the client's real commercial goal, what the company wants to achieve). That business goal is almost always one of three things: selling products, generating <em>leads</em> (contacts from interested people) or building the brand so people get to know it. For example, <strong>La Esquina Café</strong> doesn't show up saying \"I want a Sales campaign\"; it shows up saying \"I want to fill the tables on weekdays.\" That sentence is the business goal, and from there you decide the rest."
+        },
+        {
+          "type": "concept",
+          "h": "From the goal to the objective",
+          "body": "Once you're clear on the business goal, you translate it in two steps. First into the <strong>funnel stage</strong> (the stage of the purchase funnel: the path a person takes from not knowing you to buying from you). And from there into the <strong>campaign objective</strong> (the instruction you give Meta about which outcome to optimize). The objective is a <em>consequence</em> of the business, never the starting point. For example, <strong>Aceros del Bajío</strong> wants more sales in its online store: business goal \"revenue\" → funnel stage \"conversion\" → campaign objective \"Sales.\" If you reversed the order and picked the objective first, you'd be guessing."
+        },
+        {
+          "type": "concept",
+          "h": "What the 6 ODAX are",
+          "body": "<strong>ODAX</strong> stands for <em>Outcome-Driven Ad Experiences</em>, which is what Meta calls its official list of campaign objectives. There used to be many confusing and overlapping objectives; Meta simplified them down to just <strong>six</strong>, each one focused on a clear business outcome. Those six are Awareness, Traffic, Engagement, Leads, App Promotion and Sales, and when you create a campaign you have to choose exactly one of them. The idea is that you think about the outcome you want (to be known, to be bought from, to collect contacts) and not about scattered tactics. For example, <strong>La Esquina Café</strong> doesn't choose \"run ads\"; it chooses one of the 6 ODAX depending on whether it wants to be discovered or to get table reservations."
+        },
+        {
+          "type": "kvtable",
+          "h": "The 6 ODAX by funnel stage",
+          "rows": [
+            ["Awareness", "Maximize the people who will recall the ad (recall, reach)"],
+            ["Traffic", "Drive people to a destination: website, app, call or messages"],
+            ["Engagement", "Generate interaction: messages, video views, post engagement"],
+            ["Leads", "Collect contacts: Instant form, calls, sign-ups"],
+            ["App Promotion", "Install the app or increase its usage"],
+            ["Sales", "Find the people most likely to purchase"]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "The funnel rules",
+          "body": "The <strong>funnel</strong> is the metaphor for the customer journey: at the top (wide) are the many people who barely know you, and at the bottom (narrow) are the few who already buy from you. Each of the 6 objectives lives in a zone of the funnel. <strong>Top funnel</strong> (the upper part, getting discovered): Awareness and Traffic. <strong>Mid funnel</strong> (the middle part, generating interest): Engagement and Leads. <strong>Bottom funnel</strong> (the lower part, closing the sale): Sales and App Promotion. The practical rule: a business nobody knows doesn't start with Sales, because it would be asking people who don't even know it exists to buy. For example, the newly opened <strong>Hotel Lumière</strong> first builds recognition at the top (Awareness) and only later moves down to push reservations (Sales)."
+        },
+        {
+          "type": "concept",
+          "h": "Where you choose the objective in the platform",
+          "body": "Once the objective is decided on paper, you configure it in <strong>Ads Manager</strong> (Meta's ad management interface). The path is: you go to <em>Ads Manager → green + Create button → Campaign level</em>, and there Meta shows you the 6 objective cards (Awareness, Traffic, Engagement, Leads, App Promotion, Sales) for you to choose one. This choice is made at the <strong>campaign</strong> level and stays fixed for that entire campaign. For example, if <strong>Hotel Lumière</strong> already decided on Awareness, when creating the campaign it chooses the \"Awareness\" card and from there moves down to configure the rest. Note: what you decide on the business side first is what you only confirm here with a click; the platform doesn't think for you."
+        },
+        {
+          "type": "tip",
+          "label": "PLANNING RULE",
+          "body": "You always go <strong>from top to bottom</strong>: business goal → funnel stage → campaign objective → conversion location → performance goal. If you reverse the order, you end up optimizing for the wrong metric."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "Choosing <strong>Traffic</strong> when the business wants sales. Traffic optimizes for <em>link clicks</em>, not purchases. More clicks isn't more revenue. If the goal is real sales, the objective is <strong>Sales</strong>."
+        },
+        {
+          "type": "mcq",
+          "q": "A DTC client wants to maximize revenue in its online store this season. Which campaign objective do you propose?",
+          "options": [
+            "Traffic, to drive more people to the site",
+            "Engagement, so they interact with the catalog",
+            "Sales, optimizing for the Purchase event",
+            "Awareness, to keep the brand top of mind"
+          ],
+          "correct": 2,
+          "explanation": "The business goal is revenue → conversion stage → Sales objective with the Purchase conversion event. Traffic optimizes for clicks (not purchases), Engagement for interaction, Awareness for recall. None of them optimizes for actual sales.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "A new brand with no recognition wants the market to know it before asking for purchases. The planner should prioritize:",
+          "options": [
+            "Sales from day one to recover the investment quickly",
+            "Awareness to build recall, and then scale up to conversion",
+            "Leads to collect emails as soon as possible",
+            "App Promotion even though it has no app"
+          ],
+          "correct": 1,
+          "explanation": "Without prior recognition, pushing Sales directly wastes budget on an audience that doesn't know you. Awareness builds the base of the funnel; then you move down to consideration and conversion.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "Drill your memory · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "What is the media planner's first step?",
+          "options": [
+            "Choose the campaign objective in Ads Manager",
+            "Understand the client's business goal and translate it into an objective",
+            "Configure the performance goal",
+            "Upload the creative"
+          ],
+          "correct": 1,
+          "explanation": "The first step is never choosing an objective: it's understanding the business goal (sell, generate leads, build the brand) and translating it into the objective that supports it."
+        },
+        {
+          "type": "fill",
+          "q": "The correct planning order is: business goal → funnel stage → campaign objective → conversion location → ___.",
+          "options": [
+            "performance goal",
+            "creative",
+            "billing",
+            "audience"
+          ],
+          "correct": 0,
+          "explanation": "You always go from top to bottom: business goal → funnel → objective → conversion location → performance goal."
+        },
+        {
+          "type": "mcq",
+          "q": "What are the 6 ODAX?",
+          "options": [
+            "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+            "Reach, Clicks, Views, Leads, Installs, Purchase",
+            "Awareness, Consideration, Conversion, Retention, Loyalty, Sales",
+            "Pixel, CAPI, Catalog, SDK, Form, Calls"
+          ],
+          "correct": 0,
+          "explanation": "The 6 ODAX are Awareness, Traffic, Engagement, Leads, App Promotion and Sales."
+        },
+        {
+          "type": "fill",
+          "q": "If the business wants real sales and you choose Traffic, the system optimizes for ___, not purchases.",
+          "options": [
+            "link clicks",
+            "purchases",
+            "recall",
+            "leads"
+          ],
+          "correct": 0,
+          "explanation": "Traffic optimizes for link clicks. More clicks isn't more revenue. For real sales the objective is Sales."
+        },
+        {
+          "type": "fill",
+          "q": "Awareness and Traffic are top funnel; Sales and App Promotion are ___ funnel.",
+          "options": [
+            "bottom",
+            "mid",
+            "top",
+            "full"
+          ],
+          "correct": 0,
+          "explanation": "Awareness/Traffic = top, Engagement/Leads = mid, Sales/App Promotion = bottom funnel."
+        },
+        {
+          "type": "mcq",
+          "q": "A brand with no prior recognition. Which objective builds the base of the funnel?",
+          "options": [
+            "Sales",
+            "Leads",
+            "Awareness",
+            "App Promotion"
+          ],
+          "correct": 2,
+          "explanation": "With no recognition, Awareness builds recall; then you move down to consideration and conversion. Pushing Sales directly wastes budget on an audience that doesn't know you."
+        }
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "A Monterrey distributor wants to sell more",
+          "body": "An electrical supplies distributor in Monterrey is already well known in its area and has an online store. The owner tells you: \"I want <strong>more revenue</strong> this season; I don't care how many people come in, I care that they buy.\" You have to build the foundation of the plan."
+        },
+        {
+          "type": "mcq",
+          "q": "Which campaign objective do you propose to the distributor?",
+          "options": [
+            "Traffic, to drive more visits to the store",
+            "Sales, because the business goal is revenue from purchases",
+            "Engagement, so they interact with the posts",
+            "Awareness, so more people get to know it"
+          ],
+          "correct": 1,
+          "explanation": "The business goal is revenue from purchases → conversion stage → Sales objective. The brand is already known, so it doesn't need to start with Awareness; Traffic only optimizes for clicks."
+        },
+        {
+          "type": "mcq",
+          "q": "The owner insists: \"Let's go with Traffic instead, so more people come in and the sales come out of that.\" What do you tell him?",
+          "options": [
+            "He's right, more traffic is always more sales",
+            "Traffic optimizes for link clicks, not purchases; for real revenue the objective is Sales",
+            "We should use Awareness first even though it's already known",
+            "The objective doesn't matter, the creative decides it"
+          ],
+          "correct": 1,
+          "explanation": "More clicks isn't more revenue. Traffic optimizes for link clicks; the system would look for people who click, not people who buy. The objective that aligns with the revenue business goal is Sales."
+        },
+        {
+          "type": "mcq",
+          "q": "The owner asks whether it's worth also running an Awareness campaign at the same time. What do you explain?",
+          "options": [
+            "It never makes sense to run Awareness",
+            "Since the brand is already known in its area, the weight of the plan goes to conversion; Awareness would be secondary if it wanted to open a new market",
+            "Awareness should always be 80% of the budget",
+            "Awareness and Sales can't coexist in one account"
+          ],
+          "correct": 1,
+          "explanation": "The plan adjusts to the business's real funnel: a known brand with a revenue goal → the bulk goes to Sales. Awareness only if it wanted to enter a market where it isn't known yet."
+        }
+      ]
+    },
+    {
+      "id": "1.4",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "What is the media planner's first step?", "a": "Understand the client's business goal, not pick an objective in Ads Manager." },
+        { "q": "The 6 ODAX", "a": "Awareness, Traffic, Engagement, Leads, App Promotion, Sales." },
+        { "q": "Planning order", "a": "Business goal → funnel stage → campaign objective → conversion location → performance goal." },
+        { "q": "Classic trap: wanting sales and choosing…", "a": "Traffic. Traffic optimizes for link clicks, not purchases." },
+        { "q": "Funnel of the 6 ODAX", "a": "Top: Awareness/Traffic · Mid: Engagement/Leads · Bottom: Sales/App Promotion." },
+        { "q": "A new brand with no recognition, where does it start?", "a": "Awareness to build recall, then scale up to consideration and conversion." }
+      ]
+    },
+    {
+      "id": "1.5",
+      "title": "Learn · Data sources that support the objective",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "No signal, no optimization",
+          "body": "Meta optimizes by looking for the people who take the action you want, but for that it needs someone to tell it when that action happens. That notice is called a <strong>signal</strong>, and it travels from a <strong>data source</strong> (the measurement tool that records what happens on your site or app). If there's no data source, Meta optimizes blindly and wastes budget. That's why the planner validates that the source exists and is properly configured <strong>before</strong> proposing the plan, not after. For example, before promising sales campaigns to <strong>Boutique Aurora</strong>, you check that its online store already reports purchases to Meta; if not, that gets fixed first."
+        },
+        {
+          "type": "concept",
+          "h": "The signal enables the objective",
+          "body": "The data source isn't a technical detail you leave for the end: it's the requirement that decides whether the objective you proposed is viable or not. You can't optimize Sales on the website if there's no <strong>Pixel</strong> (a snippet of code installed on the site that records what the visitor does) or a <strong>CAPI</strong> (Conversions API: a channel that sends those same events from the business's server, not from the browser) reporting the purchase. If <strong>Boutique Aurora</strong> wants Sales campaigns but has nothing installed, the proposed objective simply can't run yet. The logic is: signal first, objective second; never the other way around."
+        },
+        {
+          "type": "kvtable",
+          "h": "Objective → required data source",
+          "rows": [
+            ["Sales (web)", "Pixel + Conversions API (CAPI)"],
+            ["Sales (catalog)", "Pixel/CAPI + connected Catalog"],
+            ["Leads (Instant form)", "No Pixel required; the data stays within Meta"],
+            ["Leads (website)", "Pixel + CAPI"],
+            ["App Promotion", "Facebook SDK or an authorized MMP"],
+            ["Awareness / Engagement", "No conversion tracking required"]
+          ]
+        },
+        {
+          "type": "concept",
+          "h": "The data sources, one by one",
+          "body": "It's worth being clear on the five sources that appear in the table, because the exam mixes them up. <strong>1. Pixel</strong> = code on your website that records what the visitor does from the browser. <strong>2. CAPI (Conversions API)</strong> = the same record but sent from your server, so you don't lose data when the browser fails. <strong>3. Catalog</strong> = a file with all your products (price, photo, stock) that enables dynamic sales ads. <strong>4. Facebook SDK</strong> = a piece of code placed <em>inside</em> a mobile app to measure installs and in-app actions. <strong>5. MMP (Mobile Measurement Partner)</strong> = an external company certified by Meta (such as AppsFlyer or Adjust) that measures app events neutrally. For example, <strong>Boutique Aurora</strong>'s online store uses Pixel + CAPI; if it launched an app, it would also need an SDK or an MMP."
+        },
+        {
+          "type": "quote",
+          "body": "The more complete and high-quality the signal is (Pixel + CAPI together), the better Meta's system optimizes and the more stable the plan's results are."
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "Pixel + CAPI <strong>together</strong> (not one or the other) is the standard. CAPI recovers signal the browser loses to blockers and iOS, and improves the match quality of events."
+        },
+        {
+          "type": "concept",
+          "h": "Where you check and connect the signal in the platform",
+          "body": "Data sources live in <strong>Events Manager</strong> (Meta's event management tool), not in Ads Manager. The path is: <em>Business Manager → menu → Events Manager</em>, and there you see your <strong>datasets</strong> (where the events from your Pixel and your CAPI are grouped). To validate that a business is ready for Sales, you go into its dataset and check that the <em>Purchase</em> event is coming in and that the <strong>CAPI</strong> shows as connected alongside the Pixel. For example, before launching for <strong>Boutique Aurora</strong> you open its dataset in Events Manager and confirm that test purchases are being recorded. If only the Pixel appears and the CAPI doesn't, that's where you spot that the signal is incomplete."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "Thinking that <strong>Awareness needs a Pixel</strong> or that <strong>the Pixel measures app installs</strong>. Awareness/Engagement don't require conversion tracking; installs are measured with an SDK or MMP, never with the web Pixel."
+        },
+        {
+          "type": "mcq",
+          "q": "The plan proposes Sales website with the Purchase event, but the client only has the Pixel and nothing else. What do you recommend before launching?",
+          "options": [
+            "Launch anyway; the Pixel alone is enough",
+            "Add the Conversions API to recover lost signal and improve match quality",
+            "Change the objective to Awareness",
+            "Remove the Purchase event and leave the ad set without optimization"
+          ],
+          "correct": 1,
+          "explanation": "The Pixel alone lets signal slip away due to cookie/iOS blocking. CAPI (server-side) recovers those events and improves matching. Switching to Awareness would abandon the sales business goal.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "A client wants to drive installs of its mobile app. Which data source is mandatory for the App Promotion objective?",
+          "options": [
+            "Website Pixel",
+            "A manually uploaded customer list",
+            "Facebook SDK or an MMP (Mobile Measurement Partner)",
+            "Product catalog"
+          ],
+          "correct": 2,
+          "explanation": "In-app events are measured with the Facebook SDK or an authorized MMP (AppsFlyer, Adjust, Branch). The Pixel is for web; the catalog is for Advantage+ catalog ads.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "1.6",
+      "title": "Drill your memory · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Sales website with the Purchase event requires Pixel + ___.",
+          "options": [
+            "Conversions API (CAPI)",
+            "Facebook SDK",
+            "Customer list",
+            "MMP"
+          ],
+          "correct": 0,
+          "explanation": "Sales (web) requires Pixel + Conversions API (CAPI). Together they're the standard."
+        },
+        {
+          "type": "mcq",
+          "q": "Which objectives do NOT require conversion tracking?",
+          "options": [
+            "Sales and Leads",
+            "Awareness and Engagement",
+            "App Promotion and Sales",
+            "Traffic and Sales"
+          ],
+          "correct": 1,
+          "explanation": "Awareness and Engagement don't require conversion tracking. Conversion objectives do need a data source."
+        },
+        {
+          "type": "fill",
+          "q": "Leads with an Instant form ___ require a Pixel; the data stays within Meta.",
+          "options": [
+            "doesn't",
+            "does",
+            "always",
+            "sometimes"
+          ],
+          "correct": 0,
+          "explanation": "Leads with an Instant form doesn't require a Pixel: the contact is captured within Meta."
+        },
+        {
+          "type": "mcq",
+          "q": "Why are Pixel + CAPI recommended together and not just one?",
+          "options": [
+            "Because the Pixel is obsolete",
+            "Because CAPI recovers signal the browser loses (blockers, iOS) and improves match quality",
+            "Because CAPI replaces the catalog",
+            "Because the Pixel only measures app installs"
+          ],
+          "correct": 1,
+          "explanation": "The Pixel alone lets signal slip away due to cookie/iOS blocking. CAPI (server-side) recovers those events and improves matching. That's why they go together."
+        },
+        {
+          "type": "fill",
+          "q": "The App Promotion objective requires a Facebook SDK or an authorized ___.",
+          "options": [
+            "MMP",
+            "Pixel",
+            "catalog",
+            "CAPI"
+          ],
+          "correct": 0,
+          "explanation": "In-app events are measured with the Facebook SDK or an authorized MMP (Mobile Measurement Partner)."
+        }
+      ]
+    },
+    {
+      "id": "1.7",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Kenet Solar wants to optimize web sales",
+          "body": "Kenet Solar wants <strong>Sales website</strong> campaigns optimizing the Purchase event in its store. When reviewing the setup you find that they only have the <strong>Pixel installed</strong> and nothing else. The client wants to launch now."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you recommend to Kenet before launching?",
+          "options": [
+            "Launch anyway; the Pixel alone is enough",
+            "Add the Conversions API to recover lost signal and improve match quality",
+            "Change the objective to Awareness so no signal is needed",
+            "Remove the Purchase event"
+          ],
+          "correct": 1,
+          "explanation": "The Pixel alone lets signal slip away due to cookie/iOS blocking. Adding CAPI (server-side) recovers those events and improves matching, without abandoning the sales business goal."
+        },
+        {
+          "type": "mcq",
+          "q": "Kenet is also evaluating launching a mobile monitoring app and wants App Promotion campaigns. Which data source is mandatory there?",
+          "options": [
+            "The same website Pixel",
+            "A product catalog",
+            "Facebook SDK or an authorized MMP",
+            "Awareness needs nothing"
+          ],
+          "correct": 2,
+          "explanation": "In-app events are measured with the Facebook SDK or an authorized MMP. The Pixel is for web and can't measure installs or in-app events."
+        },
+        {
+          "type": "mcq",
+          "q": "The manager asks whether it's worth waiting to have CAPI or launching now with the Pixel and \"adding it later.\" What do you argue?",
+          "options": [
+            "It doesn't matter, the result is the same",
+            "It's better to launch with the complete signal: starting with the Pixel alone trains optimization on incomplete data and degrades results from the start",
+            "CAPI only helps reporting, it doesn't affect optimization",
+            "Better to switch to Traffic in the meantime"
+          ],
+          "correct": 1,
+          "explanation": "The learning phase feeds on the available signal. Starting with incomplete signal trains the system worse; adding CAPI later doesn't recover the learning lost in those first days."
+        }
+      ]
+    },
+    {
+      "id": "1.8",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Data source for Sales website", "a": "Pixel + Conversions API (CAPI)." },
+        { "q": "Data source for App Promotion", "a": "Facebook SDK or an authorized MMP." },
+        { "q": "Does Leads with an Instant form require a Pixel?", "a": "No; the data is captured within Meta." },
+        { "q": "Why Pixel + CAPI together?", "a": "CAPI recovers signal the browser loses (blockers, iOS) and improves match quality." },
+        { "q": "Objectives that do NOT require conversion tracking", "a": "Awareness and Engagement." }
+      ]
+    },
+    {
+      "id": "1.9",
+      "title": "Learn · Conversion location, event and performance goal",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Three different decisions, same objective",
+          "body": "Choosing the objective doesn't finish the job: within it you make three decisions that many people confuse because they sound similar. First the <strong>conversion location</strong> (where the conversion happens: on your website, in your app, in messages, etc.). Second the <strong>conversion event</strong> (which exact action counts as the result: a purchase, a sign-up, an add to cart). Third the <strong>performance goal</strong> (the auction rule by which Meta decides whom to show the ad to and how much to bid). For example, for <strong>Bella Rosa Flowers</strong>: location = Website, event = Purchase, performance goal = maximize purchase value. They're three separate knobs, even though they live under the same Sales objective."
+        },
+        {
+          "type": "concept",
+          "h": "The three knobs, one by one",
+          "body": "To avoid mixing them up, think of them as three different questions. <strong>1. Conversion location → WHERE?</strong> the physical-digital place where the action happens (Website, App, Messaging, Calls, Instant form). <strong>2. Conversion event → WHAT?</strong> the concrete action that will count as success (Purchase, Lead = contact, Add to cart, View content = view a product). <strong>3. Performance goal → HOW?</strong> the way Meta optimizes delivery (maximize the number of conversions, maximize value, maximize clicks). At <strong>Bella Rosa Flowers</strong>: where? on the Website; what? the purchase (Purchase); how? optimizing by ticket value. Confusing the WHAT with the HOW is the most typical exam mistake."
+        },
+        {
+          "type": "concept",
+          "h": "The level matters",
+          "body": "A Meta campaign has three nested levels, like Russian dolls: the <strong>campaign</strong> (the biggest), inside it the <strong>ad set</strong> (where you define who, where and with what budget you speak to), and inside that the <strong>ad</strong> (the image or video people see). Each decision lives at a fixed level. The <strong>campaign objective</strong> is chosen at the campaign level. The three knobs above (location, event and performance goal) are configured at the <strong>ad set</strong> level. The ad level is only for the creative. For example, at <strong>Bella Rosa Flowers</strong> the Sales objective is set once at the top, but you could have two different ad sets below (one per city), each with its own location and performance goal. The exam confuses these levels on purpose in the distractors."
+        },
+        {
+          "type": "kvtable",
+          "h": "The three layers",
+          "rows": [
+            ["Conversion location", "Where it happens: Website, App, Messaging, Calls, Instant form"],
+            ["Conversion event", "The action that counts: Purchase, Lead, Add to cart, View content"],
+            ["Performance goal", "The bidding rule: maximize number, value, clicks, recall"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "EXAM DISTINCTION",
+          "body": "<strong>Conversion event</strong> = WHICH action counts. <strong>Performance goal</strong> = HOW it's optimized. They're not synonyms and the exam confuses them on purpose in the distractors."
+        },
+        {
+          "type": "tip",
+          "label": "VALUE VS NUMBER",
+          "body": "<strong>Maximize number of conversions</strong> seeks more units. <strong>Maximize value of conversions</strong> seeks higher-value tickets (requires value tracking in the Pixel). If the business wants ROI, it's almost always value."
+        },
+        {
+          "type": "concept",
+          "h": "Where you configure the three knobs in the platform",
+          "body": "The three decisions appear one after another when you create the <strong>ad set</strong> in Ads Manager. The path is: <em>Ads Manager → your campaign → Ad set level</em>, and at the top the <strong>conversion location</strong> appears first, then the <strong>performance goal</strong>, and within the tracking section the <strong>conversion event</strong>. For example, for <strong>Bella Rosa Flowers</strong> you go into the ad set, choose Website as the location, Purchase as the event, and \"Maximize the value of conversions\" as the performance goal. If you can't find these options, it's almost always because you're standing at the campaign or ad level by mistake, not at the ad set."
+        },
+        {
+          "type": "mcq",
+          "q": "A B2B company wants scheduled demos without taking the prospect out of the feed. Best conversion location?",
+          "options": [
+            "Website with an external landing page",
+            "Instant form (Leads)",
+            "App",
+            "Calls"
+          ],
+          "correct": 1,
+          "explanation": "Instant form keeps friction minimal: the prospect fills out the form within Meta without leaving the feed. An external landing page adds friction and a conversion drop.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "The client sells products with highly variable ticket size and wants to maximize revenue, not the number of orders. Which performance goal do you propose?",
+          "options": [
+            "Maximize number of conversions",
+            "Maximize value of conversions",
+            "Maximize link clicks",
+            "Maximize landing page views"
+          ],
+          "correct": 1,
+          "explanation": "With variable ticket size, maximizing the number can bring many small sales. Maximize value optimizes by the conversion amount (requires value in the Pixel) and aligns with the revenue business goal.",
+          "difficulty": "hard"
+        },
+        {
+          "type": "mcq",
+          "q": "Select the correct statement about where each thing is configured.",
+          "options": [
+            "The objective is chosen at the ad set level",
+            "The conversion location and performance goal are configured at the ad set level",
+            "The performance goal is chosen at the ad level",
+            "The conversion event is chosen at the campaign level"
+          ],
+          "correct": 1,
+          "explanation": "The campaign objective goes at the campaign level. Conversion location, conversion event and performance goal are configured at the ad set level. The ad level is for creatives.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "1.10",
+      "title": "Drill your memory · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Conversion event vs performance goal:",
+          "options": [
+            "They're synonyms",
+            "Event = which action counts; performance goal = how it's bid/optimized",
+            "Event = how it's bid; performance goal = which action counts",
+            "Both are configured at the campaign level"
+          ],
+          "correct": 1,
+          "explanation": "Conversion event = WHICH action counts. Performance goal = HOW it's optimized. They're not synonyms; the exam confuses them on purpose."
+        },
+        {
+          "type": "fill",
+          "q": "Conversion location, conversion event and performance goal are configured at the ___ level.",
+          "options": [
+            "ad set",
+            "campaign",
+            "ad",
+            "account"
+          ],
+          "correct": 0,
+          "explanation": "The campaign objective goes at the campaign level; the three layers (location, event, goal) are configured at the ad set level. The ad level is for creatives."
+        },
+        {
+          "type": "mcq",
+          "q": "The business wants ROI with highly variable ticket amounts. Which performance goal applies?",
+          "options": [
+            "Maximize number of conversions",
+            "Maximize value of conversions",
+            "Maximize link clicks",
+            "Maximize landing page views"
+          ],
+          "correct": 1,
+          "explanation": "Maximize value of conversions optimizes by the conversion amount (requires value tracking in the Pixel). If the business wants ROI with variable ticket size, it's almost always value."
+        },
+        {
+          "type": "fill",
+          "q": "To capture a demo without taking the prospect out of the feed, the best conversion location is ___.",
+          "options": [
+            "Instant form",
+            "Website with an external landing page",
+            "Calls",
+            "App"
+          ],
+          "correct": 0,
+          "explanation": "Instant form keeps friction minimal: the form is filled out within Meta without leaving the feed."
+        },
+        {
+          "type": "mcq",
+          "q": "What does the conversion location describe?",
+          "options": [
+            "The bidding rule",
+            "Where the conversion happens: Website, App, Messaging, Calls, Instant form",
+            "The action that counts",
+            "The ad creative"
+          ],
+          "correct": 1,
+          "explanation": "Conversion location = where the conversion happens (Website, App, Messaging, Calls, Instant form). The which action is the event; the how it's bid is the performance goal."
+        }
+      ]
+    },
+    {
+      "id": "1.11",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "B2B distributor with variable ticket sizes",
+          "body": "A Monterrey distributor of industrial equipment sells to businesses. Its orders range from <strong>$5,000 to $300,000 MXN</strong>: highly variable ticket sizes. They want to <strong>maximize revenue</strong>, not the number of orders, and capture prospects for a demo without taking them out of the feed."
+        },
+        {
+          "type": "mcq",
+          "q": "To capture demo prospects with the least friction, which conversion location do you propose?",
+          "options": [
+            "Website with an external landing page",
+            "Instant form",
+            "App",
+            "Calls"
+          ],
+          "correct": 1,
+          "explanation": "Instant form keeps friction minimal: the prospect fills out the form within Meta without leaving the feed. An external landing page adds friction and a conversion drop."
+        },
+        {
+          "type": "mcq",
+          "q": "For the sales phase with such variable ticket sizes and a revenue goal, which performance goal do you choose?",
+          "options": [
+            "Maximize number of conversions",
+            "Maximize value of conversions",
+            "Maximize link clicks",
+            "Maximize landing page views"
+          ],
+          "correct": 1,
+          "explanation": "With variable ticket size, maximizing the number can bring many small sales. Maximize value optimizes by amount (requires value in the Pixel) and aligns with the revenue business goal."
+        },
+        {
+          "type": "mcq",
+          "q": "The client asks at which level all that is configured. What do you tell them?",
+          "options": [
+            "Conversion location and performance goal are configured at the campaign level",
+            "Conversion location, event and performance goal are configured at the ad set level",
+            "Everything is configured at the ad level",
+            "The performance goal goes at the account level"
+          ],
+          "correct": 1,
+          "explanation": "The campaign objective goes at the campaign level; conversion location, conversion event and performance goal are configured at the ad set level. The ad level is for creatives."
+        }
+      ]
+    },
+    {
+      "id": "1.12",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        { "q": "At which level is the campaign objective chosen?", "a": "At the campaign level." },
+        { "q": "Where are conversion location, event and performance goal configured?", "a": "At the ad set level." },
+        { "q": "Conversion event vs performance goal", "a": "Event = which action counts. Performance goal = how it's bid/optimized." },
+        { "q": "Maximize number vs value of conversions", "a": "Number = more units. Value = higher amount per conversion (requires value tracking)." },
+        { "q": "Lowest-friction conversion location to capture leads", "a": "Instant form: the prospect fills out the form within Meta without leaving the feed." }
+      ]
+    },
+    {
+      "id": "1.13",
+      "title": "Learn · Building the media plan by phases",
+      "section": "b4",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "A plan is not a single campaign",
+          "body": "A serious <strong>media plan</strong> (the document where you decide which objectives you'll invest in and in what order) isn't solved with a single campaign. The reason is that the customer doesn't go from stranger to buyer in a single leap, but rather advances through <strong>phases</strong> (stages of the purchase journey). Each phase has its own objective because the action you want to optimize changes: at the top you want them to know you, in the middle to leave their contact, and at the bottom to buy. If you use a single objective for everything, you optimize the wrong metric in at least one phase. For example, the <strong>Políglota Language School</strong> first makes its courses known, then captures whoever requests information, and finally pushes the paid enrollment: three different actions, three different objectives."
+        },
+        {
+          "type": "concept",
+          "h": "The three phases of the journey, one by one",
+          "body": "To build the plan, think of the journey in three segments and assign each one its action. <strong>1. Acquisition (top of the funnel)</strong> = getting the prospect to know you or leave their contact; Awareness and Leads live here. <strong>2. Consideration (in the middle)</strong> = keeping the interest alive and nurturing the prospect while they decide; Engagement or Traffic come in here depending on the asset you have. <strong>3. Conversion (bottom of the funnel)</strong> = closing the value action, usually the purchase or the signing; Sales goes here. At the <strong>Políglota Language School</strong>: acquisition with Leads to gather interested people, consideration with Engagement so they see testimonials, and conversion with Sales when they pay the enrollment. Each segment is built as its own campaign with its own objective."
+        },
+        {
+          "type": "concept",
+          "h": "Scenario",
+          "body": "Let's take a concrete case to ground the phased plan. The client is a <strong>lender</strong> that offers loans to install equipment, and its <strong>business goal</strong> (real commercial goal) is <strong>signed contracts</strong>, not clicks or followers. The sales process has several steps: the prospect leaves their information in a form, an advisor contacts them via chat, and there the signing closes. On the technical side the signal is already ready: it has <strong>Pixel</strong> (code that records what happens on the site) plus <strong>CAPI</strong> (Conversions API: the same record but sent from the server) and a <strong>dataset</strong> (a set of data with its web events) working. With this you can design the phases without getting stuck for lack of measurement."
+        },
+        {
+          "type": "kvtable",
+          "h": "Phase → objective",
+          "rows": [
+            ["Capture contact (top)", "Leads + Instant form"],
+            ["Nurture / consideration", "Engagement or Traffic depending on the asset"],
+            ["Close the signing (bottom)", "Sales, with the location where the closing happens"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "MODULE WRAP-UP",
+          "body": "A good media plan separates funnel phases into different objectives: capture the lead at the top, optimize conversion at the bottom. Don't force a single objective for the whole journey."
+        },
+        {
+          "type": "warn",
+          "label": "COMMON TRAP",
+          "body": "Wanting a <strong>single objective</strong> for the whole funnel \"for simplicity.\" That optimizes the wrong metric in some phase: you'd capture leads where you should close sales, or vice versa."
+        },
+        {
+          "type": "mcq",
+          "q": "To capture the prospects who leave their information before the advisor's contact, which objective + conversion location do you propose in that phase?",
+          "options": [
+            "Sales + Website",
+            "Leads + Instant form",
+            "Awareness + none",
+            "Traffic + external landing page"
+          ],
+          "correct": 1,
+          "explanation": "The action in that phase is leaving contact (not signing yet). Leads with an Instant form minimizes friction and feeds the sales team. Sales would be for the final conversion; Traffic only sends clicks.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "If the client also wants to optimize for the contract signing that happens after the chat with the advisor, which combination comes closest?",
+          "options": [
+            "Sales with conversion location Messaging/Website depending on where the signing happens and the conversion event = the signing",
+            "Awareness with recall lift",
+            "Engagement with post engagement",
+            "Traffic with link clicks"
+          ],
+          "correct": 0,
+          "explanation": "The signing is the value conversion: Sales objective, with the conversion location where the closing actually happens and the event that represents the signing. Awareness/Engagement/Traffic don't optimize the final conversion.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "1.14",
+      "title": "Drill your memory · Block 4",
+      "section": "b4",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "How does a good media plan separate the funnel phases?",
+          "options": [
+            "It uses a single objective for the whole journey",
+            "It separates phases into different objectives: capture the lead at the top, optimize conversion at the bottom",
+            "It uses Awareness for all phases",
+            "It lets the creative decide the phase"
+          ],
+          "correct": 1,
+          "explanation": "A good media plan separates funnel phases into different objectives: capture the lead at the top, optimize conversion at the bottom. Don't force a single objective for everything."
+        },
+        {
+          "type": "fill",
+          "q": "To capture prospects who only leave their information (without signing yet), the objective is ___ with an Instant form.",
+          "options": [
+            "Leads",
+            "Sales",
+            "Awareness",
+            "Traffic"
+          ],
+          "correct": 0,
+          "explanation": "The action in that phase is leaving contact, not signing. Leads with an Instant form minimizes friction and feeds the sales team."
+        },
+        {
+          "type": "mcq",
+          "q": "The contract signing (the value conversion) is optimized with:",
+          "options": [
+            "Awareness with recall lift",
+            "Sales, with the conversion location where the closing happens and the event that represents the signing",
+            "Engagement with post engagement",
+            "Traffic with link clicks"
+          ],
+          "correct": 1,
+          "explanation": "The signing is the value conversion: Sales objective, with the conversion location where the closing actually happens and the event of the signing."
+        },
+        {
+          "type": "fill",
+          "q": "In the acquisition phase, Traffic only sends ___, not qualified contacts.",
+          "options": [
+            "clicks",
+            "sales",
+            "signings",
+            "leads"
+          ],
+          "correct": 0,
+          "explanation": "Traffic only sends clicks. To capture contact the correct option is Leads with an Instant form."
+        }
+      ]
+    },
+    {
+      "id": "1.15",
+      "title": "Case to solve · Block 4",
+      "section": "b4",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Solar loan lender by phases",
+          "body": "A solar loan lender wants <strong>signed contracts</strong>. The journey: the prospect leaves their information, an advisor contacts them via chat, and there the signing closes. It has Pixel + CAPI and a dataset with web events. They ask you for the media plan."
+        },
+        {
+          "type": "mcq",
+          "q": "Phase 1: capture those who only leave their information. Objective + conversion location?",
+          "options": [
+            "Sales + Website",
+            "Leads + Instant form",
+            "Awareness + none",
+            "Traffic + external landing page"
+          ],
+          "correct": 1,
+          "explanation": "The action in that phase is leaving contact, not signing yet. Leads + Instant form minimizes friction and feeds the sales team."
+        },
+        {
+          "type": "mcq",
+          "q": "Phase 2: optimize the signing that happens after the chat with the advisor. Which combination comes closest?",
+          "options": [
+            "Sales with the conversion location depending on where the signing happens and event = the signing",
+            "Awareness with recall lift",
+            "Engagement with post engagement",
+            "Traffic with link clicks"
+          ],
+          "correct": 0,
+          "explanation": "The signing is the value conversion: Sales objective, with the conversion location where the closing actually happens and the event that represents the signing."
+        },
+        {
+          "type": "mcq",
+          "q": "The client wants a single objective for the whole journey. What do you explain?",
+          "options": [
+            "He's right, one objective is enough for the whole funnel",
+            "It's better to separate phases into different objectives: capture the lead at the top, optimize conversion at the bottom",
+            "We should use only Awareness",
+            "The objective is decided by the creative, it doesn't matter"
+          ],
+          "correct": 1,
+          "explanation": "A good media plan separates funnel phases into different objectives: capture the lead at the top (Leads) and optimize conversion at the bottom (Sales). Forcing a single objective optimizes the wrong metric in some phase."
+        }
+      ]
+    },
+    {
+      "id": "1.16",
+      "title": "Mini-flashcards · Block 4",
+      "section": "b4",
+      "type": "flashcards",
+      "cards": [
+        { "q": "How does a good media plan separate the phases?", "a": "Into different objectives: capture the lead at the top (Leads), optimize conversion at the bottom (Sales)." },
+        { "q": "Phase to capture contact (without signing yet)", "a": "Leads + Instant form: minimal friction, feeds the sales team." },
+        { "q": "Phase to optimize the signing (value conversion)", "a": "Sales, with the conversion location where the closing happens and the event that represents the signing." },
+        { "q": "Why not force a single objective for the whole funnel?", "a": "Because you end up optimizing the wrong metric in some phase." }
+      ]
+    },
+    {
+      "id": "1.integ",
+      "title": "Integrating case · Complete plan for Kenet Solar",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "INTEGRATING CASE",
+          "h": "Kenet Solar enters a new market",
+          "body": "Kenet Solar opens operations in a city <strong>where nobody knows it</strong>. It wants, in order: for the market to know it, to capture prospects interested in getting a quote, and to close installation contracts. It has Pixel + CAPI on its site and Instant forms. They ask you for the complete media plan by phases."
+        },
+        {
+          "type": "mcq",
+          "q": "Phase 1 — the brand is unknown in that city. Which objective opens the plan?",
+          "options": [
+            "Sales, to recover the investment quickly",
+            "Awareness, to build recall in a market that doesn't know it",
+            "Leads from day one",
+            "App Promotion"
+          ],
+          "correct": 1,
+          "explanation": "Without prior recognition, pushing conversion wastes budget. Awareness builds the base of the funnel before asking for action."
+        },
+        {
+          "type": "mcq",
+          "q": "Phase 2 — capture prospects who want a quote without taking them out of the feed. Objective + location?",
+          "options": [
+            "Traffic + external landing page",
+            "Leads + Instant form",
+            "Sales + Website",
+            "Engagement + Messaging"
+          ],
+          "correct": 1,
+          "explanation": "The action is leaving contact for a quote (not buying yet). Leads + Instant form minimizes friction and feeds sales."
+        },
+        {
+          "type": "mcq",
+          "q": "Phase 3 — close installation contracts, with tickets ranging from $40,000 to $400,000 MXN and a revenue goal. Objective + performance goal?",
+          "options": [
+            "Sales + Maximize value of conversions",
+            "Sales + Maximize number of conversions",
+            "Traffic + Maximize link clicks",
+            "Leads + Maximize leads"
+          ],
+          "correct": 0,
+          "explanation": "Highly variable tickets + a revenue goal → Sales with Maximize value of conversions (requires value tracking in the Pixel), not the number of orders."
+        },
+        {
+          "type": "mcq",
+          "q": "The owner wants to put the 3 phases into a single campaign with a single objective \"to keep it simple.\" What do you explain?",
+          "options": [
+            "He's right, simplify everything into one campaign",
+            "Each phase optimizes a different action; a single objective would optimize the wrong metric in two of the three phases",
+            "We should use only Awareness for all three",
+            "The objective doesn't affect the result, the creative decides it"
+          ],
+          "correct": 1,
+          "explanation": "The plan is structured by phase because the action to optimize changes: recall, contact and value sale are different objectives. Forcing a single one breaks the logic of the funnel."
+        }
+      ]
+    },
+    {
+      "id": "1.match",
+      "title": "Match the key concepts of Module 1",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Tap the term and then its definition. Each mistake costs 1 ❤️.",
+      "pairs": [
+        ["Business goal", "What the business wants to achieve; the media planner's starting point"],
+        ["Campaign objective", "A consequence of the business goal: chosen at the campaign level"],
+        ["Awareness", "Top funnel: maximize recall and reach"],
+        ["Leads", "Collect contacts: Instant form, calls, sign-ups"],
+        ["Sales", "Bottom funnel: find the people most likely to purchase"],
+        ["Conversion location", "Where it happens: Website, App, Messaging, Calls, Instant form"],
+        ["Conversion event", "The action that counts: Purchase, Lead, Add to cart"],
+        ["Performance goal", "The bidding rule: how delivery is optimized"],
+        ["Maximize value of conversions", "Optimizes by ticket amount; requires value tracking"],
+        ["Data source for Sales web", "Pixel + Conversions API (CAPI)"],
+        ["Data source for App Promotion", "Facebook SDK or an authorized MMP"],
+        ["Objectives without conversion tracking", "Awareness and Engagement"]
+      ]
+    },
+    {
+      "id": "1.order",
+      "title": "Order the planning flow",
+      "section": "bz",
+      "type": "order",
+      "instruction": "The media planner works from top to bottom. Reorder with ▲▼ and verify.",
+      "items": [
+        "Understand the client's business goal",
+        "Identify the funnel stage",
+        "Choose the campaign objective",
+        "Define the conversion location",
+        "Define the conversion event",
+        "Define the performance goal"
+      ],
+      "explanation": "Business goal → funnel stage → campaign objective → conversion location → conversion event → performance goal. Reversing the order optimizes the wrong metric."
+    },
+    {
+      "id": "1.fill",
+      "title": "Complete the Module 1 sentences",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The media planner's first step is to understand the client's ___.",
+          "options": ["business goal", "campaign objective", "performance goal", "creative"],
+          "correct": 0,
+          "explanation": "The first step is never choosing an objective: it's understanding the business goal."
+        },
+        {
+          "type": "fill",
+          "q": "The campaign objective is chosen at the ___ level.",
+          "options": ["campaign", "ad set", "ad", "account"],
+          "correct": 0,
+          "explanation": "The objective goes at the campaign level; the three layers (location, event, goal) at the ad set level."
+        },
+        {
+          "type": "fill",
+          "q": "Sales website with the Purchase event requires Pixel + ___.",
+          "options": ["CAPI", "SDK", "MMP", "catalog"],
+          "correct": 0,
+          "explanation": "Pixel + Conversions API (CAPI) together are the standard for Sales web."
+        },
+        {
+          "type": "fill",
+          "q": "Conversion event = which action counts; performance goal = ___ it's optimized.",
+          "options": ["how", "what", "where", "when"],
+          "correct": 0,
+          "explanation": "Event = WHICH action counts. Performance goal = HOW it's optimized/bid."
+        },
+        {
+          "type": "fill",
+          "q": "To capture leads without taking the prospect out of the feed you use ___.",
+          "options": ["Instant form", "external landing page", "Calls", "App"],
+          "correct": 0,
+          "explanation": "Instant form keeps friction minimal within Meta."
+        },
+        {
+          "type": "fill",
+          "q": "With highly variable tickets and a revenue goal, the performance goal is Maximize ___ of conversions.",
+          "options": ["value", "number", "clicks", "reach"],
+          "correct": 0,
+          "explanation": "Maximize value optimizes by ticket amount; it requires value tracking in the Pixel."
+        },
+        {
+          "type": "fill",
+          "q": "App Promotion requires a Facebook SDK or an authorized ___.",
+          "options": ["MMP", "Pixel", "CAPI", "catalog"],
+          "correct": 0,
+          "explanation": "In-app events are measured with an SDK or a Mobile Measurement Partner."
+        }
+      ]
+    },
+    {
+      "id": "1.drill",
+      "title": "Drill — 12 MCQs of Module 1",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "What is the media planner's first step?",
+          "options": [
+            "Choose an objective in Ads Manager",
+            "Understand the client's business goal and translate it into an objective",
+            "Configure the Pixel",
+            "Upload the creative"
+          ],
+          "correct": 1,
+          "explanation": "The first step is never choosing an objective: it's understanding the business goal and translating it into the objective that supports it."
+        },
+        {
+          "type": "mcq",
+          "q": "The 6 ODAX are:",
+          "options": [
+            "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+            "Reach, Clicks, Views, Leads, Installs, Purchase",
+            "Awareness, Consideration, Conversion, Retention, Loyalty, Sales",
+            "Pixel, CAPI, Catalog, SDK, Form, Calls"
+          ],
+          "correct": 0,
+          "explanation": "Awareness, Traffic, Engagement, Leads, App Promotion and Sales."
+        },
+        {
+          "type": "mcq",
+          "q": "The business wants sales and you choose Traffic. What does the system optimize for?",
+          "options": ["Purchases", "Link clicks", "Recall", "Leads"],
+          "correct": 1,
+          "explanation": "Traffic optimizes for link clicks, not purchases. For real sales the objective is Sales."
+        },
+        {
+          "type": "mcq",
+          "q": "A brand with no prior recognition. Which objective builds the base of the funnel?",
+          "options": ["Sales", "Leads", "Awareness", "App Promotion"],
+          "correct": 2,
+          "explanation": "Awareness builds recall before asking for conversion."
+        },
+        {
+          "type": "mcq",
+          "q": "Objectives that do NOT require conversion tracking:",
+          "options": ["Sales and Leads", "Awareness and Engagement", "Traffic and Sales", "App Promotion and Sales"],
+          "correct": 1,
+          "explanation": "Awareness and Engagement don't require conversion tracking."
+        },
+        {
+          "type": "mcq",
+          "q": "Mandatory data source for Sales website:",
+          "options": ["Only the Pixel", "Pixel + CAPI", "Only CAPI", "Catalog"],
+          "correct": 1,
+          "explanation": "Pixel + Conversions API together are the standard."
+        },
+        {
+          "type": "mcq",
+          "q": "Mandatory data source for App Promotion:",
+          "options": ["Web Pixel", "Customer list", "Facebook SDK or an MMP", "Catalog"],
+          "correct": 2,
+          "explanation": "In-app events are measured with an SDK or an authorized MMP."
+        },
+        {
+          "type": "mcq",
+          "q": "Does Leads with an Instant form require a Pixel?",
+          "options": ["Yes, always", "No; the data stays within Meta", "Only on iOS", "Only if there's a catalog"],
+          "correct": 1,
+          "explanation": "Instant form captures the contact within Meta; it doesn't require a Pixel."
+        },
+        {
+          "type": "mcq",
+          "q": "Conversion location describes:",
+          "options": [
+            "The bidding rule",
+            "Where the conversion happens",
+            "The action that counts",
+            "The creative"
+          ],
+          "correct": 1,
+          "explanation": "Location = where it happens (Website, App, Messaging, Calls, Instant form)."
+        },
+        {
+          "type": "mcq",
+          "q": "Highly variable tickets, revenue goal. Performance goal:",
+          "options": [
+            "Maximize number of conversions",
+            "Maximize value of conversions",
+            "Maximize link clicks",
+            "Maximize landing page views"
+          ],
+          "correct": 1,
+          "explanation": "Maximize value optimizes by amount; it requires value tracking."
+        },
+        {
+          "type": "mcq",
+          "q": "At which level are conversion location, event and performance goal configured?",
+          "options": ["Campaign", "Ad set", "Ad", "Account"],
+          "correct": 1,
+          "explanation": "At the ad set level. The objective goes at the campaign level; the ad is for creatives."
+        },
+        {
+          "type": "mcq",
+          "q": "How does a good media plan separate the funnel phases?",
+          "options": [
+            "A single objective for everything",
+            "Different objectives per phase: capture at the top, convert at the bottom",
+            "Only Awareness",
+            "The creative decides it"
+          ],
+          "correct": 1,
+          "explanation": "Each phase optimizes a different action; different objectives are used."
+        }
+      ]
+    },
+    {
+      "id": "1.lightning",
+      "title": "Lightning — 8 quick questions",
+      "section": "bz",
+      "type": "lightning",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Is the first step to choose the objective in Ads Manager?",
+          "options": ["Yes", "No, it's to understand the business goal"],
+          "correct": 1,
+          "explanation": "First the business goal; the objective is a consequence."
+        },
+        {
+          "q": "Does Traffic optimize for purchases?",
+          "options": ["Yes", "No, it optimizes for link clicks"],
+          "correct": 1,
+          "explanation": "Traffic = link clicks. Real sales = Sales."
+        },
+        {
+          "q": "Does Awareness require a Pixel?",
+          "options": ["Yes", "No"],
+          "correct": 1,
+          "explanation": "Awareness/Engagement don't require conversion tracking."
+        },
+        {
+          "q": "Does Sales web need Pixel + CAPI?",
+          "options": ["Yes", "No, the Pixel is enough"],
+          "correct": 0,
+          "explanation": "Pixel + CAPI together is the standard."
+        },
+        {
+          "q": "Is the objective chosen at the ad set level?",
+          "options": ["Yes", "No, at the campaign level"],
+          "correct": 1,
+          "explanation": "The objective goes at the campaign level; the 3 layers at the ad set level."
+        },
+        {
+          "q": "Are conversion event and performance goal the same thing?",
+          "options": ["Yes", "No"],
+          "correct": 1,
+          "explanation": "Event = which action counts; performance goal = how it's optimized."
+        },
+        {
+          "q": "Are app installs measured with the web Pixel?",
+          "options": ["Yes", "No, with an SDK or MMP"],
+          "correct": 1,
+          "explanation": "In-app = an SDK or an authorized MMP."
+        },
+        {
+          "q": "Is a single objective worthwhile for the whole funnel?",
+          "options": ["Yes, it simplifies", "No, a wrong metric per phase"],
+          "correct": 1,
+          "explanation": "Each phase optimizes a different action; separate objectives."
+        }
+      ]
+    },
+    {
+      "id": "1.flash",
+      "title": "Module 1 flashcards (all)",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        { "q": "What is the media planner's first step?", "a": "Understand the client's business goal, not pick an objective in Ads Manager." },
+        { "q": "The 6 ODAX", "a": "Awareness, Traffic, Engagement, Leads, App Promotion, Sales." },
+        { "q": "Funnel of the 6 ODAX", "a": "Top: Awareness/Traffic · Mid: Engagement/Leads · Bottom: Sales/App Promotion." },
+        { "q": "At which level is the campaign objective chosen?", "a": "At the campaign level." },
+        { "q": "Where are conversion location, event and performance goal configured?", "a": "At the ad set level." },
+        { "q": "Conversion location", "a": "Where it happens: Website, App, Messaging, Calls, Instant form." },
+        { "q": "Conversion event", "a": "The action that counts: Purchase, Lead, Add to cart, View content." },
+        { "q": "Performance goal", "a": "The bidding rule: how delivery is optimized." },
+        { "q": "Conversion event vs performance goal", "a": "Event = which action counts. Performance goal = how it's bid/optimized." },
+        { "q": "Maximize number vs value of conversions", "a": "Number = more units. Value = higher amount per conversion (requires value tracking)." },
+        { "q": "Data source for Sales website", "a": "Pixel + Conversions API (CAPI)." },
+        { "q": "Data source for Sales catalog", "a": "Pixel/CAPI + connected Catalog." },
+        { "q": "Data source for App Promotion", "a": "Facebook SDK or an authorized MMP." },
+        { "q": "Data source for Leads website", "a": "Pixel + CAPI." },
+        { "q": "Does Leads with an Instant form require a Pixel?", "a": "No; the data is captured within Meta." },
+        { "q": "Why Pixel + CAPI together?", "a": "CAPI recovers signal the browser loses (blockers, iOS) and improves match quality." },
+        { "q": "Objectives that do NOT require conversion tracking", "a": "Awareness and Engagement." },
+        { "q": "Classic trap: wanting sales and choosing…", "a": "Traffic. Traffic optimizes for link clicks, not purchases." },
+        { "q": "Planning order", "a": "Business goal → funnel stage → campaign objective → conversion location → conversion event → performance goal." },
+        { "q": "A new brand with no recognition, where does it start?", "a": "Awareness to build recall, then scale up to consideration and conversion." },
+        { "q": "Lowest-friction conversion location for leads", "a": "Instant form: the form is filled out within Meta without leaving the feed." },
+        { "q": "How does a good media plan separate the phases?", "a": "Into different objectives: capture the lead at the top (Leads), optimize conversion at the bottom (Sales)." },
+        { "q": "Phase to capture contact (without signing yet)", "a": "Leads + Instant form: minimal friction, feeds the sales team." },
+        { "q": "Phase to optimize the signing (value conversion)", "a": "Sales, with the conversion location where the closing happens and the event that represents the signing." },
+        { "q": "Why not force a single objective for the whole funnel?", "a": "Because you end up optimizing the wrong metric in some phase." }
+      ]
+    }
+  ]
+}

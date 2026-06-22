@@ -1,0 +1,119 @@
+{
+  "title": "Unit quiz · Module 1",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What are the 6 ODAX?",
+      "options": [
+        "Awareness, Traffic, Engagement, Leads, App Promotion, Sales",
+        "Reach, Traffic, Conversions, Catalog, Leads, Sales",
+        "Brand, Consideration, Conversion, Retention, Loyalty, Advocacy",
+        "Awareness, Clicks, Engagement, Forms, Installs, Revenue"
+      ],
+      "correct": 0,
+      "explanation": "The 6 official ODAX: Awareness, Traffic, Engagement, Leads, App Promotion, Sales.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Where are conversion location, conversion event and performance goal configured?",
+      "options": ["Campaign", "Ad set", "Ad", "Account"],
+      "correct": 1,
+      "explanation": "At the ad set level. The objective goes at the campaign level; the creatives at the ad level.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The client wants revenue, with highly variable tickets. Which performance goal?",
+      "options": [
+        "Maximize number of conversions",
+        "Maximize value of conversions",
+        "Maximize link clicks",
+        "Maximize landing page views"
+      ],
+      "correct": 1,
+      "explanation": "Maximize value optimizes the amount, not the number of orders; it aligns with the revenue business goal.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which data sources does Sales website with the Purchase event require? Select 2.",
+      "options": [
+        "Pixel",
+        "Conversions API (CAPI)",
+        "Facebook SDK",
+        "Product catalog"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Pixel + CAPI. The SDK is for apps; the catalog is for Advantage+ catalog ads, not for general Sales.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which objective does NOT require conversion tracking?",
+      "options": ["Sales", "Leads website", "Awareness", "App Promotion"],
+      "correct": 2,
+      "explanation": "Awareness optimizes for recall/reach; it doesn't need Pixel/CAPI/SDK.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A new brand with no recognition that wants to sell long-term. Best start:",
+      "options": [
+        "Sales directly from day 1",
+        "Awareness to build the base and then move down to conversion",
+        "App Promotion",
+        "Remarketing only"
+      ],
+      "correct": 1,
+      "explanation": "Pushing Sales at an audience that doesn't know you wastes budget; Awareness builds the base of the funnel.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Leads with an Instant form is preferred over Traffic to an external landing page because:",
+      "options": [
+        "It's more expensive but prettier",
+        "It minimizes friction by capturing the contact within Meta",
+        "It needs no creative",
+        "It guarantees purchases"
+      ],
+      "correct": 1,
+      "explanation": "Instant form reduces the conversion drop: the user doesn't leave the feed. Traffic only sends clicks to a landing page.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Why are Pixel + CAPI recommended together and not just the Pixel?",
+      "options": [
+        "CAPI replaces the Pixel",
+        "CAPI recovers signal the browser loses and improves match quality",
+        "It's a legal requirement",
+        "It automatically lowers the CPM"
+      ],
+      "correct": 1,
+      "explanation": "CAPI is server-side: it recovers events lost to blockers/iOS and improves matching.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Select the correct statement.",
+      "options": [
+        "The objective is chosen at the ad set level",
+        "Conversion event = which action counts; performance goal = how it's optimized",
+        "Performance goal is chosen at the ad level",
+        "Awareness requires a Pixel"
+      ],
+      "correct": 1,
+      "explanation": "Event defines the action; performance goal defines the bidding rule. The objective goes in the campaign.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which are valid data sources for conversion objectives? Select 3.",
+      "options": [
+        "Pixel",
+        "Conversions API",
+        "Facebook SDK / MMP (apps)",
+        "The creative's color",
+        "The campaign name"
+      ],
+      "correct": [0, 1, 2],
+      "multi": true,
+      "explanation": "Pixel and CAPI for web; SDK or MMP for apps. The creative and the naming aren't conversion data sources.",
+      "difficulty": "medium"
+    }
+  ]
+}

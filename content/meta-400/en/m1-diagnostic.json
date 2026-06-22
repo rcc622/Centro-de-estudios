@@ -1,0 +1,61 @@
+{
+  "title": "Diagnostic · Module 1",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What is the media planner's first step when designing a campaign?",
+      "options": [
+        "Choose the bid strategy",
+        "Understand the client's business goal",
+        "Upload the creative",
+        "Define the placement"
+      ],
+      "correct": 1,
+      "explanation": "The plan starts with the business goal; from it you derive the objective, the conversion location and the performance goal.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "At which hierarchy level is the campaign objective chosen?",
+      "options": ["Account", "Campaign", "Ad set", "Ad"],
+      "correct": 1,
+      "explanation": "The objective is chosen at the campaign level. Conversion location, event and performance goal go at the ad set level.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Sales website with the Purchase event requires which data source:",
+      "options": [
+        "Only Pixel",
+        "Pixel + Conversions API (CAPI)",
+        "Only customer list",
+        "Facebook SDK"
+      ],
+      "correct": 1,
+      "explanation": "Pixel + CAPI together recover lost signal and improve match quality. The SDK is for apps.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Conversion event vs performance goal:",
+      "options": [
+        "They're synonyms",
+        "Event = which action counts; performance goal = how it's optimized/bid",
+        "Event goes in the campaign; performance goal in the ad",
+        "Performance goal only applies to Awareness"
+      ],
+      "correct": 1,
+      "explanation": "The conversion event defines the action (Purchase, Lead); the performance goal defines the optimization rule (number, value, clicks, recall).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A B2B company wants scheduled demos without taking the prospect out of the feed. Best combination?",
+      "options": [
+        "Sales + external Website",
+        "Leads + Instant form",
+        "Awareness + recall lift",
+        "Traffic + link clicks"
+      ],
+      "correct": 1,
+      "explanation": "Leads with an Instant form minimizes friction: the form is completed within Meta. An external landing page adds a conversion drop.",
+      "difficulty": "medium"
+    }
+  ]
+}
