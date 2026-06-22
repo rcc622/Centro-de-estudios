@@ -7,236 +7,236 @@
   "source": "Blueprint Practice Tests Media Planning A + B (preguntas oficiales)",
   "questions": [
     {
-      "q": "Un cliente lanza una campaña navideña con una serie de ads en Instagram Reels. Quiere mostrar los ads en un orden específico para generar expectativa por sus nuevas fragancias. ¿Qué estrategia de scheduling debe recomendar el media planner?",
+      "q": "Un cliente lanza una campaña navideña con una serie de ads en Instagram Reels. Quiere mostrar los ads en un orden específico para generar expectativa por sus nuevas fragancias. ¿Qué estrategia de programación (scheduling) debe recomendar el media planner?",
       "options": [
-        "Reservation con sequenced delivery",
-        "Reservation con scheduled delivery",
-        "Auction con standard delivery",
-        "Auction con accelerated delivery"
+        "Reserva (Reservation) con entrega secuenciada (sequenced delivery)",
+        "Reserva con entrega programada (scheduled delivery)",
+        "Subasta (Auction) con entrega estándar (standard delivery)",
+        "Subasta con entrega acelerada (accelerated delivery)"
       ],
       "correct": 0,
-      "explanation": "Mostrar ads en un orden específico = ad sequencing, que requiere Reservation con sequenced delivery. (Respuesta deducida: Randall la acertó, el PDF no la muestra.)",
+      "explanation": "Mostrar ads en un orden específico = ad sequencing, que requiere Reserva con entrega secuenciada. (Respuesta deducida: Randall la acertó, el PDF no la muestra.)",
       "difficulty": "medium"
     },
     {
       "q": "Una marca de retail lanza una nueva línea de fundas para celular. Quiere alcanzar a clientes potenciales al menos 3 veces por semana durante una campaña de 3 semanas. ¿Qué estrategia debe recomendar el media planner?",
-      "options": ["Auction", "Ad scheduling", "Reservation", "Bid capping"],
+      "options": ["Subasta (Auction)", "Programación de anuncios (Ad scheduling)", "Reserva (Reservation)", "Límite de puja (Bid capping)"],
       "correct": 2,
-      "explanation": "Reach & Frequency (Reservation) permite alcanzar un número definido de personas a una frecuencia específica. Respuesta oficial: Reservation.",
+      "explanation": "El alcance y la frecuencia fijos de la Reserva (Reservation) permiten llegar a un número definido de personas a una frecuencia específica. Respuesta oficial: Reserva.",
       "difficulty": "easy"
     },
     {
-      "q": "Un cliente quiere lanzar un Brand Lift test para medir el impacto de una campaña de awareness. Propone iniciar la campaña una semana antes del test (Jun 1–25, Reservation, frequency 2-3/sem, Advantage+ placements). ¿Qué debe recomendar el media planner?",
+      "q": "Un cliente quiere lanzar un test de Mejora de la marca (Brand Lift) para medir el impacto de una campaña de Reconocimiento (awareness). Propone iniciar la campaña una semana antes del test (Jun 1–25, Reserva (Reservation), frequency 2-3/sem, Ubicaciones Advantage+ (Advantage+ placements)). ¿Qué debe recomendar el media planner?",
       "options": [
         "Reducir la frecuencia del creative a 1-2 veces por semana",
-        "Reducir la duración del Brand Lift test",
-        "Extender la campaña de awareness 1 semana",
-        "Lanzar la campaña y el Brand Lift test al mismo tiempo"
+        "Reducir la duración del test de Mejora de la marca",
+        "Extender la campaña de Reconocimiento 1 semana",
+        "Lanzar la campaña y el test de Mejora de la marca al mismo tiempo"
       ],
       "correct": 3,
-      "explanation": "El schedule del Brand Lift test debe alinearse con el inicio y fin de la campaña. Respuesta oficial: lanzar campaña y test al mismo tiempo.",
+      "explanation": "La programación del test de Mejora de la marca debe alinearse con el inicio y fin de la campaña. Respuesta oficial: lanzar campaña y test al mismo tiempo.",
       "difficulty": "medium"
     },
     {
-      "q": "Un anunciante quiere impulsar ventas online en temporada navideña. Tiene catálogo y Conversions API. Quiere 3 ad sets para maximizar el targeting con un gasto máximo de $2,000/día. ¿Cómo configura la campaña el media planner?",
+      "q": "Un anunciante quiere impulsar ventas online en temporada navideña. Tiene catálogo y API de conversiones (Conversions API). Quiere 3 conjuntos de anuncios (ad sets) para maximizar la segmentación con un gasto máximo de $2,000/día. ¿Cómo configura la campaña el media planner?",
       "options": [
-        "Sales objective, $650 por ad set, Lifetime Budget",
-        "Sales objective, Advantage Campaign Budget, Daily Budget",
-        "Traffic objective, Advantage Campaign Budget, Daily Budget",
-        "Leads objective, $2,000 por ad set, Daily Budget"
+        "Objetivo de Ventas (Sales), $650 por conjunto de anuncios, presupuesto total (Lifetime Budget)",
+        "Objetivo de Ventas, Advantage+ presupuesto de campaña (Advantage Campaign Budget), presupuesto diario (Daily Budget)",
+        "Objetivo de Tráfico (Traffic), Advantage+ presupuesto de campaña, presupuesto diario",
+        "Objetivo de Clientes potenciales (Leads), $2,000 por conjunto de anuncios, presupuesto diario"
       ],
       "correct": 1,
-      "explanation": "Advantage Campaign Budget (CBO) asegura desempeño entre ad sets; Daily Budget fija el límite diario; Sales objective impulsa ventas online. Respuesta oficial.",
+      "explanation": "El Advantage+ presupuesto de campaña (CBO) asegura desempeño entre conjuntos de anuncios; el presupuesto diario fija el límite diario; el objetivo de Ventas impulsa ventas online. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
       "q": "Una marca de retail establecida lanza su primera campaña: alcanzar 70% de su audiencia 25-44, frequency 3x/sem, videos de 15 seg, y medir el cambio en intención de compra. ¿Qué herramienta de medición recomienda el media planner?",
-      "options": ["Brand Lift", "Attribution", "Ads reporting", "Conversion Lift"],
+      "options": ["Mejora de la marca (Brand Lift)", "Atribución (Attribution)", "Informe publicitario (Ads reporting)", "Aumento de conversiones (Conversion Lift)"],
       "correct": 0,
-      "explanation": "Brand Lift mide métricas de marca como intención de compra. Respuesta oficial: Brand Lift.",
+      "explanation": "La Mejora de la marca (Brand Lift) mide métricas de marca como intención de compra. Respuesta oficial: Mejora de la marca.",
       "difficulty": "easy"
     },
     {
-      "q": "Una marca de retail tiene la meta de generar 10,000 purchases en temporada. Espera $10 de costo por Add to Cart y $35 de costo por Purchase. ¿Qué budget debe usar para lograrlo?",
+      "q": "Una marca de retail tiene la meta de generar 10,000 purchases en temporada. Espera $10 de costo por Add to Cart y $35 de costo por Purchase. ¿Qué presupuesto (budget) debe usar para lograrlo?",
       "options": ["$350,000", "$100,000", "$1,000", "$35,000"],
       "correct": 0,
       "explanation": "10,000 purchases × $35 por purchase = $350,000. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Un anunciante quiere construir un Lookalike Audience basado en compradores pasados, orientado a clientes que comprarán múltiples artículos. ¿Qué solución de audiencia de Meta debe usar?",
+      "q": "Un anunciante quiere construir un Público similar (Lookalike Audience) basado en compradores pasados, orientado a clientes que comprarán múltiples artículos. ¿Qué solución de audiencia de Meta debe usar?",
       "options": [
-        "Ad Set Based Conversion Lookalikes",
-        "Add To Cart Lookalikes",
-        "Value Based Lookalikes",
-        "Website Visitor Lookalikes"
+        "Públicos similares de conversión por conjunto de anuncios (Ad Set Based Conversion Lookalikes)",
+        "Públicos similares de Add To Cart (Add To Cart Lookalikes)",
+        "Públicos similares basados en valor (Value Based Lookalikes)",
+        "Públicos similares de visitantes del sitio web (Website Visitor Lookalikes)"
       ],
       "correct": 2,
-      "explanation": "Value Based Lookalikes prioriza personas similares a los compradores de mayor valor (más artículos/monto). Respuesta oficial.",
+      "explanation": "Los Públicos similares basados en valor (Value Based Lookalikes) priorizan personas similares a los compradores de mayor valor (más artículos/monto). Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Un retailer online quiere targetear mujeres interesadas en deportes. Audiencia de 2 millones, meta 50 conversiones/semana, CPA estimado $100, campaña de 4 semanas. ¿Qué budget recomienda el media planner?",
+      "q": "Un retailer online quiere segmentar mujeres interesadas en deportes. Audiencia de 2 millones, meta 50 conversiones/semana, CPA estimado $100, campaña de 4 semanas. ¿Qué presupuesto (budget) recomienda el media planner?",
       "options": ["$20,000", "$5,000", "$10,000", "$25,000"],
       "correct": 0,
       "explanation": "50 conversiones/sem × $100 por conversión × 4 semanas = $20,000. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Una agencia local de adopción de mascotas actualiza su landing page. Con la meta de llevar usuarios a su sitio, crea tres videos de 15 seg con un CTA 'Learn More' que enlaza a la página de adopción. ¿Qué campaign objective recomienda el media planner?",
-      "options": ["Traffic", "Leads", "Engagement", "Awareness"],
+      "q": "Una agencia local de adopción de mascotas actualiza su landing page. Con la meta de llevar usuarios a su sitio, crea tres videos de 15 seg con un CTA 'Learn More' que enlaza a la página de adopción. ¿Qué objetivo de la campaña (campaign objective) recomienda el media planner?",
+      "options": ["Tráfico (Traffic)", "Clientes potenciales (Leads)", "Interacción (Engagement)", "Reconocimiento (Awareness)"],
       "correct": 0,
-      "explanation": "La meta es llevar tráfico al sitio web = Traffic objective. Respuesta oficial.",
+      "explanation": "La meta es llevar tráfico al sitio web = objetivo de Tráfico (Traffic). Respuesta oficial.",
       "difficulty": "easy"
     },
     {
-      "q": "Una marca de autos se asocia con dealerships autorizados en EE.UU. para conseguir test drives del nuevo modelo, usando imágenes del auto y un Instant Form que el cliente llena al hacer clic. ¿Qué campaign objective debe usarse?",
-      "options": ["Sales", "Awareness", "Engagement", "Leads"],
+      "q": "Una marca de autos se asocia con dealerships autorizados en EE.UU. para conseguir test drives del nuevo modelo, usando imágenes del auto y un Instant Form que el cliente llena al hacer clic. ¿Qué objetivo de la campaña (campaign objective) debe usarse?",
+      "options": ["Ventas (Sales)", "Reconocimiento (Awareness)", "Interacción (Engagement)", "Clientes potenciales (Leads)"],
       "correct": 3,
-      "explanation": "Lead ads (Instant Form) recolectan información de personas interesadas. Respuesta oficial: Leads.",
+      "explanation": "Los Lead ads (Instant Form) recolectan información de personas interesadas. Respuesta oficial: Clientes potenciales.",
       "difficulty": "easy"
     },
     {
-      "q": "Un anunciante quiere impulsar ventas online de productos de alto valor. Quiere vender la mayor cantidad posible con un costo por purchase que no exceda $50 USD. Usa broad targeting y Advantage+ placements. ¿Qué bidding strategy debe elegir?",
-      "options": ["Highest Value", "Highest Volume", "Cost per result goal", "Bid Cap"],
+      "q": "Un anunciante quiere impulsar ventas online de productos de alto valor. Quiere vender la mayor cantidad posible con un costo por purchase que no exceda $50 USD. Usa segmentación amplia (broad targeting) y Ubicaciones Advantage+ (Advantage+ placements). ¿Qué estrategia de puja (bid strategy) debe elegir?",
+      "options": ["Valor más alto (Highest Value)", "Volumen más alto (Highest Volume)", "Objetivo de costo por resultado (Cost per result goal)", "Límite de puja (Bid Cap)"],
       "correct": 2,
-      "explanation": "Cost per result goal permite fijar el costo máximo por resultado ($50). Respuesta oficial.",
+      "explanation": "El Objetivo de costo por resultado (Cost per result goal) permite fijar el costo máximo por resultado ($50). Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Un anunciante usó esta estrategia y falló en generar un alto número de purchases online: Objective Sales, Targeting Past Purchasers, Placements In-stream/Feed/Stories en Facebook, Bid Highest Volume. ¿Qué cambio debe recomendar el media planner?",
+      "q": "Un anunciante usó esta estrategia y falló en generar un alto número de purchases online: Objetivo de Ventas (Sales), segmentación de Past Purchasers, Ubicaciones (Placements) In-stream/Feed/Stories en Facebook, puja Volumen más alto (Highest Volume). ¿Qué cambio debe recomendar el media planner?",
       "options": [
-        "Usar Awareness objective solo con image ads",
-        "Agregar lookalike de past purchasers y Advantage+ placements",
-        "Elegir una goal-based bidding strategy con broad audience targeting",
-        "Agregar website visitors al targeting y placements de Instagram"
+        "Usar objetivo de Reconocimiento (Awareness) solo con image ads",
+        "Agregar Público similar (lookalike) de past purchasers y Ubicaciones Advantage+ (Advantage+ placements)",
+        "Elegir una estrategia de puja basada en objetivos (goal-based bidding strategy) con segmentación de público amplio (broad audience)",
+        "Agregar website visitors a la segmentación y ubicaciones de Instagram"
       ],
       "correct": 1,
-      "explanation": "Solo Past Purchasers es una audiencia pequeña que ya compró; ampliar con lookalike de past purchasers + Advantage+ placements da escala manteniendo intención alta. (Respuesta deducida del análisis.)",
+      "explanation": "Solo Past Purchasers es una audiencia pequeña que ya compró; ampliar con Público similar de past purchasers + Ubicaciones Advantage+ da escala manteniendo intención alta. (Respuesta deducida del análisis.)",
       "difficulty": "hard"
     },
     {
       "q": "Una marca de trajes de baño quiere una campaña que anime a shoppers que ya vieron los productos en su sitio a convertirse en compradores. ¿Qué estrategia recomienda el media planner?",
       "options": [
-        "Traffic campaign targeting personas que visitaron su perfil de Instagram",
-        "Sales campaign targeting un Lookalike Audience de past purchasers",
-        "Sales campaign targeting shoppers que vieron productos pero aún no compraron",
-        "Sales campaign targeting un Lookalike Audience de website viewers"
+        "Campaña de Tráfico (Traffic) segmentando personas que visitaron su perfil de Instagram",
+        "Campaña de Ventas (Sales) segmentando un Público similar (Lookalike Audience) de past purchasers",
+        "Campaña de Ventas segmentando shoppers que vieron productos pero aún no compraron",
+        "Campaña de Ventas segmentando un Público similar de website viewers"
       ],
       "correct": 2,
-      "explanation": "Es remarketing de conversión: Sales targeteando a quienes vieron productos y no compraron. (Respuesta deducida del análisis.)",
+      "explanation": "Es remarketing de conversión: Ventas segmentando a quienes vieron productos y no compraron. (Respuesta deducida del análisis.)",
       "difficulty": "medium"
     },
     {
-      "q": "¿Qué prospecting audience sería de alto valor para promocionar la nueva línea de tenis para correr de una marca?",
+      "q": "¿Qué público de prospección (prospecting audience) sería de alto valor para promocionar la nueva línea de tenis para correr de una marca?",
       "options": [
         "Personas interesadas en tenis para correr",
         "Personas que dieron like a la Facebook Page de la marca",
         "Personas que visitaron el sitio de la marca en los últimos 90 días",
-        "Personas Lookalike de past purchasers de los tenis para correr de la marca"
+        "Personas en un Público similar (Lookalike) de past purchasers de los tenis para correr de la marca"
       ],
       "correct": 3,
-      "explanation": "Los lookalike audiences alcanzan personas nuevas con características similares a quienes ya mostraron interés. Respuesta oficial.",
+      "explanation": "Los Públicos similares (lookalike audiences) alcanzan personas nuevas con características similares a quienes ya mostraron interés. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Una marca quiere generar video views en la mayor cantidad de placements posible. ¿Qué placement strategy recomienda el media planner?",
+      "q": "Una marca quiere generar video views en la mayor cantidad de ubicaciones (placements) posible. ¿Qué estrategia de ubicaciones recomienda el media planner?",
       "options": [
-        "Advantage+ Placements",
+        "Ubicaciones Advantage+ (Advantage+ Placements)",
         "In-stream",
         "Facebook Feed, Facebook Stories, Facebook Reels, Facebook Search Results",
         "Instagram Feed, Instagram Stories, Instagram Reels, Instagram Explore"
       ],
       "correct": 0,
-      "explanation": "Advantage+ Placements maximiza la cantidad de placements. Respuesta oficial.",
+      "explanation": "Las Ubicaciones Advantage+ (Advantage+ Placements) maximizan la cantidad de ubicaciones. Respuesta oficial.",
       "difficulty": "easy"
     },
     {
-      "q": "Un anunciante lanza un nuevo producto y quiere generar expectativa. Todas las campañas de TV y online se lanzan simultáneamente para máximo reach y awareness. En Meta quiere lanzar ads secuencialmente y re-targetear a quienes vieron sus video ads. ¿Qué recomienda el media planner?",
+      "q": "Un anunciante lanza un nuevo producto y quiere generar expectativa. Todas las campañas de TV y online se lanzan simultáneamente para máximo reach y Reconocimiento (awareness). En Meta quiere lanzar ads secuencialmente y re-targetear a quienes vieron sus video ads. ¿Qué recomienda el media planner?",
       "options": [
-        "Auction buying, Broad Audience de video viewers",
-        "TRP buying, Custom Audience de TV viewers",
-        "Reservation buying, Engagement Audience",
-        "Reservation buying, Advantage+ Catalog Ads para Broad Audience"
+        "Compra por Subasta (Auction), Público amplio (Broad Audience) de video viewers",
+        "Compra por Target Rating Point (TRP), Público personalizado (Custom Audience) de TV viewers",
+        "Compra por Reserva (Reservation), Público personalizado de interacción (Engagement Audience)",
+        "Compra por Reserva, Anuncios de catálogo Advantage+ (Advantage+ Catalog Ads) para Público amplio"
       ],
       "correct": 2,
-      "explanation": "Reservation permite ad sequencing; Engagement Audience permite re-targetear a quienes vieron los video ads. Respuesta oficial.",
+      "explanation": "La Reserva (Reservation) permite ad sequencing; el Público personalizado de interacción (Engagement Audience) permite re-targetear a quienes vieron los video ads. Respuesta oficial.",
       "difficulty": "hard"
     },
     {
-      "q": "Una escuela técnica corre una campaña de Leads 4 semanas con 3 audiencias: ad set 1 (interés automotive/electrical/computer networking) 100 leads; ad set 2 (automotive) 53 leads; ad set 3 (automotive y computer networking) 89 leads. ¿Qué debe hacer para maximizar el volumen de leads?",
+      "q": "Una escuela técnica corre una campaña de Clientes potenciales (Leads) 4 semanas con 3 audiencias: conjunto de anuncios (ad set) 1 (interés automotive/electrical/computer networking) 100 leads; conjunto de anuncios 2 (automotive) 53 leads; conjunto de anuncios 3 (automotive y computer networking) 89 leads. ¿Qué debe hacer para maximizar el volumen de leads?",
       "options": [
-        "Pausar el ad set 2",
-        "Crear ad sets por intereses",
-        "Crear ad sets por género",
-        "Fusionar los tres ad sets"
+        "Pausar el conjunto de anuncios 2",
+        "Crear conjuntos de anuncios por intereses",
+        "Crear conjuntos de anuncios por género",
+        "Fusionar los tres conjuntos de anuncios"
       ],
       "correct": 3,
-      "explanation": "Fusionar los ad sets consolida la señal, ayuda a salir de learning phase y deja que el sistema optimice el volumen total. (Respuesta deducida del análisis.)",
+      "explanation": "Fusionar los conjuntos de anuncios consolida la señal, ayuda a salir de la fase de aprendizaje (learning phase) y deja que el sistema optimice el volumen total. (Respuesta deducida del análisis.)",
       "difficulty": "hard"
     },
     {
-      "q": "Un retailer de calzado corre una campaña Traffic 4 semanas con 3 audiencias. Ad set 1 (Native Interest): 200,000 LPV. Ad set 2 (Past Purchasers Lookalikes): 333,333 LPV, CTR 1.05%. Ad set 3 (Email Subscribers CRM): 1,000,000 LPV, CTR 1.5%, CPM más bajo. ¿Qué objective y audiencia debe usar para impulsar ventas online?",
+      "q": "Un retailer de calzado corre una campaña de Tráfico (Traffic) 4 semanas con 3 audiencias. Conjunto de anuncios (ad set) 1 (Native Interest): 200,000 LPV. Conjunto de anuncios 2 (Past Purchasers Lookalikes): 333,333 LPV, CTR 1.05%. Conjunto de anuncios 3 (Email Subscribers CRM): 1,000,000 LPV, CTR 1.5%, CPM más bajo. ¿Qué objetivo de la campaña (objective) y audiencia debe usar para impulsar ventas online?",
       "options": [
-        "Sales con audiencia 3",
-        "Awareness con audiencia 2",
-        "Sales con audiencia 2",
-        "Leads con audiencia 1"
+        "Ventas (Sales) con audiencia 3",
+        "Reconocimiento (Awareness) con audiencia 2",
+        "Ventas con audiencia 2",
+        "Clientes potenciales (Leads) con audiencia 1"
       ],
       "correct": 0,
-      "explanation": "El objective de conversión (Sales) impulsa ventas online y la audiencia 3 fue la más eficiente. Respuesta oficial.",
+      "explanation": "El objetivo de conversión (Ventas) impulsa ventas online y la audiencia 3 fue la más eficiente. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Un anunciante usa los mismos creatives en sus campañas Awareness, Traffic y Sales. Hizo un A/B test lifestyle vs editorial en una campaña de awareness: lifestyle $925.77, 159 results a $5.82; editorial $924.46, 184 results a $5.02. ¿Qué debe hacer después?",
+      "q": "Un anunciante usa los mismos creatives en sus campañas de Reconocimiento (Awareness), Tráfico (Traffic) y Ventas (Sales). Hizo una Prueba A/B (A/B test) lifestyle vs editorial en una campaña de Reconocimiento: lifestyle $925.77, 159 results a $5.82; editorial $924.46, 184 results a $5.02. ¿Qué debe hacer después?",
       "options": [
         "Seguir corriendo ambos creatives en todas las campañas para dar variedad",
         "Correr solo el lifestyle creative en todas las campañas de la cuenta",
         "Correr solo el editorial creative en todas las campañas de la cuenta",
-        "Correr otro A/B test lifestyle vs editorial en distintos objectives"
+        "Correr otra Prueba A/B lifestyle vs editorial en distintos objetivos de la campaña"
       ],
       "correct": 3,
-      "explanation": "El test probó que editorial funcionó mejor solo para awareness; no se debe asumir que aplica a los otros objectives. Hay que seguir testeando. Respuesta oficial.",
+      "explanation": "El test probó que editorial funcionó mejor solo para Reconocimiento; no se debe asumir que aplica a los otros objetivos de la campaña. Hay que seguir testeando. Respuesta oficial.",
       "difficulty": "hard"
     },
     {
       "q": "Un anunciante quiere entender si sus nuevas campañas tienen efecto positivo en percepción y recall. ¿Qué solución de Meta debe recomendar el planner?",
-      "options": ["A/B Test", "Conversion Lift Test", "Brand Survey Test", "Creative Test"],
+      "options": ["Prueba A/B (A/B Test)", "Test de Aumento de conversiones (Conversion Lift Test)", "Test de encuesta de marca (Brand Survey Test)", "Test de creative (Creative Test)"],
       "correct": 2,
-      "explanation": "Brand Survey (Lift) Test mide el efecto incremental en awareness, percepción o recall. Respuesta oficial.",
+      "explanation": "El test de encuesta de marca (Brand Survey/Lift Test) mide el efecto incremental en Reconocimiento (awareness), percepción o recall. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
       "q": "¿Qué tipo de test deben usar los anunciantes para determinar si sus ads aumentan la intención de compra de las audiencias?",
-      "options": ["A/B Test", "Conversion Lift Study", "Brand Lift Study", "Marketing Mix Modeling"],
+      "options": ["Prueba A/B (A/B Test)", "Estudio de Aumento de conversiones (Conversion Lift Study)", "Estudio de Mejora de la marca (Brand Lift Study)", "Marketing Mix Modeling"],
       "correct": 2,
-      "explanation": "La intención de compra es una métrica de marca: Brand Lift Study. (Respuesta deducida del análisis.)",
+      "explanation": "La intención de compra es una métrica de marca: Estudio de Mejora de la marca (Brand Lift Study). (Respuesta deducida del análisis.)",
       "difficulty": "medium"
     },
     {
       "q": "Un anunciante quiere entender si su nuevo creative está ayudando a influir en las ventas. ¿Qué solución de Meta muestra el lift?",
-      "options": ["Brand Survey Test", "Conversion Lift Test", "A/B Test", "Offline Conversions"],
+      "options": ["Test de encuesta de marca (Brand Survey Test)", "Test de Aumento de conversiones (Conversion Lift Test)", "Prueba A/B (A/B Test)", "Conversiones offline (Offline Conversions)"],
       "correct": 1,
-      "explanation": "Conversion Lift Test mide el efecto incremental en conversiones/ventas. Respuesta oficial.",
+      "explanation": "El test de Aumento de conversiones (Conversion Lift Test) mide el efecto incremental en conversiones/ventas. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Un anunciante corre una campaña Sales con creative best practices. Quiere usar Meta para crear demanda de un nuevo producto además de TV, y testear/medir el impacto incremental de Meta en métricas de marca para su próximo lanzamiento (Budget $650,000, 6 sem, 3x video 15 seg, Advantage+ placements). ¿Qué solución de medición recomienda?",
+      "q": "Un anunciante corre una campaña de Ventas (Sales) con creative best practices. Quiere usar Meta para crear demanda de un nuevo producto además de TV, y testear/medir el impacto incremental de Meta en métricas de marca para su próximo lanzamiento (presupuesto (Budget) $650,000, 6 sem, 3x video 15 seg, Ubicaciones Advantage+ (Advantage+ placements)). ¿Qué solución de medición recomienda?",
       "options": [
-        "A/B test entre diferentes optimizaciones",
-        "Meta Brand Lift Study",
-        "Meta Conversion Lift Study",
+        "Prueba A/B (A/B test) entre diferentes optimizaciones",
+        "Estudio de Mejora de la marca de Meta (Meta Brand Lift Study)",
+        "Estudio de Aumento de conversiones de Meta (Meta Conversion Lift Study)",
         "Nielsen Brand Effect Study"
       ],
       "correct": 1,
-      "explanation": "Quiere medir impacto incremental en métricas de marca = Meta Brand Lift Study. Respuesta oficial.",
+      "explanation": "Quiere medir impacto incremental en métricas de marca = Estudio de Mejora de la marca de Meta (Meta Brand Lift Study). Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Un cliente con agencia local quiere mejorar los resultados de su última mega venta. Desarrolla contenido específico por audiencia. Tiene pixel, standard events y offline conversions event. ¿Qué otra solución debe recomendar la agencia para lograr full funnel optimization?",
-      "options": ["Conversion API", "Dynamic Creative Optimization", "A/B Testing", "Placement optimization"],
+      "q": "Un cliente con agencia local quiere mejorar los resultados de su última mega venta. Desarrolla contenido específico por audiencia. Tiene Píxel de Meta (Pixel), eventos estándar (standard events) y evento de conversiones offline (offline conversions event). ¿Qué otra solución debe recomendar la agencia para lograr full funnel optimization?",
+      "options": ["API de conversiones (Conversion API)", "Dynamic Creative Optimization", "Prueba A/B (A/B Testing)", "Optimización de ubicaciones (Placement optimization)"],
       "correct": 0,
-      "explanation": "Conversions API mejora la señal y robustece la optimización full funnel. Respuesta oficial.",
+      "explanation": "La API de conversiones (Conversions API) mejora la señal y robustece la optimización full funnel. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
@@ -254,38 +254,38 @@
       "difficulty": "easy"
     },
     {
-      "q": "Un anunciante quiere correr una campaña de video In-stream en Facebook pero tiene lineamientos específicos sobre dónde deben aparecer los ads. ¿Qué dos brand safety controls deben usarse antes del lanzamiento? (Elige 2)",
-      "options": ["Inventory Filters", "Block Lists", "Delivery Report", "Ad Disclaimer"],
+      "q": "Un anunciante quiere correr una campaña de video In-stream en Facebook pero tiene lineamientos específicos sobre dónde deben aparecer los ads. ¿Qué dos controles de brand safety deben usarse antes del lanzamiento? (Elige 2)",
+      "options": ["Filtros de inventario (Inventory Filters)", "Block Lists", "Delivery Report", "Ad Disclaimer"],
       "correct": [0, 1],
       "multi": true,
-      "explanation": "Inventory Filters ajusta la idoneidad del contenido y Block Lists excluye publishers específicos. (Respuesta deducida del análisis.)",
+      "explanation": "El filtro de inventario (Inventory Filters) ajusta la idoneidad del contenido y las Block Lists excluyen publishers específicos. (Respuesta deducida del análisis.)",
       "difficulty": "hard"
     },
     {
       "q": "Un anunciante no quiere que sus ads aparezcan en Meta Audience Network. ¿Qué herramienta debe usar?",
-      "options": ["Block lists", "Inventory filter", "Manual placements", "Advantage+ placement"],
+      "options": ["Block lists", "Filtro de inventario (Inventory filter)", "Ubicaciones manuales (Manual placements)", "Ubicaciones Advantage+ (Advantage+ placement)"],
       "correct": 2,
-      "explanation": "Con Manual placements se puede deseleccionar Audience Network. Respuesta oficial.",
+      "explanation": "Con las Ubicaciones manuales (Manual placements) se puede deseleccionar Audience Network. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Una marca de bienes raíces crea una campaña para promover casas en venta. Los ads son rechazados por incumplir housing ad policies. La campaña targetea hombres de todas las edades interesados en single-family homes que viven en Virginia. ¿Qué cambio debe hacerse para que se aprueben?",
+      "q": "Una marca de bienes raíces crea una campaña para promover casas en venta. Los ads son rechazados por incumplir housing ad policies. La campaña segmenta hombres de todas las edades interesados en single-family homes que viven en Virginia. ¿Qué cambio debe hacerse para que se aprueben?",
       "options": [
-        "Actualizar age targeting a 21-65+",
-        "Quitar gender targeting",
-        "Quitar state targeting",
-        "Quitar interest targeting"
+        "Actualizar la segmentación por edad (age targeting) a 21-65+",
+        "Quitar la segmentación por género (gender targeting)",
+        "Quitar la segmentación por estado (state targeting)",
+        "Quitar la segmentación por intereses (interest targeting)"
       ],
       "correct": 1,
       "explanation": "La Special Ad Category Housing prohíbe segmentar por género; targetear 'hombres' viola la política. (Respuesta deducida del análisis.)",
       "difficulty": "hard"
     },
     {
-      "q": "Una marca quiere promocionar sus nuevas pastillas para bajar de peso en Meta. ¿Qué targeting cumple con las políticas de ads de Meta?",
+      "q": "Una marca quiere promocionar sus nuevas pastillas para bajar de peso en Meta. ¿Qué segmentación (targeting) cumple con las políticas de ads de Meta?",
       "options": [
-        "Solo pueden targetear usuarios en Norteamérica o Europa",
-        "Solo pueden re-targetear usuarios de customer lists",
-        "Solo pueden targetear usuarios mayores de 18",
+        "Solo pueden segmentar usuarios en Norteamérica o Europa",
+        "Solo pueden re-segmentar usuarios de customer lists",
+        "Solo pueden segmentar usuarios mayores de 18",
         "Solo pueden anunciar a un género"
       ],
       "correct": 2,
@@ -293,7 +293,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Un retailer de moda offline lanza una app para que los clientes acumulen puntos en cada compra en tienda. Campaña 1: cupón $10, ages 18-65+. Campaña 2: programa de puntos, Custom Audience con App Events. ¿Cuál es el business goal primario de estas campañas?",
+      "q": "Un retailer de moda offline lanza una app para que los clientes acumulen puntos en cada compra en tienda. Campaña 1: cupón $10, ages 18-65+. Campaña 2: programa de puntos, Público personalizado (Custom Audience) con eventos de la app (App Events). ¿Cuál es el business goal primario de estas campañas?",
       "options": [
         "Aumentar online purchases",
         "Aumentar brand awareness",
@@ -301,39 +301,39 @@
         "Aumentar website traffic"
       ],
       "correct": 2,
-      "explanation": "Offline conversions conecta CRM/POS para medir compras en tienda; el objetivo son ventas offline. Respuesta oficial.",
+      "explanation": "Las Conversiones offline (Offline conversions) conectan CRM/POS para medir compras en tienda; el objetivo son ventas offline. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
       "q": "Una marca de consumo limitada a awareness/consideration dirige ads a sitios de retailers que no le pasan data. Quiere lanzar un canal direct-to-consumer en sitios propios para trackear conversiones y construir first-party data. Tiene CRM de 10,000 personas y un onboarding partner. ¿Qué debe hacer para la meta de largo plazo?",
       "options": [
-        "Colocar el Meta Pixel en el sitio propio y correr traffic campaigns para construir custom audiences iniciales",
-        "Correr traffic campaigns con video a retailers terceros para construir audiencias de video retargeting",
-        "Subir el CRM a Meta para correr conversion campaigns a una audiencia más calificada",
+        "Colocar el Píxel de Meta (Meta Pixel) en el sitio propio y correr campañas de Tráfico (traffic) para construir públicos personalizados (custom audiences) iniciales",
+        "Correr campañas de Tráfico con video a retailers terceros para construir audiencias de video retargeting",
+        "Subir el CRM a Meta para correr campañas de conversión a una audiencia más calificada",
         "Re-targetear carritos abandonados de sitios de retailers terceros"
       ],
       "correct": 0,
-      "explanation": "El Pixel en el sitio propio construye una audiencia calificada con first-party data; los retailers terceros no devuelven data y el pixel es más preciso a largo plazo que el video retargeting. Respuesta oficial.",
+      "explanation": "El Píxel de Meta en el sitio propio construye una audiencia calificada con first-party data; los retailers terceros no devuelven data y el píxel es más preciso a largo plazo que el video retargeting. Respuesta oficial.",
       "difficulty": "hard"
     },
     {
       "q": "Una aerolínea hará una campaña con oferta de temporada para aumentar ventas de boletos en junio y julio (oferta válida 30 días). Sabe: los viajeros planean 3 meses antes; el boleto es lo primero que compran; tardan 7 días investigando comparando 3+ sitios. ¿Cómo debe planear la campaña?",
       "options": [
-        "Cuatro campañas semanales secuenciales con Awareness, cada dos semanas en abril y mayo",
-        "Campaña de 7 días con Awareness en junio, seguida de 30 días con Sales en julio",
-        "Campaña de 30 días con Sales objective y Advantage+ catalog ads, programada para marzo",
-        "Campaña de 7 días con Awareness en marzo, seguida de 30 días con Sales en junio"
+        "Cuatro campañas semanales secuenciales con Reconocimiento (Awareness), cada dos semanas en abril y mayo",
+        "Campaña de 7 días con Reconocimiento en junio, seguida de 30 días con Ventas (Sales) en julio",
+        "Campaña de 30 días con objetivo de Ventas y Anuncios de catálogo Advantage+ (Advantage+ catalog ads), programada para marzo",
+        "Campaña de 7 días con Reconocimiento en marzo, seguida de 30 días con Ventas en junio"
       ],
       "correct": 2,
-      "explanation": "La meta es aumentar ventas de boletos; solo la opción con Sales objective lo logra, y marzo cubre la ventana de planeación de 3 meses. Respuesta oficial.",
+      "explanation": "La meta es aumentar ventas de boletos; solo la opción con objetivo de Ventas lo logra, y marzo cubre la ventana de planeación de 3 meses. Respuesta oficial.",
       "difficulty": "hard"
     },
     {
       "q": "Una marca de ropa e-commerce se expande a nuevos mercados y quiere adquirir clientes al menor costo. Adapta creatives con agencia mobile, estructura simplificada optimizada a conversiones, cross-border products. Tiene CPM bajo, CTR alto y tráfico cualitativo, pero CVR muy bajo en su sitio. ¿Qué debe hacer?",
       "options": [
         "Hacer un website audit",
-        "Reducir el budget total en los nuevos mercados",
-        "Cambiar el objective para generar más tráfico",
+        "Reducir el presupuesto (budget) total en los nuevos mercados",
+        "Cambiar el objetivo de la campaña (objective) para generar más tráfico",
         "Cambiar sus creatives"
       ],
       "correct": 0,
@@ -343,115 +343,115 @@
     {
       "q": "Una panadería lanza una campaña de video navideña en Meta. Quiere correr ads en días y horarios específicos de la semana. ¿Qué estrategia recomienda el media planner?",
       "options": [
-        "Reservation con accelerated delivery",
-        "Reservation con sequenced delivery",
-        "Auction con sequenced delivery",
-        "Auction con scheduled delivery"
+        "Reserva (Reservation) con entrega acelerada (accelerated delivery)",
+        "Reserva con entrega secuenciada (sequenced delivery)",
+        "Subasta (Auction) con entrega secuenciada",
+        "Subasta con entrega programada (scheduled delivery)"
       ],
       "correct": 3,
-      "explanation": "Correr ads en días/horarios específicos = ad scheduling (dayparting) en Auction con scheduled delivery. (Respuesta deducida del análisis.)",
+      "explanation": "Correr ads en días/horarios específicos = ad scheduling (dayparting) en Subasta con entrega programada. (Respuesta deducida del análisis.)",
       "difficulty": "medium"
     },
     {
-      "q": "Una marca corre un multi-cell test para decidir qué estrategia implementar el resto del año; la meta es aumentar brand favorability. Cell A (50% Awareness/50% Engagement, 5% LAL): +5pts favorability, CPVV $0.07, CPM $4.75. Cell B (100% Engagement, 5% LAL): +3pts, CPVV $0.03, CPM $5.25. ¿Qué debe recomendar como siguiente paso?",
+      "q": "Una marca corre un estudio de varias celdas (multi-cell test) para decidir qué estrategia implementar el resto del año; la meta es aumentar brand favorability. Cell A (50% Reconocimiento (Awareness)/50% Interacción (Engagement), 5% LAL): +5pts favorability, CPVV $0.07, CPM $4.75. Cell B (100% Interacción, 5% LAL): +3pts, CPVV $0.03, CPM $5.25. ¿Qué debe recomendar como siguiente paso?",
       "options": [
-        "Implementar la estrategia multi-objective de Cell A",
-        "Re-correr el test con objectives similares para reducir variables",
-        "Implementar la estrategia single-objective de Cell B",
-        "Re-correr el test con 10% Lookalikes para aumentar reach"
+        "Implementar la estrategia de objetivos múltiples (multi-objective) de Cell A",
+        "Re-correr el test con objetivos similares para reducir variables",
+        "Implementar la estrategia de objetivo único (single-objective) de Cell B",
+        "Re-correr el test con 10% Públicos similares (Lookalikes) para aumentar reach"
       ],
       "correct": 0,
       "explanation": "Cell A logró el mayor lift en favorability (+5pts), que es la meta. Respuesta oficial.",
       "difficulty": "hard"
     },
     {
-      "q": "Un fabricante de autos quiere ver rápido qué estrategia de audiencia genera más tráfico antes de la venta navideña. Hipótesis: Custom Audience supera a interest-based. Para comparación estadística las audiencias no pueden traslaparse. El MMM se hace semestral por un tercero. ¿Qué debe hacer el media planner?",
+      "q": "Un fabricante de autos quiere ver rápido qué estrategia de audiencia genera más tráfico antes de la venta navideña. Hipótesis: el Público personalizado (Custom Audience) supera a interest-based. Para comparación estadística las audiencias no pueden traslaparse. El MMM se hace semestral por un tercero. ¿Qué debe hacer el media planner?",
       "options": [
-        "Usar A/B testing sobre base Cost Per Result",
+        "Usar Prueba A/B (A/B testing) sobre base costo por resultado (Cost Per Result)",
         "Crear campañas separadas para que los ads vayan a audiencias completamente distintas",
-        "Combinar las dos audiencias bajo el mismo ad set",
-        "Correr un Brand Lift study porque es la única forma de garantizar que no haya overlap"
+        "Combinar las dos audiencias bajo el mismo conjunto de anuncios (ad set)",
+        "Correr un estudio de Mejora de la marca (Brand Lift study) porque es la única forma de garantizar que no haya overlap"
       ],
       "correct": 0,
-      "explanation": "El A/B test divide la audiencia sin overlap y compara estrategias por costo por resultado. Respuesta oficial.",
+      "explanation": "La Prueba A/B (A/B test) divide la audiencia sin overlap y compara estrategias por costo por resultado. Respuesta oficial.",
       "difficulty": "hard"
     },
     {
-      "q": "Una organización intergubernamental quiere comunicar la importancia de la inmunización de rutina y el esquema de vacunas del primer año de vida, alcanzando a la mayor cantidad de personas. Tiene landing page con info detallada, Meta pixel instalado y varios creatives (video corto, carousel, estáticos). ¿Qué objective y event optimization recomienda?",
+      "q": "Una organización intergubernamental quiere comunicar la importancia de la inmunización de rutina y el esquema de vacunas del primer año de vida, alcanzando a la mayor cantidad de personas. Tiene landing page con info detallada, Píxel de Meta (Meta pixel) instalado y varios creatives (video corto, secuencia (carousel), estáticos). ¿Qué objetivo de la campaña (objective) y event optimization recomienda?",
       "options": [
-        "Traffic objective maximizando number of landing page views",
-        "Engagement objective maximizando number of landing page views",
-        "Awareness objective maximizando reach of ads",
-        "Awareness objective maximizando ad recall lift"
+        "Objetivo de Tráfico (Traffic) maximizando number of landing page views",
+        "Objetivo de Interacción (Engagement) maximizando number of landing page views",
+        "Objetivo de Reconocimiento (Awareness) maximizando reach of ads",
+        "Objetivo de Reconocimiento maximizando ad recall lift"
       ],
       "correct": 2,
-      "explanation": "La meta es alcanzar a la mayor cantidad de personas con la información = Awareness optimizando reach. Respuesta oficial.",
+      "explanation": "La meta es alcanzar a la mayor cantidad de personas con la información = Reconocimiento optimizando reach. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
       "q": "Una tienda de artículos deportivos que solo compra comerciales de TV evalúa usar Meta antes del Super Bowl. Está acostumbrada a predictibilidad y transparencia del gasto. KPI primario: reach; secundario: video views. ¿Qué estrategia recomienda el media planner?",
       "options": [
-        "Reservation buying, Awareness optimizando para ad recall lift",
-        "Auction buying, Awareness optimizando para impressions",
-        "Reservation buying, Awareness optimizando para Thruplay views",
-        "Auction buying, Awareness optimizando para ThruPlay"
+        "Compra por Reserva (Reservation), Reconocimiento (Awareness) optimizando para ad recall lift",
+        "Compra por Subasta (Auction), Reconocimiento optimizando para impressions",
+        "Compra por Reserva, Reconocimiento optimizando para Thruplay views",
+        "Compra por Subasta, Reconocimiento optimizando para ThruPlay"
       ],
       "correct": 2,
-      "explanation": "Reservation da la predictibilidad/transparencia que el cliente espera; Awareness con Thruplay views cubre reach (primario) y video views (secundario). Respuesta oficial.",
+      "explanation": "La Reserva (Reservation) da la predictibilidad/transparencia que el cliente espera; Reconocimiento con Thruplay views cubre reach (primario) y video views (secundario). Respuesta oficial.",
       "difficulty": "hard"
     },
     {
-      "q": "Un retailer quiere una campaña navideña con sus best-sellers, usando Sales objective y manteniendo al menos 350% ROAS. ¿Qué optimización recomienda el media planner?",
-      "options": ["Conversions", "Value", "Clicks", "Reach"],
+      "q": "Un retailer quiere una campaña navideña con sus best-sellers, usando objetivo de Ventas (Sales) y manteniendo al menos 350% ROAS. ¿Qué optimización recomienda el media planner?",
+      "options": ["Conversiones (Conversions)", "Valor (Value)", "Clics (Clicks)", "Reach"],
       "correct": 1,
-      "explanation": "Mantener un ROAS objetivo requiere optimizar por Value (valor de conversión). (Respuesta deducida del análisis.)",
+      "explanation": "Mantener un ROAS objetivo requiere optimizar por Valor (Value), es decir el valor de conversión. (Respuesta deducida del análisis.)",
       "difficulty": "medium"
     },
     {
       "q": "Una empresa de blanqueamiento dental lanza un 'proceso de 3 pasos a una sonrisa más brillante'. Quiere que la gente vea los pasos en el orden correcto mientras impulsa brand recognition. Tiene 3 video ads y 3 estáticos de cada paso. ¿Qué estrategia recomienda el media planner?",
       "options": [
-        "Reservation, awareness optimizado para video views con ad sequencing",
-        "Reservation, awareness optimizado para brand awareness con ad sequencing",
-        "Auction, awareness reach-optimized con video view retargeting",
-        "Auction, awareness optimizado para brand awareness con retargeting de video views"
+        "Reserva (Reservation), Reconocimiento (awareness) optimizado para video views con ad sequencing",
+        "Reserva, Reconocimiento optimizado para brand awareness con ad sequencing",
+        "Subasta (Auction), Reconocimiento reach-optimized con video view retargeting",
+        "Subasta, Reconocimiento optimizado para brand awareness con retargeting de video views"
       ],
       "correct": 1,
-      "explanation": "Ver los pasos en orden = ad sequencing (requiere Reservation); impulsar brand recognition = optimizar para brand awareness. (Respuesta deducida del análisis.)",
+      "explanation": "Ver los pasos en orden = ad sequencing (requiere Reserva); impulsar brand recognition = optimizar para brand awareness. (Respuesta deducida del análisis.)",
       "difficulty": "hard"
     },
     {
       "q": "Una marca de bienes de consumo crea un nuevo producto y quiere alcanzar clientes nuevos. Meta: capturar emails y luego enviar un cupón para aumentar ventas en tienda. Tiene CRM disponible. ¿Qué estrategia debe usarse?",
       "options": [
-        "Awareness objective para alcanzar un Lookalike de su CRM",
-        "Leads objective para alcanzar un Lookalike Audience de su CRM",
-        "Leads objective para alcanzar un Custom Audience de su CRM",
-        "Awareness objective para alcanzar un Custom Audience de su CRM"
+        "Objetivo de Reconocimiento (Awareness) para alcanzar un Público similar (Lookalike) de su CRM",
+        "Objetivo de Clientes potenciales (Leads) para alcanzar un Público similar (Lookalike Audience) de su CRM",
+        "Objetivo de Clientes potenciales para alcanzar un Público personalizado (Custom Audience) de su CRM",
+        "Objetivo de Reconocimiento para alcanzar un Público personalizado de su CRM"
       ],
       "correct": 1,
-      "explanation": "Capturar emails = Leads; alcanzar clientes nuevos = Lookalike del CRM (no la Custom Audience del CRM, que son los existentes). Respuesta oficial.",
+      "explanation": "Capturar emails = Clientes potenciales; alcanzar clientes nuevos = Público similar del CRM (no el Público personalizado del CRM, que son los existentes). Respuesta oficial.",
       "difficulty": "medium"
     },
     {
       "q": "Una marca de joyería quiere una campaña en Meta para llevar a sus clientes existentes a sus tiendas. ¿Qué targeting recomienda el media planner?",
       "options": [
-        "Lookalike Audience de website visitors",
-        "Custom Audience de past purchasers",
-        "Detailed targeting de interés en joyería",
-        "Broad targeting"
+        "Público similar (Lookalike Audience) de website visitors",
+        "Público personalizado (Custom Audience) de past purchasers",
+        "Segmentación detallada (Detailed targeting) de interés en joyería",
+        "Segmentación amplia (Broad targeting)"
       ],
       "correct": 1,
-      "explanation": "Clientes existentes = Custom Audience de past purchasers. Respuesta oficial.",
+      "explanation": "Clientes existentes = Público personalizado (Custom Audience) de past purchasers. Respuesta oficial.",
       "difficulty": "easy"
     },
     {
-      "q": "Una marca de cuidado capilar corrió campañas click-to-message para su quiz. Ahora corre una campaña de Sponsored Message para re-enganchar a la gente a completar el quiz o comprar. Usa Advantage+ Placements. ¿En qué placements puede correr esta campaña?",
+      "q": "Una marca de cuidado capilar corrió campañas click-to-message para su quiz. Ahora corre una campaña de Mensaje publicitario (Sponsored Message) para re-enganchar a la gente a completar el quiz o comprar. Usa Ubicaciones Advantage+ (Advantage+ Placements). ¿En qué ubicaciones (placements) puede correr esta campaña?",
       "options": ["Feeds", "Stories", "Messages", "Apps and Sites"],
       "correct": 2,
-      "explanation": "Los Sponsored Messages solo se entregan en el placement Messages. Respuesta oficial.",
+      "explanation": "Los Mensajes publicitarios (Sponsored Messages) solo se entregan en la ubicación Messages. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Una marca de bienes raíces quiere una campaña Leads en Meta enfocada solo en obtener leads desde Instagram. ¿Qué placements recomienda el media planner?",
+      "q": "Una marca de bienes raíces quiere una campaña de Clientes potenciales (Leads) en Meta enfocada solo en obtener leads desde Instagram. ¿Qué ubicaciones (placements) recomienda el media planner?",
       "options": [
         "Website leads en Facebook Feed, Facebook Video Feeds y Facebook Stories",
         "Lead forms en Instagram feed, Instagram profile feed y Apps and sites",
@@ -471,52 +471,52 @@
     },
     {
       "q": "Una marca de entretenimiento con agencia local quiere mejorar la comunicación en Instagram. Ya probó video, Stories y Reels. La meta es generar una conexión más profunda con su audiencia y empieza a colaborar con nuevos influencers. ¿Qué opción debe recomendar la agencia?",
-      "options": ["Branded Content", "CAPI", "Sales", "Leads"],
+      "options": ["Branded Content", "API de conversiones (CAPI)", "Ventas (Sales)", "Clientes potenciales (Leads)"],
       "correct": 0,
       "explanation": "Colaborar con influencers para una conexión más profunda = Branded Content. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Una escuela online quiere generar 150 leads al final de una campaña de 3 semanas sin exceder un Cost Per Lead de $125. Histórico: Sem1 $5,000/40 leads/$125; Sem2 $5,000/50/$100; Sem3 $5,000/35/$200. ¿Qué debe hacer para cumplir la meta?",
+      "q": "Una escuela online quiere generar 150 leads al final de una campaña de Clientes potenciales (Leads) de 3 semanas sin exceder un Cost Per Lead de $125. Histórico: Sem1 $5,000/40 leads/$125; Sem2 $5,000/50/$100; Sem3 $5,000/35/$200. ¿Qué debe hacer para cumplir la meta?",
       "options": [
-        "Set cost per result goal",
-        "Disminuir budget en la Semana 3",
-        "Cambiar a Awareness objective",
-        "Aumentar budget en la Semana 3"
+        "Fijar el Objetivo de costo por resultado (cost per result goal)",
+        "Disminuir el presupuesto (budget) en la Semana 3",
+        "Cambiar a objetivo de Reconocimiento (Awareness)",
+        "Aumentar el presupuesto en la Semana 3"
       ],
       "correct": 0,
-      "explanation": "Para controlar el CPL en ≤$125 mientras se busca volumen se usa Cost per result goal. (Respuesta deducida del análisis.)",
+      "explanation": "Para controlar el CPL en ≤$125 mientras se busca volumen se usa el Objetivo de costo por resultado (Cost per result goal). (Respuesta deducida del análisis.)",
       "difficulty": "hard"
     },
     {
-      "q": "Una marca de moda quiere impulsar ventas de su nueva línea de suéteres (Sales objective). En 3 semanas el CPA está subiendo. Setup: Objective Sales, Optimization Conversions, Budget $1,000,000, CPA Goal $15, audiencia hombres y mujeres 25-55 interesados en ropa de otoño. ¿Qué recomienda el media planner para revertir el CPA?",
+      "q": "Una marca de moda quiere impulsar ventas de su nueva línea de suéteres (objetivo de Ventas (Sales)). En 3 semanas el CPA está subiendo. Setup: objetivo Ventas, optimización Conversiones (Conversions), presupuesto (Budget) $1,000,000, CPA Goal $15, audiencia hombres y mujeres 25-55 interesados en ropa de otoño. ¿Qué recomienda el media planner para revertir el CPA?",
       "options": [
-        "Cambiar a Awareness objective",
+        "Cambiar a objetivo de Reconocimiento (Awareness)",
         "Restringir la audiencia solo a hombres",
         "Optimizar para Video Views",
-        "Incluir una audiencia Lookalike of Past Purchasers"
+        "Incluir una audiencia Público similar de Past Purchasers (Lookalike of Past Purchasers)"
       ],
       "correct": 3,
-      "explanation": "Las otras opciones no impulsan conversiones eficientes; restringir la audiencia encarece el CPA. Probar una audiencia nueva de alta intención (Lookalike of Past Purchasers). Respuesta oficial.",
+      "explanation": "Las otras opciones no impulsan conversiones eficientes; restringir la audiencia encarece el CPA. Probar una audiencia nueva de alta intención (Público similar de Past Purchasers). Respuesta oficial.",
       "difficulty": "hard"
     },
     {
       "q": "Una tienda de arte online lanza 2 campañas optimizadas a landing page views. C1 (mujeres, videos) CPM $1.25, 600,000 LPV. C2 (hombres, estáticos) CPM $1.00, 750,000 LPV. ¿Qué estrategia recomienda el media planner?",
       "options": [
-        "Crear una campaña con dos ad sets y usar Advantage Campaign Budget",
-        "Asignar 40% del budget a C1 y 60% a C2",
-        "Crear una campaña con dos ad sets y cambiar la optimización a link clicks",
-        "Pausar C1 y mover todo el budget a C2"
+        "Crear una campaña con dos conjuntos de anuncios (ad sets) y usar Advantage+ presupuesto de campaña (Advantage Campaign Budget)",
+        "Asignar 40% del presupuesto (budget) a C1 y 60% a C2",
+        "Crear una campaña con dos conjuntos de anuncios y cambiar la optimización a link clicks",
+        "Pausar C1 y mover todo el presupuesto a C2"
       ],
       "correct": 0,
-      "explanation": "Advantage Campaign Budget optimiza las audiencias entre sí (sin asignar budget manual), encontrando eficiencias. Respuesta oficial.",
+      "explanation": "El Advantage+ presupuesto de campaña (Advantage Campaign Budget) optimiza las audiencias entre sí (sin asignar presupuesto manual), encontrando eficiencias. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Un retailer de juguetes hizo un A/B test con 2 audiencias y mismo budget. Aud1 (padres de preescolares) CPM $2.00, 275,000 LPV. Aud2 (past purchasers) CPM $1.25, 325,000 LPV. ¿Qué debe concluir el media planner?",
+      "q": "Un retailer de juguetes hizo una Prueba A/B (A/B test) con 2 audiencias y mismo presupuesto (budget). Aud1 (padres de preescolares) CPM $2.00, 275,000 LPV. Aud2 (past purchasers) CPM $1.25, 325,000 LPV. ¿Qué debe concluir el media planner?",
       "options": [
         "La audiencia 2 generará más purchases",
-        "La audiencia 1 gastó 45% del budget total del test",
+        "La audiencia 1 gastó 45% del presupuesto total del test",
         "La audiencia 1 alcanzó saturación",
         "La audiencia 2 tiene un menor costo por landing page view"
       ],
@@ -525,37 +525,37 @@
       "difficulty": "medium"
     },
     {
-      "q": "Un retailer local empezó a vender en su sitio. Meta: aumentar engagement con la marca para que los clientes conozcan sus opciones de compra. Pide testear estrategias. Resultados — A: CPP $50/CPVV $1; B: $55/$0.25; C: $45/$1; D: $60/$0.50. ¿Qué versión debe seguir corriendo?",
+      "q": "Un retailer local empezó a vender en su sitio. Meta: aumentar la Interacción (engagement) con la marca para que los clientes conozcan sus opciones de compra. Pide testear estrategias. Resultados — A: CPP $50/CPVV $1; B: $55/$0.25; C: $45/$1; D: $60/$0.50. ¿Qué versión debe seguir corriendo?",
       "options": ["A", "B", "C", "D"],
       "correct": 1,
-      "explanation": "La meta es engagement (video views): la versión B tiene el menor costo por video view ($0.25). (Respuesta deducida del análisis.)",
+      "explanation": "La meta es Interacción (engagement) vía video views: la versión B tiene el menor costo por video view ($0.25). (Respuesta deducida del análisis.)",
       "difficulty": "medium"
     },
     {
       "q": "Una marca quiere entender cómo se asignará el presupuesto de marketing entre canales, productos y regiones para pronosticar efectos de eventos/campañas futuras. ¿Qué medición Open Source de Meta debe usarse?",
-      "options": ["Brand Lift", "Conversion Lift", "Robyn MMM", "A/B Test"],
+      "options": ["Mejora de la marca (Brand Lift)", "Aumento de conversiones (Conversion Lift)", "Robyn MMM", "Prueba A/B (A/B Test)"],
       "correct": 2,
       "explanation": "Robyn es el Marketing Mix Modeling open source de Meta para asignación de presupuesto y forecast. Respuesta oficial.",
       "difficulty": "medium"
     },
     {
-      "q": "Una empresa de viajes promociona una venta y su nueva app móvil en todos los canales. Tiene Meta Pixel y video assets para todos los placements. Metas: 60% reach, 500,000 app downloads, $15 ROAS, 70% video completion rate. ¿Qué meta se puede medir con el Meta Pixel?",
+      "q": "Una empresa de viajes promociona una venta y su nueva app móvil en todos los canales. Tiene Píxel de Meta (Meta Pixel) y video assets para todas las ubicaciones (placements). Metas: 60% reach, 500,000 app downloads, $15 ROAS, 70% video completion rate. ¿Qué meta se puede medir con el Píxel de Meta?",
       "options": ["60% reach", "500,000 app downloads", "$15 ROAS", "70% video completion rate"],
       "correct": 2,
-      "explanation": "El Pixel mide conversiones y valor en web → $15 ROAS. Reach es delivery, app downloads requiere SDK/MMP, video completion es métrica del ad. (Respuesta deducida del análisis.)",
+      "explanation": "El Píxel mide conversiones y valor en web → $15 ROAS. Reach es delivery, app downloads requiere SDK/MMP, video completion es métrica del ad. (Respuesta deducida del análisis.)",
       "difficulty": "hard"
     },
     {
       "q": "Un retailer vende online y en tienda. Las ventas en tienda son estables pero las online han bajado en 6 meses. Quiere crear campañas en Meta para determinar si aumentan ventas online y offline, y usar los insights para asignar presupuesto futuro. ¿Qué dos soluciones debe recomendar el planner? (Elige 2)",
-      "options": ["A/B Test", "Conversion Lift", "Brand Lift", "Offline Conversions"],
+      "options": ["Prueba A/B (A/B Test)", "Aumento de conversiones (Conversion Lift)", "Mejora de la marca (Brand Lift)", "Conversiones offline (Offline Conversions)"],
       "correct": [1, 3],
       "multi": true,
-      "explanation": "Conversion Lift mide el impacto incremental en ventas y Offline Conversions captura las ventas en tienda. Respuesta oficial.",
+      "explanation": "El Aumento de conversiones (Conversion Lift) mide el impacto incremental en ventas y las Conversiones offline (Offline Conversions) capturan las ventas en tienda. Respuesta oficial.",
       "difficulty": "hard"
     },
     {
       "q": "¿Cuál opción es un control de privacidad del usuario que permite ajustar la recolección, acceso, compartición, uso o retención de sus datos?",
-      "options": ["Advantage+ Placements", "Off-Facebook Activity", "Limited Inventory", "AR Filter"],
+      "options": ["Ubicaciones Advantage+ (Advantage+ Placements)", "Off-Facebook Activity", "Limited Inventory", "AR Filter"],
       "correct": 1,
       "explanation": "Off-Facebook Activity permite al usuario controlar sus datos de actividad fuera de Facebook. Respuesta oficial.",
       "difficulty": "medium"
@@ -566,7 +566,7 @@
         "Correr una campaña y descargar el delivery report",
         "Descargar el Instagram profile feed publisher list",
         "Aplicar un block list al Instagram profile feed",
-        "Usar Inventory filter en Instagram profile feed"
+        "Usar el filtro de inventario (Inventory filter) en Instagram profile feed"
       ],
       "correct": 1,
       "explanation": "El publisher list del Instagram profile feed muestra dónde pueden aparecer los ads antes de lanzar. Respuesta oficial.",
@@ -585,11 +585,11 @@
       "difficulty": "hard"
     },
     {
-      "q": "Un anunciante publica una campaña Leads y es rechazada. La campaña promueve video e image ads a personas 18-65+ que viven en cierto código postal y ciudad. ¿Qué actualización cumple con las Special Ad Category policies?",
+      "q": "Un anunciante publica una campaña de Clientes potenciales (Leads) y es rechazada. La campaña promueve video e image ads a personas 18-65+ que viven en cierto código postal y ciudad. ¿Qué actualización cumple con las Special Ad Category policies?",
       "options": [
-        "Actualizar age targeting a 21-65+",
-        "Actualizar geo targeting a solo ciudad",
-        "Cambiar el objective de Leads a Awareness",
+        "Actualizar la segmentación por edad (age targeting) a 21-65+",
+        "Actualizar la segmentación geográfica (geo targeting) a solo ciudad",
+        "Cambiar el objetivo de la campaña de Clientes potenciales a Reconocimiento (Awareness)",
         "Quitar los video ads de la campaña"
       ],
       "correct": 1,
