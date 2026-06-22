@@ -1,0 +1,612 @@
+{
+  "id": "mock",
+  "title": "Final Exam — Meta Media Planning 400-101",
+  "kind": "mock-exam",
+  "passingScore": 80,
+  "timeLimit": 6300,
+  "source": "Blueprint Practice Tests Media Planning A + B (official questions)",
+  "questions": [
+    {
+      "q": "A client is launching a holiday campaign with a series of ads on Instagram Reels. They want to show the ads in a specific order to build anticipation for their new fragrances. Which scheduling strategy should the media planner recommend?",
+      "options": [
+        "Reservation with sequenced delivery",
+        "Reservation with scheduled delivery",
+        "Auction with standard delivery",
+        "Auction with accelerated delivery"
+      ],
+      "correct": 0,
+      "explanation": "Showing ads in a specific order = ad sequencing, which requires Reservation with sequenced delivery. (Deduced answer: Randall got it right; the PDF does not show it.)",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A retail brand is launching a new line of phone cases. They want to reach potential customers at least 3 times per week during a 3-week campaign. Which strategy should the media planner recommend?",
+      "options": ["Auction", "Ad scheduling", "Reservation", "Bid capping"],
+      "correct": 2,
+      "explanation": "Reach and Frequency (Reservation) lets you reach a defined number of people at a specific frequency. Official answer: Reservation.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A client wants to launch a Brand Lift test to measure the impact of an awareness campaign. They propose starting the campaign one week before the test (Jun 1–25, Reservation, frequency 2-3/week, Advantage+ placements). What should the media planner recommend?",
+      "options": [
+        "Reduce the creative frequency to 1-2 times per week",
+        "Reduce the duration of the Brand Lift test",
+        "Extend the awareness campaign by 1 week",
+        "Launch the campaign and the Brand Lift test at the same time"
+      ],
+      "correct": 3,
+      "explanation": "The Brand Lift test schedule must align with the start and end of the campaign. Official answer: launch the campaign and test at the same time.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An advertiser wants to drive online sales during the holiday season. They have a catalog and Conversions API. They want 3 ad sets to maximize targeting with a maximum spend of $2,000/day. How should the media planner set up the campaign?",
+      "options": [
+        "Sales objective, $650 per ad set, Lifetime Budget",
+        "Sales objective, Advantage Campaign Budget, Daily Budget",
+        "Traffic objective, Advantage Campaign Budget, Daily Budget",
+        "Leads objective, $2,000 per ad set, Daily Budget"
+      ],
+      "correct": 1,
+      "explanation": "Advantage Campaign Budget (CBO) ensures performance across ad sets; Daily Budget caps the daily spend; the Sales objective drives online sales. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An established retail brand is launching its first campaign: reach 70% of its 25-44 audience, frequency 3x/week, 15-second videos, and measure the change in purchase intent. Which measurement tool should the media planner recommend?",
+      "options": ["Brand Lift", "Attribution", "Ads reporting", "Conversion Lift"],
+      "correct": 0,
+      "explanation": "Brand Lift measures brand metrics such as purchase intent. Official answer: Brand Lift.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A retail brand has a goal of generating 10,000 purchases this season. They expect a $10 cost per Add to Cart and a $35 cost per Purchase. What budget should they use to achieve this?",
+      "options": ["$350,000", "$100,000", "$1,000", "$35,000"],
+      "correct": 0,
+      "explanation": "10,000 purchases × $35 per purchase = $350,000. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An advertiser wants to build a Lookalike Audience based on past purchasers, targeting customers who will buy multiple items. Which Meta audience solution should they use?",
+      "options": [
+        "Ad Set Based Conversion Lookalikes",
+        "Add To Cart Lookalikes",
+        "Value Based Lookalikes",
+        "Website Visitor Lookalikes"
+      ],
+      "correct": 2,
+      "explanation": "Value Based Lookalikes prioritize people similar to your highest-value purchasers (more items/amount). Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An online retailer wants to target women interested in sports. Audience of 2 million, goal of 50 conversions/week, estimated CPA $100, 4-week campaign. Which budget should the media planner recommend?",
+      "options": ["$20,000", "$5,000", "$10,000", "$25,000"],
+      "correct": 0,
+      "explanation": "50 conversions/week × $100 per conversion × 4 weeks = $20,000. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A local pet adoption agency is updating its landing page. With the goal of driving users to its site, it creates three 15-second videos with a 'Learn More' CTA that links to the adoption page. Which campaign objective should the media planner recommend?",
+      "options": ["Traffic", "Leads", "Engagement", "Awareness"],
+      "correct": 0,
+      "explanation": "The goal is to drive traffic to the website = Traffic objective. Official answer.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A car brand partners with authorized dealerships in the U.S. to get test drives of the new model, using images of the car and an Instant Form that the customer fills out when they click. Which campaign objective should be used?",
+      "options": ["Sales", "Awareness", "Engagement", "Leads"],
+      "correct": 3,
+      "explanation": "Lead ads (Instant Form) collect information from interested people. Official answer: Leads.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "An advertiser wants to drive online sales of high-value products. They want to sell as many as possible with a cost per purchase that does not exceed $50 USD. They use broad targeting and Advantage+ placements. Which bidding strategy should they choose?",
+      "options": ["Highest Value", "Highest Volume", "Cost per result goal", "Bid Cap"],
+      "correct": 2,
+      "explanation": "Cost per result goal lets you set the maximum cost per result ($50). Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An advertiser used this strategy and failed to generate a high number of online purchases: Objective Sales, Targeting Past Purchasers, Placements In-stream/Feed/Stories on Facebook, Bid Highest Volume. What change should the media planner recommend?",
+      "options": [
+        "Use the Awareness objective with image ads only",
+        "Add a lookalike of past purchasers and Advantage+ placements",
+        "Choose a goal-based bidding strategy with broad audience targeting",
+        "Add website visitors to the targeting and Instagram placements"
+      ],
+      "correct": 1,
+      "explanation": "Past Purchasers alone is a small audience that has already bought; expanding with a lookalike of past purchasers + Advantage+ placements adds scale while keeping intent high. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A swimwear brand wants a campaign that encourages shoppers who already viewed the products on its site to become purchasers. Which strategy should the media planner recommend?",
+      "options": [
+        "Traffic campaign targeting people who visited its Instagram profile",
+        "Sales campaign targeting a Lookalike Audience of past purchasers",
+        "Sales campaign targeting shoppers who viewed products but have not yet purchased",
+        "Sales campaign targeting a Lookalike Audience of website viewers"
+      ],
+      "correct": 2,
+      "explanation": "This is conversion remarketing: Sales targeting those who viewed products and did not purchase. (Deduced from analysis.)",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which prospecting audience would be high-value for promoting a brand's new line of running shoes?",
+      "options": [
+        "People interested in running shoes",
+        "People who liked the brand's Facebook Page",
+        "People who visited the brand's site in the last 90 days",
+        "People who are Lookalikes of past purchasers of the brand's running shoes"
+      ],
+      "correct": 3,
+      "explanation": "Lookalike audiences reach new people with characteristics similar to those who have already shown interest. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand wants to generate video views across as many placements as possible. Which placement strategy should the media planner recommend?",
+      "options": [
+        "Advantage+ Placements",
+        "In-stream",
+        "Facebook Feed, Facebook Stories, Facebook Reels, Facebook Search Results",
+        "Instagram Feed, Instagram Stories, Instagram Reels, Instagram Explore"
+      ],
+      "correct": 0,
+      "explanation": "Advantage+ Placements maximizes the number of placements. Official answer.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "An advertiser is launching a new product and wants to build anticipation. All TV and online campaigns launch simultaneously for maximum reach and awareness. On Meta they want to launch ads sequentially and re-target those who watched their video ads. What should the media planner recommend?",
+      "options": [
+        "Auction buying, Broad Audience of video viewers",
+        "TRP buying, Custom Audience of TV viewers",
+        "Reservation buying, Engagement Audience",
+        "Reservation buying, Advantage+ Catalog Ads for Broad Audience"
+      ],
+      "correct": 2,
+      "explanation": "Reservation enables ad sequencing; an Engagement Audience lets you re-target those who watched the video ads. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A technical school runs a 4-week Leads campaign with 3 audiences: ad set 1 (interest in automotive/electrical/computer networking) 100 leads; ad set 2 (automotive) 53 leads; ad set 3 (automotive and computer networking) 89 leads. What should they do to maximize lead volume?",
+      "options": [
+        "Pause ad set 2",
+        "Create ad sets by interest",
+        "Create ad sets by gender",
+        "Merge the three ad sets"
+      ],
+      "correct": 3,
+      "explanation": "Merging the ad sets consolidates the signal, helps exit the learning phase, and lets the system optimize for total volume. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A footwear retailer runs a 4-week Traffic campaign with 3 audiences. Ad set 1 (Native Interest): 200,000 LPV. Ad set 2 (Past Purchasers Lookalikes): 333,333 LPV, CTR 1.05%. Ad set 3 (Email Subscribers CRM): 1,000,000 LPV, CTR 1.5%, lowest CPM. Which objective and audience should they use to drive online sales?",
+      "options": [
+        "Sales with audience 3",
+        "Awareness with audience 2",
+        "Sales with audience 2",
+        "Leads with audience 1"
+      ],
+      "correct": 0,
+      "explanation": "The conversion objective (Sales) drives online sales, and audience 3 was the most efficient. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An advertiser uses the same creatives across its Awareness, Traffic and Sales campaigns. They ran a lifestyle vs editorial A/B test on an awareness campaign: lifestyle $925.77, 159 results at $5.82; editorial $924.46, 184 results at $5.02. What should they do next?",
+      "options": [
+        "Keep running both creatives across all campaigns to provide variety",
+        "Run only the lifestyle creative across all campaigns in the account",
+        "Run only the editorial creative across all campaigns in the account",
+        "Run another lifestyle vs editorial A/B test on different objectives"
+      ],
+      "correct": 3,
+      "explanation": "The test proved editorial performed better for awareness only; you should not assume it applies to the other objectives. You need to keep testing. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An advertiser wants to understand whether its new campaigns have a positive effect on perception and recall. Which Meta solution should the planner recommend?",
+      "options": ["A/B Test", "Conversion Lift Test", "Brand Survey Test", "Creative Test"],
+      "correct": 2,
+      "explanation": "A Brand Survey (Lift) Test measures the incremental effect on awareness, perception or recall. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which type of test should advertisers use to determine whether their ads increase the purchase intent of audiences?",
+      "options": ["A/B Test", "Conversion Lift Study", "Brand Lift Study", "Marketing Mix Modeling"],
+      "correct": 2,
+      "explanation": "Purchase intent is a brand metric: Brand Lift Study. (Deduced from analysis.)",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An advertiser wants to understand whether their new creative is helping to influence sales. Which Meta solution shows the lift?",
+      "options": ["Brand Survey Test", "Conversion Lift Test", "A/B Test", "Offline Conversions"],
+      "correct": 1,
+      "explanation": "A Conversion Lift Test measures the incremental effect on conversions/sales. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An advertiser runs a Sales campaign with creative best practices. They want to use Meta to create demand for a new product in addition to TV, and to test/measure the incremental impact of Meta on brand metrics for their upcoming launch (Budget $650,000, 6 weeks, 3x 15-second video, Advantage+ placements). Which measurement solution should they recommend?",
+      "options": [
+        "A/B test between different optimizations",
+        "Meta Brand Lift Study",
+        "Meta Conversion Lift Study",
+        "Nielsen Brand Effect Study"
+      ],
+      "correct": 1,
+      "explanation": "They want to measure incremental impact on brand metrics = Meta Brand Lift Study. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client with a local agency wants to improve the results of its latest mega sale. They develop audience-specific content. They have a pixel, standard events and an offline conversions event. What other solution should the agency recommend to achieve full funnel optimization?",
+      "options": ["Conversion API", "Dynamic Creative Optimization", "A/B Testing", "Placement optimization"],
+      "correct": 0,
+      "explanation": "Conversions API improves the signal and strengthens full funnel optimization. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Long-term financing is part of which Special Ad Category?",
+      "options": ["Credit", "Dating", "Housing", "Social Issues"],
+      "correct": 0,
+      "explanation": "The long-term financing option requires declaring the ad as Credit. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of these is considered a Special Ad Category?",
+      "options": ["Education", "Technology", "Housing", "E-Commerce"],
+      "correct": 2,
+      "explanation": "Housing is a Special Ad Category (along with Credit, Employment and Social Issues/Elections/Politics). Official answer.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "An advertiser wants to run an In-stream video campaign on Facebook but has specific guidelines about where the ads should appear. Which two brand safety controls should be used before launch? (Choose 2)",
+      "options": ["Inventory Filters", "Block Lists", "Delivery Report", "Ad Disclaimer"],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Inventory Filters adjust content suitability and Block Lists exclude specific publishers. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An advertiser does not want its ads to appear on the Meta Audience Network. Which tool should they use?",
+      "options": ["Block lists", "Inventory filter", "Manual placements", "Advantage+ placement"],
+      "correct": 2,
+      "explanation": "With Manual placements you can deselect Audience Network. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A real estate brand creates a campaign to promote homes for sale. The ads are rejected for violating housing ad policies. The campaign targets men of all ages interested in single-family homes who live in Virginia. What change should be made for the ads to be approved?",
+      "options": [
+        "Update age targeting to 21-65+",
+        "Remove gender targeting",
+        "Remove state targeting",
+        "Remove interest targeting"
+      ],
+      "correct": 1,
+      "explanation": "The Housing Special Ad Category prohibits targeting by gender; targeting 'men' violates the policy. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A brand wants to promote its new weight-loss pills on Meta. Which targeting complies with Meta's ad policies?",
+      "options": [
+        "They can only target users in North America or Europe",
+        "They can only re-target users from customer lists",
+        "They can only target users over 18",
+        "They can only advertise to one gender"
+      ],
+      "correct": 2,
+      "explanation": "Ads for weight-loss products/services can only be targeted to people aged 18 or older. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An offline fashion retailer launches an app so customers can earn points on every in-store purchase. Campaign 1: $10 coupon, ages 18-65+. Campaign 2: points program, Custom Audience with App Events. What is the primary business goal of these campaigns?",
+      "options": [
+        "Increase online purchases",
+        "Increase brand awareness",
+        "Increase offline sales",
+        "Increase website traffic"
+      ],
+      "correct": 2,
+      "explanation": "Offline conversions connect CRM/POS to measure in-store purchases; the goal is offline sales. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A consumer goods brand limited to awareness/consideration directs ads to retailer sites that do not share data with it. They want to launch a direct-to-consumer channel on their own sites to track conversions and build first-party data. They have a CRM of 10,000 people and an onboarding partner. What should they do for the long-term goal?",
+      "options": [
+        "Place the Meta Pixel on their own site and run traffic campaigns to build initial custom audiences",
+        "Run traffic campaigns with video to third-party retailers to build video retargeting audiences",
+        "Upload the CRM to Meta to run conversion campaigns to a more qualified audience",
+        "Re-target abandoned carts from third-party retailer sites"
+      ],
+      "correct": 0,
+      "explanation": "The Pixel on their own site builds a qualified audience with first-party data; third-party retailers do not return data, and the pixel is more precise long-term than video retargeting. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An airline will run a seasonal-offer campaign to increase ticket sales in June and July (offer valid 30 days). They know: travelers plan 3 months ahead; the ticket is the first thing they buy; they spend 7 days researching, comparing 3+ sites. How should they plan the campaign?",
+      "options": [
+        "Four sequential weekly Awareness campaigns, every two weeks in April and May",
+        "A 7-day Awareness campaign in June, followed by a 30-day Sales campaign in July",
+        "A 30-day Sales objective campaign with Advantage+ catalog ads, scheduled for March",
+        "A 7-day Awareness campaign in March, followed by a 30-day Sales campaign in June"
+      ],
+      "correct": 2,
+      "explanation": "The goal is to increase ticket sales; only the Sales objective option achieves it, and March covers the 3-month planning window. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An e-commerce clothing brand is expanding into new markets and wants to acquire customers at the lowest cost. They adapt creatives with a mobile agency, a simplified structure optimized for conversions, and cross-border products. They have a low CPM, high CTR and quality traffic, but a very low CVR on their site. What should they do?",
+      "options": [
+        "Conduct a website audit",
+        "Reduce the total budget in the new markets",
+        "Change the objective to generate more traffic",
+        "Change their creatives"
+      ],
+      "correct": 0,
+      "explanation": "The ads perform well (low CPM, high CTR, quality traffic) but conversion drops on the site: the problem is the website, so it needs to be audited. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A bakery launches a holiday video campaign on Meta. They want to run ads on specific days and times of the week. Which strategy should the media planner recommend?",
+      "options": [
+        "Reservation with accelerated delivery",
+        "Reservation with sequenced delivery",
+        "Auction with sequenced delivery",
+        "Auction with scheduled delivery"
+      ],
+      "correct": 3,
+      "explanation": "Running ads on specific days/times = ad scheduling (dayparting) in Auction with scheduled delivery. (Deduced from analysis.)",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand runs a multi-cell test to decide which strategy to implement for the rest of the year; the goal is to increase brand favorability. Cell A (50% Awareness/50% Engagement, 5% LAL): +5pts favorability, CPVV $0.07, CPM $4.75. Cell B (100% Engagement, 5% LAL): +3pts, CPVV $0.03, CPM $5.25. What should they recommend as the next step?",
+      "options": [
+        "Implement the multi-objective strategy of Cell A",
+        "Re-run the test with similar objectives to reduce variables",
+        "Implement the single-objective strategy of Cell B",
+        "Re-run the test with 10% Lookalikes to increase reach"
+      ],
+      "correct": 0,
+      "explanation": "Cell A achieved the highest lift in favorability (+5pts), which is the goal. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A car manufacturer wants to quickly see which audience strategy generates the most traffic before the holiday sale. Hypothesis: a Custom Audience outperforms interest-based. For statistical comparison, the audiences cannot overlap. The MMM is done semi-annually by a third party. What should the media planner do?",
+      "options": [
+        "Use A/B testing on a Cost Per Result basis",
+        "Create separate campaigns so the ads go to completely different audiences",
+        "Combine the two audiences under the same ad set",
+        "Run a Brand Lift study because it is the only way to guarantee no overlap"
+      ],
+      "correct": 0,
+      "explanation": "An A/B test splits the audience without overlap and compares strategies by cost per result. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An intergovernmental organization wants to communicate the importance of routine immunization and the first-year vaccination schedule, reaching as many people as possible. They have a landing page with detailed info, the Meta pixel installed, and several creatives (short video, carousel, statics). Which objective and event optimization should they recommend?",
+      "options": [
+        "Traffic objective maximizing number of landing page views",
+        "Engagement objective maximizing number of landing page views",
+        "Awareness objective maximizing reach of ads",
+        "Awareness objective maximizing ad recall lift"
+      ],
+      "correct": 2,
+      "explanation": "The goal is to reach as many people as possible with the information = Awareness optimizing for reach. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A sporting goods store that only buys TV commercials is evaluating using Meta before the Super Bowl. They are used to predictability and spend transparency. Primary KPI: reach; secondary: video views. Which strategy should the media planner recommend?",
+      "options": [
+        "Reservation buying, Awareness optimizing for ad recall lift",
+        "Auction buying, Awareness optimizing for impressions",
+        "Reservation buying, Awareness optimizing for Thruplay views",
+        "Auction buying, Awareness optimizing for ThruPlay"
+      ],
+      "correct": 2,
+      "explanation": "Reservation gives the predictability/transparency the client expects; Awareness with Thruplay views covers reach (primary) and video views (secondary). Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A retailer wants a holiday campaign with its best-sellers, using the Sales objective and maintaining at least 350% ROAS. Which optimization should the media planner recommend?",
+      "options": ["Conversions", "Value", "Clicks", "Reach"],
+      "correct": 1,
+      "explanation": "Maintaining a target ROAS requires optimizing for Value (conversion value). (Deduced from analysis.)",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A teeth-whitening company launches a '3-step process to a brighter smile'. They want people to see the steps in the correct order while driving brand recognition. They have 3 video ads and 3 statics for each step. Which strategy should the media planner recommend?",
+      "options": [
+        "Reservation, awareness optimized for video views with ad sequencing",
+        "Reservation, awareness optimized for brand awareness with ad sequencing",
+        "Auction, awareness reach-optimized with video view retargeting",
+        "Auction, awareness optimized for brand awareness with video view retargeting"
+      ],
+      "correct": 1,
+      "explanation": "Seeing the steps in order = ad sequencing (requires Reservation); driving brand recognition = optimizing for brand awareness. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A consumer goods brand creates a new product and wants to reach new customers. Goal: capture emails and then send a coupon to increase in-store sales. They have a CRM available. Which strategy should be used?",
+      "options": [
+        "Awareness objective to reach a Lookalike of their CRM",
+        "Leads objective to reach a Lookalike Audience of their CRM",
+        "Leads objective to reach a Custom Audience of their CRM",
+        "Awareness objective to reach a Custom Audience of their CRM"
+      ],
+      "correct": 1,
+      "explanation": "Capturing emails = Leads; reaching new customers = Lookalike of the CRM (not the Custom Audience of the CRM, which is existing customers). Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A jewelry brand wants a Meta campaign to drive its existing customers to its stores. Which targeting should the media planner recommend?",
+      "options": [
+        "Lookalike Audience of website visitors",
+        "Custom Audience of past purchasers",
+        "Detailed targeting for interest in jewelry",
+        "Broad targeting"
+      ],
+      "correct": 1,
+      "explanation": "Existing customers = Custom Audience of past purchasers. Official answer.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A hair care brand ran click-to-message campaigns for its quiz. Now it runs a Sponsored Message campaign to re-engage people to complete the quiz or buy. They use Advantage+ Placements. On which placements can this campaign run?",
+      "options": ["Feeds", "Stories", "Messages", "Apps and Sites"],
+      "correct": 2,
+      "explanation": "Sponsored Messages are only delivered on the Messages placement. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A real estate brand wants a Leads campaign on Meta focused only on getting leads from Instagram. Which placements should the media planner recommend?",
+      "options": [
+        "Website leads on Facebook Feed, Facebook Video Feeds and Facebook Stories",
+        "Lead forms on Instagram feed, Instagram profile feed and Apps and sites",
+        "Website leads on Instagram profile feed and Instagram Stories",
+        "Lead forms on Facebook Feed, Facebook Stories and Instagram feed"
+      ],
+      "correct": 2,
+      "explanation": "Instagram only and a Leads campaign: Website leads on Instagram profile feed and Instagram Stories. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A fashion brand launched a new line. Objective: maximize reach. They have always used 4:5 video and 9:16 video assets. The agency recommends adding In-Stream video in addition to Feed and Stories. Which additional asset should the client create?",
+      "options": ["1:1 ratio video", "16:9 ratio video", "4:5 ratio static", "16:9 ratio static"],
+      "correct": 1,
+      "explanation": "The design recommendation for In-Stream is 16:9 video. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An entertainment brand with a local agency wants to improve its communication on Instagram. It has already tried video, Stories and Reels. The goal is to create a deeper connection with its audience and it is starting to collaborate with new influencers. Which option should the agency recommend?",
+      "options": ["Branded Content", "CAPI", "Sales", "Leads"],
+      "correct": 0,
+      "explanation": "Collaborating with influencers for a deeper connection = Branded Content. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An online school wants to generate 150 leads by the end of a 3-week campaign without exceeding a Cost Per Lead of $125. History: Week1 $5,000/40 leads/$125; Week2 $5,000/50/$100; Week3 $5,000/35/$200. What should they do to meet the goal?",
+      "options": [
+        "Set a cost per result goal",
+        "Decrease the budget in Week 3",
+        "Switch to the Awareness objective",
+        "Increase the budget in Week 3"
+      ],
+      "correct": 0,
+      "explanation": "To control CPL at ≤$125 while pursuing volume, use a Cost per result goal. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A fashion brand wants to drive sales of its new sweater line (Sales objective). Over 3 weeks the CPA is rising. Setup: Objective Sales, Optimization Conversions, Budget $1,000,000, CPA Goal $15, audience of men and women 25-55 interested in fall clothing. What should the media planner recommend to reverse the CPA?",
+      "options": [
+        "Switch to the Awareness objective",
+        "Restrict the audience to men only",
+        "Optimize for Video Views",
+        "Include a Lookalike of Past Purchasers audience"
+      ],
+      "correct": 3,
+      "explanation": "The other options do not drive efficient conversions; restricting the audience raises the CPA. Test a new high-intent audience (Lookalike of Past Purchasers). Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An online art store launches 2 campaigns optimized for landing page views. C1 (women, videos) CPM $1.25, 600,000 LPV. C2 (men, statics) CPM $1.00, 750,000 LPV. Which strategy should the media planner recommend?",
+      "options": [
+        "Create one campaign with two ad sets and use Advantage Campaign Budget",
+        "Allocate 40% of the budget to C1 and 60% to C2",
+        "Create one campaign with two ad sets and change the optimization to link clicks",
+        "Pause C1 and move all the budget to C2"
+      ],
+      "correct": 0,
+      "explanation": "Advantage Campaign Budget optimizes the audiences against each other (without manual budget allocation), finding efficiencies. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A toy retailer ran an A/B test with 2 audiences and the same budget. Aud1 (parents of preschoolers) CPM $2.00, 275,000 LPV. Aud2 (past purchasers) CPM $1.25, 325,000 LPV. What should the media planner conclude?",
+      "options": [
+        "Audience 2 will generate more purchases",
+        "Audience 1 spent 45% of the test's total budget",
+        "Audience 1 reached saturation",
+        "Audience 2 has a lower cost per landing page view"
+      ],
+      "correct": 3,
+      "explanation": "With the same spend, audience 2 (past purchasers) generated more LPV, so its cost per LPV is lower. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A local retailer started selling on its site. Goal: increase engagement with the brand so customers learn about its purchase options. They ask to test strategies. Results — A: CPP $50/CPVV $1; B: $55/$0.25; C: $45/$1; D: $60/$0.50. Which version should they keep running?",
+      "options": ["A", "B", "C", "D"],
+      "correct": 1,
+      "explanation": "The goal is engagement (video views): version B has the lowest cost per video view ($0.25). (Deduced from analysis.)",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A brand wants to understand how the marketing budget will be allocated across channels, products and regions to forecast the effects of future events/campaigns. Which Open Source Meta measurement should be used?",
+      "options": ["Brand Lift", "Conversion Lift", "Robyn MMM", "A/B Test"],
+      "correct": 2,
+      "explanation": "Robyn is Meta's open source Marketing Mix Modeling for budget allocation and forecasting. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A travel company promotes a sale and its new mobile app across all channels. They have the Meta Pixel and video assets for all placements. Goals: 60% reach, 500,000 app downloads, $15 ROAS, 70% video completion rate. Which goal can be measured with the Meta Pixel?",
+      "options": ["60% reach", "500,000 app downloads", "$15 ROAS", "70% video completion rate"],
+      "correct": 2,
+      "explanation": "The Pixel measures web conversions and value → $15 ROAS. Reach is delivery, app downloads require an SDK/MMP, and video completion is an ad metric. (Deduced from analysis.)",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A retailer sells online and in-store. In-store sales are stable but online sales have dropped over 6 months. They want to create Meta campaigns to determine whether they increase online and offline sales, and use the insights to allocate future budget. Which two solutions should the planner recommend? (Choose 2)",
+      "options": ["A/B Test", "Conversion Lift", "Brand Lift", "Offline Conversions"],
+      "correct": [1, 3],
+      "multi": true,
+      "explanation": "Conversion Lift measures the incremental impact on sales and Offline Conversions captures in-store sales. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which option is a user privacy control that lets people adjust the collection, access, sharing, use or retention of their data?",
+      "options": ["Advantage+ Placements", "Off-Facebook Activity", "Limited Inventory", "AR Filter"],
+      "correct": 1,
+      "explanation": "Off-Facebook Activity lets the user control their activity data from outside Facebook. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client is starting to place ads in the Instagram profile feed and wants to know which profiles their ads could appear on. What action should the media planner take?",
+      "options": [
+        "Run a campaign and download the delivery report",
+        "Download the Instagram profile feed publisher list",
+        "Apply a block list to the Instagram profile feed",
+        "Use an Inventory filter on the Instagram profile feed"
+      ],
+      "correct": 1,
+      "explanation": "The Instagram profile feed publisher list shows where the ads can appear before launch. Official answer.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Due to brand safety requirements, the ads in an In-stream campaign on Facebook cannot appear next to or within political content. What should the media planner do?",
+      "options": [
+        "Apply a block list to some publishers",
+        "Apply content type exclusions to avoid live videos",
+        "Apply topic exclusions",
+        "Download the publisher list"
+      ],
+      "correct": 2,
+      "explanation": "Topic exclusions prevent ads from appearing next to topics such as political content. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An advertiser publishes a Leads campaign and it is rejected. The campaign promotes video and image ads to people 18-65+ who live in a certain ZIP code and city. Which update complies with the Special Ad Category policies?",
+      "options": [
+        "Update age targeting to 21-65+",
+        "Update geo targeting to city only",
+        "Change the objective from Leads to Awareness",
+        "Remove the video ads from the campaign"
+      ],
+      "correct": 1,
+      "explanation": "Special Ad Categories prohibit very specific geographic targeting (such as ZIP code); it must be broadened to city only. Official answer.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An ad shows two images of a person's body before taking a medication and the results after. Which restricted category does this ad violate?",
+      "options": [
+        "Negative self perception",
+        "Tobacco sales",
+        "Financial services",
+        "Before and after references"
+      ],
+      "correct": 3,
+      "explanation": "Showing 'before and after' images violates the Before and after references policy. Official answer.",
+      "difficulty": "medium"
+    }
+  ]
+}
