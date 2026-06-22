@@ -1,0 +1,1030 @@
+{
+  "id": "m7",
+  "title": "Module 7 — Privacy and brand safety",
+  "sections": {
+    "b1": {
+      "ico": "🔐",
+      "title": "Block 1",
+      "sub": "Module 6 review + Data privacy policies"
+    },
+    "b2": {
+      "ico": "🛡️",
+      "title": "Block 2",
+      "sub": "Brand safety controls"
+    },
+    "b3": {
+      "ico": "✅",
+      "title": "Block 3",
+      "sub": "Ad review process"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Module wrap-up",
+      "sub": "Capstone case, review and consolidation"
+    }
+  },
+  "lessons": [
+    {
+      "id": "7.0",
+      "title": "Spaced review · Module 6",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Closing the exam: measurement + privacy",
+          "body": "This is the final module of the syllabus: data privacy and <strong>brand safety</strong>. Before diving in, it's worth reviewing the measurement from Module 6, because the two areas are connected. All modern measurement on Meta depends on user signals, and those signals can only be collected and used with the proper consent. That's why measuring well and respecting privacy are part of the same plan, not separate topics. In this review you'll refresh the three measurement concepts that are most often confused on the exam."
+        },
+        {
+          "type": "concept",
+          "h": "The three measurement concepts that get confused",
+          "body": "The exam deliberately mixes these three terms to confuse you. <strong>1. Attribution</strong>: distributes the credit for a conversion across the touchpoints the user interacted with; it describes the journey, but it doesn't prove the ad caused the sale. <strong>2. Incrementality</strong>: measures the real causal effect, that is, the conversions that would NOT have happened without the ads. <strong>3. Lift studies</strong>: experiments with a control group that isolate that effect, such as <strong>brand lift</strong> and <strong>Conversion Lift</strong>. For example, a gym chain called VivaFit sees 500 sign-ups attributed to its ads, but a Conversion Lift reveals that only 180 were truly incremental: the other 320 would have signed up anyway."
+        },
+        {
+          "type": "fill",
+          "q": "___ measures the causal effect of the ads.",
+          "options": ["Incrementality", "Attribution", "Frequency", "Reach"],
+          "correct": 0,
+          "explanation": "Incrementality: conversions that would not have happened without ads."
+        },
+        {
+          "type": "mcq",
+          "q": "How is awareness measured?",
+          "options": [
+            "CPC and purchases",
+            "Reach, frequency and estimated ad recall lift",
+            "ROAS",
+            "Conversion rate"
+          ],
+          "correct": 1,
+          "explanation": "Awareness doesn't optimize for clicks or sales."
+        },
+        {
+          "type": "fill",
+          "q": "The experiment that measures incremental conversions with a holdout is ___ Lift.",
+          "options": ["Conversion", "Brand", "A/B", "Reach"],
+          "correct": 0,
+          "explanation": "Conversion Lift uses a holdout group."
+        },
+        {
+          "type": "mcq",
+          "q": "Attribution vs incrementality:",
+          "options": [
+            "They're the same",
+            "Attribution = credit per touchpoint; incrementality = causality",
+            "Attribution measures recall",
+            "Incrementality is a setting"
+          ],
+          "correct": 1,
+          "explanation": "Attribution doesn't prove causality; consent governs both signals."
+        }
+      ]
+    },
+    {
+      "id": "7.1",
+      "title": "Explained · Data privacy policies",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Privacy is part of the plan",
+          "body": "The <strong>media planner</strong> has to think about privacy from the campaign design stage, not as a last-minute formality. This means deciding from the start how people's data is collected, with what consent and under which Meta policies. This is called <strong>business integrity</strong>: operating responsibly and within the rules. The idea is for privacy to be a foundation of the plan, just like the budget or the audiences. An agency that plans this way avoids rejections, fines and damage to its client's reputation before they happen."
+        },
+        {
+          "type": "concept",
+          "h": "The four key privacy policies",
+          "body": "There are four rules you must master. <strong>1. Consent</strong>: data is only collected and used if there is a legal basis or the person's proper permission. <strong>2. List hashing</strong>: when a customer list is uploaded, the data is converted into an irreversible code (a hash) before it leaves; Meta never receives the emails or phone numbers in readable text. <strong>3. Sensitive data</strong>: it is prohibited to target using inferred sensitive categories, such as health, religion or orientation. <strong>4. Compliance</strong>: you must respect both Meta's policies and each country's privacy law. For example, a pet store called PatitasMX that uploads its customer database must have permission to use those emails, and the list travels hashed."
+        },
+        {
+          "type": "concept",
+          "h": "Privacy and performance aren't at odds",
+          "body": "There's a myth that protecting privacy forces you to lose results, and it's false. A signal sent from the advertiser's server through the <strong>Conversions API</strong> (Meta's conversions interface), when properly configured and with consent, improves measurement <strong>and</strong> compliance at the same time. The reason is that the server sends more complete and stable data than the browser, which blocks more and more things. Designed together from the plan, privacy and performance reinforce each other instead of fighting. For example, a specialty coffee brand called Altura was able to recover conversions it used to lose, simply by moving its events to the Conversions API with its users' consent."
+        },
+        {
+          "type": "kvtable",
+          "h": "Key privacy concepts",
+          "rows": [
+            ["Consent", "Collect and use data only with a legal basis/proper consent"],
+            ["List hashing", "Customer lists are uploaded hashed; Meta doesn't receive data in the clear"],
+            ["Sensitive data", "Targeting using inferred sensitive categories is not allowed"],
+            ["Compliance", "Respect Meta's policies and applicable regulation (data privacy)"]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "PRO TIP",
+          "body": "A well-governed server signal (Conversions API with consent) improves measurement <strong>and</strong> compliance. Privacy and performance aren't at odds if they're designed together."
+        },
+        {
+          "type": "warn",
+          "label": "TRAP",
+          "body": "Believing Meta receives the emails <strong>in the clear</strong> to do the match, or that first-party lists are prohibited. The list is hashed before upload and using first-party data is valid with a legal basis."
+        },
+        {
+          "type": "mcq",
+          "q": "A client wants to upload its customer database to create a custom audience. What is correct regarding privacy?",
+          "options": [
+            "Meta receives the emails in plain text and stores them",
+            "The list is uploaded hashed; matching happens without exposing the data in the clear",
+            "Using first-party lists isn't allowed",
+            "It's only possible with reservation"
+          ],
+          "correct": 1,
+          "explanation": "Customer lists are hashed before being uploaded; Meta does the matching with hashes, without receiving the data in the clear. Using first-party lists is allowed with the proper legal basis.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "mcq",
+          "q": "Can you target using inferred sensitive categories (health, religion, etc.)?",
+          "options": [
+            "Yes, if the client requests it",
+            "No; inferred sensitive categories can't be used for targeting",
+            "Yes, only in reservation",
+            "Yes, with verbal consent"
+          ],
+          "correct": 1,
+          "explanation": "The policies prohibit targeting using inferred sensitive categories, with no exception for a client request.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "7.1d",
+      "title": "Memory drill · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Customer lists are uploaded ___ ; Meta does the matching without receiving data in the clear.",
+          "options": [
+            "hashed",
+            "in plain text",
+            "compressed",
+            "encrypted with your key"
+          ],
+          "correct": 0,
+          "explanation": "Hashing is applied before uploading the list; matching happens with hashes, not with data in the clear."
+        },
+        {
+          "type": "mcq",
+          "q": "What is the correct basis for collecting and using data in advertising?",
+          "options": [
+            "Using any available data without restriction",
+            "Only with a legal basis or proper consent",
+            "Only if the client requests it in writing",
+            "Only in campaigns with reservation"
+          ],
+          "correct": 1,
+          "explanation": "Collecting and using data requires a legal basis/proper consent; it's a principle of the privacy policies."
+        },
+        {
+          "type": "fill",
+          "q": "Targeting using inferred ___ categories is not allowed.",
+          "options": [
+            "sensitive",
+            "demographic",
+            "geographic",
+            "interest"
+          ],
+          "correct": 0,
+          "explanation": "Inferred sensitive categories can't be used for targeting."
+        },
+        {
+          "type": "mcq",
+          "q": "Why are privacy and performance NOT at odds?",
+          "options": [
+            "Because privacy doesn't affect measurement",
+            "Because a server signal with consent (Conversions API) improves measurement and compliance",
+            "Because consent is optional",
+            "Because Meta ignores policies if there's good ROAS"
+          ],
+          "correct": 1,
+          "explanation": "Designed together, a well-governed server signal (Conversions API with consent) improves measurement and compliance at the same time."
+        },
+        {
+          "type": "mcq",
+          "q": "What must the media planner respect besides Meta's policies?",
+          "options": [
+            "Only the client's budget",
+            "The applicable data privacy regulation",
+            "Only the campaign calendar",
+            "Only the Advertising Standards"
+          ],
+          "correct": 1,
+          "explanation": "Compliance means respecting Meta's policies and the applicable data privacy regulation."
+        }
+      ]
+    },
+    {
+      "id": "7.1s",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "The small business wants to upload its database",
+          "body": "An auto-parts distributor in Monterrey wants to upload its B2B customer list for retargeting. The owner fears Meta will \"keep my customers' emails\" and asks whether it's legal to use his own database."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you explain about how the list is uploaded?",
+          "options": [
+            "Meta stores the emails in plain text to do the match",
+            "The list is uploaded hashed and matching happens without exposing the data in the clear",
+            "He can't use his own customer database",
+            "He must send the emails to Meta separately"
+          ],
+          "correct": 1,
+          "explanation": "Customer lists are hashed before being uploaded; Meta does the matching with hashes and doesn't receive the data in the clear."
+        },
+        {
+          "type": "mcq",
+          "q": "Is it valid to use his own customer database for the custom audience?",
+          "options": [
+            "No, first-party lists are prohibited",
+            "Yes, as long as there is a proper legal basis/consent",
+            "Only if the campaign uses reservation",
+            "Only if Meta receives the data in the clear"
+          ],
+          "correct": 1,
+          "explanation": "Using first-party lists is allowed with the legal basis or proper consent to collect and use that data."
+        },
+        {
+          "type": "mcq",
+          "q": "The owner also asks to target by a health condition he inferred about his customers. What do you tell him?",
+          "options": [
+            "Go ahead, if it's his own database he can",
+            "Targeting using inferred sensitive categories is not allowed, even if it comes from his database",
+            "Only if he uses reservation",
+            "Only with verbal consent"
+          ],
+          "correct": 1,
+          "explanation": "The policies prohibit targeting with inferred sensitive categories; the source of the database doesn't enable it."
+        }
+      ]
+    },
+    {
+      "id": "7.1f",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        { "q": "How are customer lists uploaded?", "a": "Hashed; Meta does matching without receiving data in the clear." },
+        { "q": "Are privacy and performance at odds?", "a": "No; a server signal with consent (Conversions API) improves measurement and compliance." },
+        { "q": "Basis for collecting and using data", "a": "Only with a legal basis or proper consent." },
+        { "q": "Sensitive data", "a": "Targeting using inferred sensitive categories is not allowed." },
+        { "q": "What does compliance involve?", "a": "Respecting Meta's policies and the applicable data privacy regulation." }
+      ]
+    },
+    {
+      "id": "7.2",
+      "title": "Explained · Brand safety controls",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Protecting where the brand appears",
+          "body": "<strong>Brand safety controls</strong> are tools that prevent your ad from appearing next to content that would harm the client's image. The risk arises in the <strong>placements</strong> where the ad sits alongside content from other creators, not from the brand. The three highest-risk places are <strong>in-stream</strong> (ads inside third-party videos), <strong>Audience Network</strong> (Meta's network of external apps and sites) and <strong>Reels</strong>. On the brand's own feed the risk is low, because there the brand controls what gets published. For example, an airline called AeroCielo doesn't want its ad to appear right after a video about a plane crash: that's what these controls are for."
+        },
+        {
+          "type": "concept",
+          "h": "The four available controls",
+          "body": "There are four tools the planner combines depending on the client. <strong>1. Inventory filter</strong>: sets how strict the allowed adjacent content is, with three levels, from broadest to most restrictive: <em>expanded</em>, <em>moderate</em> and <em>limited</em>. <strong>2. Block lists</strong>: exclude specific sites, apps or accounts where you don't want to appear. <strong>3. Publisher allow lists</strong>: do the opposite, only letting you appear on a short list of approved publishers. <strong>4. Content type exclusions</strong>: block entire sensitive categories. For example, a children's toy brand called Juguetón uses the filter set to <em>limited</em>, a block list of controversial channels and exclusions of violent content."
+        },
+        {
+          "type": "kvtable",
+          "h": "Available controls",
+          "rows": [
+            ["Inventory filter", "Content suitability level (expanded / moderate / limited)"],
+            ["Block lists", "Block specific publishers/sites/accounts"],
+            ["Publisher allow lists", "Allow only approved publishers"],
+            ["Content type exclusions", "Exclude sensitive content categories or types"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "TRADE-OFF",
+          "body": "Stricter controls = more brand safety but lower reach and possibly higher cost. The planner balances brand risk vs. efficiency depending on the client."
+        },
+        {
+          "type": "tip",
+          "label": "WHERE IT MATTERS",
+          "body": "Adjacency risk arises where there is <strong>third-party content</strong>: in-stream, Audience Network and Reels. On the brand's own feed the risk is lower."
+        },
+        {
+          "type": "mcq",
+          "q": "A conservative brand demands not to appear next to mature content in third-party placements. Which control do you apply first?",
+          "options": [
+            "Raise the budget",
+            "A stricter inventory filter (e.g. limited) and block lists as needed",
+            "Change the objective to awareness",
+            "Turn on Advantage+ creative"
+          ],
+          "correct": 1,
+          "explanation": "The inventory filter adjusts the suitability level of the adjacent content; block lists exclude specific publishers. Raising the budget or changing the objective doesn't control content adjacency.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "7.2d",
+      "title": "Memory drill · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The ___ adjusts the suitability level of the adjacent content: expanded / moderate / limited.",
+          "options": [
+            "inventory filter",
+            "ad review",
+            "Meta Pixel",
+            "objective"
+          ],
+          "correct": 0,
+          "explanation": "The inventory filter defines how strict the allowed adjacent content is."
+        },
+        {
+          "type": "mcq",
+          "q": "What is the difference between a block list and an allow list?",
+          "options": [
+            "Block = allow only approved publishers; Allow = exclude publishers",
+            "Block = exclude specific publishers; Allow = allow only approved publishers",
+            "Both exclude the same content",
+            "Only the allow list applies to Reels"
+          ],
+          "correct": 1,
+          "explanation": "A block list excludes specific publishers/sites/accounts; a publisher allow list allows only the approved publishers."
+        },
+        {
+          "type": "fill",
+          "q": "Stricter controls = more brand safety but lower ___ and possibly higher cost.",
+          "options": [
+            "reach",
+            "consent",
+            "budget",
+            "frequency"
+          ],
+          "correct": 0,
+          "explanation": "It's the brand safety trade-off: stricter reduces reach and can raise the cost."
+        },
+        {
+          "type": "mcq",
+          "q": "In which placements do brand safety controls matter most?",
+          "options": [
+            "Only on the brand's own feed",
+            "In placements with third-party content (in-stream, Audience Network, Reels)",
+            "Only in the brand's own Stories",
+            "In no placement, they're automatic"
+          ],
+          "correct": 1,
+          "explanation": "Adjacency risk arises where there is third-party content: in-stream, Audience Network and Reels."
+        },
+        {
+          "type": "mcq",
+          "q": "What are content type exclusions for?",
+          "options": [
+            "To exclude sensitive content categories or types",
+            "To raise the budget automatically",
+            "To speed up the ad review",
+            "To create custom audiences"
+          ],
+          "correct": 0,
+          "explanation": "Content type exclusions exclude sensitive content categories or types where the brand doesn't want to appear."
+        }
+      ]
+    },
+    {
+      "id": "7.2s",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Regional bank, conservative brand",
+          "body": "A regional bank in Guadalajara approves a campaign on Reels and Audience Network, but demands not to appear next to mature content or on certain sites that have given it bad press. It asks you for the protection plan."
+        },
+        {
+          "type": "mcq",
+          "q": "Which control do you apply first for content adjacency?",
+          "options": [
+            "Raise the budget to get more reach",
+            "A stricter inventory filter (e.g. limited) and block lists as needed",
+            "Change the objective to awareness",
+            "Turn on Advantage+ creative"
+          ],
+          "correct": 1,
+          "explanation": "The inventory filter adjusts the suitability of the adjacent content; block lists exclude the specific publishers it's worried about."
+        },
+        {
+          "type": "mcq",
+          "q": "The bank complains that reach dropped after tightening the controls. How do you explain it?",
+          "options": [
+            "It's a configuration error",
+            "It's the expected trade-off: more brand safety means lower reach and possibly higher cost",
+            "All the controls need to be removed",
+            "The problem is the ad review"
+          ],
+          "correct": 1,
+          "explanation": "Stricter controls protect the brand but reduce reach and can raise the cost; the planner balances risk vs. efficiency."
+        },
+        {
+          "type": "mcq",
+          "q": "The bank only wants to appear on a short list of approved publishers. What do you use?",
+          "options": [
+            "A block list of everyone else manually",
+            "A publisher allow list to allow only the approved publishers",
+            "Content type exclusions for everything",
+            "Inventory filter set to expanded"
+          ],
+          "correct": 1,
+          "explanation": "The publisher allow list lets the ad show only on the approved publishers, ideal for a short list of media."
+        }
+      ]
+    },
+    {
+      "id": "7.2f",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Inventory filter", "a": "Suitability control for adjacent content (expanded / moderate / limited)." },
+        { "q": "Block list vs allow list", "a": "Block = exclude specific publishers. Allow = allow only approved publishers." },
+        { "q": "Brand safety trade-off", "a": "Stricter = safer but lower reach and possibly higher cost." },
+        { "q": "Content type exclusions", "a": "Exclude sensitive content categories or types." },
+        { "q": "Where do brand safety controls matter most?", "a": "In placements with third-party content: in-stream, Audience Network, Reels." }
+      ]
+    },
+    {
+      "id": "7.3",
+      "title": "Explained · Ad review process",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "How an ad gets approved",
+          "body": "Before an ad is shown to anyone, it goes through the <strong>ad review</strong>, the process Meta uses to verify it complies with its <strong>Advertising Standards</strong>. This review combines automated systems, which filter most cases instantly, with human review for the questionable ones. The process usually resolves in around 24 hours, though it can vary. No ad is delivered without passing this filter, regardless of the budget. For example, a supplements brand called NutriVida uploads its ad on a Monday and plans around the ~24-hour review so as not to delay the launch."
+        },
+        {
+          "type": "concept",
+          "h": "What it reviews and what happens if it's rejected",
+          "body": "The ad review doesn't only look at the image: it reviews the text, the image, the video, the <strong>targeting</strong> and the <strong>landing page</strong> the ad leads to. If the landing page violates the standards, the ad is rejected even if the creative is perfect. When an ad is rejected, you have two paths: edit it to fix the problem, or request a manual review, called an <strong>appeal</strong>, if you believe it was a mistake. Any significant edit goes back through review before being delivered. For example, a language school called Lingua fixes the text of its rejected ad and it automatically returns to the ad review queue."
+        },
+        {
+          "type": "concept",
+          "h": "The personal attribute trap",
+          "body": "The most-tested rejection cause on the exam is implying a <strong>personal attribute</strong> of the user. The Advertising Standards prohibit an ad from suggesting it knows something private about the person who sees it, such as their health, religion, age, orientation or financial situation. The key is the wording, not the product: the same service can be advertised if the text stays general. For example, saying \"We know you suffer from migraines\" is rejected because it asserts a health condition of the viewer; whereas \"Natural relief for headaches\" is valid because it talks about the product, not the person."
+        },
+        {
+          "type": "kvtable",
+          "h": "Ad review key points",
+          "rows": [
+            ["What it reviews", "Text, image, video, targeting and the destination landing page"],
+            ["When", "Before delivery begins; it also re-reviews edits"],
+            ["If rejected", "You can edit it or request a review (appeal)"],
+            ["Personal attributes", "Prohibited to imply you know a personal attribute of the user"]
+          ]
+        },
+        {
+          "type": "warn",
+          "label": "EXAM TRAP",
+          "body": "A copy like 'Meet other people like you with diabetes' is rejected for <strong>implying a personal attribute</strong> of the viewer, even if the product and the targeting are valid."
+        },
+        {
+          "type": "mcq",
+          "q": "An ad for a health program says: 'We know you have back problems; this is for you'. It gets rejected. Why?",
+          "options": [
+            "Because the health category is prohibited on Meta",
+            "Because it implies/asserts a personal attribute of the viewer",
+            "Because it has no Meta Pixel",
+            "Because it used Advantage+ placements"
+          ],
+          "correct": 1,
+          "explanation": "The Advertising Standards prohibit ads that imply or assert a personal attribute of the user (health, condition, etc.). The problem is the wording, not the category or the technical setup.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "7.3d",
+      "title": "Memory drill · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The ad review reviews text, image, video, targeting and the destination ___.",
+          "options": [
+            "landing page",
+            "custom audience",
+            "block list",
+            "invoice"
+          ],
+          "correct": 0,
+          "explanation": "The ad review also evaluates the destination landing page, not just the creative."
+        },
+        {
+          "type": "mcq",
+          "q": "How long does the ad review typically take?",
+          "options": [
+            "Instant, no review",
+            "Approximately 24 hours, combining automation and human review",
+            "Exactly 7 days",
+            "Only if the ad is edited"
+          ],
+          "correct": 1,
+          "explanation": "The ad review usually resolves in ~24 hours and combines automated systems with human review."
+        },
+        {
+          "type": "fill",
+          "q": "If an ad is rejected, you can edit it or request a review (___).",
+          "options": [
+            "appeal",
+            "refund",
+            "boost",
+            "hash"
+          ],
+          "correct": 0,
+          "explanation": "After a rejection you can edit the ad or request a review (appeal)."
+        },
+        {
+          "type": "mcq",
+          "q": "When is an already-approved ad reviewed again?",
+          "options": [
+            "Never, once approved it stays fixed",
+            "When it's edited (significant changes go back to review)",
+            "Every 24 hours always",
+            "Only when the budget changes"
+          ],
+          "correct": 1,
+          "explanation": "The ad review re-reviews edits: significant changes go back through review."
+        },
+        {
+          "type": "mcq",
+          "q": "A copy says 'Meet other people like you with diabetes'. What's the problem with it?",
+          "options": [
+            "The Meta Pixel is missing",
+            "It implies a personal attribute of the viewer, prohibited by the Advertising Standards",
+            "It used Advantage+ placements",
+            "The targeting is too broad"
+          ],
+          "correct": 1,
+          "explanation": "Implying or asserting a personal attribute of the user (health) is prohibited, even if the product and the targeting are valid."
+        }
+      ]
+    },
+    {
+      "id": "7.3s",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Physical therapy clinic rejected",
+          "body": "A physical therapy clinic in Puebla launches ads and the copy says: \"We know you have back problems; this therapy is for you\". The ad is rejected and the owner asks to fix it quickly so as not to lose days."
+        },
+        {
+          "type": "mcq",
+          "q": "Why was the ad rejected?",
+          "options": [
+            "Because the health category is prohibited on Meta",
+            "Because the copy implies/asserts a personal attribute of the viewer",
+            "Because it didn't connect the Meta Pixel",
+            "Because it used brand safety controls"
+          ],
+          "correct": 1,
+          "explanation": "The Advertising Standards prohibit implying or asserting a personal attribute of the user; the problem is the wording, not the category or the technical setup."
+        },
+        {
+          "type": "mcq",
+          "q": "What can the clinic do after the rejection?",
+          "options": [
+            "Only create a new account",
+            "Edit the ad (reword the copy) or request a review (appeal)",
+            "Wait 7 days doing nothing",
+            "Raise the budget to force approval"
+          ],
+          "correct": 1,
+          "explanation": "After a rejection you can edit the ad or request a review (appeal); rewording the copy without implying the personal attribute unblocks it."
+        },
+        {
+          "type": "mcq",
+          "q": "After editing the copy, what happens before it delivers again?",
+          "options": [
+            "Immediate delivery without going through anything",
+            "It goes back to the ad review because edits are re-reviewed",
+            "A fine is charged",
+            "The campaign is deleted"
+          ],
+          "correct": 1,
+          "explanation": "The ad review re-reviews edits before delivering again; it usually resolves in ~24 hours."
+        }
+      ]
+    },
+    {
+      "id": "7.3f",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        { "q": "What does the ad review review?", "a": "Text, image, video, targeting and the destination landing page." },
+        { "q": "Typical ad review time", "a": "Approximately 24 hours; combines automation and human review." },
+        { "q": "When is an ad re-reviewed?", "a": "When it's edited (significant changes go back to review)." },
+        { "q": "Personal attribute", "a": "Prohibited to imply/assert you know a personal attribute of the user or their family." },
+        { "q": "If an ad is rejected", "a": "You can edit it or request a review (appeal)." }
+      ]
+    },
+    {
+      "id": "7.integ",
+      "title": "Capstone case · Kenet Solar, brand financial health",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CAPSTONE CASE",
+          "h": "Kenet Solar: privacy, brand and approval",
+          "body": "Kenet Solar wants to: (1) upload its customer database for a custom audience, (2) run on Reels and Audience Network without appearing next to inappropriate content, and (3) a copy that says \"We know you pay too much for electricity, this is for you\". They ask you to review the plan before launch."
+        },
+        {
+          "type": "mcq",
+          "q": "Regarding uploading the customer database, what do you confirm?",
+          "options": [
+            "Meta receives the emails in the clear",
+            "The list is uploaded hashed and there must be a legal basis/consent to use it",
+            "First-party lists are prohibited",
+            "It's only possible with reservation"
+          ],
+          "correct": 1,
+          "explanation": "Hashing before upload + proper legal basis/consent. Meta doesn't receive data in the clear."
+        },
+        {
+          "type": "mcq",
+          "q": "For Reels and Audience Network without inappropriate content, which control do you apply?",
+          "options": [
+            "Raise the budget",
+            "A stricter inventory filter and block lists as needed",
+            "Switch to awareness",
+            "Advantage+ creative"
+          ],
+          "correct": 1,
+          "explanation": "The inventory filter adjusts the suitability of the adjacent content; block lists exclude specific publishers."
+        },
+        {
+          "type": "mcq",
+          "q": "The copy \"We know you pay too much for electricity, this is for you\". What do you flag?",
+          "options": [
+            "It's perfect, it's persuasive",
+            "It may be rejected for implying a personal attribute of the viewer; it should be reworded",
+            "It only fails if there's no Meta Pixel",
+            "The problem is the targeting"
+          ],
+          "correct": 1,
+          "explanation": "Implying/asserting a personal attribute of the user is prohibited by the Advertising Standards. Reword the copy to something general (\"Lower your electricity bill with solar energy\")."
+        },
+        {
+          "type": "mcq",
+          "q": "The client asks to tighten the brand safety controls to the maximum. What do you explain about the trade-off?",
+          "options": [
+            "There's no trade-off, only benefits",
+            "Stricter = safer but lower reach and possibly higher cost; you have to balance",
+            "Tightening always lowers the cost",
+            "The control doesn't affect reach"
+          ],
+          "correct": 1,
+          "explanation": "Brand safety has a trade-off: the planner balances brand risk vs. efficiency depending on the client."
+        }
+      ]
+    },
+    {
+      "id": "7.match",
+      "title": "Match the key concepts of Module 7",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Tap the term and then its definition. Each mistake costs 1 ❤️.",
+      "pairs": [
+        ["List hashing", "The list is uploaded protected; Meta doesn't receive data in the clear"],
+        ["Legal basis/consent", "Requirement to collect and use data"],
+        ["Sensitive categories", "Prohibited to target using sensitive inferences"],
+        ["Conversions API with consent", "Improves measurement and compliance at once"],
+        ["Inventory filter", "Suitability of the adjacent content: expanded/moderate/limited"],
+        ["Block list", "Exclude specific publishers/sites/accounts"],
+        ["Publisher allow list", "Allow only approved publishers"],
+        ["Brand safety trade-off", "Stricter = safer, lower reach, possibly higher cost"],
+        ["Ad review", "Review against the Advertising Standards before delivery"],
+        ["Ad review time", "~24 hours; automation + human review"],
+        ["Personal attribute", "Prohibited to imply you know something personal about the user"],
+        ["Appeal", "Request a review when an ad is rejected"]
+      ]
+    },
+    {
+      "id": "7.order",
+      "title": "Order the pre-launch compliance check",
+      "section": "bz",
+      "type": "order",
+      "instruction": "Before launching, the planner validates compliance in this order. Reorder with ▲▼ and verify.",
+      "items": [
+        "Confirm the legal basis/consent for the data to be used",
+        "Upload customer lists hashed (no data in the clear)",
+        "Verify that no targeting uses sensitive categories",
+        "Configure brand safety controls based on the client's risk",
+        "Run the creative and the landing through the ad review"
+      ],
+      "explanation": "First the legal data basis, then the secure upload, then the allowed targeting, the brand controls, and finally the ad approval."
+    },
+    {
+      "id": "7.fill",
+      "title": "Complete the Module 7 sentences",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "Customer lists are uploaded ___ ; Meta doesn't receive data in the clear.",
+          "options": ["hashed", "in the clear", "compressed", "public"],
+          "correct": 0,
+          "explanation": "Hashing before upload."
+        },
+        {
+          "type": "fill",
+          "q": "Collecting and using data requires a legal basis or proper ___.",
+          "options": ["consent", "budget", "objective", "Pixel"],
+          "correct": 0,
+          "explanation": "Proper legal basis/consent."
+        },
+        {
+          "type": "fill",
+          "q": "Targeting using inferred ___ categories is not allowed.",
+          "options": ["sensitive", "demographic", "geographic", "interest"],
+          "correct": 0,
+          "explanation": "Inferred sensitive categories: prohibited."
+        },
+        {
+          "type": "fill",
+          "q": "The ___ adjusts the suitability of the adjacent content (expanded/moderate/limited).",
+          "options": ["inventory filter", "ad review", "Pixel", "objective"],
+          "correct": 0,
+          "explanation": "Inventory filter."
+        },
+        {
+          "type": "fill",
+          "q": "The allow list allows only ___ publishers.",
+          "options": ["approved", "blocked", "sensitive", "new"],
+          "correct": 0,
+          "explanation": "Publisher allow list = only the approved ones."
+        },
+        {
+          "type": "fill",
+          "q": "The ad review usually takes ~___ hours.",
+          "options": ["24", "1", "72", "168"],
+          "correct": 0,
+          "explanation": "Approximately 24 hours."
+        },
+        {
+          "type": "fill",
+          "q": "Implying a personal ___ of the user causes the ad to be rejected.",
+          "options": ["attribute", "interest", "objective", "budget"],
+          "correct": 0,
+          "explanation": "Personal attribute: prohibited by the Advertising Standards."
+        }
+      ]
+    },
+    {
+      "id": "7.drill",
+      "title": "Drill — 12 Module 7 MCQs",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "Regarding customer lists, what is correct?",
+          "options": [
+            "Meta receives the emails in the clear",
+            "They're uploaded hashed; matching happens without exposing data in the clear",
+            "First-party lists are prohibited",
+            "They only work with reservation"
+          ],
+          "correct": 1,
+          "explanation": "Hashing before upload; no data in the clear."
+        },
+        {
+          "type": "mcq",
+          "q": "Basis for collecting and using data:",
+          "options": [
+            "Any data without restriction",
+            "A legal basis or proper consent",
+            "A written request from the client",
+            "Only in reservation"
+          ],
+          "correct": 1,
+          "explanation": "Proper legal basis/consent."
+        },
+        {
+          "type": "mcq",
+          "q": "Can you target with inferred sensitive categories?",
+          "options": ["Yes", "No", "Only with first-party data", "Only in awareness"],
+          "correct": 1,
+          "explanation": "Prohibited without exception."
+        },
+        {
+          "type": "mcq",
+          "q": "Are privacy and performance at odds?",
+          "options": [
+            "Yes, always",
+            "No; Conversions API with consent improves measurement and compliance",
+            "Only in sales",
+            "Only without the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Designed together, they reinforce each other."
+        },
+        {
+          "type": "mcq",
+          "q": "Inventory filter:",
+          "options": [
+            "Defines the budget",
+            "Adjusts the suitability of the adjacent content (expanded/moderate/limited)",
+            "Is the ad review",
+            "Creates custom audiences"
+          ],
+          "correct": 1,
+          "explanation": "Suitability level of the adjacent content."
+        },
+        {
+          "type": "mcq",
+          "q": "Block list vs allow list:",
+          "options": [
+            "Block allows; allow excludes",
+            "Block excludes publishers; allow allows only approved ones",
+            "They're the same",
+            "Only allow applies to Reels"
+          ],
+          "correct": 1,
+          "explanation": "Block = exclude; allow = only approved."
+        },
+        {
+          "type": "mcq",
+          "q": "Brand safety trade-off:",
+          "options": [
+            "Stricter = more reach",
+            "Stricter = safer but lower reach and possibly higher cost",
+            "There's no trade-off",
+            "Speeds up the ad review"
+          ],
+          "correct": 1,
+          "explanation": "You balance brand risk vs. efficiency."
+        },
+        {
+          "type": "mcq",
+          "q": "Where do brand safety controls matter most?",
+          "options": [
+            "Own feed",
+            "Placements with third-party content (in-stream, Audience Network, Reels)",
+            "Only own Stories",
+            "In none"
+          ],
+          "correct": 1,
+          "explanation": "Where there is third-party content."
+        },
+        {
+          "type": "mcq",
+          "q": "What does the ad review review?",
+          "options": [
+            "Only the creative",
+            "Text, image, video, targeting and the landing page",
+            "Only the budget",
+            "Only the objective"
+          ],
+          "correct": 1,
+          "explanation": "It includes the destination landing page."
+        },
+        {
+          "type": "mcq",
+          "q": "Typical ad review time:",
+          "options": ["Instant", "~24 hours", "7 days", "30 days"],
+          "correct": 1,
+          "explanation": "Automation + human review, ~24 h."
+        },
+        {
+          "type": "mcq",
+          "q": "Ad rejected for implying a personal attribute. What do you do?",
+          "options": [
+            "Nothing, it stays blocked",
+            "Edit the copy or request an appeal",
+            "Raise the budget",
+            "Wait 7 days"
+          ],
+          "correct": 1,
+          "explanation": "Edit/reword or appeal."
+        },
+        {
+          "type": "mcq",
+          "q": "After editing a rejected ad:",
+          "options": [
+            "Immediate delivery",
+            "It goes back to the ad review (edits are re-reviewed)",
+            "A fine is charged",
+            "The campaign is deleted"
+          ],
+          "correct": 1,
+          "explanation": "Significant edits are re-reviewed."
+        }
+      ]
+    },
+    {
+      "id": "7.lightning",
+      "title": "Lightning — 8 quick questions",
+      "section": "bz",
+      "type": "lightning",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Does Meta receive customer lists in the clear?",
+          "options": ["Yes", "No, hashed"],
+          "correct": 1,
+          "explanation": "Hashing before upload."
+        },
+        {
+          "q": "Can you target by an inferred sensitive category?",
+          "options": ["Yes", "No"],
+          "correct": 1,
+          "explanation": "Prohibited by policy."
+        },
+        {
+          "q": "Are privacy and performance at odds?",
+          "options": ["Yes", "No"],
+          "correct": 1,
+          "explanation": "Conversions API with consent improves both."
+        },
+        {
+          "q": "Does the inventory filter control the adjacent content?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "Expanded / moderate / limited."
+        },
+        {
+          "q": "Does the allow list exclude publishers?",
+          "options": ["Yes", "No, it allows only approved ones"],
+          "correct": 1,
+          "explanation": "Allow = only approved; block = exclude."
+        },
+        {
+          "q": "Does stricter brand safety raise reach?",
+          "options": ["Yes", "No, it lowers it"],
+          "correct": 1,
+          "explanation": "Trade-off: safer, lower reach."
+        },
+        {
+          "q": "Does the ad review review the landing page?",
+          "options": ["Yes", "No, only the creative"],
+          "correct": 0,
+          "explanation": "It includes text, creative, targeting and landing."
+        },
+        {
+          "q": "Can a rejected ad be appealed?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "Edit or request an appeal."
+        }
+      ]
+    },
+    {
+      "id": "7.flash",
+      "title": "Module 7 flashcards (all)",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        { "q": "How are customer lists uploaded?", "a": "Hashed; Meta does matching without receiving data in the clear." },
+        { "q": "Are privacy and performance at odds?", "a": "No; a server signal with consent (Conversions API) improves measurement and compliance." },
+        { "q": "Basis for collecting and using data", "a": "Only with a legal basis or proper consent." },
+        { "q": "Sensitive data", "a": "Targeting using inferred sensitive categories is not allowed." },
+        { "q": "What does compliance involve?", "a": "Respecting Meta's policies and the applicable data privacy regulation." },
+        { "q": "Inventory filter", "a": "Suitability control for adjacent content (expanded / moderate / limited)." },
+        { "q": "Block list vs allow list", "a": "Block = exclude specific publishers. Allow = allow only approved publishers." },
+        { "q": "Brand safety trade-off", "a": "Stricter = safer but lower reach and possibly higher cost." },
+        { "q": "Content type exclusions", "a": "Exclude sensitive content categories or types." },
+        { "q": "Where do brand safety controls matter most?", "a": "In placements with third-party content: in-stream, Audience Network, Reels." },
+        { "q": "What does the ad review review?", "a": "Text, image, video, targeting and the destination landing page." },
+        { "q": "Typical ad review time", "a": "Approximately 24 hours; combines automation and human review." },
+        { "q": "When is an ad re-reviewed?", "a": "When it's edited (significant changes go back to review)." },
+        { "q": "Personal attribute", "a": "Prohibited to imply/assert you know a personal attribute of the user or their family." },
+        { "q": "If an ad is rejected", "a": "You can edit it or request a review (appeal)." },
+        { "q": "First-party lists allowed?", "a": "Yes, with a proper legal basis/consent." },
+        { "q": "Publisher allow list", "a": "Show only on a short list of approved publishers." },
+        { "q": "Ad review: what it is", "a": "Review against the Advertising Standards (automation + human) before delivery." },
+        { "q": "Copy with a personal attribute: example", "a": "\"We know you have diabetes…\" → it's rejected; reword it in general terms." },
+        { "q": "Module wrap-up", "a": "Privacy and brand safety are designed from the plan, not patched at the end." }
+      ]
+    }
+  ]
+}

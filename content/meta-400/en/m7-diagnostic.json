@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Module 7",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "When uploading a customer list to create a custom audience:",
+      "options": [
+        "Meta receives the emails in plain text",
+        "The list is uploaded hashed and matching happens without exposing data in the clear",
+        "Using first-party lists isn't allowed",
+        "It only works with reservation"
+      ],
+      "correct": 1,
+      "explanation": "Lists are hashed before being uploaded; Meta does matching with hashes, not with data in the clear.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The inventory filter controls:",
+      "options": [
+        "The daily budget",
+        "The suitability level of the content the ad appears next to",
+        "The bid strategy",
+        "The conversion event"
+      ],
+      "correct": 1,
+      "explanation": "The inventory filter (expanded/moderate/limited) adjusts how strict the adjacent content is.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Trade-off of stricter brand safety controls:",
+      "options": [
+        "More reach and lower cost",
+        "More brand safety but lower reach and possibly higher cost",
+        "They don't affect delivery",
+        "They only apply to reservation"
+      ],
+      "correct": 1,
+      "explanation": "More safety reduces the available inventory: lower reach and sometimes higher cost.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An ad says: 'We know you have back problems; this is for you'. It's rejected because:",
+      "options": [
+        "The health category is prohibited",
+        "It implies/asserts a personal attribute of the viewer",
+        "It has no Meta Pixel",
+        "It used Advantage+ placements"
+      ],
+      "correct": 1,
+      "explanation": "The Advertising Standards prohibit implying a personal attribute of the user; the problem is the wording.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "What does the ad review process review?",
+      "options": [
+        "Only the image",
+        "Text, image, video, targeting and the destination landing page",
+        "Only the budget",
+        "Only the objective"
+      ],
+      "correct": 1,
+      "explanation": "The ad review evaluates all the ad's components and its destination against the Advertising Standards.",
+      "difficulty": "easy"
+    }
+  ]
+}

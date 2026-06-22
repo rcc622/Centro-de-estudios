@@ -1,0 +1,123 @@
+{
+  "title": "Unit quiz · Module 7",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Customer list for a custom audience:",
+      "options": [
+        "It's uploaded in plain text",
+        "It's uploaded hashed; matching happens without exposing data in the clear",
+        "It's not allowed",
+        "Only with reservation"
+      ],
+      "correct": 1,
+      "explanation": "Hashing before upload; Meta does matching with hashes.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The inventory filter controls:",
+      "options": [
+        "The budget",
+        "The suitability level of the adjacent content (expanded/moderate/limited)",
+        "The bid strategy",
+        "The conversion event"
+      ],
+      "correct": 1,
+      "explanation": "It adjusts how strict the content the ad appears next to is.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Block list vs allow list:",
+      "options": [
+        "Block = allow only approved ones; allow = block",
+        "Block = exclude specific publishers; allow = allow only approved ones",
+        "They're the same",
+        "They only apply to reservation"
+      ],
+      "correct": 1,
+      "explanation": "Block excludes; allow restricts to an allowed list.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Trade-off of stricter brand safety:",
+      "options": [
+        "More reach and lower cost",
+        "More safety but lower reach and possibly higher cost",
+        "No effect on delivery",
+        "Always improves ROAS"
+      ],
+      "correct": 1,
+      "explanation": "Less available inventory: a balance between brand risk and efficiency.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An ad says 'We know you have diabetes; this is for you'. It's rejected because:",
+      "options": [
+        "The health category is prohibited",
+        "It implies/asserts a personal attribute of the viewer",
+        "It has no Meta Pixel",
+        "It used Advantage+ creative"
+      ],
+      "correct": 1,
+      "explanation": "The Advertising Standards prohibit implying personal attributes of the user; the problem is the wording.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The ad review reviews: Select 3.",
+      "options": [
+        "Text and creative (image/video)",
+        "Targeting",
+        "Destination landing page",
+        "The internal campaign name",
+        "The color of the client's logo"
+      ],
+      "correct": [0, 1, 2],
+      "multi": true,
+      "explanation": "It evaluates the creative, targeting and the destination landing page against the Advertising Standards.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Typical ad review time:",
+      "options": ["~1 minute", "~24 hours", "~7 days", "~1 month"],
+      "correct": 1,
+      "explanation": "It usually resolves in ~24 hours, combining automation and human review.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "If an ad is rejected, the advertiser can:",
+      "options": [
+        "Nothing, it stays blocked forever",
+        "Edit it or request a review (appeal)",
+        "Switch accounts",
+        "Force delivery with more budget"
+      ],
+      "correct": 1,
+      "explanation": "You can fix the ad or appeal the decision.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Are privacy and performance necessarily at odds?",
+      "options": [
+        "Yes, always",
+        "No; a server signal with consent (Conversions API) improves measurement and compliance",
+        "Yes, except in reservation",
+        "Only in awareness"
+      ],
+      "correct": 1,
+      "explanation": "Well designed, privacy and performance reinforce each other (Conversions API with consent).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A conservative brand that doesn't want to appear next to mature content in third-party placements:",
+      "options": [
+        "Raise the budget",
+        "A stricter inventory filter + block lists as needed",
+        "Change the objective to awareness",
+        "Turn on Advantage+ creative"
+      ],
+      "correct": 1,
+      "explanation": "The inventory filter adjusts adjacency; block lists exclude specific publishers.",
+      "difficulty": "hard"
+    }
+  ]
+}
