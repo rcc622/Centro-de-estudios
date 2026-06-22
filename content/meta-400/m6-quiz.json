@@ -29,38 +29,38 @@
     {
       "q": "El cliente duda si las ventas habrían ocurrido sin pauta. Metodología:",
       "options": [
-        "Attribution last-click",
-        "Conversion Lift con holdout",
+        "Atribución (attribution) last-click",
+        "Aumento de conversiones (Conversion Lift) con holdout",
         "Más frequency",
         "Cambiar a Reservation"
       ],
       "correct": 1,
-      "explanation": "Conversion Lift aísla las conversiones incrementales con grupo control.",
+      "explanation": "El Aumento de conversiones aísla las conversiones incrementales con grupo control.",
       "difficulty": "hard"
     },
     {
       "q": "Medir cambio en recall e intención de una campaña de marca:",
-      "options": ["Conversion Lift", "Brand Lift", "A/B Test", "MMM"],
+      "options": ["Aumento de conversiones", "Mejora de la marca (brand lift)", "Prueba A/B (A/B test)", "MMM"],
       "correct": 1,
-      "explanation": "Brand Lift mide métricas de marca por encuesta entre expuestos y control.",
+      "explanation": "La Mejora de la marca mide métricas de marca por encuesta entre expuestos y control.",
       "difficulty": "medium"
     },
     {
       "q": "Comparar dos creativos para ver cuál rinde mejor con audiencias separadas:",
-      "options": ["Brand Lift", "A/B Test", "MMM", "Attribution"],
+      "options": ["Mejora de la marca", "Prueba A/B", "MMM", "Atribución (attribution)"],
       "correct": 1,
-      "explanation": "A/B Test compara variantes con audiencias separadas para evitar contaminación.",
+      "explanation": "La Prueba A/B compara variantes con audiencias separadas para evitar contaminación.",
       "difficulty": "easy"
     },
     {
       "q": "El CMO quiere ver cómo TODOS los canales (TV, search, social, offline) aportan a ventas anuales:",
-      "options": ["Attribution de Meta", "Brand Lift", "Marketing Mix Modeling (MMM)", "A/B Test"],
+      "options": ["Atribución de Meta", "Mejora de la marca", "Marketing Mix Modeling (MMM)", "Prueba A/B"],
       "correct": 2,
       "explanation": "MMM modela el impacto agregado de todos los canales a nivel macro.",
       "difficulty": "hard"
     },
     {
-      "q": "Cambiar el attribution setting:",
+      "q": "Cambiar la configuración de atribución (attribution setting):",
       "options": [
         "Cambia las ventas reales",
         "Cambia qué conversiones se le acreditan a Meta, no las ventas reales",
@@ -72,41 +72,41 @@
       "difficulty": "medium"
     },
     {
-      "q": "Attribution vs incrementalidad:",
+      "q": "Atribución vs incrementalidad:",
       "options": [
         "Son lo mismo",
-        "Attribution = crédito por touchpoint; incrementalidad = efecto causal de la pauta",
+        "Atribución = crédito por touchpoint; incrementalidad = efecto causal de la pauta",
         "Incrementalidad asigna crédito por clic",
-        "Attribution usa holdout"
+        "La atribución usa holdout"
       ],
       "correct": 1,
-      "explanation": "La attribution reparte crédito; la incrementalidad pregunta qué pasó por causa de la pauta.",
+      "explanation": "La atribución reparte crédito; la incrementalidad pregunta qué pasó por causa de la pauta.",
       "difficulty": "medium"
     },
     {
       "q": "¿Cuáles son experiments de Meta? Selecciona 3.",
       "options": [
-        "A/B Test",
-        "Conversion Lift",
-        "Brand Lift",
+        "Prueba A/B",
+        "Aumento de conversiones",
+        "Mejora de la marca",
         "Bid Cap",
         "Advantage+ placements"
       ],
       "correct": [0, 1, 2],
       "multi": true,
-      "explanation": "A/B Test, Conversion Lift y Brand Lift son experiments. Bid Cap y Advantage+ placements no lo son.",
+      "explanation": "La Prueba A/B, el Aumento de conversiones y la Mejora de la marca son experiments. Bid Cap y Advantage+ placements no lo son.",
       "difficulty": "medium"
     },
     {
       "q": "Plan de medición para un cliente que exige probar valor causal:",
       "options": [
-        "Solo attribution de Ads Manager",
-        "Conversion Lift como eje + attribution para optimización diaria",
-        "Solo Brand Lift",
+        "Solo atribución de Ads Manager",
+        "Aumento de conversiones como eje + atribución para optimización diaria",
+        "Solo Mejora de la marca",
         "Comparar semanas sin control"
       ],
       "correct": 1,
-      "explanation": "Causalidad = lift como eje; attribution complementa la operación, no prueba causalidad sola.",
+      "explanation": "Causalidad = lift como eje; la atribución complementa la operación, no prueba causalidad sola.",
       "difficulty": "hard"
     }
   ]

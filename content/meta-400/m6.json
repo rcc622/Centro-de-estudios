@@ -288,33 +288,33 @@
           "type": "kvtable",
           "h": "Experiments de Meta",
           "rows": [
-            ["A/B Test", "Compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas"],
-            ["Conversion Lift", "Mide conversiones incrementales con grupo control (holdout)"],
-            ["Brand Lift", "Mide cambios en recall, awareness o intención por encuesta"],
+            ["Prueba A/B (A/B test)", "Compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas"],
+            ["Aumento de conversiones (Conversion Lift)", "Mide conversiones incrementales con grupo control (holdout)"],
+            ["Mejora de la marca (brand lift)", "Mide cambios en recall, awareness o intención por encuesta"],
             ["Holdout", "Grupo que NO ve anuncios; base para comparar incrementalidad"]
           ]
         },
         {
           "type": "tip",
-          "label": "ATTRIBUTION ≠ INCREMENTALIDAD",
-          "body": "La attribution asigna crédito a touchpoints; la incrementalidad pregunta qué habría pasado sin el anuncio. Para probar valor real de la inversión, el estándar de oro es el experimento de lift."
+          "label": "ATRIBUCIÓN ≠ INCREMENTALIDAD",
+          "body": "La atribución (attribution) asigna crédito a touchpoints; la incrementalidad pregunta qué habría pasado sin el anuncio. Para probar valor real de la inversión, el estándar de oro es el experimento de lift."
         },
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Usar la attribution last-click como 'prueba' de que la pauta generó las ventas. La attribution no responde causalidad: para eso necesitas un experimento de lift con holdout."
+          "body": "Usar la atribución last-click como 'prueba' de que la pauta generó las ventas. La atribución no responde causalidad: para eso necesitas un experimento de lift con holdout."
         },
         {
           "type": "mcq",
           "q": "El cliente duda si las ventas reportadas habrían ocurrido igual sin pauta. ¿Qué metodología propones?",
           "options": [
-            "Revisar attribution last-click",
-            "Conversion Lift con grupo holdout",
+            "Revisar atribución last-click",
+            "Aumento de conversiones con grupo holdout",
             "Más frequency",
             "Cambiar a Reservation"
           ],
           "correct": 1,
-          "explanation": "La pregunta es causal (incrementalidad). Conversion Lift compara expuestos vs. holdout para aislar las conversiones que la pauta realmente generó. La attribution no responde causalidad.",
+          "explanation": "La pregunta es causal (incrementalidad). El Aumento de conversiones compara expuestos vs. holdout para aislar las conversiones que la pauta realmente generó. La atribución no responde causalidad.",
           "difficulty": "hard"
         }
       ]
@@ -353,13 +353,13 @@
           "type": "mcq",
           "q": "¿Qué experimento mide cambios en recall, awareness o intención por encuesta?",
           "options": [
-            "Conversion Lift",
-            "A/B Test",
-            "Brand Lift",
+            "Aumento de conversiones (Conversion Lift)",
+            "Prueba A/B (A/B test)",
+            "Mejora de la marca (brand lift)",
             "Holdout"
           ],
           "correct": 2,
-          "explanation": "Brand Lift mide cambios en recall, awareness o intención por encuesta (expuestos vs. control)."
+          "explanation": "La Mejora de la marca mide cambios en recall, awareness o intención por encuesta (expuestos vs. control)."
         },
         {
           "type": "fill",
@@ -375,15 +375,15 @@
         },
         {
           "type": "mcq",
-          "q": "¿En qué se diferencia la attribution de la incrementalidad?",
+          "q": "¿En qué se diferencia la atribución (attribution) de la incrementalidad?",
           "options": [
             "Son sinónimos",
-            "Attribution asigna crédito a touchpoints; incrementalidad pregunta qué habría pasado sin el anuncio",
-            "Attribution mide recall; incrementalidad mide CPC",
-            "Attribution es un experimento de lift; incrementalidad no"
+            "La atribución asigna crédito a touchpoints; incrementalidad pregunta qué habría pasado sin el anuncio",
+            "La atribución mide recall; incrementalidad mide CPC",
+            "La atribución es un experimento de lift; incrementalidad no"
           ],
           "correct": 1,
-          "explanation": "La attribution asigna crédito a touchpoints; la incrementalidad pregunta qué habría pasado sin el anuncio. Para probar valor real, el estándar de oro es el experimento de lift."
+          "explanation": "La atribución asigna crédito a touchpoints; la incrementalidad pregunta qué habría pasado sin el anuncio. Para probar valor real, el estándar de oro es el experimento de lift."
         }
       ]
     },
@@ -403,37 +403,37 @@
           "type": "mcq",
           "q": "¿Qué tipo de pregunta está haciendo el director?",
           "options": [
-            "Una pregunta de crédito por touchpoint (attribution)",
+            "Una pregunta de crédito por touchpoint (atribución / attribution)",
             "Una pregunta causal de incrementalidad",
             "Una pregunta de recall de marca",
             "Una pregunta de CPC"
           ],
           "correct": 1,
-          "explanation": "Pregunta si las ventas habrían ocurrido igual sin pauta: eso es incrementalidad (efecto causal), no attribution."
+          "explanation": "Pregunta si las ventas habrían ocurrido igual sin pauta: eso es incrementalidad (efecto causal), no atribución."
         },
         {
           "type": "mcq",
           "q": "¿Qué experimento de Meta responde directamente esa duda?",
           "options": [
-            "A/B Test de creativo",
-            "Conversion Lift con grupo holdout",
-            "Brand Lift",
+            "Prueba A/B (A/B test) de creativo",
+            "Aumento de conversiones (Conversion Lift) con grupo holdout",
+            "Mejora de la marca (brand lift)",
             "Subir la frequency y comparar semanas"
           ],
           "correct": 1,
-          "explanation": "Conversion Lift compara expuestos vs. holdout para aislar las conversiones que la pauta realmente generó. La attribution no responde causalidad."
+          "explanation": "El Aumento de conversiones compara expuestos vs. holdout para aislar las conversiones que la pauta realmente generó. La atribución no responde causalidad."
         },
         {
           "type": "mcq",
           "q": "Además, quieren saber si la campaña de marca movió el recall y la intención de compra del público B2B. ¿Qué experimento agregas?",
           "options": [
-            "Otro Conversion Lift",
-            "Brand Lift",
-            "A/B Test de audiencia",
+            "Otro Aumento de conversiones",
+            "Mejora de la marca",
+            "Prueba A/B de audiencia",
             "ROAS Goal"
           ],
           "correct": 1,
-          "explanation": "Brand Lift mide cambios en recall, awareness o intención por encuesta entre expuestos y control. Conversion Lift es para conversiones; A/B Test compara variantes; ROAS Goal es bid strategy."
+          "explanation": "La Mejora de la marca mide cambios en recall, awareness o intención por encuesta entre expuestos y control. El Aumento de conversiones es para conversiones; la Prueba A/B compara variantes; ROAS Goal es bid strategy."
         }
       ]
     },
@@ -444,11 +444,11 @@
       "type": "flashcards",
       "cards": [
         { "q": "Incrementalidad", "a": "Efecto causal de la pauta: conversiones que NO habrían ocurrido sin anuncios." },
-        { "q": "Conversion Lift", "a": "Experimento con grupo holdout que mide conversiones incrementales." },
-        { "q": "Brand Lift", "a": "Mide cambios en recall/awareness/intención vía encuesta (expuestos vs. control)." },
-        { "q": "A/B Test", "a": "Compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas." },
+        { "q": "Aumento de conversiones (Conversion Lift)", "a": "Experimento con grupo holdout que mide conversiones incrementales." },
+        { "q": "Mejora de la marca (brand lift)", "a": "Mide cambios en recall/awareness/intención vía encuesta (expuestos vs. control)." },
+        { "q": "Prueba A/B (A/B test)", "a": "Compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas." },
         { "q": "Holdout", "a": "Grupo que NO ve anuncios; base para comparar incrementalidad." },
-        { "q": "Attribution vs incrementalidad", "a": "Attribution = crédito por touchpoint. Incrementalidad = qué pasó por causa de la pauta." }
+        { "q": "Atribución (attribution) vs incrementalidad", "a": "Atribución = crédito por touchpoint. Incrementalidad = qué pasó por causa de la pauta." }
       ]
     },
     {
@@ -460,12 +460,12 @@
         {
           "type": "concept",
           "h": "Tres lentes complementarios",
-          "body": "Para medir bien, Meta recomienda no casarte con un solo método sino usar tres lentes que se complementan. El primero son los <strong>experiments</strong> (experimentos), que prueban causalidad real con grupos de prueba y control. El segundo es la <strong>attribution</strong> (atribución), que reparte el crédito de cada venta entre los <strong>touchpoints</strong> (puntos de contacto, cada vez que la persona vio o tocó tu marca). El tercero es el <strong>marketing mix modeling (MMM)</strong> (modelado de mezcla de marketing), que mira el aporte agregado de TODOS los canales, incluso los offline. Cada lente tiene puntos ciegos, así que se usan juntos."
+          "body": "Para medir bien, Meta recomienda no casarte con un solo método sino usar tres lentes que se complementan. El primero son los <strong>experiments</strong> (experimentos), que prueban causalidad real con grupos de prueba y control. El segundo es la <strong>atribución</strong> (attribution), que reparte el crédito de cada venta entre los <strong>touchpoints</strong> (puntos de contacto, cada vez que la persona vio o tocó tu marca). El tercero es el <strong>marketing mix modeling (MMM)</strong> (modelado de mezcla de marketing), que mira el aporte agregado de TODOS los canales, incluso los offline. Cada lente tiene puntos ciegos, así que se usan juntos."
         },
         {
           "type": "concept",
           "h": "Cada lente responde una pregunta distinta",
-          "body": "La clave es entender qué pregunta contesta cada uno. Los experiments responden \"¿mi pauta <em>causó</em> este resultado?\". La attribution responde \"¿qué touchpoints intervinieron en el camino a la conversión?\". El MMM responde \"¿cómo aportan a las ventas todos mis canales, online y offline, a nivel macro?\". Ninguno por sí solo da la foto completa: el experimento prueba causa pero es caro y puntual, la attribution es diaria pero no prueba causa, y el MMM ve el bosque pero no el árbol. Por eso combinarlos da la lectura más confiable."
+          "body": "La clave es entender qué pregunta contesta cada uno. Los experiments responden \"¿mi pauta <em>causó</em> este resultado?\". La atribución responde \"¿qué touchpoints intervinieron en el camino a la conversión?\". El MMM responde \"¿cómo aportan a las ventas todos mis canales, online y offline, a nivel macro?\". Ninguno por sí solo da la foto completa: el experimento prueba causa pero es caro y puntual, la atribución es diaria pero no prueba causa, y el MMM ve el bosque pero no el árbol. Por eso combinarlos da la lectura más confiable."
         },
         {
           "type": "concept",
@@ -477,32 +477,32 @@
           "h": "Cuándo usar cada uno",
           "rows": [
             ["Experiments", "Probar causalidad de una táctica o canal (gold standard)"],
-            ["Attribution", "Optimización táctica diaria; ver qué touchpoints intervienen"],
+            ["Atribución", "Optimización táctica diaria; ver qué touchpoints intervienen"],
             ["MMM", "Visión macro: cómo todos los canales (on/offline) aportan a ventas"],
             ["Triangulación", "Combinar los tres para una lectura robusta"]
           ]
         },
         {
           "type": "tip",
-          "label": "ATTRIBUTION SETTING",
+          "label": "CONFIGURACIÓN DE ATRIBUCIÓN",
           "body": "La ventana de atribución (ej. 7-day click, 1-day view) define qué conversiones se le cuentan a Meta. Cambiarla cambia el número reportado sin cambiar las ventas reales: comunícalo al cliente."
         },
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Tratar la <strong>attribution</strong> como prueba única de causalidad. Es para optimización táctica; la causalidad la prueban los experiments de lift."
+          "body": "Tratar la <strong>atribución</strong> como prueba única de causalidad. Es para optimización táctica; la causalidad la prueban los experiments de lift."
         },
         {
           "type": "mcq",
           "q": "El CMO quiere entender cómo TODOS los canales (TV, search, social, offline) contribuyen a las ventas anuales. ¿Qué metodología?",
           "options": [
-            "Attribution de Meta",
-            "Brand Lift",
+            "Atribución de Meta",
+            "Mejora de la marca (brand lift)",
             "Marketing Mix Modeling (MMM)",
-            "A/B Test de creativo"
+            "Prueba A/B (A/B test) de creativo"
           ],
           "correct": 2,
-          "explanation": "MMM modela el impacto agregado de todos los canales (online y offline) a nivel macro. Attribution solo ve touchpoints digitales medibles; Brand Lift y A/B Test responden preguntas más acotadas.",
+          "explanation": "MMM modela el impacto agregado de todos los canales (online y offline) a nivel macro. La atribución solo ve touchpoints digitales medibles; la Mejora de la marca y la Prueba A/B responden preguntas más acotadas.",
           "difficulty": "hard"
         }
       ]
@@ -518,20 +518,20 @@
           "q": "¿Cuáles son los tres enfoques de medición que Meta describe como complementarios?",
           "options": [
             "Reach, frequency y recall",
-            "Experiments, attribution y marketing mix modeling (MMM)",
+            "Experiments, atribución (attribution) y marketing mix modeling (MMM)",
             "CPC, CPM y CTR",
             "Awareness, Traffic y Sales"
           ],
           "correct": 1,
-          "explanation": "Meta describe experiments (causalidad), attribution (crédito por touchpoint) y MMM (impacto agregado de todos los canales)."
+          "explanation": "Meta describe experiments (causalidad), atribución (crédito por touchpoint) y MMM (impacto agregado de todos los canales)."
         },
         {
           "type": "fill",
           "q": "El enfoque que da la visión macro de cómo todos los canales on/offline aportan a ventas es ___.",
           "options": [
             "MMM",
-            "attribution",
-            "A/B Test",
+            "atribución",
+            "Prueba A/B",
             "holdout"
           ],
           "correct": 0,
@@ -541,10 +541,10 @@
           "type": "mcq",
           "q": "¿Cuál es el gold standard para probar causalidad de una táctica o canal?",
           "options": [
-            "Attribution",
+            "Atribución",
             "Experiments",
             "MMM",
-            "Cambiar el attribution setting"
+            "Cambiar la configuración de atribución"
           ],
           "correct": 1,
           "explanation": "Los experiments son el gold standard para probar causalidad de una táctica o canal."
@@ -563,7 +563,7 @@
         },
         {
           "type": "mcq",
-          "q": "¿Qué hace el attribution setting (ej. 7-day click, 1-day view)?",
+          "q": "¿Qué hace la configuración de atribución (attribution setting) (ej. 7-day click, 1-day view)?",
           "options": [
             "Cambia las ventas reales del negocio",
             "Define qué conversiones se le cuentan a Meta; cambiarlo cambia el número reportado, no las ventas reales",
@@ -591,34 +591,34 @@
           "type": "mcq",
           "q": "¿Qué plan de medición propones como eje?",
           "options": [
-            "Solo el reporte de attribution de Ads Manager",
-            "Conversion Lift (incrementalidad) como eje, apoyado con attribution para optimización diaria",
-            "Brand Lift únicamente",
+            "Solo el reporte de atribución (attribution) de Ads Manager",
+            "Aumento de conversiones (Conversion Lift) (incrementalidad) como eje, apoyado con atribución para optimización diaria",
+            "Mejora de la marca (brand lift) únicamente",
             "Subir frequency y comparar semanas"
           ],
           "correct": 1,
-          "explanation": "La exigencia es causal: Conversion Lift demuestra ventas incrementales. La attribution sirve para la optimización táctica diaria, pero no prueba causalidad por sí sola.",
+          "explanation": "La exigencia es causal: el Aumento de conversiones demuestra ventas incrementales. La atribución sirve para la optimización táctica diaria, pero no prueba causalidad por sí sola.",
           "difficulty": "medium"
         },
         {
           "type": "mcq",
           "q": "El cliente luego quiere una visión macro de cómo Meta encaja junto a TV, search y su fuerza de ventas offline. ¿Qué capa agregas?",
           "options": [
-            "Otro Conversion Lift",
+            "Otro Aumento de conversiones",
             "Marketing Mix Modeling (MMM)",
-            "Cambiar el attribution setting",
-            "Brand Lift"
+            "Cambiar la configuración de atribución",
+            "Mejora de la marca"
           ],
           "correct": 1,
           "explanation": "MMM modela el impacto agregado de todos los canales on/offline a nivel macro. Es la capa correcta para esa visión global."
         },
         {
           "type": "mcq",
-          "q": "¿Cómo describes el rol de la attribution en este plan?",
+          "q": "¿Cómo describes el rol de la atribución en este plan?",
           "options": [
             "Como la prueba única de causalidad",
             "Como capa complementaria para optimización táctica diaria, no como prueba única de causalidad",
-            "Como reemplazo del Conversion Lift",
+            "Como reemplazo del Aumento de conversiones",
             "Como medición de recall de marca"
           ],
           "correct": 1,
@@ -634,10 +634,10 @@
       "cards": [
         { "q": "Marketing Mix Modeling (MMM)", "a": "Modela el impacto agregado de todos los canales (on/offline) a nivel macro." },
         { "q": "Gold standard para probar valor causal", "a": "Experiments de lift (holdout)." },
-        { "q": "¿Qué hace el attribution setting?", "a": "Define la ventana (ej. 7-day click/1-day view) que decide qué conversiones se le cuentan a Meta." },
-        { "q": "Triangulación de medición", "a": "Combinar experiments + attribution + MMM para una lectura robusta." },
-        { "q": "Rol de la attribution en el plan", "a": "Optimización táctica diaria; capa complementaria, no prueba única de causalidad." },
-        { "q": "Cierre del módulo", "a": "Mide según el business goal, prueba el valor con experiments de lift, usa attribution + MMM como capas complementarias." }
+        { "q": "¿Qué hace la configuración de atribución (attribution setting)?", "a": "Define la ventana (ej. 7-day click/1-day view) que decide qué conversiones se le cuentan a Meta." },
+        { "q": "Triangulación de medición", "a": "Combinar experiments + atribución + MMM para una lectura robusta." },
+        { "q": "Rol de la atribución en el plan", "a": "Optimización táctica diaria; capa complementaria, no prueba única de causalidad." },
+        { "q": "Cierre del módulo", "a": "Mide según el business goal, prueba el valor con experiments de lift, usa atribución + MMM como capas complementarias." }
       ]
     },
     {
@@ -667,30 +667,30 @@
         {
           "type": "mcq",
           "q": "Para saber si el rebrand movió el recall, ¿qué experimento corres?",
-          "options": ["Conversion Lift", "Brand Lift", "A/B Test", "MMM"],
+          "options": ["Aumento de conversiones (Conversion Lift)", "Mejora de la marca (brand lift)", "Prueba A/B (A/B test)", "MMM"],
           "correct": 1,
-          "explanation": "Brand Lift mide cambios en recall/awareness/intención por encuesta entre expuestos y control."
+          "explanation": "La Mejora de la marca mide cambios en recall/awareness/intención por encuesta entre expuestos y control."
         },
         {
           "type": "mcq",
           "q": "Para probar que la pauta genera ventas incrementales (no las que igual hubieran ocurrido), ¿qué propones?",
           "options": [
-            "Attribution last-click",
-            "Conversion Lift con grupo holdout",
-            "Brand Lift",
+            "Atribución (attribution) last-click",
+            "Aumento de conversiones con grupo holdout",
+            "Mejora de la marca",
             "Subir frequency"
           ],
           "correct": 1,
-          "explanation": "La pregunta es causal: Conversion Lift compara expuestos vs. holdout. La attribution no prueba causalidad."
+          "explanation": "La pregunta es causal: el Aumento de conversiones compara expuestos vs. holdout. La atribución no prueba causalidad."
         },
         {
           "type": "mcq",
           "q": "Para ver cómo Meta encaja junto a la fuerza comercial offline a nivel anual, ¿qué capa agregas?",
           "options": [
-            "Otro Brand Lift",
+            "Otra Mejora de la marca",
             "Marketing Mix Modeling (MMM)",
-            "Cambiar el attribution setting",
-            "A/B Test"
+            "Cambiar la configuración de atribución",
+            "Prueba A/B"
           ],
           "correct": 1,
           "explanation": "MMM modela el impacto agregado de todos los canales on/offline a nivel macro."
@@ -710,10 +710,10 @@
         ["Ingreso · métricas", "Purchase value, ROAS"],
         ["Incrementalidad", "Efecto causal: conversiones que no hubieran ocurrido"],
         ["Holdout", "Grupo que NO ve anuncios; base de comparación"],
-        ["Conversion Lift", "Conversiones incrementales con holdout"],
-        ["Brand Lift", "Cambios en recall/awareness/intención por encuesta"],
-        ["A/B Test", "Compara dos variantes con audiencias separadas"],
-        ["Attribution", "Crédito por touchpoint; optimización táctica"],
+        ["Aumento de conversiones (Conversion Lift)", "Conversiones incrementales con holdout"],
+        ["Mejora de la marca (brand lift)", "Cambios en recall/awareness/intención por encuesta"],
+        ["Prueba A/B (A/B test)", "Compara dos variantes con audiencias separadas"],
+        ["Atribución (attribution)", "Crédito por touchpoint; optimización táctica"],
         ["MMM", "Impacto agregado de todos los canales on/offline"],
         ["Triangulación", "Combinar experiments + attribution + MMM"]
       ]
@@ -728,10 +728,10 @@
         "Definir la métrica que prueba el business goal",
         "Reportar esa métrica como veredicto (el resto, contexto)",
         "Diseñar un experiment de lift para probar valor causal",
-        "Usar attribution para optimización táctica diaria",
+        "Usar atribución (attribution) para optimización táctica diaria",
         "Agregar MMM para la visión macro multicanal"
       ],
-      "explanation": "La métrica sigue al objetivo; el valor causal se prueba con experiments; attribution y MMM son capas complementarias, no la prueba única."
+      "explanation": "La métrica sigue al objetivo; el valor causal se prueba con experiments; atribución y MMM son capas complementarias, no la prueba única."
     },
     {
       "id": "6.fill",
@@ -777,13 +777,13 @@
         {
           "type": "fill",
           "q": "El aporte agregado de todos los canales on/offline lo da el ___.",
-          "options": ["MMM", "attribution", "A/B Test", "holdout"],
+          "options": ["MMM", "atribución (attribution)", "Prueba A/B", "holdout"],
           "correct": 0,
           "explanation": "Marketing Mix Modeling."
         },
         {
           "type": "fill",
-          "q": "Cambiar el attribution setting cambia el número reportado, no las ventas ___.",
+          "q": "Cambiar la configuración de atribución (attribution setting) cambia el número reportado, no las ventas ___.",
           "options": ["reales", "incrementales", "atribuidas", "proyectadas"],
           "correct": 0,
           "explanation": "Solo cambia qué conversiones se le cuentan a Meta."
@@ -843,7 +843,7 @@
         },
         {
           "type": "mcq",
-          "q": "Conversion Lift sirve para:",
+          "q": "El Aumento de conversiones (Conversion Lift) sirve para:",
           "options": [
             "Comparar dos creativos",
             "Medir conversiones incrementales con holdout",
@@ -855,7 +855,7 @@
         },
         {
           "type": "mcq",
-          "q": "Brand Lift mide:",
+          "q": "La Mejora de la marca (brand lift) mide:",
           "options": [
             "Conversiones incrementales",
             "Cambios en recall/awareness/intención por encuesta",
@@ -867,7 +867,7 @@
         },
         {
           "type": "mcq",
-          "q": "A/B Test:",
+          "q": "Prueba A/B (A/B test):",
           "options": [
             "Compara dos variantes con audiencias separadas",
             "Mide recall por encuesta",
@@ -879,33 +879,33 @@
         },
         {
           "type": "mcq",
-          "q": "Attribution vs incrementalidad:",
+          "q": "Atribución (attribution) vs incrementalidad:",
           "options": [
             "Son lo mismo",
-            "Attribution = crédito por touchpoint; incrementalidad = causalidad",
-            "Attribution mide recall",
+            "Atribución = crédito por touchpoint; incrementalidad = causalidad",
+            "La atribución mide recall",
             "Incrementalidad es un setting"
           ],
           "correct": 1,
-          "explanation": "Attribution no prueba causalidad."
+          "explanation": "La atribución no prueba causalidad."
         },
         {
           "type": "mcq",
           "q": "Visión macro de todos los canales on/offline:",
-          "options": ["Attribution", "MMM", "Brand Lift", "A/B Test"],
+          "options": ["Atribución", "MMM", "Mejora de la marca", "Prueba A/B"],
           "correct": 1,
           "explanation": "Marketing Mix Modeling."
         },
         {
           "type": "mcq",
           "q": "Gold standard para probar causalidad:",
-          "options": ["Attribution", "Experiments de lift", "MMM", "Cambiar el setting"],
+          "options": ["Atribución", "Experiments de lift", "MMM", "Cambiar el setting"],
           "correct": 1,
           "explanation": "Experiments con holdout."
         },
         {
           "type": "mcq",
-          "q": "Cambiar el attribution setting:",
+          "q": "Cambiar la configuración de atribución (attribution setting):",
           "options": [
             "Cambia las ventas reales",
             "Cambia el número reportado, no las ventas reales",
@@ -949,13 +949,13 @@
           "explanation": "Es el grupo control que NO ve anuncios."
         },
         {
-          "q": "¿Brand Lift mide conversiones?",
+          "q": "¿La Mejora de la marca (brand lift) mide conversiones?",
           "options": ["Sí", "No, recall/intención"],
           "correct": 1,
-          "explanation": "Conversion Lift mide conversiones; Brand Lift mide recall."
+          "explanation": "El Aumento de conversiones (Conversion Lift) mide conversiones; la Mejora de la marca mide recall."
         },
         {
-          "q": "¿Attribution prueba causalidad?",
+          "q": "¿La atribución (attribution) prueba causalidad?",
           "options": ["Sí", "No"],
           "correct": 1,
           "explanation": "Para causalidad: experiments de lift."
@@ -967,7 +967,7 @@
           "explanation": "MMM modela todos los canales on/offline."
         },
         {
-          "q": "¿Cambiar el attribution setting cambia las ventas reales?",
+          "q": "¿Cambiar la configuración de atribución (attribution setting) cambia las ventas reales?",
           "options": ["Sí", "No"],
           "correct": 1,
           "explanation": "Solo cambia el número reportado."
@@ -988,19 +988,19 @@
         { "q": "Trampa típica de medición", "a": "Juzgar Awareness por CPC o por compras." },
         { "q": "Incrementalidad", "a": "Efecto causal de la pauta: conversiones que NO habrían ocurrido sin anuncios." },
         { "q": "Holdout", "a": "Grupo que NO ve anuncios; base para comparar incrementalidad." },
-        { "q": "Conversion Lift", "a": "Experimento con grupo holdout que mide conversiones incrementales." },
-        { "q": "Brand Lift", "a": "Mide cambios en recall/awareness/intención vía encuesta (expuestos vs. control)." },
-        { "q": "A/B Test", "a": "Compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas." },
-        { "q": "Attribution vs incrementalidad", "a": "Attribution = crédito por touchpoint. Incrementalidad = qué pasó por causa de la pauta." },
+        { "q": "Aumento de conversiones (Conversion Lift)", "a": "Experimento con grupo holdout que mide conversiones incrementales." },
+        { "q": "Mejora de la marca (brand lift)", "a": "Mide cambios en recall/awareness/intención vía encuesta (expuestos vs. control)." },
+        { "q": "Prueba A/B (A/B test)", "a": "Compara dos variantes (creativo, audiencia, estrategia) con audiencias separadas." },
+        { "q": "Atribución (attribution) vs incrementalidad", "a": "Atribución = crédito por touchpoint. Incrementalidad = qué pasó por causa de la pauta." },
         { "q": "Marketing Mix Modeling (MMM)", "a": "Modela el impacto agregado de todos los canales (on/offline) a nivel macro." },
         { "q": "Gold standard para probar valor causal", "a": "Experiments de lift (holdout)." },
-        { "q": "¿Qué hace el attribution setting?", "a": "Define la ventana (ej. 7-day click/1-day view) que decide qué conversiones se le cuentan a Meta." },
-        { "q": "Triangulación de medición", "a": "Combinar experiments + attribution + MMM para una lectura robusta." },
-        { "q": "Rol de la attribution en el plan", "a": "Optimización táctica diaria; capa complementaria, no prueba única de causalidad." },
-        { "q": "Cierre del módulo", "a": "Mide según el business goal, prueba el valor con experiments de lift, usa attribution + MMM como capas complementarias." },
+        { "q": "¿Qué hace la configuración de atribución (attribution setting)?", "a": "Define la ventana (ej. 7-day click/1-day view) que decide qué conversiones se le cuentan a Meta." },
+        { "q": "Triangulación de medición", "a": "Combinar experiments + atribución + MMM para una lectura robusta." },
+        { "q": "Rol de la atribución en el plan", "a": "Optimización táctica diaria; capa complementaria, no prueba única de causalidad." },
+        { "q": "Cierre del módulo", "a": "Mide según el business goal, prueba el valor con experiments de lift, usa atribución + MMM como capas complementarias." },
         { "q": "Vanity metrics", "a": "Likes/impresiones/clics que se ven bien pero no prueban el business goal." },
-        { "q": "¿Attribution prueba causalidad?", "a": "No; para causalidad, experiments de lift con holdout." },
-        { "q": "Conversion Lift vs Brand Lift", "a": "Conversion = conversiones incrementales. Brand = recall/intención por encuesta." },
+        { "q": "¿La atribución prueba causalidad?", "a": "No; para causalidad, experiments de lift con holdout." },
+        { "q": "Aumento de conversiones vs Mejora de la marca", "a": "Aumento de conversiones = conversiones incrementales. Mejora de la marca = recall/intención por encuesta." },
         { "q": "¿Cuándo MMM?", "a": "Visión macro multicanal on/offline a nivel agregado/anual." }
       ]
     }

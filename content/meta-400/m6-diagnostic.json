@@ -28,9 +28,9 @@
     },
     {
       "q": "Para medir cambios en recall e intención de compra de una campaña de marca:",
-      "options": ["Conversion Lift", "Brand Lift", "A/B Test", "ROAS Goal"],
+      "options": ["Aumento de conversiones (Conversion Lift)", "Mejora de la marca (brand lift)", "Prueba A/B (A/B test)", "ROAS Goal"],
       "correct": 1,
-      "explanation": "Brand Lift mide métricas de marca (recall, awareness, intención) vía encuesta entre expuestos y control.",
+      "explanation": "La Mejora de la marca mide métricas de marca (recall, awareness, intención) vía encuesta entre expuestos y control.",
       "difficulty": "medium"
     },
     {
@@ -42,7 +42,7 @@
         "Crear custom audiences"
       ],
       "correct": 1,
-      "explanation": "MMM modela la contribución macro de todos los canales; attribution solo ve touchpoints digitales.",
+      "explanation": "MMM modela la contribución macro de todos los canales; la atribución (attribution) solo ve touchpoints digitales.",
       "difficulty": "hard"
     },
     {
