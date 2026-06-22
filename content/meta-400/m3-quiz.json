@@ -3,81 +3,81 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "Daily budget vs lifetime budget:",
+      "q": "Presupuesto diario (daily budget) vs presupuesto total (lifetime budget):",
       "options": [
-        "Daily = total del periodo; lifetime = por día",
-        "Daily = gasto promedio diario; lifetime = total del periodo (permite scheduling)",
+        "Diario = total del periodo; total = por día",
+        "Diario = gasto promedio diario; total = total del periodo (permite scheduling)",
         "Son lo mismo",
-        "Lifetime solo existe en Reservation"
+        "El total solo existe en Reserva (Reservation)"
       ],
       "correct": 1,
-      "explanation": "Daily controla el promedio diario; lifetime fija el total y habilita ad scheduling.",
+      "explanation": "El presupuesto diario controla el promedio diario; el total fija el monto del periodo y habilita ad scheduling.",
       "difficulty": "easy"
     },
     {
       "q": "El ad scheduling (dayparting) requiere:",
-      "options": ["Daily budget", "Lifetime budget", "Bid Cap", "CBO obligatorio"],
+      "options": ["Presupuesto diario (daily budget)", "Presupuesto total (lifetime budget)", "Límite de puja (Bid Cap)", "CBO obligatorio"],
       "correct": 1,
-      "explanation": "Solo con lifetime budget se pueden definir horarios de entrega.",
+      "explanation": "Solo con presupuesto total (lifetime budget) se pueden definir horarios de entrega.",
       "difficulty": "medium"
     },
     {
-      "q": "Advantage+ campaign budget (CBO):",
+      "q": "Advantage+ presupuesto de campaña (Advantage+ campaign budget, CBO):",
       "options": [
-        "Fija budget por ad set manualmente",
-        "Reparte el budget entre ad sets hacia el de mejor desempeño",
+        "Fija el presupuesto por conjunto de anuncios manualmente",
+        "Reparte el presupuesto entre conjuntos de anuncios hacia el de mejor desempeño",
         "Garantiza CPM fijo",
-        "Es exclusivo de Awareness"
+        "Es exclusivo de Reconocimiento (Awareness)"
       ],
       "correct": 1,
-      "explanation": "CBO mueve el gasto dinámicamente; ABO fija el budget por ad set.",
+      "explanation": "CBO mueve el gasto dinámicamente; ABO fija el presupuesto por conjunto de anuncios.",
       "difficulty": "easy"
     },
     {
       "q": "Cliente necesita ~600 leads/mes, CPL histórico ~$4. Estimación base:",
       "options": ["$600", "$1,200", "$2,400", "$6,000"],
       "correct": 2,
-      "explanation": "600 × $4 = $2,400 (estimación, no garantía: el costo en Auction fluctúa).",
+      "explanation": "600 × $4 = $2,400 (estimación, no garantía: el costo en Subasta (Auction) fluctúa).",
       "difficulty": "medium"
     },
     {
-      "q": "Reservation: 1,000,000 personas, frequency 3, CPM fijo $4. Budget:",
+      "q": "Reserva (Reservation): 1,000,000 personas, frequency 3, CPM fijo $4. Presupuesto:",
       "options": ["$4,000", "$12,000", "$120,000", "$1,200"],
       "correct": 1,
-      "explanation": "Impresiones = 1,000,000 × 3 = 3,000,000. Budget = 3,000,000 × 4 ÷ 1000 = $12,000.",
+      "explanation": "Impresiones = 1,000,000 × 3 = 3,000,000. Presupuesto = 3,000,000 × 4 ÷ 1000 = $12,000.",
       "difficulty": "hard"
     },
     {
-      "q": "Umbral aproximado para salir de learning phase:",
+      "q": "Umbral aproximado para salir de la fase de aprendizaje (learning phase):",
       "options": [
         "~10 eventos en 30 días",
-        "~50 eventos de optimización en ~7 días por ad set",
+        "~50 eventos de optimización en ~7 días por conjunto de anuncios (ad set)",
         "~500 clics por día",
-        "No existe learning phase"
+        "No existe fase de aprendizaje"
       ],
       "correct": 1,
-      "explanation": "~50 eventos de optimización en ~7 días estabilizan el ad set.",
+      "explanation": "~50 eventos de optimización en ~7 días estabilizan el conjunto de anuncios.",
       "difficulty": "medium"
     },
     {
-      "q": "¿Daily budget gasta exactamente lo mismo cada día?",
+      "q": "¿El presupuesto diario (daily budget) gasta exactamente lo mismo cada día?",
       "options": [
         "Sí, siempre idéntico",
         "No; puede variar día a día respetando el promedio del periodo",
-        "Solo en Reservation",
-        "Solo con Bid Cap"
+        "Solo en Reserva (Reservation)",
+        "Solo con Límite de puja (Bid Cap)"
       ],
       "correct": 1,
       "explanation": "Meta puede gastar más en días de alta oportunidad y compensar, manteniendo el promedio.",
       "difficulty": "medium"
     },
     {
-      "q": "Budget muy bajo que impide juntar ~50 eventos/semana provoca:",
+      "q": "Presupuesto muy bajo que impide juntar ~50 eventos/semana provoca:",
       "options": [
         "Mejor ROAS",
-        "Ad set atrapado en learning; desempeño inestable",
+        "Conjunto de anuncios (ad set) atrapado en aprendizaje (learning phase); desempeño inestable",
         "Rechazo del anuncio",
-        "Cambio a Reservation"
+        "Cambio a Reserva (Reservation)"
       ],
       "correct": 1,
       "explanation": "Sin señal suficiente el sistema no optimiza bien; resultados volátiles.",
@@ -86,26 +86,26 @@
     {
       "q": "Lanzamiento con alcance garantizado y presupuesto cerrado aprobado por dirección:",
       "options": [
-        "Auction con Highest Volume",
-        "Reservation, budget = impresiones × CPM ÷ 1000",
-        "Auction con Bid Cap bajo",
-        "Reservation con objective Sales"
+        "Subasta (Auction) con Volumen más alto (Highest Volume)",
+        "Reserva (Reservation), presupuesto = impresiones × CPM ÷ 1000",
+        "Subasta con Límite de puja (Bid Cap) bajo",
+        "Reserva con objetivo de la campaña Ventas (Sales)"
       ],
       "correct": 1,
-      "explanation": "Garantía + presupuesto cerrado = Reservation con cálculo de impresiones; Reservation no soporta Sales.",
+      "explanation": "Garantía + presupuesto cerrado = Reserva con cálculo de impresiones; Reserva no soporta Ventas.",
       "difficulty": "medium"
     },
     {
-      "q": "¿Qué requiere lifetime budget? Selecciona 2.",
+      "q": "¿Qué requiere presupuesto total (lifetime budget)? Selecciona 2.",
       "options": [
         "Ad scheduling (dayparting)",
-        "Reservation",
-        "Highest Volume",
+        "Reserva (Reservation)",
+        "Volumen más alto (Highest Volume)",
         "Tener Pixel"
       ],
       "correct": [0, 1],
       "multi": true,
-      "explanation": "El dayparting necesita lifetime budget; Reservation también opera con presupuesto del periodo.",
+      "explanation": "El dayparting necesita presupuesto total; la Reserva también opera con presupuesto del periodo.",
       "difficulty": "hard"
     }
   ]
