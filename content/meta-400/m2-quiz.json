@@ -3,7 +3,7 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "Reservation buying type soporta los objectives:",
+      "q": "El tipo de compra Reserva (Reservation buying type) soporta los objectives:",
       "options": [
         "Awareness y Engagement",
         "Sales y Leads",
@@ -11,7 +11,7 @@
         "Todos"
       ],
       "correct": 0,
-      "explanation": "Solo Awareness y Engagement. El resto va por Auction.",
+      "explanation": "Solo Awareness y Engagement. El resto va por Subasta (Auction).",
       "difficulty": "easy"
     },
     {
@@ -23,7 +23,7 @@
         "Bid + bid strategy + placements"
       ],
       "correct": 0,
-      "explanation": "Bid + estimated action rates + ad quality. La bid strategy/cost control no entra.",
+      "explanation": "Bid + estimated action rates + ad quality. La estrategia de puja (bid strategy)/cost control no entra.",
       "difficulty": "medium"
     },
     {
@@ -36,21 +36,21 @@
       ],
       "correct": [0, 1],
       "multi": true,
-      "explanation": "Spend-based gasta todo el budget maximizando resultados (Volume) o valor (Value). Cost per Result es goal-based; Bid Cap es manual.",
+      "explanation": "Spend-based gasta todo el budget maximizando resultados (Volumen más alto) o valor (Valor más alto). Objetivo de costo por resultado es goal-based; Límite de puja es manual.",
       "difficulty": "medium"
     },
     {
       "q": "Ecommerce con ROAS mínimo exigido de 4x, optimiza por valor:",
       "options": ["Highest Volume", "Cost per Result Goal", "ROAS Goal", "Bid Cap"],
       "correct": 2,
-      "explanation": "ROAS Goal apunta a un retorno objetivo; requiere value tracking.",
+      "explanation": "Objetivo de ROAS (ROAS Goal) apunta a un retorno objetivo; requiere value tracking.",
       "difficulty": "medium"
     },
     {
       "q": "Cliente con CPA tope estricto, optimiza por cantidad (no valor):",
       "options": ["ROAS Goal", "Cost per Result Goal", "Highest Value", "Reservation"],
       "correct": 1,
-      "explanation": "Cost per Result Goal mantiene el costo por resultado objetivo buscando volumen.",
+      "explanation": "Objetivo de costo por resultado (Cost per Result Goal) mantiene el costo por resultado objetivo buscando volumen.",
       "difficulty": "medium"
     },
     {
@@ -74,7 +74,7 @@
         "Auction + ROAS Goal"
       ],
       "correct": 1,
-      "explanation": "Garantía de entrega a precio fijo = Reservation. Auction no garantiza ni entrega ni costo.",
+      "explanation": "Garantía de entrega a precio fijo = Reserva. La Subasta no garantiza ni entrega ni costo.",
       "difficulty": "easy"
     },
     {
@@ -93,11 +93,11 @@
       "q": "El cliente quiere el mayor valor total de compras sin techo de costo:",
       "options": ["Highest Volume", "Highest Value", "Cost per Result Goal", "Bid Cap"],
       "correct": 1,
-      "explanation": "Sin control de costo + optimiza valor = Highest Value (spend-based).",
+      "explanation": "Sin control de costo + optimiza valor = Valor más alto (Highest Value, spend-based).",
       "difficulty": "hard"
     },
     {
-      "q": "¿Qué es cierto de Reservation? Selecciona 2.",
+      "q": "¿Qué es cierto de Reserva? Selecciona 2.",
       "options": [
         "Precio (CPM) fijo conocido por adelantado",
         "Permite reach y frequency planeables/garantizados",
@@ -106,7 +106,7 @@
       ],
       "correct": [0, 1],
       "multi": true,
-      "explanation": "Reservation = CPM fijo + entrega garantizada. No soporta Sales ni bid strategies de Auction.",
+      "explanation": "Reserva = CPM fijo + entrega garantizada. No soporta Sales ni estrategias de puja de Subasta.",
       "difficulty": "medium"
     }
   ]

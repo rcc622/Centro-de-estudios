@@ -37,8 +37,8 @@
       "cards": [
         {
           "type": "concept",
-          "h": "Antes de buying types, fija el Módulo 1",
-          "body": "Un <strong>buying type</strong> (tipo de compra) es la forma en que adquieres inventario de anuncios, y una <strong>bid strategy</strong> (estrategia de puja) es cómo Meta gasta tu presupuesto en la subasta. Ambas son decisiones que vienen <strong>después</strong> de tener claro el <strong>objective</strong> (objetivo de la campaña). Si eliges la estrategia de puja antes de saber qué resultado buscas, terminas optimizando hacia la meta equivocada. Por eso este módulo se apoya en el flujo de planeación que aprendiste en el Módulo 1. Imagina la agencia <em>Brújula Digital</em>: primero define que su cliente quiere ventas en línea, y solo entonces decide cómo comprar y pujar."
+          "h": "Antes del tipo de compra, fija el Módulo 1",
+          "body": "Un <strong>tipo de compra</strong> (buying type) es la forma en que adquieres inventario de anuncios, y una <strong>estrategia de puja</strong> (bid strategy) es cómo Meta gasta tu presupuesto en la subasta. Ambas son decisiones que vienen <strong>después</strong> de tener claro el <strong>objective</strong> (objetivo de la campaña). Si eliges la estrategia de puja antes de saber qué resultado buscas, terminas optimizando hacia la meta equivocada. Por eso este módulo se apoya en el flujo de planeación que aprendiste en el Módulo 1. Imagina la agencia <em>Brújula Digital</em>: primero define que su cliente quiere ventas en línea, y solo entonces decide cómo comprar y pujar."
         },
         {
           "type": "concept",
@@ -89,36 +89,36 @@
         {
           "type": "concept",
           "h": "Dos formas de comprar inventario",
-          "body": "Un <strong>buying type</strong> (tipo de compra) es el método con el que adquieres espacios publicitarios a lo largo de las plataformas de Meta (Facebook, Instagram, Messenger). Piensa en él como la modalidad de compra: igual que puedes comprar un boleto de avión en subasta de último minuto o reservándolo con meses de anticipación. Meta ofrece exactamente dos: <strong>Auction</strong> (subasta) y <strong>Reservation</strong> (reserva). Esta es la primera gran decisión de este módulo, porque define qué opciones tendrás después. La agencia <em>Brújula Digital</em> elige el buying type según si el cliente prioriza eficiencia o predecibilidad."
+          "body": "Un <strong>tipo de compra</strong> (buying type) es el método con el que adquieres espacios publicitarios a lo largo de las plataformas de Meta (Facebook, Instagram, Messenger). Piensa en él como la modalidad de compra: igual que puedes comprar un boleto de avión en subasta de último minuto o reservándolo con meses de anticipación. Meta ofrece exactamente dos: <strong>Subasta</strong> (Auction) y <strong>Reserva</strong> (Reservation). Esta es la primera gran decisión de este módulo, porque define qué opciones tendrás después. La agencia <em>Brújula Digital</em> elige el tipo de compra según si el cliente prioriza eficiencia o predecibilidad."
         },
         {
           "type": "concept",
-          "h": "Auction: flexibilidad y escala",
-          "body": "<strong>Auction</strong> (subasta) significa que tus anuncios compiten en tiempo real por cada espacio disponible, y el precio sube o baja según la demanda del momento. Es la modalidad más flexible: soporta <strong>todos</strong> los objectives, las 5 bid strategies (estrategias de puja) y todos los <strong>placements</strong> (ubicaciones donde aparece el anuncio, como el feed o las stories). Su precio es variable porque depende de cuántos anunciantes pelean por la misma persona en ese instante. Es la opción por defecto cuando buscas la mayor eficiencia y volumen posible. Por ejemplo, una tienda de ropa en línea como <em>Telar Urbano</em> usa Auction para conseguir el mayor número de ventas posible con su presupuesto."
+          "h": "Subasta: flexibilidad y escala",
+          "body": "La <strong>Subasta</strong> (Auction) significa que tus anuncios compiten en tiempo real por cada espacio disponible, y el precio sube o baja según la demanda del momento. Es la modalidad más flexible: soporta <strong>todos</strong> los objectives, las 5 estrategias de puja (bid strategies) y todos los <strong>placements</strong> (ubicaciones donde aparece el anuncio, como el feed o las stories). Su precio es variable porque depende de cuántos anunciantes pelean por la misma persona en ese instante. Es la opción por defecto cuando buscas la mayor eficiencia y volumen posible. Por ejemplo, una tienda de ropa en línea como <em>Telar Urbano</em> usa Subasta para conseguir el mayor número de ventas posible con su presupuesto."
         },
         {
           "type": "concept",
-          "h": "Reservation: predecibilidad",
-          "body": "<strong>Reservation</strong> (reserva) funciona como la compra de medios tradicionales (TV, radio, espectaculares): apartas la entrega y el precio por adelantado, antes de que la campaña corra. A cambio de esa certeza, solo soporta los objectives Awareness y Engagement, pero te garantiza el <strong>reach</strong> (alcance: cuántas personas distintas verán el anuncio) y la <strong>frequency</strong> (frecuencia: cuántas veces lo verá cada una) a un <strong>CPM</strong> (costo por mil impresiones) fijo. No compites en subasta: el espacio ya es tuyo. Una marca de bebidas como <em>Agua Clara</em> que lanza una campaña masiva y necesita prometerle a su dirección un alcance exacto, usa Reservation."
+          "h": "Reserva: predecibilidad",
+          "body": "La <strong>Reserva</strong> (Reservation) funciona como la compra de medios tradicionales (TV, radio, espectaculares): apartas la entrega y el precio por adelantado, antes de que la campaña corra. A cambio de esa certeza, solo soporta los objectives Awareness y Engagement, pero te garantiza el <strong>reach</strong> (alcance: cuántas personas distintas verán el anuncio) y la <strong>frequency</strong> (frecuencia: cuántas veces lo verá cada una) a un <strong>CPM</strong> (costo por mil impresiones) fijo. No compites en subasta: el espacio ya es tuyo. Una marca de bebidas como <em>Agua Clara</em> que lanza una campaña masiva y necesita prometerle a su dirección un alcance exacto, usa Reserva."
         },
         {
           "type": "kvtable",
           "h": "Comparativa directa",
           "rows": [
-            ["Auction", "Más objectives, 5 bid strategies, todos los placements, precio variable"],
-            ["Reservation", "Solo Awareness y Engagement, precio y delivery fijos, planeable por adelantado"],
-            ["Auction · control", "Eficiencia y escala; el costo fluctúa con la subasta"],
-            ["Reservation · control", "Reach y frequency garantizados a CPM fijo"]
+            ["Subasta", "Más objectives, 5 estrategias de puja, todos los placements, precio variable"],
+            ["Reserva", "Solo Awareness y Engagement, precio y delivery fijos, planeable por adelantado"],
+            ["Subasta · control", "Eficiencia y escala; el costo fluctúa con la subasta"],
+            ["Reserva · control", "Reach y frequency garantizados a CPM fijo"]
           ]
         },
         {
           "type": "warn",
           "label": "DATO DE EXAMEN",
-          "body": "Reservation <strong>solo</strong> está disponible para los objectives <strong>Awareness</strong> y <strong>Engagement</strong>. Sales, Leads, Traffic y App Promotion siempre van por Auction."
+          "body": "Reserva <strong>solo</strong> está disponible para los objectives <strong>Awareness</strong> y <strong>Engagement</strong>. Sales, Leads, Traffic y App Promotion siempre van por Subasta."
         },
         {
           "type": "tip",
-          "label": "CUÁNDO RESERVATION",
+          "label": "CUÁNDO RESERVA",
           "body": "Cuando el cliente necesita <strong>predecibilidad</strong>: un lanzamiento con reach y frequency garantizados, presupuesto cerrado por adelantado y planeación tipo medios tradicionales."
         },
         {
@@ -131,7 +131,7 @@
             "Auction con ROAS Goal"
           ],
           "correct": 1,
-          "explanation": "Reach y frequency garantizados a precio fijo = Reservation. Auction no garantiza entrega ni costo; fluctúa con la subasta.",
+          "explanation": "Reach y frequency garantizados a precio fijo = Reserva. La Subasta no garantiza entrega ni costo; fluctúa con la subasta.",
           "difficulty": "easy"
         },
         {
@@ -144,7 +144,7 @@
             "Reservation solo si usa catálogo"
           ],
           "correct": 1,
-          "explanation": "Reservation solo soporta Awareness y Engagement. Para Sales el único buying type posible es Auction.",
+          "explanation": "Reserva solo soporta Awareness y Engagement. Para Sales el único tipo de compra posible es Subasta.",
           "difficulty": "medium"
         }
       ]
@@ -165,7 +165,7 @@
             "placement"
           ],
           "correct": 0,
-          "explanation": "Buying type = el método para comprar anuncios. Hay dos: Auction y Reservation."
+          "explanation": "Tipo de compra (buying type) = el método para comprar anuncios. Hay dos: Subasta (Auction) y Reserva (Reservation)."
         },
         {
           "type": "mcq",
@@ -177,7 +177,7 @@
             "Awareness y Engagement"
           ],
           "correct": 1,
-          "explanation": "Los dos buying types son Auction (flexible, subasta) y Reservation (predecible, reservas anticipadas)."
+          "explanation": "Los dos tipos de compra son Subasta (flexible, subasta) y Reserva (predecible, reservas anticipadas)."
         },
         {
           "type": "fill",
@@ -189,7 +189,7 @@
             "Traffic"
           ],
           "correct": 0,
-          "explanation": "Reservation está limitado a Awareness y Engagement. Sales, Leads, Traffic y App Promotion van por Auction."
+          "explanation": "Reserva está limitado a Awareness y Engagement. Sales, Leads, Traffic y App Promotion van por Subasta."
         },
         {
           "type": "mcq",
@@ -201,7 +201,7 @@
             "Lo decide el frequency cap"
           ],
           "correct": 1,
-          "explanation": "Auction tiene precio variable que fluctúa con la subasta. El precio fijo y conocido por adelantado es de Reservation."
+          "explanation": "La Subasta tiene precio variable que fluctúa con la subasta. El precio fijo y conocido por adelantado es de Reserva."
         },
         {
           "type": "mcq",
@@ -213,14 +213,14 @@
             "Ninguno"
           ],
           "correct": 1,
-          "explanation": "Reservation garantiza reach y frequency a CPM fijo. Auction optimiza eficiencia y escala, sin garantías de entrega ni costo."
+          "explanation": "Reserva garantiza reach y frequency a CPM fijo. La Subasta optimiza eficiencia y escala, sin garantías de entrega ni costo."
         },
         {
           "type": "fill",
           "q": "Auction soporta las ___ bid strategies y todos los placements.",
           "options": ["5", "2", "3", "6"],
           "correct": 0,
-          "explanation": "Auction soporta las 5 bid strategies y todos los placements. Reservation no licita."
+          "explanation": "La Subasta soporta las 5 estrategias de puja y todos los placements. Reserva no licita."
         }
       ]
     },
@@ -246,7 +246,7 @@
             "Auction con Cost per Result Goal"
           ],
           "correct": 1,
-          "explanation": "Necesitan reach y frequency garantizados, presupuesto cerrado y objetivo Awareness: ese perfil es exactamente Reservation."
+          "explanation": "Necesitan reach y frequency garantizados, presupuesto cerrado y objetivo Awareness: ese perfil es exactamente Reserva (Reservation)."
         },
         {
           "type": "mcq",
@@ -258,7 +258,7 @@
             "Depende de la subasta de cada día"
           ],
           "correct": 1,
-          "explanation": "Reservation tiene precio (CPM) fijo y conocido por adelantado: predecibilidad tipo medios tradicionales."
+          "explanation": "Reserva tiene precio (CPM) fijo y conocido por adelantado: predecibilidad tipo medios tradicionales."
         },
         {
           "type": "mcq",
@@ -270,7 +270,7 @@
             "Solo si bajan el presupuesto"
           ],
           "correct": 1,
-          "explanation": "Reservation está limitado a Awareness y Engagement. Para Sales el único buying type posible es Auction."
+          "explanation": "Reserva está limitado a Awareness y Engagement. Para Sales el único tipo de compra posible es Subasta (Auction)."
         }
       ]
     },
@@ -280,11 +280,11 @@
       "section": "b1",
       "type": "flashcards",
       "cards": [
-        { "q": "Buying type", "a": "Método para comprar anuncios across Meta technologies: Auction o Reservation." },
-        { "q": "Objectives que soporta Reservation", "a": "Solo Awareness y Engagement." },
-        { "q": "¿Cuándo Reservation sobre Auction?", "a": "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada." },
-        { "q": "Precio en Auction vs Reservation", "a": "Auction: variable, fluctúa con la subasta. Reservation: CPM fijo conocido por adelantado." },
-        { "q": "Objectives que NO soporta Reservation", "a": "Sales, Leads, Traffic y App Promotion: esos van por Auction." }
+        { "q": "Tipo de compra (buying type)", "a": "Método para comprar anuncios across Meta technologies: Subasta (Auction) o Reserva (Reservation)." },
+        { "q": "Objectives que soporta Reserva", "a": "Solo Awareness y Engagement." },
+        { "q": "¿Cuándo Reserva sobre Subasta?", "a": "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada." },
+        { "q": "Precio en Subasta vs Reserva", "a": "Subasta: variable, fluctúa con la subasta. Reserva: CPM fijo conocido por adelantado." },
+        { "q": "Objectives que NO soporta Reserva", "a": "Sales, Leads, Traffic y App Promotion: esos van por Subasta." }
       ]
     },
     {
@@ -301,7 +301,7 @@
         {
           "type": "concept",
           "h": "Los 3 componentes del total value",
-          "body": "El total value se calcula sumando tres ingredientes:<br/><strong>1. Advertiser bid</strong> (puja del anunciante): cuánto estás dispuesto a pagar por el resultado que buscas.<br/><strong>2. Estimated action rates</strong> (tasas de acción estimadas): la probabilidad que Meta calcula de que esa persona haga la acción deseada, ej. comprar o dar clic.<br/><strong>3. Ad quality</strong> (calidad del anuncio): qué tan relevante y bien hecho es el creativo según señales de los usuarios.<br/>Cuidado con un detalle clave: el <strong>cost control</strong> (control de costo, es decir la bid strategy) NO entra en esta fórmula. La estrategia de puja controla cómo gastas tu presupuesto, no cómo ganas la subasta. La pizzería <em>Forno Rosso</em> sube su total value mejorando el creativo, no solo subiendo la puja."
+          "body": "El total value se calcula sumando tres ingredientes:<br/><strong>1. Advertiser bid</strong> (puja del anunciante): cuánto estás dispuesto a pagar por el resultado que buscas.<br/><strong>2. Estimated action rates</strong> (tasas de acción estimadas): la probabilidad que Meta calcula de que esa persona haga la acción deseada, ej. comprar o dar clic.<br/><strong>3. Ad quality</strong> (calidad del anuncio): qué tan relevante y bien hecho es el creativo según señales de los usuarios.<br/>Cuidado con un detalle clave: el <strong>cost control</strong> (control de costo, es decir la estrategia de puja / bid strategy) NO entra en esta fórmula. La estrategia de puja controla cómo gastas tu presupuesto, no cómo ganas la subasta. La pizzería <em>Forno Rosso</em> sube su total value mejorando el creativo, no solo subiendo la puja."
         },
         {
           "type": "kvtable",
@@ -324,7 +324,7 @@
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Creer que la <strong>bid strategy</strong> es el cuarto componente del total value. No lo es. El total value tiene exactamente 3: bid, estimated action rates y ad quality."
+          "body": "Creer que la <strong>estrategia de puja</strong> es el cuarto componente del total value. No lo es. El total value tiene exactamente 3: bid, estimated action rates y ad quality."
         },
         {
           "type": "mcq",
@@ -336,7 +336,7 @@
             "El cost control / bid strategy elegida"
           ],
           "correct": 3,
-          "explanation": "El total value = advertiser bid + estimated action rates + ad quality. La bid strategy controla cómo gastas, pero no entra en la fórmula del total value.",
+          "explanation": "El total value = advertiser bid + estimated action rates + ad quality. La estrategia de puja controla cómo gastas, pero no entra en la fórmula del total value.",
           "difficulty": "hard"
         }
       ]
@@ -405,7 +405,7 @@
             "Solo en campañas de Sales"
           ],
           "correct": 1,
-          "explanation": "El cost control / bid strategy no es parte del total value. Controla cómo gastas, no cómo se gana la subasta."
+          "explanation": "El cost control / estrategia de puja (bid strategy) no es parte del total value. Controla cómo gastas, no cómo se gana la subasta."
         }
       ]
     },
@@ -481,43 +481,43 @@
         {
           "type": "concept",
           "h": "Tres familias, cinco estrategias",
-          "body": "Una <strong>bid strategy</strong> (estrategia de puja) le dice a Meta cómo gastar tu presupuesto en la subasta para conseguir tu meta. Existen cinco, y se agrupan en tres familias según qué priorizan:<br/><strong>1. Spend-based</strong> (basadas en gasto): gastan todo el presupuesto buscando el mejor resultado, sin un techo de costo.<br/><strong>2. Goal-based</strong> (basadas en meta): apuntan a un costo o retorno objetivo que tú defines.<br/><strong>3. Manual</strong>: tú controlas directamente cuánto puja Meta en cada subasta.<br/>Entender a qué familia pertenece cada estrategia te ayuda a elegir rápido. La tienda <em>Telar Urbano</em> elige la familia según si tiene metas estrictas de costo o no."
+          "body": "Una <strong>estrategia de puja</strong> (bid strategy) le dice a Meta cómo gastar tu presupuesto en la subasta para conseguir tu meta. Existen cinco, y se agrupan en tres familias según qué priorizan:<br/><strong>1. Spend-based</strong> (basadas en gasto): gastan todo el presupuesto buscando el mejor resultado, sin un techo de costo.<br/><strong>2. Goal-based</strong> (basadas en meta): apuntan a un costo o retorno objetivo que tú defines.<br/><strong>3. Manual</strong>: tú controlas directamente cuánto puja Meta en cada subasta.<br/>Entender a qué familia pertenece cada estrategia te ayuda a elegir rápido. La tienda <em>Telar Urbano</em> elige la familia según si tiene metas estrictas de costo o no."
         },
         {
           "type": "concept",
-          "h": "Familia spend-based: Highest Volume y Highest Value",
-          "body": "Las dos estrategias basadas en gasto exprimen todo tu presupuesto sin respetar un límite de costo:<br/><strong>1. Highest Volume</strong> (mayor volumen): busca el máximo número de resultados posible con tu budget, ej. la mayor cantidad de compras o leads.<br/><strong>2. Highest Value</strong> (mayor valor): busca el máximo valor total de compra, priorizando clientes que gastan más; requiere <strong>value tracking</strong> (seguimiento del valor de cada compra). Por ejemplo, <em>Telar Urbano</em> usa Highest Volume si quiere muchas ventas sin importar el monto, pero cambia a Highest Value si prefiere pocas ventas grandes de clientes premium."
+          "h": "Familia spend-based: Volumen más alto y Valor más alto",
+          "body": "Las dos estrategias basadas en gasto exprimen todo tu presupuesto sin respetar un límite de costo:<br/><strong>1. Volumen más alto</strong> (Highest Volume): busca el máximo número de resultados posible con tu budget, ej. la mayor cantidad de compras o leads.<br/><strong>2. Valor más alto</strong> (Highest Value): busca el máximo valor total de compra, priorizando clientes que gastan más; requiere <strong>value tracking</strong> (seguimiento del valor de cada compra). Por ejemplo, <em>Telar Urbano</em> usa Volumen más alto si quiere muchas ventas sin importar el monto, pero cambia a Valor más alto si prefiere pocas ventas grandes de clientes premium."
         },
         {
           "type": "concept",
           "h": "Familias goal-based y manual",
-          "body": "Las tres estrategias restantes te dan más control sobre el costo:<br/><strong>1. Cost per Result Goal</strong> (meta de costo por resultado): mantiene un costo promedio por resultado que tú fijas, ej. no más de 350 pesos por lead.<br/><strong>2. ROAS Goal</strong> (meta de retorno sobre la inversión publicitaria): mantiene un <strong>ROAS</strong> (return on ad spend: pesos generados por cada peso gastado) objetivo, ej. 4x; requiere value tracking.<br/><strong>3. Bid Cap</strong> (tope de puja, la única manual): fija el máximo que Meta puede pujar en cada subasta individual. Una agencia como <em>Brújula Digital</em> usa Cost per Result Goal cuando el cliente tiene un presupuesto por lead cerrado por su contador."
+          "body": "Las tres estrategias restantes te dan más control sobre el costo:<br/><strong>1. Objetivo de costo por resultado</strong> (Cost per Result Goal): mantiene un costo promedio por resultado que tú fijas, ej. no más de 350 pesos por lead.<br/><strong>2. Objetivo de ROAS</strong> (ROAS Goal): mantiene un <strong>ROAS</strong> (return on ad spend: pesos generados por cada peso gastado) objetivo, ej. 4x; requiere value tracking.<br/><strong>3. Límite de puja</strong> (Bid Cap, la única manual): fija el máximo que Meta puede pujar en cada subasta individual. Una agencia como <em>Brújula Digital</em> usa Objetivo de costo por resultado cuando el cliente tiene un presupuesto por lead cerrado por su contador."
         },
         {
           "type": "concept",
           "h": "Dónde se configura en Ads Manager",
-          "body": "La bid strategy no se elige a nivel anuncio, sino a nivel <strong>campaign</strong> (campaña) o <strong>ad set</strong> (conjunto de anuncios), según cómo manejes el presupuesto. La ruta es: <strong>Ads Manager</strong> (Administrador de anuncios) → creas o abres una campaña → en la sección de presupuesto buscas <strong>Campaign bid strategy</strong> → eliges entre Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal o Bid Cap. Las opciones disponibles cambian según el objective y el performance goal que ya definiste antes. Por eso <em>Brújula Digital</em> primero fija el objective y solo al final entra a este menú a confirmar la estrategia de puja."
+          "body": "La estrategia de puja no se elige a nivel anuncio, sino a nivel <strong>campaña</strong> (campaign) o <strong>conjunto de anuncios</strong> (ad set), según cómo manejes el presupuesto. La ruta es: <strong>Ads Manager</strong> (Administrador de anuncios) → creas o abres una campaña → en la sección de presupuesto buscas <strong>Campaign bid strategy</strong> → eliges entre Volumen más alto, Valor más alto, Objetivo de costo por resultado, Objetivo de ROAS o Límite de puja. Las opciones disponibles cambian según el objective y el performance goal que ya definiste antes. Por eso <em>Brújula Digital</em> primero fija el objective y solo al final entra a este menú a confirmar la estrategia de puja."
         },
         {
           "type": "kvtable",
-          "h": "Las 5 bid strategies",
+          "h": "Las 5 estrategias de puja",
           "rows": [
-            ["Highest Volume", "Spend-based: máximo de resultados con el budget"],
-            ["Highest Value", "Spend-based: máximo valor de compra con el budget"],
-            ["Cost per Result Goal", "Goal-based: mantener un costo por resultado objetivo"],
-            ["ROAS Goal", "Goal-based: mantener un retorno sobre ad spend objetivo"],
-            ["Bid Cap", "Manual: tope máximo de bid en cada subasta"]
+            ["Volumen más alto", "Spend-based: máximo de resultados con el budget"],
+            ["Valor más alto", "Spend-based: máximo valor de compra con el budget"],
+            ["Objetivo de costo por resultado", "Goal-based: mantener un costo por resultado objetivo"],
+            ["Objetivo de ROAS", "Goal-based: mantener un retorno sobre ad spend objetivo"],
+            ["Límite de puja", "Manual: tope máximo de bid en cada subasta"]
           ]
         },
         {
           "type": "tip",
           "label": "DEFAULT RECOMENDADO",
-          "body": "Si no hay metas estrictas de costo, <strong>Highest Volume / Highest Value</strong> es lo más simple y suele rendir bien. Las goal-based y Bid Cap exigen datos y vigilancia."
+          "body": "Si no hay metas estrictas de costo, <strong>Volumen más alto / Valor más alto</strong> es lo más simple y suele rendir bien. Las goal-based y Límite de puja exigen datos y vigilancia."
         },
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "<strong>Bid Cap</strong> mal calibrado limita el delivery: si el cap es muy bajo, el anuncio casi no entra a subastas y la campaña no gasta. Es la estrategia más delicada."
+          "body": "<strong>Límite de puja</strong> mal calibrado limita el delivery: si el cap es muy bajo, el anuncio casi no entra a subastas y la campaña no gasta. Es la estrategia más delicada."
         },
         {
           "type": "mcq",
@@ -529,7 +529,7 @@
             "Bid Cap"
           ],
           "correct": 1,
-          "explanation": "Cost per Result Goal mantiene un costo objetivo por resultado mientras busca volumen. Highest Volume no respeta un techo de costo; Bid Cap controla el bid por subasta, no el costo por resultado promedio.",
+          "explanation": "Objetivo de costo por resultado mantiene un costo objetivo por resultado mientras busca volumen. Volumen más alto no respeta un techo de costo; Límite de puja controla el bid por subasta, no el costo por resultado promedio.",
           "difficulty": "medium"
         },
         {
@@ -542,7 +542,7 @@
             "Bid Cap"
           ],
           "correct": 2,
-          "explanation": "ROAS Goal apunta a mantener un retorno sobre ad spend objetivo (4x). Requiere value tracking. Highest Volume ignora el valor; Cost per Result controla costo, no retorno.",
+          "explanation": "Objetivo de ROAS apunta a mantener un retorno sobre ad spend objetivo (4x). Requiere value tracking. Volumen más alto ignora el valor; Objetivo de costo por resultado controla costo, no retorno.",
           "difficulty": "medium"
         }
       ]
@@ -563,7 +563,7 @@
             "Reservation"
           ],
           "correct": 0,
-          "explanation": "Spend-based gasta todo el budget: Highest Volume (resultados) y Highest Value (valor)."
+          "explanation": "Spend-based gasta todo el budget: Volumen más alto (Highest Volume, resultados) y Valor más alto (Highest Value, valor)."
         },
         {
           "type": "fill",
@@ -575,7 +575,7 @@
             "Reservation"
           ],
           "correct": 0,
-          "explanation": "Goal-based apunta a un costo/retorno objetivo: Cost per Result Goal y ROAS Goal."
+          "explanation": "Goal-based apunta a un costo/retorno objetivo: Objetivo de costo por resultado (Cost per Result Goal) y Objetivo de ROAS (ROAS Goal)."
         },
         {
           "type": "mcq",
@@ -587,7 +587,7 @@
             "Cost per Result Goal"
           ],
           "correct": 2,
-          "explanation": "Bid Cap es la manual: tope máximo de bid en cada subasta. Es la más delicada."
+          "explanation": "Límite de puja (Bid Cap) es la manual: tope máximo de bid en cada subasta. Es la más delicada."
         },
         {
           "type": "mcq",
@@ -599,7 +599,7 @@
             "Se convierte en Highest Volume"
           ],
           "correct": 1,
-          "explanation": "Un Bid Cap mal calibrado limita el delivery: cap muy bajo = casi no entra a subastas, la campaña no gasta."
+          "explanation": "Un Límite de puja mal calibrado limita el delivery: cap muy bajo = casi no entra a subastas, la campaña no gasta."
         },
         {
           "type": "fill",
@@ -611,7 +611,7 @@
             "ROAS"
           ],
           "correct": 0,
-          "explanation": "Highest Volume / Highest Value es el default recomendado cuando no hay metas estrictas de costo."
+          "explanation": "Volumen más alto / Valor más alto es el default recomendado cuando no hay metas estrictas de costo."
         },
         {
           "type": "mcq",
@@ -623,7 +623,7 @@
             "El bid por subasta"
           ],
           "correct": 1,
-          "explanation": "Highest Value es spend-based: busca el máximo valor de compra con el budget. Highest Volume maximiza cantidad de resultados."
+          "explanation": "Valor más alto es spend-based: busca el máximo valor de compra con el budget. Volumen más alto maximiza cantidad de resultados."
         }
       ]
     },
@@ -649,7 +649,7 @@
             "Bid Cap"
           ],
           "correct": 1,
-          "explanation": "Hay un techo de costo por resultado (350 pesos) y optimiza por cantidad: Cost per Result Goal mantiene ese costo objetivo mientras busca volumen."
+          "explanation": "Hay un techo de costo por resultado (350 pesos) y optimiza por cantidad: Objetivo de costo por resultado (Cost per Result Goal) mantiene ese costo objetivo mientras busca volumen."
         },
         {
           "type": "mcq",
@@ -661,7 +661,7 @@
             "Highest Volume optimiza por valor de compra"
           ],
           "correct": 1,
-          "explanation": "Highest Volume no respeta un techo de costo. Si hay un CPA tope estricto, la opción correcta es Cost per Result Goal."
+          "explanation": "Volumen más alto (Highest Volume) no respeta un techo de costo. Si hay un CPA tope estricto, la opción correcta es Objetivo de costo por resultado."
         },
         {
           "type": "mcq",
@@ -673,7 +673,7 @@
             "Bid Cap"
           ],
           "correct": 2,
-          "explanation": "ROAS Goal mantiene un retorno sobre ad spend objetivo (4x) y requiere value tracking. Cost per Result controla costo, no retorno."
+          "explanation": "Objetivo de ROAS (ROAS Goal) mantiene un retorno sobre ad spend objetivo (4x) y requiere value tracking. Objetivo de costo por resultado controla costo, no retorno."
         }
       ]
     },
@@ -722,12 +722,12 @@
       "section": "b3",
       "type": "flashcards",
       "cards": [
-        { "q": "Las 5 bid strategies", "a": "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap." },
-        { "q": "Bid strategies spend-based", "a": "Highest Volume y Highest Value." },
-        { "q": "Bid strategies goal-based", "a": "Cost per Result Goal y ROAS Goal." },
-        { "q": "Bid strategy manual", "a": "Bid Cap." },
-        { "q": "Riesgo de Bid Cap mal calibrado", "a": "Limita el delivery: cap muy bajo = casi no entra a subastas, la campaña no gasta." },
-        { "q": "Default recomendado si no hay metas estrictas", "a": "Highest Volume / Highest Value: lo más simple y suele rendir bien." }
+        { "q": "Las 5 estrategias de puja (bid strategies)", "a": "Volumen más alto, Valor más alto, Objetivo de costo por resultado, Objetivo de ROAS, Límite de puja." },
+        { "q": "Estrategias de puja spend-based", "a": "Volumen más alto y Valor más alto." },
+        { "q": "Estrategias de puja goal-based", "a": "Objetivo de costo por resultado y Objetivo de ROAS." },
+        { "q": "Estrategia de puja manual", "a": "Límite de puja." },
+        { "q": "Riesgo de Límite de puja mal calibrado", "a": "Limita el delivery: cap muy bajo = casi no entra a subastas, la campaña no gasta." },
+        { "q": "Default recomendado si no hay metas estrictas", "a": "Volumen más alto / Valor más alto: lo más simple y suele rendir bien." }
       ]
     },
     {
@@ -739,16 +739,16 @@
         {
           "type": "concept",
           "h": "Comprar como medios tradicionales",
-          "body": "<strong>Reservation</strong> (reserva) te permite apartar por adelantado un número fijo de personas, a una <strong>frequency</strong> (frecuencia: veces que cada persona ve el anuncio) específica, por un precio fijo medido en <strong>CPM</strong> (costo por mil impresiones). Es la misma lógica de comprar un espectacular o un spot de TV: sabes desde antes a cuánta gente llegarás y cuánto te costará. Esa certeza es justo lo que no te da la subasta. El término <strong>OOH</strong> (out of home: publicidad exterior como vallas y anuncios en vía pública) es el referente clásico de esta forma de planear. Una desarrolladora inmobiliaria como <em>Altavista Residencial</em> usa Reservation para prometerle a su dirección un alcance garantizado."
+          "body": "La <strong>Reserva</strong> (Reservation) te permite apartar por adelantado un número fijo de personas, a una <strong>frequency</strong> (frecuencia: veces que cada persona ve el anuncio) específica, por un precio fijo medido en <strong>CPM</strong> (costo por mil impresiones). Es la misma lógica de comprar un espectacular o un spot de TV: sabes desde antes a cuánta gente llegarás y cuánto te costará. Esa certeza es justo lo que no te da la subasta. El término <strong>OOH</strong> (out of home: publicidad exterior como vallas y anuncios en vía pública) es el referente clásico de esta forma de planear. Una desarrolladora inmobiliaria como <em>Altavista Residencial</em> usa Reserva para prometerle a su dirección un alcance garantizado."
         },
         {
           "type": "concept",
-          "h": "Qué no hace Reservation",
-          "body": "Es clave saber qué NO puedes hacer con Reservation, porque ahí caen muchas trampas de examen:<br/><strong>1. No licita</strong>: no usa las bid strategies de Auction; el precio ya está fijado, no hay subasta.<br/><strong>2. No soporta objectives de conversión</strong> como Sales, Leads, Traffic o App Promotion; solo Awareness y Engagement.<br/><strong>3. No es necesariamente más barato</strong> que Auction: lo que compras es predecibilidad de entrega y precio, no un costo mínimo.<br/>Si <em>Altavista Residencial</em> después quiere vender departamentos en línea (objective Sales), tendrá que cambiar a Auction, porque Reservation no lo permite."
+          "h": "Qué no hace Reserva",
+          "body": "Es clave saber qué NO puedes hacer con Reserva, porque ahí caen muchas trampas de examen:<br/><strong>1. No licita</strong>: no usa las estrategias de puja de Subasta; el precio ya está fijado, no hay subasta.<br/><strong>2. No soporta objectives de conversión</strong> como Sales, Leads, Traffic o App Promotion; solo Awareness y Engagement.<br/><strong>3. No es necesariamente más barato</strong> que Subasta: lo que compras es predecibilidad de entrega y precio, no un costo mínimo.<br/>Si <em>Altavista Residencial</em> después quiere vender departamentos en línea (objective Sales), tendrá que cambiar a Subasta, porque Reserva no lo permite."
         },
         {
           "type": "kvtable",
-          "h": "Reservation en una mirada",
+          "h": "Reserva en una mirada",
           "rows": [
             ["Objectives", "Solo Awareness y Engagement"],
             ["Plataformas", "Facebook e Instagram"],
@@ -759,12 +759,12 @@
         {
           "type": "tip",
           "label": "FREQUENCY CAP",
-          "body": "En Reservation puedes definir <strong>frequency caps</strong> precisos (ej. máx 2 impresiones por persona por semana), clave en planes de awareness para no quemar a la audiencia."
+          "body": "En Reserva puedes definir <strong>frequency caps</strong> precisos (ej. máx 2 impresiones por persona por semana), clave en planes de awareness para no quemar a la audiencia."
         },
         {
           "type": "warn",
           "label": "TRAMPA",
-          "body": "Asumir que <strong>Reservation es más barato</strong>. No lo es necesariamente: su valor es la predecibilidad de entrega y precio, no un costo mínimo."
+          "body": "Asumir que <strong>Reserva es más barato</strong>. No lo es necesariamente: su valor es la predecibilidad de entrega y precio, no un costo mínimo."
         },
         {
           "type": "mcq",
@@ -776,7 +776,7 @@
             "Permite ROAS Goal como bid strategy"
           ],
           "correct": 1,
-          "explanation": "Reservation = entrega y precio predecibles (CPM fijo), limitado a Awareness y Engagement. No usa bid strategies de Auction ni es necesariamente más barato.",
+          "explanation": "Reserva = entrega y precio predecibles (CPM fijo), limitado a Awareness y Engagement. No usa estrategias de puja de Subasta ni es necesariamente más barato.",
           "difficulty": "medium"
         }
       ]
@@ -797,7 +797,7 @@
             "CPC"
           ],
           "correct": 0,
-          "explanation": "Reservation reserva personas a frequency específica por un CPM fijo, planeado por adelantado."
+          "explanation": "Reserva (Reservation) reserva personas a frequency específica por un CPM fijo, planeado por adelantado."
         },
         {
           "type": "mcq",
@@ -809,7 +809,7 @@
             "Solo Instagram"
           ],
           "correct": 1,
-          "explanation": "Reservation está disponible en Facebook e Instagram."
+          "explanation": "Reserva está disponible en Facebook e Instagram."
         },
         {
           "type": "mcq",
@@ -821,7 +821,7 @@
             "Solo Bid Cap"
           ],
           "correct": 1,
-          "explanation": "Reservation no usa bid strategies: precio y entrega son fijos, no se licita."
+          "explanation": "Reserva no usa estrategias de puja (bid strategies): precio y entrega son fijos, no se licita."
         },
         {
           "type": "fill",
@@ -833,7 +833,7 @@
             "ROAS"
           ],
           "correct": 0,
-          "explanation": "Los frequency caps (ej. máx 2 impresiones por persona por semana) son clave en planes de awareness con Reservation."
+          "explanation": "Los frequency caps (ej. máx 2 impresiones por persona por semana) son clave en planes de awareness con Reserva."
         },
         {
           "type": "mcq",
@@ -845,7 +845,7 @@
             "Verdadero solo con frequency cap"
           ],
           "correct": 1,
-          "explanation": "Reservation no es necesariamente más barato. Su ventaja es la predecibilidad de entrega y precio (CPM fijo), no un costo mínimo."
+          "explanation": "Reserva no es necesariamente más barato. Su ventaja es la predecibilidad de entrega y precio (CPM fijo), no un costo mínimo."
         }
       ]
     },
@@ -871,7 +871,7 @@
             "Auction con ROAS Goal"
           ],
           "correct": 1,
-          "explanation": "Plan cerrado, reach garantizado, CPM por adelantado y objetivo Awareness en Facebook e Instagram: ese perfil es Reservation, predecibilidad tipo medios tradicionales."
+          "explanation": "Plan cerrado, reach garantizado, CPM por adelantado y objetivo Awareness en Facebook e Instagram: ese perfil es Reserva (Reservation), predecibilidad tipo medios tradicionales."
         },
         {
           "type": "mcq",
@@ -883,7 +883,7 @@
             "No se puede controlar la frequency"
           ],
           "correct": 1,
-          "explanation": "Reservation permite definir frequency caps precisos, clave en awareness para no quemar a la audiencia."
+          "explanation": "Reserva permite definir frequency caps precisos, clave en awareness para no quemar a la audiencia."
         },
         {
           "type": "mcq",
@@ -895,7 +895,7 @@
             "Solo si activa Pixel"
           ],
           "correct": 1,
-          "explanation": "Reservation no es necesariamente más barato que Auction. Su valor es la predecibilidad (CPM fijo, reach y frequency garantizados)."
+          "explanation": "Reserva no es necesariamente más barato que Subasta. Su valor es la predecibilidad (CPM fijo, reach y frequency garantizados)."
         }
       ]
     },
@@ -905,11 +905,11 @@
       "section": "b4",
       "type": "flashcards",
       "cards": [
-        { "q": "¿Qué reserva Reservation?", "a": "Un número fijo de personas a una frequency específica por un precio fijo (CPM), planeado por adelantado." },
-        { "q": "Plataformas de Reservation", "a": "Facebook e Instagram." },
-        { "q": "¿Reservation usa bid strategies?", "a": "No; precio y entrega son fijos, no se licita." },
-        { "q": "Frequency cap en Reservation", "a": "Tope preciso de impresiones por persona (ej. máx 2 por semana) para no quemar a la audiencia." },
-        { "q": "¿Reservation es siempre más barato?", "a": "No; da predecibilidad de entrega y precio, no un costo mínimo." }
+        { "q": "¿Qué reserva la Reserva (Reservation)?", "a": "Un número fijo de personas a una frequency específica por un precio fijo (CPM), planeado por adelantado." },
+        { "q": "Plataformas de Reserva", "a": "Facebook e Instagram." },
+        { "q": "¿Reserva usa estrategias de puja?", "a": "No; precio y entrega son fijos, no se licita." },
+        { "q": "Frequency cap en Reserva", "a": "Tope preciso de impresiones por persona (ej. máx 2 por semana) para no quemar a la audiencia." },
+        { "q": "¿Reserva es siempre más barato?", "a": "No; da predecibilidad de entrega y precio, no un costo mínimo." }
       ]
     },
     {
@@ -934,7 +934,7 @@
             "Auction con ROAS Goal"
           ],
           "correct": 1,
-          "explanation": "Reach y frequency garantizados, CPM cerrado y objetivo Awareness en FB/IG = Reservation."
+          "explanation": "Reach y frequency garantizados, CPM cerrado y objetivo Awareness en FB/IG = Reserva (Reservation)."
         },
         {
           "type": "mcq",
@@ -946,7 +946,7 @@
             "Auction + Bid Cap"
           ],
           "correct": 1,
-          "explanation": "Sales solo va por Auction. Con ROAS objetivo y optimización por valor, la bid strategy es ROAS Goal (requiere value tracking, que ya tiene)."
+          "explanation": "Sales solo va por Subasta (Auction). Con ROAS objetivo y optimización por valor, la estrategia de puja (bid strategy) es Objetivo de ROAS (ROAS Goal) (requiere value tracking, que ya tiene)."
         },
         {
           "type": "mcq",
@@ -970,7 +970,7 @@
             "Solo si bajan el ROAS objetivo"
           ],
           "correct": 1,
-          "explanation": "Reservation está limitado a Awareness y Engagement. Sales no es elegible para Reservation bajo ninguna condición."
+          "explanation": "Reserva está limitado a Awareness y Engagement. Sales no es elegible para Reserva bajo ninguna condición."
         }
       ]
     },
@@ -981,18 +981,18 @@
       "type": "match",
       "instruction": "Tap el término y luego su definición. Cada error cuesta 1 ❤️.",
       "pairs": [
-        ["Buying type", "Método para comprar anuncios: Auction o Reservation"],
-        ["Auction", "Flexible: todos los objectives, 5 bid strategies, precio variable"],
-        ["Reservation", "Predecible: solo Awareness/Engagement, CPM fijo"],
+        ["Tipo de compra (buying type)", "Método para comprar anuncios: Subasta o Reserva"],
+        ["Subasta (Auction)", "Flexible: todos los objectives, 5 estrategias de puja, precio variable"],
+        ["Reserva (Reservation)", "Predecible: solo Awareness/Engagement, CPM fijo"],
         ["Total value", "Advertiser bid + estimated action rates + ad quality"],
         ["Estimated action rates", "Probabilidad de que la persona haga la acción deseada"],
-        ["Highest Volume", "Spend-based: máximo de resultados con el budget"],
-        ["Highest Value", "Spend-based: máximo valor de compra con el budget"],
-        ["Cost per Result Goal", "Goal-based: mantener un costo por resultado objetivo"],
-        ["ROAS Goal", "Goal-based: mantener un retorno sobre ad spend objetivo"],
-        ["Bid Cap", "Manual: tope máximo de bid en cada subasta"],
+        ["Volumen más alto (Highest Volume)", "Spend-based: máximo de resultados con el budget"],
+        ["Valor más alto (Highest Value)", "Spend-based: máximo valor de compra con el budget"],
+        ["Objetivo de costo por resultado (Cost per Result Goal)", "Goal-based: mantener un costo por resultado objetivo"],
+        ["Objetivo de ROAS (ROAS Goal)", "Goal-based: mantener un retorno sobre ad spend objetivo"],
+        ["Límite de puja (Bid Cap)", "Manual: tope máximo de bid en cada subasta"],
         ["Frequency cap", "Tope de impresiones por persona; clave en awareness"],
-        ["Riesgo de Bid Cap bajo", "El anuncio casi no entra a subastas y no gasta"]
+        ["Riesgo de Límite de puja bajo", "El anuncio casi no entra a subastas y no gasta"]
       ]
     },
     {
@@ -1003,12 +1003,12 @@
       "instruction": "El planner decide la compra en este orden. Reordena con ▲▼ y verifica.",
       "items": [
         "Confirmar el campaign objective",
-        "Verificar si el objective permite Reservation o exige Auction",
-        "Elegir buying type (Auction o Reservation)",
-        "Si es Auction, elegir la bid strategy según costo/valor",
-        "Si es Reservation, definir reach y frequency caps"
+        "Verificar si el objective permite Reserva o exige Subasta",
+        "Elegir tipo de compra / buying type (Subasta o Reserva)",
+        "Si es Subasta, elegir la estrategia de puja según costo/valor",
+        "Si es Reserva, definir reach y frequency caps"
       ],
-      "explanation": "El objective manda: define qué buying types son posibles. Luego buying type y, según el caso, bid strategy o frequency caps."
+      "explanation": "El objective manda: define qué tipos de compra son posibles. Luego tipo de compra y, según el caso, estrategia de puja o frequency caps."
     },
     {
       "id": "2.fill",
@@ -1021,7 +1021,7 @@
           "q": "Reservation solo soporta los objectives Awareness y ___.",
           "options": ["Engagement", "Sales", "Leads", "Traffic"],
           "correct": 0,
-          "explanation": "Awareness y Engagement: los únicos objectives de Reservation."
+          "explanation": "Awareness y Engagement: los únicos objectives de Reserva (Reservation)."
         },
         {
           "type": "fill",
@@ -1042,21 +1042,21 @@
           "q": "La única bid strategy manual es ___.",
           "options": ["Bid Cap", "ROAS Goal", "Highest Volume", "Cost per Result Goal"],
           "correct": 0,
-          "explanation": "Bid Cap: tope de bid por subasta, la más delicada."
+          "explanation": "Límite de puja (Bid Cap): tope de bid por subasta, la más delicada."
         },
         {
           "type": "fill",
           "q": "Con ROAS objetivo y optimización por valor, la bid strategy es ___.",
           "options": ["ROAS Goal", "Highest Volume", "Bid Cap", "Cost per Result Goal"],
           "correct": 0,
-          "explanation": "ROAS Goal mantiene un retorno objetivo; requiere value tracking."
+          "explanation": "Objetivo de ROAS (ROAS Goal) mantiene un retorno objetivo; requiere value tracking."
         },
         {
           "type": "fill",
           "q": "Con CPA tope estricto optimizando por cantidad, la bid strategy es ___.",
           "options": ["Cost per Result Goal", "Highest Value", "ROAS Goal", "Highest Volume"],
           "correct": 0,
-          "explanation": "Cost per Result Goal mantiene el costo objetivo por resultado."
+          "explanation": "Objetivo de costo por resultado (Cost per Result Goal) mantiene el costo objetivo por resultado."
         },
         {
           "type": "fill",
@@ -1083,14 +1083,14 @@
             "Reservation solo si usa catálogo"
           ],
           "correct": 1,
-          "explanation": "Reservation solo soporta Awareness y Engagement. Para Sales el único buying type posible es Auction."
+          "explanation": "Reserva (Reservation) solo soporta Awareness y Engagement. Para Sales el único tipo de compra (buying type) posible es Subasta (Auction)."
         },
         {
           "type": "mcq",
           "q": "¿Cuáles son los dos buying types?",
           "options": ["Auction y Manual", "Auction y Reservation", "Spend-based y Goal-based", "Awareness y Engagement"],
           "correct": 1,
-          "explanation": "Auction (flexible) y Reservation (predecible)."
+          "explanation": "Subasta (flexible) y Reserva (predecible)."
         },
         {
           "type": "mcq",
@@ -1116,7 +1116,7 @@
           "q": "¿La bid strategy entra en el total value?",
           "options": ["Sí, es el 4º componente", "No, controla cómo gastas", "Solo Bid Cap", "Solo en Sales"],
           "correct": 1,
-          "explanation": "No. El cost control no es parte del total value."
+          "explanation": "No. El cost control (estrategia de puja / bid strategy) no es parte del total value."
         },
         {
           "type": "mcq",
@@ -1128,14 +1128,14 @@
             "Awareness, Engagement, Sales, Leads, Traffic"
           ],
           "correct": 0,
-          "explanation": "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap."
+          "explanation": "Volumen más alto (Highest Volume), Valor más alto (Highest Value), Objetivo de costo por resultado (Cost per Result Goal), Objetivo de ROAS (ROAS Goal), Límite de puja (Bid Cap)."
         },
         {
           "type": "mcq",
           "q": "Bid strategy goal-based para retorno objetivo:",
           "options": ["Highest Volume", "Highest Value", "ROAS Goal", "Bid Cap"],
           "correct": 2,
-          "explanation": "ROAS Goal mantiene un retorno sobre ad spend objetivo."
+          "explanation": "Objetivo de ROAS mantiene un retorno sobre ad spend objetivo."
         },
         {
           "type": "mcq",
@@ -1190,7 +1190,7 @@
           "q": "¿Reservation soporta Sales?",
           "options": ["Sí", "No, solo Awareness/Engagement"],
           "correct": 1,
-          "explanation": "Sales solo va por Auction."
+          "explanation": "Sales solo va por Subasta (Auction)."
         },
         {
           "q": "¿Gana la subasta el bid más alto?",
@@ -1208,7 +1208,7 @@
           "q": "¿Bid Cap es spend-based?",
           "options": ["Sí", "No, es manual"],
           "correct": 1,
-          "explanation": "Bid Cap es la única manual."
+          "explanation": "Límite de puja (Bid Cap) es la única manual."
         },
         {
           "q": "¿ROAS Goal requiere value tracking?",
@@ -1232,7 +1232,7 @@
           "q": "¿Highest Volume respeta un techo de costo?",
           "options": ["Sí", "No"],
           "correct": 1,
-          "explanation": "Para techo de costo: Cost per Result Goal."
+          "explanation": "Para techo de costo: Objetivo de costo por resultado (Cost per Result Goal)."
         }
       ]
     },
@@ -1242,30 +1242,30 @@
       "section": "bz",
       "type": "flashcards",
       "cards": [
-        { "q": "Buying type", "a": "Método para comprar anuncios across Meta technologies: Auction o Reservation." },
-        { "q": "Auction", "a": "Flexible: todos los objectives, 5 bid strategies, todos los placements, precio variable." },
-        { "q": "Objectives que soporta Reservation", "a": "Solo Awareness y Engagement." },
-        { "q": "Plataformas de Reservation", "a": "Facebook e Instagram." },
-        { "q": "¿Cuándo Reservation sobre Auction?", "a": "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada." },
-        { "q": "Precio en Auction vs Reservation", "a": "Auction: variable. Reservation: CPM fijo conocido por adelantado." },
+        { "q": "Tipo de compra (buying type)", "a": "Método para comprar anuncios across Meta technologies: Subasta (Auction) o Reserva (Reservation)." },
+        { "q": "Subasta", "a": "Flexible: todos los objectives, 5 estrategias de puja, todos los placements, precio variable." },
+        { "q": "Objectives que soporta Reserva", "a": "Solo Awareness y Engagement." },
+        { "q": "Plataformas de Reserva", "a": "Facebook e Instagram." },
+        { "q": "¿Cuándo Reserva sobre Subasta?", "a": "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada." },
+        { "q": "Precio en Subasta vs Reserva", "a": "Subasta: variable. Reserva: CPM fijo conocido por adelantado." },
         { "q": "Total value de la subasta", "a": "Advertiser bid + estimated action rates + ad quality." },
         { "q": "¿El cost control entra en el total value?", "a": "No." },
         { "q": "¿Quién gana la subasta?", "a": "El anuncio con el mayor total value, no el del bid más alto." },
         { "q": "Estimated action rates", "a": "Probabilidad de que la persona haga la acción deseada." },
         { "q": "¿Puede ganar un bid más bajo?", "a": "Sí, si el anuncio es más relevante y de mayor calidad." },
-        { "q": "Las 5 bid strategies", "a": "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap." },
-        { "q": "Bid strategies spend-based", "a": "Highest Volume y Highest Value." },
-        { "q": "Bid strategies goal-based", "a": "Cost per Result Goal y ROAS Goal." },
-        { "q": "Bid strategy manual", "a": "Bid Cap." },
-        { "q": "Highest Volume vs Highest Value", "a": "Volume = máximo de resultados. Value = máximo valor de compra (requiere value tracking)." },
-        { "q": "Cost per Result Goal", "a": "Goal-based: mantiene un costo por resultado objetivo." },
-        { "q": "ROAS Goal", "a": "Goal-based: mantiene un retorno sobre ad spend objetivo (requiere value tracking)." },
-        { "q": "Riesgo de Bid Cap mal calibrado", "a": "Cap muy bajo: casi no entra a subastas, la campaña no gasta." },
-        { "q": "Default recomendado si no hay metas estrictas", "a": "Highest Volume / Highest Value." },
-        { "q": "¿Qué reserva Reservation?", "a": "Número fijo de personas a una frequency específica por un CPM fijo, planeado por adelantado." },
-        { "q": "¿Reservation usa bid strategies?", "a": "No; precio y entrega son fijos, no se licita." },
-        { "q": "Frequency cap en Reservation", "a": "Tope preciso de impresiones por persona para no quemar a la audiencia." },
-        { "q": "¿Reservation es siempre más barato?", "a": "No; da predecibilidad de entrega y precio, no un costo mínimo." }
+        { "q": "Las 5 estrategias de puja (bid strategies)", "a": "Volumen más alto (Highest Volume), Valor más alto (Highest Value), Objetivo de costo por resultado (Cost per Result Goal), Objetivo de ROAS (ROAS Goal), Límite de puja (Bid Cap)." },
+        { "q": "Estrategias de puja spend-based", "a": "Volumen más alto y Valor más alto." },
+        { "q": "Estrategias de puja goal-based", "a": "Objetivo de costo por resultado y Objetivo de ROAS." },
+        { "q": "Estrategia de puja manual", "a": "Límite de puja." },
+        { "q": "Volumen más alto vs Valor más alto", "a": "Volume = máximo de resultados. Value = máximo valor de compra (requiere value tracking)." },
+        { "q": "Objetivo de costo por resultado", "a": "Goal-based: mantiene un costo por resultado objetivo." },
+        { "q": "Objetivo de ROAS", "a": "Goal-based: mantiene un retorno sobre ad spend objetivo (requiere value tracking)." },
+        { "q": "Riesgo de Límite de puja mal calibrado", "a": "Cap muy bajo: casi no entra a subastas, la campaña no gasta." },
+        { "q": "Default recomendado si no hay metas estrictas", "a": "Volumen más alto / Valor más alto." },
+        { "q": "¿Qué reserva la Reserva?", "a": "Número fijo de personas a una frequency específica por un CPM fijo, planeado por adelantado." },
+        { "q": "¿Reserva usa estrategias de puja?", "a": "No; precio y entrega son fijos, no se licita." },
+        { "q": "Frequency cap en Reserva", "a": "Tope preciso de impresiones por persona para no quemar a la audiencia." },
+        { "q": "¿Reserva es siempre más barato?", "a": "No; da predecibilidad de entrega y precio, no un costo mínimo." }
       ]
     }
   ]
