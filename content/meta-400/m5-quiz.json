@@ -3,9 +3,9 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "Advantage+ placements:",
+      "q": "Ubicaciones Advantage+ (Advantage+ placements):",
       "options": [
-        "Restringe a un solo placement",
+        "Restringe a una sola ubicación (placement)",
         "Deja a Meta entregar donde mejor rinde, maximizando alcance y eficiencia",
         "Solo funciona con Reservation",
         "Fija el CPM"
@@ -15,7 +15,7 @@
       "difficulty": "easy"
     },
     {
-      "q": "Restringir placements sin razón de negocio normalmente:",
+      "q": "Restringir ubicaciones sin razón de negocio normalmente:",
       "options": [
         "Baja el costo",
         "Sube el costo por resultado y reduce el delivery",
@@ -23,7 +23,7 @@
         "Mejora el ad review"
       ],
       "correct": 1,
-      "explanation": "Menos placements limita la optimización: encarece y reduce entrega.",
+      "explanation": "Menos ubicaciones limita la optimización: encarece y reduce entrega.",
       "difficulty": "medium"
     },
     {
@@ -41,7 +41,7 @@
     {
       "q": "Advantage+ creative hace:",
       "options": [
-        "Elegir el placement",
+        "Elegir la ubicación",
         "Optimizaciones automáticas del creativo por persona",
         "Fijar el CPM",
         "Crear lookalikes"
@@ -51,10 +51,10 @@
       "difficulty": "medium"
     },
     {
-      "q": "¿Cuándo SÍ se justifica restringir placements? Selecciona 2.",
+      "q": "¿Cuándo SÍ se justifica restringir ubicaciones? Selecciona 2.",
       "options": [
         "Requisito de marca que prohíbe ciertas superficies",
-        "El creativo no es apto para algún placement",
+        "El creativo no es apto para alguna ubicación",
         "Preferencia estética sin razón de negocio",
         "Para que el reporte se vea más simple"
       ],
@@ -88,10 +88,10 @@
       "difficulty": "medium"
     },
     {
-      "q": "Marca de consumo, alcance amplio y eficiente, tiene video vertical, imágenes y carousel:",
+      "q": "Marca de consumo, alcance amplio y eficiente, tiene video vertical, imágenes y Secuencia (carousel):",
       "options": [
         "Manual solo Feed + 1 video horizontal",
-        "Advantage+ placements + varios creativos verticales + Advantage+ creative",
+        "Ubicaciones Advantage+ + varios creativos verticales + Advantage+ creative",
         "Solo Stories con 1 imagen",
         "Solo Audience Network"
       ],
@@ -100,7 +100,7 @@
       "difficulty": "medium"
     },
     {
-      "q": "Placements son:",
+      "q": "Las ubicaciones (placements) son:",
       "options": [
         "Las bid strategies",
         "Las superficies donde aparece el anuncio across Meta technologies",
@@ -114,13 +114,13 @@
     {
       "q": "Un cliente quiere control total porque su creativo no funciona en cierto formato vertical de terceros. ¿Qué haces?",
       "options": [
-        "Advantage+ placements igual, sin tocar nada",
-        "Placements manuales excluyendo esa superficie por razón de creativo",
+        "Ubicaciones Advantage+ igual, sin tocar nada",
+        "Ubicaciones manuales (manual placements) excluyendo esa superficie por razón de creativo",
         "Cambiar el objective",
         "Subir el budget"
       ],
       "correct": 1,
-      "explanation": "Hay razón real (creativo no apto): se justifica restringir ese placement de forma manual.",
+      "explanation": "Hay razón real (creativo no apto): se justifica restringir esa ubicación de forma manual.",
       "difficulty": "hard"
     }
   ]

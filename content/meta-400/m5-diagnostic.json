@@ -3,19 +3,19 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "¿Qué recomienda Meta como default de placements?",
+      "q": "¿Qué recomienda Meta como default de ubicaciones (placements)?",
       "options": [
         "Manual, solo Feed",
-        "Advantage+ placements",
+        "Ubicaciones Advantage+ (Advantage+ placements)",
         "Solo Stories",
         "Solo Audience Network"
       ],
       "correct": 1,
-      "explanation": "Advantage+ placements da al sistema más superficies para optimizar: más alcance y eficiencia.",
+      "explanation": "Las Ubicaciones Advantage+ dan al sistema más superficies para optimizar: más alcance y eficiencia.",
       "difficulty": "easy"
     },
     {
-      "q": "Efecto típico de restringir placements sin razón de negocio:",
+      "q": "Efecto típico de restringir ubicaciones sin razón de negocio:",
       "options": [
         "Baja el costo y sube el alcance",
         "Sube el costo por resultado y baja el delivery",
@@ -23,7 +23,7 @@
         "Mejora el ad review"
       ],
       "correct": 1,
-      "explanation": "Menos placements = menos subastas/combinaciones; normalmente encarece y limita el delivery.",
+      "explanation": "Menos ubicaciones = menos subastas/combinaciones; normalmente encarece y limita el delivery.",
       "difficulty": "medium"
     },
     {
@@ -47,7 +47,7 @@
         "Crear lookalikes"
       ],
       "correct": 1,
-      "explanation": "Advantage+ creative adapta el creativo por persona. Advantage+ placements es sobre dónde se entrega.",
+      "explanation": "Advantage+ creative adapta el creativo por persona. Las Ubicaciones Advantage+ son sobre dónde se entrega.",
       "difficulty": "medium"
     },
     {
