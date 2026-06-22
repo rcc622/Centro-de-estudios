@@ -1,0 +1,1067 @@
+{
+  "id": "m5",
+  "title": "Module 5 — Placements and creative",
+  "sections": {
+    "b1": {
+      "ico": "📍",
+      "title": "Block 1",
+      "sub": "M4 review + placement selection"
+    },
+    "b2": {
+      "ico": "🎨",
+      "title": "Block 2",
+      "sub": "Ad creative strategy and Advantage+ creative"
+    },
+    "b3": {
+      "ico": "🧩",
+      "title": "Block 3",
+      "sub": "Coherent placements + creative"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Module wrap-up",
+      "sub": "Integrative case, review and consolidation"
+    }
+  },
+  "lessons": [
+    {
+      "id": "5.0",
+      "title": "Spaced review · Module 4",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Audience → placements → creative",
+          "body": "<strong>Placements</strong> and creative aren't planned in a vacuum: they build on the audience you already defined in Module 4. The idea is that you first decide who you're talking to, then on which surfaces the ad appears, and with which pieces. If the audience is poorly built, not even the best placements or the best creative can save it. That's why this module assumes you already have the audience ready and builds on top of it. Before moving on, quickly review the key concepts from Module 4."
+        },
+        {
+          "type": "fill",
+          "q": "Meta's recommended audience default is ___.",
+          "options": ["Advantage+ Audience", "original audience", "lookalike 10%", "detailed targeting"],
+          "correct": 0,
+          "explanation": "Advantage+ Audience: signals as a suggestion."
+        },
+        {
+          "type": "mcq",
+          "q": "Risk of over-targeting:",
+          "options": [
+            "Better optimization",
+            "Tiny audience: high cost, little delivery",
+            "Always lowers CPM",
+            "Doubles delivery"
+          ],
+          "correct": 1,
+          "explanation": "With no room to optimize, cost goes up. The same logic applies to restricting placements."
+        },
+        {
+          "type": "fill",
+          "q": "A lookalike starts from a ___ (a quality custom audience).",
+          "options": ["seed", "bid", "placement", "public list"],
+          "correct": 0,
+          "explanation": "The seed determines the quality of the lookalike."
+        },
+        {
+          "type": "mcq",
+          "q": "The four custom audience sources:",
+          "options": [
+            "Website, App activity, Customer list, Engagement",
+            "Pixel, CAPI, dataset, catalog",
+            "Feeds, Stories, Reels, Search",
+            "Awareness, Traffic, Sales, Engagement"
+          ],
+          "correct": 0,
+          "explanation": "Website, App activity, Customer list, Engagement."
+        }
+      ]
+    },
+    {
+      "id": "5.1",
+      "title": "Explained · Placement selection",
+      "section": "b1",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Where the ad is shown",
+          "body": "<strong>Placements</strong> are the spaces where your ad can appear within Meta's universe. It's not just Facebook: the same ad can show up on Instagram, in Messenger, and in third-party apps connected to Meta's network. When you set up a campaign, you define which of these spaces you want to deliver to. Thinking carefully about placements matters because each surface has a different format, cost, and type of attention. In practice, it's almost always best to let Meta use as many placements as possible."
+        },
+        {
+          "type": "concept",
+          "h": "The available surfaces",
+          "body": "The most common placements are: <strong>1. Feeds</strong> (the main feed on Facebook and Instagram). <strong>2. Stories</strong> (vertical stories that last 24 hours). <strong>3. Reels</strong> (short vertical videos). <strong>4. In-stream</strong> (ads inside longer videos). <strong>5. Marketplace</strong> (Facebook's buy-and-sell section). <strong>6. Search</strong> (search results). <strong>7. Audience Network</strong> (a network of third-party apps and sites where Meta also places ads). For example, a coffee shop like <em>Café Aurora</em> can appear in a user's Feed, in a Story, and inside a Reels video on the same day, all with the same campaign."
+        },
+        {
+          "type": "concept",
+          "h": "The default: Advantage+ placements",
+          "body": "<strong>Advantage+ placements</strong> (previously called Automatic Placements) is the option Meta recommends by default. Instead of you hand-picking the surfaces, you let the system deliver the ad wherever it finds the best result at the lowest cost. The logic is simple: the more placements you allow it to use, the more auctions and combinations it has to test. That usually lowers the cost per result and broadens reach. For example, a clothing store like <em>Mode Lila</em> leaves all placements enabled and discovers that its best sales come through Reels, something it would never have guessed if it had chosen only Feed."
+        },
+        {
+          "type": "kvtable",
+          "h": "Advantage+ placements vs manual",
+          "rows": [
+            [
+              "Advantage+ placements",
+              "Meta delivers where the result per cost is best; maximum efficient reach"
+            ],
+            [
+              "Manual placements",
+              "You choose the surfaces; control for brand or specific-creative cases"
+            ],
+            [
+              "Meta recommendation",
+              "Advantage+ placements as the default unless there's a justified restriction"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "WHY ADVANTAGE+ PLACEMENTS",
+          "body": "Giving the system more placements gives it more auctions and combinations to optimize: it usually lowers the cost per result and broadens reach. Restricting placements almost always raises cost."
+        },
+        {
+          "type": "warn",
+          "label": "TRAP",
+          "body": "Limiting to a single placement out of 'aesthetic preference' with no business reason raises cost and reduces delivery. Only restrict if there's a real reason (unsuitable creative, brand requirement)."
+        },
+        {
+          "type": "mcq",
+          "q": "The client wants maximum reach at the lowest possible cost with no specific brand requirements. Which placement strategy?",
+          "options": [
+            "Manual, Facebook Feed only",
+            "Advantage+ placements",
+            "Stories only",
+            "Audience Network only"
+          ],
+          "correct": 1,
+          "explanation": "With no restrictions, Advantage+ placements maximizes efficiency and reach by giving the system all surfaces to optimize. Restricting to a single surface raises cost and limits delivery.",
+          "difficulty": "easy"
+        },
+        {
+          "type": "mcq",
+          "q": "When IS it justified to use manual placements?",
+          "options": [
+            "Because of the client's aesthetic preference",
+            "With a real reason: a brand requirement or creative not suitable for certain surfaces",
+            "Whenever the budget is low",
+            "Never"
+          ],
+          "correct": 1,
+          "explanation": "Manual placements requires a real business reason, not an aesthetic preference.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "title": "Memory drill · Block 1",
+      "section": "b1",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The surfaces where the ad appears across Meta technologies are called ___.",
+          "options": [
+            "placements",
+            "audiences",
+            "objectives",
+            "datasets"
+          ],
+          "correct": 0,
+          "explanation": "Placements = Feeds, Stories, Reels, In-stream, Marketplace, Search, Audience Network, etc."
+        },
+        {
+          "type": "fill",
+          "q": "The default Meta recommends, previously called Automatic Placements, is ___.",
+          "options": [
+            "Advantage+ placements",
+            "Manual placements",
+            "Reservation",
+            "Bid Cap"
+          ],
+          "correct": 0,
+          "explanation": "Advantage+ placements (previously Automatic Placements) delivers wherever the result per cost is best."
+        },
+        {
+          "type": "mcq",
+          "q": "What typical effect does restricting placements without a business reason have?",
+          "options": [
+            "Lowers the cost per result",
+            "Raises the cost per result and reduces delivery",
+            "Changes nothing",
+            "Automatically increases reach"
+          ],
+          "correct": 1,
+          "explanation": "Restricting placements almost always raises cost and reduces delivery: the system has fewer auctions and combinations to optimize."
+        },
+        {
+          "type": "mcq",
+          "q": "When IS it valid to use manual placements?",
+          "options": [
+            "When the client aesthetically prefers a single placement",
+            "When there's a real reason: a brand requirement or creative not suitable for certain surfaces",
+            "Always, it's Meta's default",
+            "Only in reach campaigns"
+          ],
+          "correct": 1,
+          "explanation": "Manual placements is justified only by a real business reason: a brand requirement or unsuitable creative. Not by aesthetic preference."
+        },
+        {
+          "type": "mcq",
+          "q": "Why does Advantage+ placements usually lower the cost per result?",
+          "options": [
+            "Because it reduces the advertiser bid",
+            "Because it gives the system more auctions and combinations to optimize",
+            "Because it eliminates the auction",
+            "Because it changes the campaign objective"
+          ],
+          "correct": 1,
+          "explanation": "More placements = more auctions and person-surface combinations to optimize; that usually lowers the cost per result and broadens reach."
+        }
+      ]
+    },
+    {
+      "id": "5.3",
+      "title": "Case to solve · Block 1",
+      "section": "b1",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "A small business wants to lock in a single placement",
+          "body": "A tortilla shop with locations in Monterrey wants to promote its home-delivery service. The owner tells you: \"I just want it to appear in the Facebook Feed, nothing else interests me.\" She has no brand requirement and no problem with the creative; it's just a personal preference."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you recommend to the owner?",
+          "options": [
+            "Respect her preference and lock in Facebook Feed only",
+            "Use Advantage+ placements: with no business reason, restricting raises cost and reduces delivery",
+            "Use Audience Network only because it's cheaper",
+            "Wait for more budget before launching"
+          ],
+          "correct": 1,
+          "explanation": "There's no brand requirement or unsuitable creative: aesthetic preference doesn't justify restricting. Advantage+ placements maximizes efficiency and reach."
+        },
+        {
+          "type": "mcq",
+          "q": "She insists: \"What if limiting placements makes it cheaper for me?\" What do you tell her?",
+          "options": [
+            "She's right, fewer placements always costs less",
+            "On the contrary: restricting almost always raises the cost per result because the system has fewer combinations to optimize",
+            "Cost doesn't depend on placements",
+            "It depends only on the campaign objective"
+          ],
+          "correct": 1,
+          "explanation": "Restricting placements almost always raises cost. The system needs more surfaces to find the most efficient auctions and combinations."
+        },
+        {
+          "type": "mcq",
+          "q": "In which case WOULD you agree to use manual placements?",
+          "options": [
+            "If she simply doesn't like how it looks outside the Feed",
+            "If her creative is not suitable for certain surfaces or she has a real brand requirement",
+            "Never, manual placements doesn't exist",
+            "Only if the budget is very low"
+          ],
+          "correct": 1,
+          "explanation": "Manual placements is justified by a real reason: unsuitable creative or a brand requirement. Aesthetic preference doesn't count."
+        }
+      ]
+    },
+    {
+      "id": "5.4",
+      "title": "Mini-flashcards · Block 1",
+      "section": "b1",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Placements",
+          "a": "Surfaces where the ad appears across Meta technologies (Feeds, Stories, Reels, etc.)."
+        },
+        {
+          "q": "Advantage+ placements",
+          "a": "Recommended default: Meta delivers where it performs best; more reach and efficiency. Previously Automatic Placements."
+        },
+        {
+          "q": "When manual placements?",
+          "a": "Only with a real reason: a brand requirement or creative not suitable for certain surfaces."
+        },
+        {
+          "q": "Effect of restricting placements",
+          "a": "It usually raises the cost per result and reduces delivery."
+        },
+        {
+          "q": "Why does Advantage+ placements lower cost?",
+          "a": "It gives the system more auctions and combinations to optimize."
+        }
+      ]
+    },
+    {
+      "id": "5.5",
+      "title": "Explained · Ad creative strategy and Advantage+ creative",
+      "section": "b2",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "Creative is a performance lever",
+          "body": "The <strong>creative</strong> (the visual piece: image, video, text) is not decoration: it's one of the strongest levers for improving results. The reason is that a relevant, well-made ad makes more people react and gets Meta to rate it as a high-quality ad. Those two factors feed into the auction formula, so a good creative can win placements at a lower cost than a mediocre one. That's why planning the creative is part of the media strategy, not a separate step you leave to the designer. A brand like <em>Frutto</em> (natural juices) that invests in good creative can pay less per sale than a competitor with the same budget but weak ads."
+        },
+        {
+          "type": "concept",
+          "h": "How creative enters the auction",
+          "body": "Meta decides which ad to show using a <strong>total value</strong> formula that adds up three things: <strong>1. Advertiser bid</strong> (how much you're willing to pay). <strong>2. Estimated action rates</strong> (the estimated probability that the person takes the action you want, like buying or signing up). <strong>3. Ad quality</strong> (how good and relevant Meta considers your ad based on quality signals and feedback). The creative doesn't change your bid, but it does move the other two components: an appealing ad raises the probability of action and the perceived quality. So a school like <em>Lingua Viva</em> can win more auctions with the same bid simply because its video generates more clicks and feels more relevant."
+        },
+        {
+          "type": "concept",
+          "h": "Advantage+ creative",
+          "body": "<strong>Advantage+ creative</strong> is a feature that lets Meta automatically adjust your piece differently for each person who sees it. It can crop the image, change brightness, add music, or modify the text so it lands better with each user. The idea is that the same ad adapts on its own, without you making a version for each audience. Note: this is different from Advantage+ placements; this one optimizes <strong>how</strong> the creative looks, not <strong>where</strong> it's shown. For example, a furniture store like <em>Roble &amp; Nogal</em> uploads a video and lets Advantage+ creative adjust it per person, instead of editing ten versions by hand."
+        },
+        {
+          "type": "kvtable",
+          "h": "Creative best practices",
+          "rows": [
+            [
+              "Mobile-first / vertical",
+              "Design for a vertical screen (9:16) and for sound-off"
+            ],
+            [
+              "Brand early",
+              "Logo/message in the first few seconds"
+            ],
+            [
+              "Vary formats",
+              "Video, image, carousel, collection depending on the objective"
+            ],
+            [
+              "Advantage+ creative",
+              "Automatic per-person optimizations (crops, brightness, music, text)"
+            ]
+          ]
+        },
+        {
+          "type": "tip",
+          "label": "CREATIVE DIVERSITY",
+          "body": "Several different creatives per ad set give the system material to find the best person-creative combination. Few creatives = less optimization room and faster fatigue."
+        },
+        {
+          "type": "warn",
+          "label": "TRAP",
+          "body": "Confusing <strong>Advantage+ creative</strong> (optimizes the creative per person) with <strong>Advantage+ placements</strong> (decides where it's shown). They're different things and the exam mixes them up."
+        },
+        {
+          "type": "mcq",
+          "q": "Why does the creative affect cost in the ad auction?",
+          "options": [
+            "Because it changes the advertiser bid automatically",
+            "Because it influences estimated action rates and ad quality, part of the total value",
+            "Because it defines the buying type",
+            "Because it replaces the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. A relevant, high-quality creative raises those two components and can win auctions at a lower cost.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "5.6",
+      "title": "Memory drill · Block 2",
+      "section": "b2",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "The client wants the system to automatically adapt crops, music and enhancements per person. What do you turn on?",
+          "options": [
+            "Advantage+ placements",
+            "Advantage+ creative",
+            "Bid Cap",
+            "Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ creative applies automatic per-person creative optimizations (image/video adjustments, music, text). Advantage+ placements is about where it's shown, not about the creative.",
+          "difficulty": "medium"
+        },
+        {
+          "type": "fill",
+          "q": "The creative influences estimated action rates and ad ___, two components of the auction's total value.",
+          "options": [
+            "quality",
+            "budget",
+            "bid",
+            "reach"
+          ],
+          "correct": 0,
+          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. The creative moves the last two."
+        },
+        {
+          "type": "fill",
+          "q": "The best practice of designing for a vertical 9:16 screen and for sound-off is called ___.",
+          "options": [
+            "mobile-first",
+            "desktop-first",
+            "horizontal-only",
+            "audio-first"
+          ],
+          "correct": 0,
+          "explanation": "Mobile-first / vertical: design for 9:16 and without relying on sound."
+        },
+        {
+          "type": "mcq",
+          "q": "Why is it worth having several different creatives per ad set?",
+          "options": [
+            "To spend more budget",
+            "They give the system material to find the best person-creative combination and reduce fatigue",
+            "To change the campaign objective",
+            "Because it's a Reservation requirement"
+          ],
+          "correct": 1,
+          "explanation": "More creative variety = more optimization room and less fatigue. Few creatives limit the system."
+        },
+        {
+          "type": "mcq",
+          "q": "What does a good creative strategy include according to best practices?",
+          "options": [
+            "A single horizontal video with mandatory audio",
+            "Vertical/mobile-first, brand early, several formats, and designing for sound-off",
+            "Static images only",
+            "Only the Stories placement"
+          ],
+          "correct": 1,
+          "explanation": "Best practices: mobile-first vertical, brand in the first few seconds, vary formats (video, image, carousel, collection) and don't rely on sound."
+        }
+      ]
+    },
+    {
+      "id": "5.7",
+      "title": "Case to solve · Block 2",
+      "section": "b2",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "B2B distributor with a single creative",
+          "body": "An industrial refrigeration equipment distributor in Guadalajara is going to advertise its cold-room line to other businesses. It only uploaded <strong>one horizontal video</strong> with a voiceover and asks that it be used as-is across all ad sets. Its goal is to lower the cost per lead."
+        },
+        {
+          "type": "mcq",
+          "q": "What do you recommend about the creative?",
+          "options": [
+            "It's fine, a single horizontal video is enough",
+            "Add several vertical mobile-first creatives and design for sound-off to give the system optimization material",
+            "Remove the video and use only text",
+            "Limit the creative to a single placement"
+          ],
+          "correct": 1,
+          "explanation": "A single horizontal creative limits optimization and fatigues quickly. Several vertical mobile-first creatives, without relying on audio, give the system material to find the best person-creative combination."
+        },
+        {
+          "type": "mcq",
+          "q": "The client asks how the creative can lower its cost per lead. What do you explain?",
+          "options": [
+            "The creative doesn't influence cost",
+            "A relevant, high-quality creative raises estimated action rates and ad quality, which are part of the total value and can win auctions at a lower cost",
+            "Cost depends only on the daily budget",
+            "Cost depends only on the audience"
+          ],
+          "correct": 1,
+          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. A better creative raises those components and can reduce the cost per result."
+        },
+        {
+          "type": "mcq",
+          "q": "It wants the system to adapt crops, music and enhancements for each person. What do you offer?",
+          "options": [
+            "Advantage+ placements",
+            "Advantage+ creative",
+            "Manual placements",
+            "Bid Cap"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ creative applies automatic per-person creative optimizations (crops, brightness, music, text)."
+        }
+      ]
+    },
+    {
+      "id": "5.8",
+      "title": "Mini-flashcards · Block 2",
+      "section": "b2",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Why does the creative affect cost?",
+          "a": "It influences estimated action rates and ad quality (part of the auction's total value)."
+        },
+        {
+          "q": "Advantage+ creative",
+          "a": "Automatic per-person creative optimizations (crops, brightness, music, text)."
+        },
+        {
+          "q": "Creative best practices",
+          "a": "Vertical/mobile-first, brand early, several formats, design for sound-off."
+        },
+        {
+          "q": "Why several creatives per ad set?",
+          "a": "They give the system material to find the best person-creative combination and reduce fatigue."
+        },
+        {
+          "q": "Advantage+ creative vs Advantage+ placements",
+          "a": "Creative = optimizes the creative per person. Placements = decides where it's shown."
+        }
+      ]
+    },
+    {
+      "id": "5.9",
+      "title": "Explained · Coherent placements + creative",
+      "section": "b3",
+      "type": "reading",
+      "cards": [
+        {
+          "type": "concept",
+          "h": "The scenario",
+          "body": "Imagine a consumer brand, an artisanal ice cream shop like <em>Nieve Real</em>, that wants to launch its new line with broad, efficient reach. It has already produced three types of piece: a vertical video, several images, and a <strong>carousel</strong> (an ad of several cards the user swipes through). It has no brand requirement forcing it to avoid certain surfaces. The question is how to combine placements and creative to get the most out of that material. This scenario helps show why placements and creative are thought of as a single plan."
+        },
+        {
+          "type": "concept",
+          "h": "They're planned together",
+          "body": "Placements and creative aren't decided separately: they're two pieces of the same plan. The recipe is to <strong>maximize surfaces</strong> with Advantage+ placements and, at the same time, provide <strong>mobile-first creative variety</strong> (several pieces designed for mobile and vertical format). When the system has many placements and several creatives, it can test combinations and find the best mix of person, surface, and creative. If you maximize surfaces but upload a single creative, you give it many spaces but little material to optimize. That's why <em>Nieve Real</em> should enable all surfaces and upload its video, its images, and its carousel together, not pick just one."
+        },
+        {
+          "type": "tip",
+          "label": "WRAP-UP",
+          "body": "Placements and creative are planned together: maximize surfaces (Advantage+ placements), provide mobile-first creative variety, and let Advantage+ creative find the best combination."
+        },
+        {
+          "type": "warn",
+          "label": "TRAP",
+          "body": "Maximizing placements but using a <strong>single creative</strong>: you have surfaces but little material to optimize, and the creative fatigues quickly. They go hand in hand."
+        },
+        {
+          "type": "mcq",
+          "q": "What placements + creative recommendation do you give for broad, efficient reach?",
+          "options": [
+            "Manual Feed only + a single horizontal video",
+            "Advantage+ placements + several vertical mobile-first creatives and Advantage+ creative",
+            "Stories only with one image",
+            "Audience Network only"
+          ],
+          "correct": 1,
+          "explanation": "Broad, efficient reach = Advantage+ placements; several vertical creatives give the system material to optimize; Advantage+ creative adapts per person. Restricting placement or using a single creative limits optimization.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "5.10",
+      "title": "Memory drill · Block 3",
+      "section": "b3",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "For a launch with broad, efficient reach, how do you combine placements and creative?",
+          "options": [
+            "Manual Feed only + a single horizontal video",
+            "Advantage+ placements + several vertical mobile-first creatives and Advantage+ creative",
+            "Stories only with one image",
+            "Audience Network only"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ placements maximizes surfaces; vertical creative variety provides optimization material; Advantage+ creative adapts per person."
+        },
+        {
+          "type": "fill",
+          "q": "Placements and creative aren't decided separately: they're ___ together.",
+          "options": [
+            "planned",
+            "ignored",
+            "hidden",
+            "billed"
+          ],
+          "correct": 0,
+          "explanation": "Placements and creative are planned together so the system finds the best person-surface-creative combination."
+        },
+        {
+          "type": "fill",
+          "q": "For the system to adapt the creative per person within a coherent plan, you turn on Advantage+ ___.",
+          "options": [
+            "creative",
+            "placements",
+            "audience",
+            "budget"
+          ],
+          "correct": 0,
+          "explanation": "Advantage+ creative adapts crops, brightness, music and text per person; it complements Advantage+ placements."
+        },
+        {
+          "type": "mcq",
+          "q": "What happens if you maximize placements but use a single horizontal creative?",
+          "options": [
+            "It's the best possible strategy",
+            "You limit optimization: the system has surfaces but little creative material and fatigues quickly",
+            "Cost goes down guaranteed",
+            "Advantage+ placements gets turned off"
+          ],
+          "correct": 1,
+          "explanation": "Placements and creative go together: a single creative limits optimization even with many surfaces. Mobile-first creative variety is needed."
+        }
+      ]
+    },
+    {
+      "id": "5.11",
+      "title": "Case to solve · Block 3",
+      "section": "b3",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "CASE TO SOLVE",
+          "h": "Consumer brand launch from Monterrey",
+          "body": "An artisanal salsa brand from Monterrey is launching a new line nationwide. It wants <strong>broad, efficient reach</strong>. It has already produced a vertical video, images and a product carousel, but its previous agency only ran Feed with a horizontal video."
+        },
+        {
+          "type": "mcq",
+          "q": "What comprehensive placements + creative plan do you propose?",
+          "options": [
+            "Keep manual Feed only + a single horizontal video",
+            "Advantage+ placements + several vertical mobile-first creatives + Advantage+ creative",
+            "Stories only with a static image",
+            "Audience Network only to cut costs"
+          ],
+          "correct": 1,
+          "explanation": "Broad, efficient reach = Advantage+ placements; making the most of the vertical video, images and carousel provides creative variety; Advantage+ creative adapts per person."
+        },
+        {
+          "type": "mcq",
+          "q": "The client asks why not just keep the horizontal video it already had. What do you answer?",
+          "options": [
+            "They're right, a single creative is enough",
+            "A single creative limits optimization and fatigues quickly; vertical variety gives the system material for the best combination",
+            "The creative doesn't influence the result",
+            "The horizontal video improves reach"
+          ],
+          "correct": 1,
+          "explanation": "Few creatives = less optimization room and faster fatigue. Mobile-first variety lets the system find the best person-creative combination."
+        },
+        {
+          "type": "mcq",
+          "q": "Why does Advantage+ placements fit its goal of efficient reach?",
+          "options": [
+            "Because it eliminates the auction",
+            "Because it delivers wherever the result per cost is best, maximizing reach and efficiency",
+            "Because it forces using Reels only",
+            "Because it lowers the advertiser bid"
+          ],
+          "correct": 1,
+          "explanation": "Advantage+ placements delivers where it performs best per cost: more reach and efficiency, ideal for a broad launch."
+        }
+      ]
+    },
+    {
+      "id": "5.12",
+      "title": "Mini-flashcards · Block 3",
+      "section": "b3",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Are placements and creative decided separately?",
+          "a": "No: they're planned together to find the best person-surface-creative combination."
+        },
+        {
+          "q": "Recipe for broad, efficient reach",
+          "a": "Advantage+ placements + several vertical mobile-first creatives + Advantage+ creative."
+        },
+        {
+          "q": "Risk of maximizing placements with a single creative",
+          "a": "You limit optimization and the creative fatigues quickly even with many surfaces."
+        },
+        {
+          "q": "Role of Advantage+ creative in the plan",
+          "a": "It adapts the creative per person (crops, brightness, music, text) and complements Advantage+ placements."
+        },
+        {
+          "q": "Why does Advantage+ placements give efficient reach?",
+          "a": "It delivers wherever the result per cost is best, maximizing reach and efficiency."
+        }
+      ]
+    },
+    {
+      "id": "5.integ",
+      "title": "Integrative case · Placements and creative plan for Kenet Solar",
+      "section": "bz",
+      "type": "scenario",
+      "cards": [
+        {
+          "type": "scenario",
+          "label": "INTEGRATIVE CASE",
+          "h": "Kenet Solar launches a residential line nationwide",
+          "body": "Kenet Solar wants a <strong>broad, efficient reach</strong> plan for its new residential line. It has a vertical video, images and a carousel. There are no brand requirements that limit surfaces. The goal is the lowest possible cost per lead."
+        },
+        {
+          "type": "mcq",
+          "q": "What placement strategy do you propose?",
+          "options": [
+            "Manual Facebook Feed only",
+            "Advantage+ placements",
+            "Stories only",
+            "Audience Network only"
+          ],
+          "correct": 1,
+          "explanation": "With no brand requirements and an efficiency goal, Advantage+ placements maximizes reach and lowers the cost per result."
+        },
+        {
+          "type": "mcq",
+          "q": "How do you make the most of the vertical video, images and carousel?",
+          "options": [
+            "Use only the video, discard the rest",
+            "Upload several vertical mobile-first creatives and turn on Advantage+ creative",
+            "Convert everything to horizontal",
+            "Use a single static image only"
+          ],
+          "correct": 1,
+          "explanation": "Mobile-first creative variety + Advantage+ creative gives the system material for the best person-creative combination."
+        },
+        {
+          "type": "mcq",
+          "q": "Management wants to lock in Feed only \"to look good.\" What do you argue?",
+          "options": [
+            "They're right, locking in Feed looks better",
+            "With no real business reason, restricting placements raises cost and reduces delivery; manual is only justified by brand or unsuitable creative",
+            "It doesn't matter, placement doesn't affect cost",
+            "We should switch to Reservation"
+          ],
+          "correct": 1,
+          "explanation": "Aesthetic preference doesn't justify restricting. With no brand requirement or unsuitable creative, Advantage+ placements is the right choice."
+        },
+        {
+          "type": "mcq",
+          "q": "How does this plan connect with cost per lead (remember Module 2)?",
+          "options": [
+            "Creative and placements don't affect cost",
+            "A better creative raises estimated action rates and ad quality (total value); more placements give more auctions: both lower the cost per result",
+            "Only the budget defines cost",
+            "Only the audience defines cost"
+          ],
+          "correct": 1,
+          "explanation": "Total value = bid + estimated action rates + ad quality. A quality creative + more placements = more auction efficiency."
+        }
+      ]
+    },
+    {
+      "id": "5.match",
+      "title": "Match the key concepts of Module 5",
+      "section": "bz",
+      "type": "match",
+      "instruction": "Tap the term and then its definition. Each mistake costs 1 ❤️.",
+      "pairs": [
+        ["Placements", "Surfaces where the ad appears across Meta technologies"],
+        ["Advantage+ placements", "Default: Meta delivers where the result per cost is best"],
+        ["Manual placements", "You choose surfaces; only with a real business reason"],
+        ["Restricting placements with no reason", "Raises cost and reduces delivery"],
+        ["Advantage+ creative", "Optimizes the creative per person (crops, music, text)"],
+        ["Mobile-first", "Design vertical 9:16 and for sound-off"],
+        ["Creative diversity", "Several creatives per ad set: more optimization, less fatigue"],
+        ["Total value", "Advertiser bid + estimated action rates + ad quality"],
+        ["Creative and cost", "Raises estimated action rates and ad quality"],
+        ["Placements + creative", "Planned together, not separately"]
+      ]
+    },
+    {
+      "id": "5.order",
+      "title": "Order the placements and creative plan",
+      "section": "bz",
+      "type": "order",
+      "instruction": "The planner integrates placements and creative in this order. Reorder with ▲▼ and check.",
+      "items": [
+        "Define the objective and audience (previous modules)",
+        "Choose Advantage+ placements unless there's a real business restriction",
+        "Produce mobile-first creative variety (vertical, designed for sound-off)",
+        "Turn on Advantage+ creative to adapt per person",
+        "Let the system find the best person-surface-creative combination"
+      ],
+      "explanation": "Placements and creative are planned together on top of the already-defined audience; the system optimizes the combination if you give it surfaces and varied creative material."
+    },
+    {
+      "id": "5.fill",
+      "title": "Complete the Module 5 statements",
+      "section": "bz",
+      "type": "fill",
+      "cards": [
+        {
+          "type": "fill",
+          "q": "The placement default Meta recommends is ___.",
+          "options": ["Advantage+ placements", "manual placements", "Feed only", "Audience Network"],
+          "correct": 0,
+          "explanation": "Advantage+ placements (previously Automatic Placements)."
+        },
+        {
+          "type": "fill",
+          "q": "Restricting placements with no business reason usually ___ the cost per result.",
+          "options": ["raises", "lowers", "eliminates", "doubles"],
+          "correct": 0,
+          "explanation": "Fewer surfaces = less optimization, more cost."
+        },
+        {
+          "type": "fill",
+          "q": "Manual placements is only justified by a brand requirement or creative that is not ___.",
+          "options": ["suitable", "vertical", "expensive", "new"],
+          "correct": 0,
+          "explanation": "A real business reason, not an aesthetic preference."
+        },
+        {
+          "type": "fill",
+          "q": "The creative influences estimated action rates and ad ___.",
+          "options": ["quality", "budget", "bid", "reach"],
+          "correct": 0,
+          "explanation": "Part of the auction's total value."
+        },
+        {
+          "type": "fill",
+          "q": "Designing vertical 9:16 for sound-off is the ___ practice.",
+          "options": ["mobile-first", "desktop-first", "audio-first", "horizontal"],
+          "correct": 0,
+          "explanation": "Mobile-first / vertical."
+        },
+        {
+          "type": "fill",
+          "q": "Advantage+ ___ adapts crops, music and text per person.",
+          "options": ["creative", "placements", "audience", "budget"],
+          "correct": 0,
+          "explanation": "Advantage+ creative optimizes the creative per person."
+        },
+        {
+          "type": "fill",
+          "q": "Placements and creative are ___ together, not separately.",
+          "options": ["planned", "ignored", "billed", "hidden"],
+          "correct": 0,
+          "explanation": "They're planned together for the best combination."
+        }
+      ]
+    },
+    {
+      "id": "5.drill",
+      "title": "Drill — 12 MCQs of Module 5",
+      "section": "bz",
+      "type": "drill",
+      "cards": [
+        {
+          "type": "mcq",
+          "q": "With no brand requirements and seeking maximum reach at the lowest cost, which placement strategy do you use?",
+          "options": ["Manual Feed only", "Advantage+ placements", "Stories only", "Audience Network only"],
+          "correct": 1,
+          "explanation": "Advantage+ placements maximizes efficiency and reach."
+        },
+        {
+          "type": "mcq",
+          "q": "Restricting placements with no business reason:",
+          "options": ["Lowers cost", "Raises cost and reduces delivery", "Changes nothing", "Raises reach"],
+          "correct": 1,
+          "explanation": "Fewer auctions/combinations = more cost."
+        },
+        {
+          "type": "mcq",
+          "q": "When is manual placements justified?",
+          "options": [
+            "Aesthetic preference",
+            "Brand requirement or unsuitable creative",
+            "Low budget",
+            "Never"
+          ],
+          "correct": 1,
+          "explanation": "A real business reason, not aesthetics."
+        },
+        {
+          "type": "mcq",
+          "q": "Why does Advantage+ placements lower cost?",
+          "options": [
+            "It reduces the bid",
+            "More auctions and combinations to optimize",
+            "It eliminates the auction",
+            "It changes the objective"
+          ],
+          "correct": 1,
+          "explanation": "More surfaces = more optimization room."
+        },
+        {
+          "type": "mcq",
+          "q": "The creative affects cost because:",
+          "options": [
+            "It changes the bid only",
+            "It influences estimated action rates and ad quality (total value)",
+            "It defines the buying type",
+            "It replaces the Pixel"
+          ],
+          "correct": 1,
+          "explanation": "It moves 2 of the 3 components of total value."
+        },
+        {
+          "type": "mcq",
+          "q": "Advantage+ creative:",
+          "options": [
+            "Decides where the ad is shown",
+            "Optimizes the creative per person (crops, music, text)",
+            "Defines the audience",
+            "Sets the budget"
+          ],
+          "correct": 1,
+          "explanation": "It optimizes the creative, not the placement."
+        },
+        {
+          "type": "mcq",
+          "q": "Creative best practice:",
+          "options": [
+            "Horizontal with mandatory audio",
+            "Vertical mobile-first, brand early, several formats, designed for sound-off",
+            "Static images only",
+            "Stories only"
+          ],
+          "correct": 1,
+          "explanation": "Mobile-first, brand early, format variety."
+        },
+        {
+          "type": "mcq",
+          "q": "Why several creatives per ad set?",
+          "options": [
+            "To spend more",
+            "Material for the best person-creative combination and less fatigue",
+            "To change the objective",
+            "Reservation requirement"
+          ],
+          "correct": 1,
+          "explanation": "Variety = more optimization, less fatigue."
+        },
+        {
+          "type": "mcq",
+          "q": "Maximizing placements with a single creative:",
+          "options": [
+            "Is ideal",
+            "Limits optimization; the creative fatigues even with surfaces",
+            "Lowers cost guaranteed",
+            "Turns off Advantage+ placements"
+          ],
+          "correct": 1,
+          "explanation": "They go hand in hand; creative material is missing."
+        },
+        {
+          "type": "mcq",
+          "q": "Are placements and creative decided separately?",
+          "options": ["Yes", "No, they're planned together", "Only in Reservation", "Only in Awareness"],
+          "correct": 1,
+          "explanation": "They're planned together for the best combination."
+        },
+        {
+          "type": "mcq",
+          "q": "The auction's total value:",
+          "options": [
+            "Bid + budget + reach",
+            "Advertiser bid + estimated action rates + ad quality",
+            "Bid + placement + creative",
+            "Bid + audience + frequency"
+          ],
+          "correct": 1,
+          "explanation": "The creative moves estimated action rates and ad quality."
+        },
+        {
+          "type": "mcq",
+          "q": "Recipe for broad, efficient reach:",
+          "options": [
+            "Manual Feed + a horizontal video",
+            "Advantage+ placements + mobile-first creative variety + Advantage+ creative",
+            "Stories only with one image",
+            "Audience Network only"
+          ],
+          "correct": 1,
+          "explanation": "Maximize surfaces + creative material + per-person adaptation."
+        }
+      ]
+    },
+    {
+      "id": "5.lightning",
+      "title": "Lightning — 8 quick questions",
+      "section": "bz",
+      "type": "lightning",
+      "timeLimit": 180,
+      "questions": [
+        {
+          "q": "Is Advantage+ placements the recommended default?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "Unless there's a justified business restriction."
+        },
+        {
+          "q": "Does restricting placements lower cost?",
+          "options": ["Yes", "No, it raises it"],
+          "correct": 1,
+          "explanation": "Less optimization = more cost."
+        },
+        {
+          "q": "Does aesthetic preference justify manual placements?",
+          "options": ["Yes", "No"],
+          "correct": 1,
+          "explanation": "Only a real business reason."
+        },
+        {
+          "q": "Does the creative affect cost in the auction?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "It moves estimated action rates and ad quality."
+        },
+        {
+          "q": "Does Advantage+ creative optimize placements?",
+          "options": ["Yes", "No, it optimizes the creative"],
+          "correct": 1,
+          "explanation": "It adapts the creative per person; placements is something else."
+        },
+        {
+          "q": "Does mobile-first mean horizontal with audio?",
+          "options": ["Yes", "No, vertical without relying on sound"],
+          "correct": 1,
+          "explanation": "Vertical 9:16, without relying on audio."
+        },
+        {
+          "q": "Do several creatives per ad set help?",
+          "options": ["Yes", "No"],
+          "correct": 0,
+          "explanation": "More optimization material, less fatigue."
+        },
+        {
+          "q": "Are placements and creative decided separately?",
+          "options": ["Yes", "No, together"],
+          "correct": 1,
+          "explanation": "They're planned together."
+        }
+      ]
+    },
+    {
+      "id": "5.flash",
+      "title": "Module 5 flashcards (everything)",
+      "section": "bz",
+      "type": "flashcards",
+      "cards": [
+        { "q": "Placements", "a": "Surfaces where the ad appears across Meta technologies (Feeds, Stories, Reels, etc.)." },
+        { "q": "Advantage+ placements", "a": "Recommended default: Meta delivers where it performs best; more reach and efficiency." },
+        { "q": "When manual placements?", "a": "Only with a real reason: a brand requirement or creative not suitable for certain surfaces." },
+        { "q": "Effect of restricting placements", "a": "It usually raises the cost per result and reduces delivery." },
+        { "q": "Why does Advantage+ placements lower cost?", "a": "It gives the system more auctions and combinations to optimize." },
+        { "q": "Why does the creative affect cost?", "a": "It influences estimated action rates and ad quality (part of the auction's total value)." },
+        { "q": "Advantage+ creative", "a": "Automatic per-person creative optimizations (crops, brightness, music, text)." },
+        { "q": "Advantage+ creative vs Advantage+ placements", "a": "Creative = optimizes the creative. Placements = decides where it's shown." },
+        { "q": "Creative best practices", "a": "Vertical/mobile-first, brand early, several formats, design for sound-off." },
+        { "q": "Why several creatives per ad set?", "a": "Material for the best person-creative combination and less fatigue." },
+        { "q": "The auction's total value", "a": "Advertiser bid + estimated action rates + ad quality. The creative moves the last two." },
+        { "q": "Are placements and creative decided separately?", "a": "No: they're planned together to find the best person-surface-creative combination." },
+        { "q": "Recipe for broad, efficient reach", "a": "Advantage+ placements + several vertical mobile-first creatives + Advantage+ creative." },
+        { "q": "Risk of maximizing placements with a single creative", "a": "You limit optimization and the creative fatigues quickly even with many surfaces." },
+        { "q": "Role of Advantage+ creative in the plan", "a": "It adapts the creative per person and complements Advantage+ placements." },
+        { "q": "Why does Advantage+ placements give efficient reach?", "a": "It delivers wherever the result per cost is best, maximizing reach and efficiency." },
+        { "q": "Mobile-first", "a": "Design vertical 9:16 without relying on sound." },
+        { "q": "Creative diversity", "a": "Several creatives per ad set: more optimization, less fatigue." },
+        { "q": "Manual placements for aesthetics?", "a": "No; only for a real business reason (brand or unsuitable creative)." },
+        { "q": "Creative-cost connection", "a": "Better creative = more estimated action rates and ad quality = lower cost per result." }
+      ]
+    }
+  ]
+}

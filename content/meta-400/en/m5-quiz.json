@@ -1,0 +1,127 @@
+{
+  "title": "Unit quiz · Module 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "Advantage+ placements:",
+      "options": [
+        "Restricts to a single placement",
+        "Lets Meta deliver where it performs best, maximizing reach and efficiency",
+        "Only works with Reservation",
+        "Sets the CPM"
+      ],
+      "correct": 1,
+      "explanation": "More surfaces = more auctions to optimize; the recommended default.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Restricting placements with no business reason usually:",
+      "options": [
+        "Lowers cost",
+        "Raises the cost per result and reduces delivery",
+        "Has no effect",
+        "Improves the ad review"
+      ],
+      "correct": 1,
+      "explanation": "Fewer placements limit optimization: it raises cost and reduces delivery.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Why is the creative a cost lever in the auction?",
+      "options": [
+        "It changes the budget",
+        "It affects estimated action rates and ad quality (part of the total value)",
+        "It defines the buying type",
+        "It replaces the audience"
+      ],
+      "correct": 1,
+      "explanation": "A relevant/quality creative raises those components and can win auctions more cheaply.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Advantage+ creative does:",
+      "options": [
+        "Choosing the placement",
+        "Automatic per-person creative optimizations",
+        "Setting the CPM",
+        "Creating lookalikes"
+      ],
+      "correct": 1,
+      "explanation": "It adapts crops, brightness, music and text per person.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "When IS restricting placements justified? Select 2.",
+      "options": [
+        "A brand requirement that prohibits certain surfaces",
+        "The creative is not suitable for some placement",
+        "Aesthetic preference with no business reason",
+        "To make the report look simpler"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Only with a real reason (brand or unsuitable creative). Aesthetics with no business reason doesn't justify raising cost.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Mobile-first creative best practice:",
+      "options": [
+        "Horizontal with mandatory audio",
+        "Vertical (9:16), brand early, legible without sound",
+        "One image for the entire campaign",
+        "Long text on top of the image"
+      ],
+      "correct": 1,
+      "explanation": "Vertical consumption and often sound-off; brand early.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Why several creatives per ad set?",
+      "options": [
+        "To spend more",
+        "They give material to find the best person-creative combination and reduce fatigue",
+        "To avoid the ad review",
+        "To activate Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Creative diversity broadens the optimization room and delays fatigue.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Consumer brand, broad and efficient reach, has a vertical video, images and carousel:",
+      "options": [
+        "Manual Feed only + 1 horizontal video",
+        "Advantage+ placements + several vertical creatives + Advantage+ creative",
+        "Stories only with 1 image",
+        "Audience Network only"
+      ],
+      "correct": 1,
+      "explanation": "Maximizing surfaces and creative variety with automatic adaptation performs better.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Placements are:",
+      "options": [
+        "The bid strategies",
+        "The surfaces where the ad appears across Meta technologies",
+        "The objectives",
+        "The data sources"
+      ],
+      "correct": 1,
+      "explanation": "Feeds, Stories, Reels, In-stream, Marketplace, Search, Audience Network, etc.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A client wants full control because their creative doesn't work in a certain third-party vertical format. What do you do?",
+      "options": [
+        "Advantage+ placements anyway, without touching anything",
+        "Manual placements excluding that surface for a creative reason",
+        "Change the objective",
+        "Raise the budget"
+      ],
+      "correct": 1,
+      "explanation": "There's a real reason (unsuitable creative): restricting that placement manually is justified.",
+      "difficulty": "hard"
+    }
+  ]
+}

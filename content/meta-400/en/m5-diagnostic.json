@@ -1,0 +1,66 @@
+{
+  "title": "Diagnostic · Module 5",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "What does Meta recommend as the placement default?",
+      "options": [
+        "Manual, Feed only",
+        "Advantage+ placements",
+        "Stories only",
+        "Audience Network only"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ placements gives the system more surfaces to optimize: more reach and efficiency.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Typical effect of restricting placements with no business reason:",
+      "options": [
+        "Lowers cost and raises reach",
+        "Raises the cost per result and lowers delivery",
+        "Has no effect",
+        "Improves the ad review"
+      ],
+      "correct": 1,
+      "explanation": "Fewer placements = fewer auctions/combinations; it usually raises cost and limits delivery.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Why does the creative affect cost in the auction?",
+      "options": [
+        "It changes the budget",
+        "It influences estimated action rates and ad quality (part of the total value)",
+        "It defines the buying type",
+        "It replaces the Pixel"
+      ],
+      "correct": 1,
+      "explanation": "A relevant, high-quality creative raises those components of the total value and can win auctions more cheaply.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Advantage+ creative is used for:",
+      "options": [
+        "Choosing where the ad is shown",
+        "Automatic per-person creative optimizations (crops, music, text)",
+        "Setting the CPM",
+        "Creating lookalikes"
+      ],
+      "correct": 1,
+      "explanation": "Advantage+ creative adapts the creative per person. Advantage+ placements is about where it's delivered.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Mobile-first creative best practice:",
+      "options": [
+        "Horizontal video with mandatory audio",
+        "Vertical (9:16), brand early and designed to be seen without sound",
+        "A single image for the entire campaign",
+        "Long text on the image"
+      ],
+      "correct": 1,
+      "explanation": "Consumption is vertical and often sound-off; brand early and vertical format perform better.",
+      "difficulty": "easy"
+    }
+  ]
+}
