@@ -1,0 +1,113 @@
+{
+  "title": "Unit quiz · Module 2",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "The Reservation buying type supports the objectives:",
+      "options": [
+        "Awareness and Engagement",
+        "Sales and Leads",
+        "Traffic and App Promotion",
+        "All"
+      ],
+      "correct": 0,
+      "explanation": "Only Awareness and Engagement. The rest runs on Auction.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The auction's total value is:",
+      "options": [
+        "Advertiser bid + estimated action rates + ad quality",
+        "Bid + budget + frequency",
+        "CPM + CTR + CPA",
+        "Bid + bid strategy + placements"
+      ],
+      "correct": 0,
+      "explanation": "Bid + estimated action rates + ad quality. The bid strategy/cost control doesn't enter.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Match the family: which bid strategies are spend-based? Select 2.",
+      "options": [
+        "Highest Volume",
+        "Highest Value",
+        "Cost per Result Goal",
+        "Bid Cap"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Spend-based spends the whole budget maximizing results (Volume) or value (Value). Cost per Result is goal-based; Bid Cap is manual.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Ecommerce with a required minimum ROAS of 4x, optimizes for value:",
+      "options": ["Highest Volume", "Cost per Result Goal", "ROAS Goal", "Bid Cap"],
+      "correct": 2,
+      "explanation": "ROAS Goal aims for a target return; it requires value tracking.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client with a strict CPA ceiling, optimizes for quantity (not value):",
+      "options": ["ROAS Goal", "Cost per Result Goal", "Highest Value", "Reservation"],
+      "correct": 1,
+      "explanation": "Cost per Result Goal maintains the target cost per result while seeking volume.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Risk of a poorly calibrated Bid Cap (too low):",
+      "options": [
+        "Overspends",
+        "The ad barely enters auctions and the campaign doesn't spend",
+        "Raises recall",
+        "Activates Reservation"
+      ],
+      "correct": 1,
+      "explanation": "Too low a cap = loses almost all auctions; delivery stalls.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Brand launch with guaranteed reach and frequency and a locked budget:",
+      "options": [
+        "Auction + Highest Volume",
+        "Reservation",
+        "Auction + Bid Cap",
+        "Auction + ROAS Goal"
+      ],
+      "correct": 1,
+      "explanation": "Guaranteed delivery at a fixed price = Reservation. Auction doesn't guarantee delivery or cost.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "About Auction, which statement is correct?",
+      "options": [
+        "Whoever bids more always wins",
+        "A relevant, high-quality ad can beat one with a higher bid",
+        "The bid is the only thing that matters",
+        "There's no auction, it's a fixed price"
+      ],
+      "correct": 1,
+      "explanation": "Estimated action rates and ad quality are part of total value; relevance/quality lower the cost.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The client wants the highest total purchase value with no cost ceiling:",
+      "options": ["Highest Volume", "Highest Value", "Cost per Result Goal", "Bid Cap"],
+      "correct": 1,
+      "explanation": "No cost control + optimizes for value = Highest Value (spend-based).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "What is true of Reservation? Select 2.",
+      "options": [
+        "Fixed price (CPM) known in advance",
+        "Allows plannable/guaranteed reach and frequency",
+        "Supports Sales with a catalog",
+        "Uses ROAS Goal"
+      ],
+      "correct": [0, 1],
+      "multi": true,
+      "explanation": "Reservation = fixed CPM + guaranteed delivery. It doesn't support Sales or Auction's bid strategies.",
+      "difficulty": "medium"
+    }
+  ]
+}

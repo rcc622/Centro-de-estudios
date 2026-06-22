@@ -1,0 +1,61 @@
+{
+  "title": "Diagnostic · Module 2",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "The Reservation buying type is available only for:",
+      "options": [
+        "Sales and Leads",
+        "Awareness and Engagement",
+        "Traffic and Awareness",
+        "All objectives"
+      ],
+      "correct": 1,
+      "explanation": "Reservation = predictable delivery and price, limited to Awareness and Engagement. Everything else runs on Auction.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The auction's total value is made up of:",
+      "options": [
+        "Advertiser bid + estimated action rates + ad quality",
+        "Advertiser bid + budget + placements",
+        "Bid strategy + frequency + reach",
+        "CPM + CTR + CPC"
+      ],
+      "correct": 0,
+      "explanation": "Total value = advertiser bid + estimated action rates + ad quality. The bid strategy/cost control does NOT enter.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The 5 bid strategies are:",
+      "options": [
+        "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap",
+        "Daily, Lifetime, CBO, ABO, Bid Cap",
+        "Awareness, Traffic, Engagement, Leads, Sales",
+        "CPM, CPC, CPA, ROAS, CTR"
+      ],
+      "correct": 0,
+      "explanation": "Spend-based (Highest Volume/Value), goal-based (Cost per Result/ROAS Goal) and manual (Bid Cap).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client with a strict CPA ceiling that optimizes for number of results:",
+      "options": ["Highest Volume", "Cost per Result Goal", "Highest Value", "Reservation"],
+      "correct": 1,
+      "explanation": "Cost per Result Goal maintains a target cost per result while seeking volume. Highest Volume doesn't respect a cost ceiling.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "When is Reservation preferable to Auction?",
+      "options": [
+        "When you want the lowest possible cost",
+        "When you need guaranteed reach/frequency at a fixed CPM and planning in advance",
+        "When the objective is Sales",
+        "When you use Bid Cap"
+      ],
+      "correct": 1,
+      "explanation": "Reservation gives predictability: fixed delivery and price. It isn't necessarily cheaper nor does it support Sales.",
+      "difficulty": "medium"
+    }
+  ]
+}
