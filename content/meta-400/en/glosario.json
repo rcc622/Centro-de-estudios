@@ -1,0 +1,493 @@
+{
+  "id": "glosario",
+  "title": "Official Meta 400-101 Glossary",
+  "lessons": [
+    {
+      "id": "glo.1",
+      "title": "Objectives, signal and buying types",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Business goal",
+          "a": "The real goal of the business (sell, generate leads, build brand). The plan starts here."
+        },
+        {
+          "q": "The 6 ODAX objectives",
+          "a": "Awareness, Traffic, Engagement, Leads, App Promotion, Sales."
+        },
+        {
+          "q": "Conversion location",
+          "a": "Where the conversion happens: Website, App, Messaging, Calls, Instant form."
+        },
+        {
+          "q": "Conversion event",
+          "a": "The action that counts as a result: Purchase, Lead, AddToCart, etc."
+        },
+        {
+          "q": "Performance goal",
+          "a": "Determines what outcome an advertiser is trying to accomplish based on the objective, optimization and other offsite signals they provide in ad setup."
+        },
+        {
+          "q": "Meta Pixel",
+          "a": "A piece of code installed on a website that tracks website events."
+        },
+        {
+          "q": "Conversions API (CAPI)",
+          "a": "An API that enables developers to send website event data to Meta directly from a server, as opposed to sending the data through the Meta Pixel (which uses a website browser). This data is then connected to a pixel ID and can be used for various purposes, from measurement to optimization."
+        },
+        {
+          "q": "MMP (Mobile Measurement Partner)",
+          "a": "An authorized partner for measuring in-app events (an alternative to the Facebook SDK)."
+        },
+        {
+          "q": "Buying type",
+          "a": "The method by which an advertiser buys ads across Meta technologies: Auction or Reservation."
+        },
+        {
+          "q": "Auction",
+          "a": "An ad buying type wherein the advertiser decides to participate in the ad auction: more objectives, 5 bid strategies, all placements; variable price."
+        },
+        {
+          "q": "Reservation",
+          "a": "An ad buying type that enables advertisers to reach an established number of people within an audience at a specified frequency at a fixed price (CPM); only Awareness and Engagement."
+        },
+        {
+          "q": "Total value (auction)",
+          "a": "Advertiser bid + estimated action rates + ad quality. Cost control does NOT factor in."
+        },
+        {
+          "q": "Estimated action rates",
+          "a": "A calculated value determined by how likely it is that an ad will lead to a desired outcome after it's shown to a person."
+        },
+        {
+          "q": "Ad quality",
+          "a": "A calculated value determined by the quality of ad creative along with how relevant an ad is to the chosen individual."
+        },
+        {
+          "q": "Media planner's first step",
+          "a": "Understand the client's business goal, not pick an objective in Ads Manager."
+        },
+        {
+          "q": "Planning order",
+          "a": "Business goal → funnel stage → objective → conversion location → event → performance goal."
+        },
+        {
+          "q": "Funnel of the 6 ODAX objectives",
+          "a": "Top: Awareness/Traffic · Mid: Engagement/Leads · Bottom: Sales/App Promotion."
+        },
+        {
+          "q": "Campaign vs ad set level",
+          "a": "Objective = campaign level. Conversion location, event and performance goal = ad set level."
+        },
+        {
+          "q": "Maximize number vs value of conversions",
+          "a": "Number = more units. Value = higher amount per conversion (requires value tracking)."
+        },
+        {
+          "q": "Data source for web Sales",
+          "a": "Meta Pixel + Conversions API (CAPI) together."
+        },
+        {
+          "q": "Data source for App Promotion",
+          "a": "Facebook SDK or an authorized MMP."
+        },
+        {
+          "q": "Leads with Instant form",
+          "a": "Requires no Pixel; the contact is captured within Meta."
+        },
+        {
+          "q": "Objectives without conversion tracking",
+          "a": "Awareness and Engagement (exactly the only ones Reservation supports)."
+        },
+        {
+          "q": "Trap: wanting sales and choosing Traffic",
+          "a": "Traffic optimizes for link clicks, not purchases. Real sales = Sales."
+        }
+      ]
+    },
+    {
+      "id": "glo.2",
+      "title": "Bid strategies, budget and audiences",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Highest Volume",
+          "a": "A spend-based bid strategy that maximizes delivery and the number of results you get with your budget."
+        },
+        {
+          "q": "Highest Value",
+          "a": "A spend-based bid strategy that prioritizes spending the budget and focusing on highest value purchases."
+        },
+        {
+          "q": "Cost per Result Goal",
+          "a": "A goal-based bid strategy that enables advertisers to provide a benchmark cost for the results they care about, keeping a target cost per result."
+        },
+        {
+          "q": "ROAS Goal",
+          "a": "A goal-based bid strategy in which the system tries to deliver against a target return on ad spend over the campaign's lifetime."
+        },
+        {
+          "q": "Bid Cap",
+          "a": "A bid strategy that lets the advertiser set a maximum bid to be used in each auction. If set too low, it slows delivery."
+        },
+        {
+          "q": "Daily budget",
+          "a": "Average spend per day; for ongoing campaigns."
+        },
+        {
+          "q": "Lifetime budget",
+          "a": "Total for the period; required for ad scheduling and Reservation."
+        },
+        {
+          "q": "Advantage+ campaign budget (CBO)",
+          "a": "A setting in Ads Manager that distributes spend across the ad sets in a campaign to get the best overall performance."
+        },
+        {
+          "q": "Ad set budget (ABO)",
+          "a": "A fixed budget per ad set; manual distribution."
+        },
+        {
+          "q": "Learning phase",
+          "a": "In Ads Manager, this is when information is being collected to optimize ad delivery (~50 events in ~7 days); before that, results are unstable. This term refers to machine learning, not advertiser learning."
+        },
+        {
+          "q": "Budget in Auction",
+          "a": "Estimate: target results × expected cost per result."
+        },
+        {
+          "q": "Budget in Reservation",
+          "a": "Calculation: impressions × CPM ÷ 1000 (impressions = reach × frequency)."
+        },
+        {
+          "q": "Advantage+ Audience",
+          "a": "Recommended approach: your audiences are suggestions, not limits; Meta searches for conversions."
+        },
+        {
+          "q": "Custom audience",
+          "a": "An audience of people on Meta technologies who have already interacted with or shown interest in a brand: web, app, customer list, engagement."
+        },
+        {
+          "q": "Lookalike audience",
+          "a": "A group of people who are similar to a quality seed audience; for prospecting. 1% = more precise, 10% = more reach."
+        },
+        {
+          "q": "Over-targeting",
+          "a": "An audience so narrow that the system can't optimize: low delivery, high CPM."
+        },
+        {
+          "q": "Bid strategy families",
+          "a": "Spend-based (Volume/Value), goal-based (Cost per Result/ROAS Goal), manual (Bid Cap)."
+        },
+        {
+          "q": "Recommended default bid strategy",
+          "a": "Highest Volume / Highest Value if there are no strict cost goals."
+        },
+        {
+          "q": "Risk of a miscalibrated Bid Cap",
+          "a": "A cap set too low: the ad barely enters auctions and the campaign doesn't spend."
+        },
+        {
+          "q": "Reservation budget example",
+          "a": "500,000 people × frequency 3 × CPM $4 ÷ 1000 = ~$6,000 USD."
+        },
+        {
+          "q": "Auction budget example",
+          "a": "400 leads × CPL $5 ≈ ~$2,000 USD (estimate, not a guarantee)."
+        },
+        {
+          "q": "Daily budget variation",
+          "a": "Up to ~25% day to day, respecting the period's average."
+        },
+        {
+          "q": "Custom audience sources",
+          "a": "Website, App activity, Customer list, Engagement."
+        },
+        {
+          "q": "Uses of a custom audience",
+          "a": "Remarketing, lookalike seed and excluding people who already converted."
+        },
+        {
+          "q": "Detailed targeting",
+          "a": "An audience option that enables advertisers to reach people based on demographics, location, interests and behaviors; for cold audiences without first-party signal."
+        },
+        {
+          "q": "Detailed targeting expansion",
+          "a": "Allows Meta to go beyond the set interest if it improves results (within the original audience)."
+        }
+      ]
+    },
+    {
+      "id": "glo.3",
+      "title": "Placements, measurement, privacy",
+      "type": "flashcards",
+      "cards": [
+        {
+          "q": "Placements",
+          "a": "Where ads appear on a website or app across Meta technologies, such as Feed, Instagram Stories or inbox in Messenger."
+        },
+        {
+          "q": "Advantage+ placements",
+          "a": "An option in Ads Manager that shows an ad on the widest range of available placements across Meta technologies; the recommended default for more reach and efficiency."
+        },
+        {
+          "q": "Advantage+ creative",
+          "a": "Automatic creative optimizations per person (crops, music, text)."
+        },
+        {
+          "q": "Incrementality",
+          "a": "The causal effect of the ads: conversions that would NOT have happened without the ads."
+        },
+        {
+          "q": "Conversion Lift",
+          "a": "A test that uses randomized control trials (RCTs) to measure the number of incremental conversions that happen as a result of ads across Meta technologies."
+        },
+        {
+          "q": "Brand Lift",
+          "a": "Also known as brand affinity, a metric that provides insight into people's brand awareness and attitudes toward a brand (exposed vs. control survey)."
+        },
+        {
+          "q": "A/B test",
+          "a": "A test that uses a control and test group to compare multiple ad sets and see which performs the best."
+        },
+        {
+          "q": "Holdout (control group)",
+          "a": "The group of people in a test who aren't exposed to ads. Control groups are used as a benchmark to measure the effect of the test."
+        },
+        {
+          "q": "Attribution",
+          "a": "A measurement solution that enables you to see which app, channel, device, ads or content should be credited with a conversion; it does not prove causality on its own."
+        },
+        {
+          "q": "Attribution setting",
+          "a": "The period of time during which conversions can be credited to a particular ad (e.g. 7-day click / 1-day view)."
+        },
+        {
+          "q": "Marketing Mix Modeling (MMM)",
+          "a": "Models the aggregate impact of all channels (online/offline) at a macro level."
+        },
+        {
+          "q": "Customer list hashing",
+          "a": "Lists are uploaded hashed; Meta matches without receiving data in the clear."
+        },
+        {
+          "q": "Inventory filter",
+          "a": "A control over the suitability of adjacent content (expanded / moderate / limited)."
+        },
+        {
+          "q": "Block list / Allow list",
+          "a": "Block = exclude specific publishers. Allow = permit only approved publishers."
+        },
+        {
+          "q": "Ad review",
+          "a": "Review of the ad (text, creative, targeting, landing) against the Advertising Standards (~24 h)."
+        },
+        {
+          "q": "Personal attribute",
+          "a": "It is prohibited to imply or assert that you know a personal attribute of the user or their family."
+        },
+        {
+          "q": "When to use manual placements?",
+          "a": "Only with a real business reason: a brand requirement or unsuitable creative. Not for aesthetics."
+        },
+        {
+          "q": "Effect of restricting placements without reason",
+          "a": "Raises cost per result and reduces delivery."
+        },
+        {
+          "q": "Creative and cost",
+          "a": "Raises estimated action rates and ad quality (total value) → lower cost per result."
+        },
+        {
+          "q": "Mobile-first",
+          "a": "Design vertical 9:16 without relying on sound; brand early; multiple formats."
+        },
+        {
+          "q": "Creative diversity",
+          "a": "Several creatives per ad set: more optimization space and less fatigue."
+        },
+        {
+          "q": "Metric by business goal",
+          "a": "Awareness=recall/reach · Traffic=clicks/CPC · Leads/Sales=cost per result · Revenue=ROAS."
+        },
+        {
+          "q": "Vanity metrics",
+          "a": "Likes/impressions/clicks that look good but don't prove the business goal."
+        },
+        {
+          "q": "Measurement triangulation",
+          "a": "Combine experiments + attribution + MMM for a robust read."
+        },
+        {
+          "q": "Legal basis / consent",
+          "a": "A requirement to collect and use data in advertising."
+        },
+        {
+          "q": "Sensitive categories",
+          "a": "It is prohibited to target using inferred sensitive categories (health, religion, etc.)."
+        },
+        {
+          "q": "Brand safety trade-off",
+          "a": "Stricter = safer but less reach and possibly higher cost."
+        },
+        {
+          "q": "Appeal / re-review",
+          "a": "A rejected ad can be edited or appealed; edits go back to ad review."
+        }
+      ]
+    }
+  ],
+  "conceptos": [
+    {
+      "cat": "🧭 From business goal to plan",
+      "items": [
+        {
+          "t": "Business goal → campaign objective",
+          "d": "First you define the business goal (awareness, leads, sales) and from there you derive the correct ODAX campaign objective. The objective isn't chosen at random: it responds to the goal and the funnel stage."
+        },
+        {
+          "t": "The media plan by phases",
+          "d": "A plan is built by funnel phases (awareness → consideration → conversion), assigning objective, audience, budget and measurement to each phase, not everything to direct conversion."
+        },
+        {
+          "t": "Conversion location, event and performance goal",
+          "d": "<strong>Conversion location</strong> = where it happens (web, app, messages...). <strong>Conversion event</strong> = what counts (Purchase, Lead...). <strong>Performance goal</strong> = how it's optimized/bid. These are three distinct decisions."
+        }
+      ]
+    },
+    {
+      "cat": "🎯 The 6 objectives (ODAX)",
+      "items": [
+        {
+          "t": "Awareness",
+          "d": "Maximum reach of people who will recall the ad. Top of funnel."
+        },
+        {
+          "t": "Traffic",
+          "d": "Send people to a destination: web, app, call or messages."
+        },
+        {
+          "t": "Engagement",
+          "d": "Interaction with the business: messages, video views, post engagement."
+        },
+        {
+          "t": "Leads",
+          "d": "Collect contacts via forms, calls or sign-ups."
+        },
+        {
+          "t": "App Promotion",
+          "d": "Install the app or increase its usage."
+        },
+        {
+          "t": "Sales",
+          "d": "People more likely to buy. Requires a conversion signal (Pixel/CAPI)."
+        }
+      ]
+    },
+    {
+      "cat": "💰 Budget",
+      "items": [
+        {
+          "t": "Daily vs Lifetime budget",
+          "d": "<strong>Daily</strong>: average spend per day, even delivery. <strong>Lifetime</strong>: total for the entire period, allows scheduling/dayparting and variable distribution by day."
+        },
+        {
+          "t": "Advantage+ campaign budget (CBO) vs ABO",
+          "d": "<strong>Campaign budget (CBO)</strong>: a campaign-level budget that the system distributes dynamically to the best-performing ad set. <strong>ABO</strong>: a fixed budget per ad set (manual control)."
+        },
+        {
+          "t": "Budget in Auction vs Reservation",
+          "d": "In <strong>Auction</strong> the cost is set by the auction (variable). In <strong>Reservation</strong> you buy a fixed CPM in advance: budget ≈ reach × frequency × CPM, predictable."
+        }
+      ]
+    },
+    {
+      "cat": "⚖️ Buying and bidding",
+      "items": [
+        {
+          "t": "Buying types: Auction vs Reservation",
+          "d": "<strong>Auction</strong>: flexible, optimizes by auction, all objectives. <strong>Reservation</strong>: predictable delivery and CPM bought in advance (TV-style planning), limited objectives."
+        },
+        {
+          "t": "The 5 bid strategies",
+          "d": "<strong>Highest Volume</strong> · <strong>Highest Value</strong> · <strong>Cost per Result Goal</strong> · <strong>ROAS Goal</strong> · <strong>Bid Cap</strong>. Spend-based ones spend the whole budget; goal-based ones respect a cost/return goal; Bid Cap is manual. Auction only."
+        }
+      ]
+    },
+    {
+      "cat": "👥 Audiences",
+      "items": [
+        {
+          "t": "Detailed targeting",
+          "d": "Targeting by demographics, interests and behaviors to define a 'core' audience. Very small audiences limit exiting the learning phase."
+        },
+        {
+          "t": "Custom Audience",
+          "d": "People who already interacted with you: customer list (hashed), web/app traffic, engagement on Meta, video viewers. The basis for retargeting and Lookalikes."
+        },
+        {
+          "t": "Lookalike Audience",
+          "d": "People similar to a quality source. 1%–10% of the country: 1% = more similar/less reach, 10% = more reach/less precise."
+        },
+        {
+          "t": "Advantage+ Audience",
+          "d": "Automates audience selection: your inputs are a guide, not a limit; the system explores beyond them to find who converts."
+        }
+      ]
+    },
+    {
+      "cat": "📍 Placements and creative",
+      "items": [
+        {
+          "t": "Advantage+ placements vs manual",
+          "d": "<strong>Advantage+ placements</strong> (recommended): the system delivers where it performs best at lower cost. <strong>Manual</strong>: you choose, useful only with a clear strategic reason."
+        },
+        {
+          "t": "Key aspect ratios",
+          "d": "<strong>9:16</strong> vertical full screen (Stories/Reels) · <strong>1:1</strong> square (feed) · <strong>4:5</strong> mobile feed · <strong>16:9</strong> horizontal. Design mobile-first and adapt the creative to the placement."
+        }
+      ]
+    },
+    {
+      "cat": "📊 Measurement",
+      "items": [
+        {
+          "t": "Attribution settings",
+          "d": "Default window <strong>7-day click + 1-day view</strong>. Defines which conversions get credit; affects reporting."
+        },
+        {
+          "t": "A/B Test",
+          "d": "Compares isolated variables with mutually exclusive audiences to find a statistically significant winner."
+        },
+        {
+          "t": "Brand Lift vs Conversion Lift",
+          "d": "<strong>Brand Lift</strong>: surveys, measures recall/awareness (upper funnel). <strong>Conversion Lift</strong>: holdout, measures real incremental conversion (lower funnel)."
+        },
+        {
+          "t": "Incrementality",
+          "d": "The <em>additional</em> value the advertising generated vs what would have happened without it (measured with a control group). It's not the same as attributed conversions."
+        }
+      ]
+    },
+    {
+      "cat": "🔒 Privacy and brand safety",
+      "items": [
+        {
+          "t": "iOS 14+ / ATT / AEM",
+          "d": "ATT reduced iOS signal. <strong>Aggregated Event Measurement</strong>: max 8 prioritized events per verified domain; prioritize the main conversion event."
+        },
+        {
+          "t": "Inventory filters",
+          "d": "Brand Safety Center: <strong>Expanded</strong> (default, more reach) · <strong>Moderate</strong> · <strong>Limited</strong> (more exclusion, less reach)."
+        },
+        {
+          "t": "Content type / topic exclusions",
+          "d": "Allow excluding content types or sensitive topics. Topic exclusions apply only to Facebook in-stream and reels."
+        },
+        {
+          "t": "Data privacy",
+          "d": "Use only data with consent; customer lists are uploaded hashed. Privacy protects the user's and their family's personal information."
+        }
+      ]
+    }
+  ]
+}
