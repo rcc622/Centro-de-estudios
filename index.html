@@ -2307,10 +2307,33 @@ function recordActivity(opts){
   if(opts.errors) DB.activityLog[day].errors += opts.errors;
   if(opts.mins) DB.activityLog[day].mins += opts.mins;
 
+  // POWER: bonus de meta diaria — al registrar lecciones, premia la 1ª vez del
+  // día que se alcanza la meta. Centralizado aquí para cubrir TODAS las rutas de
+  // cierre de lección (estándar, flashcards, match/order, decision-tree), no solo
+  // finishLesson. Devuelve true si el premio se otorgó justo ahora.
+  let goalJustMet = false;
+  if(opts.lessons) goalJustMet = awardDailyGoalBonus();
+
   // Logros de horario
   const h = new Date().getHours();
   if(h < 7) earnAch('early_bird');
   if(h >= 23 || h < 5) earnAch('night_owl');
+  return goalJustMet;
+}
+
+// +50 XP la primera vez del día que se alcanza la meta diaria de lecciones.
+function awardDailyGoalBonus(){
+  const goal = DB.dailyGoal || 3;
+  const todayKey = todayStr();
+  const todayLessons = DB.activityLog?.[todayKey]?.lessons || 0;
+  if(!DB.goalBonusClaimed) DB.goalBonusClaimed = {};
+  if(todayLessons >= goal && !DB.goalBonusClaimed[todayKey]){
+    DB.goalBonusClaimed[todayKey] = true;
+    addXP(50);
+    setTimeout(() => showToast('🏆 ¡Meta diaria alcanzada! +50 XP bonus', 2800, 'success'), 600);
+    return true;
+  }
+  return false;
 }
 
 function earnAch(id){
@@ -6034,24 +6057,17 @@ function finishLesson(){
   markLessonComplete(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, perfect);
   updateStreak();
   addXP(xp);
-  recordActivity({xp, lessons:1, perfectLessons: perfect?1:0, errors: LESSON_STATE.errors, mins: duration});
+  // recordActivity otorga el bonus de meta diaria (+50 XP + toast) si esta
+  // lección cierra la meta; devuelve true en ese caso.
+  const goalJustMet = recordActivity({xp, lessons:1, perfectLessons: perfect?1:0, errors: LESSON_STATE.errors, mins: duration});
 
   if(expertHeartBonus){
     setTimeout(() => showToast('🏆 Racha perfecta x3 · +1 ❤️ extra (Experto)', 2800, 'success'), 500);
   }
 
-  // POWER: Daily Goal Bonus — +50 XP al alcanzar la meta del día (una vez por día)
-  const goal = DB.dailyGoal || 3;
-  const todayKey = todayStr();
-  const todayLessons = DB.activityLog?.[todayKey]?.lessons || 0;
-  if(!DB.goalBonusClaimed) DB.goalBonusClaimed = {};
-  if(todayLessons >= goal && !DB.goalBonusClaimed[todayKey]){
-    DB.goalBonusClaimed[todayKey] = true;
-    addXP(50);
-    setTimeout(() => showToast('🏆 ¡Meta diaria alcanzada! +50 XP bonus', 2800, 'success'), 600);
-  }
   if(comboUsed){
-    setTimeout(() => showToast('🔥 ¡Perfect Combo! XP duplicado', 2200, 'success'), comboUsed && todayLessons >= goal ? 3400 : 400);
+    // Si también se mostró el toast de meta, retrasar el de combo para no encimarlos.
+    setTimeout(() => showToast('🔥 ¡Perfect Combo! XP duplicado', 2200, 'success'), goalJustMet ? 3400 : 400);
   }
 
   // Logros de cantidad de lecciones perfectas
