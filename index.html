@@ -171,6 +171,25 @@ body{display:block}
 .lvl-num{font-size:42px;font-weight:900;color:#1877F2;margin:8px 0}
 .lvl-name{font-size:14px;color:#42B883;font-weight:700;margin-bottom:18px}
 
+/* COFRE DE RECOMPENSA (animado) — tapa que se abre + glow + premio que sale */
+.rw-chest{position:relative;width:128px;height:100px;margin:4px auto 14px;perspective:560px}
+.rw-base{position:absolute;left:9px;bottom:0;width:110px;height:58px;border-radius:9px 9px 13px 13px;background:linear-gradient(180deg,#C68B3C,#8A5A22);box-shadow:inset 0 -6px 0 rgba(0,0,0,.18),0 8px 16px rgba(138,90,34,.35)}
+.rw-base::after{content:'';position:absolute;left:50%;top:-3px;transform:translateX(-50%);width:24px;height:22px;border-radius:5px;background:linear-gradient(180deg,#FFD86B,#E0A325);box-shadow:0 0 0 2px rgba(0,0,0,.1)}
+.rw-lid{position:absolute;left:6px;top:8px;width:116px;height:40px;border-radius:13px 13px 5px 5px;background:linear-gradient(180deg,#E0A84E,#A86A28);box-shadow:inset 0 4px 0 rgba(255,255,255,.22);transform-origin:50% 100%;transform:rotateX(0);z-index:3}
+.rw-glow{position:absolute;left:50%;top:42px;width:96px;height:96px;transform:translate(-50%,-50%) scale(.2);border-radius:50%;background:radial-gradient(circle,rgba(255,238,150,.95),rgba(255,205,70,0) 68%);opacity:0;z-index:1}
+.rw-reward{position:absolute;left:50%;top:26px;transform:translate(-50%,0) scale(.3);font-size:40px;opacity:0;z-index:6;filter:drop-shadow(0 4px 7px rgba(0,0,0,.3))}
+.rw-rays{position:absolute;left:50%;top:38%;width:210px;height:210px;transform:translate(-50%,-50%) scale(.4);opacity:0;pointer-events:none;background:conic-gradient(rgba(255,221,120,0) 0deg,rgba(255,221,120,.55) 10deg,rgba(255,221,120,0) 20deg,rgba(255,221,120,0) 40deg,rgba(255,221,120,.55) 50deg,rgba(255,221,120,0) 60deg,rgba(255,221,120,0) 80deg,rgba(255,221,120,.55) 90deg,rgba(255,221,120,0) 100deg,rgba(255,221,120,0) 120deg,rgba(255,221,120,.55) 130deg,rgba(255,221,120,0) 140deg)}
+.rw-chest.armed{animation:rwShake .46s ease}
+.rw-chest.opening .rw-lid{animation:rwLid .72s cubic-bezier(.34,1.56,.64,1) forwards}
+.rw-chest.opening .rw-glow{animation:rwGlow .9s ease-out forwards}
+.rw-chest.opening .rw-reward{animation:rwReward .9s cubic-bezier(.34,1.56,.64,1) forwards}
+.rw-chest.opening~.rw-rays{animation:rwRays 1.1s ease-out forwards}
+@keyframes rwShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}75%{transform:rotate(-3deg)}}
+@keyframes rwLid{0%{transform:rotateX(0)}70%{transform:rotateX(-126deg)}100%{transform:rotateX(-110deg)}}
+@keyframes rwGlow{0%{transform:translate(-50%,-50%) scale(.2);opacity:0}45%{opacity:.95}100%{transform:translate(-50%,-50%) scale(1.6);opacity:0}}
+@keyframes rwReward{0%{transform:translate(-50%,6px) scale(.2);opacity:0}45%{opacity:1}100%{transform:translate(-50%,-30px) scale(1);opacity:1}}
+@keyframes rwRays{0%{transform:translate(-50%,-50%) rotate(0) scale(.4);opacity:0}40%{opacity:.65}100%{transform:translate(-50%,-50%) rotate(38deg) scale(1.35);opacity:0}}
+
 /* CONFETTI */
 .particles{position:fixed;inset:0;pointer-events:none;z-index:99;overflow:hidden;display:none}
 .particles.show{display:block}
@@ -1137,6 +1156,21 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
     <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#9B59B6">¡MEDALLA DEL MES!</div>
     <div style="font-size:20px;font-weight:900;margin:8px 0 4px;color:#6B2FB3" id="medal-name">Junio 2026</div>
     <div style="font-size:13px;color:#65676B">Completaste el desafío mensual</div>
+    <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
+  </div>
+</div>
+<div class="overlay reward-overlay" id="reward-overlay" onclick="closeRewardOverlay()">
+  <div class="overlay-inner">
+    <div class="rw-chest" id="rw-chest">
+      <div class="rw-glow"></div>
+      <div class="rw-reward" id="rw-reward">🎁</div>
+      <div class="rw-base"></div>
+      <div class="rw-lid"></div>
+    </div>
+    <div class="rw-rays"></div>
+    <div style="font-size:11px;font-weight:800;letter-spacing:1px" id="rw-kicker">¡DESAFÍO COMPLETADO!</div>
+    <div class="lvl-num" id="rw-xp" style="color:#9B59B6">+15 XP</div>
+    <div style="font-size:13px;font-weight:700" id="rw-sub">+1 punto de desafío</div>
     <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
   </div>
 </div>
@@ -2330,7 +2364,9 @@ function awardDailyGoalBonus(){
   if(todayLessons >= goal && !DB.goalBonusClaimed[todayKey]){
     DB.goalBonusClaimed[todayKey] = true;
     addXP(50);
-    setTimeout(() => showToast('🏆 ¡Meta diaria alcanzada! +50 XP bonus', 2800, 'success'), 600);
+    const gain = Math.round(50 * getXpMult());
+    // Diferido: deja que el cierre de la lección monte su pantalla antes del cofre.
+    setTimeout(() => presentRewards([{kicker:'¡META DIARIA CUMPLIDA!', xpText:`+${gain} XP`, sub:'Bono por tu meta del día', color:'#FF9F1C', ico:'🏆'}]), 650);
     return true;
   }
   return false;
@@ -2974,11 +3010,7 @@ function openChest(courseId, dayId, section){
   DB.chests[key] = true;
   const gain = Math.round(CHEST_BONUS * getXpMult());
   addXP(CHEST_BONUS); // addXP aplica xpMult y persiste
-  document.getElementById('ch-xp').textContent = `+${gain} XP`;
-  document.getElementById('chest-overlay').classList.add('show');
-  haptic(HAPTIC.levelUp);
-  playSfx('chest');
-  launchConfetti();
+  presentRewards([{kicker:'¡COFRE ABIERTO!', xpText:`+${gain} XP`, sub:'Bono por completar el bloque', color:'#C68B3C', ico:'🎁'}]);
 }
 function closeChestOverlay(){
   document.getElementById('chest-overlay').classList.remove('show');
@@ -4524,6 +4556,17 @@ function renderFlashcards(){
       if(wasIncomplete){
         updateStreak();
         recordActivity({lessons:1, perfectLessons: perfect?1:0});
+        // Las flashcards también avanzan los retos diarios y abren cofres (antes
+        // se saltaban este flujo porque no pasan por finishLesson).
+        const sessXp = (FLASH_STATE.rightCount||0)*3 + (FLASH_STATE.wrongCount||0)*1;
+        const rated = FLASH_STATE.rated || 0;
+        const accuracy = rated ? Math.round((FLASH_STATE.rightCount||0)/rated*100) : 0;
+        const mins = FLASH_STATE.started ? Math.round((now() - FLASH_STATE.started)/60000) : 0;
+        bumpChallengesForLesson({xp: sessXp, mins, accuracy});
+        const rewards = claimReadyChallengeRewards();
+        if(rewards.length){
+          presentRewards(rewards, () => { if(_pendingMedal){ const m = _pendingMedal; _pendingMedal = null; showMedalOverlay(m); } });
+        }
       }
     }
     const rightN = FLASH_STATE.rightCount || 0;
@@ -5933,7 +5976,7 @@ function openFlashcards(lessonId){
   CURRENT.lessonId = lessonId;
   PRACTICE_MODE = 'lesson';
   PRACTICE_SCOPE = null;
-  FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false};
+  FLASH_STATE = {idx:0, deck:[], rated:0, flipped:false, started: now()};
   VIEW = 'flashcards';
   render();
 }
@@ -6185,20 +6228,14 @@ function claimChal(id){
   if(!t || t.prog < t.target || t.claimed) return;
   t.claimed = true;
   DB.chalPoints = (DB.chalPoints || 0) + CHAL_REWARD_POINTS;
-  save();
   const gain = Math.round(CHAL_REWARD_XP * getXpMult());
   addXP(CHAL_REWARD_XP); // addXP aplica xpMult y persiste
-  // ¿Cruzó la meta mensual? → gana la medalla del mes (una sola vez por mes).
-  checkMonthlyMedal();
-  const xpEl = document.getElementById('chal-xp');
-  const ptsEl = document.getElementById('chal-pts');
-  if(xpEl) xpEl.textContent = `+${gain} XP`;
-  if(ptsEl) ptsEl.textContent = `+${CHAL_REWARD_POINTS} punto de desafío`;
-  const ov = document.getElementById('chal-overlay');
-  if(ov) ov.classList.add('show');
-  haptic(HAPTIC.levelUp);
-  playSfx('chest');
-  launchConfetti();
+  checkMonthlyMedal(); // ¿cruzó la meta mensual? → medalla del mes (1×/mes)
+  save();
+  presentRewards(
+    [{kicker:'¡DESAFÍO COMPLETADO!', xpText:`+${gain} XP`, sub:`+${CHAL_REWARD_POINTS} punto de desafío`, color:'#9B59B6', ico:'🎁'}],
+    () => { if(_pendingMedal){ const m = _pendingMedal; _pendingMedal = null; showMedalOverlay(m); } else { render(); } }
+  );
 }
 // Otorga la medalla del mes si los puntos llegaron a la meta y no se tenía.
 let _pendingMedal = null;
@@ -6548,38 +6585,19 @@ function applyPostStage(){
 // están listos en la pantalla de recompensa post-lección. Otorga XP + puntos sin
 // modal (el tap manual con modal sigue disponible como respaldo en otras vistas).
 function autoOpenReadyChests(){
-  const ready = getChals().filter(t => t.prog >= t.target && !t.claimed);
-  if(!ready.length) return;
-  let i = 0;
-  const openNext = () => {
-    if(i >= ready.length){
-      CHAL_ANIM = {}; // las barras ya están en su valor final: evita re-animar en renders
-      if(_pendingMedal){ const m = _pendingMedal; _pendingMedal = null; showMedalOverlay(m); }
-      return;
+  const rewards = claimReadyChallengeRewards();
+  if(!rewards.length) return;
+  // Refleja el estado en los chests inline de la pantalla (✅) para cuando vuelvas.
+  getChals().forEach(t => {
+    if(t.claimed){
+      const el = document.querySelector(`.chal-chest[data-chal="${t.id}"]`);
+      if(el){ el.classList.remove('ready', 'locked'); el.classList.add('opened'); el.textContent = '✅'; }
     }
-    const t = ready[i]; i++;
-    if(t.claimed){ openNext(); return; } // por si el tap manual ya lo reclamó
-    t.claimed = true;
-    DB.chalPoints = (DB.chalPoints || 0) + CHAL_REWARD_POINTS;
-    addXP(CHAL_REWARD_XP); // aplica xpMult, persiste y suelta el +XP flotante
-    checkMonthlyMedal();
-    save();
-    haptic(HAPTIC.levelUp);
-    playSfx('chest');
-    launchConfetti();
-    const el = document.querySelector(`.chal-chest[data-chal="${t.id}"]`);
-    if(el){
-      el.classList.remove('ready', 'locked');
-      el.classList.add('opening');
-      setTimeout(() => {
-        el.classList.remove('opening');
-        el.classList.add('opened');
-        el.textContent = '✅';
-      }, 560);
-    }
-    setTimeout(openNext, 920);
-  };
-  openNext();
+  });
+  presentRewards(rewards, () => {
+    CHAL_ANIM = {}; // las barras ya están en su valor final: evita re-animar en renders
+    if(_pendingMedal){ const m = _pendingMedal; _pendingMedal = null; showMedalOverlay(m); }
+  });
 }
 function isLastPostStage(){ return POST_LESSON.idx >= POST_LESSON.stages.length - 1; }
 // Avanza a la siguiente etapa de la cadena (resumen → desafíos → racha).
@@ -6936,6 +6954,72 @@ function launchConfetti(){
     pc.appendChild(p);
   }
   setTimeout(() => pc.classList.remove('show'), 3500);
+}
+
+// ============================================================
+// COFRE DE RECOMPENSA — overlay animado reutilizable (con cola)
+// ============================================================
+let _rewardQueue = [];
+let _rewardActive = false;
+let _rewardDoneCbs = [];
+// Encola y muestra cofres. list: [{kicker, xpText, sub, color, ico}].
+// onDone se ejecuta cuando la cola se vacía por completo. Es solo presentación:
+// el XP/puntos los suma quien llama (este overlay no toca el estado).
+function presentRewards(list, onDone){
+  if(list && list.length) _rewardQueue.push(...list);
+  if(typeof onDone === 'function') _rewardDoneCbs.push(onDone);
+  if(!_rewardActive) _showNextReward();
+}
+function _showNextReward(){
+  const ov = document.getElementById('reward-overlay');
+  if(!ov || !_rewardQueue.length){
+    _rewardActive = false;
+    const cbs = _rewardDoneCbs; _rewardDoneCbs = [];
+    cbs.forEach(cb => { try { cb(); } catch(e){} });
+    return;
+  }
+  _rewardActive = true;
+  const r = _rewardQueue.shift();
+  const color = r.color || '#9B59B6';
+  const set = (id, txt, col) => { const el = document.getElementById(id); if(el){ el.textContent = txt; if(col) el.style.color = col; } };
+  set('rw-kicker', r.kicker || '¡RECOMPENSA!', color);
+  set('rw-xp', r.xpText || '', color);
+  set('rw-sub', r.sub || '', color);
+  set('rw-reward', r.ico || '🎁');
+  const chest = document.getElementById('rw-chest');
+  if(chest){ chest.classList.remove('opening', 'armed'); void chest.offsetWidth; } // reinicia anims
+  ov.classList.add('show');
+  if(chest) chest.classList.add('armed');
+  haptic(HAPTIC.levelUp);
+  setTimeout(() => {
+    if(chest){ chest.classList.remove('armed'); chest.classList.add('opening'); }
+    playSfx('chest');
+    launchConfetti();
+    haptic(HAPTIC.achievement);
+  }, 470);
+}
+function closeRewardOverlay(){
+  const ov = document.getElementById('reward-overlay');
+  if(ov) ov.classList.remove('show');
+  setTimeout(_showNextReward, 200); // siguiente cofre de la cola (o callback final)
+}
+// Reclama TODOS los retos diarios listos (marca claimed + suma XP/puntos + checa
+// medalla) y devuelve la lista de recompensas para presentRewards(). Reusado por
+// la pantalla post-lección y por el cierre de lecciones de flashcards.
+function claimReadyChallengeRewards(){
+  ensureChalMonth();
+  const ready = getChals().filter(t => t.prog >= t.target && !t.claimed);
+  const rewards = [];
+  ready.forEach(t => {
+    t.claimed = true;
+    DB.chalPoints = (DB.chalPoints || 0) + CHAL_REWARD_POINTS;
+    addXP(CHAL_REWARD_XP); // aplica xpMult y persiste
+    checkMonthlyMedal();
+    const gain = Math.round(CHAL_REWARD_XP * getXpMult());
+    rewards.push({kicker:'¡DESAFÍO COMPLETADO!', xpText:`+${gain} XP`, sub:`+${CHAL_REWARD_POINTS} punto de desafío`, color:'#9B59B6', ico:'🎁'});
+  });
+  if(ready.length) save();
+  return rewards;
 }
 
 let _toastTimer = null;
