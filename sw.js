@@ -8,7 +8,7 @@
 //     si hay versión nueva. Si offline, sirve lo cacheado.
 //
 // Cómo invalidar el cache: bumpear CACHE_VERSION (forces purge en activate).
-const CACHE_VERSION = 'cer-v2026-06-26a';
+const CACHE_VERSION = 'cer-v2026-06-27a';
 
 // Lista de assets críticos que se precargan al instalar el SW. La app
 // arranca con esto disponible sin red. El resto se cachea on-demand.
