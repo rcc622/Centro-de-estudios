@@ -717,6 +717,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .practice-row .pr-title{font-weight:800;font-size:15px;color:#1C1E21;margin-bottom:3px;line-height:1.2}
 .practice-row .pr-meta{font-size:12px;color:#8A8D91;font-weight:600;line-height:1.3}
 .practice-row .pr-ico{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;color:#fff;box-shadow:0 3px 8px rgba(0,0,0,.12)}
+.practice-row .pr-ico svg{width:24px;height:24px}
 .practice-row .pr-arrow{font-size:18px;color:#B0B3B8;font-weight:800;flex-shrink:0}
 .practice-row .pr-badge{position:absolute;top:-6px;right:8px;background:#E74C3C;color:#fff;font-size:10px;font-weight:800;padding:3px 7px;border-radius:99px;border:2px solid #fff;box-shadow:0 2px 4px rgba(231,76,60,.3)}
 .practice-row.locked{opacity:.55;cursor:not-allowed}
@@ -1574,6 +1575,21 @@ const SET_SVG = {
   volume: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`,
   vibrate: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 8 2 2-2 2 2 2-2 2"/><path d="m22 8-2 2 2 2-2 2 2 2"/><rect width="8" height="14" x="8" y="5" rx="1"/></svg>`,
   swords: NAV_SVG.swords
+};
+
+// Íconos Lucide (blanco) para los tiles de Práctica y Stats (.pr-ico).
+const PR_SVG = {
+  repeat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>`,
+  layers: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
+  zap: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>`,
+  shuffle: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"/><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"/><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45"/></svg>`,
+  ordered: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" x2="21" y1="6" y2="6"/><line x1="10" x2="21" y1="12" y2="12"/><line x1="10" x2="21" y1="18" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>`,
+  flame: NAV_SVG.flame,
+  award: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>`,
+  book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>`,
+  bookmark: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v8l3-3 3 3V2"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>`,
+  chart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>`
 };
 
 // Ícono por tipo de lección (para el path)
@@ -4725,7 +4741,7 @@ function renderPracticeHub(){
         <div class="section-title">Tus errores</div>
         <div class="practice-row" onclick="haptic(8);startPractice('errors')">
           <div class="pr-badge">${errorCount}</div>
-          <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#C03030)">🔁</div>
+          <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#C03030)">${PR_SVG.repeat}</div>
           <div class="pr-info">
             <div class="pr-title">Repasar errores</div>
             <div class="pr-meta">${errorCount} ${errorCount===1?'pregunta que fallaste':'preguntas que fallaste'} · pulir antes del examen</div>
@@ -4736,7 +4752,7 @@ function renderPracticeHub(){
 
       <div class="section-title">Por tipo de práctica</div>
       <div class="practice-row" onclick="haptic(8);startPractice('all-flash')">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">🃏</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">${PR_SVG.layers}</div>
         <div class="pr-info">
           <div class="pr-title">Flashcards</div>
           <div class="pr-meta">${flashCount} ${flashCount===1?'tarjeta':'tarjetas'} de repaso</div>
@@ -4744,7 +4760,7 @@ function renderPracticeHub(){
         <div class="pr-arrow">→</div>
       </div>
       <div class="practice-row ${mcqCount===0?'locked':''}" onclick="${mcqCount===0?'':`haptic(8);startPractice('quick-quiz')`}">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">⚡</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">${PR_SVG.zap}</div>
         <div class="pr-info">
           <div class="pr-title">Quick Quiz</div>
           <div class="pr-meta">10 preguntas tipo examen al azar · de ${mcqCount} disponibles</div>
@@ -4757,7 +4773,7 @@ function renderPracticeHub(){
         let html = '';
         if(matchN) html += `
           <div class="practice-row" onclick="haptic(8);startPractice('match')">
-            <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔀</div>
+            <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">${PR_SVG.shuffle}</div>
             <div class="pr-info">
               <div class="pr-title">Emparejar</div>
               <div class="pr-meta">${matchN} ${matchN===1?'ejercicio':'ejercicios'} · al azar · sin costo de ❤️</div>
@@ -4766,7 +4782,7 @@ function renderPracticeHub(){
           </div>`;
         if(orderN) html += `
           <div class="practice-row" onclick="haptic(8);startPractice('order')">
-            <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">🔢</div>
+            <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">${PR_SVG.ordered}</div>
             <div class="pr-info">
               <div class="pr-title">Ordenar</div>
               <div class="pr-meta">${orderN} ${orderN===1?'ejercicio':'ejercicios'} de secuencia · al azar · sin costo de ❤️</div>
@@ -5509,7 +5525,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);navTo('achievements')">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">⚡</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1877F2,#0E5BC4)">${PR_SVG.zap}</div>
         <div class="pr-info">
           <div class="pr-title">XP total</div>
           <div class="pr-meta">Ver progreso semanal y anual →</div>
@@ -5518,7 +5534,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);openStreak()">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">🔥</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#FF6B35,#D04A1F)">${PR_SVG.flame}</div>
         <div class="pr-info">
           <div class="pr-title">Racha actual</div>
           <div class="pr-meta">${DB.streak===1?'día consecutivo':'días consecutivos'} estudiando · Ver calendario →</div>
@@ -5527,7 +5543,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);navTo('achievements')">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#FFD700,#B8950A)">🏅</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#FFD700,#B8950A)">${PR_SVG.award}</div>
         <div class="pr-info">
           <div class="pr-title">Logros</div>
           <div class="pr-meta">Ver insignias desbloqueadas →</div>
@@ -5536,7 +5552,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);navTo('home')">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">📚</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#9B59B6,#7548A0)">${PR_SVG.book}</div>
         <div class="pr-info">
           <div class="pr-title">Lecciones completadas</div>
           <div class="pr-meta">Volver al curso →</div>
@@ -5545,7 +5561,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);navTo('achievements')">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">💯</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#E74C3C,#A8332B)">${PR_SVG.check}</div>
         <div class="pr-info">
           <div class="pr-title">Lecciones perfectas</div>
           <div class="pr-meta">Sin errores · 0 hearts perdidos</div>
@@ -5554,7 +5570,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);openGlossary()">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#1ABC9C,#138D75)">📖</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#1ABC9C,#138D75)">${PR_SVG.bookmark}</div>
         <div class="pr-info">
           <div class="pr-title">Glosario</div>
           <div class="pr-meta">Términos y conceptos clave por curso →</div>
@@ -5563,7 +5579,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);openStats()">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#F39C12,#CA7E0B)">📊</div>
+        <div class="pr-ico" style="background:linear-gradient(135deg,#F39C12,#CA7E0B)">${PR_SVG.chart}</div>
         <div class="pr-info">
           <div class="pr-title">Estadísticas</div>
           <div class="pr-meta">Precisión por unidad · flashcards vencidas · errores →</div>
