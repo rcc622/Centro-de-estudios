@@ -1473,7 +1473,7 @@ const BATTLE_CONFIG = {
   minPoolSize: 9,               // mínimo necesario para arrancar battle
   secondsPerQuestion: 20,
   minLessonsToday: 2,           // no en la 1ra del día
-  minHearts: 2,                 // no si está en racha mala
+  minHearts: 2,                 // no si está en racha mala (se capea a getMaxHearts(): en Experto basta 1❤️)
   xpWin: 25,                    // ganaste (foe HP→0%): +25 XP base
   xpPerCorrect: 2               // bono +2 XP por cada acierto en el battle
 };
@@ -7404,12 +7404,16 @@ function maybeStartBattle(resumeAction, opts){
   if(!BATTLE_CONFIG.enabled && !force) return false;
   // Cooldown
   if(!force && (now() - (DB.lastBattleTs || 0)) < BATTLE_CONFIG.cooldownMs) return false;
-  // No en la 1ra lección del día (ni si las vidas están en rojo)
+  // No en la 1ra lección del día (ni si las vidas están en rojo).
+  // minHearts se ajusta a la dificultad: en Avanzado (2❤️) y Experto (1❤️)
+  // el tope de vidas es menor que el minHearts fijo, así que se exige
+  // "vidas llenas o ≥2, lo que sea menor" para no bloquear battles.
   if(!force){
     const todayKey = todayStr();
     const todayLessons = DB.activityLog?.[todayKey]?.lessons || 0;
     if(todayLessons < BATTLE_CONFIG.minLessonsToday) return false;
-    if((DB.hearts || 0) < BATTLE_CONFIG.minHearts) return false;
+    const minHearts = Math.min(BATTLE_CONFIG.minHearts, getMaxHearts());
+    if((DB.hearts || 0) < minHearts) return false;
     if(Math.random() >= BATTLE_CONFIG.triggerChance) return false;
   }
   // Necesita curso activo
