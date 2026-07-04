@@ -701,7 +701,7 @@
         {
           "type": "concept",
           "h": "Scenario",
-          "body": "Let's take a concrete case to ground the phased plan. The client is a <strong>lender</strong> that offers loans to install equipment, and its <strong>business goal</strong> (real commercial goal) is <strong>signed contracts</strong>, not clicks or followers. The sales process has several steps: the prospect leaves their information in a form, an advisor contacts them via chat, and there the signing closes. On the technical side the signal is already ready: it has <strong>Pixel</strong> (code that records what happens on the site) plus <strong>CAPI</strong> (Conversions API: the same record but sent from the server) and a <strong>dataset</strong> (a set of data with its web events) working. With this you can design the phases without getting stuck for lack of measurement."
+          "body": "Let's take a concrete case to ground the phased plan. The client is a <strong>lender</strong> that offers loans to install equipment, and its <strong>business goal</strong> (real commercial goal) is <strong>signed contracts</strong>, not clicks or followers. The sales process has several steps: the prospect leaves their information in a form, an advisor contacts them via chat, and there the signing closes. On the technical side the signal is already ready: it has <strong>Pixel</strong> (code that records what happens on the site) plus <strong>CAPI</strong> (Conversions API: the same record but sent from the server) and a <strong>dataset</strong> (a set of data with its web events) working. Note one detail: the signing happens with the advisor, off the website — it's an <strong>offline event</strong>, so it reaches the dataset sent by CAPI from the lender's CRM, not by the Pixel. With this you can design the phases without getting stuck for lack of measurement."
         },
         {
           "type": "kvtable",
@@ -709,7 +709,7 @@
           "rows": [
             ["Capture contact (top)", "Leads + Instant form"],
             ["Nurture / consideration", "Engagement or Traffic depending on the asset"],
-            ["Close the signing (bottom)", "Sales, with the location where the closing happens"]
+            ["Close the signing (bottom)", "Sales, optimizing the signing event the CRM sends via CAPI (offline close)"]
           ]
         },
         {
@@ -737,15 +737,15 @@
         },
         {
           "type": "mcq",
-          "q": "A finance company closes the contract signing in a chat with the advisor (sometimes on its website). To optimize the campaign toward that signing, which combination comes closest?",
+          "q": "A finance company closes the contract signing with an advisor, off the website (offline). To optimize the campaign toward that signing, which combination comes closest?",
           "options": [
-            "Sales with conversion location Messaging/Website depending on where the signing happens and the conversion event = the signing",
+            "Sales, with the signing recorded in the CRM and sent via CAPI as the conversion event to optimize toward",
             "Awareness with recall lift",
             "Engagement with post engagement",
             "Traffic with link clicks"
           ],
           "correct": 0,
-          "explanation": "The signing is the value conversion: Sales objective, with the conversion location where the closing actually happens and the event that represents the signing. Awareness/Engagement/Traffic don't optimize the final conversion.",
+          "explanation": "The signing closes with the advisor, off the website: it's an offline event. The CRM sends it via CAPI (Conversions API) to the dataset and the Sales campaign optimizes toward that conversion event — neither the chat message nor the form is the conversion, they're previous steps. Awareness/Engagement/Traffic don't optimize the final conversion.",
           "difficulty": "hard"
         }
       ]
@@ -785,12 +785,12 @@
           "q": "The contract signing (the value conversion) is optimized with:",
           "options": [
             "Awareness with recall lift",
-            "Sales, with the conversion location where the closing happens and the event that represents the signing",
+            "Sales, optimizing the signing event the CRM sends via CAPI (the signing happens offline)",
             "Engagement with post engagement",
             "Traffic with link clicks"
           ],
           "correct": 1,
-          "explanation": "The signing is the value conversion: Sales objective, with the conversion location where the closing actually happens and the event of the signing."
+          "explanation": "The signing is the value conversion and happens offline (with the advisor): the CRM sends it via CAPI to the dataset and the Sales campaign optimizes toward that event."
         },
         {
           "type": "fill",
@@ -816,7 +816,7 @@
           "type": "scenario",
           "label": "CASE TO SOLVE",
           "h": "Solar loan lender by phases",
-          "body": "A solar loan lender wants <strong>signed contracts</strong>. The journey: the prospect leaves their information, an advisor contacts them via chat, and there the signing closes. It has Pixel + CAPI and a dataset with web events. They ask you for the media plan."
+          "body": "A solar loan lender wants <strong>signed contracts</strong>. The journey: the prospect leaves their information, an advisor contacts them via chat, and there the signing closes. It has Pixel + CAPI and a dataset with web events; the signing, since it closes with the advisor (offline), enters the dataset via CAPI from the CRM. They ask you for the media plan."
         },
         {
           "type": "mcq",
@@ -834,13 +834,13 @@
           "type": "mcq",
           "q": "Phase 2: optimize the signing that happens after the chat with the advisor. Which combination comes closest?",
           "options": [
-            "Sales with the conversion location depending on where the signing happens and event = the signing",
+            "Sales, optimizing the signing event sent via CAPI from the CRM",
             "Awareness with recall lift",
             "Engagement with post engagement",
             "Traffic with link clicks"
           ],
           "correct": 0,
-          "explanation": "The signing is the value conversion: Sales objective, with the conversion location where the closing actually happens and the event that represents the signing."
+          "explanation": "The signing happens offline, with the advisor: the CRM sends it via CAPI to the dataset and the Sales campaign optimizes toward that conversion event."
         },
         {
           "type": "mcq",
@@ -864,7 +864,7 @@
       "cards": [
         { "q": "In a media plan, how are campaign objectives distributed across the funnel phases?", "a": "Each funnel phase gets its own campaign objective: Leads to capture in the initial phase, Sales to convert in the final phase." },
         { "q": "Phase to capture contact (without signing yet)", "a": "Leads + Instant form: minimal friction, feeds the sales team." },
-        { "q": "Phase to optimize the signing (value conversion)", "a": "Sales, with the conversion location where the closing happens and the event that represents the signing." },
+        { "q": "Phase to optimize the contract signing (offline close with the advisor)", "a": "Sales, optimizing the signing event the CRM sends via CAPI to the dataset (the signing is an offline event, it doesn't happen on the site)." },
         { "q": "Why not force a single objective for the whole funnel?", "a": "Because you end up optimizing the wrong metric in some phase." }
       ]
     },
@@ -1227,7 +1227,7 @@
         { "q": "Lowest-friction conversion location for leads", "a": "Instant form: the form is filled out within Meta without leaving the feed." },
         { "q": "In a media plan, how are campaign objectives distributed across the funnel phases?", "a": "Each funnel phase gets its own campaign objective: Leads to capture in the initial phase, Sales to convert in the final phase." },
         { "q": "Phase to capture contact (without signing yet)", "a": "Leads + Instant form: minimal friction, feeds the sales team." },
-        { "q": "Phase to optimize the signing (value conversion)", "a": "Sales, with the conversion location where the closing happens and the event that represents the signing." },
+        { "q": "Phase to optimize the contract signing (offline close with the advisor)", "a": "Sales, optimizing the signing event the CRM sends via CAPI to the dataset (the signing is an offline event, it doesn't happen on the site)." },
         { "q": "Why not force a single objective for the whole funnel?", "a": "Because you end up optimizing the wrong metric in some phase." }
       ]
     }
