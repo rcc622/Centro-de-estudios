@@ -308,7 +308,7 @@
         },
         {
           "type": "mcq",
-          "q": "El plan propone Ventas website con evento Purchase, pero el cliente solo tiene Pixel y nada más. ¿Qué recomiendas antes de lanzar?",
+          "q": "Boutique Aurora quiere lanzar Ventas website con evento Purchase, pero solo tiene el Pixel instalado y nada más. ¿Qué recomiendas antes de lanzar?",
           "options": [
             "Lanzar igual; el Pixel solo es suficiente",
             "Sumar Conversions API para recuperar señal perdida y mejorar match quality",
@@ -657,7 +657,7 @@
         },
         {
           "type": "mcq",
-          "q": "El cliente pregunta en qué nivel se configura todo eso. ¿Qué le respondes?",
+          "q": "El cliente pregunta en qué nivel de la estructura se configuran la conversion location, el conversion event y el objetivo de rendimiento. ¿Qué le respondes?",
           "options": [
             "Conversion location y objetivo de rendimiento se configuran a nivel campaña",
             "Conversion location, event y objetivo de rendimiento se configuran a nivel conjunto de anuncios (ad set)",
@@ -724,7 +724,7 @@
         },
         {
           "type": "mcq",
-          "q": "Para captar a los prospectos que dejan datos antes del contacto del asesor, ¿qué objetivo de la campaña + conversion location propones en esa fase?",
+          "q": "Una financiera capta prospectos que dejan sus datos en un formulario antes de que un asesor los contacte. Para esa fase de captación, ¿qué objetivo de la campaña + conversion location propones?",
           "options": [
             "Ventas + Website",
             "Clientes potenciales + Instant form",
@@ -737,7 +737,7 @@
         },
         {
           "type": "mcq",
-          "q": "Si el cliente además quiere optimizar para la firma del contrato que ocurre tras chat con el asesor, ¿qué combinación se acerca más?",
+          "q": "Una financiera cierra la firma del contrato en un chat con el asesor (a veces en su sitio web). Para optimizar la campaña hacia esa firma, ¿qué combinación se acerca más?",
           "options": [
             "Ventas con conversion location Messaging/Website según dónde se firme y evento de conversión = la firma",
             "Reconocimiento con recall lift",

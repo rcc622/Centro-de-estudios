@@ -4326,6 +4326,20 @@ function stopQuizTimer(){
   if(QUIZ_TIMER_ID){ clearInterval(QUIZ_TIMER_ID); QUIZ_TIMER_ID = null; }
 }
 
+// Detecta preguntas que dependen del contexto de su lección y por eso NO se
+// entienden sueltas (bonus, Quick Quiz, battles las excluyen):
+//   - Viven en una lección tipo 'scenario' (todo el caso es el contexto)
+//   - Siguen inmediatamente a una card 'scenario' o 'quote'
+//   - Su texto alude al caso ("el cliente", "este ejemplo", "the client"…)
+const MCQ_CONTEXT_REGEX = /\b(?:el|este|esta|ese)\s+(?:caso|escenario|ejemplo|cliente|caso anterior)\b|\besta situación\b|\bcambia de opinión\b|\bsegún (?:lo|el) (?:anterior|caso|ejemplo)\b|\bdel ejemplo\b|\bel cliente\b|\b(?:the|this|that)\s+(?:case|scenario|example|client)\b/i;
+function isContextDependentCard(lesson, cards, i){
+  if(lesson.type === 'scenario') return true;
+  const prev = cards[i - 1];
+  if(prev && (prev.type === 'scenario' || prev.type === 'quote')) return true;
+  const qText = (cards[i].q || '').replace(/<[^>]+>/g, '');
+  return MCQ_CONTEXT_REGEX.test(qText);
+}
+
 // Filtra un array de preguntas/MCQs por el nivel de dificultad actual.
 // Cada item puede tener difficulty: 'easy' | 'medium' | 'hard' (default medium).
 // Si después del filtro queda <3 preguntas, devuelve todas (UX mínima).
@@ -5862,8 +5876,12 @@ function buildQuickQuizDeck(n){
       if(day.locked || day.kind === 'mock-exam' || day.id === 'glosario') continue;
       for(const lesson of day.lessons || []){
         const isCompleted = !!prog[day.id]?.[lesson.id]?.completed;
-        for(const card of lesson.cards || []){
+        const cards = lesson.cards || [];
+        for(let i = 0; i < cards.length; i++){
+          const card = cards[i];
           if(card.type !== 'mcq') continue;
+          // Sin preguntas que dependen del escenario de su lección: sueltas no se entienden.
+          if(isContextDependentCard(lesson, cards, i)) continue;
           (isCompleted ? completed : rest).push(card);
         }
       }
@@ -6400,8 +6418,12 @@ function buildBonusQueue(n){
       if(!isLessonCompleted(courseId, day.id, lesson.id)) continue;
       // Etiqueta de origen para mostrar de qué día/lección salió la pregunta.
       const srcLabel = lesson.title ? `${day.title || day.id} · ${lesson.title}` : (day.title || day.id);
-      for(const c of (lesson.cards || [])){
+      const cards = lesson.cards || [];
+      for(let i = 0; i < cards.length; i++){
+        const c = cards[i];
         if(c.type !== 'mcq' || !Array.isArray(c.options)) continue;
+        // Sin preguntas que dependen del escenario de su lección: sueltas no se entienden.
+        if(isContextDependentCard(lesson, cards, i)) continue;
         const b = c.difficulty === 'hard' ? 'hard' : c.difficulty === 'medium' ? 'medium' : 'rest';
         // Clon para no mutar el contenido original; lleva la referencia de origen.
         buckets[b].push({...c, _srcLabel: srcLabel});
@@ -7325,7 +7347,6 @@ function gatherBattleQuestions(courseId, currentLessonId, n, opts){
   opts = opts || {};
   const course = COURSES[courseId];
   if(!course) return [];
-  const CONTEXT_REGEX = /\b(?:el|este|esta|ese)\s+(?:caso|escenario|ejemplo|cliente|caso anterior)\b|\besta situación\b|\bcambia de opinión\b|\bsegún (?:lo|el) (?:anterior|caso|ejemplo)\b|\bdel ejemplo\b|\bel cliente\b/i;
   // Patrón concepto→definición: típicamente con opciones cortas
   const CONCEPT_PATTERN = /¿\s*(?:qu[ée]\s+(?:es|significa|describe(?:\s+mejor)?|define|representa)|a\s+qu[ée]\s+se\s+refiere|c[óo]mo\s+se\s+define|cu[áa]l\s+(?:es\s+la\s+definici[óo]n|describe))/i;
   const MAX_OPTION_LEN = 60; // chars sin HTML; >60 no cabe en 4 cards
@@ -7346,10 +7367,8 @@ function gatherBattleQuestions(courseId, currentLessonId, n, opts){
         if(card.multi) continue;
         if(!Array.isArray(card.options) || card.options.length !== 4) continue;
         if(typeof card.correct !== 'number') continue;
-        const prev = cards[i - 1];
-        if(prev && (prev.type === 'scenario' || prev.type === 'quote')) continue;
+        if(isContextDependentCard(lesson, cards, i)) continue;
         const qText = (card.q || '').replace(/<[^>]+>/g, '');
-        if(CONTEXT_REGEX.test(qText)) continue;
         if(qText.length < 20) continue;
         // Filtro: opciones largas → skip
         const hasLongOption = card.options.some(opt =>

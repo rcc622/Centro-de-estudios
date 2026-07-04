@@ -653,7 +653,7 @@
         },
         {
           "type": "mcq",
-          "q": "El cliente pregunta por qué no usar Highest Volume. ¿Qué le explicas?",
+          "q": "La PyME de muebles, con su tope de 350 pesos por lead, pregunta por qué no usar Highest Volume. ¿Qué le explicas?",
           "options": [
             "Highest Volume es lo mismo que Cost per Result Goal",
             "Highest Volume no respeta un techo de costo por resultado; gastaría sin garantizar el límite de 350 pesos",
@@ -665,7 +665,7 @@
         },
         {
           "type": "mcq",
-          "q": "Más adelante abre tienda en línea y le exigen un ROAS mínimo de 4x optimizando por valor. ¿Qué bid strategy se alinea?",
+          "q": "Más adelante, la misma PyME abre tienda en línea y le exigen un ROAS mínimo de 4x optimizando por valor. ¿Qué bid strategy se alinea?",
           "options": [
             "Highest Volume",
             "Cost per Result Goal",

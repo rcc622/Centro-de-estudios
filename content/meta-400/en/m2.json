@@ -653,7 +653,7 @@
         },
         {
           "type": "mcq",
-          "q": "The client asks why not use Highest Volume. What do you explain?",
+          "q": "The furniture SMB, with its cap of 350 pesos per lead, asks why not use Highest Volume. What do you explain?",
           "options": [
             "Highest Volume is the same as Cost per Result Goal",
             "Highest Volume doesn't respect a cost-per-result ceiling; it would spend without guaranteeing the 350-peso limit",
@@ -665,7 +665,7 @@
         },
         {
           "type": "mcq",
-          "q": "Later they open an online store and are required to hit a minimum ROAS of 4x optimizing for value. Which bid strategy aligns?",
+          "q": "Later, the same SMB opens an online store and is required to hit a minimum ROAS of 4x optimizing for value. Which bid strategy aligns?",
           "options": [
             "Highest Volume",
             "Cost per Result Goal",

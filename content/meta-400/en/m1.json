@@ -308,7 +308,7 @@
         },
         {
           "type": "mcq",
-          "q": "The plan proposes Sales website with the Purchase event, but the client only has the Pixel and nothing else. What do you recommend before launching?",
+          "q": "Boutique Aurora wants to launch Sales website with the Purchase event, but only has the Pixel installed and nothing else. What do you recommend before launching?",
           "options": [
             "Launch anyway; the Pixel alone is enough",
             "Add the Conversions API to recover lost signal and improve match quality",
@@ -657,7 +657,7 @@
         },
         {
           "type": "mcq",
-          "q": "The client asks at which level all that is configured. What do you tell them?",
+          "q": "The client asks at which level of the structure the conversion location, conversion event and performance goal are configured. What do you tell them?",
           "options": [
             "Conversion location and performance goal are configured at the campaign level",
             "Conversion location, event and performance goal are configured at the ad set level",
@@ -724,7 +724,7 @@
         },
         {
           "type": "mcq",
-          "q": "To capture the prospects who leave their information before the advisor's contact, which objective + conversion location do you propose in that phase?",
+          "q": "A finance company captures prospects who leave their information in a form before an advisor contacts them. For that capture phase, which objective + conversion location do you propose?",
           "options": [
             "Sales + Website",
             "Leads + Instant form",
@@ -737,7 +737,7 @@
         },
         {
           "type": "mcq",
-          "q": "If the client also wants to optimize for the contract signing that happens after the chat with the advisor, which combination comes closest?",
+          "q": "A finance company closes the contract signing in a chat with the advisor (sometimes on its website). To optimize the campaign toward that signing, which combination comes closest?",
           "options": [
             "Sales with conversion location Messaging/Website depending on where the signing happens and the conversion event = the signing",
             "Awareness with recall lift",
