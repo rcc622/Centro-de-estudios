@@ -361,7 +361,7 @@
             "Because it replaces the Pixel"
           ],
           "correct": 1,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. A relevant, high-quality creative raises those two components and can win auctions at a lower cost.",
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality. A relevant, high-quality creative raises those two components and can win auctions at a lower cost.",
           "difficulty": "hard"
         }
       ]
@@ -395,7 +395,7 @@
             "reach"
           ],
           "correct": 0,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. The creative moves the last two."
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality. The creative moves the last two."
         },
         {
           "type": "fill",
@@ -469,7 +469,7 @@
             "Cost depends only on the audience"
           ],
           "correct": 1,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. A better creative raises those components and can reduce the cost per result."
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality. A better creative raises those components and can reduce the cost per result."
         },
         {
           "type": "mcq",
@@ -746,7 +746,7 @@
             "Only the audience defines cost"
           ],
           "correct": 1,
-          "explanation": "Total value = bid + estimated action rates + ad quality. A quality creative + more placements = more auction efficiency."
+          "explanation": "Total value = bid × estimated action rates + ad quality. A quality creative + more placements = more auction efficiency."
         }
       ]
     },
@@ -764,7 +764,7 @@
         ["Advantage+ creative", "Optimizes the creative per person (crops, music, text)"],
         ["Mobile-first", "Design vertical 9:16 and for sound-off"],
         ["Creative diversity", "Several creatives per ad set: more optimization, less fatigue"],
-        ["Total value", "Advertiser bid + estimated action rates + ad quality"],
+        ["Total value", "Advertiser bid × estimated action rates + ad quality"],
         ["Creative and cost", "Raises estimated action rates and ad quality"],
         ["Placements + creative", "Planned together, not separately"]
       ]
@@ -957,7 +957,7 @@
           "q": "The auction's total value:",
           "options": [
             "Bid + budget + reach",
-            "Advertiser bid + estimated action rates + ad quality",
+            "Advertiser bid × estimated action rates + ad quality",
             "Bid + placement + creative",
             "Bid + audience + frequency"
           ],
@@ -1051,7 +1051,7 @@
         { "q": "Advantage+ creative vs Advantage+ placements", "a": "Creative = optimizes the creative. Placements = decides where it's shown." },
         { "q": "Creative best practices", "a": "Vertical/mobile-first, brand early, several formats, design for sound-off." },
         { "q": "Why several creatives per ad set?", "a": "Material for the best person-creative combination and less fatigue." },
-        { "q": "The auction's total value", "a": "Advertiser bid + estimated action rates + ad quality. The creative moves the last two." },
+        { "q": "The auction's total value", "a": "Advertiser bid × estimated action rates + ad quality. The creative moves the last two." },
         { "q": "Are placements and creative decided separately?", "a": "No: they're planned together to find the best person-surface-creative combination." },
         { "q": "Recipe for broad, efficient reach", "a": "Advantage+ placements + several vertical mobile-first creatives + Advantage+ creative." },
         { "q": "Risk of maximizing placements with a single creative", "a": "You limit optimization and the creative fatigues quickly even with many surfaces." },

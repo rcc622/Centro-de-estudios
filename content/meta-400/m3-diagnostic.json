@@ -3,53 +3,123 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "El ad scheduling (mostrar anuncios solo en ciertos horarios) requiere:",
-      "options": ["Presupuesto diario (daily budget)", "Presupuesto total (lifetime budget)", "Límite de puja (Bid Cap)", "Reserva (Reservation)"],
+      "q": "El ad scheduling (anuncios solo en ciertos horarios) requiere:",
+      "options": [
+        "Presupuesto diario con tope de gasto por franja horaria",
+        "Presupuesto total (lifetime budget) para poder programar horarios",
+        "Límite de puja (Bid Cap) sincronizado con el horario",
+        "Reserva (Reservation) con delivery pactado por hora"
+      ],
       "correct": 1,
-      "explanation": "El dayparting solo es posible con presupuesto total (lifetime budget).",
+      "explanation": "El ad scheduling solo existe con lifetime budget: el sistema necesita el total del periodo para repartir el gasto entre las franjas elegidas.",
       "difficulty": "medium"
     },
     {
-      "q": "Advantage+ presupuesto de campaña (Advantage+ campaign budget, CBO) sirve para:",
+      "q": "Advantage+ presupuesto de campaña (CBO) sirve para:",
       "options": [
-        "Fijar presupuesto por conjunto de anuncios manualmente",
-        "Que Meta reparta el presupuesto entre conjuntos de anuncios según oportunidad",
-        "Garantizar CPM fijo",
-        "Activar Reserva (Reservation)"
+        "Fijar un monto manual e independiente por conjunto de anuncios",
+        "Garantizar un CPM fijo durante toda la campaña",
+        "Que Meta reparta el presupuesto entre ad sets según oportunidad",
+        "Programar el gasto por horarios sin usar lifetime budget"
       ],
-      "correct": 1,
-      "explanation": "CBO mueve el gasto al conjunto de anuncios con mejor desempeño; ABO fija el presupuesto por conjunto de anuncios.",
-      "difficulty": "easy"
+      "correct": 2,
+      "explanation": "CBO pone el presupuesto a nivel campaña y el sistema lo mueve hacia los ad sets con mejor oportunidad. El monto manual por ad set es ABO.",
+      "difficulty": "medium"
     },
     {
-      "q": "Estimación de presupuesto en Subasta (Auction):",
+      "q": "Estimación de presupuesto base en Subasta (Auction):",
       "options": [
-        "Impresiones × CPM ÷ 1000",
+        "Impresiones esperadas × CPM del histórico ÷ 1,000",
         "Resultados objetivo × costo por resultado esperado",
-        "Reach × frequency",
-        "Presupuesto fijo aprobado por dirección"
+        "Reach pactado × frequency prometida × CPM fijo",
+        "Presupuesto del año anterior + inflación estimada"
       ],
       "correct": 1,
-      "explanation": "En Subasta el costo es variable; se estima con resultados deseados y costo por resultado esperado.",
+      "explanation": "En Auction planeas desde el resultado: cuántos necesitas × cuánto te cuesta cada uno. La fórmula de reach × frequency × CPM es de Reserva.",
       "difficulty": "medium"
     },
     {
-      "q": "Plan Reserva (Reservation): 400,000 personas, frequency 2, CPM fijo $5. Presupuesto aproximado:",
-      "options": ["$2,000", "$4,000", "$8,000", "$40,000"],
+      "q": "Plan Reserva: 400,000 personas, frequency 2, CPM fijo $5. Presupuesto aproximado:",
+      "options": [
+        "$2,000 — se cobra solo por personas únicas, no por impresión",
+        "$8,000 — cada frecuencia se compra por separado al doble",
+        "$4,000 — (400,000 × 2 ÷ 1,000) × $5 de CPM",
+        "$40,000 — el CPM se aplica por cada 100 impresiones"
+      ],
+      "correct": 2,
+      "explanation": "Impresiones = 400,000 × 2 = 800,000. Entre 1,000 = 800 millares × $5 = $4,000. El CPM siempre es costo por MIL impresiones.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Riesgo principal de un presupuesto demasiado bajo en Subasta:",
+      "options": [
+        "El anuncio se rechaza en el ad review por gasto insuficiente",
+        "Meta convierte la campaña a Reservation automáticamente",
+        "La bid strategy se resetea a Highest Volume sin avisar",
+        "El ad set no sale de la learning phase y el desempeño queda inestable"
+      ],
+      "correct": 3,
+      "explanation": "Sin ~50 eventos de optimización por semana, el ad set se queda aprendiendo: costos volátiles y resultados inestables. El review no mira tu presupuesto.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Campaña con 6 ad sets, sin tiempo para ajustar repartos a mano y desempeño desigual entre audiencias:",
+      "options": [
+        "ABO con montos iguales por ad set para comparar audiencias de forma limpia",
+        "CBO: el sistema mueve el gasto hacia los ad sets con mejor oportunidad",
+        "Lifetime budget con ad scheduling de lunes a viernes",
+        "Reservation para garantizar el reparto entre los seis"
+      ],
       "correct": 1,
-      "explanation": "Impresiones = 400,000 × 2 = 800,000. Presupuesto = 800,000 × 5 ÷ 1000 = $4,000.",
+      "explanation": "Muchos ad sets + cero tiempo de gestión + desempeño desigual = CBO. ABO se usa cuando NECESITAS garantizar gasto por audiencia (ej. tests).",
       "difficulty": "hard"
     },
     {
-      "q": "Riesgo principal de un presupuesto demasiado bajo en Subasta (Auction):",
+      "q": "¿Cuándo conviene ABO (presupuesto por ad set) sobre CBO?",
       "options": [
-        "El anuncio se rechaza",
-        "El conjunto de anuncios (ad set) no sale de la fase de aprendizaje (learning phase) y el desempeño es inestable",
-        "Se activa Reserva (Reservation)",
-        "Sube el ROAS"
+        "Cuando necesitas garantizar gasto mínimo por audiencia (ej. tests controlados)",
+        "Cuando prefieres que el sistema optimice el reparto del gasto por ti solo",
+        "Cuando el presupuesto es lifetime y hay ad scheduling activo",
+        "Cuando la campaña es Reservation con CPM fijo pactado"
+      ],
+      "correct": 0,
+      "explanation": "ABO da control: cada ad set gasta lo que le asignas, ideal para tests o cuotas por mercado. CBO optimiza mejor cuando no necesitas ese control.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Necesitas ~400 leads en el mes y tu CPL histórico es ~$5 USD. Presupuesto base:",
+      "options": [
+        "$800 USD: la mitad, porque la optimización abarata el resto",
+        "$4,000 USD: el doble para cubrir la learning phase completa",
+        "$2,000 USD: 400 leads × $5 de costo esperado por lead",
+        "$5,000 USD: mil por semana más un margen de seguridad"
+      ],
+      "correct": 2,
+      "explanation": "Resultados objetivo × costo esperado = 400 × $5 = $2,000. Es la base; luego se ajusta con datos reales, pero nunca se arranca adivinando.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Learning phase: ¿qué la resetea y por qué importa?",
+      "options": [
+        "Solo pausar la campaña más de 24 horas la reinicia",
+        "Ediciones significativas (audiencia, creativo, bid) reinician el aprendizaje y desestabilizan el costo",
+        "Cambiar el nombre del ad set reinicia el aprendizaje",
+        "Nada la resetea: dura exactamente 7 días desde el inicio sin importar las ediciones que hagas"
       ],
       "correct": 1,
-      "explanation": "Sin ~50 eventos de optimización por semana el conjunto de anuncios se queda en aprendizaje; resultados volátiles.",
+      "explanation": "Los cambios significativos mandan al ad set de vuelta a aprender: por eso se agrupan ediciones y no se 'menea' la campaña a diario.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Daily budget vs lifetime budget:",
+      "options": [
+        "Daily permite ad scheduling; lifetime obliga gasto uniforme",
+        "Daily solo está disponible en Auction; lifetime es exclusivo de campañas de Reservation",
+        "Daily gasta ~el monto cada día; lifetime reparte un total en el periodo y permite ad scheduling",
+        "Daily requiere CBO activado; lifetime requiere ABO"
+      ],
+      "correct": 2,
+      "explanation": "Daily = ritmo diario aproximado. Lifetime = total del periodo con reparto flexible, y es el único que habilita ad scheduling.",
       "difficulty": "medium"
     }
   ]

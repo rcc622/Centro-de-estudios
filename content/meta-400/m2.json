@@ -301,7 +301,7 @@
         {
           "type": "concept",
           "h": "Los 3 componentes del total value",
-          "body": "El total value se calcula sumando tres ingredientes:<br/><strong>1. Advertiser bid</strong> (puja del anunciante): cuánto estás dispuesto a pagar por el resultado que buscas.<br/><strong>2. Estimated action rates</strong> (tasas de acción estimadas): la probabilidad que Meta calcula de que esa persona haga la acción deseada, ej. comprar o dar clic.<br/><strong>3. Ad quality</strong> (calidad del anuncio): qué tan relevante y bien hecho es el creativo según señales de los usuarios.<br/>Cuidado con un detalle clave: el <strong>cost control</strong> (control de costo, es decir la estrategia de puja / bid strategy) NO entra en esta fórmula. La estrategia de puja controla cómo gastas tu presupuesto, no cómo ganas la subasta. La pizzería <em>Forno Rosso</em> sube su total value mejorando el creativo, no solo subiendo la puja."
+          "body": "El total value combina tres ingredientes con la fórmula <strong>bid × estimated action rates + ad quality</strong> (la puja multiplicada por la probabilidad de acción, más la calidad del anuncio):<br/><strong>1. Advertiser bid</strong> (puja del anunciante): cuánto estás dispuesto a pagar por el resultado que buscas.<br/><strong>2. Estimated action rates</strong> (tasas de acción estimadas): la probabilidad que Meta calcula de que esa persona haga la acción deseada, ej. comprar o dar clic.<br/><strong>3. Ad quality</strong> (calidad del anuncio): qué tan relevante y bien hecho es el creativo según señales de los usuarios.<br/>Cuidado con un detalle clave: el <strong>cost control</strong> (control de costo, es decir la estrategia de puja / bid strategy) NO entra en esta fórmula. La estrategia de puja controla cómo gastas tu presupuesto, no cómo ganas la subasta. La pizzería <em>Forno Rosso</em> sube su total value mejorando el creativo, no solo subiendo la puja."
         },
         {
           "type": "kvtable",
@@ -336,7 +336,7 @@
             "El cost control / bid strategy elegida"
           ],
           "correct": 3,
-          "explanation": "El total value = advertiser bid + estimated action rates + ad quality. La estrategia de puja controla cómo gastas, pero no entra en la fórmula del total value.",
+          "explanation": "El total value = advertiser bid × estimated action rates + ad quality. La estrategia de puja controla cómo gastas, pero no entra en la fórmula del total value.",
           "difficulty": "hard"
         }
       ]
@@ -349,7 +349,7 @@
       "cards": [
         {
           "type": "fill",
-          "q": "El total value se compone de advertiser bid + estimated action rates + ___.",
+          "q": "Total value = advertiser bid × estimated action rates + ___.",
           "options": [
             "ad quality",
             "bid strategy",
@@ -357,7 +357,7 @@
             "frequency cap"
           ],
           "correct": 0,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality."
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality."
         },
         {
           "type": "mcq",
@@ -426,7 +426,7 @@
           "q": "¿Qué le explicas sobre cómo se gana la subasta?",
           "options": [
             "Tiene razón, el bid más alto siempre gana",
-            "Gana el mayor total value: bid + estimated action rates + ad quality, no solo el bid",
+            "Gana el mayor total value: bid × estimated action rates + ad quality, no solo el bid",
             "Debe cambiar a Reservation",
             "Debe subir el presupuesto diario"
           ],
@@ -465,7 +465,7 @@
       "section": "b2",
       "type": "flashcards",
       "cards": [
-        { "q": "Total value de la subasta", "a": "Advertiser bid + estimated action rates + ad quality." },
+        { "q": "Total value de la subasta", "a": "Advertiser bid × estimated action rates + ad quality." },
         { "q": "¿El cost control entra en el total value?", "a": "No." },
         { "q": "¿Quién gana la subasta?", "a": "El anuncio con el mayor total value, no el del bid más alto." },
         { "q": "Estimated action rates", "a": "Probabilidad de que la persona haga la acción deseada." },
@@ -953,7 +953,7 @@
           "q": "El director quiere subir el bid al máximo en la campaña de Sales \"para ganar todas las subastas\". ¿Qué le explicas?",
           "options": [
             "Tiene razón, el bid más alto gana",
-            "Gana el mayor total value (bid + estimated action rates + ad quality); mejorar creativo y match es más eficiente que solo subir el bid",
+            "Gana el mayor total value (bid × estimated action rates + ad quality); mejorar creativo y match es más eficiente que solo subir el bid",
             "Hay que cambiar a Reservation",
             "El bid no influye en nada"
           ],
@@ -984,7 +984,7 @@
         ["Tipo de compra (buying type)", "Método para comprar anuncios: Subasta o Reserva"],
         ["Subasta (Auction)", "Flexible: todos los objectives, 5 estrategias de puja, precio variable"],
         ["Reserva (Reservation)", "Predecible: solo Awareness/Engagement, CPM fijo"],
-        ["Total value", "Advertiser bid + estimated action rates + ad quality"],
+        ["Total value", "Advertiser bid × estimated action rates + ad quality"],
         ["Estimated action rates", "Probabilidad de que la persona haga la acción deseada"],
         ["Volumen más alto (Highest Volume)", "Spend-based: máximo de resultados con el budget"],
         ["Valor más alto (Highest Value)", "Spend-based: máximo valor de compra con el budget"],
@@ -1025,7 +1025,7 @@
         },
         {
           "type": "fill",
-          "q": "El total value = advertiser bid + estimated action rates + ___.",
+          "q": "El total value = advertiser bid × estimated action rates + ___.",
           "options": ["ad quality", "bid strategy", "budget", "frequency"],
           "correct": 0,
           "explanation": "Los 3 componentes: bid, estimated action rates y ad quality."
@@ -1109,7 +1109,7 @@
             "Bid + frequency + reach"
           ],
           "correct": 1,
-          "explanation": "Advertiser bid + estimated action rates + ad quality."
+          "explanation": "Advertiser bid × estimated action rates + ad quality."
         },
         {
           "type": "mcq",
@@ -1196,7 +1196,7 @@
           "q": "¿Gana la subasta el bid más alto?",
           "options": ["Sí", "No, el mayor total value"],
           "correct": 1,
-          "explanation": "Total value = bid + estimated action rates + ad quality."
+          "explanation": "Total value = bid × estimated action rates + ad quality."
         },
         {
           "q": "¿La bid strategy entra en el total value?",
@@ -1248,7 +1248,7 @@
         { "q": "Plataformas de Reserva", "a": "Facebook e Instagram." },
         { "q": "¿Cuándo Reserva sobre Subasta?", "a": "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada." },
         { "q": "Precio en Subasta vs Reserva", "a": "Subasta: variable. Reserva: CPM fijo conocido por adelantado." },
-        { "q": "Total value de la subasta", "a": "Advertiser bid + estimated action rates + ad quality." },
+        { "q": "Total value de la subasta", "a": "Advertiser bid × estimated action rates + ad quality." },
         { "q": "¿El cost control entra en el total value?", "a": "No." },
         { "q": "¿Quién gana la subasta?", "a": "El anuncio con el mayor total value, no el del bid más alto." },
         { "q": "Estimated action rates", "a": "Probabilidad de que la persona haga la acción deseada." },

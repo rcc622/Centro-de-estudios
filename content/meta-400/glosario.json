@@ -53,7 +53,7 @@
         },
         {
           "q": "Total value (subasta)",
-          "a": "Advertiser bid + estimated action rates + ad quality. El cost control NO entra."
+          "a": "Advertiser bid × estimated action rates + ad quality. El cost control NO entra."
         },
         {
           "q": "Proporciones de acciones estimadas (Estimated action rates)",

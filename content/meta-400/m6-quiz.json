@@ -5,7 +5,7 @@
     {
       "q": "Una campaña de Awareness se evalúa por:",
       "options": [
-        "CPC y compras",
+        "CPC bajo y compras asistidas de la semana",
         "Reach, frequency y estimated ad recall lift",
         "ROAS",
         "Cost per lead"
@@ -17,7 +17,7 @@
     {
       "q": "Incrementalidad significa:",
       "options": [
-        "Qué touchpoint recibe el crédito",
+        "Qué touchpoint del recorrido recibe el crédito",
         "Conversiones que NO habrían ocurrido sin la pauta",
         "El CPM más bajo",
         "El creativo con más CTR"
@@ -29,7 +29,7 @@
     {
       "q": "El cliente duda si las ventas habrían ocurrido sin pauta. Metodología:",
       "options": [
-        "Atribución (attribution) last-click",
+        "Atribución (attribution) last-click de Ads Manager",
         "Aumento de conversiones (Conversion Lift) con holdout",
         "Más frequency",
         "Cambiar a Reservation"
@@ -62,7 +62,7 @@
     {
       "q": "Cambiar la configuración de atribución (attribution setting):",
       "options": [
-        "Cambia las ventas reales",
+        "Cambia las ventas reales que el negocio registra en su sistema",
         "Cambia qué conversiones se le acreditan a Meta, no las ventas reales",
         "Desactiva el Pixel",
         "Activa Reservation"
@@ -76,7 +76,7 @@
       "options": [
         "Son lo mismo",
         "Atribución = crédito por touchpoint; incrementalidad = efecto causal de la pauta",
-        "Incrementalidad asigna crédito por clic",
+        "La incrementalidad asigna el crédito por clic a cada touchpoint del recorrido",
         "La atribución usa holdout"
       ],
       "correct": 1,
@@ -100,7 +100,7 @@
     {
       "q": "Plan de medición para un cliente que exige probar valor causal:",
       "options": [
-        "Solo atribución de Ads Manager",
+        "Solo el reporte de atribución de Ads Manager como evidencia única",
         "Aumento de conversiones como eje + atribución para optimización diaria",
         "Solo Mejora de la marca",
         "Comparar semanas sin control"

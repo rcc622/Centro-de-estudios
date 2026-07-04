@@ -5,7 +5,7 @@
     {
       "q": "Customer list for a custom audience:",
       "options": [
-        "It's uploaded in plain text",
+        "It's uploaded in plain text so that the matching can be fully exact",
         "It's uploaded hashed; matching happens without exposing data in the clear",
         "It's not allowed",
         "Only with reservation"
@@ -17,7 +17,7 @@
     {
       "q": "The inventory filter controls:",
       "options": [
-        "The budget",
+        "The maximum daily budget that is allowed to be spent on each surface",
         "The suitability level of the adjacent content (expanded/moderate/limited)",
         "The bid strategy",
         "The conversion event"
@@ -29,7 +29,7 @@
     {
       "q": "Block list vs allow list:",
       "options": [
-        "Block = allow only approved ones; allow = block",
+        "Block = allow only the approved ones; allow = block specific ones",
         "Block = exclude specific publishers; allow = allow only approved ones",
         "They're the same",
         "They only apply to reservation"
@@ -41,7 +41,7 @@
     {
       "q": "Trade-off of stricter brand safety:",
       "options": [
-        "More reach and lower cost",
+        "More reach and lower cost thanks to better adjacency",
         "More safety but lower reach and possibly higher cost",
         "No effect on delivery",
         "Always improves ROAS"
@@ -53,7 +53,7 @@
     {
       "q": "An ad says 'We know you have diabetes; this is for you'. It's rejected because:",
       "options": [
-        "The health category is prohibited",
+        "The health category is entirely prohibited on Meta",
         "It implies/asserts a personal attribute of the viewer",
         "It has no Meta Pixel",
         "It used Advantage+ creative"
@@ -99,8 +99,8 @@
       "q": "Are privacy and performance necessarily at odds?",
       "options": [
         "Yes, always",
-        "No; a server signal with consent (Conversions API) improves measurement and compliance",
-        "Yes, except in reservation",
+        "No; a server signal with consent (CAPI) improves measurement and compliance",
+        "Yes, except in the campaigns bought via Reservation at a locked, fixed CPM",
         "Only in awareness"
       ],
       "correct": 1,
@@ -112,7 +112,7 @@
       "options": [
         "Raise the budget",
         "A stricter inventory filter + block lists as needed",
-        "Change the objective to awareness",
+        "Change the objective to awareness to avoid the risk",
         "Turn on Advantage+ creative"
       ],
       "correct": 1,

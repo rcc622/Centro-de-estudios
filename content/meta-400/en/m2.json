@@ -301,7 +301,7 @@
         {
           "type": "concept",
           "h": "The 3 components of total value",
-          "body": "Total value is calculated by adding three ingredients:<br/><strong>1. Advertiser bid</strong>: how much you're willing to pay for the result you want.<br/><strong>2. Estimated action rates</strong>: the probability Meta calculates that this person will take the desired action, e.g. purchase or click.<br/><strong>3. Ad quality</strong>: how relevant and well-made the creative is according to user signals.<br/>Watch out for a key detail: <strong>cost control</strong> (that is, the bid strategy) does NOT enter this formula. The bid strategy controls how you spend your budget, not how you win the auction. The pizzeria <em>Forno Rosso</em> raises its total value by improving the creative, not just by raising the bid."
+          "body": "Total value combines three ingredients with the formula <strong>bid × estimated action rates + ad quality</strong> (your bid multiplied by the probability of action, plus ad quality):<br/><strong>1. Advertiser bid</strong>: how much you're willing to pay for the result you want.<br/><strong>2. Estimated action rates</strong>: the probability Meta calculates that this person will take the desired action, e.g. purchase or click.<br/><strong>3. Ad quality</strong>: how relevant and well-made the creative is according to user signals.<br/>Watch out for a key detail: <strong>cost control</strong> (that is, the bid strategy) does NOT enter this formula. The bid strategy controls how you spend your budget, not how you win the auction. The pizzeria <em>Forno Rosso</em> raises its total value by improving the creative, not just by raising the bid."
         },
         {
           "type": "kvtable",
@@ -336,7 +336,7 @@
             "The chosen cost control / bid strategy"
           ],
           "correct": 3,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. The bid strategy controls how you spend, but doesn't enter the total value formula.",
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality. The bid strategy controls how you spend, but doesn't enter the total value formula.",
           "difficulty": "hard"
         }
       ]
@@ -349,7 +349,7 @@
       "cards": [
         {
           "type": "fill",
-          "q": "Total value is made up of advertiser bid + estimated action rates + ___.",
+          "q": "Total value = advertiser bid × estimated action rates + ___.",
           "options": [
             "ad quality",
             "bid strategy",
@@ -357,7 +357,7 @@
             "frequency cap"
           ],
           "correct": 0,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality."
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality."
         },
         {
           "type": "mcq",
@@ -426,7 +426,7 @@
           "q": "What do you explain about how the auction is won?",
           "options": [
             "They're right, the highest bid always wins",
-            "The highest total value wins: bid + estimated action rates + ad quality, not just the bid",
+            "The highest total value wins: bid × estimated action rates + ad quality, not just the bid",
             "They should switch to Reservation",
             "They should raise the daily budget"
           ],
@@ -465,7 +465,7 @@
       "section": "b2",
       "type": "flashcards",
       "cards": [
-        { "q": "Auction total value", "a": "Advertiser bid + estimated action rates + ad quality." },
+        { "q": "Auction total value", "a": "Advertiser bid × estimated action rates + ad quality." },
         { "q": "Does cost control enter total value?", "a": "No." },
         { "q": "Who wins the auction?", "a": "The ad with the highest total value, not the one with the highest bid." },
         { "q": "Estimated action rates", "a": "Probability that the person takes the desired action." },
@@ -953,7 +953,7 @@
           "q": "The director wants to raise the bid to the max in the Sales campaign \"to win all the auctions.\" What do you explain?",
           "options": [
             "They're right, the highest bid wins",
-            "The highest total value wins (bid + estimated action rates + ad quality); improving creative and match is more efficient than just raising the bid",
+            "The highest total value wins (bid × estimated action rates + ad quality); improving creative and match is more efficient than just raising the bid",
             "You have to switch to Reservation",
             "The bid has no influence at all"
           ],
@@ -984,7 +984,7 @@
         ["Buying type", "Method for buying ads: Auction or Reservation"],
         ["Auction", "Flexible: all objectives, 5 bid strategies, variable price"],
         ["Reservation", "Predictable: only Awareness/Engagement, fixed CPM"],
-        ["Total value", "Advertiser bid + estimated action rates + ad quality"],
+        ["Total value", "Advertiser bid × estimated action rates + ad quality"],
         ["Estimated action rates", "Probability that the person takes the desired action"],
         ["Highest Volume", "Spend-based: maximum results with the budget"],
         ["Highest Value", "Spend-based: maximum purchase value with the budget"],
@@ -1025,7 +1025,7 @@
         },
         {
           "type": "fill",
-          "q": "Total value = advertiser bid + estimated action rates + ___.",
+          "q": "Total value = advertiser bid × estimated action rates + ___.",
           "options": ["ad quality", "bid strategy", "budget", "frequency"],
           "correct": 0,
           "explanation": "The 3 components: bid, estimated action rates and ad quality."
@@ -1109,7 +1109,7 @@
             "Bid + frequency + reach"
           ],
           "correct": 1,
-          "explanation": "Advertiser bid + estimated action rates + ad quality."
+          "explanation": "Advertiser bid × estimated action rates + ad quality."
         },
         {
           "type": "mcq",
@@ -1196,7 +1196,7 @@
           "q": "Does the highest bid win the auction?",
           "options": ["Yes", "No, the highest total value"],
           "correct": 1,
-          "explanation": "Total value = bid + estimated action rates + ad quality."
+          "explanation": "Total value = bid × estimated action rates + ad quality."
         },
         {
           "q": "Does the bid strategy enter total value?",
@@ -1248,7 +1248,7 @@
         { "q": "Reservation platforms", "a": "Facebook and Instagram." },
         { "q": "When Reservation over Auction?", "a": "When you need guaranteed reach/frequency at a fixed CPM and planning in advance." },
         { "q": "Price in Auction vs Reservation", "a": "Auction: variable. Reservation: fixed CPM known in advance." },
-        { "q": "Auction total value", "a": "Advertiser bid + estimated action rates + ad quality." },
+        { "q": "Auction total value", "a": "Advertiser bid × estimated action rates + ad quality." },
         { "q": "Does cost control enter total value?", "a": "No." },
         { "q": "Who wins the auction?", "a": "The ad with the highest total value, not the one with the highest bid." },
         { "q": "Estimated action rates", "a": "Probability that the person takes the desired action." },

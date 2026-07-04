@@ -53,7 +53,7 @@
         },
         {
           "q": "Total value (auction)",
-          "a": "Advertiser bid + estimated action rates + ad quality. Cost control does NOT factor in."
+          "a": "Advertiser bid × estimated action rates + ad quality. Cost control does NOT factor in."
         },
         {
           "q": "Estimated action rates",

@@ -5,7 +5,7 @@
     {
       "q": "Daily budget vs lifetime budget:",
       "options": [
-        "Daily = total for the period; lifetime = per day",
+        "Daily = the total for the whole period; lifetime = the spend per single day",
         "Daily = average daily spend; lifetime = total for the period (enables scheduling)",
         "They're the same",
         "Lifetime only exists in Reservation"
@@ -24,7 +24,7 @@
     {
       "q": "Advantage+ campaign budget (CBO):",
       "options": [
-        "Sets the budget per ad set manually",
+        "Sets a manual, independent budget for each individual ad set",
         "Distributes the budget across ad sets toward the best-performing one",
         "Guarantees a fixed CPM",
         "Is exclusive to Awareness"
@@ -50,7 +50,7 @@
     {
       "q": "Approximate threshold to exit the learning phase:",
       "options": [
-        "~10 events in 30 days",
+        "~10 optimization events in 30 days per ad set",
         "~50 optimization events in ~7 days per ad set",
         "~500 clicks per day",
         "There is no learning phase"
@@ -62,7 +62,7 @@
     {
       "q": "Does daily budget spend exactly the same each day?",
       "options": [
-        "Yes, always identical",
+        "Yes, it spends exactly the same amount every single day",
         "No; it can vary day to day while honoring the period's average",
         "Only in Reservation",
         "Only with Bid Cap"
@@ -77,7 +77,7 @@
         "Better ROAS",
         "Ad set stuck in learning; unstable performance",
         "Ad rejection",
-        "Switch to Reservation"
+        "An automatic switch to Reservation to guarantee delivery"
       ],
       "correct": 1,
       "explanation": "Without enough signal the system doesn't optimize well; volatile results.",

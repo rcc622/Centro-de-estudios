@@ -17,8 +17,8 @@
     {
       "q": "El total value de la subasta es:",
       "options": [
-        "Advertiser bid + estimated action rates + ad quality",
-        "Bid + budget + frequency",
+        "Advertiser bid × estimated action rates + ad quality",
+        "Advertiser bid + budget disponible + frequency",
         "CPM + CTR + CPA",
         "Bid + bid strategy + placements"
       ],
@@ -56,7 +56,7 @@
     {
       "q": "Riesgo de un Bid Cap mal calibrado (muy bajo):",
       "options": [
-        "Gasta de más",
+        "Gasta de más el presupuesto diario en las subastas más caras",
         "El anuncio casi no entra a subastas y la campaña no gasta",
         "Sube el recall",
         "Activa Reservation"
@@ -82,7 +82,7 @@
       "options": [
         "Quien puja más siempre gana",
         "Un anuncio relevante y de calidad puede ganar a uno con bid más alto",
-        "El bid es lo único que importa",
+        "El bid es lo único que importa para decidir al ganador de la subasta",
         "No hay subasta, es precio fijo"
       ],
       "correct": 1,

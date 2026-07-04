@@ -3,64 +3,124 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "What does Meta recommend as the placement default?",
+      "q": "What does Meta recommend as the placements default?",
       "options": [
-        "Manual, Feed only",
-        "Advantage+ placements",
-        "Stories only",
-        "Audience Network only"
+        "Manual with Facebook and Instagram Feed only",
+        "Advantage+ placements across all available surfaces",
+        "Stories and Reels, where mobile-first attention lives",
+        "Audience Network to maximize the cheapest reach"
       ],
       "correct": 1,
-      "explanation": "Advantage+ placements gives the system more surfaces to optimize: more reach and efficiency.",
-      "difficulty": "easy"
-    },
-    {
-      "q": "Typical effect of restricting placements with no business reason:",
-      "options": [
-        "Lowers cost and raises reach",
-        "Raises the cost per result and lowers delivery",
-        "Has no effect",
-        "Improves the ad review"
-      ],
-      "correct": 1,
-      "explanation": "Fewer placements = fewer auctions/combinations; it usually raises cost and limits delivery.",
+      "explanation": "Advantage+ placements is the default: more surfaces = more auctions and combinations to optimize = lower cost per result.",
       "difficulty": "medium"
     },
     {
-      "q": "Why does the creative affect cost in the auction?",
+      "q": "Typical effect of restricting placements without a business reason:",
       "options": [
-        "It changes the budget",
-        "It influences estimated action rates and ad quality (part of the total value)",
-        "It defines the buying type",
-        "It replaces the Pixel"
+        "Cost goes down because delivery concentrates better",
+        "Nothing changes as long as the creative is high quality",
+        "Cost per result goes up and available delivery goes down",
+        "Ad review improves along with perceived ad quality"
       ],
-      "correct": 1,
-      "explanation": "A relevant, high-quality creative raises those components of the total value and can win auctions more cheaply.",
-      "difficulty": "hard"
+      "correct": 2,
+      "explanation": "Fewer surfaces = fewer auctions to compete in: the system loses options and cost rises. Restricting requires a real reason.",
+      "difficulty": "medium"
     },
     {
-      "q": "Advantage+ creative is used for:",
+      "q": "Why does creative affect cost in Auction?",
       "options": [
-        "Choosing where the ad is shown",
-        "Automatic per-person creative optimizations (crops, music, text)",
-        "Setting the CPM",
-        "Creating lookalikes"
+        "Because it changes the ad set's minimum required budget",
+        "Because it moves estimated action rates and ad quality, two pieces of total value",
+        "Because it defines which buying type remains available for the whole campaign",
+        "Because it replaces the Pixel signal in the dataset"
       ],
       "correct": 1,
-      "explanation": "Advantage+ creative adapts the creative per person. Advantage+ placements is about where it's delivered.",
+      "explanation": "A better creative raises the probability of action and the ad's quality: 2 of the 3 total value components. That's why it's a cost lever.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Advantage+ creative is for:",
+      "options": [
+        "Automatically choosing the surfaces where the ad ends up appearing",
+        "Locking the creative's CPM for the whole campaign",
+        "Optimizing the creative per person (crops, music, automatic enhancements)",
+        "Creating audience variations from the winning creative"
+      ],
+      "correct": 2,
+      "explanation": "Advantage+ creative adapts the SAME creative per person: crops, music, brightness, text. Choosing surfaces is Advantage+ placements.",
       "difficulty": "medium"
     },
     {
       "q": "Mobile-first creative best practice:",
       "options": [
-        "Horizontal video with mandatory audio",
-        "Vertical (9:16), brand early and designed to be seen without sound",
-        "A single image for the entire campaign",
-        "Long text on the image"
+        "Horizontal 16:9 video with mandatory audio and the logo at the end",
+        "Vertical 9:16, brand early and understandable without sound",
+        "A single master image reused across every surface",
+        "Long text over the image to explain the full offer"
       ],
       "correct": 1,
-      "explanation": "Consumption is vertical and often sound-off; brand early and vertical format perform better.",
-      "difficulty": "easy"
+      "explanation": "Mobile-first: vertical format, brand in the first seconds and a message that works without audio (most people watch muted).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "You have vertical video, images and a carousel; goal of lowest cost per lead nationwide:",
+      "options": [
+        "Only the vertical video, today's winning format",
+        "All the assets + Advantage+ placements + Advantage+ creative",
+        "Only the carousel in Feed with well-detailed targeting",
+        "Only images in Stories with a lifetime budget"
+      ],
+      "correct": 1,
+      "explanation": "Creative variety + every surface + per-person optimization: maximum optimization space = lowest cost. Betting on a single asset limits it.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "When are manual placements justified?",
+      "options": [
+        "By the owner's aesthetic preference about how the Feed looks",
+        "With a low budget that can't afford every surface",
+        "With a brand requirement or a creative unfit for certain surfaces",
+        "When Stories' historical CTR beats the Feed's"
+      ],
+      "correct": 2,
+      "explanation": "Manual requires a real business reason: brand guidelines or a creative that doesn't work on some surface. Aesthetic taste doesn't count.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A single creative running across many placements causes:",
+      "options": [
+        "Lower cost because the system learns faster",
+        "Quick fatigue and less person-creative optimization space",
+        "Better recall thanks to repeating the same message",
+        "More reach because the creative becomes familiar"
+      ],
+      "correct": 1,
+      "explanation": "The system has surfaces but little material: people always see the same thing (fatigue) and there's no variety to find the best combination.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The video looks cropped in Stories and its text is unreadable in Feed. What was missing?",
+      "options": [
+        "Adapting the creative per placement group (asset customization)",
+        "Raising the budget to win better positions in the auction",
+        "Enabling Reservation to control where it appears",
+        "Changing the performance goal to maximize reach"
+      ],
+      "correct": 0,
+      "explanation": "Each surface has its own format: asset customization per placement adapts crops and text without sacrificing reach.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Correct relationship between audience, placements and creative:",
+      "options": [
+        "You produce the creative first, and audience and surfaces derive from it",
+        "They're independent: each one optimizes separately",
+        "Meta decides all three automatically with no configuration",
+        "First you define who you talk to, then where the ad appears and with which assets"
+      ],
+      "correct": 3,
+      "explanation": "The plan's order: audience (Module 4) → surfaces → creative assets. If the audience is wrong, not even the best creative saves it.",
+      "difficulty": "medium"
     }
   ]
 }

@@ -5,7 +5,7 @@
     {
       "q": "Advantage+ placements:",
       "options": [
-        "Restricts to a single placement",
+        "Restricts delivery to a single hand-picked placement chosen manually",
         "Lets Meta deliver where it performs best, maximizing reach and efficiency",
         "Only works with Reservation",
         "Sets the CPM"
@@ -17,7 +17,7 @@
     {
       "q": "Restricting placements with no business reason usually:",
       "options": [
-        "Lowers cost",
+        "Lowers the cost because delivery concentrates",
         "Raises the cost per result and reduces delivery",
         "Has no effect",
         "Improves the ad review"
@@ -31,7 +31,7 @@
       "options": [
         "It changes the budget",
         "It affects estimated action rates and ad quality (part of the total value)",
-        "It defines the buying type",
+        "It defines which buying type stays available for the whole campaign",
         "It replaces the audience"
       ],
       "correct": 1,
@@ -41,7 +41,7 @@
     {
       "q": "Advantage+ creative does:",
       "options": [
-        "Choosing the placement",
+        "Automatically choosing the ad's placement",
         "Automatic per-person creative optimizations",
         "Setting the CPM",
         "Creating lookalikes"
@@ -66,7 +66,7 @@
     {
       "q": "Mobile-first creative best practice:",
       "options": [
-        "Horizontal with mandatory audio",
+        "Horizontal 16:9 with mandatory audio to look premium",
         "Vertical (9:16), brand early, legible without sound",
         "One image for the entire campaign",
         "Long text on top of the image"
@@ -80,7 +80,7 @@
       "options": [
         "To spend more",
         "They give material to find the best person-creative combination and reduce fatigue",
-        "To avoid the ad review",
+        "To avoid passing the ad review process separately on every new surface added",
         "To activate Reservation"
       ],
       "correct": 1,
@@ -90,7 +90,7 @@
     {
       "q": "Consumer brand, broad and efficient reach, has a vertical video, images and carousel:",
       "options": [
-        "Manual Feed only + 1 horizontal video",
+        "Manual placements, Feed only + a single reused horizontal video",
         "Advantage+ placements + several vertical creatives + Advantage+ creative",
         "Stories only with 1 image",
         "Audience Network only"
@@ -105,7 +105,7 @@
         "The bid strategies",
         "The surfaces where the ad appears across Meta technologies",
         "The objectives",
-        "The data sources"
+        "The data sources feeding the dataset in Events Manager"
       ],
       "correct": 1,
       "explanation": "Feeds, Stories, Reels, In-stream, Marketplace, Search, Audience Network, etc.",

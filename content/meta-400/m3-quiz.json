@@ -8,7 +8,7 @@
         "Diario = total del periodo; total = por día",
         "Diario = gasto promedio diario; total = total del periodo (permite scheduling)",
         "Son lo mismo",
-        "El total solo existe en Reserva (Reservation)"
+        "El presupuesto total solo existe en campañas de Reserva (Reservation)"
       ],
       "correct": 1,
       "explanation": "El presupuesto diario controla el promedio diario; el total fija el monto del periodo y habilita ad scheduling.",
@@ -24,7 +24,7 @@
     {
       "q": "Advantage+ presupuesto de campaña (Advantage+ campaign budget, CBO):",
       "options": [
-        "Fija el presupuesto por conjunto de anuncios manualmente",
+        "Fija manualmente un presupuesto independiente por cada conjunto de anuncios",
         "Reparte el presupuesto entre conjuntos de anuncios hacia el de mejor desempeño",
         "Garantiza CPM fijo",
         "Es exclusivo de Reconocimiento (Awareness)"
@@ -50,7 +50,7 @@
     {
       "q": "Umbral aproximado para salir de la fase de aprendizaje (learning phase):",
       "options": [
-        "~10 eventos en 30 días",
+        "~10 eventos de optimización en 30 días por conjunto de anuncios",
         "~50 eventos de optimización en ~7 días por conjunto de anuncios (ad set)",
         "~500 clics por día",
         "No existe fase de aprendizaje"
@@ -62,7 +62,7 @@
     {
       "q": "¿El presupuesto diario (daily budget) gasta exactamente lo mismo cada día?",
       "options": [
-        "Sí, siempre idéntico",
+        "Sí, gasta exactamente el mismo monto todos los días",
         "No; puede variar día a día respetando el promedio del periodo",
         "Solo en Reserva (Reservation)",
         "Solo con Límite de puja (Bid Cap)"
@@ -77,7 +77,7 @@
         "Mejor ROAS",
         "Conjunto de anuncios (ad set) atrapado en aprendizaje (learning phase); desempeño inestable",
         "Rechazo del anuncio",
-        "Cambio a Reserva (Reservation)"
+        "Cambio automático a Reserva (Reservation) para garantizar el delivery y el CPM pactados"
       ],
       "correct": 1,
       "explanation": "Sin señal suficiente el sistema no optimiza bien; resultados volátiles.",

@@ -3,59 +3,124 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "El tipo de compra Reserva (Reservation buying type) está disponible solo para:",
+      "q": "El tipo de compra Reserva (Reservation) está disponible solo para:",
       "options": [
-        "Sales y Leads",
-        "Awareness y Engagement",
-        "Traffic y Awareness",
-        "Todos los objectives"
+        "Los objetivos Ventas y Clientes potenciales con value tracking",
+        "Los objetivos Reconocimiento (awareness) e Interacción (engagement)",
+        "Los objetivos Tráfico y Promoción de la app en Facebook",
+        "Todos los objetivos, siempre que el presupuesto sea lifetime"
       ],
       "correct": 1,
-      "explanation": "Reserva = entrega y precio predecibles, limitado a Awareness y Engagement. Lo demás va por Subasta (Auction).",
-      "difficulty": "easy"
-    },
-    {
-      "q": "El total value de la subasta se compone de:",
-      "options": [
-        "Advertiser bid + estimated action rates + ad quality",
-        "Advertiser bid + budget + placements",
-        "Bid strategy + frequency + reach",
-        "CPM + CTR + CPC"
-      ],
-      "correct": 0,
-      "explanation": "Total value = advertiser bid + estimated action rates + ad quality. La estrategia de puja (bid strategy)/cost control NO entra.",
+      "explanation": "Reserva solo soporta Awareness y Engagement. Sales, Leads, Traffic y App Promotion van siempre por Subasta, sin excepción.",
       "difficulty": "medium"
     },
     {
-      "q": "Las 5 bid strategies son:",
+      "q": "El total value de la subasta se calcula como:",
       "options": [
-        "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap",
-        "Daily, Lifetime, CBO, ABO, Bid Cap",
-        "Awareness, Traffic, Engagement, Leads, Sales",
-        "CPM, CPC, CPA, ROAS, CTR"
+        "Advertiser bid × budget disponible + placements activos",
+        "Bid strategy × frequency prometida + reach estimado",
+        "Advertiser bid × estimated action rates + ad quality",
+        "CPM promedio × CTR esperado + CPC del histórico"
       ],
-      "correct": 0,
-      "explanation": "Spend-based (Volumen más alto/Valor más alto), goal-based (Objetivo de costo por resultado/Objetivo de ROAS) y manual (Límite de puja).",
+      "correct": 2,
+      "explanation": "Total value = bid × estimated action rates + ad quality: la puja multiplicada por la probabilidad de acción, más la calidad del anuncio. El cost control NO entra.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Las 5 bid strategies de Subasta son:",
+      "options": [
+        "Daily, Lifetime, CBO, ABO y Bid Cap con tope manual",
+        "Reconocimiento, Tráfico, Interacción, Clientes potenciales y Ventas",
+        "CPM fijo, CPC objetivo, CPA tope, ROAS mínimo y CTR meta",
+        "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap"
+      ],
+      "correct": 3,
+      "explanation": "Las 5 son: Highest Volume y Highest Value (spend-based), Cost per Result Goal y ROAS Goal (goal-based) y Bid Cap (manual). Lo demás son presupuestos u objetivos.",
       "difficulty": "medium"
     },
     {
       "q": "Cliente con CPA tope estricto que optimiza por cantidad de resultados:",
-      "options": ["Highest Volume", "Cost per Result Goal", "Highest Value", "Reservation"],
+      "options": [
+        "Highest Volume, porque entrega el máximo de resultados",
+        "Cost per Result Goal, que busca volumen respetando el costo objetivo",
+        "Highest Value, porque maximiza el valor de compra con el presupuesto",
+        "ROAS Goal con un retorno objetivo equivalente al CPA"
+      ],
       "correct": 1,
-      "explanation": "Objetivo de costo por resultado mantiene un costo objetivo por resultado mientras busca volumen. Volumen más alto no respeta techo de costo.",
-      "difficulty": "hard"
+      "explanation": "Techo de costo + optimización por cantidad = Cost per Result Goal. Highest Volume no respeta topes; Highest Value y ROAS Goal optimizan valor, no cantidad.",
+      "difficulty": "medium"
     },
     {
       "q": "¿Cuándo conviene Reserva sobre Subasta?",
       "options": [
-        "Cuando se quiere el menor costo posible",
-        "Cuando se necesita reach/frequency garantizados a CPM fijo y planeación anticipada",
-        "Cuando el objective es Sales",
-        "Cuando se usa Bid Cap"
+        "Cuando se busca el menor costo por resultado posible",
+        "Cuando el objetivo es Ventas con ROAS mínimo exigido",
+        "Cuando se necesita reach y frequency garantizados a CPM fijo",
+        "Cuando el creativo aún no pasa el ad review process"
       ],
-      "correct": 1,
-      "explanation": "Reserva da predecibilidad: entrega y precio fijos. No es necesariamente más barato ni soporta Sales.",
+      "correct": 2,
+      "explanation": "Reserva compra certeza: alcance y frecuencia pactados a CPM fijo, planeables por adelantado. La eficiencia máxima y Sales viven en Subasta.",
       "difficulty": "medium"
+    },
+    {
+      "q": "Ecommerce exige ROAS mínimo de 4x y optimiza por valor de compra. ¿Bid strategy?",
+      "options": [
+        "Highest Value, que maximiza valor sin garantizar retorno",
+        "Cost per Result Goal con un CPA equivalente al 25%",
+        "Bid Cap con tope igual al ticket promedio de la tienda",
+        "ROAS Goal con objetivo 4x (requiere value tracking)"
+      ],
+      "correct": 3,
+      "explanation": "Hay un retorno mínimo exigido: ROAS Goal apunta a ese múltiplo. Highest Value maximiza valor pero sin comprometer un retorno específico.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Qué NO entra en el total value de la subasta?",
+      "options": [
+        "La puja del anunciante (advertiser bid) que declaras",
+        "Las estimated action rates de esa persona en ese momento",
+        "El cost control de la estrategia de puja elegida",
+        "La ad quality según señales de los usuarios"
+      ],
+      "correct": 2,
+      "explanation": "El total value tiene exactamente 3 componentes: bid, estimated action rates y ad quality. La bid strategy controla cómo gastas, no cómo se gana la subasta.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Marca exige aparecer un día exacto con alcance pactado ante dirección, sin sorpresas de costo:",
+      "options": [
+        "Reservation: delivery y CPM pactados por adelantado",
+        "Auction + Highest Volume con presupuesto alto ese día",
+        "Auction + Bid Cap con tope agresivo para ganar subastas",
+        "Auction + Cost per Result Goal con schedule de horario"
+      ],
+      "correct": 0,
+      "explanation": "Certeza de fecha, alcance y costo = Reserva. En Subasta el precio fluctúa con la demanda y nada garantiza el delivery de un día específico.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Subir el bid al máximo 'para ganar todas las subastas' es ineficiente porque:",
+      "options": [
+        "El bid alto reduce las estimated action rates del anuncio",
+        "La subasta descarta el bid cuando supera el promedio de la categoría del negocio",
+        "El costo sube pero el delivery se congela en learning phase",
+        "Gana el mayor total value; mejorar creativo y relevancia rinde más que pagar de más"
+      ],
+      "correct": 3,
+      "explanation": "El ganador es el de mayor total value (bid × action rates + quality). Mover creativo y relevancia mejora 2 de los 3 componentes sin inflar el costo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Bid Cap se diferencia de Cost per Result Goal en que:",
+      "options": [
+        "Bid Cap limita la puja por subasta; Cost per Result Goal apunta a un costo promedio por resultado",
+        "Bid Cap garantiza el costo por resultado final; Cost per Result Goal solo limita la puja por subasta",
+        "Bid Cap es exclusivo de Reservation; Cost per Result Goal de Auction",
+        "Bid Cap optimiza por valor; Cost per Result Goal por volumen sin tope"
+      ],
+      "correct": 0,
+      "explanation": "Bid Cap es control manual del bid máximo por subasta (no del CPA final). Cost per Result Goal deja que el sistema busque volumen alrededor de un costo objetivo.",
+      "difficulty": "hard"
     }
   ]
 }

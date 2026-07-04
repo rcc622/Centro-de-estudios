@@ -361,7 +361,7 @@
             "Porque sustituye al Pixel"
           ],
           "correct": 1,
-          "explanation": "El total value = advertiser bid + estimated action rates + ad quality. Un creativo relevante y de calidad sube esos dos componentes y puede ganar subastas a menor costo.",
+          "explanation": "El total value = advertiser bid × estimated action rates + ad quality. Un creativo relevante y de calidad sube esos dos componentes y puede ganar subastas a menor costo.",
           "difficulty": "hard"
         }
       ]
@@ -395,7 +395,7 @@
             "reach"
           ],
           "correct": 0,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. El creativo mueve los últimos dos."
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality. El creativo mueve los últimos dos."
         },
         {
           "type": "fill",
@@ -469,7 +469,7 @@
             "El costo solo depende de la audiencia"
           ],
           "correct": 1,
-          "explanation": "Total value = advertiser bid + estimated action rates + ad quality. Mejor creativo sube esos componentes y puede reducir el costo por resultado."
+          "explanation": "Total value = advertiser bid × estimated action rates + ad quality. Mejor creativo sube esos componentes y puede reducir el costo por resultado."
         },
         {
           "type": "mcq",
@@ -746,7 +746,7 @@
             "Solo la audiencia define el costo"
           ],
           "correct": 1,
-          "explanation": "Total value = bid + estimated action rates + ad quality. Creativo de calidad + más ubicaciones = más eficiencia en subasta."
+          "explanation": "Total value = bid × estimated action rates + ad quality. Creativo de calidad + más ubicaciones = más eficiencia en subasta."
         }
       ]
     },
@@ -764,7 +764,7 @@
         ["Advantage+ creative", "Optimiza el creativo por persona (recortes, música, texto)"],
         ["Mobile-first", "Diseñar vertical 9:16 y sin depender del sonido"],
         ["Diversidad creativa", "Varios creativos por ad set: más optimización, menos fatiga"],
-        ["Total value", "Advertiser bid + estimated action rates + ad quality"],
+        ["Total value", "Advertiser bid × estimated action rates + ad quality"],
         ["El creativo y el costo", "Sube estimated action rates y ad quality"],
         ["Ubicaciones + creativo", "Se planean juntos, no por separado"]
       ]
@@ -957,7 +957,7 @@
           "q": "Total value de la subasta:",
           "options": [
             "Bid + budget + reach",
-            "Advertiser bid + estimated action rates + ad quality",
+            "Advertiser bid × estimated action rates + ad quality",
             "Bid + ubicación + creativo",
             "Bid + audiencia + frequency"
           ],
@@ -1051,7 +1051,7 @@
         { "q": "Advantage+ creative vs Ubicaciones Advantage+", "a": "Creative = optimiza el creativo. Ubicaciones = decide dónde se muestra." },
         { "q": "Best practices de creativo", "a": "Vertical/mobile-first, marca temprano, varios formatos, diseñar sin depender del sonido." },
         { "q": "¿Por qué varios creativos por ad set?", "a": "Material para la mejor combinación persona-creativo y menos fatiga." },
-        { "q": "Total value de la subasta", "a": "Advertiser bid + estimated action rates + ad quality. El creativo mueve los últimos dos." },
+        { "q": "Total value de la subasta", "a": "Advertiser bid × estimated action rates + ad quality. El creativo mueve los últimos dos." },
         { "q": "¿Las ubicaciones y el creativo se deciden por separado?", "a": "No: se planean juntos para hallar la mejor combinación persona-superficie-creativo." },
         { "q": "Receta para alcance amplio y eficiente", "a": "Ubicaciones Advantage+ + varios creativos verticales mobile-first + Advantage+ creative." },
         { "q": "Riesgo de maximizar ubicaciones con un solo creativo", "a": "Limitas la optimización y el creativo fatiga rápido aunque haya muchas superficies." },

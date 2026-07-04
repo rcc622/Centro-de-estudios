@@ -5,62 +5,122 @@
     {
       "q": "¿Qué recomienda Meta como default de ubicaciones (placements)?",
       "options": [
-        "Manual, solo Feed",
-        "Ubicaciones Advantage+ (Advantage+ placements)",
-        "Solo Stories",
-        "Solo Audience Network"
+        "Manual con Feed de Facebook e Instagram únicamente",
+        "Ubicaciones Advantage+ en todas las superficies disponibles",
+        "Stories y Reels, donde está la atención mobile-first",
+        "Audience Network para maximizar el alcance más barato"
       ],
       "correct": 1,
-      "explanation": "Las Ubicaciones Advantage+ dan al sistema más superficies para optimizar: más alcance y eficiencia.",
-      "difficulty": "easy"
+      "explanation": "Advantage+ placements es el default: más superficies = más subastas y combinaciones para optimizar = menor costo por resultado.",
+      "difficulty": "medium"
     },
     {
       "q": "Efecto típico de restringir ubicaciones sin razón de negocio:",
       "options": [
-        "Baja el costo y sube el alcance",
-        "Sube el costo por resultado y baja el delivery",
-        "No tiene efecto",
-        "Mejora el ad review"
+        "Baja el costo porque la entrega se concentra mejor",
+        "No cambia nada mientras el creativo sea de calidad",
+        "Sube el costo por resultado y reduce el delivery disponible",
+        "Mejora el ad review y la calidad percibida del anuncio"
       ],
-      "correct": 1,
-      "explanation": "Menos ubicaciones = menos subastas/combinaciones; normalmente encarece y limita el delivery.",
+      "correct": 2,
+      "explanation": "Menos superficies = menos subastas donde competir: el sistema pierde opciones y el costo sube. Restringir requiere una razón real.",
       "difficulty": "medium"
     },
     {
-      "q": "¿Por qué el creativo afecta el costo en Auction?",
+      "q": "¿Por qué el creativo afecta el costo en Subasta?",
       "options": [
-        "Cambia el budget",
-        "Influye en estimated action rates y ad quality (parte del total value)",
-        "Define el buying type",
-        "Sustituye al Pixel"
+        "Porque cambia el presupuesto mínimo requerido del ad set",
+        "Porque mueve estimated action rates y ad quality, dos piezas del total value",
+        "Porque define qué buying type queda disponible para la campaña completa",
+        "Porque sustituye la señal del Pixel en el dataset"
       ],
       "correct": 1,
-      "explanation": "Un creativo relevante y de calidad sube esos componentes del total value y puede ganar subastas más barato.",
-      "difficulty": "hard"
+      "explanation": "Un creativo mejor sube la probabilidad de acción y la calidad del anuncio: 2 de los 3 componentes del total value. Por eso es palanca de costo.",
+      "difficulty": "medium"
     },
     {
       "q": "Advantage+ creative sirve para:",
       "options": [
-        "Elegir dónde se muestra el anuncio",
-        "Optimizaciones automáticas del creativo por persona (recortes, música, texto)",
-        "Fijar el CPM",
-        "Crear lookalikes"
+        "Elegir automáticamente las superficies donde aparece el anuncio",
+        "Fijar el CPM del creativo durante toda la campaña",
+        "Optimizar el creativo por persona (recortes, música, mejoras automáticas)",
+        "Crear variaciones de audiencia a partir del creativo ganador"
       ],
-      "correct": 1,
-      "explanation": "Advantage+ creative adapta el creativo por persona. Las Ubicaciones Advantage+ son sobre dónde se entrega.",
+      "correct": 2,
+      "explanation": "Advantage+ creative adapta el MISMO creativo por persona: recortes, música, brillo, texto. Elegir superficies es Advantage+ placements.",
       "difficulty": "medium"
     },
     {
       "q": "Best practice de creativo mobile-first:",
       "options": [
-        "Video horizontal con audio obligatorio",
-        "Vertical (9:16), marca temprano y diseñado para verse sin sonido",
-        "Una sola imagen para toda la campaña",
-        "Texto largo en la imagen"
+        "Video horizontal 16:9 con audio obligatorio y logo al final",
+        "Vertical 9:16, marca temprano y que se entienda sin sonido",
+        "Una sola imagen maestra reutilizada en todas las superficies",
+        "Texto largo sobre la imagen para explicar la oferta completa"
       ],
       "correct": 1,
-      "explanation": "El consumo es vertical y muchas veces sin sonido; marca temprana y formato vertical rinden mejor.",
-      "difficulty": "easy"
+      "explanation": "Mobile-first: formato vertical, la marca en los primeros segundos y mensaje claro sin audio (la mayoría ve en silencio).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Tienes video vertical, imágenes y carousel; meta de menor costo por lead a nivel nacional:",
+      "options": [
+        "Solo el video vertical, que es el formato ganador actual",
+        "Todas las piezas + Ubicaciones Advantage+ + Advantage+ creative",
+        "Solo el carousel en Feed con targeting bien detallado",
+        "Solo imágenes en Stories con presupuesto lifetime"
+      ],
+      "correct": 1,
+      "explanation": "Variedad creativa + todas las superficies + optimización por persona: máximo espacio de optimización = menor costo. Apostar a una sola pieza lo limita.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Cuándo se justifican ubicaciones manuales?",
+      "options": [
+        "Por preferencia estética del dueño sobre cómo se ve el Feed",
+        "Con presupuesto bajo que no alcanza todas las superficies",
+        "Con requisito de marca o creativo no apto para ciertas superficies",
+        "Cuando el CTR histórico de Stories supera al del Feed"
+      ],
+      "correct": 2,
+      "explanation": "Manual requiere razón de negocio real: lineamientos de marca o un creativo que no funciona en cierta superficie. El gusto estético no cuenta.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Un solo creativo corriendo en muchas ubicaciones provoca:",
+      "options": [
+        "Menor costo porque el sistema aprende más rápido",
+        "Fatiga rápida y menos espacio de optimización persona-creativo",
+        "Mejor recall gracias a la repetición del mismo mensaje",
+        "Más alcance porque el creativo se vuelve familiar"
+      ],
+      "correct": 1,
+      "explanation": "El sistema tiene superficies pero poco material: la gente ve siempre lo mismo (fatiga) y no hay variedad para encontrar la mejor combinación.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "El video se ve cortado en Stories y con texto ilegible en Feed. ¿Qué faltó?",
+      "options": [
+        "Adaptar el creativo por grupo de ubicaciones (asset customization)",
+        "Subir el presupuesto para ganar mejores posiciones en la subasta",
+        "Activar Reservation para controlar dónde aparece",
+        "Cambiar el performance goal a maximize reach"
+      ],
+      "correct": 0,
+      "explanation": "Cada superficie tiene formato propio: la personalización de assets por ubicación adapta recortes y textos sin sacrificar alcance.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Relación correcta entre audiencia, ubicaciones y creativo:",
+      "options": [
+        "Primero produces el creativo, y de ahí se derivan audiencia y superficies",
+        "Son independientes: cada una se optimiza por separado",
+        "Meta decide las tres automáticamente sin configuración",
+        "Primero defines a quién le hablas, luego dónde aparece y con qué piezas"
+      ],
+      "correct": 3,
+      "explanation": "El orden del plan: audiencia (Módulo 4) → superficies → piezas creativas. Si la audiencia está mal, ni el mejor creativo la salva.",
+      "difficulty": "medium"
     }
   ]
 }

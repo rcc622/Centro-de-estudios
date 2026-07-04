@@ -3,53 +3,123 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "Ad scheduling (showing ads only at certain times) requires:",
-      "options": ["Daily budget", "Lifetime budget", "Bid Cap", "Reservation"],
+      "q": "Ad scheduling (ads only during certain hours) requires:",
+      "options": [
+        "A daily budget with a spending cap per time slot",
+        "A lifetime budget to be able to schedule hours",
+        "A Bid Cap synchronized with the schedule",
+        "Reservation with delivery locked per hour"
+      ],
       "correct": 1,
-      "explanation": "Dayparting is only possible with a lifetime budget.",
+      "explanation": "Ad scheduling only exists with a lifetime budget: the system needs the period's total to distribute spend across the chosen slots.",
       "difficulty": "medium"
     },
     {
-      "q": "Advantage+ campaign budget (CBO) is used to:",
+      "q": "Advantage+ campaign budget (CBO) is for:",
       "options": [
-        "Set the budget per ad set manually",
-        "Have Meta distribute the budget across ad sets based on opportunity",
-        "Guarantee a fixed CPM",
-        "Activate Reservation"
+        "Setting a manual, independent amount per ad set",
+        "Guaranteeing a fixed CPM throughout the whole campaign",
+        "Letting Meta distribute the budget across ad sets by opportunity",
+        "Scheduling spend by hours without a lifetime budget"
       ],
-      "correct": 1,
-      "explanation": "CBO moves spend to the best-performing ad set; ABO sets the budget per ad set.",
-      "difficulty": "easy"
+      "correct": 2,
+      "explanation": "CBO puts the budget at campaign level and the system moves it toward the ad sets with the best opportunity. Manual amounts per ad set is ABO.",
+      "difficulty": "medium"
     },
     {
-      "q": "Budget estimate in Auction:",
+      "q": "Base budget estimation in Auction:",
       "options": [
-        "Impressions × CPM ÷ 1000",
+        "Expected impressions × historical CPM ÷ 1,000",
         "Target results × expected cost per result",
-        "Reach × frequency",
-        "Fixed budget approved by management"
+        "Committed reach × promised frequency × fixed CPM",
+        "Last year's budget + estimated inflation"
       ],
       "correct": 1,
-      "explanation": "In Auction the cost is variable; it's estimated with desired results and expected cost per result.",
+      "explanation": "In Auction you plan from the result: how many you need × what each one costs. The reach × frequency × CPM formula belongs to Reservation.",
       "difficulty": "medium"
     },
     {
       "q": "Reservation plan: 400,000 people, frequency 2, fixed CPM $5. Approximate budget:",
-      "options": ["$2,000", "$4,000", "$8,000", "$40,000"],
-      "correct": 1,
-      "explanation": "Impressions = 400,000 × 2 = 800,000. Budget = 800,000 × 5 ÷ 1000 = $4,000.",
-      "difficulty": "hard"
+      "options": [
+        "$2,000 — you pay only for unique people, not per impression",
+        "$8,000 — each frequency is bought separately at double",
+        "$4,000 — (400,000 × 2 ÷ 1,000) × $5 CPM",
+        "$40,000 — the CPM applies per 100 impressions"
+      ],
+      "correct": 2,
+      "explanation": "Impressions = 400,000 × 2 = 800,000. Divided by 1,000 = 800 thousands × $5 = $4,000. CPM is always cost per THOUSAND impressions.",
+      "difficulty": "medium"
     },
     {
       "q": "Main risk of a budget that's too low in Auction:",
       "options": [
-        "The ad is rejected",
-        "The ad set doesn't exit the learning phase and performance is unstable",
-        "Reservation is activated",
-        "ROAS goes up"
+        "The ad gets rejected in the ad review process for insufficient spend",
+        "Meta converts the campaign to Reservation automatically",
+        "The bid strategy resets to Highest Volume without notice",
+        "The ad set never exits the learning phase and performance stays unstable"
+      ],
+      "correct": 3,
+      "explanation": "Without ~50 optimization events per week, the ad set keeps learning: volatile costs and unstable results. Review doesn't look at your budget.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A campaign with 6 ad sets, no time to adjust splits by hand and uneven performance across audiences:",
+      "options": [
+        "ABO with equal amounts per ad set for a clean audience comparison",
+        "CBO: the system moves spend toward the ad sets with the best opportunity",
+        "Lifetime budget with Monday-to-Friday ad scheduling",
+        "Reservation to guarantee the split among the six"
       ],
       "correct": 1,
-      "explanation": "Without ~50 optimization events per week the ad set stays in learning; volatile results.",
+      "explanation": "Many ad sets + zero management time + uneven performance = CBO. ABO is for when you NEED guaranteed spend per audience (e.g. tests).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "When is ABO (budget per ad set) better than CBO?",
+      "options": [
+        "When you need guaranteed minimum spend per audience (e.g. controlled tests)",
+        "When you prefer the system to optimize the spend split for you on its own",
+        "When the budget is lifetime and ad scheduling is active",
+        "When the campaign is Reservation with a locked CPM"
+      ],
+      "correct": 0,
+      "explanation": "ABO gives control: each ad set spends what you assign, ideal for tests or market quotas. CBO optimizes better when you don't need that control.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "You need ~400 leads this month and your historical CPL is ~$5 USD. Base budget:",
+      "options": [
+        "$800 USD: half, because optimization makes the rest cheaper",
+        "$4,000 USD: double, to cover the full learning phase",
+        "$2,000 USD: 400 leads × $5 expected cost per lead",
+        "$5,000 USD: a thousand per week plus a safety margin"
+      ],
+      "correct": 2,
+      "explanation": "Target results × expected cost = 400 × $5 = $2,000. It's the base; you adjust with real data later, but you never start by guessing.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Learning phase: what resets it and why does it matter?",
+      "options": [
+        "Only pausing the campaign for more than 24 hours restarts it",
+        "Significant edits (audience, creative, bid) restart learning and destabilize cost",
+        "Renaming the ad set restarts the learning phase",
+        "Nothing resets it: it lasts exactly 7 days regardless of any edits you make"
+      ],
+      "correct": 1,
+      "explanation": "Significant edits send the ad set back to learning: that's why edits are batched and the campaign isn't poked daily.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Daily budget vs lifetime budget:",
+      "options": [
+        "Daily allows ad scheduling; lifetime forces uniform spend",
+        "Daily is only available in Auction campaigns; lifetime is exclusive to campaigns bought via Reservation",
+        "Daily spends ~the amount each day; lifetime spreads a total across the period and allows ad scheduling",
+        "Daily requires CBO enabled; lifetime requires ABO"
+      ],
+      "correct": 2,
+      "explanation": "Daily = approximate daily pace. Lifetime = a period total with flexible distribution, and it's the only one that enables ad scheduling.",
       "difficulty": "medium"
     }
   ]

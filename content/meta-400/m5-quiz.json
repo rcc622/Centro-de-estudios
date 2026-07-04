@@ -5,7 +5,7 @@
     {
       "q": "Ubicaciones Advantage+ (Advantage+ placements):",
       "options": [
-        "Restringe a una sola ubicación (placement)",
+        "Restringe la entrega a una sola ubicación (placement) elegida a mano",
         "Deja a Meta entregar donde mejor rinde, maximizando alcance y eficiencia",
         "Solo funciona con Reservation",
         "Fija el CPM"
@@ -17,7 +17,7 @@
     {
       "q": "Restringir ubicaciones sin razón de negocio normalmente:",
       "options": [
-        "Baja el costo",
+        "Baja el costo porque la entrega se concentra",
         "Sube el costo por resultado y reduce el delivery",
         "No tiene efecto",
         "Mejora el ad review"
@@ -31,7 +31,7 @@
       "options": [
         "Cambia el budget",
         "Afecta estimated action rates y ad quality (parte del total value)",
-        "Define el buying type",
+        "Define qué buying type queda disponible para la campaña entera",
         "Reemplaza la audiencia"
       ],
       "correct": 1,
@@ -41,7 +41,7 @@
     {
       "q": "Advantage+ creative hace:",
       "options": [
-        "Elegir la ubicación",
+        "Elegir automáticamente la ubicación del anuncio",
         "Optimizaciones automáticas del creativo por persona",
         "Fijar el CPM",
         "Crear lookalikes"
@@ -66,7 +66,7 @@
     {
       "q": "Best practice de creativo mobile-first:",
       "options": [
-        "Horizontal con audio obligatorio",
+        "Horizontal 16:9 con audio obligatorio para verse premium",
         "Vertical (9:16), marca temprano, legible sin sonido",
         "Una imagen para toda la campaña",
         "Texto largo encima de la imagen"
@@ -80,7 +80,7 @@
       "options": [
         "Para gastar más",
         "Dan material para encontrar la mejor combinación persona-creativo y reducen fatiga",
-        "Para evitar el ad review",
+        "Para evitar pasar el ad review process por separado en cada superficie nueva",
         "Para activar Reservation"
       ],
       "correct": 1,
@@ -90,7 +90,7 @@
     {
       "q": "Marca de consumo, alcance amplio y eficiente, tiene video vertical, imágenes y Secuencia (carousel):",
       "options": [
-        "Manual solo Feed + 1 video horizontal",
+        "Ubicaciones manuales solo Feed + un único video horizontal reutilizado",
         "Ubicaciones Advantage+ + varios creativos verticales + Advantage+ creative",
         "Solo Stories con 1 imagen",
         "Solo Audience Network"
@@ -105,7 +105,7 @@
         "Las bid strategies",
         "Las superficies donde aparece el anuncio across Meta technologies",
         "Los objectives",
-        "Las fuentes de datos"
+        "Las fuentes de datos que alimentan el dataset en Events Manager"
       ],
       "correct": 1,
       "explanation": "Feeds, Stories, Reels, In-stream, Marketplace, Search, Audience Network, etc.",
@@ -114,7 +114,7 @@
     {
       "q": "Un cliente quiere control total porque su creativo no funciona en cierto formato vertical de terceros. ¿Qué haces?",
       "options": [
-        "Ubicaciones Advantage+ igual, sin tocar nada",
+        "Ubicaciones Advantage+ de todos modos, sin excluir ninguna superficie del universo",
         "Ubicaciones manuales (manual placements) excluyendo esa superficie por razón de creativo",
         "Cambiar el objective",
         "Subir el budget"

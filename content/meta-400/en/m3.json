@@ -47,7 +47,7 @@
           "q": "Who wins the auction in Auction?",
           "options": ["The highest bid", "The highest total value", "The largest budget", "Whoever uses Bid Cap"],
           "correct": 1,
-          "explanation": "The highest total value wins (bid + estimated action rates + ad quality), not the highest bid."
+          "explanation": "The highest total value wins (bid × estimated action rates + ad quality), not the highest bid."
         },
         {
           "type": "fill",

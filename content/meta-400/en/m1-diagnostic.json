@@ -5,57 +5,122 @@
     {
       "q": "What is the media planner's first step when designing a campaign?",
       "options": [
-        "Choose the bid strategy",
-        "Understand the client's business goal",
-        "Upload the creative",
-        "Define the placement"
+        "Choosing the bid strategy based on the approved budget",
+        "Understanding the real business goal the client wants to achieve",
+        "Defining the placements where the creative will look best",
+        "Configuring the conversion event inside Events Manager"
       ],
       "correct": 1,
-      "explanation": "The plan starts with the business goal; from it you derive the objective, the conversion location and the performance goal.",
-      "difficulty": "easy"
+      "explanation": "Everything starts from the business goal: without knowing what the business wants, the bid, placements and events are configured blindly.",
+      "difficulty": "medium"
     },
     {
-      "q": "At which hierarchy level is the campaign objective chosen?",
-      "options": ["Account", "Campaign", "Ad set", "Ad"],
-      "correct": 1,
-      "explanation": "The objective is chosen at the campaign level. Conversion location, event and performance goal go at the ad set level.",
-      "difficulty": "easy"
-    },
-    {
-      "q": "Sales website with the Purchase event requires which data source:",
+      "q": "At which level of the hierarchy is the campaign objective chosen?",
       "options": [
-        "Only Pixel",
-        "Pixel + Conversions API (CAPI)",
-        "Only customer list",
-        "Facebook SDK"
+        "At the account level, once for all campaigns",
+        "At the ad set level, next to the performance goal",
+        "At the campaign level, and it stays fixed for that campaign",
+        "At the ad level, because it depends on the final creative"
+      ],
+      "correct": 2,
+      "explanation": "The objective is chosen when creating the campaign and can't be changed later. Location, event and performance goal live at the ad set level; the ad is creative only.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Sales website with the Purchase event requires as data source:",
+      "options": [
+        "Only the Pixel, which records everything from the browser",
+        "Pixel + Conversions API (CAPI) sending events together",
+        "A customer list updated every week as the signal",
+        "The Facebook SDK connected to the business website"
       ],
       "correct": 1,
-      "explanation": "Pixel + CAPI together recover lost signal and improve match quality. The SDK is for apps.",
+      "explanation": "The standard is Pixel + CAPI together: CAPI recovers the signal the browser loses to blockers and iOS. The SDK is for apps, not web.",
       "difficulty": "medium"
     },
     {
       "q": "Conversion event vs performance goal:",
       "options": [
-        "They're synonyms",
-        "Event = which action counts; performance goal = how it's optimized/bid",
-        "Event goes in the campaign; performance goal in the ad",
-        "Performance goal only applies to Awareness"
+        "They are two names for the same ad set configuration",
+        "The event is configured at the campaign level and the goal at the ad level",
+        "The event only applies to Sales; the goal only to Awareness",
+        "The event defines which action counts; the goal defines how delivery optimizes"
+      ],
+      "correct": 3,
+      "explanation": "Event = WHICH action counts as success (e.g. Purchase). Performance goal = HOW Meta optimizes delivery (e.g. maximize value). Both live in the ad set.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A B2B company wants demos booked without taking the prospect out of the feed. Best combination?",
+      "options": [
+        "Sales + Website with a Schedule event on the external page",
+        "Leads + Instant form inside Meta",
+        "Awareness + estimated ad recall lift as the metric",
+        "Traffic + link clicks to the website calendar"
       ],
       "correct": 1,
-      "explanation": "The conversion event defines the action (Purchase, Lead); the performance goal defines the optimization rule (number, value, clicks, recall).",
+      "explanation": "'Without leaving the feed' points to Instant form: the form is filled inside Meta with minimal friction. Website or link clicks push the prospect out.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A finance app wants installs and its measurement runs on AppsFlyer. Correct combination?",
+      "options": [
+        "App Promotion measured with the website Pixel",
+        "Sales website with the Purchase event and value tracking",
+        "App Promotion with the Facebook SDK or the MMP as the source",
+        "Leads with an Instant form and a customer list"
+      ],
+      "correct": 2,
+      "explanation": "In-app events are measured with the Facebook SDK or an authorized MMP (AppsFlyer, Adjust). The Pixel is web-only and never measures installs.",
       "difficulty": "hard"
     },
     {
-      "q": "A B2B company wants scheduled demos without taking the prospect out of the feed. Best combination?",
+      "q": "An ecommerce with tickets from $200 to $9,000 MXN has a revenue goal, not an order goal. Performance goal?",
       "options": [
-        "Sales + external Website",
-        "Leads + Instant form",
-        "Awareness + recall lift",
-        "Traffic + link clicks"
+        "Maximize number of conversions to gather more orders",
+        "Maximize link clicks to fill the funnel with visits",
+        "Maximize reach so more people see the store",
+        "Maximize value of conversions with value tracking active"
       ],
-      "correct": 1,
-      "explanation": "Leads with an Instant form minimizes friction: the form is completed within Meta. An external landing page adds a conversion drop.",
+      "correct": 3,
+      "explanation": "Highly variable tickets + revenue goal = optimize for VALUE, not volume. Requires value tracking on the Pixel to report amounts.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "You propose Sales website, but in Events Manager the Purchase event isn't arriving. What do you do first?",
+      "options": [
+        "Fix the signal (Pixel/CAPI reporting Purchase) before launching",
+        "Launch anyway: the campaign gathers signal while it runs",
+        "Switch the objective to Awareness in the meantime",
+        "Optimize to link clicks and migrate to Purchase later"
+      ],
+      "correct": 0,
+      "explanation": "Signal first, then objective: without Purchase arriving at the dataset, the campaign has nothing to optimize toward. Launching without signal burns budget.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Where are conversion location, conversion event and performance goal configured?",
+      "options": [
+        "At the campaign level, next to the campaign objective",
+        "At the ad level, because they depend on the final creative",
+        "At the ad set level, all three together",
+        "In Events Manager, inside the Pixel dataset"
+      ],
+      "correct": 2,
+      "explanation": "The three knobs live in the ad set. In Events Manager you only verify the signal arrives; the campaign level holds the objective.",
       "difficulty": "medium"
+    },
+    {
+      "q": "A brand-new business with no signal installed wants leads NOW. What does the planner propose?",
+      "options": [
+        "Sales website right away, while the team installs the Pixel",
+        "Waiting a few weeks for CAPI to mature and launching Sales website later",
+        "Leads + Instant form: the data stays inside Meta without requiring a Pixel",
+        "App Promotion to avoid depending on the website"
+      ],
+      "correct": 2,
+      "explanation": "Instant form doesn't require a Pixel: data is captured inside Meta. It's the way to start leads while the web signal gets installed.",
+      "difficulty": "hard"
     }
   ]
 }

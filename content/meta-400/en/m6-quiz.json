@@ -5,7 +5,7 @@
     {
       "q": "An Awareness campaign is evaluated by:",
       "options": [
-        "CPC and purchases",
+        "Low CPC and the week's assisted purchases",
         "Reach, frequency and estimated ad recall lift",
         "ROAS",
         "Cost per lead"
@@ -17,7 +17,7 @@
     {
       "q": "Incrementality means:",
       "options": [
-        "Which touchpoint gets the credit",
+        "Which touchpoint of the journey gets the credit",
         "Conversions that would NOT have happened without the ads",
         "The lowest CPM",
         "The creative with the highest CTR"
@@ -54,7 +54,7 @@
     },
     {
       "q": "The CMO wants to see how ALL channels (TV, search, social, offline) contribute to annual sales:",
-      "options": ["Meta attribution", "Brand Lift", "Marketing Mix Modeling (MMM)", "A/B Test"],
+      "options": ["Meta attribution setting", "Brand Lift", "Marketing Mix Modeling (MMM)", "A/B Test"],
       "correct": 2,
       "explanation": "MMM models the aggregate impact of all channels at a macro level.",
       "difficulty": "hard"
@@ -62,7 +62,7 @@
     {
       "q": "Changing the attribution setting:",
       "options": [
-        "Changes the real sales",
+        "Changes the real sales the business records in its system",
         "Changes which conversions are credited to Meta, not the real sales",
         "Disables the Pixel",
         "Activates Reservation"
@@ -76,7 +76,7 @@
       "options": [
         "They're the same",
         "Attribution = credit per touchpoint; incrementality = causal effect of the ads",
-        "Incrementality assigns credit per click",
+        "Incrementality assigns the per-click credit to each touchpoint of the journey",
         "Attribution uses a holdout"
       ],
       "correct": 1,
@@ -100,7 +100,7 @@
     {
       "q": "Measurement plan for a client who demands proof of causal value:",
       "options": [
-        "Only Ads Manager attribution",
+        "Only the Ads Manager attribution report as the sole evidence",
         "Conversion Lift as the core + attribution for daily optimization",
         "Only Brand Lift",
         "Compare weeks without a control"

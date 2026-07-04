@@ -3,64 +3,124 @@
   "passingScore": 80,
   "questions": [
     {
-      "q": "When uploading a customer list to create a custom audience:",
+      "q": "When uploading a customer list to create a Custom Audience:",
       "options": [
-        "Meta receives the emails in plain text",
-        "The list is uploaded hashed and matching happens without exposing data in the clear",
-        "Using first-party lists isn't allowed",
-        "It only works with reservation"
+        "Meta receives the emails in plain text in order to do the matching",
+        "The list travels hashed and matching never exposes data in the clear",
+        "First-party lists have been banned since iOS 14",
+        "It's only allowed with Reservation and signed consent"
       ],
       "correct": 1,
-      "explanation": "Lists are hashed before being uploaded; Meta does matching with hashes, not with data in the clear.",
-      "difficulty": "easy"
+      "explanation": "Data is hashed BEFORE upload and matching happens on hashes: Meta never sees data in the clear. A legal basis for that use must also exist.",
+      "difficulty": "medium"
     },
     {
       "q": "The inventory filter controls:",
       "options": [
-        "The daily budget",
-        "The suitability level of the content the ad appears next to",
-        "The bid strategy",
-        "The conversion event"
+        "The maximum daily budget per delivery surface",
+        "Which bid strategy is available for the category",
+        "The suitability of the content your ad appears next to",
+        "Which conversion events the dataset can receive"
       ],
-      "correct": 1,
-      "explanation": "The inventory filter (expanded/moderate/limited) adjusts how strict the adjacent content is.",
+      "correct": 2,
+      "explanation": "The inventory filter governs adjacency: how strict you are about the content your ad shows up next to (expanded, moderate, limited).",
       "difficulty": "medium"
     },
     {
       "q": "Trade-off of stricter brand safety controls:",
       "options": [
-        "More reach and lower cost",
-        "More brand safety but lower reach and possibly higher cost",
-        "They don't affect delivery",
-        "They only apply to reservation"
+        "More reach and lower cost thanks to better-quality adjacency",
+        "More brand protection but less reach and possibly higher cost",
+        "No effect on delivery, only on the report",
+        "They only apply to campaigns bought via Reservation"
       ],
       "correct": 1,
-      "explanation": "More safety reduces the available inventory: lower reach and sometimes higher cost.",
+      "explanation": "Restricting inventory reduces available auctions: more safety, less reach, possibly higher cost. The planner balances it per client.",
       "difficulty": "medium"
     },
     {
       "q": "An ad says: 'We know you have back problems; this is for you'. It's rejected because:",
       "options": [
-        "The health category is prohibited",
-        "It implies/asserts a personal attribute of the viewer",
-        "It has no Meta Pixel",
-        "It used Advantage+ placements"
+        "The health category is entirely banned on Meta",
+        "The Pixel isn't configured for that landing page",
+        "It uses Advantage+ placements in a sensitive category",
+        "It implies or asserts a personal attribute of the viewer"
+      ],
+      "correct": 3,
+      "explanation": "Advertising Standards prohibit implying personal attributes (health, religion, finances...). Rephrase to a general product message.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "What does the ad review process check?",
+      "options": [
+        "Only the final ad's image and video",
+        "Text, image, video, targeting and the destination landing page",
+        "Only the campaign budget and the chosen bid strategy",
+        "Only the campaign's objective and buying type"
       ],
       "correct": 1,
-      "explanation": "The Advertising Standards prohibit implying a personal attribute of the user; the problem is the wording.",
+      "explanation": "Review evaluates the whole package against the Standards: creative, text, targeting and where you send people (the landing page).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A client demands the strictest inventory filter + huge block lists. What do you warn?",
+      "options": [
+        "Reach drops and cost may rise; protection must be balanced against efficiency",
+        "There's no effect on delivery as long as the creative is good quality",
+        "Meta forbids combining the strict filter with block lists",
+        "Block lists only work inside Audience Network"
+      ],
+      "correct": 0,
+      "explanation": "Every restriction layer cuts available inventory. The right conversation is how much protection the brand needs vs how much cost it accepts.",
       "difficulty": "hard"
     },
     {
-      "q": "What does the ad review process review?",
+      "q": "Which of these copies DOES comply with the Advertising Standards?",
       "options": [
-        "Only the image",
-        "Text, image, video, targeting and the destination landing page",
-        "Only the budget",
-        "Only the objective"
+        "\"We know you pay too much for electricity: this is for you\"",
+        "\"Lower your electricity bill with solar energy\"",
+        "\"For diabetics who can't stand their treatment anymore\"",
+        "\"Are you depressed? This supplement lifts you up\""
       ],
       "correct": 1,
-      "explanation": "The ad review evaluates all the ad's components and its destination against the Advertising Standards.",
-      "difficulty": "easy"
+      "explanation": "The general product message complies; the other three imply personal attributes of the viewer (finances, health, mental state).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Legal basis for using a customer list in advertising:",
+      "options": [
+        "The customer's consent/legal basis for that use of their data",
+        "It's enough that the email is corporate, not personal",
+        "It's only required if the list exceeds 10,000 records",
+        "Not applicable: hashing replaces the need for consent"
+      ],
+      "correct": 0,
+      "explanation": "Hashing protects the transport, it doesn't legalize the use: you need the data subject's legal basis/consent. They're two different layers.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A special ad category (housing, employment, credit) implies:",
+      "options": [
+        "Targeting restrictions to prevent discrimination",
+        "Only a change in the auction's average CPM",
+        "Mandatory buying through Reservation at a fixed CPM",
+        "Uploading the customer list unhashed for auditing"
+      ],
+      "correct": 0,
+      "explanation": "Special categories limit targeting options (age, gender, zones) to prevent discrimination in housing, employment and credit.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Your ad was rejected and you believe it was a mistake. What do you do?",
+      "options": [
+        "Request a review (appeal) from Account Quality",
+        "Duplicate the campaign until it passes the filter",
+        "Switch to another ad account and relaunch it",
+        "Edit only the ad set's name and republish"
+      ],
+      "correct": 0,
+      "explanation": "The correct path is the appeal in Account Quality. Duplicating or gaming the review risks the entire account.",
+      "difficulty": "medium"
     }
   ]
 }

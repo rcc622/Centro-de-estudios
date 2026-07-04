@@ -5,56 +5,121 @@
     {
       "q": "¿Cómo se mide una campaña de Awareness?",
       "options": [
-        "CPC y conversiones",
+        "CPC bajo y conversiones asistidas en la ventana de 7 días",
         "Reach, frequency y estimated ad recall lift",
-        "ROAS",
-        "Cost per lead"
+        "ROAS comparado contra el benchmark de la industria",
+        "Cost per lead comparado contra el histórico"
       ],
       "correct": 1,
-      "explanation": "Awareness no optimiza clics ni ventas; su métrica es recall y reach eficiente.",
-      "difficulty": "easy"
+      "explanation": "Awareness no optimiza clics ni ventas: se evalúa con alcance, frecuencia y recall estimado. Juzgarla por CPC es un error de medición.",
+      "difficulty": "medium"
     },
     {
-      "q": "La incrementalidad responde a:",
+      "q": "La incrementalidad responde a la pregunta:",
       "options": [
-        "Qué touchpoint recibe el crédito",
-        "Cuántas conversiones NO habrían ocurrido sin la pauta",
-        "Cuál es el CPM",
-        "Qué creativo tiene más CTR"
+        "¿Qué touchpoint del recorrido recibe el crédito de la venta?",
+        "¿Cuál CPM es competitivo para la categoría del negocio?",
+        "¿Cuántas conversiones NO habrían ocurrido sin la pauta?",
+        "¿Qué creativo genera más CTR en cada superficie?"
       ],
-      "correct": 1,
-      "explanation": "Incrementalidad = efecto causal; se mide con un grupo holdout (control).",
+      "correct": 2,
+      "explanation": "Incrementalidad = causalidad: cuánto valor generó la pauta que no hubiera existido sin ella. El crédito por touchpoint es atribución.",
       "difficulty": "medium"
     },
     {
       "q": "Para medir cambios en recall e intención de compra de una campaña de marca:",
-      "options": ["Aumento de conversiones (Conversion Lift)", "Mejora de la marca (brand lift)", "Prueba A/B (A/B test)", "ROAS Goal"],
+      "options": [
+        "Aumento de conversiones (Conversion Lift) con grupo holdout",
+        "Mejora de la marca (Brand Lift) con encuestas expuestos vs control",
+        "Prueba A/B de creativos con métricas de costo por resultado",
+        "MMM con datos agregados de todos los canales del negocio"
+      ],
       "correct": 1,
-      "explanation": "La Mejora de la marca mide métricas de marca (recall, awareness, intención) vía encuesta entre expuestos y control.",
+      "explanation": "Brand Lift encuesta a expuestos y no expuestos para medir recall, awareness e intención. Conversion Lift mide ventas incrementales, no percepción.",
       "difficulty": "medium"
     },
     {
       "q": "Marketing Mix Modeling (MMM) se usa para:",
       "options": [
-        "Optimización táctica diaria de un ad set",
-        "Ver el impacto agregado de todos los canales (on/offline) a nivel macro",
-        "Aprobar anuncios",
-        "Crear custom audiences"
+        "La optimización táctica diaria de campañas y ad sets",
+        "Aprobar anuncios de categorías sensibles antes del ad review process",
+        "Construir custom audiences con datos de TV y radio",
+        "Ver el impacto agregado de todos los canales on/offline a nivel macro"
       ],
-      "correct": 1,
-      "explanation": "MMM modela la contribución macro de todos los canales; la atribución (attribution) solo ve touchpoints digitales.",
-      "difficulty": "hard"
+      "correct": 3,
+      "explanation": "MMM es la capa macro: modela cómo contribuye cada canal (Meta, TV, search, offline) al negocio a nivel agregado/anual.",
+      "difficulty": "medium"
     },
     {
       "q": "Cambiar la ventana de atribución (attribution setting):",
       "options": [
-        "Cambia las ventas reales del negocio",
-        "Cambia qué conversiones se le cuentan a Meta, sin cambiar las ventas reales",
-        "Desactiva el Pixel",
-        "Activa Reservation"
+        "Cambia las ventas reales que registra el negocio",
+        "Cambia qué conversiones se le atribuyen a Meta, sin cambiar las ventas reales",
+        "Desactiva la señal del Pixel hasta la siguiente sincronización del dataset",
+        "Convierte los resultados al modelo de último clic"
       ],
       "correct": 1,
-      "explanation": "La ventana define el crédito reportado; las ventas reales no cambian. Hay que comunicarlo al cliente.",
+      "explanation": "La ventana define qué conversiones se cuentan en el reporte. Mueve el número reportado, nunca las ventas que de verdad ocurrieron.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Dirección duda: '¿esas ventas no habrían pasado igual sin pauta?' ¿Qué propones?",
+      "options": [
+        "Reporte de atribución 7-day click para demostrarlo",
+        "Brand Lift para medir la intención de compra actual",
+        "Conversion Lift con grupo holdout: mide causalidad real",
+        "Subir frequency y comparar las semanas siguientes"
+      ],
+      "correct": 2,
+      "explanation": "La pregunta es causal y la atribución no prueba causalidad. Conversion Lift compara expuestos vs holdout: ventas incrementales de verdad.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Rol correcto de la atribución en un plan de medición maduro:",
+      "options": [
+        "Es la prueba única y suficiente de que la pauta causó las ventas reportadas",
+        "Guía la optimización táctica diaria; la causalidad la prueban los experimentos",
+        "Sustituye al MMM cuando existen canales offline",
+        "Solo es confiable si la ventana es 28-day click"
+      ],
+      "correct": 1,
+      "explanation": "Cada herramienta tiene su rol: atribución para decidir día a día, experimentos (lift) para causalidad, MMM para la visión macro.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Vanity metrics vs métricas de negocio:",
+      "options": [
+        "Likes e impresiones lucen bien pero no prueban avance del business goal",
+        "Los likes y compartidos predicen las ventas mejor que el ROAS reportado",
+        "Las impresiones son la métrica clave del objetivo Ventas",
+        "El CTR es el veredicto final de cualquier campaña"
+      ],
+      "correct": 0,
+      "explanation": "Las vanity metrics (likes, impresiones sueltas) impresionan pero no responden al business goal. Se reportan como contexto, no como veredicto.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Una triangulación de medición completa combina:",
+      "options": [
+        "Experimentos (lift) + atribución + MMM leídos en conjunto",
+        "Tres ventanas de atribución comparadas entre sí",
+        "Tres plataformas de pauta corriendo el mismo creativo",
+        "Brand Lift corrido tres veces durante el trimestre"
+      ],
+      "correct": 0,
+      "explanation": "Triangular = juntar las tres capas: experimentos para causalidad, atribución para lo táctico y MMM para lo macro. Una sola lente engaña.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Campaña de Awareness reporta CPC alto y dirección quiere 'arreglarlo'. ¿Qué haces?",
+      "options": [
+        "Cambiar a Traffic para que el CPC baje de inmediato",
+        "Subir el bid para ganar mejores posiciones de subasta y así bajar el CPC",
+        "Explicar que el CPC no es métrica de Awareness; se evalúa recall y reach",
+        "Pausar la campaña hasta producir un mejor creativo"
+      ],
+      "correct": 2,
+      "explanation": "Awareness no optimiza clics: el CPC es irrelevante para ese objetivo. Cambiar a Traffic abandonaría el business goal del rebrand.",
       "difficulty": "medium"
     }
   ]

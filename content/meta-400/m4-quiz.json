@@ -31,7 +31,7 @@
     {
       "q": "Máxima precisión para parecidos a tus mejores clientes:",
       "options": [
-        "Lookalike 10% sobre todos los visitantes",
+        "Lookalike 10% sobre todos los visitantes del sitio",
         "Lookalike 1% sobre seed de compradores de alto valor",
         "Detailed targeting con 10 intereses",
         "Engagement de video"
@@ -43,7 +43,7 @@
     {
       "q": "Recuperar a quienes agregaron al carrito y no compraron en 7 días:",
       "options": [
-        "Customer list de compradores",
+        "Customer list de compradores del último año completo",
         "Website custom audience por AddToCart, excluyendo Purchase",
         "Lookalike 1%",
         "Engagement de página"
@@ -70,7 +70,7 @@
         "Advantage+ Audience",
         "Audiencia original con targeting definido",
         "Lookalike 10%",
-        "Detailed targeting expansion"
+        "Detailed targeting expansion activado"
       ],
       "correct": 1,
       "explanation": "Restricción legal dura = control estricto (audiencia original).",
@@ -80,8 +80,8 @@
       "q": "¿Para qué sirve excluir custom audiences en prospección?",
       "options": [
         "Para subir el CPM",
-        "Para no pagar dos veces por clientes/convertidos ya existentes",
-        "Para rechazar el anuncio",
+        "No pagar por alcanzar a clientes ya convertidos",
+        "Para acelerar la aprobación en el ad review",
         "Para activar Reservation"
       ],
       "correct": 1,
@@ -91,7 +91,7 @@
     {
       "q": "¿Qué hace mejor a un lookalike?",
       "options": [
-        "Una seed grande de visitantes cualquiera",
+        "Una seed muy grande de visitantes cualquiera",
         "Una seed de calidad (ej. compradores de alto valor)",
         "Un tamaño 10%",
         "Más intereses"
@@ -106,7 +106,7 @@
         "Solo remarketing a compradores",
         "Advantage+/lookalike de alto valor para prospección, excluyendo clientes; remarketing aparte",
         "Un ad set con 12 intereses",
-        "Reservation con frequency cap"
+        "Comprar todo por Reservation con frequency cap para controlar alcance y repetición"
       ],
       "correct": 1,
       "explanation": "Prospección con exclusión de clientes + remarketing separado escala sin canibalizar.",

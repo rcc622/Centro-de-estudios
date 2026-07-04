@@ -5,61 +5,121 @@
     {
       "q": "What is Advantage+ Audience?",
       "options": [
-        "A hashed customer list",
-        "The recommended approach where you provide signals as a suggestion and Meta finds who converts",
-        "An automatic placement",
-        "A bid strategy"
+        "The hashed customer list you upload for matching",
+        "The approach where your signals are suggestions and the system finds who converts",
+        "The automatic delivery of the ad across every available surface in Meta",
+        "The bid strategy that maximizes conversion value within budget"
       ],
       "correct": 1,
-      "explanation": "Advantage+ Audience uses your audiences as a suggestion, not a hard limit; it looks for conversions beyond them.",
-      "difficulty": "easy"
+      "explanation": "Advantage+ Audience takes your signals as a starting point and widens the search toward whoever is most likely to convert. The hashed list is a custom audience; surfaces are placements.",
+      "difficulty": "medium"
     },
     {
       "q": "A custom audience is built with:",
       "options": [
-        "Generic interests and behaviors",
-        "People with a prior relationship to the business (website, app, list, engagement)",
-        "Only lookalikes",
-        "Third-party placements"
+        "Generic interests and behaviors from detailed targeting",
+        "The largest-percentage lookalikes available per country",
+        "People with a previous relationship to the business (web, app, list, engagement)",
+        "The audiences automatically suggested by the Advantage+ Audience system"
       ],
-      "correct": 1,
-      "explanation": "Custom audience = your people: visitors, app users, customer list, or those who engaged.",
-      "difficulty": "easy"
+      "correct": 2,
+      "explanation": "Custom audience = people who ALREADY interacted with you: visited your site, used your app, are on your list or engaged with your content.",
+      "difficulty": "medium"
     },
     {
       "q": "Lookalike 1% vs 10%:",
       "options": [
-        "1% more reach; 10% more precise",
-        "1% more similar/precise and less reach; 10% more reach and less similar",
-        "They are the same",
-        "Only the country changes"
+        "The 1% gives more reach with less similarity; the 10% gives higher matching precision with fewer people",
+        "The 1% is most similar to the seed with less reach; the 10% expands reach losing similarity",
+        "They are the same size; only the source country changes",
+        "The 1% requires an active Pixel and the 10% requires a customer list"
       ],
       "correct": 1,
-      "explanation": "1% is the closest match to the seed (precise, low reach); 10% expands but dilutes the similarity.",
+      "explanation": "The percentage is how far you stray from the seed: 1% = the most similar (fewer people), 10% = more reach with lower similarity.",
       "difficulty": "medium"
     },
     {
-      "q": "Typical symptom of over-targeting (audience too small):",
+      "q": "Typical symptom of over-targeting (an audience that's too small):",
       "options": [
-        "Low CPM and high delivery",
-        "Almost no delivery and high CPM",
-        "More conversions",
-        "Better recall"
+        "Low CPM with high delivery but expensive conversions",
+        "More conversions with less spend during the learning phase",
+        "High recall but low clicks across all surfaces",
+        "Nearly zero delivery with high CPM and stalled learning"
       ],
-      "correct": 1,
-      "explanation": "A tiny audience = the system can't optimize; cost goes up and delivery drops.",
+      "correct": 3,
+      "explanation": "A tiny audience = few available auctions: the system has no one to deliver to, CPM spikes and the learning phase never ends.",
       "difficulty": "medium"
     },
     {
-      "q": "A client in a regulated sector that may NOT show ads outside an audience defined by law:",
+      "q": "A regulated-sector client that by law can NOT show ads outside a defined audience:",
       "options": [
-        "Advantage+ Audience",
-        "Original audience with defined targeting",
-        "Lookalike 10%",
-        "Detailed targeting expansion enabled"
+        "Advantage+ Audience with strong signals as suggestions",
+        "Original audience with defined targeting and no expansion",
+        "Lookalike 10% seeded from the current customer list",
+        "Detailed targeting expansion enabled with block lists"
       ],
       "correct": 1,
-      "explanation": "A hard legal restriction = strict control: original audience. Advantage+ treats signals as a suggestion and can expand.",
+      "explanation": "Legal restriction = strict control: original audience without expansion. Advantage+ and expansions can step outside the allowed audience.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An ecommerce wants to win back people who added to cart without buying in the last 7 days:",
+      "options": [
+        "A lookalike 1% of the last year's buyers",
+        "A website custom audience (AddToCart 7 days) excluding buyers",
+        "Advantage+ Audience with no signals, keeping the search as broad as possible",
+        "Detailed targeting on the 'online shopping' interest"
+      ],
+      "correct": 1,
+      "explanation": "Pure remarketing: website source with the 7-day AddToCart event, excluding Purchase so you don't spend on people who already bought.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The ideal seed for a high-value lookalike:",
+      "options": [
+        "All site visitors from the last 180 days",
+        "A saved audience with broad interests from the industry",
+        "A quality custom audience (e.g. buyers or top customers)",
+        "The audience from a previous Awareness campaign"
+      ],
+      "correct": 2,
+      "explanation": "The lookalike's quality depends on the seed: start from your BEST customers, not general traffic. Garbage in, garbage out.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The four custom audience sources are:",
+      "options": [
+        "Website, App activity, Customer list and Engagement",
+        "Pixel, CAPI, dataset and connected catalog",
+        "Feed, Stories, Reels and Audience Network",
+        "Awareness, Traffic, Leads and Sales"
+      ],
+      "correct": 0,
+      "explanation": "The 4 sources: website activity, app activity, customer list and engagement with your content on Meta. The rest are signals, surfaces and objectives.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "When is an original audience better than Advantage+ Audience?",
+      "options": [
+        "Whenever there's a large budget available to scale",
+        "When the Pixel signal is strong, mature and with events arriving steadily",
+        "When you're seeking the lowest possible cost per result",
+        "With regulatory restrictions or a need for strict audience control"
+      ],
+      "correct": 3,
+      "explanation": "The recommended default is Advantage+; the original audience is reserved for strict control: regulation, brand safety or controlled tests.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A base of 40,000 customers to start new prospecting. First move?",
+      "options": [
+        "Upload it hashed and use it directly as the target audience for the new prospecting",
+        "Upload it hashed as a custom audience and build a lookalike, excluding current customers",
+        "Turn it into detailed targeting using those customers' common interests",
+        "Use it only as an exclusion list to avoid spending on current customers"
+      ],
+      "correct": 1,
+      "explanation": "The list is CURRENT customers (not prospecting): it works as a lookalike seed and as an exclusion. Using it directly would talk to people who already bought.",
       "difficulty": "hard"
     }
   ]

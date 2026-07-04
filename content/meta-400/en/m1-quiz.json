@@ -56,7 +56,7 @@
     {
       "q": "A new brand with no recognition that wants to sell long-term. Best start:",
       "options": [
-        "Sales directly from day 1",
+        "Sales directly from day 1 to recover the investment fast",
         "Awareness to build the base and then move down to conversion",
         "App Promotion",
         "Remarketing only"
@@ -68,7 +68,7 @@
     {
       "q": "Leads with an Instant form is preferred over Traffic to an external landing page because:",
       "options": [
-        "It's more expensive but prettier",
+        "It's more expensive but gives the user a more polished experience",
         "It minimizes friction by capturing the contact within Meta",
         "It needs no creative",
         "It guarantees purchases"
@@ -80,7 +80,7 @@
     {
       "q": "Why are Pixel + CAPI recommended together and not just the Pixel?",
       "options": [
-        "CAPI replaces the Pixel",
+        "CAPI replaces the Pixel and avoids installing browser code",
         "CAPI recovers signal the browser loses and improves match quality",
         "It's a legal requirement",
         "It automatically lowers the CPM"
@@ -92,7 +92,7 @@
     {
       "q": "Select the correct statement.",
       "options": [
-        "The objective is chosen at the ad set level",
+        "The campaign objective is chosen at the ad set level, not at campaign level",
         "Conversion event = which action counts; performance goal = how it's optimized",
         "Performance goal is chosen at the ad level",
         "Awareness requires a Pixel"

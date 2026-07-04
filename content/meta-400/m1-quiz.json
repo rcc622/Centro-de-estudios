@@ -7,7 +7,7 @@
       "options": [
         "Reconocimiento, Tráfico, Interacción, Clientes potenciales, Promoción de la app, Ventas",
         "Reach, Tráfico, Conversions, Catalog, Clientes potenciales, Ventas",
-        "Brand, Consideration, Conversion, Retention, Loyalty, Advocacy",
+        "Brand, Consideration, Conversion, Retention, Loyalty y Advocacy del funnel clásico",
         "Reconocimiento, Clicks, Interacción, Forms, Installs, Revenue"
       ],
       "correct": 0,
@@ -16,7 +16,7 @@
     },
     {
       "q": "¿Dónde se configuran conversion location, conversion event y objetivo de rendimiento (performance goal)?",
-      "options": ["Campaña", "Conjunto de anuncios (ad set)", "Ad", "Account"],
+      "options": ["A nivel campaña, junto al objetivo", "Conjunto de anuncios (ad set)", "A nivel anuncio (ad)", "A nivel cuenta (account)"],
       "correct": 1,
       "explanation": "A nivel conjunto de anuncios. El objetivo de la campaña (campaign objective) va a nivel campaña; los creativos a nivel ad.",
       "difficulty": "easy"
@@ -56,7 +56,7 @@
     {
       "q": "Marca nueva sin reconocimiento que quiere vender a largo plazo. Mejor arranque:",
       "options": [
-        "Ventas directo desde el día 1",
+        "Ventas directo desde el día 1 para recuperar la inversión rápido",
         "Reconocimiento para construir base y luego bajar a conversión",
         "Promoción de la app",
         "Solo remarketing"
@@ -68,7 +68,7 @@
     {
       "q": "Clientes potenciales con Instant form se prefiere sobre Tráfico a landing externa porque:",
       "options": [
-        "Es más caro pero más bonito",
+        "Es más caro pero da una experiencia más pulida al usuario",
         "Minimiza fricción al capturar el contacto dentro de Meta",
         "No necesita creativo",
         "Garantiza compras"
@@ -80,7 +80,7 @@
     {
       "q": "¿Por qué se recomienda Pixel + CAPI juntos y no solo Pixel?",
       "options": [
-        "CAPI reemplaza al Pixel",
+        "CAPI reemplaza al Pixel y evita instalar código en el navegador",
         "CAPI recupera señal que el navegador pierde y mejora el match quality",
         "Es un requisito legal",
         "Baja el CPM automáticamente"
@@ -92,7 +92,7 @@
     {
       "q": "Selecciona la afirmación correcta.",
       "options": [
-        "El objetivo de la campaña se elige a nivel conjunto de anuncios",
+        "El objetivo de la campaña se elige a nivel conjunto de anuncios, no en campaña",
         "Conversion event = qué acción cuenta; objetivo de rendimiento = cómo se optimiza",
         "Objetivo de rendimiento se elige a nivel ad",
         "Reconocimiento requiere Pixel"

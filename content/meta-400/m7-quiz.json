@@ -5,7 +5,7 @@
     {
       "q": "Customer list para Público personalizado (Custom Audience):",
       "options": [
-        "Se sube en texto plano",
+        "Se sube en texto plano para que el matching sea exacto",
         "Se sube hasheada; el matching ocurre sin exponer datos en claro",
         "No está permitida",
         "Solo con Reservation"
@@ -17,7 +17,7 @@
     {
       "q": "El filtro de inventario (inventory filter) controla:",
       "options": [
-        "El budget",
+        "El presupuesto máximo diario que puede gastarse en cada superficie",
         "El nivel de idoneidad del contenido adyacente (expanded/moderate/limited)",
         "La bid strategy",
         "El conversion event"
@@ -29,7 +29,7 @@
     {
       "q": "Block list vs allow list:",
       "options": [
-        "Block = permitir solo aprobados; allow = bloquear",
+        "Block = permitir solo los aprobados; allow = bloquear concretos",
         "Block = excluir publishers concretos; allow = permitir solo aprobados",
         "Son lo mismo",
         "Solo aplican a Reservation"
@@ -41,7 +41,7 @@
     {
       "q": "Trade-off de brand safety más estricto:",
       "options": [
-        "Más alcance y menor costo",
+        "Más alcance y menor costo por mejor adyacencia",
         "Más seguridad pero menor alcance y posible mayor costo",
         "Sin efecto en la entrega",
         "Mejora el ROAS siempre"
@@ -53,7 +53,7 @@
     {
       "q": "Un anuncio dice 'Sabemos que tienes diabetes; esto es para ti'. Se rechaza porque:",
       "options": [
-        "La categoría salud está prohibida",
+        "La categoría de salud está totalmente prohibida",
         "Implica/afirma un atributo personal del espectador",
         "No tiene Pixel",
         "Usó Advantage+ creative"
@@ -100,7 +100,7 @@
       "options": [
         "Sí, siempre",
         "No; señal de servidor con consentimiento (CAPI) mejora medición y cumplimiento",
-        "Sí, salvo en Reservation",
+        "Sí, salvo en las campañas compradas por Reservation con CPM fijo pactado",
         "Solo en Awareness"
       ],
       "correct": 1,
@@ -112,7 +112,7 @@
       "options": [
         "Subir el budget",
         "Filtro de inventario más estricto + block lists según necesidad",
-        "Cambiar el objective a Awareness",
+        "Cambiar el objective a Awareness para evitar el riesgo",
         "Activar Advantage+ creative"
       ],
       "correct": 1,

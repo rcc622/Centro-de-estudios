@@ -5,57 +5,122 @@
     {
       "q": "¿Cuál es el primer paso del media planner al diseñar una campaña?",
       "options": [
-        "Elegir la estrategia de puja (bid strategy)",
-        "Entender el business goal del cliente",
-        "Subir el creativo",
-        "Definir la ubicación (placement)"
+        "Elegir la estrategia de puja según el presupuesto aprobado",
+        "Entender el business goal real que el cliente quiere lograr",
+        "Definir las ubicaciones donde el creativo se verá mejor",
+        "Configurar el evento de conversión en Events Manager"
       ],
       "correct": 1,
-      "explanation": "El plan empieza por el business goal; de ahí se deriva el objetivo de la campaña (campaign objective), la conversion location y el objetivo de rendimiento (performance goal).",
-      "difficulty": "easy"
+      "explanation": "Todo parte del business goal: sin saber qué quiere lograr el negocio, la puja, las ubicaciones y los eventos se configuran a ciegas.",
+      "difficulty": "medium"
     },
     {
-      "q": "¿En qué nivel de la jerarquía se elige el objetivo de la campaña?",
-      "options": ["Account", "Campaña", "Conjunto de anuncios (ad set)", "Ad"],
-      "correct": 1,
-      "explanation": "El objetivo de la campaña se elige a nivel campaña. Conversion location, event y objetivo de rendimiento van a nivel conjunto de anuncios.",
-      "difficulty": "easy"
+      "q": "¿En qué nivel de la jerarquía se elige el objetivo de la campaña (campaign objective)?",
+      "options": [
+        "A nivel cuenta, una sola vez para todas las campañas",
+        "A nivel conjunto de anuncios, junto al performance goal",
+        "A nivel campaña, y queda fijo para toda esa campaña",
+        "A nivel anuncio, porque depende del creativo final"
+      ],
+      "correct": 2,
+      "explanation": "El objetivo se elige al crear la campaña y no se puede cambiar después. Location, event y performance goal van a nivel ad set; el ad es solo creativo.",
+      "difficulty": "medium"
     },
     {
       "q": "Ventas (sales) website con evento Purchase requiere como data source:",
       "options": [
-        "Solo Pixel",
-        "Pixel + Conversions API (CAPI)",
-        "Solo customer list",
-        "Facebook SDK"
+        "Solo el Pixel, que registra todo desde el navegador",
+        "Pixel + Conversions API (CAPI) enviando eventos juntos",
+        "Una customer list actualizada cada semana como señal",
+        "El Facebook SDK conectado al sitio web del negocio"
       ],
       "correct": 1,
-      "explanation": "Pixel + CAPI juntos recuperan señal perdida y mejoran match quality. El SDK es para apps.",
+      "explanation": "El estándar es Pixel + CAPI juntos: la CAPI recupera la señal que el navegador pierde por bloqueadores e iOS. El SDK es para apps, no para web.",
       "difficulty": "medium"
     },
     {
-      "q": "Conversion event vs objetivo de rendimiento:",
+      "q": "Conversion event vs objetivo de rendimiento (performance goal):",
       "options": [
-        "Son sinónimos",
-        "Event = qué acción cuenta; objetivo de rendimiento = cómo se optimiza/licita",
-        "Event va en campaña; objetivo de rendimiento en ad",
-        "Objetivo de rendimiento solo aplica a Reconocimiento (awareness)"
+        "Son dos nombres para la misma configuración del ad set",
+        "El event se configura en campaña y el goal en el anuncio",
+        "El event solo aplica a Ventas; el goal solo a Reconocimiento",
+        "El event define qué acción cuenta; el goal define cómo se optimiza"
       ],
-      "correct": 1,
-      "explanation": "El conversion event define la acción (Purchase, Lead); el objetivo de rendimiento define la regla de optimización (cantidad, valor, clics, recall).",
-      "difficulty": "hard"
+      "correct": 3,
+      "explanation": "Event = QUÉ acción cuenta como éxito (ej. Purchase). Performance goal = CÓMO optimiza Meta la entrega (ej. maximizar valor). Ambos viven en el ad set.",
+      "difficulty": "medium"
     },
     {
       "q": "Una empresa B2B quiere demos agendadas sin sacar al prospecto del feed. ¿Mejor combinación?",
       "options": [
-        "Ventas + Website externo",
-        "Clientes potenciales (leads) + Instant form",
-        "Reconocimiento + recall lift",
-        "Tráfico (traffic) + link clicks"
+        "Ventas + Website con evento Schedule en la página externa",
+        "Clientes potenciales (leads) + Instant form dentro de Meta",
+        "Reconocimiento + estimated ad recall lift como métrica",
+        "Tráfico + link clicks hacia el calendario del sitio web"
       ],
       "correct": 1,
-      "explanation": "Clientes potenciales con Instant form minimiza fricción: el formulario se completa dentro de Meta. Una landing externa agrega caída de conversión.",
+      "explanation": "'Sin salir del feed' apunta a Instant form: el formulario se llena dentro de Meta con mínima fricción. Website o link clicks sacan al prospecto.",
       "difficulty": "medium"
+    },
+    {
+      "q": "Una app de finanzas quiere instalaciones y su medición corre con AppsFlyer. ¿Combinación correcta?",
+      "options": [
+        "Promoción de la app medida con el Pixel del sitio web",
+        "Ventas website con evento Purchase y value tracking",
+        "Promoción de la app con Facebook SDK o el MMP como fuente",
+        "Clientes potenciales con Instant form y customer list"
+      ],
+      "correct": 2,
+      "explanation": "Los eventos in-app se miden con el SDK de Facebook o un MMP autorizado (AppsFlyer, Adjust). El Pixel es de web y nunca mide instalaciones.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Ecommerce con tickets de $200 a $9,000 MXN tiene meta de ingreso, no de pedidos. ¿Performance goal?",
+      "options": [
+        "Maximize number of conversions para juntar más pedidos",
+        "Maximize link clicks para llenar el funnel de visitas",
+        "Maximize reach para que más personas vean la tienda",
+        "Maximize value of conversions con value tracking activo"
+      ],
+      "correct": 3,
+      "explanation": "Tickets muy variables + meta de ingreso = optimizar por VALOR, no por número. Requiere value tracking en el Pixel para reportar montos.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Propones Ventas website, pero en Events Manager el evento Purchase no está llegando. ¿Qué haces primero?",
+      "options": [
+        "Arreglar la señal (Pixel/CAPI reportando Purchase) antes de lanzar",
+        "Lanzar igual: la campaña va juntando la señal mientras corre",
+        "Cambiar el objetivo a Reconocimiento mientras tanto",
+        "Optimizar a link clicks y migrar a Purchase después"
+      ],
+      "correct": 0,
+      "explanation": "Primero la señal, luego el objetivo: sin Purchase llegando al dataset, la campaña no tiene hacia qué optimizar. Lanzar sin señal quema presupuesto.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Dónde se configuran conversion location, conversion event y performance goal?",
+      "options": [
+        "A nivel campaña, junto con el objetivo de la campaña",
+        "A nivel anuncio, porque dependen del creativo final",
+        "A nivel conjunto de anuncios (ad set), los tres juntos",
+        "En Events Manager, dentro del dataset del Pixel"
+      ],
+      "correct": 2,
+      "explanation": "Los tres 'knobs' viven en el ad set. En Events Manager solo revisas que la señal llegue; la configuración de campaña es el objetivo.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Negocio nuevo sin señal instalada quiere leads YA. ¿Qué propone el planner?",
+      "options": [
+        "Ventas website de una vez, mientras el equipo instala el Pixel",
+        "Esperar unas semanas a que la CAPI madure y lanzar Ventas website después",
+        "Clientes potenciales + Instant form: los datos quedan en Meta sin requerir Pixel",
+        "Promoción de la app para no depender del sitio web"
+      ],
+      "correct": 2,
+      "explanation": "Instant form no requiere Pixel: los datos se capturan dentro de Meta. Es la vía para arrancar leads mientras se instala la señal web.",
+      "difficulty": "hard"
     }
   ]
 }

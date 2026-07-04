@@ -17,8 +17,8 @@
     {
       "q": "The auction's total value is:",
       "options": [
-        "Advertiser bid + estimated action rates + ad quality",
-        "Bid + budget + frequency",
+        "Advertiser bid × estimated action rates + ad quality",
+        "Advertiser bid + available budget + frequency",
         "CPM + CTR + CPA",
         "Bid + bid strategy + placements"
       ],
@@ -56,7 +56,7 @@
     {
       "q": "Risk of a poorly calibrated Bid Cap (too low):",
       "options": [
-        "Overspends",
+        "Overspends the daily budget on the most expensive auctions",
         "The ad barely enters auctions and the campaign doesn't spend",
         "Raises recall",
         "Activates Reservation"
@@ -82,7 +82,7 @@
       "options": [
         "Whoever bids more always wins",
         "A relevant, high-quality ad can beat one with a higher bid",
-        "The bid is the only thing that matters",
+        "The bid is the only thing that matters to decide the auction winner",
         "There's no auction, it's a fixed price"
       ],
       "correct": 1,

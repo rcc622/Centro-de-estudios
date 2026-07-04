@@ -5,62 +5,122 @@
     {
       "q": "Al subir una customer list para crear un Público personalizado (Custom Audience):",
       "options": [
-        "Meta recibe los emails en texto plano",
-        "La lista se sube hasheada y el matching ocurre sin exponer datos en claro",
-        "No se permite usar listas propias",
-        "Solo funciona con Reservation"
+        "Meta recibe los correos en texto plano para hacer el matching",
+        "La lista viaja hasheada y el matching no expone datos en claro",
+        "Las listas propias están prohibidas desde iOS 14",
+        "Solo se permite con Reservation y consentimiento firmado"
       ],
       "correct": 1,
-      "explanation": "Las listas se hashean antes de subirse; Meta hace matching con hashes, no con datos en claro.",
-      "difficulty": "easy"
+      "explanation": "Los datos se hashean ANTES de subir y el matching ocurre sobre hashes: Meta nunca ve los datos en claro. Además debe existir base legal para ese uso.",
+      "difficulty": "medium"
     },
     {
       "q": "El filtro de inventario (inventory filter) controla:",
       "options": [
-        "El presupuesto diario",
-        "El nivel de idoneidad del contenido junto al que aparece el anuncio",
-        "La bid strategy",
-        "El conversion event"
+        "El presupuesto máximo diario por superficie de entrega",
+        "La estrategia de puja disponible según la categoría",
+        "La idoneidad del contenido junto al que aparece tu anuncio",
+        "Los conversion events que el dataset puede recibir"
       ],
-      "correct": 1,
-      "explanation": "El filtro de inventario (expanded/moderate/limited) ajusta qué tan estricto es el contenido adyacente.",
+      "correct": 2,
+      "explanation": "El inventory filter regula la adyacencia: qué tan estricto eres con el contenido junto al que sale tu anuncio (expanded, moderate, limited).",
       "difficulty": "medium"
     },
     {
       "q": "Trade-off de controles de brand safety más estrictos:",
       "options": [
-        "Más alcance y menor costo",
-        "Más seguridad de marca pero menor alcance y posible mayor costo",
-        "No afectan la entrega",
-        "Solo aplican a Reservation"
+        "Más alcance y menor costo gracias a una adyacencia de mejor calidad",
+        "Más protección de marca pero menor alcance y posible mayor costo",
+        "Ningún efecto en la entrega, solo cambia el reporte",
+        "Solo aplican a campañas compradas por Reservation"
       ],
       "correct": 1,
-      "explanation": "Mayor seguridad reduce el inventario disponible: menos alcance y a veces mayor costo.",
+      "explanation": "Restringir inventario reduce las subastas disponibles: más seguridad, menos alcance, posible costo mayor. El planner balancea según el cliente.",
       "difficulty": "medium"
     },
     {
-      "q": "Un anuncio dice: 'Sabemos que tienes problemas de espalda; esto es para ti'. Se rechaza porque:",
+      "q": "Anuncio: 'Sabemos que tienes problemas de espalda; esto es para ti'. Se rechaza porque:",
       "options": [
-        "La categoría salud está prohibida",
-        "Implica/afirma un atributo personal del espectador",
-        "No tiene Pixel",
-        "Usó Advantage+ placements"
+        "La categoría de salud está totalmente prohibida en Meta",
+        "Falta el Pixel configurado para esa landing page",
+        "Usa Advantage+ placements en una categoría sensible",
+        "Implica o afirma un atributo personal del espectador"
       ],
-      "correct": 1,
-      "explanation": "Las Normas de publicidad (Advertising Standards) prohíben implicar un atributo personal del usuario; el problema es la redacción.",
-      "difficulty": "hard"
+      "correct": 3,
+      "explanation": "Las Normas de publicidad prohíben implicar atributos personales (salud, religión, finanzas...). Se reformula a mensaje general del producto.",
+      "difficulty": "medium"
     },
     {
       "q": "¿Qué revisa el ad review process?",
       "options": [
-        "Solo la imagen",
-        "Texto, imagen, video, targeting y la landing page de destino",
-        "Solo el presupuesto",
-        "Solo el objective"
+        "Solo la imagen y el video del anuncio final",
+        "Texto, imagen, video, targeting y la landing de destino",
+        "Solo el presupuesto y la estrategia de puja elegida",
+        "Solo el objetivo y el buying type de la campaña"
       ],
       "correct": 1,
-      "explanation": "El ad review evalúa todos los componentes del anuncio y su destino contra las Normas de publicidad.",
-      "difficulty": "easy"
+      "explanation": "El review evalúa el paquete completo contra las Normas: creativo, texto, segmentación y a dónde llevas a la gente (landing).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Cliente exige el filtro de inventario más estricto + block lists enormes. ¿Qué adviertes?",
+      "options": [
+        "El alcance cae y el costo puede subir; hay que balancear protección vs eficiencia",
+        "No hay efecto alguno en la entrega mientras el creativo sea de buena calidad",
+        "Meta prohíbe combinar filtro estricto con block lists",
+        "Las block lists solo funcionan dentro de Audience Network"
+      ],
+      "correct": 0,
+      "explanation": "Cada capa de restricción recorta inventario disponible. La conversación correcta es cuánta protección necesita la marca vs cuánto costo acepta.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "¿Cuál de estos copies SÍ cumple las Normas de publicidad?",
+      "options": [
+        "\"Sabemos que pagas demasiada luz: esto es para ti\"",
+        "\"Reduce tu recibo de luz con energía solar\"",
+        "\"Para diabéticos que ya no aguantan su tratamiento\"",
+        "\"¿Estás deprimido? Este suplemento te levanta\""
+      ],
+      "correct": 1,
+      "explanation": "El mensaje general del producto cumple; los otros tres implican atributos personales del espectador (finanzas, salud, estado mental).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Base legal para usar una customer list en publicidad:",
+      "options": [
+        "Consentimiento/base legal del cliente para ese uso de sus datos",
+        "Basta con que el correo sea corporativo y no personal",
+        "Solo se requiere si la lista supera 10,000 registros",
+        "No aplica: el hashing sustituye al consentimiento"
+      ],
+      "correct": 0,
+      "explanation": "El hashing protege el transporte, no legaliza el uso: necesitas base legal/consentimiento del titular. Son dos capas distintas.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Una categoría de anuncio especial (vivienda, empleo, crédito) implica:",
+      "options": [
+        "Restricciones de targeting para evitar discriminación",
+        "Solo un cambio en el CPM promedio de la subasta",
+        "Compra obligatoria por Reservation con CPM fijo",
+        "Subir la customer list sin hashear para auditoría"
+      ],
+      "correct": 0,
+      "explanation": "Las categorías especiales limitan opciones de segmentación (edad, género, zonas) para prevenir discriminación en vivienda, empleo y crédito.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Rechazaron un anuncio y crees que fue un error. ¿Qué haces?",
+      "options": [
+        "Solicitar revisión (appeal) desde Account Quality",
+        "Duplicar la campaña hasta que pase el filtro",
+        "Cambiar de cuenta publicitaria y relanzarlo",
+        "Editar solo el nombre del ad set y republicar"
+      ],
+      "correct": 0,
+      "explanation": "El camino correcto es el appeal en Account Quality. Duplicar o brincarse el review con trucos arriesga la cuenta completa.",
+      "difficulty": "medium"
     }
   ]
 }

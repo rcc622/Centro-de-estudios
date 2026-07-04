@@ -5,57 +5,122 @@
     {
       "q": "The Reservation buying type is available only for:",
       "options": [
-        "Sales and Leads",
-        "Awareness and Engagement",
-        "Traffic and Awareness",
-        "All objectives"
+        "The Sales and Leads objectives with value tracking",
+        "The Awareness and Engagement objectives",
+        "The Traffic and App Promotion objectives on Facebook",
+        "All objectives, as long as the budget is lifetime"
       ],
       "correct": 1,
-      "explanation": "Reservation = predictable delivery and price, limited to Awareness and Engagement. Everything else runs on Auction.",
-      "difficulty": "easy"
+      "explanation": "Reservation only supports Awareness and Engagement. Sales, Leads, Traffic and App Promotion always run through Auction, no exceptions.",
+      "difficulty": "medium"
     },
     {
-      "q": "The auction's total value is made up of:",
+      "q": "The auction's total value is calculated as:",
       "options": [
-        "Advertiser bid + estimated action rates + ad quality",
-        "Advertiser bid + budget + placements",
-        "Bid strategy + frequency + reach",
-        "CPM + CTR + CPC"
+        "Advertiser bid × available budget + active placements",
+        "Bid strategy × promised frequency + estimated reach",
+        "Advertiser bid × estimated action rates + ad quality",
+        "Average CPM × expected CTR + historical CPC"
       ],
-      "correct": 0,
-      "explanation": "Total value = advertiser bid + estimated action rates + ad quality. The bid strategy/cost control does NOT enter.",
+      "correct": 2,
+      "explanation": "Total value = bid × estimated action rates + ad quality: your bid multiplied by the probability of action, plus ad quality. Cost control does NOT enter.",
       "difficulty": "medium"
     },
     {
       "q": "The 5 bid strategies are:",
       "options": [
-        "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap",
-        "Daily, Lifetime, CBO, ABO, Bid Cap",
-        "Awareness, Traffic, Engagement, Leads, Sales",
-        "CPM, CPC, CPA, ROAS, CTR"
+        "Daily, Lifetime, CBO, ABO and Bid Cap with a manual cap",
+        "Awareness, Traffic, Engagement, Leads and Sales",
+        "Fixed CPM, target CPC, capped CPA, minimum ROAS and target CTR",
+        "Highest Volume, Highest Value, Cost per Result Goal, ROAS Goal, Bid Cap"
       ],
-      "correct": 0,
-      "explanation": "Spend-based (Highest Volume/Value), goal-based (Cost per Result/ROAS Goal) and manual (Bid Cap).",
+      "correct": 3,
+      "explanation": "The 5 are: Highest Volume and Highest Value (spend-based), Cost per Result Goal and ROAS Goal (goal-based) and Bid Cap (manual). The rest are budgets or objectives.",
       "difficulty": "medium"
     },
     {
-      "q": "A client with a strict CPA ceiling that optimizes for number of results:",
-      "options": ["Highest Volume", "Cost per Result Goal", "Highest Value", "Reservation"],
+      "q": "A client with a strict CPA cap who optimizes for volume of results:",
+      "options": [
+        "Highest Volume, because it delivers the maximum results",
+        "Cost per Result Goal, which seeks volume while respecting the target cost",
+        "Highest Value, because it maximizes purchase value with the budget",
+        "ROAS Goal with a return target equivalent to the CPA"
+      ],
       "correct": 1,
-      "explanation": "Cost per Result Goal maintains a target cost per result while seeking volume. Highest Volume doesn't respect a cost ceiling.",
+      "explanation": "Cost ceiling + volume optimization = Cost per Result Goal. Highest Volume respects no caps; Highest Value and ROAS Goal optimize value, not volume.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "When is Reservation better than Auction?",
+      "options": [
+        "When you want the lowest possible cost per result",
+        "When the objective is Sales with a required minimum ROAS",
+        "When you need guaranteed reach and frequency at a fixed CPM",
+        "When the creative hasn't passed the ad review process yet"
+      ],
+      "correct": 2,
+      "explanation": "Reservation buys certainty: reach and frequency locked at a fixed CPM, plannable in advance. Maximum efficiency and Sales live in Auction.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An ecommerce demands a minimum ROAS of 4x optimizing for purchase value. Bid strategy?",
+      "options": [
+        "Highest Value, which maximizes value without guaranteeing a return",
+        "Cost per Result Goal with a CPA equivalent to 25%",
+        "Bid Cap with a cap equal to the store's average ticket",
+        "ROAS Goal with a 4x target (requires value tracking)"
+      ],
+      "correct": 3,
+      "explanation": "There's a required minimum return: ROAS Goal targets that multiple. Highest Value maximizes value but doesn't commit to a specific return.",
       "difficulty": "hard"
     },
     {
-      "q": "When is Reservation preferable to Auction?",
+      "q": "Which of these does NOT enter the auction's total value?",
       "options": [
-        "When you want the lowest possible cost",
-        "When you need guaranteed reach/frequency at a fixed CPM and planning in advance",
-        "When the objective is Sales",
-        "When you use Bid Cap"
+        "The advertiser bid you declare",
+        "The estimated action rates for that person at that moment",
+        "The cost control of the chosen bid strategy",
+        "The ad quality based on user signals"
       ],
-      "correct": 1,
-      "explanation": "Reservation gives predictability: fixed delivery and price. It isn't necessarily cheaper nor does it support Sales.",
+      "correct": 2,
+      "explanation": "Total value has exactly 3 components: bid, estimated action rates and ad quality. The bid strategy controls how you spend, not how the auction is won.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A brand must appear on an exact day with reach committed to leadership, no cost surprises:",
+      "options": [
+        "Reservation: delivery and CPM locked in advance",
+        "Auction + Highest Volume with a high budget that day",
+        "Auction + Bid Cap with an aggressive cap to win auctions",
+        "Auction + Cost per Result Goal with an hourly schedule"
+      ],
+      "correct": 0,
+      "explanation": "Certainty of date, reach and cost = Reservation. In Auction the price floats with demand and nothing guarantees a specific day's delivery.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Raising the bid to the max 'to win every auction' is inefficient because:",
+      "options": [
+        "A high bid lowers the ad's estimated action rates",
+        "The auction discards bids above the category average for the business",
+        "Cost goes up but delivery freezes in the learning phase",
+        "The highest total value wins; improving creative and relevance beats overpaying"
+      ],
+      "correct": 3,
+      "explanation": "The winner has the highest total value (bid × action rates + quality). Improving creative and relevance moves 2 of the 3 components without inflating cost.",
       "difficulty": "medium"
+    },
+    {
+      "q": "Bid Cap differs from Cost per Result Goal in that:",
+      "options": [
+        "Bid Cap limits the bid per auction; Cost per Result Goal targets an average cost per result",
+        "Bid Cap guarantees the final cost per result; Cost per Result Goal only limits the bid per auction",
+        "Bid Cap is exclusive to Reservation; Cost per Result Goal to Auction",
+        "Bid Cap optimizes for value; Cost per Result Goal for volume without caps"
+      ],
+      "correct": 0,
+      "explanation": "Bid Cap is manual control of the max bid per auction (not the final CPA). Cost per Result Goal lets the system seek volume around a target cost.",
+      "difficulty": "hard"
     }
   ]
 }

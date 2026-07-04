@@ -5,61 +5,121 @@
     {
       "q": "¿Qué es Advantage+ Audience?",
       "options": [
-        "Una lista de clientes hasheada",
-        "El enfoque recomendado donde das señales como sugerencia y Meta busca a quien convierte",
-        "Un placement automático",
-        "Una bid strategy"
+        "La lista de clientes hasheada que subes para hacer matching",
+        "El enfoque donde tus señales son sugerencia y el sistema busca a quien convierte",
+        "La entrega automática del anuncio en todas las superficies disponibles",
+        "La estrategia de puja que maximiza el valor de conversión dentro del presupuesto"
       ],
       "correct": 1,
-      "explanation": "Advantage+ Audience usa tus audiencias como sugerencia, no como límite duro; busca conversiones más allá.",
-      "difficulty": "easy"
+      "explanation": "Advantage+ Audience toma tus señales como punto de partida y amplía la búsqueda hacia quien más probablemente convierta. La lista hasheada es custom audience; las superficies son placements.",
+      "difficulty": "medium"
     },
     {
       "q": "Una custom audience se construye con:",
       "options": [
-        "Intereses y comportamientos genéricos",
+        "Intereses y comportamientos genéricos del detailed targeting",
+        "Los lookalikes de mayor porcentaje disponibles por país",
         "Personas con relación previa al negocio (web, app, lista, engagement)",
-        "Solo lookalikes",
-        "Placements de terceros"
+        "Los públicos sugeridos automáticamente por Advantage+ Audience"
       ],
-      "correct": 1,
-      "explanation": "Custom audience = tu gente: visitantes, usuarios de app, customer list o quienes interactuaron.",
-      "difficulty": "easy"
+      "correct": 2,
+      "explanation": "Custom audience = gente que YA interactuó contigo: visitó tu web, usó tu app, está en tu lista o interactuó con tu contenido. Los intereses genéricos son detailed targeting.",
+      "difficulty": "medium"
     },
     {
       "q": "Lookalike 1% vs 10%:",
       "options": [
-        "1% más alcance; 10% más preciso",
-        "1% más parecido/preciso y menos alcance; 10% más alcance y menos parecido",
-        "Son iguales",
-        "Solo cambia el país"
+        "El 1% da más alcance con menos parecido; el 10% da mayor precisión de matching con menos gente",
+        "El 1% es más parecido a la seed con menos alcance; el 10% amplía alcance perdiendo parecido",
+        "Son del mismo tamaño; solo cambia el país de origen",
+        "El 1% requiere Pixel activo y el 10% requiere customer list"
       ],
       "correct": 1,
-      "explanation": "1% es lo más parecido a la seed (preciso, poco alcance); 10% amplía pero diluye el parecido.",
+      "explanation": "El porcentaje es qué tan lejos te alejas de la seed: 1% = los más parecidos (menos gente), 10% = más alcance con menor similitud.",
       "difficulty": "medium"
     },
     {
-      "q": "Síntoma típico de over-targeting (audiencia muy chica):",
+      "q": "Síntoma típico de over-targeting (audiencia demasiado chica):",
       "options": [
-        "CPM bajo y mucho delivery",
-        "Delivery casi nulo y CPM alto",
-        "Más conversiones",
-        "Mejor recall"
+        "CPM bajo con delivery alto pero conversiones caras",
+        "Más conversiones con menos gasto en la learning phase",
+        "Recall alto pero clics bajos en todas las superficies",
+        "Delivery casi nulo con CPM alto y aprendizaje estancado"
       ],
-      "correct": 1,
-      "explanation": "Audiencia minúscula = el sistema no puede optimizar; sube el costo y cae el delivery.",
+      "correct": 3,
+      "explanation": "Audiencia minúscula = pocas subastas disponibles: el sistema no tiene a quién entregarle, el CPM se dispara y la learning phase nunca termina.",
       "difficulty": "medium"
     },
     {
-      "q": "Cliente de sector regulado que NO puede mostrar anuncios fuera de un público definido por ley:",
+      "q": "Cliente de sector regulado que por ley NO puede mostrar anuncios fuera de un público definido:",
       "options": [
-        "Advantage+ Audience",
-        "Audiencia original con targeting definido",
-        "Lookalike 10%",
-        "Detailed targeting expansion activado"
+        "Advantage+ Audience con señales fuertes como sugerencia",
+        "Audiencia original con targeting definido y sin expansión",
+        "Lookalike 10% partiendo de la lista de clientes actual",
+        "Detailed targeting expansion activado con block lists"
       ],
       "correct": 1,
-      "explanation": "Restricción legal dura = control estricto: audiencia original. Advantage+ trata las señales como sugerencia y puede expandir.",
+      "explanation": "Restricción legal = control estricto: audiencia original sin expansión. Advantage+ y las expansiones pueden salirse del público permitido.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Ecommerce quiere recuperar a quienes agregaron al carrito y no compraron en 7 días:",
+      "options": [
+        "Lookalike 1% de los compradores del último año",
+        "Custom audience de website (AddToCart 7 días) excluyendo compradores",
+        "Advantage+ Audience sin señales, para dejar la búsqueda lo más amplia posible",
+        "Detailed targeting por el interés 'compras en línea'"
+      ],
+      "correct": 1,
+      "explanation": "Remarketing puro: fuente website con evento AddToCart de 7 días, excluyendo Purchase para no gastar en quien ya compró.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "La seed ideal para un lookalike de alto valor:",
+      "options": [
+        "Todos los visitantes del sitio en los últimos 180 días",
+        "Un público guardado con intereses amplios del giro",
+        "Una custom audience de calidad (ej. compradores o top clientes)",
+        "La audiencia de una campaña de Reconocimiento previa"
+      ],
+      "correct": 2,
+      "explanation": "La calidad del lookalike depende de la seed: parte de tus MEJORES clientes, no del tráfico general. Basura entra, basura sale.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Las cuatro fuentes de custom audience son:",
+      "options": [
+        "Website, App activity, Customer list y Engagement",
+        "Pixel, CAPI, dataset y catálogo conectado",
+        "Feed, Stories, Reels y Audience Network",
+        "Reconocimiento, Tráfico, Clientes potenciales y Ventas"
+      ],
+      "correct": 0,
+      "explanation": "Las 4 fuentes: actividad web, actividad en app, lista de clientes y engagement con tu contenido en Meta. Lo demás son señales, superficies y objetivos.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuándo conviene audiencia original (original audience) sobre Advantage+ Audience?",
+      "options": [
+        "Siempre que haya presupuesto grande disponible para escalar",
+        "Cuando la señal del Pixel es fuerte, madura y con eventos llegando estables",
+        "Cuando se busca el menor costo por resultado posible",
+        "Con restricciones regulatorias o necesidad de control estricto del público"
+      ],
+      "correct": 3,
+      "explanation": "El default recomendado es Advantage+; la audiencia original se reserva para control estricto: regulación, brand safety o pruebas controladas.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Base de 40,000 clientes para arrancar prospección nueva. ¿Primera jugada?",
+      "options": [
+        "Subirla hasheada y usarla directo como el público objetivo de la prospección",
+        "Subirla hasheada como custom audience y crear un lookalike, excluyendo a los clientes actuales",
+        "Convertirla en detailed targeting usando los intereses comunes de esos clientes",
+        "Usarla únicamente como lista de exclusión para no gastar presupuesto en clientes actuales"
+      ],
+      "correct": 1,
+      "explanation": "La lista son clientes ACTUALES (no prospección): sirve como seed de lookalike y como exclusión. Usarla directa le hablaría a quien ya te compró.",
       "difficulty": "hard"
     }
   ]

@@ -31,7 +31,7 @@
     {
       "q": "Maximum precision for people similar to your best customers:",
       "options": [
-        "Lookalike 10% over all visitors",
+        "Lookalike 10% over all of the site's visitors",
         "Lookalike 1% over a seed of high-value customers",
         "Detailed targeting with 10 interests",
         "Video engagement"
@@ -43,7 +43,7 @@
     {
       "q": "Re-engaging people who added to cart and didn't buy within 7 days:",
       "options": [
-        "Customer list of buyers",
+        "Customer list of the buyers from the last full year",
         "Website custom audience by AddToCart, excluding Purchase",
         "Lookalike 1%",
         "Page engagement"
@@ -70,7 +70,7 @@
         "Advantage+ Audience",
         "Original audience with defined targeting",
         "Lookalike 10%",
-        "Detailed targeting expansion"
+        "Detailed targeting expansion enabled"
       ],
       "correct": 1,
       "explanation": "A hard legal restriction = strict control (original audience).",
@@ -80,8 +80,8 @@
       "q": "What is the purpose of excluding custom audiences in prospecting?",
       "options": [
         "To raise the CPM",
-        "To avoid paying twice for existing customers/converters",
-        "To reject the ad",
+        "To avoid paying to reach already-converted customers",
+        "To speed up approval in the ad review process",
         "To enable Reservation"
       ],
       "correct": 1,
@@ -91,7 +91,7 @@
     {
       "q": "What makes a lookalike better?",
       "options": [
-        "A large seed of random visitors",
+        "A very large seed made of random site visitors",
         "A quality seed (e.g., high-value customers)",
         "A 10% size",
         "More interests"
@@ -106,7 +106,7 @@
         "Only remarketing to buyers",
         "Advantage+/high-value lookalike for prospecting, excluding customers; remarketing separately",
         "One ad set with 12 interests",
-        "Reservation with a frequency cap"
+        "Buying everything via Reservation with a frequency cap to control reach and repetition"
       ],
       "correct": 1,
       "explanation": "Prospecting with a customer exclusion + a separate remarketing effort scales without cannibalizing.",

@@ -5,56 +5,121 @@
     {
       "q": "How is an Awareness campaign measured?",
       "options": [
-        "CPC and conversions",
+        "Low CPC and assisted conversions in the 7-day window",
         "Reach, frequency and estimated ad recall lift",
-        "ROAS",
-        "Cost per lead"
+        "ROAS compared against the industry benchmark",
+        "Cost per lead compared against the historical average"
       ],
       "correct": 1,
-      "explanation": "Awareness doesn't optimize for clicks or sales; its metric is recall and efficient reach.",
-      "difficulty": "easy"
+      "explanation": "Awareness doesn't optimize clicks or sales: it's evaluated with reach, frequency and estimated recall. Judging it by CPC is a measurement error.",
+      "difficulty": "medium"
     },
     {
-      "q": "Incrementality answers:",
+      "q": "Incrementality answers the question:",
       "options": [
-        "Which touchpoint gets the credit",
-        "How many conversions would NOT have happened without the ads",
-        "What the CPM is",
-        "Which creative has the higher CTR"
+        "Which touchpoint of the journey gets credit for the sale?",
+        "Which CPM is competitive for the business category?",
+        "How many conversions would NOT have happened without the ads?",
+        "Which creative drives the highest CTR per surface?"
       ],
-      "correct": 1,
-      "explanation": "Incrementality = causal effect; it's measured with a holdout (control) group.",
+      "correct": 2,
+      "explanation": "Incrementality = causality: how much value the ads generated that wouldn't have existed without them. Credit per touchpoint is attribution.",
       "difficulty": "medium"
     },
     {
       "q": "To measure changes in recall and purchase intent for a brand campaign:",
-      "options": ["Conversion Lift", "Brand Lift", "A/B Test", "ROAS Goal"],
+      "options": [
+        "Conversion Lift with a holdout group",
+        "Brand Lift with surveys of exposed vs control groups",
+        "An A/B test of creatives with cost-per-result metrics",
+        "MMM with aggregated data from all business channels"
+      ],
       "correct": 1,
-      "explanation": "Brand Lift measures brand metrics (recall, awareness, intent) via survey between exposed and control groups.",
+      "explanation": "Brand Lift surveys exposed and non-exposed people to measure recall, awareness and intent. Conversion Lift measures incremental sales, not perception.",
       "difficulty": "medium"
     },
     {
-      "q": "Marketing Mix Modeling (MMM) is used to:",
+      "q": "Marketing Mix Modeling (MMM) is used for:",
       "options": [
-        "Daily tactical optimization of an ad set",
-        "See the aggregate impact of all channels (online/offline) at a macro level",
-        "Approve ads",
-        "Create custom audiences"
+        "The daily tactical optimization of campaigns and ad sets",
+        "Approving ads from sensitive categories before the ad review process",
+        "Building custom audiences with TV and radio data",
+        "Seeing the aggregate impact of every on/offline channel at a macro level"
+      ],
+      "correct": 3,
+      "explanation": "MMM is the macro layer: it models how each channel (Meta, TV, search, offline) contributes to the business at an aggregate/annual level.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Changing the attribution setting:",
+      "options": [
+        "Changes the real sales the business records",
+        "Changes which conversions are credited to Meta, without changing real sales",
+        "Disables the Pixel signal until the next synchronization of the dataset",
+        "Converts the results to a last-click model"
       ],
       "correct": 1,
-      "explanation": "MMM models the macro contribution of all channels; attribution only sees digital touchpoints.",
+      "explanation": "The window defines which conversions count in the report. It moves the reported number, never the sales that actually happened.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Leadership doubts: 'wouldn't those sales have happened anyway without ads?' What do you propose?",
+      "options": [
+        "A 7-day click attribution report to prove it",
+        "Brand Lift to measure current purchase intent",
+        "Conversion Lift with a holdout group: it measures real causality",
+        "Raising the frequency and comparing the following weeks' results"
+      ],
+      "correct": 2,
+      "explanation": "The question is causal and attribution doesn't prove causality. Conversion Lift compares exposed vs holdout: true incremental sales.",
       "difficulty": "hard"
     },
     {
-      "q": "Changing the attribution window (attribution setting):",
+      "q": "The correct role of attribution in a mature measurement plan:",
       "options": [
-        "Changes the business's real sales",
-        "Changes which conversions are credited to Meta, without changing the real sales",
-        "Disables the Pixel",
-        "Activates Reservation"
+        "It's the single, sufficient proof that the ads caused the reported sales",
+        "It guides daily tactical optimization; causality is proven by experiments",
+        "It replaces MMM whenever offline channels exist",
+        "It's only reliable if the window is 28-day click"
       ],
       "correct": 1,
-      "explanation": "The window defines the reported credit; the real sales don't change. You have to communicate this to the client.",
+      "explanation": "Each tool has its role: attribution for day-to-day decisions, experiments (lift) for causality, MMM for the macro view.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Vanity metrics vs business metrics:",
+      "options": [
+        "Likes and impressions look good but don't prove business-goal progress",
+        "Likes and shares predict future sales better than the reported ROAS",
+        "Impressions are the key metric for the Sales objective",
+        "CTR is the final verdict for any campaign"
+      ],
+      "correct": 0,
+      "explanation": "Vanity metrics (likes, loose impressions) impress but don't answer the business goal. Report them as context, not as the verdict.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A complete measurement triangulation combines:",
+      "options": [
+        "Experiments (lift) + attribution + MMM read together",
+        "Three attribution windows compared against each other",
+        "Three ad platforms running the same creative",
+        "Brand Lift run three times during the quarter"
+      ],
+      "correct": 0,
+      "explanation": "Triangulating = joining the three layers: experiments for causality, attribution for tactics and MMM for the macro view. A single lens misleads.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An Awareness campaign reports high CPC and leadership wants it 'fixed'. What do you do?",
+      "options": [
+        "Switch to Traffic so the CPC drops immediately",
+        "Raise the bid to win better auction positions and bring the CPC down",
+        "Explain that CPC isn't an Awareness metric; it's evaluated on recall and reach",
+        "Pause the campaign until a better creative is produced"
+      ],
+      "correct": 2,
+      "explanation": "Awareness doesn't optimize clicks: CPC is irrelevant for that objective. Switching to Traffic would abandon the rebrand's business goal.",
       "difficulty": "medium"
     }
   ]
