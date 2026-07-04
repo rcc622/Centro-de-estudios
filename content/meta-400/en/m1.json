@@ -715,7 +715,7 @@
         {
           "type": "tip",
           "label": "MODULE WRAP-UP",
-          "body": "A good media plan separates funnel phases into different objectives: capture the lead at the top, optimize conversion at the bottom. Don't force a single objective for the whole journey."
+          "body": "A good media plan assigns each funnel phase (the customer journey) its own campaign objective: Leads to capture prospects in the initial phase of the funnel, Sales to close the conversion in the final phase. Don't force a single objective for the whole journey."
         },
         {
           "type": "warn",
@@ -758,15 +758,15 @@
       "cards": [
         {
           "type": "mcq",
-          "q": "How does a good media plan separate the funnel phases?",
+          "q": "How does a good media plan distribute campaign objectives across the funnel?",
           "options": [
             "It uses a single objective for the whole journey",
-            "It separates phases into different objectives: capture the lead at the top, optimize conversion at the bottom",
+            "It assigns a different objective per funnel phase: Leads to capture at the start, Sales to convert at the end",
             "It uses Awareness for all phases",
             "It lets the creative decide the phase"
           ],
           "correct": 1,
-          "explanation": "A good media plan separates funnel phases into different objectives: capture the lead at the top, optimize conversion at the bottom. Don't force a single objective for everything."
+          "explanation": "Each funnel phase (purchase journey) optimizes a different action, so each gets its own campaign objective: Leads at the start to capture, Sales at the end to close. A single objective for everything optimizes the wrong metric in some phase."
         },
         {
           "type": "fill",
@@ -847,12 +847,12 @@
           "q": "The client wants a single objective for the whole journey. What do you explain?",
           "options": [
             "He's right, one objective is enough for the whole funnel",
-            "It's better to separate phases into different objectives: capture the lead at the top, optimize conversion at the bottom",
+            "It's better to use a different objective per funnel phase: Leads to capture at the start, Sales to convert at the end",
             "We should use only Awareness",
             "The objective is decided by the creative, it doesn't matter"
           ],
           "correct": 1,
-          "explanation": "A good media plan separates funnel phases into different objectives: capture the lead at the top (Leads) and optimize conversion at the bottom (Sales). Forcing a single objective optimizes the wrong metric in some phase."
+          "explanation": "Each funnel phase optimizes a different action: Leads captures prospects in the initial phase and Sales closes the conversion in the final phase. Forcing a single objective optimizes the wrong metric in some phase."
         }
       ]
     },
@@ -862,7 +862,7 @@
       "section": "b4",
       "type": "flashcards",
       "cards": [
-        { "q": "How does a good media plan separate the phases?", "a": "Into different objectives: capture the lead at the top (Leads), optimize conversion at the bottom (Sales)." },
+        { "q": "In a media plan, how are campaign objectives distributed across the funnel phases?", "a": "Each funnel phase gets its own campaign objective: Leads to capture in the initial phase, Sales to convert in the final phase." },
         { "q": "Phase to capture contact (without signing yet)", "a": "Leads + Instant form: minimal friction, feeds the sales team." },
         { "q": "Phase to optimize the signing (value conversion)", "a": "Sales, with the conversion location where the closing happens and the event that represents the signing." },
         { "q": "Why not force a single objective for the whole funnel?", "a": "Because you end up optimizing the wrong metric in some phase." }
@@ -1129,15 +1129,15 @@
         },
         {
           "type": "mcq",
-          "q": "How does a good media plan separate the funnel phases?",
+          "q": "How does a good media plan distribute campaign objectives across the funnel?",
           "options": [
             "A single objective for everything",
-            "Different objectives per phase: capture at the top, convert at the bottom",
+            "A different objective per funnel phase: capture leads at the start, convert at the end",
             "Only Awareness",
             "The creative decides it"
           ],
           "correct": 1,
-          "explanation": "Each phase optimizes a different action; different objectives are used."
+          "explanation": "Each funnel phase optimizes a different action; that's why each gets its own campaign objective."
         }
       ]
     },
@@ -1225,7 +1225,7 @@
         { "q": "Planning order", "a": "Business goal → funnel stage → campaign objective → conversion location → conversion event → performance goal." },
         { "q": "A new brand with no recognition, where does it start?", "a": "Awareness to build recall, then scale up to consideration and conversion." },
         { "q": "Lowest-friction conversion location for leads", "a": "Instant form: the form is filled out within Meta without leaving the feed." },
-        { "q": "How does a good media plan separate the phases?", "a": "Into different objectives: capture the lead at the top (Leads), optimize conversion at the bottom (Sales)." },
+        { "q": "In a media plan, how are campaign objectives distributed across the funnel phases?", "a": "Each funnel phase gets its own campaign objective: Leads to capture in the initial phase, Sales to convert in the final phase." },
         { "q": "Phase to capture contact (without signing yet)", "a": "Leads + Instant form: minimal friction, feeds the sales team." },
         { "q": "Phase to optimize the signing (value conversion)", "a": "Sales, with the conversion location where the closing happens and the event that represents the signing." },
         { "q": "Why not force a single objective for the whole funnel?", "a": "Because you end up optimizing the wrong metric in some phase." }

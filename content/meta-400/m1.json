@@ -715,7 +715,7 @@
         {
           "type": "tip",
           "label": "CIERRE DEL MÓDULO",
-          "body": "Un buen media plan separa fases del funnel en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo. No fuerces un solo objetivo de la campaña para todo el recorrido."
+          "body": "Un buen media plan asigna a cada fase del funnel (el recorrido del cliente) su propio objetivo de la campaña: Clientes potenciales para captar leads en la fase inicial del funnel, Ventas para cerrar la conversión en la fase final. No fuerces un solo objetivo de la campaña para todo el recorrido."
         },
         {
           "type": "warn",
@@ -758,15 +758,15 @@
       "cards": [
         {
           "type": "mcq",
-          "q": "¿Cómo separa las fases del funnel un buen media plan?",
+          "q": "¿Cómo reparte los objetivos de la campaña un buen media plan a lo largo del funnel?",
           "options": [
             "Usa un solo objetivo de la campaña (campaign objective) para todo el recorrido",
-            "Separa fases en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo",
+            "Asigna un objetivo distinto por fase del funnel: Clientes potenciales para captar leads al inicio, Ventas para convertir al final",
             "Usa Reconocimiento (awareness) para todas las fases",
             "Deja que el creative decida la fase"
           ],
           "correct": 1,
-          "explanation": "Un buen media plan separa fases del funnel en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo. No fuerces un solo objetivo de la campaña para todo."
+          "explanation": "Cada fase del funnel (recorrido de compra) optimiza una acción distinta, así que cada una lleva su propio objetivo de la campaña: Clientes potenciales al inicio para captar leads, Ventas al final para cerrar. Un solo objetivo para todo optimiza la métrica equivocada en alguna fase."
         },
         {
           "type": "fill",
@@ -847,12 +847,12 @@
           "q": "El cliente quiere un solo objetivo de la campaña para todo el recorrido. ¿Qué le explicas?",
           "options": [
             "Tiene razón, un objetivo de la campaña basta para todo el funnel",
-            "Conviene separar fases en objetivos de la campaña distintos: captar lead arriba, optimizar conversión abajo",
+            "Conviene un objetivo distinto por fase del funnel: Clientes potenciales para captar leads al inicio, Ventas para convertir al final",
             "Hay que usar solo Reconocimiento",
             "El objetivo de la campaña lo decide el creative, no importa"
           ],
           "correct": 1,
-          "explanation": "Un buen media plan separa fases del funnel en objetivos de la campaña distintos: captar lead arriba (Clientes potenciales) y optimizar conversión abajo (Ventas). Forzar un solo objetivo de la campaña optimiza la métrica equivocada en alguna fase."
+          "explanation": "Cada fase del funnel optimiza una acción distinta: Clientes potenciales capta leads en la fase inicial y Ventas cierra la conversión en la fase final. Forzar un solo objetivo de la campaña optimiza la métrica equivocada en alguna fase."
         }
       ]
     },
@@ -862,7 +862,7 @@
       "section": "b4",
       "type": "flashcards",
       "cards": [
-        { "q": "¿Cómo separa las fases un buen media plan?", "a": "En objetivos de la campaña (campaign objectives) distintos: captar lead arriba (Clientes potenciales / leads), optimizar conversión abajo (Ventas / sales)." },
+        { "q": "En un media plan, ¿cómo se reparten los objetivos de la campaña entre las fases del funnel?", "a": "Cada fase del funnel lleva su propio objetivo de la campaña (campaign objective): Clientes potenciales (leads) para captar en la fase inicial, Ventas (sales) para convertir en la fase final." },
         { "q": "Fase de captar contacto (sin firmar aún)", "a": "Clientes potenciales + Instant form: mínima fricción, alimenta al equipo de ventas." },
         { "q": "Fase de optimizar la firma (conversión de valor)", "a": "Ventas, con el conversion location donde sucede el cierre y el evento que representa la firma." },
         { "q": "¿Por qué no forzar un solo objetivo de la campaña para todo el funnel?", "a": "Porque terminas optimizando la métrica equivocada en alguna fase." }
@@ -1129,15 +1129,15 @@
         },
         {
           "type": "mcq",
-          "q": "¿Cómo separa las fases del funnel un buen media plan?",
+          "q": "¿Cómo reparte los objetivos de la campaña un buen media plan a lo largo del funnel?",
           "options": [
             "Un solo objetivo de la campaña para todo",
-            "Objetivos de la campaña distintos por fase: captar arriba, convertir abajo",
+            "Un objetivo de la campaña distinto por fase del funnel: captar leads al inicio, convertir al final",
             "Solo Reconocimiento",
             "Lo decide el creative"
           ],
           "correct": 1,
-          "explanation": "Cada fase optimiza una acción distinta; se usan objetivos de la campaña distintos."
+          "explanation": "Cada fase del funnel optimiza una acción distinta; por eso cada una lleva su propio objetivo de la campaña."
         }
       ]
     },
@@ -1225,7 +1225,7 @@
         { "q": "Orden de planeación", "a": "Business goal → etapa del funnel → objetivo de la campaña → conversion location → conversion event → objetivo de rendimiento." },
         { "q": "Marca nueva sin reconocimiento, ¿por dónde empieza?", "a": "Reconocimiento para construir recall, luego escala a consideración y conversión." },
         { "q": "Conversion location de menor fricción para leads", "a": "Instant form: el formulario se llena dentro de Meta sin salir del feed." },
-        { "q": "¿Cómo separa las fases un buen media plan?", "a": "En objetivos de la campaña distintos: captar lead arriba (Clientes potenciales), optimizar conversión abajo (Ventas)." },
+        { "q": "En un media plan, ¿cómo se reparten los objetivos de la campaña entre las fases del funnel?", "a": "Cada fase del funnel lleva su propio objetivo de la campaña: Clientes potenciales para captar en la fase inicial, Ventas para convertir en la fase final." },
         { "q": "Fase de captar contacto (sin firmar aún)", "a": "Clientes potenciales + Instant form: mínima fricción, alimenta al equipo de ventas." },
         { "q": "Fase de optimizar la firma (conversión de valor)", "a": "Ventas, con el conversion location donde sucede el cierre y el evento que representa la firma." },
         { "q": "¿Por qué no forzar un solo objetivo de la campaña para todo el funnel?", "a": "Porque terminas optimizando la métrica equivocada en alguna fase." }
