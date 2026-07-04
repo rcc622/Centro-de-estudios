@@ -642,15 +642,15 @@
     },
     {
       "id": "6.integ",
-      "title": "Integrative case · Measurement plan for Kenet Solar",
+      "title": "Integrative case · Measurement plan for Seguros del Norte",
       "section": "bz",
       "type": "scenario",
       "cards": [
         {
           "type": "scenario",
           "label": "INTEGRATIVE CASE",
-          "h": "Kenet Solar wants to defend the investment to leadership",
-          "body": "Kenet Solar runs Awareness campaigns (regional rebrand) and Sales campaigns (quote leads). Leadership demands three things: (1) to know whether the rebrand moved recall, (2) to prove the ads generate sales that wouldn't have happened, and (3) to understand how Meta fits alongside its offline sales force."
+          "h": "Seguros del Norte wants to defend the investment to leadership",
+          "body": "The insurer <strong>Seguros del Norte</strong> runs Awareness campaigns (regional rebrand) and Sales campaigns (policy quote leads). Leadership demands three things: (1) to know whether the rebrand moved recall, (2) to prove the ads generate sales that wouldn't have happened, and (3) to understand how Meta fits alongside its offline agent network."
         },
         {
           "type": "mcq",
@@ -685,7 +685,7 @@
         },
         {
           "type": "mcq",
-          "q": "To see how Meta fits alongside the offline sales force at an annual level, which layer do you add?",
+          "q": "To see how Meta fits alongside the offline agent network at an annual level, which layer do you add?",
           "options": [
             "Another Brand Lift",
             "Marketing Mix Modeling (MMM)",

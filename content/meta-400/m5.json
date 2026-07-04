@@ -690,15 +690,15 @@
     },
     {
       "id": "5.integ",
-      "title": "Caso integrador · Plan de ubicaciones y creativo para Kenet Solar",
+      "title": "Caso integrador · Plan de ubicaciones y creativo para Universidad Delta",
       "section": "bz",
       "type": "scenario",
       "cards": [
         {
           "type": "scenario",
           "label": "CASO INTEGRADOR",
-          "h": "Kenet Solar lanza línea residencial a nivel nacional",
-          "body": "Kenet Solar quiere un plan de <strong>alcance amplio y eficiente</strong> para su nueva línea residencial. Tiene video vertical, imágenes y una Secuencia (carousel). No hay requisitos de marca que limiten superficies. La meta es el menor costo por lead posible."
+          "h": "Universidad Delta lanza campaña nacional de inscripciones",
+          "body": "La <strong>Universidad Delta</strong> (educación en línea) quiere un plan de <strong>alcance amplio y eficiente</strong> para su convocatoria nacional de inscripciones. Tiene video vertical, imágenes y una Secuencia (carousel). No hay requisitos de marca que limiten superficies. La meta es el menor costo por lead posible."
         },
         {
           "type": "mcq",

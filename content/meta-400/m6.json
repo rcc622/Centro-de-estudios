@@ -642,15 +642,15 @@
     },
     {
       "id": "6.integ",
-      "title": "Caso integrador · Plan de medición para Kenet Solar",
+      "title": "Caso integrador · Plan de medición para Seguros del Norte",
       "section": "bz",
       "type": "scenario",
       "cards": [
         {
           "type": "scenario",
           "label": "CASO INTEGRADOR",
-          "h": "Kenet Solar quiere defender la inversión ante dirección",
-          "body": "Kenet Solar corre campañas de Awareness (rebrand regional) y de Sales (leads de cotización). Dirección exige tres cosas: (1) saber si el rebrand movió el recall, (2) probar que la pauta genera ventas que no hubieran ocurrido, y (3) entender cómo Meta encaja junto a su fuerza comercial offline."
+          "h": "Seguros del Norte quiere defender la inversión ante dirección",
+          "body": "La aseguradora <strong>Seguros del Norte</strong> corre campañas de Awareness (rebrand regional) y de Sales (leads de cotización de pólizas). Dirección exige tres cosas: (1) saber si el rebrand movió el recall, (2) probar que la pauta genera ventas que no hubieran ocurrido, y (3) entender cómo Meta encaja junto a su red de agentes offline."
         },
         {
           "type": "mcq",
@@ -685,7 +685,7 @@
         },
         {
           "type": "mcq",
-          "q": "Para ver cómo Meta encaja junto a la fuerza comercial offline a nivel anual, ¿qué capa agregas?",
+          "q": "Para ver cómo Meta encaja junto a la red de agentes offline a nivel anual, ¿qué capa agregas?",
           "options": [
             "Otra Mejora de la marca",
             "Marketing Mix Modeling (MMM)",

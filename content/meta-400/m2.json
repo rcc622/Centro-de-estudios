@@ -914,15 +914,15 @@
     },
     {
       "id": "2.integ",
-      "title": "Caso integrador · Plan de compra para Kenet Solar",
+      "title": "Caso integrador · Plan de compra para Deleá Cosméticos",
       "section": "bz",
       "type": "scenario",
       "cards": [
         {
           "type": "scenario",
           "label": "CASO INTEGRADOR",
-          "h": "Kenet Solar: awareness garantizado + ventas eficientes",
-          "body": "Kenet Solar lanza una línea residencial. Quiere dos cosas: (1) un plan de <strong>awareness garantizado</strong> en Facebook e Instagram con número fijo de personas y tope de frequency, presupuesto cerrado aprobado por dirección; y (2) campañas de <strong>Sales</strong> con ROAS mínimo de 5x optimizando por valor de compra. Tiene Pixel + CAPI con value tracking."
+          "h": "Deleá Cosméticos: awareness garantizado + ventas eficientes",
+          "body": "La marca de cuidado de la piel <strong>Deleá Cosméticos</strong> lanza una línea nueva. Quiere dos cosas: (1) un plan de <strong>awareness garantizado</strong> en Facebook e Instagram con número fijo de personas y tope de frequency, presupuesto cerrado aprobado por dirección; y (2) campañas de <strong>Sales</strong> con ROAS mínimo de 5x optimizando por valor de compra. Tiene Pixel + CAPI con value tracking."
         },
         {
           "type": "mcq",

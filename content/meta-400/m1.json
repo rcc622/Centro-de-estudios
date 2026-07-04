@@ -870,15 +870,15 @@
     },
     {
       "id": "1.integ",
-      "title": "Caso integrador · Plan completo para Kenet Solar",
+      "title": "Caso integrador · Plan completo para Viajes Cardinal",
       "section": "bz",
       "type": "scenario",
       "cards": [
         {
           "type": "scenario",
           "label": "CASO INTEGRADOR",
-          "h": "Kenet Solar entra a un mercado nuevo",
-          "body": "Kenet Solar abre operaciones en una ciudad <strong>donde nadie la conoce</strong>. Quiere, en orden: que el mercado la conozca, captar prospectos interesados en cotizar, y cerrar contratos de instalación. Tiene Pixel + CAPI en su sitio y formularios Instant form. Te piden el media plan completo por fases."
+          "h": "Viajes Cardinal entra a un mercado nuevo",
+          "body": "La agencia de viajes <strong>Viajes Cardinal</strong> abre operaciones en una ciudad <strong>donde nadie la conoce</strong>. Quiere, en orden: que el mercado la conozca, captar prospectos interesados en cotizar un viaje, y cerrar la venta de paquetes en su sitio. Tiene Pixel + CAPI en su sitio y formularios Instant form. Te piden el media plan completo por fases."
         },
         {
           "type": "mcq",
@@ -906,7 +906,7 @@
         },
         {
           "type": "mcq",
-          "q": "Fase 3 — cerrar contratos de instalación, con tickets que van de $40,000 a $400,000 MXN y meta de ingreso. ¿Objetivo de la campaña + objetivo de rendimiento (performance goal)?",
+          "q": "Fase 3 — cerrar la venta de paquetes en el sitio, con tickets que van de $8,000 a $250,000 MXN (de escapadas a viajes de lujo) y meta de ingreso. ¿Objetivo de la campaña + objetivo de rendimiento (performance goal)?",
           "options": [
             "Ventas + Maximize value of conversions",
             "Ventas + Maximize number of conversions",

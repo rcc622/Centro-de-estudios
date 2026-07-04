@@ -870,15 +870,15 @@
     },
     {
       "id": "1.integ",
-      "title": "Integrating case · Complete plan for Kenet Solar",
+      "title": "Integrating case · Complete plan for Viajes Cardinal",
       "section": "bz",
       "type": "scenario",
       "cards": [
         {
           "type": "scenario",
           "label": "INTEGRATING CASE",
-          "h": "Kenet Solar enters a new market",
-          "body": "Kenet Solar opens operations in a city <strong>where nobody knows it</strong>. It wants, in order: for the market to know it, to capture prospects interested in getting a quote, and to close installation contracts. It has Pixel + CAPI on its site and Instant forms. They ask you for the complete media plan by phases."
+          "h": "Viajes Cardinal enters a new market",
+          "body": "The travel agency <strong>Viajes Cardinal</strong> opens operations in a city <strong>where nobody knows it</strong>. It wants, in order: for the market to know it, to capture prospects interested in getting a trip quote, and to close package sales on its site. It has Pixel + CAPI on its site and Instant forms. They ask you for the complete media plan by phases."
         },
         {
           "type": "mcq",
@@ -906,7 +906,7 @@
         },
         {
           "type": "mcq",
-          "q": "Phase 3 — close installation contracts, with tickets ranging from $40,000 to $400,000 MXN and a revenue goal. Objective + performance goal?",
+          "q": "Phase 3 — close package sales on the site, with tickets ranging from $8,000 to $250,000 MXN (from getaways to luxury trips) and a revenue goal. Objective + performance goal?",
           "options": [
             "Sales + Maximize value of conversions",
             "Sales + Maximize number of conversions",
