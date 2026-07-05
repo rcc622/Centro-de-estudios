@@ -4401,7 +4401,10 @@ function openQuiz(dayId, kind){
   QUIZ_STATE = {
     qIdx: 0,
     answers: {},
-    deck: filterByDifficulty(source.questions),
+    // Evaluaciones SIN filtro de dificultad: el diagnóstico/quiz certifica el
+    // módulo completo. Filtrar por nivel recortaba el deck (ej. Experto → solo
+    // las 'hard' → 3 de 10 preguntas). La dificultad modula lecciones, no exámenes.
+    deck: source.questions,
     started: now(),
     timeLimit: source.timeLimit || 0,
     kind,
@@ -4425,7 +4428,7 @@ function openMockExam(dayId){
   QUIZ_STATE = {
     qIdx: 0,
     answers: {},
-    deck: filterByDifficulty(mock.questions),
+    deck: mock.questions, // simulacro completo siempre (sin filtro de dificultad)
     started: now(),
     timeLimit: mock.timeLimit || 6300, // default 105 min
     kind: 'mock-exam',
