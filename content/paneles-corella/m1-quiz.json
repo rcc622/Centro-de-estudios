@@ -1,0 +1,126 @@
+{
+  "title": "Quiz de Unidad · Módulo 1",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "La constante solar es:",
+      "options": [
+        "1,000 W/m² medidos al nivel del mar en el ecuador",
+        "1,353 W/m² de irradiación fuera de la atmósfera",
+        "700 W/m² del promedio anual en superficie",
+        "25 °C de temperatura de celda en laboratorio"
+      ],
+      "correct": 1,
+      "explanation": "Fuera de la atmósfera llegan 1,353 W/m²; los gases la reducen a 700-1,000 W/m² en superficie. Los 1,000 W/m² son la convención de la prueba STC.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Cuál de las tres componentes de la irradiación llega tras rebotar en superficies cercanas?",
+      "options": [
+        "La directa, que viaja en línea recta desde el disco solar",
+        "La difusa, dispersada por nubes y partículas del aire",
+        "La reflejada, que rebota en techos, arena o agua",
+        "La global, que es la suma de las otras tres"
+      ],
+      "correct": 2,
+      "explanation": "Reflejada = rebote en superficies del entorno. La difusa viene dispersada por la atmósfera; la directa llega sin desviarse; la global es la suma total.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Que un sistema fotovoltaico produzca energía incluso nublado se debe a que:",
+      "options": [
+        "Aprovecha también la irradiación difusa y la reflejada",
+        "Los módulos almacenan carga de los días soleados",
+        "El inversor compensa la falta de sol con la red",
+        "Las celdas suben su eficiencia cuando bajan de 25 °C"
+      ],
+      "correct": 0,
+      "explanation": "Los módulos trabajan con las tres componentes: con nubes se pierde la directa pero la difusa sigue produciendo. Ventaja clave sobre la solar térmica.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "La declinación solar (δ) varía a lo largo del año entre:",
+      "options": [
+        "0° y 90°, siguiendo la altura del Sol al mediodía",
+        "+23.5° y −23.5°, con 0° en los equinoccios",
+        "+45° y −45°, según la latitud del observador",
+        "0° y 23.5°, siempre con signo positivo en México"
+      ],
+      "correct": 1,
+      "explanation": "La declinación oscila ±23.5° por la inclinación del eje terrestre y vale 0° en los equinoccios. No depende de la latitud del observador.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "El efecto fotoeléctrico en una celda consiste en que:",
+      "options": [
+        "El calor del sol dilata el silicio y genera presión eléctrica",
+        "Los fotones liberan electrones que saltan a la banda de conducción",
+        "El campo magnético del módulo ordena a los electrones",
+        "La unión P-N calienta el material hasta ionizarlo"
+      ],
+      "correct": 1,
+      "explanation": "Los fotones con energía suficiente liberan electrones de la banda de valencia a la de conducción; con un circuito conectado, ese flujo es electricidad. El calor es subproducto, no la causa.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿Por qué la celda fotovoltaica se comporta como un diodo cuando está en sombra?",
+      "options": [
+        "Porque su unión P-N solo permite el paso de corriente en una dirección",
+        "Porque el vidrio templado bloquea el flujo inverso de electrones",
+        "Porque el inversor le impone una polaridad de reposo fija",
+        "Porque el silicio dopado se vuelve aislante total sin luz"
+      ],
+      "correct": 0,
+      "explanation": "La celda ES estructuralmente un diodo (unión P-N). Sombreada, deja de generar y se comporta como diodo común, pudiendo consumir tensión del arreglo — la raíz del problema de las sombras.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "La Voc y la Isc de la ficha técnica se usan principalmente para:",
+      "options": [
+        "Calcular la generación mensual esperada del sistema",
+        "Estimar la eficiencia del módulo comparándolo entre marcas distintas",
+        "Dimensionar protecciones: son los extremos que el sistema puede alcanzar",
+        "Programar el punto de arranque nocturno del inversor"
+      ],
+      "correct": 2,
+      "explanation": "El sistema no OPERA en Voc ni en Isc (potencia cero), pero puede ALCANZAR esos valores: por eso protecciones y equipos se dimensionan con ellos. La generación se calcula con Vmp × Imp y HSP.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Para medir la Isc de los módulos antes del montaje, la práctica recomendada es:",
+      "options": [
+        "Medir módulo por módulo, al sol, con pinza amperimétrica de CD",
+        "Medir todo el string en serie para ahorrar tiempo de obra",
+        "Medirla en la sombra para proteger el multímetro de picos",
+        "No medirla: la Isc solo puede verificarla el fabricante"
+      ],
+      "correct": 0,
+      "explanation": "Individual, al sol y con pinza de CD: así el valor se acerca al de ficha y detectas módulos dañados antes de subirlos al techo. En serie no sabrías cuál módulo falla.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un módulo de 60 celdas mide 1.65 × 0.99 m y reporta 300 W nominales. Su eficiencia aproximada es:",
+      "options": [
+        "30%, la potencia entre los mil Watts de la prueba",
+        "18%, la potencia entre el área por 1,000 W/m²",
+        "12%, el estándar de cualquier módulo de 60 celdas",
+        "24%, el doble del área efectiva de captación"
+      ],
+      "correct": 1,
+      "explanation": "Eficiencia = 300 ÷ (1.63 m² × 1,000) ≈ 18%. La potencia sola no basta: importa cuánta área necesitas para lograrla — clave en techos chicos.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Una casa consume 9 kWh/día en un sitio de 5 HSP. Con módulos de 450 W (sin considerar pérdidas), necesitas al menos:",
+      "options": [
+        "2 módulos, que cubren la mitad del consumo pico",
+        "4 módulos: cada uno aporta ~2.25 kWh diarios",
+        "9 módulos: uno por cada kWh de consumo diario",
+        "20 módulos: el consumo entre la potencia nominal"
+      ],
+      "correct": 1,
+      "explanation": "Cada módulo: 450 W × 5 HSP = 2,250 Wh/día. 9,000 ÷ 2,250 = 4 módulos justos (en la práctica se agrega margen por pérdidas — lo verás en el Módulo 6).",
+      "difficulty": "medium"
+    }
+  ]
+}

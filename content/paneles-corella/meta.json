@@ -1,0 +1,75 @@
+{
+  "id": "paneles-corella",
+  "title": "Sistemas Fotovoltaicos",
+  "subtitle": "Diseño e instalación de paneles solares · 9 módulos",
+  "description": "Curso técnico de diseño e instalación de sistemas fotovoltaicos: del recurso solar y la conversión de energía hasta el diseño completo, la seguridad en obra y el marco de generación distribuida en México. Basado en la guía del Ing. Joaquín Corella (2da edición).",
+  "icon": "☀️",
+  "color": "#F59E0B",
+  "structure": "modules",
+  "units": [
+    {
+      "id": "m1",
+      "title": "Módulo 1 — Fundamentos: del Sol a la electricidad",
+      "subtitle": "Recurso solar, semiconductores, curva I-V, STC/NOCT, hora solar pico",
+      "coverage": "Caps. 1-2 del libro",
+      "diagnostic": { "file": "m1-diagnostic.json", "passingScore": 80 },
+      "unitQuiz": { "file": "m1-quiz.json", "passingScore": 80 }
+    },
+    {
+      "id": "m2",
+      "title": "Módulo 2 — Módulos e inversores",
+      "subtitle": "Tipos de paneles, temperatura, tipos de inversor y sus cuidados",
+      "coverage": "Cap. 3 del libro",
+      "locked": true
+    },
+    {
+      "id": "m3",
+      "title": "Módulo 3 — Estructuras, cableado y canalizaciones",
+      "subtitle": "Anclajes por tipo de techo, cable FV, caída de tensión, tuberías",
+      "coverage": "Cap. 4 del libro",
+      "locked": true
+    },
+    {
+      "id": "m4",
+      "title": "Módulo 4 — Circuitos de corriente directa",
+      "subtitle": "Serie, paralelo, combinaciones y conexión leapfrog",
+      "coverage": "Cap. 5 del libro",
+      "locked": true
+    },
+    {
+      "id": "m5",
+      "title": "Módulo 5 — Protecciones eléctricas",
+      "subtitle": "Sobrecorriente CD/CA, anti-isla, falla a tierra, arco y sobretensión",
+      "coverage": "Cap. 6 del libro",
+      "locked": true
+    },
+    {
+      "id": "m6",
+      "title": "Módulo 6 — Producción y dimensionamiento",
+      "subtitle": "Tablas de incidencia, cálculo de generación, pérdidas, potencia necesaria",
+      "coverage": "Cap. 7 del libro",
+      "locked": true
+    },
+    {
+      "id": "m7",
+      "title": "Módulo 7 — Diseño del sistema (caso integrador)",
+      "subtitle": "Selección de módulo e inversor, strings, sobredimensionamiento, montaje",
+      "coverage": "Cap. 8 del libro",
+      "locked": true
+    },
+    {
+      "id": "m8",
+      "title": "Módulo 8 — Seguridad en instalación y operación",
+      "subtitle": "EPP, alturas, escaleras, señalización y casos de seguridad",
+      "coverage": "Cap. 9 del libro",
+      "locked": true
+    },
+    {
+      "id": "m9",
+      "title": "Módulo 9 — Generación distribuida y marco legal",
+      "subtitle": "Medición neta, facturación neta, venta total, híbridos y regulación",
+      "coverage": "Cap. 10 del libro",
+      "locked": true
+    }
+  ]
+}

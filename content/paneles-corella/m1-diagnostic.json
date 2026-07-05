@@ -1,0 +1,126 @@
+{
+  "title": "Diagnóstico · Módulo 1",
+  "passingScore": 80,
+  "questions": [
+    {
+      "q": "¿Cómo llega la energía del Sol a la Tierra?",
+      "options": [
+        "Por convección a través del viento solar",
+        "Por radiación: en el vacío no hay otro mecanismo",
+        "Por conducción a través del campo magnético",
+        "Por la combinación de conducción y convección"
+      ],
+      "correct": 1,
+      "explanation": "Entre el Sol y la Tierra hay vacío: sin contacto no hay conducción y sin fluido no hay convección. Solo queda la radiación.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "La irradiancia de un sitio se mide en:",
+      "options": [
+        "W/m², como potencia instantánea del momento",
+        "kWh/m²/día, como energía acumulada del sitio",
+        "W/m²/°C, ajustada por temperatura de celda",
+        "kW por módulo instalado en el arreglo"
+      ],
+      "correct": 1,
+      "explanation": "Irradiancia = energía acumulada (kWh/m²/día); es el dato con el que se dimensiona. La potencia instantánea en W/m² es la irradiación.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un instalador en Mérida (hemisferio norte) sin restricciones de techo orienta los módulos:",
+      "options": [
+        "Al norte, con inclinación del doble de la latitud",
+        "Al este, para capturar completo el amanecer",
+        "Al sur, con inclinación cercana a la latitud del sitio",
+        "Al oeste, para cubrir el pico de demanda vespertino"
+      ],
+      "correct": 2,
+      "explanation": "En el hemisferio norte la referencia es orientación sur con inclinación ≈ latitud. Las desviaciones se aceptan calculando y compensando las pérdidas.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "El material tipo P de una celda de silicio se obtiene dopando con:",
+      "options": [
+        "Un elemento de 3 electrones de valencia, como el boro",
+        "Un elemento de 5 electrones de valencia, como el fósforo",
+        "Silicio adicional purificado a grado electrónico",
+        "Telurio de cadmio depositado en película delgada"
+      ],
+      "correct": 0,
+      "explanation": "Tipo P = dopante de 3 electrones (boro) que deja un hueco positivo. El de 5 electrones (fósforo) produce el tipo N. El CdTe es otra tecnología de celda.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Sin luz solar directa, un módulo fotovoltaico:",
+      "options": [
+        "Produce potencia reducida gracias a la tensión residual",
+        "Puede mostrar tensión, pero sin corriente no entrega potencia",
+        "Produce corriente pero con la tensión invertida",
+        "Almacena la energía del día para entregarla después"
+      ],
+      "correct": 1,
+      "explanation": "Sin fotones no hay electrones en movimiento: puede medirse tensión, pero potencia = V × I, y sin corriente el resultado es cero. El módulo no almacena nada.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "¿En qué punto de la curva I-V la potencia del módulo es máxima?",
+      "options": [
+        "En la Voc, donde la tensión llega a su valor más alto",
+        "En la Isc, donde la corriente llega a su valor más alto",
+        "En el MPP, donde el producto Vmp × Imp se maximiza",
+        "En el promedio aritmético entre la Voc y la Isc"
+      ],
+      "correct": 2,
+      "explanation": "En Voc y en Isc la potencia es CERO (falta un factor del producto V × I). El punto de máxima potencia es el MPP, con coordenadas Vmp e Imp.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Un arreglo amanece a 5 °C en Pachuca. Respecto a los valores de ficha (25 °C), su tensión:",
+      "options": [
+        "Es mayor: la tensión sube cuando la celda está fría",
+        "Es menor: el frío frena la liberación de electrones",
+        "Es igual: la tensión no depende de la temperatura",
+        "Es cero hasta que la celda alcanza los 25 °C"
+      ],
+      "correct": 0,
+      "explanation": "Temperatura y tensión tienen relación inversa (~0.3 %/°C). El amanecer frío de invierno es la condición de Voc máxima — crítica para el diseño de strings.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "La prueba NOCT se diferencia de la STC en que mide a:",
+      "options": [
+        "1,000 W/m² con la celda enfriada a 0 °C",
+        "1,353 W/m² simulando las condiciones fuera de la atmósfera",
+        "500 W/m² con el módulo en sombra parcial",
+        "800 W/m² con celda a 47 °C, más cercano a la operación real"
+      ],
+      "correct": 3,
+      "explanation": "NOCT = 800 W/m² y 47 °C de celda: números menos vistosos pero más honestos sobre el campo. STC (1,000 W/m², 25 °C de celda) sirve para comparar marcas.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Una ciudad tiene 12 horas de luz en verano y 5.8 kWh/m²/día de irradiancia. Sus horas solares pico son:",
+      "options": [
+        "12, porque cada hora con sol cuenta como hora pico",
+        "5.8, porque las HSP equivalen a la irradiancia diaria",
+        "6.2, el promedio entre las horas de luz y la irradiancia",
+        "17.8, la suma de horas de luz más la irradiancia"
+      ],
+      "correct": 1,
+      "explanation": "HSP = horas equivalentes a 1,000 W/m² = irradiancia en kWh/m²/día. Las horas de luz del reloj no son horas pico: el sol de las 8 AM no pega a 1,000 W/m².",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Un módulo de 450 W en un sitio con 5 HSP genera al día (sin pérdidas) aproximadamente:",
+      "options": [
+        "450 Wh, una vez su potencia nominal de etiqueta",
+        "5,400 Wh, contando las 12 horas de luz del día",
+        "2,250 Wh, el producto de 450 W × 5 HSP",
+        "1,000 Wh, el estándar de la prueba de laboratorio"
+      ],
+      "correct": 2,
+      "explanation": "Generación diaria ≈ potencia × HSP = 450 × 5 = 2,250 Wh ≈ 2.3 kWh. Es la cuenta base del dimensionamiento antes de aplicar pérdidas.",
+      "difficulty": "medium"
+    }
+  ]
+}

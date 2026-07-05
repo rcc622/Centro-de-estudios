@@ -22,13 +22,8 @@
     },
     {
       "id": "paneles-corella",
-      "active": false,
-      "order": 4,
-      "placeholder": {
-        "title": "Sistemas FV — Corella",
-        "subtitle": "Disponible después del examen Meta",
-        "icon": "☀️"
-      }
+      "active": true,
+      "order": 4
     }
   ]
 }
