@@ -22,12 +22,12 @@
         {
           "type": "concept",
           "h": "Irradiación vs irradiancia: la potencia y la energía",
-          "body": "Aquí vive una de las confusiones más comunes del sector. La <strong>irradiación</strong> es la POTENCIA instantánea que llega por unidad de área: se mide en <strong>W/m²</strong>, como una foto del momento. La <strong>irradiancia</strong> es la ENERGÍA acumulada que recibe un sitio a lo largo del tiempo: se mide en <strong>kWh/m²/día</strong>, como el video del día completo. Fuera de la atmósfera la irradiación vale 1,353 W/m² (la <strong>constante solar</strong>); al cruzar los gases de la atmósfera se reduce a entre 700 y 1,000 W/m² sobre la superficie. Para dimensionar sistemas usamos la irradiancia, porque lo que cobramos y ahorramos son kWh, no Watts instantáneos."
+          "body": "Aquí vive una de las confusiones más comunes del sector. La <strong>irradiación</strong> es la POTENCIA instantánea que llega por unidad de área y se mide en <strong>W/m²</strong>. La <strong>irradiancia</strong> es la ENERGÍA acumulada que recibe un sitio a lo largo del tiempo y se mide en <strong>kWh/m²/día</strong>. Una comparación sencilla: la irradiación es la fuerza con la que sale el agua de una manguera en un instante; la irradiancia es cuánta agua juntaste en la cubeta al final del día. Fuera de la atmósfera la irradiación vale 1,353 W/m² (la <strong>constante solar</strong>); al cruzar los gases de la atmósfera se reduce a entre 700 y 1,000 W/m² sobre la superficie. Para dimensionar sistemas usamos la irradiancia, porque lo que cobramos y ahorramos son kWh, no Watts instantáneos."
         },
         {
           "type": "concept",
           "h": "Los tres tipos de irradiación",
-          "body": "La irradiación que recibe un módulo se divide en tres componentes. <strong>1. Directa</strong>: la que llega en línea recta desde el Sol, sin desviarse. <strong>2. Difusa</strong>: la que rebotó en nubes, polvo y atmósfera y llega desde todo el cielo. <strong>3. Reflejada</strong>: la que rebota en superficies cercanas (un techo blanco, la arena, el agua). La suma de las tres es la <strong>irradiación global</strong>. Los módulos fotovoltaicos trabajan principalmente con la directa, pero producen con las tres — por eso un día nublado en la instalación del <strong>Hotel Casa Marina</strong> en Cancún la producción baja, pero nunca llega a cero. Esa es una ventaja clave sobre la solar térmica, que con cielo nublado prácticamente se apaga."
+          "body": "La irradiación que recibe un módulo se divide en tres componentes. <strong>1. Directa</strong>: la que llega en línea recta desde el Sol, sin desviarse. <strong>2. Difusa</strong>: la que rebotó en nubes, polvo y atmósfera y llega desde todo el cielo. <strong>3. Reflejada</strong>: la que rebota en superficies cercanas (un techo blanco, la arena, el agua). La suma de las tres es la <strong>irradiación global</strong>. Los módulos fotovoltaicos trabajan principalmente con la directa, pero producen con las tres. Imagina un hotel en Cancún con paneles en el techo: en un día nublado pierde la componente directa y su producción baja, pero la difusa sigue llegando y nunca produce cero. Esa es una ventaja clave sobre la solar térmica, que con cielo nublado prácticamente se apaga."
         },
         {
           "type": "kvtable",
@@ -68,7 +68,7 @@
             "La temperatura promedio de las celdas en STC"
           ],
           "correct": 2,
-          "explanation": "La energía acumulada se calcula con irradiancia (kWh/m²/día). La irradiación instantánea es solo una foto del momento, y la constante solar es un valor fuera de la atmósfera, igual para todo el planeta.",
+          "explanation": "La energía acumulada se calcula con irradiancia (kWh/m²/día). La irradiación instantánea es solo la potencia de un momento puntual, y la constante solar es un valor fuera de la atmósfera, igual para todo el planeta.",
           "difficulty": "medium"
         }
       ]
@@ -92,7 +92,7 @@
         {
           "type": "concept",
           "h": "Orientación e inclinación: la regla práctica",
-          "body": "En el hemisferio norte (todo México), la orientación ideal de los módulos es <strong>hacia el sur</strong>, y la inclinación de referencia es igual a la <strong>latitud del lugar</strong>. Por ejemplo, la <strong>Granja Avícola San Pedro</strong> en Hermosillo (latitud ~29°N) montaría sus paneles mirando al sur con ~29° de inclinación. ¿Y si el techo no da al sur? No se cancela el proyecto: se calculan las <strong>pérdidas por desviación</strong> y, si hacen falta, se compensan con módulos adicionales. El autor del libro lo hizo en su propia oficina: techo al noroeste, tres módulos extra, y una instalación segura que no vuela con el viento."
+          "body": "En el hemisferio norte (todo México), la orientación ideal de los módulos es <strong>hacia el sur</strong>, y la inclinación de referencia es igual a la <strong>latitud del lugar</strong>. Por ejemplo, imagina una granja avícola en Hermosillo (latitud ~29° norte): sus paneles irían mirando al sur con ~29° de inclinación. ¿Y si el techo no da al sur? No se cancela el proyecto: se calculan las <strong>pérdidas por desviación</strong> y, si hacen falta, se compensan con módulos adicionales. Es un caso común en oficinas y naves ya construidas: un techo al noroeste con dos o tres módulos extra da una instalación segura y firme, que produce bien sin necesidad de estructuras enormes y riesgosas."
         },
         {
           "type": "tip",
@@ -101,7 +101,7 @@
         },
         {
           "type": "mcq",
-          "q": "Una bodega de la refaccionaria El Cigüeñal en Torreón (latitud 25°N) tiene techo plano. ¿Orientación e inclinación de referencia?",
+          "q": "Una refaccionaria en Torreón (latitud 25° norte) quiere paneles en el techo plano de su bodega. ¿Orientación e inclinación de referencia?",
           "options": [
             "Norte, con inclinación de 25° para el viento dominante",
             "Sur, con inclinación cercana a los 25° de latitud",
@@ -212,7 +212,7 @@
         {
           "type": "concept",
           "h": "No todos los fotones sirven igual",
-          "body": "Para liberar un electrón, el fotón necesita una energía mínima. Si trae menos, no libera nada y toda su energía se vuelve <strong>calor</strong>. Si trae más de la necesaria, libera al electrón y el excedente también se vuelve calor. Por eso una celda nunca convierte el 100% del espectro solar, y por eso — dato curioso que sorprende en campo — un módulo <strong>conectado y produciendo</strong> está más frío que uno desconectado: parte de la energía está saliendo como electricidad en lugar de quedarse como calor. Los técnicos de <strong>Solaria Instalaciones</strong> usan ese truco con cámara térmica para detectar strings desconectados en una azotea: los módulos que no producen se ven más calientes."
+          "body": "Para liberar un electrón, el fotón necesita una energía mínima. Si trae menos, no libera nada y toda su energía se vuelve <strong>calor</strong>. Si trae más de la necesaria, libera al electrón y el excedente también se vuelve calor. Por eso una celda nunca convierte el 100% del espectro solar, y por eso — dato curioso que sorprende en campo — un módulo <strong>conectado y produciendo</strong> está más frío que uno desconectado: parte de la energía está saliendo como electricidad en lugar de quedarse como calor. Los instaladores aprovechan ese fenómeno en campo: con una cámara térmica sobre la azotea, los módulos que NO están produciendo se ven más calientes que los que sí — una forma rápida de detectar cadenas desconectadas."
         },
         {
           "type": "warn",
@@ -266,7 +266,7 @@
         {
           "type": "concept",
           "h": "El calor le baja la tensión al módulo",
-          "body": "Regla de oro del comportamiento térmico: <strong>a mayor temperatura de celda, menor tensión</strong>; a menor temperatura, mayor tensión. La relación es aproximadamente lineal, con un coeficiente que el fabricante reporta en la ficha técnica (típicamente entre 0.29 y 0.35 %/°C). La corriente, en cambio, depende sobre todo de la <strong>cantidad de fotones</strong>: más irradiación, más corriente. Por eso el <strong>Colegio Andes</strong> en Toluca (frío) puede ver tensiones de arreglo más altas en una mañana de enero que las que ve una instalación gemela en Mexicali en agosto — mismo módulo, comportamiento distinto."
+          "body": "Regla de oro del comportamiento térmico: <strong>a mayor temperatura de celda, menor tensión</strong>; a menor temperatura, mayor tensión. La relación es aproximadamente lineal, con un coeficiente que el fabricante reporta en la ficha técnica (típicamente entre 0.29 y 0.35 %/°C). La corriente, en cambio, depende sobre todo de la <strong>cantidad de fotones</strong>: más irradiación, más corriente. Por eso una escuela en Toluca (clima frío) puede ver tensiones de arreglo más altas en una mañana de enero que las que ve una instalación idéntica en Mexicali en pleno agosto — mismo módulo, comportamiento distinto por la temperatura."
         },
         {
           "type": "kvtable",
@@ -326,7 +326,7 @@
         {
           "type": "concept",
           "h": "NOCT: la prueba que se parece a la vida real",
-          "body": "Los 25 °C de celda de la STC casi nunca ocurren en México: un módulo al sol opera fácilmente 25-30 °C por ARRIBA del ambiente. Por eso existe una segunda prueba: la <strong>NOCT</strong> (Normal Operating Cell Temperature, condiciones normales de operación), medida a <strong>800 W/m²</strong> y <strong>47 °C de temperatura de celda</strong>. Sus números son menos glamorosos pero más honestos sobre lo que verás en campo. Cuando la <strong>Distribuidora Eléctrica del Norte</strong> cotiza un proyecto en Mexicali, revisa la potencia NOCT del módulo, no solo la etiqueta STC."
+          "body": "Los 25 °C de celda de la STC casi nunca ocurren en México: un módulo al sol opera fácilmente 25-30 °C por ARRIBA del ambiente. Por eso existe una segunda prueba: la <strong>NOCT</strong> (Normal Operating Cell Temperature, condiciones normales de operación), medida a <strong>800 W/m²</strong> y <strong>47 °C de temperatura de celda</strong>. Sus números son menos glamorosos pero más honestos sobre lo que verás en campo. Por eso, al cotizar un proyecto en una ciudad calurosa como Mexicali, un instalador serio revisa la potencia NOCT del módulo y no solo la etiqueta STC."
         },
         {
           "type": "concept",
@@ -380,8 +380,8 @@
         {
           "type": "scenario",
           "label": "CASO A RESOLVER",
-          "h": "Solaria Instalaciones cotiza el mismo sistema en dos climas",
-          "body": "Solaria Instalaciones va a cotizar el mismo arreglo de módulos de 500 W en dos sucursales de un cliente: una en Hermosillo (6.3 HSP, veranos de 45 °C) y otra en Toluca (5.4 HSP, amaneceres bajo cero en invierno). El vendedor promete al cliente que 'cada módulo produce 500 Watts por cada hora de sol' y el ingeniero de proyecto tiene que corregir la propuesta antes de firmar."
+          "h": "Una instaladora cotiza el mismo sistema en dos climas",
+          "body": "Una empresa instaladora, llamémosle Solaria, va a cotizar el mismo arreglo de módulos de 500 W en dos sucursales de un cliente: una en Hermosillo (6.3 HSP, veranos de 45 °C) y otra en Toluca (5.4 HSP, amaneceres bajo cero en invierno). El vendedor promete al cliente que 'cada módulo produce 500 Watts por cada hora de sol' y el ingeniero de proyecto tiene que corregir la propuesta antes de firmar."
         },
         {
           "type": "mcq",
