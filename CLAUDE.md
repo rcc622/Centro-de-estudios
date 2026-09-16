@@ -662,6 +662,21 @@ La idea también viene de Mural ("*the language app you eventually delete*"): la
 
 Botón 🔊 en las dos caras de cada flashcard y en cada término del glosario (este en `en-US`, casi todos son términos en inglés). API nativa del navegador: cero dependencias, cero archivos, funciona offline una vez instalada la PWA — respeta la regla de oro 4. Segundo tap sobre el mismo botón detiene; `navTo()` corta la voz al cambiar de vista.
 
+### Iconografía propia — `ICO` + `icoize()`
+
+La app tiene un set de 25 iconos propios (sólidos, con color, `viewBox` 24×24) en la constante `ICO`. Sustituyen a los emojis del sistema, que se ven distintos en cada teléfono y no son nuestros.
+
+**Cómo funciona — esto es lo importante:** el motor **sigue escribiendo emojis normales en su código** (`❤️`, `🔥`, `🏆`…). La traducción ocurre en **un solo lugar**: `render()` pasa el HTML por `icoize()` antes de inyectarlo. Se probó primero reescribir los ~200 sitios del código uno por uno y fue un error — rompía strings, atributos y los mensajes de `showToast`. El enfoque de un solo punto es más simple, no toca ningún string y se revierte quitando una llamada.
+
+- `icoize(html)` — solo reemplaza en el **texto entre etiquetas** (`>…<`). Nunca toca un atributo (`data-ico`, `title`, `alt`) ni el interior de un `<svg>`.
+- `icoText(s)` — para un valor suelto que va a un contenedor (icono del toast, overlay de logros). Esos dos pasaron de `textContent` a `innerHTML`; es seguro porque el icono **siempre** sale de una constante nuestra, nunca de contenido externo.
+- Para agregar un icono: añádelo a `ICO` y mapea su emoji en `ICO_FOR`. No hay que tocar nada más.
+
+**Lo que NO cubre, y por qué:**
+- **El mensaje de `showToast`** va a `.textContent` a propósito (el texto puede ser dinámico). Un emoji dentro del mensaje se queda como emoji.
+- **Los emojis en CSS `content:''`** (la llama de `.streak-hero::after`, la ✕ de `.tc-badge.lost`). Una regla CSS no admite SVG inline; habría que pasarlos a `background-image` con data-URI.
+- **Los emojis del contenido de los cursos** (los JSON) sí se traducen si coinciden con el mapa, porque pasan por el mismo `render()`.
+
 ### Práctica (pestaña ⚔️)
 - **Repaso inteligente (mix)**: 10 flashcards priorizadas con **SM-2 real** (`sm2Update`: acierto=q4, fallo=q1; intervalos 1d→6d→ivl·ef; fallo resetea). Orden: vencidas → nunca vistas → próximas a vencer
 - **Quick Quiz**: 10 MCQs al azar de lecciones completadas de TODOS los cursos activos; no toca `quizProgress`
@@ -847,6 +862,6 @@ Cuando termines una tarea, **siempre confirma a Randall**:
 
 ---
 
-**Versión de este CLAUDE.md:** 1.2
-**Última actualización:** Martes 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section` documentado)
+**Versión de este CLAUDE.md:** 1.3
+**Última actualización:** Martes 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section`, iconografía propia `ICO`/`icoize`)
 **Autor original:** Claude (en sesión Claude.ai con Randall)
