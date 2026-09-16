@@ -1080,6 +1080,79 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .medal-ico-pop{animation:medalPop .6s cubic-bezier(.34,1.8,.64,1)}
 @keyframes medalPop{0%{transform:scale(.3) rotate(-20deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
 
+/* ============ VOZ · speechSynthesis (API nativa, sin dependencias) ============ */
+.speak-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:4px 7px;border-radius:9px;line-height:1;opacity:.5;transition:opacity .15s,transform .15s;font-family:inherit;flex-shrink:0}
+.speak-btn:active{transform:scale(.86)}
+.speak-btn.on{opacity:1;animation:speakPulse .9s ease-in-out infinite}
+@keyframes speakPulse{0%,100%{opacity:1}50%{opacity:.35}}
+.flash-speak{position:absolute;top:12px;left:12px;z-index:3;font-size:17px;opacity:.6}
+.glo-item>summary .speak-btn{margin-left:auto;margin-right:4px}
+
+/* ============ BARRAS DE DOMINIO (evidencia cruzada) ============ */
+.bars{display:inline-flex;align-items:flex-end;gap:2px;height:11px;vertical-align:middle}
+.bars>i{width:3.5px;background:#DDE1E6;border-radius:2px;display:block}
+.bars>i:nth-child(1){height:5px}
+.bars>i:nth-child(2){height:8px}
+.bars>i:nth-child(3){height:11px}
+.bars>i.on{background:#42B883}
+.bars.b3>i.on{background:#2FAF6F}
+
+/* ============ READINESS — ¿listo para el examen? ============ */
+.rdy-card{background:#fff;border:1px solid #E4E6EB;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.05);cursor:pointer;transition:transform .15s}
+.rdy-card:active{transform:scale(.985)}
+.rdy-card.ready{background:linear-gradient(135deg,#E9F9F1,#F4FCF8);border-color:#9FE3C4}
+.rdy-top{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+.rdy-gauge{width:56px;height:56px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;background:conic-gradient(#1877F2 calc(var(--p)*1%),#EEF0F2 0);position:relative}
+.rdy-card.ready .rdy-gauge{background:conic-gradient(#2FAF6F calc(var(--p)*1%),#EEF0F2 0)}
+.rdy-gauge::after{content:'';position:absolute;inset:5px;border-radius:50%;background:#fff}
+.rdy-gauge span{position:relative;z-index:1;font-size:14.5px;font-weight:900;color:#1C1E21;letter-spacing:-.4px}
+.rdy-head{flex:1;min-width:0}
+.rdy-title{font-size:14.5px;font-weight:800;color:#1C1E21;margin-bottom:3px}
+.rdy-sub{font-size:12.5px;color:#65676B;line-height:1.45}
+.rdy-parts{display:grid;gap:8px}
+.rdy-part{display:flex;align-items:center;gap:9px}
+.rdy-plbl{font-size:11.5px;font-weight:700;color:#65676B;width:92px;flex-shrink:0}
+.rdy-ptrack{flex:1;height:6px;background:#EEF0F2;border-radius:4px;overflow:hidden}
+.rdy-pfill{height:100%;border-radius:4px;background:#1877F2;transition:width .5s ease}
+.rdy-part.weak .rdy-pfill{background:#F5A623}
+.rdy-part.weak .rdy-plbl{color:#C77700}
+.rdy-pval{font-size:11.5px;font-weight:800;color:#1C1E21;width:34px;text-align:right;flex-shrink:0}
+.rdy-hint{margin-top:11px;padding:10px 12px;background:#F7F8FA;border-radius:11px;font-size:12.5px;color:#1C1E21;line-height:1.5}
+.rdy-card.ready .rdy-hint{background:rgba(255,255,255,.75)}
+.rdy-hint b{font-weight:800}
+
+/* ============ RECALL — respuesta libre (producción, no reconocimiento) ============ */
+.recall-card{background:#fff;border:1px solid #E4E6EB;border-radius:18px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.recall-tag{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#7A4DD1;margin-bottom:9px}
+.recall-q{font-size:17px;font-weight:700;color:#1C1E21;line-height:1.45;margin-bottom:14px}
+.recall-ta{width:100%;min-height:118px;border:1.5px solid #E4E6EB;border-radius:14px;padding:13px;font-size:15px;font-family:inherit;color:#1C1E21;line-height:1.5;resize:vertical;background:#FBFCFD;-webkit-appearance:none}
+.recall-ta:focus{outline:none;border-color:#7A4DD1;background:#fff;box-shadow:0 0 0 3px rgba(122,77,209,.1)}
+.recall-hint{margin-top:10px;font-size:12.5px;color:#65676B;background:#F7F8FA;border-radius:10px;padding:9px 11px;line-height:1.45}
+.recall-hint b{color:#7A4DD1;font-weight:800}
+.recall-mine{background:#F7F8FA;border-radius:13px;padding:12px;font-size:14px;color:#1C1E21;line-height:1.55;white-space:pre-wrap;margin-bottom:14px;border-left:3px solid #D8DCE1}
+.recall-mine.empty{color:#8A8D91;font-style:italic;white-space:normal}
+.recall-kw-h{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#65676B;margin-bottom:8px}
+.recall-kws{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.recall-kw{font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:9px;display:inline-flex;align-items:center;gap:5px}
+.recall-kw.hit{background:#E9F9F1;color:#218A5C}
+.recall-kw.miss{background:#FDF0E7;color:#B5651A}
+.recall-model{background:#F2F7FF;border:1px solid #D6E6FF;border-radius:13px;padding:13px;margin-bottom:14px}
+.recall-model-h{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#1877F2;margin-bottom:7px}
+.recall-model-b{font-size:14.5px;color:#1C1E21;line-height:1.6}
+.recall-why{font-size:13px;color:#65676B;line-height:1.55;margin-top:10px;padding-top:10px;border-top:1px solid #D6E6FF}
+.recall-grade-h{font-size:12.5px;font-weight:700;color:#1C1E21;text-align:center;margin-bottom:10px}
+.recall-grades{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.recall-gbtn{padding:12px 6px;border-radius:13px;border:1.5px solid #E4E6EB;background:#fff;cursor:pointer;font-family:inherit;text-align:center;transition:transform .12s,border-color .12s}
+.recall-gbtn:active{transform:scale(.95)}
+.recall-gbtn .rg-ico{font-size:19px;display:block;margin-bottom:3px}
+.recall-gbtn .rg-lbl{font-size:11.5px;font-weight:800;color:#1C1E21;line-height:1.25}
+.recall-gbtn.got:active,.recall-gbtn.got.sel{border-color:#42B883;background:#E9F9F1}
+.recall-gbtn.partial:active,.recall-gbtn.partial.sel{border-color:#F5A623;background:#FDF6E7}
+.recall-gbtn.missed:active,.recall-gbtn.missed.sel{border-color:#E74C3C;background:#FDECEA}
+.recall-done{border-radius:13px;padding:12px 14px;font-size:13.5px;font-weight:700;line-height:1.5;text-align:center}
+.recall-done.got{background:#E9F9F1;color:#218A5C}
+.recall-done.partial{background:#FDF6E7;color:#B5651A}
+.recall-done.missed{background:#FDECEA;color:#C0392B}
 </style>
 </head>
 <body>
@@ -1856,7 +1929,8 @@ let DB = {
   soundEnabled: true, // efectos de sonido WebAudio (toggle en Ajustes)
   soundTheme: 'classic', // tema de SFX: classic | arcade | marimba
   hapticLevel: 'strong', // vibración: off | soft | strong
-  lang: 'es' // idioma del contenido de cursos: 'es' | 'en' (la UI siempre es español)
+  lang: 'es', // idioma del contenido de cursos: 'es' | 'en' (la UI siempre es español)
+  conceptStats: {} // {courseId|dayId|lessonId: {ctx:{}, days:[], right, wrong, lastWrong}} evidencia cruzada
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -2834,6 +2908,7 @@ function renderHome(){
           </div>
         </div>
       ` : '')}
+      ${mainCourse ? readinessCardHtml(mainCourse.id) : ''}
       ${heroHtml}
       ${homeChalHtml}
       ${otherCoursesHtml}
@@ -2857,6 +2932,7 @@ function renderCourse(){
         <h1>${course.title}</h1>
         <p>${course.subtitle}</p>
       </div>
+      ${readinessCardHtml(course.id)}
       <div class="section-title">Plan de ${course.days.length} unidades</div>
       ${course.days.map((day, idx) => {
         const unlocked = isDayUnlocked(course.id, idx);
@@ -3235,11 +3311,23 @@ function renderLesson(){
       </div>`;
   } else if(card.type === 'mcq' || card.type === 'fill'){
     cardHtml = mcqCardHtml(card, LESSON_STATE.answers[idx], LESSON_STATE.tempSelected, 'selectOption');
+  } else if(card.type === 'recall'){
+    cardHtml = recallCardHtml(card, LESSON_STATE.answers[idx]);
   }
 
   // Action button
   let actionBtn;
-  if(card.type === 'mcq' || card.type === 'fill'){
+  if(card.type === 'recall'){
+    const a = LESSON_STATE.answers[idx];
+    if(!a){
+      const hasTxt = (LESSON_STATE.recallDraft || '').trim().length > 0;
+      actionBtn = `<button class="btn ${hasTxt?'btn-primary':'btn-secondary'}" id="recallBtn" onclick="recallReveal()">Revisar mi respuesta</button>`;
+    } else if(!a.graded){
+      actionBtn = `<button class="btn btn-disabled">Califícate arriba para seguir</button>`;
+    } else {
+      actionBtn = `<button class="btn btn-primary" onclick="nextCard()">${idx+1 < total ? 'Siguiente' : 'Terminar lección'}</button>`;
+    }
+  } else if(card.type === 'mcq' || card.type === 'fill'){
     const answered = LESSON_STATE.answers[idx];
     if(!answered){
       const hasSel = LESSON_STATE.tempSelected?.length > 0;
@@ -4657,11 +4745,13 @@ function renderFlashcards(){
       <div class="flash-wrap">
         <div class="flash3d ${flipped?'flipped':''}" id="flash3d" onclick="flipFlash()">
           <div class="flash face front">
+            ${speakBtnHtml(card.q, null, 'flash-speak')}
             <div class="flash-tag">PREGUNTA</div>
             <div class="flash-q">${card.q}</div>
             <div class="flash-hint">Toca para revelar</div>
           </div>
           <div class="flash face back">
+            ${speakBtnHtml(card.a, null, 'flash-speak')}
             <div class="flash-tag">RESPUESTA</div>
             <div class="flash-a">${card.a}</div>
             ${showExpl ? `<div class="flash-explanation">💡 ${card.explanation}</div>` : ''}
@@ -5193,7 +5283,7 @@ function renderGlossary(){
       <div class="section-title">${title}</div>
       ${items.map(it => `
         <details class="glo-item" data-k="${gloNorm((it.t || '') + ' ' + (it.d || '')).replace(/"/g, '&quot;')}">
-          <summary>${it.t || ''}</summary>
+          <summary>${it.t || ''}${speakBtnHtml(it.t, 'en-US')}</summary>
           <div class="glo-def">${it.d || ''}</div>
         </details>`).join('')}
     </div>`;
@@ -5737,9 +5827,351 @@ function renderConfig(){
 }
 
 // ============================================================
+// VOZ — lectura en voz alta con speechSynthesis
+// API nativa del navegador: cero dependencias, cero archivos, y
+// funciona offline una vez instalada la PWA (respeta la regla 4).
+// Se usa en flashcards y glosario para oír los términos en inglés.
+// ============================================================
+let _speakBtn = null;
+
+function speakText(text, lang, btn){
+  if(!('speechSynthesis' in window)){
+    showToast('Tu navegador no soporta lectura en voz alta', 2200);
+    return;
+  }
+  const clean = (text || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  if(!clean) return;
+  haptic(HAPTIC.tap);
+  // Segundo tap sobre el mismo botón = detener. Tap en otro = cambiar.
+  const wasSame = _speakBtn === btn;
+  if(_speakBtn){
+    speechSynthesis.cancel();
+    _speakBtn.classList?.remove('on');
+    _speakBtn = null;
+    if(wasSame) return;
+  }
+  const u = new SpeechSynthesisUtterance(clean.slice(0, 400));
+  u.lang = lang || (DB.lang === 'en' ? 'en-US' : 'es-MX');
+  u.rate = 0.95;
+  const off = () => { btn?.classList.remove('on'); if(_speakBtn === btn) _speakBtn = null; };
+  u.onend = off;
+  u.onerror = off;
+  _speakBtn = btn;
+  btn?.classList.add('on');
+  speechSynthesis.speak(u);
+}
+
+// Botón reutilizable. El texto viaja en un data-attr para no pelearse
+// con las comillas del HTML inline que traen las cards.
+function speakBtnHtml(text, lang, cls){
+  const safe = (text || '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if(!safe) return '';
+  return `<button class="speak-btn ${cls||''}" aria-label="Escuchar" data-say="${safe}" data-lang="${lang||''}" onclick="event.stopPropagation();speakText(this.dataset.say,this.dataset.lang,this)">🔊</button>`;
+}
+
+// Cortar la voz al cambiar de vista (si no, sigue hablando en otra pantalla).
+function stopSpeak(){
+  if(!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  _speakBtn?.classList?.remove('on');
+  _speakBtn = null;
+}
+
+// ============================================================
+// DOMINIO POR EVIDENCIA CRUZADA
+// Modelo tomado de las "recall bars" de Mural: un tema NO se da por
+// dominado por acertarlo una vez. Hace falta evidencia REPETIDA, en
+// CONTEXTOS distintos y ESPACIADA en el tiempo.
+// La unidad de "tema" es la lección (courseId|dayId|lessonId): se
+// deriva del sendero que ya existe, así que no hay que taggear nada
+// en los JSON de contenido.
+// Contextos que cuentan: lesson · flash · practice · recall
+// Barras: 1 = evidencia suelta
+//         2 = 2+ contextos distintos (o 3 aciertos en 2+ días)
+//         3 = 2+ contextos Y 2+ días distintos Y sin fallos recientes
+// ============================================================
+const EVIDENCE_DECAY_DAYS = 7; // un fallo reciente tumba la tercera barra
+
+function conceptKey(courseId, dayId, lessonId){
+  if(!courseId || !dayId || !lessonId) return null;
+  return courseId + '|' + dayId + '|' + lessonId;
+}
+
+function recordEvidence(courseId, dayId, lessonId, ctx, correct){
+  const key = conceptKey(courseId, dayId, lessonId);
+  if(!key) return;
+  if(!DB.conceptStats) DB.conceptStats = {};
+  const st = DB.conceptStats[key] || (DB.conceptStats[key] = {ctx:{}, days:[], right:0, wrong:0, lastWrong:0});
+  if(!st.ctx) st.ctx = {};
+  if(!Array.isArray(st.days)) st.days = [];
+  if(correct){
+    st.right = (st.right || 0) + 1;
+    st.ctx[ctx] = (st.ctx[ctx] || 0) + 1;
+    const d = todayStr();
+    if(st.days[st.days.length-1] !== d && !st.days.includes(d)) st.days.push(d);
+    if(st.days.length > 30) st.days = st.days.slice(-30);
+  } else {
+    st.wrong = (st.wrong || 0) + 1;
+    st.lastWrong = now();
+  }
+}
+
+// 0-3 barras de dominio para un tema.
+function conceptBars(key){
+  const st = key && DB.conceptStats?.[key];
+  if(!st || !st.right) return 0;
+  const ctxN = Object.keys(st.ctx || {}).length;
+  const dayN = (st.days || []).length;
+  const recentFail = st.lastWrong && (now() - st.lastWrong) < EVIDENCE_DECAY_DAYS * 864e5;
+  if(ctxN >= 2 && dayN >= 2 && !recentFail) return 3;
+  if(ctxN >= 2 || (st.right >= 3 && dayN >= 2)) return 2;
+  return 1;
+}
+
+function barsHtml(n){
+  return `<span class="bars ${n>=3?'b3':''}" title="Dominio ${n} de 3">${[1,2,3].map(i => `<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
+}
+
+// ============================================================
+// READINESS — ¿qué tan listo estás para el examen?
+// La idea viene de Mural ("the language app you eventually delete"):
+// la meta no es estudiar para siempre, es llegar a un umbral claro y
+// presentar. Cuatro componentes, todos derivados de datos que el motor
+// YA guarda (no hay tracking nuevo):
+//   cobertura (30%)    — lecciones completadas del curso
+//   dominio (30%)      — temas con 3 barras de evidencia cruzada
+//   evaluaciones (25%) — quizzes de unidad + simulacro (pesa doble)
+//   errores (15%)      — deuda de preguntas falladas sin corregir
+// ============================================================
+const READY_THRESHOLD = 85;
+
+function courseReadiness(courseId){
+  const course = COURSES[courseId];
+  if(!course || !course.days || !course._daysLoaded) return null;
+  const days = course.days.filter(d => !d.locked && d.id !== 'glosario');
+  const real = days.filter(d => d.kind !== 'mock-exam');
+  const mocks = days.filter(d => d.kind === 'mock-exam');
+
+  // 1) Cobertura — cuánto del curso ya recorriste
+  let done = 0, total = 0, mastered = 0;
+  for(const d of real){
+    for(const l of (d.lessons || [])){
+      total++;
+      if(isLessonCompleted(courseId, d.id, l.id)) done++;
+      if(conceptBars(conceptKey(courseId, d.id, l.id)) >= 3) mastered++;
+    }
+  }
+  if(!total) return null;
+  const cobertura = done / total;
+
+  // 2) Dominio — evidencia cruzada, no solo "lo marqué como visto"
+  const dominio = mastered / total;
+
+  // 3) Evaluaciones — quiz de unidad pendiente cuenta como 0, el simulacro pesa doble
+  let sum = 0, w = 0;
+  for(const d of real){
+    const qp = DB.quizProgress?.[courseId]?.[d.id];
+    if(qp?.bestScore != null){ sum += Math.min(100, qp.bestScore) / 100; w += 1; }
+    else if(d.unitQuiz){ w += 1; }
+  }
+  for(const d of mocks){
+    const qp = DB.quizProgress?.[courseId]?.[d.id];
+    sum += Math.min(100, qp?.bestScore || 0) / 100 * 2;
+    w += 2;
+  }
+  const evaluaciones = w ? sum / w : 0;
+
+  // 4) Deuda de errores — relativa a lo que YA viste, no al curso entero.
+  // Si no has estudiado nada, no puedes acreditarte "sin errores": deuda = 1.
+  const errs = Object.values(DB.wrongAnswers || {}).filter(e => e.courseId === courseId).length;
+  const deuda = done ? Math.min(1, errs / Math.max(10, done)) : 1;
+
+  const parts = [
+    {k:'cobertura',    lbl:'Cobertura',  v:cobertura,   w:.30, hint:`Te faltan <b>${total-done}</b> ${total-done===1?'lección':'lecciones'} por completar.`},
+    {k:'dominio',      lbl:'Dominio',    v:dominio,     w:.30, hint:`Solo <b>${mastered}</b> de ${total} temas tienen 3 barras. Un tema llega a 3 cuando lo aciertas en dos actividades distintas y en días distintos — repasa en la pestaña ⚔️.`},
+    {k:'evaluaciones', lbl:'Exámenes',   v:evaluaciones,w:.25, hint:'Presenta los quizzes de unidad que te faltan y sube tu mejor score del simulacro.'},
+    {k:'errores',      lbl:'Sin errores',v:1-deuda,     w:.15, hint:`Traes <b>${errs}</b> ${errs===1?'pregunta fallada':'preguntas falladas'} sin corregir. Práctica → Repasar errores.`}
+  ];
+
+  const pct = Math.round(100 * parts.reduce((a,p) => a + p.w * p.v, 0));
+  // El cuello de botella: el componente que más puntos te está costando.
+  const weak = parts.slice().sort((a,b) => (a.w*(1-a.v)) - (b.w*(1-b.v))).pop();
+
+  return {pct, ready: pct >= READY_THRESHOLD, parts, weak, done, total, mastered, errs};
+}
+
+function readinessCardHtml(courseId){
+  const r = courseReadiness(courseId);
+  if(!r) return '';
+  const course = COURSES[courseId];
+  return `
+    <div class="rdy-card ${r.ready?'ready':''}" onclick="haptic(8);openCourse('${courseId}')">
+      <div class="rdy-top">
+        <div class="rdy-gauge" style="--p:${r.pct}"><span>${r.pct}%</span></div>
+        <div class="rdy-head">
+          <div class="rdy-title">${r.ready ? '🎓 Listo para presentar' : '🎯 Listo para el examen'}</div>
+          <div class="rdy-sub">${r.ready
+            ? `${course.title} · llegaste al ${READY_THRESHOLD}%. Ya puedes presentar sin apostarle.`
+            : `${course.title} · ${r.mastered}/${r.total} temas dominados`}</div>
+        </div>
+      </div>
+      <div class="rdy-parts">
+        ${r.parts.map(p => `
+          <div class="rdy-part ${p===r.weak && !r.ready ? 'weak':''}">
+            <div class="rdy-plbl">${p.lbl}</div>
+            <div class="rdy-ptrack"><div class="rdy-pfill" style="width:${Math.round(p.v*100)}%"></div></div>
+            <div class="rdy-pval">${Math.round(p.v*100)}%</div>
+          </div>`).join('')}
+      </div>
+      ${r.ready ? '' : `<div class="rdy-hint">⬆️ <b>Lo que más te sube el número:</b> ${r.weak.hint}</div>`}
+    </div>`;
+}
+
+// ============================================================
+// RECALL — respuesta libre (producción, no reconocimiento)
+// El resto del motor evalúa por reconocimiento: eliges entre opciones.
+// Reconocer es mucho más fácil que producir, y el examen real te pide
+// producir. Aquí escribes la respuesta con tus palabras, el motor marca
+// qué conceptos clave capturaste y cuáles no, te muestra la respuesta
+// modelo y tú te auto-calificas.
+// Incentivos a propósito: decir "no la tenía" NO cuesta corazones ni XP.
+// Si mentir fuera gratis y ser honesto costara, todos mentiríamos. El
+// auto-reporte solo alimenta el repaso espaciado y la evidencia.
+// ============================================================
+function recallNorm(s){
+  return (s == null ? '' : '' + s)
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/<[^>]+>/g, ' ')
+    .toLowerCase().replace(/[^a-z0-9ñ\s]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function recallScore(card, text){
+  const hay = ' ' + recallNorm(text) + ' ';
+  const hit = [], miss = [];
+  for(const kw of (card.keywords || [])){
+    (hay.indexOf(' ' + recallNorm(kw) + ' ') !== -1 || hay.indexOf(recallNorm(kw)) !== -1 ? hit : miss).push(kw);
+  }
+  return {hit, miss};
+}
+
+function recallDraftInput(el){
+  LESSON_STATE.recallDraft = el.value;
+  // Habilitar/deshabilitar el botón sin re-render (perdería el foco del teclado).
+  const btn = document.getElementById('recallBtn');
+  if(btn) btn.className = 'btn ' + (el.value.trim() ? 'btn-primary' : 'btn-secondary');
+}
+
+function recallReveal(){
+  const el = document.getElementById('recallInput');
+  const text = (el ? el.value : (LESSON_STATE.recallDraft || '')).trim();
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  const card = lesson?.cards?.[LESSON_STATE.cardIdx];
+  if(!card) return;
+  haptic(HAPTIC.submit);
+  playSfx('flip');
+  const {hit, miss} = recallScore(card, text);
+  LESSON_STATE.answers[LESSON_STATE.cardIdx] = {recall:true, text, hit, miss, graded:false, correct:false};
+  LESSON_STATE.recallDraft = '';
+  render();
+}
+
+// grade: 'got' | 'partial' | 'missed'
+function recallGrade(grade){
+  const a = LESSON_STATE.answers[LESSON_STATE.cardIdx];
+  if(!a || a.graded) return;
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  const card = lesson?.cards?.[LESSON_STATE.cardIdx];
+  const ok = grade !== 'missed';
+  a.graded = true;
+  a.grade = grade;
+  a.correct = ok;
+  haptic(ok ? HAPTIC.correct : HAPTIC.wrong);
+  playSfx(ok ? 'correct' : 'wrong');
+  // Evidencia cruzada: 'recall' es su propio contexto.
+  recordEvidence(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, 'recall', grade === 'got');
+  // Repaso espaciado: la pregunta entra al mismo SM-2 de las flashcards.
+  if(card?.q){
+    if(!DB.flashcardStats[card.q]) DB.flashcardStats[card.q] = {right:0, wrong:0};
+    const st = DB.flashcardStats[card.q];
+    st[grade === 'got' ? 'right' : 'wrong'] = (st[grade === 'got' ? 'right' : 'wrong'] || 0) + 1;
+    st.lastSeen = now();
+    sm2Update(st, grade === 'got');
+  }
+  // Solo lo que NO tenías entra a la cola de errores. Sin costo de corazón:
+  // esto es producción, no examen — castigar la honestidad sería contraproducente.
+  if(card && grade === 'missed'){
+    // recordWrong deriva el texto de la respuesta de options[correct], así que
+    // le pasamos la respuesta modelo con esa forma.
+    recordWrong({q: card.q, options: [card.model || ''], correct: 0, explanation: card.explanation || ''}, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
+  } else if(card){
+    clearWrong({q: card.q}, CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId);
+  }
+  addXP(grade === 'got' ? 5 : (grade === 'partial' ? 3 : 2));
+  save();
+  render();
+}
+
+function recallCardHtml(card, answered){
+  const kwN = (card.keywords || []).length;
+  if(!answered){
+    const draft = LESSON_STATE.recallDraft || '';
+    return `
+      <div class="recall-card">
+        <div class="recall-tag">✍️ Explícalo con tus palabras</div>
+        <div class="recall-q">${card.q}</div>
+        <textarea class="recall-ta" id="recallInput" placeholder="Escribe tu respuesta… No busques la palabra exacta, explícalo como se lo dirías a un compañero." oninput="recallDraftInput(this)" autocomplete="off" autocorrect="on" spellcheck="true">${draft.replace(/</g,'&lt;')}</textarea>
+        ${card.hint ? `<div class="recall-hint">💭 <b>Pista:</b> ${card.hint}</div>` : ''}
+        ${kwN ? `<div class="recall-hint" style="margin-top:8px">🎯 Hay <b>${kwN} conceptos clave</b> que tu respuesta debería tocar.</div>` : ''}
+      </div>`;
+  }
+  const g = answered.grade;
+  return `
+    <div class="recall-card">
+      <div class="recall-tag">✍️ Tu respuesta</div>
+      <div class="recall-q" style="font-size:15px;font-weight:600;color:#65676B;margin-bottom:11px">${card.q}</div>
+      <div class="recall-mine ${answered.text ? '' : 'empty'}">${answered.text ? answered.text.replace(/</g,'&lt;') : 'No escribiste nada — está bien, así sabes exactamente qué te falta.'}</div>
+      ${kwN ? `
+        <div class="recall-kw-h">Conceptos clave · ${answered.hit.length}/${kwN}</div>
+        <div class="recall-kws">
+          ${answered.hit.map(k => `<span class="recall-kw hit">✓ ${k}</span>`).join('')}
+          ${answered.miss.map(k => `<span class="recall-kw miss">○ ${k}</span>`).join('')}
+        </div>` : ''}
+      <div class="recall-model">
+        <div class="recall-model-h">Respuesta modelo</div>
+        <div class="recall-model-b">${card.model || ''}</div>
+        ${card.explanation ? `<div class="recall-why">💡 ${card.explanation}</div>` : ''}
+      </div>
+      ${answered.graded ? `
+        <div class="recall-done ${g}">${
+          g === 'got' ? '✅ La tenías · +5 XP' :
+          g === 'partial' ? '🟡 A medias · +3 XP · vuelve en el repaso espaciado' :
+          '📌 No la tenías · +2 XP · guardada en tus errores para repasarla'
+        }</div>` : `
+        <div class="recall-grade-h">Sé honesto contigo: ¿la tenías?</div>
+        <div class="recall-grades">
+          <button class="recall-gbtn got" onclick="recallGrade('got')"><span class="rg-ico">✅</span><span class="rg-lbl">La tenía</span></button>
+          <button class="recall-gbtn partial" onclick="recallGrade('partial')"><span class="rg-ico">🟡</span><span class="rg-lbl">A medias</span></button>
+          <button class="recall-gbtn missed" onclick="recallGrade('missed')"><span class="rg-ico">📌</span><span class="rg-lbl">No la tenía</span></button>
+        </div>`}
+    </div>`;
+}
+
+// ============================================================
 // ACTIONS
 // ============================================================
 async function navTo(view){
+  stopSpeak();
   if(view === 'flashcards'){
     PRACTICE_MODE = null;
     PRACTICE_SCOPE = null;
@@ -5795,7 +6227,8 @@ function allFlashcards(){
     for(const d of (course.days||[])){
       if(d.locked || d.kind === 'mock-exam') continue;
       for(const l of d.lessons || []){
-        if(l.type === 'flashcards') out.push(...(l.cards||[]));
+        // _src: origen de la card, para poder atribuir la evidencia cruzada
+        if(l.type === 'flashcards') out.push(...(l.cards||[]).map(c => ({...c, _src:{c:course.id, d:d.id, l:l.id}})));
       }
     }
   }
@@ -5854,7 +6287,8 @@ function buildPracticeDeck(mode, scope){
     const course = COURSES[scope?.courseId || PRIMARY_COURSE_ID];
     const day = course?.days.find(d => d.id === scope?.dayId);
     if(!day) return [];
-    return day.lessons.filter(l => l.type === 'flashcards').flatMap(l => l.cards||[]);
+    return day.lessons.filter(l => l.type === 'flashcards')
+      .flatMap(l => (l.cards||[]).map(c => ({...c, _src:{c:course.id, d:day.id, l:l.id}})));
   }
   if(mode === 'errors'){
     return Object.values(DB.wrongAnswers||{}).map(e => ({
@@ -6082,6 +6516,7 @@ function submitAnswer(){
     ? (selSet.size === correctSet.size && [...selSet].every(x => correctSet.has(x)))
     : (selSet.size === 1 && correctSet.has([...selSet][0]));
   LESSON_STATE.answers[LESSON_STATE.cardIdx] = {selected:[...LESSON_STATE.tempSelected], correct};
+  recordEvidence(CURRENT.courseId, CURRENT.dayId, CURRENT.lessonId, 'lesson', correct);
   if(!correct){
     LESSON_STATE.errors += 1;
     haptic(HAPTIC.wrong);
@@ -6105,6 +6540,7 @@ function nextCard(){
   if(LESSON_STATE.cardIdx + 1 < lesson.cards.length){
     LESSON_STATE.cardIdx += 1;
     LESSON_STATE.tempSelected = [];
+    LESSON_STATE.recallDraft = '';
     render();
     setTimeout(() => {
       const sc = document.querySelector('.scroll');
@@ -6810,6 +7246,10 @@ function flashAnswer(result){
   s[result] = (s[result]||0) + 1;
   s.lastSeen = now();
   sm2Update(s, result === 'right');
+  // Evidencia cruzada: desde el sendero cuenta como 'flash'; desde el hub de
+  // práctica cuenta como 'practice' (es otro contexto, que es justo el punto).
+  const _src = card._src || {c: CURRENT.courseId, d: CURRENT.dayId, l: CURRENT.lessonId};
+  recordEvidence(_src.c, _src.d, _src.l, PRACTICE_MODE === 'lesson' ? 'flash' : 'practice', result === 'right');
   // XP: acertar da 3, fallar da 1 (sigue siendo aprendizaje)
   addXP(result === 'right' ? 3 : 1);
   // Counters de la sesión actual
@@ -6922,7 +7362,7 @@ function triggerImportBackup(){
         if(!confirm('Esto va a REEMPLAZAR tu progreso actual con el del backup. ¿Continuar?')) return;
         DB = Object.assign({
           xp:0, hearts:MAX_HEARTS, lastHeartLost:null, streak:0, lastStudyDate:null,
-          achievements:{}, progress:{}, flashcardStats:{}, totalLessons:0,
+          achievements:{}, progress:{}, flashcardStats:{}, conceptStats:{}, totalLessons:0,
           perfectLessons:0, quizProgress:{}, wrongAnswers:{}, activityLog:{}, studiedWeekdays:{}, chests:{},
           monthlyMedals:{}
         }, data);
@@ -6945,7 +7385,7 @@ function resetAll(){
   DB = {
     xp: 0, hearts: MAX_HEARTS, lastHeartLost: null,
     streak: 0, lastStudyDate: null, achievements: {},
-    progress: {}, flashcardStats: {}, totalLessons: 0, perfectLessons: 0,
+    progress: {}, flashcardStats: {}, conceptStats: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
     goalBonusClaimed: {}, dailyChal: null, chalPoints: 0, chalMonth: null, monthlyMedals: {},

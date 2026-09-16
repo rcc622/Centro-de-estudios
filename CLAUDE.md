@@ -492,6 +492,28 @@ Estructura:
 - Pesos: < 15MB por archivo (GitHub Pages tiene 1GB total y 100GB/mes bandwidth)
 - Si es > 15MB o varios videos, preferir `video-embed` con YouTube unlisted
 
+#### `recall` — respuesta libre (producción, no reconocimiento)
+
+El resto del motor evalúa por **reconocimiento**: eliges entre opciones. Reconocer es mucho más fácil que producir, y el examen real te pide producir. En un `recall` el usuario escribe la respuesta con sus palabras, el motor marca qué conceptos clave capturó, le muestra la respuesta modelo y él se auto-califica.
+
+```json
+{
+  "type": "recall",
+  "q": "Explica con tus palabras qué es el Learning Phase y qué saca de ahí a un conjunto de anuncios.",
+  "hint": "Piensa en el número de eventos y en la ventana de días.",
+  "keywords": ["50 eventos", "7 días", "optimización", "estabiliza"],
+  "model": "El <strong>Learning Phase</strong> (fase de aprendizaje) es el periodo en que el sistema de entrega de Meta explora a quién mostrarle tu anuncio...",
+  "explanation": "En el examen lo preguntan como \"por qué no debes editar un adset en aprendizaje\"."
+}
+```
+
+- `q` — pide PRODUCIR, no reconocer. "Explica con tus palabras…", "¿Cómo le explicarías a un cliente…?", "Describe paso a paso…".
+- `keywords` — 3-5 conceptos que un buen resumen tendría. **Con su ortografía normal** (acentos y mayúsculas correctas): se muestran tal cual en pantalla como chips, y `recallScore` normaliza los dos lados del match, así que los acentos no rompen nada. Evita unidades y símbolos (`W/m²` → `w m2`) y formas sensibles al plural. **Cada keyword debe aparecer literalmente dentro del texto de su propio `model`** — si no, es imposible de acertar.
+- `model` — la respuesta modelo, 4-6 oraciones, con las mismas reglas de redacción que un `concept` (desarrollar, traducir términos, autocontenida).
+- `hint` — pista corta opcional, no la respuesta.
+
+**Incentivos, a propósito:** decir "no la tenía" **no cuesta corazones ni XP**. Si mentir fuera gratis y ser honesto costara, todos mentiríamos y el dato se volvería basura. La auto-calificación solo alimenta el repaso espaciado (SM-2), la cola de errores y la evidencia de dominio. XP: `la tenía` +5 · `a medias` +3 · `no la tenía` +2.
+
 #### `decision-tree` — lección de árbol de decisión interactivo (full-lesson)
 
 Tipo de **lección completa** (no card individual). Usar cuando el contenido fuente es un árbol/diagrama de decisión con bifurcaciones Sí/No (o múltiples ramas), donde forzar un `order` lineal rompe la lógica.
@@ -552,6 +574,12 @@ Tipo de **lección completa** (no card individual). Usar cuando el contenido fue
 - El usuario debe aprender qué resultado aplica según condiciones múltiples.
 - Ej: bid strategy según costos+valor, attribution según industria+tipo de evento, troubleshooting según síntoma.
 
+### Campo `section` — bloques del sendero (OBLIGATORIO al agregar lecciones)
+
+`renderPath` agrupa las burbujas del sendero con `lesson.section || 'A'`. Los archivos de unidad declaran un objeto `sections` (ej. `b1`, `b2`, `b3`… `bz`) y **cada lección lleva su propio `section`**.
+
+**Si agregas una lección sin `section` a una unidad que sí usa sections, cae en un grupo fantasma 'A' y se dibuja fuera de lugar** (antes de todo, o después de las flashcards). Al agregar una lección, cópiale el `section` de la lección vecina donde debe quedar — normalmente el mismo que `<N>.flash` (`bz`) si va al final.
+
 ### Reglas para escribir contenido educativo
 
 1. **Las lecciones tipo "concept" deben DESARROLLAR el concepto, no telegrafiar.** Cuando introduces un término nuevo (sobre todo si está en inglés), explícalo con tus palabras: qué es, para qué sirve y de dónde viene. Apunta a 4-6 oraciones por card. Si un concepto trae varios sub-términos (ej. "Brand Lift" trae *brand awareness*, *ad recall*, *message association*), dedica una card aparte a desglosarlos uno por uno. Mejor varias cards digeribles que una sola densa.
@@ -604,6 +632,35 @@ Al terminar una lección hay ~20% de probabilidad (cooldown 2h, mínimo 2 leccio
 - **Celebración de racha**: toast + haptic cuando la racha crece (1 vez/día)
 - **Animaciones de refuerzo**: entrada de cards, pop/shake en MCQ, XP flotante, pulso del cofre, flip 3D real en flashcards, brillo periódico en la barra de progreso
 - **Sonidos (SFX)**: chimes sintetizados con WebAudio en `playSfx()` — cero archivos de audio, 100% offline. Eventos: correct/wrong/flip/complete/perfect/levelup/chest/streak/battleHit/battleWin. Toggle en Ajustes (`DB.soundEnabled`). NO sustituir por archivos de audio ni CDNs.
+
+### Dominio por evidencia cruzada (barras 1-3)
+
+Modelo tomado de las *recall bars* de [Mural](https://github.com/ujanjan/mural): un tema NO se da por dominado por acertarlo una vez. Hace falta evidencia **repetida**, en **contextos distintos** y **espaciada** en el tiempo.
+
+- La unidad de "tema" es la lección: `conceptStats['courseId|dayId|lessonId']`. Se deriva del sendero que ya existe — **no hay que taggear nada en los JSON de contenido**.
+- Contextos que cuentan: `lesson` (MCQ del sendero) · `flash` (flashcards del día) · `practice` (hub ⚔️) · `recall`.
+- Barras: **1** = evidencia suelta · **2** = 2+ contextos distintos · **3** = 2+ contextos Y 2+ días distintos Y sin fallos en los últimos 7 días (`EVIDENCE_DECAY_DAYS`).
+- Un fallo reciente tumba la tercera barra; a los 7 días se recupera sola.
+- Los quizzes y el simulacro no alimentan las barras: ya pesan aparte en el componente "Exámenes" del readiness.
+
+### Readiness — ¿listo para el examen?
+
+La idea también viene de Mural ("*the language app you eventually delete*"): la meta no es estudiar para siempre, es llegar a un umbral claro y presentar. Card en el home (curso principal) y en la vista de cada curso.
+
+`courseReadiness(courseId)` combina cuatro componentes, todos derivados de datos que el motor ya guardaba:
+
+| Componente | Peso | De dónde sale |
+|---|---|---|
+| Cobertura | 30% | lecciones completadas / total |
+| Dominio | 30% | temas con 3 barras / total |
+| Exámenes | 25% | `bestScore` de los unit-quiz + simulacro (pesa doble); quiz pendiente cuenta 0 |
+| Sin errores | 15% | deuda de `wrongAnswers` **relativa a lo ya cubierto** (si no has estudiado, vale 0) |
+
+`READY_THRESHOLD = 85`. Al cruzarlo el card se pone verde y dice "Listo para presentar". Debajo, el motor nombra el **cuello de botella** (el componente que más puntos te está costando, ponderado) con una acción concreta.
+
+### Voz — `speechSynthesis`
+
+Botón 🔊 en las dos caras de cada flashcard y en cada término del glosario (este en `en-US`, casi todos son términos en inglés). API nativa del navegador: cero dependencias, cero archivos, funciona offline una vez instalada la PWA — respeta la regla de oro 4. Segundo tap sobre el mismo botón detiene; `navTo()` corta la voz al cambiar de vista.
 
 ### Práctica (pestaña ⚔️)
 - **Repaso inteligente (mix)**: 10 flashcards priorizadas con **SM-2 real** (`sm2Update`: acierto=q4, fallo=q1; intervalos 1d→6d→ivl·ef; fallo resetea). Orden: vencidas → nunca vistas → próximas a vencer
@@ -790,6 +847,6 @@ Cuando termines una tarea, **siempre confirma a Randall**:
 
 ---
 
-**Versión de este CLAUDE.md:** 1.1
-**Última actualización:** Martes 9 de junio de 2026 (sync con motor: 100 niveles, battles, mecánicas Hook, práctica multi-curso, política de assets)
+**Versión de este CLAUDE.md:** 1.2
+**Última actualización:** Martes 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section` documentado)
 **Autor original:** Claude (en sesión Claude.ai con Randall)
