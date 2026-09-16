@@ -999,6 +999,68 @@
       ]
     },
     {
+      "id": "7.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain the four data privacy rules a media planner has to build into a campaign from the start.",
+          "hint": "Permission, protection of the list, forbidden categories, and the law.",
+          "keywords": [
+            "consent",
+            "hash",
+            "sensitive data",
+            "compliance"
+          ],
+          "model": "Privacy gets designed into the plan from day one, alongside the budget and the audiences, instead of being bolted on as a formality at the end; operating this way is what Meta calls business integrity. The four rules are these. <strong>Consent</strong>: data is only collected and used when there is a legal basis or the person's proper permission. <strong>List hashing</strong>: a customer list is converted into an irreversible code before it leaves your systems, so Meta never receives emails or phone numbers in readable text. <strong>Sensitive data</strong>: you may not target using inferred sensitive categories such as health, religion or sexual orientation. <strong>Compliance</strong>: you respect both Meta policies and the privacy law of each country. There is also a myth worth killing, which is that protecting privacy costs you performance: a signal sent from the advertiser's own server through the <strong>Conversions API</strong>, properly configured and with consent, is more complete and stable than what the browser reports, so a pet supply retailer that moved its events there recovered conversions it had been losing while improving compliance at the same time.",
+          "explanation": "Two exam traps live here: believing Meta receives readable emails to run the match, and believing first-party lists are forbidden."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a cautious client which controls protect where their ad appears, and what they give up by tightening them?",
+          "hint": "Four tools, plus a trade-off you have to say out loud.",
+          "keywords": [
+            "inventory filter",
+            "block list",
+            "allow list",
+            "exclusion",
+            "Audience Network"
+          ],
+          "model": "Brand safety controls keep an ad from appearing next to content that would damage the client's image, and the risk only exists where your ad sits beside someone else's content: mainly <strong>in-stream</strong> video, the <strong>Audience Network</strong> and Reels, since on the brand's own feed the brand controls what gets published. There are four tools. The <strong>inventory filter</strong> sets how strict the adjacent content may be, with three levels from broadest to tightest: expanded, moderate and limited. <strong>Block lists</strong> exclude specific sites, apps or accounts, while publisher <strong>allow lists</strong> do the opposite and let you run only on a short approved list. <strong>Content type exclusions</strong> block entire sensitive categories at once. The trade-off has to be stated plainly: stricter controls mean a safer brand but smaller reach and often a higher cost, so an airline that never wants its ad landing after aviation-accident content is knowingly paying for that certainty.",
+          "explanation": "The exam checks that you know where adjacency risk actually lives and that you can name the cost of tightening the controls."
+        },
+        {
+          "type": "recall",
+          "q": "Describe step by step what happens when you submit an ad for review and what your options are if it gets rejected.",
+          "hint": "It is not only the image that gets checked, and an edit is not free.",
+          "keywords": [
+            "ad review",
+            "Advertising Standards",
+            "landing page",
+            "appeal",
+            "24 hours"
+          ],
+          "model": "Before an ad reaches anybody it goes through <strong>ad review</strong>, the process Meta uses to check compliance with its <strong>Advertising Standards</strong>. Automated systems filter most cases instantly and human reviewers handle the questionable ones; it usually resolves in about <strong>24 hours</strong>, though it can vary, and no ad is delivered without passing regardless of how large the budget is. The review does not only look at the image: it covers the text, the image, the video, the targeting and the <strong>landing page</strong> the ad leads to, so a flawless creative is still rejected when the destination page violates the standards. If it is rejected you have two paths: edit the ad to fix the problem, or request a manual review, called an <strong>appeal</strong>, when you believe the decision was a mistake. Any significant edit sends the ad back through review before it can deliver, which is why a supplements brand planning a Monday launch builds that roughly 24-hour window into the timeline instead of discovering it on launch day.",
+          "explanation": "The landing page being part of the review is the detail most people miss, and it is exactly the one the exam likes to test."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain the personal attribute rule and rewrite a rejected line so that it complies.",
+          "hint": "The problem is what the copy claims to know about the reader, not what you sell.",
+          "keywords": [
+            "personal attribute",
+            "Advertising Standards",
+            "wording",
+            "health"
+          ],
+          "model": "The <strong>Advertising Standards</strong> prohibit an ad from implying it knows a <strong>personal attribute</strong> of the person seeing it, such as their <strong>health</strong>, religion, age, sexual orientation or financial situation. What triggers the rejection is the <em>wording</em>, not the product: the same service can be advertised without any problem as long as the copy talks about what you offer instead of asserting something private about the reader. A line like <em>We know you suffer from migraines</em> is rejected because it asserts a health condition of the viewer, while <em>Natural relief for headaches</em> is valid because it describes the product. The same trap catches phrasing such as <em>Meet other people like you with diabetes</em>, which is rejected even when the product and the targeting are entirely legitimate. The practical fix is to rewrite around the offer rather than around the person: a debt consolidation service says <em>Combine several payments into one monthly payment</em>, never <em>Struggling with your debts?</em>",
+          "explanation": "This is the single most tested rejection cause, and the exam always presents it as valid product plus valid targeting with non-compliant copy."
+        }
+      ]
+    },
+    {
       "id": "7.flash",
       "title": "Module 7 flashcards (all)",
       "section": "bz",

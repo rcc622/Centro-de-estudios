@@ -1036,6 +1036,70 @@
       ]
     },
     {
+      "id": "5.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un cliente que solo quiere anunciarse en Stories porque se le hace más bonito, que esa decisión le va a costar más caro?",
+          "hint": "Más superficies significan más subastas donde competir.",
+          "keywords": [
+            "placements",
+            "Advantage+",
+            "costo por resultado",
+            "alcance",
+            "ubicaciones manuales"
+          ],
+          "model": "Los <strong>placements</strong> (ubicaciones) son los espacios donde tu anuncio puede aparecer dentro del universo de Meta: los Feeds de Facebook e Instagram, Stories, Reels, in-stream (dentro de videos más largos), Marketplace, Search y Audience Network (la red de apps y sitios de terceros). El default recomendado es <strong>Advantage+ placements</strong> (Ubicaciones Advantage+), donde en lugar de escoger a mano dejas que el sistema entregue el anuncio donde encuentre el mejor resultado al menor costo. La lógica que le explicas al cliente es de mercado: mientras más ubicaciones le permitas usar, más subastas y más combinaciones tiene el sistema para probar, y eso normalmente baja el costo por resultado y amplía el alcance. Encerrarse en una sola superficie por gusto estético reduce el inventario disponible y encarece cada resultado. Imagina una sala de conciertos independiente que solo quiere Stories: termina pagando más por cada boleto vendido que si hubiera dejado abiertas todas las superficies. Las ubicaciones manuales sí se justifican, pero solo con una razón de negocio real: un creativo que no funciona en cierto formato o un requisito de marca.",
+          "explanation": "El examen distingue preferencia estética de razón de negocio: restringir ubicaciones sin una justificación real es siempre la opción incorrecta."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras por qué el creativo cambia el costo de una campaña en Subasta, aunque no toques el presupuesto ni la puja.",
+          "hint": "Piensa en los tres ingredientes del total value.",
+          "keywords": [
+            "total value",
+            "estimated action rates",
+            "ad quality",
+            "bid",
+            "creativo"
+          ],
+          "model": "El creativo (la pieza visual: imagen, video, texto) no es decoración, es una de las palancas más fuertes de costo que tienes. Meta decide qué anuncio mostrar con el <strong>total value</strong> (valor total), que suma tres cosas: el <strong>advertiser bid</strong> (cuánto estás dispuesto a pagar), las <strong>estimated action rates</strong> (la probabilidad estimada de que esa persona haga la acción que buscas, como comprar o registrarse) y el <strong>ad quality</strong> (qué tan bueno y relevante considera Meta tu anuncio según señales y feedback de los usuarios). El creativo no cambia tu puja, pero sí mueve los otros dos: un anuncio atractivo sube la probabilidad de acción y la calidad percibida, así que gana más subastas con la misma puja. Ese es el mecanismo exacto por el que un buen creativo abarata los resultados sin que gastes un peso más. Imagina una clínica dental que graba un video corto y claro sobre su revisión gratuita: puede terminar pagando menos por cada cita agendada que un competidor con más presupuesto pero anuncios genéricos. Por eso el creativo se planea como parte de la estrategia de medios, no se delega para el final.",
+          "explanation": "Es una de las preguntas conceptuales más repetidas, y el distractor típico dice que el creativo baja tu bid: no lo baja, sube los otros dos componentes del total value."
+        },
+        {
+          "type": "recall",
+          "q": "¿Qué le dirías a un compañero que usa Advantage+ creative y Advantage+ placements como si fueran lo mismo?",
+          "hint": "Uno decide CÓMO se ve, el otro DÓNDE se muestra.",
+          "keywords": [
+            "Advantage+",
+            "placements",
+            "creativo",
+            "ubicaciones",
+            "cada persona"
+          ],
+          "model": "Son dos automatizaciones distintas de Meta que comparten apellido, y por eso el examen las cruza a propósito. <strong>Advantage+ creative</strong> (creativo automático) ajusta tu pieza de forma diferente para cada persona que la ve: puede recortar la imagen, cambiar el brillo, agregar música o modificar el texto para que le caiga mejor a ese usuario. <strong>Advantage+ placements</strong> (Ubicaciones Advantage+) no toca la pieza: decide en qué superficies se entrega el anuncio, entre Feeds, Stories, Reels, in-stream, Marketplace y Audience Network, buscando el mejor resultado al menor costo. En una frase: creative optimiza CÓMO se ve el anuncio y placements decide DÓNDE se muestra. Imagina una tienda en línea de artículos para mascotas que sube un video: con placements activo, ese video puede salir en Reels y en el Feed; con creative activo, el mismo video se le muestra recortado y con música distinta a cada persona. Lo normal es usar las dos juntas, pero saber cuál hace qué es lo que te salva la pregunta.",
+          "explanation": "El examen pone las dos opciones en la misma pregunta; la pista está en si el enunciado habla de superficies donde aparece o de la pieza que se ve."
+        },
+        {
+          "type": "recall",
+          "q": "Un cliente ya tiene un video vertical, varias imágenes y un carousel, y quiere alcance amplio y eficiente. ¿Qué plan de ubicaciones y creativo le propones y por qué?",
+          "hint": "Maximizar superficies sirve de poco con una sola pieza.",
+          "keywords": [
+            "Advantage+",
+            "vertical",
+            "variedad creativa",
+            "fatiga",
+            "combinación"
+          ],
+          "model": "La receta es doble: maximizar superficies con <strong>Advantage+ placements</strong> (Ubicaciones Advantage+) y al mismo tiempo cargar variedad creativa pensada para celular, es decir piezas verticales que funcionen sin sonido y con la marca visible en los primeros segundos. Las dos mitades se necesitan: si abres todas las ubicaciones pero subes un solo creativo, le das al sistema muchos espacios y poco material para probar, y esa única pieza se desgasta rápido, lo que se conoce como fatiga creativa. Con varias piezas y varias superficies, el sistema puede buscar la mejor combinación de persona, ubicación y creativo, que es justo donde está la eficiencia. En concreto, el video vertical, las imágenes y el <strong>carousel</strong> (Secuencia: anuncio de varias tarjetas que el usuario desliza) deben cargarse todos, no elegir solo uno. Imagina una zapatería que lanza su colección de temporada: sube sus tres formatos, deja abiertas todas las ubicaciones y descubre que sus mejores ventas llegan por Reels, algo que no habría visto si hubiera restringido a Feed. Las ubicaciones y el creativo se planean juntos, nunca como dos decisiones separadas.",
+          "explanation": "Las opciones incorrectas típicas son maximizar ubicaciones con un solo creativo, o restringir superficies para cuidar la estética; ambas rompen la mitad del plan."
+        }
+      ]
+    },
+    {
       "id": "5.flash",
       "title": "Flashcards del Módulo 5 (todo)",
       "section": "bz",

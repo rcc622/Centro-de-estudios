@@ -1237,6 +1237,69 @@
       ]
     },
     {
+      "id": "2.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras la diferencia entre los dos buying types de Meta y en qué situación elegirías cada uno.",
+          "hint": "Uno compite en tiempo real, el otro aparta el espacio por adelantado.",
+          "keywords": [
+            "Auction",
+            "Reservation",
+            "CPM",
+            "reach",
+            "frequency"
+          ],
+          "model": "Un <strong>buying type</strong> (tipo de compra) es el método con el que adquieres espacios publicitarios en las plataformas de Meta, y solo existen dos. En <strong>Auction</strong> (Subasta) tus anuncios compiten en tiempo real por cada espacio y el precio sube o baja según la demanda del momento; es la modalidad flexible porque soporta todos los objetivos, las cinco estrategias de puja y todas las ubicaciones. En <strong>Reservation</strong> (Reserva) apartas la entrega y el precio por adelantado, igual que al comprar un espectacular o un spot de televisión: te garantizan el <strong>reach</strong> (alcance: cuántas personas distintas ven el anuncio) y la <strong>frequency</strong> (frecuencia: cuántas veces lo ve cada una) a un <strong>CPM</strong> (costo por mil impresiones) fijo. El precio de esa certeza es que Reserva solo soporta los objetivos Awareness e Engagement. Imagina una aerolínea regional que estrena ruta y necesita prometerle a su dirección un alcance exacto con presupuesto cerrado: ahí va Reserva. Si esa misma aerolínea quiere vender boletos al menor costo posible y a escala, va Subasta.",
+          "explanation": "El examen lo pregunta como caso: si el enunciado dice garantizado, predecible o presupuesto cerrado, apunta a Reserva; si dice eficiencia, escala o conversiones, apunta a Subasta."
+        },
+        {
+          "type": "recall",
+          "q": "¿Qué le dirías a un compañero que quiere ganar más subastas subiendo el bid y nada más?",
+          "hint": "El ganador no es quien paga más. Son tres ingredientes.",
+          "keywords": [
+            "total value",
+            "bid",
+            "estimated action rates",
+            "ad quality"
+          ],
+          "model": "En la subasta de Meta el ganador no es quien ofrece más dinero. Cada vez que alguien abre Facebook o Instagram, Meta corre una subasta instantánea y calcula el <strong>total value</strong> (valor total) de cada anuncio para esa persona en ese momento, y muestra el que tenga el valor más alto. Ese total value combina exactamente tres ingredientes: el <strong>advertiser bid</strong> (la puja: lo que estás dispuesto a pagar por el resultado), las <strong>estimated action rates</strong> (la probabilidad que Meta calcula de que esa persona haga la acción que buscas) y el <strong>ad quality</strong> (qué tan relevante y bien hecho considera tu anuncio según señales de los usuarios). Por eso subir el bid a ciegas es la palanca más cara: mejorar el creativo y el match con la audiencia sube los otros dos componentes y baja el costo sin gastar más. Imagina una panadería artesanal con tres sucursales que le gana espacios a una cadena nacional simplemente porque su anuncio es más relevante para el vecindario. Ojo con la trampa: la estrategia de puja NO es un cuarto componente del total value.",
+          "explanation": "La pregunta clásica es cuál de estas opciones NO forma parte del total value, y el distractor favorito es la bid strategy o el presupuesto."
+        },
+        {
+          "type": "recall",
+          "q": "Describe las cinco bid strategies de Meta agrupándolas por familia, y di qué prioriza cada familia.",
+          "hint": "Tres familias: basadas en gasto, basadas en meta y manual.",
+          "keywords": [
+            "Volumen más alto",
+            "Valor más alto",
+            "costo por resultado",
+            "ROAS",
+            "Bid Cap"
+          ],
+          "model": "Una <strong>bid strategy</strong> (estrategia de puja) le dice a Meta cómo gastar tu presupuesto en la subasta, y hay cinco agrupadas en tres familias. Las <strong>spend-based</strong> (basadas en gasto) exprimen todo el presupuesto sin techo de costo: Volumen más alto (Highest Volume) busca el máximo número de resultados, y Valor más alto (Highest Value) busca el máximo valor total de compra, aunque esta última exige que midas el valor de cada venta. Las <strong>goal-based</strong> (basadas en meta) apuntan a una cifra que tú fijas: Objetivo de costo por resultado (Cost per Result Goal) mantiene un costo promedio por resultado, y Objetivo de ROAS (ROAS Goal, de return on ad spend: pesos generados por cada peso gastado) mantiene un retorno objetivo. La quinta es la única manual: Límite de puja (Bid Cap), que fija el máximo que Meta puede pujar en cada subasta individual. Imagina un fabricante de bombas de riego que le vende a agricultores y tiene cerrado con su contador un tope por prospecto: ahí encaja Objetivo de costo por resultado. Cuidado con el Límite de puja: si lo pones muy bajo, el anuncio casi no entra a subastas y la campaña ni siquiera gasta.",
+          "explanation": "El examen te da la restricción del cliente y espera que la traduzcas: tope de costo con el máximo volumen dentro del límite es Cost per Result Goal, y retorno mínimo exigido es ROAS Goal."
+        },
+        {
+          "type": "recall",
+          "q": "Un cliente asume que Reserva le va a salir más barato que Subasta. ¿Qué le respondes y qué tres límites de Reserva le explicarías?",
+          "hint": "Lo que compras es certeza, no descuento.",
+          "keywords": [
+            "Reserva",
+            "predecibilidad",
+            "Awareness",
+            "Engagement",
+            "CPM"
+          ],
+          "model": "Reserva no es un descuento, es un seguro: lo que compras es predecibilidad de entrega y de precio, no un costo mínimo. El primer límite es que no licita, porque el precio ya está pactado en un <strong>CPM</strong> (costo por mil impresiones) fijo y por lo tanto no usa las estrategias de puja de la subasta. El segundo es de objetivos: Reserva solo soporta Awareness (Reconocimiento) e Engagement (Interacción), así que Ventas, Clientes potenciales, Tráfico y Promoción de la app siempre van por Subasta. El tercero es el más incómodo de decir en junta: Reserva puede salir igual o más cara que Subasta, porque estás pagando por la garantía de <strong>reach</strong> (alcance) y <strong>frequency</strong> (frecuencia), no por un precio bajo. Imagina una agencia de autos que lanza un modelo nuevo y quiere prometer exactamente a cuántas personas va a llegar: Reserva encaja perfecto. Pero si esa misma agencia luego quiere vender ese modelo en línea, tendrá que moverse a Subasta.",
+          "explanation": "Las tres afirmaciones falsas típicas del examen son que Reserva es más barata, que usa bid strategies o que soporta objetivos de conversión."
+        }
+      ]
+    },
+    {
       "id": "2.flash",
       "title": "Flashcards del Módulo 2 (todo)",
       "section": "bz",

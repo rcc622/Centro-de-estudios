@@ -1763,6 +1763,70 @@
       ]
     },
     {
+      "id": "4.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "How would you explain to a client why they need both the Meta Pixel and the Conversions API instead of just one of them?",
+          "hint": "One runs inside the visitor's browser, the other runs on the advertiser's own server.",
+          "keywords": [
+            "Pixel",
+            "CAPI",
+            "server",
+            "ad blocker",
+            "complementary"
+          ],
+          "model": "The <strong>Meta Pixel</strong> is a piece of JavaScript you install on your website that captures what a visitor does in their <em>browser</em>: viewing a product, adding to cart, purchasing. Because it runs client-side, it is fragile: ad blockers, browser restrictions and iOS privacy settings can swallow somewhere around 10 to 30 percent of those events. The <strong>Conversions API</strong>, or <strong>CAPI</strong>, sends the same kind of events <strong>server to server</strong>, straight from your own server to Meta, so it does not depend on the browser and keeps reporting purchases the Pixel would have lost. The key point is that <strong>CAPI does not replace the Pixel</strong>; they are complementary, and Meta's own recommendation is to run both for maximum coverage, roughly 95 percent or more, plus better event match quality and better optimization. Picture an online pharmacy: the Pixel gives the browsing detail such as which products were viewed, while CAPI guarantees the confirmed order still reaches Meta even when the browser blocks the pixel. Both feed the same <strong>Dataset</strong>, the container that consolidates all your sources, and the dataset is chosen at the ad set level.",
+          "explanation": "A very common distractor claims CAPI replaces the Pixel or is only needed for iOS; the correct framing is always that both together give the best coverage."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what Event Match Quality is and which event parameters you would make sure to send for a sales campaign.",
+          "hint": "Think about matching an event to a real person, and about what the system needs in order to know how much a sale was worth.",
+          "keywords": [
+            "Event Match Quality",
+            "hash",
+            "value",
+            "currency",
+            "Content ID"
+          ],
+          "model": "<strong>Event Match Quality</strong>, or <strong>EMQ</strong>, measures how well Meta manages to tie an event it receives to a real person in its user base. If the match fails, the event is effectively lost for optimization: the system knows something happened but cannot learn who it should look for next. EMQ improves when you send rich customer information such as <strong>hashed</strong> email and phone, meaning the data is turned into an irreversible code before it leaves your server, so Meta can match it without ever seeing it in plain text. Separately, an event's <strong>parameters</strong> are the extra data travelling inside it that give context: <em>Content IDs</em> (the product code or SKU), <em>content type</em>, <em>value</em>, <em>currency</em> and the customer information fields. For a sales campaign the two non-negotiable ones are <strong>value</strong> and <strong>currency</strong>: without them Meta knows a purchase occurred but cannot tell a small order from a large one, which blocks value-based bid strategies like Highest Value and ROAS Goal outright. A travel agency selling both day tours and two-week packages would be optimizing blind without them.",
+          "explanation": "Questions about why a value-based bid strategy is unavailable or underperforming almost always trace back to missing value and currency parameters or poor event match quality."
+        },
+        {
+          "type": "recall",
+          "q": "Describe the difference between a Custom Event and a Custom Conversion, and when you would use each.",
+          "hint": "One requires new code on the site; the other is just a rule applied to data that is already arriving.",
+          "keywords": [
+            "Custom Event",
+            "Custom Conversion",
+            "standard event",
+            "rule",
+            "code"
+          ],
+          "model": "Meta has three kinds of events: <strong>automatically logged</strong> ones (apps only, detected by the SDK with no extra code), <strong>standard events</strong> predefined by Meta such as Purchase, Lead, AddToCart, ViewContent or Subscribe, and <strong>custom events</strong> that the business invents for itself. A <strong>Custom Event</strong> is a brand-new event that did not exist before, so you must touch the Pixel or CAPI code to start sending it; you only do this when no standard event describes the action, for example a trade school tracking something like <em>scholarship simulator completed</em>. A <strong>Custom Conversion</strong> is different: it is a <strong>rule</strong> you build on top of an event that is <em>already arriving</em>, filtering it by conditions such as the page URL, the purchase value or a parameter, and it requires no code at all. So if that same school already receives a Lead event and only wants to count leads coming from the diploma-course page, that is a Custom Conversion, not a new event. The golden rule: if the data already reaches Meta, use a Custom Conversion; only write code when the action is genuinely not being sent. One hard limit: <strong>Custom Conversions are not available for app events</strong>, only for web and offline, so in apps you must create direct custom events through the SDK.",
+          "explanation": "The exam leans on this pair because both names sound alike; the deciding question is always whether new code is required or whether the data is already being received."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what Apple's App Tracking Transparency changed for advertisers and how Aggregated Event Measurement responds to it.",
+          "hint": "A consent popup on one side; measuring in bulk with a hard limit on the number of events on the other.",
+          "keywords": [
+            "ATT",
+            "consent",
+            "AEM",
+            "8 events",
+            "attribution window"
+          ],
+          "model": "<strong>App Tracking Transparency</strong>, or <strong>ATT</strong>, is the policy Apple introduced with iOS 14 that forces every app to show a prompt asking for explicit consent before tracking the user across other apps and websites. Most people decline, so advertisers lost a large share of the individual-level signal coming from iPhones; Android is not affected, but the volume of iOS traffic makes the impact big. <strong>Aggregated Event Measurement</strong>, or <strong>AEM</strong>, is Meta's answer: a protocol that keeps measuring web and app events on iOS 14 and above by reporting them in aggregate rather than person by person, stripping personal identifiers so an event cannot be tied to an individual. The price is a set of limits worth memorizing: a maximum of <strong>8 prioritized events per domain</strong>, reporting delayed by roughly 24 to 72 hours instead of real time, <strong>attribution windows reduced to 1-day view and 7-day click</strong>, and weaker web custom audiences for users who did not consent. Because of the 8-slot cap, an online grocer should spend its slots on Purchase, InitiateCheckout, AddToCart and Lead rather than on trivial page views. The mitigation Meta recommends is installing CAPI, prioritizing the right 8 events, and sending hashed customer information to lift event match quality.",
+          "explanation": "The 8-events-per-domain limit and the reduced attribution windows are precise facts the exam tests directly, and the mitigation list is the expected answer to <em>what should the media buyer do</em> questions."
+        }
+      ]
+    },
+    {
       "id": "4.flash",
       "title": "Day 4 flashcards (all)",
       "section": "bz",

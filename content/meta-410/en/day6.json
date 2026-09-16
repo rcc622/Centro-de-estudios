@@ -2194,6 +2194,70 @@
       ]
     },
     {
+      "id": "6.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "How would you explain to a client why their ad stopped performing after three weeks, and what you would do about it?",
+          "hint": "Same people, same ad, too many times. Then think about the three dimensions you can vary.",
+          "keywords": [
+            "creative fatigue",
+            "Advantage+ Creative",
+            "messaging",
+            "visuals",
+            "formats"
+          ],
+          "model": "What the client is seeing is <strong>creative fatigue</strong>, also called ad wear-out: the performance drop that happens when the same people see the same ad too many times, stop paying attention and eventually ignore or hide it. The cure is diversification, and it works along three dimensions: <strong>messaging</strong> (headline, body copy, call to action), <strong>visuals</strong> (image, video, colour, the person shown) and <strong>formats</strong> (single image, video, carousel, collection), so the system always has fresh material to rotate. <strong>Advantage+ Creative</strong> helps here by adapting your assets per person and per placement: it generates <em>variations</em> (different crops, brightness, background music), applies <em>enhancements</em> such as translations, captions or audio polish, and delivers the combination most likely to work for each viewer. If instead you want manual control, <strong>Asset Customization for Placements</strong> lets you decide by hand which asset, crop and text appear in each placement. Finally, keep the mobile-first rules in mind when producing the replacements: <strong>9:16</strong> video of 15 seconds or less, branding within the first <strong>3 seconds</strong>, audio plus captions because sound is off by default, and key elements inside the central safe zone so the interface does not cover them.",
+          "explanation": "Declining performance on a stable setup is a recurring exam scenario, and the expected answer is creative diversification rather than budget or bid changes."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what attribution is and what the default attribution setting in Ads Manager means.",
+          "hint": "Who gets the credit for a sale, and for how long after a view or a click it still counts.",
+          "keywords": [
+            "attribution",
+            "touchpoint",
+            "1-day view",
+            "7-day click",
+            "customer journey"
+          ],
+          "model": "<strong>Attribution</strong> is the process of deciding which ad gets the credit when someone converts. It matters because a person rarely buys on first contact: they collect several <strong>touchpoints</strong> along the way, perhaps seeing an ad on Instagram on Monday, another on Facebook on Tuesday and buying on Wednesday, and that whole path is the <strong>customer journey</strong>. The <strong>attribution setting</strong> is the time window in which a conversion still counts for the ad, and Meta's default is <strong>1-day view, 7-day click</strong>. Read it this way: if the person only <em>saw</em> the ad without tapping it, the purchase counts if it happens within 1 day; if they <em>clicked</em>, they have up to 7 days for the purchase to still be credited, and anything beyond those windows is not attributed to that ad. A furniture store with a long consideration cycle will therefore see fewer credited sales than its own books show, which is expected rather than a tracking bug. One exam warning: in Ads Manager only <strong>Standard</strong> and <strong>Incremental</strong> attribution settings exist, so options named <em>Custom attribution</em> or <em>Engaged-view attribution</em> are invented distractors.",
+          "explanation": "Attribution windows explain most of the gaps between Ads Manager numbers and a client's internal sales reports, and the invented-setting distractor appears regularly."
+        },
+        {
+          "type": "recall",
+          "q": "Describe the difference between an A/B test, a Brand Lift study and a Conversion Lift study, and when you would use each.",
+          "hint": "One compares two versions, one asks people questions, one measures the extra sales that would not have happened otherwise.",
+          "keywords": [
+            "cost per result",
+            "single variable",
+            "Brand Lift",
+            "survey",
+            "Conversion Lift"
+          ],
+          "model": "An <strong>A/B test</strong>, also called a split test, runs two versions of an ad at the same time to see which performs better, and its golden rule is changing <strong>one single variable</strong> between them: creative, audience, placement or delivery optimization. Meta splits the audience <em>randomly and without overlap</em>, so nobody sees both versions, and the winner is the one with the lower <strong>cost per result</strong>; give it at least 7 days, ideally 14 to 30. <strong>Brand Lift</strong> measures perception rather than sales, using <strong>surveys</strong> sent to a group that saw the ads (the test group) and a comparable group that did not (the control group), and it reports three things: <em>brand awareness</em>, <em>ad recall</em> and <em>message association</em>. <strong>Conversion Lift</strong> measures <strong>incrementality</strong>: how many <em>extra</em> conversions the campaign caused that would not have happened anyway, using a randomized controlled trial with a holdout group that is never shown the ads. So a beverage brand launching a new flavour would use Brand Lift, while a subscription box wanting to know whether the ads truly caused the signups would use Conversion Lift. All three are configured in the <strong>Experiments</strong> section of Ads Manager or Meta Business Suite, not in ordinary Ads Reporting, and each runs in its own dedicated campaign.",
+          "explanation": "The exam cue is in the wording: <em>how many extra sales</em> points to Conversion Lift, <em>brand impact or recall</em> points to Brand Lift, and <em>which version works better</em> points to an A/B test."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain the difference between Brand Safety and the Advertising Standards, and name the controls Brand Safety gives you.",
+          "hint": "One is about what your ad appears next to; the other is about what your own ad says.",
+          "keywords": [
+            "Brand Safety",
+            "inventory filter",
+            "block list",
+            "Advertising Standards",
+            "personal attribute"
+          ],
+          "model": "<strong>Brand Safety</strong> is the set of controls that decide <em>what content your ad can appear next to</em>, because people associate a brand with its surroundings and no advertiser wants to sit beside violent or disreputable content. It gives you four controls, from simplest to most manual: <strong>inventory filters</strong>, a three-level switch of Expanded (the default and widest), Moderate and Limited; <strong>publisher block lists</strong>, a list you build by hand of publishers you refuse to appear with; <strong>topic exclusions</strong>, to avoid subjects such as controversial news; and <strong>content type exclusions</strong>, to avoid formats such as in-stream pre-roll. The <strong>Advertising Standards</strong> are a different thing entirely: they govern <em>what your own ad is allowed to say and sell</em>. They split into fully <strong>prohibited</strong> content, such as tobacco, drugs, privacy violations, graphic violence and deceptive practices, and <strong>restricted</strong> content allowed under conditions, such as alcohol with geographic and age limits, gambling with authorization, or financial and health-related products. The trap worth remembering is <strong>personal attributes</strong>: an ad can be rejected even when the product is perfectly legal, because the copy implies it knows something about the viewer, so wording aimed at <em>other older gentlemen</em> gets rejected while <em>experienced professionals</em> passes.",
+          "explanation": "Rejection scenarios usually turn on the personal-attributes rule rather than on the product itself, and mixing up Brand Safety with the Advertising Standards is the other half of those questions."
+        }
+      ]
+    },
+    {
       "id": "6.flash",
       "title": "Day 6 flashcards (all)",
       "section": "bz",

@@ -2,10 +2,26 @@
   "id": "m1",
   "title": "Módulo 1 — Fundamentos: del Sol a la electricidad",
   "sections": {
-    "b1": { "ico": "🌞", "title": "Bloque 1", "sub": "El recurso solar" },
-    "b2": { "ico": "⚛️", "title": "Bloque 2", "sub": "De fotón a electricidad" },
-    "b3": { "ico": "📏", "title": "Bloque 3", "sub": "Valores, pruebas y mediciones" },
-    "bz": { "ico": "🏆", "title": "Cierre del módulo", "sub": "Caso a resolver y consolidación" }
+    "b1": {
+      "ico": "🌞",
+      "title": "Bloque 1",
+      "sub": "El recurso solar"
+    },
+    "b2": {
+      "ico": "⚛️",
+      "title": "Bloque 2",
+      "sub": "De fotón a electricidad"
+    },
+    "b3": {
+      "ico": "📏",
+      "title": "Bloque 3",
+      "sub": "Valores, pruebas y mediciones"
+    },
+    "bz": {
+      "ico": "🏆",
+      "title": "Cierre del módulo",
+      "sub": "Caso a resolver y consolidación"
+    }
   },
   "lessons": [
     {
@@ -33,11 +49,26 @@
           "type": "kvtable",
           "h": "Conceptos base del recurso solar",
           "rows": [
-            ["Radiación", "Método de transferencia: única vía Sol → Tierra"],
-            ["Irradiación", "Potencia instantánea · W/m²"],
-            ["Irradiancia", "Energía acumulada · kWh/m²/día"],
-            ["Constante solar", "1,353 W/m² fuera de la atmósfera"],
-            ["En superficie", "Entre 700 y 1,000 W/m² tras filtrarse en la atmósfera"]
+            [
+              "Radiación",
+              "Método de transferencia: única vía Sol → Tierra"
+            ],
+            [
+              "Irradiación",
+              "Potencia instantánea · W/m²"
+            ],
+            [
+              "Irradiancia",
+              "Energía acumulada · kWh/m²/día"
+            ],
+            [
+              "Constante solar",
+              "1,353 W/m² fuera de la atmósfera"
+            ],
+            [
+              "En superficie",
+              "Entre 700 y 1,000 W/m² tras filtrarse en la atmósfera"
+            ]
           ]
         },
         {
@@ -149,7 +180,12 @@
         {
           "type": "fill",
           "q": "La energía acumulada que recibe un sitio se llama ___ y se mide en kWh/m²/día.",
-          "options": ["irradiancia", "irradiación", "radiación", "declinación"],
+          "options": [
+            "irradiancia",
+            "irradiación",
+            "radiación",
+            "declinación"
+          ],
           "correct": 0,
           "explanation": "Irradiancia = energía acumulada (kWh/m²/día). Irradiación = potencia instantánea (W/m²)."
         },
@@ -169,7 +205,12 @@
         {
           "type": "fill",
           "q": "El eje de la Tierra está inclinado ___ grados, y eso genera las estaciones.",
-          "options": ["23.5", "90", "45", "0"],
+          "options": [
+            "23.5",
+            "90",
+            "45",
+            "0"
+          ],
           "correct": 0,
           "explanation": "La inclinación de 23.5° del eje respecto al plano de la órbita produce las estaciones y hace variar la declinación solar entre +23.5° y −23.5°."
         },
@@ -272,11 +313,26 @@
           "type": "kvtable",
           "h": "Puntos clave de la curva I-V",
           "rows": [
-            ["Voc", "Tensión máxima, corriente cero (circuito abierto) → potencia 0"],
-            ["Isc", "Corriente máxima, tensión cero (corto circuito) → potencia 0"],
-            ["MPP", "Punto de máxima potencia: Pmp = Vmp × Imp"],
-            ["Calor ↑", "Tensión ↓ (coef. ~0.29-0.35 %/°C)"],
-            ["Irradiación ↑", "Corriente ↑"]
+            [
+              "Voc",
+              "Tensión máxima, corriente cero (circuito abierto) → potencia 0"
+            ],
+            [
+              "Isc",
+              "Corriente máxima, tensión cero (corto circuito) → potencia 0"
+            ],
+            [
+              "MPP",
+              "Punto de máxima potencia: Pmp = Vmp × Imp"
+            ],
+            [
+              "Calor ↑",
+              "Tensión ↓ (coef. ~0.29-0.35 %/°C)"
+            ],
+            [
+              "Irradiación ↑",
+              "Corriente ↑"
+            ]
           ]
         },
         {
@@ -438,26 +494,148 @@
       ]
     },
     {
+      "id": "1.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Una familia que quiere paneles en su casa te pregunta cuánta energía le va a dar el sistema cada mes. Explica con tus palabras la diferencia entre irradiación e irradiancia y cuál de las dos necesitas para contestarle.",
+          "hint": "Una se mide en un instante; la otra se acumula a lo largo del día.",
+          "keywords": [
+            "irradiación",
+            "irradiancia",
+            "potencia instantánea",
+            "energía acumulada"
+          ],
+          "model": "La <strong>irradiación</strong> es la <strong>potencia instantánea</strong> que llega del Sol sobre cada metro cuadrado y se mide en W/m²: es la foto de un momento. La <strong>irradiancia</strong> es la <strong>energía acumulada</strong> que recibe ese mismo metro cuadrado a lo largo del día y se mide en kWh/m²/día. Piensa en una manguera: la irradiación es la fuerza con la que sale el agua en un instante, y la irradiancia es cuánta agua juntaste en la cubeta al final del día. Para contestarle a la familia necesitas la irradiancia del sitio, porque lo que aparece en su recibo de luz y lo que se ahorra son kWh, no Watts instantáneos. Como referencia, fuera de la atmósfera la irradiación vale 1,353 W/m² (la constante solar) y en superficie baja a entre 700 y 1,000 W/m² porque los gases de la atmósfera la filtran.",
+          "explanation": "Si tomas W/m² para estimar la generación de un mes, el resultado sale disparatado. Los recibos y los ahorros se miden en kWh, y esa moneda es la irradiancia."
+        },
+        {
+          "type": "recall",
+          "q": "El dueño de una nave industrial en Torreón te dice que su techo da al noroeste y que por eso la solar no le sirve. ¿Cómo le explicarías cuál es la orientación e inclinación de referencia y por qué su techo sí funciona?",
+          "hint": "Piensa en qué hemisferio estamos y en qué dato del sitio se parece a la inclinación ideal.",
+          "keywords": [
+            "hemisferio norte",
+            "sur",
+            "latitud",
+            "pérdidas",
+            "módulos adicionales"
+          ],
+          "model": "Como México está en el <strong>hemisferio norte</strong>, la orientación de referencia de los módulos es hacia el <strong>sur</strong>, y la inclinación de referencia es un ángulo parecido a la <strong>latitud</strong> del sitio: Torreón está cerca de los 25° norte, así que rondaría los 25°. Cuando el techo no da al sur, el proyecto no se cancela: se calculan las <strong>pérdidas por desviación</strong>, es decir cuánta generación se pierde por no estar en la posición ideal. Esas pérdidas se compensan agregando uno o dos <strong>módulos adicionales</strong> al arreglo, que casi siempre sale más barato y más seguro que levantar una estructura para forzar la orientación. La diferencia de generación entre la posición perfecta y una razonable suele ser pequeña, mientras que una estructura alta y expuesta al viento sí es un riesgo real. En techos ya construidos la regla práctica es: acomódate al techo, calcula las pérdidas y compénsalas con módulos, sin sacrificar la firmeza de la instalación.",
+          "explanation": "Tirar un proyecto porque el techo no mira al sur es un error caro. Lo que no se negocia no son los grados exactos de orientación, sino la seguridad estructural del montaje."
+        },
+        {
+          "type": "recall",
+          "q": "Estás capacitando a un instalador nuevo. Explícale con tus palabras qué pasa dentro de una celda cuando le pega la luz y por qué hace falta una unión P-N.",
+          "hint": "Arranca por lo que trae el fotón y termina en hacia dónde se van los electrones.",
+          "keywords": [
+            "fotón",
+            "unión P-N",
+            "electrón",
+            "campo eléctrico",
+            "silicio"
+          ],
+          "model": "Una celda está hecha de un <strong>semiconductor</strong>, casi siempre <strong>silicio</strong>, que es un material capaz de comportarse como conductor o como aislante según las condiciones. Para que sirva hay que doparlo, o sea contaminarlo a propósito: el material <strong>tipo N</strong> se dopa con un elemento de cinco electrones en su capa de valencia, como el fósforo, y queda con un electrón libre; el <strong>tipo P</strong> se dopa con uno de tres, como el boro, y queda con un hueco. Al juntar los dos lados se forma la <strong>unión P-N</strong>: los electrones libres del lado N cruzan a llenar huecos del lado P y aparece un <strong>campo eléctrico</strong> en la frontera que solo deja pasar corriente en un sentido. Cuando llega la luz, cada <strong>fotón</strong> golpea el material y libera electrones de la banda de valencia a la de conducción, y ese campo eléctrico los empuja siempre hacia el mismo lado en lugar de dejarlos recombinarse. Si hay un circuito conectado, esos electrones viajan por él y eso es la electricidad que entrega el módulo; el fenómeno completo se llama <strong>efecto fotoeléctrico</strong>. Sin la unión P-N no habría campo que ordenara a los electrones y la energía del fotón terminaría convertida en puro calor.",
+          "explanation": "Entender esto explica dos cosas que vas a ver en campo: por qué un módulo sin sol puede dar tensión pero cero potencia, y por qué un módulo que sí está produciendo se ve más frío en la cámara térmica que uno desconectado."
+        },
+        {
+          "type": "recall",
+          "q": "Describe paso a paso qué le pasa a la tensión, la corriente y la potencia de un módulo a lo largo de su curva I-V, y qué cambia en la mañana helada de enero de un rancho en Chihuahua.",
+          "hint": "Los dos extremos de la curva tienen algo en común; entre ellos está el punto que te interesa.",
+          "keywords": [
+            "Voc",
+            "Isc",
+            "MPP",
+            "temperatura",
+            "inversor"
+          ],
+          "model": "La <strong>curva I-V</strong> reúne todas las combinaciones de corriente y tensión en las que puede operar un módulo. En un extremo está el <strong>circuito abierto</strong>: no circula corriente, la tensión llega a su máximo (la <strong>Voc</strong>, tensión de circuito abierto) y la potencia es cero. En el otro extremo está el <strong>corto circuito</strong>: la tensión vale cero, la corriente llega a su máximo (la <strong>Isc</strong>, corriente de corto circuito) y la potencia también es cero, porque la potencia es tensión por corriente y en cada extremo uno de los dos factores se anula. Entre ambos hay un punto donde ese producto se maximiza: el <strong>MPP</strong> (Maximum Power Point, punto de máxima potencia), con coordenadas <strong>Vmp</strong> e <strong>Imp</strong>, y no es fijo: se mueve todo el día porque depende de la irradiación y de la temperatura de la celda. La regla térmica es que a mayor temperatura, menor tensión, y a menor temperatura, mayor tensión (alrededor de 0.29 a 0.35 % por cada grado), mientras que la corriente sube cuando hay más fotones, es decir más irradiación. Por eso en el amanecer helado del rancho la Voc del arreglo sale más alta que la de la ficha técnica, y esa es justo la condición crítica que debes revisar para no rebasar la tensión máxima que aguanta el inversor.",
+          "explanation": "El amanecer más frío del año, no el mediodía de verano, es el momento que manda en el diseño de las cadenas: si la Voc rebasa el límite del inversor, el equipo se daña."
+        },
+        {
+          "type": "recall",
+          "q": "La directora de una escuela pregunta por qué los módulos dicen 400 W si nunca los va a ver produciendo eso, y cuánta energía le van a dar al día (su ciudad promedia 5.1 horas solares pico). Explícale con tus palabras qué significa ese número y cómo estimas la generación diaria.",
+          "hint": "Un número viene de una prueba de laboratorio; el otro sale de una hora equivalente de sol.",
+          "keywords": [
+            "STC",
+            "NOCT",
+            "HSP",
+            "potencia nominal",
+            "laboratorio"
+          ],
+          "model": "Los 400 W de la etiqueta son la <strong>potencia nominal</strong>: el resultado de una prueba de laboratorio llamada <strong>STC</strong> (Standard Test Conditions, condiciones estándar de prueba), que se hace con 1,000 W/m² de irradiación, la celda a 25 °C y masa de aire 1.5. Sirve para comparar marcas con la misma vara, igual que el rendimiento en kilómetros por litro de los coches: nadie lo logra en el tráfico real, pero permite comparar. En operación la celda trabaja entre 25 y 30 °C por arriba del ambiente, así que existe una segunda prueba más parecida a la realidad, la <strong>NOCT</strong> (Normal Operating Cell Temperature, condiciones normales de operación), medida a 800 W/m² con la celda a 47 °C. Para estimar lo que va a generar se usa la <strong>hora solar pico</strong> (HSP): una hora equivalente de sol a exactamente 1,000 W/m², cuyo número coincide con la irradiancia del sitio en kWh/m²/día. La cuenta es potencia nominal por HSP: 400 W × 5.1 HSP = 2,040 Wh, o sea unos 2 kWh al día por módulo antes de pérdidas. Y ojo con el error clásico: las HSP no son las horas que hay luz, porque un día de verano puede tener 13 horas de luz y aun así solo 6.3 HSP.",
+          "explanation": "Es la cuenta que te salva de sobreprometer: multiplicar la potencia por las horas de luz infla el número casi al doble y deja al cliente esperando una generación que nunca va a llegar."
+        }
+      ]
+    },
+    {
       "id": "1.flash",
       "title": "Flashcards del Módulo 1",
       "section": "bz",
       "type": "flashcards",
       "cards": [
-        { "q": "Único mecanismo de transferencia de energía Sol → Tierra", "a": "Radiación: en el vacío no hay conducción (contacto) ni convección (fluido)." },
-        { "q": "Irradiación vs irradiancia", "a": "Irradiación = potencia instantánea (W/m²). Irradiancia = energía acumulada (kWh/m²/día)." },
-        { "q": "Constante solar", "a": "1,353 W/m² fuera de la atmósfera; en superficie llega entre 700 y 1,000 W/m²." },
-        { "q": "Los tres tipos de irradiación", "a": "Directa, difusa y reflejada. Los módulos producen con las tres; su suma es la global." },
-        { "q": "Orientación e inclinación de referencia en México", "a": "Hacia el sur (hemisferio norte), con inclinación ≈ latitud del sitio." },
-        { "q": "Dopaje tipo N vs tipo P", "a": "N = 5 electrones de valencia (fósforo), electrón libre. P = 3 (boro), hueco positivo." },
-        { "q": "¿Qué es una celda fotovoltaica sin luz?", "a": "Un diodo: la unión P-N solo deja pasar corriente en una dirección." },
-        { "q": "Voc e Isc", "a": "Voc = tensión máxima (circuito abierto, I=0). Isc = corriente máxima (corto circuito, V=0). En ambos, potencia = 0." },
-        { "q": "MPP", "a": "Punto de máxima potencia: Pmp = Vmp × Imp. Se mueve con la irradiación y la temperatura." },
-        { "q": "Efecto del calor en la tensión", "a": "Sube temperatura → baja tensión (~0.29-0.35 %/°C). El frío la sube: cuidado con la Voc de invierno." },
-        { "q": "Condiciones STC", "a": "1,000 W/m² · celda a 25 °C · masa de aire 1.5. Hace comparables los Watts nominales entre marcas." },
-        { "q": "Prueba NOCT", "a": "800 W/m² y celda a 47 °C: refleja la operación real mejor que la STC." },
-        { "q": "Hora solar pico (HSP)", "a": "Hora equivalente a 1,000 W/m². Las HSP del sitio = su irradiancia en kWh/m²/día." },
-        { "q": "Generación diaria aproximada de un módulo", "a": "Potencia nominal × HSP del sitio (antes de pérdidas). Ej: 250 W × 6.3 = 1,575 Wh." },
-        { "q": "Eficiencia de un módulo (si no viene en ficha)", "a": "Potencia nominal ÷ (área × 1,000 W/m²). Ej: 270 W en 1.63 m² ≈ 16.5%." }
+        {
+          "q": "Único mecanismo de transferencia de energía Sol → Tierra",
+          "a": "Radiación: en el vacío no hay conducción (contacto) ni convección (fluido)."
+        },
+        {
+          "q": "Irradiación vs irradiancia",
+          "a": "Irradiación = potencia instantánea (W/m²). Irradiancia = energía acumulada (kWh/m²/día)."
+        },
+        {
+          "q": "Constante solar",
+          "a": "1,353 W/m² fuera de la atmósfera; en superficie llega entre 700 y 1,000 W/m²."
+        },
+        {
+          "q": "Los tres tipos de irradiación",
+          "a": "Directa, difusa y reflejada. Los módulos producen con las tres; su suma es la global."
+        },
+        {
+          "q": "Orientación e inclinación de referencia en México",
+          "a": "Hacia el sur (hemisferio norte), con inclinación ≈ latitud del sitio."
+        },
+        {
+          "q": "Dopaje tipo N vs tipo P",
+          "a": "N = 5 electrones de valencia (fósforo), electrón libre. P = 3 (boro), hueco positivo."
+        },
+        {
+          "q": "¿Qué es una celda fotovoltaica sin luz?",
+          "a": "Un diodo: la unión P-N solo deja pasar corriente en una dirección."
+        },
+        {
+          "q": "Voc e Isc",
+          "a": "Voc = tensión máxima (circuito abierto, I=0). Isc = corriente máxima (corto circuito, V=0). En ambos, potencia = 0."
+        },
+        {
+          "q": "MPP",
+          "a": "Punto de máxima potencia: Pmp = Vmp × Imp. Se mueve con la irradiación y la temperatura."
+        },
+        {
+          "q": "Efecto del calor en la tensión",
+          "a": "Sube temperatura → baja tensión (~0.29-0.35 %/°C). El frío la sube: cuidado con la Voc de invierno."
+        },
+        {
+          "q": "Condiciones STC",
+          "a": "1,000 W/m² · celda a 25 °C · masa de aire 1.5. Hace comparables los Watts nominales entre marcas."
+        },
+        {
+          "q": "Prueba NOCT",
+          "a": "800 W/m² y celda a 47 °C: refleja la operación real mejor que la STC."
+        },
+        {
+          "q": "Hora solar pico (HSP)",
+          "a": "Hora equivalente a 1,000 W/m². Las HSP del sitio = su irradiancia en kWh/m²/día."
+        },
+        {
+          "q": "Generación diaria aproximada de un módulo",
+          "a": "Potencia nominal × HSP del sitio (antes de pérdidas). Ej: 250 W × 6.3 = 1,575 Wh."
+        },
+        {
+          "q": "Eficiencia de un módulo (si no viene en ficha)",
+          "a": "Potencia nominal ÷ (área × 1,000 W/m²). Ej: 270 W en 1.63 m² ≈ 16.5%."
+        }
       ]
     }
   ]

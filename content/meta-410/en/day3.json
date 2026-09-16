@@ -1797,6 +1797,69 @@
       ]
     },
     {
+      "id": "3.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain the difference between the Auction and Reservation buying types, and when you would recommend each.",
+          "hint": "One gives flexibility, the other gives predictability. One of them also locks you into just two objectives.",
+          "keywords": [
+            "Auction",
+            "Reservation",
+            "fixed CPM",
+            "lifetime budget",
+            "predictable"
+          ],
+          "model": "The <strong>buying type</strong> is how you pay Meta to appear in front of people, and it is the first decision you make, at the Campaign level, because it opens or closes everything below it. <strong>Auction</strong> is the default: every time someone opens Facebook or Instagram an instant auction runs among advertisers, and it gives you access to <em>all</em> objectives, <em>all</em> placements and the five bid strategies, with a cost that fluctuates and a daily or lifetime budget. <strong>Reservation</strong> is buying the space in advance, like booking a billboard for an exact date: you get a <strong>fixed CPM</strong> (cost per thousand impressions) and predictable delivery, but it only supports the <strong>Awareness and Engagement</strong> objectives, only Facebook and Instagram placements, and only a lifetime budget. Reservation also swaps the frequency cap for <em>target frequency</em> plus a cap. I would recommend Reservation to something like a university launching its enrollment period on a fixed date, where knowing the exact reach and cost matters more than flexibility, and Auction to anyone chasing sales or leads.",
+          "explanation": "The exam asks which combinations are valid, so a scenario that pairs Reservation with a Sales objective or with Audience Network placements is automatically wrong."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a client why a competitor with a bigger bid does not automatically win the auction?",
+          "hint": "Three ingredients decide it, not one.",
+          "keywords": [
+            "total value",
+            "advertiser bid",
+            "estimated action rate",
+            "ad quality"
+          ],
+          "model": "Meta does not hand the placement to whoever offers the most money; it hands it to the ad with the highest <strong>total value</strong>. The formula is <strong>total value = advertiser bid x estimated action rates + ad quality</strong>, which combines three separate things. The <strong>advertiser bid</strong> is what you are willing to pay for the result. The <strong>estimated action rates</strong> are Meta's prediction of how likely <em>this specific person</em> is to do what you want, such as click or buy. <strong>Ad quality</strong> is how relevant, clear and appealing the ad is, judged partly from feedback from people who see it. So a local bakery with a modest bid, a highly relevant creative and a strong predicted action rate can beat a national chain with a much larger bid and a weak, generic ad. The practical takeaway for the client is that improving the creative and the audience fit is often cheaper than raising the bid.",
+          "explanation": "The single most common auction distractor is the statement that the highest bid wins; the correct answer always names all three components of total value."
+        },
+        {
+          "type": "recall",
+          "q": "Describe the five bid strategies and the order of questions you use to choose between them.",
+          "hint": "First ask whether the client needs to control cost; then ask whether they optimize for value or for quantity.",
+          "keywords": [
+            "Highest Volume",
+            "Highest Value",
+            "Cost per Result",
+            "ROAS Goal",
+            "Bid Cap"
+          ],
+          "model": "There are five bid strategies, and they fall into three families. <strong>Spend-based</strong> strategies spend the whole budget no matter what: <strong>Highest Volume</strong> is the default and brings the greatest <em>number</em> of results, while <strong>Highest Value</strong> spends everything but prioritizes the highest-value results and needs a Pixel that tracks value. <strong>Goal-based</strong> strategies respect a limit you set and may leave budget unspent: <strong>Cost per Result Goal</strong> keeps the average cost per acquisition near your target, and <strong>ROAS Goal</strong> aims at a target return on ad spend such as 4x, also requiring value tracking. <strong>Manual</strong> is <strong>Bid Cap</strong>, which caps the bid placed in each auction and is for experienced buyers. The decision order is: do you need to control cost? If no, Highest Volume or Highest Value; if yes, Cost per Result Goal or ROAS Goal; then ask whether you optimize by quantity or by value to pick within the pair. Two nuances matter: the Cost per Result Goal target is an <em>average</em> over the campaign and can be exceeded, and <strong>Bid Cap does not control the final cost per result</strong>, only the bid.",
+          "explanation": "Bidding scenarios are a large slice of the exam, and the Bid Cap confusion (thinking it caps CPA rather than the bid) is one of the most punished mistakes."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what the Learning Phase is, how an ad set exits it, and what Learning Limited means.",
+          "hint": "Think about the number of events and the time window, and about what resets the clock.",
+          "keywords": [
+            "50 events",
+            "7 days",
+            "optimization event",
+            "Learning Limited",
+            "significant edit"
+          ],
+          "model": "The <strong>Learning Phase</strong> is the initial period in which Meta's delivery system experiments with your ad set to figure out who, when and where to show the ad. During it the system still lacks enough data, so cost per result and performance swing quite a bit and you should resist the urge to judge the campaign yet. The ad set leaves the Learning Phase when it accumulates <strong>50 optimization events in a rolling 7-day window</strong>, counted from activation or from the last significant change; the <em>optimization event</em> is the concrete action you asked for, such as a purchase, a lead or an install. Notice that this is a <strong>volume</strong> requirement, not a time one, so waiting longer does not graduate an ad set that is not gathering events. If the 7 days pass without reaching 50 events, the ad set falls into <strong>Learning Limited</strong>, a warning state where performance stays unstable and usually more expensive, typically caused by a small audience, a low budget, a restrictive bid, overlap between ad sets or a rare event. And be careful with <strong>significant edits</strong>: changing the bid strategy, the optimization event, a large part of the audience or the creative <em>resets</em> the learning phase and throws away everything learned so far.",
+          "explanation": "Exam cases often describe an unstable, expensive ad set and expect you to diagnose Learning Limited and fix the cause rather than restart the campaign, which would only reset learning again."
+        }
+      ]
+    },
+    {
       "id": "3.flash",
       "title": "Day 3 Flashcards",
       "section": "bz",

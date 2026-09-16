@@ -1057,6 +1057,67 @@
       ]
     },
     {
+      "id": "3.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain the difference between a daily budget and a lifetime budget, and when each one is the right choice.",
+          "hint": "One is a pace, the other is a total. Only one of them lets you pick the hours.",
+          "keywords": [
+            "daily budget",
+            "lifetime budget",
+            "dayparting",
+            "always-on"
+          ],
+          "model": "The <strong>daily budget</strong> is the average amount you tell Meta to spend per day, which fits campaigns that run continuously with no end date, what marketers call <em>always-on</em>. It is an average and not a hard cap: Meta can spend up to roughly 25 percent more on a high-opportunity day and offset it on a slow one, honoring the average over the period. The <strong>lifetime budget</strong> is a single total for the whole campaign period, and Meta distributes that money across the dates, spending more on the days with the best opportunity. Lifetime is mandatory for two things: <strong>dayparting</strong> or ad scheduling, meaning delivering only on certain days and hours, and Reservation campaigns. So a neighborhood bakery that just wants to stay visible month after month uses a daily budget, while a gym running a January sign-up promotion with a fixed approved amount, fixed dates and ads only on weekday mornings has no choice but lifetime.",
+          "explanation": "Two exam favorites live here: dayparting requires a lifetime budget, and the daily figure is an average rather than a guaranteed per-day spend."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a client the difference between putting the budget at the campaign level and putting it in each ad set, and what they gain or lose with each?",
+          "hint": "The real question is who decides the split: the system or you.",
+          "keywords": [
+            "CBO",
+            "ABO",
+            "Ad set budget",
+            "campaign level"
+          ],
+          "model": "A Meta campaign has three nested levels, campaign, ad set and ad, and the money can sit at the top or one step down. With <strong>Advantage+ campaign budget</strong>, historically called <strong>CBO</strong> (Campaign Budget Optimization), the budget sits at the <strong>campaign level</strong> and Meta distributes it across the ad sets on its own, pushing more spend toward whichever audience is producing the cheapest results. With <strong>Ad set budget</strong>, historically <strong>ABO</strong> (Ad Set Budget Optimization), you set an independent amount on each ad set and the distribution is manual. The short version: CBO means the system decides the split, so you gain efficiency and lose granular control, while ABO means you decide the split and guarantee each audience receives exactly what you assigned. An online shoe retailer testing six different audiences is a natural CBO case, while a dental clinic that wants its whitening promotion guaranteed at 100 dollars a day no matter what needs ABO so the system cannot pull that money elsewhere.",
+          "explanation": "Exam items describe either a test you must protect or several audiences you want optimized automatically, and the answer always hinges on who controls the distribution."
+        },
+        {
+          "type": "recall",
+          "q": "Describe step by step how you estimate a campaign budget in Auction, and explain why the learning phase has to be part of that calculation.",
+          "hint": "Start from the results you want and what each one has cost before. Then check the system can actually learn.",
+          "keywords": [
+            "cost per result",
+            "benchmark",
+            "learning phase",
+            "learning limited",
+            "optimization event"
+          ],
+          "model": "In Auction there is no agreed price, since the cost moves with how much competition exists for the same audience, so you estimate the budget instead of guaranteeing it. The base formula is <strong>budget ≈ target results × expected cost per result</strong>, where the expected <strong>cost per result</strong> comes from your own account history or, with no history, from an industry <strong>benchmark</strong>; depending on the action it is called CPL (cost per lead) or CPA (cost per acquisition), but the math is identical. The second check is the <strong>learning phase</strong>, the initial period in which the algorithm is still figuring out who to show the ad to: an ad set needs roughly 50 <strong>optimization events</strong> in about 7 days to exit it. If the budget is too small the ad set never gathers that signal and gets stuck in <strong>learning limited</strong>, where costs jump around and never stabilize. So an online language school wanting 200 trial sign-ups at a historical 7 dollars each starts around 1,400 dollars, then verifies that this spend also buys at least 50 sign-ups per week per ad set; if it does not, the fix is running fewer ad sets, not shrinking the budget.",
+          "explanation": "The 50 events in about 7 days threshold is a fixed exam fact, and the companion trap is presenting an Auction estimate to a client as if it were a guaranteed cost."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, walk through how you calculate the budget of a Reservation campaign, using a concrete example with numbers.",
+          "hint": "Everything starts from impressions, and impressions come from two planning inputs.",
+          "keywords": [
+            "reach",
+            "frequency",
+            "impression",
+            "CPM"
+          ],
+          "model": "In Reservation the price is quoted and locked before launch, expressed as a fixed <strong>CPM</strong> (cost per thousand impressions), so you do not estimate the budget, you calculate it exactly. You start from two inputs: the <strong>reach</strong>, meaning the unique people you want to see the ad, and the <strong>frequency</strong>, meaning how many times on average each of them should see it. Multiplying them gives the <strong>impressions</strong>, which is what you are actually buying: <em>impressions = reach × frequency</em>. The budget then comes straight from the quoted price: <em>budget = impressions × CPM ÷ 1000</em>, dividing by a thousand because CPM is the price per thousand impressions. Take an outdoor-gear brand launching a backpack that wants 400,000 people at a frequency of 3 with a quoted CPM of 5 dollars: 400,000 × 3 = 1,200,000 impressions, and 1,200,000 × 5 ÷ 1000 = 6,000 dollars, an exact figure rather than a projection.",
+          "explanation": "The classic trap is applying the Auction formula of results times cost per result to a Reservation plan, where nothing starts from conversions."
+        }
+      ]
+    },
+    {
       "id": "3.flash",
       "title": "Flashcards of Module 3 (all)",
       "section": "bz",

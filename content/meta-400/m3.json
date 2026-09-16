@@ -1057,6 +1057,69 @@
       ]
     },
     {
+      "id": "3.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras la diferencia entre presupuesto diario y presupuesto total, y menciona los dos casos en que el presupuesto total es obligatorio.",
+          "hint": "Uno es ritmo, el otro es monto cerrado.",
+          "keywords": [
+            "presupuesto diario",
+            "presupuesto total",
+            "dayparting",
+            "ad scheduling",
+            "Reserva"
+          ],
+          "model": "El <strong>daily budget</strong> (presupuesto diario) es la cantidad promedio que le dices a Meta que gaste por día; lo eliges en campañas continuas sin fecha de fin clara, lo que en marketing se llama <strong>always-on</strong> (siempre encendida). El <strong>lifetime budget</strong> (presupuesto total) es un monto único para todo el periodo: le dices a Meta cuánto hay del principio al fin y el sistema reparte ese dinero a lo largo de las fechas, gastando más en los días de mejor oportunidad. El presupuesto total es obligatorio en dos casos concretos: para el <strong>ad scheduling</strong> o <strong>dayparting</strong> (programar la entrega solo en ciertos días y horarios) y para las campañas de Reserva. Hay un detalle que el examen aprovecha: el presupuesto diario es un promedio, no una cifra clavada, y Meta puede gastar hasta alrededor de 25% más en un día de alta oportunidad y compensarlo en los días bajos. Imagina una clínica veterinaria que quiere estar siempre presente con 200 pesos al día: ese es presupuesto diario. En cambio, una campaña de vacunación del 1 al 15 con monto ya aprobado y solo de lunes a viernes por la mañana necesita presupuesto total.",
+          "explanation": "Cuando el enunciado menciona horarios, fechas cerradas o Reserva, la respuesta es presupuesto total; el distractor es asegurar que el diario sirve igual."
+        },
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un compañero la diferencia entre poner el presupuesto en la campaña o en cada conjunto de anuncios, y cuándo conviene cada uno?",
+          "hint": "La pregunta es quién reparte el dinero: Meta o tú.",
+          "keywords": [
+            "CBO",
+            "ABO",
+            "Advantage+",
+            "conjunto de anuncios",
+            "control granular"
+          ],
+          "model": "La pregunta de fondo es en qué nivel vive el dinero. Con <strong>Advantage+ campaign budget</strong> (presupuesto de campaña Advantage+, conocido históricamente como CBO o Campaign Budget Optimization) el presupuesto se pone arriba, a nivel campaña, y Meta lo reparte solo entre los conjuntos de anuncios, mandando más dinero al que va dando mejores resultados. Con <strong>ad set budget</strong> (presupuesto a nivel conjunto de anuncios, conocido como ABO) tú pones un monto independiente en cada conjunto y el reparto es manual: si quieres que uno gaste más que otro, lo defines tú. CBO te da eficiencia cuando corres varias audiencias y no quieres andar moviendo dinero a mano; ABO te da control granular cuando necesitas garantizar que una audiencia específica reciba su gasto pase lo que pase. Imagina una tienda en línea de equipo de audio que prueba seis audiencias distintas: le conviene CBO para que el sistema concentre el gasto donde de verdad se vende. Pero si esa misma tienda quiere asegurar 100 pesos diarios a una prueba de bocinas nuevas que no debe morir, ahí usa ABO.",
+          "explanation": "El examen contrasta eficiencia automática contra control garantizado: si el enunciado dice que el cliente no quiere ajustar el reparto a mano, es CBO; si dice que debe garantizar gasto a un conjunto, es ABO."
+        },
+        {
+          "type": "recall",
+          "q": "Describe paso a paso cómo estimas el presupuesto de una campaña en Subasta y por qué el número que sale no siempre alcanza.",
+          "hint": "Multiplica primero, y luego revisa si el sistema alcanza a aprender.",
+          "keywords": [
+            "costo por resultado",
+            "CPL",
+            "fase de aprendizaje",
+            "50 eventos",
+            "learning limited"
+          ],
+          "model": "En Subasta no hay precio pactado, así que el presupuesto se estima, no se garantiza. La fórmula base es resultados objetivo multiplicados por el costo por resultado esperado, y ese costo sale del histórico de la propia cuenta o, si no hay historial, de un benchmark de la industria; según el tipo de acción se le llama <strong>CPL</strong> (Cost Per Lead: costo por prospecto que deja sus datos) o <strong>CPA</strong> (Cost Per Acquisition: costo por venta o conversión cerrada). El segundo paso es el que la gente olvida: ese presupuesto también tiene que alcanzar para que el sistema aprenda a entregar bien. Cuando lanzas un conjunto de anuncios entra en la <strong>learning phase</strong> (fase de aprendizaje), el periodo en que el algoritmo todavía está descubriendo a quién mostrarle el anuncio, y necesita alrededor de 50 eventos de optimización en unos 7 días para salir; si no los junta, queda en <strong>learning limited</strong> (aprendizaje limitado) y el costo brinca sin estabilizarse. Imagina una clínica de fisioterapia que quiere 200 citas nuevas y cuyo histórico dice 140 pesos por cita: la estimación base son 28,000 pesos, pero si los reparte en cinco conjuntos de anuncios y ninguno junta 50 eventos semanales, conviene correr menos conjuntos con más presupuesto cada uno. Y siempre hay que aclararle al cliente que en Subasta ese número es un punto de partida, no un compromiso.",
+          "explanation": "El examen mezcla las dos ideas: primero te pide el cálculo y luego te pregunta el riesgo de un presupuesto demasiado bajo, cuya respuesta es quedarse en learning limited."
+        },
+        {
+          "type": "recall",
+          "q": "Explica paso a paso cómo se calcula el presupuesto de una campaña de Reserva y por qué no se usa la misma fórmula que en Subasta.",
+          "hint": "Aquí todo parte de impresiones, no de conversiones.",
+          "keywords": [
+            "reach",
+            "frequency",
+            "impresiones",
+            "CPM fijo"
+          ],
+          "model": "En Reserva el precio ya está cotizado antes de lanzar, así que no estimas: calculas con precisión. Empiezas con dos insumos: el <strong>reach</strong> (alcance: cuántas personas únicas quieres que vean el anuncio, contando a cada persona una sola vez sin importar cuántas veces lo vea) y la <strong>frequency</strong> (frecuencia: cuántas veces en promedio quieres que cada una lo vea en el periodo). Multiplicándolos obtienes las impresiones, que es lo que realmente se compra: reach por frequency igual a impresiones. Después conviertes esas impresiones a dinero usando el <strong>CPM</strong> (Cost Per Mille: costo por cada mil impresiones), dividiendo entre mil, así que impresiones por CPM entre 1000 igual a presupuesto. Imagina una marca de agua mineral que quiere llegar a 400,000 personas con frecuencia 3 y le cotizaron un CPM fijo de 5 dólares: son 1,200,000 impresiones y 6,000 dólares exactos, no aproximados. La trampa clásica del examen es querer usar aquí la fórmula de Subasta (resultados por costo por resultado): en Reserva no estimas conversiones, partes siempre de impresiones.",
+          "explanation": "En el examen estos cálculos vienen con números redondos, y equivocarse casi siempre es olvidar dividir entre mil o mezclar las dos fórmulas."
+        }
+      ]
+    },
+    {
       "id": "3.flash",
       "title": "Flashcards del Módulo 3 (todo)",
       "section": "bz",

@@ -1893,6 +1893,70 @@
       ]
     },
     {
+      "id": "1.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras qué es el Opportunity Score y qué NO te dice.",
+          "hint": "Piensa de dónde sale la calificación: ¿de tus resultados reales o de una lista de recomendaciones?",
+          "keywords": [
+            "Opportunity Score",
+            "recomendación",
+            "0 a 100",
+            "no predice",
+            "Ads Manager"
+          ],
+          "model": "El <strong>Opportunity Score</strong> (Puntuación de Oportunidad) es una calificación de 0 a 100 que vive en Ads Manager (Administrador de Anuncios) y mide qué tan optimizadas están tus campañas. Meta tiene una lista de recomendaciones que ya probó y que suelen mejorar resultados; el score solo refleja cuántas de esas recomendaciones ya aplicaste. Ese score no predice tu rendimiento: un 68 de 100 no significa que vayas a recuperar el 68% de lo que inviertes ni que ese sea tu retorno. Lo puedes consultar en tres momentos: antes de crear campañas desde Account overview (el resumen de la cuenta), durante la creación como score de esa campaña, y después, mientras corre, en forma de recomendaciones continuas. Imagina una cadena de gimnasios que abre su cuenta y ve 55 de 100: eso no es un pronóstico de ventas, es una lista de pendientes por aplicar.",
+          "explanation": "El examen siempre mete la opción de que el score predice performance o garantiza resultados: es falsa. Solo mide adopción de recomendaciones probadas."
+        },
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un compañero nuevo qué se decide en cada uno de los tres niveles de una campaña de Meta?",
+          "hint": "Un nivel responde qué quieres lograr, otro a quién le hablas y otro cómo se ve el anuncio.",
+          "keywords": [
+            "ad set",
+            "objetivo",
+            "audiencia",
+            "creativo",
+            "presupuesto"
+          ],
+          "model": "Toda campaña de Meta se arma en tres niveles anidados: <strong>Campaign</strong> (campaña), <strong>Ad set</strong> (conjunto de anuncios) y <strong>Ad</strong> (anuncio). En la campaña decides el <strong>buying type</strong> (forma de compra: subasta o reservación), el objetivo y la categoría especial de anuncio si aplica. En el conjunto de anuncios decides a quién le hablas, o sea la audiencia, dónde aparece el anuncio, que son los placements o ubicaciones, el calendario y dónde ocurre la conversión. En el anuncio decides cómo se ve: el creativo, el texto, el destino al que manda y el tracking (rastreo). La regla mental rápida es: qué quiero lograr va en campaña; a quién, dónde y cuándo va en conjunto de anuncios; cómo se ve y a dónde manda va en anuncio. El presupuesto es la excepción que confunde a todos: se define en campaña o en conjunto de anuncios, nunca en los dos a la vez.",
+          "explanation": "Casi todas las preguntas de estructura se resuelven ubicando el nivel correcto. Audiencia, ubicación de conversión y placements siempre son del conjunto de anuncios, no de la campaña."
+        },
+        {
+          "type": "recall",
+          "q": "Un cliente te pregunta qué es Advantage+ y en qué se diferencian sus dos categorías. Explícaselo con tus palabras.",
+          "hint": "Una categoría automatiza la campaña entera; la otra automatiza una sola pieza.",
+          "keywords": [
+            "Advantage+",
+            "complete campaign",
+            "single-step",
+            "placement",
+            "inteligencia artificial"
+          ],
+          "model": "<strong>Advantage+</strong> es el conjunto de herramientas de Meta que usan inteligencia artificial y automatización para conectar tus anuncios con la gente que tiene más probabilidad de comprar o actuar, en vez de que tú adivines cada ajuste. Se divide en dos categorías y el examen las mezcla a propósito. Las complete campaign solutions (soluciones de campaña completa) automatizan la campaña entera de principio a fin y son exactamente tres: Advantage+ Sales para ventas, Advantage+ App para promoción de app y Advantage+ Leads para clientes potenciales. Las single-step solutions (soluciones de un solo paso) automatizan un solo aspecto: audiencia, placements o ubicaciones, presupuesto, creativo o destino. Imagina una aseguradora de autos: si quiere que el sistema maneje toda su campaña de ventas, va con Advantage+ Sales; si solo quiere dejar de elegir ubicaciones a mano, le basta con Advantage+ placements.",
+          "explanation": "Si la pregunta dice automatizar TODA la campaña, la respuesta es una solución completa. Si dice automatizar un aspecto concreto, es single-step. Confundirlas es el error más caro de este bloque."
+        },
+        {
+          "type": "recall",
+          "q": "Describe con tus palabras qué es un business portfolio y qué tipos de usuario y niveles de acceso puedes dar dentro de él.",
+          "hint": "Piensa en la diferencia entre una persona, otra empresa y un servidor.",
+          "keywords": [
+            "portfolio",
+            "Partners",
+            "System users",
+            "full control",
+            "temporary"
+          ],
+          "model": "Un <strong>business portfolio</strong> (portafolio de negocio, antes llamado Business Manager) es el contenedor que agrupa todos los activos de una marca en un solo lugar: la Página de Facebook, la cuenta de Instagram, la <strong>ad account</strong> (cuenta publicitaria), el catálogo y las fuentes de datos. Su gran ventaja es que repartes accesos controlados en vez de andar prestando contraseñas. Dentro hay tres tipos de usuario: People, que son personas individuales; Partners, que son otros negocios y necesitan su propio portfolio y su business ID; y System users, que son servidores o software que entran por API. Los niveles de acceso van del partial access, o acceso parcial, que solo trabaja sobre los activos que le asignas, hasta el full control, que maneja configuración, gente, herramientas y hasta puede borrar el portafolio. Encima hay dos accesos avanzados: finance, para ver o manejar facturas y transacciones, y temporary, un acceso temporal de mínimo 3 días y máximo 75. Imagina un despacho contable al que solo le toca descargar facturas: le das el acceso financiero, no el control total.",
+          "explanation": "El matiz que el examen adora: alguien puede tener full control de UNA cuenta publicitaria sin tener full control del portafolio completo. Son permisos independientes."
+        }
+      ]
+    },
+    {
       "id": "1.flash",
       "title": "Flashcards del Día 1 (todo)",
       "section": "bz",

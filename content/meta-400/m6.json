@@ -975,6 +975,69 @@
       ]
     },
     {
+      "id": "6.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Un cliente juzga su campaña de Reconocimiento por el costo por clic y cree que fracasó. Explícale con tus palabras por qué esa lectura está mal y qué debería mirar.",
+          "hint": "Primero el business goal, después la métrica.",
+          "keywords": [
+            "business goal",
+            "recall",
+            "reach",
+            "vanity metrics",
+            "costo por resultado"
+          ],
+          "model": "No existe una mejor métrica universal: la métrica que importa depende del <strong>business goal</strong> (objetivo de negocio), es decir de qué querías lograr en realidad. Si buscabas que más gente te conozca, lo que cuenta es el <strong>reach</strong> (alcance) y el <strong>recall</strong> (recordación: cuánta gente recuerda haber visto el anuncio); si buscabas ventas, cuenta el costo por resultado; y si buscabas ingreso, cuenta el <strong>ROAS</strong> (return on ad spend: pesos generados por cada peso gastado). Juzgar una campaña de Reconocimiento por costo por clic o por compras es medir algo que esa campaña ni siquiera está optimizando, así que el veredicto sale equivocado aunque los números sean reales. El otro lado del mismo error son las <strong>vanity metrics</strong> (métricas de vanidad): likes, impresiones o clics sueltos que se ven bien en la junta pero no prueban que el negocio avanzó. Imagina un museo que lanza una campaña para que la ciudad sepa de su nueva exposición: su métrica es a cuánta gente llegó y cuántos recuerdan el anuncio, no cuántos boletos vendió en línea ese día. La regla mental es definir primero qué querías lograr y después elegir la métrica que prueba ese logro, nunca al revés.",
+          "explanation": "El examen plantea casos donde el cliente pide arreglar la métrica equivocada, y la respuesta correcta es corregir la lectura del reporte, no la campaña."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras qué es la incrementalidad y por qué sin un grupo holdout no puedes probarla.",
+          "hint": "La pregunta honesta: esas ventas iban a pasar de todos modos.",
+          "keywords": [
+            "incrementalidad",
+            "holdout",
+            "efecto causal",
+            "grupo de control",
+            "causalidad"
+          ],
+          "model": "La <strong>incrementalidad</strong> (incrementality) responde la pregunta más honesta de la publicidad: esas ventas pasaron por tu anuncio o iban a pasar de todos modos. Mide el efecto causal de la pauta, es decir cuántas conversiones NO habrían ocurrido si nunca hubieras anunciado, que es muy distinto de contar todas las ventas y atribuírselas al anuncio. Para aislar ese efecto necesitas un <strong>holdout</strong> (grupo de control: un conjunto de personas que a propósito NO ven tus anuncios durante el experimento), que funciona como un universo paralelo sin publicidad. Si el grupo expuesto convierte más que el holdout, esa diferencia es el aporte real de tu inversión; si convierten casi igual, significa que la pauta aportó poco. Imagina una tienda de electrodomésticos que vendió 1,000 refrigeradores el mes que pautó y lo celebró: si su grupo de control, sin ver anuncios, generó el equivalente a 600 ventas, el efecto real fueron 400, no 1,000. Sin holdout no hay punto de comparación, y sin comparación no pruebas causalidad, solo coincidencia.",
+          "explanation": "Cuando el enunciado dice que el cliente duda si las ventas habrían ocurrido igual sin pauta, la respuesta es un experimento de lift con holdout, no un reporte de atribución."
+        },
+        {
+          "type": "recall",
+          "q": "Describe los tres lentes de medición que recomienda Meta y qué pregunta distinta contesta cada uno.",
+          "hint": "Causa, recorrido y foto macro.",
+          "keywords": [
+            "experiments",
+            "atribución",
+            "MMM",
+            "touchpoints",
+            "triangulación"
+          ],
+          "model": "Meta recomienda no casarse con un solo método, sino combinar tres lentes que se complementan porque cada uno tiene puntos ciegos. Los <strong>experiments</strong> (experimentos) contestan si tu pauta causó el resultado, comparando un grupo expuesto contra uno de control; son el estándar de oro para probar causalidad, pero son caros y puntuales. La <strong>attribution</strong> (atribución) contesta qué <strong>touchpoints</strong> (puntos de contacto: cada vez que la persona vio o tocó tu marca) intervinieron en el camino a la conversión; sirve para optimizar el día a día, pero no prueba causa. El <strong>MMM</strong> (marketing mix modeling: modelado de mezcla de marketing) contesta cómo aportan a las ventas todos los canales a nivel macro, incluidos los que no son digitales; ve el bosque, pero no el árbol. Combinar los tres se llama triangulación y es lo que da la lectura más confiable. Imagina una cadena de supermercados: corre un experimento para probar que sus anuncios generan visitas nuevas, usa la atribución diaria para ver qué formatos tocaron a quien compró, y una vez al año encarga un MMM para comparar Meta contra su radio local, sus volantes y su televisión.",
+          "explanation": "Si la pregunta menciona todos los canales, incluidos los offline o la televisión, la respuesta es MMM; si menciona probar causalidad, son experiments."
+        },
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un cliente que su número de conversiones cambió al modificar la ventana de atribución, aunque las ventas reales no cambiaron?",
+          "hint": "La ventana decide qué se le cuenta a Meta, no qué pasó en el negocio.",
+          "keywords": [
+            "ventana de atribución",
+            "crédito",
+            "touchpoints",
+            "experimento"
+          ],
+          "model": "La <strong>attribution window</strong> (ventana de atribución) es el plazo dentro del cual una conversión se le cuenta a Meta después de que la persona vio el anuncio o le dio clic, por ejemplo 7 días desde el clic y 1 día desde la vista. Cambiar esa ventana cambia cuántas conversiones aparecen en el reporte, pero no cambia una sola venta del negocio: lo único que estás moviendo es la regla con la que se reparte el crédito. Por eso hay que comunicarle siempre al cliente qué ventana se está usando antes de comparar dos periodos o dos plataformas, o va a creer que la campaña mejoró o empeoró sin que haya pasado nada real. Además, la atribución describe el recorrido entre <strong>touchpoints</strong> (puntos de contacto), no prueba que el anuncio haya causado la venta. Imagina una empresa de software de facturación que vende suscripciones después de semanas de evaluación: con una ventana corta parecerá que Meta aporta poco, aunque el prospecto sí haya llegado por ahí. Si lo que el cliente quiere es probar el aporte real de la inversión, eso se resuelve con un experimento de lift, no ajustando la ventana.",
+          "explanation": "El examen castiga tratar la atribución como prueba de causalidad; su papel es la optimización táctica y la comparación consistente entre periodos."
+        }
+      ]
+    },
+    {
       "id": "6.flash",
       "title": "Flashcards del Módulo 6 (todo)",
       "section": "bz",

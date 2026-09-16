@@ -1893,6 +1893,70 @@
       ]
     },
     {
+      "id": "1.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain the three levels of a Meta campaign and what decision belongs to each one. Where does the budget live?",
+          "hint": "Campaign, ad set, ad. And the budget sits at one level only, never at two at the same time.",
+          "keywords": [
+            "Campaign",
+            "Ad set",
+            "objective",
+            "audience",
+            "budget"
+          ],
+          "model": "Every Meta campaign is built on <strong>three nested levels</strong>, and each one owns a different set of decisions that never mix. At the <strong>Campaign</strong> level you decide the <em>buying type</em> (auction or reservation), the <em>objective</em> (the business outcome you are chasing), the Special Ad Category and whether you run an A/B test. At the <strong>Ad set</strong> level you decide the <em>audience</em> (who you talk to), the <em>placements</em> (which apps and surfaces the ad appears in), the schedule and the conversion setup (location, event, dataset and attribution). At the <strong>Ad</strong> level you decide the <em>creative</em> (image, video, copy), the <em>destination</em> where the click lands and the tracking. The mental shortcut is: <em>which objective and how I pay</em> goes to Campaign, <em>who, where and when</em> goes to Ad set, and <em>how it looks and where it sends</em> goes to Ad. The <strong>budget</strong> is set at Campaign <em>or</em> Ad set, never both: at campaign level it is called <strong>Advantage+ campaign budget</strong> and it is the default option.",
+          "explanation": "Knowing which decision lives at which level is one of the most frequently tested topics on the 410-101, because almost every scenario question hides a level mismatch in the distractors."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a client the difference between an Advantage+ campaign and an Advantage+ tool? Name what belongs in each group.",
+          "hint": "One group automates the entire campaign end to end; the other automates a single step of it.",
+          "keywords": [
+            "complete campaign",
+            "single-step",
+            "Advantage+ Sales",
+            "Placement",
+            "Destination"
+          ],
+          "model": "<strong>Advantage+</strong> is Meta's family of AI and automation features, and it splits into two categories that the exam deliberately mixes up. The <strong>complete campaign solutions</strong> hand the whole campaign to the AI from start to finish, and there are exactly three: <strong>Advantage+ Sales</strong>, <strong>Advantage+ App</strong> and <strong>Advantage+ Leads</strong>. The <strong>single-step solutions</strong> automate just one piece of a campaign you are otherwise building yourself, and they cover five areas: <em>Audience</em> (Advantage+ audience), <em>Placement</em> (Advantage+ placements), <em>Budget</em> (Advantage+ campaign budget, formerly CBO), <em>Creative</em> (Advantage+ creative and Advantage+ catalog ads) and <em>Destination</em> (Advantage+ destination). To a client I would put it like this: imagine a bakery chain that wants online orders; the complete solution is handing over the keys so the AI builds audience, placements and budget on its own, while a single-step solution is keeping your own setup and only letting the AI pick where the ad shows. The trap is answering with a single-step tool when the question describes a full campaign, or the other way round.",
+          "explanation": "The exam writes distractors that put a single-step tool such as Advantage+ placements in a list of complete campaign types; knowing that only Sales, App and Leads are complete campaigns kills those options instantly."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what the Opportunity Score is, what it is based on, and what it does NOT tell you.",
+          "hint": "It is a number from 0 to 100 about recommendations you have adopted, not a forecast of results.",
+          "keywords": [
+            "0 to 100",
+            "recommendation",
+            "adopt",
+            "predict",
+            "Account overview"
+          ],
+          "model": "The <strong>Opportunity Score</strong> is a rating from <strong>0 to 100</strong> that tells you how optimized your campaigns are against Meta's own proven recommendations. Meta keeps a list of changes it has already tested and found to improve results, and the score simply measures how many of them you have adopted, so a higher score means you are following more of that best-practice list. It appears in three moments: <em>before</em> you build, from the Account overview; <em>during</em> creation, as a per-campaign score that does not move the account-level one; and <em>after</em> launch, as ongoing recommendations while the campaign runs. What it does <strong>not</strong> do is predict or guarantee performance: a fitness studio with a score of 68 out of 100 is not recovering 68 percent of its spend, and its return on ad spend could be excellent or terrible regardless. Treat it as a compliance checklist for setup quality, never as a results forecast.",
+          "explanation": "A classic distractor states that the Opportunity Score predicts ROAS or guarantees results; the only correct reading is that it measures adoption of Meta's recommendations."
+        },
+        {
+          "type": "recall",
+          "q": "Describe step by step what you would set up for a business owner who wants to give an outside agency access to their ads without handing over a personal password.",
+          "hint": "Think about the container that holds all the assets, and about the levels of access you can hand out inside it.",
+          "keywords": [
+            "business portfolio",
+            "asset",
+            "Partners",
+            "partial access",
+            "full control"
+          ],
+          "model": "The answer is a <strong>business portfolio</strong> (formerly Business Manager), the container that groups every asset of the brand in one place: the Facebook Page, the Instagram account, the ad account, the product catalog and the datasets. Take a regional insurance broker that today shares the owner's personal login with its agency: instead of that, you create the portfolio, add the assets to it, and then add the agency under <strong>Partners</strong>, which requires the agency to have its own portfolio and business ID. Inside the portfolio, users come in three kinds: <strong>People</strong> (individuals), <strong>Partners</strong> (other businesses) and <strong>System users</strong> (servers or software using the API). Then you assign the permission level: <em>partial access</em> lets someone work only on the assets you assign, while <em>full control</em> lets them manage settings, people, tools and assets and even delete the portfolio; there are also advanced levels for finance and a temporary access that lasts a minimum of 3 and a maximum of 75 days. The path is <strong>Meta Business Suite</strong> then the <strong>Settings</strong> gear then <strong>Business settings</strong>, and the big win is that revoking the agency later is one click, with no password changes for anyone.",
+          "explanation": "Permission-level questions are common, and the subtle point the exam loves is that someone can have full control of a single ad account without having full control of the whole portfolio."
+        }
+      ]
+    },
+    {
       "id": "1.flash",
       "title": "Day 1 flashcards (all)",
       "section": "bz",

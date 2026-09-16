@@ -1763,6 +1763,70 @@
       ]
     },
     {
+      "id": "4.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras la diferencia entre un signal y un event, y cuáles son las 4 data sources con las que le mandas información a Meta.",
+          "hint": "Uno es la intención de la persona; el otro es el reporte técnico que la registra.",
+          "keywords": [
+            "signal",
+            "event",
+            "Píxel",
+            "CAPI",
+            "offline conversions"
+          ],
+          "model": "Un <strong>signal</strong> (señal) es cualquier acción de una persona que revela interés o intención: ver un producto, agregarlo al carrito, comprar o entrar a una tienda. Un <strong>event</strong> (evento) es el registro técnico de esa acción que tu sitio o tu app le manda a Meta; el signal es la intención y el event es el reporte que dice que eso pasó. Para entregarle esos eventos a Meta existen 4 data sources, o fuentes de datos: el Píxel de Meta, que es un código de JavaScript en tu sitio web; la Conversions API o CAPI, que envía desde tu propio servidor; el Facebook SDK, que es el equivalente del Píxel para apps móviles; y las offline conversions, o conversiones fuera de línea, que es un archivo con lo que pasó en piso, por teléfono o en oficina. La forma fácil de elegir es preguntarte dónde ocurre la acción: si pasa en web, Píxel más CAPI; si pasa en una app, SDK; si pasa fuera de internet, offline conversions. Imagina una distribuidora de equipo médico que recibe cotizaciones en línea pero firma en oficina: usa Píxel y CAPI para las cotizaciones y offline conversions para los contratos cerrados.",
+          "explanation": "Si los eventos no llegan bien, Meta se queda sin materia prima para optimizar. Por eso el examen insiste en qué fuente corresponde a cada canal."
+        },
+        {
+          "type": "recall",
+          "q": "Un cliente te dice: ya tengo el Píxel, para qué quiero la Conversions API. ¿Qué le respondes?",
+          "hint": "Piensa en qué se pierde cuando toda la medición depende del navegador.",
+          "keywords": [
+            "CAPI",
+            "server-to-server",
+            "ad blocker",
+            "Dataset",
+            "deduplicación"
+          ],
+          "model": "La <strong>Conversions API</strong> (CAPI) no reemplaza al Píxel: son complementarios y la recomendación de Meta es usar los dos. El Píxel vive en el navegador del visitante, así que pierde entre 10% y 30% de los eventos por ad blockers, o bloqueadores de anuncios, por cookies borradas y por las restricciones de iOS. La CAPI manda los eventos server-to-server, o sea de tu servidor directo al de Meta, sin pasar por el navegador, así que sobrevive a todo eso; a cambio, el Píxel aporta el detalle fino de lo que pasa en el browser. Juntos dan la cobertura más alta y mejor optimización. Para que no se cuente dos veces la misma compra, las dos fuentes se conectan a un <strong>Dataset</strong> (conjunto de datos: el contenedor que une Píxel, CAPI, SDK y offline), que hace la deduplicación, y ese dataset se elige a nivel conjunto de anuncios. Imagina una tienda en línea de suplementos que solo usa Píxel: cada compra que se pierde es una pista menos para que el sistema encuentre compradores parecidos.",
+          "explanation": "Después de iOS 14 la CAPI dejó de ser opcional en la práctica, porque es la vía que no depende del permiso del navegador ni del dispositivo."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras la diferencia entre un evento estándar, un evento personalizado y una conversión personalizada.",
+          "hint": "Uno ya viene con nombre oficial, otro obliga a tocar código y el tercero es una regla encima de lo que ya mandas.",
+          "keywords": [
+            "standard event",
+            "custom event",
+            "custom conversion",
+            "código",
+            "Purchase"
+          ],
+          "model": "Un standard event, o evento estándar, es uno de los nombres que Meta ya tiene predefinidos, como Purchase (compra), Lead (prospecto) o AddToCart (agregar al carrito); si tu acción encaja en uno, úsalo, porque así puedes optimizar, crear audiencias y medir sin trabajo extra. Un custom event, o evento personalizado, es un evento nuevo que inventas porque ninguno de los estándar describe tu acción, y obliga a tocar el código del Píxel o de la CAPI para empezar a enviarlo. Una custom conversion, o conversión personalizada, no es un evento nuevo: es una regla que construyes encima de un evento que ya mandas, filtrándolo por condiciones como la URL de la página o el valor de un parámetro. Como es solo una regla, se arma desde Events Manager sin programar nada. Imagina una escuela de posgrados que ya manda Lead: puede crear una conversión personalizada que cuente solo a los prospectos que llegaron desde la página de maestrías, sin tocar una línea de código.",
+          "explanation": "Trampa importante: las conversiones personalizadas solo aplican a eventos web y offline, nunca a eventos de app. Para app hay que crear eventos personalizados directo con el SDK."
+        },
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un cliente por qué su medición en iPhone se ve incompleta desde iOS 14 y qué puede hacer al respecto?",
+          "hint": "Piensa en el permiso que pide Apple y en cuántos eventos puede priorizar Meta por dominio.",
+          "keywords": [
+            "ATT",
+            "AEM",
+            "8 eventos",
+            "CAPI",
+            "permiso"
+          ],
+          "model": "Apple introdujo en iOS 14 el App Tracking Transparency o <strong>ATT</strong> (Transparencia de Rastreo entre Apps): cada app debe pedir permiso explícito antes de rastrear a la persona entre apps y sitios. Mucha gente dice que no, así que el Píxel se queda corto y hay eventos que Meta ya no puede asociar con nadie. La respuesta de Meta es el Aggregated Event Measurement o <strong>AEM</strong> (Medición de Eventos Agregada), que mide en bloque en lugar de persona por persona. Sus límites son claros: máximo 8 eventos priorizados por dominio web, reportes con 24 a 72 horas de retraso, ventanas de atribución recortadas a 1 día por visualización y 7 días por clic, y audiencias personalizadas web más chicas. Para mitigarlo instala la CAPI, que va por servidor y no depende del permiso de Apple, ordena esos 8 eventos empezando por el que más te importa y manda datos de contacto cifrados. Imagina una óptica en línea con los 8 espacios llenos de vistas de su blog: le conviene dejar arriba Purchase y AddToCart y sacar lo que no le mueve el negocio.",
+          "explanation": "Ojo: AEM aplica solo a iOS 14 en adelante, Android no se ve afectado por ATT. Y el orden de los 8 eventos importa, porque lo que quede fuera se mide mal o no se mide en iPhone."
+        }
+      ]
+    },
+    {
       "id": "4.flash",
       "title": "Flashcards del Día 4 (todo)",
       "section": "bz",

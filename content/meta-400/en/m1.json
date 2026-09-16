@@ -1199,6 +1199,68 @@
       ]
     },
     {
+      "id": "1.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, describe the chain a media planner follows to get from a client business goal to a campaign objective in Meta, and name the six objectives available.",
+          "hint": "Start with the business, not with the platform. Two translations happen before you click anything.",
+          "keywords": [
+            "business goal",
+            "funnel stage",
+            "campaign objective",
+            "ODAX"
+          ],
+          "model": "The planner never starts inside Ads Manager: the first step is the <strong>business goal</strong>, the commercial outcome the company actually wants, such as selling more, collecting leads or becoming known. That goal is then translated into a <strong>funnel stage</strong>, meaning whether the people you need to reach are just discovering the brand or are already close to buying. Only after that does it become a <strong>campaign objective</strong>, which is the instruction you give Meta about which outcome to optimize for. Meta groups those objectives into six options called <strong>ODAX</strong> (Outcome-Driven Ad Experiences): Awareness, Traffic, Engagement, Leads, App Promotion and Sales. Imagine a bakery in Guadalajara that wants to fill its tables on weekdays: the business goal is more weekday customers, the funnel stage is discovery because the neighborhood does not know it yet, so the objective is Awareness and not Sales. Reversing that order means picking a metric first and inventing a business reason for it afterwards.",
+          "explanation": "The exam keeps giving you a business situation and asking for the correct objective. Walking the chain in order is what stops you from choosing Traffic when the client actually wants revenue."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain why the data source has to be validated before you promise a campaign objective, and which source each kind of objective needs.",
+          "hint": "Nobody tells Meta the sale happened unless something reports it.",
+          "keywords": [
+            "Pixel",
+            "CAPI",
+            "signal",
+            "data source",
+            "Catalog"
+          ],
+          "model": "Meta optimizes by hunting for people who take the action you want, and it can only do that if something reports when that action happens; that report is the <strong>signal</strong> and it travels from a <strong>data source</strong>. For website sales you need the <strong>Pixel</strong> (code on the site that records what a visitor does from the browser) plus <strong>CAPI</strong> (Conversions API, the same events sent from the business server so you do not lose data when the browser fails or blocks trackers), and a connected <strong>catalog</strong> on top if the ads are dynamic product ads. App campaigns are measured with the Facebook SDK or an authorized MMP (Mobile Measurement Partner), never with the web Pixel. Awareness and Engagement require no conversion tracking at all, and a Leads campaign that uses an Instant form needs no Pixel either, because the contact never leaves Meta. Picture a regional insurance broker asking for Sales campaigns with nothing installed on its quoting page: the honest answer is that the signal gets fixed first and the objective comes second, not the other way around.",
+          "explanation": "Several exam items describe a client with a missing or mismatched data source and ask what to do first. The answer is always to repair the signal before launching the objective."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a colleague the difference between conversion location, conversion event and performance goal, and at which level each one is configured?",
+          "hint": "Three different questions: where, what and how. And they do not all live at the same level.",
+          "keywords": [
+            "conversion location",
+            "conversion event",
+            "performance goal",
+            "ad set"
+          ],
+          "model": "These three settings live under the same objective and sound alike, which is exactly why they get mixed up. The <strong>conversion location</strong> answers WHERE the action happens: website, app, messaging, calls or an Instant form. The <strong>conversion event</strong> answers WHAT counts as a result: purchase, lead, add to cart, view content. The <strong>performance goal</strong> answers HOW Meta optimizes delivery, for example maximize the number of conversions, maximize their value, or maximize clicks. The campaign objective is chosen once at the <strong>campaign</strong> level, while all three of these knobs are configured one level down at the <strong>ad set</strong>; the ad level only holds the creative. Take an online flower shop shipping nationwide: location Website, event Purchase, performance goal maximize conversion value, because the owner cares about ticket size and not only about order count.",
+          "explanation": "The exam deliberately swaps the event and the performance goal in its distractors, and it also tests which of the three levels a given setting belongs to."
+        },
+        {
+          "type": "recall",
+          "q": "Describe step by step how you would build a media plan by phases for a client whose sales process takes several weeks, and which objective you would assign to each phase.",
+          "hint": "Three segments of the journey, and each one optimizes a different action.",
+          "keywords": [
+            "acquisition",
+            "consideration",
+            "conversion",
+            "Leads",
+            "Sales"
+          ],
+          "model": "A plan is not one campaign, because a stranger does not turn into a buyer in a single jump. You split the journey into three phases and give each one the objective that matches the action you want there. <strong>Acquisition</strong> sits at the top: you want the person to discover you or leave their contact, so Awareness or <strong>Leads</strong> fit. <strong>Consideration</strong> sits in the middle: you keep the interest alive while the person decides, which is where Engagement or Traffic belong depending on the asset you have. <strong>Conversion</strong> sits at the bottom and closes the value action with <strong>Sales</strong>; if the close happens away from the website, for example a sales rep signing the contract, that offline event still reaches Meta from the company CRM through the Conversions API. Imagine a private clinic selling a surgery package: Leads to capture consultations, Engagement so patients see testimonials, and Sales optimized on the signed procedure the CRM reports.",
+          "explanation": "Exam questions often present a long sales cycle and ask which objective goes in which phase. Forcing a single objective on the whole funnel is always the wrong answer."
+        }
+      ]
+    },
+    {
       "id": "1.flash",
       "title": "Module 1 flashcards (all)",
       "section": "bz",

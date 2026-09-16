@@ -2194,6 +2194,70 @@
       ]
     },
     {
+      "id": "6.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras cuáles son los 4 formatos de anuncio y cuándo usarías un Instant Experience.",
+          "hint": "Piensa en cuántas piezas lleva cada molde y en qué pasa cuando tu sitio carga lento.",
+          "keywords": [
+            "Carousel",
+            "Collection",
+            "Flexible",
+            "Instant Experience",
+            "Single image"
+          ],
+          "model": "El formato de anuncio es el molde visual: define cómo se ve tu publicidad y cuántas piezas lleva dentro, y no tiene nada que ver con el mensaje ni con la audiencia. Son 4: Flexible, donde subes varias piezas y Meta decide cuál entregar según cuál rinda mejor; single image o video, que es una sola pieza y el formato más simple; carousel, o carrusel, que son dos o más piezas que la persona desliza con el dedo, ideal para varios productos o para contar pasos; y collection, o colección, que es una pieza principal arriba y una cuadrícula de productos del catálogo debajo. El <strong>Instant Experience</strong> (experiencia instantánea) es otra cosa: una mini-página a pantalla completa que se abre dentro de Meta al tocar el anuncio, solo en celular y sin sacar a la persona a un sitio externo. Conviene cuando tu sitio carga lento o no está adaptado a celular, cuando quieres contar una historia más larga con fotos y video, o cuando quieres que la gente explore sin perder velocidad. Imagina una agencia de bodas cuyo sitio tarda seis segundos en abrir: con un Instant Experience deja de perder a la mitad de los interesados en la espera.",
+          "explanation": "Flexible es la opción cuando no sabes qué formato rinde mejor: Meta prueba y entrega el ganador, igual que Advantage+ pero a nivel de formato."
+        },
+        {
+          "type": "recall",
+          "q": "Describe con tus palabras qué es un placement, por qué conviene dejar Advantage+ placements y qué cuidado tiene el creativo en Stories y Reels.",
+          "hint": "Piensa en la forma de la pantalla y en lo que tapa la interfaz de la app.",
+          "keywords": [
+            "placement",
+            "Advantage+",
+            "aspect ratio",
+            "safe zone",
+            "Reels"
+          ],
+          "model": "El <strong>placement</strong> (ubicación) es el lugar exacto donde aparece tu anuncio dentro del universo de Meta: el Feed, que es el muro donde uno baja con el dedo; las Stories, que duran 24 horas; los Reels, que son videos verticales cortos; y también Marketplace, Explore, Messenger, Audience Network o Threads. Advantage+ placements, o ubicaciones automáticas, viene marcado por defecto y deja que el sistema reparta tu anuncio donde más rinde; como compite por más inventario, normalmente baja el costo por resultado, y elegir ubicaciones a mano solo se justifica con una razón concreta de marca o de formato. El aspect ratio, que es la proporción de la pieza o qué tan ancha es contra qué tan alta, decide si el anuncio llena la pantalla o se pierde: 9:16 llena Stories y Reels, 4:5 es el recomendado para el Feed de Facebook e Instagram y 1:1 funciona parejo en varios lugares. En Stories y Reels hay que respetar la safe zone, la zona segura del centro, porque la interfaz de la app tapa las orillas con el perfil, los íconos y el botón de mensaje. Imagina una pizzería que pone su teléfono pegado al borde de abajo en un Reel: el botón de mensaje de Instagram lo tapa y nadie puede marcarle.",
+          "explanation": "Una pieza horizontal en Stories se ve diminuta y con franjas negras, aunque el mensaje sea bueno. El aspect ratio correcto por ubicación es parte del rendimiento, no un detalle de diseño."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras qué es la atribución, qué modelos existen en Ads Manager y cuál es la ventana por defecto.",
+          "hint": "Piensa en quién se lleva el crédito de una venta y por cuánto tiempo sigue contando.",
+          "keywords": [
+            "atribución",
+            "1-day view",
+            "7-day click",
+            "standard attribution",
+            "incremental attribution"
+          ],
+          "model": "La <strong>atribución</strong> (attribution) es el proceso de decidir a qué anuncio le toca el crédito cuando alguien convierte, porque antes de comprar la persona suele tener varios touchpoints, o puntos de contacto con tu marca. En Ads Manager existen solo dos modelos: standard attribution, o atribución estándar, que reparte el crédito con reglas fijas de ventana y tipo de contacto; e incremental attribution, o atribución incremental, que estima cuánto de ese resultado no habría ocurrido sin el anuncio. El attribution setting, o configuración de atribución, es la ventana dentro de la cual la conversión todavía cuenta, y por defecto es 1-day view, 7-day click: 1 día por visualización y 7 días por clic. Tradúcelo así: si la persona solo vio el anuncio, la conversión cuenta si ocurre dentro del día siguiente; si además hizo clic, cuenta hasta 7 días después. Imagina una mueblería en línea: si alguien ve el anuncio el lunes sin dar clic y compra el martes, esa venta sí se le atribuye; si compra el sábado, ya no.",
+          "explanation": "Trampa de examen: Custom attribution y Engaged-view attribution no existen en Ads Manager. Solo hay Standard e Incremental."
+        },
+        {
+          "type": "recall",
+          "q": "Un cliente quiere saber si su campaña sirvió. Explica con tus palabras cuándo usarías una Prueba A/B, cuándo Mejora de la marca y cuándo Aumento de conversiones.",
+          "hint": "Uno compara dos versiones, otro pregunta con encuestas y otro mide ventas extra.",
+          "keywords": [
+            "una sola variable",
+            "encuestas",
+            "incrementalidad",
+            "Experiments",
+            "cost per result"
+          ],
+          "model": "La <strong>Prueba A/B</strong> (A/B test) es un experimento donde corres dos versiones al mismo tiempo cambiando una sola variable, que puede ser el creativo, la audiencia o la ubicación; Meta divide a la gente al azar y sin que nadie vea las dos versiones, y gana la que logre el menor cost per result, o costo por resultado. La <strong>Mejora de la marca</strong> (brand lift) mide percepción, no ventas: con encuestas a un grupo que sí vio los anuncios y a otro parecido que no, compara reconocimiento de marca, recuerdo del anuncio y asociación del mensaje. El <strong>Aumento de conversiones</strong> (Conversion Lift) mide incrementalidad: cuántas ventas, prospectos o eventos extra causó la campaña que no habrían ocurrido sin ella, comparando también grupo expuesto contra grupo de control. Los tres se arman en la sección Experiments, dentro de Ads Manager o de Business Suite, no en el reporte normal de métricas. Imagina una aerolínea de bajo costo: para saber si el video nuevo vende más que el viejo usa una Prueba A/B, para saber si su patrocinio dejó huella en la memoria usa Mejora de la marca, y para saber cuántos boletos extra generó usa Aumento de conversiones.",
+          "explanation": "El truco para no confundirlas: si la pregunta habla de encuestas y de lo que la gente piensa o recuerda, es Mejora de la marca; si habla de ventas o prospectos reales que no habrían pasado, es Aumento de conversiones."
+        }
+      ]
+    },
+    {
       "id": "6.flash",
       "title": "Flashcards del Día 6 (todo)",
       "section": "bz",

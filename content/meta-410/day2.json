@@ -1691,6 +1691,70 @@
       ]
     },
     {
+      "id": "2.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras qué es ODAX y cuáles son los 6 objetivos, acomodados por etapa del funnel.",
+          "hint": "Piensa en el recorrido: primero que te conozcan, luego que te consideren, al final que compren.",
+          "keywords": [
+            "ODAX",
+            "Reconocimiento",
+            "Ventas",
+            "funnel",
+            "Clientes potenciales"
+          ],
+          "model": "<strong>ODAX</strong> son las siglas de Outcome-Driven Ad Experiences (experiencias publicitarias guiadas por resultados): es la forma en que Meta organiza sus objetivos partiendo del resultado de negocio que buscas, no de la táctica que quieres usar. Son 6 y se eligen a nivel campaña, el primer nivel de la estructura. Arriba del funnel (embudo: el recorrido del cliente desde que te conoce hasta que te compra) está Reconocimiento, que busca que la gente te recuerde. En medio están Tráfico, que lleva gente a un destino; Interacción, que busca que hagan algo con tu contenido o te escriban; Clientes potenciales, que recolecta datos de contacto; y Promoción de la app, para instalaciones y uso de una aplicación. Hasta abajo está Ventas, que busca a quien ya está listo para comprar. Imagina una escuela de idiomas: usa Reconocimiento cuando abre una sede nueva, Clientes potenciales para juntar prospectos de clase de prueba y Ventas cuando ya cobra el curso en línea.",
+          "explanation": "El razonamiento va al revés de como uno cree: primero la meta real del negocio y después el objetivo. Elegir el objetivo por la táctica que te gusta es la falla más común."
+        },
+        {
+          "type": "recall",
+          "q": "¿Cómo decides entre el objetivo Clientes potenciales (leads) y el objetivo Ventas (sales)? Explica la regla con tus palabras.",
+          "hint": "Pregúntate si el resultado que buscas es una conversación o un cobro.",
+          "keywords": [
+            "Clientes potenciales",
+            "Ventas",
+            "consideración",
+            "transacción",
+            "Instant form"
+          ],
+          "model": "La regla más simple es preguntarte qué resultado quieres: si necesitas datos de contacto para que alguien les dé seguimiento, es <strong>Clientes potenciales</strong> (leads); si necesitas una transacción con cobro de por medio, es <strong>Ventas</strong> (sales). Clientes potenciales vive en la etapa de consideración, cuando la persona ya te volteó a ver pero todavía no compra, y te deja elegir dónde deja sus datos: Instant form, que es un formulario instantáneo dentro de Meta, tu sitio web, Messenger, una llamada o Instagram. Ventas vive en la etapa de conversión y también te deja elegir dónde ocurre la compra: sitio web, app o chat. Un detalle que preguntan seguido: Ventas con conversión en sitio web y evento Purchase (compra) exige tener el Píxel de Meta y la API de conversiones bien configurados. Imagina una clínica de fisioterapia que solo quiere agendar valoraciones gratis: eso es Clientes potenciales, aunque después venda paquetes caros en consulta.",
+          "explanation": "Si el resultado es una cita, una lista de correos o una llamada, es Clientes potenciales. El cobro real es lo único que manda a Ventas, y la instalación de una app va a Promoción de la app, no a Ventas."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras la diferencia entre el conversion event y el performance goal, y por qué no son lo mismo.",
+          "hint": "Uno dice qué cuenta como resultado; el otro dice cómo pujar por ese resultado.",
+          "keywords": [
+            "conversion event",
+            "performance goal",
+            "maximize number",
+            "maximize value",
+            "conjunto de anuncios"
+          ],
+          "model": "El <strong>conversion event</strong> (evento de conversión) es QUÉ acción cuenta como resultado válido: una compra (Purchase), un prospecto (Lead), una suscripción (Subscribe). El <strong>performance goal</strong> (meta de rendimiento) es CÓMO quieres que Meta puje para conseguir ese resultado. En campañas de Ventas tienes dos caminos: maximize number of conversions, o sea maximizar el número de conversiones, donde una venta de 200 pesos cuenta igual que una de 20,000; y maximize value of conversions, o sea maximizar el valor de las conversiones, donde el sistema persigue los tickets más altos aunque sean menos. Los dos se configuran a nivel conjunto de anuncios, no en la campaña. Imagina una mueblería que vende salas de 8,000 pesos y comedores de 40,000: con el mismo evento Purchase, maximizar número le trae muchas ventas chicas y maximizar valor le trae menos ventas pero más facturación.",
+          "explanation": "Cada objetivo trae su performance goal por defecto alineado a su resultado: Tráfico va por link clicks, Clientes potenciales por número de leads y Ventas por número de conversiones. Cambiarlo solo se justifica si la meta de negocio lo pide."
+        },
+        {
+          "type": "recall",
+          "q": "Un compañero dice que Reconocimiento (awareness) e Interacción (engagement) con video views son lo mismo. ¿Qué le respondes?",
+          "hint": "Uno mide que te recuerden; el otro mide una acción concreta sobre tu contenido.",
+          "keywords": [
+            "ad recall",
+            "reach",
+            "video views",
+            "Reservation",
+            "Interacción"
+          ],
+          "model": "No son lo mismo. <strong>Reconocimiento</strong> (awareness) busca llegar a la mayor cantidad de personas que van a recordar tu anuncio: optimiza métricas como el reach, que es el alcance o cuántas personas distintas lo vieron al menos una vez, y el ad recall lift, que es el incremento estimado de recuerdo del anuncio. No le importa el clic ni la compra. <strong>Interacción</strong> (engagement) busca una acción concreta con tu contenido o tu negocio, y por eso te obliga a elegir un engagement type o tipo de interacción: video views, interacción con la publicación o mensajes. Otro dato que el examen usa mucho: Reconocimiento e Interacción son los dos únicos objetivos disponibles en Reservation; los demás solo existen en Auction. Imagina una tostadora de café que cambia de logo: si solo quiere que la gente registre el cambio es Reconocimiento, y si quiere que vean completo el video de cómo tuestan el grano es Interacción.",
+          "explanation": "Reconocimiento reparte alcance amplio para grabar la marca; Interacción persigue la acción medible. Si la pregunta habla de recordación es Reconocimiento, aunque el creativo sea un video."
+        }
+      ]
+    },
+    {
       "id": "2.flash",
       "title": "Flashcards del Día 2 (todo)",
       "section": "bz",

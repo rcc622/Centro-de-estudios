@@ -975,6 +975,68 @@
       ]
     },
     {
+      "id": "6.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "How would you explain to a client who is proud of a post with 200,000 likes that this does not prove the campaign worked?",
+          "hint": "First define what you were trying to achieve, then pick the number that proves it.",
+          "keywords": [
+            "vanity metric",
+            "business goal",
+            "cost per result",
+            "ROAS"
+          ],
+          "model": "There is no universal best metric: the number that judges a campaign depends on the <strong>business goal</strong> you set before launching. If the goal was to become known, you read reach, frequency and estimated ad recall lift; if it was leads or sales, you read results and <strong>cost per result</strong>; if it was revenue, you read purchase value and <strong>ROAS</strong> (return on ad spend, the money generated per money spent). <strong>Vanity metrics</strong> are numbers that look impressive but do not prove the business moved forward: piles of likes, raw impressions or loose clicks that never become customers. A video can collect 200,000 likes because the joke traveled and still produce zero sales, which simply means it attracted an audience that was never going to buy. The serious planner reports the metric that answers the business goal and keeps everything else as context, never as the verdict.",
+          "explanation": "The exam punishes judging a campaign by the wrong metric, for example reading an Awareness campaign through CPC or through purchases."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what incrementality measures and why you cannot answer that question without a holdout group.",
+          "hint": "Would those sales have happened anyway?",
+          "keywords": [
+            "incrementality",
+            "holdout",
+            "causal",
+            "control group"
+          ],
+          "model": "<strong>Incrementality</strong> answers the most honest question in advertising: did those conversions happen <em>because</em> of the ads, or were they going to happen anyway? It measures the <strong>causal</strong> effect of the campaign, meaning the conversions that would NOT have occurred without advertising, which is very different from counting every sale and crediting it to the ad. To measure it you need a <strong>holdout</strong>, a <strong>control group</strong> of people deliberately kept from seeing your ads during the experiment, working as a parallel universe with no advertising in it. If the exposed group converts more than the holdout, that gap is the real effect; if both convert at about the same rate, the ads contributed very little. Imagine a sneaker brand that sold 1,000 pairs during a campaign month, but whose holdout still generated the equivalent of 600 sales on its own: the honest number is 400 incremental sales, not 1,000. Without a point of comparison there is simply no way to prove causality.",
+          "explanation": "Attribution is not proof of causality, and the exam tests exactly that distinction with last-click numbers presented as evidence."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, describe the three Meta experiments and what each one measures.",
+          "hint": "One compares variants, one measures incremental conversions, one asks people questions.",
+          "keywords": [
+            "A/B Test",
+            "Conversion Lift",
+            "Brand Lift",
+            "survey",
+            "holdout"
+          ],
+          "model": "Meta offers three experiment types and each answers a different question. An <strong>A/B Test</strong> compares two variants, whether creative, audience or strategy, by splitting the audience so each group sees only one version, which tells you which option performs better. A <strong>Conversion Lift</strong> measures incremental conversions using a <strong>holdout</strong> group that sees no ads, isolating how many purchases or leads the campaign actually caused. A <strong>Brand Lift</strong> measures shifts in brand perception through a <em>survey</em>, asking exposed and unexposed people about recall, awareness or intent and reporting the difference. So if a bank wants to know which headline wins, that is an A/B Test; if it wants to know how many accounts the ads truly created, that is a Conversion Lift; and if it wants to know whether more people now remember the brand, that is a Brand Lift.",
+          "explanation": "Exam items describe the question the client is asking and expect you to return the matching experiment, so tying each one to its question is the shortcut."
+        },
+        {
+          "type": "recall",
+          "q": "Describe the three measurement lenses Meta recommends combining and which question each one answers.",
+          "hint": "Cause, credit, and the whole forest including offline.",
+          "keywords": [
+            "experiment",
+            "attribution",
+            "marketing mix modeling",
+            "triangulation",
+            "touchpoint"
+          ],
+          "model": "Measuring well means not marrying a single method, because each one has blind spots. <strong>Experiments</strong> answer whether your ads <em>caused</em> the result, using test and control groups; they are the gold standard for causality, but they are expensive and one-off. <strong>Attribution</strong> answers which <strong>touchpoints</strong> were involved on the path to a conversion and distributes the credit among them; it is available daily and excellent for tactical optimization, but it never proves cause. <strong>Marketing mix modeling</strong> (MMM) answers how all channels contribute at a macro level, including offline ones such as radio or an in-store sales team; it sees the forest but not the individual tree. Combining all three is called <strong>triangulation</strong> and it gives the most reliable read of the investment. One warning worth passing to the client: the attribution window, for example 7-day click or 1-day view, changes which conversions get credited to Meta, so changing it changes the reported number without changing a single real sale.",
+          "explanation": "The trap is treating attribution as proof of causality. Attribution optimizes tactics day to day, experiments prove cause, MMM frames the whole mix."
+        }
+      ]
+    },
+    {
       "id": "6.flash",
       "title": "Module 6 flashcards (all)",
       "section": "bz",

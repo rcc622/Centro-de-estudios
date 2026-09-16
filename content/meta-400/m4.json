@@ -1204,6 +1204,70 @@
       ]
     },
     {
+      "id": "4.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un cliente la diferencia entre Advantage+ Audience y la audiencia original, y en qué caso NO deberías usar Advantage+?",
+          "hint": "La pregunta es si tus señales son un muro o una sugerencia.",
+          "keywords": [
+            "Advantage+",
+            "audiencia original",
+            "señales",
+            "límite duro",
+            "expandir"
+          ],
+          "model": "Durante años planear significaba decirle a Meta exactamente a quién mostrar el anuncio, y el sistema se quedaba dentro de ese muro. Hoy el punto de partida recomendado es el <strong>Advantage+ Audience</strong> (público Advantage+), donde tú aportas señales (públicos personalizados o intereses) y el sistema las toma como sugerencia para arrancar la búsqueda, con permiso de expandir más allá si encuentra conversiones afuera. La audiencia original no desapareció: ahí lo que defines es un límite duro que el sistema respeta al pie de la letra. La diferencia que el examen persigue es exactamente esa: en Advantage+ las señales priorizan pero no encierran, y en la original sí encierran. Por eso la audiencia original sigue siendo la respuesta correcta cuando hay restricciones legales o de marca, por ejemplo un laboratorio farmacéutico que por regulación solo puede anunciar cierto producto a un perfil específico y no puede permitir que el sistema se salga de ahí. Si no existe esa restricción y el negocio tiene buena señal de conversión, Advantage+ es el default.",
+          "explanation": "Cuando el enunciado dice que por ley o por marca el anuncio NO puede salirse de un público definido, la respuesta es audiencia original, aunque Advantage+ sea el default recomendado."
+        },
+        {
+          "type": "recall",
+          "q": "Un planner armó una audiencia con ocho intereses anidados y triple narrowing; el delivery es casi nulo y el costo altísimo. Explica qué pasó y qué le recomendarías.",
+          "hint": "Cada capa de AND encoge el público.",
+          "keywords": [
+            "detailed targeting",
+            "narrow",
+            "exclude",
+            "audiencia amplia",
+            "intereses"
+          ],
+          "model": "La <strong>segmentación detallada</strong> (detailed targeting) acota a quién le llega el anuncio combinando tres criterios: intereses (temas con los que la gente interactúa), comportamientos (hábitos detectados, como comprar en línea con frecuencia) y demográficos (edad, escolaridad, estado civil). Sobre esa base hay dos herramientas de precisión: <strong>narrow</strong> (estrechar) suma una condición obligatoria con lógica Y, de modo que la persona tiene que cumplir ambos criterios a la vez, y <strong>exclude</strong> (excluir) saca perfiles con lógica NO aunque cumplan el interés principal. El problema del caso es que cada capa de narrow multiplica condiciones y el público se encoge hasta quedar minúsculo: el sistema ya no tiene espacio para optimizar, apenas entra a subastas y el costo se dispara. La recomendación es soltar el narrowing, quedarse con pocos intereses realmente representativos y dejar que la señal de conversión haga el trabajo fino, porque con buena señal una audiencia amplia suele rendir mejor que una sobre-segmentada. Imagina un vivero que vende plantas de interior: le rinde más un público amplio de gente interesada en jardinería que tres capas de intereses anidados. Como referencia, existe la <strong>detailed targeting expansion</strong> (expansión de la segmentación detallada), una casilla dentro de la audiencia original que deja a Meta salirse del interés cuando eso mejora resultados.",
+          "explanation": "El examen usa este síntoma exacto, delivery nulo con costo alto, y la respuesta correcta apunta a la sobre-segmentación, no al creativo ni a la ubicación."
+        },
+        {
+          "type": "recall",
+          "q": "Describe qué es un público personalizado, de qué cuatro fuentes puede salir y los tres usos distintos que tiene dentro de un plan.",
+          "hint": "No solo sirve para remarketing.",
+          "keywords": [
+            "Custom Audience",
+            "remarketing",
+            "seed",
+            "exclusión",
+            "customer list"
+          ],
+          "model": "Un <strong>Custom Audience</strong> (público personalizado) se construye con personas que ya tienen alguna relación con tu negocio, no con desconocidos: parte de tu propia señal en lugar de los intereses generales que Meta conoce de todos. Sale de cuatro fuentes: Website (visitantes y eventos que registró el Pixel, como quien agregó al carrito), App activity (usuarios y eventos dentro de tu app móvil), <strong>customer list</strong> (tu base propia de correos o teléfonos, que se sube hasheada, es decir convertida antes en un código irreversible) y Engagement (gente que vio tu video, interactuó con tu página o abrió un formulario instantáneo). Los tres usos que el examen mezcla a propósito son: remarketing, que es volver a impactar a quien ya te conoce, por ejemplo para recuperar carritos abandonados; <strong>seed</strong> (semilla), que es usarla como base para crear un público similar y prospectar gente parecida; y exclusión, que es dejarla fuera de una campaña para no volver a pagar por quien ya convirtió. Imagina una compañía de internet que sube su padrón de clientes actuales: lo usa como semilla para prospectar hogares parecidos y, al mismo tiempo, lo excluye de la campaña de altas nuevas para no anunciarle a quien ya contrató. Las tres funciones conviven en el mismo plan y no son excluyentes entre sí.",
+          "explanation": "Las preguntas suelen dar un síntoma de negocio, como carritos abandonados o no gastar en clientes actuales, y esperan que identifiques la fuente correcta y el uso correcto, no solo la palabra remarketing."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras qué es un lookalike, qué decide su porcentaje del 1% al 10% y por qué la calidad de la seed manda.",
+          "hint": "Garbage in, garbage out.",
+          "keywords": [
+            "Lookalike",
+            "seed",
+            "precisión",
+            "alcance",
+            "alto valor"
+          ],
+          "model": "Un <strong>Lookalike</strong> (público similar) sirve para prospectar a escala sin disparar a ciegas: parte de una <strong>seed</strong> (semilla: un público personalizado de calidad que usas como base, como tus mejores clientes) y le pide a Meta que encuentre gente con perfil parecido que todavía no te conoce. El porcentaje define el equilibrio entre precisión y alcance: el 1% toma a la porción de la población más parecida a tu semilla dentro del país objetivo y es lo más preciso, pero con el menor alcance, mientras que el 5% al 10% amplía mucho el alcance a cambio de diluir el parecido. No hay un número correcto: el 1% conviene cuando priorizas calidad y el 10% cuando necesitas volumen para escalar. Lo que sí es regla es que un público similar nunca es mejor que la semilla de la que parte, algo que se resume como garbage in, garbage out (basura que entra, basura que sale), porque el algoritmo solo puede copiar el patrón que le das. Imagina una joyería que quiere prospectar clientes nuevos: una semilla de compradores de alto valor le dará un público mucho más fuerte que una semilla de todos los visitantes de su sitio. Como referencia, la semilla recomendada ronda entre 1,000 y 50,000 personas, y el público similar siempre se genera sobre un país objetivo.",
+          "explanation": "El examen contrapone precisión contra volumen y castiga dos errores: creer que el 10% es mejor por ser más grande y usar como semilla cualquier tráfico sin filtrar valor."
+        }
+      ]
+    },
+    {
       "id": "4.flash",
       "title": "Flashcards del Módulo 4 (todo)",
       "section": "bz",

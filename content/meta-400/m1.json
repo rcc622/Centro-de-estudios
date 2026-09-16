@@ -1199,6 +1199,69 @@
       ]
     },
     {
+      "id": "1.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Un dueño de negocio te dice que ya sabe lo que quiere: una campaña de Ventas. Explica con tus palabras por qué ese no es el punto de partida y cuál es el orden correcto de decisiones.",
+          "hint": "Empieza por el negocio, no por Ads Manager.",
+          "keywords": [
+            "business goal",
+            "etapa del funnel",
+            "conversion location",
+            "performance goal"
+          ],
+          "model": "El punto de partida nunca es la plataforma, es el negocio. Primero defines el <strong>business goal</strong> (la meta comercial real del cliente: vender productos, captar contactos o darse a conocer), porque esa frase es la que manda sobre todo lo demás. De ahí lo traduces a una etapa del <strong>funnel</strong> (el embudo: el camino que recorre una persona desde que no te conoce hasta que te compra) y solo entonces eliges el objetivo de la campaña, que es la instrucción que le das a Meta sobre qué resultado optimizar. Después bajas al <strong>conversion location</strong> (dónde ocurre la acción) y al <strong>performance goal</strong> (cómo optimiza Meta la entrega). Imagina una academia de natación para niños que acaba de abrir y pide una campaña de Ventas: si nadie la conoce, su meta real es llenar cursos y su primera fase es darse a conocer, no cerrar ventas. Elegir el objetivo primero es adivinar; elegirlo al final es planear.",
+          "explanation": "El examen plantea casos donde el cliente pide un objetivo concreto y la respuesta correcta es la que respeta la cadena, no la que repite lo que pidió el cliente."
+        },
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un cliente que quiere campañas de Ventas en su sitio web por qué primero hay que revisar sus fuentes de datos, y qué pasaría si no las tiene?",
+          "hint": "Meta necesita que alguien le avise cuándo ocurrió la acción.",
+          "keywords": [
+            "Pixel",
+            "CAPI",
+            "señal",
+            "data source",
+            "Events Manager"
+          ],
+          "model": "Meta optimiza buscando a las personas que hacen la acción que tú quieres, pero para lograrlo necesita que alguien le avise cuándo esa acción ocurrió. Ese aviso es la <strong>señal</strong> (signal) y viaja desde una <strong>data source</strong> (fuente de datos: la herramienta que registra lo que pasa en el sitio o la app), como el <strong>Pixel</strong> (código instalado en el sitio que registra lo que hace el visitante desde el navegador) o la <strong>CAPI</strong> (Conversions API: el mismo registro pero enviado desde el servidor del negocio, para no perder datos cuando el navegador falla). Sin esa fuente, Meta optimiza a ciegas y el presupuesto se desperdicia, así que la señal no es un detalle técnico del final: decide si el objetivo que propusiste es viable o no. Imagina una tienda en línea de muebles que quiere campañas de Ventas con el evento Purchase pero solo tiene el Pixel instalado: lo correcto es completar la CAPI y validar en Events Manager que la compra sí está llegando antes de lanzar. Conviene tener claro el contraste que el examen aprovecha: Reconocimiento e Interacción no requieren seguimiento de conversión, y las instalaciones de app se miden con el SDK o con un <strong>MMP</strong> (Mobile Measurement Partner: empresa externa certificada que mide eventos de apps), nunca con el Pixel web.",
+          "explanation": "En el examen te dan un caso con señal incompleta y la respuesta correcta casi siempre es arreglar la fuente de datos antes de lanzar, no lanzar y ver qué pasa."
+        },
+        {
+          "type": "recall",
+          "q": "Describe la diferencia entre conversion location, conversion event y performance goal, y di en qué nivel de la campaña se configura cada decisión.",
+          "hint": "Dónde, qué y cómo. Y ojo con el nivel.",
+          "keywords": [
+            "conversion location",
+            "conversion event",
+            "performance goal",
+            "ad set",
+            "nivel campaña"
+          ],
+          "model": "Son tres perillas distintas que suenan parecido y por eso se confunden. El <strong>conversion location</strong> (ubicación de la conversión) responde DÓNDE ocurre la acción: sitio web, app, mensajes, llamadas o formulario instantáneo. El <strong>conversion event</strong> (evento de conversión) responde QUÉ acción cuenta como resultado: una compra (Purchase), un contacto (Lead), un agregar al carrito. El <strong>performance goal</strong> (objetivo de rendimiento) responde CÓMO optimiza Meta la entrega: maximizar cantidad de conversiones, maximizar valor o maximizar clics. El nivel también importa: el objetivo de la campaña se elige a nivel campaña, mientras que estas tres perillas se configuran a nivel conjunto de anuncios (ad set), y el nivel anuncio solo carga el creativo. Imagina un banco digital que capta solicitudes de tarjeta desde su sitio: location Sitio web, event Lead y performance goal maximizar la cantidad de solicitudes.",
+          "explanation": "Confundir el QUÉ (el evento) con el CÓMO (el performance goal) es el distractor más repetido del examen, y las preguntas de nivel se resuelven recordando que solo el objetivo vive a nivel campaña."
+        },
+        {
+          "type": "recall",
+          "q": "Un cliente quiere resolver todo su embudo con una sola campaña, dice que por simplicidad. ¿Qué le dirías y cómo armarías el plan por fases?",
+          "hint": "Cada fase optimiza una acción distinta.",
+          "keywords": [
+            "media plan",
+            "captación",
+            "consideración",
+            "conversión",
+            "embudo"
+          ],
+          "model": "Un <strong>media plan</strong> (plan de medios: el documento donde defines en qué objetivos inviertes y en qué orden) serio no se resuelve con una sola campaña, porque nadie pasa de extraño a comprador de un solo salto. El recorrido se parte en tres tramos y cada uno pide su propio objetivo: captación arriba del embudo, donde viven Reconocimiento o Clientes potenciales para que te conozcan o dejen su contacto; consideración en medio, con Interacción o Tráfico para sostener el interés mientras el prospecto decide; y conversión abajo, con Ventas para cerrar la acción de valor. Si fuerzas un solo objetivo para todo el recorrido, terminas optimizando la métrica equivocada en al menos una fase: captas contactos donde debías cerrar ventas, o al revés. Imagina una aseguradora de autos que capta prospectos con Clientes potenciales y formulario instantáneo, los nutre con Interacción mostrando testimonios, y cierra la póliza con Ventas optimizando el evento de firma. Un detalle práctico: cuando el cierre ocurre fuera del sitio, como con un asesor por teléfono, ese evento offline se manda de regreso a Meta por CAPI para que la campaña pueda optimizar hacia él.",
+          "explanation": "El examen premia al planner que asigna un objetivo por fase; la opción de un solo objetivo para todo el funnel siempre es el distractor."
+        }
+      ]
+    },
+    {
       "id": "1.flash",
       "title": "Flashcards del Módulo 1 (todo)",
       "section": "bz",

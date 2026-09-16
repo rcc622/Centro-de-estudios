@@ -999,6 +999,70 @@
       ]
     },
     {
+      "id": "7.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Un cliente quiere subir su base de clientes para crear un público personalizado y te pregunta si eso es legal y seguro. Describe las cuatro políticas de privacidad que le explicarías.",
+          "hint": "Consentimiento, hashing, datos sensibles y cumplimiento.",
+          "keywords": [
+            "consentimiento",
+            "hashing",
+            "datos sensibles",
+            "cumplimiento",
+            "CAPI"
+          ],
+          "model": "La privacidad se diseña desde el plan, no se resuelve como trámite del final, y hay cuatro reglas que dominar. Primera, el consentimiento: los datos solo se recolectan y se usan si existe una base legal o el permiso adecuado de la persona. Segunda, el <strong>hashing</strong> de listas: cuando subes una base de clientes, los correos y teléfonos se convierten antes en un código irreversible, así que Meta nunca los recibe en texto legible y hace el match sin exponer los datos. Tercera, los datos sensibles: está prohibido segmentar usando categorías sensibles inferidas, como salud, religión u orientación. Cuarta, el cumplimiento: hay que respetar tanto las políticas de Meta como la ley de privacidad del país donde operas. Imagina un laboratorio de análisis clínicos que quiere reactivar a sus pacientes: puede usar su base propia si la levantó con consentimiento y la sube hasheada, pero no puede armar segmentaciones por condición médica; y si además mueve su medición a <strong>CAPI</strong> (Conversions API: envío de eventos desde su propio servidor) con consentimiento, mejora medición y cumplimiento al mismo tiempo.",
+          "explanation": "El examen usa dos falsedades como distractores: que Meta recibe los correos en claro y que usar la base propia está prohibido. Ambas son falsas si hay consentimiento y hashing."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras dónde nace el riesgo de brand safety, cuáles son los cuatro controles disponibles y qué se sacrifica al apretarlos.",
+          "hint": "El riesgo aparece donde hay contenido de terceros.",
+          "keywords": [
+            "brand safety",
+            "filtro de inventario",
+            "block lists",
+            "allow lists",
+            "alcance"
+          ],
+          "model": "Los <strong>brand safety controls</strong> (controles de seguridad de marca) evitan que tu anuncio aparezca junto a contenido que dañaría la imagen del cliente. El riesgo no está en todas partes: nace en las ubicaciones donde el anuncio convive con contenido de otros creadores, sobre todo in-stream (dentro de videos de terceros), Audience Network (apps y sitios externos) y Reels, mientras que en el feed propio de la marca el riesgo es bajo porque ahí ella controla lo que se publica. Los cuatro controles son: el <strong>inventory filter</strong> (filtro de inventario), que fija qué tan estricto es el contenido adyacente permitido con tres niveles, de más amplio a más restringido, expanded, moderate y limited; las <strong>block lists</strong> (listas de bloqueo), que excluyen sitios, apps o cuentas específicas; las <strong>publisher allow lists</strong> (listas de permitidos), que hacen lo contrario y solo dejan aparecer en medios aprobados; y las <strong>content type exclusions</strong> (exclusiones por tipo de contenido), que bloquean categorías sensibles completas. El precio siempre es el mismo: mientras más estricto el control, mayor seguridad de marca pero menor alcance y posible mayor costo. Imagina una universidad privada que no puede aparecer junto a contenido maduro: aprieta el filtro de inventario y suma exclusiones, asumiendo que su campaña llegará a menos gente. El trabajo del planner es balancear riesgo de marca contra eficiencia según lo que ese cliente puede tolerar.",
+          "explanation": "La trampa es presentar los controles como gratis; toda pregunta de brand safety bien hecha espera que menciones el costo en alcance y eficiencia."
+        },
+        {
+          "type": "recall",
+          "q": "Describe paso a paso qué revisa Meta antes de que un anuncio se entregue y qué opciones tienes si te lo rechazan.",
+          "hint": "No solo mira la imagen.",
+          "keywords": [
+            "ad review",
+            "landing page",
+            "targeting",
+            "appeal",
+            "24 horas"
+          ],
+          "model": "Antes de mostrarse a nadie, todo anuncio pasa por el <strong>ad review</strong> (revisión de anuncios), el proceso con el que Meta verifica que cumpla sus Normas de publicidad. Combina sistemas automatizados, que resuelven la mayoría de los casos al instante, con revisión humana para los dudosos, y suele tardar alrededor de 24 horas, aunque puede variar; ningún anuncio se entrega sin pasar ese filtro, sin importar el presupuesto. Lo que revisa no es solo la imagen: revisa el texto, la imagen, el video, el <strong>targeting</strong> (la segmentación) y la <strong>landing page</strong> (la página de destino a la que lleva el anuncio), así que una página que infringe las normas tumba el anuncio aunque el creativo esté impecable. Si te rechazan tienes dos caminos: editar el anuncio para corregir el problema, o pedir una revisión manual, llamada <strong>appeal</strong> (apelación), si crees que fue un error. Cualquier edición significativa vuelve a pasar por revisión antes de entregarse, así que hay que contemplar ese tiempo en el calendario de lanzamiento. Imagina una fintech de préstamos personales que lanza el lunes: si su página de destino no cumple, pierde el lanzamiento aunque el anuncio se vea perfecto.",
+          "explanation": "La respuesta que el examen busca casi siempre incluye la landing page, porque es justo lo que la gente olvida al listar qué se revisa."
+        },
+        {
+          "type": "recall",
+          "q": "¿Qué le dirías a un redactor que escribió Sabemos que sufres de migraña en un anuncio y no entiende por qué se lo rechazaron?",
+          "hint": "El problema es la redacción, no el producto.",
+          "keywords": [
+            "atributo personal",
+            "Normas de publicidad",
+            "redacción",
+            "rechazo",
+            "salud"
+          ],
+          "model": "El rechazo no es por el producto, es por la redacción: las Normas de publicidad de Meta prohíben que un anuncio implique que conoce un atributo personal de quien lo ve. Se considera atributo personal cualquier rasgo privado como salud, religión, edad, orientación o situación económica, y basta con que el texto dé a entender que lo sabes para que el anuncio se caiga. Esa frase afirma una condición de salud del espectador hablándole en segunda persona, y por eso se rechaza aunque la segmentación sea válida y el producto esté permitido. La corrección es sencilla: hablar del producto y no de la persona, así que algo como Alivio natural para el dolor de cabeza sí pasa, porque describe lo que ofreces sin atribuirle nada a quien lee. Imagina un consultorio de nutrición: decir Tú que batallas con tu peso lo tumba, mientras que Planes de alimentación diseñados por nutriólogos pasa sin problema. La regla práctica para revisar textos es cazar los tú, los tus y los sabemos que: cuando apuntan a una condición personal, hay que reescribir.",
+          "explanation": "Es la causa de rechazo más preguntada del examen y siempre se resuelve igual: el mismo servicio se puede anunciar si el texto se mantiene general."
+        }
+      ]
+    },
+    {
       "id": "7.flash",
       "title": "Flashcards del Módulo 7 (todo)",
       "section": "bz",

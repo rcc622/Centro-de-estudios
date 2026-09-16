@@ -1036,6 +1036,67 @@
       ]
     },
     {
+      "id": "5.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain what placements are, name the main ones, and say why Meta recommends letting the system use as many as possible.",
+          "hint": "The surfaces where the ad can appear. More surfaces means more of something.",
+          "keywords": [
+            "placement",
+            "Advantage+ placements",
+            "Feed",
+            "Reels",
+            "Audience Network"
+          ],
+          "model": "<strong>Placements</strong> are the spaces where your ad can appear inside Meta technologies, and they reach well beyond Facebook: the same ad can run on Instagram, in Messenger and in third-party apps connected to Meta. The most common ones are <strong>Feeds</strong>, <strong>Stories</strong>, <strong>Reels</strong>, <strong>in-stream</strong> (inside longer videos), <strong>Marketplace</strong>, <strong>Search</strong> and the <strong>Audience Network</strong>. Meta recommends <strong>Advantage+ placements</strong> as the default, where instead of hand-picking surfaces you let the system deliver wherever the result per cost is best. The logic is mechanical: more placements mean more auctions and more person-surface combinations to test, which usually lowers the cost per result and widens reach. Restricting surfaces out of aesthetic preference, with no business reason behind it, almost always raises cost. A clothing brand that only allowed Feed would never have discovered its cheapest sales were coming from Reels.",
+          "explanation": "The exam rewards the same instinct every time: restrict placements only for a real reason such as a brand requirement or an unsuitable creative."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a client who wants to cut costs that the creative itself is one of the strongest levers they have?",
+          "hint": "Two of the three auction ingredients depend on the ad, not on the money.",
+          "keywords": [
+            "estimated action rate",
+            "ad quality",
+            "total value",
+            "cost per result"
+          ],
+          "model": "The creative is not decoration, it is a delivery lever, because Meta chooses which ad to show using a <strong>total value</strong> that combines the advertiser bid, the <strong>estimated action rates</strong> (the probability that this person takes the action you want) and the <strong>ad quality</strong> (how relevant and well made Meta considers the ad based on user signals). The creative does not change your bid, but it moves the other two components. That means two advertisers bidding the same amount do not end up with the same <strong>cost per result</strong>: the one with the better ad wins more auctions and pays less for each outcome. A language academy can beat a competitor on the same budget purely because its video gets more people to react and feels more relevant to them. This is why creative planning belongs inside the media strategy and is not something handed to the designer at the end of the process.",
+          "explanation": "Linking creative quality to the auction formula is what separates a planner from someone who only knows how to raise bids when results dip."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what Advantage+ creative does and how it differs from Advantage+ placements.",
+          "hint": "One decides how the ad looks, the other decides where it shows.",
+          "keywords": [
+            "Advantage+ creative",
+            "Advantage+ placements",
+            "per person",
+            "surface"
+          ],
+          "model": "<strong>Advantage+ creative</strong> lets Meta automatically adjust your piece differently <strong>per person</strong> who sees it: it can crop the image, change brightness, add music or modify the text so the ad lands better with that individual. The point is that one uploaded asset adapts on its own, instead of you producing ten manual versions for ten audiences. <strong>Advantage+ placements</strong> is a completely different setting: it decides <em>where</em> the ad is delivered, letting Meta pick the <strong>surfaces</strong> that give the best result per cost. So one optimizes HOW the creative looks and the other optimizes WHERE it appears, and in practice they are usually switched on together. A furniture store uploads a single video, lets Advantage+ creative tailor it for each viewer, and lets Advantage+ placements find out whether Feed, Stories or Reels converts best.",
+          "explanation": "The exam mixes these two names on purpose. Remembering creative equals how and placements equals where is enough to defuse the distractor."
+        },
+        {
+          "type": "recall",
+          "q": "Describe how you would combine placements and creative in a plan for a brand that has several types of assets and no brand restrictions.",
+          "hint": "Many surfaces need many pieces. One without the other breaks the plan.",
+          "keywords": [
+            "Advantage+ placements",
+            "creative variety",
+            "vertical",
+            "creative fatigue"
+          ],
+          "model": "Placements and creative are two halves of the same plan, not separate decisions taken by different people. The recipe is to maximize surfaces with <strong>Advantage+ placements</strong> and at the same time supply <strong>creative variety</strong> designed for mobile: <strong>vertical</strong> format for a 9:16 screen, readable with the sound off, and the brand or the message visible in the first few seconds. When the system has many placements and several pieces, it can test combinations and find the best match of person, surface and creative. If you open every surface but upload a single creative, you hand it plenty of space and almost nothing to optimize with, and that lone piece burns out quickly, which is <strong>creative fatigue</strong>. Picture an artisanal ice cream brand launching a new line with a vertical video, a set of images and a carousel: it should enable all placements and load all three formats together instead of betting on one.",
+          "explanation": "The exam scenario usually hands you a brand with varied assets and no restrictions, and the expected answer is always maximum surfaces plus varied mobile-first creative."
+        }
+      ]
+    },
+    {
       "id": "5.flash",
       "title": "Module 5 flashcards (everything)",
       "section": "bz",

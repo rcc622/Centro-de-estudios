@@ -1797,6 +1797,69 @@
       ]
     },
     {
+      "id": "3.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras la diferencia entre Auction y Reservation, y cuándo le recomendarías cada uno a un cliente.",
+          "hint": "Uno te da flexibilidad; el otro te da certeza de precio y de entrega.",
+          "keywords": [
+            "subasta",
+            "Reservation",
+            "CPM fijo",
+            "predictibilidad",
+            "Reconocimiento"
+          ],
+          "model": "El <strong>buying type</strong> (tipo de compra) es cómo le compras el espacio publicitario a Meta y se decide a nivel campaña. <strong>Auction</strong> (subasta) es el método por defecto: cada vez que alguien abre Facebook o Instagram se corre una subasta instantánea, el costo fluctúa y tienes acceso a todos los objetivos, a todos los placements y a presupuesto diario o total. <strong>Reservation</strong> (reservación) es comprar por adelantado: apartas la entrega con un CPM fijo, o sea un costo fijo por cada 1,000 impresiones, y sabes desde antes a cuánta gente vas a llegar, pero solo sirve con los objetivos Reconocimiento e Interacción, solo en Facebook e Instagram y solo con presupuesto total. Elige Auction cuando necesitas flexibilidad, ventas o prospectos; elige Reservation cuando necesitas predictibilidad para una fecha fija. Imagina una feria del libro que corre dos semanas de campaña: quiere saber exactamente a cuántos lectores llegará y cuánto va a pagar, así que Reservation le queda.",
+          "explanation": "El buying type funciona como filtro de entrada: si eliges Reservation se te caen objetivos como Ventas y casi todas las estrategias de puja. Por eso el examen pregunta qué combinaciones son posibles."
+        },
+        {
+          "type": "recall",
+          "q": "Describe con tus palabras cómo se decide quién gana una subasta en Meta.",
+          "hint": "No es solo el dinero: hay dos ingredientes más en la fórmula.",
+          "keywords": [
+            "total value",
+            "puja",
+            "action rates",
+            "ad quality"
+          ],
+          "model": "Gana el anunciante con el mayor <strong>total value</strong> (valor total), no el que ofrece más dinero. Ese valor combina tres piezas: la advertiser bid, que es la puja del anunciante o cuánto estás dispuesto a pagar por el resultado; las estimated action rates, que son las tasas de acción estimadas o qué tan probable es que esa persona haga justo lo que pides; y la ad quality, que es la calidad del anuncio, armada con señales de la gente que lo ve y con la revisión de si es engañoso o de baja calidad. La fórmula es la puja multiplicada por las tasas de acción estimadas, más la calidad del anuncio. Por eso un anuncio relevante con puja modesta puede ganarle a uno genérico con puja alta. Imagina una panadería artesanal que puja 18 pesos con un video real de su horno: puede quedarse el espacio frente a una cadena que puja 35 pesos con un banner aburrido.",
+          "explanation": "La trampa clásica es la opción que dice que gana la puja más alta: es falsa. Mejorar el creativo baja tu costo tanto como subir el bid, porque sube las tasas de acción estimadas y la calidad."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras las 3 familias de estrategia de puja y cuál elegirías si el cliente exige un retorno mínimo.",
+          "hint": "Unas gastan todo el presupuesto, otras respetan una meta de costo y una controla la puja dentro de la subasta.",
+          "keywords": [
+            "spend-based",
+            "goal-based",
+            "ROAS",
+            "costo por resultado",
+            "Bid Cap"
+          ],
+          "model": "La estrategia de puja le dice a Meta cómo gastar tu presupuesto en las subastas y se configura a nivel campaña. Hay tres familias. Las spend-based, o basadas en gastar, gastan todo el presupuesto sí o sí: Volumen más alto (highest volume), que trae la mayor cantidad de resultados, y Valor más alto (highest value), que persigue el mayor valor y necesita Píxel con seguimiento de valor. Las goal-based, o basadas en una meta, respetan un límite: Objetivo de costo por resultado, que mantiene tu costo promedio cerca de la cifra que pediste, y Objetivo de ROAS (return on ad spend: cuántos pesos de ingreso regresan por cada peso invertido), que apunta a un retorno objetivo. La tercera familia es manual y ahí vive el Bid Cap (límite de puja), que topa cuánto puja el sistema en cada subasta, no lo que acabas pagando por resultado. Si el cliente exige un retorno mínimo de 4x y ya mide el valor de cada venta, la respuesta es Objetivo de ROAS.",
+          "explanation": "La trampa más repetida es creer que el Bid Cap controla el costo por resultado. No: controla la puja dentro de la subasta, y si lo pones muy bajo el anuncio deja de entregar."
+        },
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras qué es la Fase de aprendizaje, cómo se sale de ella y qué la puede reiniciar.",
+          "hint": "Piensa en el número de eventos y en la ventana de días.",
+          "keywords": [
+            "50 eventos",
+            "7 días",
+            "Learning Limited",
+            "reinicia",
+            "optimization event"
+          ],
+          "model": "La <strong>Fase de aprendizaje</strong> (learning phase) es el periodo inicial en el que Meta experimenta con tu conjunto de anuncios para descubrir a quién, cuándo y dónde conviene mostrar el anuncio; mientras dura, la entrega es inestable y el costo por resultado suele salir más caro. Se sale de ahí acumulando 50 eventos de optimización, los optimization events, que son la acción concreta que le pediste perseguir, como una compra o un prospecto, dentro de una ventana de 7 días. Es un requisito de volumen, no de tiempo: si no junta esos 50, el conjunto cae en Learning Limited (aprendizaje limitado) y el rendimiento se queda inestable. Eso se corrige ampliando la audiencia, subiendo el presupuesto, consolidando conjuntos que se pisan o eligiendo un evento que ocurra más seguido. Cuidado con los cambios importantes: mover la estrategia de puja, el evento de optimización, la audiencia o el creativo reinicia el aprendizaje desde cero. Imagina una agencia de viajes que vende paquetes caros y solo registra 12 compras al mes: le conviene optimizar por un evento más frecuente antes que mover la puja a media campaña.",
+          "explanation": "Casi todas las preguntas de Learning Limited se resuelven con la misma lógica: falta volumen de eventos. Editar a medio aprendizaje para apurar el proceso es justo lo que lo empeora."
+        }
+      ]
+    },
+    {
       "id": "3.flash",
       "title": "Flashcards del Día 3",
       "section": "bz",

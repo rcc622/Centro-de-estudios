@@ -1204,6 +1204,69 @@
       ]
     },
     {
+      "id": "4.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "How would you explain to a client the difference between an Advantage+ Audience and the original audience, and when you would insist on the original one?",
+          "hint": "One treats what you provide as a starting point, the other treats it as a wall.",
+          "keywords": [
+            "Advantage+ Audience",
+            "original audience",
+            "signal",
+            "legal restriction"
+          ],
+          "model": "With an <strong>Advantage+ Audience</strong> you no longer draw a closed box around who sees the ad: you hand Meta <strong>signals</strong>, meaning custom audiences and detailed targeting used as a reference, and the system looks for whoever is most likely to convert. Those signals prioritize where it starts searching, but they are a suggestion the system can step beyond if it finds converters outside them. The <strong>original audience</strong> is the classic manual targeting and it did not disappear: what you define there is a hard limit the system respects to the letter. You keep the original audience when you cannot afford the system expanding on its own, typically <strong>legal restrictions</strong> (financial or health products that by regulation may only be shown to certain profiles), brand restrictions, or very narrow audiences that must not grow. A specialty coffee roaster can hand its subscriber list as a signal and let Meta widen the net, but an insurer barred by regulation from showing a product to minors needs the original audience to guarantee that line is never crossed.",
+          "explanation": "The exam trap is treating Advantage+ signals as a hard limit. They prioritize, they do not restrict, and only the original audience gives you a real boundary."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what detailed targeting is, how narrowing and excluding change the audience, and what the risk of over-refining is.",
+          "hint": "Three criteria, then AND and NOT logic stacked on top. Each layer costs you size.",
+          "keywords": [
+            "interest",
+            "behavior",
+            "demographic",
+            "narrow",
+            "exclude"
+          ],
+          "model": "<strong>Detailed targeting</strong> narrows who the ad reaches using three criteria Meta builds from what it knows about each person: <em>interests</em> (topics people interact with, such as cooking or travel), <em>behaviors</em> (detected habits, such as frequent online shoppers) and <em>demographics</em> (age, education, marital status). It is mostly used to build cold audiences when you do not yet have enough of your own signal, meaning little Pixel history and no customer list. On top of that you refine in two ways: <strong>narrow</strong> adds a required condition with AND logic so the person has to meet both criteria at once, and <strong>exclude</strong> removes profiles with NOT logic even when they match the main interest. The risk is that every condition you add shrinks the audience, and an audience that is too small leaves the system no room to optimize, which pushes cost up and delivery down. A newly opened dental practice with no patient base can start with local demographics plus the interest dental care, narrow to online shoppers and exclude people who already follow its page, but stacking five more conditions on top would strangle it. There is also <strong>detailed targeting expansion</strong>, an optional setting inside the original audience that lets Meta step past your interests only when it improves results, much narrower than the Advantage+ Audience where expanding is the default behavior.",
+          "explanation": "Over-segmentation is the exam's standard wrong answer: with a good conversion signal a broad audience usually beats a heavily filtered one."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what a custom audience is, the four sources it can be built from, and the three jobs it does inside an audience plan.",
+          "hint": "People who already have some relationship with the business. Four origins, three uses.",
+          "keywords": [
+            "custom audience",
+            "remarketing",
+            "seed",
+            "exclusion",
+            "customer list"
+          ],
+          "model": "A <strong>custom audience</strong> is built from people who already have some relationship with your business rather than from strangers, so it starts from your own signal instead of from general interests. It can come from four sources: <strong>website</strong> visitors and events the Pixel logged, <strong>app activity</strong> measured with the SDK or an MMP, a <strong>customer list</strong> of emails or phone numbers you upload, and <strong>engagement</strong> with your content inside Meta, such as people who watched a video or opened an Instant form. In a plan it performs three distinct jobs: <strong>remarketing</strong>, speaking again to people who already know you, for example to recover abandoned carts; <strong>seed</strong>, serving as the base from which you generate a lookalike; and <strong>exclusion</strong>, keeping people out of a campaign so you do not pay twice for someone who already converted. One privacy detail that matters: customer lists are uploaded <strong>hashed</strong>, converted into an irreversible code, so Meta runs the match without ever receiving readable emails or phone numbers. An online bookstore can retarget everyone who viewed a title without buying, use its repeat buyers as a lookalike seed, and exclude those same buyers from the prospecting campaign.",
+          "explanation": "The exam blurs the three uses and also checks that first-party lists are perfectly valid as long as they travel hashed."
+        },
+        {
+          "type": "recall",
+          "q": "Describe step by step how you would build a lookalike audience for a client, and explain what decides whether it turns out good or bad.",
+          "hint": "It can only copy a pattern. Whatever pattern you hand it.",
+          "keywords": [
+            "lookalike",
+            "seed",
+            "target country",
+            "prospecting",
+            "high-value"
+          ],
+          "model": "A <strong>lookalike audience</strong> is how you do <strong>prospecting</strong> at scale without shooting blindly: you give Meta a <strong>seed</strong>, a quality custom audience such as your best customers, and ask it to find people with a similar profile who do not know you yet. You build it from the Audiences section by choosing three things: the seed, the <strong>target country</strong> where you want to prospect, and a size from 1 to 10 percent. That percentage is the trade between precision and reach, since 1 percent takes the slice of the country most similar to your seed and is the most precise but the smallest, while 5 to 10 percent widens reach and dilutes the resemblance. Because it is generated over one country, you need a separate lookalike per market. What decides the quality is the seed itself, because the algorithm can only copy the pattern you hand it: a seed of <strong>high-value</strong> customers beats a list of casual visitors, and the recommended seed size is roughly 1,000 to 50,000 people. A boutique gym will get a far stronger lookalike from 3,000 active high-spend members than from 80,000 people who once opened its website.",
+          "explanation": "Garbage in, garbage out is the exam's favorite lookalike principle, together with the 1 percent precision versus 10 percent reach trade."
+        }
+      ]
+    },
+    {
       "id": "4.flash",
       "title": "Module 4 flashcards (all)",
       "section": "bz",

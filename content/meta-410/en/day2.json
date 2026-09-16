@@ -1691,6 +1691,70 @@
       ]
     },
     {
+      "id": "2.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain what ODAX means, where the objective is chosen, and list the six objectives in funnel order.",
+          "hint": "The acronym is about outcomes, not tactics. Six names, from the top of the funnel to the bottom.",
+          "keywords": [
+            "Outcome-Driven",
+            "Campaign level",
+            "Awareness",
+            "Engagement",
+            "Sales"
+          ],
+          "model": "<strong>ODAX</strong> stands for <strong>Outcome-Driven Ad Experiences</strong>, Meta's way of organizing campaign objectives around the business result you want instead of the tactic you have in mind. Rather than asking you to pick something like <em>make a video</em> or <em>send people to the site</em>, it asks what outcome you are after and then lets the system choose the best path there. The objective is chosen at the <strong>Campaign</strong> level, the highest of the three levels, and never at the ad set or the ad. There are exactly six, and in funnel order they are: <strong>Awareness</strong>, <strong>Traffic</strong>, <strong>Engagement</strong>, <strong>Leads</strong>, <strong>App Promotion</strong> and <strong>Sales</strong>. Awareness sits at the top (be remembered), Traffic, Engagement, Leads and App Promotion sit in the middle (consideration), and Sales sits at the bottom (convert). The most common mistake is picking Traffic when the real goal is purchases, because Traffic optimizes for link clicks and stops caring the moment someone clicks.",
+          "explanation": "Most Day 2 exam questions start by asking you to map a business goal to the right objective, so the funnel order and the Traffic-versus-Sales trap are worth reciting cold."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain the difference between Awareness, Traffic and Engagement, and which of the three can be bought with Reservation?",
+          "hint": "One chases memory, one chases the exit click, one chases a real interaction.",
+          "keywords": [
+            "ad recall",
+            "link click",
+            "Reservation",
+            "Auction only",
+            "engagement type"
+          ],
+          "model": "<strong>Awareness</strong> aims to reach the largest number of people who will <em>remember</em> the ad afterwards; it does not care about clicks or sales, and it optimizes for things like reach, <strong>ad recall lift</strong> (the estimated number of people who would remember the ad two days later) or impressions. <strong>Traffic</strong> has one mission, sending people to a destination such as a website, an app, a chat or a call, and it optimizes for <em>link clicks</em> or <em>landing page views</em>; its job ends at the click, so it never tells you whether that person went on to buy. <strong>Engagement</strong> asks people to actually do something with your content or business: watch a video, react or comment on a post, or start a conversation by message. On buying type, only <strong>Awareness and Engagement</strong> support <strong>Reservation</strong>; Traffic and the other three objectives are <strong>Auction only</strong>. One more detail worth holding on to: Engagement has no traditional conversion event, so it forces you to pick an <em>engagement type</em> first, which is Video views, Post engagement or Messaging.",
+          "explanation": "The exam regularly pairs an objective with a buying type that does not exist for it, and the Awareness-versus-Engagement video confusion is one of the most repeated distractors."
+        },
+        {
+          "type": "recall",
+          "q": "Describe how you decide between the Leads and the Sales objective, and what data setup Sales needs when the conversion happens on a website.",
+          "hint": "Ask yourself whether the result you want is a conversation or a payment.",
+          "keywords": [
+            "Leads",
+            "Sales",
+            "conversion location",
+            "Pixel",
+            "CAPI"
+          ],
+          "model": "The decision rule is short: if the result you want is a <strong>contact or a conversation</strong> (an email, a phone number, a booked appointment), the objective is <strong>Leads</strong>; if the result is a <strong>transaction with a payment</strong>, the objective is <strong>Sales</strong>. Leads lives in the consideration stage and lets you pick a <strong>conversion location</strong> among five options: instant form, website, app, Messenger or calls. Sales lives in the conversion stage and lets you choose website, app, Messenger, Instagram or WhatsApp, or calls, depending on where the money actually changes hands. Both are <strong>Auction only</strong>, so Reservation is never a valid answer for either. The critical requirement: Sales with conversion location <em>Website</em> and conversion event <em>Purchase</em> needs the <strong>Pixel plus the Conversions API (CAPI)</strong> configured, because without those signals the system cannot optimize toward real buyers. Think of a private clinic selling a surgery package: the online consultation booking is Leads, the paid pre-surgery deposit on the website is Sales.",
+          "explanation": "Scenario questions describe a business goal and expect you to pick the objective plus the conversion location plus the data requirement in that order; missing the Pixel and CAPI requirement is a common way to lose the point."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain the difference between a conversion event and a performance goal, and what the two performance goal options are in a Sales campaign.",
+          "hint": "One says WHAT counts as a result; the other says HOW the system should bid for it.",
+          "keywords": [
+            "conversion event",
+            "performance goal",
+            "maximize number",
+            "maximize value",
+            "Purchase"
+          ],
+          "model": "The <strong>conversion event</strong> is <em>what</em> action you want counted as a valid result: a Purchase, a Lead, a Subscribe, and so on. The <strong>performance goal</strong> is <em>how</em> you instruct the system to bid toward that action, and it is a separate setting that the exam mixes in on purpose. In a Sales campaign there are two: <strong>maximize number of conversions</strong>, which brings the highest possible quantity of purchases regardless of ticket size, and <strong>maximize value of conversions</strong>, which prioritizes the buyers who spend more even if there are fewer of them. A furniture retailer selling both cushions and full living-room sets would pick maximize value, because a single large order is worth far more than a pile of small ones. Each objective also ships with a default performance goal aligned to its outcome: Awareness defaults to maximize ad recall lift, Traffic to maximize link clicks, Engagement with video to ThruPlay views, Leads to maximize number of leads, App Promotion to app events and Sales to maximize number of conversions.",
+          "explanation": "A large share of Day 2 questions read <em>which setting should the media buyer choose</em>, and they are only solvable if you keep the event (what counts) separate from the performance goal (how to bid)."
+        }
+      ]
+    },
+    {
       "id": "2.flash",
       "title": "Day 2 flashcards (all)",
       "section": "bz",

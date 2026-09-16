@@ -1726,6 +1726,70 @@
       ]
     },
     {
+      "id": "5.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain how detailed targeting selections combine, and why adding more filters usually makes a campaign more expensive.",
+          "hint": "Inside one category the options behave one way; across different categories they behave the opposite way.",
+          "keywords": [
+            "Demographics",
+            "Interests",
+            "Behaviors",
+            "narrow",
+            "CPA"
+          ],
+          "model": "<strong>Detailed targeting</strong> is where you describe your ideal customer using data Meta already has, and it is built from three kinds of filter: <strong>demographics</strong> (fixed traits such as age, education or job type), <strong>interests</strong> (topics the person follows, shares or consumes) and <strong>behaviors</strong> (detected habits such as device used or purchase activity). Within the <em>same</em> category the options add up with <strong>OR</strong> logic, so meeting any one of them is enough and the audience gets bigger. Across <em>different</em> categories they cross with <strong>AND</strong> logic, so the person must satisfy all of them at once, and every extra category therefore <strong>narrows</strong> the audience. That is why over-segmenting backfires: stacking condition on condition shrinks delivery, starves the system of people to optimize against, and usually pushes the <strong>cost per acquisition (CPA)</strong> up. A specialty coffee roaster that requires <em>interested in coffee</em> AND <em>small business owner</em> AND <em>frequent online buyer</em> ends up with a tiny, expensive audience instead of a broad one the AI can work with.",
+          "explanation": "The exam presents <em>adding more interests</em> as if it expanded reach; understanding the OR-within and AND-across logic is what lets you spot that reversal."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a client the difference between a Custom Audience and a Lookalike Audience, and what a Lookalike needs in order to work well?",
+          "hint": "One re-reaches people who already know the brand; the other goes hunting for new ones, and it has a hard minimum.",
+          "keywords": [
+            "Custom Audience",
+            "retargeting",
+            "Lookalike",
+            "prospecting",
+            "100 people"
+          ],
+          "model": "A <strong>Custom Audience</strong> is a list of people who have <em>already</em> interacted with the business: visited the site, bought, watched a video, or sit in the customer database. It is the tool for <strong>retargeting</strong>, and its sources split into your own (website via the Pixel, app activity, catalog, customer list uploaded as a hashed CSV, offline activity) and Meta sources (people who engaged with your Page, Instagram account, videos, lead forms or events). For website and app sources you also set a <strong>retention window</strong>, meaning how many days back an interaction still counts, typically 30, 60, 90 or 180 days; shorter windows give hotter prospects. A <strong>Lookalike Audience</strong> does the opposite: it asks Meta to study a source audience of yours and go find <strong>new people with a similar profile</strong>, which is <strong>prospecting</strong>, not retargeting. Its quality depends entirely on the source, so feed it your best buyers rather than any random list, and respect the hard floor: the source needs at least <strong>100 people from a single country</strong>, with 1,000 to 50,000 recommended. Finally, size matters: a <strong>1 percent</strong> Lookalike is more similar to the source but smaller, a <strong>10 percent</strong> one reaches far more people with less precision, and the source audience is automatically excluded from the Lookalike so you do not pay twice for the same people.",
+          "explanation": "Audiences are the heaviest single block of the exam, and the 100-people-single-country minimum plus the 1 percent versus 10 percent trade-off are the facts most often tested outright."
+        },
+        {
+          "type": "recall",
+          "q": "Describe the difference between audience controls and audience suggestions, and name what turns Advantage+ Audience off.",
+          "hint": "One is a wall the system never crosses; the other is a hint it is allowed to expand beyond.",
+          "keywords": [
+            "controls",
+            "suggestions",
+            "location",
+            "Advantage+ Audience",
+            "original audience"
+          ],
+          "model": "Not every audience decision carries the same weight with the algorithm, and Meta splits them in two. <strong>Audience controls</strong> are hard limits that restrict delivery and that the system never steps outside: location, language, a minimum age when the product legally requires it, and Custom Audience <em>exclusions</em>. <strong>Audience suggestions</strong> only guide the optimization and can be expanded: age and gender ranges, detailed targeting interests and behaviors, Custom Audience <em>inclusions</em> and Lookalikes. <strong>Advantage+ Audience</strong> is the feature that makes this distinction matter, because it lets the AI start from your suggestions and then look beyond them for people more likely to convert, while still respecting every control. It is <strong>on by default</strong> in new campaigns, and the usual winning setup in modern campaigns is a broad audience (location and age only) with Advantage+ Audience left on. Two clicks switch it off, sometimes without the buyer realizing: choosing <em>Switch to original audience options</em> or choosing <em>Further limit the reach of your ads</em>. For a regional gym chain, the city is a control the system must obey, while the interest in fitness is only a suggestion it can widen.",
+          "explanation": "Exam scenarios describe a buyer who accidentally disabled Advantage+ Audience or who assumes an interest is a hard filter; knowing which settings are controls and which are suggestions resolves both."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, explain what a product catalog is, what product sets are for, and how Advantage+ Catalog Ads use them.",
+          "hint": "Think about where the inventory lives, and about what makes each viewer see a different product.",
+          "keywords": [
+            "Commerce Manager",
+            "product set",
+            "Advantage+ Catalog Ads",
+            "match rate",
+            "single catalog"
+          ],
+          "model": "A <strong>product catalog</strong> is a structured file holding everything you sell, each item with its own data, and it lives in <strong>Commerce Manager</strong>, Meta's inventory and sales tool, which is separate from Ads Manager. Every product must carry the required attributes or Meta rejects it: <strong>ID</strong>, <strong>title</strong>, <strong>description</strong>, <strong>price</strong> with currency, <strong>availability</strong>, <strong>condition</strong>, <strong>link</strong> and <strong>image link</strong>. A <strong>product set</strong> is a subgroup inside the same catalog built on a criterion you choose, so you can advertise only part of the inventory without creating a second catalog, and Meta recommends at least 20 products per set; an auto parts distributor might build sets for <em>brake components</em> and <em>seasonal promotions</em>. The best practice is <strong>one single catalog per business</strong>, because splitting into several confuses the system and makes matching with Pixel events harder. <strong>Advantage+ Catalog Ads</strong>, formerly called Dynamic Ads, then use machine learning to show each person the products they are most likely to want based on what they browsed or viewed, so you hand over the catalog instead of building one ad per product. What keeps it healthy is the <strong>catalog match rate</strong>: the percentage of the Content IDs your Pixel reports that actually exist in the catalog, since any mismatch is a lost opportunity.",
+          "explanation": "Catalog questions test the required attributes, the one-catalog rule and the match rate, and a broken match rate is the expected diagnosis when catalog ads under-deliver."
+        }
+      ]
+    },
+    {
       "id": "5.flash",
       "title": "Day 5 flashcards (everything)",
       "section": "bz",

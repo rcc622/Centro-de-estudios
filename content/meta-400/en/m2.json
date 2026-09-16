@@ -1237,6 +1237,68 @@
       ]
     },
     {
+      "id": "2.recall",
+      "title": "Explain it in your own words",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "In your own words, explain the two buying types Meta offers and what each one gives you in exchange.",
+          "hint": "One competes in real time, the other locks the deal in advance. What do you trade away?",
+          "keywords": [
+            "Auction",
+            "Reservation",
+            "CPM",
+            "reach",
+            "frequency"
+          ],
+          "model": "A <strong>buying type</strong> is the method you use to acquire ad placements across Meta technologies, and there are exactly two. <strong>Auction</strong> means your ads compete in real time for each available placement, so the price rises and falls with how many advertisers want the same person at that instant; in exchange it supports every objective, all five bid strategies and all placements, which makes it the flexible, efficient option. <strong>Reservation</strong> works like buying a billboard or a TV spot: you lock delivery and price before the campaign runs, guaranteeing the <strong>reach</strong> (distinct people who will see the ad) and the <strong>frequency</strong> (how many times each of them sees it) at a fixed <strong>CPM</strong> (cost per thousand impressions). What you are really trading is flexibility for predictability, and the catch is that Reservation only supports the Awareness and Engagement objectives. A beverage company launching a bottle nationally and having to promise its board an exact reach belongs in Reservation, while a running-shoe store chasing the most purchases its budget can buy stays in Auction.",
+          "explanation": "The Reservation restriction is tested constantly: any Sales, Leads, Traffic or App Promotion scenario has to run through Auction."
+        },
+        {
+          "type": "recall",
+          "q": "How would you explain to a client who keeps asking to raise the bid that a better ad can win auctions more cheaply than more money?",
+          "hint": "The winner is not whoever pays the most. Three ingredients decide it, and two have nothing to do with money.",
+          "keywords": [
+            "total value",
+            "advertiser bid",
+            "estimated action rate",
+            "ad quality"
+          ],
+          "model": "Every time someone opens Facebook or Instagram, Meta runs an instant auction among the ads that could be shown to that person and picks the one with the highest <strong>total value</strong>, not the highest bid. Total value is calculated as <strong>advertiser bid × estimated action rates + ad quality</strong>: what you are willing to pay, the probability Meta estimates that this specific person takes the action you want, and how relevant and well made the creative is according to user signals. That means a relevant, well-crafted ad can beat a bigger spender, because two of the three ingredients are not money at all. One detail worth locking in: the <strong>bid strategy</strong> is not a fourth component, since it governs how your budget is spent and not how you win the auction. So for a family-run pizzeria competing against a national chain, the cheapest lever is a better creative and a better audience match, not a higher bid.",
+          "explanation": "The three components of total value are a favorite exam item, and the classic distractor sneaks in cost control or the bid strategy as a fourth one."
+        },
+        {
+          "type": "recall",
+          "q": "In your own words, list the five bid strategies and explain what the three families they belong to prioritize.",
+          "hint": "Two spend it all, two chase a target you set, one you control by hand.",
+          "keywords": [
+            "Highest Volume",
+            "Highest Value",
+            "Cost per Result",
+            "ROAS Goal",
+            "Bid Cap"
+          ],
+          "model": "A <strong>bid strategy</strong> tells Meta how to spend your budget in the auction, and the five options fall into three families. The <em>spend-based</em> family uses the whole budget with no cost ceiling: <strong>Highest Volume</strong> chases the maximum number of results, and <strong>Highest Value</strong> chases the maximum total purchase value, which requires tracking the value of each sale. The <em>goal-based</em> family respects a target you define: <strong>Cost per Result Goal</strong> holds an average cost per result, and <strong>ROAS Goal</strong> holds a target return on ad spend, which also requires value tracking. The <em>manual</em> family has a single member, <strong>Bid Cap</strong>, where you set the maximum Meta may bid in each individual auction. Picture a hardware distributor whose accountant locked a ceiling of 350 pesos per lead: that is Cost per Result Goal, while a store with no cost target simply runs Highest Volume, and a Bid Cap set too low is the most delicate case of all because the ad barely enters auctions and the campaign never spends.",
+          "explanation": "Naming the family a strategy belongs to is the fastest route through exam items that describe a client constraint and ask you to pick the strategy."
+        },
+        {
+          "type": "recall",
+          "q": "Describe step by step how you decide which bid strategy to recommend, starting from what the client requires.",
+          "hint": "Two questions in order decide it: cost first, then value.",
+          "keywords": [
+            "cost ceiling",
+            "ROAS Goal",
+            "Cost per Result",
+            "Highest Volume"
+          ],
+          "model": "The decision comes down to two questions asked in order. First: does the client require controlling cost, meaning a <strong>cost ceiling</strong> per result or a return target? Second: are they optimizing for purchase <em>value</em> rather than just the number of results? If cost control is yes and value is yes, the answer is <strong>ROAS Goal</strong>; if cost control is yes and value is no, it is <strong>Cost per Result Goal</strong>, or <strong>Bid Cap</strong> when they specifically want to control the bid in each individual auction. If cost control is no and value is yes, it is <strong>Highest Value</strong>; if both answers are no, it is <strong>Highest Volume</strong>. A travel agency told to hold a strict 4x return on ad spend lands on ROAS Goal, while a new subscription box with no cost or value targets simply runs Highest Volume to gather results fast. The two questions are what turn a vague client request into one specific setting.",
+          "explanation": "Exam scenarios rarely name the strategy. They describe the client constraint, and walking these two questions gets you to the answer without guessing."
+        }
+      ]
+    },
+    {
       "id": "2.flash",
       "title": "Module 2 flashcards (everything)",
       "section": "bz",

@@ -1727,6 +1727,70 @@
       ]
     },
     {
+      "id": "5.recall",
+      "title": "Explícalo con tus palabras",
+      "section": "bz",
+      "type": "cards",
+      "cards": [
+        {
+          "type": "recall",
+          "q": "Explica con tus palabras la diferencia entre un público personalizado y un público similar, y qué necesita cada uno para funcionar.",
+          "hint": "Uno vuelve por quien ya te conoce; el otro sale a buscar gente nueva.",
+          "keywords": [
+            "retargeting",
+            "prospección",
+            "Lookalike",
+            "100 personas",
+            "source"
+          ],
+          "model": "Un <strong>público personalizado</strong> (Custom Audience) es una lista de gente que ya interactuó con tu negocio: visitó tu sitio, te compró, vio tus videos o está en tu base de clientes. Sirve para retargeting, o sea volver a alcanzar a quien ya te conoce, y se arma con tus propias fuentes, como el sitio web, la app, el catálogo o una lista de clientes, o con fuentes de Meta, como video, Página o formularios. Un <strong>público similar</strong> (Lookalike) hace lo contrario: toma una audiencia tuya como source, que es la audiencia fuente, y sale a buscar gente nueva con perfil parecido, o sea prospección. Su calidad depende de esa fuente: el mínimo absoluto son 100 personas de un solo país y lo recomendable es entre 1,000 y 50,000, idealmente tus mejores clientes. Un público similar de 1% es más parecido a la fuente y más chico, uno de 10% alcanza más gente pero es menos preciso, y en los dos casos la fuente se excluye automáticamente. Imagina una marca de café de especialidad: su mejor público similar no sale de todos sus visitantes, sale de quienes ya compraron dos o más veces.",
+          "explanation": "Regla práctica: público personalizado para quien ya te conoce, público similar para gente nueva. Si la fuente es débil o mezcla a todos, el similar hereda esa mediocridad."
+        },
+        {
+          "type": "recall",
+          "q": "¿Cómo le explicarías a un compañero la diferencia entre audience controls y audience suggestions, y qué hace Advantage+ público con cada uno?",
+          "hint": "Unos son una pared que el sistema no cruza; los otros son una pista que puede ampliar.",
+          "keywords": [
+            "controls",
+            "suggestions",
+            "Advantage+",
+            "ubicación",
+            "edad"
+          ],
+          "model": "Cuando defines una audiencia, no todas tus selecciones pesan igual frente al sistema. Los audience controls, o controles de audiencia, son límites duros que la entrega no puede cruzar: la ubicación, el idioma, la edad mínima y las exclusiones. Las audience suggestions, o sugerencias de audiencia, son pistas flexibles: los intereses, los comportamientos, los públicos similares y los rangos de edad o género, que la inteligencia artificial puede respetar o ampliar si encuentra gente parecida que convierte afuera. <strong>Advantage+ público</strong> (Advantage+ audience) trabaja justo así: arranca de tus sugerencias y expande, pero jamás se sale de tus controles. Viene activado por defecto en campañas nuevas y se apaga si eliges cambiar a las opciones originales de audiencia o si eliges limitar todavía más el alcance de tus anuncios, muchas veces sin que te des cuenta. Imagina una universidad privada que solo puede recibir alumnos de su estado: pone el estado como control y deja los intereses académicos como sugerencia.",
+          "explanation": "Si la pregunta menciona algo que el sistema NO puede expandir, es un control: ubicación, idioma, edad mínima o exclusiones. Todo lo demás es sugerencia."
+        },
+        {
+          "type": "recall",
+          "q": "Un cliente quiere agregar más intereses para llegarle a más gente. Explica con tus palabras por qué eso suele hacer justo lo contrario.",
+          "hint": "Piensa en cómo se combinan las opciones dentro de una misma categoría y entre categorías distintas.",
+          "keywords": [
+            "detailed targeting",
+            "interés",
+            "comportamiento",
+            "misma categoría",
+            "CPA"
+          ],
+          "model": "El <strong>detailed targeting</strong> (segmentación detallada) arma la audiencia con tres tipos de filtro: datos demográficos como edad, escolaridad o tipo de empleo; intereses, que son los temas que le gustan a la persona; y comportamientos, que es lo que hace, como compras, uso de dispositivos o viajes. La clave está en cómo se combinan. Dentro de la misma categoría las opciones se suman: basta con que la persona cumpla cualquiera, así que ahí sí amplías al agregar. Pero entre categorías distintas se cruzan: la persona tiene que cumplir las dos, de modo que cada categoría nueva que apilas hace la audiencia más chica. Por eso sobre-segmentar reduce la entrega y suele encarecer el CPA (cost per acquisition: lo que te cuesta en promedio conseguir un cliente o un prospecto). Imagina una agencia de seguros de gastos médicos que apila cinco categorías distintas: termina con una audiencia tan estrecha que el sistema casi no tiene a quién entregarle.",
+          "explanation": "El examen presenta agregar categorías como si ampliara el alcance. En la práctica suma dentro de una categoría, pero entre categorías el cruce es restrictivo y encoge la audiencia."
+        },
+        {
+          "type": "recall",
+          "q": "Describe con tus palabras qué es un catálogo, para qué sirven los product sets y qué te dice el catalog match rate.",
+          "hint": "Piensa de dónde saca un anuncio dinámico el producto exacto que te muestra.",
+          "keywords": [
+            "catálogo",
+            "product set",
+            "match rate",
+            "Commerce Manager",
+            "content ID"
+          ],
+          "model": "Un <strong>catálogo</strong> (catalog) es el archivo con todo lo que vendes, cada producto con su identificador, título, descripción, precio, disponibilidad, condición, imagen y enlace, y vive en Commerce Manager, el Administrador de Comercio, que es distinto de Ads Manager. Es la base de los Advantage+ Catalog Ads, los anuncios de catálogo, que le muestran a cada persona el producto de tu inventario que más le puede interesar. Un product set, o conjunto de productos, es un grupo de productos dentro del mismo catálogo armado con el criterio que tú elijas, para anunciar solo una parte del inventario sin partir el catálogo en pedazos. La buena práctica es tener un solo catálogo por negocio y dividirlo con product sets. El catalog match rate, o tasa de coincidencia del catálogo, mide qué porcentaje de los productos con los que la gente interactúa en tu sitio empata con lo que tienes cargado; si está bajo, casi siempre es porque los content ids, o identificadores de producto, que manda el Píxel no coinciden con los del catálogo. Imagina una ferretería en línea con miles de claves: si el sitio manda un código y el catálogo otro, los anuncios dinámicos terminan mostrando el producto equivocado.",
+          "explanation": "Un match rate bajo no se arregla con presupuesto: se arregla emparejando los identificadores del sitio con los del catálogo. Tener varios catálogos por marca empeora justo ese emparejamiento."
+        }
+      ]
+    },
+    {
       "id": "5.flash",
       "title": "Flashcards del Día 5 (todo)",
       "section": "bz",
