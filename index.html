@@ -654,7 +654,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .stat.clickable:active{opacity:.6}
 
 /* ----- LOGROS view: niveles + tracking ----- */
-.level-current{background:linear-gradient(135deg,#1877F2,#0E5BC4);color:#fff;border-radius:20px;padding:18px;margin-bottom:18px;box-shadow:0 6px 18px rgba(24,119,242,.24);position:relative;overflow:hidden}
+.level-current{background:linear-gradient(135deg,#156AD8,#0E5BC4);color:#fff;border-radius:20px;padding:18px;margin-bottom:18px;box-shadow:0 6px 18px rgba(24,119,242,.24);position:relative;overflow:hidden}
 .level-current::after{content:'';position:absolute;right:-30px;top:-30px;width:120px;height:120px;background:rgba(255,255,255,.08);border-radius:50%}
 .level-current .lc-eyebrow{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;opacity:.96;margin-bottom:6px;position:relative;z-index:1}
 .level-current .lc-row{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
@@ -1157,6 +1157,41 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .ico-i{width:1em;height:1em;display:inline-block;vertical-align:-.14em;flex-shrink:0}
 .nico .ico-i,.pr-ico .ico-i,.overlay-ico .ico-i,.empty-ico .ico-i,.complete-ico .ico-i{width:1em;height:1em}
 .medal-emoji .ico-i,.ms-ico .ico-i,.diag-ico .ico-i{width:1em;height:1em}
+/* ============ EMBLEMAS DE RANGO ============ */
+.rank-badge{width:1em;height:1em;display:inline-block;vertical-align:-.16em;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18))}
+.rank-badge.rank-locked{filter:grayscale(1);opacity:.4}
+.level-row .lr-ico{font-size:32px;width:38px}
+.level-current .lc-ico{font-size:58px}
+.lvl-badge{display:inline-flex;align-items:center;gap:5px}
+.lvl-badge .rank-badge{font-size:17px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+.pr-ico.pr-rank{background:none!important;box-shadow:none;font-size:42px}
+.overlay-ico .rank-badge{font-size:84px}
+
+/* ============ CERTIFICADO ============ */
+.rdy-cert{display:flex;align-items:center;gap:10px;margin-top:12px;padding:11px 13px;border-radius:12px;background:linear-gradient(135deg,#FFF6D8,#FFE9A8);border:1px solid #F2D27A;color:#5C4300;font-size:13px;font-weight:800;cursor:pointer}
+.rdy-cert .rc-ico{font-size:22px}
+.rdy-cert .rc-arrow{margin-left:auto;font-size:15px}
+.cert{background:linear-gradient(135deg,#C9A227,#F5E3A0 30%,#B8891C 55%,#F2DC95 80%,#C9A227);padding:5px;border-radius:20px;margin:6px 0 14px;box-shadow:0 10px 28px rgba(122,79,0,.22)}
+.cert-inner{background:#FFFDF6;border-radius:16px;padding:26px 20px 20px;text-align:center;position:relative;border:1px solid rgba(201,162,39,.4)}
+.cert-inner::before{content:'';position:absolute;inset:8px;border:1.5px solid rgba(201,162,39,.35);border-radius:11px;pointer-events:none}
+.cert-mark{width:58px;height:58px;border-radius:15px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+.cert-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#7A5A00}
+.cert-title{font-size:23px;font-weight:900;color:#1C1E21;letter-spacing:-.4px;margin:6px 0 16px;font-family:Georgia,'Times New Roman',serif}
+.cert-line{font-size:13px;color:#5E5132;font-style:italic;font-family:Georgia,serif}
+.cert-name{font-size:34px;font-weight:700;color:#1C1E21;margin:6px 0 8px;font-family:Georgia,serif;letter-spacing:.3px}
+.cert-course{font-size:17px;font-weight:900;color:#156AD8;margin-top:8px;line-height:1.3}
+.cert-sub{font-size:12px;color:#6C6E71;margin-top:3px}
+.cert-score{margin:18px auto 14px;display:flex;flex-direction:column;align-items:center}
+.cert-score span{font-size:46px;font-weight:900;color:#297C55;letter-spacing:-1.5px;line-height:1}
+.cert-score small{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#6C6E71;margin-top:4px}
+.cert-parts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:18px}
+.cert-part{background:#F8F2DD;border-radius:10px;padding:8px 2px}
+.cert-part b{display:block;font-size:15px;color:#1C1E21}
+.cert-part span{font-size:9.5px;font-weight:700;color:#5E5132;line-height:1.2;display:block;margin-top:2px}
+.cert-foot{display:flex;justify-content:space-between;gap:10px;border-top:1px dashed rgba(122,79,0,.3);padding-top:12px;text-align:left;font-size:12.5px;font-weight:700;color:#1C1E21}
+.cert-foot div:last-child{text-align:right;font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.cert-foot small{display:block;font-size:9.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#7A5A00;margin-bottom:2px;font-family:inherit}
+.cert-note{font-size:12px;color:#6C6E71;text-align:center;line-height:1.5;margin:0 6px 14px}
 </style>
 </head>
 <body>
@@ -1206,7 +1241,7 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 <div class="overlay" id="ach-overlay" onclick="closeAchOverlay()">
   <div class="overlay-inner">
     <div class="overlay-ico" id="ach-ico">🏅</div>
-    <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#FFD700">¡LOGRO DESBLOQUEADO!</div>
+    <div style="font-size:11px;font-weight:800;letter-spacing:1px;color:#9A6B00">¡LOGRO DESBLOQUEADO!</div>
     <div style="font-size:18px;font-weight:800;margin:8px 0 4px" id="ach-name">Primera Lección</div>
     <div style="font-size:13px;color:#65676B" id="ach-desc">Completaste tu primera lección</div>
     <div style="font-size:12px;color:#65676B;margin-top:18px">Toca para continuar</div>
@@ -1580,7 +1615,7 @@ const LEVELS = Array.from({length:100}, (_, idx) => {
   const explosive = Math.pow(Math.max(0, n - 15), 2.3) * 8;
   const xp = Math.round(linear + explosive);
   const rank = LEVEL_RANKS.find(r => n >= r.from && n <= r.to);
-  return { n: rank.n, xp, i: rank.i, num: n };
+  return { n: rank.n, xp, i: rank.i, num: n, ri: LEVEL_RANKS.indexOf(rank) };
 });
 // Helper: rango (con nombre e ícono) del nivel dado
 function getLevelRank(lvl){
@@ -1620,7 +1655,8 @@ const ACHIEVEMENTS = [
   {id:'no_hearts',     i:'💔', n:'Sin Vidas',           desc:'Pierde todos tus corazones (irónicamente)', hidden:true},
   {id:'speedrun',      i:'⚡', n:'Velocista',            desc:'Completa una lección en menos de 3 minutos', hidden:true},
   {id:'first_badge',   i:'🎖️',n:'Primera Medalla',      desc:'Gana tu primera medalla en un battle'},
-  {id:'champion',      i:'👑', n:'Campeón',              desc:'Conquista las 8 medallas', hidden:true}
+  {id:'champion',      i:'👑', n:'Campeón',              desc:'Conquista las 8 medallas', hidden:true},
+  {id:'exam_ready',    i:'🎓', n:'Listo para Presentar', desc:'Llega al 85% de preparación en un curso'}
 ];
 
 // Metadata de secciones pedagógicas (A teoría → B práctica → C aplicación → D validación)
@@ -1856,6 +1892,7 @@ function buildCourseShell(meta, entry){
     id: meta.id,
     title: meta.title,
     subtitle: meta.subtitle,
+    exam_url: meta.exam_url || null,
     icon: meta.icon || '📘',
     color: meta.color || '#1877F2',
     active: entry.active,
@@ -1998,7 +2035,8 @@ let DB = {
   soundTheme: 'classic', // tema de SFX: classic | arcade | marimba
   hapticLevel: 'strong', // vibración: off | soft | strong
   lang: 'es', // idioma del contenido de cursos: 'es' | 'en' (la UI siempre es español)
-  conceptStats: {} // {courseId|dayId|lessonId: {ctx:{}, days:[], right, wrong, lastWrong}} evidencia cruzada
+  conceptStats: {}, // {courseId|dayId|lessonId: {ctx:{}, days:[], right, wrong, lastWrong}} evidencia cruzada
+  certificates: {} // {courseId: {date, pct, id, parts}} certificado al cruzar READY_THRESHOLD
 };
 const MAX_SHIELDS = 3;
 const XP_PER_HEART = 50;
@@ -2763,8 +2801,10 @@ function render(){
   else if(VIEW === 'stats') html = renderStats();
   else if(VIEW === 'battle') html = renderBattle();
   else if(VIEW === 'trainer_card') html = renderTrainerCard();
+  else if(VIEW === 'certificate') html = renderCertificate();
   else html = renderHome();
   app.innerHTML = icoize(html);
+  updateStreakIcon();
   if(VIEW === 'day'){ restoreDayScroll(); initDayBlockBar(); }
 }
 
@@ -2789,7 +2829,7 @@ function renderHeader(){
           <div class="stat stat-hearts ${DB.hearts===0?'clickable':''}" ${heartsClick}>${heartsHtml}${showTimer?'<span class="hearts-timer" id="hearts-timer-hdr"></span>':''}</div>
           <div class="stat stat-xp"><span class="ico">⚡</span>${DB.xp}</div>
         </div>
-        <div class="lvl-badge">N${lvl}</div>
+        <div class="lvl-badge">${rankBadgeSvg(rankIdxForLevel(lvl))}N${lvl}</div>
       </div>
       <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
       <div class="progress-label"><span>${lvlInfo.n}</span><span>${DB.xp} / ${nextXP} XP</span></div>
@@ -5101,7 +5141,7 @@ function renderAchievements(){
       <div class="level-current">
         <div class="lc-eyebrow">Tu nivel actual · ${lvlInfo.n}</div>
         <div class="lc-row">
-          <div class="lc-ico">${lvlInfo.i}</div>
+          <div class="lc-ico">${rankBadgeSvg(lvlInfo.ri)}</div>
           <div class="lc-info">
             <div class="lc-name">Nivel ${lvl}</div>
             <div class="lc-meta">${lvl < LEVELS.length ? `Faltan ${nxt-DB.xp} XP para N${lvl+1}` : '¡Nivel máximo alcanzado!'}</div>
@@ -5112,7 +5152,7 @@ function renderAchievements(){
 
       <div class="section-title">Rangos · 100 niveles</div>
       <div class="level-list">
-        ${LEVEL_RANKS.map(rank => {
+        ${LEVEL_RANKS.map((rank, ri) => {
           const achieved = lvl > rank.to;
           const current = lvl >= rank.from && lvl <= rank.to;
           const cls = current ? 'current' : (achieved ? 'achieved' : 'locked');
@@ -5121,7 +5161,7 @@ function renderAchievements(){
           const status = current ? `N${lvl} · aquí` : (achieved ? '✓' : '');
           return `
             <div class="level-row ${cls}">
-              <div class="lr-ico">${achieved || current ? rank.i : '🔒'}</div>
+              <div class="lr-ico">${rankBadgeSvg(ri, !(achieved || current))}</div>
               <div class="lr-info">
                 <div class="lr-name">${rank.n} <span style="font-weight:600;color:#6C6E71;font-size:12px">· N${rank.from}–N${rank.to}</span></div>
                 <div class="lr-xp">${fromXp.toLocaleString()}–${toXp.toLocaleString()} XP</div>
@@ -5691,7 +5731,7 @@ function renderConfig(){
       </div>
 
       <div class="practice-row" onclick="haptic(8);navTo('achievements')">
-        <div class="pr-ico" style="background:linear-gradient(135deg,#42B883,#2D8F66)">${lvlInfo.i}</div>
+        <div class="pr-ico pr-rank">${rankBadgeSvg(lvlInfo.ri)}</div>
         <div class="pr-info">
           <div class="pr-title">Nivel — ${lvlInfo.n}</div>
           <div class="pr-meta">${xpMeta} · Ver lista de niveles →</div>
@@ -6079,6 +6119,8 @@ function readinessCardHtml(courseId){
   const r = courseReadiness(courseId);
   if(!r) return '';
   const course = COURSES[courseId];
+  ensureCertificate(courseId, r);
+  const cert = DB.certificates?.[courseId];
   return `
     <div class="rdy-card ${r.ready?'ready':''}" onclick="haptic(8);openCourse('${courseId}')">
       <div class="rdy-top">
@@ -6099,6 +6141,7 @@ function readinessCardHtml(courseId){
           </div>`).join('')}
       </div>
       ${r.ready ? '' : `<div class="rdy-hint">⬆️ <b>Lo que más te sube el número:</b> ${r.weak.hint}</div>`}
+      ${cert ? `<div class="rdy-cert" onclick="event.stopPropagation();openCertificate('${courseId}')"><span class="rc-ico">🎓</span><span>Tu certificado · ${fmtFechaLarga(cert.date)}</span><span class="rc-arrow">→</span></div>` : ''}
     </div>`;
 }
 
@@ -6233,6 +6276,203 @@ function recallCardHtml(card, answered){
           <button class="recall-gbtn missed" onclick="recallGrade('missed')"><span class="rg-ico">📌</span><span class="rg-lbl">No la tenía</span></button>
         </div>`}
     </div>`;
+}
+
+// ============================================================
+// EMBLEMAS DE RANGO — cada uno de los 10 rangos tiene cara propia.
+// Hexágono tipo medalla con color por escalón: los primeros rangos son
+// colores vivos, los últimos son metales (oro, platino, diamante) y la
+// Leyenda es iridiscente. Antes cada rango era solo un emoji suelto.
+// ============================================================
+const RANK_TIERS = [
+  // [claro, oscuro, (tercero)] · color del glifo
+  {c:['#AED581','#43A047'],          g:'#fff'},     // Novato
+  {c:['#4FC3F7','#1E88E5'],          g:'#fff'},     // Aprendiz
+  {c:['#7986CB','#3949AB'],          g:'#fff'},     // Estudiante
+  {c:['#FFB74D','#EF6C00'],          g:'#fff'},     // Practicante
+  {c:['#BA68C8','#7B1FA2'],          g:'#fff'},     // Competente
+  {c:['#F06292','#C2185B'],          g:'#fff'},     // Avanzado
+  {c:['#FFE082','#F9A825'],          g:'#7A4F00'},  // Experto · oro
+  {c:['#F5F7F8','#90A4AE'],          g:'#37474F'},  // Maestro · platino
+  {c:['#A7FFFF','#00ACC1'],          g:'#00525A'},  // Sabio · diamante
+  {c:['#FF80AB','#7C4DFF','#18FFFF'],g:'#fff'}      // Leyenda · iridiscente
+];
+// Glifos en un lienzo de 48x48; `a` es el color de acento del escalón.
+const RANK_GLYPHS = [
+  (g,a) => `<path d="M24 35V25" stroke="${g}" stroke-width="3" stroke-linecap="round"/><path d="M24 27c0-6-5-9.5-10.5-9.5 0 5.6 4.4 9.5 10.5 9.5Z" fill="${g}"/><path d="M24 25c0-6.4 4.4-10.5 10.5-10.5 0 6.2-4.4 10.5-10.5 10.5Z" fill="${g}"/>`,
+  (g,a) => `<path d="M12 17c4-1.6 8-1.6 12 1 4-2.6 8-2.6 12-1v16c-4-1.6-8-1.6-12 1-4-2.6-8-2.6-12-1Z" fill="${g}"/><path d="M24 18v16" stroke="${a}" stroke-width="2"/>`,
+  (g,a) => `<path d="M24 13.5 38.5 20.3 24 27 9.5 20.3Z" fill="${g}"/><path d="M16 23.6V30c3.6 3.2 12.4 3.2 16 0v-6.4L24 27.3Z" fill="${g}"/><path d="M36.5 21.4V29" stroke="${g}" stroke-width="2.2" stroke-linecap="round"/>`,
+  (g,a) => `<path d="M26.5 11.5 14.5 27h8.6l-2.4 10.5L33 21.5h-8.5Z" fill="${g}" stroke="${g}" stroke-width="1.2" stroke-linejoin="round"/>`,
+  (g,a) => `<path d="M24 12.5l3.5 7.2 7.9 1.1-5.7 5.6 1.4 7.9L24 30.6l-7.1 3.7 1.4-7.9-5.7-5.6 7.9-1.1Z" fill="${g}" stroke="${g}" stroke-width="1.4" stroke-linejoin="round"/>`,
+  (g,a) => `<path d="M24 10.5c5.4 4.2 7 10.6 5.8 19H18.2c-1.2-8.4.4-14.8 5.8-19Z" fill="${g}"/><circle cx="24" cy="20.5" r="2.7" fill="${a}"/><path d="M18.4 24.5 13.6 31l5.1-.8ZM29.6 24.5l4.8 6.5-5.1-.8Z" fill="${g}"/><path d="M21 31l3 6.2 3-6.2Z" fill="#FFD54F"/>`,
+  (g,a) => `<path d="M16 12.5h16V20c0 5.2-3.6 8.5-8 8.5s-8-3.3-8-8.5Z" fill="${g}"/><path d="M16 15h-3.4v2.6c0 3 2 4.6 4.2 4.6M32 15h3.4v2.6c0 3-2 4.6-4.2 4.6" fill="none" stroke="${g}" stroke-width="2.2" stroke-linecap="round"/><path d="M22 28.5h4V32h-4Z" fill="${g}"/><rect x="17.5" y="32.5" width="13" height="4" rx="1.6" fill="${g}"/>`,
+  (g,a) => `<path d="M17 13h14l6.5 7.4L24 36.5 10.5 20.4Z" fill="${g}"/><path d="M10.5 20.4h27M17 13l4.3 7.4L24 36.5l2.7-16.1L31 13" fill="none" stroke="${a}" stroke-width="1.5" stroke-linejoin="round" opacity=".7"/>`,
+  (g,a) => `<path d="M14 17.5 18 12l3.4 4.4h5.2L30 12l4 5.5V27c0 5.5-4.5 9-10 9s-10-3.5-10-9Z" fill="${g}"/><circle cx="19.6" cy="22.4" r="3.7" fill="${a}"/><circle cx="28.4" cy="22.4" r="3.7" fill="${a}"/><circle cx="19.6" cy="22.4" r="1.4" fill="#fff"/><circle cx="28.4" cy="22.4" r="1.4" fill="#fff"/><path d="M24 25.6l-1.7 2.8h3.4Z" fill="#FFB300"/>`,
+  (g,a) => `<path d="M11 18.5l6.2 5.2L24 13l6.8 10.7 6.2-5.2-3 14.5H14Z" fill="${g}" stroke="${g}" stroke-width="1.2" stroke-linejoin="round"/><rect x="14" y="34.4" width="20" height="3.2" rx="1.3" fill="${g}"/><circle cx="24" cy="27.5" r="2" fill="${a}"/><circle cx="18" cy="28.5" r="1.4" fill="${a}"/><circle cx="30" cy="28.5" r="1.4" fill="${a}"/>`
+];
+let _rankUid = 0;
+function rankIdxForLevel(lvl){
+  const i = LEVEL_RANKS.findIndex(r => lvl >= r.from && lvl <= r.to);
+  return i < 0 ? 0 : i;
+}
+// locked = silueta gris: ves qué rango viene, pero aún no es tuyo.
+function rankBadgeSvg(idx, locked){
+  const t = RANK_TIERS[idx] || RANK_TIERS[0];
+  const id = 'rk' + (++_rankUid);
+  const stops = t.c.map((c, i) => `<stop offset="${Math.round(i/(t.c.length-1)*100)}%" stop-color="${c}"/>`).join('');
+  const acc = t.c[1];
+  const metal = idx >= 6;   // del oro en adelante, brillo de metal
+  return `<svg class="rank-badge${locked?' rank-locked':''}" viewBox="0 0 48 48" aria-label="${LEVEL_RANKS[idx]?.n||''}">`
+    + `<defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1">${stops}</linearGradient></defs>`
+    + `<path d="M24 2.5 43 13.3v21.4L24 45.5 5 34.7V13.3Z" fill="url(#${id})" stroke="${acc}" stroke-width="1.5" stroke-linejoin="round"/>`
+    + `<path d="M24 6.6 39.4 15.4v17.2L24 41.4 8.6 32.6V15.4Z" fill="none" stroke="#fff" stroke-opacity="${metal?'.6':'.32'}" stroke-width="1.2" stroke-linejoin="round"/>`
+    + (metal ? `<path d="M8.6 15.4 24 6.6l15.4 8.8L24 19Z" fill="#fff" opacity=".22"/>` : '')
+    + RANK_GLYPHS[idx](t.g, acc)
+    + `</svg>`;
+}
+
+// ============================================================
+// CERTIFICADO — el momento de graduación.
+// Mural se presenta como "la app que acabas borrando": la meta es llegar a
+// un umbral y presentar. Iro corona el camino con un certificado. Aquí se
+// emite la primera vez que un curso cruza READY_THRESHOLD y se conserva
+// aunque el readiness baje después: lo ganaste ese día.
+// Es interno y lo dice: certifica preparación, no sustituye el examen.
+// ============================================================
+function certIdFor(courseId, date){
+  let h = 2166136261;
+  for(const ch of courseId + '|' + date){ h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); }
+  const s = (h >>> 0).toString(36).toUpperCase().padStart(8, '0');
+  return 'CER-' + s.slice(0, 4) + '-' + s.slice(4, 8);
+}
+function ensureCertificate(courseId, r){
+  if(!r || !r.ready) return;
+  if(!DB.certificates) DB.certificates = {};
+  if(DB.certificates[courseId]) return;
+  const date = todayStr();
+  DB.certificates[courseId] = {
+    date, pct: r.pct, id: certIdFor(courseId, date),
+    parts: r.parts.map(p => ({lbl: p.lbl, v: Math.round(p.v*100)}))
+  };
+  earnAch('exam_ready');
+  save();
+  setTimeout(() => showToast('🎓 Llegaste al ' + r.pct + '% de preparación · tu certificado está listo', 3200, 'success'), 500);
+}
+function openCertificate(courseId){
+  haptic(HAPTIC.tap);
+  CURRENT.certCourse = courseId;
+  VIEW = 'certificate';
+  render();
+  setTimeout(() => { const sc = document.querySelector('.scroll'); if(sc) sc.scrollTop = 0; }, 10);
+}
+function fmtFechaLarga(ymd){
+  const [y, m, d] = (ymd || '').split('-').map(Number);
+  const MES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  return d ? `${d} de ${MES[m-1]} de ${y}` : '';
+}
+function shareCertificate(courseId){
+  const c = DB.certificates?.[courseId], course = COURSES[courseId];
+  if(!c || !course) return;
+  const txt = `Llegué al ${c.pct}% de preparación en ${course.title} · ${c.id}`;
+  if(navigator.share) navigator.share({title: 'Certificado de preparación', text: txt}).catch(() => {});
+  else if(navigator.clipboard) navigator.clipboard.writeText(txt).then(() => showToast('Copiado al portapapeles', 1600, 'success')).catch(() => {});
+}
+function renderCertificate(){
+  const courseId = CURRENT.certCourse;
+  const course = COURSES[courseId];
+  const c = DB.certificates?.[courseId];
+  if(!course || !c) return renderHome();
+  return `
+    ${renderHeader()}
+    <div class="scroll">
+      <div class="back-row">
+        <button class="back-btn" onclick="openCourse('${courseId}')" aria-label="Volver">←</button>
+        <div class="crumb">${course.title}</div>
+      </div>
+      <div class="cert">
+        <div class="cert-inner">
+          <img class="cert-mark" src="icon-192.png" alt="">
+          <div class="cert-eyebrow">Centro de Estudios Randall</div>
+          <div class="cert-title">Certificado de preparación</div>
+          <div class="cert-line">Se certifica que</div>
+          <div class="cert-name">Randall</div>
+          <div class="cert-line">alcanzó el nivel de preparación para presentar</div>
+          <div class="cert-course">${course.icon || ''} ${course.title}</div>
+          ${course.subtitle ? `<div class="cert-sub">${course.subtitle}</div>` : ''}
+          <div class="cert-score"><span>${c.pct}%</span><small>de preparación</small></div>
+          <div class="cert-parts">
+            ${(c.parts||[]).map(p => `<div class="cert-part"><b>${p.v}%</b><span>${p.lbl}</span></div>`).join('')}
+          </div>
+          <div class="cert-foot">
+            <div><small>Emitido</small>${fmtFechaLarga(c.date)}</div>
+            <div><small>Folio</small>${c.id}</div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-note">Es un certificado interno de la app: dice que estás listo para presentar, no sustituye la certificación oficial.</div>
+      ${course.exam_url ? `<a class="btn btn-primary" style="display:flex;text-decoration:none;justify-content:center;margin-bottom:10px" href="${course.exam_url}" target="_blank" rel="noopener">Presentar el examen oficial →</a>` : ''}
+      <button class="btn btn-secondary" onclick="shareCertificate('${courseId}')">Compartir</button>
+    </div>
+    ${renderNav('home')}
+  `;
+}
+
+// ============================================================
+// FAVICON Y BADGE DE RACHA
+// Del teardown de Duolingo: el icono del launcher refleja el estado de tu
+// racha. Aquí, sin la parte de castigo que el propio teardown desaconseja
+// (iconos que se degradan cuando faltas): el icono nunca empeora, solo
+// gana una marca. Check verde = ya estudiaste hoy. Punto naranja = tu
+// racha sigue viva y hoy aún no estudias. En la PWA instalada además se
+// usa la Badging API (puntito en el icono) donde el sistema la soporta.
+// ============================================================
+let _favKey = null, _favImg = null;
+const FAV_BASE_TITLE = 'Centro de Estudios Randall';
+function streakIconState(){
+  if(DB.lastStudyDate === todayStr()) return 'done';
+  if((DB.streak || 0) > 0) return 'risk';
+  return 'none';
+}
+function updateStreakIcon(){
+  const state = streakIconState();
+  const key = state + '|' + (DB.streak || 0);
+  if(key === _favKey) return;
+  _favKey = key;
+  document.title = (DB.streak || 0) > 0 ? `🔥${DB.streak} · ${FAV_BASE_TITLE}` : FAV_BASE_TITLE;
+  try{
+    if('setAppBadge' in navigator){
+      (state === 'risk' ? navigator.setAppBadge(1) : navigator.clearAppBadge()).catch(() => {});
+    }
+  }catch(e){}
+  const draw = () => {
+    try{
+      const S = 64, cv = document.createElement('canvas');
+      cv.width = cv.height = S;
+      const x = cv.getContext('2d');
+      x.drawImage(_favImg, 0, 0, S, S);
+      if(state !== 'none'){
+        const cx = 48, cy = 48, r = 15;
+        x.beginPath(); x.arc(cx, cy, r + 3, 0, Math.PI*2); x.fillStyle = '#fff'; x.fill();
+        x.beginPath(); x.arc(cx, cy, r, 0, Math.PI*2);
+        x.fillStyle = state === 'done' ? '#2FAF6F' : '#FF8A1F'; x.fill();
+        x.strokeStyle = '#fff'; x.lineWidth = 4; x.lineCap = 'round'; x.lineJoin = 'round';
+        x.beginPath();
+        if(state === 'done'){ x.moveTo(41, 48.5); x.lineTo(46, 53); x.lineTo(55, 43); x.stroke(); }
+        // racha viva sin estudiar hoy: solo el punto naranja, sin signo de alarma
+      }
+      let link = document.querySelector('link[rel="icon"]');
+      if(!link){ link = document.createElement('link'); link.rel = 'icon'; document.head.appendChild(link); }
+      link.type = 'image/png';
+      link.removeAttribute('sizes');
+      link.href = cv.toDataURL('image/png');
+    }catch(e){}
+  };
+  if(_favImg && _favImg.complete && _favImg.naturalWidth) draw();
+  else {
+    _favImg = new Image();
+    _favImg.onload = draw;
+    _favImg.src = 'icon-192.png';
+  }
 }
 
 // ============================================================
@@ -7430,7 +7670,7 @@ function triggerImportBackup(){
         if(!confirm('Esto va a REEMPLAZAR tu progreso actual con el del backup. ¿Continuar?')) return;
         DB = Object.assign({
           xp:0, hearts:MAX_HEARTS, lastHeartLost:null, streak:0, lastStudyDate:null,
-          achievements:{}, progress:{}, flashcardStats:{}, conceptStats:{}, totalLessons:0,
+          achievements:{}, progress:{}, flashcardStats:{}, conceptStats:{}, certificates:{}, totalLessons:0,
           perfectLessons:0, quizProgress:{}, wrongAnswers:{}, activityLog:{}, studiedWeekdays:{}, chests:{},
           monthlyMedals:{}
         }, data);
@@ -7453,7 +7693,7 @@ function resetAll(){
   DB = {
     xp: 0, hearts: MAX_HEARTS, lastHeartLost: null,
     streak: 0, lastStudyDate: null, achievements: {},
-    progress: {}, flashcardStats: {}, conceptStats: {}, totalLessons: 0, perfectLessons: 0,
+    progress: {}, flashcardStats: {}, conceptStats: {}, certificates: {}, totalLessons: 0, perfectLessons: 0,
     quizProgress: {}, wrongAnswers: {}, activityLog: {}, studiedWeekdays: {},
     dailyGoal: 3, streakViewMonth: null, perfectStreak: 0, comboReady: false,
     goalBonusClaimed: {}, dailyChal: null, chalPoints: 0, chalMonth: null, monthlyMedals: {},
@@ -7475,7 +7715,7 @@ function showNextLvlUp(){
   if(!_luq.length) return;
   const lvl = _luq[0];
   const info = LEVELS[lvl-1];
-  document.getElementById('lu-ico').textContent = info.i;
+  document.getElementById('lu-ico').innerHTML = rankBadgeSvg(info.ri); // svg generado por nosotros
   document.getElementById('lu-num').textContent = lvl;
   document.getElementById('lu-name').textContent = info.n;
   document.getElementById('lvlup-overlay').classList.add('show');

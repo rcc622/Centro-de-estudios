@@ -677,6 +677,22 @@ La app tiene un set de 25 iconos propios (sólidos, con color, `viewBox` 24×24)
 - **Los emojis en CSS `content:''`** (la llama de `.streak-hero::after`, la ✕ de `.tc-badge.lost`). Una regla CSS no admite SVG inline; habría que pasarlos a `background-image` con data-URI.
 - **Los emojis del contenido de los cursos** (los JSON) sí se traducen si coinciden con el mapa, porque pasan por el mismo `render()`.
 
+### Certificado de preparación
+
+Cuando un curso cruza `READY_THRESHOLD` (85%) por primera vez, `ensureCertificate()` emite un certificado y lo guarda en `DB.certificates[courseId]` = `{date, pct, id, parts}`. **Se conserva aunque el readiness baje después**: lo ganaste ese día. Otorga el logro `exam_ready` y aparece como acceso dorado dentro del card de readiness. La vista `certificate` muestra nombre, curso, porcentaje, los 4 componentes, fecha y folio (`CER-XXXX-XXXX`, derivado del curso y la fecha), más un botón al examen oficial si el `meta.json` trae `exam_url`.
+
+Lleva una nota explícita: es un certificado **interno**, dice que estás listo para presentar, **no sustituye la certificación oficial**. No usar logos ni nombres de terceros en él.
+
+### Emblemas de rango — `rankBadgeSvg(idx, locked)`
+
+Cada uno de los 10 rangos tiene emblema propio: hexágono tipo medalla con color por escalón (los primeros, colores vivos; Experto oro, Maestro platino, Sabio diamante, Leyenda iridiscente) y un glifo (`RANK_GLYPHS`). Aparecen en el header junto al nivel, la tarjeta de nivel de Logros, la lista de rangos, Ajustes y el overlay de subir de nivel. Los rangos aún no alcanzados se muestran como **silueta gris** (`locked`): ves qué viene, no un candado. `LEVELS[n].ri` da el índice de rango de cada nivel.
+
+### Favicon y badge de racha — `updateStreakIcon()`
+
+Idea tomada del teardown de Duolingo (el icono refleja tu racha), **sin la parte de castigo** que el propio teardown desaconseja: el icono nunca se degrada, solo gana una marca. Check verde = ya estudiaste hoy; punto naranja (sin signo de alarma) = racha viva y hoy aún no estudias. El título de la pestaña lleva `🔥N`. En la PWA instalada usa la Badging API (`setAppBadge`) donde el sistema la soporta. Se recalcula al final de cada `render()`, con caché por estado.
+
+**Límite:** el icono de la pantalla de inicio de una PWA instalada no se puede cambiar desde JS; lo que cambia es el favicon de la pestaña y, donde existe, el puntito de la Badging API.
+
 ### Práctica (pestaña ⚔️)
 - **Repaso inteligente (mix)**: 10 flashcards priorizadas con **SM-2 real** (`sm2Update`: acierto=q4, fallo=q1; intervalos 1d→6d→ivl·ef; fallo resetea). Orden: vencidas → nunca vistas → próximas a vencer
 - **Quick Quiz**: 10 MCQs al azar de lecciones completadas de TODOS los cursos activos; no toca `quizProgress`
@@ -862,6 +878,6 @@ Cuando termines una tarea, **siempre confirma a Randall**:
 
 ---
 
-**Versión de este CLAUDE.md:** 1.3
-**Última actualización:** Martes 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section`, iconografía propia `ICO`/`icoize`)
+**Versión de este CLAUDE.md:** 1.4
+**Última actualización:** Martes 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section`, iconografía propia `ICO`/`icoize`, auditoría de contraste, certificado, emblemas de rango, favicon de racha)
 **Autor original:** Claude (en sesión Claude.ai con Randall)
