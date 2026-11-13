@@ -843,7 +843,11 @@ Claude Code tiene conectado el MCP de ElevenLabs. Twilio está importado dentro 
 - **Cobertura (2026-11-13):** meta-410 día 1-6, meta-400 módulo 1-7, paneles-corella módulo 1. Las unidades sin recall (glosarios, simulacros) no llevan audio. Guiones de cada curso en `source/<curso>/audio/guiones.md`.
 - **Resúmenes en audio** (meta-410, día 1 a 6): voz **Randy De Rosas** (`voice_id` EQdYdxpkGKpMCC5nZMgi, acento mexicano), modelo `eleven_v4`. Son la primera tarjeta de cada lección `N.recall`: escuchas el resumen y luego lo explicas con tus palabras. Costo real: ~5,650 créditos (~$1 USD) los 6. El guion sale de las respuestas modelo de los recall de ese día, así que no mete material nuevo.
 - **Video** (piloto): 5 s, 720p, `bytedance-seedance-v2.5`, ~14,000 créditos (~$2.55 USD) por clip. Caro para lo que dura: úsalo solo para metáforas visuales puntuales. Se sube a YouTube unlisted y entra con `video-embed`. Nunca al repo.
-- **Tutor por llamada**: agente de ElevenLabs "Tutor Meta 410 · Centro de Estudios" (`agent_0701m79qrsa0e1gvcga8sqhj1vdm`), en español y con voz Randy. Su base de conocimiento es `source/meta-410/tutor/kb-tutor.txt` (los 6 guiones + las respuestas modelo de los recall), que ElevenLabs lee desde la URL raw de GitHub (documento `QwsmY74Nh0hxxQGynJCA`). Si cambias el contenido de los recall, regenera ese archivo y vuelve a crear el documento de la base de conocimiento. Hace repaso activo: una pregunta a la vez, te pide explicarlo con tus palabras y te dice qué concepto te faltó.
+- **Tutor por llamada**: agente de ElevenLabs "Tutor · Centro de Estudios" (`agent_0701m79qrsa0e1gvcga8sqhj1vdm`, rama `agtbrch_8401m79qrtcffw8r1283wnd9p7kh`), en español y con voz Randy. Cubre los 3 cursos activos; pregunta primero cuál repasar. Hace repaso activo: una pregunta a la vez, te pide explicarlo con tus palabras y te dice qué concepto te faltó. Bases de conocimiento (una por curso, generadas con `multimedia.py kb <curso>` en `source/<curso>/tutor/kb-tutor.txt` y leídas por ElevenLabs desde la URL raw de GitHub):
+  - meta-410 → documento `QwsmY74Nh0hxxQGynJCA`
+  - meta-400 → documento `bt4z8WX7aut2TWScu4bS`
+  - paneles-corella → documento `jUUYBjFVlpUssGvxMsjG`
+  - Si cambia el contenido de los recall o se agrega un curso: regenerar el `kb-tutor.txt`, push a `main`, crear un documento nuevo con `agents_create_kb_url`, adjuntarlo, desadjuntar el viejo y publicar (ver la skill `multimedia`). RAG está apagado: el material completo entra al contexto. Si la suma de bases pasa de ~150 KB, prender RAG (`agents_update_prompt_settings` → `rag.enabled`).
 - **Número del tutor:** SOLO la línea de prueba `+1 586 328 0753` (`phnum_0701m4a18fm9fb8b965t0w38c0m6`, etiqueta "TEST +1 586").
 - ⚠️ **NUNCA tocar, reasignar ni probar con las 4 líneas de Kenet en Kommo (MVA, MTY, TRC, SLT).** Son líneas de operación de la empresa.
 - Para llamadas salientes (que el tutor te marque) o recordatorios diarios hace falta el número de Randall y un disparador programado: pídelo antes, no lo inventes.
@@ -897,6 +901,6 @@ Cuando termines una tarea, **siempre confirma a Randall**:
 
 ---
 
-**Versión de este CLAUDE.md:** 1.5
-**Última actualización:** Viernes 13 de noviembre de 2026 (audios por día con ElevenLabs, modo escuchar 🎧, tutor por llamada, excepción de audio <1 MB). Antes, 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section`, iconografía propia `ICO`/`icoize`, auditoría de contraste, certificado, emblemas de rango, favicon de racha)
+**Versión de este CLAUDE.md:** 1.6
+**Última actualización:** Viernes 13 de noviembre de 2026 (v1.6: audios en los 3 cursos, protocolo multimedia encendido, tutor multi-curso; v1.5: audios por día con ElevenLabs, modo escuchar 🎧, tutor por llamada, excepción de audio <1 MB). Antes, 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section`, iconografía propia `ICO`/`icoize`, auditoría de contraste, certificado, emblemas de rango, favicon de racha)
 **Autor original:** Claude (en sesión Claude.ai con Randall)
