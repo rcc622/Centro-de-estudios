@@ -662,6 +662,8 @@ La idea también viene de Mural ("*the language app you eventually delete*"): la
 
 Botón 🔊 en las dos caras de cada flashcard y en cada término del glosario (este en `en-US`, casi todos son términos en inglés). API nativa del navegador: cero dependencias, cero archivos, funciona offline una vez instalada la PWA — respeta la regla de oro 4. Segundo tap sobre el mismo botón detiene; `navTo()` corta la voz al cambiar de vista.
 
+**Modo escuchar (🎧).** El header de toda lección estándar trae un botón 🎧 que lee en voz alta la tarjeta actual (`listenCard` → `cardSpeechText`): concept, tip, warn, quote, kvtable, mcq/fill (con la explicación si ya respondiste) y recall (con la respuesta modelo si ya la revelaste). `speakText` parte el texto en trozos de ~220 caracteres por oración y los encola, porque algunos motores de voz cortan los textos largos a la mitad. En una tarjeta `audio-embed`, 🎧 reproduce o pausa el audio grabado en vez de usar la voz sintética. `nextCard` y `exitLesson` cortan la voz.
+
 ### Iconografía propia — `ICO` + `icoize()`
 
 La app tiene un set de 25 iconos propios (sólidos, con color, `viewBox` 24×24) en la constante `ICO`. Sustituyen a los emojis del sistema, que se ven distintos en cada teléfono y no son nuestros.
@@ -828,6 +830,19 @@ Validaciones mentales:
 - Video → YouTube unlisted con card `video-embed`. Audio → Drive público con `audio-link`.
 - Imágenes: solo si pesan <300KB (comprimir/WebP antes de subir).
 - El service worker sirve `content/*/assets/` cache-first SIN revalidación: si cambias un asset, cámbiale el nombre de archivo.
+- **Excepción (decidida por Randall 2026-11-13): audios cortos dentro de la app.** Resúmenes de ~1 min, mono 48 kbps, **< 1 MB** cada uno, en `content/<curso>/assets/` con nombre versionado (`audio-day1-v1.mp3`; si se regenera → `-v2`). Se muestran con card `audio-embed`. El guion se guarda en `source/<curso>/audio/guiones.md`. Comando de compresión: `ffmpeg -i in.mp3 -ac 1 -b:a 48k content/<curso>/assets/audio-dayN-v1.mp3`. Video sigue FUERA del repo.
+- El service worker deja pasar directo a la red las peticiones con header `Range` (audio/video piden por rangos y la Cache API no guarda respuestas 206).
+
+### Multimedia con ElevenLabs y Twilio (2026-11-13)
+
+Claude Code tiene conectado el MCP de ElevenLabs. Twilio está importado dentro de ElevenLabs (no hay MCP de Twilio aparte).
+
+- **Resúmenes en audio** (meta-410, día 1 a 6): voz **Randy De Rosas** (`voice_id` EQdYdxpkGKpMCC5nZMgi, acento mexicano), modelo `eleven_v4`. Son la primera tarjeta de cada lección `N.recall`: escuchas el resumen y luego lo explicas con tus palabras. Costo real: ~5,650 créditos (~$1 USD) los 6. El guion sale de las respuestas modelo de los recall de ese día, así que no mete material nuevo.
+- **Video** (piloto): 5 s, 720p, `bytedance-seedance-v2.5`, ~14,000 créditos (~$2.55 USD) por clip. Caro para lo que dura: úsalo solo para metáforas visuales puntuales. Se sube a YouTube unlisted y entra con `video-embed`. Nunca al repo.
+- **Tutor por llamada**: agente de ElevenLabs "Tutor Meta 410 · Centro de Estudios" (`agent_0701m79qrsa0e1gvcga8sqhj1vdm`), en español y con voz Randy. Su base de conocimiento es `source/meta-410/tutor/kb-tutor.txt` (los 6 guiones + las respuestas modelo de los recall), que ElevenLabs lee desde la URL raw de GitHub (documento `QwsmY74Nh0hxxQGynJCA`). Si cambias el contenido de los recall, regenera ese archivo y vuelve a crear el documento de la base de conocimiento. Hace repaso activo: una pregunta a la vez, te pide explicarlo con tus palabras y te dice qué concepto te faltó.
+- **Número del tutor:** SOLO la línea de prueba `+1 586 328 0753` (`phnum_0701m4a18fm9fb8b965t0w38c0m6`, etiqueta "TEST +1 586").
+- ⚠️ **NUNCA tocar, reasignar ni probar con las 4 líneas de Kenet en Kommo (MVA, MTY, TRC, SLT).** Son líneas de operación de la empresa.
+- Para llamadas salientes (que el tutor te marque) o recordatorios diarios hace falta el número de Randall y un disparador programado: pídelo antes, no lo inventes.
 
 ---
 
@@ -878,6 +893,6 @@ Cuando termines una tarea, **siempre confirma a Randall**:
 
 ---
 
-**Versión de este CLAUDE.md:** 1.4
-**Última actualización:** Martes 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section`, iconografía propia `ICO`/`icoize`, auditoría de contraste, certificado, emblemas de rango, favicon de racha)
+**Versión de este CLAUDE.md:** 1.5
+**Última actualización:** Viernes 13 de noviembre de 2026 (audios por día con ElevenLabs, modo escuchar 🎧, tutor por llamada, excepción de audio <1 MB). Antes, 16 de septiembre de 2026 (card `recall`, dominio por evidencia cruzada, readiness de examen, voz nativa, campo `section`, iconografía propia `ICO`/`icoize`, auditoría de contraste, certificado, emblemas de rango, favicon de racha)
 **Autor original:** Claude (en sesión Claude.ai con Randall)
