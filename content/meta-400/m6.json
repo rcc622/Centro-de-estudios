@@ -981,6 +981,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 6",
+          "src": "content/meta-400/assets/audio-m6-v1.mp3",
+          "duration": "0:52",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Un cliente juzga su campaña de Reconocimiento por el costo por clic y cree que fracasó. Explícale con tus palabras por qué esa lectura está mal y qué debería mirar.",
           "hint": "Primero el business goal, después la métrica.",

@@ -444,6 +444,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 1",
+          "src": "content/paneles-corella/assets/audio-m1-v1.mp3",
+          "duration": "0:58",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Una familia que quiere paneles en su casa te pregunta cuánta energía le va a dar el sistema cada mes. Explica con tus palabras la diferencia entre irradiación e irradiancia y cuál de las dos necesitas para contestarle.",
           "hint": "Una se mide en un instante; la otra se acumula a lo largo del día.",

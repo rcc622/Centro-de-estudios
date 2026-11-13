@@ -1,4 +1,4 @@
-MATERIAL DE ESTUDIO · Meta Certified Media Buying Professional (examen 410-101)
+MATERIAL DE ESTUDIO · Meta Media Buying Professional
 
 === Día 1 — Ads Manager + Business Suite ===
 
@@ -119,4 +119,3 @@ Conceptos clave: atribución, 1-day view, 7-day click, standard attribution, inc
 Pregunta: Un cliente quiere saber si su campaña sirvió. Explica con tus palabras cuándo usarías una Prueba A/B, cuándo Mejora de la marca y cuándo Aumento de conversiones.
 Respuesta modelo: La Prueba A/B (A/B test) es un experimento donde corres dos versiones al mismo tiempo cambiando una sola variable, que puede ser el creativo, la audiencia o la ubicación; Meta divide a la gente al azar y sin que nadie vea las dos versiones, y gana la que logre el menor cost per result, o costo por resultado. La Mejora de la marca (brand lift) mide percepción, no ventas: con encuestas a un grupo que sí vio los anuncios y a otro parecido que no, compara reconocimiento de marca, recuerdo del anuncio y asociación del mensaje. El Aumento de conversiones (Conversion Lift) mide incrementalidad: cuántas ventas, prospectos o eventos extra causó la campaña que no habrían ocurrido sin ella, comparando también grupo expuesto contra grupo de control. Los tres se arman en la sección Experiments, dentro de Ads Manager o de Business Suite, no en el reporte normal de métricas. Imagina una aerolínea de bajo costo: para saber si el video nuevo vende más que el viejo usa una Prueba A/B, para saber si su patrocinio dejó huella en la memoria usa Mejora de la marca, y para saber cuántos boletos extra generó usa Aumento de conversiones.
 Conceptos clave: una sola variable, encuestas, incrementalidad, Experiments, cost per result
-

@@ -1063,6 +1063,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 3",
+          "src": "content/meta-400/assets/audio-m3-v1.mp3",
+          "duration": "0:52",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Explica con tus palabras la diferencia entre presupuesto diario y presupuesto total, y menciona los dos casos en que el presupuesto total es obligatorio.",
           "hint": "Uno es ritmo, el otro es monto cerrado.",

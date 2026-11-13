@@ -1210,6 +1210,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 4",
+          "src": "content/meta-400/assets/audio-m4-v1.mp3",
+          "duration": "0:56",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "¿Cómo le explicarías a un cliente la diferencia entre Advantage+ Audience y la audiencia original, y en qué caso NO deberías usar Advantage+?",
           "hint": "La pregunta es si tus señales son un muro o una sugerencia.",

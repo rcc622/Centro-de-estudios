@@ -1005,6 +1005,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 7",
+          "src": "content/meta-400/assets/audio-m7-v1.mp3",
+          "duration": "0:55",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Un cliente quiere subir su base de clientes para crear un público personalizado y te pregunta si eso es legal y seguro. Describe las cuatro políticas de privacidad que le explicarías.",
           "hint": "Consentimiento, hashing, datos sensibles y cumplimiento.",

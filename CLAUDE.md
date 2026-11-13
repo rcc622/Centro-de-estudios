@@ -124,8 +124,9 @@ Ejemplo: *"Agrega Día 2 del curso Meta con estos temas: Campaign Objectives, lo
 2. Si la unidad está marcada `locked: true`, **quita esa flag** ahora que tendrá contenido.
 3. Crea o sobrescribe `content/[curso]/[unitId].json` siguiendo el schema de la sección 5.
 4. **Verifica que el JSON sea válido** antes de guardar (mentalmente parsea).
-5. Mensaje de commit: `feat([curso]): agregar [unitId] - [descripción corta]`
-6. Confirma a Randall: cuántas lecciones, cuántas MCQs, cuántas flashcards generaste.
+5. **Protocolo multimedia (siempre encendido):** si la unidad trae lección `<N>.recall`, sigue la skill `.claude/skills/multimedia/` — guion, audio de ~1 min, tarjeta `audio-embed` y base del tutor. No esperes a que Randall lo pida.
+6. Mensaje de commit: `feat([curso]): agregar [unitId] - [descripción corta]`
+7. Confirma a Randall: cuántas lecciones, cuántas MCQs, cuántas flashcards generaste, y el audio.
 
 #### Tarea B — Crear un curso nuevo desde cero
 
@@ -141,7 +142,8 @@ Ejemplo: *"Créame un curso de ITIL Foundation con 4 módulos basado en este tem
 3. Crea archivos vacíos o con placeholder para cada unidad si Randall solo te dio el plan general.
 4. Si Randall te dio contenido completo, créalo todo de una vez.
 5. **Agrega el curso a `content/courses.json`** en la lista.
-6. Mensaje de commit: `feat: nuevo curso [nombre]`
+6. **Protocolo multimedia:** un audio por unidad con recall + base de conocimiento del curso adjunta al tutor (skill `.claude/skills/multimedia/`).
+7. Mensaje de commit: `feat: nuevo curso [nombre]`
 
 #### Tarea C — Agregar/editar flashcards
 
@@ -218,6 +220,7 @@ Ejemplo: *"Procesa este PDF y créame un curso completo."*
     - **Caveman** (skill instalada en `.claude/skills/caveman/`, de [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman), MIT): las respuestas de chat van comprimidas — cero relleno, cero cortesías vacías ("¡Claro, con gusto!"), fragmentos OK, directo al grano. Nivel default: **lite-full adaptado al español mexicano** (el tuteo y los términos técnicos exactos se mantienen; los artículos pueden quedarse si quitar­los vuelve confuso el español).
     - **Alcance del caveman: SOLO el chat.** NUNCA aplica a: contenido educativo de los JSON (las lecciones siguen la regla de desarrollar conceptos en 4-6 oraciones), mensajes de commit, documentación (CLAUDE.md/README), ni código.
     - **Goal**: Randall usa el comando `/goal` de Claude Code para fijar condiciones de éxito medibles; mientras un goal esté activo no se para hasta cumplirlo. Al recibir una tarea grande, define explícitamente el criterio de éxito ANTES de ejecutar (qué se va a verificar y cómo) — y sugiérele a Randall una condición `/goal` medible cuando aplique. Esto complementa la regla 11: el goal define el "qué", la triple verificación define el "cómo se comprueba".
+13. **PROTOCOLO MULTIMEDIA, siempre encendido (decidido por Randall 2026-11-13).** Toda unidad nueva o reescrita con lección `<N>.recall` sale con su resumen en audio y entra a la base del tutor por llamada. Se sigue la skill `.claude/skills/multimedia/SKILL.md` y su herramienta `multimedia.py` (`status`, `compress`, `insert`, `kb`). `multimedia.py status` debe quedar en 0 pendientes antes de cerrar la tarea. Si el MCP de ElevenLabs no conecta, se dice explícitamente y el audio queda como pendiente; no se salta en silencio.
 
 ---
 
@@ -837,6 +840,7 @@ Validaciones mentales:
 
 Claude Code tiene conectado el MCP de ElevenLabs. Twilio está importado dentro de ElevenLabs (no hay MCP de Twilio aparte).
 
+- **Cobertura (2026-11-13):** meta-410 día 1-6, meta-400 módulo 1-7, paneles-corella módulo 1. Las unidades sin recall (glosarios, simulacros) no llevan audio. Guiones de cada curso en `source/<curso>/audio/guiones.md`.
 - **Resúmenes en audio** (meta-410, día 1 a 6): voz **Randy De Rosas** (`voice_id` EQdYdxpkGKpMCC5nZMgi, acento mexicano), modelo `eleven_v4`. Son la primera tarjeta de cada lección `N.recall`: escuchas el resumen y luego lo explicas con tus palabras. Costo real: ~5,650 créditos (~$1 USD) los 6. El guion sale de las respuestas modelo de los recall de ese día, así que no mete material nuevo.
 - **Video** (piloto): 5 s, 720p, `bytedance-seedance-v2.5`, ~14,000 créditos (~$2.55 USD) por clip. Caro para lo que dura: úsalo solo para metáforas visuales puntuales. Se sube a YouTube unlisted y entra con `video-embed`. Nunca al repo.
 - **Tutor por llamada**: agente de ElevenLabs "Tutor Meta 410 · Centro de Estudios" (`agent_0701m79qrsa0e1gvcga8sqhj1vdm`), en español y con voz Randy. Su base de conocimiento es `source/meta-410/tutor/kb-tutor.txt` (los 6 guiones + las respuestas modelo de los recall), que ElevenLabs lee desde la URL raw de GitHub (documento `QwsmY74Nh0hxxQGynJCA`). Si cambias el contenido de los recall, regenera ese archivo y vuelve a crear el documento de la base de conocimiento. Hace repaso activo: una pregunta a la vez, te pide explicarlo con tus palabras y te dice qué concepto te faltó.

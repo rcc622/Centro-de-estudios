@@ -1042,6 +1042,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 5",
+          "src": "content/meta-400/assets/audio-m5-v1.mp3",
+          "duration": "0:56",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "¿Cómo le explicarías a un cliente que solo quiere anunciarse en Stories porque se le hace más bonito, que esa decisión le va a costar más caro?",
           "hint": "Más superficies significan más subastas donde competir.",

@@ -1205,6 +1205,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 1",
+          "src": "content/meta-400/assets/audio-m1-v1.mp3",
+          "duration": "0:59",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Un dueño de negocio te dice que ya sabe lo que quiere: una campaña de Ventas. Explica con tus palabras por qué ese no es el punto de partida y cuál es el orden correcto de decisiones.",
           "hint": "Empieza por el negocio, no por Ads Manager.",

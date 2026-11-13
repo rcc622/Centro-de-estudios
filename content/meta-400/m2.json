@@ -1243,6 +1243,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Módulo 2",
+          "src": "content/meta-400/assets/audio-m2-v1.mp3",
+          "duration": "0:53",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Explica con tus palabras la diferencia entre los dos buying types de Meta y en qué situación elegirías cada uno.",
           "hint": "Uno compite en tiempo real, el otro aparta el espacio por adelantado.",
