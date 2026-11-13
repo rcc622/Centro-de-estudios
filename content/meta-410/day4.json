@@ -1769,6 +1769,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Día 4",
+          "src": "content/meta-410/assets/audio-day4-v1.mp3",
+          "duration": "0:58",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Explica con tus palabras la diferencia entre un signal y un event, y cuáles son las 4 data sources con las que le mandas información a Meta.",
           "hint": "Uno es la intención de la persona; el otro es el reporte técnico que la registra.",

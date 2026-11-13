@@ -1803,6 +1803,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Día 3",
+          "src": "content/meta-410/assets/audio-day3-v1.mp3",
+          "duration": "0:57",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Explica con tus palabras la diferencia entre Auction y Reservation, y cuándo le recomendarías cada uno a un cliente.",
           "hint": "Uno te da flexibilidad; el otro te da certeza de precio y de entrega.",

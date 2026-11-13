@@ -1899,6 +1899,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Día 1",
+          "src": "content/meta-410/assets/audio-day1-v1.mp3",
+          "duration": "1:00",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Explica con tus palabras qué es el Opportunity Score y qué NO te dice.",
           "hint": "Piensa de dónde sale la calificación: ¿de tus resultados reales o de una lista de recomendaciones?",

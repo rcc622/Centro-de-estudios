@@ -1192,6 +1192,8 @@ html,body{font-feature-settings:'cv11','ss03';letter-spacing:-.005em}
 .cert-foot div:last-child{text-align:right;font-family:ui-monospace,Menlo,monospace;font-size:12px}
 .cert-foot small{display:block;font-size:9.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#7A5A00;margin-bottom:2px;font-family:inherit}
 .cert-note{font-size:12px;color:#6C6E71;text-align:center;line-height:1.5;margin:0 6px 14px}
+.listen-btn{font-size:18px;margin-right:8px;flex-shrink:0}
+.listen-btn.on{background:#EAF2FE;border-color:#156AD8;animation:speakPulse .9s ease-in-out infinite}
 </style>
 </head>
 <body>
@@ -3454,6 +3456,7 @@ function renderLesson(){
         <div style="flex:1;margin:0 12px">
           <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
         </div>
+        ${'speechSynthesis' in window ? `<button class="back-btn listen-btn" onclick="listenCard(this)" aria-label="Escuchar esta tarjeta">🎧</button>` : ''}
         <div class="stat stat-hearts"><span class="ico">${DB.hearts > 0 ? '❤️' : '💔'}</span>${DB.hearts}</div>
       </div>
     </div>
@@ -5958,15 +5961,59 @@ function speakText(text, lang, btn){
     _speakBtn = null;
     if(wasSame) return;
   }
-  const u = new SpeechSynthesisUtterance(clean.slice(0, 400));
-  u.lang = lang || (DB.lang === 'en' ? 'en-US' : 'es-MX');
-  u.rate = 0.95;
+  // Por oraciones, en trozos de ~220 caracteres: Chrome corta las lecturas
+  // largas a media frase si van en una sola utterance.
+  const trozos = [];
+  for(const frase of clean.match(/[^.!?;:]+[.!?;:]*\s*/g) || [clean]){
+    const t = frase.trim(); if(!t) continue;
+    const ult = trozos[trozos.length-1];
+    if(ult && (ult.length + t.length) < 220) trozos[trozos.length-1] = ult + ' ' + t;
+    else trozos.push(t.length > 400 ? t.slice(0, 400) : t);
+  }
   const off = () => { btn?.classList.remove('on'); if(_speakBtn === btn) _speakBtn = null; };
-  u.onend = off;
-  u.onerror = off;
   _speakBtn = btn;
   btn?.classList.add('on');
-  speechSynthesis.speak(u);
+  trozos.forEach((t, i) => {
+    const u = new SpeechSynthesisUtterance(t);
+    u.lang = lang || (DB.lang === 'en' ? 'en-US' : 'es-MX');
+    u.rate = 0.95;
+    if(i === trozos.length - 1){ u.onend = off; }
+    u.onerror = off;
+    speechSynthesis.speak(u);
+  });
+}
+
+// MODO ESCUCHAR — lee en voz alta la tarjeta actual de la lección.
+// Gratis y offline (voz del sistema). Para repasar sin ver la pantalla.
+function cardSpeechText(card, answered){
+  if(!card) return '';
+  const t = s => (s == null ? '' : String(s));
+  switch(card.type){
+    case 'concept': return t(card.h) + '. ' + t(card.body);
+    case 'tip':     return t(card.label || 'Pro tip') + '. ' + t(card.body);
+    case 'warn':    return t(card.label || 'Cuidado') + '. ' + t(card.body);
+    case 'quote':   return t(card.body);
+    case 'kvtable': return t(card.h) + '. ' + (card.rows||[]).map(([k,v]) => t(k) + ': ' + t(v)).join('. ');
+    case 'mcq': case 'fill': {
+      const q = t(card.q).replace(/___+/g, 'espacio en blanco');
+      const ops = (card.options||[]).map((o, i) => 'Opción ' + String.fromCharCode(65+i) + ': ' + t(o)).join('. ');
+      return q + '. ' + ops + (answered ? '. ' + t(card.explanation) : '');
+    }
+    case 'recall': return t(card.q) + (answered ? '. Respuesta modelo: ' + t(card.model) : '');
+    default: return t(card.q || card.title || card.h || card.body);
+  }
+}
+function listenCard(btn){
+  const course = COURSES[CURRENT.courseId];
+  const day = course?.days.find(d => d.id === CURRENT.dayId);
+  const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
+  const card = lesson?.cards?.[LESSON_STATE.cardIdx];
+  // En una tarjeta de audio, 🎧 reproduce el audio grabado, no la voz sintética
+  const player = card?.type === 'audio-embed' && document.querySelector('audio.audio-player');
+  if(player){ stopSpeak(); if(player.paused) player.play().catch(() => {}); else player.pause(); return; }
+  const txt = cardSpeechText(card, LESSON_STATE.answers?.[LESSON_STATE.cardIdx]);
+  if(!txt.trim()){ showToast('Esta tarjeta no tiene texto para leer', 1600); return; }
+  speakText(txt, null, btn);
 }
 
 // Botón reutilizable. El texto viaja en un data-attr para no pelearse
@@ -6775,6 +6822,7 @@ function openFlashcards(lessonId){
 }
 
 function exitLesson(){
+  stopSpeak();
   const someProgress =
     (LESSON_STATE.cardIdx > 0) ||
     (MATCH_STATE.matched && MATCH_STATE.matched.size > 0) ||
@@ -6846,6 +6894,7 @@ function nextCard(){
   const day = course?.days.find(d => d.id === CURRENT.dayId);
   const lesson = day?.lessons.find(l => l.id === CURRENT.lessonId);
   if(LESSON_STATE.cardIdx + 1 < lesson.cards.length){
+    stopSpeak();
     LESSON_STATE.cardIdx += 1;
     LESSON_STATE.tempSelected = [];
     LESSON_STATE.recallDraft = '';

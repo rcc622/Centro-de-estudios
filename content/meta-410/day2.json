@@ -1697,6 +1697,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Día 2",
+          "src": "content/meta-410/assets/audio-day2-v1.mp3",
+          "duration": "1:00",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Explica con tus palabras qué es ODAX y cuáles son los 6 objetivos, acomodados por etapa del funnel.",
           "hint": "Piensa en el recorrido: primero que te conozcan, luego que te consideren, al final que compren.",

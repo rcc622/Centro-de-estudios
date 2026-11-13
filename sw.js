@@ -62,6 +62,9 @@ self.addEventListener('fetch', e => {
   if(e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
   if(url.origin !== self.location.origin) return;
+  // Audio/video piden por rangos (206). La Cache API no guarda respuestas
+  // parciales y Safari exige 206: que esas peticiones vayan directo a la red.
+  if(e.request.headers.has('range')) return;
 
   e.respondWith(
     caches.open(CACHE_VERSION).then(cache =>

@@ -1733,6 +1733,13 @@
       "type": "cards",
       "cards": [
         {
+          "type": "audio-embed",
+          "title": "Resumen en audio · Día 5",
+          "src": "content/meta-410/assets/audio-day5-v1.mp3",
+          "duration": "0:59",
+          "source": "Escúchalo primero y luego explícalo con tus palabras"
+        },
+        {
           "type": "recall",
           "q": "Explica con tus palabras la diferencia entre un público personalizado y un público similar, y qué necesita cada uno para funcionar.",
           "hint": "Uno vuelve por quien ya te conoce; el otro sale a buscar gente nueva.",
